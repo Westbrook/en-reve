@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "kind": "planning-document-verification",
+  "at": "2026-09-30T22:49:46.382656+00:00",
+  "status": "failed",
+  "checks": {
+    "localMarkdownLinks": 16,
+    "jsonReceipts": 3,
+    "inventoryTotalsReconcile": true,
+    "campaignFormulasReconcile": true,
+    "mainWordCount": 4802,
+    "sourceHashChecks": [
+      {
+        "path": "tooling/testing/workload.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/comprehensive.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/pathways.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/execution-manifest.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/public-views.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/specialized.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/command-activation.mjs",
+        "unchanged": true
+      },
+      {
+        "path": "tooling/testing/families.mjs",
+        "unchanged": true
+      }
+    ],
+    "independentReviews": [
+      "execution graph reviewer: no blocking findings; installation net-benefit and measured worker reuse refinements applied",
+      "campaign reviewer: no unsafe recommendations; command duration and outside-job interval wording refined"
+    ]
+  },
+  "errors": [
+    "Missing link: /Users/westbrook/Documents/repos/design-system/plans/validation-efficiency-2026-09-30/tooling/testing/README.md"
+  ],
+  "limits": [
+    "No repository tests, builds, installs, browser test discovery or timing campaigns executed.",
+    "Historical timing evidence and live integration snapshot remain separately labeled.",
+    "Document/link/data verification is not implementation qualification."
+  ]
+}

@@ -2,7 +2,7 @@ import test from 'node:test';
 import {createHash} from 'node:crypto';
 import {portableConstructorProofs} from './portable-constructor-proofs.ts';
 import assert from 'node:assert/strict';
-import {mkdtemp, mkdir, writeFile, rm, symlink, readdir} from 'node:fs/promises';
+import {mkdtemp, mkdir, writeFile, rm, symlink, readdir,realpath} from 'node:fs/promises';
 import {join, dirname, resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {generateCandidateCem, verifyCandidateReceipt, verifyCandidateComposition} from './generate-wc-toolkit.ts';
@@ -16,7 +16,7 @@ export function M<T extends Ctor>(Parent:T){return class Mixed extends Parent {m
 export class Leaf extends M(Base) {own=true;}
 `;
 async function fixture(files: Record<string,string>, run: (f: any) => unknown, lit = false) {
-  const root = await mkdtemp(join(tmpdir(), 'cem-hybrid-generator-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'cem-hybrid-generator-')));
   try {
     const dependencies = resolve(import.meta.dirname, '../../node_modules');
     await mkdir(join(root, 'node_modules'));

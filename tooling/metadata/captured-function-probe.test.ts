@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -11,7 +11,7 @@ const options={noEmit:true,strict:true,skipLibCheck:true,target:ts.ScriptTarget.
 const prefix='export type Constructor=new (...args:any[])=>{}; export interface Box<T>{value:T}; export class Base {value="base";}';
 const factory='export function M<T extends Constructor>(Parent:T){return class extends Parent {};}' ;
 async function fixture(code:string,run:(value:any)=>unknown,extra:Record<string,string>={}) {
-  const root=await mkdtemp(join(tmpdir(),'cem-function-probe-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'cem-function-probe-')));
   try {
     for(const [name,text] of Object.entries({'main.ts':code,...extra})){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}
     const file=join(root,'main.ts'),capture=createCapturedCompilerProgram([file],options),program=capture.program,source=program.getSourceFile(file);

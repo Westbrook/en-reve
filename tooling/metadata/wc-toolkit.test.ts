@@ -166,7 +166,7 @@ test('plain superclass aliases resolve to the declaration in the referenced sour
 }));
 
 async function fixture(run: (root: string) => Promise<void>) {
-  const root = await mkdtemp(join(tmpdir(), 'en-wc-candidate-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'en-wc-candidate-')));
   try {await run(root);} catch (error) {
     if (error && typeof error === "object" && "failures" in error) throw new Error(JSON.stringify(error.failures), {cause: error});
     throw error;
@@ -205,7 +205,7 @@ test('candidate rejects empty, missing, invalid and symlink-escaping source inpu
   await assert.rejects(()=>generateCandidateCem({sourceRoot:root,sources:['missing.ts']}));
   await writeFile(join(root,'broken.ts'),'export class {');
   await assert.rejects(()=>generateCandidateCem({sourceRoot:root,sources:['broken.ts']}),/invalid source/);
-  const outside=await mkdtemp(join(tmpdir(),'en-wc-outside-'));
+  const outside=await realpath(await mkdtemp(join(tmpdir(),'en-wc-outside-')));
   try {await writeFile(join(outside,'outside.ts'),'export class Outside {}');await symlink(join(outside,'outside.ts'),join(root,'escape.ts'));
     await assert.rejects(()=>generateCandidateCem({sourceRoot:root,sources:['escape.ts']}),/inside sourceRoot/);
   }finally{await rm(outside,{recursive:true,force:true});}

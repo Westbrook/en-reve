@@ -1,3 +1,5 @@
+import {comprehensiveGraph} from '../testing/comprehensive.mjs';
+import {integrationPlan} from '../testing/integration-plan.mjs';
 import {resolve,join} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {mkdir,mkdtemp,readFile} from 'node:fs/promises';
@@ -29,13 +31,15 @@ if(!options.commit){
 }
 // No change provenance means conservative source selection, never an empty smoke.
 if(!changed.filter(Boolean).length)changed.push('unknown');
-const stages=selection(catalog(root),{...options,changed:changed.filter(Boolean)});
-for(const id of options.skip??[]){const stage=stages.find(s=>s.id===id);if(!stage)throw Error(`Unknown skipped stage ${id}`);stage.requestedSkip=true;}
-if(options.list){console.log(JSON.stringify({mode:options.mode,source:{commit:head,tree:git(root,'rev-parse','HEAD^{tree}'),worktreeStatus:dirty},changed:[...new Set(changed.filter(Boolean))],stages},null,2));return 0;}
+const selected=selection(catalog(root),{...options,changed:changed.filter(Boolean)});
+for(const id of options.skip??[]){const stage=selected.find(s=>s.id===id);if(!stage)throw Error(`Unknown skipped stage ${id}`);stage.requestedSkip=true;}
+const plan=integrationPlan(await comprehensiveGraph({workspaceRoot:root}),selected);
+const stages=plan.stages;
+if(options.list){console.log(JSON.stringify({mode:options.mode,source:{commit:head,tree:git(root,'rev-parse','HEAD^{tree}'),worktreeStatus:dirty},changed:[...new Set(changed.filter(Boolean))],stages,schedulePreview:plan.schedulePreview,mapping:plan.mapping},null,2));return 0;}
 const parent=join(root,'artifacts/cache/integration-gates');await mkdir(parent,{recursive:true});
 const container=options.output?null:await mkdtemp(join(parent,`${options.mode}-`));
 const output=options.output?resolve(options.output):join(container,'run');
-const receipt=await runStages({root,output,stages,metadata:{selection:{mode:options.mode,base:options.base??null,changed,explicitStages:options.only},exactCommit:options.commit??null}});
+const receipt=await runStages({root,output,stages,metadata:{failFast:true,selection:{mode:options.mode,base:options.base??null,changed,explicitStages:options.only},exactCommit:options.commit??null}});
 console.log(`${receipt.status}: ${output}/receipt.json`);return receipt.exitCode;
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href)process.exitCode=await main();

@@ -66,6 +66,22 @@ Use the guidance below for the area being changed; read linked contracts as need
   `test:tooling`, `test:api`, `test:theme`, `test:probes`, and `test:release`.
   `test:union` selects the broad correctness graph; `test:plan` and `test:inventory`
   describe coverage without executing assertions.
+- Start with the cheapest relevant semantic and pure checks. `npm run test:fast`
+  checks the owning package compilers, consumers, test/config/tooling TypeScript,
+  and runner controls before docs, packed frameworks, or browser preparation.
+  `check:types` is metadata snapshot freshness, not a general semantic typecheck.
+- Use `test:plan -- --pathways=<names>` to combine affected obligations. During
+  edits, use focused lanes; after the candidate settles, run one required union.
+  Do not repeat passing broad gates without changed relevant inputs, unresolved
+  coverage, or a distinct required acceptance environment. Unknown dependencies
+  still require the complete final gate; focused success remains subset evidence.
+- Keep compatible preparation and owned services alive for an invocation. Preserve
+  fresh browser contexts and actual cold-session measurement semantics. Use the
+  shared three-worker budget; unknown ports, caches or mutation ownership serialize.
+  Routine ownership admission is automatic, not a human confirmation per stage.
+- Default union and integration CLI browser runs stop at the first unexpected case.
+  Use union `--continue-independent` deliberately when collecting independent
+  diagnostics; interrupted or omitted coverage never counts as passing evidence.
 - Use supported test entry points and a fresh, non-existing `EN_EXECUTION_OUTPUT`
   directory for each outer run. Respect checkout/machine ownership leases and
   coordinate validation across agents; never bypass a lease or kill unrelated servers.
@@ -82,6 +98,11 @@ Use the guidance below for the area being changed; read linked contracts as need
   relevant campaign guide for toolchains, engines, profiles, samples, and fresh IDs.
 - Preserve frozen sources, vendor snapshots, locks, and historical receipts. Treat
   repacking, baseline promotion, and new acquisitions as explicit scoped work.
+- Before a new performance confirmation, declare its decision, comparison family,
+  precision, matrix, maximum jobs and stopping rule. `test:campaign-plan` expands
+  timing and retention work without acquiring samples. Finish required functional
+  qualification first. A fixed budget can end uncertain; do not automatically
+  extend sampling, pool campaigns or relax thresholds. Frozen protocols stay intact.
 - Keep functional qualification, performance measurements, historical observations,
   and manual acceptance distinct. Record provenance and limitations with new results.
 

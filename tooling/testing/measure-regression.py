@@ -159,5 +159,32 @@ runpy.run_path(path, run_name='__main__')
         self.assertEqual(receipt['exitCode'], 0)
 
 
+class NativeFailureTests(unittest.TestCase):
+    def test_stream_handles_partial_records_and_expected_todo(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'events.jsonl'
+            monitor = measurement.NativeFailureMonitor(path)
+            self.assertIsNone(monitor.failure())
+            path.write_text('{"type":"test:fail","data":{"todo":true}}\n{"type":')
+            self.assertIsNone(monitor.failure())
+            with path.open('a') as stream:
+                stream.write('"test:fail","data":{"name":"seeded"}}\n')
+            self.assertEqual(monitor.failure()['data']['name'], 'seeded')
+            self.assertIsNone(monitor.failure())
+
+    def test_failure_stops_owned_long_running_command_and_retains_marker(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / 'events.jsonl'
+            output = Path(directory) / 'output'
+            program = "import pathlib,time; pathlib.Path(" + repr(str(path)) + ").write_text('" + '{"type":"test:fail","data":{"name":"seeded"}}' + "\\n'); time.sleep(90)"
+            result = subprocess.run([sys.executable, str(Path(measurement.__file__)), '--out', str(output), '--label', 'native-failure', '--node-fail-fast-events', str(path), '--', sys.executable, '-c', program], capture_output=True, text=True, timeout=25)
+            self.assertEqual(result.returncode, 1, result.stderr)
+            receipt = json.loads((output / 'receipt.json').read_text())
+            self.assertEqual(receipt['failurePhase'], 'native-node-failure')
+            self.assertEqual(receipt['nativeFailure']['data']['name'], 'seeded')
+            self.assertLess(receipt['firstFailureSeconds'], 5)
+            self.assertLess(receipt['wallSeconds'], 20)
+
+
 if __name__ == '__main__':
     unittest.main()

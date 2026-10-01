@@ -13,7 +13,7 @@ else {
  const plan=(separator<0?args:args.slice(0,separator)).includes('--plan');
  if(plan)await run();else {
   const dispose=installInterruptionHandlers();let failure;
-  try{await withMachineOwner(()=>withExecutionOwner(root,run,{invocation}),{invocation});}
+  try{await withMachineOwner(ownership=>{process.env.EN_TEST_MACHINE_QUEUE_MS=String(ownership?.queueMs??0);return withExecutionOwner(root,run,{invocation});},{invocation,waitMs:Number(process.env.EN_TEST_MACHINE_WAIT_MS??60000)});}
   catch(error){failure=error;}
   try{await finishExecution(failure);}finally{dispose();}
  }

@@ -80,7 +80,30 @@ class OwnedCommand:
             receipt.setdefault('cleanupErrors', []).append(repr(error))
 
 
-def measure(command, cwd, output, label):
+class NativeFailureMonitor:
+    """Read only new complete native reporter events; never infer failure from TAP text."""
+    def __init__(self, path):
+        self.path, self.offset, self.pending = Path(path), 0, ''
+
+    def failure(self):
+        try:
+            with self.path.open() as stream:
+                stream.seek(self.offset)
+                text = self.pending + stream.read()
+                self.offset = stream.tell()
+        except FileNotFoundError:
+            return None
+        lines = text.split('\n')
+        self.pending = lines.pop()
+        for line in lines:
+            event = json.loads(line)
+            data = event.get('data', {})
+            if event.get('type') == 'test:fail' and not data.get('todo') and not data.get('skip'):
+                return event
+        return None
+
+
+def measure(command, cwd, output, label, node_fail_fast_events=None):
     output = Path(output).resolve()
     output.mkdir(parents=True, exist_ok=False)
     receipt = dict(schemaVersion=1, label=label, command=command, cwd=str(Path(cwd).resolve()),
@@ -113,6 +136,8 @@ def measure(command, cwd, output, label):
     persist()
     start = time.monotonic()
     owned = None
+    monitor = NativeFailureMonitor(node_fail_fast_events) if node_fail_fast_events else None
+    next_observation = 0
     try:
         with (output / 'command.log').open('w') as log:
             group_owned = os.name != 'nt' and all(hasattr(os, key) for key in ('waitid', 'WNOWAIT', 'wait4'))
@@ -122,13 +147,20 @@ def measure(command, cwd, output, label):
             while not owned.completed():
                 if cancelled:
                     raise KeyboardInterrupt('Interrupted by signal ' + str(cancelled[0]))
+                if monitor is not None and time.monotonic() >= next_observation:
+                    next_observation = time.monotonic() + .1
+                    failure = monitor.failure()
+                    if failure:
+                        receipt.update(firstFailureSeconds=time.monotonic() - start, nativeFailure=failure,
+                                       failurePhase='native-node-failure')
+                        raise RuntimeError('Native Node assertion failed; stop the owned cohort')
                 time.sleep(.01)
             if cancelled:
                 raise KeyboardInterrupt('Interrupted by signal ' + str(cancelled[0]))
             owned.reap(receipt)
         receipt.update(exitCode=child.returncode, status='passed' if child.returncode == 0 else 'failed')
     except BaseException as error:
-        receipt.update(exitCode=1, status='failed', error=repr(error), failurePhase='command-launch-or-wait')
+        receipt.update(exitCode=1, status='failed', error=repr(error), failurePhase=receipt.get('failurePhase', 'command-launch-or-wait'))
         if owned is not None:
             try:
                 owned.cleanup(receipt)
@@ -181,12 +213,13 @@ def main():
     parser.add_argument('--out', required=True)
     parser.add_argument('--cwd', default='.')
     parser.add_argument('--label', required=True)
+    parser.add_argument('--node-fail-fast-events')
     parser.add_argument('command', nargs=argparse.REMAINDER)
     args = parser.parse_args()
     command = args.command[1:] if args.command[:1] == ['--'] else args.command
     if not command:
         parser.error('supply a command after --')
-    receipt, _, commit_terminal = measure(command, args.cwd, args.out, args.label)
+    receipt, _, commit_terminal = measure(command, args.cwd, args.out, args.label, args.node_fail_fast_events)
     exit_code = commit_terminal()
     print(json.dumps({key: receipt[key] for key in ['label', 'status', 'exitCode', 'wallSeconds']}))
     return exit_code

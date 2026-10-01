@@ -1,13 +1,13 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {readEventContracts} from './event-contracts.ts';
 const source='src/main.ts',rootRow={source,className:'Leaf'};
 const event={...rootRow,name:'en-action',type:'CustomEvent<{action:"go";data:number}>',detail:'{ action: "go"; data: number; }',composition:{version:1}};
 async function fixture(code:string,run:(root:string)=>unknown) {
- const root=await mkdtemp(join(tmpdir(),'cem-effective-events-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-effective-events-')));
  try{await mkdir(join(root,'src'));await writeFile(join(root,source),code);await run(root);}finally{await rm(root,{recursive:true,force:true});}
 }
 const code=(value:string)=>`declare function dispatchAction(target:EventTarget,detail:unknown):void;

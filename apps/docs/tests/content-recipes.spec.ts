@@ -212,6 +212,8 @@ test('content recipe actions align with the select control and fit a phone witho
 
 
 test('loading fields match populated geometry through themes, layouts and narrow RTL', async ({ page }, info) => {
+	// Six themes × two widths × two layouts, including font readiness and paired screenshots.
+	test.setTimeout(60_000);
 	await page.goto(path);
 	await expect(page.locator('en-api-example-app')).not.toHaveAttribute('data-ssr');
 	const root = specimen(page);

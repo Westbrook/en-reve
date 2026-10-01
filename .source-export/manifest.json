@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "d314733215b89149d538bce3a3f8728c2dcc0822",
-  "exportedAt": "2026-10-01T20:14:37.095497+00:00",
+  "sourceCommit": "0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32",
+  "exportedAt": "2026-10-01T21:23:43.892510+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5301,
-  "includedBytes": 143565835,
-  "qualification": "Unchanged main qualification plus retained acquisition checks: 19 campaign/integration tests, 15 filtered reader checks, and hash-verified 806 observations. Publication does not repeat timings or establish broad correctness/manual acceptance.",
-  "latestUpdate": ".source-export/updates/performance-20261001.json",
+  "includedFiles": 5331,
+  "includedBytes": 143318380,
+  "qualification": "Implementation merged with explicit user approval to stop remaining confirmation. Pinned LTS fast/analysis controls passed; the broad Current run was intentionally interrupted and is incomplete. Distinct integration smoke was not run. Historical evidence-dependent replay requires locally retained evidence. Manual acceptance and performance acquisition remain separate.",
+  "latestUpdate": ".source-export/updates/validation-efficiency-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

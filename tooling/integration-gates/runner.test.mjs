@@ -241,6 +241,16 @@ test('execution-owner cleanup failure preserves an already recorded positive chi
  assert.equal(result.stages[0].status,'failed');assert.equal(result.stages[0].exitCode,17);assert.equal(result.exitCode,17);assert.equal(result.status,'failed');assert.match(result.orchestrationError.message,/Execution ownership changed/);assert.equal(JSON.parse(await readFile(ownerPath,'utf8')).token,'changed-owner');assert.equal(JSON.parse(await readFile(join(root,'out/receipt.json'),'utf8')).exitCode,17);
 }));
 
+test('canonical Node sources execute once and references retain their native coverage receipt',()=>fixture(async root=>{
+ await writeFile(join(root,'one.test.mjs'),"import test from 'node:test';test('real assertion',()=>{});\n");
+ const make=id=>({...stage(id),kind:'node',nodeSources:['one.test.mjs'],referenceableSources:['one.test.mjs'],command:['node','--test','one.test.mjs']});
+ const receipt=await run(root,[make('first'),make('second')]);assert.equal(receipt.exitCode,0,JSON.stringify(receipt));assert.equal(receipt.stages[0].nodeFacets.status,'passed');assert.equal(receipt.stages[1].references.length,1);assert.deepEqual(receipt.stages[1].executedSources,[]);assert.equal(receipt.stages[1].references[0].stage,'first');assert.equal(receipt.nodeReferencePolicy.sourceStable,true);
+}));
+test('integration fail-fast blocks expensive independent preparation after cheap negative',()=>fixture(async root=>{
+ const receipt=await run(root,[{...stage('build'),kind:'producer'},{...stage('types',17),kind:'types'}],{metadata:{failFast:true}});assert.equal(receipt.exitCode,17);assert.equal(receipt.stages[0].status,'skipped');assert.equal(receipt.stages[1].status,'failed');assert(receipt.schedule.firstFailureMs>=0);
+}));
+
+test('unknown Node dependencies execute again instead of inheriting a passing reference',()=>fixture(async root=>{await writeFile(join(root,'unknown.test.mjs'),"import test from 'node:test';test('unknown closure',()=>{});\n");const make=id=>({...stage(id),kind:'node',nodeSources:['unknown.test.mjs'],command:['node','--test','unknown.test.mjs']});const receipt=await run(root,[make('first'),make('second')]);assert.equal(receipt.exitCode,0,JSON.stringify(receipt));assert.deepEqual(receipt.stages[1].executedSources,['unknown.test.mjs']);assert.deepEqual(receipt.stages[1].references,[]);}));
 
 test('delivery source changes retain every affected assertion owner and complete workflow selection',()=>{
  const stages=catalog(resolve(import.meta.dirname,'../..'));

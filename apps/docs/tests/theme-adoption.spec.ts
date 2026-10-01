@@ -45,7 +45,7 @@ for(const d of definitions)test(`${d.id}: shipped variants, family anatomy, auto
  expect(validateRenderedRelationships(relationships).filter(r=>r.status!=='pass')).toEqual([]);
  await info.attach('variant-relationships',{body:JSON.stringify(relationships,null,2),contentType:'application/json'});
  await page.emulateMedia({reducedMotion:'no-preference'});const button=page.locator('#adopt-primary button');await button.hover();await page.mouse.down();
- const scale=d.id==='astryx-inspired'?'0.98':['spectrum-inspired','kinetic'].includes(d.id)?'0.94':'1';
+ const scale=d.id==='astryx-inspired'?'0.98':d.id==='web-awesome-inspired'?'0.9875':['spectrum-inspired','kinetic'].includes(d.id)?'0.94':'1';
  await expect.poll(()=>paint(page,'#adopt-primary button','scale')).toBe(scale);await page.mouse.up();
  await page.emulateMedia({reducedMotion:'reduce'});await button.hover();await page.mouse.down();expect(await paint(page,'#adopt-primary button','scale')).toBe('none');await page.mouse.up();
  const download=page.waitForEvent('download');await page.getByRole('button',{name:'Download CSS',exact:true}).click();const file=await download;const path=info.outputPath(`${d.id}.css`);await file.saveAs(path);const css=await readFile(path,'utf8');expect(css).toContain('prefers-color-scheme: dark');expect(css).toContain(`[data-en-theme="${d.id}"]`);

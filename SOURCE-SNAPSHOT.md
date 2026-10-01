@@ -22,3 +22,7 @@ large history and regression baselines remain local. Compact comparison evidence
 and the checksum-verified 2026-10-01 acquisition archive are included deliberately.
 See [the publication record](plans/performance-publication-2026-10-01.md) for
 qualification limits and replay instructions, and [the source mapping](.source-export/updates/performance-20261001.json) for exact changed blobs.
+
+## Validation efficiency publication — 2026-10-01
+
+Current source maps to local main `0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32`. The user approved stopping remaining confirmation and merging. LTS controls passed; the broad Current run was intentionally stopped before completion. No complete correctness pass is claimed. See `.source-export/updates/validation-efficiency-20261001.json`.

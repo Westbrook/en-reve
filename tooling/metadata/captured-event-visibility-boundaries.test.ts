@@ -3,7 +3,7 @@ import test from 'node:test';
 import {checkCapturedEventVisibility,assertCapturedEventVisibility} from './captured-event-visibility.ts';
 import {ts} from './compiler-api.mjs';
 import {createCapturedCompilerProgram} from './captured-compiler-program.ts';
-import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,rm,realpath} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {factory,fixture as rawFixture,event,valid} from './captured-factory-event-fixtures.ts';
@@ -41,7 +41,7 @@ test('event visibility preserves exported nominal classes while excluding hidden
 
 
 test('event visibility keeps public external named aliases and classes opaque',async()=>{
- const root=await mkdtemp(join(tmpdir(),'cem-event-visibility-external-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-event-visibility-external-')));
  try {
   const packageRoot=join(root,'node_modules/@cem/external');await mkdir(packageRoot,{recursive:true});
   await writeFile(join(packageRoot,'package.json'),JSON.stringify({name:'@cem/external',version:'1.0.0',types:'./index.d.ts'}));
@@ -70,7 +70,7 @@ test('event visibility derives nested returned-class ownership from the exact se
 
 
 test('event visibility uses exact selected ownership for imported local named bodies',async()=>{
- const root=await mkdtemp(join(tmpdir(),'cem-event-selected-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-event-selected-')));
  try {
   const path=join(root,'main.ts'),detailPath=join(root,'detail.ts');let code=factory('CustomEvent<Detail>','');code=code.slice(code.indexOf('export type Constructor'));
   await writeFile(path,`import type {Detail} from './detail.js';${code}`);await writeFile(detailPath,'type Hidden=string;export interface Detail {value:Hidden}');

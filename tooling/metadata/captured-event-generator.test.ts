@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,writeFile,rm,symlink,readdir} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,symlink,readdir,realpath} from 'node:fs/promises';
 import {join,dirname,resolve} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -11,7 +11,7 @@ export function M<T extends Ctor>(Parent:T){return (
 class extends Parent{send(value:InstanceType<T>){this.dispatchEvent(new CustomEvent('changed',{detail:{value}}));}});}
 export class Leaf extends M(Base){}`;
 async function fixture(files:Record<string,string>,run:(f:any)=>unknown){
- const root=await mkdtemp(join(tmpdir(),'cem-event-generator-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-event-generator-')));
  try{
   const dependencies=resolve(import.meta.dirname,'../../node_modules');await mkdir(join(root,'node_modules'));for(const name of await readdir(dependencies))await symlink(join(dependencies,name),join(root,'node_modules',name));
   for(const[name,text]of Object.entries(files)){await mkdir(dirname(join(root,name)),{recursive:true});await writeFile(join(root,name),text);}

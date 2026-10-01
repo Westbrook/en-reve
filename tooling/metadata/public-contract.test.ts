@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,writeFile,readFile,rm,symlink} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,rm,symlink,realpath} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {fileURLToPath} from 'node:url';
@@ -10,7 +10,7 @@ import {snapshotCem} from '../releases/cem-diff.ts';
 import {diffPublicGraph} from '../releases/graph-diff.ts';
 import {generateElements,verifyGeneratedElements} from './generate-elements.ts';
 
-async function fixture(run:(root:string)=>Promise<void>) {const root=await mkdtemp(join(tmpdir(),'api-contract-'));try{await mkdir(join(root,'src'));await symlink(fileURLToPath(new URL('../../node_modules',import.meta.url)),join(root,'node_modules'),'dir');await run(root);}finally{await rm(root,{recursive:true,force:true});}}
+async function fixture(run:(root:string)=>Promise<void>) {const root=await realpath(await mkdtemp(join(tmpdir(),'api-contract-')));try{await mkdir(join(root,'src'));await symlink(fileURLToPath(new URL('../../node_modules',import.meta.url)),join(root,'node_modules'),'dir');await run(root);}finally{await rm(root,{recursive:true,force:true});}}
 
 test('accessor contracts preserve inferred reads, typed writes and Lit attribute types',()=>fixture(async root=>{
  await writeFile(join(root,'src/element.ts'),`import {LitElement} from 'lit';

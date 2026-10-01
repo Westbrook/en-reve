@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-30T22:43:18.962Z",
+  "root": "/Users/westbrook/Documents/repos/design-system",
+  "head": "6d09b31cf43523ac8c75352208ab9697b62e2673",
+  "scope": "Static maintained-source inventory in the existing dirty shared root; not the isolated integration checkout or runtime-resolved job counts.",
+  "caveat": "Substantial pre-existing tracked and untracked work exists. Counts can change as other agents work. No tests, builds, browser discovery, installations, campaigns or lease acquisition were executed. No coverage or passing evidence is claimed.",
+  "scan": {
+    "roots": [
+      "packages",
+      "apps",
+      "tooling",
+      "probes",
+      "showcases"
+    ],
+    "excludedDirectoryNames": [
+      "node_modules",
+      ".git",
+      ".cache",
+      ".vite",
+      ".vite-temp",
+      "dist",
+      "artifacts",
+      "results",
+      "test-results",
+      "playwright-report",
+      "reports",
+      "baselines",
+      "runs",
+      "vendor"
+    ],
+    "additionalRootFiles": [
+      "package.json",
+      "package-lock.json"
+    ],
+    "historical": "Maintained historical source recipes are classified; excluded artifact/vendor/baseline outputs are not counted as tests."
+  },
+  "sources": [
+    {
+      "path": "tooling/testing/workload.mjs",
+      "sha256": "dc15f9b1c7706a075273f90555399c4c018f0c60e1210e738d7fc625fbf130cf"
+    },
+    {
+      "path": "tooling/testing/comprehensive.mjs",
+      "sha256": "becc475c9d04f528bfc01cfe46b1654990eb2852c32474111dacc551ffb95843"
+    },
+    {
+      "path": "tooling/testing/pathways.mjs",
+      "sha256": "07e70287382cc0398a9da5921b6ec170e149eddd328f7b6408e877cfcc23f131"
+    },
+    {
+      "path": "tooling/testing/execution-manifest.mjs",
+      "sha256": "2fd438a01efcb4022b59f7bb2e1183a146d931d6843e58d23bb59efccba7f35d"
+    },
+    {
+      "path": "tooling/testing/public-views.mjs",
+      "sha256": "ffcf47ffe8d04de5b2216d4da9aa0d41ea69b2e50f589cd95df2494bc3b9bd2d"
+    },
+    {
+      "path": "tooling/testing/specialized.mjs",
+      "sha256": "ed5725751358523b8a924221e46bfbb7c1112585d34456db9b93579bfa880f8a"
+    },
+    {
+      "path": "tooling/testing/command-activation.mjs",
+      "sha256": "582d6a18e31a9c528333ab32b230426694c1d0e030ae398e6cc116a044ffe8c1"
+    },
+    {
+      "path": "tooling/testing/families.mjs",
+      "sha256": "0e917d54db0c23ac71331a349776ac1c21eecd38fc68a71ddac3f4ccbae06711"
+    }
+  ],
+  "correctness": {
+    "tasks": 281,
+    "pathways": 31,
+    "byKind": {
+      "producer": 22,
+      "barrier": 2,
+      "check": 8,
+      "node": 150,
+      "browser": 71,
+      "custom-browser": 4,
+      "release-attestation": 1,
+      "node-browser": 1,
+      "built-browser": 11,
+      "development-browser": 1,
+      "reader-browser": 4,
+      "types": 5,
+      "python": 1
+    }
+  },
+  "completeManifest": {
+    "tasks": 360,
+    "pathways": 48,
+    "byKind": {
+      "producer": 31,
+      "barrier": 2,
+      "check": 8,
+      "node": 150,
+      "browser": 71,
+      "custom-browser": 4,
+      "release-attestation": 1,
+      "node-browser": 1,
+      "built-browser": 11,
+      "development-browser": 1,
+      "reader-browser": 4,
+      "types": 5,
+      "python": 1,
+      "specialized": 70
+    },
+    "counts": {
+      "commands": 103,
+      "installations": 27,
+      "configs": 71,
+      "assertions": 333,
+      "types": 14,
+      "typeConfigurations": 6,
+      "custom": 185,
+      "documentedCommands": 341,
+      "unresolved": 0
+    },
+    "publicViewCount": 26,
+    "publicAliases": [
+      {
+        "view": "root#test:tokens",
+        "aliasOf": "packages/tokens#test"
+      }
+    ],
+    "assertionFileKinds": {
+      "browser-or-hybrid": 180,
+      "node": 148,
+      "python": 1,
+      "case-registration": 4
+    },
+    "customStatus": {
+      "bound-command-or-imported-obligation": 84,
+      "manual-fixture-and-human-acceptance": 4,
+      "explicit-historical-reproduction": 97
+    },
+    "untypedTestSourceCount": 184
+  },
+  "nodeCountReconciliation": {
+    "nodeClassifiedFiles": 148,
+    "nodeGraphTasks": 150,
+    "nodeGraphUniqueSources": 150,
+    "taskFilesNotClassifiedNode": [
+      "tooling/theme-candidates/catalogue-group-1.test.mjs",
+      "tooling/theme-candidates/catalogue-group-2.test.mjs",
+      "tooling/theme-candidates/catalogue-group-3.test.mjs",
+      "tooling/test-pipeline/config-output.test.mjs",
+      "tooling/testing/runtime-identity.test.mjs"
+    ],
+    "classifiedNodeNotNodeTask": [
+      "packages/tokens/test/portability/portability.test.mjs",
+      "tooling/theme-authoring-pilot/pilot.test.mjs",
+      "tooling/theme-authoring-pilot/watch.test.mjs"
+    ]
+  },
+  "completenessPolicy": "The manifest inventories ordinary, specialized, manual and historical families. A selected correctness pass never implies complete-library or historical/manual acceptance. Unresolved activation/dependency edges remain visible; changed-only selection and completed-result reuse remain disabled."
+}

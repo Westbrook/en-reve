@@ -1,0 +1,130 @@
+{
+  "file": "artifacts/test-runtime-2026-09-25/final-warm-correctness-current-v3/execution.json",
+  "status": "passed",
+  "startedAt": "2026-09-26T02:08:16.829Z",
+  "finishedAt": "2026-09-26T03:50:14.751Z",
+  "wallSeconds": 6117.910874458,
+  "groups": {
+    "check": {
+      "commands": 10,
+      "wallSeconds": 15.815135500393808
+    },
+    "producer": {
+      "commands": 22,
+      "wallSeconds": 98.74658491555601
+    },
+    "direct": {
+      "commands": 26,
+      "wallSeconds": 1179.3781841685995
+    },
+    "node": {
+      "commands": 1,
+      "wallSeconds": 54.13221437484026
+    },
+    "discovery": {
+      "commands": 88,
+      "wallSeconds": 20.645060035400093
+    },
+    "playwright": {
+      "commands": 70,
+      "wallSeconds": 4705.37577804178
+    }
+  },
+  "largest": [
+    {
+      "id": "browser:apps/docs/tests/playwright.config.ts",
+      "wallSeconds": 1444.8991732499562
+    },
+    {
+      "id": "browser:showcases/performance-results/playwright.config.js",
+      "wallSeconds": 783.50795579236
+    },
+    {
+      "id": "direct:candidate-import",
+      "wallSeconds": 399.5203177500516
+    },
+    {
+      "id": "browser:apps/docs/tests/theme-refresh.config.ts",
+      "wallSeconds": 311.6896526250057
+    },
+    {
+      "id": "browser:apps/docs/tests/theme-adoption.config.ts",
+      "wallSeconds": 176.48807112500072
+    },
+    {
+      "id": "direct:reader-en-reve-main",
+      "wallSeconds": 162.23829420795664
+    },
+    {
+      "id": "direct:reader-spectrum-gen2",
+      "wallSeconds": 154.2913990416564
+    },
+    {
+      "id": "browser:packages/tokens/test/browser/playwright.config.mjs",
+      "wallSeconds": 147.3366895839572
+    },
+    {
+      "id": "direct:reader-calendar-variants",
+      "wallSeconds": 145.22641950007528
+    },
+    {
+      "id": "browser:apps/docs/tests/theme-regression.config.ts",
+      "wallSeconds": 108.37708299979568
+    },
+    {
+      "id": "browser:probes/component-patterns/parts.config.ts",
+      "wallSeconds": 101.10607900004834
+    },
+    {
+      "id": "browser:packages/elements/src/combobox/tests/playwright.config.ts",
+      "wallSeconds": 93.04966379189864
+    }
+  ],
+  "types": [
+    {
+      "id": "metadata:types",
+      "wallSeconds": 0.8775254171341658,
+      "secondsUntilStart": 7.936
+    },
+    {
+      "id": "consumer-types",
+      "wallSeconds": 0.4134812499396503,
+      "secondsUntilStart": 127.921
+    },
+    {
+      "id": "primitives-types",
+      "wallSeconds": 0.20069633284583688,
+      "secondsUntilStart": 128.384
+    },
+    {
+      "id": "breadcrumbs-types",
+      "wallSeconds": 0.051510042045265436,
+      "secondsUntilStart": 128.634
+    },
+    {
+      "id": "styles-check",
+      "wallSeconds": 0.20997562492266297,
+      "secondsUntilStart": 128.736
+    },
+    {
+      "id": "scoped-consumer-types",
+      "wallSeconds": 0.06910950038582087,
+      "secondsUntilStart": 128.995
+    },
+    {
+      "id": "direct:types",
+      "wallSeconds": 0.7745129172690213,
+      "secondsUntilStart": 129.623
+    }
+  ],
+  "discoveryCount": 88,
+  "secondDiscovery": 16,
+  "firstBrowserSecondsUntilStart": 234.58,
+  "browserModes": {
+    "execute-full": 69,
+    "execute-residual": 1,
+    "reference-producer": 1
+  },
+  "identitySeconds": 7.591150750999629,
+  "caveat": "Historical passing warm run from 2026-09-26, not a current re-execution or cross-version speedup claim. Source and runtime cohort must be checked before any direct comparison."
+}

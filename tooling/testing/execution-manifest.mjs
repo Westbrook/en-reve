@@ -1,3 +1,6 @@
+import {catalog,selection} from '../integration-gates/catalog.mjs';
+import {integrationPlan} from './integration-plan.mjs';
+import {obligations,triggerInventory} from './obligations.mjs';
 import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -24,14 +27,18 @@ async function documentedCommands(files){
 }
 export async function executionManifest(){
  const inventory=await workloadManifest(),correctness=await comprehensiveGraph(),specialized=await specializedPathways();
+ const integration=integrationPlan(correctness,selection(catalog(root),{mode:'integration'}));
  const tasks=[...correctness.tasks,...specialized.tasks],ids=tasks.map(task=>task.id);
  if(new Set(ids).size!==ids.length)throw new Error('Duplicate task identity across pathway families');
  const pathways={...correctness.pathways,...specialized.pathways};
  const sourceOwners=new Map();
- for(const task of tasks)for(const file of [...(task.assertionSources??[]),...(task.config?[task.config]:[]),...(task.command??[]).filter(arg=>typeof arg==='string'&&/^(?:apps|packages|tooling|probes|showcases)\/.+\.(?:[cm]?[jt]s|py)$/.test(arg))]){
+ const integrationOwners=integration.stages.filter(stage=>!stage.nodeSources).map(stage=>({...stage,id:stage.canonicalTasks[0]}));
+ for(const task of [...tasks,...integrationOwners])for(const file of [...(task.assertionSources??[]),...(task.config?[task.config]:[]),...(task.command??[]).filter(arg=>typeof arg==='string'&&/^(?:apps|packages|tooling|probes|showcases)\/.+\.(?:[cm]?[jt]s|py)$/.test(arg))]){
   const owners=sourceOwners.get(file)??new Set();owners.add(task.id);sourceOwners.set(file,owners);
  }
  const delegated={
+  'tooling/testing/measure-regression.py':['node:tooling/testing/interruption.test.mjs'],
+  'probes/registry-diagnostics/check.mjs':['integration:diagnostics'],
   'tooling/testing/measure.py':tasks.map(task=>task.id),
   'showcases/performance/experiments/receipt-output.mjs':tasks.filter(task=>task.environment?.EN_NATIVE_EXPERIMENT_OUTPUT).map(task=>task.id),
   'tooling/theme-candidates/verify-focus.mjs':['direct:candidate-import'],
@@ -45,10 +52,10 @@ export async function executionManifest(){
  };
  const custom=inventory.custom.map(item=>{
   const owners=[...(sourceOwners.get(item.path)??[]),...(delegated[item.path]??[])];
-  return {...item,owners:[...new Set(owners)],status:owners.length?'bound-command-or-imported-obligation':['historical-reproduction','historical-recipe','historical-helper'].includes(item.activation.tier)?'explicit-historical-reproduction':item.activation.tier==='manual-acceptance'?'manual-fixture-and-human-acceptance':'unresolved-explicit-command',reason:owners.length?'Original source remains selected by the identified task; imported helpers are not extra independent runs.':item.reason};
+  return {...item,owners:[...new Set(owners)],status:owners.length?'bound-command-or-imported-obligation':['historical-reproduction','historical-recipe','historical-helper'].includes(item.activation.tier)?'explicit-historical-reproduction':item.activation.tier==='manual-acceptance'?'manual-fixture-and-human-acceptance':['lazy-delivery-study','performance-campaign'].includes(item.activation.tier)?'documented-specialized-protocol':'unresolved-explicit-command',reason:owners.length?'Original source remains selected by the identified task; imported helpers are not extra independent runs.':item.reason};
  });
  const unresolved=custom.filter(item=>item.status==='unresolved-explicit-command');
- const result={...inventory,schemaVersion:2,complete:false,graph:{tasks,pathways,manual:specialized.manual,requiredInputs:specialized.requiredInputs},publicViews:publicViews(correctness),custom,documentedCommands:await documentedCommands(await maintainedFiles()),unresolved,
+ const result={...inventory,schemaVersion:2,complete:false,graph:{tasks,pathways,manual:specialized.manual,requiredInputs:specialized.requiredInputs},publicViews:publicViews(correctness),integrationView:integration,obligations:obligations(tasks,pathways),triggers:await triggerInventory(root),custom,documentedCommands:await documentedCommands(await maintainedFiles()),unresolved,
   completenessPolicy:'The manifest inventories ordinary, specialized, manual and historical families. A selected correctness pass never implies complete-library or historical/manual acceptance. Unresolved activation/dependency edges remain visible; changed-only selection and completed-result reuse remain disabled.',
   tierOrder:['deterministic preparation','current-library correctness','current native qualification','serial diagnostic/instrument qualification','serial full campaigns and regression checks','separate actual manual acceptance'],
   nativeRegressionProtocolSources:['showcases/performance/ci/lane-plan.mjs','showcases/performance/ci/run-lane.mjs'],

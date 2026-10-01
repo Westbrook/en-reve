@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -14,7 +14,7 @@ export function M<T extends Constructor>(Parent:T){return (
 class extends Parent{});}`;
 const files={'factory.ts':factory(),'base.ts':'export class Base extends EventTarget {value="actual";}','main.ts':`import {M} from './factory.js';import {Base} from './base.js';export class Leaf extends M(Base){}`};
 async function fixture(input:Record<string,string>,run:(f:any)=>unknown) {
- const root=await mkdtemp(join(tmpdir(),'cem-event-projection-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-event-projection-')));
  try {
   for(const [name,text]of Object.entries(input)){await mkdir(dirname(join(root,name)),{recursive:true});await writeFile(join(root,name),text);}
   const capture=createCapturedConstructorCompilerProgram(Object.keys(input).map(name=>join(root,name)),options),program=capture.program;

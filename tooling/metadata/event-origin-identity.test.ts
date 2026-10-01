@@ -1,12 +1,12 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp, mkdir, writeFile, readFile, rm} from 'node:fs/promises';
+import {mkdtemp, mkdir, writeFile, readFile, rm,realpath} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {readEventContracts} from './event-contracts.ts';
 
 async function fixture(files: Record<string,string>, run: (root:string) => Promise<void>) {
-  const root = await mkdtemp(join(tmpdir(), 'cem-event-origin-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'cem-event-origin-')));
   try {
     await mkdir(join(root, 'src'));
     for (const [name, text] of Object.entries(files)) await writeFile(join(root, 'src', name), text);

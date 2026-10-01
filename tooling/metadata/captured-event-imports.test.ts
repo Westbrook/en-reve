@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -14,7 +14,7 @@ export function M<T extends Ctor>(Parent:T){return (
 /** @fires {${type}} changed */
 class extends Parent{});}export class Leaf extends M(Base){}`;
 async function fixture(files:Record<string,string>,run:(f:any)=>unknown) {
- const root=await mkdtemp(join(tmpdir(),'cem-event-imports-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-event-imports-')));
  try {
   for(const [name,text]of Object.entries(files)){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}
   const roots=Object.keys(files).filter(name=>!name.startsWith('node_modules/')).map(name=>join(root,name));

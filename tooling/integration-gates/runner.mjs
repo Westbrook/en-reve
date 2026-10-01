@@ -1,3 +1,10 @@
+import {BrowserPorts} from '../testing/browser-ports.mjs';
+import {browserFailureCommand} from '../testing/failure-policy.mjs';
+import {withNodeFacetReporter} from '../testing/node-command.mjs';
+import {validateNodeEvents} from '../testing/validate-node-events.mjs';
+import {runSchedule} from '../testing/schedule.mjs';
+import {Services} from '../testing/services.mjs';
+import {startDocsServer} from '../../apps/docs/tests/static-server.mjs';
 import {withExecutionOwner} from '../testing/execution-owner.mjs';
 import {spawn,execFileSync} from 'node:child_process';
 import {createHash,randomUUID} from 'node:crypto';
@@ -67,6 +74,9 @@ export async function runStages({root,output,stages,metadata={},env={},executeCo
   limitations:['Automated DOM/focus checks are not assistive-technology, physical-device or real IME review.','No performance improvement claim. Historical workloads, cache and preparation policies remain separate.']};
  const save=()=>atomic(join(output,'receipt.json'),receipt);
  let unlock,resourceEnv={};
+ const browserPorts=new BrowserPorts();
+ const services=new Services({docs:()=>startDocsServer({distribution:join(root,'dist'),port:0})});
+ const completedNodes=new Map();const started=performance.now();
  try {
   try {if(lockPath)unlock=await acquireLock(lockPath,{id,pid:process.pid,startedAt:receipt.startedAt});else {const resources=await acquireResources(root,{env:{...process.env,...env}});unlock=resources.release;resourceEnv=resources.env;receipt.contention.resources={paths:resources.paths,inherited:resources.inherited};}receipt.contention.lockAcquired=true;}
   catch(error){receipt.preflight={status:'failed',category:'environment',reason:'Resource lock unavailable; no tests started',detail:error.message,code:error.code};receipt.exitCode=75;return receipt;}
@@ -80,10 +90,11 @@ export async function runStages({root,output,stages,metadata={},env={},executeCo
   for(const p of ['package.json','package-lock.json','showcases/performance/package-lock.json']){try{receipt[p.replaceAll('/','_')+'Sha256']=hash(await readFile(join(root,p)));}catch{}}
   const packagePaths=['package.json','node_modules/@playwright/test/package.json','node_modules/typescript/package.json','node_modules/vite/package.json','showcases/performance/node_modules/esbuild/package.json',...['tokens','styles','primitives','elements','ssr'].map(n=>`packages/${n}/package.json`)];
   receipt.packages={};for(const path of packagePaths){try{const p=JSON.parse(await readFile(join(root,path),'utf8'));receipt.packages[p.name]=p.version;}catch{}}
-  for(const stage of receipt.stages) {
-   if(!stage.required)continue;
-   if(stage.requestedSkip){stage.status='skipped';stage.reason='Explicit operator skip; remains required';await save();continue;}
-   if(stage.deps.some(id=>receipt.stages.find(s=>s.id===id)?.status!=='passed')){stage.status='skipped';stage.reason='Required dependency did not pass';await save();continue;}
+  receipt.scheduleStartedMs=performance.now()-started;
+  receipt.schedule=await runSchedule(receipt.stages.filter(stage=>stage.required),async stage=>{
+   if(stage.requestedSkip){stage.status='skipped';stage.reason='Explicit operator skip; remains required';await save();return {status:'failed'};}
+   if(stage.deps.some(id=>receipt.stages.find(s=>s.id===id)?.status!=='passed')){stage.status='skipped';stage.reason='Required dependency did not pass';await save();return {status:'failed'};}
+   if(stage.kind==='barrier'){stage.status='passed';stage.startedAt=stage.finishedAt=new Date().toISOString();await save();return {status:'passed'};}
    const directory=join(output,stage.id);await mkdir(directory);await mkdir(join(directory,'tmp'));
    const runEnv={...ownedEnvironment,EN_EXECUTION_OUTPUT:join(directory,'public'),EN_TEST_PIPELINE_OUTPUT:join(directory,'configurations'),TMPDIR:join(directory,'tmp'),TMP:join(directory,'tmp'),TEMP:join(directory,'tmp'),
     EN_CONSUMER_CONTRACTS_OUT:join(output,'consumer-prepare','evidence'),DATE_INPUT_RUN:join(directory,'evidence'),
@@ -93,6 +104,8 @@ export async function runStages({root,output,stages,metadata={},env={},executeCo
     EN_GATE_CONFIG:stage.config??'',EN_WORKFLOW_TEST_OUTPUT_DIR:directory,EN_WORKFLOW_TEST_PORT:'4596',EN_SSR_TEST_PORT:'4292',
     EN_SIZE_TEST_OUTPUT:directory,EN_SIZE_TEST_PORT:'47829',EN_COMMANDS_TEST_PORT:'47830',EN_COMMANDS_TEST_OUTPUT_DIR:directory};
    delete runEnv.EN_TEST_PIPELINE_CONFIG_OUTPUTS;
+   // This is an independently collected Node run, never the parent's worker IPC stream.
+   if(stage.nodeSources)delete runEnv.NODE_TEST_CONTEXT;
    // Adapter configuration belongs only to its actual stage, never unit fixtures.
    for(const key of Object.keys(runEnv))if(key.startsWith('EN_DIAGNOSTICS_'))delete runEnv[key];
    if(stage.id==='diagnostics'){
@@ -109,18 +122,39 @@ export async function runStages({root,output,stages,metadata={},env={},executeCo
    }
    // Never allow external-server shortcuts to test an unrelated checkout.
    for(const key of ['EN_WORKFLOW_BASE_URL','EN_DOCS_ORIGIN','EN_PATTERN_GALLERY_URL','EN_COMMANDS_TEST_BASE_URL','EN_COMMANDS_MOBILE_BASE_URL','EN_COMBOBOX_MOBILE_BASE_URL','EN_POPUP_MOTION_BASE_URL'])delete runEnv[key];
-   stage.configuration={config:stage.config??null,workers:'maximum 3, retaining lower owning limits',retries:stage.config?0:null,resourcePolicy:'host-serialized fixed ports; owned per-run outputs'};
+   if(stage.config?.startsWith('apps/docs/tests/')){const docs=await services.get('docs');runEnv.EN_WORKFLOW_BASE_URL=docs.url;runEnv.EN_DOCS_ORIGIN=docs.url;stage.ownedDocsOrigin=docs.url;}
+   Object.assign(runEnv,await browserPorts.environment(stage.config,runEnv));
+   stage.configuration={config:stage.config??null,workers:'maximum 3, retaining lower owning limits',retries:stage.config?0:null,maxFailures:stage.config&&metadata.failFast?1:'owning configuration',resourcePolicy:'host-serialized fixed ports; owned per-run outputs'};
    if(stage.id==='document-scroll')stage.configuration.documentScroll={builtPackages:runEnv.EN_CAPABILITY_BUILT==='1',host:'127.0.0.1',port:Number(runEnv.EN_CAPABILITY_PORT),origin:`http://127.0.0.1:${runEnv.EN_CAPABILITY_PORT}`,cacheDir:runEnv.EN_CAPABILITY_CACHE};
    stage.status='running';stage.startedAt=new Date().toISOString();stage.log=`${stage.id}/command.log`;await save();
-   const result=await executeCommand(stage.command,{cwd:root,env:runEnv,log:join(output,stage.log)});Object.assign(stage,result);
+   if(!stage.nodeSources)completedNodes.clear(); // Never reference across another producer/check generation.
+   let command=stage.command;
+   if(stage.nodeSources){
+    stage.references=stage.nodeSources.filter(file=>stage.referenceableSources?.includes(file)&&completedNodes.has(file)).map(file=>({file,...completedNodes.get(file)}));
+    stage.executedSources=stage.nodeSources.filter(file=>!stage.referenceableSources?.includes(file)||!completedNodes.has(file));
+    command=[process.execPath,'--test','--test-concurrency=3',...stage.executedSources];
+   }
+   const nodeEvents=stage.executedSources?.length?join(directory,'node-events.jsonl'):null;
+   if(nodeEvents)command=withNodeFacetReporter(command,{reporter:resolve(import.meta.dirname,'../testing/node-facet-reporter.mjs'),destination:nodeEvents});
+   if(stage.config)command=browserFailureCommand(command,{failFast:Boolean(metadata.failFast)});
+   stage.executedCommand=command;
+   await browserPorts.release(stage.config);
+   const result=stage.nodeSources&&!stage.executedSources.length?{exitCode:0,referenced:true}:await executeCommand(command,{cwd:root,env:runEnv,log:join(output,stage.log)});Object.assign(stage,result);
+   if(nodeEvents){try{stage.nodeFacets=validateNodeEvents({events:(await readFile(nodeEvents,'utf8')).trim().split('\n').map(JSON.parse),sources:stage.executedSources,root});}catch(error){stage.status='failed';stage.failure={category:'harness',evidence:'Native Node coverage invalid: '+error.message};}}
    if(stage.config){try{stage.browser=playwrightSummary(JSON.parse(await readFile(join(directory,'playwright.json'),'utf8')));}
     catch(error){if(result.exitCode===0){stage.status='failed';stage.failure={category:'harness',evidence:`Missing/invalid required Playwright report: ${error.message}`};}}}
    if(stage.receipts){stage.receiptValidation=[];for(const spec of stage.receipts){try{stage.receiptValidation.push(await validateReceipt(directory,spec,receipt.source.commit));}catch(error){stage.receiptValidation.push({path:spec.path,status:'failed',error:error.message});if(result.exitCode===0){stage.status='failed';stage.failure={category:'harness',evidence:error.message};}}}}
    if(stage.status!=='failed')Object.assign(stage,outcome(result,stage.browser));
-   stage.finishedAt=new Date().toISOString();stage.artifacts=await filesBelow(output,directory);
-   await save();
-  }
+   stage.finishedAt=new Date().toISOString();stage.wallMs=Date.parse(stage.finishedAt)-Date.parse(stage.startedAt);stage.artifacts=await filesBelow(output,directory);
+   if(stage.status==='passed')for(const file of (stage.executedSources??[]).filter(file=>stage.referenceableSources?.includes(file)))completedNodes.set(file,{stage:stage.id,log:stage.log,logSha256:stage.logSha256,originatingRun:id});
+   await save();return {status:stage.status};
+  },{continueIndependent:!metadata.failFast});
+  if(receipt.schedule.firstFailureMs!==null)receipt.firstFailureMs=receipt.scheduleStartedMs+receipt.schedule.firstFailureMs;
+  for(const stage of receipt.stages)if(stage.required&&stage.status==='pending'){stage.status='skipped';stage.reason=receipt.schedule.outcomes[stage.id]?.reason??'Required dependency did not pass';}
+  const schedulingError=Object.values(receipt.schedule.outcomes).find(outcome=>outcome.error);
+  if(schedulingError)throw schedulingError.error;
   receipt.after=await identity(root);
+  receipt.nodeReferencePolicy={scope:'same invocation only',sourceStable:receipt.source.sha256===receipt.after.sha256,inputs:'Identical source owners, built artifacts and Node test flags under one source-bound preparation phase',referencesAcceptedOnlyWithPassingTerminalReceipt:true};
   if(receipt.source.commit!==receipt.after.commit||receipt.source.sha256!==receipt.after.sha256){receipt.sourceStability={status:'failed',category:'harness',reason:'Source or generated metadata changed during run; review diff and rerun exact committed source'};}
   receipt.builtAssets=[];for(const dir of ['dist','packages/tokens/dist','packages/styles/dist','packages/primitives/dist','packages/elements/dist','packages/ssr/dist','apps/docs/dist'])receipt.builtAssets.push(...await filesBelow(root,join(root,dir)));
   receipt.exitCode=aggregate(receipt.stages)||(receipt.sourceStability?1:0);
@@ -138,7 +172,9 @@ export async function runStages({root,output,stages,metadata={},env={},executeCo
   receipt.exitCode=failedChild?.exitCode??(Number.isInteger(receipt.exitCode)&&receipt.exitCode>0?receipt.exitCode:1);
  }
  finally {
-  receipt.finishedAt=new Date().toISOString();receipt.contention.loadAtEnd=loadavg();
+  try{await browserPorts.close();}catch(error){receipt.cleanupError=String(error);receipt.exitCode=receipt.exitCode||1;}
+  try{await services.close();}catch(error){receipt.cleanupError=String(error);receipt.exitCode=receipt.exitCode||1;}
+  receipt.serviceEvents=services.events;receipt.wallMs=performance.now()-started;receipt.finishedAt=new Date().toISOString();receipt.contention.loadAtEnd=loadavg();
   for(const s of receipt.stages)if(s.status==='pending'||s.status==='running'){s.status='skipped';s.reason='Orchestration did not complete this required stage';}
   if(unlock){try{await unlock();receipt.resourceRelease={status:'passed'};}catch(error){receipt.resourceRelease={status:'failed',error:String(error)};receipt.exitCode=receipt.exitCode||1;}}
   receipt.status=receipt.exitCode===0?'passed':'failed';await save();

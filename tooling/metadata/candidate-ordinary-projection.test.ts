@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp, mkdir, writeFile, rm, symlink, readdir} from 'node:fs/promises';
+import {mkdtemp, mkdir, writeFile, rm, symlink, readdir,realpath} from 'node:fs/promises';
 import {dirname, join, resolve, relative} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -15,7 +15,7 @@ export function M<T extends Ctor>(Parent: T) { return class Mixed extends Parent
 export class Leaf extends M(Base) { own = true; }
 `;
 async function fixture(files: Record<string, string>, run: (f: any) => unknown) {
-  const root = await mkdtemp(join(tmpdir(), 'cem-ordinary-projection-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'cem-ordinary-projection-')));
   try {
     const dependencies = resolve(import.meta.dirname, '../../node_modules');
     await mkdir(join(root, 'node_modules'));

@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {browserResources} from './browser-resources.mjs';
+const task={config:'packages/primitives/tests/navigation/playwright.config.ts'},discovery={webServer:[{url:'http://127.0.0.1:4394/fixture',reuseExistingServer:false}]};
+test('only owned reviewed browser fixtures may share the global worker pool',()=>{const p=browserResources(task,discovery,1);assert.equal(p.exclusive,false);assert.equal(p.slots,1);assert(p.locks.includes('tcp:4394'));assert(browserResources({config:'unknown'},discovery,1).exclusive);assert(browserResources(task,{webServer:[]},1).exclusive);assert(browserResources(task,discovery,1,{serial:true}).exclusive);});

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -10,7 +10,7 @@ import {checkCapturedModuleEventVisibility,assertCapturedModuleEventVisibility} 
 const options={strict:true,noEmit:true,skipLibCheck:true,module:ts.ModuleKind.ESNext,moduleResolution:ts.ModuleResolutionKind.Bundler,target:ts.ScriptTarget.ES2022,types:[],lib:['lib.es2022.d.ts','lib.dom.d.ts']};
 const code=(type:string,extra='')=>`${extra}\n/** @fires {${type}} changed */\nexport class Base {id=1;}`;
 async function fixture(files:Record<string,string>,run:(f:any)=>unknown,selected=Object.keys(files)) {
- const root=await mkdtemp(join(tmpdir(),'cem-module-event-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-module-event-')));
  try {
   for(const [name,text]of Object.entries(files)){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}
   const capture=createCapturedEventCompilerProgram(selected.map(name=>join(root,name)),options),program=capture.program,source=program.getSourceFile(join(root,'main.ts'));

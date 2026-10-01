@@ -1,5 +1,5 @@
 // Orchestration only: each command invokes an existing assertion owner.
-import {readdirSync} from 'node:fs';
+import {readdirSync,readFileSync} from 'node:fs';
 import workflowConfig from '../../apps/docs/tests/playwright.config.ts';
 import { deliveryBrowserOwners, deliveryNodeSources, isDeliveryChange } from '../testing/lazy-delivery-closure.mjs';
 const node = (...args) => ['node', ...args];
@@ -7,6 +7,11 @@ const npm = (...args) => ['npm', ...args];
 const unit = (id, files, deps = ['build']) => ({id, deps, command: node('--test', ...files)});
 const pw = (id, config, deps = ['build']) => ({id, deps:['capabilities',...deps], config, command: node('node_modules/@playwright/test/cli.js', 'test', '--config', 'tooling/integration-gates/playwright.config.ts')});
 export function catalog(root) {
+ // Inventory must not execute a browser config or require an installed browser package.
+ const workflowSource=readFileSync(`${root}/apps/docs/tests/playwright.config.ts`,'utf8');
+ const match=workflowSource.match(/testMatch:\s*(\[[^\]]*\])/);
+ if(!match)throw Error('Workflow ownership must be an explicit file array');
+ const workflowConfig={testMatch:JSON.parse(match[1].replaceAll("'",'"'))};
  const ssrTests = readdirSync(`${root}/packages/ssr/tests`).filter(n=>n.endsWith('.test.mjs')).sort().map(n=>`packages/ssr/tests/${n}`);
  const tokenTests = readdirSync(`${root}/packages/tokens/test`).filter(n=>n.endsWith('.test.mjs')).sort().map(n=>`packages/tokens/test/${n}`);
  return [

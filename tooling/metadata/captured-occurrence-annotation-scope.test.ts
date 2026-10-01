@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -12,7 +12,7 @@ const options={noEmit:true,strict:true,skipLibCheck:true,target:ts.ScriptTarget.
 const prefix='export type Constructor=new (...args:any[])=>{}; export interface Envelope<T>{detail:T}; export class Base {value="base";}';
 const factory=(text:string,parameters='T extends Constructor')=>`export function M<${parameters}>(Parent:T){return (\n/** @fires {${text}} changed */\nclass extends Parent {});}`;
 async function fixture(code:string,run:(value:any)=>unknown,extra:Record<string,string>={}) {
-  const root=await mkdtemp(join(tmpdir(),'cem-occurrence-scope-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'cem-occurrence-scope-')));
   try {
     const files={'main.ts':code,...extra};
     for(const [name,text] of Object.entries(files)){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}

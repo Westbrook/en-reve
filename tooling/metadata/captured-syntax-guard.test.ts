@@ -126,10 +126,10 @@ test('parsed syntax guards cannot delegate reference item identity to mutable ar
 });
 
 test('parsed syntax guards reject foreign Program roots despite an inherited some override',async()=>{
- const {mkdtemp,writeFile,rm}=await import('node:fs/promises');
+ const {mkdtemp,writeFile,rm,realpath}=await import('node:fs/promises');
  const {join}=await import('node:path'),{tmpdir}=await import('node:os');
  const {createCapturedCompilerProgram}=await import('./captured-compiler-program.ts');
- const directory=await mkdtemp(join(tmpdir(),'cem-root-array-guard-'));
+ const directory=await realpath(await mkdtemp(join(tmpdir(),'cem-root-array-guard-')));
  try {
   const file=join(directory,'main.ts');await writeFile(file,'export const value=1;');
   const capture=createCapturedCompilerProgram([file],{noEmit:true,strict:true,skipLibCheck:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,moduleResolution:ts.ModuleResolutionKind.Bundler,types:[],lib:['lib.es5.d.ts']});

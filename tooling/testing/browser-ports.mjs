@@ -1,0 +1,29 @@
+import {createServer} from 'node:net';
+const ports=new Map([['probes/scoped-registry/playwright.config.ts','EN_SCOPE_PORT']]);
+const close=server=>new Promise((resolve,reject)=>server.close(error=>error?reject(error):resolve()));
+/** Hold dynamic endpoints from discovery until the owning strict-port server starts. */
+export class BrowserPorts {
+ constructor(){this.entries=new Map();}
+ async environment(config,environment=process.env){
+  const key=ports.get(config);
+  if(!key||environment[key]!==undefined)return {};
+  if(!this.entries.has(config)){
+   const pending=(async()=>{
+    const server=createServer();
+    await new Promise((resolve,reject)=>{server.once('error',reject);server.listen(0,'127.0.0.1',resolve);});
+    return {server,environment:{[key]:String(server.address().port)},reserved:true};
+   })();
+   this.entries.set(config,pending);
+  }
+  return {...(await this.entries.get(config)).environment};
+ }
+ async release(config){
+  const pending=this.entries.get(config);if(!pending)return;
+  const entry=await pending;if(entry.reserved){await close(entry.server);entry.reserved=false;}
+ }
+ async close(){
+  const errors=[];
+  for(const config of this.entries.keys())try{await this.release(config);}catch(error){errors.push(error);}
+  this.entries.clear();if(errors.length)throw new AggregateError(errors,'Browser port reservation cleanup failed');
+ }
+}

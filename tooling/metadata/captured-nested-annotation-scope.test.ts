@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join,dirname} from 'node:path';
 import {ts} from './compiler-api.mjs';
@@ -8,7 +8,7 @@ import {createCapturedCompilerProgram} from './captured-compiler-program.ts';
 import {checkCapturedAnnotationScope,checkCapturedNestedAnnotationScope,assertCapturedAnnotationScope,assertCapturedNestedAnnotationScope} from './captured-annotation-scope.ts';
 const options={strict:true,skipLibCheck:true,noEmit:true,target:ts.ScriptTarget.ESNext,module:ts.ModuleKind.ESNext,moduleResolution:ts.ModuleResolutionKind.Bundler,types:[]};
 async function fixture(files:Record<string,string>,run:(f:any)=>unknown) {
-  const root=await mkdtemp(join(tmpdir(),'cem-nested-event-scope-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'cem-nested-event-scope-')));
   try {
     for(const [name,text]of Object.entries(files)){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}
     const capture=createCapturedCompilerProgram(Object.keys(files).map(name=>join(root,name)),options),program=capture.program,source=program.getSourceFile(join(root,'main.ts'));

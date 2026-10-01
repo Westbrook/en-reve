@@ -1,3 +1,8 @@
+import {browserFailureCommand} from './failure-policy.mjs';
+import {BrowserPorts} from './browser-ports.mjs';
+import {browserResources} from './browser-resources.mjs';
+import {runSchedule,serialOrder} from './schedule.mjs';
+import {Services} from './services.mjs';
 import { inputIdentity } from './input-identity.mjs';
 import { validateNodeEvents } from './validate-node-events.mjs';
 import { waitOwnedCommand, throwIfInterrupted, terminalReceipt } from './interruption.mjs';
@@ -19,7 +24,7 @@ import { validateExecutedFacets } from './validate-facets.mjs';
 import { testListLines } from './equivalence.mjs';
 
 const args=process.argv.slice(2);
-for(const arg of args)if(!['--plan','--skip-build','--no-browser-reuse','--continue-independent'].includes(arg)&&!arg.startsWith('--pathways='))throw new Error(`Unknown option: ${arg}`);
+for(const arg of args)if(!['--plan','--skip-build','--no-browser-reuse','--continue-independent','--serial-browsers'].includes(arg)&&!arg.startsWith('--pathways='))throw new Error(`Unknown option: ${arg}`);
 const requested=(args.find(arg=>arg.startsWith('--pathways='))?.slice(11)??'correctness').split(',');
 const graph=await comprehensiveGraph(),selected=selectTasks(graph,requested);
 const dependencyGraph={schemaVersion:1,nodes:graph.tasks.map(task=>({id:task.id,kind:task.kind==='producer'?'module':'scenario',dependencies:task.dependencies,complete:task.dependenciesComplete===true}))};
@@ -29,24 +34,34 @@ const unknownEdges=validation.gaps.filter(gap=>gap.startsWith('Unknown dependenc
 if(unknownEdges.length)throw new Error(unknownEdges.join('\n'));
 // Incomplete source edges forbid focused/result reuse; the full requested pathway still executes.
 if(args.includes('--plan')){
- const plan=JSON.stringify({...graph,requested,continueIndependent:args.includes('--continue-independent'),browserReuse:!args.includes('--no-browser-reuse'),selected:selected.map(task=>task.id),dependencyGraphDigest:validation.graphDigest},null,2)+'\n';
+ const plan=JSON.stringify({...graph,requested,continueIndependent:args.includes('--continue-independent'),browserReuse:!args.includes('--no-browser-reuse'),selected:selected.map(task=>task.id),schedulePreview:serialOrder(selected),dependencyGraphDigest:validation.graphDigest},null,2)+'\n';
  await new Promise((resolve,reject)=>process.stdout.write(plan,error=>error?reject(error):resolve()));
  process.exit(0);
 }
 const output=resolve(process.env.EN_EXECUTION_OUTPUT??resolve(root,'artifacts/test-execution',randomUUID()));
 await mkdir(dirname(output),{recursive:true});await mkdir(output);
 const baseEnv={...process.env,EN_TEST_PIPELINE_OUTPUT:resolve(output,'evidence'),EN_EXECUTION_OWN_SERVERS:'1',PROPERTY_TEST_OUTPUT_DIR:resolve(output,'properties'),SCOPE_TEST_OUTPUT_DIR:resolve(output,'scopes'),EN_PAIR_EVIDENCE:resolve(output,'paired'),EN_REVE_REGISTRATION_EVIDENCE_DIR:resolve(output,'registration'),EN_STICKER_TEST_OUTPUT_DIR:resolve(output,'sticker'),EVIDENCE_DIR:resolve(output,'portability'),EN_AUTHORING_OUTPUT:`node_modules/.cache/authoring-${inventoryDigest(output).slice(7,19)}`,EN_FRAMEWORK_INSTALL_RECEIPT:resolve(output,'framework-install.json'),EN_API_SMOKE_OUTPUT_DIR:resolve(output,'api-examples'),EN_CANDIDATES:resolve(output,'fixtures/candidates'),EN_CANDIDATE_OUTPUT:resolve(output,'candidate-import'),EN_THEME_ASSETS_OUTPUT:resolve(output,'candidate-assets')};
-const receipt={schemaVersion:2,run:output,requested,scope:graph.completeness,libraryComplete:false,requestedPathwaysComplete:false,status:'running',
+const receipt={schemaVersion:2,machineQueueMs:Number(process.env.EN_TEST_MACHINE_QUEUE_MS??0),run:output,requested,scope:graph.completeness,libraryComplete:false,requestedPathwaysComplete:false,status:'running',
  dependencyGaps:validation.gaps,selectionMode:'full-requested-pathways',continueIndependent:args.includes('--continue-independent'),browserReuse:!args.includes('--no-browser-reuse'),graphDigest:inventoryDigest(graph),dependencyGraphDigest:validation.graphDigest,workers:3,startedAt:new Date().toISOString(),results:[],outcomes:{},pathways:{}};
+const browserPorts=new BrowserPorts();
+let commandSequence=0,failureSequence=0;
 const started=performance.now();let docs,development,reader,candidate,inputDigest;
+const services=new Services({docs:()=>startDocsServer({port:0}),development:()=>startOwnedVite({root,output:resolve(output,'development-server.log'),env:baseEnv}),reader:()=>startOwnedVite({root,output:resolve(output,'reader-server.log'),env:baseEnv,workspace:'showcases/performance-results',preview:true})});
+async function ensureServices(task){
+ if(task.kind==='development-browser')development=await services.get('development');
+ if(task.config?.startsWith('showcases/performance-results/')||task.kind==='reader-browser')reader=await services.get('reader');
+ if(task.kind==='built-browser'||task.config?.startsWith('apps/docs/')||task.id==='browser:probes/component-patterns/playwright.config.ts') {docs=await services.get('docs');receipt.docsOrigin=docs.url;}
+}
 const exclude=name=>/(^|\/)(\.cache|\.vite|\.vite-temp|artifacts|results|test-results|playwright-report)(\/|$)/.test(name)||name.endsWith('.tsbuildinfo');
 const captureInputs=async(includeSource=false)=>{const phase=await inputIdentity(root,output,{includeSource,exclude});receipt.identityPhases??=[];const evidence=resolve(output,'identity-phases',`${receipt.identityPhases.length+1}.json`);await atomicJSON(evidence,phase);receipt.identityPhases.push({...phase.measurement,evidence});return phase;};
 const inputs=async()=>(await captureInputs()).inputs;
 const expand=value=>typeof value==='string'?value.replaceAll('$RUN',output).replaceAll('$DOCS_ORIGIN',docs?.url??''):value;
 async function execute(task, fulfilled=[task.id]) {
- const directory=resolve(output,'commands',`${String(receipt.results.length+1).padStart(3,'0')}-${task.id.replaceAll(/[^a-zA-Z0-9_-]/g,'_')}`);
+ await ensureServices(task);
+ const directory=resolve(output,'commands',`${String(++commandSequence).padStart(3,'0')}-${task.id.replaceAll(/[^a-zA-Z0-9_-]/g,'_')}`);
  const producerEnv={...process.env};delete producerEnv.EN_EXECUTION_OUTPUT;delete producerEnv.EN_TEST_PIPELINE_OUTPUT;
  const env={...(task.kind==='producer'?producerEnv:baseEnv),...Object.fromEntries(Object.entries(task.environment??{}).map(([key,value])=>[key,expand(value)]))};
+ Object.assign(env,await browserPorts.environment(task.config,env));
  if(task.id.startsWith('direct:'))env.EN_TEST_PIPELINE_OUTPUT=resolve(baseEnv.EN_TEST_PIPELINE_OUTPUT,task.id.replaceAll(/[^a-zA-Z0-9_-]/g,'_'));
  if(docs)Object.assign(env,{EN_REVE_PREVIEW_URL:docs.url+'/',EN_WORKFLOW_BASE_URL:docs.url,EN_DOCS_ORIGIN:docs.url,TOKEN_DOCS_URL:docs.url,EN_PATTERN_GALLERY_URL:docs.url,EN_API_SMOKE_BASE_URL:docs.url,EN_CANDIDATE_ORIGIN:docs.url});
  if(reader) {
@@ -58,12 +73,14 @@ async function execute(task, fulfilled=[task.id]) {
  if(task.id==='direct:highlighting-production')env.EN_REVE_HIGHLIGHT_MODE='production';
  const command=task.command.map(expand);
  throwIfInterrupted();
- const child=spawn('python3',[resolve(root,'tooling/testing/measure.py'),'--out',directory,'--cwd',resolve(root,task.cwd??'.'),'--label',task.id,'--',...command],{cwd:root,env,stdio:'inherit'});
+ const commandStartedMs=performance.now()-started;
+ const child=spawn('python3',[resolve(root,'tooling/testing/measure.py'),'--out',directory,'--cwd',resolve(root,task.cwd??'.'),'--label',task.id,...(task.nodeEvents&&!args.includes('--continue-independent')?['--node-fail-fast-events',task.nodeEvents]:[]),'--',...command],{cwd:root,env,stdio:'inherit'});
  const code=await waitOwnedCommand(child);
  const measured=JSON.parse(await readFile(resolve(directory,'receipt.json'),'utf8'));
+ if(Number.isFinite(measured.firstFailureSeconds))receipt.firstFailureMs=Math.min(receipt.firstFailureMs??Infinity,commandStartedMs+measured.firstFailureSeconds*1000);
  let nodeFacets;
  if(task.nodeSources){
-  try{nodeFacets=validateNodeEvents({events:(await readFile(resolve(output,'node-events.jsonl'),'utf8')).trim().split('\n').map(JSON.parse),sources:task.nodeSources,root});}
+  try{nodeFacets=validateNodeEvents({events:(await readFile(task.nodeEvents??resolve(output,'node-events.jsonl'),'utf8')).trim().split('\n').map(JSON.parse),sources:task.nodeSources,root});}
   catch(error){nodeFacets={status:'invalid',error:String(error.stack??error)};}
   await atomicJSON(resolve(directory,'node-facets.json'),nodeFacets);
  }
@@ -84,10 +101,10 @@ async function attempt(work,fulfilled,stage) {
   if(!args.includes('--continue-independent'))throw error;
   receipt.failures??=[];
   const failure={stage,fulfilled,error:String(error.stack??error),originatingRun:output};
-  const file=resolve(output,'failures',`${receipt.failures.length+1}.json`);
+  const file=resolve(output,'failures',`${++failureSequence}.json`);
   await atomicJSON(file,failure);receipt.failures.push({...failure,evidence:file});
   for(const id of fulfilled)receipt.outcomes[id]={...receipt.outcomes[id],status:'failed',reason:String(error.message??error),originatingRun:output,
-   evidence:[...new Set([...(receipt.outcomes[id]?.evidence??[]),...receipt.results.slice(firstResult).map(result=>result.receipt),file])]};
+   evidence:[...new Set([...(receipt.outcomes[id]?.evidence??[]),...receipt.results.slice(firstResult).filter(result=>result.fulfilled.some(id=>fulfilled.includes(id))).map(result=>result.receipt),file])]};
   receipt.wallMs=performance.now()-started;await atomicJSON(resolve(output,'execution.json'),receipt);
   return null;
  }
@@ -98,35 +115,52 @@ try {
   const check=selected.find(task=>task.id==='check-api');
   if(check)await execute({...check,id:'preflight:standalone-api'},[]);
  }
- // Finish every selected shared producer before any consumer can observe its files.
- for(const task of selected.filter(task=>task.kind==='producer')) {
-  if(args.includes('--skip-build') && (task.id.startsWith('build:') || task.id.startsWith('metadata:'))) {
-   receipt.outcomes[task.id]={status:'not-run',reason:'Caller explicitly supplied existing build artifacts.',nextAction:'Run without --skip-build for clean build evidence.'};continue;
+ // Cheap failures are admitted at their declaration boundary, before unrelated preparation.
+ // Keep the entire preparation source bound too: generated source changes require a fresh run.
+ const beforePreparation=await captureInputs(true);
+ const preparation=selected.filter(task=>['producer','barrier','check','types','python','node'].includes(task.kind));
+ const groups=new Map(),mapping=new Map();
+ for(const task of preparation.filter(task=>task.kind==='node')){
+  const key=JSON.stringify([[...task.dependencies].sort(),task.nodeIsolation==='exclusive'?task.id:null]);
+  if(!groups.has(key))groups.set(key,[]);groups.get(key).push(task);
+ }
+ let cohort=0;
+ for(const units of groups.values()){
+  const id='node-cohort-'+(++cohort),nodeEvents=resolve(output,id+'-events.jsonl');
+  for(const unit of units)mapping.set(unit.id,id);
+  preparation.push({id,kind:'node-group',dependencies:units[0].dependencies,fulfilled:units.map(task=>task.id),nodeSources:units.flatMap(task=>task.assertionSources),nodeEvents,
+   command:[process.execPath,'--test','--test-concurrency=3','--test-reporter=tap','--test-reporter-destination=stdout',`--test-reporter=${resolve(root,'tooling/testing/node-facet-reporter.mjs')}`,`--test-reporter-destination=${nodeEvents}`,...units.flatMap(task=>task.assertionSources)]});
+ }
+ const scheduled=preparation.filter(task=>task.kind!=='node').map(task=>({...task,dependencies:task.id==='check-api'&&selected.some(t=>t.id==='metadata')?['metadata']:task.id==='styles-check'&&selected.some(t=>t.id==='build:styles')?['build:styles']:[...new Set(task.dependencies.map(id=>mapping.get(id)??id))]}));
+ receipt.scheduleStartedMs=performance.now()-started;
+ receipt.schedule=await runSchedule(scheduled,async task=>{
+  throwIfInterrupted();
+  const fulfilled=task.fulfilled??[task.id];
+  if(args.includes('--skip-build')&&(task.id.startsWith('build:')||task.id.startsWith('metadata:'))){
+   receipt.outcomes[task.id]={status:'not-run',reason:'Caller explicitly supplied existing build artifacts.',nextAction:'Run without --skip-build for clean build evidence.'};return {status:'passed',admissionOnly:true};
   }
-  await execute(task);
- }
- for(const task of selected.filter(task=>task.kind==='barrier')) {
-  const dependencies=task.dependencies.map(id=>receipt.outcomes[id]);
-  receipt.outcomes[task.id]=dependencies.every(outcome=>outcome?.status==='passed')
-   ? {status:'passed',evidence:[...new Set(dependencies.flatMap(outcome=>outcome.evidence))],originatingRun:output}
-   : {status:'not-run',reason:'A required producer was not executed in this lane.',nextAction:'Run without --skip-build for complete build evidence.'};
- }
- if(selected.some(task=>task.kind==='development-browser'))development=await startOwnedVite({root,output:resolve(output,'development-server.log'),env:baseEnv});
- if(selected.some(task=>task.id.includes('showcases/performance-results/')||task.kind==='reader-browser'))reader=await startOwnedVite({root,output:resolve(output,'reader-server.log'),env:baseEnv,workspace:'showcases/performance-results',preview:true});
+  if(task.kind==='barrier'){
+   const dependencies=task.dependencies.map(id=>receipt.outcomes[id]);
+   receipt.outcomes[task.id]=dependencies.every(outcome=>outcome?.status==='passed')?{status:'passed',evidence:[...new Set(dependencies.flatMap(outcome=>outcome.evidence??[]))],originatingRun:output}:{status:'not-run',reason:'A producer was not executed in this lane.'};return {status:'passed',admissionOnly:true};
+  }
+  // Identical emitting compiler and flags already proved this semantic obligation.
+  if(task.id==='styles-check'&&receipt.outcomes['build:styles']?.status==='passed'){
+   receipt.outcomes[task.id]={status:'reused',reuseKind:'same-invocation-emitting-compiler',originatingRun:output,evidence:receipt.outcomes['build:styles'].evidence,cacheKey:'styles-tsconfig-emitted-this-run'};return {status:'passed'};
+  }
+  const result=await attempt(()=>execute(task,fulfilled),fulfilled,task.id);
+  return {status:result?'passed':'failed'};
+ },{continueIndependent:args.includes('--continue-independent')});
+ for(const task of scheduled)if(receipt.schedule.outcomes[task.id]?.status==='not-run')for(const id of task.fulfilled??[task.id])receipt.outcomes[id]={status:'not-run',reason:receipt.schedule.outcomes[task.id].reason};
+ if(receipt.schedule.firstFailureMs!==null)receipt.firstFailureMs=Math.min(receipt.firstFailureMs??Infinity,receipt.scheduleStartedMs+receipt.schedule.firstFailureMs);
+ const preparationFailed=Object.values(receipt.schedule.outcomes).some(outcome=>outcome.status==='failed');
+ if(preparationFailed&&!args.includes('--continue-independent'))throw new Error('Preparation or early assertion failed; expensive descendants were not started');
  const initialPhase=await captureInputs(true);candidate=initialPhase.source;inputDigest=inventoryDigest(initialPhase.inputs);receipt.candidate=candidate;receipt.inputDigest=inputDigest;
- // Root build produces all three required documentation routes; use one owned ephemeral server.
- if(selected.some(task=>task.kind==='built-browser'||task.config?.startsWith('apps/docs/')||task.id==='browser:probes/component-patterns/playwright.config.ts')) {
-  docs=await startDocsServer({port:0});receipt.docsOrigin=docs.url;
- }
- const apiCheck=selected.find(task=>task.id==='check-api');
- if(apiCheck)await attempt(()=>execute(apiCheck),[apiCheck.id],apiCheck.id);
- for(const task of selected.filter(task=>task.id!=='check-api'&&['check','types','python'].includes(task.kind)))await attempt(()=>execute(task),[task.id],task.id);
- const units=selected.filter(task=>task.kind==='node');
- if(units.length)await attempt(()=>execute({id:'node-union',nodeSources:units.flatMap(task=>task.assertionSources),command:[process.execPath,'--test','--test-concurrency=3','--test-reporter=tap','--test-reporter-destination=stdout',
-  `--test-reporter=${resolve(root,'tooling/testing/node-facet-reporter.mjs')}`,`--test-reporter-destination=${resolve(output,'node-events.jsonl')}`,...units.flatMap(task=>task.assertionSources)]},units.map(task=>task.id)),units.map(task=>task.id),'node-union');
- const browserTasks=selected.filter(task=>task.kind==='browser'),discoveries={},budgets={};
+ receipt.preparationSource=beforePreparation.source;
+ if(beforePreparation.source.sourceDigest!==candidate.sourceDigest)throw new Error('Source or retained generated metadata changed during preparation; inspect the original freshness and regenerate explicitly before a fresh run');
+ const admissible=task=>task.dependencies.every(id=>['passed','reused'].includes(receipt.outcomes[id]?.status)||(args.includes('--skip-build')&&receipt.outcomes[id]?.status==='not-run'&&(id==='build'||id==='metadata'||id.startsWith('build:')||id.startsWith('metadata:'))));
+ const browserTasks=selected.filter(task=>task.kind==='browser'&&admissible(task)),discoveries={},budgets={};
  async function discover(task, extra=[], label='discover:') {
-  const result=await execute({...task,id:label+task.id,command:[...task.command,...extra,'--list',`--reporter=${resolve(root,'tooling/testing/selection-reporter.mjs')}`]},[]);
+  const result=await execute({...task,id:label+task.id,command:browserFailureCommand([...task.command,...extra,'--list',`--reporter=${resolve(root,'tooling/testing/selection-reporter.mjs')}`],{failFast:!args.includes('--continue-independent')})},[]);
   const lines=(await readFile(resolve(result.directory,'command.log'),'utf8')).split('\n').filter(line=>line.startsWith('EN_EXECUTION_DISCOVERY '));
   if(lines.length!==1)throw new Error('Expected one resolved discovery receipt: '+task.id);
   return JSON.parse(lines[0].slice('EN_EXECUTION_DISCOVERY '.length));
@@ -153,7 +187,7 @@ try {
   const evidenceDirectory=resolve(baseEnv.EN_TEST_PIPELINE_OUTPUT,createHash('sha256').update(url).digest('hex').slice(0,12));
   const facetFile=resolve(evidenceDirectory,'facets.json'),rawReport=resolve(evidenceDirectory,'playwright.json');
   let result,commandError,facetError,facets;
-  try{result=await execute({...task,command},fulfilled);}catch(error){commandError=error;}
+  try{await browserPorts.release(task.config);result=await execute({...task,command:browserFailureCommand(command,{failFast:!args.includes('--continue-independent')})},fulfilled);}catch(error){commandError=error;}
   // Keep raw reports from failing configurations too; a failed assertion cannot fulfill a pathway.
   const evidence=[];let rawStats;
   for(const file of [rawReport,facetFile]){
@@ -211,10 +245,22 @@ try {
   receipt.outcomes[task.id]={status:'reused',reuseKind:'same-invocation-browser-reference',originatingRun:output,cacheKey:item.proof.equivalenceDigest,evidence};
   await atomicJSON(resolve(output,'execution.json'),receipt);
  }
- for(const item of browserPlan)await attempt(()=>executeBrowserItem(item),[item.task.id],item.task.id);
+ const browserIds=new Set(browserPlan.map(item=>item.task.id));
+ const browserStages=browserPlan.map(item=>({...item.task,item,
+  dependencies:[...new Set([...(item.task.dependencies??[]).filter(id=>browserIds.has(id)),...(item.producer?[item.producer.id]:[])])],
+  resources:browserResources(item.task,discoveries[item.task.id],budgets[item.task.id],{serial:args.includes('--serial-browsers')}),
+ }));
+ receipt.browserScheduleStartedMs=performance.now()-started;
+ receipt.browserSchedule=await runSchedule(browserStages,async task=>{
+  await attempt(()=>executeBrowserItem(task.item),[task.id],task.id);
+  return {status:['passed','reused'].includes(receipt.outcomes[task.id]?.status)?'passed':'failed'};
+ },{continueIndependent:args.includes('--continue-independent')});
+ if(receipt.browserSchedule.firstFailureMs!==null)receipt.firstFailureMs??=receipt.browserScheduleStartedMs+receipt.browserSchedule.firstFailureMs;
+ for(const task of browserStages)if(receipt.browserSchedule.outcomes[task.id]?.status==='not-run')receipt.outcomes[task.id]={status:'not-run',reason:receipt.browserSchedule.outcomes[task.id].reason};
+ if(!args.includes('--continue-independent')&&Object.values(receipt.browserSchedule.outcomes).some(outcome=>outcome.status==='failed'))throw new Error('Browser assertion failed; retain original command and facet receipts');
  // Direct reader certification follows the complete selected reader receipt, never a partial rerun.
  for(const task of selected.filter(task=>task.id!=='check-api'&&!['producer','barrier','node','browser','check','types','python','release-attestation'].includes(task.kind))){
-  const failedDependencies=task.dependencies.filter(id=>receipt.outcomes[id]?.status==='failed');
+  const failedDependencies=admissible(task)?[]:task.dependencies.filter(id=>!['passed','reused'].includes(receipt.outcomes[id]?.status));
   if(failedDependencies.length){
    receipt.outcomes[task.id]={status:'not-run',reason:'Required assertion prerequisites failed',dependencies:failedDependencies,nextAction:'Repair and rerun the required prerequisites, then run this certification against their fresh passing receipt.'};
    continue;
@@ -250,8 +296,10 @@ try {
  catch(coverageError){receipt.coverageError=String(coverageError.stack);receipt.coverage={complete:false,checks:receipt.outcomes};}
 }
 finally{
- for(const server of [reader,development,docs])if(server)try{await server.close();}catch(error){receipt.cleanupErrors??=[];receipt.cleanupErrors.push(String(error.stack));receipt.status='failed';receipt.requestedPathwaysComplete=false;process.exitCode=1;}
+ try{await browserPorts.close();}catch(error){receipt.cleanupErrors??=[];receipt.cleanupErrors.push(String(error.stack));receipt.status='failed';receipt.requestedPathwaysComplete=false;process.exitCode=1;}
+ try{await services.close();}catch(error){receipt.cleanupErrors??=[];receipt.cleanupErrors.push(String(error.stack));receipt.status='failed';receipt.requestedPathwaysComplete=false;process.exitCode=1;}
 }
+receipt.serviceEvents=services.events;
 receipt.finishedAt=new Date().toISOString();
 await terminalReceipt(receipt,async()=>{receipt.wallMs=performance.now()-started;await atomicJSON(resolve(output,'execution.json'),receipt);},{
  onCommitted:()=>console.log(`Execution ${receipt.status}: ${output}. Scope: ${receipt.scope}`),

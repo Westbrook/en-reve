@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,readFile,rm,symlink} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,rm,symlink,realpath} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -13,7 +13,7 @@ export function M<T extends Constructor>(Parent:T){return (
 /** @fires {CustomEvent<{action:"choose";data:InstanceType<T>}>} en-action */
 class extends Parent {send(value:InstanceType<T>){dispatchAction(this,{action:"choose",data:value});}});}export class Leaf extends M(Base){}`;
 async function fixture(run:(f:any)=>unknown,change:(files:any)=>void=()=>{}) {
- const root=await mkdtemp(join(tmpdir(),'cem-helper-policy-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-helper-policy-')));
  try {
   const files:any={};for(const name of ['events.js','events.d.ts','package.json'])files[name]=await readFile(new URL('./fixtures/dispatch-helper-policy/'+name,import.meta.url),'utf8');change(files);
   const packageRoot=join(root,'node_modules/@en-reve/primitives');await mkdir(join(packageRoot,'dist/interactions'),{recursive:true});
