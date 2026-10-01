@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "status": "predeclared-before-runtime-edits-and-timing",
+  "workstream": "universal-opt-in-lazy-delivery",
+  "minimumSuccessfulTimingSamplesPerCell": 30,
+  "minimumSamplesForP95": 100,
+  "apiOverhead": {
+    "maximumAddedSelectiveGzipBytes": 4096,
+    "maximumDescriptorGzipBytes": 16384,
+    "maximumAddedStartupJSRequests": 0,
+    "maximumAddedStartupReadyMs": {
+      "desktop": 8,
+      "constrained": 24
+    },
+    "maximumAddedLoadMs": {
+      "desktop": 4,
+      "constrained": 12
+    },
+    "maximumAddedEnsureMs": {
+      "desktop": 4,
+      "constrained": 12
+    },
+    "benefitClaim": false
+  },
+  "dateFeature": {
+    "minimumUnusedConnectedNodeReductionPercent": 40,
+    "orMinimumStartupJSReductionPercent": 10,
+    "maximumAddedFirstReadyMs": {
+      "desktop": 16,
+      "constrained": 50
+    },
+    "maximumAddedRepeatReadyMs": {
+      "desktop": 4,
+      "constrained": 10
+    },
+    "maximumAddedShellReadyMs": {
+      "desktop": 16,
+      "constrained": 50
+    },
+    "maximumAddedUnusedDeliveryBytes": 4096,
+    "scope": "Fresh matched production single-date fixture only; no inherited outcome or route claim"
+  },
+  "constructionFeature": {
+    "minimumUnusedComponentNodeReductionPercent": 40,
+    "minimumUnusedWholeRouteNodeReductionPercent": 10,
+    "alternativeUniqueCodeMinimumWholeRouteStartupJSReductionPercent": 10,
+    "maximumAddedFirstReadyMs": {
+      "desktop": 16,
+      "constrained": 50
+    },
+    "maximumAddedRepeatReadyMs": {
+      "desktop": 4,
+      "constrained": 10
+    },
+    "maximumAddedShellReadyMs": {
+      "desktop": 16,
+      "constrained": 50
+    },
+    "maximumAddedUnusedDeliveryBytes": 4096,
+    "requiresNamedRealConsumerAndUsageAssumptions": true,
+    "candidates": [
+      "media-viewer-controls",
+      "combobox-options",
+      "multiselect-options"
+    ],
+    "scope": "Unpromoted candidates; deterministic source-backed no-change dispositions do not require timing campaigns",
+    "status": "provisional until explicitly adopted by a named family before its runtime edits"
+  },
+  "retention": {
+    "freshContextsPerArm": 5,
+    "cyclesPerContext": 100,
+    "checkpoints": [
+      0,
+      10,
+      50,
+      100
+    ],
+    "maximumGrowth10To100NodesEveryRepetition": 20,
+    "maximumGrowth10To100ListenersEveryRepetition": 10,
+    "maximumAdditionalMedianHeapGrowthVersusPairedEagerBytes": 262144
+  },
+  "constrained": {
+    "cpuRate": 4,
+    "latencyMs": 150,
+    "downloadBitsPerSecond": 1600000,
+    "uploadBitsPerSecond": 750000
+  },
+  "preparedLeadMs": 250,
+  "unusedObservationMs": 500,
+  "decision": "Within-mode matched medians and upper paired bootstrap uncertainty bounds must satisfy applicable practical limits. A primary median failure requires a changed candidate and complete new campaign; never selectively replace cells or relax budgets. Uncertainty crossing a limit leaves promotion unqualified pending a predeclared complete confirmation. Correctness/accessibility/ownership failures cannot be traded for savings. Cold policies missing latency bounds remain diagnostic. No microbenchmark establishes real-route benefit.",
+  "familyOverrides": {
+    "contextual-editor-toolbar": {
+      "protocol": "plans/lazy-delivery/editor.md",
+      "minimumUnusedComponentNodesRemoved": 100,
+      "minimumUnusedComponentNodeReductionPercent": 60,
+      "minimumWholeRouteNodeReductionPercent": 5,
+      "minimumSuccessfulTimingSamplesPerCell": 100,
+      "maximumGrowth10To100NodesEveryRepetition": 0,
+      "maximumGrowth10To100ListenersEveryRepetition": 0,
+      "precedence": "The separately frozen editor protocol controls all toolbar cells, latency and retention limits."
+    }
+  },
+  "namedFamilyProtocol": "plans/lazy-delivery/family-designs.json budgetDecision freezes specific gates and takes precedence over provisional constructionFeature defaults."
+}

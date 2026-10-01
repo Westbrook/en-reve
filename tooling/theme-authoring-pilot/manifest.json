@@ -1,0 +1,16 @@
+{
+  "dialect": "en-reve-authoring-pilot/v1",
+  "baselineCommit": "d71912ac47f20ec8e5c3186f26ff0bd948e3e82b",
+  "productionVersion": 200,
+  "engine": {
+    "reference": "https://github.com/reve-ai/reve-core/blob/main/tools/css/src/css-functions.ts",
+    "sha256": "d6385a838809eb941b77d16657732077f9cfa31ff65f19426d93567c2c5005ac",
+    "environmentVariable": "REVE_CSS_FUNCTIONS_SOURCE",
+    "buildConfigSha256": "0bdae88933a78a32674ec13b85cf204dbef75b7187eeb326e8f2fcf7a51ca703",
+    "lightningcssVersion": "1.32.0"
+  },
+  "definitions": [
+    "fixtures/recipes.css"
+  ],
+  "adoption": "evaluation-only"
+}

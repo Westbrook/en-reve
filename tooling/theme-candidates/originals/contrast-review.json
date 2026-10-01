@@ -1,0 +1,2533 @@
+{
+	"scope": "Authored opaque token pairs relevant to existing consumers; excludes translucent compositing, rendered focus adjacency, disabled text exemptions and manual accessibility review.",
+	"cases": [
+		{
+			"id": "vellum",
+			"mode": "light",
+			"sourceHash": "sha256:621f75163a6e6e64f209e57598bec8a56d9deb4b15ce3561d9c4c3301ec7bb13",
+			"tokenEditCount": 196,
+			"sourceDefinitionCount": 11,
+			"tokenGroups": {
+				"palette": 17,
+				"color": 10,
+				"font": 31,
+				"rhythm": 1,
+				"space": 11,
+				"radius": 4,
+				"border": 2,
+				"size": 10,
+				"layout": 3,
+				"focus": 5,
+				"component.input": 5,
+				"component.option": 20,
+				"duration": 7,
+				"ease": 3,
+				"motion": 2,
+				"component.button": 2,
+				"component.segmented-control": 1,
+				"component.option-list": 7,
+				"calendar": 2,
+				"component.radio": 1,
+				"component.toast": 11,
+				"component.toast-region": 2,
+				"component.editor-token": 10,
+				"component.color-slider": 4,
+				"component.color-picker": 4,
+				"component.rating": 1,
+				"component.pagination": 3,
+				"component.presence": 7,
+				"component.activity": 5,
+				"component.presence-group": 1,
+				"component.carousel": 4
+			},
+			"compilerDiagnostics": [],
+			"checks": [
+				{
+					"foreground": "color.text",
+					"background": "color.canvas",
+					"ratio": 10.813,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.canvas",
+					"ratio": 5.295,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface",
+					"ratio": 13.827,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface",
+					"ratio": 6.77,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-raised",
+					"ratio": 14.151,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-raised",
+					"ratio": 6.929,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-subtle",
+					"ratio": 11.528,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-subtle",
+					"ratio": 5.645,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.selected",
+					"ratio": 9.623,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.selected",
+					"ratio": 4.712,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface",
+					"ratio": 9.662,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface-subtle",
+					"ratio": 8.055,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.724,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface",
+					"ratio": 7.472,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.23,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.accent-subtle",
+					"ratio": 5.2,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface",
+					"ratio": 6.556,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface-subtle",
+					"ratio": 5.466,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.563,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface",
+					"ratio": 6.897,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface-subtle",
+					"ratio": 5.75,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.8,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-brand",
+					"background": "color.brand",
+					"ratio": 9.662,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action",
+					"ratio": 9.662,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-hover",
+					"ratio": 12.026,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-pressed",
+					"ratio": 14.695,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.hover-color",
+					"background": "component.option.hover-background",
+					"ratio": 11.528,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.active-color",
+					"background": "component.option.active-background",
+					"ratio": 11.528,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.pressed-color",
+					"background": "component.option.pressed-background",
+					"ratio": 9.623,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.selected-color",
+					"background": "component.option.selected-background",
+					"ratio": 9.623,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.background",
+					"ratio": 11.528,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.hover-background",
+					"ratio": 9.623,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.pressed-background",
+					"ratio": 9.623,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.color",
+					"background": "component.toast.background",
+					"ratio": 12.394,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.info-icon-color",
+					"background": "component.toast.background",
+					"ratio": 12.394,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.success-icon-color",
+					"background": "component.toast.background",
+					"ratio": 9.845,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.warning-icon-color",
+					"background": "component.toast.background",
+					"ratio": 10.901,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.danger-icon-color",
+					"background": "component.toast.background",
+					"ratio": 9.902,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.background",
+					"ratio": 13.827,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.background",
+					"ratio": 6.77,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.activity.background",
+					"ratio": 13.827,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.activity.background",
+					"ratio": 6.77,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.hover-background",
+					"ratio": 9.623,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.hover-background",
+					"ratio": 4.712,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface",
+					"ratio": 6.847,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface-subtle",
+					"ratio": 5.708,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.selected",
+					"ratio": 4.765,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.hover-background",
+					"ratio": 5.708,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.active-background",
+					"ratio": 5.708,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.pressed-background",
+					"ratio": 4.765,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.selected-background",
+					"ratio": 4.765,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option-list.background",
+					"ratio": 7.007,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface",
+					"ratio": 4.303,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface-subtle",
+					"ratio": 3.588,
+					"minimum": 3,
+					"pass": true
+				}
+			]
+		},
+		{
+			"id": "vellum",
+			"mode": "dark",
+			"sourceHash": "sha256:b5ffd00ce3016cd95c17a68f99eeacd1250823c2707de94f272867d556447f4e",
+			"tokenEditCount": 196,
+			"sourceDefinitionCount": 11,
+			"tokenGroups": {
+				"palette": 17,
+				"color": 10,
+				"font": 31,
+				"rhythm": 1,
+				"space": 11,
+				"radius": 4,
+				"border": 2,
+				"size": 10,
+				"layout": 3,
+				"focus": 5,
+				"component.input": 5,
+				"component.option": 20,
+				"duration": 7,
+				"ease": 3,
+				"motion": 2,
+				"component.button": 2,
+				"component.segmented-control": 1,
+				"component.option-list": 7,
+				"calendar": 2,
+				"component.radio": 1,
+				"component.toast": 11,
+				"component.toast-region": 2,
+				"component.editor-token": 10,
+				"component.color-slider": 4,
+				"component.color-picker": 4,
+				"component.rating": 1,
+				"component.pagination": 3,
+				"component.presence": 7,
+				"component.activity": 5,
+				"component.presence-group": 1,
+				"component.carousel": 4
+			},
+			"compilerDiagnostics": [],
+			"checks": [
+				{
+					"foreground": "color.text",
+					"background": "color.canvas",
+					"ratio": 15.162,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.canvas",
+					"ratio": 9.127,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface",
+					"ratio": 13.306,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface",
+					"ratio": 8.01,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-raised",
+					"ratio": 11.877,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-raised",
+					"ratio": 7.15,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-subtle",
+					"ratio": 10.617,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-subtle",
+					"ratio": 6.391,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.selected",
+					"ratio": 9.258,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.selected",
+					"ratio": 5.573,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface",
+					"ratio": 7.54,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.017,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.accent-subtle",
+					"ratio": 5.247,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface",
+					"ratio": 9.352,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.462,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.507,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface",
+					"ratio": 9.526,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.601,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.628,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface",
+					"ratio": 9.749,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.779,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.784,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-brand",
+					"background": "color.brand",
+					"ratio": 8.451,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action",
+					"ratio": 7.433,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-hover",
+					"ratio": 9.013,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-pressed",
+					"ratio": 10.766,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.hover-color",
+					"background": "component.option.hover-background",
+					"ratio": 10.617,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.active-color",
+					"background": "component.option.active-background",
+					"ratio": 10.617,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.pressed-color",
+					"background": "component.option.pressed-background",
+					"ratio": 9.258,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.selected-color",
+					"background": "component.option.selected-background",
+					"ratio": 9.258,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.background",
+					"ratio": 10.617,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.hover-background",
+					"ratio": 9.258,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.pressed-background",
+					"ratio": 9.258,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.color",
+					"background": "component.toast.background",
+					"ratio": 11.444,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.info-icon-color",
+					"background": "component.toast.background",
+					"ratio": 11.444,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.success-icon-color",
+					"background": "component.toast.background",
+					"ratio": 5.105,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.warning-icon-color",
+					"background": "component.toast.background",
+					"ratio": 5.237,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.danger-icon-color",
+					"background": "component.toast.background",
+					"ratio": 5.968,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.background",
+					"ratio": 13.306,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.background",
+					"ratio": 8.01,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.activity.background",
+					"ratio": 13.306,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.activity.background",
+					"ratio": 8.01,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.hover-background",
+					"ratio": 9.258,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.hover-background",
+					"ratio": 5.573,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface",
+					"ratio": 9.299,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface-subtle",
+					"ratio": 7.42,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.selected",
+					"ratio": 6.47,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.hover-background",
+					"ratio": 7.42,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.active-background",
+					"ratio": 7.42,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.pressed-background",
+					"ratio": 6.47,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.selected-background",
+					"ratio": 6.47,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option-list.background",
+					"ratio": 8.3,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface",
+					"ratio": 5.36,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface-subtle",
+					"ratio": 4.277,
+					"minimum": 3,
+					"pass": true
+				}
+			]
+		},
+		{
+			"id": "signal",
+			"mode": "light",
+			"sourceHash": "sha256:b601c28570bb10df73bdab48b580b5240f4f3b3f8055a68b5edd0ad6e2d7608a",
+			"tokenEditCount": 196,
+			"sourceDefinitionCount": 11,
+			"tokenGroups": {
+				"palette": 17,
+				"color": 10,
+				"font": 31,
+				"rhythm": 1,
+				"space": 11,
+				"radius": 4,
+				"border": 2,
+				"size": 10,
+				"layout": 3,
+				"focus": 5,
+				"component.input": 5,
+				"component.option": 20,
+				"duration": 7,
+				"ease": 3,
+				"motion": 2,
+				"component.button": 2,
+				"component.segmented-control": 1,
+				"component.option-list": 7,
+				"calendar": 2,
+				"component.radio": 1,
+				"component.toast": 11,
+				"component.toast-region": 2,
+				"component.editor-token": 10,
+				"component.color-slider": 4,
+				"component.color-picker": 4,
+				"component.rating": 1,
+				"component.pagination": 3,
+				"component.presence": 7,
+				"component.activity": 5,
+				"component.presence-group": 1,
+				"component.carousel": 4
+			},
+			"compilerDiagnostics": [],
+			"checks": [
+				{
+					"foreground": "color.text",
+					"background": "color.canvas",
+					"ratio": 14.124,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.canvas",
+					"ratio": 5.9,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface",
+					"ratio": 17.335,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface",
+					"ratio": 7.242,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-raised",
+					"ratio": 17.335,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-raised",
+					"ratio": 7.242,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-subtle",
+					"ratio": 13.099,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-subtle",
+					"ratio": 5.472,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.selected",
+					"ratio": 15.588,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.selected",
+					"ratio": 6.512,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface",
+					"ratio": 9.447,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.138,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.accent-subtle",
+					"ratio": 8.494,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface",
+					"ratio": 7.499,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface-subtle",
+					"ratio": 5.666,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.743,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface",
+					"ratio": 6.852,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface-subtle",
+					"ratio": 5.177,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.161,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface",
+					"ratio": 7.364,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface-subtle",
+					"ratio": 5.564,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.622,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-brand",
+					"background": "color.brand",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-hover",
+					"ratio": 11.892,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-pressed",
+					"ratio": 9.386,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.hover-color",
+					"background": "component.option.hover-background",
+					"ratio": 14.747,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.active-color",
+					"background": "component.option.active-background",
+					"ratio": 14.747,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.pressed-color",
+					"background": "component.option.pressed-background",
+					"ratio": 11.892,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.selected-color",
+					"background": "component.option.selected-background",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.background",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.hover-background",
+					"ratio": 11.892,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.pressed-background",
+					"ratio": 9.386,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.color",
+					"background": "component.toast.background",
+					"ratio": 15.588,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.info-icon-color",
+					"background": "component.toast.background",
+					"ratio": 15.588,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.success-icon-color",
+					"background": "component.toast.background",
+					"ratio": 12.51,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.warning-icon-color",
+					"background": "component.toast.background",
+					"ratio": 13.852,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.danger-icon-color",
+					"background": "component.toast.background",
+					"ratio": 12.583,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.background",
+					"ratio": 17.335,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.background",
+					"ratio": 7.242,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.activity.background",
+					"ratio": 17.335,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.activity.background",
+					"ratio": 7.242,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.hover-background",
+					"ratio": 15.588,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.hover-background",
+					"ratio": 6.512,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface",
+					"ratio": 17.335,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface-subtle",
+					"ratio": 13.099,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.selected",
+					"ratio": 15.588,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.hover-background",
+					"ratio": 15.234,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.active-background",
+					"ratio": 15.234,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.pressed-background",
+					"ratio": 12.286,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.selected-background",
+					"ratio": 15.588,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option-list.background",
+					"ratio": 17.335,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface",
+					"ratio": 6.984,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface-subtle",
+					"ratio": 5.277,
+					"minimum": 3,
+					"pass": true
+				}
+			]
+		},
+		{
+			"id": "signal",
+			"mode": "dark",
+			"sourceHash": "sha256:f3f63157f867bc64ac7ad82c3ec229cfb052067b34979cc89032685da999eecd",
+			"tokenEditCount": 196,
+			"sourceDefinitionCount": 11,
+			"tokenGroups": {
+				"palette": 17,
+				"color": 10,
+				"font": 31,
+				"rhythm": 1,
+				"space": 11,
+				"radius": 4,
+				"border": 2,
+				"size": 10,
+				"layout": 3,
+				"focus": 5,
+				"component.input": 5,
+				"component.option": 20,
+				"duration": 7,
+				"ease": 3,
+				"motion": 2,
+				"component.button": 2,
+				"component.segmented-control": 1,
+				"component.option-list": 7,
+				"calendar": 2,
+				"component.radio": 1,
+				"component.toast": 11,
+				"component.toast-region": 2,
+				"component.editor-token": 10,
+				"component.color-slider": 4,
+				"component.color-picker": 4,
+				"component.rating": 1,
+				"component.pagination": 3,
+				"component.presence": 7,
+				"component.activity": 5,
+				"component.presence-group": 1,
+				"component.carousel": 4
+			},
+			"compilerDiagnostics": [],
+			"checks": [
+				{
+					"foreground": "color.text",
+					"background": "color.canvas",
+					"ratio": 17.08,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.canvas",
+					"ratio": 11.164,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface",
+					"ratio": 15.131,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface",
+					"ratio": 9.89,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-raised",
+					"ratio": 12.885,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-raised",
+					"ratio": 8.423,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-subtle",
+					"ratio": 11.257,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-subtle",
+					"ratio": 7.358,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.selected",
+					"ratio": 9.083,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.selected",
+					"ratio": 5.937,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface",
+					"ratio": 15.202,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface-subtle",
+					"ratio": 11.311,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.accent-subtle",
+					"ratio": 9.126,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface",
+					"ratio": 10.071,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.493,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.046,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface",
+					"ratio": 11.456,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface-subtle",
+					"ratio": 8.523,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.877,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface",
+					"ratio": 10.58,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.872,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.351,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-brand",
+					"background": "color.brand",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-hover",
+					"ratio": 15.477,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-pressed",
+					"ratio": 15.871,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.hover-color",
+					"background": "component.option.hover-background",
+					"ratio": 14.747,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.active-color",
+					"background": "component.option.active-background",
+					"ratio": 14.747,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.pressed-color",
+					"background": "component.option.pressed-background",
+					"ratio": 11.892,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.selected-color",
+					"background": "component.option.selected-background",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.background",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.hover-background",
+					"ratio": 11.892,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.pressed-background",
+					"ratio": 9.386,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.color",
+					"background": "component.toast.background",
+					"ratio": 15.089,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.info-icon-color",
+					"background": "component.toast.background",
+					"ratio": 15.089,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.success-icon-color",
+					"background": "component.toast.background",
+					"ratio": 7.543,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.warning-icon-color",
+					"background": "component.toast.background",
+					"ratio": 7.47,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.danger-icon-color",
+					"background": "component.toast.background",
+					"ratio": 7.053,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.background",
+					"ratio": 15.131,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.background",
+					"ratio": 9.89,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.activity.background",
+					"ratio": 15.131,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.activity.background",
+					"ratio": 9.89,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.hover-background",
+					"ratio": 9.083,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.hover-background",
+					"ratio": 5.937,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface",
+					"ratio": 15.131,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface-subtle",
+					"ratio": 11.257,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.selected",
+					"ratio": 9.083,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.hover-background",
+					"ratio": 3.848,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.active-background",
+					"ratio": 3.848,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.pressed-background",
+					"ratio": 3.103,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.selected-background",
+					"ratio": 3.937,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option-list.background",
+					"ratio": 3.288,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface",
+					"ratio": 5.805,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface-subtle",
+					"ratio": 4.319,
+					"minimum": 3,
+					"pass": true
+				}
+			]
+		},
+		{
+			"id": "kinetic",
+			"mode": "light",
+			"sourceHash": "sha256:58297868677f9da73eb0431675f501ee02cc83ba758b37860a926acb52dc8162",
+			"tokenEditCount": 196,
+			"sourceDefinitionCount": 12,
+			"tokenGroups": {
+				"palette": 17,
+				"color": 10,
+				"font": 31,
+				"rhythm": 1,
+				"space": 11,
+				"radius": 4,
+				"border": 2,
+				"size": 9,
+				"component.surface": 1,
+				"layout": 3,
+				"focus": 5,
+				"component.input": 5,
+				"component.option": 20,
+				"duration": 7,
+				"ease": 3,
+				"motion": 2,
+				"component.button": 2,
+				"component.segmented-control": 1,
+				"component.option-list": 7,
+				"calendar": 2,
+				"component.radio": 1,
+				"component.toast": 11,
+				"component.toast-region": 2,
+				"component.editor-token": 10,
+				"component.color-slider": 4,
+				"component.color-picker": 4,
+				"component.rating": 1,
+				"component.pagination": 3,
+				"component.presence": 7,
+				"component.activity": 5,
+				"component.presence-group": 1,
+				"component.carousel": 4
+			},
+			"compilerDiagnostics": [],
+			"checks": [
+				{
+					"foreground": "color.text",
+					"background": "color.canvas",
+					"ratio": 12.019,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.canvas",
+					"ratio": 6.707,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface",
+					"ratio": 13.579,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface",
+					"ratio": 7.578,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-raised",
+					"ratio": 14.078,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-raised",
+					"ratio": 7.856,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-subtle",
+					"ratio": 11.036,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-subtle",
+					"ratio": 6.159,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.selected",
+					"ratio": 8.59,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.selected",
+					"ratio": 4.794,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface",
+					"ratio": 7.582,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.162,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.796,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface",
+					"ratio": 7.76,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.307,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.909,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface",
+					"ratio": 7.666,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.23,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.849,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface",
+					"ratio": 7.805,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.343,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.937,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-brand",
+					"background": "color.brand",
+					"ratio": 4.799,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action",
+					"ratio": 7.624,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-hover",
+					"ratio": 9.796,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-pressed",
+					"ratio": 12.622,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.hover-color",
+					"background": "component.option.hover-background",
+					"ratio": 11.036,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.active-color",
+					"background": "component.option.active-background",
+					"ratio": 11.036,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.pressed-color",
+					"background": "component.option.pressed-background",
+					"ratio": 8.59,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.selected-color",
+					"background": "component.option.selected-background",
+					"ratio": 8.59,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.background",
+					"ratio": 9.786,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.hover-background",
+					"ratio": 8.59,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.pressed-background",
+					"ratio": 8.59,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.color",
+					"background": "component.toast.background",
+					"ratio": 7.624,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.info-icon-color",
+					"background": "component.toast.background",
+					"ratio": 7.624,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.success-icon-color",
+					"background": "component.toast.background",
+					"ratio": 6.685,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.warning-icon-color",
+					"background": "component.toast.background",
+					"ratio": 6.358,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.danger-icon-color",
+					"background": "component.toast.background",
+					"ratio": 5.775,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.background",
+					"ratio": 12.24,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.background",
+					"ratio": 6.83,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.activity.background",
+					"ratio": 12.24,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.activity.background",
+					"ratio": 6.83,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.hover-background",
+					"ratio": 11.067,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.hover-background",
+					"ratio": 6.176,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface",
+					"ratio": 10.073,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface-subtle",
+					"ratio": 8.186,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.selected",
+					"ratio": 6.372,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.hover-background",
+					"ratio": 8.186,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.active-background",
+					"ratio": 8.186,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.pressed-background",
+					"ratio": 6.372,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.selected-background",
+					"ratio": 6.372,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option-list.background",
+					"ratio": 10.443,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface",
+					"ratio": 4.652,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface-subtle",
+					"ratio": 3.781,
+					"minimum": 3,
+					"pass": true
+				}
+			]
+		},
+		{
+			"id": "kinetic",
+			"mode": "dark",
+			"sourceHash": "sha256:d6e1cfc244c65bff04704518539fc854caea74328e20580f5374dd84f3d979e8",
+			"tokenEditCount": 196,
+			"sourceDefinitionCount": 12,
+			"tokenGroups": {
+				"palette": 17,
+				"color": 10,
+				"font": 31,
+				"rhythm": 1,
+				"space": 11,
+				"radius": 4,
+				"border": 2,
+				"size": 9,
+				"component.surface": 1,
+				"layout": 3,
+				"focus": 5,
+				"component.input": 5,
+				"component.option": 20,
+				"duration": 7,
+				"ease": 3,
+				"motion": 2,
+				"component.button": 2,
+				"component.segmented-control": 1,
+				"component.option-list": 7,
+				"calendar": 2,
+				"component.radio": 1,
+				"component.toast": 11,
+				"component.toast-region": 2,
+				"component.editor-token": 10,
+				"component.color-slider": 4,
+				"component.color-picker": 4,
+				"component.rating": 1,
+				"component.pagination": 3,
+				"component.presence": 7,
+				"component.activity": 5,
+				"component.presence-group": 1,
+				"component.carousel": 4
+			},
+			"compilerDiagnostics": [],
+			"checks": [
+				{
+					"foreground": "color.text",
+					"background": "color.canvas",
+					"ratio": 15.643,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.canvas",
+					"ratio": 10.83,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface",
+					"ratio": 13.209,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface",
+					"ratio": 9.145,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-raised",
+					"ratio": 11.229,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-raised",
+					"ratio": 7.775,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.surface-subtle",
+					"ratio": 9.373,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.surface-subtle",
+					"ratio": 6.49,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "color.selected",
+					"ratio": 7.231,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "color.selected",
+					"ratio": 5.007,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface",
+					"ratio": 8.453,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.surface-subtle",
+					"ratio": 5.998,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.action-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.628,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface",
+					"ratio": 9.086,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.surface-subtle",
+					"ratio": 6.447,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.danger-text",
+					"background": "color.accent-subtle",
+					"ratio": 4.974,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface",
+					"ratio": 11.12,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.891,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.warning-text",
+					"background": "color.accent-subtle",
+					"ratio": 6.088,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface",
+					"ratio": 10.195,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.surface-subtle",
+					"ratio": 7.235,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.success-text",
+					"background": "color.accent-subtle",
+					"ratio": 5.582,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-brand",
+					"background": "color.brand",
+					"ratio": 6.552,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action",
+					"ratio": 8.485,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-hover",
+					"ratio": 10.32,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.on-action",
+					"background": "color.action-pressed",
+					"ratio": 12.005,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.hover-color",
+					"background": "component.option.hover-background",
+					"ratio": 9.373,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.active-color",
+					"background": "component.option.active-background",
+					"ratio": 9.373,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.pressed-color",
+					"background": "component.option.pressed-background",
+					"ratio": 7.231,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.selected-color",
+					"background": "component.option.selected-background",
+					"ratio": 7.231,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.background",
+					"ratio": 8.102,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.hover-background",
+					"ratio": 7.231,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.editor-token.color",
+					"background": "component.editor-token.pressed-background",
+					"ratio": 7.231,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.color",
+					"background": "component.toast.background",
+					"ratio": 8.414,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.info-icon-color",
+					"background": "component.toast.background",
+					"ratio": 8.414,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.success-icon-color",
+					"background": "component.toast.background",
+					"ratio": 6.91,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.warning-icon-color",
+					"background": "component.toast.background",
+					"ratio": 5.953,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.toast.danger-icon-color",
+					"background": "component.toast.background",
+					"ratio": 6.214,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.background",
+					"ratio": 8.753,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.background",
+					"ratio": 6.06,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.activity.background",
+					"ratio": 8.753,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.activity.background",
+					"ratio": 6.06,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text",
+					"background": "component.presence.hover-background",
+					"ratio": 6.612,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.text-muted",
+					"background": "component.presence.hover-background",
+					"ratio": 4.578,
+					"minimum": 4.5,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface",
+					"ratio": 11.461,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.surface-subtle",
+					"ratio": 8.133,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.focus",
+					"background": "color.selected",
+					"ratio": 6.275,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.hover-background",
+					"ratio": 8.133,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.active-background",
+					"ratio": 8.133,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.pressed-background",
+					"ratio": 6.275,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option.selected-background",
+					"ratio": 6.275,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "component.option.focus-color",
+					"background": "component.option-list.background",
+					"ratio": 9.744,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface",
+					"ratio": 5.518,
+					"minimum": 3,
+					"pass": true
+				},
+				{
+					"foreground": "color.boundary",
+					"background": "color.surface-subtle",
+					"ratio": 3.915,
+					"minimum": 3,
+					"pass": true
+				}
+			]
+		}
+	]
+}

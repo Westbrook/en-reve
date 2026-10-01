@@ -1,0 +1,3 @@
+import {createServer} from 'node:http';import {readFile} from 'node:fs/promises';import {resolve,extname} from 'node:path';
+const root=resolve(process.env.PHASE5_REVIEW_ROOT??'artifacts/scoped-registry-phase-5-closeout/production/cold/site');
+createServer(async(req,res)=>{try{const path=new URL(req.url,'http://localhost').pathname,file=resolve(root,'.'+(path==='/'?'/index.html':path));if(!file.startsWith(root+'/'))throw Error('path');const bytes=await readFile(file);res.writeHead(200,{'content-type':extname(file)==='.js'?'text/javascript':'text/html; charset=utf-8','cache-control':'private, no-cache'}).end(bytes);}catch{res.writeHead(404).end('Not found');}}).listen(4231,'127.0.0.1',()=>console.log('http://127.0.0.1:4231/?progress-report'));

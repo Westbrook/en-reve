@@ -1,0 +1,38 @@
+node_modules/
+dist/
+*.tsbuildinfo
+test-results/
+playwright-report/
+.env
+.env.*
+!.env.example
+.DS_Store
+artifacts/cache/
+.progress-report/
+tooling/sticker-sheet/evidence/*.png
+tooling/highlighting/results/*.png
+tooling/swatch/results/*.png
+tooling/typography/results/*.png
+tooling/slider/results/*.png
+.vite/
+**/results/*/
+packages/ssr/tests/minification/source.generated.mjs
+# Recreated from authored sources before docs builds and development.
+apps/docs/src/generated/
+apps/docs/public/styles/
+apps/docs/public/reviews/
+apps/docs/public/custom-elements.json
+apps/docs/public/custom-elements.json.receipt.json
+apps/docs/api-examples/
+apps/docs/api-examples.html
+apps/docs/workflows/settings/
+
+# CSS source generates these Lit delivery adapters before styles builds.
+packages/styles/src/generated/
+
+apps/docs/public/public-types.json
+
+apps/docs/public/public-api.json
+
+# Project-local runtimes (never the app or system installation)
+.toolchains/

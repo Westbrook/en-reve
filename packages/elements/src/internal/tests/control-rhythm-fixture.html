@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Comparable control rhythm</title>
+<style>html{font-size:16px}body{margin:24px}#controls{display:grid;grid-template-columns:repeat(2,400px);gap:16px}#controls>*{min-width:0}</style>
+<style id="theme"></style>
+<form id="controls">
+  <en-button id="button">Reset values</en-button>
+  <en-text-field id="text" label="Project name" name="project" value="A shared project"></en-text-field>
+  <en-select id="select" label="Density" name="density" value="comfortable"></en-select>
+  <en-color-field id="color" label="Accent" name="accent" value="#2457d6"></en-color-field>
+  <en-number-field id="number" label="Scale" name="scale" value="2" min="0" max="10"></en-number-field>
+  <en-date-input id="date" label="Review date" name="date" value="2026-09-08"></en-date-input>
+  <en-search-input id="search" label="Find layers" name="search" value="Sky"></en-search-input>
+  <en-segmented-control id="segmented" label="Appearance" name="appearance" value="light"></en-segmented-control>
+</form>
+<script type="module">
+  import { resolveTheme, emitThemeCSS } from '@en-reve/tokens';
+  import { EnButton } from '../../button/index.js';
+  import { EnTextField } from '../../text-field/index.js';
+  import { EnSelect } from '../../select/index.js';
+  import { EnColorField } from '../../color-field/index.js';
+  import { EnNumberField } from '../../number-field/index.js';
+  import { EnDateInput } from '../../date-input/index.js';
+  import { EnSearchInput } from '../../search-input/index.js';
+  import { EnSegmentedControl } from '../../segmented-control/index.js';
+  for (const [tag, element] of [['en-button',EnButton],['en-text-field',EnTextField],['en-select',EnSelect],
+    ['en-color-field',EnColorField],['en-number-field',EnNumberField],['en-date-input',EnDateInput],
+    ['en-search-input',EnSearchInput],['en-segmented-control',EnSegmentedControl]]) customElements.define(tag,element);
+  document.querySelector('#select').items=[{value:'comfortable',label:'Comfortable'},{value:'compact',label:'Compact'}];
+  document.querySelector('#segmented').items=[{value:'light',label:'Light'},{value:'dark',label:'Dark'}];
+  window.configureControlRhythm=async ({density,rhythm,size,pins={}}) => {
+    document.querySelector('#theme').textContent=emitThemeCSS(resolveTheme({density,
+      pins:{'rhythm.base':{value:rhythm,unit:'rem'},...pins}}),{scope:'root'});
+    await Promise.all([...document.querySelector('#controls').children].map(async host=>{
+      if(size==='absent')host.removeAttribute('size');else host.size=size;
+      await host.updateComplete;
+    }));
+    await new Promise(requestAnimationFrame);
+  };
+</script></html>

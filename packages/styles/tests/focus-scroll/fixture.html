@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Focus scroll clearance</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; font-family: system-ui; }
+    main { max-inline-size: 640px; }
+    .gap { block-size: 1100px; }
+    .scrollport { block-size: 280px; overflow: auto; border: 1px solid; }
+    .scrollport-content { padding: 64px; }
+    .horizontal { inline-size: 100%; overflow: auto; border: 1px solid; }
+    .horizontal-content { inline-size: 2100px; padding: 64px; display: flex; gap: 700px; }
+    en-text-field { inline-size: 180px; }
+  </style>
+  <script type="module" src="./fixture.ts"></script>
+</head>
+<body><main id="fixture"></main></body>
+</html>

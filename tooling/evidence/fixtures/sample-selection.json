@@ -1,0 +1,17 @@
+{
+  "sample": true,
+  "graph": {
+    "schemaVersion": 1,
+    "nodes": [
+      { "id": "token:accent", "kind": "token", "dependencies": [] },
+      { "id": "token:accent-hover", "kind": "token", "dependencies": ["token:accent"] },
+      { "id": "theme:default", "kind": "theme", "dependencies": ["token:accent-hover"] },
+      { "id": "style:control", "kind": "style", "dependencies": ["theme:default"] },
+      { "id": "component:sample-control", "kind": "component", "dependencies": ["style:control"] },
+      { "id": "scenario:sample-control", "kind": "scenario", "dependencies": ["component:sample-control"] },
+      { "id": "docs:private-copy", "kind": "docs", "dependencies": [] },
+      { "id": "scenario:docs-page", "kind": "scenario", "dependencies": ["docs:private-copy"] }
+    ]
+  },
+  "changed": ["token:accent"]
+}

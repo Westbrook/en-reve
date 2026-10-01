@@ -1,0 +1,35 @@
+import assert from 'node:assert/strict';import {readFile,writeFile,mkdir,appendFile} from 'node:fs/promises';import {resolve} from 'node:path';
+import lighthouse from 'lighthouse';import {launch} from 'chrome-launcher';import {chromium,firefox,webkit,expect} from '@playwright/test';
+import {root,registry,profiles,json,rng,shuffle} from '../src/config.mjs';import {startServers} from '../src/server.mjs';import {exclusiveBrowserWork} from '../src/lock.mjs';
+const builds=JSON.parse(await readFile(resolve(root,'reports/calendar-variants/builds.json')));const variants=builds.variants;
+async function work(){const complete=JSON.parse(await readFile(resolve(root,'runs/calendar-variants-v1/completion.json')));assert.equal(complete.failed,0);assert.equal(complete.planned,complete.recorded);
+ if(!process.argv.includes('--recovery-only')) {
+ const dir=resolve(root,'runs/calendar-variants-lighthouse-v1');await mkdir(dir,{recursive:true});const random=rng(20260924);let index=0;const jobs=[];
+ for(let block=0;block<5;block++)for(const v of shuffle(variants,random))jobs.push({id:String(++index).padStart(5,'0'),variant:v.id,block,profile:'mobile',suite:'lighthouse',cache:'cold',system:'en-reve'});
+ await writeFile(resolve(dir,'manifest.json'),json({id:'calendar-variants-lighthouse-v1',createdAt:new Date().toISOString(),jobs,variants,profiles,methodology:'Fresh full Chromium audit, DevTools throttling only, CPU4x and 100ms/8Mbps/2Mbps. Policies interleaved within block. Separate lane from primary samples.'}),{flag:'wx'});
+ for(const job of jobs){const stop=await startServers({systems:registry.filter(s=>s.id==='en-reve'),variant:job.variant});let chrome;const sample={...job,startedAt:new Date().toISOString(),status:'running',errors:[]};
+ try{chrome=await launch({chromePath:chromium.executablePath(),chromeFlags:['--headless','--ignore-certificate-errors','--no-first-run']});const result=await lighthouse('https://127.0.0.1:4617/',{port:chrome.port,logLevel:'error',output:['json','html'],onlyCategories:['performance'],formFactor:'mobile',screenEmulation:{mobile:true,width:390,height:844,deviceScaleFactor:1,disabled:false},throttlingMethod:'devtools',throttling:{cpuSlowdownMultiplier:4,requestLatencyMs:100,downloadThroughputKbps:8000,uploadThroughputKbps:2000},maxWaitForLoad:30000});
+ await writeFile(resolve(dir,job.id+'-lighthouse.json'),result.report[0]);await writeFile(resolve(dir,job.id+'-lighthouse.html'),result.report[1]);const a=result.lhr.audits;sample.metrics=Object.fromEntries(Object.entries({fcp:'first-contentful-paint',lcp:'largest-contentful-paint',cls:'cumulative-layout-shift',tbt:'total-blocking-time',speedIndex:'speed-index'}).map(([k,id])=>[k,a[id]?.numericValue]));sample.browser=result.lhr.environment.hostUserAgent;sample.warnings=result.lhr.runWarnings;if(result.lhr.runtimeError)throw Error(JSON.stringify(result.lhr.runtimeError));sample.status='ok';
+ }catch(e){sample.status='failed';sample.errors.push(e.stack)}finally{await chrome?.kill();await stop()}
+ sample.finishedAt=new Date().toISOString();await appendFile(resolve(dir,'samples.jsonl'),JSON.stringify(sample)+'\n');console.log('LIGHTHOUSE',job.id,job.variant,sample.status);
+ }
+ }
+ // Recovery and cancellation are qualification lanes, never mixed into timing medians.
+ const checks=[];const split=variants.find(v=>v.id==='calendar-split');const chunk=split.assets.find(a=>/assets\/calendar-.*\.js$/.test(a.path)).path;
+ const stop=await startServers({systems:registry.filter(s=>s.id==='en-reve'),variant:'calendar-split'});
+ try{for(const [engine,type]of Object.entries({chromium,firefox,webkit})){
+ const browser=await type.launch();try{
+  const context=await browser.newContext({ignoreHTTPSErrors:true,hasTouch:true,viewport:{width:390,height:844}});
+  let page=await context.newPage();const requests=[];page.on('request',r=>requests.push(r.url()));await page.goto('https://127.0.0.1:4617');await page.locator('.showcase-card').last().waitFor();await page.locator('#project-date input').waitFor();
+  assert(!requests.some(u=>u.endsWith(chunk)));assert.equal(await page.locator('#project-date en-calendar').count(),0);
+  await page.locator('#project-date').evaluate(el=>el.preparePicker());assert(requests.some(u=>u.endsWith(chunk)));assert.equal(await page.locator('#project-date en-calendar').count(),0);assert.equal(await page.evaluate(()=>Boolean(customElements.get('en-calendar'))),false);checks.push({engine,kind:'prepare-loads-code-without-registering-or-constructing',passed:true});await page.close();
+  page=await context.newPage();let release;let requested=false;const barrier=new Promise(r=>release=r);await page.route('**/'+chunk,async route=>{requested=true;await barrier;await route.continue()});
+  await page.goto('https://127.0.0.1:4617');const trigger=page.locator('#project-date #picker-trigger').getByRole('button');await trigger.focus();await trigger.press('Enter');await expect(page.locator('#project-date [part=calendar-status]')).toContainText(/loading/i);assert(requested);await page.keyboard.press('Escape');release();await page.waitForLoadState('networkidle');await expect(page.locator('#project-date dialog')).not.toBeVisible();checks.push({engine,kind:'escape-cancels-pending-import-without-late-open',passed:true});await page.close();
+  page=await context.newPage();await page.route('**/'+chunk,route=>route.abort('failed'));await page.goto('https://127.0.0.1:4617');const field=page.locator('#project-date');await field.locator('#picker-trigger').getByRole('button').click();await expect(field.locator('[part=calendar-status]')).toContainText(/could|unable|retry|try again/i);await expect(field.locator('dialog')).not.toBeVisible();const errorText=await field.locator('[part=calendar-status]').innerText();assert(!/loading/i.test(errorText));await field.locator('input').fill('2026-10-01');await field.locator('input').press('Tab');await expect(field).toHaveJSProperty('value','2026-10-01');
+  await page.unroute('**/'+chunk);const retry=await field.evaluate(async el=>{try{await el.preparePicker({retry:true});return 'resolved'}catch(e){return 'rejected: '+e.message}});await expect(field.locator('dialog')).not.toBeVisible();checks.push({engine,kind:'import-failure-native-editing-and-explicit-retry',passed:true,errorText,retry});
+  await page.reload();const touchTrigger=page.locator('#project-date #picker-trigger').getByRole('button');await touchTrigger.tap();await expect(page.locator('#project-date dialog')).toBeVisible();await expect(page.locator('#project-date en-calendar')).toBeVisible();checks.push({engine,kind:'reload-recovery-and-touch-opening',passed:true});await context.close();
+ }finally{await browser.close()}
+ }}finally{await stop()}
+ await writeFile(resolve(root,'reports/calendar-variants/recovery-qualification.json'),json({at:new Date().toISOString(),passed:true,checks}));console.log('FOLLOWUP COMPLETE',checks.length);
+}
+for(;;){let entered=false;try{await exclusiveBrowserWork(async()=>{entered=true;await work()});break}catch(e){if(entered||!/^Another browser campaign is active/.test(e.message))throw e;await new Promise(r=>setTimeout(r,15000))}}

@@ -1,0 +1,7 @@
+.api-examples-index .examples-list { list-style:none; padding:0; margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr)); column-gap:var(--en-space-8); }
+.api-examples-index .examples-list li { min-inline-size:0; border-block-start:var(--en-border-width) solid var(--en-color-line); }
+.api-examples-index .examples-list a { display:flex; flex-direction:column; gap:var(--en-space-1); padding:var(--en-space-4) var(--en-space-2); text-decoration:none; overflow-wrap:anywhere; font-size:1rem; }
+.api-examples-index .examples-list a:hover { background:var(--en-color-surface); text-decoration:underline; }
+.api-examples-index .examples-list span { font-family:var(--en-font-code-family); font-size:.875rem; color:var(--en-color-text-muted); }
+.api-examples-index .examples-skip { position:fixed; inset-block-start:var(--en-space-2); inset-inline-start:var(--en-space-2); transform:translateY(-200%); z-index:100; padding:var(--en-space-3); background:var(--en-color-surface); }
+.api-examples-index .examples-skip:focus { transform:none; }

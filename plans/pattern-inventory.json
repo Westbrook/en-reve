@@ -1,0 +1,2710 @@
+{
+  "schemaVersion": 1,
+  "status": "partially-implemented",
+  "title": "en-reve pattern coverage plan",
+  "count": 72,
+  "sourceCategoryCount": 60,
+  "referenceExtensionCount": 12,
+  "countingRule": "Named user-facing patterns count once. Child elements, variants, utility modules and implementation techniques do not create additional patterns.",
+  "coverageRule": "Every entry requires its stated baseline behavior plus applicable accessibility, application-state ownership, localization, platform and browser evidence; documentation or screenshots alone do not establish implemented coverage. Source presence and focused evidence are recorded separately; no entry is marked fully accepted by this planning audit.",
+  "architecture": "./architecture.md",
+  "sources": [
+    {
+      "url": "https://component.gallery/components/",
+      "role": "All 60 base category names; retrieved 2026-09-08."
+    }
+  ],
+  "deliveryKinds": {
+    "element": "Custom element(s) with owned behavior or encapsulated presentation; consult implementation status for current source presence.",
+    "native-recipe": "Native semantic HTML plus supported styles/composition, not an artificial shadow wrapper.",
+    "composition": "Reusable composed workflow; proposed elements listed only where an independent interface is presently justified."
+  },
+  "workflows": {
+    "login": "Multi-step SSO-centric form with deterministic external-service fixtures.",
+    "settings": "Design-tool settings panel with ordinary and nuanced control.",
+    "chat": "Chat-triggered just-in-time controls with preserved draft/context.",
+    "catalog": "Dedicated operational scenarios for remaining patterns beyond the five delivered reference workflows.",
+    "selection": "Finite-catalog project selection with native form receipts and mobile/viewport recovery scenarios.",
+    "assets": "Nine local fixtures with query/type filtering, Grid/List/Table, optional native-header sorting, app-owned single selection, hidden-selection recovery, preview and deterministic insertion."
+  },
+  "crossCuttingAcceptance": [
+    "Applicable WCAG 2.2 AA checks and semantic/name/role/state correctness.",
+    "Keyboard, pointer and relevant touch paths; screen-reader and platform-preference checks.",
+    "Authoritative external state and documented cancellation where the pattern has public state/actions.",
+    "19 requested message catalogs, locale formatting and RTL behavior; translated catalog quality remains separately reviewed.",
+    "Scoped theme and per-instance overrides without relying on private internal markup.",
+    "Current-minus-one support matrix; requested mobile/tablet/desktop display and orientation coverage.",
+    "Packed-artifact selective ESM/import-map consumption and declared type/metadata contract.",
+    "Component/recipe-specific meaningful real-browser operations, integrated workflow checks, and reviewed visual evidence.",
+    "Absent size attributes use medium; size=inherit is explicit. Verify shared density/rhythm geometry, independent role overrides, text growth and unclipped focus without promising identical heights for unrelated controls.",
+    "Use same-root external for references where implemented; label/content slots do not expose private markup. Cross-root Reference Target and its polyfill remain separate verification work.",
+    "Build-time DSD and focused hydration evidence do not establish complete-library SSR, no-JavaScript FACE behavior, or every native pre-upgrade edit.",
+    "Preserve known platform findings and manual-review gaps; synthetic/emulated input evidence is not physical-device or screen-reader acceptance."
+  ],
+  "implementationSnapshot": {
+    "sourceCommit": "2ddf799abb0510d90ff351ce7e871e724bb1a23b",
+    "packageVersion": "0.1.0",
+    "taggedElementCount": 40,
+    "elementManifest": "../packages/elements/custom-elements.json",
+    "evidenceIndex": "./review-session.md",
+    "statusMeaning": {
+      "elements-implemented": "Listed element source and CEM entry exist; required full-pattern acceptance is still incomplete.",
+      "supporting-code-only": "Reusable primitives/styles or docs compositions exist, but not the complete pattern delivery and evidence.",
+      "not-implemented": "Retained scope; no complete pattern implementation or acceptance is claimed.",
+      "implementation-in-progress": "User-authorized implementation is underway; source integration, scoped verification and full-pattern acceptance are not yet established by this checkpoint."
+    },
+    "coverage": "The 40 tags include child elements. The 72 named-pattern target remains unchanged. Four independently rendered reference workflows are delivered; full pattern/workflow acceptance remains open. Tags, screenshots and rendered coverage do not convert arithmetically to accepted patterns.",
+    "runtimeStateOwnership": "The implemented public contract removes controlled and en-request-change. One synchronous cancelable en-change exposes coherent tentative property/Signals/FormData state; cancellation restores still-owned staging, while silent author writes and accepted nested transactions take authority. en-input observes native drafts and en-action remains the command channel; neither is an alternative accepted-value ownership channel. See architecture.md and the separately versioned migration receipts.",
+    "evidencePolicy": "Linked package/tooling/report receipts retain their original source/build/engine identities. A current source mapping does not relabel older checks as a fresh full-library run.",
+    "unannotatedEntries": "Entries without a per-pattern implementation note remain scope records; use the CEM for current source presence. No completed pattern acceptance is inferred.",
+    "historicalSnapshot": {
+      "sourceCommit": "0d0b4265701b9102d1530bee63330ce879de327d",
+      "taggedElementCount": 37,
+      "note": "The earlier snapshot described three reference workflows and the pre-migration controlled API. It is historical, not the current runtime contract."
+    },
+    "themeDelivery": "Independent authored light/dark pairs, managed pair export/reopen and adaptive default.css are implemented. Missing/auto appearance follows system preference; explicit light/dark remains supported. Single authored candidates and deterministic light resolver fallbacks remain distinct from adaptive CSS. Full offline review, evidence comparison and adoption remain unfinished.",
+    "snapshotScope": "sourceCommit records the earlier Site58 baseline. The subsequent Fluent selected-radio role, persistent combobox no-room feedback and metadata-driven API example controls are implemented with scoped verification under verifiedBuildFingerprint and followUpEvidence. No older receipt is relabelled as a fresh run; no broad pattern acceptance or new hosted version is claimed. The 2026-09-10 commandFamilyCheckpoint supersedes the earlier proposed/unstarted menu-and-toolbar planning status; it does not change this verified source/build identity or claim new command-family evidence.",
+    "verifiedBuildFingerprint": "sha256:063835913c1e90f8aa777b4ce8bf3d979670c066589b5f922c8d9c76a9513237",
+    "followUpEvidence": "../artifacts/review-followups-controls/verification.json",
+    "apiExampleControls": "39 explicitly authored public targets and 249 scalar/enum descriptors in 26 isolated documents. Controls use public code metadata, silent property writes, settled readback and original-specimen reset. Rich objects/arrays, slots, events/methods and composition-owned exceptions remain outside this bounded editor; no private shadow targeting is implied.",
+    "commandFamilyCheckpoint": {
+      "date": "2026-09-10",
+      "status": "elements-implemented",
+      "patternIds": [
+        "dropdown-menu",
+        "button-group",
+        "command-palette"
+      ],
+      "deliveryScope": [
+        "sticker-sheet specimens and exact authored source/reset",
+        "CEM-driven API documentation and isolated demos",
+        "creative-settings workflow command registry",
+        "all four inspired light/dark theme pairs"
+      ],
+      "evidence": "Source and documentation integration implemented. The command-family receipt records exact source/build, scoped automated verification, refreshed build-bound themes and publication identity. Full-pattern user/environment acceptance remains open. Outer snapshot provenance remains historical.",
+      "contract": "One existing synchronous cancelable en-action carries stateless command intent; one cancelable en-change governs menu/palette boolean open state. Menu items emit once and bubble naturally; toolbar children keep native click handling. Menu disabled items are discoverable and arrow-focusable but inert; button-only toolbar navigation skips disabled/loading buttons. Palette commands are a finite text/data catalog with no persistent selected value or form state.",
+      "plan": "./review-session.md#authorized-command-family-implementation--2026-09-10",
+      "implementationStage": "scoped-review",
+      "elementNames": [
+        "en-menu",
+        "en-menu-item",
+        "en-toolbar",
+        "en-command-palette"
+      ],
+      "sourceSnapshot": {
+        "taggedElementCount": 44,
+        "cemScannedSourceFileCount": 234,
+        "stickerSpecimenCount": 32,
+        "isolatedAPIExampleDocumentCount": 27,
+        "meaning": "Current integrated source/delivery counts, not verification passes or accepted pattern counts."
+      },
+      "styling": "All four inspired light/dark theme pairs use existing option-list, option, input and overlay hooks. No theme token or package version was added by this family.",
+      "finalReceipt": "../artifacts/command-family/verification.json"
+    },
+    "assetBrowserFollowupsCheckpoint": {
+      "date": "2026-09-10",
+      "buildFingerprint": "sha256:edd09329014f90911e5b89d0f83cda22b9951c93546ea0a965d70411aec7776c",
+      "sourceMode": "working-tree",
+      "packageVersion": "0.1.0",
+      "taggedElementCount": 46,
+      "stickerSpecimenCount": 36,
+      "isolatedAPIExampleDocumentCount": 31,
+      "referenceWorkflowCount": 5,
+      "patternIds": [
+        "card",
+        "empty-state",
+        "file",
+        "list",
+        "asset-browser"
+      ],
+      "status": "scoped-review",
+      "evidence": "../artifacts/asset-browser-followups/verification.json",
+      "coverage": "Current integrated delivery counts supersede older inventory counts without relabeling their historical build receipts. Scoped asset/content recipes, popup motion, SSR action styles and five theme pairs are implemented. Full pattern and environment acceptance remain open; the 72-pattern target is unchanged."
+    }
+  },
+  "patterns": [
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-accordion",
+        "en-accordion-item"
+      ],
+      "sharingFamilies": [
+        "disclosure",
+        "composite-focus"
+      ],
+      "semanticOwner": "Each disclosure trigger owns its expanded state and associated panel.",
+      "baselineBehaviors": [
+        "Expand/collapse with keyboard and pointer; expose name, expanded state and panel relationship.",
+        "Support controlled open items, disabled items, and one/many-open configuration without hiding focused content unexpectedly."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Open two sections, externally close one, move focus through the remaining controls, and cancel a requested collapse.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Accordion"
+      }
+    },
+    {
+      "id": "alert",
+      "name": "Alert",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-alert"
+      ],
+      "sharingFamilies": [
+        "status",
+        "announcement",
+        "surface"
+      ],
+      "semanticOwner": "The message owns its importance/status semantics; optional dismissal is a separate action.",
+      "baselineBehaviors": [
+        "Render a clear message and optional action/dismiss control.",
+        "Announce newly relevant messages according to documented urgency without repeating static content on every render."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Trigger a recoverable error, read the message with a screen reader, activate its recovery action and dismiss only when supported.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Alert"
+      }
+    },
+    {
+      "id": "avatar",
+      "name": "Avatar",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-avatar"
+      ],
+      "sharingFamilies": [
+        "media",
+        "surface"
+      ],
+      "semanticOwner": "The host usage determines whether the person image conveys a name or is decorative.",
+      "baselineBehaviors": [
+        "Handle image, initials and unavailable-image fallback.",
+        "Avoid duplicate accessible names when adjacent text already identifies the person."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Load an unavailable avatar image beside a named participant and verify useful fallback without a duplicate announcement.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Avatar"
+      }
+    },
+    {
+      "id": "badge",
+      "name": "Badge",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-badge"
+      ],
+      "sharingFamilies": [
+        "status",
+        "surface"
+      ],
+      "semanticOwner": "The surrounding item owns identity; badge text communicates its status or count.",
+      "baselineBehaviors": [
+        "Expose textual meaning in addition to color.",
+        "Handle long labels and changing counts without truncating the only understandable meaning."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Change an item from draft to approved while using a monochrome/high-contrast environment and inspect the visible and accessible meaning.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Badge"
+      }
+    },
+    {
+      "id": "breadcrumbs",
+      "name": "Breadcrumbs",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-breadcrumbs"
+      ],
+      "sharingFamilies": [
+        "navigation",
+        "layout"
+      ],
+      "semanticOwner": "The component owns a labelled navigation landmark and private ordered-list wrappers; authored native anchors/spans own content, destinations, listeners and explicit current-location semantics.",
+      "baselineBehaviors": [
+        "Preserve real href links, current-page semantics and understandable overflow.",
+        "Support long localized paths and RTL ordering."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Traverse a long nested asset path by keyboard, activate an ancestor and identify the current location in RTL.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Breadcrumbs"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "sourceEntries": [
+          "../packages/elements/src/breadcrumbs.ts",
+          "../packages/elements/src/breadcrumbs/element.ts",
+          "../packages/primitives/src/interactions/breadcrumbs-projection.ts",
+          "../packages/primitives/src/templates/breadcrumbs.ts",
+          "../packages/primitives/src/templates/navigation.ts",
+          "../packages/styles/src/navigation.ts",
+          "../packages/ssr/src/index.ts",
+          "../packages/ssr/src/breadcrumbs-adapter.ts",
+          "../packages/primitives/docs/navigation.md"
+        ],
+        "acceptance": "partial; scoped public native-child CSR/automatic buffered SSR/hydration and documentation integration verified; earlier array-based wrapper/recipe receipts retain their own scope; full pattern and cross-cutting acceptance incomplete",
+        "notes": "en-breadcrumbs accepts authored direct native a/noninteractive span children, including rich inline content, with no .items property. Consumers own URLs, aria-current and native listeners. The private Shadow DOM list exposes base/list/item/separator Parts; applications style their own native links. CSR uses manual assignment; registered components rendered with @en-reve/ssr renderToString receive automatic buffered named-slot DSD projection that retains original children through hydration. Authors supply no slot attributes or private projection metadata. Ordinary hidden is supported; hidden=until-found is unsupported. The lower-level pure breadcrumbTemplate items API remains available. The scoped migration passed standalone component, production-backed adapter, built documentation/copied-sample and SSR checks; the hashless hydration identity/focus case passes in all three installed engines. Native initial-fragment timing remains distinct from hydration and required no runtime workaround. Exact counts and evidence boundaries are recorded in review-session.md. Long-path/overflow, localization, current-minus-one, physical-device and manual AT acceptance remain work.",
+        "evidenceEntries": [
+          "../packages/elements/src/navigation/tests/README.md",
+          "../packages/primitives/tests/navigation/README.md",
+          "../apps/docs/tests/navigation.spec.ts",
+          "./review-session.md"
+        ],
+        "elementNames": [
+          "en-breadcrumbs"
+        ]
+      }
+    },
+    {
+      "id": "button",
+      "name": "Button",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-button"
+      ],
+      "sharingFamilies": [
+        "control",
+        "press",
+        "form"
+      ],
+      "semanticOwner": "A native button inside the element owns button semantics and keyboard activation.",
+      "baselineBehaviors": [
+        "Support disabled state, accessible name, submit/reset/button intent and documented form integration.",
+        "Dispatch an interceptable semantic action without implying async completion."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Activate by keyboard and pointer, cancel a request, then exercise actual submit/reset behavior in an associated form.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Button"
+      }
+    },
+    {
+      "id": "button-group",
+      "name": "Button group",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-button-group",
+        "en-toolbar"
+      ],
+      "sharingFamilies": [
+        "control",
+        "composite-focus",
+        "layout"
+      ],
+      "semanticOwner": "A named group organizes related controls; a toolbar variant owns documented composite keyboard navigation.",
+      "baselineBehaviors": [
+        "Distinguish ordinary grouped tab stops from an explicit toolbar with roving navigation.",
+        "Preserve each control name/action and disabled behavior."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Operate ordinary grouped actions with native Tab behavior, then use the button-only toolbar with one Tab entry, orientation/RTL-aware arrows and Home/End; skip disabled/loading buttons, retain child command behavior and restore focus participation after detach or reparent.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Button group"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "sourceEntries": [
+          "../packages/elements/src/toolbar/element.ts",
+          "../packages/elements/src/toolbar/README.md",
+          "../packages/elements/src/internal/focus-participant.ts",
+          "../apps/docs/src/workflows/settings/template.ts"
+        ],
+        "acceptance": "Source and documentation integration implemented; scoped results are in the command-family receipt. Full-pattern user/environment acceptance remains open.",
+        "notes": "The 2026-09-10 implementation adds the button-only en-toolbar with one Tab entry, axis/RTL-aware arrows, Home/End and disabled/loading-button skipping through an encapsulated focus participant adapter. It does not redispatch child clicks. Ordinary grouped buttons retain en-stack/native Tab behavior; no en-button-group wrapper is added. Sticker/API/settings integration shares the command executor and existing theme hooks. Scoped verification is recorded separately; earlier grouped-layout evidence is not relabelled. The 2026-09-13 mixed-toolbar phase adds explicit native Tab/group mode, conservative automatic mixed-child fallback and shared Settings/isolated examples. Verification and review are tracked independently in plans/mixed-toolbar-and-api.md.",
+        "implementationStage": "scoped-review",
+        "evidence": "../artifacts/command-family/verification.json"
+      }
+    },
+    {
+      "id": "card",
+      "name": "Card",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-card"
+      ],
+      "sharingFamilies": [
+        "surface",
+        "layout"
+      ],
+      "semanticOwner": "The contained heading/content/actions provide semantics; the surface does not invent a role.",
+      "baselineBehaviors": [
+        "Compose content and separate actions without nested interactive targets.",
+        "Allow layout and styling slots while keeping internal surface markup private."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog",
+        "assets"
+      ],
+      "browserScenario": "Read a card with a heading, primary link and secondary menu, then activate each action independently at narrow width.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Card"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/content.ts",
+          "../packages/styles/src/content.ts",
+          "../apps/docs/src/workflows/assets/template.ts"
+        ],
+        "evidence": "../artifacts/asset-browser-followups/verification.json",
+        "acceptance": "Scoped implementation and automated journeys are delivered; complete pattern acceptance remains partial.",
+        "notes": "Existing en-card remains available. The native file-card recipe adds separate authored selection, content, metadata and actions; full card acceptance still includes the retained scenarios."
+      }
+    },
+    {
+      "id": "carousel",
+      "name": "Carousel",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-carousel",
+        "en-carousel-slide"
+      ],
+      "sharingFamilies": [
+        "collection",
+        "navigation",
+        "media",
+        "announcement"
+      ],
+      "semanticOwner": "The carousel owns labelled slide navigation and current-slide context.",
+      "baselineBehaviors": [
+        "Provide reachable previous/next controls and understandable slide position.",
+        "No automatic rotation by default; any later autoplay must have explicit stop/pause and preference support."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Move between slides with keyboard and touch, identify the current slide, and confirm hidden slides do not trap navigation.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Carousel"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/elements/src/carousel.ts",
+          "../packages/elements/src/carousel-slide.ts",
+          "../packages/styles/src/carousel.ts",
+          "../apps/docs/src/carousel-demo.ts"
+        ],
+        "acceptance": "Finite slot-first implementation delivered for review; physical mobile swipe and VoiceOver acceptance remain open.",
+        "notes": "Responsive native scrolling, current-window semantics, cancellable navigation, retained authored children, optional rotation, theme hooks and complete source/API examples. Automated acceptance is in apps/docs/tests/carousel.spec.ts. No virtual slides or cloned infinite loop.",
+        "evidence": "../apps/docs/tests/carousel.spec.ts"
+      }
+    },
+    {
+      "id": "checkbox",
+      "name": "Checkbox",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-checkbox"
+      ],
+      "sharingFamilies": [
+        "control",
+        "form",
+        "selection"
+      ],
+      "semanticOwner": "A native checkbox/form-associated adapter owns checked, mixed and submission semantics.",
+      "baselineBehaviors": [
+        "Support checked, indeterminate, disabled, required, name/value and controlled updates.",
+        "Keep label activation and keyboard/pointer activation consistent."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Set a mixed selection, toggle via its label, veto the request and verify form data and validity against the accepted value.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Checkbox"
+      }
+    },
+    {
+      "id": "color-picker",
+      "name": "Color picker",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-color-field",
+        "en-swatch",
+        "en-color-picker"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "control",
+        "form",
+        "surface"
+      ],
+      "semanticOwner": "A labelled color value editor owns the value; visual picking has equivalent textual controls.",
+      "baselineBehaviors": [
+        "Provide editable color representation and keyboard-operable adjustments with visible error feedback.",
+        "Show transparency and distinguish selected value from preview; do not depend on hue alone."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Select a color visually, reproduce it using text/keyboard controls, correct an invalid entry and cancel a proposed change.",
+      "boundary": "Current en-color-field scope is native six-digit sRGB hex. en-swatch owns only neutral sample activation and paint. A richer en-color-picker, transparency/color-space controls and their equivalent editing paths remain proposed; no image-editing engine or native-picker outcome guarantee is implied.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Color picker"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-color-field",
+          "en-swatch"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/color-field.ts",
+          "../packages/elements/src/swatch.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "Implemented en-color-field accepts six-digit sRGB hex through a visible native input; an optional same-root for trigger can be a native button, en-button or en-swatch. en-swatch is a neutral sample-only token/raw-color button; consumers own copying, reference/name/status layout and preview synchronization. Custom alpha/color-space/text-editing picker breadth and real OS-picker display/selection remain unverified scope, not delivered by the swatch."
+      }
+    },
+    {
+      "id": "combobox",
+      "name": "Combobox",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-combobox"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "collection",
+        "selection",
+        "form",
+        "composite-focus"
+      ],
+      "semanticOwner": "The native editable input owns focus, combobox semantics and active-option relationships to its same-shadow listbox; accepted catalog identity remains separate from the search query.",
+      "baselineBehaviors": [
+        "Filter supplied options without losing input composition; distinguish draft text from accepted selection.",
+        "Support keyboard choice, escape, disabled options, empty/loading/error messages and externally controlled data."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat",
+        "selection"
+      ],
+      "browserScenario": "Compose text with an IME, receive filtered results, choose an option by keyboard and reject one proposed selection without losing the draft.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Combobox"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-combobox"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/combobox/element.ts",
+          "../packages/elements/src/combobox/model.ts",
+          "../packages/elements/src/combobox/interaction-controller.ts",
+          "../packages/elements/src/combobox/position-controller.ts",
+          "../packages/elements/src/combobox/template.ts",
+          "../packages/elements/src/combobox/README.md"
+        ],
+        "acceptance": "partial; bounded finite-catalog component, native consumer, production SSR/hydration, sticker-sheet use and exact-build candidate interactions verified; full pattern and cross-cutting acceptance remain incomplete",
+        "notes": "Single accepted catalog ID with plain-text items records, local case-insensitive label filtering and application-supplied loading/loadError state. The native query draft, active option and popup state remain separate from accepted value and form data. Explicit selection uses the single tentative cancelable en-change contract; en-input observes native query drafts. Controlled mode and en-request-change are removed. Escape, Tab and whole-control blur restore the accepted label without implicit selection; focused cancellation retains the draft, and IME reconciliation is deferred safely. One optional empty-value item supports explicit clearing, while required empty selections remain invalid. Removed or disabled nonempty accepted IDs retain their ID/last known label and become invalid without choosing a replacement. Empty means no selection and is invalid when required; optional empty values remain valid independently of an empty-choice record. The same-shadow native input/listbox/options and separate controllers reuse shared field/form/editing/style foundations; no standalone en-option is delivered. Supported label/description slots do not expose private markup. Public native-module, form/selection, popup, documentation and generated metadata checks have new focused receipts. The sticker sheet exposes Find a project with actual accepted-ID submission, loading/failure/Retry states and Reset. Query validation presentation follows explicit error reporting rather than painting an unfinished search as an error. Rich options, freeform values, multiple selection, grouping, remote filtering, fetching and virtualization are outside this bounded slice. Persistent no-room feedback is implemented with scoped evidence: after 700 ms of continuous measured lack of room, and safe composition completion, a stable polite status outside the hidden popup explains unavailable suggestions. Brief transitions/offscreen inputs do not start feedback. The existing positioning algorithm, native draft and accepted value remain intact; recovery text is localizable through noRoomText/no-room-text without promising that scrolling can defeat an authored height ceiling.",
+        "evidenceEntries": [
+          "../packages/elements/src/combobox/README.md",
+          "./review-session.md",
+          "../artifacts/review-followups-controls/verification.json"
+        ]
+      }
+    },
+    {
+      "id": "date-input",
+      "name": "Date input",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-date-input"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "form",
+        "locale"
+      ],
+      "semanticOwner": "A labelled date entry surface owns validation and unambiguous serialized date value.",
+      "baselineBehaviors": [
+        "Accept keyboard entry with localized presentation and documented incomplete/invalid state.",
+        "Expose native form value, limits, required/disabled state and readable format guidance."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Enter an incomplete date, correct it, change locale and verify the same accepted calendar date is submitted.",
+      "boundary": "Date-only values remain distinct from timezone-bearing timestamps.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Date input"
+      }
+    },
+    {
+      "id": "date-picker",
+      "name": "Datepicker",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-date-picker",
+        "en-calendar"
+      ],
+      "sharingFamilies": [
+        "collection",
+        "composite-focus",
+        "editable",
+        "locale",
+        "overlay"
+      ],
+      "semanticOwner": "The input and calendar grid each own their documented semantics and focus relationship.",
+      "baselineBehaviors": [
+        "Offer text entry as well as calendar navigation; announce displayed period and selected/unavailable dates.",
+        "Support controlled selection, min/max limits, month/year navigation and dismissal/focus return."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Enter a date by text, open the calendar, traverse a month boundary by keyboard and choose an allowed date in RTL.",
+      "boundary": "Initial baseline is single-date selection; ranges and alternative calendar systems require separately recorded scope if added.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Datepicker"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-calendar",
+          "en-date-picker"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/calendar.ts",
+          "../packages/elements/src/date-picker.ts"
+        ],
+        "acceptance": "Browser verification recorded in the calendar/date-picker report receipt; physical-device, screen-reader and cross-cutting acceptance remain open.",
+        "notes": "Single Gregorian date-only calendar plus editable modal picker, with min/max, locale, explicit first weekday and cancelable en-change. Native en-date-input remains available.",
+        "evidence": [
+          "../apps/docs/src/calendar-demo.ts",
+          "./calendar-date-picker.md"
+        ],
+        "implementationStage": "scoped-review"
+      }
+    },
+    {
+      "id": "drawer",
+      "name": "Drawer",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-drawer"
+      ],
+      "sharingFamilies": [
+        "overlay",
+        "disclosure",
+        "focus",
+        "surface"
+      ],
+      "semanticOwner": "The drawer owns explicit modal or nonmodal panel semantics; application content owns task completion.",
+      "baselineBehaviors": [
+        "Open/close through controlled state and cancelable transitions.",
+        "For modal use, contain focus and restore it; for nonmodal use, preserve document navigation."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Open a settings drawer, traverse controls, veto close while a fixture reports unsaved work, then close and return focus.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Drawer"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-drawer"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/drawer.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "Shares native dialog dismissal/focus behavior and responsive presentation. Child field focus contours have focused evidence; the entire planned modal/nonmodal scenario matrix remains required."
+      }
+    },
+    {
+      "id": "dropdown-menu",
+      "name": "Dropdown menu",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-menu",
+        "en-menu-item"
+      ],
+      "sharingFamilies": [
+        "overlay",
+        "collection",
+        "composite-focus",
+        "control"
+      ],
+      "semanticOwner": "The menu owns action navigation; its trigger owns expanded state and naming.",
+      "baselineBehaviors": [
+        "Provide keyboard-open, item navigation, disabled items and escape/return behavior.",
+        "Separate action menus from selection fields and navigation lists; actions remain externally handled."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Open the menu by keyboard, discover a disabled command without activating it, navigate past separators, cancel an action and a dismissal independently, then execute an eligible settings command; verify close/focus ordering, same-tree trigger rebinding, Tab/Escape exit and no accidental form submission.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Dropdown menu"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "sourceEntries": [
+          "../packages/elements/src/menu/element.ts",
+          "../packages/elements/src/menu-item/element.ts",
+          "../packages/elements/src/menu/README.md",
+          "../packages/elements/src/menu-item/README.md",
+          "../apps/docs/src/workflows/settings/commands.ts"
+        ],
+        "acceptance": "Focused browser, SSR and integration checks pass for this bounded slice; full pattern, physical-device and manual assistive-technology acceptance remain open.",
+        "notes": "Checkable/radio items and nested menus share the single cancelable state contract. The review refinement adds protected mouse hover, touch replacement panels with Back, authored trigger carets and semantic separators. Focused engineering evidence is recorded in the Progress Report; physical-device and manual AT acceptance remain open.",
+        "implementationStage": "scoped-review",
+        "evidence": "../artifacts/command-family/verification.json"
+      }
+    },
+    {
+      "id": "empty-state",
+      "name": "Empty state",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "status",
+        "surface",
+        "layout"
+      ],
+      "semanticOwner": "Content explains the absent data and available next action without pretending an error occurred.",
+      "baselineBehaviors": [
+        "Distinguish empty, no-results and unavailable states in examples.",
+        "Offer a contextual recovery/start action and preserve surrounding navigation."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog",
+        "assets"
+      ],
+      "browserScenario": "Filter an asset collection to no results, clear the filter through the suggested action and regain the collection.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Empty state"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/content.ts",
+          "../packages/styles/src/content.ts",
+          "../apps/docs/src/workflows/assets/template.ts"
+        ],
+        "evidence": "../artifacts/asset-browser-followups/verification.json",
+        "acceptance": "Focused browser, SSR and integration checks pass for this bounded slice; full pattern, physical-device and manual assistive-technology acceptance remain open.",
+        "notes": "Explicit empty/no-results/unavailable compositions expose authored recovery actions. Loading examples pair decorative en-skeleton shapes with application-owned busy/status behavior and retain content footprint. The recipe does not impose live-region or focus policy on consumers."
+      }
+    },
+    {
+      "id": "fieldset",
+      "name": "Fieldset",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "form",
+        "layout"
+      ],
+      "semanticOwner": "Native fieldset and legend in the composing tree own grouping and disabled semantics.",
+      "baselineBehaviors": [
+        "Keep an actual legend associated with the grouped controls.",
+        "Support disabled propagation and nested layout without replacing semantics with a visual border."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Read and operate a labelled group, disable it through the native fieldset and verify every relevant control follows its form semantics.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Fieldset"
+      }
+    },
+    {
+      "id": "file",
+      "name": "File",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "media",
+        "asset",
+        "navigation"
+      ],
+      "semanticOwner": "A real link/button owns download/open behavior; descriptive content names the represented file.",
+      "baselineBehaviors": [
+        "Show meaningful filename/type/size and optional availability status.",
+        "Keep preview/open/download actions distinct and accessible."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog",
+        "assets"
+      ],
+      "browserScenario": "Inspect a long localized filename, activate download and verify the action still has an understandable name without a thumbnail.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "File"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/content.ts",
+          "../packages/styles/src/content.ts",
+          "../apps/docs/src/workflows/assets/template.ts"
+        ],
+        "evidence": "../artifacts/asset-browser-followups/verification.json",
+        "acceptance": "Focused browser, SSR and integration checks pass for this bounded slice; full pattern, physical-device and manual assistive-technology acceptance remain open.",
+        "notes": "File cards accept explicit availability and missing-media fallback content; long localized names, metadata and separate authored actions are covered by focused recipes. Real remote transfer/progress and file-service behavior remain application work."
+      }
+    },
+    {
+      "id": "file-upload",
+      "name": "File upload",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-file-upload"
+      ],
+      "sharingFamilies": [
+        "form",
+        "editable",
+        "media",
+        "status"
+      ],
+      "semanticOwner": "A native file input owns selection; the composition exposes files, progress and external actions.",
+      "baselineBehaviors": [
+        "Support keyboard file selection as well as optional drop; report type/size rejection meaningfully.",
+        "Expose selected files and cancel/remove requests; the application owns transfer."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Choose multiple files without dragging, remove one, reject an oversized fixture file and show application-provided pending/error states.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "File upload"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "sourceEntries": [
+          "../packages/elements/src/file-upload/element.ts",
+          "../packages/primitives/src/interactions/file-selection.ts",
+          "../packages/styles/src/file-upload.ts"
+        ],
+        "acceptance": "Native selection/drop, rejection, removal, controlled ownership, form and SSR baseline implemented. Physical picker and assistive-technology review remain open.",
+        "notes": "See file-upload-baseline.md. One cancelable en-change governs files; transfer and remote services remain application-owned. Shared sticker/API/theme review and an Asset Browser transfer simulation exercise the baseline. Exact browser evidence and publication are tracked in the independent Progress Report."
+      }
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "navigation",
+        "layout"
+      ],
+      "semanticOwner": "Native footer semantics belong to the document or section where it is composed.",
+      "baselineBehaviors": [
+        "Compose supporting navigation and legal/help content with appropriate labels.",
+        "Adapt long localized content without injecting global layout rules."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Navigate a narrow-page footer with keyboard and landmarks while text is enlarged.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Footer"
+      }
+    },
+    {
+      "id": "form",
+      "name": "Form",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "form",
+        "editable",
+        "status"
+      ],
+      "semanticOwner": "A native form owns submission/reset and browser integration; fields retain their own validity.",
+      "baselineBehaviors": [
+        "Use actual form association, FormData, submit/reset and labelled controls.",
+        "Support application-controlled submit, field errors and form-wide feedback without a built-in service."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Submit invalid inputs, correct them, collect FormData, cancel external submission and reset through real browser form operations.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Form"
+      }
+    },
+    {
+      "id": "header",
+      "name": "Header",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "navigation",
+        "layout"
+      ],
+      "semanticOwner": "Native header/landmark semantics belong to the application or section context.",
+      "baselineBehaviors": [
+        "Compose title, navigation and optional actions without an imposed application router.",
+        "Support responsive layout and discoverable overflow controls."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Navigate a header at mobile width and high text zoom, finding its title and overflow actions without clipped controls.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Header"
+      }
+    },
+    {
+      "id": "heading",
+      "name": "Heading",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "typography",
+        "structure"
+      ],
+      "semanticOwner": "Native h1-h6 chosen by the composing application owns document hierarchy.",
+      "baselineBehaviors": [
+        "Separate visual heading style from semantic level.",
+        "Allow wrapping, text scaling and localized content."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Inspect heading navigation across a composed workflow while applying a different visual heading scale.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Heading"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "sourceEntries": [
+          "../packages/styles/src/typography.ts",
+          "../tooling/typography/README.md"
+        ],
+        "acceptance": "pattern delivery and full scenario acceptance remain incomplete",
+        "notes": "Public typography leaf helpers reset only opted-in role elements and preserve native h1-h6 semantics independently of visual size. No typography custom element/global reset is needed. The specific WebKit fixed-host dynamic root-rem finding remains open."
+      }
+    },
+    {
+      "id": "hero",
+      "name": "Hero",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "surface",
+        "media",
+        "layout"
+      ],
+      "semanticOwner": "Native heading and content/actions convey the introductory section; no special hero role is invented.",
+      "baselineBehaviors": [
+        "Compose heading, description, media and a clear action.",
+        "Keep text usable when imagery fails or available width shrinks."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Read and activate an introductory section at narrow width with its decorative media unavailable.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Hero"
+      }
+    },
+    {
+      "id": "icon",
+      "name": "Icon",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-icon"
+      ],
+      "sharingFamilies": [
+        "media",
+        "control"
+      ],
+      "semanticOwner": "The usage supplies a meaningful accessible label or explicitly marks decorative imagery.",
+      "baselineBehaviors": [
+        "Support a consistent icon slot/asset contract with inherited color and sizing.",
+        "Avoid duplicate accessible names within labelled controls."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Use the same icon decoratively in a labelled button and as a standalone named indicator; inspect accessible names and forced colors.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Icon"
+      }
+    },
+    {
+      "id": "image",
+      "name": "Image",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "media",
+        "layout"
+      ],
+      "semanticOwner": "Native img/picture owns alternative text and image loading behavior.",
+      "baselineBehaviors": [
+        "Use responsive sources, dimensions/aspect ratio and meaningful alternative text.",
+        "Keep failures understandable and avoid layout shift where dimensions are known."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Load responsive art at different widths, trigger an image failure and inspect content order and reserved space.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Image"
+      }
+    },
+    {
+      "id": "label",
+      "name": "Label",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "form",
+        "typography"
+      ],
+      "semanticOwner": "The native label or the component documented label slot owns control naming.",
+      "baselineBehaviors": [
+        "Use actual label association, including supported cross-shadow mechanisms.",
+        "Preserve click/tap activation and avoid duplicate name sources."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Activate a control through its external label, then verify the corresponding internal control name with keyboard and assistive technology.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Label"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/field.ts",
+          "../packages/elements/src/forms-private/README.md"
+        ],
+        "acceptance": "pattern delivery and full scenario acceptance remain incomplete",
+        "notes": "Named label slots and same-tree internal label relationships exist. External overlay/color-field for references are not label association or Reference Target; generic cross-root labels remain unverified. Whitespace-only default-slot content can mask fallback labels."
+      }
+    },
+    {
+      "id": "link",
+      "name": "Link",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-link"
+      ],
+      "sharingFamilies": [
+        "navigation",
+        "control"
+      ],
+      "semanticOwner": "A real anchor with href owns browser link behavior.",
+      "baselineBehaviors": [
+        "Preserve keyboard activation, copy/open-in-new-context semantics and visited/current usage where applicable.",
+        "Support meaningful names and link-versus-button distinction."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Open a link by keyboard and browser context menu and verify the native destination behavior remains intact.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Link"
+      }
+    },
+    {
+      "id": "list",
+      "name": "List",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "collection",
+        "structure",
+        "layout"
+      ],
+      "semanticOwner": "Native ul/ol/dl and item elements own content structure.",
+      "baselineBehaviors": [
+        "Support semantic unordered, ordered and description-list recipes.",
+        "Compose interactive descendants without changing a content list into an implied listbox."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat",
+        "catalog",
+        "assets"
+      ],
+      "browserScenario": "Navigate a long content list with a screen reader, then operate its embedded actions without listbox keyboard behavior.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "List"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/content.ts",
+          "../packages/styles/src/content.ts",
+          "../apps/docs/src/workflows/assets/template.ts"
+        ],
+        "evidence": "../artifacts/table-list/verification.json",
+        "acceptance": "Focused browser, SSR and integration checks pass for this bounded slice; full pattern, physical-device and manual assistive-technology acceptance remain open.",
+        "notes": "Ordered/unordered collections now preserve native ol/ul semantics, start/reversed numbering and keyed interactive content. Description-list labels accept authored content. Dynamic/reflow/browser verification is scoped; manual screen-reader acceptance remains open."
+      }
+    },
+    {
+      "id": "modal",
+      "name": "Modal",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-dialog"
+      ],
+      "sharingFamilies": [
+        "overlay",
+        "focus",
+        "disclosure"
+      ],
+      "semanticOwner": "A native dialog or verified equivalent owns modal semantics, naming and focus containment.",
+      "baselineBehaviors": [
+        "Open through controlled state, name the task, provide a reachable close/finish path and restore focus.",
+        "Handle escape/cancel and nested-overlay interaction without closing unrelated surfaces."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Open a confirmation from another surface, cancel its close once, finish it and return to the invoking control.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Modal"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-dialog"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/dialog.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "Native dialog behavior includes documented closedBy fallback and responsive presentation. Focus-contour fixes and form-content journeys have focused evidence; no universal nested-modal/AT acceptance is claimed."
+      }
+    },
+    {
+      "id": "navigation",
+      "name": "Navigation",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-navigation"
+      ],
+      "sharingFamilies": [
+        "navigation",
+        "collection",
+        "layout"
+      ],
+      "semanticOwner": "The component owns a labelled native navigation landmark; authored default-slotted anchors own their content, URLs, listeners and explicit current-location semantics.",
+      "baselineBehaviors": [
+        "Support current location, nested groups and responsive disclosure.",
+        "Keep navigation links distinct from application menus and avoid imposing a router."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Find the current section, expand a nested path and navigate through actual links with keyboard at narrow width.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Navigation"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "sourceEntries": [
+          "../packages/elements/src/navigation.ts",
+          "../packages/elements/src/navigation/element.ts",
+          "../packages/primitives/src/templates/slotted-navigation.ts",
+          "../packages/primitives/src/templates/navigation.ts",
+          "../packages/primitives/src/interactions/anchor-navigation.ts",
+          "../packages/styles/src/navigation.ts",
+          "../packages/primitives/docs/navigation.md"
+        ],
+        "acceptance": "partial; scoped default-slotted native-anchor CSR/SSR/hydration and documentation migration verified; earlier array-based wrapper/recipe and breadcrumb receipts retain their own scope; full pattern and cross-cutting acceptance incomplete",
+        "notes": "en-navigation takes authored native anchors in its ordinary default slot, including rich noninteractive content and consumer-owned href, aria-current, target, rel and listeners. It has no .items property or element item-type exports. Host APIs are label, sticky and inherited size; base is its only Part, and applications style their native links. The existing Lit renderer supplies ordinary named default-slot DSD without a navigation mapping adapter or private projection metadata. Original native children are retained through hydration. The pure sectionNavigationTemplate data/items API remains independently available. Sticky positioning belongs to the host; optional root-scoped anchor alignment owns no router or focus policy and resolves only contained light-document targets. The scoped navigation migration passed 51 standalone browser cases and 18 built-documentation/executed-source cases, plus seven focused workflow cases with two retained narrow Firefox/WebKit skips. Full build, 39-tag CEM checks and strict test typechecking passed; the full sticker sheet passed three installed engines at five viewport profiles each without runtime errors or axe violations. This is not a rerun of the full 64-case workflow suite. Exact evidence boundaries remain in review-session.md; nested groups, responsive disclosure, current-minus-one and manual AT acceptance remain work.",
+        "evidenceEntries": [
+          "../packages/elements/src/navigation/tests/README.md",
+          "../packages/primitives/tests/navigation/README.md",
+          "../apps/docs/tests/navigation.spec.ts",
+          "./review-session.md"
+        ],
+        "elementNames": [
+          "en-navigation"
+        ]
+      }
+    },
+    {
+      "id": "pagination",
+      "name": "Pagination",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-pagination"
+      ],
+      "sharingFamilies": [
+        "navigation",
+        "collection",
+        "status"
+      ],
+      "semanticOwner": "The pagination navigation owns current-page context; the application owns collection fetching.",
+      "baselineBehaviors": [
+        "Expose previous/next and page access with clear names/current state.",
+        "Support controlled page changes, disabled boundaries and unknown/known totals without inventing data."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Navigate a paginated asset result set, reject one proposed page change and retain the current-page indication.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Pagination"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "implementationStage": "scoped-review",
+        "elementNames": [
+          "en-pagination"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/pagination/element.ts",
+          "../packages/styles/src/pagination.ts",
+          "../apps/docs/src/examples.ts"
+        ],
+        "acceptance": "Focused browser, SSR and integration checks pass for this bounded slice; full pattern, physical-device and manual assistive-technology acceptance remain open.",
+        "notes": "Stable numbered positions and inline ellipsis page entry extend the existing one-based cancelable API. Visible Previous/Next text and full accessible labels are separately localizable. Optional geometry tokens participate in managed themes and reset. Engineering evidence and manual review remain separately tracked."
+      }
+    },
+    {
+      "id": "popover",
+      "name": "Popover",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-popover"
+      ],
+      "sharingFamilies": [
+        "overlay",
+        "disclosure",
+        "focus"
+      ],
+      "semanticOwner": "The trigger and presented content own explicit relationship and appropriate nonmodal semantics.",
+      "baselineBehaviors": [
+        "Support controlled open state, keyboard/pointer invocation, dismissal and positioning.",
+        "Preserve focus/accessibility context and inherited theme at the overlay boundary."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Open a contextual control popover in a nested theme, operate its contents and dismiss it without losing the originating focus.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Popover"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-popover"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/popover.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "for names an external native button or en-button by literal ID within the same Document/ShadowRoot. Trigger slots are removed; resolution/cleanup, real trigger focus and selected SSR/hydration paths have focused evidence. Cross-root reference support is not implied."
+      }
+    },
+    {
+      "id": "progress-bar",
+      "name": "Progress bar",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-progress-bar"
+      ],
+      "sharingFamilies": [
+        "status",
+        "announcement"
+      ],
+      "semanticOwner": "A progress indicator owns determinate/indeterminate value semantics and its task label.",
+      "baselineBehaviors": [
+        "Expose known bounds/value or honest indeterminate progress.",
+        "Avoid chatty updates and provide surrounding task/result text."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "chat"
+      ],
+      "browserScenario": "Supply externally updated progress, inspect determinate semantics, then complete the task with an explicit result message.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Progress bar"
+      }
+    },
+    {
+      "id": "progress-indicator",
+      "name": "Progress indicator",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-progress-steps"
+      ],
+      "sharingFamilies": [
+        "navigation",
+        "status",
+        "layout"
+      ],
+      "semanticOwner": "A step list communicates progression; navigable steps are real controls with clear status.",
+      "baselineBehaviors": [
+        "Distinguish current, completed and unavailable steps with text/state.",
+        "Support controlled active step without implying completed work is persisted."
+      ],
+      "acceptanceWorkflowIds": [
+        "login"
+      ],
+      "browserScenario": "Navigate a multi-step form backward and forward, identify the current step and recover from an error in an earlier step.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Progress indicator"
+      },
+      "implementation": {
+        "status": "implemented-awaiting-review",
+        "notes": "Progress steps and linked validation summary with a three-step project brief, SSR and hydrated application-owned state. Browser and manual acceptance remain separate.",
+        "plan": "plans/form-navigation.md"
+      }
+    },
+    {
+      "id": "quote",
+      "name": "Quote",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "typography",
+        "structure"
+      ],
+      "semanticOwner": "Native blockquote/q and optional citation own quotation semantics.",
+      "baselineBehaviors": [
+        "Preserve source/citation meaning and readable wrapping.",
+        "Compose quoted messages without relying only on indentation or color."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Read a quoted prior message and reach its source link at high text zoom.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Quote"
+      }
+    },
+    {
+      "id": "radio-button",
+      "name": "Radio button",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-radio",
+        "en-radio-group"
+      ],
+      "sharingFamilies": [
+        "control",
+        "form",
+        "selection",
+        "composite-focus"
+      ],
+      "semanticOwner": "A labelled radio group and its native-equivalent options own exclusive selection.",
+      "baselineBehaviors": [
+        "Support group keyboard behavior, checked/disabled/required state and form value.",
+        "Expose controlled selection without inconsistent checked siblings."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Move through options with arrow keys, veto a selection and submit the accepted single value.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Radio button"
+      }
+    },
+    {
+      "id": "rating",
+      "name": "Rating",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-rating"
+      ],
+      "sharingFamilies": [
+        "control",
+        "form",
+        "selection"
+      ],
+      "semanticOwner": "A labelled discrete value input owns selection; read-only rating is a separate presentation state.",
+      "baselineBehaviors": [
+        "Provide numeric/text meaning and keyboard selection equivalent to pointer stars.",
+        "Distinguish user rating from an aggregate read-only score."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Set a rating with keyboard, clear it where allowed and read an aggregate value without an editable-control announcement.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Rating"
+      }
+    },
+    {
+      "id": "rich-text-editor",
+      "name": "Rich text editor",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-rich-text-editor"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "form",
+        "control",
+        "composite-focus"
+      ],
+      "semanticOwner": "The editable surface owns document editing; its toolbar exposes explicit formatting commands.",
+      "baselineBehaviors": [
+        "Provide actual text entry, selection, basic emphasis/list/link commands and accessible editing state.",
+        "Preserve IME, paste, undo/redo and selection through toolbar operations; serialize a documented safe content model."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Compose text with an IME, select a phrase, apply emphasis and a link, paste content, undo and submit the accepted representation.",
+      "boundary": "Initial baseline is a small explicit formatting model, not a full publishing/editor engine. Content sanitization and schema are required design work; toolbar-only demos do not count.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Rich text editor"
+      }
+    },
+    {
+      "id": "search-input",
+      "name": "Search input",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-search-input"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "form",
+        "status"
+      ],
+      "semanticOwner": "A labelled native search input owns editing; application code owns results and search execution.",
+      "baselineBehaviors": [
+        "Preserve native editing/clear behavior and expose controlled value plus search request.",
+        "Provide optional supplied pending/result messages without coupling to a search service."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Type and clear a query, request search, display delayed external results and retain an IME composition without resets.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Search input"
+      }
+    },
+    {
+      "id": "segmented-control",
+      "name": "Segmented control",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-segmented-control"
+      ],
+      "sharingFamilies": [
+        "control",
+        "selection",
+        "composite-focus"
+      ],
+      "semanticOwner": "One labeled native-radio group owns exclusive accepted selection and single-entry keyboard navigation.",
+      "baselineBehaviors": [
+        "Support named exclusive alternatives, controlled accepted state and native-radio grouping with one Tab entry.",
+        "Support cancellation, disabled/unavailable selection recovery, nearest-option pointer activation and shared control geometry; use tabs or switches for their distinct tasks."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings"
+      ],
+      "browserScenario": "Choose an exclusive rendering option with pointer/keyboard, cancel a proposal, remove or disable the accepted option, recover a valid selection and verify form state and focus.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Segmented control"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-segmented-control"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/segmented-control.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "The current element implements exclusive native-radio selection, one Tab entry, nearest-option frame hit testing and a select-aligned outer radius with concentric inner corners. It does not offer a generic switch/tab mode; those tasks use their own patterns."
+      }
+    },
+    {
+      "id": "select",
+      "name": "Select",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-select"
+      ],
+      "sharingFamilies": [
+        "form",
+        "selection",
+        "control"
+      ],
+      "semanticOwner": "Native select or a verified equivalent owns finite-choice selection and form semantics.",
+      "baselineBehaviors": [
+        "Support options, disabled choices, placeholder/required behavior and controlled value.",
+        "Preserve platform keyboard/touch selection behavior; custom popup behavior is a separate verified implementation choice."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Select a locale with touch and keyboard, externally update the value and submit the accepted option.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Select"
+      }
+    },
+    {
+      "id": "separator",
+      "name": "Separator",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "structure",
+        "layout"
+      ],
+      "semanticOwner": "Native hr conveys a thematic break; decorative dividers carry no invented interaction.",
+      "baselineBehaviors": [
+        "Differentiate meaningful separation from decorative borders.",
+        "Support horizontal/vertical visual treatment without presenting a decorative rule as a control."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Read a settings group with meaningful and decorative separation and verify only useful boundaries enter the accessibility structure.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Separator"
+      }
+    },
+    {
+      "id": "skeleton",
+      "name": "Skeleton",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-skeleton"
+      ],
+      "sharingFamilies": [
+        "status",
+        "layout",
+        "surface"
+      ],
+      "semanticOwner": "The loading region owns busy state; placeholder shapes are decorative.",
+      "baselineBehaviors": [
+        "Reserve representative content space while hiding meaningless skeleton shapes from assistive technology.",
+        "Respect reduced motion and resolve to real content without losing focus."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Show delayed collection content with skeletons, enable reduced motion and verify no placeholder shape is announced as content.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Skeleton"
+      }
+    },
+    {
+      "id": "skip-link",
+      "name": "Skip link",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "navigation",
+        "focus"
+      ],
+      "semanticOwner": "A document-context anchor and destination own bypass navigation.",
+      "baselineBehaviors": [
+        "Become visible on focus and land on the intended main/context region.",
+        "Preserve native fragment navigation rather than hiding a cross-tree destination behind a shadow wrapper."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Use only keyboard to bypass repeated navigation and continue from the intended main region in the composed document.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Skip link"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/navigation.ts",
+          "../packages/styles/src/navigation.ts",
+          "../packages/primitives/docs/navigation.md"
+        ],
+        "acceptance": "partial; focused native recipe and documentation integration verified, full pattern and cross-cutting acceptance incomplete",
+        "notes": "The current native anchor recipe and opt-in focus-visible style are consumed by the sticker sheet and workflow pages. The consuming document owns the destination and its focusability; no shadow wrapper or cross-root target lookup is introduced. Standalone and production browser checks verify keyboard continuation, pre-JavaScript use and hydration.",
+        "evidenceEntries": [
+          "../packages/primitives/tests/navigation/README.md",
+          "../apps/docs/tests/navigation.spec.ts",
+          "./review-session.md"
+        ]
+      }
+    },
+    {
+      "id": "slider",
+      "name": "Slider",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-slider"
+      ],
+      "sharingFamilies": [
+        "control",
+        "form",
+        "editable"
+      ],
+      "semanticOwner": "A range input owns numeric value semantics; related text entry provides precise editing where needed.",
+      "baselineBehaviors": [
+        "Support min/max/step, readable value text, orientation and keyboard changes.",
+        "Emit controlled value proposals without layout thrashing; honor disabled and RTL semantics."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings"
+      ],
+      "browserScenario": "Adjust a value with arrows and touch, enter its precise counterpart and verify both views reflect an external accepted value.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Slider"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-slider"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/slider.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "editable adds a native exact-value editor sharing one accepted numeric value/form entry with the range. Draft completion, validation, cancellation and reconciliation are implemented; read the slider README for current defaults and lifecycle. Full physical input/AT and pattern acceptance remain open."
+      }
+    },
+    {
+      "id": "spinner",
+      "name": "Spinner",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-spinner"
+      ],
+      "sharingFamilies": [
+        "status",
+        "announcement"
+      ],
+      "semanticOwner": "Surrounding status text owns the task message; the animated graphic is decorative.",
+      "baselineBehaviors": [
+        "Pair indefinite waiting with a meaningful task description.",
+        "Respect motion preferences and avoid repeated live announcements."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "chat"
+      ],
+      "browserScenario": "Trigger a waiting state, read its task once, switch reduced motion and transition to success or error.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Spinner"
+      }
+    },
+    {
+      "id": "stack",
+      "name": "Stack",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-stack"
+      ],
+      "sharingFamilies": [
+        "layout"
+      ],
+      "semanticOwner": "Children retain semantics; the stack only owns layout behavior.",
+      "baselineBehaviors": [
+        "Provide token-backed spacing, alignment and logical orientation.",
+        "Allow wrapping/responsive composition without reordering meaningful reading order."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Reflow a mixed-control stack between narrow and wide regions and verify visual and keyboard reading order stay aligned.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Stack"
+      }
+    },
+    {
+      "id": "stepper",
+      "name": "Stepper",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-number-field"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "control",
+        "form"
+      ],
+      "semanticOwner": "A native-equivalent numeric input owns value; increment/decrement controls are named actions.",
+      "baselineBehaviors": [
+        "Support direct editing plus buttons, min/max/step, invalid/incomplete drafts and controlled value.",
+        "Preserve locale display and accessible numeric state without forcing every draft into a number."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings"
+      ],
+      "browserScenario": "Type an incomplete number, finish it, increment to a boundary and reject a proposed value without losing the editable context.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Stepper"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-number-field"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/number-field.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "Compound numeric input plus decrement/increment controls is implemented. The redundant native spinner is suppressed only for this compound field; focus geometry, bounded drafts and shared control sizing have focused evidence."
+      }
+    },
+    {
+      "id": "table",
+      "name": "Table",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-table"
+      ],
+      "sharingFamilies": [
+        "collection",
+        "structure",
+        "selection"
+      ],
+      "semanticOwner": "Native table, headers and captions own relationships; additional controls own sort/select/filter actions.",
+      "baselineBehaviors": [
+        "Provide readable row/column headers, caption and sorting controls with state.",
+        "Compose selection and overflow without imposing grid keyboard navigation on an ordinary data table."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog",
+        "assets"
+      ],
+      "browserScenario": "Sort an asset table through its header control, read associated cells with a screen reader and select a row without replacing native table semantics.",
+      "boundary": "An interactive cell-navigation data grid is not automatically included; virtualized rendering requires its own measured semantics proof.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Table"
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "elementNames": [
+          "en-table"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/table.ts",
+          "../packages/styles/src/table.ts",
+          "../apps/docs/src/examples.ts"
+        ],
+        "acceptance": "Scoped implementation verified by focused three-engine browser checks; physical-device and manual screen-reader acceptance remain open.",
+        "notes": "A shadow viewport wraps one authored native table. Caption/header relationships remain native; sorting and single selection belong to the consuming application. Table styles are explicitly adopted in the author root. Composite grid navigation, virtualization, multiselect and remote data remain separate work.",
+        "evidence": "../artifacts/table-list/verification.json"
+      }
+    },
+    {
+      "id": "tabs",
+      "name": "Tabs",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-tabs",
+        "en-tab",
+        "en-tab-panel"
+      ],
+      "sharingFamilies": [
+        "navigation",
+        "selection",
+        "composite-focus"
+      ],
+      "semanticOwner": "The tablist owns selected tab, associated panels and focus/activation policy.",
+      "baselineBehaviors": [
+        "Support documented automatic/manual activation, orientation, disabled tabs and controlled selection.",
+        "Keep tab/panel names and relationships valid across rendered boundaries."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings"
+      ],
+      "browserScenario": "Navigate a tablist without selecting in manual mode, activate a tab, reject one request and verify only its associated panel is exposed.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Tabs"
+      }
+    },
+    {
+      "id": "text-input",
+      "name": "Text input",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-text-field"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "form"
+      ],
+      "semanticOwner": "A native input owns editable semantics, selection and form behavior.",
+      "baselineBehaviors": [
+        "Support appropriate input types/autocomplete, labels/descriptions/errors, required/disabled/readonly and form integration.",
+        "Preserve native composition, selection, autofill and controlled accepted value/draft reconciliation."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Enter text with IME and autofill, trigger validation, correct the value and verify external updates do not duplicate user-change notifications.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Text input"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-text-field"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/text-field.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "Text/email/password and related native types are implemented; the docs now include a password example with actual source and Reset. Password-manager, autofill and physical-IME acceptance remain open."
+      }
+    },
+    {
+      "id": "textarea",
+      "name": "Textarea",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-textarea"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "form"
+      ],
+      "semanticOwner": "A native textarea owns multiline editing and selection semantics.",
+      "baselineBehaviors": [
+        "Support labels, validation, required/disabled/readonly and form data.",
+        "Preserve newline, composition, selection and resizing/autosize behavior without scroll jumps."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "settings"
+      ],
+      "browserScenario": "Write a multiline draft, resize the surrounding panel, apply an external accepted update and continue editing without losing selection.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Textarea"
+      }
+    },
+    {
+      "id": "toast",
+      "name": "Toast",
+      "origin": "component-gallery",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-toast",
+        "en-toast-region"
+      ],
+      "sharingFamilies": [
+        "status",
+        "announcement",
+        "overlay"
+      ],
+      "semanticOwner": "The status region owns announcement policy; individual messages own actions/dismissal.",
+      "baselineBehaviors": [
+        "Present nonblocking status with reachable actions and a documented lifetime policy.",
+        "Do not steal focus; actionable content remains available long enough for keyboard/AT use."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Complete an action, read the toast while continuing input, activate its undo action and inspect multiple queued messages.",
+      "boundary": "Durations and persistence policy require explicit UX validation; no arbitrary short timeout is assumed.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Toast"
+      }
+    },
+    {
+      "id": "toggle",
+      "name": "Toggle",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-switch"
+      ],
+      "sharingFamilies": [
+        "control",
+        "form",
+        "selection"
+      ],
+      "semanticOwner": "A named switch owns on/off state and applicable form behavior.",
+      "baselineBehaviors": [
+        "Support keyboard/pointer activation, controlled checked state, disabled state and consistent labeling.",
+        "Keep switch meaning distinct from a submit action or selected tab."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings"
+      ],
+      "browserScenario": "Turn a setting on, display pending externally controlled status, reject it and preserve a truthful off state.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Toggle"
+      }
+    },
+    {
+      "id": "tooltip",
+      "name": "Tooltip",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-tooltip"
+      ],
+      "sharingFamilies": [
+        "overlay",
+        "description"
+      ],
+      "semanticOwner": "The trigger owns focus/action; the tooltip supplies noninteractive supplementary description.",
+      "baselineBehaviors": [
+        "Show on focus and appropriate pointer interaction, dismiss with escape and maintain a valid description relationship.",
+        "Never hide essential information exclusively in hover content or insert interactive controls."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Focus a labelled icon control, read its supplementary description, dismiss with escape and verify the action remains usable on touch.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Tooltip"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-tooltip"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/tooltip.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "for names an external native button or en-button within the same Document/ShadowRoot. The tooltip owns supplemental description and pointer-corridor behavior, not interactive content. The implemented element-reference bridge is separate from Reference Target/polyfill support."
+      }
+    },
+    {
+      "id": "tree-view",
+      "name": "Tree view",
+      "origin": "component-gallery",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-tree",
+        "en-tree-item"
+      ],
+      "sharingFamilies": [
+        "collection",
+        "selection",
+        "composite-focus"
+      ],
+      "semanticOwner": "The tree owns hierarchical navigation, expansion and selection as distinct state.",
+      "baselineBehaviors": [
+        "Provide tree keyboard navigation, level/expanded/selected state and controlled selection/expansion.",
+        "Keep focus bookkeeping independent of externally accepted selection and handle unavailable children honestly."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Expand a branch, navigate to a descendant, reject selection and process an external tree update without focus landing on a removed item.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Tree view"
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/elements/src/tree/element.ts",
+          "../packages/elements/src/tree-item/element.ts",
+          "../packages/primitives/src/interactions/tree.ts",
+          "../packages/ssr/src/tree-adapter.ts",
+          "../apps/docs/src/examples.ts",
+          "../packages/elements/src/tree/data-controller.ts",
+          "../packages/elements/src/tree/data-template.ts",
+          "../apps/docs/src/tree-data-demo.ts",
+          "./tree-data-virtualization.md"
+        ],
+        "notes": "Slot-authored single-selection tree plus optional immutable data model and virtualized nested hierarchy. Parent value/expanded, cancelable en-change, focused-row retention, full-model keyboard navigation and scrollToKey remain shared. SSR preserves normalized model data and deterministic initial rows. Separate slotted and data demos share themed API review.",
+        "acceptance": "Slotted baseline has user approval. Data/virtual mode has focused browser and SSR verification; physical assistive-technology review remains separate. Multi-selection, lazy loading and drag-and-drop reordering remain follow-ups."
+      }
+    },
+    {
+      "id": "video",
+      "name": "Video",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "media",
+        "control"
+      ],
+      "semanticOwner": "Native video and track elements own playback, captions and media accessibility.",
+      "baselineBehaviors": [
+        "Provide usable native playback controls, captions/track selection and a meaningful surrounding label/transcript path.",
+        "Keep poster/aspect-ratio layout stable and respect application-supplied media sources."
+      ],
+      "acceptanceWorkflowIds": [
+        "catalog"
+      ],
+      "browserScenario": "Play/pause by keyboard, enable captions, seek using native controls and inspect fallback content when media is unavailable.",
+      "boundary": "Custom transport/timeline/editing engines are not implied by video-player coverage.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Video"
+      }
+    },
+    {
+      "id": "visually-hidden",
+      "name": "Visually hidden",
+      "origin": "component-gallery",
+      "delivery": "native-recipe",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "accessibility",
+        "typography"
+      ],
+      "semanticOwner": "The composed text remains in the accessibility tree; the helper owns only visual hiding.",
+      "baselineBehaviors": [
+        "Provide a reusable hidden-text style that does not use display:none for meaningful content.",
+        "Offer a focus-revealed variant where interactive content must become visible."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Read a control name containing hidden context, tab to a focus-revealed link and verify its label is visible and unclipped.",
+      "source": {
+        "catalog": "Component Gallery",
+        "url": "https://component.gallery/components/",
+        "category": "Visually hidden"
+      }
+    },
+    {
+      "id": "form-field",
+      "name": "Form field",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "form",
+        "editable",
+        "layout",
+        "status"
+      ],
+      "semanticOwner": "The composing field owns the label/control/help/error relationship without replacing the control semantics.",
+      "baselineBehaviors": [
+        "Join control, label, help, required indication and error consistently.",
+        "Support external/native and component label contracts while avoiding duplicate names."
+      ],
+      "acceptanceWorkflowIds": [
+        "login",
+        "settings"
+      ],
+      "browserScenario": "Move from field help to validation error, inspect announced relationships and activate the same control through its label.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/field.ts",
+          "../packages/elements/src/forms-private/README.md"
+        ],
+        "acceptance": "pattern delivery and full scenario acceptance remain incomplete",
+        "notes": "Shared field templates and native form controllers exist, with component-level labels/help/errors. This does not establish every external/cross-root association or the complete validation workflow."
+      }
+    },
+    {
+      "id": "validation-summary",
+      "name": "Validation summary",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-validation-summary"
+      ],
+      "sharingFamilies": [
+        "form",
+        "status",
+        "navigation",
+        "focus"
+      ],
+      "semanticOwner": "The summary owns an ordered explanation of actionable form errors and links to affected controls.",
+      "baselineBehaviors": [
+        "Render supplied errors with meaningful links and appropriate announcement/focus behavior.",
+        "Keep field-level and summary errors consistent without deciding business validation rules."
+      ],
+      "acceptanceWorkflowIds": [
+        "login"
+      ],
+      "browserScenario": "Submit multiple invalid fields, follow a summary link to a failing control, correct it and verify the summary reflects the new result.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "implemented-awaiting-review",
+        "notes": "Progress steps and linked validation summary with a three-step project brief, SSR and hydrated application-owned state. Browser and manual acceptance remain separate.",
+        "plan": "plans/form-navigation.md"
+      }
+    },
+    {
+      "id": "multi-step-form",
+      "name": "Multi-step form",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "form",
+        "disclosure",
+        "navigation",
+        "status"
+      ],
+      "semanticOwner": "A native form and explicit step navigation jointly own the flow; the application owns persistence and service work.",
+      "baselineBehaviors": [
+        "Compose progress, fields, next/back and pending/error feedback with controlled step transitions.",
+        "Retain relevant fixture values and focus context across revisits without assuming cross-session persistence."
+      ],
+      "acceptanceWorkflowIds": [
+        "login"
+      ],
+      "browserScenario": "Complete the SSO-centric reference flow, revisit an earlier step, recover from a service-fixture rejection and finish using keyboard and assistive technology.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "implemented-awaiting-review",
+        "notes": "Progress steps and linked validation summary with a three-step project brief, SSR and hydrated application-owned state. Browser and manual acceptance remain separate.",
+        "plan": "plans/form-navigation.md"
+      }
+    },
+    {
+      "id": "command-palette",
+      "name": "Command palette",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-command-palette"
+      ],
+      "sharingFamilies": [
+        "editable",
+        "collection",
+        "overlay",
+        "composite-focus"
+      ],
+      "semanticOwner": "A searchable command selection surface owns discoverability and keyboard navigation; the app owns command execution.",
+      "baselineBehaviors": [
+        "Search supplied named commands, expose matching/no-result states and optional shortcut hints.",
+        "Request an action, support escape, and restore the invoking context."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat"
+      ],
+      "browserScenario": "Open from the visible Search commands affordance, filter the finite settings catalog with native text/IME editing, explore candidates without executing, observe no-results, cancel or activate an eligible command once, and verify canceled closure and deliberate destination focus after modal settlement.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "acceptance": "Source and documentation integration implemented; scoped results are in the command-family receipt. Full-pattern user/environment acceptance remains open.",
+        "notes": "The 2026-09-10 source implements en-command-palette with one native modal dialog, same-shadow native combobox/listbox and a validated/copied finite .commands catalog. Labels, keywords, disabled state and display-only shortcuts remain plain data. Query and active candidate are internal, with no persistent selected command or form value. Explicit activation emits one cancelable en-action; boolean open uses en-change. Sticker/API/settings integration waits for allowed dismissal before current-context execution and retains a visible Search commands affordance. Existing shared theme hooks are reused. Scoped verification is recorded separately; remote search, rich renderers, virtualization and global shortcuts remain outside this first contract.",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/elements/src/command-palette/element.ts",
+          "../packages/elements/src/command-palette/model.ts",
+          "../packages/elements/src/command-palette/README.md",
+          "../apps/docs/src/workflows/settings/commands.ts"
+        ],
+        "evidence": "../artifacts/command-family/verification.json"
+      }
+    },
+    {
+      "id": "split-view",
+      "name": "Split view",
+      "origin": "reference-workflow-extension",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-split-view",
+        "en-splitter"
+      ],
+      "sharingFamilies": [
+        "layout",
+        "control",
+        "focus"
+      ],
+      "semanticOwner": "A labelled adjustable separator owns pane resizing; each pane retains its content semantics.",
+      "baselineBehaviors": [
+        "Resize by pointer and keyboard with bounds and readable value/size meaning.",
+        "Support controlled sizes, collapse/restore where configured, and focus safety in narrow layouts."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "catalog"
+      ],
+      "browserScenario": "Resize an inspector beside a canvas placeholder by keyboard, collapse and restore it, rotate the viewport and retain a reachable control.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "elements-implemented",
+        "elementNames": [
+          "en-split-view",
+          "en-splitter"
+        ],
+        "sourceEntries": [
+          "../packages/elements/src/split-view.ts",
+          "../packages/elements/src/splitter.ts"
+        ],
+        "acceptance": "partial; required pattern and cross-cutting acceptance are not complete",
+        "notes": "Selective split-view registration now includes en-splitter, and same-value author writes supersede pending defaults in the structure family. These corrections and maintained vertical resizing passed the scoped structure/packed-consumer checkpoint at 5bd6459efff35c2aa8ea8dca3cc7ef4316292d9d; see review-session.md for exact evidence scope. Catalog demos do not establish universal registration or supersession behavior. Planned collapse/restore and complete workflow acceptance are not inferred."
+      }
+    },
+    {
+      "id": "settings-panel",
+      "name": "Settings panel",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "form",
+        "layout",
+        "disclosure",
+        "control"
+      ],
+      "semanticOwner": "Grouped fields and headings own the settings semantics; the composition owns hierarchy and optional detail.",
+      "baselineBehaviors": [
+        "Expose ordinary controls clearly and make nuanced options discoverable without mandatory expertise modes.",
+        "Demonstrate scoped theme/density changes, external values and restore/reset actions."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings"
+      ],
+      "browserScenario": "Change an ordinary setting, expand an optional detail, make a precise adjustment and restore it while the same panel is used with touch and keyboard.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      }
+    },
+    {
+      "id": "chat-message",
+      "name": "Chat message",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-chat-message"
+      ],
+      "sharingFamilies": [
+        "collaboration",
+        "typography",
+        "media",
+        "status"
+      ],
+      "semanticOwner": "Message content identifies speaker and sequence; the transcript container owns update/reading policy.",
+      "baselineBehaviors": [
+        "Compose author, time, text/media/quoted content and optional actions without hard-coding a chat service.",
+        "Handle long localized content and dynamic additions without focus stealing or repetitive announcements."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat"
+      ],
+      "browserScenario": "Read a message containing a quotation and file, receive another message and use a contextual action without losing the reading position.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "review-ready",
+        "source": "packages/elements/src/chat-message/element.ts",
+        "example": "/api-examples/chat-patterns",
+        "scope": "Slotted composition; transcript, transport, announcements and draft/attachment clearing remain application-owned."
+      }
+    },
+    {
+      "id": "chat-composer",
+      "name": "Chat composer",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [
+        "en-chat-composer"
+      ],
+      "sharingFamilies": [
+        "collaboration",
+        "editable",
+        "form",
+        "media"
+      ],
+      "semanticOwner": "The editable input owns composition; explicit submit/attachment actions own requests.",
+      "baselineBehaviors": [
+        "Preserve multiline drafts, IME and clear send/newline behavior.",
+        "Compose optional attachments and externally supplied pending/rejected state without assuming message delivery."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat"
+      ],
+      "browserScenario": "Compose an IME/multiline draft, add an attachment, request send, receive a rejected fixture result and continue editing the retained draft.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "review-ready",
+        "source": "packages/elements/src/chat-composer/element.ts",
+        "example": "/api-examples/chat-patterns",
+        "scope": "Slotted composition; transcript, transport, announcements and draft/attachment clearing remain application-owned."
+      }
+    },
+    {
+      "id": "contextual-action",
+      "name": "Contextual action",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "collaboration",
+        "control",
+        "overlay",
+        "disclosure"
+      ],
+      "semanticOwner": "A context label and its controls explain a newly available capability and own its local actions.",
+      "baselineBehaviors": [
+        "Introduce actionable controls with sufficient name, explanation and current value.",
+        "Offer operate/dismiss paths without stealing focus from the ongoing task."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "settings"
+      ],
+      "browserScenario": "Introduce a new adjustment beside a conversation, discover and operate it by keyboard, cancel a requested change and resume the existing draft.",
+      "boundary": "This is composition of known supported controls, not a required arbitrary-code or schema renderer.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      }
+    },
+    {
+      "id": "presence-group",
+      "name": "Presence group",
+      "origin": "reference-workflow-extension",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-presence",
+        "en-presence-group"
+      ],
+      "sharingFamilies": [
+        "collaboration",
+        "status",
+        "media"
+      ],
+      "semanticOwner": "Textual participant/activity information owns meaning; avatars are supporting representation.",
+      "baselineBehaviors": [
+        "Show supplied participants and useful active/away/editing context without color-only status.",
+        "Handle overflow and updates with restrained announcements."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "settings"
+      ],
+      "browserScenario": "Inspect collaborators beyond an avatar overflow, identify one active editor and receive an update without repeated interruption.",
+      "boundary": "The application owns identity, presence transport and conflict resolution.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "review-ready",
+        "sourceEntries": [
+          "../packages/elements/src/presence.ts",
+          "../packages/elements/src/presence-group.ts"
+        ],
+        "example": "/api-examples/presence-activity",
+        "plan": "./presence-activity.md",
+        "acceptance": "Scoped automated coverage accompanies publication; physical device and screen-reader review remain open.",
+        "scope": "Direct slotted identities, live membership and cancelable overflow disclosure. Availability is application-supplied."
+      }
+    },
+    {
+      "id": "activity-feed",
+      "name": "Activity feed",
+      "origin": "reference-workflow-extension",
+      "delivery": "element",
+      "proposedElementNames": [
+        "en-activity-item",
+        "en-activity-feed"
+      ],
+      "sharingFamilies": [
+        "collaboration",
+        "collection",
+        "status",
+        "typography"
+      ],
+      "semanticOwner": "A semantic event list owns chronology and item context; update announcements are explicit.",
+      "baselineBehaviors": [
+        "Render actor/action/time and supplied links in a readable sequence.",
+        "Support controlled additions/filtering and a way to inspect newly available entries without involuntary focus movement."
+      ],
+      "acceptanceWorkflowIds": [
+        "chat",
+        "catalog"
+      ],
+      "browserScenario": "Read an activity entry, receive new entries while focused elsewhere, then reveal them and follow a supplied asset link.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "review-ready",
+        "sourceEntries": [
+          "../packages/elements/src/activity-item.ts",
+          "../packages/elements/src/activity-feed.ts"
+        ],
+        "example": "/api-examples/presence-activity",
+        "plan": "./presence-activity.md",
+        "acceptance": "Scoped automated coverage accompanies publication; physical device and screen-reader review remain open.",
+        "scope": "Finite authored list with explicit update and load-more requests, named items, localizable summary and empty/loading slots. Transport, grouping and keyed content remain application-owned."
+      }
+    },
+    {
+      "id": "asset-browser",
+      "name": "Asset browser",
+      "origin": "reference-workflow-extension",
+      "delivery": "composition",
+      "proposedElementNames": [],
+      "sharingFamilies": [
+        "asset",
+        "media",
+        "collection",
+        "selection",
+        "navigation"
+      ],
+      "semanticOwner": "Collection structure and selection controls own find/select/inspect behavior; the application owns asset storage.",
+      "baselineBehaviors": [
+        "Compose query/filter, grid/list/table views, selection, preview and empty/loading/error states.",
+        "Preserve selected identities and keyboard focus across view/filter changes; virtualization is optional measured rendering."
+      ],
+      "acceptanceWorkflowIds": [
+        "settings",
+        "chat",
+        "catalog",
+        "assets"
+      ],
+      "browserScenario": "Find an asset, select it, switch view, inspect its preview and request insertion into a contextual workflow without losing selection.",
+      "boundary": "No upload/storage/search backend, media transformation engine or unrestricted production-scale virtualization guarantee is implied.",
+      "source": {
+        "catalog": "Accepted reference workflows",
+        "decisionIds": [
+          "d01",
+          "d02",
+          "d03"
+        ],
+        "rationale": "Extends the base catalog with a distinct creative-workflow task."
+      },
+      "implementation": {
+        "status": "supporting-code-only",
+        "implementationStage": "scoped-review",
+        "sourceEntries": [
+          "../packages/primitives/src/templates/content.ts",
+          "../packages/styles/src/content.ts",
+          "../apps/docs/src/workflows/assets/template.ts"
+        ],
+        "evidence": "../artifacts/table-list/verification.json",
+        "acceptance": "Scoped implementation verified by focused three-engine browser checks; physical-device and manual screen-reader acceptance remain open.",
+        "notes": "Finite search/filter, single selection, hidden-selection recovery, Preview focus return and deterministic insertion now include compact responsive list rows, a native Table view and optional application-owned sorting with retained selection. Remote loading/errors, uploads, multiselect and measured virtualization remain open."
+      }
+    }
+  ],
+  "followUpPlan": {
+    "path": "./component-follow-up-backlog.md",
+    "acceptedAt": "2026-09-16",
+    "status": "tree-1-upload-1-2-implemented-awaiting-review",
+    "counting": "Extension passes retain the existing 72 named patterns; the Progress Report separately accounts for 16 newly committed effort units."
+  }
+}

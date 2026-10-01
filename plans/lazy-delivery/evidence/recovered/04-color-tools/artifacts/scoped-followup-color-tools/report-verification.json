@@ -1,0 +1,66 @@
+{
+  "origin": "http://127.0.0.1:4279",
+  "rows": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1280,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 390,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 1280,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 390,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "width": 1280,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "width": 390,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    }
+  ],
+  "limitations": "DOM/visual checks; not assistive technology speech acceptance"
+}

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Review theme boundaries, registered custom properties, and local component overrides in en-reve.">
+  <title>en-reve · Theme customization</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="stylesheet" href="/src/site.css">
+  <style>
+    @layer en.docs {
+      .contract-main { max-inline-size:88rem; }
+      .contract-header nav { display:flex; flex-wrap:wrap; gap:1.25rem; }
+      .contract-header nav a { font-size:.875rem; }
+      .eyebrow { margin-block-end:.75rem; font:600 .75rem/1.4 var(--en-font-code-family); letter-spacing:.1em; text-transform:uppercase; color:var(--en-color-text-muted); }
+      .contract-heading { align-items:start; padding-block:1rem 2.5rem; }
+      .contract-heading h1 { max-inline-size:18ch; font-size:clamp(2rem,5vw,3.5rem); letter-spacing:-.035em; line-height:1.08; }
+      .contract-heading .lede { max-inline-size:57ch; line-height:1.6; }
+      .review-tag { display:inline-flex; align-items:center; gap:.55rem; border:1px solid var(--en-color-line); border-radius:999px; padding:.5rem .85rem; font-size:.75rem; white-space:nowrap; }
+      .review-tag::before { content:""; inline-size:.45rem; block-size:.45rem; border-radius:50%; background:var(--en-color-action); }
+      .lab-section { padding-block:2.5rem; border-block-start:1px solid var(--en-color-line); }
+      .lab-title { display:grid; grid-template-columns:2.5rem minmax(0,1fr); gap:1rem; max-inline-size:55rem; margin-block-end:1.75rem; }
+      .section-index { font:.8rem/2rem var(--en-font-code-family); color:var(--en-color-text-muted); }
+      .lab-title h2 { font-size:1.5rem; letter-spacing:-.02em; }
+      .lab-title p { margin-block-start:.55rem; color:var(--en-color-text-muted); line-height:1.6; }
+      .lab-toolbar { display:flex; align-items:center; flex-wrap:wrap; gap:1.25rem 2rem; padding:1.1rem 1.25rem; margin-block-end:1.25rem; border:1px solid var(--en-color-line); border-radius:.75rem; background:var(--en-color-surface); }
+      .control-label { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; font-size:.875rem; }
+      .control-label input[type=range] { inline-size:9rem; accent-color:var(--en-color-action); }
+      .control-label output { min-inline-size:4ch; font: .8rem var(--en-font-code-family); }
+      .lab-toolbar select { min-block-size:2.5rem; border:1px solid var(--en-color-boundary); border-radius:.5rem; background:var(--en-color-surface); color:var(--en-color-text); padding:.4rem 2rem .4rem .65rem; }
+      .scope-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+      .scope-card { min-inline-size:0; padding:1.4rem; background:var(--en-color-surface); color:var(--en-color-text); border:1px solid var(--en-color-line); border-radius:.85rem; }
+      .scope-card header { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:.5rem; margin-block-end:1rem; }
+      .scope-card h3 { font-size:1rem; }
+      .scope-kind { font:.7rem var(--en-font-code-family); color:var(--en-color-text-muted); border:1px solid var(--en-color-line); border-radius:999px; padding:.3rem .5rem; }
+      .scope-card > p { min-block-size:3lh; font-size:.875rem; color:var(--en-color-text-muted); line-height:1.55; margin-block-end:1.25rem; }
+      .scope-sample { padding:1.1rem; border-radius:.5rem; background:var(--en-color-canvas); }
+      .scope-sample en-validation-summary { font-size:.875rem; }
+      .field-target { margin-block-start:.85rem; display:grid; gap:.35rem; font-size:.75rem; }
+      .field-target input { min-inline-size:0; inline-size:100%; min-block-size:2.5rem; border:1px solid var(--en-color-boundary); border-radius:.4rem; background:var(--en-color-surface); color:var(--en-color-text); padding:.5rem .65rem; }
+      .measurement { display:flex; justify-content:space-between; flex-wrap:wrap; gap:.4rem; border-block-start:1px solid var(--en-color-line); padding-block-start:.85rem; margin-block-start:1.1rem; font-size:.75rem; color:var(--en-color-text-muted); }
+      .measurement output { color:var(--en-color-text); font-family:var(--en-font-code-family); }
+      .review-guidance { display:flex; align-items:baseline; gap:.65rem; margin-block:1.25rem; line-height:1.6; font-size:.875rem; color:var(--en-color-text-muted); }
+      .review-guidance strong { white-space:nowrap; color:var(--en-color-text); }
+      .source-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+      .source-grid details { margin:0; }
+      .source-grid details pre { margin-block-start:.7rem; }
+      .registration-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+      .registration-card { min-inline-size:0; border:1px solid var(--en-color-line); border-radius:.85rem; padding:1.4rem; background:var(--en-color-surface); }
+      .registration-card h3 { font-size:1rem; }
+      .registration-card > p { margin-block:.65rem 1.25rem; color:var(--en-color-text-muted); font-size:.875rem; line-height:1.6; min-block-size:4.8em; }
+      .property-preview { display:grid; gap:.9rem; padding:1.2rem; background:var(--en-color-canvas); border:1px solid var(--en-color-line); border-radius:.55rem; }
+      .property-track { block-size:1.7rem; overflow:hidden; border:1px solid var(--en-color-line); border-radius:.3rem; background:var(--en-color-surface); }
+      .property-fill { block-size:100%; inline-size:calc(var(--en-demo-compatible-level,.25) * 100%); background:var(--en-demo-compatible-tint,#6553c0); }
+      .typed-preview { transition:--en-demo-typed-level 650ms ease, --en-demo-typed-tint 650ms ease; }
+      .typed-preview .property-fill { inline-size:calc(var(--en-demo-typed-level,.25) * 100%); background:var(--en-demo-typed-tint,#6553c0); }
+      .property-readout { display:grid; grid-template-columns:auto minmax(0,1fr); gap:.45rem 1rem; font:.75rem/1.5 var(--en-font-code-family); }
+      .property-readout dt { color:var(--en-color-text-muted); }
+      .property-readout dd { margin:0; text-align:end; overflow-wrap:anywhere; }
+      .registration-actions { display:flex; flex-wrap:wrap; gap:.65rem; margin-block:1.25rem; }
+      .registration-actions button { min-block-size:2.75rem; padding:.5rem .8rem; border:1px solid var(--en-color-boundary); border-radius:.5rem; background:var(--en-color-surface); font-size:.875rem; }
+      @media (hover:hover) { .registration-actions button:hover { background:var(--en-color-surface-subtle); } }
+      .registration-actions button[aria-pressed=true] { background:var(--en-color-action); color:var(--en-color-on-action); border-color:var(--en-color-action); }
+      .registration-status { margin-block-start:1rem; font-size:.8rem; color:var(--en-color-text-muted); min-block-size:1lh; }
+      .configuration { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:2rem; }
+      .configuration p, .configuration li { line-height:1.6; font-size:.9rem; }
+      .configuration p { color:var(--en-color-text-muted); }
+      .configuration ul { padding-inline-start:1.15rem; margin-block:1rem 0; }
+      .configuration li + li { margin-block-start:.6rem; }
+      .configuration pre { margin:0; padding:1.2rem; background:var(--en-color-surface); border:1px solid var(--en-color-line); border-radius:.65rem; overflow:auto; }
+      .configuration pre code { white-space:pre; overflow-wrap:normal; line-height:1.7; }
+      [hidden] { display:none !important; }
+      @media (max-width:48rem) { .scope-grid,.registration-grid,.source-grid,.configuration { grid-template-columns:minmax(0,1fr); } .scope-card > p { min-block-size:0; } .contract-heading { padding-block-start:0; } .review-guidance { display:block; } .contract-header nav { margin-inline-start:0; } }
+      @media (prefers-reduced-motion:reduce) { .typed-preview { transition:none; } }
+      @media (forced-colors:active) { .property-fill,.typed-preview .property-fill { background:Highlight; } }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header contract-header">
+    <a class="wordmark" href="/" data-preserve-report><span class="mark" aria-hidden="true">en</span> en-reve</a>
+    <span class="header-context">Theme customization</span>
+    <nav aria-label="Documentation"><a href="/theme-review.html" data-preserve-report>Theme Review</a><a href="/theme-authoring.html" data-preserve-report>Theme authoring</a><a href="/api-reference.html" data-preserve-report>API reference</a></nav>
+  </header>
+  <main class="contract-main">
+    <div class="page-heading contract-heading">
+      <div><p class="eyebrow">THEME-01 · Implementation review</p><h1>A clear boundary for every theme.</h1><p class="lede">Full themes reset component overrides. Partial themes inherit them. Property registration adds an explicit choice between existing fallback behavior and typed values.</p></div>
+      <span class="review-tag">Live component review</span>
+    </div>
+
+    <section class="lab-section" aria-labelledby="boundaries-title">
+      <div class="lab-title"><span class="section-index" aria-hidden="true">01 /</span><div><h2 id="boundaries-title">A component override crosses a theme boundary</h2><p>Each specimen uses the real <code>en-validation-summary</code>. An ancestor supplies its corner override; each nested theme has a shared container radius of <strong>8px</strong>.</p></div></div>
+      <div class="lab-toolbar">
+        <label class="control-label" for="ancestor-radius">Ancestor override <input id="ancestor-radius" type="range" min="0" max="40" step="1" value="32"><output id="ancestor-radius-value" for="ancestor-radius">32px</output></label>
+        <label class="control-label" for="boundary-appearance">Appearance <select id="boundary-appearance"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+      </div>
+      <div class="scope-grid" id="boundary-specimens" style="--en-validation-summary-radius:32px">
+        <article class="scope-card"><header><h3>Before · inherited override</h3><span class="scope-kind">Simulated former output</span></header><p>The missing reset lets the ancestor’s component override cross a full theme boundary.</p><div class="scope-sample" id="boundary-before"><en-validation-summary heading="Review your contact details"><a href="#email-before">Enter an email address.</a></en-validation-summary><label class="field-target" for="email-before">Email address<input id="email-before" type="email" autocomplete="off" placeholder="you@example.com"></label></div><div class="measurement"><span>Rendered corner radius</span><output id="radius-before">Measuring…</output></div></article>
+        <article class="scope-card"><header><h3>After · full theme</h3><span class="scope-kind">Reset to fallback</span></header><p>The full theme clears the component override with <code>initial</code>. The summary uses this boundary’s shared radius.</p><div class="scope-sample" id="boundary-full"><en-validation-summary heading="Review your contact details"><a href="#email-full">Enter an email address.</a></en-validation-summary><label class="field-target" for="email-full">Email address<input id="email-full" type="email" autocomplete="off" placeholder="you@example.com"></label></div><div class="measurement"><span>Rendered corner radius</span><output id="radius-full">Measuring…</output></div></article>
+        <article class="scope-card"><header><h3>Partial theme · inheritance</h3><span class="scope-kind">Selected tokens only</span></header><p>Changing only the shared radius intentionally leaves the ancestor’s component override in place.</p><div class="scope-sample" id="boundary-partial"><en-validation-summary heading="Review your contact details"><a href="#email-partial">Enter an email address.</a></en-validation-summary><label class="field-target" for="email-partial">Email address<input id="email-partial" type="email" autocomplete="off" placeholder="you@example.com"></label></div><div class="measurement"><span>Rendered corner radius</span><output id="radius-partial">Measuring…</output></div></article>
+        <article class="scope-card"><header><h3>Full theme · local override</h3><span class="scope-kind">Authored component value</span></header><p>A declaration on the component still wins. This summary has its own <code>2px</code> radius inside a full theme.</p><div class="scope-sample" id="boundary-local"><en-validation-summary heading="Review your contact details" style="--en-validation-summary-radius:2px"><a href="#email-local">Enter an email address.</a></en-validation-summary><label class="field-target" for="email-local">Email address<input id="email-local" type="email" autocomplete="off" placeholder="you@example.com"></label></div><div class="measurement"><span>Rendered corner radius</span><output id="radius-local">Measuring…</output></div></article>
+      </div>
+      <p class="review-guidance"><strong>Review it</strong> Move the ancestor slider. Only Before and Partial should follow it. Activate an error link to verify the real summary still focuses its email field.</p>
+      <div class="source-grid">
+        <details class="code-disclosure"><summary>Full and partial theme source</summary><pre><code id="boundary-source"></code></pre></details>
+        <details class="code-disclosure"><summary>Reset, simulation, and local override</summary><pre><code id="override-source"></code></pre></details>
+      </div>
+    </section>
+
+    <section class="lab-section" aria-labelledby="registration-title">
+      <div class="lab-title"><span class="section-index" aria-hidden="true">02 /</span><div><h2 id="registration-title">Choose the registration contract</h2><p>Registration is document-wide. These isolated sample names compare compatible and typed modes without changing the component hooks above.</p></div></div>
+      <div class="registration-grid">
+        <article class="registration-card"><h3>Compatible · keep <code>var()</code> fallbacks</h3><p>Universal syntax, inheritance enabled, and no initial value. Unset properties keep their fallback; arbitrary authored values remain untyped.</p><div class="property-preview" id="compatible-preview"><div class="property-track" aria-hidden="true"><div class="property-fill"></div></div><dl class="property-readout"><dt>level</dt><dd><output id="compatible-level" aria-live="off"></output></dd><dt>tint</dt><dd><output id="compatible-tint" aria-live="off"></output></dd></dl></div></article>
+        <article class="registration-card"><h3>Typed · validate and interpolate</h3><p>Number and color syntax with explicit initial values. Invalid declarations resolve through the registered contract; valid values animate smoothly.</p><div class="property-preview typed-preview" id="typed-preview"><div class="property-track" aria-hidden="true"><div class="property-fill"></div></div><dl class="property-readout"><dt>level</dt><dd><output id="typed-level" aria-live="off"></output></dd><dt>tint</dt><dd><output id="typed-tint" aria-live="off"></output></dd></dl></div></article>
+      </div>
+      <div class="registration-actions" role="group" aria-label="Property registration samples">
+        <button type="button" data-property-state="unset" aria-pressed="true">Remove declarations</button>
+        <button type="button" data-property-state="calm" aria-pressed="false">Set calm values</button>
+        <button type="button" data-property-state="bright" aria-pressed="false">Set bright values</button>
+        <button type="button" data-property-state="invalid" aria-pressed="false">Set invalid values</button>
+      </div>
+      <p class="registration-status" id="registration-status" role="status">Loading registration preview…</p>
+      <p class="review-guidance"><strong>Review it</strong> Compare Calm and Bright, then set invalid values. Remove declarations to inspect fallback behavior. Motion follows your system’s reduced-motion preference.</p>
+      <div class="source-grid">
+        <details class="code-disclosure"><summary>Compatible registration CSS</summary><pre><code id="compatible-source"></code></pre></details>
+        <details class="code-disclosure"><summary>Typed registration CSS</summary><pre><code id="typed-source"></code></pre></details>
+      </div>
+    </section>
+
+    <section class="lab-section" aria-labelledby="configuration-title">
+      <div class="lab-title"><span class="section-index" aria-hidden="true">03 /</span><div><h2 id="configuration-title">Make registration an explicit decision</h2><p>The token package supplies a shared property registry. Registration is separate from emitting theme declarations.</p></div></div>
+      <div class="configuration"><div><p id="configuration-explanation">Use compatible registration when existing component fallbacks must remain active. Opt into typed registration only when the initial values and interpolation behavior are part of your application’s contract.</p><ul><li>Full scopes reset public component overrides.</li><li>Partial scopes emit only the selected tokens.</li><li>Local CSS remains available for component-specific styling.</li><li>Typed registration changes what <code>initial</code> and invalid values resolve to; review each property before opting in.</li></ul></div><pre><code id="configuration-source"></code></pre></div>
+    </section>
+  </main>
+  <section class="lab-section" aria-label="Contract reference"><p><a href="/theme-states.html" data-preserve-report>Button state refinements</a> · <a href="/reviews/theme-customization/customization.json">Download the contract registry</a> · <a href="/reviews/theme-customization/contract-guide.md">Registration and configuration guide</a> · <a href="/reviews/theme-customization/coverage.md">Source coverage and tracked findings</a> · <a href="/reviews/theme-customization.html" data-preserve-report>Decision register</a></p></section>
+  <footer class="site-footer"><span>en-reve · Theme customization contract</span><span>Live previews use the installed token compiler and component styles.</span></footer>
+  <a class="progress-return" href="http://127.0.0.1:4177/#review-theme-contract-review" id="progress-return" hidden>Progress Report</a>
+  <script type="module" src="/src/theme-customization-demo.ts"></script>
+</body>
+</html>

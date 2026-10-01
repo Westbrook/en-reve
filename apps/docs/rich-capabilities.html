@@ -1,0 +1,23 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>En Reve · Portable rich editing</title>
+<style>body{max-width:54rem;margin:3rem auto;padding:1rem;font:16px system-ui;color:#252525;background:#fafafa}button{font:inherit;padding:.5rem;margin:.25rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}.report{position:fixed;right:1rem;bottom:1rem;background:white;padding:.5rem}</style></head><body>
+<h1>Portable rich editing</h1><p>Select text to capture a revision-bound range. Decorate it, replace it, then undo. Type <code>/insert t</code> to match a known multiword command. Copy a reference token between the editors to import it with a fresh occurrence ID.</p>
+<en-rich-text-editor label="Document"></en-rich-text-editor>
+<p><button id="capture">Capture selection</button><button id="decorate">Decorate captured range</button><button id="replace">Replace with “Revised”</button><button id="undo">Undo</button><button id="reset">Reset document</button></p>
+<en-token-editor label="Token destination"></en-token-editor><pre id="receipt" aria-live="polite"></pre>
+<script type="module">
+import '@en-reve/elements/define/rich-text-editor.js';import '@en-reve/elements/define/token-editor.js';
+import {richDocumentFromRuns,richDocumentText} from '@en-reve/elements/rich-document.js';
+import {createEditorCommandMatcher} from '@en-reve/elements/editor-command-matcher.js';
+const rich=document.querySelector('en-rich-text-editor'),plain=document.querySelector('en-token-editor'),receipt=document.querySelector('#receipt');let range;
+const reset=()=>{rich.document=richDocumentFromRuns([{kind:'text',text:'Alpha and Beta review '},{kind:'token',id:'reference-1',type:'reference',text:'@Design',label:'Design reference',data:{key:'design'}}]);range=undefined;receipt.textContent=richDocumentText(rich.document);};
+for(const editor of [rich,plain]){
+ editor.registerToken('reference',token=>document.createTextNode(token.text),{importToken:(token,context)=>{receipt.textContent=`Imported source occurrence ${context.sourceId}`;return token;}});
+ editor.registerExtension({id:'commands',trigger:'/',label:'Commands',match:createEditorCommandMatcher(['insert table']),provide:()=>[{id:'table',label:'Insert table',insert:[{kind:'text',text:'[Table]'}]}]});
+}
+for(const button of document.querySelectorAll('button'))button.addEventListener('pointerdown',event=>event.preventDefault());
+document.querySelector('#capture').onclick=()=>{range=rich.captureRange();receipt.textContent=JSON.stringify(range,null,2)??'No valid range';};
+document.querySelector('#decorate').onclick=()=>{receipt.textContent=String(range&&rich.decorateRanges([{id:'review',range}]));};
+document.querySelector('#replace').onclick=()=>{receipt.textContent=String(range&&rich.replaceRanges([{range,runs:[{kind:'text',text:'Revised'}]}]));};
+document.querySelector('#undo').onclick=()=>rich.undo();document.querySelector('#reset').onclick=reset;reset();
+if(new URL(location.href).searchParams.has('progress-report')){const a=document.createElement('a');a.className='report';a.href='http://127.0.0.1:4177';a.textContent='Progress Report';document.body.append(a);}
+</script></body></html>

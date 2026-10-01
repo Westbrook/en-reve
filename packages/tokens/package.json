@@ -1,0 +1,62 @@
+{
+  "name": "@en-reve/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./defaults.js": {
+      "types": "./dist/defaults.d.ts",
+      "default": "./dist/defaults.js"
+    },
+    "./source.js": {
+      "types": "./dist/source.d.ts",
+      "default": "./dist/source.js"
+    },
+    "./sizing.js": {
+      "types": "./dist/sizing.d.ts",
+      "default": "./dist/sizing.js"
+    },
+    "./color.js": {
+      "types": "./dist/color.d.ts",
+      "default": "./dist/color.js"
+    },
+    "./overrides.js": {
+      "types": "./dist/overrides.d.ts",
+      "default": "./dist/overrides.js"
+    },
+    "./customization.js": {
+      "types": "./dist/customization.d.ts",
+      "default": "./dist/customization.js"
+    },
+    "./properties.js": {
+      "types": "./dist/properties.d.ts",
+      "default": "./dist/properties.js"
+    },
+    "./properties.css": "./dist/properties.css",
+    "./customization.json": "./dist/customization.json",
+    "./default.css": "./dist/default.css",
+    "./themes/*.css": "./dist/themes/*.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./manifest.json": "./dist/manifest.json"
+  },
+  "scripts": {
+    "build": "node ../../node_modules/typescript/bin/tsc -p tsconfig.json && node scripts/generate.mjs",
+    "test": "node ../../tooling/testing/invoke.mjs public --view='packages/tokens#test' --"
+  }
+}

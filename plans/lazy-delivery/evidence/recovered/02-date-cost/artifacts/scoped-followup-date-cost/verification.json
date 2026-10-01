@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "receiptChecks": [
+    "current/eager asset/package hashes match",
+    "current/dom asset/package hashes match",
+    "current/cold asset/package hashes match",
+    "current/intent asset/package hashes match",
+    "current/route asset/package hashes match",
+    "trial/eager asset/package hashes match",
+    "trial/dom asset/package hashes match",
+    "trial/cold asset/package hashes match",
+    "trial/intent asset/package hashes match",
+    "trial/route asset/package hashes match"
+  ],
+  "runtimeAndExistingHarnessUnchanged": true,
+  "unchangedBudgets": true,
+  "archives": {
+    "files": 30634,
+    "bytes": 921774396,
+    "sha256": "9aae98ebde80d081bdeca4922d99b47a9594b128e847cf08a18eb17cc55642f7",
+    "unchanged": true
+  },
+  "diagnostics": {
+    "current": 24,
+    "trial": 8,
+    "failedBrowserAttempts": 0,
+    "timingCampaign": false,
+    "retentionCampaign": false,
+    "runtimePromoted": false
+  },
+  "sourceManifestSha256": "3f92757a43629f636981ca5d4c8ecf0c26ef9720918b8d9def4b3949b4470132"
+}

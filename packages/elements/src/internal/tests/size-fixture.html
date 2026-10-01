@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Element size scope test</title>
+<style>
+  body { --probe-size: 20px; }
+  #scope { --probe-size: 30px; }
+</style>
+<div id="scope"><en-size-fixture id="parent"><en-size-fixture id="child"></en-size-fixture></en-size-fixture></div>
+<en-size-fixture id="root"></en-size-fixture>
+<script type="module">
+  import { html, css } from 'lit';
+  import { EnElement } from '../en-element.ts';
+  class SizeFixture extends EnElement {
+    static properties = { label: {} };
+    static styles = css`
+      :host { display: block; --probe-size: 20px; font-size: var(--probe-size); }
+      :host([size="inherit"]) { --probe-size: inherit; }
+      :host([size="small"]) { --probe-size: 10px; }
+      :host([size="medium"]) { --probe-size: 20px; }
+      :host([size="large"]) { --probe-size: 30px; }
+      output { font-size: inherit; }
+    `;
+    render() { return html`<output>${this.size}</output><slot></slot>`; }
+  }
+  customElements.define('en-size-fixture', SizeFixture);
+</script></html>

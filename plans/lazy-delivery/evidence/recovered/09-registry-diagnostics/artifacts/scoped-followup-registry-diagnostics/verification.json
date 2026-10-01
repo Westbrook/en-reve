@@ -1,0 +1,210 @@
+{
+  "status": "passed",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "baseTree": "6f0cd79db801f483dd40b51885742580c951b8a0",
+  "phase6Seal": "220d2dd3e4f55c6f2557d7e7fc593d5d16099bba",
+  "branch": "codex/scoped-followup-registry-diagnostics",
+  "worktree": "/private/tmp/design-system-registry-diagnostics",
+  "productionRuntimeChanged": false,
+  "sourceOnlyChanges": [
+    "probes/registry-diagnostics",
+    "plans/scoped-followup-registry-diagnostics.md"
+  ],
+  "frozenEvidenceChanged": false,
+  "versions": {
+    "node": "v24.16.0",
+    "typescript": "7.0.2",
+    "playwright": "1.63.0",
+    "esbuild": "0.28.2",
+    "os": "macOS-26.6.1-arm64-arm-64bit-Mach-O",
+    "dependencies": {
+      "lit": "3.3.3",
+      "lit-html": "3.3.3",
+      "lit-element": "4.2.2",
+      "@lit/reactive-element": "2.1.2",
+      "@lit/context": "1.1.6",
+      "signal-polyfill": "0.2.2",
+      "signal-utils": "0.21.1"
+    },
+    "browsers": {
+      "chromium": "153.0.8010.12",
+      "firefox": "155.0",
+      "webkit": "26.6"
+    }
+  },
+  "checks": {
+    "strictTypes": "passed",
+    "build": "passed",
+    "matchedBaseDisabledBytes": 19061,
+    "matchedBaseDisabledSha256": "df913859d259a43f103141c627393e550f027e4e61645092b94639ba4e2b7838",
+    "disabledImportGraphExcludesObserver": true,
+    "conformanceAssertions": 141,
+    "developerInteractions": {
+      "coverage": "Automated DOM, keyboard activation, focus and layout; no AT speech or physical-device acceptance.",
+      "results": [
+        {
+          "engineName": "chromium",
+          "version": "153.0.8010.12",
+          "passed": true,
+          "errors": []
+        },
+        {
+          "engineName": "firefox",
+          "version": "155.0",
+          "passed": true,
+          "errors": []
+        },
+        {
+          "engineName": "webkit",
+          "version": "26.6",
+          "passed": true,
+          "errors": []
+        }
+      ]
+    },
+    "timingSamples": 144,
+    "samplesPerConfiguration": 12,
+    "retentionRuns": 20,
+    "rootsPerRetentionRun": 50,
+    "survivingRootsScopesControllersAndHandles": 0,
+    "finalTimingFailures": []
+  },
+  "timingSummary": [
+    {
+      "engine": "chromium",
+      "requested": "auto",
+      "coldSetupMs": {
+        "disabled": 0.6500000953674316,
+        "enabled": 0.7000000476837158,
+        "deltaEnabledMinusDisabled": 0.04999995231628418
+      },
+      "warmOperationUs": {
+        "disabled": 0.2999997138977051,
+        "enabled": 1.6000003814697266,
+        "deltaEnabledMinusDisabled": 1.3000006675720215
+      }
+    },
+    {
+      "engine": "chromium",
+      "requested": "global",
+      "coldSetupMs": {
+        "disabled": 0.3000001907348633,
+        "enabled": 0.6999998092651367,
+        "deltaEnabledMinusDisabled": 0.39999961853027344
+      },
+      "warmOperationUs": {
+        "disabled": 0.3000001907348633,
+        "enabled": 1.799999713897705,
+        "deltaEnabledMinusDisabled": 1.4999995231628418
+      }
+    },
+    {
+      "engine": "firefox",
+      "requested": "auto",
+      "coldSetupMs": {
+        "disabled": 0.0,
+        "enabled": 0.0,
+        "deltaEnabledMinusDisabled": 0.0
+      },
+      "warmOperationUs": {
+        "disabled": 2.0,
+        "enabled": 8.0,
+        "deltaEnabledMinusDisabled": 6.0
+      }
+    },
+    {
+      "engine": "firefox",
+      "requested": "global",
+      "coldSetupMs": {
+        "disabled": 0.0,
+        "enabled": 0.0,
+        "deltaEnabledMinusDisabled": 0.0
+      },
+      "warmOperationUs": {
+        "disabled": 3.0,
+        "enabled": 8.0,
+        "deltaEnabledMinusDisabled": 5.0
+      }
+    },
+    {
+      "engine": "webkit",
+      "requested": "auto",
+      "coldSetupMs": {
+        "disabled": 1.0,
+        "enabled": 1.0,
+        "deltaEnabledMinusDisabled": 0.0
+      },
+      "warmOperationUs": {
+        "disabled": 0.0,
+        "enabled": 2.0,
+        "deltaEnabledMinusDisabled": 2.0
+      }
+    },
+    {
+      "engine": "webkit",
+      "requested": "global",
+      "coldSetupMs": {
+        "disabled": 0.0,
+        "enabled": 1.0,
+        "deltaEnabledMinusDisabled": 1.0
+      },
+      "warmOperationUs": {
+        "disabled": 0.0,
+        "enabled": 2.0,
+        "deltaEnabledMinusDisabled": 2.0
+      }
+    }
+  ],
+  "privacy": "Explicit bounded inputs; weak handles; scalar-only snapshots; fixed guidance; no global inventory, page scan, form contents, telemetry, timers or listeners.",
+  "retentionLimit": "Quiescent disposed controllers; held disposed diagnostic objects; Chromium forced-GC reference test. Pending completion clearing separately tested functionally. Not heap bytes or cross-engine GC acceptance.",
+  "manualCoverage": {
+    "automated": "Three-engine DOM/focus/sort/narrow viewport checks.",
+    "unperformed": [
+      "Actual assistive technology speech",
+      "Physical devices/touch",
+      "Retail Safari",
+      "IME/autofill/native picker/history/BFCache"
+    ],
+    "acceptedPriorReviewReopened": false
+  },
+  "report": "http://127.0.0.1:4177",
+  "review": "http://127.0.0.1:4287/?progress-report",
+  "comparison": "http://127.0.0.1:4287/comparison.html?progress-report",
+  "rawRejectedAttempts": [
+    "review-check-url-expectation-failure.log",
+    "conformance-launch-sandbox-failure.log",
+    "types-initial-failure.log",
+    "base-proof-path-comment-failure.log",
+    "conformance-server-unavailable.log",
+    "measurements-server-unavailable.log",
+    "build-missing-generated-inputs.log"
+  ],
+  "exploratoryMeasurements": [
+    "measurements-initial.json",
+    "measurements-overlapping-review.json"
+  ],
+  "authorization": "Focused local commits only; no merge, publishing, deployment or messages.",
+  "implementationCommit": "9593fa932df056a22205c6b39723653342ab3301",
+  "lockfileSha256": "073f3817d32fa3d085592c7f9170777a88964e24f02332420a0d3626e071bddb",
+  "sourceHashes": {
+    "plans/scoped-followup-registry-diagnostics.md": "eaaf47cf533948fb6b5846e16b648a192068abcb847a08e06ece215fa9456d66",
+    "probes/registry-diagnostics/base-proof.mjs": "d4df1c154525ddf4eb35ab8a51554a19bf744a30b3a4c176568180a18528998a",
+    "probes/registry-diagnostics/index.html": "97aea9367112a1db920227ceb887fe8f1b3f811a5b935dfccad06dd4b68d7a17",
+    "probes/registry-diagnostics/measure.mjs": "5b6e209f2e835063bb3fda54a437aaeb239e87e9d52d52357240cc3fc9388db5",
+    "probes/registry-diagnostics/api.ts": "c4b5d0dfacb2bb37385fcfc812ff67068711519130fb4bbbc59a449fb5c74da8",
+    "probes/registry-diagnostics/comparison.ts": "fb1731c789e2959342b3a290285ebcec8039f34265d466be8c8bb1d159d2a4ba",
+    "probes/registry-diagnostics/verify.mjs": "2581234511c8f07b084b3114da875d9d517eb73eeeb78f84fe0353fca2d65a29",
+    "probes/registry-diagnostics/update-report.py": "9a40834bd74ee3ba97cde5c400aa864463645b8560324946d78e243feff52878",
+    "probes/registry-diagnostics/comparison.html": "941cfe6f5f093357b11869fe07ecf82504d3cf6acaa7ea03e3809436fca5659a",
+    "probes/registry-diagnostics/disabled.ts": "ab04a1ec531cb1394cc3b7beb5864032f2430ccee0d9d3349bb7c8258a83fba6",
+    "probes/registry-diagnostics/README.md": "d162444e6a3a8ea7fbc53d43f646297456340d48acca74b5614d6fa8c6e47aae",
+    "probes/registry-diagnostics/check.mjs": "66832d9f5f99d881fdaf7950e7ceea06b9fb205231ddb2eaec3aadc41070ca31",
+    "probes/registry-diagnostics/.gitignore": "32dae3052f331ee34d628ef535709b301259a45df7c7522c4d35dcf49873f00b",
+    "probes/registry-diagnostics/build.mjs": "8c08ebb5ffedf0b32ffde2af904788cab02e7c54db4e5145d32a704a42078d46",
+    "probes/registry-diagnostics/toolchain.mjs": "b7b3d8633653889d64f68ff7efe61c15642f14beeeea86f8386da40a3b129c7e",
+    "probes/registry-diagnostics/diagnostics.ts": "e69209eb1fdc3bea2426bdd91b0882a1e98668ad6f5b163e07e230f62bcf2432",
+    "probes/registry-diagnostics/server.mjs": "7b0be7506a36ac8485d1588257264b01a31fb729e4b7133f829fd70852ca90a2",
+    "probes/registry-diagnostics/ui.ts": "7926129a5c0573de6096acdd4e3207a6996b59eadfd9daba9e4ce57c8b47861b",
+    "probes/registry-diagnostics/review-check.mjs": "763673177bc6cc8f0c75eae4ce1feb428cae1eb4ed4aef90845ae6b561d48992"
+  }
+}

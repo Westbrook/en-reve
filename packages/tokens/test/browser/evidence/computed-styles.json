@@ -1,0 +1,2677 @@
+{
+  "stats": {
+    "startTime": "2026-09-09T00:30:28.187Z",
+    "duration": 18069.531,
+    "expected": 39,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "sha256": {
+    "src/graph.ts": "268d8f1f4cef0dd052b55743a187eb99c65c557cd254a61787cb3370d14891e0",
+    "src/source.ts": "5ec2c9f208273451d3a92317800910caadad44e96067cf6930c9048d842ad9d2",
+    "src/sizing.ts": "09719f52655f2c8dc2a9e1194281fb80d6ad382fbf47c8a98139b25a36bf5e6f",
+    "src/recipes.ts": "b4fce5835d6fbdea3c75afe8100acb45f321d87894747c9f920a18f3644cd89a",
+    "dist/default.css": "c59b4f304849b48280fe0a9e54c286e858a3ed8f967be751657ce8624094a884",
+    "test/browser/scopes.spec.mjs": "4aead66cfb74b5b3fb2777632af3a9d05a5343f4037e69390960afbdc839d2b3",
+    "test/browser/sizes.spec.mjs": "ef915ce97a6a77d0f2d581dda222ddfbdada1b01243be8ce064cc4f802eda08a",
+    "test/browser/stable-page.mjs": "733a01ab4c815906de5a4e90f018cad9bc0e0f7e9075fb53d335ded8af519bad"
+  },
+  "measurements": [
+    {
+      "test": "page theme, full child theme and local component styling reach real shadow controls",
+      "scenario": "initial-scopes.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "page": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "child": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "local": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "preview controls apply accent, rhythm, density and mode while preserving local overrides",
+      "scenario": "custom-preview.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "page": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "child": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "38px",
+          "fontSize": "16px",
+          "paddingInlineStart": "8px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "pageCard": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(27, 31, 36)",
+          "borderRadius": "16px",
+          "minBlockSize": "0px",
+          "fontSize": "16px",
+          "paddingInlineStart": "32px",
+          "paddingBlockStart": "32px",
+          "gap": "32px"
+        },
+        "childCard": {
+          "backgroundColor": "rgb(28, 33, 39)",
+          "color": "rgb(243, 245, 247)",
+          "borderRadius": "16px",
+          "minBlockSize": "0px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "16px",
+          "gap": "16px"
+        },
+        "local": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        }
+      }
+    },
+    {
+      "test": "a full child boundary resets inherited component pins; a partial region preserves unrelated inheritance",
+      "scenario": "rebase-and-partial.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "inherited": {
+          "backgroundColor": "rgb(200, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "rebased": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "partial": {
+          "backgroundColor": "rgb(0, 100, 0)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "local": {
+          "backgroundColor": "rgb(0, 0, 200)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "primitive overrides require a complete boundary to rebase inherited aliases",
+      "scenario": "primitive-rebase.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "afterRebase": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "24px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "beforePadding": "12px"
+      }
+    },
+    {
+      "test": "granular rhythm and hover pins survive system changes and restore rejoins the derived graph",
+      "scenario": "pin-and-restore.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "afterRestore": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "24px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "pinnedPadding": "4.8px",
+        "pinnedHover": "rgb(32, 32, 32)"
+      }
+    },
+    {
+      "test": "unlayered author overrides follow the CSS cascade and survive a theme refresh",
+      "scenario": "author-cascade.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "child": {
+          "backgroundColor": "rgb(10, 80, 90)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+      "scenario": "default-accent-recipes.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "roles": {
+          "color.brand": {
+            "expected": "rgb(36, 87, 214)",
+            "actual": "rgb(36, 87, 214)"
+          },
+          "color.on-brand": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.action": {
+            "expected": "rgb(36, 87, 214)",
+            "actual": "rgb(36, 87, 214)"
+          },
+          "color.action-hover": {
+            "expected": "rgb(31, 77, 191)",
+            "actual": "rgb(31, 77, 191)"
+          },
+          "color.action-pressed": {
+            "expected": "rgb(26, 67, 169)",
+            "actual": "rgb(26, 67, 169)"
+          },
+          "color.accent-subtle": {
+            "expected": "rgb(227, 236, 252)",
+            "actual": "rgb(227, 236, 252)"
+          },
+          "color.accent-border": {
+            "expected": "rgb(182, 203, 246)",
+            "actual": "rgb(182, 203, 246)"
+          },
+          "color.on-action": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.danger-text": {
+            "expected": "rgb(180, 35, 24)",
+            "actual": "rgb(180, 35, 24)"
+          }
+        },
+        "danger": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(180, 35, 24)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+      "scenario": "custom-accent-recipes.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "roles": {
+          "color.brand": {
+            "expected": "rgb(161, 54, 152)",
+            "actual": "rgb(161, 54, 152)"
+          },
+          "color.on-brand": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.action": {
+            "expected": "rgb(161, 54, 152)",
+            "actual": "rgb(161, 54, 152)"
+          },
+          "color.action-hover": {
+            "expected": "rgb(144, 47, 136)",
+            "actual": "rgb(144, 47, 136)"
+          },
+          "color.action-pressed": {
+            "expected": "rgb(127, 41, 119)",
+            "actual": "rgb(127, 41, 119)"
+          },
+          "color.accent-subtle": {
+            "expected": "rgb(245, 231, 243)",
+            "actual": "rgb(245, 231, 243)"
+          },
+          "color.accent-border": {
+            "expected": "rgb(228, 192, 222)",
+            "actual": "rgb(228, 192, 222)"
+          },
+          "color.on-action": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.danger-text": {
+            "expected": "rgb(180, 35, 24)",
+            "actual": "rgb(180, 35, 24)"
+          }
+        },
+        "danger": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(180, 35, 24)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-shared-seed.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(161, 54, 152)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(161, 54, 152)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(161, 54, 152)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-independent-pins.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(244, 223, 55)",
+          "color.on-brand": "rgb(16, 27, 57)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(244, 223, 55)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(244, 223, 55)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-pins-survive-seed.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(244, 223, 55)",
+          "color.on-brand": "rgb(16, 27, 57)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(244, 223, 55)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(244, 223, 55)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-only-restored.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-rejoined-seed.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(48, 127, 82)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "action-palette-override.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(213, 97, 3)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(213, 97, 3)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "a full child theme resets brand and action roles while a partial brand region preserves actions",
+      "scenario": "brand-scoped-reset.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "parent": {
+          "mark": {
+            "backgroundColor": "rgb(48, 127, 82)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(48, 127, 82)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        },
+        "child": {
+          "mark": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        },
+        "partial": {
+          "mark": {
+            "backgroundColor": "rgb(244, 223, 55)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        }
+      }
+    },
+    {
+      "test": "page theme, full child theme and local component styling reach real shadow controls",
+      "scenario": "initial-scopes.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "page": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "child": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "local": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "preview controls apply accent, rhythm, density and mode while preserving local overrides",
+      "scenario": "custom-preview.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "page": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "child": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "38px",
+          "fontSize": "16px",
+          "paddingInlineStart": "8px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "pageCard": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(27, 31, 36)",
+          "borderRadius": "16px",
+          "minBlockSize": "0px",
+          "fontSize": "16px",
+          "paddingInlineStart": "32px",
+          "paddingBlockStart": "32px",
+          "gap": "32px"
+        },
+        "childCard": {
+          "backgroundColor": "rgb(28, 33, 39)",
+          "color": "rgb(243, 245, 247)",
+          "borderRadius": "16px",
+          "minBlockSize": "0px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "16px",
+          "gap": "16px"
+        },
+        "local": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        }
+      }
+    },
+    {
+      "test": "a full child boundary resets inherited component pins; a partial region preserves unrelated inheritance",
+      "scenario": "rebase-and-partial.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "inherited": {
+          "backgroundColor": "rgb(200, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "rebased": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "partial": {
+          "backgroundColor": "rgb(0, 100, 0)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "local": {
+          "backgroundColor": "rgb(0, 0, 200)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "primitive overrides require a complete boundary to rebase inherited aliases",
+      "scenario": "primitive-rebase.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "afterRebase": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "24px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "beforePadding": "12px"
+      }
+    },
+    {
+      "test": "granular rhythm and hover pins survive system changes and restore rejoins the derived graph",
+      "scenario": "pin-and-restore.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "afterRestore": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "24px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "pinnedPadding": "4.8px",
+        "pinnedHover": "rgb(32, 32, 32)"
+      }
+    },
+    {
+      "test": "unlayered author overrides follow the CSS cascade and survive a theme refresh",
+      "scenario": "author-cascade.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "child": {
+          "backgroundColor": "rgb(10, 80, 90)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+      "scenario": "default-accent-recipes.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "roles": {
+          "color.brand": {
+            "expected": "rgb(36, 87, 214)",
+            "actual": "rgb(36, 87, 214)"
+          },
+          "color.on-brand": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.action": {
+            "expected": "rgb(36, 87, 214)",
+            "actual": "rgb(36, 87, 214)"
+          },
+          "color.action-hover": {
+            "expected": "rgb(31, 77, 191)",
+            "actual": "rgb(31, 77, 191)"
+          },
+          "color.action-pressed": {
+            "expected": "rgb(26, 67, 169)",
+            "actual": "rgb(26, 67, 169)"
+          },
+          "color.accent-subtle": {
+            "expected": "rgb(227, 236, 252)",
+            "actual": "rgb(227, 236, 252)"
+          },
+          "color.accent-border": {
+            "expected": "rgb(182, 203, 246)",
+            "actual": "rgb(182, 203, 246)"
+          },
+          "color.on-action": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.danger-text": {
+            "expected": "rgb(180, 35, 24)",
+            "actual": "rgb(180, 35, 24)"
+          }
+        },
+        "danger": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(180, 35, 24)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+      "scenario": "custom-accent-recipes.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "roles": {
+          "color.brand": {
+            "expected": "rgb(161, 54, 152)",
+            "actual": "rgb(161, 54, 152)"
+          },
+          "color.on-brand": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.action": {
+            "expected": "rgb(161, 54, 152)",
+            "actual": "rgb(161, 54, 152)"
+          },
+          "color.action-hover": {
+            "expected": "rgb(144, 47, 136)",
+            "actual": "rgb(144, 47, 136)"
+          },
+          "color.action-pressed": {
+            "expected": "rgb(127, 41, 119)",
+            "actual": "rgb(127, 41, 119)"
+          },
+          "color.accent-subtle": {
+            "expected": "rgb(245, 231, 243)",
+            "actual": "rgb(245, 231, 243)"
+          },
+          "color.accent-border": {
+            "expected": "rgb(228, 192, 222)",
+            "actual": "rgb(228, 192, 222)"
+          },
+          "color.on-action": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.danger-text": {
+            "expected": "rgb(180, 35, 24)",
+            "actual": "rgb(180, 35, 24)"
+          }
+        },
+        "danger": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(180, 35, 24)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-shared-seed.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(161, 54, 152)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(161, 54, 152)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(161, 54, 152)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-independent-pins.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(244, 223, 55)",
+          "color.on-brand": "rgb(16, 27, 57)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(244, 223, 55)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(244, 223, 55)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-pins-survive-seed.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(244, 223, 55)",
+          "color.on-brand": "rgb(16, 27, 57)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(244, 223, 55)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(244, 223, 55)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-only-restored.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-rejoined-seed.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(48, 127, 82)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "action-palette-override.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(213, 97, 3)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(213, 97, 3)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "a full child theme resets brand and action roles while a partial brand region preserves actions",
+      "scenario": "brand-scoped-reset.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "parent": {
+          "mark": {
+            "backgroundColor": "rgb(48, 127, 82)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(48, 127, 82)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        },
+        "child": {
+          "mark": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        },
+        "partial": {
+          "mark": {
+            "backgroundColor": "rgb(244, 223, 55)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        }
+      }
+    },
+    {
+      "test": "page theme, full child theme and local component styling reach real shadow controls",
+      "scenario": "initial-scopes.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "page": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "child": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "local": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "preview controls apply accent, rhythm, density and mode while preserving local overrides",
+      "scenario": "custom-preview.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "page": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "child": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "38px",
+          "fontSize": "16px",
+          "paddingInlineStart": "8px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "pageCard": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(27, 31, 36)",
+          "borderRadius": "16px",
+          "minBlockSize": "0px",
+          "fontSize": "16px",
+          "paddingInlineStart": "32px",
+          "paddingBlockStart": "32px",
+          "gap": "32px"
+        },
+        "childCard": {
+          "backgroundColor": "rgb(28, 33, 39)",
+          "color": "rgb(243, 245, 247)",
+          "borderRadius": "16px",
+          "minBlockSize": "0px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "16px",
+          "gap": "16px"
+        },
+        "local": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "0px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "16px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        }
+      }
+    },
+    {
+      "test": "a full child boundary resets inherited component pins; a partial region preserves unrelated inheritance",
+      "scenario": "rebase-and-partial.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "inherited": {
+          "backgroundColor": "rgb(200, 0, 0)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "rebased": {
+          "backgroundColor": "rgb(170, 193, 255)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "partial": {
+          "backgroundColor": "rgb(0, 100, 0)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        },
+        "local": {
+          "backgroundColor": "rgb(0, 0, 200)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "primitive overrides require a complete boundary to rebase inherited aliases",
+      "scenario": "primitive-rebase.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "afterRebase": {
+          "backgroundColor": "rgb(36, 87, 214)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "24px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "beforePadding": "12px"
+      }
+    },
+    {
+      "test": "granular rhythm and hover pins survive system changes and restore rejoins the derived graph",
+      "scenario": "pin-and-restore.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "afterRestore": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "50px",
+          "fontSize": "16px",
+          "paddingInlineStart": "24px",
+          "paddingBlockStart": "12px",
+          "gap": "16px"
+        },
+        "pinnedPadding": "4.8px",
+        "pinnedHover": "rgb(32, 32, 32)"
+      }
+    },
+    {
+      "test": "unlayered author overrides follow the CSS cascade and survive a theme refresh",
+      "scenario": "author-cascade.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "child": {
+          "backgroundColor": "rgb(10, 80, 90)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+      "scenario": "default-accent-recipes.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "roles": {
+          "color.brand": {
+            "expected": "rgb(36, 87, 214)",
+            "actual": "rgb(36, 87, 214)"
+          },
+          "color.on-brand": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.action": {
+            "expected": "rgb(36, 87, 214)",
+            "actual": "rgb(36, 87, 214)"
+          },
+          "color.action-hover": {
+            "expected": "rgb(31, 77, 191)",
+            "actual": "rgb(31, 77, 191)"
+          },
+          "color.action-pressed": {
+            "expected": "rgb(26, 67, 169)",
+            "actual": "rgb(26, 67, 169)"
+          },
+          "color.accent-subtle": {
+            "expected": "rgb(227, 236, 252)",
+            "actual": "rgb(227, 236, 252)"
+          },
+          "color.accent-border": {
+            "expected": "rgb(182, 203, 246)",
+            "actual": "rgb(182, 203, 246)"
+          },
+          "color.on-action": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.danger-text": {
+            "expected": "rgb(180, 35, 24)",
+            "actual": "rgb(180, 35, 24)"
+          }
+        },
+        "danger": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(180, 35, 24)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+      "scenario": "custom-accent-recipes.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "roles": {
+          "color.brand": {
+            "expected": "rgb(161, 54, 152)",
+            "actual": "rgb(161, 54, 152)"
+          },
+          "color.on-brand": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.action": {
+            "expected": "rgb(161, 54, 152)",
+            "actual": "rgb(161, 54, 152)"
+          },
+          "color.action-hover": {
+            "expected": "rgb(144, 47, 136)",
+            "actual": "rgb(144, 47, 136)"
+          },
+          "color.action-pressed": {
+            "expected": "rgb(127, 41, 119)",
+            "actual": "rgb(127, 41, 119)"
+          },
+          "color.accent-subtle": {
+            "expected": "rgb(245, 231, 243)",
+            "actual": "rgb(245, 231, 243)"
+          },
+          "color.accent-border": {
+            "expected": "rgb(228, 192, 222)",
+            "actual": "rgb(228, 192, 222)"
+          },
+          "color.on-action": {
+            "expected": "rgb(255, 255, 255)",
+            "actual": "rgb(255, 255, 255)"
+          },
+          "color.danger-text": {
+            "expected": "rgb(180, 35, 24)",
+            "actual": "rgb(180, 35, 24)"
+          }
+        },
+        "danger": {
+          "backgroundColor": "rgb(255, 255, 255)",
+          "color": "rgb(180, 35, 24)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-shared-seed.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(161, 54, 152)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(161, 54, 152)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(161, 54, 152)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(161, 54, 152)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-independent-pins.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(244, 223, 55)",
+          "color.on-brand": "rgb(16, 27, 57)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(244, 223, 55)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(244, 223, 55)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-pins-survive-seed.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(244, 223, 55)",
+          "color.on-brand": "rgb(16, 27, 57)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(244, 223, 55)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(244, 223, 55)",
+          "color": "rgb(16, 27, 57)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-only-restored.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(21, 59, 104)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(21, 59, 104)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "brand-action-rejoined-seed.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(48, 127, 82)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "branding and actions share a seed while independent pins and restoration stay isolated",
+      "scenario": "action-palette-override.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "expected": {
+          "color.brand": "rgb(48, 127, 82)",
+          "color.on-brand": "rgb(255, 255, 255)",
+          "color.action": "rgb(213, 97, 3)",
+          "color.on-action": "rgb(255, 255, 255)"
+        },
+        "wordmark": {
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgb(48, 127, 82)",
+          "borderRadius": "0px",
+          "minBlockSize": "auto",
+          "fontSize": "18px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "8px"
+        },
+        "mark": {
+          "backgroundColor": "rgb(48, 127, 82)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "auto",
+          "fontSize": "16px",
+          "paddingInlineStart": "0px",
+          "paddingBlockStart": "0px",
+          "gap": "normal"
+        },
+        "button": {
+          "backgroundColor": "rgb(213, 97, 3)",
+          "color": "rgb(255, 255, 255)",
+          "borderRadius": "8px",
+          "minBlockSize": "40px",
+          "fontSize": "16px",
+          "paddingInlineStart": "12px",
+          "paddingBlockStart": "6px",
+          "gap": "8px"
+        }
+      }
+    },
+    {
+      "test": "a full child theme resets brand and action roles while a partial brand region preserves actions",
+      "scenario": "brand-scoped-reset.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "parent": {
+          "mark": {
+            "backgroundColor": "rgb(48, 127, 82)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(48, 127, 82)",
+            "color": "rgb(255, 255, 255)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        },
+        "child": {
+          "mark": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        },
+        "partial": {
+          "mark": {
+            "backgroundColor": "rgb(244, 223, 55)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "0px",
+            "minBlockSize": "0px",
+            "fontSize": "16px",
+            "paddingInlineStart": "16px",
+            "paddingBlockStart": "16px",
+            "gap": "normal"
+          },
+          "action": {
+            "backgroundColor": "rgb(170, 193, 255)",
+            "color": "rgb(16, 27, 57)",
+            "borderRadius": "8px",
+            "minBlockSize": "40px",
+            "fontSize": "16px",
+            "paddingInlineStart": "12px",
+            "paddingBlockStart": "6px",
+            "gap": "8px"
+          }
+        }
+      }
+    },
+    {
+      "test": "three densities preserve type while all visual sizes retain independent target floors",
+      "scenario": "size-density.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "compact-small": {
+          "width": 64.703125,
+          "height": 36.5,
+          "font": "16px",
+          "minimum": "36.5px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 35,
+          "clientHeight": 35
+        },
+        "compact-medium": {
+          "width": 66.703125,
+          "height": 38,
+          "font": "16px",
+          "minimum": "38px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 36,
+          "clientHeight": 36
+        },
+        "compact-large": {
+          "width": 76.046875,
+          "height": 44,
+          "font": "18px",
+          "minimum": "44px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "comfortable-small": {
+          "width": 71.703125,
+          "height": 36.5,
+          "font": "16px",
+          "minimum": "36.5px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 35,
+          "clientHeight": 35
+        },
+        "comfortable-medium": {
+          "width": 74.703125,
+          "height": 40,
+          "font": "16px",
+          "minimum": "40px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 38,
+          "clientHeight": 38
+        },
+        "comfortable-large": {
+          "width": 86.046875,
+          "height": 50,
+          "font": "18px",
+          "minimum": "50px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        },
+        "spacious-small": {
+          "width": 78.703125,
+          "height": 42,
+          "font": "16px",
+          "minimum": "42px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 40,
+          "clientHeight": 40
+        },
+        "spacious-medium": {
+          "width": 82.703125,
+          "height": 48,
+          "font": "16px",
+          "minimum": "48px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "spacious-large": {
+          "width": 96.046875,
+          "height": 60,
+          "font": "18px",
+          "minimum": "60px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        }
+      }
+    },
+    {
+      "test": "explicit inherited size rebases inside a full child theme while absent size remains medium",
+      "scenario": "size-density.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "inherited": {
+          "width": 1280,
+          "height": 112.5,
+          "font": "16px",
+          "minimum": "0px",
+          "padding": "21px",
+          "line": 24,
+          "blockPadding": 42,
+          "blockBorder": 2,
+          "scrollHeight": 111,
+          "clientHeight": 111
+        },
+        "rebased": {
+          "width": 1280,
+          "height": 228,
+          "font": "16px",
+          "minimum": "0px",
+          "padding": "56px",
+          "line": 24,
+          "blockPadding": 112,
+          "blockBorder": 2,
+          "scrollHeight": 226,
+          "clientHeight": 226
+        },
+        "explicit": {
+          "width": 186.40625,
+          "height": 50,
+          "font": "16px",
+          "minimum": "50px",
+          "padding": "12px",
+          "line": 24,
+          "blockPadding": 24,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        },
+        "default": {
+          "width": 186.109375,
+          "height": 50,
+          "font": "16px",
+          "minimum": "50px",
+          "padding": "12px",
+          "line": 24,
+          "blockPadding": 24,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      }
+    },
+    {
+      "test": "family output pins and direct component overrides survive coordinated size changes",
+      "scenario": "size-density.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "avatar": {
+          "width": 60,
+          "height": 60,
+          "font": "18px",
+          "minimum": "0px",
+          "padding": "0px",
+          "line": 27,
+          "blockPadding": 0,
+          "blockBorder": 0,
+          "scrollHeight": 60,
+          "clientHeight": 60
+        },
+        "spinner": {
+          "width": 42.063777923583984,
+          "height": 42.064453125,
+          "font": "18px",
+          "minimum": "0px",
+          "padding": "0px",
+          "line": 27,
+          "blockPadding": 0,
+          "blockBorder": 4,
+          "scrollHeight": 26,
+          "clientHeight": 26
+        },
+        "local": {
+          "width": 156.265625,
+          "height": 64,
+          "font": "18px",
+          "minimum": "64px",
+          "padding": "9px",
+          "line": 27,
+          "blockPadding": 18,
+          "blockBorder": 2,
+          "scrollHeight": 62,
+          "clientHeight": 62
+        }
+      }
+    },
+    {
+      "test": "a very small code-authored visual scale does not multiply the interactive target floor",
+      "scenario": "size-density.json",
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "measurements": {
+        "width": 24,
+        "height": 36,
+        "font": "16px",
+        "minimum": "36px",
+        "padding": "0.75px",
+        "line": 24,
+        "blockPadding": 1.5,
+        "blockBorder": 2,
+        "scrollHeight": 34,
+        "clientHeight": 34
+      }
+    },
+    {
+      "test": "three densities preserve type while all visual sizes retain independent target floors",
+      "scenario": "size-density.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "compact-small": {
+          "width": 64.64999389648438,
+          "height": 36.5,
+          "font": "16px",
+          "minimum": "36.5px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 35,
+          "clientHeight": 35
+        },
+        "compact-medium": {
+          "width": 66.65000915527344,
+          "height": 38,
+          "font": "16px",
+          "minimum": "38px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 36,
+          "clientHeight": 36
+        },
+        "compact-large": {
+          "width": 76.08332824707031,
+          "height": 44,
+          "font": "18px",
+          "minimum": "44px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "comfortable-small": {
+          "width": 71.64999389648438,
+          "height": 36.5,
+          "font": "16px",
+          "minimum": "36.5px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 35,
+          "clientHeight": 35
+        },
+        "comfortable-medium": {
+          "width": 74.65000915527344,
+          "height": 40,
+          "font": "16px",
+          "minimum": "40px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 38,
+          "clientHeight": 38
+        },
+        "comfortable-large": {
+          "width": 86.08332824707031,
+          "height": 50,
+          "font": "18px",
+          "minimum": "50px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        },
+        "spacious-small": {
+          "width": 78.64999389648438,
+          "height": 42,
+          "font": "16px",
+          "minimum": "42px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 40,
+          "clientHeight": 40
+        },
+        "spacious-medium": {
+          "width": 82.65000915527344,
+          "height": 48,
+          "font": "16px",
+          "minimum": "48px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "spacious-large": {
+          "width": 96.08332824707031,
+          "height": 60,
+          "font": "18px",
+          "minimum": "60px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        }
+      }
+    },
+    {
+      "test": "explicit inherited size rebases inside a full child theme while absent size remains medium",
+      "scenario": "size-density.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "inherited": {
+          "width": 1280,
+          "height": 112.5,
+          "font": "16px",
+          "minimum": "0px",
+          "padding": "21px",
+          "line": 24,
+          "blockPadding": 42,
+          "blockBorder": 2,
+          "scrollHeight": 111,
+          "clientHeight": 111
+        },
+        "rebased": {
+          "width": 1280,
+          "height": 228,
+          "font": "16px",
+          "minimum": "0px",
+          "padding": "56px",
+          "line": 24,
+          "blockPadding": 112,
+          "blockBorder": 2,
+          "scrollHeight": 226,
+          "clientHeight": 226
+        },
+        "explicit": {
+          "width": 186.66665649414062,
+          "height": 50,
+          "font": "16px",
+          "minimum": "50px",
+          "padding": "12px",
+          "line": 24,
+          "blockPadding": 24,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        },
+        "default": {
+          "width": 186.35000610351562,
+          "height": 50,
+          "font": "16px",
+          "minimum": "50px",
+          "padding": "12px",
+          "line": 24,
+          "blockPadding": 24,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      }
+    },
+    {
+      "test": "family output pins and direct component overrides survive coordinated size changes",
+      "scenario": "size-density.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "avatar": {
+          "width": 60,
+          "height": 60,
+          "font": "18px",
+          "minimum": "0px",
+          "padding": "0px",
+          "line": 27,
+          "blockPadding": 0,
+          "blockBorder": 0,
+          "scrollHeight": 60,
+          "clientHeight": 60
+        },
+        "spinner": {
+          "width": 42.066680908203125,
+          "height": 42.06666564941406,
+          "font": "18px",
+          "minimum": "0px",
+          "padding": "0px",
+          "line": 27,
+          "blockPadding": 0,
+          "blockBorder": 4,
+          "scrollHeight": 26,
+          "clientHeight": 26
+        },
+        "local": {
+          "width": 156.8000030517578,
+          "height": 64,
+          "font": "18px",
+          "minimum": "64px",
+          "padding": "9px",
+          "line": 27,
+          "blockPadding": 18,
+          "blockBorder": 2,
+          "scrollHeight": 62,
+          "clientHeight": 62
+        }
+      }
+    },
+    {
+      "test": "a very small code-authored visual scale does not multiply the interactive target floor",
+      "scenario": "size-density.json",
+      "engine": "firefox",
+      "version": "155.0",
+      "measurements": {
+        "width": 24,
+        "height": 36,
+        "font": "16px",
+        "minimum": "36px",
+        "padding": "0.75px",
+        "line": 24,
+        "blockPadding": 1.5,
+        "blockBorder": 2,
+        "scrollHeight": 34,
+        "clientHeight": 34
+      }
+    },
+    {
+      "test": "three densities preserve type while all visual sizes retain independent target floors",
+      "scenario": "size-density.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "compact-small": {
+          "width": 64.703125,
+          "height": 36.5,
+          "font": "16px",
+          "minimum": "36.5px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 35,
+          "clientHeight": 35
+        },
+        "compact-medium": {
+          "width": 66.703125,
+          "height": 38,
+          "font": "16px",
+          "minimum": "38px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 36,
+          "clientHeight": 36
+        },
+        "compact-large": {
+          "width": 76.03125,
+          "height": 44,
+          "font": "18px",
+          "minimum": "44px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 42,
+          "clientHeight": 42
+        },
+        "comfortable-small": {
+          "width": 71.703125,
+          "height": 36.5,
+          "font": "16px",
+          "minimum": "36.5px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 35,
+          "clientHeight": 35
+        },
+        "comfortable-medium": {
+          "width": 74.703125,
+          "height": 40,
+          "font": "16px",
+          "minimum": "40px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 38,
+          "clientHeight": 38
+        },
+        "comfortable-large": {
+          "width": 86.03125,
+          "height": 50,
+          "font": "18px",
+          "minimum": "50px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        },
+        "spacious-small": {
+          "width": 78.703125,
+          "height": 42,
+          "font": "16px",
+          "minimum": "42px",
+          "padding": "5.25px",
+          "line": 24,
+          "blockPadding": 10.5,
+          "blockBorder": 2,
+          "scrollHeight": 40,
+          "clientHeight": 40
+        },
+        "spacious-medium": {
+          "width": 82.703125,
+          "height": 48,
+          "font": "16px",
+          "minimum": "48px",
+          "padding": "6px",
+          "line": 24,
+          "blockPadding": 12,
+          "blockBorder": 2,
+          "scrollHeight": 46,
+          "clientHeight": 46
+        },
+        "spacious-large": {
+          "width": 96.03125,
+          "height": 60,
+          "font": "18px",
+          "minimum": "60px",
+          "padding": "7.5px",
+          "line": 27,
+          "blockPadding": 15,
+          "blockBorder": 2,
+          "scrollHeight": 58,
+          "clientHeight": 58
+        }
+      }
+    },
+    {
+      "test": "explicit inherited size rebases inside a full child theme while absent size remains medium",
+      "scenario": "size-density.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "inherited": {
+          "width": 1280,
+          "height": 112.5,
+          "font": "16px",
+          "minimum": "0px",
+          "padding": "21px",
+          "line": 24,
+          "blockPadding": 42,
+          "blockBorder": 2,
+          "scrollHeight": 111,
+          "clientHeight": 111
+        },
+        "rebased": {
+          "width": 1280,
+          "height": 228,
+          "font": "16px",
+          "minimum": "0px",
+          "padding": "56px",
+          "line": 24,
+          "blockPadding": 112,
+          "blockBorder": 2,
+          "scrollHeight": 226,
+          "clientHeight": 226
+        },
+        "explicit": {
+          "width": 186.390625,
+          "height": 50,
+          "font": "16px",
+          "minimum": "50px",
+          "padding": "12px",
+          "line": 24,
+          "blockPadding": 24,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        },
+        "default": {
+          "width": 186.09375,
+          "height": 50,
+          "font": "16px",
+          "minimum": "50px",
+          "padding": "12px",
+          "line": 24,
+          "blockPadding": 24,
+          "blockBorder": 2,
+          "scrollHeight": 48,
+          "clientHeight": 48
+        }
+      }
+    },
+    {
+      "test": "family output pins and direct component overrides survive coordinated size changes",
+      "scenario": "size-density.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "avatar": {
+          "width": 60,
+          "height": 60,
+          "font": "18px",
+          "minimum": "0px",
+          "padding": "0px",
+          "line": 27,
+          "blockPadding": 0,
+          "blockBorder": 0,
+          "scrollHeight": 60,
+          "clientHeight": 60
+        },
+        "spinner": {
+          "width": 34.90168380737305,
+          "height": 34.90234375,
+          "font": "18px",
+          "minimum": "0px",
+          "padding": "0px",
+          "line": 27,
+          "blockPadding": 0,
+          "blockBorder": 4,
+          "scrollHeight": 26,
+          "clientHeight": 26
+        },
+        "local": {
+          "width": 156.25,
+          "height": 64,
+          "font": "18px",
+          "minimum": "64px",
+          "padding": "9px",
+          "line": 27,
+          "blockPadding": 18,
+          "blockBorder": 2,
+          "scrollHeight": 62,
+          "clientHeight": 62
+        }
+      }
+    },
+    {
+      "test": "a very small code-authored visual scale does not multiply the interactive target floor",
+      "scenario": "size-density.json",
+      "engine": "webkit",
+      "version": "26.6",
+      "measurements": {
+        "width": 24,
+        "height": 36,
+        "font": "16px",
+        "minimum": "36px",
+        "padding": "0.75px",
+        "line": 24,
+        "blockPadding": 1.5,
+        "blockBorder": 2,
+        "scrollHeight": 34,
+        "clientHeight": 34
+      }
+    }
+  ]
+}

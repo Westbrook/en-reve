@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Command family consumer verification</title>
+  <link rel="stylesheet" href="/packages/tokens/dist/default.css">
+  <!-- import-map -->
+  <style>
+    body { margin: 16px; font-family: system-ui; color: #202124; background: white; }
+    main { max-inline-size: 48rem; margin-inline: auto; }
+    section { margin-block: 24px; }
+    input, button { font: inherit; }
+    button { min-block-size: 32px; }
+    en-toolbar { max-inline-size: 100%; }
+    #parking { margin-block: 12px; }
+    #destination { margin-block: 24px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Command family consumer verification</h1>
+  <form id="form">
+    <section aria-label="Action menu example">
+      <button type="button" id="before-menu">Before menu</button>
+      <en-button id="menu-trigger">More actions</en-button>
+      <en-menu id="menu" for="menu-trigger" label="Document actions">
+        <en-menu-item id="copy" action="copy">Copy</en-menu-item>
+        <en-menu-item id="delete" action="delete" disabled>Delete</en-menu-item>
+        <hr role="separator">
+        <en-menu-item id="download" action="download"><strong>Download</strong> file</en-menu-item>
+        <en-menu-item id="rename" action="rename">Rename</en-menu-item>
+      </en-menu>
+      <button type="button" id="after-menu">After menu</button>
+      <label>Outside notes <input id="outside" name="notes" value="Retain this draft"></label>
+    </section>
+    <section aria-label="Toolbar example">
+      <button type="button" id="before-toolbar">Before toolbar</button>
+      <en-toolbar id="toolbar" label="Document tools">
+        <en-button id="tool-one">First tool</en-button>
+        <button id="tool-two" type="button">Second tool</button>
+        <button id="tool-disabled" type="button" disabled>Unavailable tool</button>
+        <en-button id="tool-loading" loading>Busy tool</en-button>
+        <en-button id="tool-three">Third tool</en-button>
+      </en-toolbar>
+      <button type="button" id="after-toolbar">After toolbar</button>
+      <div id="parking"></div>
+    </section>
+    <section aria-label="Searchable commands example">
+      <en-button id="palette-trigger">Search commands</en-button>
+      <en-command-palette id="palette" for="palette-trigger" label="Command search" search-label="Search commands" empty-text="No matching commands" close-label="Close command search"></en-command-palette>
+      <button type="button" id="after-palette">After command search</button>
+    </section>
+    <button type="submit" id="submit">Submit form</button>
+  </form>
+  <h2 id="destination" tabindex="-1">Command destination</h2>
+  <div id="shadow-container"></div>
+</main>
+<script type="module" src="/fixture.mjs"></script>
+</body>
+</html>

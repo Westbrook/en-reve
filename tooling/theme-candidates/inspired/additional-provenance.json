@@ -1,0 +1,559 @@
+{
+  "schemaVersion": 1,
+  "reviewDate": "2026-09-10",
+  "status": "reference-derived draft recipes; not published or visually accepted",
+  "sources": [
+    {
+      "id": "astryx-astryxTheme.ts",
+      "origin": "retained primary-source snapshot",
+      "commit": "1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc",
+      "url": "https://github.com/facebook/astryx/blob/1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc/apps/docsite/src/themes/astryxTheme.ts",
+      "file": "sources/astryx-astryxTheme.ts",
+      "sha256": "sha256:d80be2c50f77ecf56c47309e3e5b86d71b1c971ddde6936c58c2cefb894a6c12",
+      "bytes": 8120,
+      "freshVerification": "relevant declarations cross-checked against official main source using web on 2026-09-10"
+    },
+    {
+      "id": "astryx-tokens.stylex.ts",
+      "origin": "retained primary-source snapshot",
+      "commit": "1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc",
+      "url": "https://github.com/facebook/astryx/blob/1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc/packages/core/src/theme/tokens.stylex.ts",
+      "file": "sources/astryx-tokens.stylex.ts",
+      "sha256": "sha256:7d5b5321220e0924213d9b37cf4acf9ba5bb16f3de1485710dd543f964676f81",
+      "bytes": 19652,
+      "freshVerification": "relevant declarations cross-checked against official main source using web on 2026-09-10"
+    },
+    {
+      "id": "shadcn-legacy-themes.css",
+      "origin": "retained primary-source snapshot",
+      "commit": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "url": "https://github.com/shadcn-ui/ui/blob/3ba91b1cc83e1bbe4ab35a422ff2a694849c5048/apps/v4/app/legacy-themes.css",
+      "file": "sources/shadcn-legacy-themes.css",
+      "sha256": "sha256:b53f086328b730f0330d1d0eee6301564811511fa38cdbd3832db55ee3e32f85",
+      "bytes": 21457,
+      "freshVerification": "relevant declarations cross-checked against official main source using web on 2026-09-10"
+    },
+    {
+      "id": "shadcn-rhea-style-rhea.css",
+      "origin": "retained primary-source snapshot",
+      "commit": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "url": "https://github.com/shadcn-ui/ui/blob/3ba91b1cc83e1bbe4ab35a422ff2a694849c5048/apps/v4/registry/styles/style-rhea.css",
+      "file": "sources/shadcn-rhea-style-rhea.css",
+      "sha256": "sha256:bcb242a7845316f93b0562345dd5c32a46a2988b506a8e8d7df1c836a1637b49",
+      "bytes": 75351,
+      "freshVerification": "relevant declarations cross-checked against official main source using web on 2026-09-10"
+    },
+    {
+      "id": "shadcn-cards-index.tsx",
+      "origin": "retained primary-source snapshot",
+      "commit": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "url": null,
+      "file": "sources/shadcn-cards-index.tsx",
+      "sha256": "sha256:6c4dca5b57c0f61bf2a57fc637950a17f4038483bf2d1317f89857ca59d4df4e",
+      "bytes": 5961,
+      "freshVerification": "retained snapshot reviewed for theme-neutral and base-rhea imports"
+    },
+    {
+      "id": "shadcn-cards-ui-elements.tsx",
+      "origin": "retained primary-source snapshot",
+      "commit": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "url": null,
+      "file": "sources/shadcn-cards-ui-elements.tsx",
+      "sha256": "sha256:ddf577f6975f9683400368382ab44a005117c7c2c7d2fc6a2a9a650ecb333a20",
+      "bytes": 6110,
+      "freshVerification": "retained snapshot reviewed for theme-neutral and base-rhea imports"
+    },
+    {
+      "id": "astryx-brand-constant",
+      "origin": "official current source read through web tool",
+      "url": "https://raw.githubusercontent.com/facebook/astryx/main/apps/docsite/src/constants.ts",
+      "verifiedOn": "2026-09-10",
+      "declaration": {
+        "name": "BRAND_BLUE",
+        "light": "#225BFF",
+        "dark": "#3D87FF"
+      },
+      "commit": null,
+      "limitation": "The pinned raw URL returned a cache miss. This exact declaration was verified at the official mutable main URL, not assigned an invented commit or byte hash."
+    }
+  ],
+  "freshPrimarySourcesRead": [
+    "https://astryx.atmeta.com/",
+    "https://ui.shadcn.com/",
+    "https://raw.githubusercontent.com/facebook/astryx/main/apps/docsite/src/themes/astryxTheme.ts",
+    "https://raw.githubusercontent.com/facebook/astryx/main/packages/core/src/theme/tokens.stylex.ts",
+    "https://raw.githubusercontent.com/facebook/astryx/main/apps/docsite/src/constants.ts",
+    "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/app/legacy-themes.css",
+    "https://raw.githubusercontent.com/shadcn-ui/ui/main/apps/v4/registry/styles/style-rhea.css"
+  ],
+  "referencePolicy": "Dark values come from explicit source branches, never light inversion. Historical light artifacts remain unchanged; canonical light recipes now include the bounded danger-text correction recorded below. Geometry/typography/motion and filled action paint are preserved.",
+  "colorEncoding": "sRGB DTCG values. Astryx hex values retained; shadcn OKLCH converted with repository CSS Color 4 matrices and rounded to 8-bit. Opaque-only roles use declared surface composites with 8-bit rounding; allowed option/scrim roles keep alpha.",
+  "candidates": {
+    "astryx": {
+      "flavor": "Branded Astryx website skin",
+      "baseRecipe": "artifacts/theme-candidates/spectrum2-latest/astryx-edits.json",
+      "baseRecipeHash": "sha256:555b9cac1ff2f7e9affb113ad51e51e4653ca525faf6e4c02aac4ef8cf6a7c46",
+      "file": "astryx-dark-edits.json",
+      "sha256": "sha256:c133d09683700b050ce5820f2f999ec00abb3db97ffc8b443f84168d373058f4",
+      "editCount": 75,
+      "mode": "dark",
+      "density": "compact",
+      "recipeKind": "complete managed edit sequence for createReviewDraft({})",
+      "changedOrAddedPaint": {
+        "palette.accent": {
+          "before": "#225BFF",
+          "after": "#3D87FF",
+          "operation": "replace"
+        },
+        "palette.canvas": {
+          "before": "#F8F4ED",
+          "after": "#111112",
+          "operation": "replace"
+        },
+        "palette.surface": {
+          "before": "#FFFFFF",
+          "after": "#1F1F22",
+          "operation": "replace"
+        },
+        "palette.surface-raised": {
+          "before": "#FFFFFF",
+          "after": "#28292C",
+          "operation": "replace"
+        },
+        "palette.surface-subtle": {
+          "before": "#F3F6F7",
+          "after": "#18181A",
+          "operation": "replace"
+        },
+        "palette.text": {
+          "before": "#15110C",
+          "after": "#DFE2E5",
+          "operation": "replace"
+        },
+        "palette.text-muted": {
+          "before": "#4E606F",
+          "after": "#AAAFB5",
+          "operation": "replace"
+        },
+        "palette.line": {
+          "before": "#E6EBEF",
+          "after": "#343437",
+          "operation": "replace"
+        },
+        "palette.boundary": {
+          "before": "#647685",
+          "after": "#748695",
+          "operation": "replace"
+        },
+        "palette.selected": {
+          "before": "#ECECEC",
+          "after": "#3A3A3D",
+          "operation": "replace"
+        },
+        "color.action-hover": {
+          "before": "#141310",
+          "after": "#E1E3E6",
+          "operation": "replace"
+        },
+        "color.action-pressed": {
+          "before": "#131514",
+          "after": "#E2E5E8",
+          "operation": "replace"
+        },
+        "color.accent-subtle": {
+          "before": "#ECECEC",
+          "after": "#3A3A3D",
+          "operation": "replace"
+        },
+        "color.accent-border": {
+          "before": "#CCD3DB",
+          "after": "#494D53",
+          "operation": "replace"
+        },
+        "palette.danger-text": {
+          "before": "#E3193B",
+          "after": "#FFB2B8",
+          "operation": "replace"
+        },
+        "palette.warning-text": {
+          "before": "#753F07",
+          "after": "#FBCE03",
+          "operation": "replace"
+        },
+        "palette.success-text": {
+          "before": "#0D8626",
+          "after": "#A5F690",
+          "operation": "replace"
+        },
+        "color.scrim": {
+          "before": "#011228 / 0.4",
+          "after": "#111112 / 0.6",
+          "operation": "replace"
+        },
+        "component.option.hover-background": {
+          "before": "#053659 / 0.047058824",
+          "after": "#FFFFFF / 0.047058824",
+          "operation": "replace"
+        },
+        "component.option.active-background": {
+          "before": "#053659 / 0.047058824",
+          "after": "#FFFFFF / 0.047058824",
+          "operation": "replace"
+        },
+        "component.option.pressed-background": {
+          "before": "#053659 / 0.098039216",
+          "after": "#FFFFFF / 0.098039216",
+          "operation": "replace"
+        },
+        "color.on-action": {
+          "before": "unmodified library derivation/default",
+          "after": "#15110C",
+          "operation": "add"
+        }
+      },
+      "nonColorOperations": "identical to latest light recipe; validated using resolved token types",
+      "validation": {
+        "managedReplay": "passed",
+        "exportReopen": "passed",
+        "byteIdenticalReexport": "passed",
+        "nonColorOperations": "identical",
+        "resolvedGeometryTypographyMotion": "identical",
+        "resolvedNonColorCount": 249,
+        "diagnostics": [],
+        "sourceHash": "sha256:27ee31b5bc31a53cc04c7091256a7f465759635e669fa8ca2c0195666437c752",
+        "declaredPairRatios": [
+          {
+            "foreground": "color.text",
+            "background": "color.surface",
+            "ratio": 12.641413277037275
+          },
+          {
+            "foreground": "color.text-muted",
+            "background": "color.surface",
+            "ratio": 7.443851778115814
+          },
+          {
+            "foreground": "color.text-muted",
+            "background": "component.input.background",
+            "ratio": 7.443851778115814
+          },
+          {
+            "foreground": "color.on-action",
+            "background": "color.action",
+            "ratio": 14.451349377875006
+          },
+          {
+            "foreground": "color.on-action",
+            "background": "color.action-hover",
+            "ratio": 14.61621123367891
+          },
+          {
+            "foreground": "color.on-action",
+            "background": "color.action-pressed",
+            "ratio": 14.862266012656029
+          },
+          {
+            "foreground": "color.on-brand",
+            "background": "color.brand",
+            "ratio": 4.934223723459837
+          },
+          {
+            "foreground": "palette.danger-text",
+            "background": "color.surface",
+            "ratio": 9.638903080184631
+          },
+          {
+            "foreground": "palette.warning-text",
+            "background": "color.surface",
+            "ratio": 10.90666957900299
+          },
+          {
+            "foreground": "palette.success-text",
+            "background": "color.surface",
+            "ratio": 12.670638203749908
+          },
+          {
+            "foreground": "palette.boundary",
+            "background": "color.surface",
+            "ratio": 4.373590019425586
+          }
+        ],
+        "interpretation": "In-memory existing compiler validation only; not a build, rendered accessibility test, visual match or publication."
+      },
+      "browserValidation": "not run",
+      "publication": "not performed"
+    },
+    "shadcn": {
+      "flavor": "Homepage Rhea / Neutral component demo",
+      "baseRecipe": "artifacts/theme-candidates/spectrum2-latest/shadcn-edits.json",
+      "baseRecipeHash": "sha256:2d20b028989e6aa1978b714f739efa1dc0b3b27e78c4a81cebd79c8b1508583f",
+      "file": "shadcn-dark-edits.json",
+      "sha256": "sha256:9e45c7e51f47a17897950257af0dcf5ca72d1baf8f7f14c84aebd2571f438349",
+      "editCount": 70,
+      "mode": "dark",
+      "density": "compact",
+      "recipeKind": "complete managed edit sequence for createReviewDraft({})",
+      "changedOrAddedPaint": {
+        "palette.accent": {
+          "before": "#171717",
+          "after": "#E5E5E5",
+          "operation": "replace"
+        },
+        "palette.canvas": {
+          "before": "#FFFFFF",
+          "after": "#0A0A0A",
+          "operation": "replace"
+        },
+        "palette.surface": {
+          "before": "#FFFFFF",
+          "after": "#171717",
+          "operation": "replace"
+        },
+        "palette.surface-raised": {
+          "before": "#FFFFFF",
+          "after": "#171717",
+          "operation": "replace"
+        },
+        "palette.surface-subtle": {
+          "before": "#F5F5F5",
+          "after": "#262626",
+          "operation": "replace"
+        },
+        "palette.text": {
+          "before": "#0A0A0A",
+          "after": "#FAFAFA",
+          "operation": "replace"
+        },
+        "palette.text-muted": {
+          "before": "#6B6B6B",
+          "after": "#A1A1A1",
+          "operation": "replace"
+        },
+        "palette.line": {
+          "before": "#E5E5E5",
+          "after": "#2E2E2E",
+          "operation": "replace"
+        },
+        "palette.boundary": {
+          "before": "#737373",
+          "after": "#737373",
+          "operation": "replace"
+        },
+        "palette.selected": {
+          "before": "#F5F5F5",
+          "after": "#262626",
+          "operation": "replace"
+        },
+        "palette.focus": {
+          "before": "#737373",
+          "after": "#737373",
+          "operation": "replace"
+        },
+        "color.on-action": {
+          "before": "#FAFAFA",
+          "after": "#171717",
+          "operation": "replace"
+        },
+        "color.on-brand": {
+          "before": "#FAFAFA",
+          "after": "#171717",
+          "operation": "replace"
+        },
+        "color.action-hover": {
+          "before": "#454545",
+          "after": "#BCBCBC",
+          "operation": "replace"
+        },
+        "color.action-pressed": {
+          "before": "#454545",
+          "after": "#BCBCBC",
+          "operation": "replace"
+        },
+        "color.accent-subtle": {
+          "before": "#F5F5F5",
+          "after": "#262626",
+          "operation": "replace"
+        },
+        "color.accent-border": {
+          "before": "#E5E5E5",
+          "after": "#2E2E2E",
+          "operation": "replace"
+        },
+        "palette.danger-text": {
+          "before": "#E40014",
+          "after": "#FF6467",
+          "operation": "replace"
+        },
+        "component.input.background": {
+          "before": "#F2F2F2",
+          "after": "#282828",
+          "operation": "replace"
+        },
+        "component.option-list.border-color": {
+          "before": "#0A0A0A / 0.05",
+          "after": "#FAFAFA / 0.1",
+          "operation": "replace"
+        },
+        "color.scrim": {
+          "before": "unmodified library derivation/default",
+          "after": "#000000 / 0.3",
+          "operation": "add"
+        }
+      },
+      "nonColorOperations": "identical to latest light recipe; validated using resolved token types",
+      "validation": {
+        "managedReplay": "passed",
+        "exportReopen": "passed",
+        "byteIdenticalReexport": "passed",
+        "nonColorOperations": "identical",
+        "resolvedGeometryTypographyMotion": "identical",
+        "resolvedNonColorCount": 249,
+        "diagnostics": [],
+        "sourceHash": "sha256:84c074778d630b8fd18040e7421de8998fb78f4da539ab4737ec6908ad3db5a7",
+        "declaredPairRatios": [
+          {
+            "foreground": "color.text",
+            "background": "color.surface",
+            "ratio": 17.176123405576867
+          },
+          {
+            "foreground": "color.text-muted",
+            "background": "color.surface",
+            "ratio": 6.938930345767489
+          },
+          {
+            "foreground": "color.text-muted",
+            "background": "component.input.background",
+            "ratio": 5.706343601242673
+          },
+          {
+            "foreground": "color.on-action",
+            "background": "color.action",
+            "ratio": 14.231935591755258
+          },
+          {
+            "foreground": "color.on-action",
+            "background": "color.action-hover",
+            "ratio": 9.440057235876326
+          },
+          {
+            "foreground": "color.on-action",
+            "background": "color.action-pressed",
+            "ratio": 9.440057235876326
+          },
+          {
+            "foreground": "color.on-brand",
+            "background": "color.brand",
+            "ratio": 14.231935591755258
+          },
+          {
+            "foreground": "palette.danger-text",
+            "background": "color.surface",
+            "ratio": 6.207064877222629
+          },
+          {
+            "foreground": "palette.warning-text",
+            "background": "color.surface",
+            "ratio": 12.551173173273146
+          },
+          {
+            "foreground": "palette.success-text",
+            "background": "color.surface",
+            "ratio": 11.13239717298435
+          },
+          {
+            "foreground": "palette.boundary",
+            "background": "color.surface",
+            "ratio": 3.7809149327548917
+          }
+        ],
+        "interpretation": "In-memory existing compiler validation only; not a build, rendered accessibility test, visual match or publication."
+      },
+      "browserValidation": "not run",
+      "publication": "not performed"
+    }
+  },
+  "openProductQuestions": [],
+  "limitations": [
+    "Current main-source reads confirm the relevant declarations, not full byte identity with retained pinned snapshots.",
+    "No browser, native picker, physical device, assistive technology or visual approval performed.",
+    "Fidelity and accessibility are separate; managed diagnostics cover only declared pairs.",
+    "Opaque field/line/selected/action composites cannot preserve appearance over every arbitrary nested background.",
+    "Existing fonts, protected targets, focus behavior, native controls and single-layer shadows remain adaptations."
+  ],
+  "validationCompiler": {
+    "origin": "existing built tokens package; no build run",
+    "sourceRecipeHash": "sha256:b4fce5835d6fbdea3c75afe8100acb45f321d87894747c9f920a18f3644cd89a",
+    "distRecipeHash": "sha256:3594f05b7307310d05a55411924cab38ec0f6792f1de933a678f1fc62e022ca7"
+  },
+  "mappingDocument": {
+    "file": "additional-mapping.md",
+    "sha256": "sha256:799113ada3dac96034c5fc6045f68fb8c6024f3247d1142a4cc0c455660a6934"
+  },
+  "peerReview": {
+    "perspective": "token architecture",
+    "outcome": "Agreed dark status text uses explicit source text ramps rather than low-contrast fill colors; preserve noncolor inputs and derive on-brand where no source foreground exists."
+  },
+  "lightDangerTextCorrection": {
+    "date": "2026-09-10",
+    "trigger": "Parent-rendered light danger badge checks fell below 4.5 on actual badge backgrounds.",
+    "historicalIdentity": "Existing baseRecipe/baseRecipeHash and dark validation records describe the original derivation checkpoint; these records are not rewritten by the canonical light-only correction.",
+    "candidates": {
+      "astryx": {
+        "previous": "#E3193B",
+        "proposed": "#D31130",
+        "background": "#F3F6F7",
+        "source": "https://github.com/facebook/astryx/blob/1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc/packages/core/src/theme/tokens.stylex.ts",
+        "sourceDeclaration": "'--color-icon-red': 'light-dark(#D31130, #E3193B)'",
+        "adaptation": "Map the existing light red icon token to the light danger-text role. This is a source-supported role adaptation, not a claimed next semantic error-text ramp step.",
+        "canonicalInput": "tooling/theme-candidates/inspired/astryx.light.json",
+        "previousInputHash": "sha256:555b9cac1ff2f7e9affb113ad51e51e4653ca525faf6e4c02aac4ef8cf6a7c46",
+        "correctedInputHash": "sha256:c8b64bebb37b2dfcf3851cbf2c02c6cd455dd00c08e55f42bbe1347dfa424369",
+        "unchangedDarkInputHash": "sha256:c133d09683700b050ce5820f2f999ec00abb3db97ffc8b443f84168d373058f4",
+        "ratios": {
+          "before": 4.3273636990776145,
+          "after": 4.9674108878528935,
+          "threshold": 4.5
+        },
+        "validation": {
+          "managedReplay": "passed",
+          "exportReopenReexport": "byte-identical",
+          "diagnostics": [],
+          "changedOperation": "palette.danger-text only",
+          "unchangedResolvedNonColorAndActionRoleCount": 258,
+          "filledActionPaintUnchanged": true,
+          "sourceHash": "sha256:59fe538fd66aee83ed6a7d50adb1c1f9a161e081ab93c4a1ddd9ff62750390fa",
+          "scope": "Existing built token compiler and calculated contrast on parent-reported rendered badge backgrounds; no build or browser test run by this correction task."
+        }
+      },
+      "shadcn": {
+        "previous": "#E40014",
+        "proposed": "#E20014",
+        "background": "#F5F5F5",
+        "source": "https://github.com/shadcn-ui/ui/blob/3ba91b1cc83e1bbe4ab35a422ff2a694849c5048/apps/v4/app/legacy-themes.css",
+        "sourceDeclaration": ".theme-neutral { --destructive: oklch(0.577 0.245 27.325); }",
+        "adaptation": "The Neutral branch supplies no separate stronger danger-text ramp. Reduce the rounded sRGB red channel from 228 to 226, leaving green 0 and blue 20 unchanged. This En Rêve contrast adaptation is not an official shadcn token.",
+        "canonicalInput": "tooling/theme-candidates/inspired/shadcn.light.json",
+        "previousInputHash": "sha256:2d20b028989e6aa1978b714f739efa1dc0b3b27e78c4a81cebd79c8b1508583f",
+        "correctedInputHash": "sha256:c8d7aa5a0b8afde6b79211bb2f8b22f3efedb74f1d2f734db450c8e4778903b0",
+        "unchangedDarkInputHash": "sha256:9e45c7e51f47a17897950257af0dcf5ca72d1baf8f7f14c84aebd2571f438349",
+        "ratios": {
+          "before": 4.470278832007325,
+          "after": 4.538795180615213,
+          "threshold": 4.5
+        },
+        "validation": {
+          "managedReplay": "passed",
+          "exportReopenReexport": "byte-identical",
+          "diagnostics": [],
+          "changedOperation": "palette.danger-text only",
+          "unchangedResolvedNonColorAndActionRoleCount": 258,
+          "filledActionPaintUnchanged": true,
+          "sourceHash": "sha256:3133becb52cb37dff70896bb097f111e94daeb7d2e799ec8166a56911ae4b1db",
+          "scope": "Existing built token compiler and calculated contrast on parent-reported rendered badge backgrounds; no build or browser test run by this correction task."
+        }
+      }
+    },
+    "browserStatus": "Parent to regenerate and rerun candidate verification; no browser pass claimed here."
+  }
+}

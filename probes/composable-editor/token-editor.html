@@ -1,0 +1,9 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Token editor integration</title><main><h1>Token editor</h1><en-chat-composer><en-token-editor slot="editor" label="Draft"></en-token-editor></en-chat-composer><button id="outside">Outside</button><output id="result"></output></main><script type="module">
+import {html} from 'lit';window.template=html;
+import '@en-reve/elements/define/token-editor.js';import '@en-reve/elements/define/chat-composer.js';
+const editor=document.querySelector('en-token-editor');await editor.updateComplete;
+editor.registerExtension({id:'references',trigger:'@',label:'References',provide:({query})=>[{id:'mira',label:'Mira',insert:[{kind:'token',id:'ref-1',type:'ref',text:'@Mira',label:'Mira reference',data:{id:'mira'}}]}].filter(item=>item.label.toLowerCase().includes(query.toLowerCase()))});
+editor.registerExtension({id:'tools',trigger:'/',label:'Tools',provide:()=>[{id:'summarize',label:'Summarize',action:'summarize'}]});
+editor.addEventListener('en-action',e=>document.querySelector('#result').textContent=e.detail.action);
+window.editor=editor;window.ready=true;
+</script></html>

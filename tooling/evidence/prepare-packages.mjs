@@ -1,0 +1,10 @@
+import { mkdir } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { preparedPackages } from './packed-setup.mjs';
+import { atomicJSON } from './setup.mjs';
+const destination=process.argv[2];
+if(!destination||process.argv.length!==3)throw new Error('Provide one fresh archive destination');
+const output=resolve(destination);await mkdir(output,{recursive:false});
+const started=performance.now();
+const packages=await preparedPackages(['elements','primitives','styles','tokens','ssr'],output);
+await atomicJSON(resolve(output,'preparation.json'),{kind:'actual-packed-artifacts',packages,wallMs:performance.now()-started,note:'Archives retain npm integrity/shasum and originating immutable producer; no browser result reuse.'});

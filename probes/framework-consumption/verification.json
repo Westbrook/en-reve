@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-09-13T00:11:27.788Z",
+  "status": "passed",
+  "command": "PLAYWRIGHT_BROWSERS_PATH=/private/tmp/en-reve-playwright npx playwright test --config probes/framework-consumption/playwright.config.ts --workers=2",
+  "stats": {
+    "startTime": "2026-09-13T00:11:27.788Z",
+    "duration": 16991.093,
+    "expected": 84,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browsers": {
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "webkit": "26.6"
+  },
+  "consumers": {
+    "html": "native DOM + Lit3.3.3",
+    "react19": {
+      "react": "19.3.0",
+      "react-dom": "19.3.0"
+    },
+    "react18": {
+      "react": "18.3.1",
+      "react-dom": "18.3.1"
+    },
+    "vue3": {
+      "vue": "3.5.42",
+      "@vue/server-renderer": "3.5.42"
+    },
+    "vue2": {
+      "vue": "2.7.16",
+      "vue-server-renderer": "2.7.16"
+    },
+    "svelte5": {
+      "svelte": "5.57.0"
+    },
+    "svelte4": {
+      "svelte": "4.2.20"
+    }
+  },
+  "scopes": [
+    "SSR native controls before hydration and host/shadow/native-input identity afterward",
+    "one real tentative en-change per user action, rejection rollback, authoritative synchronous setter",
+    "framework-owned boolean property updates, accepted/rejected/superseded en-change, keyboard Space",
+    "framework-bound actions add/remove child-authored select options while native select identity remains stable"
+  ],
+  "limitations": [
+    "Opaque island SSR adapter; ordinary framework-authored client checkbox is separately mounted",
+    "Vue2 EOL historical compatibility only",
+    "Svelte5 exercised shared legacy syntax, not runes integration",
+    "Workspace distribution consumption, not npm packed package/type/import-map verification",
+    "Installed desktop engines, not current-minus-one browser matrix or physical mobile/assistive technology"
+  ],
+  "sources": {
+    "adapters/html.mjs": "3210558b0f4a2d78a4107e7f1592582930f353eed35315aeca95d555ee37a84d",
+    "adapters/react.mjs": "929867680e922f9b703d752f90811a9f6db5b1f42ae92a5963162185bf25f790",
+    "adapters/svelte.mjs": "98985165a8fc4726178cd0028cf1b0b1bbd7d5f37ec0c81e4d9c8d7fd4132b25",
+    "adapters/vue.mjs": "226a84f21750b218ee4f1496d4e2aa64b3e30127b996363b505bfc652d385c32",
+    "build.mjs": "3c76aaeaa009fe331e0aba8a9c3ae44ee3bc82ee535309c3114855bf6c389637",
+    "consumption.spec.ts": "80e1e14e72c9480a232bbb39ca09d7745c9c70d5b82b9c9a6977ab125c08ae81",
+    "environments/react18/package-lock.json": "954741ca15333b68b203df978986f7bdeaea405d4f7608792e737d0f33b55472",
+    "environments/react18/package.json": "804ec8c4f0c28eac228d9feccc9df7cb814084643c9123b59a4d35dd47727d08",
+    "environments/react19/package-lock.json": "b78429552b6313b23cf2f354655d9aad02af5b34ba16c2b25b60ac14fdc31fb5",
+    "environments/react19/package.json": "3db5086cb6daa71b9e13426a75e7c6809c2b687926ebccc878bc0e338fc26505",
+    "environments/svelte4/package-lock.json": "ff0069782ca10d9562f8d5d9ea5a480c19064e81361c2d95dc31c1914fbd487c",
+    "environments/svelte4/package.json": "8e606b2fabf276b6e5a4b9f13d4d3eef96e95db71280aa0263d10a9943b423a8",
+    "environments/svelte5/package-lock.json": "4d11244104b9c22ec183c795a10610b449089ab28e8390f852f0646e5e61e47d",
+    "environments/svelte5/package.json": "9d681335728bdd99ba8f451438507d728dd1e93ec1c4fafe43fe76537c3a2bef",
+    "environments/vue2/package-lock.json": "c56c52b0aac987dd17dffda7338bb1f23609bd44d62db6e412f0ae99d1e8062c",
+    "environments/vue2/package.json": "e5df75f9a61615e8a46a06e6a59bb847d5452ad7f303947095858c0d93f63872",
+    "environments/vue3/package-lock.json": "28eea99d1103acc521060734236bbb3997fdb1dd97422bd3706cc2f1d70ae4a7",
+    "environments/vue3/package.json": "4dffd5daf48b3da43bb5ce7dad9cc9fe73573389793014d13cfa6de16e793252",
+    "fixture.mjs": "65626ca3bcebc8b6a8907300728d47e09962737a6dc394e907df1d16330c94d5",
+    "install.mjs": "4e7111faae2bbd0e030fbce90e40f6598cc8bf8b23b9886f2b73d32df74dafa9",
+    "island-client.mjs": "c2b809039a9462d2a18027890cd3a0809deed2733ecc7cb90762f8c7c7f37177",
+    "package-lock.json": "aa6d810bb3d6f3a161db76703119598e88c32b87f6e020fbcb9a6b6c14ab48f5",
+    "package.json": "35aaf7dfa52ed47b0e7b021c33982f3a40af4d54dba0560b37bafdfaeb5cf94a",
+    "playwright.config.ts": "b310a9ac151371c4edfe15f68ac7cf970d553512625b995949fa468fce01b404",
+    "server.mjs": "4aa3c6c724bcaebca13030cf60c565392562c8e8e20ef005617b513156cf6a37"
+  },
+  "builtArtifacts": {
+    "html.html": "1baa51cdd978cc3741fe82b43d861979f07857eee97c1ea9c2b59e038f2cf002",
+    "html.js": "a3321672189faf11dabbd9feb0bdf54b252a1204de65f65c0ffc5c4742af4d5e",
+    "island.js": "eaa14ca6b55c04e5211a1395ebc5a877bfbc5db858d729f2dacd83200db210ec",
+    "react18.html": "b8563b6029dc455f175bad465c55b2e70b73ec62eae96b2f9da5ba9406d5028e",
+    "react18.js": "03b5ed13717fea87a7087e9fb8da37888d3529863434ce04b554e042104e48d6",
+    "react19.html": "588d0f9894b0e25dddafe57d321248e50bc2b475556a8d0db5b9d4df2a324358",
+    "react19.js": "83233ec5b279543894a64161b5c693d9f671cf72228242216700f87dca3c7a7e",
+    "svelte4.html": "c344e2b219b51a481ec846355e0b94ee72002de0c3e42e817fd57a6e2940211d",
+    "svelte4.js": "eb29d4149d348b8318afa84d3b59e020ac6924f60a26247a23b3047d1f85eaed",
+    "svelte5.html": "dbbcfaca65c025122c738a49d6eafbc222f00a96a4818e45af47acecbb7db326",
+    "svelte5.js": "a1f9ee1c4e6615b4c98cc8b5403810cd1816aa7a9978eedb461884573d272837",
+    "versions.json": "2dbd99ad227eb352e05ad3a91756a1259d8da4567bf9bd744725af9633b23a68",
+    "vue2.html": "1ab9cf387696637f6b3b58592d6289387d8c36fb7b685f3515578eabc8e6318e",
+    "vue2.js": "ff08d052d7b04b5529a9946ac84321cb6ebfc7e2bf27b604bce55af10883cba4",
+    "vue3.html": "9f7552b37f06e81f23bef6b3b365949040075f57dd0886afa0b774d8e45a5649",
+    "vue3.js": "54069f7b80000006c4c23f01451a09c72c7267d65fa4758a12ff97975c1eedc7"
+  },
+  "rawResultSha256": "ceee6724c71aa64f23a2377a733415082adfd9d352aa79f313f7249a37100fe7"
+}

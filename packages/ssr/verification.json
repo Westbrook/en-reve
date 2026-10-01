@@ -1,0 +1,58 @@
+{
+  "date": "2026-09-08",
+  "productionArtifact": {
+    "path": "dist/index.html",
+    "sha256": "ac8249aad044f713dfe91fa45b26e0ded21190cf1a8fed83086f50101c091370",
+    "bytes": 3657386,
+    "mode": "build-time SSR",
+    "scope": "The JavaScript-disabled and full-sheet delayed-hydration journeys ran against this frozen production document and its built assets. Form-state journeys rendered actual library controls through the SSR adapter in a separate fixture.",
+    "url": "http://127.0.0.1:4192/"
+  },
+  "node": {
+    "passed": 3,
+    "failed": 0,
+    "command": "npm test -w @en-reve/ssr"
+  },
+  "browser": {
+    "passed": 12,
+    "failed": 0,
+    "engines": [
+      "Chromium 153",
+      "Firefox 155",
+      "WebKit 26.6"
+    ],
+    "command": "PLAYWRIGHT_BROWSERS_PATH=/private/tmp/en-reve-playwright npm exec playwright -- test --config packages/ssr/playwright.config.ts",
+    "journeys": [
+      "Built full sticker sheet visible with JavaScript disabled, actual native field/choice and tab/accordion initial state, and rating group named How useful is this concept?",
+      "Delayed full-sheet hydration preserves native input identity, draft, focus and selection; all specimen hosts upgrade",
+      "Leading-newline multiline textarea preserves pre-upgrade identity, draft, focus and selection; managed FACE submission adopts the edit",
+      "Controlled textarea retains native draft while FormData uses accepted state until an application property write"
+    ],
+    "runStartedAt": "2026-09-08T20:58:12.307Z"
+  },
+  "limitations": [
+    "Build-time static documentation SSR is not a deployed request-time server",
+    "No scoped-registry SSR claim",
+    "No retail current-minus-one or physical assistive-technology/IME certification",
+    "No no-JavaScript custom-element form association or full application interaction claim",
+    "Choice-control pre-upgrade edits are not covered by the text-edit preservation contract"
+  ],
+  "postVerificationArtifact": {
+    "sha256": "f017516d2873c324fae159d58253d924c60c90b154fcfafdd69a045e7059c9e4",
+    "bytes": 3657386,
+    "change": "A CSS-only follow-up makes the code syntax-theme container inherit the selected page color scheme. Rendered body markup and JavaScript behavior are unchanged. The 12 SSR journeys above ran against ac8249; they are not represented as a fresh run against this follow-up artifact.",
+    "followupEvidence": "tooling/sticker-sheet/evidence/verification.json",
+    "followupScope": "Full documentation interaction, source tab geometry, copied text preservation and light/dark axe suites passed in Chromium, Firefox and WebKit against this follow-up artifact."
+  },
+  "finalCssOnlyArtifact": {
+    "path": "dist/index.html",
+    "sha256": "caf44b8148c19bc0b4ca0e83d845d33d2823af25731b73345f56ab025dae4725",
+    "bytes": 3657386,
+    "url": "http://127.0.0.1:4196/",
+    "changes": [
+      "Syntax comment color uses the semantic text-muted token.",
+      "CSS compilation targets Chrome 123, Firefox 120 and Safari 17.5 to preserve native light-dark() behavior instead of lowering it to flag variables."
+    ],
+    "scope": "CSS-only follow-up. Existing full documentation and SSR results retain their actual tested artifact hashes; no fresh full-suite run against this artifact is claimed. Final targeted light/dark, highlight-range and comment-contrast checks are recorded separately by the highlighting reviewer."
+  }
+}

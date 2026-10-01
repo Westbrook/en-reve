@@ -1,0 +1,1062 @@
+{
+  "at": "2026-09-24T01:37:15.000Z",
+  "passed": true,
+  "retainedNativeAssets": 81,
+  "tables": 25,
+  "integration": 17,
+  "entries": [
+    {
+      "source": "runs/calendar-variants-pilot-v1/collector.js",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/collector.js.gz",
+      "sha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+      "bytes": 20323,
+      "compressedBytes": 7479
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/completion.json",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/completion.json.gz",
+      "sha256": "4d29c68c0597d78f2d37b5f7d1e708faccac1143b023ee4ccb22f9291f2dc733",
+      "bytes": 114,
+      "compressedBytes": 109
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/profiles/profiles.json",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/profiles/profiles.json.gz",
+      "sha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+      "bytes": 540,
+      "compressedBytes": 281
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/registry/systems.json",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/registry/systems.json.gz",
+      "sha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+      "bytes": 1209,
+      "compressedBytes": 255
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/registry/verification-receipts.json",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/registry/verification-receipts.json.gz",
+      "sha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+      "bytes": 61,
+      "compressedBytes": 63
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/scenarios/calendar.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/scenarios/calendar.mjs.gz",
+      "sha256": "a79afc27d711fc64fc1fc9ed489ca0a2bb2a8b793803de06d9d67a6ec25aded8",
+      "bytes": 3934,
+      "compressedBytes": 1470
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/scenarios/journey.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/scenarios/journey.mjs.gz",
+      "sha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+      "bytes": 6985,
+      "compressedBytes": 2280
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/scenarios/registry-workflows.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/scenarios/registry-workflows.mjs.gz",
+      "sha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+      "bytes": 9710,
+      "compressedBytes": 2933
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/scenarios/startup.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/scenarios/startup.mjs.gz",
+      "sha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+      "bytes": 3915,
+      "compressedBytes": 1576
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/analysis.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/analysis.mjs.gz",
+      "sha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+      "bytes": 6915,
+      "compressedBytes": 2216
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/bfcache.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/bfcache.mjs.gz",
+      "sha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+      "bytes": 6805,
+      "compressedBytes": 2469
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/bundles.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/bundles.mjs.gz",
+      "sha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+      "bytes": 5845,
+      "compressedBytes": 2292
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/calibrate.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/calibrate.mjs.gz",
+      "sha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+      "bytes": 4472,
+      "compressedBytes": 1650
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/cli.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/cli.mjs.gz",
+      "sha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+      "bytes": 2066,
+      "compressedBytes": 800
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/collector.js",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/collector.js.gz",
+      "sha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+      "bytes": 9072,
+      "compressedBytes": 2983
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/config.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/config.mjs.gz",
+      "sha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+      "bytes": 1808,
+      "compressedBytes": 831
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/delivery.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/delivery.mjs.gz",
+      "sha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+      "bytes": 3116,
+      "compressedBytes": 1153
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/diagnostics.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/diagnostics.mjs.gz",
+      "sha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+      "bytes": 7041,
+      "compressedBytes": 2429
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/dom-diagnostics.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/dom-diagnostics.mjs.gz",
+      "sha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+      "bytes": 1329,
+      "compressedBytes": 556
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/functional.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/functional.mjs.gz",
+      "sha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+      "bytes": 5290,
+      "compressedBytes": 1823
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/lighthouse.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/lighthouse.mjs.gz",
+      "sha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+      "bytes": 6575,
+      "compressedBytes": 2411
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/lock.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/lock.mjs.gz",
+      "sha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+      "bytes": 1109,
+      "compressedBytes": 511
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/prepare.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/prepare.mjs.gz",
+      "sha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+      "bytes": 10426,
+      "compressedBytes": 3095
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/registry-fixture.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/registry-fixture.mjs.gz",
+      "sha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+      "bytes": 5692,
+      "compressedBytes": 2344
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/registry-ownership.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/registry-ownership.mjs.gz",
+      "sha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+      "bytes": 7582,
+      "compressedBytes": 3112
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/registry-reference.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/registry-reference.mjs.gz",
+      "sha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+      "bytes": 12881,
+      "compressedBytes": 4323
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/registry-runner.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/registry-runner.mjs.gz",
+      "sha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+      "bytes": 13984,
+      "compressedBytes": 5124
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/regression.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/regression.mjs.gz",
+      "sha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+      "bytes": 9484,
+      "compressedBytes": 2911
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/report.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/report.mjs.gz",
+      "sha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+      "bytes": 9471,
+      "compressedBytes": 3082
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/runner.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/runner.mjs.gz",
+      "sha256": "2840f65f307be03d868e0d55d545770685d5e3f29fd76788ff0ab28344f17399",
+      "bytes": 20491,
+      "compressedBytes": 6646
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/server.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/server.mjs.gz",
+      "sha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+      "bytes": 6640,
+      "compressedBytes": 2383
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/harness/src/verification-receipts.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/harness/src/verification-receipts.mjs.gz",
+      "sha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+      "bytes": 2068,
+      "compressedBytes": 792
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/manifest.json",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/manifest.json.gz",
+      "sha256": "b900bb53676ed0c72e1227ffc4a72a4542caa12eaac6cbfd06b1b843bf908910",
+      "bytes": 42576,
+      "compressedBytes": 4303
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/run-calendar-variants.mjs",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/run-calendar-variants.mjs.gz",
+      "sha256": "5d2d25ffd364fc70f1b1c954c5a6505fb87acea29f81579d21129974b98ab179",
+      "bytes": 4517,
+      "compressedBytes": 1914
+    },
+    {
+      "source": "runs/calendar-variants-pilot-v1/samples.jsonl",
+      "artifact": "evidence/runs/calendar-variants-pilot-v1/samples.jsonl.gz",
+      "sha256": "3e139a258cf5d5116d431195ba61a2a930798cbcc8e1108d5ebacc71756787f4",
+      "bytes": 100774,
+      "compressedBytes": 11364
+    },
+    {
+      "source": "runs/calendar-variants-v1/collector.js",
+      "artifact": "evidence/runs/calendar-variants-v1/collector.js.gz",
+      "sha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+      "bytes": 20323,
+      "compressedBytes": 7479
+    },
+    {
+      "source": "runs/calendar-variants-v1/completion.json",
+      "artifact": "evidence/runs/calendar-variants-v1/completion.json.gz",
+      "sha256": "5b4a87622e160b5e87934760dd597c3d5f8c77c92c3334c838bf302f4be2fb71",
+      "bytes": 120,
+      "compressedBytes": 112
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/profiles/profiles.json",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/profiles/profiles.json.gz",
+      "sha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+      "bytes": 540,
+      "compressedBytes": 281
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/registry/systems.json",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/registry/systems.json.gz",
+      "sha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+      "bytes": 1209,
+      "compressedBytes": 255
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/registry/verification-receipts.json",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/registry/verification-receipts.json.gz",
+      "sha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+      "bytes": 61,
+      "compressedBytes": 63
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/scenarios/calendar.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/scenarios/calendar.mjs.gz",
+      "sha256": "a79afc27d711fc64fc1fc9ed489ca0a2bb2a8b793803de06d9d67a6ec25aded8",
+      "bytes": 3934,
+      "compressedBytes": 1470
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/scenarios/journey.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/scenarios/journey.mjs.gz",
+      "sha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+      "bytes": 6985,
+      "compressedBytes": 2280
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/scenarios/registry-workflows.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/scenarios/registry-workflows.mjs.gz",
+      "sha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+      "bytes": 9710,
+      "compressedBytes": 2933
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/scenarios/startup.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/scenarios/startup.mjs.gz",
+      "sha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+      "bytes": 3915,
+      "compressedBytes": 1576
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/analysis.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/analysis.mjs.gz",
+      "sha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+      "bytes": 6915,
+      "compressedBytes": 2216
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/bfcache.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/bfcache.mjs.gz",
+      "sha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+      "bytes": 6805,
+      "compressedBytes": 2469
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/bundles.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/bundles.mjs.gz",
+      "sha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+      "bytes": 5845,
+      "compressedBytes": 2292
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/calibrate.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/calibrate.mjs.gz",
+      "sha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+      "bytes": 4472,
+      "compressedBytes": 1650
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/cli.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/cli.mjs.gz",
+      "sha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+      "bytes": 2066,
+      "compressedBytes": 800
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/collector.js",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/collector.js.gz",
+      "sha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+      "bytes": 9072,
+      "compressedBytes": 2983
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/config.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/config.mjs.gz",
+      "sha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+      "bytes": 1808,
+      "compressedBytes": 831
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/delivery.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/delivery.mjs.gz",
+      "sha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+      "bytes": 3116,
+      "compressedBytes": 1153
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/diagnostics.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/diagnostics.mjs.gz",
+      "sha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+      "bytes": 7041,
+      "compressedBytes": 2429
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/dom-diagnostics.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/dom-diagnostics.mjs.gz",
+      "sha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+      "bytes": 1329,
+      "compressedBytes": 556
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/functional.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/functional.mjs.gz",
+      "sha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+      "bytes": 5290,
+      "compressedBytes": 1823
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/lighthouse.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/lighthouse.mjs.gz",
+      "sha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+      "bytes": 6575,
+      "compressedBytes": 2411
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/lock.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/lock.mjs.gz",
+      "sha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+      "bytes": 1109,
+      "compressedBytes": 511
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/prepare.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/prepare.mjs.gz",
+      "sha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+      "bytes": 10426,
+      "compressedBytes": 3095
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/registry-fixture.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/registry-fixture.mjs.gz",
+      "sha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+      "bytes": 5692,
+      "compressedBytes": 2344
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/registry-ownership.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/registry-ownership.mjs.gz",
+      "sha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+      "bytes": 7582,
+      "compressedBytes": 3112
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/registry-reference.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/registry-reference.mjs.gz",
+      "sha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+      "bytes": 12881,
+      "compressedBytes": 4323
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/registry-runner.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/registry-runner.mjs.gz",
+      "sha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+      "bytes": 13984,
+      "compressedBytes": 5124
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/regression.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/regression.mjs.gz",
+      "sha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+      "bytes": 9484,
+      "compressedBytes": 2911
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/report.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/report.mjs.gz",
+      "sha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+      "bytes": 9471,
+      "compressedBytes": 3082
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/runner.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/runner.mjs.gz",
+      "sha256": "df5fb721b334a7598fb597549376c4f9d3486be812a1de10cfcf968c326fade6",
+      "bytes": 20791,
+      "compressedBytes": 6701
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/server.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/server.mjs.gz",
+      "sha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+      "bytes": 6640,
+      "compressedBytes": 2383
+    },
+    {
+      "source": "runs/calendar-variants-v1/harness/src/verification-receipts.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/harness/src/verification-receipts.mjs.gz",
+      "sha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+      "bytes": 2068,
+      "compressedBytes": 792
+    },
+    {
+      "source": "runs/calendar-variants-v1/manifest.json",
+      "artifact": "evidence/runs/calendar-variants-v1/manifest.json.gz",
+      "sha256": "a81cd0030237b515aa79a3faa754a4d9fe53ecedcd006aee74602af9ea18169b",
+      "bytes": 131880,
+      "compressedBytes": 6656
+    },
+    {
+      "source": "runs/calendar-variants-v1/run-calendar-variants.mjs",
+      "artifact": "evidence/runs/calendar-variants-v1/run-calendar-variants.mjs.gz",
+      "sha256": "f55f43a70f42676b99c0a680833361e233fa60f28692d6999024315f6841adf8",
+      "bytes": 4513,
+      "compressedBytes": 1912
+    },
+    {
+      "source": "runs/calendar-variants-v1/samples.jsonl",
+      "artifact": "evidence/runs/calendar-variants-v1/samples.jsonl.gz",
+      "sha256": "ad08e5578effcd5c830cb9928908a8fe095628b529a414ca0ead9f6984e45bae",
+      "bytes": 28106517,
+      "compressedBytes": 1288850
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00001-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00001-lighthouse.html.gz",
+      "sha256": "6791f68fd07adf040a16ef993230b436ed3671b3d1eeb836236ce6c1357fb19d",
+      "bytes": 585032,
+      "compressedBytes": 192491
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00001-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00001-lighthouse.json.gz",
+      "sha256": "54cdb821fc88c9f1648e4bed76f0cda3896f90aebecec4a33aee3d0505962cda",
+      "bytes": 440923,
+      "compressedBytes": 144195
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00002-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00002-lighthouse.html.gz",
+      "sha256": "cb524300b43a640b56f5ca64e8be58918e696ee6e117e5a5e9fd2d0f39953d35",
+      "bytes": 606159,
+      "compressedBytes": 192585
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00002-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00002-lighthouse.json.gz",
+      "sha256": "c932feecae67ca1f71f31d891faaaa8731fdd42db7628f822c87614265c0bc99",
+      "bytes": 461900,
+      "compressedBytes": 144260
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00003-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00003-lighthouse.html.gz",
+      "sha256": "35d1e9b7a14bdb71ed5356cdfe8e76b2c2c8e5486ef9e658b99bc5ddbb7131b3",
+      "bytes": 585080,
+      "compressedBytes": 192414
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00003-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00003-lighthouse.json.gz",
+      "sha256": "3bba5bc58edaaf319f0532d76ff88462992e21c3f5c8adb0c5927df3831b3a5d",
+      "bytes": 440821,
+      "compressedBytes": 144097
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00004-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00004-lighthouse.html.gz",
+      "sha256": "ec4a3508ed639959f804491ef923a79de6087e0f1c3a5c2e1bf6c4a97c4ddd65",
+      "bytes": 606198,
+      "compressedBytes": 204622
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00004-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00004-lighthouse.json.gz",
+      "sha256": "be5188cbb0085be0385c073da91c2ae690fd4c5b8f7e7ae41ee61d17c5325c05",
+      "bytes": 461939,
+      "compressedBytes": 156316
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00005-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00005-lighthouse.html.gz",
+      "sha256": "b1ba424f8bf6a82c55758b097d8de99e6f36fdbb4a14a9a69a16977e996b6386",
+      "bytes": 584904,
+      "compressedBytes": 192299
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00005-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00005-lighthouse.json.gz",
+      "sha256": "3f6f1d50688c8888f1241b579c481d8c4ab27cc13777dd7bc94283edc91daad3",
+      "bytes": 440695,
+      "compressedBytes": 143983
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00006-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00006-lighthouse.html.gz",
+      "sha256": "5e557de94c8960d19a2a548f9fda72d28345eca23b40a2afe541a9191a8a77d7",
+      "bytes": 585037,
+      "compressedBytes": 192375
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00006-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00006-lighthouse.json.gz",
+      "sha256": "edb5dd071c91f28edbcc344af8a1f7604b9f53d8c9ff1c031c2df311e22d56a5",
+      "bytes": 440778,
+      "compressedBytes": 144060
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00007-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00007-lighthouse.html.gz",
+      "sha256": "bba8bec479271e70624bd3d05b65ada350451b799936e058e911073c3687e396",
+      "bytes": 606180,
+      "compressedBytes": 204547
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00007-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00007-lighthouse.json.gz",
+      "sha256": "c190447005bd232989750513048b10c36057fec85bdb0f3bce29b811e48383e0",
+      "bytes": 461921,
+      "compressedBytes": 156235
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00008-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00008-lighthouse.html.gz",
+      "sha256": "d4ce6c41630c129f314af7ef32f9ad436a97b324a4a4e18c38db4b18f6095a64",
+      "bytes": 585066,
+      "compressedBytes": 192395
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00008-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00008-lighthouse.json.gz",
+      "sha256": "5a88beb4501b45476bb1754b62c0a55b2e371aff34924aba9f78a2b20d0f2392",
+      "bytes": 440857,
+      "compressedBytes": 144077
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00009-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00009-lighthouse.html.gz",
+      "sha256": "5b20ea4c501a89c1f57293d6e2a2d01127b39ea485ebf258e38f7e1756e22090",
+      "bytes": 584835,
+      "compressedBytes": 192307
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00009-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00009-lighthouse.json.gz",
+      "sha256": "ba87df03a3703da45579ac780faf4e458b7b7f0c79f6beb9b989104707b55ba7",
+      "bytes": 440576,
+      "compressedBytes": 143998
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00010-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00010-lighthouse.html.gz",
+      "sha256": "86875075cc1509ffd240000899d4f404b1a70823b0a0fa89a9485d3fb4649947",
+      "bytes": 606120,
+      "compressedBytes": 192561
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00010-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00010-lighthouse.json.gz",
+      "sha256": "0694c2df0629a1d1311802cfa05e198fbde92930623a201c39d99408fd223d23",
+      "bytes": 461811,
+      "compressedBytes": 144231
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00011-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00011-lighthouse.html.gz",
+      "sha256": "3aee3c1afe1267ad881ac26a0b3d11a331167c5f6dd08bde9b7f32d0230a072f",
+      "bytes": 585049,
+      "compressedBytes": 192370
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00011-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00011-lighthouse.json.gz",
+      "sha256": "63d58018ff862df47f7aad039d773fe826917571b447a93ca75495169d1e2a47",
+      "bytes": 440790,
+      "compressedBytes": 144045
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00012-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00012-lighthouse.html.gz",
+      "sha256": "575ab1941705dc60a38d37fe5c5094baa66e5fe2d0086d5fc742a6a26fa2f771",
+      "bytes": 584871,
+      "compressedBytes": 192278
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00012-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00012-lighthouse.json.gz",
+      "sha256": "658213b77b001239fe7705a860c03d69c03baa39b852be6125e6dbf33c5465bd",
+      "bytes": 440612,
+      "compressedBytes": 143957
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00013-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00013-lighthouse.html.gz",
+      "sha256": "2d12a4365aa65e7169602644e4abab0b77b3ceee161ab31dc25d5b6b34143f4c",
+      "bytes": 606170,
+      "compressedBytes": 192537
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00013-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00013-lighthouse.json.gz",
+      "sha256": "9855f1fee36bca127bcf9a289f5a2d3affcb51ef9d016caba48afbf0261677de",
+      "bytes": 461911,
+      "compressedBytes": 144212
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00014-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00014-lighthouse.html.gz",
+      "sha256": "0f9d99bfc01c9fc4f95a6fbb2ce95ca705c5a609284d3fc143ad23de56a298de",
+      "bytes": 585035,
+      "compressedBytes": 192325
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00014-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00014-lighthouse.json.gz",
+      "sha256": "0b712052dcf5596179277f715010305a856fd8752bf17fa3e73c62dcd3d44e14",
+      "bytes": 440826,
+      "compressedBytes": 144013
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00015-lighthouse.html",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00015-lighthouse.html.gz",
+      "sha256": "49c48d49e5d44517885a8c84e6cafbe6436a16ad67e08ab2e5f4cc5d1f35f522",
+      "bytes": 584888,
+      "compressedBytes": 192287
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/00015-lighthouse.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/00015-lighthouse.json.gz",
+      "sha256": "db09044f63f66a065c08a8767c855a6a49a4e973249cde0d076f2b9c270d1fe3",
+      "bytes": 440679,
+      "compressedBytes": 143967
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/manifest.json",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/manifest.json.gz",
+      "sha256": "194e53825c3937bf3dfd03ba0301f498e278cf897c1ddb4ee966eb03f06ad54c",
+      "bytes": 11417,
+      "compressedBytes": 2203
+    },
+    {
+      "source": "runs/calendar-variants-lighthouse-v1/samples.jsonl",
+      "artifact": "evidence/runs/calendar-variants-lighthouse-v1/samples.jsonl.gz",
+      "sha256": "7501a3e21b2e3263a59e31af9363ad46c407e3cc22a63ad43c1d9327c2cc8ffb",
+      "bytes": 6855,
+      "compressedBytes": 809
+    },
+    {
+      "source": ".cache/variants/calendar-eager/assets/index-C0meNs_7.js",
+      "artifact": "evidence/builds/calendar-eager/assets/index-C0meNs_7.js.gz",
+      "sha256": "2b96bbe0542ee9b69891e993f33b18110e7c56c10e4195133d91b0a5bcb38eed",
+      "bytes": 450035,
+      "compressedBytes": 110874
+    },
+    {
+      "source": ".cache/variants/calendar-eager/assets/index-C0meNs_7.js.map",
+      "artifact": "evidence/builds/calendar-eager/assets/index-C0meNs_7.js.map.gz",
+      "sha256": "3aea1d71d753337cc9b65b905e3ef0c9f34a3c29cff4f392846b347a699de892",
+      "bytes": 1209535,
+      "compressedBytes": 272225
+    },
+    {
+      "source": ".cache/variants/calendar-eager/assets/index-CDV5OawH.css",
+      "artifact": "evidence/builds/calendar-eager/assets/index-CDV5OawH.css.gz",
+      "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+      "bytes": 44562,
+      "compressedBytes": 6986
+    },
+    {
+      "source": ".cache/variants/calendar-eager/build-metadata.json",
+      "artifact": "evidence/builds/calendar-eager/build-metadata.json.gz",
+      "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+      "bytes": 813,
+      "compressedBytes": 426
+    },
+    {
+      "source": ".cache/variants/calendar-eager/index.html",
+      "artifact": "evidence/builds/calendar-eager/index.html.gz",
+      "sha256": "c646974e3d1bde22b4bd076bfcc9f7e157f73e7b8d99495f492018becd4c7417",
+      "bytes": 359,
+      "compressedBytes": 265
+    },
+    {
+      "source": ".cache/variants/calendar-deferred/assets/index-BnFGY6RL.js",
+      "artifact": "evidence/builds/calendar-deferred/assets/index-BnFGY6RL.js.gz",
+      "sha256": "546431141ee0c20d76a463be0911cd21effaa10646053f3130ed36b4680679a0",
+      "bytes": 450063,
+      "compressedBytes": 110891
+    },
+    {
+      "source": ".cache/variants/calendar-deferred/assets/index-BnFGY6RL.js.map",
+      "artifact": "evidence/builds/calendar-deferred/assets/index-BnFGY6RL.js.map.gz",
+      "sha256": "d42388074797ca1882c5dbba5c804d1e2e0a940174bf3ddb0259070c13768631",
+      "bytes": 1178246,
+      "compressedBytes": 263425
+    },
+    {
+      "source": ".cache/variants/calendar-deferred/assets/index-CDV5OawH.css",
+      "artifact": "evidence/builds/calendar-deferred/assets/index-CDV5OawH.css.gz",
+      "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+      "bytes": 44562,
+      "compressedBytes": 6986
+    },
+    {
+      "source": ".cache/variants/calendar-deferred/build-metadata.json",
+      "artifact": "evidence/builds/calendar-deferred/build-metadata.json.gz",
+      "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+      "bytes": 813,
+      "compressedBytes": 426
+    },
+    {
+      "source": ".cache/variants/calendar-deferred/index.html",
+      "artifact": "evidence/builds/calendar-deferred/index.html.gz",
+      "sha256": "057c4efc6ed3f596de04dfa5874855be5c91541b0c936fac34a14911f51e67de",
+      "bytes": 359,
+      "compressedBytes": 269
+    },
+    {
+      "source": ".cache/variants/calendar-split/assets/calendar-Bnw96Yao.js",
+      "artifact": "evidence/builds/calendar-split/assets/calendar-Bnw96Yao.js.gz",
+      "sha256": "a63480b138de0c65b218c2acb19b119a36e29ed1bf3456a33290cb05d0836888",
+      "bytes": 20849,
+      "compressedBytes": 5754
+    },
+    {
+      "source": ".cache/variants/calendar-split/assets/calendar-Bnw96Yao.js.map",
+      "artifact": "evidence/builds/calendar-split/assets/calendar-Bnw96Yao.js.map.gz",
+      "sha256": "820e48577a095b52cbb06d59d60623e75ac408d0524a8b0865c3fe2791ff6187",
+      "bytes": 47163,
+      "compressedBytes": 11853
+    },
+    {
+      "source": ".cache/variants/calendar-split/assets/index-BuDGUI--.js",
+      "artifact": "evidence/builds/calendar-split/assets/index-BuDGUI--.js.gz",
+      "sha256": "7de2d2c17a30207b0eae99deddf0243a7d36b4a763da1faccea0b73cccac50c3",
+      "bytes": 431418,
+      "compressedBytes": 106889
+    },
+    {
+      "source": ".cache/variants/calendar-split/assets/index-BuDGUI--.js.map",
+      "artifact": "evidence/builds/calendar-split/assets/index-BuDGUI--.js.map.gz",
+      "sha256": "07b763b9460943534d0897a20e4429635f8d7c0fa95138284caf0971855d3cfd",
+      "bytes": 1129840,
+      "compressedBytes": 253249
+    },
+    {
+      "source": ".cache/variants/calendar-split/assets/index-CDV5OawH.css",
+      "artifact": "evidence/builds/calendar-split/assets/index-CDV5OawH.css.gz",
+      "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+      "bytes": 44562,
+      "compressedBytes": 6986
+    },
+    {
+      "source": ".cache/variants/calendar-split/build-metadata.json",
+      "artifact": "evidence/builds/calendar-split/build-metadata.json.gz",
+      "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+      "bytes": 813,
+      "compressedBytes": 426
+    },
+    {
+      "source": ".cache/variants/calendar-split/index.html",
+      "artifact": "evidence/builds/calendar-split/index.html.gz",
+      "sha256": "df6093985a813137f53cdc54f2d5122fe984e676721dc0c6e44a52978b2c5a74",
+      "bytes": 359,
+      "compressedBytes": 267
+    },
+    {
+      "source": "experiments/build-calendar-variants.mjs",
+      "artifact": "evidence/scripts/build-calendar-variants.mjs.gz",
+      "sha256": "d04685870505ed429c53fd40a488b7bb6ea454d9437b0e26dbd3551fb05283d8",
+      "bytes": 3110,
+      "compressedBytes": 1387
+    },
+    {
+      "source": "experiments/qualify-calendar-variants.mjs",
+      "artifact": "evidence/scripts/qualify-calendar-variants.mjs.gz",
+      "sha256": "877507cfa3b8558078de8f9c846e912b0c8c40642497b7ff740efffccb049025",
+      "bytes": 1703,
+      "compressedBytes": 801
+    },
+    {
+      "source": "experiments/run-calendar-variants.mjs",
+      "artifact": "evidence/scripts/run-calendar-variants.mjs.gz",
+      "sha256": "f55f43a70f42676b99c0a680833361e233fa60f28692d6999024315f6841adf8",
+      "bytes": 4513,
+      "compressedBytes": 1912
+    },
+    {
+      "source": "experiments/calendar-followup.mjs",
+      "artifact": "evidence/scripts/calendar-followup.mjs.gz",
+      "sha256": "9a098c23265d7bfd4162ad7600d19b9ca3f0c2710126dce6b911f93843c28786",
+      "bytes": 7118,
+      "compressedBytes": 2787
+    },
+    {
+      "source": "experiments/report-calendar-variants.mjs",
+      "artifact": "evidence/scripts/report-calendar-variants.mjs.gz",
+      "sha256": "269d7d449622b9ec11e520fce5e671227332034ff0d83cdbb7cb20eb51de540b",
+      "bytes": 19226,
+      "compressedBytes": 7178
+    },
+    {
+      "source": "experiments/date-report-tables.mjs",
+      "artifact": "evidence/scripts/date-report-tables.mjs.gz",
+      "sha256": "4f2391a7e2943594897ce4b7719d29a86f0b0c9244e278a0a1e258bf26f6c83c",
+      "bytes": 3556,
+      "compressedBytes": 1656
+    },
+    {
+      "source": "experiments/archive-calendar-variants.mjs",
+      "artifact": "evidence/scripts/archive-calendar-variants.mjs.gz",
+      "sha256": "c455016c4d85cdbe9c36f244e2fdbbacbb003cd00f768c17fbe7bb95405f55e2",
+      "bytes": 4030,
+      "compressedBytes": 1294
+    },
+    {
+      "source": "experiments/verify-calendar-evidence.mjs",
+      "artifact": "evidence/scripts/verify-calendar-evidence.mjs.gz",
+      "sha256": "3703db43036848ea1a6d7177db3455d0868cf5b31d38372e842cded8ab045cc9",
+      "bytes": 3587,
+      "compressedBytes": 1405
+    },
+    {
+      "source": "reports/calendar-variants/qualification.json",
+      "artifact": "evidence/receipts/qualification.json.gz",
+      "sha256": "60c8ecd909772c335ebae730eddb2374f3d36c31690898cd852b97791436fca0",
+      "bytes": 30289,
+      "compressedBytes": 1907
+    },
+    {
+      "source": "reports/calendar-variants/recovery-qualification.json",
+      "artifact": "evidence/receipts/recovery-qualification.json.gz",
+      "sha256": "21c25646d22bc0784b18dd6a4290b0e244e1531dcbdd92367d062d93330ae46b",
+      "bytes": 2050,
+      "compressedBytes": 449
+    },
+    {
+      "source": "reports/calendar-variants/builds.json",
+      "artifact": "evidence/receipts/builds.json.gz",
+      "sha256": "c91ec856dc14b3b14dd2ab1442974b9c590aaa5565c7638e9c883af60f91248a",
+      "bytes": 14759,
+      "compressedBytes": 3968
+    },
+    {
+      "source": "reports/calendar-variants/tables.json",
+      "artifact": "evidence/receipts/tables.json.gz",
+      "sha256": "6b5c4e76c85c5f258c3505acc30b3cacb6bddbaaccc46051407c27ba53934c3e",
+      "bytes": 44742,
+      "compressedBytes": 5172
+    },
+    {
+      "source": "reports/calendar-variants/integration.json",
+      "artifact": "evidence/receipts/integration.json.gz",
+      "sha256": "943875c5330c5df4520ebfa79dbb5596d711ffd0081cd53b039d9fe9ca23e4e5",
+      "bytes": 714,
+      "compressedBytes": 291
+    },
+    {
+      "source": "reports/calendar-variants/date-columns.json",
+      "artifact": "evidence/receipts/date-columns.json.gz",
+      "sha256": "b3cb8a0ccae62bb60a1d3284fe9233044569ffe7397d67bf543540b45568370b",
+      "bytes": 7271,
+      "compressedBytes": 975
+    },
+    {
+      "source": "reports/calendar-variants/reader/verification.json",
+      "artifact": "evidence/receipts/reader/verification.json.gz",
+      "sha256": "4e6bc57fc8544c210d60c72cc94ed0f71ebb635776be4ff7f896bafead52438b",
+      "bytes": 2125,
+      "compressedBytes": 709
+    },
+    {
+      "source": "reports/calendar-variants/verification.json",
+      "artifact": "evidence/receipts/verification.json.gz",
+      "sha256": "2508f3ea023987416c4b02bc58c5d1a179bae9e313b7779db153cb1c8da317ad",
+      "bytes": 1234,
+      "compressedBytes": 437
+    },
+    {
+      "source": "reports/calendar-variants/final-unit-tests.log",
+      "artifact": "evidence/receipts/final-unit-tests.log.gz",
+      "sha256": "d4bcc6155fc1bef813e18b8beea2692dbb07123fa4992cdcf6a29fa7faa1fdf3",
+      "bytes": 4387,
+      "compressedBytes": 1987
+    },
+    {
+      "source": "reports/calendar-variants/recovery-early-assertion-failure.log",
+      "artifact": "evidence/receipts/recovery-early-assertion-failure.log.gz",
+      "sha256": "9e1e6c2a274baf32257d3cb46e6feeb4324e05a6ee707a0ae8538f2b53ed1237",
+      "bytes": 1390,
+      "compressedBytes": 483
+    },
+    {
+      "source": "reports/calendar-variants/recovery.log",
+      "artifact": "evidence/receipts/recovery.log.gz",
+      "sha256": "f2061912a24c194aa7d6d1770a7eb9a77b89adcbbe1635e2f7bb94b4b6c20c1f",
+      "bytes": 21,
+      "compressedBytes": 41
+    },
+    {
+      "source": "reports/calendar-variants/README.md",
+      "artifact": "evidence/receipts/README.md.gz",
+      "sha256": "acd60e83fa7b2ae9e3724e3d5344ff67af8047e1c40ef82d7e6259af5fbdf9d0",
+      "bytes": 3956,
+      "compressedBytes": 1752
+    },
+    {
+      "source": "../../plans/native-showcase-calendar-variants-results.md",
+      "artifact": "evidence/report-source/plans_native-showcase-calendar-variants-results.md.gz",
+      "sha256": "57f50f789c7722e7716d7b52559b52c719d93832ae98ab45fb97037c6d354b86",
+      "bytes": 28764,
+      "compressedBytes": 5906
+    },
+    {
+      "source": "../../plans/native-showcase-performance-results.md",
+      "artifact": "evidence/report-source/plans_native-showcase-performance-results.md.gz",
+      "sha256": "b4a6a2bd1f4b50e33ee9e988172b1b7daac85e0f7885174c254e771fc8820d50",
+      "bytes": 470687,
+      "compressedBytes": 95073
+    },
+    {
+      "source": "../performance-results/scripts/verify-calendar-variants.mjs",
+      "artifact": "evidence/report-source/performance-results_scripts_verify-calendar-variants.mjs.gz",
+      "sha256": "df9e0eb2b52d5f8d7906c0346c9a18b0b87ded974ff5b7953464cea55eb181d5",
+      "bytes": 6695,
+      "compressedBytes": 2429
+    },
+    {
+      "source": "../performance-results/scripts/render.mjs",
+      "artifact": "evidence/report-source/performance-results_scripts_render.mjs.gz",
+      "sha256": "d4a19eed03ce3103ed3a6e07b179e9cc1fb9b00c74b94990f5de8af8f8001360",
+      "bytes": 7651,
+      "compressedBytes": 3137
+    },
+    {
+      "source": "../performance-results/src/table-data.js",
+      "artifact": "evidence/report-source/performance-results_src_table-data.js.gz",
+      "sha256": "d3825b3f491dbcfd9f57f1be574eddceca3dc5cb10cafccf1a25315926c50c41",
+      "bytes": 1272,
+      "compressedBytes": 613
+    },
+    {
+      "source": "../performance-results/src/tables.json",
+      "artifact": "evidence/report-source/performance-results_src_tables.json.gz",
+      "sha256": "7aa8faaf43c20184878f12d48355f23eca75ebc97664de934767b835bc90b4ae",
+      "bytes": 992493,
+      "compressedBytes": 63915
+    },
+    {
+      "source": "../performance-results/src/styles.css",
+      "artifact": "evidence/report-source/performance-results_src_styles.css.gz",
+      "sha256": "6d9bada6e9a66a2e9bc74d30384f9c82262532cd3ec7d5a841f1a2fffe2991a3",
+      "bytes": 6940,
+      "compressedBytes": 1909
+    },
+    {
+      "source": "../performance-results/src/sticky-columns.css",
+      "artifact": "evidence/report-source/performance-results_src_sticky-columns.css.gz",
+      "sha256": "b53836cca4994736a3f0603c0048ae40e4d6ce1acb57ec9a1f26d2a8f8aa7168",
+      "bytes": 485,
+      "compressedBytes": 250
+    }
+  ],
+  "summary": "383 primary samples and 15 Lighthouse samples; three pilot samples retained separately. 66 existing showcase checks, nine cross-engine calendar journeys, 12 recovery/preparation/touch checks. See raw samples for API-memory availability; no leak inference.",
+  "reader": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "checkedTables": 41,
+      "sortedColumns": 81,
+      "passed": true
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "checkedTables": 41,
+      "sortedColumns": 81,
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "checkedTables": 41,
+      "sortedColumns": 81,
+      "passed": true
+    }
+  ]
+}

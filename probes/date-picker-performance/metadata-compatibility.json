@@ -1,0 +1,295 @@
+{
+  "version": 1,
+  "sourceParent": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+  "scope": "Explicit type-API compatibility overlay on fresh historical stages; archived commit/locks unchanged. Runtime JavaScript equality requires execution proof; declarations/maps are not byte-identical.",
+  "product": [
+    {
+      "path": "packages/elements/src/color-field/picker-controller.ts",
+      "historicalSha256": "95ca4497904a71bee465f6948ebc2ae2b6ac11a6080ee8b4b374ef23c7a92c02",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type PickerHost = HTMLElement & ReactiveControllerHost & { for: string };",
+          "after": "export type PickerHost = HTMLElement & ReactiveControllerHost & { for: string };"
+        },
+        {
+          "before": "interface PickerOptions {",
+          "after": "export interface PickerOptions {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/combobox/interaction-controller.ts",
+      "historicalSha256": "a701fef9a543318817da4744077267c9963664dae4b87a29ea7098e83d386bd3",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "interface InteractionOptions {",
+          "after": "export interface InteractionOptions {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/combobox/position-controller.ts",
+      "historicalSha256": "862aee9df48cd03db91d50e19b90f5c671834f7e7785c5925446e2cc53704cf5",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type PopupPresentation = 'pending' | 'visible' | 'suspended';",
+          "after": "export type PopupPresentation = 'pending' | 'visible' | 'suspended';"
+        },
+        {
+          "before": "type SuspensionReason = 'no-room' | 'offscreen' | 'unmeasured';",
+          "after": "export type SuspensionReason = 'no-room' | 'offscreen' | 'unmeasured';"
+        },
+        {
+          "before": "interface PositionOptions {",
+          "after": "export interface PositionOptions {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/combobox/space-feedback-controller.ts",
+      "historicalSha256": "bacc540d58d184127d25bc222644793d7b671f1497a46abb4fc9cdc4b79848c9",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type SpaceState = 'clear' | 'pending' | 'no-room';",
+          "after": "export type SpaceState = 'clear' | 'pending' | 'no-room';"
+        },
+        {
+          "before": "interface SpaceFeedbackOptions {",
+          "after": "export interface SpaceFeedbackOptions {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/command-palette/interaction-controller.ts",
+      "historicalSha256": "2d1be758ea38273d418ae57aea85ec2fb471c1b8c0dda999882b361ef1540703",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "interface PaletteInteraction {",
+          "after": "export interface PaletteInteraction {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/dialog/trigger-controller.ts",
+      "historicalSha256": "2e04af3b819b929cd9eba6a815ed225c3d4cc32eccbe12a8ff911193528fc66c",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "interface TriggerOptions { id(): string; open(): boolean; activate(trigger: HTMLElement, valid: () => boolean): void; }",
+          "after": "export interface TriggerOptions { id(): string; open(): boolean; activate(trigger: HTMLElement, valid: () => boolean): void; }"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/file-upload/drop-controller.ts",
+      "historicalSha256": "993e6215595a2143105db897cbe652bbaaa0d2353f9596681c5625a0fa90055c",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host = HTMLElement & ReactiveControllerHost;",
+          "after": "export type Host = HTMLElement & ReactiveControllerHost;"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/internal/child-upgrades.ts",
+      "historicalSha256": "005be586b25f098df44813e2e1dab3d147804ab1ef8ee4913cee22d7d308ffae",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host = HTMLElement & ReactiveControllerHost;",
+          "after": "export type Host = HTMLElement & ReactiveControllerHost;"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/internal/context-consumer.ts",
+      "historicalSha256": "5f2838f36a70750713ff2ad055899abd4024ace04c131a993af3201d82470a4e",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host = HTMLElement & ReactiveControllerHost;",
+          "after": "export type Host = HTMLElement & ReactiveControllerHost;"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/internal/editor-association.ts",
+      "historicalSha256": "9c1923877bba7e2f6d0adc487d400e264005a6f268cdcc5100b8a02def570797",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host<T> = HTMLElement & ReactiveControllerHost & { for: string; editor: T | undefined };",
+          "after": "export type Host<T> = HTMLElement & ReactiveControllerHost & { for: string; editor: T | undefined };"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/internal/id-reference.ts",
+      "historicalSha256": "7243073087060f47b07e1606ced4f0c2f25f731428d80d6a3f3be8c02b9e5864",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Subscriber = (element: Element | null) => void;",
+          "after": "export type Subscriber = (element: Element | null) => void;"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/menu/interaction-controller.ts",
+      "historicalSha256": "558facb0918c1117c0b63ec2f849b15cba775a02389bdfb3f591263e5c5c86c3",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "interface MenuInteractionOptions {",
+          "after": "export interface MenuInteractionOptions {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/menu/position-controller.ts",
+      "historicalSha256": "ebd4b8980166c9191765816f6a4cf7a0765c645e695a6fdbff4d7ebc61e854fe",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "interface PositionOptions {",
+          "after": "export interface PositionOptions {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/tree/data-controller.ts",
+      "historicalSha256": "6a9177741cf213a9dff0c439cc98b3124319a51968b81702e20bd1f22d35b222",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host = HTMLElement & ReactiveControllerHost & { readonly renderRoot: DocumentFragment | HTMLElement; readonly updateComplete: Promise<boolean> };",
+          "after": "export type Host = HTMLElement & ReactiveControllerHost & { readonly renderRoot: DocumentFragment | HTMLElement; readonly updateComplete: Promise<boolean> };"
+        },
+        {
+          "before": "interface Callbacks {",
+          "after": "export interface Callbacks {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/tree/data-template.ts",
+      "historicalSha256": "ce811ca9d2e94e57aad8e463776a53eb75b4b5df8b779061872a50b673160ac1",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "interface View {",
+          "after": "export interface View {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/tree/interaction-controller.ts",
+      "historicalSha256": "cf793c084a42c9b51d48e3ce27994303fbe443884060b5c944aaf53144da384b",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host = HTMLElement & ReactiveControllerHost;",
+          "after": "export type Host = HTMLElement & ReactiveControllerHost;"
+        },
+        {
+          "before": "interface Callbacks {",
+          "after": "export interface Callbacks {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/tree/lazy-controller.ts",
+      "historicalSha256": "a236719798320b21d4033f98394323c2f2ac50a5ebc5272e02e5776fbf928236",
+      "kind": "type-exports",
+      "edits": [
+        {
+          "before": "type Host = HTMLElement & ReactiveControllerHost;",
+          "after": "export type Host = HTMLElement & ReactiveControllerHost;"
+        },
+        {
+          "before": "interface Callbacks {",
+          "after": "export interface Callbacks {"
+        }
+      ]
+    },
+    {
+      "path": "packages/elements/src/tooltip/warmup-group.ts",
+      "historicalSha256": "588dc601990b17e4c86376b9eba4269e7ec24e10f13a66047d8b7ab916952848",
+      "kind": "type-exports",
+      "append": "\nexport type { TooltipWarmupGroup };\n"
+    },
+    {
+      "path": "packages/elements/src/token-editor/element.ts",
+      "historicalSha256": "05420514131ea617f584fe550ef79d5c90232d2564477fc798a0ad1402e006e8",
+      "kind": "erased-event-detail-assertion",
+      "edits": [
+        {
+          "before": "(event as CustomEvent).detail",
+          "after": "(event as ChangeEvent<{document:DocumentValue;selection:Selection},TokenEditorChangeReason>).detail"
+        }
+      ]
+    }
+  ],
+  "toolingHistoricalSha256": {
+    "tooling/metadata/generate.ts": "48d06f66189f9e7a6256258344386d18c6d7507906dbfe885a9be0336dcbc9fe",
+    "tooling/metadata/generator-identity.ts": "e96da3a4db9cad1ace0448c4d5dcc0ba2427c8518c8f36b4052c1c1ff0c10bc6",
+    "tooling/metadata/generate-elements.ts": "32d5031cf9d00ba065229c78960a210e1b6e7a88e378594ab66f2312d8f3da65",
+    "tooling/metadata/event-contracts.ts": "87c7f6d39f7ccc33d1a61b30317b4efed79e43f368e28e23076cfb635d39c0f9",
+    "tooling/metadata/definition-graph.ts": "d6c4d21e7ee54db19766cb98ea1cccfc8d7c09af43a3a1f63c77b36a71d5cfb9",
+    "tooling/metadata/type-snapshot.ts": "3949747362775cb1751b1754f351dc4b3399fa0792d8359871a01ce2d2f1d9b5",
+    "tooling/customization/source-inventory.mjs": "48080934b408833d5aca1746363d6d083dad472f2756562d212717edb8e0c53d"
+  },
+  "historicalPartsPolicy": {
+    "version": 1,
+    "sources": {
+      "src/checkbox-group.ts": "sha256:09ac7fee2ac720fa5f856c0c04eaccd1b4d960a688dca7fcb86c1565cf11d327",
+      "src/multiselect.ts": "sha256:c428bb9574a3c0d6ea8cf31001ffb5200546882aefe539520616d16a6f659555",
+      "src/selection-collection.ts": "sha256:a3cd4609a013580c1dcdcb14f04de86cd61b4e7b61417a03a5c5c0f8a47cd903",
+      "src/toggle-group.ts": "sha256:bdd3f3a3a0fbbeb62c00920830f4a86fe175acbdf9ce7b41e1ad455e72526611",
+      "src/internal/multiple-choice.ts": "sha256:b999912b29ab2d5449d3293736d6431180cdda474bbd9e8ac2b02eb4ebeae100"
+    },
+    "omissions": [
+      {
+        "module": "src/checkbox-group.ts",
+        "className": "EnCheckboxGroup",
+        "parts": [
+          "tags"
+        ]
+      },
+      {
+        "module": "src/multiselect.ts",
+        "className": "EnMultiselect",
+        "parts": [
+          "option-content"
+        ]
+      },
+      {
+        "module": "src/selection-collection.ts",
+        "className": "EnSelectionCollection",
+        "parts": [
+          "field",
+          "option",
+          "option-content",
+          "options",
+          "tags"
+        ]
+      },
+      {
+        "module": "src/toggle-group.ts",
+        "className": "EnToggleGroup",
+        "parts": [
+          "option-content",
+          "tags"
+        ]
+      }
+    ],
+    "reason": "Exact historical render branches omit nine inherited CSS Parts. Metadata-only policy preserves archived sources and emitted JS; no maintained description template/part is imported.",
+    "unqualifiedArchivedConsumer": "Archived tooling/releases/cem-diff.ts rebuilds inheritance and does not honor omission extensions/schema2.1.0. It is not executed by the active historical preparation; it remains an archived, unqualified consumer."
+  }
+}

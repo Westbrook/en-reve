@@ -1,0 +1,3 @@
+import { pipelineOutput } from '../../tooling/test-pipeline/config-output.mjs';
+import {defineConfig} from '@playwright/test';export default defineConfig({
+  forbidOnly: true,testDir:'.',testMatch:'*.spec.ts',workers:1,reporter:[['list'],['json',{outputFile:'../../artifacts/scoped-registry-phase-4/library-tests.json'}]],outputDir:'../../artifacts/scoped-registry-phase-4/library-results',projects:['chromium','firefox','webkit'].map(browserName=>({name:browserName,use:{browserName:browserName as any,hasTouch:true}})),use:{baseURL:'http://127.0.0.1:4211'},webServer:{command:'node probes/activation-library/server.mjs',cwd:'../..',url:'http://127.0.0.1:4211',reuseExistingServer:false}}, pipelineOutput(import.meta.url));

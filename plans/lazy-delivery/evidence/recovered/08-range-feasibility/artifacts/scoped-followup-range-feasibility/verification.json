@@ -1,0 +1,48 @@
+{
+  "recommendation": "no-go for production range deferral; separate essential range shell implementation decision required",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "initialInvestigationCommit": "5d3703ea37b9c00a9f5ef2f2282013e25e0c5ab2",
+  "measuredPrototypeSources": {
+    "prototype.mjs": "8dfcf4107ed55c0128662d82c335bae9d7dc63d77043cf8820ab4092b97da8d1",
+    "session.mjs": "2effb47bee6e0052202433f0a20b5f7f290a36637a66a98cc7ce5272a398d559",
+    "parent.mjs": "3e59f2a2e1163d8274ad62ce393fa7decb545021e60b1e2cf01ae155e65c1a44",
+    "vite.config.mjs": "44bdf67745c3d93f727c513896ab344924266c2f54a7d6bd35f011fc86691d0a"
+  },
+  "sourceScope": "plan and isolated artifacts only; final artifact commit contains measured file hashes",
+  "phase6SealIncluded": true,
+  "runtimeChanged": false,
+  "archives": {
+    "files": 30634,
+    "aggregateSHA256": "9aae98ebde80d081bdeca4922d99b47a9594b128e847cf08a18eb17cc55642f7"
+  },
+  "archivesUnchanged": true,
+  "modelTests": 7,
+  "existingPackedTests": 8,
+  "ssrAudit": "Two named-by-label but unnamed native endpoints inside dialog; same constructor; both range/deferred assignment orders rejected",
+  "browserFunctionalConfigurations": 15,
+  "rawBrowserFailedAttempts": 3,
+  "rawBrowserSuccessfulAttempts": 30,
+  "diagnosticTimingObservations": {
+    "parent": 6,
+    "prototype": 3,
+    "samplesPerConfiguration": 1,
+    "productionPerformanceCandidate": false
+  },
+  "viewerEngines": 3,
+  "timingPromotionCampaign": false,
+  "repeatedRetentionCampaign": false,
+  "manualAT": "unperformed for prototype; accepted prior Phase 6 review unchanged",
+  "physicalDevices": "unperformed",
+  "rangeHydrationIdentity": "unperformed; current source suite has single-date identity only",
+  "noJavaScriptServerValidation": "not implemented; native form association fixture only",
+  "globalFallback": "Reported separately from native scoped requests; prototype explicit global only",
+  "platform": "macOS-26.6.1-arm64-arm-64bit-Mach-O",
+  "node": "v24.16.0",
+  "limitations": [
+    "prototype lacks production event/API/close-veto/SSR/localization/scoped parity",
+    "n=1 instrumented observations not statistical evidence or cross-control deltas",
+    "actual browser request abortion tests do not prove successful cache retry or OS/native picker behavior"
+  ],
+  "published": false,
+  "merged": false
+}

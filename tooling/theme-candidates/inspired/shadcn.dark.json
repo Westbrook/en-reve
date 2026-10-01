@@ -1,0 +1,639 @@
+[
+	{
+		"density": "compact",
+		"mode": "dark",
+		"type": "context"
+	},
+	{
+		"id": "palette.accent",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.8980392156862745,
+				0.8980392156862745,
+				0.8980392156862745
+			]
+		}
+	},
+	{
+		"id": "palette.canvas",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.0392156862745098,
+				0.0392156862745098,
+				0.0392156862745098
+			]
+		}
+	},
+	{
+		"id": "palette.surface",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.09019607843137255,
+				0.09019607843137255,
+				0.09019607843137255
+			]
+		}
+	},
+	{
+		"id": "palette.surface-raised",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.09019607843137255,
+				0.09019607843137255,
+				0.09019607843137255
+			]
+		}
+	},
+	{
+		"id": "palette.surface-subtle",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.14901960784313725,
+				0.14901960784313725,
+				0.14901960784313725
+			]
+		}
+	},
+	{
+		"id": "palette.text",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.9803921568627451,
+				0.9803921568627451,
+				0.9803921568627451
+			]
+		}
+	},
+	{
+		"id": "palette.text-muted",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.6313725490196078,
+				0.6313725490196078,
+				0.6313725490196078
+			]
+		}
+	},
+	{
+		"id": "palette.boundary",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.45098039215686275,
+				0.45098039215686275,
+				0.45098039215686275
+			]
+		}
+	},
+	{
+		"id": "palette.selected",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.14901960784313725,
+				0.14901960784313725,
+				0.14901960784313725
+			]
+		}
+	},
+	{
+		"id": "palette.focus",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.45098039215686275,
+				0.45098039215686275,
+				0.45098039215686275
+			]
+		}
+	},
+	{
+		"id": "color.on-action",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.09019607843137255,
+				0.09019607843137255,
+				0.09019607843137255
+			]
+		}
+	},
+	{
+		"id": "color.on-brand",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.09019607843137255,
+				0.09019607843137255,
+				0.09019607843137255
+			]
+		}
+	},
+	{
+		"id": "color.action-hover",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.7372549019607844,
+				0.7372549019607844,
+				0.7372549019607844
+			]
+		}
+	},
+	{
+		"id": "color.action-pressed",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.7372549019607844,
+				0.7372549019607844,
+				0.7372549019607844
+			]
+		}
+	},
+	{
+		"id": "color.accent-subtle",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.14901960784313725,
+				0.14901960784313725,
+				0.14901960784313725
+			]
+		}
+	},
+	{
+		"id": "palette.danger-text",
+		"type": "token",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				1.0,
+				0.39215686274509803,
+				0.403921568627451
+			]
+		}
+	},
+	{
+		"type": "token",
+		"id": "radius.control",
+		"value": {
+			"value": 1.125,
+			"unit": "rem"
+		}
+	},
+	{
+		"id": "radius.container",
+		"type": "token",
+		"value": {
+			"unit": "rem",
+			"value": 1.5
+		}
+	},
+	{
+		"type": "token",
+		"id": "radius.dialog",
+		"value": "{radius.container}"
+	},
+	{
+		"id": "space.label-control",
+		"type": "token",
+		"value": "{space.2}"
+	},
+	{
+		"id": "space.control-inline",
+		"type": "token",
+		"value": "{space.3}"
+	},
+	{
+		"id": "space.control-block",
+		"type": "token",
+		"value": "{space.1}"
+	},
+	{
+		"id": "space.control-description",
+		"type": "token",
+		"value": "{space.1-5}"
+	},
+	{
+		"type": "token",
+		"id": "space.panel",
+		"value": "{space.5}"
+	},
+	{
+		"id": "space.fields",
+		"type": "token",
+		"value": "{space.6}"
+	},
+	{
+		"id": "space.rows",
+		"type": "token",
+		"value": "{space.2}"
+	},
+	{
+		"id": "space.sections",
+		"type": "token",
+		"value": "{space.8}"
+	},
+	{
+		"id": "space.actions",
+		"type": "token",
+		"value": "{space.1-5}"
+	},
+	{
+		"id": "space.icon-label",
+		"type": "token",
+		"value": "{space.1-5}"
+	},
+	{
+		"id": "font.ui.weight",
+		"type": "token",
+		"value": 500
+	},
+	{
+		"id": "font.input.weight",
+		"type": "token",
+		"value": 400
+	},
+	{
+		"id": "font.label-strong.weight",
+		"type": "token",
+		"value": 500
+	},
+	{
+		"id": "duration.regular",
+		"type": "token",
+		"value": {
+			"unit": "ms",
+			"value": 200
+		}
+	},
+	{
+		"id": "duration.slow",
+		"type": "token",
+		"value": {
+			"unit": "ms",
+			"value": 200
+		}
+	},
+	{
+		"id": "ease.standard",
+		"type": "token",
+		"value": [
+			0.4,
+			0,
+			0.2,
+			1
+		]
+	},
+	{
+		"type": "token",
+		"id": "size.icon",
+		"value": {
+			"value": 1,
+			"unit": "rem"
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.input.inline-padding",
+		"value": "{space.2-5}"
+	},
+	{
+		"type": "token",
+		"id": "component.option-list.background",
+		"value": "{palette.surface-raised}"
+	},
+	{
+		"type": "token",
+		"id": "component.option-list.color",
+		"value": "{palette.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.option-list.border-color",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.9803921568627451,
+				0.9803921568627451,
+				0.9803921568627451
+			],
+			"alpha": 0.1
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.option-list.radius",
+		"value": {
+			"unit": "rem",
+			"value": 1.125
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.option-list.padding",
+		"value": "{space.1}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.radius",
+		"value": {
+			"unit": "rem",
+			"value": 0.875
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.option.inline-padding",
+		"value": "{space.2}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.block-padding",
+		"value": "{space.1-5}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.rest-background",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"alpha": 0
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.option.rest-color",
+		"value": "{palette.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.hover-background",
+		"value": "{palette.selected}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.hover-color",
+		"value": "{palette.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.active-background",
+		"value": "{palette.selected}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.active-color",
+		"value": "{palette.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.pressed-background",
+		"value": "{palette.selected}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.pressed-color",
+		"value": "{palette.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.selected-background",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.0,
+				0.0,
+				0.0
+			],
+			"alpha": 0
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.option.selected-color",
+		"value": "{palette.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.option.font-weight",
+		"value": 400
+	},
+	{
+		"type": "token",
+		"id": "component.option.selected-font-weight",
+		"value": 400
+	},
+	{
+		"type": "token",
+		"id": "component.option-list.shadow",
+		"value": "{shadow.overlay}"
+	},
+	{
+		"type": "token",
+		"id": "component.button.focus-halo-width",
+		"value": {
+			"value": 3,
+			"unit": "px"
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.button.focus-halo-color",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.4515192429625185,
+				0.4515192429625185,
+				0.4515192429625185
+			],
+			"alpha": 0.3
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.input.focus-halo-width",
+		"value": {
+			"value": 3,
+			"unit": "px"
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.input.focus-halo-color",
+		"value": {
+			"colorSpace": "srgb",
+			"components": [
+				0.4515192429625185,
+				0.4515192429625185,
+				0.4515192429625185
+			],
+			"alpha": 0.3
+		}
+	},
+	{
+		"type": "token",
+		"id": "duration.focus-enter",
+		"value": {
+			"value": 200,
+			"unit": "ms"
+		}
+	},
+	{
+		"type": "token",
+		"id": "duration.focus-exit",
+		"value": {
+			"value": 200,
+			"unit": "ms"
+		}
+	},
+	{
+		"type": "token",
+		"id": "ease.focus-enter",
+		"value": [
+			0.4,
+			0,
+			0.2,
+			1
+		]
+	},
+	{
+		"type": "token",
+		"id": "ease.focus-exit",
+		"value": [
+			0.4,
+			0,
+			0.2,
+			1
+		]
+	},
+	{
+		"type": "token",
+		"id": "duration.enter",
+		"value": {
+			"value": 100,
+			"unit": "ms"
+		}
+	},
+	{
+		"type": "token",
+		"id": "duration.exit",
+		"value": {
+			"value": 100,
+			"unit": "ms"
+		}
+	},
+	{
+		"type": "token",
+		"id": "ease.enter",
+		"value": "{ease.standard}"
+	},
+	{
+		"type": "token",
+		"id": "ease.exit",
+		"value": "{ease.standard}"
+	},
+	{
+		"type": "token",
+		"id": "motion.surface-offset",
+		"value": {
+			"value": 0,
+			"unit": "px"
+		}
+	},
+	{
+		"type": "token",
+		"id": "motion.surface-scale",
+		"value": 0.95
+	},
+	{
+		"type": "token",
+		"id": "component.rating.star-radius",
+		"value": "{radius.pill}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.background",
+		"value": "{color.surface-raised}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.color",
+		"value": "{color.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.border-color",
+		"value": "{color.line}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.radius",
+		"value": "{radius.control}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.padding",
+		"value": "{space.4}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.shadow",
+		"value": "{shadow.overlay}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast-region.gap",
+		"value": "{space.3}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast-region.width",
+		"value": {
+			"value": 24,
+			"unit": "rem"
+		}
+	},
+	{
+		"type": "token",
+		"id": "component.editor-token.color",
+		"value": "{color.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.icon-color",
+		"value": "{color.text}"
+	},
+	{
+		"type": "token",
+		"id": "component.toast.danger-icon-color",
+		"value": "{color.danger-text}"
+	}
+]

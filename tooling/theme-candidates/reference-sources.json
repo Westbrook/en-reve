@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "file": "artifacts/theme-adoption/sources/astryx-Button-Button.tsx",
+      "url": "https://raw.githubusercontent.com/facebook/astryx/413fa55281d1565abae8319e9803c8ccc639bc28/packages/core/src/Button/Button.tsx",
+      "sha256": "sha256:716ec92f1597397576a7e084d5f47bff74bc6e13e9781694b4573fa3b15c8d06"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/astryx-Field-inputStyles.stylex.ts",
+      "url": "https://raw.githubusercontent.com/facebook/astryx/413fa55281d1565abae8319e9803c8ccc639bc28/packages/core/src/Field/inputStyles.stylex.ts",
+      "sha256": "sha256:3510b226790125a8ea404eb6602d61cd7c2aaec3a42f51155a252378f51e5281"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/astryx-Switch-Switch.tsx",
+      "url": "https://raw.githubusercontent.com/facebook/astryx/413fa55281d1565abae8319e9803c8ccc639bc28/packages/core/src/Switch/Switch.tsx",
+      "sha256": "sha256:2c44deb8c279090cc7d120c4335f73eeb076ca5d28a0ee9fec4d32d89710620a"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/shadcn-rhea.css",
+      "url": "https://raw.githubusercontent.com/shadcn-ui/ui/a87a63b2ca25143d26c8bd0903e4e9bc77b3f824/apps/v4/registry/styles/style-rhea.css",
+      "sha256": "sha256:bcb242a7845316f93b0562345dd5c32a46a2988b506a8e8d7df1c836a1637b49"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-Button.tsx",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/Button.tsx",
+      "sha256": "sha256:834f956f00dc269109060039416a88240a1453640eccf25e0d4a48600ae93705"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-Checkbox.tsx",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/Checkbox.tsx",
+      "sha256": "sha256:a2ab78ceb3b8c9f055c141ff2d944457efe143b27a3321cffbdd03b8e5216923"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-Tabs.tsx",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/Tabs.tsx",
+      "sha256": "sha256:815ba1d61a5edf65873d84e7a6f8e9c9fcd5b9016d04110ab95756f6708679a7"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-TextField.tsx",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/TextField.tsx",
+      "sha256": "sha256:a83ea80b8d08512bb4f5b925c3b60634d8dbf46561d8196336ff7e8ed77f21ba"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-Modal.tsx",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/Modal.tsx",
+      "sha256": "sha256:6017c8eab3d04044461048380ceeeb9afa1ea8cdd0489ec37df60a3dc4855075"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-Toast.tsx",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/Toast.tsx",
+      "sha256": "sha256:cb17c9244cf1a680766a684f165b5a8003c736c9b2687d326d93919821dcc268"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/fluent-button.ts",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui/babf26015958505fc6fc0216724f2f61244f829c/packages/web-components/src/button/button.styles.ts",
+      "sha256": "sha256:5177be722fff82b3344d949bfb26121c6eee34ec4289f9e8ac4e9e44d6263dca"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/fluent-checkbox.ts",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui/babf26015958505fc6fc0216724f2f61244f829c/packages/web-components/src/checkbox/checkbox.styles.ts",
+      "sha256": "sha256:e5c086905d98fa5415e5700f4817e1b7006c12407da6a2b781257f5fe858900e"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/fluent-switch.ts",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui/babf26015958505fc6fc0216724f2f61244f829c/packages/web-components/src/switch/switch.styles.ts",
+      "sha256": "sha256:5ec569b0af5a047ba0c362b478c418123e796628b280e076c603468030ce133f"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/fluent-dialog.ts",
+      "url": "https://raw.githubusercontent.com/microsoft/fluentui/babf26015958505fc6fc0216724f2f61244f829c/packages/web-components/src/dialog/dialog.styles.ts",
+      "sha256": "sha256:29d09a4da1a9a1e682e83f3a499e4e07962a05618279f07e42c5c31f51e155a5"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/spectrum-pressScale.ts",
+      "url": "https://raw.githubusercontent.com/adobe/react-spectrum/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/@react-spectrum/s2/src/pressScale.ts",
+      "sha256": "sha256:06d2c493d4baa6389b57c05def8c7685b2cfc91211fa5d2b0467fe1db25cc609"
+    },
+    {
+      "file": "artifacts/theme-adoption/sources/radix-base-tab-list.css",
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/_internal/base-tab-list.css",
+      "sha256": "sha256:510da49513f6cc3cd809b511c5b3bca7b8aa97da967bb4a8ca0a1066f696ee7a"
+    },
+    {
+      "url": "https://fluent2websitecdn.azureedge.net/cdn/accessibility.C8FxN6HQ.css",
+      "file": "artifacts/fluent2-refresh/source/site.css",
+      "sha256": "sha256:5f485c0050719e807c5f5465787f50cb77388cc1244df040b9a7da2916898b31",
+      "bytes": 80363
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/styles/tokens/typography.css",
+      "file": "artifacts/radix-refresh/sources/typography.css",
+      "sha256": "sha256:6e3eceb987598abf72bdd8a338e7270d91000ab326bfc3d2852368e5436f04cd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/styles/tokens/radius.css",
+      "file": "artifacts/radix-refresh/sources/radius.css",
+      "sha256": "sha256:14ae4e5ce53ab722f6e4b1d3e4b74a4d977c18da7483ded86173ca4df284c5da"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/styles/tokens/shadow.css",
+      "file": "artifacts/radix-refresh/sources/shadow.css",
+      "sha256": "sha256:8116b0467b2c755a0cdb30f9603f71e28dc14cd6e9642cbab4d7648eb2f8aacb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/text-field.css",
+      "file": "artifacts/radix-refresh/sources/text-field.css",
+      "sha256": "sha256:b13ec6a98c20e8a4128f879b905bcb3fd193078c2591a0c22d20fad044f8a8e0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/_internal/base-button.css",
+      "file": "artifacts/radix-refresh/sources/themes-base-button.css",
+      "sha256": "sha256:6d8d72cc651cae5b713adfaffcea1ee4d2609adbf2e6fd31dd379833828c2e55"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/checkbox.css",
+      "file": "artifacts/radix-refresh/sources/themes-checkbox.css",
+      "sha256": "sha256:7e8bf5b3a36e981bfa32ee99ddf49d442326bf97f26a8c8b295a265a621083cb"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/radix-ui/themes/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/_internal/base-dialog.css",
+      "file": "artifacts/radix-refresh/sources/themes-base-dialog.css",
+      "sha256": "sha256:c1cc1495a5df537aa59b8b4cb234b4d72d13cd104ab66d7fbd600e37b0b6932b"
+    },
+    {
+      "url": "https://swccg-holotable.reve-ai-0869.chatgpt.site/",
+      "file": "plans/theme-refresh-holotable.md",
+      "sha256": "sha256:c870f3434ea6b8acdb3181141361ac0a656e822b3de7588714a54b6db32ac4b9",
+      "hashKind": "recorded-observations"
+    }
+  ]
+}

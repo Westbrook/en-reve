@@ -1,0 +1,42 @@
+{
+  "reportedAt": "2026-09-22T19:43:45.867068+00:00",
+  "source": "User manual review",
+  "fixture": "http://127.0.0.1:4233/global.html?progress-report",
+  "fixtureSourceVersion": "3e8597a132bf2dd3b5ebd1572a961adb2dfc7b037fbd45b89302fa0318e23237",
+  "checkOrder": [
+    "autofillBeforeHydration",
+    "autofillAfterHydration",
+    "historyAfterHydration",
+    "historyBeforeHydration"
+  ],
+  "results": {
+    "Chrome": {
+      "autofillBeforeHydration": "pass",
+      "autofillAfterHydration": "pass",
+      "historyAfterHydration": "pass",
+      "historyBeforeHydration": "pass"
+    },
+    "WebKit": {
+      "autofillBeforeHydration": "pass",
+      "autofillAfterHydration": "pass",
+      "historyAfterHydration": "pass",
+      "historyBeforeHydration": "pass"
+    },
+    "Firefox": {
+      "autofillBeforeHydration": "pass",
+      "autofillAfterHydration": "pass",
+      "historyAfterHydration": "pass",
+      "historyBeforeHydration": "pass"
+    }
+  },
+  "browserNaming": "WebKit is the user-provided label for this report; prior scoped-shadow review used Safari.",
+  "notSpecified": [
+    "BFCache versus new-document return path",
+    "Exact browser versions for this retest"
+  ],
+  "interpretation": "All four global-delivery checks pass in the three reported browsers. Scoped-shadow Chrome/Safari pre-hydration Back loss remains open; these fixtures vary both boundary topology and registry delivery, so this does not isolate registry behavior as the cause.",
+  "pending": [
+    "Diagnose Chrome/Safari scoped-shadow pre-hydration Back restoration loss"
+  ],
+  "provenance": "Follow-up manual evidence; sealed commit and frozen performance archives unchanged."
+}

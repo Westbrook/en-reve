@@ -1,0 +1,11 @@
+import {readFile,writeFile} from 'node:fs/promises';import {resolve} from 'node:path';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';
+const base=resolve('artifacts/scoped-registry-phase-5/production'),run=process.argv[2]??'campaign-v2',sha=b=>createHash('sha256').update(b).digest('hex');
+const manifest=JSON.parse(await readFile(resolve(base,run,'manifest.json'))),samples=(await readFile(resolve(base,run,'samples.jsonl'),'utf8')).trim().split('\n').map(JSON.parse),summary=JSON.parse(await readFile(resolve(base,run,'summary.json')));
+assert.equal(samples.length,555);assert.equal(summary.timing,540);assert.equal(summary.retention,15);assert.equal(summary.failed,0);
+const key=j=>[j.kind,j.policy,j.browser,j.profile,j.input,j.block].join('|');assert.equal(new Set(samples.map(key)).size,555);assert.deepEqual(samples.map(key).sort(),manifest.jobs.map(key).sort());
+for(const s of samples){assert.equal(s.status,'ok');assert.deepEqual(s.errors,[]);assert.deepEqual(s.failures,[]);if(s.kind==='retention')assert.deepEqual(s.checkpoints.map(c=>c.cycle),[0,10,50,100]);}
+for(const h of manifest.harness)assert.equal(sha(await readFile(resolve(import.meta.dirname,h.name))),h.sha256);
+for(const r of manifest.receipts){for(const a of r.assets)assert.equal(sha(await readFile(resolve(base,r.policy,'site',a.path))),a.sha256);for(const p of r.packages)assert.equal(sha(await readFile(resolve(base,p.path))),p.sha256);for(const s of r.overlay)assert.equal(sha(await readFile(s.path)),s.sha256);}
+const a=manifest.receipts.find(r=>r.policy==='eager'),b=manifest.receipts.find(r=>r.policy==='prepared');
+for(const name of ['elements','primitives','styles','tokens'])assert.equal(a.packages.find(p=>p.path.includes('en-reve-'+name+'-')).sha256,b.packages.find(p=>p.path.includes('en-reve-'+name+'-')).sha256);
+await writeFile(resolve(base,'capture-verification.json'),JSON.stringify({at:new Date().toISOString(),passed:true,timing:540,retention:15,successfulPerTimingConfiguration:30,separateRetentionPerPolicy:5,configurationCount:18,exactJobs:true,assetHashesVerified:true,sourceHashesVerified:true,packagesOtherThanSSRIdentical:true},null,2)+'\n');console.log('Capture verified: 540 timing samples, 15 retention runs, exact inputs.');

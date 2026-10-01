@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-20T21:23:54.980Z",
+  "runId": "dom-review-v4",
+  "snapshots": 83,
+  "failures": 0,
+  "desktopJourneySessions": 24,
+  "dateSessions": 9,
+  "narrowSessions": 8,
+  "supplementalOwnershipSessions": 8,
+  "checks": [
+    "Every node-type and date partition reconciles",
+    "Three repetitions have identical reported initial and journey counts for each system",
+    "Three custom-date lifecycle repetitions agree",
+    "Supplemental initial totals match primary initial census",
+    "All 16 card buckets plus outside-cards reconcile"
+  ],
+  "sourceReportSha256": "6bf6f292fd73d2150a547c0b4e94916832facca36ef5be3f4ab0fc4f78058acb",
+  "sourceInventoryCounts": {
+    "currentComponentTypes": 41,
+    "currentComponentDeclarationSites": 43,
+    "currentDocumentedBasePartComponentTypes": 40,
+    "frozenComponentTypes": 40,
+    "frozenComponentDeclarationSites": 42,
+    "additionalStandalonePrimitiveTemplateSites": 2
+  }
+}

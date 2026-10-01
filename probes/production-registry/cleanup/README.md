@@ -1,0 +1,13 @@
+# Phase 3 first-use cleanup comparison
+
+The implementation changes only `apps/docs/src/workflows/settings/index.ts` and `template.ts`: loading/error/busy feedback writes to dedicated native nodes rather than rerendering the workflow; Lit guards the palette catalog by its capability inputs. SSR markup stays consistent. Shared element library behavior is unchanged.
+
+`prepare.mjs` creates an isolated candidate from archived Phase 3 production sources, restores the exact compiled library outputs, overlays those two files, typechecks and runs the original full Vite/SSR build. It refuses to overwrite a candidate. Extracted files are made writable only in that copy. The candidate receipt checks all 2,744 library files and matching Vite/lock hashes. Failed initial preparations are retained in artifacts for diagnosis; they were never measured.
+
+`verify-functional.mjs` checks the built candidate in three browsers: no parent renders on first use, SSR identity, typing/focus restoration, no-JS SSR and two mobile-touch configurations. `campaign.mjs --qualify` validates the complete observer/retention path. `campaign.mjs` collects 240 serial paired timing samples plus ten separate retention runs; both arms get identical external observers. `analyze.mjs` computes medians and exploratory paired intervals; optional absent observations remain null. `freeze.mjs` archives evidence and sources with a read-only seal; `--verify` checks it. Original frozen campaigns and the original production readiness observer remain unchanged.
+
+`milestones.mjs` adds input focus, a following frame opportunity, first nonempty busy feedback, a frame opportunity while feedback remains busy, and definition readiness. A frame callback is not proof of screen presentation or INP. The observer records only explicit command gestures and disconnects/releases its DOM targets before retention cycling; remount cycles do not accumulate observations. The interrupted first capture and its qualification are retained as rejected diagnostics because their observer could retain the initial workflow. Desktop loads may finish before a feedback frame, which correctly remains unobserved rather than zero.
+
+For interaction regression coverage, prepare the packed fixture with `EN_LAZY_OUT=artifacts/scoped-registry-phase-3-cleanup/packed node probes/lazy-registry/prepare.mjs`, then run `playwright test --config probes/lazy-registry/cleanup.config.ts`. The default fixture output remains backward compatible. This adds four tests per browser to the existing lazy-registry suite.
+
+Do not rerun into completed output directories or overwrite frozen references. This is Phase 3 cleanup, not Phase 4 prediction, prefetch or activation policy.

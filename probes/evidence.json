@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "executedAt": "2026-09-08T18:50:42.858Z",
+  "host": {
+    "system": "Darwin",
+    "release": "25.6.0",
+    "architecture": "arm64",
+    "node": "v24.16.0"
+  },
+  "packages": {
+    "lit": "3.3.3",
+    "signal-polyfill": "0.2.2",
+    "signal-utils": "0.21.1",
+    "@lit-labs/ssr": "4.1.0",
+    "@lit-labs/ssr-client": "1.1.8",
+    "@playwright/test": "1.63.0",
+    "vite": "8.2.2",
+    "parse5": "7.3.0"
+  },
+  "browserSummary": {
+    "passed": 20,
+    "unsupported": 1,
+    "failed": 0
+  },
+  "nodeSummary": {
+    "passed": 3,
+    "failed": 0,
+    "evidence": "results/node-ssr.txt"
+  },
+  "scenarios": [
+    {
+      "scenario": "signal snapshot is synchronous; disconnected reaction is disposed and reconnect subscribes once",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        }
+      ]
+    },
+    {
+      "scenario": "slotted native form control retains name, description, validation, submission and reset",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        }
+      ]
+    },
+    {
+      "scenario": "FACE form association does not transfer an external label to inner native input",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        },
+        {
+          "type": "external-label-activation",
+          "description": "{\"labelFocusedInput\":false}"
+        }
+      ]
+    },
+    {
+      "scenario": "native scoped registries keep identical tags and nested Lit render trees independent",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        },
+        {
+          "type": "scoped-capability",
+          "description": "{\"supported\":true,\"stage\":\"complete\",\"available\":true,\"old\":{\"branch\":true,\"leaf\":true,\"scopedRoot\":true,\"creationScope\":true},\"new\":{\"branch\":true,\"leaf\":true,\"scopedRoot\":true,\"creationScope\":true}}"
+        }
+      ]
+    },
+    {
+      "scenario": "controlled text keeps native draft, selection and node through unrelated updates",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        }
+      ]
+    },
+    {
+      "scenario": "synthetic composition guard defers external replacement; does not claim real IME coverage",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        },
+        {
+          "type": "coverage-limit",
+          "description": "Synthetic composition lifecycle only. Real OS IME, dictation and composition keyboard interactions remain manual coverage."
+        }
+      ]
+    },
+    {
+      "scenario": "ordinary SSR renders request-local snapshots and hydrates existing nodes, draft and events",
+      "engine": "chromium",
+      "status": "passed",
+      "browserVersion": "153.0.8010.12",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "153.0.8010.12"
+        }
+      ]
+    },
+    {
+      "scenario": "signal snapshot is synchronous; disconnected reaction is disposed and reconnect subscribes once",
+      "engine": "firefox",
+      "status": "passed",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        }
+      ]
+    },
+    {
+      "scenario": "slotted native form control retains name, description, validation, submission and reset",
+      "engine": "firefox",
+      "status": "passed",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        }
+      ]
+    },
+    {
+      "scenario": "FACE form association does not transfer an external label to inner native input",
+      "engine": "firefox",
+      "status": "passed",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        },
+        {
+          "type": "external-label-activation",
+          "description": "{\"labelFocusedInput\":false}"
+        }
+      ]
+    },
+    {
+      "scenario": "native scoped registries keep identical tags and nested Lit render trees independent",
+      "engine": "firefox",
+      "status": "unsupported",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        },
+        {
+          "type": "scoped-capability",
+          "description": "{\"supported\":false,\"stage\":\"construct-registry\",\"error\":\"TypeError: Illegal constructor.\"}"
+        },
+        {
+          "type": "skip",
+          "description": "Native scoped path unavailable at construct-registry: TypeError: Illegal constructor.",
+          "location": {
+            "file": "/Users/westbrook/Documents/repos/design-system/probes/tests/platform.spec.ts",
+            "line": 68,
+            "column": 8
+          }
+        }
+      ]
+    },
+    {
+      "scenario": "controlled text keeps native draft, selection and node through unrelated updates",
+      "engine": "firefox",
+      "status": "passed",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        }
+      ]
+    },
+    {
+      "scenario": "synthetic composition guard defers external replacement; does not claim real IME coverage",
+      "engine": "firefox",
+      "status": "passed",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        },
+        {
+          "type": "coverage-limit",
+          "description": "Synthetic composition lifecycle only. Real OS IME, dictation and composition keyboard interactions remain manual coverage."
+        }
+      ]
+    },
+    {
+      "scenario": "ordinary SSR renders request-local snapshots and hydrates existing nodes, draft and events",
+      "engine": "firefox",
+      "status": "passed",
+      "browserVersion": "155.0",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "155.0"
+        }
+      ]
+    },
+    {
+      "scenario": "signal snapshot is synchronous; disconnected reaction is disposed and reconnect subscribes once",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        }
+      ]
+    },
+    {
+      "scenario": "slotted native form control retains name, description, validation, submission and reset",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        }
+      ]
+    },
+    {
+      "scenario": "FACE form association does not transfer an external label to inner native input",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        },
+        {
+          "type": "external-label-activation",
+          "description": "{\"labelFocusedInput\":false}"
+        }
+      ]
+    },
+    {
+      "scenario": "native scoped registries keep identical tags and nested Lit render trees independent",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        },
+        {
+          "type": "scoped-capability",
+          "description": "{\"supported\":true,\"stage\":\"complete\",\"available\":true,\"old\":{\"branch\":true,\"leaf\":true,\"scopedRoot\":true,\"creationScope\":true},\"new\":{\"branch\":true,\"leaf\":true,\"scopedRoot\":true,\"creationScope\":true}}"
+        }
+      ]
+    },
+    {
+      "scenario": "controlled text keeps native draft, selection and node through unrelated updates",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        }
+      ]
+    },
+    {
+      "scenario": "synthetic composition guard defers external replacement; does not claim real IME coverage",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        },
+        {
+          "type": "coverage-limit",
+          "description": "Synthetic composition lifecycle only. Real OS IME, dictation and composition keyboard interactions remain manual coverage."
+        }
+      ]
+    },
+    {
+      "scenario": "ordinary SSR renders request-local snapshots and hydrates existing nodes, draft and events",
+      "engine": "webkit",
+      "status": "passed",
+      "browserVersion": "26.6",
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "26.6"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Installed Playwright engine builds only; not full current-minus-one/browser/device matrix.",
+    "No manual screen-reader or real OS IME test.",
+    "Composition guard uses explicitly synthetic events.",
+    "No Reference Target or cross-shadow reference polyfill test.",
+    "No scoped SSR/hydration, iframe fallback, or distinct runtime dependency graph test.",
+    "No performance budget, production component, or framework-support claim."
+  ],
+  "artifacts": {
+    "browser": "results/playwright.json",
+    "node": "results/node-ssr.txt",
+    "narrative": "evidence.md"
+  }
+}

@@ -1,0 +1,1226 @@
+{
+  "verifiedAt": "2026-09-20T16:43:25.773Z",
+  "browser": "Chromium 153.0.8010.12",
+  "node": "v24.16.0",
+  "platform": "darwin",
+  "rendering": "client",
+  "scope": "Functional qualification and desktop visual review; not performance profiling or accessibility certification",
+  "checksPassed": 176,
+  "projects": [
+    {
+      "name": "radix-react",
+      "url": "http://127.0.0.1:4510",
+      "sourceSha256": "b1ad21d7f5d0354dcc0a7bf0b00d39204ade1826828fd5e50039f55cc82a637a",
+      "sourceHashes": {
+        "radix-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "radix-react/index.html": "736ae41907989999e50c32bc33b5c45be5e80933b0dcdae497525d76cafa38b4",
+        "radix-react/package-lock.json": "fa2f782adbdfc84ffda43b4617b3ed9ec342e834ec0b58726f7f3cd391ccb1e3",
+        "radix-react/package.json": "da4c490340c1df90583d227da30585a634429a31ccb3a79272ea5cbb57a033b4",
+        "radix-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "radix-react/src/ui.jsx": "52878577da90c9a870bbf605fd820ea33f1ec9b3c0ec58d1cf89c928241a0e42",
+        "radix-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-radix-react",
+        "dependencies": {
+          "@radix-ui/themes": "3.3.0",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "fa2f782adbdfc84ffda43b4617b3ed9ec342e834ec0b58726f7f3cd391ccb1e3",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "radix-react/dist/index.html": "06b899ad15b557db99e8428e8d4db02c1c8a77c78aee468b1fba5dbf33b88b25",
+        "radix-react/dist/build-metadata.json": "6cc62be49dedf4ced5607688c7a9498cc0725b8a32249b31ea80ca0daf2a5e13",
+        "radix-react/dist/assets/index-C-Yx8hkh.js": "f1a93076076c664860bc3ca548b0fad3ee6195b67b8db5691cdb07947f6fc6a1",
+        "radix-react/dist/assets/index-C-Yx8hkh.js.map": "586bec5bcb4ec6266aabb043e79d17b0cc3e25d3558dd52559e0adc047d6d953",
+        "radix-react/dist/assets/index-DOSlwvYy.css": "610f29857979271ecdc7e40479c845d5b7be44bf21205476d23a57031e013675"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/radix-react.png"
+    },
+    {
+      "name": "fluent-react",
+      "url": "http://127.0.0.1:4511",
+      "sourceSha256": "a87ac6e1de5da44cb437faba355a4c1e767a8adf4d9249b0fdef3edc6131ae98",
+      "sourceHashes": {
+        "fluent-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "fluent-react/index.html": "8e67eed89472abef95652b5176bb366e186eee5eb45d5f7a2ae7c0a977722080",
+        "fluent-react/package-lock.json": "90f13d3552a7dbc15db761a28f7b8abc14c3d2f03cbbe29d66da369cb0ed04d0",
+        "fluent-react/package.json": "931674f3bbe7d6f0a41175bca171c448184bec94f804985170c5d6141a3ee251",
+        "fluent-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "fluent-react/src/ui.jsx": "516407b41a17b1936f53f82ede2bfa889710f80e3f4c8dfd613c8d07df009144",
+        "fluent-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-fluent-react",
+        "dependencies": {
+          "@fluentui/react-components": "9.74.7",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "90f13d3552a7dbc15db761a28f7b8abc14c3d2f03cbbe29d66da369cb0ed04d0",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "fluent-react/dist/index.html": "63a979f27bc5b59c93a980d2324b3aff3a4818ccf0eee821f638763708b8ccf4",
+        "fluent-react/dist/build-metadata.json": "c211fbf4dbc439f75ac5696d74b13906ec8f0d2454b4898c2f6270c8066a27d1",
+        "fluent-react/dist/assets/index-DewZRYh7.css": "20905df8e118ffc0c088adb80fa3ccf3ee41cee7031fe5ce0dc9fc4f97d5ee0d",
+        "fluent-react/dist/assets/index-iOgXJCQZ.js": "62ee377e9f680ee405192d859307e9dba176afdf88f27670d287f70bdddbcdc3",
+        "fluent-react/dist/assets/index-iOgXJCQZ.js.map": "8e2c577f775c3bd7adf0809a018979195edd2ea1282189b4cb35e980f1fa16c0"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/fluent-react.png"
+    },
+    {
+      "name": "spectrum-react",
+      "url": "http://127.0.0.1:4512",
+      "sourceSha256": "e7b33ddaaefa77debae02736553eab909cdfe3ecdddfc3bd09129cd67d8c4e9d",
+      "sourceHashes": {
+        "spectrum-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-react/index.html": "e2c45a6df4ddcf39c94286bb5d5175bfdf9fa8c3d8547b167c18d59ea0e85ebf",
+        "spectrum-react/package-lock.json": "3869ad314c9b7bc78db184d7d118b4188d8a5b3fe0321aed753f362dac83ea61",
+        "spectrum-react/package.json": "9a34f0ce2ddf0105d9b61f43046845b26cc12a54c43c9d676f47a204e125f35a",
+        "spectrum-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "spectrum-react/src/ui.jsx": "ce9b3ea10db724b4571967e338e15c58934f7e27db7ffc1571861caf6ea75763",
+        "spectrum-react/vite.config.js": "9132b1d81643acb0ddc421ce22aa574ff4df8c55274e94e5266b8cb19ceb7223",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-spectrum-react",
+        "dependencies": {
+          "@parcel/macros": "2.16.4",
+          "@react-spectrum/s2": "1.7.1",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0",
+          "@vitejs/plugin-react": "6.1.1",
+          "lightningcss": "1.33.0",
+          "typescript": "7.0.2",
+          "unplugin-parcel-macros": "0.2.0",
+          "vite": "8.2.2"
+        },
+        "lockfileSha256": "3869ad314c9b7bc78db184d7d118b4188d8a5b3fe0321aed753f362dac83ea61",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "spectrum-react/dist/index.html": "e6584d671f14e7de24bea8decb881fb60e6fafaff3fd56d9ff942ccd5d6a7a3e",
+        "spectrum-react/dist/build-metadata.json": "12e22ef64e15a29698200ddfc69ab802b27c46b9509ec4ef8d568280c391274e",
+        "spectrum-react/dist/assets/index-CmMecXP4.js": "3103bc5c135f2dff521c87304ab28448ebba2c1f73df8375514d57160362cd09",
+        "spectrum-react/dist/assets/index-CmMecXP4.js.map": "72c4ef691221692b1c9312a3fb887481c094ce244e06ab3ea3c7e40a2015b956",
+        "spectrum-react/dist/assets/style-CJkFymtk.css": "2ee44e23c3817905b3e742b9e56dec0b91d270339ff7d13f53b328bf4f3a18af"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/spectrum-react.png"
+    },
+    {
+      "name": "astryx-react",
+      "url": "http://127.0.0.1:4513",
+      "sourceSha256": "4b4f59137fe4fde16b39bf3e41aa8571fed9261d462221e64246058b11e55ddc",
+      "sourceHashes": {
+        "astryx-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "astryx-react/index.html": "87d797f9765418351e72ca57f1faa4b67cb9ca1f64b51c66bc14a1dbdb112fd8",
+        "astryx-react/package-lock.json": "eadba0edb838523603d5a68a968b269f8eee5ed1c59d0617c6a24ecb0c109e68",
+        "astryx-react/package.json": "36b74b7c5b399e86676091c8b06cd601c9834ed1f0e82803238a79bbdd8e7271",
+        "astryx-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "astryx-react/src/ui.jsx": "e8711e9458d6bf64af2c5851ce96dcd14a03d99b9b97ace6b1d56fe56cec50c0",
+        "astryx-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-astryx-react",
+        "dependencies": {
+          "@astryxdesign/core": "0.6.2",
+          "@astryxdesign/theme-neutral": "0.6.2",
+          "@stylexjs/stylex": "0.19.1",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "eadba0edb838523603d5a68a968b269f8eee5ed1c59d0617c6a24ecb0c109e68",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "astryx-react/dist/index.html": "4bbdd7a52306827d1f9c4cae82419eb0188052ce829454e4a53e9df6b07fcf0c",
+        "astryx-react/dist/build-metadata.json": "5bae64f7682ba05efc2de9c2bec16c601417a3a96cb730ae7f3996a8b12266f7",
+        "astryx-react/dist/assets/ProgressBarMarkTooltip-Dc5ShBeo.js": "5ab53ad44b1ac2d98925093f3e968d64858d285b88b55e32074bc7b878872b3d",
+        "astryx-react/dist/assets/ProgressBarMarkTooltip-Dc5ShBeo.js.map": "25363baa356ba19b9bfd469542499beb4633582aee2eda4f3ead1d2b614caec4",
+        "astryx-react/dist/assets/index-B1-DuT3_.css": "c19a040d0747ccdaa4cff31b92abe4bd84fddd0fb8a2ca5a391e2b89c94eb551",
+        "astryx-react/dist/assets/index-BBSG2wCJ.js": "5bad0a778f949a0d5ab30438c36e81c32df4e0e406f9e50f8f4b2f75c792278d",
+        "astryx-react/dist/assets/index-BBSG2wCJ.js.map": "e0fcd9fa7a0c610b887971a99c213a20321fa1f54369851a59dd09cdc8b02a10"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/astryx-react.png"
+    },
+    {
+      "name": "shadcn-react",
+      "url": "http://127.0.0.1:4514",
+      "sourceSha256": "1446c4e890a5ff86c99590104a4dc9f21bf78d49b75b5fd3fcd3f36cff8872f6",
+      "sourceHashes": {
+        "shadcn-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "shadcn-react/index.html": "08d448d88e24c4209cf27dc2d28741e9dd04fe1d2211b05b3a9443e4af0a8a9b",
+        "shadcn-react/licenses/shadcn-ui-MIT.txt": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+        "shadcn-react/package-lock.json": "e8c5259688dc78a17875457d227df843646017492f8cab36293731d0cf72e8d7",
+        "shadcn-react/package.json": "f8fe9a6aede7bf388b208c15253e45ef730cae85fffce721ffdeae91d0197ac8",
+        "shadcn-react/public/fonts/Geist-OFL.txt": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+        "shadcn-react/public/fonts/Geist-Variable.woff2": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",
+        "shadcn-react/registry-provenance.json": "83a67c17c90df50016ea534e33297c82ce338638368c849f3d5489e73dfc28c3",
+        "shadcn-react/src/components/ui/accordion.tsx": "ff30d314735c42e3625a0a018c5466ed231ebe7f8567f4e686a0517c30d1ec94",
+        "shadcn-react/src/components/ui/avatar.tsx": "1f947c95a656b024ca34bdd4f3d8a61dd9206071884ce8e6f08e1d6e198fa4d2",
+        "shadcn-react/src/components/ui/badge.tsx": "904484c9f48020b63f4a6bcbd400bc7545b12cbc14b278223576d727b3b17407",
+        "shadcn-react/src/components/ui/breadcrumb.tsx": "9aaeb0cc3bdb0c2784f59c7b958170c124140afb36286379af2e1a0032609069",
+        "shadcn-react/src/components/ui/button.tsx": "ec7af8ad606ab0601875e6af73136410eb1dabb1c7c3f2a3f99012d2268189f0",
+        "shadcn-react/src/components/ui/card.tsx": "7d5e0c74e0645f179aad6ff04793b1d9c2ae865e2fc191371e7f218b51ae4bac",
+        "shadcn-react/src/components/ui/checkbox.tsx": "5f5ae8010b1709a831f38a23893ae087c2deffdb5767f598a990509994f18776",
+        "shadcn-react/src/components/ui/combobox.tsx": "7dceec86ba8b3f5c2ae017e5346f0b74fe36fb0622ed38508f593f05fa411990",
+        "shadcn-react/src/components/ui/dialog.tsx": "df0804a9d5cac1b73f29ec138b5051190f87dda0e7f96928a5689ac9beb9835d",
+        "shadcn-react/src/components/ui/dropdown-menu.tsx": "d7f14dfbe2ecc651683e0d104eaad1e2d2b2528aa369c1b8f1990d4341e17eca",
+        "shadcn-react/src/components/ui/input-group.tsx": "385d7d665bac2ce5c263eba2eb0dda117d6cb1b74383c88465d5e0be74adb302",
+        "shadcn-react/src/components/ui/input.tsx": "cd33378f4038513cf97a58406837adb48b00fe2b79f7ee0ad3a7da4b44f09c6d",
+        "shadcn-react/src/components/ui/label.tsx": "ac36c09749a827b198fa6e995a917c9749cb8819bfb75a89ff1fac5c3121093d",
+        "shadcn-react/src/components/ui/popover.tsx": "2778e3617f408f471f4ceb2193104ab801d68b563fc8198689155ba177a9cdab",
+        "shadcn-react/src/components/ui/progress.tsx": "ea5c9b874af1bfe1a89157afe073c5af33ea04b82a7f0553db6eb9f8253cf06a",
+        "shadcn-react/src/components/ui/radio-group.tsx": "1b143e2e18e6d3202bc6f1b2dad8b9bd712bbffe0660af81c8a61ea887cb0b2e",
+        "shadcn-react/src/components/ui/select.tsx": "07480aa52c81e13ab8fb7b62366498d1dc6c3af3e5f9172bf3b130e33b665735",
+        "shadcn-react/src/components/ui/sheet.tsx": "b6da7b49e4f18316c7823803948913e818ccfe0cbcecd712c0e6a0295ac62e16",
+        "shadcn-react/src/components/ui/slider.tsx": "c7eea4ac655a7b865e81e273d5a02bdaa97881c55a5c5912d14efebc6990e59f",
+        "shadcn-react/src/components/ui/switch.tsx": "7eebd68f1009f4352dce25df92b0c626946e497d9c4175f79ec01dc92ce28663",
+        "shadcn-react/src/components/ui/tabs.tsx": "d05cceaaa82502c8f6bb4b14f8c8baed307992c6a11c0ac57336485076e43adb",
+        "shadcn-react/src/components/ui/textarea.tsx": "b2a12a6d7b76bb8cf7c31c1630bbfbdccc351a11d2dc17c90243adf54222169e",
+        "shadcn-react/src/lib/utils.ts": "c4afe23db29651dec75ca5a3098a8bafe35f78cd45d4773d1db1c8001e640623",
+        "shadcn-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "shadcn-react/src/style.css": "721a95624773563dee7db84a0973f8344753550e938d575f52a32bd2429bc9fd",
+        "shadcn-react/src/ui.jsx": "14ec41a7aaadc14ec1d1b905a1546a38710d96610a29a98e462ea6bed831482b",
+        "shadcn-react/vite.config.js": "ac61123535e8decacfb846acf59485d72938f8b5ebd07dfa39bf83e1574c0525",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-shadcn-react",
+        "dependencies": {
+          "@base-ui/react": "1.8.0",
+          "class-variance-authority": "0.7.1",
+          "clsx": "2.1.1",
+          "tailwind-merge": "3.7.0",
+          "lucide-react": "1.47.0",
+          "tailwindcss": "4.3.3",
+          "@tailwindcss/vite": "4.3.3",
+          "tw-animate-css": "1.4.0",
+          "shadcn": "4.21.0",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "e8c5259688dc78a17875457d227df843646017492f8cab36293731d0cf72e8d7",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "shadcn-react/dist/index.html": "d5f3e59b87f60ef0542550985f04121313205527bba2dce0387b3a611b82a92e",
+        "shadcn-react/dist/build-metadata.json": "29b60a5080bf9ea64254dcb9991e5e896a1ab9bc5b4fee54d6035bc899366ec8",
+        "shadcn-react/dist/assets/index-9zXTxq3o.js": "286f55a23aac3006e182f0c0450072df55fe8e77c8682b905b753a69a0d39a52",
+        "shadcn-react/dist/assets/index-9zXTxq3o.js.map": "cca36d45b78b3ace46565c9d730a8a970ee1984fb6ff6fc93df242ec7ede8e02",
+        "shadcn-react/dist/assets/index-CiupPIgs.css": "3a6bc597b340765a07a9e697c4eb08934a49f61ef31c2fc9f517e1584907dea1"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/shadcn-react.png"
+    },
+    {
+      "name": "fluent-web-components",
+      "url": "http://127.0.0.1:4515",
+      "sourceSha256": "4f2cf4d8ab466e3d70548581c6cddc083b3f58525ca21fcf5966e96d13c222fa",
+      "sourceHashes": {
+        "fluent-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "fluent-web-components/index.html": "770af2226f145efedd60c7fdadaa49cb0aafaa8fea33b1f8c12bae85b2574302",
+        "fluent-web-components/package-lock.json": "f493501714f115b4495cf85c5ab8802c403ca281f4590d8ef48df8d3e08df79c",
+        "fluent-web-components/package.json": "fad901973eb53ff642715eda59b56cb52d2f41bd9d923de35bfc9b41cdb906ff",
+        "fluent-web-components/src/main.js": "65d128c2f256997a4f2c8792c4af14fdeb7da0aadecd116c2d62d609d33aaac4",
+        "fluent-web-components/src/style.css": "a91e1378d00772336d612d4b7a68d1fde98b199d14f6f2355229633645ef7e76",
+        "fluent-web-components/src/ui.js": "d3a13790c46516d951f34983b2419387af319a965a7909d5cca10e7d1d5280ec",
+        "fluent-web-components/vite.config.js": "cb705b1fa4574ccec7667684414a52f608ff80e61dd5885d6f922908d7812cd5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-fluent-web-components",
+        "dependencies": {
+          "@fluentui/web-components": "3.1.3",
+          "@fluentui/tokens": "1.0.0-alpha.24"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "f493501714f115b4495cf85c5ab8802c403ca281f4590d8ef48df8d3e08df79c",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "fluent-web-components/dist/index.html": "e7f911b0dbd4b39dc86db03033351f5e1a500bc15d52599634406c24d49a5ce7",
+        "fluent-web-components/dist/build-metadata.json": "0f1bdeb13eff20c01ac491715167c877e138adbb923ce6c971239fdf79a9a95f",
+        "fluent-web-components/dist/assets/index-7X1QEckn.css": "ec89e27f3be2ab053b06747b64a8808752ac7127160f08f048e02e50fe900576",
+        "fluent-web-components/dist/assets/index-DHbL8u7_.js": "94488b365414c47d3fd114a17a90c9f20f33cd8c1f720b1aa9f4f3dec5722a18",
+        "fluent-web-components/dist/assets/index-DHbL8u7_.js.map": "8a1aabf6b25e7b9073fed887617a8f0c2cc64b0d13da29466effa228608f1d7b"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/fluent-web-components.png"
+    },
+    {
+      "name": "spectrum-web-components",
+      "url": "http://127.0.0.1:4516",
+      "sourceSha256": "4ad8fec3843a6fe31bbd23cf20248a7fbe82e4a11f4c8ab94afb8a9d79dabca9",
+      "sourceHashes": {
+        "spectrum-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-web-components/index.html": "bc5782b3b1052630466e1952557f035eefe3ecfdbf79669b2d593ca477f8654e",
+        "spectrum-web-components/package-lock.json": "594469265f0cca7e79d73a1d66a067444e8f19e372710e7e1f2b23c6eac3a5d5",
+        "spectrum-web-components/package.json": "ff2d43480459003cda271eb8abcedb36e047c553c44d630f7969ccfc416041b2",
+        "spectrum-web-components/src/main.js": "831a7b46b41ba2aae31315eb9926d41eda4023f385d312010bca16ddb1508a53",
+        "spectrum-web-components/src/style.css": "6e61e44d266c68c34bcb37413287c2c8276f2aaa934f39ec513aba098cf92b04",
+        "spectrum-web-components/src/ui.js": "1b550c1bcc848f7cd62244497492ce05b4f9e5831bd56b0235ce82d95e6cf82d",
+        "spectrum-web-components/vite.config.js": "cb705b1fa4574ccec7667684414a52f608ff80e61dd5885d6f922908d7812cd5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-spectrum-web-components",
+        "dependencies": {
+          "@spectrum-web-components/accordion": "1.12.2",
+          "@spectrum-web-components/action-button": "1.12.2",
+          "@spectrum-web-components/action-group": "1.12.2",
+          "@spectrum-web-components/avatar": "1.12.2",
+          "@spectrum-web-components/badge": "1.12.2",
+          "@spectrum-web-components/button": "1.12.2",
+          "@spectrum-web-components/checkbox": "1.12.2",
+          "@spectrum-web-components/color-field": "1.12.2",
+          "@spectrum-web-components/combobox": "1.12.2",
+          "@spectrum-web-components/dialog": "1.12.2",
+          "@spectrum-web-components/field-label": "1.12.2",
+          "@spectrum-web-components/link": "1.12.2",
+          "@spectrum-web-components/menu": "1.12.2",
+          "@spectrum-web-components/number-field": "1.12.2",
+          "@spectrum-web-components/overlay": "1.12.2",
+          "@spectrum-web-components/picker": "1.12.2",
+          "@spectrum-web-components/popover": "1.12.2",
+          "@spectrum-web-components/progress-bar": "1.12.2",
+          "@spectrum-web-components/radio": "1.12.2",
+          "@spectrum-web-components/slider": "1.12.2",
+          "@spectrum-web-components/switch": "1.12.2",
+          "@spectrum-web-components/tabs": "1.12.2",
+          "@spectrum-web-components/textfield": "1.12.2",
+          "@spectrum-web-components/theme": "1.12.2"
+        },
+        "devDependencies": {
+          "typescript": "7.0.2",
+          "vite": "8.2.2"
+        },
+        "lockfileSha256": "594469265f0cca7e79d73a1d66a067444e8f19e372710e7e1f2b23c6eac3a5d5",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "spectrum-web-components/dist/index.html": "dbc52bc4bba601de0cba12bc921f2dbba82e42055f8bb9f0a98ff3e3836ba52c",
+        "spectrum-web-components/dist/build-metadata.json": "5fe792210be70c84f937d77a6cc061cefa231987eafa64e12a7783df9769c042",
+        "spectrum-web-components/dist/assets/Base-ZN4Dbzq-.js": "d3a23ed6a0ca4370db75ffc4a8485d83a8f898c9881aa15ff492ad0cf6cd7f1d",
+        "spectrum-web-components/dist/assets/Base-ZN4Dbzq-.js.map": "8dfd8410f225a3ef8d05b46396fd696b467b0ccd24cf6378b3ae341c4a441cd2",
+        "spectrum-web-components/dist/assets/LanguageResolution-BzS_x5pe.js": "a491366275d505058f33ceb5b90331489b6ccbb7a66ce68080539ee0708a21cc",
+        "spectrum-web-components/dist/assets/LanguageResolution-BzS_x5pe.js.map": "218cd9cb834e41860fb5d52c43e25602f0cfcbe7ae3847d4fdcdfd09b601117a",
+        "spectrum-web-components/dist/assets/Overlay-Lz9pcCg9.js": "143d6f84f51bd9b42f5124d31ede3882deac42aafaafe547c7f0f5f40e82a111",
+        "spectrum-web-components/dist/assets/Overlay-Lz9pcCg9.js.map": "00756e5642ad48c768404970e5d257e7ca36953b9a6e89d509397eff83626217",
+        "spectrum-web-components/dist/assets/define-element-BlONwTYC.js": "eb8518b0f2c27fada891f9de32970d3130cff3d2bc319dea90570ee34d0bcd25",
+        "spectrum-web-components/dist/assets/define-element-BlONwTYC.js.map": "ef0bf816e1f7981ae543bf33f4a003bf6739b8e4a5fbb855950f1f59bf153d1d",
+        "spectrum-web-components/dist/assets/first-focusable-in-HCIc6lth.js": "ac753b7149f0c4a22d5082b6c637648f9ec202710480489f88c08b451b666f54",
+        "spectrum-web-components/dist/assets/first-focusable-in-HCIc6lth.js.map": "d4e1bb0b5490eddff23737f5c9b54fcca7ccac52d40ce15728e581fe38666860",
+        "spectrum-web-components/dist/assets/focus-trap.esm-GrKRp3fm.js": "24260c354bbbbb401dc157a37f93ee9961b4c2adb7e5594810a8e65cc863dd3c",
+        "spectrum-web-components/dist/assets/focus-trap.esm-GrKRp3fm.js.map": "f0b1039fb0142191d3fb37827e354a5ed2e965d7d10c2260d69cce81c2d25ef4",
+        "spectrum-web-components/dist/assets/focus-visible-D6fgymCV.js": "b8630cc1dd7b4c153a00f8cf39a7cf78cd0c1ab9b1082561d9cb6bb52f7d2a62",
+        "spectrum-web-components/dist/assets/focus-visible-D6fgymCV.js.map": "546b965798bdd9ffc1fd8789224d072af905d97cbff225475bebcbd48a6b602c",
+        "spectrum-web-components/dist/assets/focusable-selectors-CbRTteoW.js": "1e81176f2810691a8b5c4a51da1faa8737c1135800cd7e5f7ff3ba15f64dbaf4",
+        "spectrum-web-components/dist/assets/focusable-selectors-CbRTteoW.js.map": "16c277b5ea0ac50ec0e5bdc520ab25fb0be4979f0928119defbb601769955d5c",
+        "spectrum-web-components/dist/assets/if-defined-Vi_7t4rj.js": "9a7ea60b46753285f290a66d5a5cd37ac5548223da232541573d15b0162ee5e3",
+        "spectrum-web-components/dist/assets/if-defined-Vi_7t4rj.js.map": "73906724737f50e664ba4b81ae41b27dcb229f5385cec0a9d390d06848fd8ffb",
+        "spectrum-web-components/dist/assets/index-BKxPXhH6.js": "3681da0099fcd3d3cbf41854448f07fb71345a8df36da0bea4ea85b3dce02f60",
+        "spectrum-web-components/dist/assets/index-BKxPXhH6.js.map": "972a9223bab533cb0e1e625562d1261c91d61dc3761db911abee268451b3b0e1",
+        "spectrum-web-components/dist/assets/index-BdxRcUJm.css": "0a6540d02c0ba9ae8b58c4b8e250222da65dc4ede3fc87f155c7cd321e448c73",
+        "spectrum-web-components/dist/assets/platform-BZDoCuRt.js": "d77e473ba4d7a14b80ebae6ee0fc4bfbf125494cb151d20ea3ad449660ac9e12",
+        "spectrum-web-components/dist/assets/platform-BZDoCuRt.js.map": "9804269a328b38461a78f92d5e86f55865c0891a40a39aa111d684fcc32b1e5e",
+        "spectrum-web-components/dist/assets/preload-helper-Czpn1I53.js": "aba87f2a53e45ecdc9113fc30387d16e449d1676428cf5f82dd624c1df97d152",
+        "spectrum-web-components/dist/assets/query-Df4-SAIv.js": "711201f990f269cde9e54095f81a441fd43433c5c7c5b3849032ee95e2e96d9a",
+        "spectrum-web-components/dist/assets/query-Df4-SAIv.js.map": "f3df8d1ef54c6f04a09019fab91ca4b9ff4d4c03acf6c4f7cd132f1e02f00469",
+        "spectrum-web-components/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "spectrum-web-components/dist/assets/sp-color-handle-BKVt-kRK.js": "89156d1b49afa6c397d1bfeb2efa0c5642d87a926bc3a0df7237390dd20b0714",
+        "spectrum-web-components/dist/assets/sp-color-handle-BKVt-kRK.js.map": "f6c4d3b68b04eacb6537571978a358a10c17201f389591e15692103eb051c455",
+        "spectrum-web-components/dist/assets/sp-tooltip-Bow_xdpX.js": "11b9e9d018343d054a8bfcb6031f0ab9000edcd7c7af72444865adfee6652c82",
+        "spectrum-web-components/dist/assets/sp-tooltip-Bow_xdpX.js.map": "070a3ca55d9f938bbfa7109b0c22d437ac0dbf63144dc00ae87213585f6783f5",
+        "spectrum-web-components/dist/assets/sp-tray-CPbcM0dS.js": "e79ffad5dba4346fce756c3effb2897b25fe429ed42b122d4d2924510690d81b",
+        "spectrum-web-components/dist/assets/sp-tray-CPbcM0dS.js.map": "c3224ac3cc34e5885e5e1e6aa216f80c8db462636f59b7b8616468bc16ee9175",
+        "spectrum-web-components/dist/assets/state-9U0Jz7yL.js": "004dd62719d7f14afcd96ee6c8b20d2cde797235b74f74c6e54fde69ced6b99a",
+        "spectrum-web-components/dist/assets/state-9U0Jz7yL.js.map": "2a06f4a34345704633a9061f3d0c17be48ffe249562dbb4ab843b2ce9f3e0feb"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/spectrum-web-components.png"
+    },
+    {
+      "name": "en-reve",
+      "url": "http://127.0.0.1:4517",
+      "sourceSha256": "ca70f41ed4b01c3164cda40059ce765ded838ba61ae38b91aedb1be89dab0184",
+      "sourceHashes": {
+        "en-reve/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "en-reve/index.html": "7382c087e80812ef2097bfb940209c7586cf26d5298f9ec80c1fe38879a4f57d",
+        "en-reve/package-lock.json": "28a5a5695c5ab1f689d5d8cfaafe3457d5731aa3e0596d1c668e78fb829679fc",
+        "en-reve/package.json": "53b31be830df923ec0d15ba2c0c289a061e81c0e0e21600928ee2a80d1577028",
+        "en-reve/snapshot.json": "c3fbd4c000923175f3374a4a11bb20d85918b3e6fab5a0c5db2de35f4a976e1d",
+        "en-reve/src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+        "en-reve/src/base.css": "572a50f9bd509cf1ca11dcd525be0800e5321cc94aa58e79fa26367f34efb7c0",
+        "en-reve/src/change-consumption.ts": "e1bc1b6b9d72fa561f6043721f8165c2cf78ace78720ecce3a07bc01d661c8be",
+        "en-reve/src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+        "en-reve/src/model.ts": "db63e21d6055808f15e9e9ea942d321871f6150b2f9b6b16c4e442e02ef79f65",
+        "en-reve/src/styles.css": "9e4ba3f86fe9662f74ee88b67a326f292652e0c5a0ecce8fc9fe5ae5d9fc14ff",
+        "en-reve/src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+        "en-reve/src/theme.css": "b3271186d7e800872f25c5d5b785abd5eb3f6705e686dba0c5cd5fb82703c14c",
+        "en-reve/src/token-copy.ts": "ae7e2ee7882d81b89e2d9427bb3f18f01e886660fcbf62d141f714dd114dc720",
+        "en-reve/vendor/en-reve-elements-0.1.0.tgz": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+        "en-reve/vendor/en-reve-primitives-0.1.0.tgz": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+        "en-reve/vendor/en-reve-styles-0.1.0.tgz": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+        "en-reve/vendor/en-reve-tokens-0.1.0.tgz": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+        "en-reve/vite.config.js": "cd5bace161a6a47b3c7550399cf656d2fe7ba972d5bcf67442ac8e50d29479a3",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-en-reve",
+        "dependencies": {
+          "@en-reve/tokens": "file:vendor/en-reve-tokens-0.1.0.tgz",
+          "@en-reve/styles": "file:vendor/en-reve-styles-0.1.0.tgz",
+          "@en-reve/primitives": "file:vendor/en-reve-primitives-0.1.0.tgz",
+          "@en-reve/elements": "file:vendor/en-reve-elements-0.1.0.tgz",
+          "lit": "3.3.3",
+          "signal-polyfill": "0.2.2"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "28a5a5695c5ab1f689d5d8cfaafe3457d5731aa3e0596d1c668e78fb829679fc",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "en-reve/dist/index.html": "8f98eaa7342e07081e627e12b6ce537e2d5062e407ae5b57a87a9f18945af8e7",
+        "en-reve/dist/build-metadata.json": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "en-reve/dist/assets/index-CSoEuTYL.js": "038ca6003cce6fc311dfd6db84a853ad7ded7135281ab3b1c1b29b3dbd07b5fd",
+        "en-reve/dist/assets/index-CSoEuTYL.js.map": "402e698cdc38f4656469175f966e6d5656d4083a9da29367d9bc27686d556051",
+        "en-reve/dist/assets/index-DADEvvIk.css": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "artifacts/en-reve.png"
+    }
+  ]
+}

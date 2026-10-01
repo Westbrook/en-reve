@@ -1,0 +1,7 @@
+{
+  "definitions": ["src/css/recipes.css"],
+  "entries": [
+    { "source": "src/css/typography.css", "module": "typography", "export": "typographyStyles" },
+    { "source": "src/css/surface.css", "module": "surface", "export": "surfaceStyles" }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "name": "@en-reve/styles",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "exports": {
+    "./patterns.js": {
+      "types": "./dist/patterns.d.ts",
+      "default": "./dist/patterns.js"
+    },
+    "./patterns.css": "./dist/patterns.css",
+    "./carousel.js": {
+      "types": "./dist/carousel.d.ts",
+      "default": "./dist/carousel.js"
+    },
+    "./carousel.css": "./dist/carousel.css",
+    "./collaboration.js": {
+      "types": "./dist/collaboration.d.ts",
+      "default": "./dist/collaboration.js"
+    },
+    "./collaboration.css": "./dist/collaboration.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./index.js": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./form-navigation.js": {
+      "types": "./dist/form-navigation.d.ts",
+      "default": "./dist/form-navigation.js"
+    },
+    "./form-navigation.css": "./dist/form-navigation.css",
+    "./color-wheel.js": {
+      "types": "./dist/color-wheel.d.ts",
+      "default": "./dist/color-wheel.js"
+    },
+    "./color-wheel.css": "./dist/color-wheel.css",
+    "./color-slider.js": {
+      "types": "./dist/color-slider.d.ts",
+      "default": "./dist/color-slider.js"
+    },
+    "./color-slider.css": "./dist/color-slider.css",
+    "./color-picker.js": {
+      "types": "./dist/color-picker.d.ts",
+      "default": "./dist/color-picker.js"
+    },
+    "./color-picker.css": "./dist/color-picker.css",
+    "./calendar.css": "./dist/calendar.css",
+    "./calendar.js": {
+      "types": "./dist/calendar.d.ts",
+      "default": "./dist/calendar.js"
+    },
+    "./foundations.js": {
+      "types": "./dist/foundations.d.ts",
+      "default": "./dist/foundations.js"
+    },
+    "./typography.js": {
+      "types": "./dist/typography.d.ts",
+      "default": "./dist/typography.js"
+    },
+    "./buttons.js": {
+      "types": "./dist/buttons.d.ts",
+      "default": "./dist/buttons.js"
+    },
+    "./buttons.css": "./dist/buttons.css",
+    "./links.js": {
+      "types": "./dist/links.d.ts",
+      "default": "./dist/links.js"
+    },
+    "./links.css": "./dist/links.css",
+    "./radio.js": {
+      "types": "./dist/radio.d.ts",
+      "default": "./dist/radio.js"
+    },
+    "./radio.css": "./dist/radio.css",
+    "./controls.js": {
+      "types": "./dist/controls.d.ts",
+      "default": "./dist/controls.js"
+    },
+    "./combobox.js": {
+      "types": "./dist/combobox.d.ts",
+      "default": "./dist/combobox.js"
+    },
+    "./commands.js": {
+      "types": "./dist/commands.d.ts",
+      "default": "./dist/commands.js"
+    },
+    "./selection.js": {
+      "types": "./dist/selection.d.ts",
+      "default": "./dist/selection.js"
+    },
+    "./surfaces.js": {
+      "types": "./dist/surfaces.d.ts",
+      "default": "./dist/surfaces.js"
+    },
+    "./overlays.js": {
+      "types": "./dist/overlays.d.ts",
+      "default": "./dist/overlays.js"
+    },
+    "./feedback.js": {
+      "types": "./dist/feedback.d.ts",
+      "default": "./dist/feedback.js"
+    },
+    "./activity.js": {
+      "types": "./dist/activity.d.ts",
+      "default": "./dist/activity.js"
+    },
+    "./navigation.js": {
+      "types": "./dist/navigation.d.ts",
+      "default": "./dist/navigation.js"
+    },
+    "./content.js": {
+      "types": "./dist/content.d.ts",
+      "default": "./dist/content.js"
+    },
+    "./recipes.js": {
+      "types": "./dist/recipes.d.ts",
+      "default": "./dist/recipes.js"
+    },
+    "./metadata.js": {
+      "types": "./dist/metadata.d.ts",
+      "default": "./dist/metadata.js"
+    },
+    "./foundations.css": "./dist/foundations.css",
+    "./typography.css": "./dist/typography.css",
+    "./controls.css": "./dist/controls.css",
+    "./combobox.css": "./dist/combobox.css",
+    "./commands.css": "./dist/commands.css",
+    "./selection.css": "./dist/selection.css",
+    "./surfaces.css": "./dist/surfaces.css",
+    "./overlays.css": "./dist/overlays.css",
+    "./feedback.css": "./dist/feedback.css",
+    "./activity.css": "./dist/activity.css",
+    "./navigation.css": "./dist/navigation.css",
+    "./content.css": "./dist/content.css",
+    "./recipes.css": "./dist/recipes.css",
+    "./table.js": {
+      "types": "./dist/table.d.ts",
+      "default": "./dist/table.js"
+    },
+    "./table.css": "./dist/table.css",
+    "./pagination.js": {
+      "types": "./dist/pagination.d.ts",
+      "default": "./dist/pagination.js"
+    },
+    "./pagination.css": "./dist/pagination.css",
+    "./tree.js": {
+      "types": "./dist/tree.d.ts",
+      "default": "./dist/tree.js"
+    },
+    "./tree.css": "./dist/tree.css",
+    "./file-upload.js": {
+      "types": "./dist/file-upload.d.ts",
+      "default": "./dist/file-upload.js"
+    },
+    "./file-upload.css": "./dist/file-upload.css",
+    "./toast.js": {
+      "types": "./dist/toast.d.ts",
+      "default": "./dist/toast.js"
+    },
+    "./toast.css": "./dist/toast.css",
+    "./rich-text-editor.js": {
+      "types": "./dist/rich-text-editor.d.ts",
+      "default": "./dist/rich-text-editor.js"
+    },
+    "./token-editor.js": {
+      "types": "./dist/token-editor.d.ts",
+      "default": "./dist/token-editor.js"
+    },
+    "./chat.js": {
+      "types": "./dist/chat.d.ts",
+      "default": "./dist/chat.js"
+    },
+    "./chat.css": "./dist/chat.css",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "node scripts/author-css.mjs && node ../../node_modules/typescript/bin/tsc -p tsconfig.json && node scripts/export-css.mjs",
+    "check": "node scripts/author-css.mjs && node ../../node_modules/typescript/bin/tsc -p tsconfig.json --noEmit",
+    "watch": "node scripts/watch-css.mjs",
+    "test:authoring": "node ../../tooling/testing/invoke.mjs public --view='packages/styles#test:authoring' --"
+  },
+  "dependencies": {
+    "lit": "3.3.3",
+    "@en-reve/tokens": "0.1.0"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "reason": "The dialog readiness collector treated an undefined en-command-palette host as visible before its deferred definition arrived. Fixed by requiring custom-element registration and retaining the first valid semantic completion.",
+  "affectedRuns": [
+    "experiment-lazy-commands-interaction-v1",
+    "experiment-intent-commands-interaction-v1"
+  ],
+  "invalidMetrics": [
+    "actions.commands-first.semanticMs",
+    "actions.commands-first.frameOpportunityMs"
+  ],
+  "unaffected": "Raw browser Event Timing, network delivery, load-only campaigns and functional outcomes remain retained. No speedup is claimed from affected measurements.",
+  "replacement": {
+    "calibration": "reports/collector-calibration.json",
+    "runs": [
+      "experiment-native-interaction-v2",
+      "experiment-lazy-commands-interaction-v2",
+      "experiment-intent-commands-interaction-v2"
+    ],
+    "status": "All replacement samples and deferred-definition calibration passed"
+  }
+}

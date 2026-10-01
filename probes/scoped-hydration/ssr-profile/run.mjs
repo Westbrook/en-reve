@@ -1,0 +1,23 @@
+import {mkdtemp,readFile,writeFile,mkdir,copyFile,symlink} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {resolve,join} from 'node:path';
+import {spawn} from 'node:child_process';
+import {exclusiveBrowserWork} from '../../../showcases/performance/src/lock.mjs';
+const root=process.cwd(),source=resolve('probes/scoped-hydration/ssr-profile');
+const run=process.argv.find(a=>a.startsWith('--run='))?.slice(6);
+if(!run || !/^[a-z0-9-]+$/.test(run))throw Error('Supply a unique --run=name');
+const qualify=process.argv.includes('--qualify');
+const out=resolve('artifacts/scoped-registry-phase-5-ssr-investigation',run);
+await mkdir(out,{recursive:false});
+const original=(await readFile('artifacts/scoped-registry-phase-5/production/stage.txt','utf8')).trim();
+const stage=await mkdtemp(join(tmpdir(),'phase5-ssr-profile-'));
+await symlink(join(original,'phase5/node_modules'),join(stage,'node_modules'),'dir');
+for(const file of ['driver.mjs','worker.mjs','stateful.mjs'])await copyFile(join(source,file),join(stage,file));
+for(const file of ['island.mjs','rendered.json'])await copyFile(join(original,'phase5/study',file),join(stage,file));
+for(const file of ['one.mjs','two.mjs'])await copyFile(resolve('packages/ssr/tests/scoped-fixtures',file),join(stage,file));
+await writeFile(join(out,'receipt.json'),JSON.stringify({stage,original,packages:'Unmodified extracted Phase 5 campaign packages',source,qualify},null,2));
+await exclusiveBrowserWork(()=>new Promise((yes,no)=>{
+ const child=spawn(process.execPath,[join(stage,'driver.mjs'),`--out=${join(out,'samples.json')}`,...(qualify?['--qualify']:[])],{cwd:root,stdio:'inherit'});
+ child.on('error',no);child.on('exit',code=>code===0?yes():no(Error(`Capture exited ${code}`)));
+}));
+console.log(out);

@@ -1,0 +1,262 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Current measured-candidate rejection index; inherited Stage A evidence-index.json remains unchanged. Current source behavior is distinct from the measured subjects.",
+  "evidenceCommit": "be9cd5068dbfb9dfc9028b6efe3c943955a97464",
+  "measuredReference": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+  "measuredCandidate": "0aa7a3057d993cee04f5c0f49b5ba482945b8ed7",
+  "separatelyAcceptedCommonButtonCommit": "806886d104febb0b3deb4aef2b3e4dad7947ae87",
+  "changedSubjectRule": "No result is relabeled onto the eager restoration or common-button successor. The separate command/combobox C1 campaign retains its own exact measured subjects and rejection evidence.",
+  "features": [
+    {
+      "family": "media",
+      "featureId": "en-reve/en-media-viewer/gallery-body",
+      "disposition": "rejected-with-evidence",
+      "support": "not-supported",
+      "necessaryGateFinding": "Class +804 / definition +875 gzip bytes; each exceeds +512. Requests stay 1 \u2192 1.",
+      "currentBehavior": "Eager gallery body and existing modal/media ownership.",
+      "evidence": [
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/media/disposition.md",
+          "startLine": 3,
+          "endLine": 16,
+          "sha256": "d7132481d0210c2bfd75f3ed702a54b070e933293aaeb5cc0612eb1b9f899aa1",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        },
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/media/media-evidence-extract.json",
+          "startLine": 270,
+          "endLine": 309,
+          "sha256": "3a103ac2c2f6becab4d6a0eef81e8c3cb21f3300e084336f4a34d8b0af19a8b9",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        }
+      ],
+      "rawInput": {
+        "archivePath": "artifacts/lazy-delivery/c0-qualification/20260930-03/qualification-run.tar.gz",
+        "memberPath": "inputs/selective-entry-static-authentication-01.json",
+        "sha256": "dec643bb76539c252e32613b19cbe91b21351be9064ce707b05550ef16a1fe57",
+        "bytes": 49491,
+        "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+      }
+    },
+    {
+      "family": "editor",
+      "featureId": "en-reve/en-editor-toolbar/contextual-command-construction",
+      "disposition": "rejected-with-evidence",
+      "support": "not-supported",
+      "necessaryGateFinding": "Actual rich-text entry +6,642 gzip bytes / +1 request; exceeds +4,096 / 0.",
+      "currentBehavior": "Eager default controls; contextual visibility remains selection-owned.",
+      "evidence": [
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/editor/disposition.md",
+          "startLine": 3,
+          "endLine": 21,
+          "sha256": "b98a62af2f03923777398508c8ad917e1d4e74abdfb76c4f03eafe9ff4c73cfc",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        },
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/editor/route-evidence-extract.json",
+          "startLine": 166,
+          "endLine": 217,
+          "sha256": "143ccf92755e24f9bad6b1daf5c1ec8013805a3da3ae20d1cc18a086e7e5f325",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        }
+      ],
+      "rawInput": {
+        "archivePath": "artifacts/lazy-delivery/c0-qualification/20260930-03/qualification-run.tar.gz",
+        "memberPath": "inputs/route-entry-static-authentication-01.json",
+        "sha256": "49ed3a519f2f4882c4416b08fa1008478622a0f1a1447c7a9174c38906ee3ab9",
+        "bytes": 85030,
+        "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+      }
+    },
+    {
+      "family": "color",
+      "featureId": "en-reve/en-token-editor/application-color-popup-code",
+      "disposition": "rejected-with-evidence",
+      "support": "not-supported",
+      "necessaryGateFinding": "22,513 / 234,287 gzip bytes saved = 9.6091545839%; passes 4,096 bytes but fails required 10%.",
+      "currentBehavior": "Eager application-owned definitions/template; popup DOM stays session-conditional.",
+      "evidence": [
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/color/DISPOSITION.md",
+          "startLine": 7,
+          "endLine": 34,
+          "sha256": "20f961ca9aa7a63c60736156b59a77ff915a590a499967250b239de90267f111",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        },
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/color/gate-authentication.json",
+          "startLine": 58,
+          "endLine": 90,
+          "sha256": "4adf939ce2a2ceba3a9d833c780d5104aebe1145489bb19e85275ab364d739bd",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        }
+      ],
+      "rawInput": {
+        "archivePath": "artifacts/lazy-delivery/c0-qualification/20260930-03/qualification-run.tar.gz",
+        "memberPath": "color-inputs/producer.json",
+        "sha256": "c31862b437e077e160e4dd228b90107b6ef0fd17e71c7a4ebc751f1207c7d436",
+        "bytes": 6433896,
+        "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+      }
+    },
+    {
+      "family": "pagination",
+      "featureId": "en-reve/en-pagination/direct-page-popover-editor-and-actions",
+      "disposition": "rejected-with-evidence",
+      "support": "not-supported",
+      "necessaryGateFinding": "All 14 pairs add +1 entry / +2 settled requests; both ceilings are 0. DOM thresholds pass (\u2212115 route / \u221220 primary nodes).",
+      "currentBehavior": "Eager chooser with native draft/editing and missed-toggle hydration recovery.",
+      "evidence": [
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/pagination/disposition.md",
+          "startLine": 3,
+          "endLine": 20,
+          "sha256": "819d9e16d86a979bb33b1577d537de9c248f98231644854651a1a35dc60a18ed",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        },
+        {
+          "path": "artifacts/lazy-delivery/disposition-drafts/20260930-01/pagination/evidence-extract.json",
+          "startLine": 21,
+          "endLine": 68,
+          "sha256": "5f156b57b34a1f296f76ac70b4d8da64141c520dfd38381b82e3b9e9e58f4d2c",
+          "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+        }
+      ],
+      "rawInput": {
+        "archivePath": "artifacts/lazy-delivery/c0-qualification/20260930-03/qualification-run.tar.gz",
+        "memberPath": "inputs/remaining-families-structural-screen-01.json",
+        "sha256": "d055844a6e372b93da22e6a07ecd624e362d73be4d1ff1d00441d283ac70a124",
+        "bytes": 350311,
+        "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+      }
+    },
+    {
+      "family": "combobox",
+      "featureId": "en-reve/en-combobox/generated-suggestion-options",
+      "disposition": "rejected-with-evidence",
+      "support": "not-supported",
+      "measuredReference": "806886d104febb0b3deb4aef2b3e4dad7947ae87",
+      "measuredCandidate": "ac5180f6fe85b1e5b9543d698caa45e937f9ddae",
+      "evidenceCommit": "3bfa03004e811b9a78b78a4d52f9dc74f4110f8d",
+      "evidence": [
+        {
+          "path": "artifacts/lazy-delivery/c1-measurement/20260930-01/terminal-gates.json",
+          "startLine": 30,
+          "endLine": 407,
+          "sha256": "d41c2cfd32e8ce98873d03aa484a305b736d6a4dbda14404fafa5b9c7d26ff62",
+          "revision": "3bfa03004e811b9a78b78a4d52f9dc74f4110f8d"
+        }
+      ],
+      "canonicalAnalysis": {
+        "path": "artifacts/lazy-delivery/c1-measurement/20260930-01/timing-analysis.json",
+        "sha256": "969783044db25e0f2e336c0f05874c3ecc423ffd99d977b0ba4f384c2080a3ae",
+        "revision": "3bfa03004e811b9a78b78a4d52f9dc74f4110f8d"
+      },
+      "sampling": {
+        "complete": true,
+        "successful": 1260,
+        "required": 1260,
+        "nPlannedPerCell": 30
+      },
+      "counts": {
+        "passed": 542,
+        "uncertain": 19,
+        "failed": 4,
+        "pending": 2
+      },
+      "failedByCategory": {
+        "latency": 4
+      },
+      "currentBehavior": "Eager construction after coordinated retirement; independent native editing, focus, registration and transaction contracts retained.",
+      "limits": [
+        "Full sampling completion is not a budget pass;19 uncertain checks remain uncertain.",
+        "Control failures prevent sole-feature causal attribution.",
+        "Full retention/full SSR not acquired after necessary failure; n1 SSR is not full qualification.",
+        "Shared API/Stage B/final75 and final eager acceptance require separate exact-source receipts; this dated rejection is preserved."
+      ]
+    },
+    {
+      "family": "command",
+      "featureId": "en-reve/en-command-palette/closed-search-and-result-body",
+      "disposition": "rejected-with-evidence",
+      "support": "not-supported",
+      "measuredReference": "806886d104febb0b3deb4aef2b3e4dad7947ae87",
+      "measuredCandidate": "ac5180f6fe85b1e5b9543d698caa45e937f9ddae",
+      "evidenceCommit": "3bfa03004e811b9a78b78a4d52f9dc74f4110f8d",
+      "evidence": [
+        {
+          "path": "artifacts/lazy-delivery/c1-measurement/20260930-01/terminal-gates.json",
+          "startLine": 408,
+          "endLine": 1364,
+          "sha256": "d41c2cfd32e8ce98873d03aa484a305b736d6a4dbda14404fafa5b9c7d26ff62",
+          "revision": "3bfa03004e811b9a78b78a4d52f9dc74f4110f8d"
+        }
+      ],
+      "canonicalAnalysis": {
+        "path": "artifacts/lazy-delivery/c1-measurement/20260930-01/timing-analysis.json",
+        "sha256": "969783044db25e0f2e336c0f05874c3ecc423ffd99d977b0ba4f384c2080a3ae",
+        "revision": "3bfa03004e811b9a78b78a4d52f9dc74f4110f8d"
+      },
+      "sampling": {
+        "complete": true,
+        "successful": 6930,
+        "required": 6930,
+        "nPlannedPerCell": 30
+      },
+      "counts": {
+        "passed": 11437,
+        "failed": 46,
+        "uncertain": 19,
+        "pending": 1
+      },
+      "failedByCategory": {
+        "benefit": 14,
+        "latency": 6,
+        "preparation": 26
+      },
+      "currentBehavior": "Eager construction after coordinated retirement; independent native editing, focus, registration and transaction contracts retained.",
+      "limits": [
+        "Full sampling completion is not a budget pass;19 uncertain checks remain uncertain.",
+        "Control failures prevent sole-feature causal attribution.",
+        "Full retention/full SSR not acquired after necessary failure; n1 SSR is not full qualification.",
+        "Shared API/Stage B/final75 and final eager acceptance require separate exact-source receipts; this dated rejection is preserved."
+      ]
+    }
+  ],
+  "comparisonReport": {
+    "path": "artifacts/lazy-delivery/reports/c0-rejections-20260930-01/index.html",
+    "role": "Portable sortable comparison of the same four frozen necessary-gate decisions; companion artifact, no new campaign or qualification."
+  },
+  "qualificationArchive": {
+    "path": "artifacts/lazy-delivery/c0-qualification/20260930-03/qualification-run.tar.gz",
+    "sha256": "180710a1a4fb2413836c323733d506a9742779498c00e6d68f96df6bf33a1fa9",
+    "bytes": 327584752,
+    "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464",
+    "preservation": {
+      "path": "artifacts/lazy-delivery/c0-qualification/20260930-03/preservation.json",
+      "sha256": "9f430350776d734539495e93fa4e9397cf18fbb415704995e919c1cb8e873683",
+      "revision": "be9cd5068dbfb9dfc9028b6efe3c943955a97464"
+    },
+    "rootRecordedReadbackVerified": true,
+    "terminalMember": {
+      "path": "inputs/qualification-terminal-readback.json",
+      "sha256": "fab3c57ba0aa5b50e491ad11de2139ab93c42686bbae409937b80a82337d716f",
+      "bytes": 7236
+    },
+    "paginationRawMember": {
+      "path": "remaining-families-qualification/samples.jsonl",
+      "sha256": "61ee6b4871673548ee5a39b6f366cde7e291b851edbead433785ffcc4470ea5b",
+      "bytes": 12765639
+    }
+  },
+  "limits": [
+    "Necessary gate rejections only; no sole-feature causal attribution.",
+    "Media/editor timing and retention, color cold/control/full/retention and full pagination timing/retention were not acquired after the necessary failures. Missing work is not a pass or measured failure.",
+    "Pagination observed DOM benefit and complete 84-case combined qualification remain bounded n1 facts, not statistical promotion.",
+    "Original failed/incomplete acquisition and every diagnostic remain preserved; no pooling or historical status rewriting.",
+    "Independent runtime fixes, scoped user observations and permanent regressions remain separate.",
+    "Final eager recombination, producer outputs, shared API/Stage B and exact 75-stage correctness require separate acceptance receipts; zero candidate rows is not rollout completion. Ongoing status belongs to the canonical report."
+  ],
+  "subjectScope": "Top-level evidenceCommit/measuredReference/measuredCandidate/qualificationArchive identify the original four C0 decisions only. Each C1 feature below supplies its own measured subjects and E1 evidence revision."
+}

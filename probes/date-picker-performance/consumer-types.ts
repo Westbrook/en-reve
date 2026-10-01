@@ -1,0 +1,18 @@
+import {EnDatePicker} from '@en-reve/elements/date-picker.js';
+import {datePickerDefinition} from '@en-reve/elements/definitions/date-picker.js';
+import {datePickerShellDefinition} from '@en-reve/elements/date-picker-shell.js';
+import {createElementScope} from '@en-reve/elements/element-scope.js';
+const eager: typeof EnDatePicker = datePickerDefinition.elementClass;
+const shell: typeof EnDatePicker = datePickerShellDefinition.elementClass;
+const scope = createElementScope({document});
+scope.register([datePickerDefinition, datePickerShellDefinition]);
+const field = scope.createElement('en-date-picker') as EnDatePicker;
+field.selection = 'single';
+field.calendarLoading = 'deferred';
+field.loadingLabel = 'Loading date choices';
+field.loadErrorLabel = 'Use the date field or reload';
+field.loadRetryErrorLabel = 'Retry {attempt} failed; use the date field';
+const prepare: Promise<void> = field.preparePicker({retry: true});
+const open: Promise<void> = field.showPicker();
+field.hidePicker();
+void [eager, shell, prepare, open];

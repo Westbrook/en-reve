@@ -1,0 +1,269 @@
+[
+  {
+    "engine": "chromium",
+    "status": "passed",
+    "errors": [],
+    "violations": [],
+    "specimenCount": 25,
+    "sourcePanels": [
+      "structured-values",
+      "opacity",
+      "dialog-drawer",
+      "popover-tooltip"
+    ],
+    "sourceIndentation": {
+      "before": {
+        "tabSize": "2",
+        "width": 19.203125
+      },
+      "after": {
+        "tabSize": "4",
+        "width": 38.40625
+      },
+      "copiedSourcePreserved": true
+    },
+    "viewportChecks": [
+      {
+        "width": 390,
+        "height": 844,
+        "overflow": false,
+        "navigationHeight": 229
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "overflow": false,
+        "navigationHeight": 71.5
+      }
+    ],
+    "toolsResult": {
+      "names": [
+        "read_theme_preview",
+        "configure_theme_preview"
+      ],
+      "before": {
+        "mode": "light",
+        "density": "comfortable",
+        "accent": "",
+        "rhythm": 0.25,
+        "direction": "ltr"
+      },
+      "applied": {
+        "settings": {
+          "mode": "dark",
+          "density": "spacious",
+          "accent": "#6d28d9",
+          "rhythm": 0.375,
+          "direction": "rtl"
+        },
+        "tokenCount": 280
+      },
+      "after": {
+        "mode": "dark",
+        "density": "spacious",
+        "accent": "#6d28d9",
+        "rhythm": 0.375,
+        "direction": "rtl"
+      },
+      "invalid": true,
+      "dir": "rtl"
+    },
+    "webMCPContext": "injected API contract test; not a native host integration"
+  },
+  {
+    "engine": "firefox",
+    "status": "passed",
+    "errors": [],
+    "violations": [],
+    "specimenCount": 25,
+    "sourcePanels": [
+      "structured-values",
+      "opacity",
+      "dialog-drawer",
+      "popover-tooltip"
+    ],
+    "sourceIndentation": {
+      "before": {
+        "tabSize": "2",
+        "width": 19.26666259765625
+      },
+      "after": {
+        "tabSize": "4",
+        "width": 38.53334045410156
+      },
+      "copiedSourcePreserved": true
+    },
+    "viewportChecks": [
+      {
+        "width": 390,
+        "height": 844,
+        "overflow": false,
+        "navigationHeight": 229
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "overflow": false,
+        "navigationHeight": 71.5
+      }
+    ],
+    "toolsResult": {
+      "names": [
+        "read_theme_preview",
+        "configure_theme_preview"
+      ],
+      "before": {
+        "mode": "light",
+        "density": "comfortable",
+        "accent": "",
+        "rhythm": 0.25,
+        "direction": "ltr"
+      },
+      "applied": {
+        "settings": {
+          "mode": "dark",
+          "density": "spacious",
+          "accent": "#6d28d9",
+          "rhythm": 0.375,
+          "direction": "rtl"
+        },
+        "tokenCount": 280
+      },
+      "after": {
+        "mode": "dark",
+        "density": "spacious",
+        "accent": "#6d28d9",
+        "rhythm": 0.375,
+        "direction": "rtl"
+      },
+      "invalid": true,
+      "dir": "rtl"
+    },
+    "webMCPContext": "injected API contract test; not a native host integration"
+  },
+  {
+    "engine": "webkit",
+    "status": "passed",
+    "errors": [],
+    "violations": [],
+    "specimenCount": 25,
+    "sourcePanels": [
+      "structured-values",
+      "opacity",
+      "dialog-drawer",
+      "popover-tooltip"
+    ],
+    "sourceIndentation": {
+      "before": {
+        "tabSize": "2",
+        "width": 17
+      },
+      "after": {
+        "tabSize": "4",
+        "width": 33
+      },
+      "copiedSourcePreserved": true
+    },
+    "viewportChecks": [
+      {
+        "width": 390,
+        "height": 844,
+        "overflow": false,
+        "navigationHeight": 229
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 768,
+        "height": 1024,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 1024,
+        "height": 768,
+        "overflow": false,
+        "navigationHeight": 124
+      },
+      {
+        "width": 1440,
+        "height": 1000,
+        "overflow": false,
+        "navigationHeight": 71.5
+      }
+    ],
+    "toolsResult": {
+      "names": [
+        "read_theme_preview",
+        "configure_theme_preview"
+      ],
+      "before": {
+        "mode": "light",
+        "density": "comfortable",
+        "accent": "",
+        "rhythm": 0.25,
+        "direction": "ltr"
+      },
+      "applied": {
+        "settings": {
+          "mode": "dark",
+          "density": "spacious",
+          "accent": "#6d28d9",
+          "rhythm": 0.375,
+          "direction": "rtl"
+        },
+        "tokenCount": 280
+      },
+      "after": {
+        "mode": "dark",
+        "density": "spacious",
+        "accent": "#6d28d9",
+        "rhythm": 0.375,
+        "direction": "rtl"
+      },
+      "invalid": true,
+      "dir": "rtl"
+    },
+    "webMCPContext": "injected API contract test; not a native host integration"
+  }
+]

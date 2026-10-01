@@ -1,0 +1,10 @@
+import {writeFile} from 'node:fs/promises';
+await import('@en-reve/ssr/install.js');
+const {registerDefinitions,collectDefinitions}=await import('@en-reve/primitives/interactions/registration.js');
+const {renderToString}=await import('@en-reve/ssr');
+const module=await import('./island.mjs');registerDefinitions(customElements,module.definitions);
+const snapshot={commands:Array.from({length:50},(_,i)=>({action:'command-'+i,label:i?'Settings action '+i:'Save settings',keywords:['settings']}))};
+const html=await renderToString(module.template(snapshot));
+const manifest={id:'first',key:'commands',version:module.version,tags:collectDefinitions(module.definitions).map(d=>d.tagName)};
+const page=`<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Phase 5 progressive hydration</title><style>body{font:16px system-ui;margin:3rem;max-width:65rem;color:#23372f;background:#f7faf7}button,input{font:inherit;padding:.6rem;margin:.3rem}#status{min-height:1.5rem}label{display:block}button{cursor:pointer}</style></head><body><main><h1>Progressive command islands</h1><p>Your native form remains usable while optional commands load.</p><form><label>Draft <input name="draft" required value="Initial draft"></label><button type="submit">Native save</button></form><button id="first-trigger" data-trigger aria-haspopup="dialog">Search commands</button><button id="second-trigger" data-trigger aria-haspopup="dialog">Other commands</button><p id="status" role="status" aria-live="polite"></p><section id="first" data-island><template data-en-island-template>${html}</template></section><section id="second" data-island><template data-en-island-template>${html}</template></section><noscript>Use the native form above. Optional commands require JavaScript.</noscript></main><script id="manifest" type="application/json">${JSON.stringify(manifest)}</script><script id="snapshot" type="application/json">${JSON.stringify(snapshot)}</script><script type="module" src="/boot.mjs"></script></body></html>`;
+await writeFile('index.html',page);await writeFile('rendered.json',JSON.stringify({html,snapshot,manifest}));

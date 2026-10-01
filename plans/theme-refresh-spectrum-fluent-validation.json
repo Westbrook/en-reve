@@ -1,0 +1,361 @@
+{
+  "created": "2026-09-20T01:05:43.071Z",
+  "checks": [
+    {
+      "theme": "spectrum",
+      "mode": "light",
+      "edits": 99,
+      "pins": 119,
+      "diagnostics": [],
+      "exactRoundTrip": true,
+      "sourceHash": "sha256:9ded3f84c5b1fe6da7a9663870340e0ead94f7d1a4341dd2c42aac12a890df4c",
+      "pairs": [
+        {
+          "foreground": "color.link",
+          "background": "color.surface",
+          "minimum": 4.5,
+          "contrast": 6.2951
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.surface-subtle",
+          "minimum": 4.5,
+          "contrast": 5.1851
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.selected",
+          "minimum": 4.5,
+          "contrast": 5.4638
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.background",
+          "minimum": 4.5,
+          "contrast": 11.9828
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.hover-background",
+          "minimum": 4.5,
+          "contrast": 11.1251
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.pressed-background",
+          "minimum": 4.5,
+          "contrast": 11.1251
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 8.0633
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.info-background",
+          "minimum": 4.5,
+          "contrast": 4.8124
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.success-background",
+          "minimum": 4.5,
+          "contrast": 4.8132
+        },
+        {
+          "foreground": "component.toast.warning-color",
+          "background": "component.toast.warning-background",
+          "minimum": 4.5,
+          "contrast": 8.0725
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.danger-background",
+          "minimum": 4.5,
+          "contrast": 4.8093
+        }
+      ]
+    },
+    {
+      "theme": "spectrum",
+      "mode": "dark",
+      "edits": 101,
+      "pins": 121,
+      "diagnostics": [],
+      "exactRoundTrip": true,
+      "sourceHash": "sha256:ddb348b80e2a7805062bd2739802f830392e90a89564d3421b086f056ef431fe",
+      "pairs": [
+        {
+          "foreground": "color.link",
+          "background": "color.surface",
+          "minimum": 4.5,
+          "contrast": 6.5918
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.surface-subtle",
+          "minimum": 4.5,
+          "contrast": 4.875
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.selected",
+          "minimum": 4.5,
+          "contrast": 4.9198
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.background",
+          "minimum": 4.5,
+          "contrast": 10.0865
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.hover-background",
+          "minimum": 4.5,
+          "contrast": 9.2602
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.pressed-background",
+          "minimum": 4.5,
+          "contrast": 9.2602
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 5.1743
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.info-background",
+          "minimum": 4.5,
+          "contrast": 4.5093
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.success-background",
+          "minimum": 4.5,
+          "contrast": 4.5208
+        },
+        {
+          "foreground": "component.toast.warning-color",
+          "background": "component.toast.warning-background",
+          "minimum": 4.5,
+          "contrast": 5.9923
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.danger-background",
+          "minimum": 4.5,
+          "contrast": 4.5143
+        }
+      ]
+    },
+    {
+      "theme": "fluent",
+      "mode": "light",
+      "edits": 107,
+      "pins": 117,
+      "diagnostics": [],
+      "exactRoundTrip": true,
+      "sourceHash": "sha256:979eb13f2af5aeabae880921ae94ca206d8486944a8f8e3a7cd6727a83b49595",
+      "pairs": [
+        {
+          "foreground": "color.link",
+          "background": "color.surface",
+          "minimum": 4.5,
+          "contrast": 6.6587
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.surface-subtle",
+          "minimum": 4.5,
+          "contrast": 6.1076
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.selected",
+          "minimum": 4.5,
+          "contrast": 5.9479
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.background",
+          "minimum": 4.5,
+          "contrast": 9.218
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.hover-background",
+          "minimum": 4.5,
+          "contrast": 8.43
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.pressed-background",
+          "minimum": 4.5,
+          "contrast": 6.9146
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 15.5229
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 15.5229
+        },
+        {
+          "foreground": "component.toast.info-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 10.0497
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 15.5229
+        },
+        {
+          "foreground": "component.toast.success-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 6.2824
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 15.5229
+        },
+        {
+          "foreground": "component.toast.warning-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 5.0619
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 15.5229
+        },
+        {
+          "foreground": "component.toast.danger-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 7.121
+        }
+      ]
+    },
+    {
+      "theme": "fluent",
+      "mode": "dark",
+      "edits": 111,
+      "pins": 121,
+      "diagnostics": [],
+      "exactRoundTrip": true,
+      "sourceHash": "sha256:0506fbfc0c09aeda5360ee83a83ef6c1e878aec3c13cef13099a09fd0c935c97",
+      "pairs": [
+        {
+          "foreground": "color.link",
+          "background": "color.surface",
+          "minimum": 4.5,
+          "contrast": 5.18
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.surface-subtle",
+          "minimum": 4.5,
+          "contrast": 6.5595
+        },
+        {
+          "foreground": "color.link",
+          "background": "color.selected",
+          "minimum": 4.5,
+          "contrast": 5.7172
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.background",
+          "minimum": 4.5,
+          "contrast": 12.6755
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.hover-background",
+          "minimum": 4.5,
+          "contrast": 10.0098
+        },
+        {
+          "foreground": "component.editor-token.color",
+          "background": "component.editor-token.pressed-background",
+          "minimum": 4.5,
+          "contrast": 13.6219
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 14.5482
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 14.5482
+        },
+        {
+          "foreground": "component.toast.info-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 10.0098
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 14.5482
+        },
+        {
+          "foreground": "component.toast.success-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 5.3448
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 14.5482
+        },
+        {
+          "foreground": "component.toast.warning-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 7.1393
+        },
+        {
+          "foreground": "component.toast.color",
+          "background": "component.toast.background",
+          "minimum": 4.5,
+          "contrast": 14.5482
+        },
+        {
+          "foreground": "component.toast.danger-icon-color",
+          "background": "component.toast.background",
+          "minimum": 3,
+          "contrast": 4.1643
+        }
+      ]
+    }
+  ]
+}

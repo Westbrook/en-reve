@@ -1,0 +1,11 @@
+{
+  "name": "@en-reve/primitives",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    "./interactions/*.js": {
+      "types": "./dist/interactions/*.d.ts",
+      "default": "./dist/interactions/*.js"
+    }
+  }
+}

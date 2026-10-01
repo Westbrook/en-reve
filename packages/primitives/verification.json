@@ -1,0 +1,44 @@
+{
+  "package": "@en-reve/primitives",
+  "version": "0.1.0",
+  "date": "2026-09-08",
+  "status": "focused_checks_passed",
+  "checks": [
+    {
+      "command": "npm test --workspace @en-reve/primitives",
+      "typeScriptBuild": "passed",
+      "nodeTestsPassed": 22,
+      "failures": 0
+    },
+    {
+      "command": "PLAYWRIGHT_BROWSERS_PATH=/private/tmp/en-reve-playwright npx playwright test --config packages/primitives/playwright.config.ts",
+      "browserTestsPassed": 24,
+      "failures": 0,
+      "projects": { "chromium": 8, "firefox": 8, "webkit": 8 },
+      "browserInstallation": "Reused the platform-probe Playwright browser installation; not a retail current-minus-one matrix."
+    }
+  ],
+  "coverage": [
+    "Synchronous model reads, normalization, reset, selection isolation and invalid transitions",
+    "Managed, controlled, canceled, superseded and no-op semantic requests",
+    "Signal subscription disposal, reconnect and independent views of shared state",
+    "Explicit registration conflict preflight and dependency closure",
+    "Native typing, explicit draft rejection and selection preservation through unrelated updates",
+    "Synthetic composition guards, deferred author updates, orphaned composition and later independent editing",
+    "Request cancellation across nested Shadow DOM",
+    "Roving focus, disabled-item skipping, RTL and native editor arrow keys",
+    "FACE FormData, native validity, reset and disabled fieldsets"
+  ],
+  "resolvedDuringVerification": [
+    "Editing surface detachment now ends orphaned composition without accepting input or synthesizing a user action.",
+    "An explicit value reconciliation clears composition deduplication so a later independent identical edit is not suppressed.",
+    "Firefox Playwright fill completes its own composition; unfinished-composition tests now use explicitly synthetic InputEvent sequencing."
+  ],
+  "limits": [
+    "Synthetic composition sequencing does not establish physical IME, dictation, autofill or password-manager compatibility.",
+    "No full current-minus-one, device, locale, performance or assistive-technology matrix is claimed.",
+    "Element SSR markup/hydration and textarea initial-value serialization remain integration work; model SSR reads do not establish those behaviors.",
+    "FormController does not implement labels, Reference Target, semantic ownership or outer-form native submitter parity.",
+    "Registration helpers do not implement scoped Lit rendering or scoped SSR."
+  ]
+}

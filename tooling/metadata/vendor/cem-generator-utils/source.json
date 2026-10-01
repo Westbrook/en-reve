@@ -1,0 +1,16 @@
+{
+  "name": "@wc-toolkit/cem-generator-utils",
+  "upstreamVersion": "0.1.3",
+  "localVersion": "0.1.3-en-cem.6",
+  "upstreamUrl": "https://registry.npmjs.org/@wc-toolkit/cem-generator-utils/-/cem-generator-utils-0.1.3.tgz",
+  "upstreamIntegrity": "sha512-k47089Sy1ne4zUPCzdx+iZNZa7CV+SBl6lEZc4fDwpKgPJijqtRS1bmkSVuuZai3OdRh57iVzmQ4F5fAAMv9Dg==",
+  "upstreamSha256": "1d8cb9ac5d9ec4c2442fe7a53ebb2833483a6854d2621155ebf609d4a5677989",
+  "verifiedAt": "2026-09-26T19:23:07.129308+00:00",
+  "overlays": [
+    "jsdoc.d.ts",
+    "jsdoc.js",
+    "type-parser.d.ts",
+    "type-parser.js"
+  ],
+  "reason": "Preserve callable, constructor and index signatures and their precedence in expanded types. Preserve consuming source scope in inferred and expanded type references. Preserve repeated and conditional constituent precedence; parse complete type syntax before splitting top-level operators. Delegate structural syntax to the owning compiler, preserving readonly, tuple element flags, method variance and instantiated aliases. Preserve authored type text when compaction changes its parsed structure/literal tokens; collapse boolean unions only when both literal values or boolean are present. Add reviewed own-constructor extraction and provenance bindings for the separately qualified composition tier; preserve the ordinary production route. Bind event dispatch to original compiler-owned receiver and constructor identity. Retain direct JSDoc ownership and source scope in shared parsing."
+}

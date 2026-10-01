@@ -1,0 +1,162 @@
+{
+  "at": "2026-09-19T21:34:37.200625+00:00",
+  "status": "verified_locally",
+  "scope": "API-07 target-floor follow-up; not the entire API-07 audit",
+  "version": "api07-target-floors-v1",
+  "baselineCommit": "97766902a79212b1048335eb74301a9be77453d5",
+  "sourceHashes": {
+    "packages/elements/src/calendar/element.ts": "e16ceb9bde2e1838de5b5aece20e398c7f1b23ead2855275d84d5c7219c2f401",
+    "packages/elements/src/data-table/element.ts": "bf745f24ba5184e9daf2f8ca894422c1584ac0c16f999b1bd23b0cfbd8299c0d",
+    "packages/styles/README.md": "f4a04e7d5371ad9159f74e9a0376246023075a1d4aa450d42d6a5becbbeb6f3b",
+    "packages/styles/src/calendar.ts": "24e02814c397094277605e1cfb32bdb9569f99da887af84ff39aee486a814405",
+    "packages/styles/src/carousel.ts": "009d7c91684ce6e76b446424ef29298934020e13d7b732d5fb8ee3b5f5783831",
+    "packages/styles/src/color-picker.ts": "58263ed607cadc595ad13855b64ddbcefdcd4c69fde1e1ae719daacf250d98fe",
+    "packages/styles/src/color-slider.ts": "6a3202141531871f5a7fdd9e163dc8df7efa0439759ab20d8928f506e9710988",
+    "packages/styles/src/color-wheel.ts": "c6ce38b7fce879b1669642a887479471c48ecb74ec7f985ed396afad4becf6a6",
+    "packages/styles/src/combobox.ts": "52e3790b1301d7042fb146dba44787013f4b21da7f814ad69f1a81da402d6c73",
+    "packages/styles/src/commands.ts": "89d13275e03b1e26e6cf54f11dce4954c80bb341ebb6945ab7eb92bbf4d5dc53",
+    "packages/styles/src/controls.ts": "6ba6f77594c42629577490827ae4c75c9c24d7f9e8d1674ac19a7763c05500fa",
+    "packages/styles/src/feedback.ts": "90a7ea4fc7c3ca8b9839619e63dfda4b697f2afa8cb30b199e118e5330fdfd4b",
+    "packages/styles/src/file-upload.ts": "dbaf110ff4bb5e1cc10af14827bcef62cb871e948772cf09ed27e93b19bbff1d",
+    "packages/styles/src/internal/control-shared.ts": "843ed96f1ffd822f46c377da4946564218a9b22410141cc0f2a3d616f25b7176",
+    "packages/styles/src/internal/control-size.ts": "3c38c9831325eec3eee8a2344f80b8736d4fb0177d217e02634f1d381c5d899b",
+    "packages/styles/src/internal/select-chevron.ts": "e02082f36fca6a28b9c435bc36059bd8f4512bc40b756d077cc898177895a1d7",
+    "packages/styles/src/internal/target-size.ts": "567b18606f70435a3d60fe98b59d85b6956dfed84792dbf16dff21d01c8caea5",
+    "packages/styles/src/navigation.ts": "e0295d8cb8c50976a43467a61a8d8326688da5859332d4283f6e5158403b9978",
+    "packages/styles/src/pagination.ts": "1313e3169f593ff2d1bd560123c40a1b7de747a627e3f91568be5d427dd76ef1",
+    "packages/styles/src/selection.ts": "9779639a9127381144e451e0b36cacf90fdaea39320449415a1c7ed44bb0476b",
+    "packages/styles/src/surfaces.ts": "eba0a49a90d97d4c2851bdb3677c34752200bcf2bc1eb0008510e1637c3ce911",
+    "packages/styles/src/token-editor.ts": "b93ed41b80c11529ac3065ab5d46710b67839da534787930457c44ad5dbc63a2",
+    "packages/styles/src/tree.ts": "57ba2c3259b3fc62bd071380b0045f8bd8fdcfa6879fca7d53b8204e01435122",
+    "packages/styles/tests/target-floors/fixture.html": "7ae9a480b245e4da2ab948224285596c04cc2792e63f90806d6d17e79bf8506c",
+    "packages/styles/tests/target-floors/fixture.ts": "2f05967680f89f6791f61247f2c7774e12c9bd3e2dd18f6ec675d9f5eedabf04",
+    "packages/styles/tests/target-floors/playwright.config.ts": "29ad97747bc91b6517112ba3d70b15eaeed6ac415621b205e767b914ac0692d5",
+    "packages/styles/tests/target-floors/server.mjs": "e3ecfec8b3db7d58fab9489ff5a0701e2ed053f21ff66813e23e0f7cfb1db362",
+    "packages/styles/tests/target-floors/targets.spec.ts": "d8dc42d896bd118a4a663cdbc50d1f929dfa4119e6918827fc19de5d93365205",
+    "packages/tokens/src/customization-data.ts": "9f2efb0c5559f5fed991d7696412bdcb2f82115c0a0301bd3333f34ad2c43ea2"
+  },
+  "browserSuites": {
+    "target-floors.json": {
+      "startTime": "2026-09-19T21:30:56.284Z",
+      "duration": 30879.878,
+      "expected": 49,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "composition.json": {
+      "startTime": "2026-09-19T21:25:34.429Z",
+      "duration": 16372.572000000002,
+      "expected": 69,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "sizing.json": {
+      "startTime": "2026-09-19T21:25:54.570Z",
+      "duration": 84934.66900000001,
+      "expected": 41,
+      "skipped": 0,
+      "unexpected": 13,
+      "flaky": 0
+    },
+    "sizing-recheck.json": {
+      "startTime": "2026-09-19T21:31:02.580Z",
+      "duration": 3598.666,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "baseline-sizing.json": {
+      "startTime": "2026-09-19T21:28:45.492Z",
+      "duration": 36636.452,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 12,
+      "flaky": 0
+    }
+  },
+  "tokenTests": {
+    "passed": 126
+  },
+  "toolingTests": {
+    "passed": 47
+  },
+  "builds": {
+    "tokens": "passed",
+    "styles": "passed",
+    "elements": "passed"
+  },
+  "metadata": "Regenerated; customization freshness check passes with zero failures.",
+  "knownFailures": [
+    {
+      "test": " / family-geometry.spec.ts / inline family pins preserve specialized controls, invalid text position and legacy precedence",
+      "project": "chromium",
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#button [part=\"control\"]')\nExpected: \u001b[32m\"\u001b[7m17\u001b[27mpx\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m24\u001b[27mpx\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" locator('#button [part=\"control\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#button [part=\"control\"]')\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <button tabindex=\"0\" type=\"button\" part=\"control\" class=\"en-button\" aria-busy=\"false\" data-size=\"medium\" data-variant=\"primary\">\u2026</button>\u001b[22m\n\u001b[2m       - unexpected value \"24px\"\u001b[22m\n"
+    },
+    {
+      "test": " / family-geometry.spec.ts / full scoped rebases clear family pins and partial scopes retain other pins",
+      "project": "chromium",
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / inline family pins preserve specialized controls, invalid text position and legacy precedence",
+      "project": "firefox",
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#button [part=\"control\"]')\nExpected: \u001b[32m\"\u001b[7m17\u001b[27mpx\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m24\u001b[27mpx\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" locator('#button [part=\"control\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#button [part=\"control\"]')\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <button tabindex=\"0\" type=\"button\" part=\"control\" class=\"en-button\" aria-busy=\"false\" data-size=\"medium\" data-variant=\"primary\">\u2026</button>\u001b[22m\n\u001b[2m       - unexpected value \"24px\"\u001b[22m\n"
+    },
+    {
+      "test": " / family-geometry.spec.ts / full scoped rebases clear family pins and partial scopes retain other pins",
+      "project": "firefox",
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / inline family pins preserve specialized controls, invalid text position and legacy precedence",
+      "project": "webkit",
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveCSS\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#button [part=\"control\"]')\nExpected: \u001b[32m\"\u001b[7m17\u001b[27mpx\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7m24\u001b[27mpx\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveCSS\" locator('#button [part=\"control\"]') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#button [part=\"control\"]')\u001b[22m\n\u001b[2m    14 \u00d7 locator resolved to <button tabindex=\"0\" type=\"button\" part=\"control\" class=\"en-button\" aria-busy=\"false\" data-size=\"medium\" data-variant=\"primary\">\u2026</button>\u001b[22m\n\u001b[2m       - unexpected value \"24px\"\u001b[22m\n"
+    },
+    {
+      "test": " / family-geometry.spec.ts / full scoped rebases clear family pins and partial scopes retain other pins",
+      "project": "webkit",
+      "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / fine family geometry / shared frame pins preserve row alignment and actual option targets",
+      "project": "chromium",
+      "error": "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / fine family geometry / shared frame pins preserve row alignment and actual option targets",
+      "project": "firefox",
+      "error": "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / fine family geometry / shared frame pins preserve row alignment and actual option targets",
+      "project": "webkit",
+      "error": "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / coarse family geometry / shared frame pins preserve row alignment and actual option targets",
+      "project": "chromium",
+      "error": "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / coarse family geometry / shared frame pins preserve row alignment and actual option targets",
+      "project": "firefox",
+      "error": "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m"
+    },
+    {
+      "test": " / family-geometry.spec.ts / coarse family geometry / shared frame pins preserve row alignment and actual option targets",
+      "project": "webkit",
+      "error": "\u001b[31mTest timeout of 10000ms exceeded.\u001b[39m"
+    }
+  ],
+  "verificationNotes": [
+    "49 target-floor cases passed across Chromium/Firefox/WebKit mouse/touch and Chromium mixed-pointer capability.",
+    "69 composition cases passed.",
+    "Sizing: 41 initially passed; one WebKit execution-context interruption passed on isolated rerun (2/2 cases). The remaining 12 family-geometry failures also reproduce using unchanged HEAD styles via an isolated Vite alias.",
+    "Baseline source was exported and compiled in /private/tmp/en-api07-baseline without changing workspace source files.",
+    "Calendar keyboard scrolling and narrow picker geometry verified in LTR/RTL.",
+    "No publication or full API-07 completion is implied."
+  ]
+}

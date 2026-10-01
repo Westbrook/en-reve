@@ -1,0 +1,72 @@
+{
+  "date": "2026-09-19",
+  "baseCommit": "582fe166910c2172eb4b80fd00b049baac184e88",
+  "build": "passed",
+  "command": "npm run test:theme -- --skip-build",
+  "buildMode": "Successful full workspace build immediately before regression; caller-supplied build mode",
+  "nodeTests": 193,
+  "browserScenarios": {
+    "cascade": 33,
+    "states": 30,
+    "composition": 69,
+    "docs": 73,
+    "scopes": 66
+  },
+  "documentedSkips": [
+    "Firefox touch emulation",
+    "WebKit forced-colors emulation"
+  ],
+  "registrationEngines": {
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "webkit": "26.6"
+  },
+  "publicRegistrations": 553,
+  "typedRegistrations": 119,
+  "registryFailures": 0,
+  "reviewedAnnotationExceptions": 16,
+  "evidence": "artifacts/theme-followup/regression/results.json",
+  "manualStatus": "pending screen-reader, physical-device and native high-contrast evidence; routine reflow/text enlargement is automated; native UI zoom is a targeted diagnostic",
+  "reflowFollowup": {
+    "date": "2026-09-19",
+    "baseCommit": "080c18590bfc84124021c2b989e99edc007a5428",
+    "command": "npx playwright test --config apps/docs/tests/theme-proof.config.ts --grep 'equivalent reflow|200% text enlargement'",
+    "buildMode": "Unchanged Site 207 runtime; documentation-only publication. Runtime files compared with the retained publication archive.",
+    "passed": 54,
+    "failed": 0,
+    "skipped": 0,
+    "engines": [
+      "chromium",
+      "firefox",
+      "webkit"
+    ],
+    "themes": [
+      "editorial",
+      "precision",
+      "studio"
+    ],
+    "appearances": [
+      "light",
+      "dark"
+    ],
+    "writingDirections": [
+      "ltr",
+      "rtl"
+    ],
+    "scenarios": [
+      "1280x1024 to 640x512: 200% equivalent layout reflow",
+      "1280x1024 to 320x256: 400% equivalent layout reflow",
+      "200% relative text at 1280x1024; measured input font doubling"
+    ],
+    "assertions": [
+      "no page horizontal overflow",
+      "control and dialog horizontal bounds",
+      "retained edited value after resize",
+      "selection",
+      "keyboard focus and focus indication",
+      "dialog dismissal and focus return"
+    ],
+    "evidence": "artifacts/theme-followup/reflow/playwright.json",
+    "nativeZoomClaimed": false
+  }
+}

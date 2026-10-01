@@ -1,0 +1,45 @@
+{
+  "reportedAt": "2026-09-22T19:06:08.054206+00:00",
+  "source": "User manual review",
+  "fixture": "http://127.0.0.1:4233/shadow.html?progress-report",
+  "fixtureSourceVersion": "3e8597a132bf2dd3b5ebd1572a961adb2dfc7b037fbd45b89302fa0318e23237",
+  "checkOrder": [
+    "autofillBeforeHydration",
+    "autofillAfterHydration",
+    "historyAfterHydration",
+    "historyBeforeHydration"
+  ],
+  "results": {
+    "Chrome": {
+      "autofillBeforeHydration": "pass",
+      "autofillAfterHydration": "pass",
+      "historyAfterHydration": "pass",
+      "historyBeforeHydration": "not_restored_on_back"
+    },
+    "Safari": {
+      "autofillBeforeHydration": "pass",
+      "autofillAfterHydration": "pass",
+      "historyAfterHydration": "pass",
+      "historyBeforeHydration": "not_restored_on_back"
+    },
+    "Firefox": {
+      "autofillBeforeHydration": "pass",
+      "autofillAfterHydration": "pass",
+      "historyAfterHydration": "pass",
+      "historyBeforeHydration": "pass"
+    }
+  },
+  "userFailureDescription": "pre-hydration filled content not restores after the \"Back\" action",
+  "notSpecified": [
+    "BFCache versus new-document return path",
+    "Native reference versus managed field detail for the failing step",
+    "Whether subsequently hydrating restores the missing value",
+    "Exact browser versions for this retest"
+  ],
+  "interpretation": "User reports scoped-shadow tests 1\u20133 pass in all three browsers; test 4 fails at Back in Chrome/Safari and passes in Firefox. Root cause not established.",
+  "pending": [
+    "Global-delivery manual comparison",
+    "Diagnose Chrome/Safari pre-hydration Back restoration loss"
+  ],
+  "provenance": "Follow-up manual evidence; sealed commit and frozen performance archives unchanged."
+}

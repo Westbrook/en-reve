@@ -1,0 +1,22 @@
+{
+  "url": "http://127.0.0.1:4196/",
+  "artifactSha256": "f017516d2873c324fae159d58253d924c60c90b154fcfafdd69a045e7059c9e4",
+  "geometry": {
+    "viewport": 390,
+    "documentWidth": 390,
+    "sourceVisibleWidth": 282,
+    "sourceScrollWidth": 609,
+    "tabSize": "2"
+  },
+  "screenshots": [
+    "source-card-tabs-2.png",
+    "source-card-tabs-4.png",
+    "source-card-mobile.png"
+  ],
+  "verifiedAt": "2026-09-08T21:02:32.589Z",
+  "visualReview": {
+    "reviewer": "assistant",
+    "scope": "Card source at 2-column and 4-column tab widths, plus mobile source pane",
+    "findings": "Nested elements align by level. Four-column tabs visibly widen indentation. Mobile code scrolls within its pane; the document remains viewport width."
+  }
+}

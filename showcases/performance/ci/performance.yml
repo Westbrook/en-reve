@@ -1,0 +1,72 @@
+name: Native performance laboratory
+# Copy into .github/workflows when enabling this repository's CI.
+# Timed jobs require a dedicated, labelled reference runner. No hosted-runner timing gates.
+on:
+  workflow_dispatch:
+    inputs:
+      lane:
+        description: Qualification, PR sentinel, or full comparison
+        type: choice
+        options: [qualification, sentinel, full]
+        default: qualification
+      baseline:
+        description: Explicit reviewed baseline path for regression lanes
+        type: string
+        required: false
+      interaction-baseline:
+        description: Explicit reviewed interaction baseline path
+        type: string
+        required: false
+permissions:
+  contents: read
+concurrency:
+  group: native-performance-reference
+  cancel-in-progress: false
+jobs:
+  measure:
+    runs-on: [self-hosted, en-reve-performance]
+    # Full nine-system cycles can take several hours; this is a job-level self-hosted limit.
+    timeout-minutes: 480
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: actions/setup-node@v7.0.0
+        with:
+          node-version-file: ".nvmrc"
+      - name: Select pinned npm
+        run: npm install --global npm@12.1.0
+      - name: Install only isolated laboratory tools
+        run: npm --prefix showcases/performance ci
+      - name: Install root library build dependencies for current-source regression
+        if: inputs.lane != 'qualification'
+        run: npm ci
+      - name: Install pinned browser
+        working-directory: showcases/performance
+        run: npx playwright install chromium
+      - name: Prepare qualified builds
+        run: |
+          node showcases/tools/install.mjs
+          node showcases/tools/build.mjs
+          npm --prefix showcases/performance test
+          # Default receipt catalog composes original and additive evidence without rewriting either.
+          npm --prefix showcases/performance run prepare:lab -- --candidate --reason "CI current-build qualification"
+      - name: Run lane
+        env:
+          PERF_LANE: ${{ inputs.lane }}
+          PERF_BASELINE: ${{ inputs.baseline }}
+          PERF_INTERACTION_BASELINE: ${{ inputs.interaction-baseline }}
+        run: node showcases/performance/ci/run-lane.mjs "$PERF_LANE"
+      - name: Retain evidence, including failed runs
+        if: always()
+        uses: actions/upload-artifact@v7.0.1
+        with:
+          name: native-performance-${{ github.run_id }}
+          path: |
+            showcases/performance/runs/
+            showcases/performance/reports/
+            showcases/performance/.cache/inventory.json
+            showcases/performance/.cache/snapshots/
+            showcases/performance/.cache/variants/
+            showcases/performance/.cache/current-consumer/en-reve/vendor/
+            showcases/performance/.cache/current-consumer/en-reve/package-lock.json
+          include-hidden-files: true
+          retention-days: 90

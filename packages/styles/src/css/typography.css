@@ -1,0 +1,42 @@
+.en-body, .en-prose, .en-heading-small, .en-heading-medium, .en-heading-large, .en-metadata, .en-data {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+.en-body, .en-prose {
+  color: --token(--en-color-text);
+  @apply --en-font(--token(--en-font-body-weight), --token(--en-font-body-size), --token(--en-font-body-line-height), --token(--en-font-body-family));
+  font-style: --token(--en-font-body-style);
+  letter-spacing: --token(--en-font-body-tracking);
+}
+.en-prose {
+  max-inline-size: var(--en-prose-max-inline-size, --token(--en-layout-prose-max));
+}
+.en-prose :where(p, ul, ol, dl, blockquote) { margin-block: 0 --token(--en-space-4); }
+.en-prose :where(ul, ol) { padding-inline-start: --token(--en-space-6); }
+.en-heading-small {
+  @apply --en-font(--token(--en-font-heading-small-weight), --token(--en-font-heading-small-size), --token(--en-font-heading-small-line-height), --token(--en-font-heading-small-family));
+  font-style: --token(--en-font-heading-small-style);
+  letter-spacing: --token(--en-font-heading-small-tracking);
+}
+.en-heading-medium {
+  @apply --en-font(--token(--en-font-heading-medium-weight), --token(--en-font-heading-medium-size), --token(--en-font-heading-medium-line-height), --token(--en-font-heading-medium-family));
+  font-style: --token(--en-font-heading-medium-style);
+  letter-spacing: --token(--en-font-heading-medium-tracking);
+}
+.en-heading-large {
+  @apply --en-font(--token(--en-font-heading-large-weight), --token(--en-font-heading-large-size), --token(--en-font-heading-large-line-height), --token(--en-font-heading-large-family));
+  font-style: --token(--en-font-heading-large-style);
+  letter-spacing: --token(--en-font-heading-large-tracking);
+}
+.en-metadata {
+  color: --token(--en-color-text-muted);
+  @apply --en-font(--token(--en-font-metadata-weight), --token(--en-font-metadata-size), --token(--en-font-metadata-line-height), --token(--en-font-metadata-family));
+  font-style: --token(--en-font-metadata-style);
+  letter-spacing: --token(--en-font-metadata-tracking);
+}
+.en-data {
+  @apply --en-font(--token(--en-font-data-weight), --token(--en-font-data-size), --token(--en-font-data-line-height), --token(--en-font-data-family));
+  font-style: --token(--en-font-data-style);
+  letter-spacing: --token(--en-font-data-tracking);
+  font-variant-numeric: tabular-nums;
+}

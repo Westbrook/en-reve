@@ -1,0 +1,14 @@
+{
+  "name": "@wc-toolkit/cem-generator-lit",
+  "upstreamVersion": "0.1.11",
+  "localVersion": "0.1.11-en-cem.5",
+  "upstreamUrl": "https://registry.npmjs.org/@wc-toolkit/cem-generator-lit/-/cem-generator-lit-0.1.11.tgz",
+  "upstreamIntegrity": "sha512-w8d5w1RtL5ftjoJZJSY7TyxR7JLiMaE+UtIkVm8OL2nxGjcDlfollaJ6KIIfjfXuzmU5iBA5yt/uG3FIZ02qVA==",
+  "upstreamSha256": "ff2c3744fa32bea7a467d268ba6d241012c89adc387737b0154fb5cb8b8a177f",
+  "verifiedAt": "2026-09-26T20:12:00.661293+00:00",
+  "overlays": [
+    "index.d.ts",
+    "index.js"
+  ],
+  "reason": "Preserve source types/defaults/visibility while supplementing Lit metadata and retain attribute inheritance origins. Converter types do not override authored types. Preserve inherited constructor overrides, declare-only defaults and inherited/attribute documentation. Keep explicitly authored attribute ownership separate from inherited backing-field ownership. Optional semantic class and framework-boundary hooks allow the adapter to bind renamed/namespace Lit imports to actual compiler declarations; default detection remains unchanged. Add reviewed own-constructor extraction and provenance bindings for the separately qualified composition tier; preserve the ordinary production route. Bind event dispatch to original compiler-owned receiver and constructor identity. Retain direct JSDoc ownership and source scope in shared parsing."
+}

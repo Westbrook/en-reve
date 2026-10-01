@@ -1,0 +1,38 @@
+# Settings command delivery policy controls
+
+This contract accompanies `command-policy-controls.mjs` and the actual settings observer in `command-probe.mjs`. It adds no product API. Preparation applies an exact, symmetric, recorded source overlay to the original `apps/docs/src/workflow-pages/settings-entry.ts` in all three production arms. The overlay validates unique preimages for the original loader, initial load statement and workflow callbacks; the build retains original/executed source and hashes. The production loader instance, its literal definition import, its owning global registry and the application’s opening behavior remain in place. Measurements include this instrumentation in both arms and do not describe uninstrumented absolute asset sizes.
+
+The bridge exposes only explicit test operations backed by the route loader’s public `load` and `ensure`, immutable identity/configuration, and serializable operation observations. It does not expose definitions, constructors, application state, private component flags or loader caches. Timing observers return each original public operation promise. Completion timestamps are captured by the first attached completion observer, before the application’s await continuation; the separate observer promise is tracked until its cleanup. Focus references used for identity assertions are weak, and temporary strong references are cleared upon completion.
+
+## Policies and matrix
+
+Every arm runs each active policy in all seven declared browser/configuration cells and both trusted input modes, with at least 30 independent samples per cell. The unused policy runs in all seven configurations, with `action: 'none'`; input is structurally not applicable because no activation occurs. Omitted cells cannot qualify through a smaller manifest. All source, runtime, traffic, failure and numerical budget contracts remain those of the common family campaign and frozen plans.
+
+| `job.deliveryPolicy` | Before action | Interpretation |
+| --- | --- | --- |
+| `cold` | Preserve the original route-entry load-only call. First actual trigger activation ensures registration. | Unchanged production delivery policy with symmetric observation. Only this policy supplies actual route startup/benefit evidence. It is not by itself the same-code construction gate. |
+| `same-code` | After saving initial startup/traffic observations, explicitly ensure the definition while closed, await public updates and the observer’s closed stable endpoint. | Same available code and completed registration before the trusted construction-only clock. Post-registration component census is separate from untouched startup. |
+| `prepared-0` | Suppress only route-entry speculative load; after initial observations call public load, then attempt activation with no intentional delay. | Authored alternate preparation policy. Actual event lead and pending/completed status are recorded. Constrained immediate coverage requires preparation still pending at the trusted event. |
+| `prepared-50` | Same controlled load, with at least 50 ms intentional lead before activation. | Actual observed lead is reported; the nominal lead never substitutes for an event timestamp. |
+| `prepared-200` | Same controlled load, with at least 200 ms intentional lead before activation. | Alternate preparation policy, separate from production startup benefit. |
+| `unused` | Same controlled load; await its genuine completion without opening. | First/repeat latency and recreation metrics are null and declared not applicable. Registration, focus, generated content and closure must stay unchanged. |
+
+The original route already begins load at entry. Suppressing that call in the four controlled preparation policies is explicit experimental instrumentation, not a claim that production waits for intent. Those cells cannot supply actual route startup benefit or an optional-code saving claim. Real trigger focus/pointerover can also invoke the application’s intent preload. The driver therefore starts explicit preparation before focusing or hovering the trigger, preserves all actual intent-load operation records and executable resource timings, and reports the state at the trusted action. No synthetic user event substitutes for that action.
+
+## Driver and evidence contract
+
+1. Before navigation, install `installCommandPolicyConfig({deliveryPolicy})` and the command observer. Timing records operations by default.
+2. Preserve the untouched initial startup and settled resource observations. Call `beginCommandPolicy(page, deliveryPolicy)` before trigger focus/hover. Same-code registration is part of this setup and is not inside action latency.
+3. Wait the requested prepared lead when applicable, capture `commandPreActivation(page, control)`, arm the observer, and dispatch the trusted action. The observer captures bridge status synchronously at its actual input event in `first.deliveryStatus`.
+4. For active cells, observe usable first/repeat endpoints. For unused cells, perform no action. Call `finishCommandPolicy(page, control, {activated})`; it waits real pending operations rather than an arbitrary timeout.
+5. `summarizeCommandPolicy(control, preActivation, completion, first)` produces `row.preparation`. Missing real completion, public method timing, trusted-event state, required closed/focus evidence, or requested lead rejects the receipt.
+
+`row.preparation` includes the descriptor, same-code readiness, real public `loadMs`/`ensureMs`, source operation IDs, actual preparation lead, pending status at trusted activation, completion time/duration, raw control/pre-activation/completion snapshots and all activation operation observations. Load duration refers to route-entry load for cold/same-code and explicit preparation for the controlled policies. Ensure duration refers to explicit setup ensure for same-code or the actual first application activation callback for cold/prepared. Ensure is null only for unused, where registration is prohibited. Intent load calls remain separately labeled in the raw operations and are not silently substituted for the primary load measurement.
+
+Before activation, the recorded command surface must stay closed; code-only preparation must preserve definitions for every declared expected tag and exact focus identity. Same-code must establish actual host registration and upgrade while retaining closure and focus. During activation, focus and registration are expected to change; the event/completion observations preserve those changes without wrongly attributing them to speculative load. Unused preparation must complete with unchanged registration, generated content and focus while remaining closed. Browser resource snapshots before and after preparation are independently mapped to the packed receipts; transferred, encoded and static gzip counts remain distinct.
+
+## Retention instrumentation
+
+Retention installs `installCommandPolicyConfig({deliveryPolicy: 'cold', recordOperations: false})` before navigation. This keeps the production delivery policy and returns the same public loader promises while bypassing operation arrays, pending promise tracking and focus references. The bridge status explicitly records `recordOperations: false`. Recording cannot be disabled for any alternate preparation policy, and timing receipt normalization rejects disabled recording. This prevents diagnostic accumulation from being mistaken for component retention. The retention campaign separately records its supported counters, checkpoints and observer limitations.
+
+This lane has authored sources and tests only. It has not executed a build, test, browser qualification or timing acquisition.

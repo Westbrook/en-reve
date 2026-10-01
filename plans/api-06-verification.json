@@ -1,0 +1,95 @@
+{
+  "decision": "API-06",
+  "status": "integrated_verified",
+  "verifiedAt": "2026-09-19T21:34:05.152462+00:00",
+  "baseCommit": "080c18590bfc84124021c2b989e99edc007a5428",
+  "published": false,
+  "userReviewed": false,
+  "checks": [
+    {
+      "suite": "workspace build",
+      "command": "npm run build",
+      "result": "pass"
+    },
+    {
+      "suite": "tokens",
+      "command": "npm run test:tokens",
+      "passed": 126
+    },
+    {
+      "suite": "tooling and metadata",
+      "command": "npm run test:tooling",
+      "passed": 41
+    },
+    {
+      "suite": "SSR Node",
+      "command": "npm test -w @en-reve/ssr",
+      "passed": 62
+    },
+    {
+      "suite": "composition",
+      "command": "EN_COMPOSITION_PORT=48766 npx playwright test --config packages/styles/tests/composition/playwright.config.ts",
+      "passed": 93,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "notes": "Initial 90 cases: 87 passed, 3 test setup errors corrected (missing document version). API-06 subset rerun 21 passed. Additional palette case 3 passed after limiting its assertion to its own shadow surface."
+    },
+    {
+      "suite": "SSR slot hydration",
+      "command": "EN_SSR_TEST_PORT=48767 npx playwright test --config packages/ssr/playwright.config.ts optional-slots.spec.ts --workers=3",
+      "passed": 27,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "notes": "Updated a pre-existing hard-coded test URL to honor the configured server port; full rerun passed."
+    },
+    {
+      "suite": "documentation integration",
+      "command": "EN_WORKFLOW_TEST_PORT=48768 npx playwright test --config apps/docs/tests/playwright.config.ts rich-text.spec.ts color-wheel.spec.ts form-navigation.spec.ts pagination.spec.ts presence-activity.spec.ts toast.spec.ts content-recipes.spec.ts navigation-sidebar.spec.ts editor-token-deletion.spec.ts",
+      "passed": 396,
+      "initialPassed": 393,
+      "initialFailed": 3,
+      "engines": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ],
+      "notes": "WebKit presence hover geometry and two toast theme cases passed on isolated single-worker rerun without product or test changes. Full-suite concurrency remains a timing sensitivity."
+    },
+    {
+      "suite": "metadata and customization freshness",
+      "command": "node tooling/metadata/generate-elements.ts --check && npm run check:customization",
+      "result": "pass",
+      "unreviewedFindings": 0
+    },
+    {
+      "suite": "slot preservation",
+      "catalogElements": 77,
+      "removedSlots": [],
+      "comparison": "Baseline custom-elements.json versus regenerated manifest"
+    }
+  ],
+  "limitations": [
+    "No new manual screen-reader or physical-device evidence.",
+    "Three WebKit integration cases needed an isolated rerun.",
+    "Uncommitted API-07\u201310 changes remain outside this publication."
+  ],
+  "commandsUseLocalPorts": true,
+  "integration": {
+    "mainBaseCommit": "0673418",
+    "verifiedAt": "2026-09-19T22:52:28.106410+00:00",
+    "build": "passed",
+    "compositionBrowserPassed": 93,
+    "api05BrowserPassed": 75,
+    "toolingPassed": 41,
+    "ssrNodePassed": 62,
+    "chatEditorNodePassed": 5,
+    "metadataFreshness": "passed",
+    "uncommittedMainWorkExcluded": true
+  }
+}

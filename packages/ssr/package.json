@@ -1,0 +1,42 @@
+{
+  "name": "@en-reve/ssr",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "verification.json"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./install.js": "./dist/install.js",
+    "./scoped.js": {
+      "types": "./dist/scoped.d.ts",
+      "import": "./dist/scoped.js"
+    },
+    "./client.js": {
+      "types": "./dist/client.d.ts",
+      "import": "./dist/client.js"
+    }
+  },
+  "scripts": {
+    "build": "node ../../node_modules/typescript/bin/tsc -b",
+    "test": "node ../../tooling/testing/invoke.mjs public --view='packages/ssr#test' --",
+    "test:browser": "node ../../tooling/testing/invoke.mjs public --view='packages/ssr#test:browser' --"
+  },
+  "dependencies": {
+    "@en-reve/elements": "0.1.0",
+    "@en-reve/primitives": "0.1.0",
+    "@lit-labs/ssr": "4.1.0",
+    "@lit-labs/ssr-client": "1.1.8",
+    "parse5": "8.0.1"
+  },
+  "peerDependencies": {
+    "lit": "^3.3.3"
+  }
+}

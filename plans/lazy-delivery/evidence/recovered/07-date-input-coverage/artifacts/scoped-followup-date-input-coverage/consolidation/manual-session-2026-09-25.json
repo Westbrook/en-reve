@@ -1,0 +1,1564 @@
+{
+  "startedAt": "2026-09-25T19:50:40.170636+00:00",
+  "status": "bounded_iphone_session_complete_broader_coverage_open",
+  "promptOwner": "This task, at user request: walk through iPhone manual confirmation one action at a time.",
+  "device": "iPhone 12 Pro (prior user inventory), iOS 27.0; exact OS build and Safari version unreported",
+  "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+  "url": "http://192.168.1.163:4517/native/global",
+  "serverEvidence": "HTTP 200 and original build marker verified after user enabled Node incoming connections; loopback and private Wi-Fi listeners available at session end.",
+  "pendingAction": "Consolidate and commit findings; preserve broader unreported matrix. Restore prior Node firewall block via user-operated Settings UI because automated access is denied and managed CLI changes are prohibited.",
+  "observations": [
+    {
+      "at": "2026-09-25T19:53:40.136053+00:00",
+      "kind": "user_report",
+      "text": "That server isn't currently running.",
+      "boundary": "User did not specify client/browser; no physical date-input outcome."
+    },
+    {
+      "at": "2026-09-25T19:57:03.643341+00:00",
+      "kind": "user_report",
+      "text": "Both.",
+      "meaning": "User confirms fixture unavailable in both iPhone Safari and Codex browser."
+    },
+    {
+      "at": "2026-09-25T20:19:23.744851+00:00",
+      "kind": "user_report",
+      "text": "Localhost is also not running."
+    },
+    {
+      "at": "2026-09-25T20:25:25.574843+00:00",
+      "kind": "user_report",
+      "text": "That's better. What's the WIFI URL?",
+      "meaning": "User confirms localhost recovery; physical input cases remain unreported."
+    },
+    {
+      "at": "2026-09-25T20:27:14.266249+00:00",
+      "kind": "user_authorization",
+      "text": "All the incoming requests to node.",
+      "scope": "Incoming connections for the previously identified Node executable, following the temporary exception request; restore previous block after review."
+    },
+    {
+      "at": "2026-09-25T20:28:55.813068+00:00",
+      "kind": "user_report",
+      "text": "Done.",
+      "verification": "Subsequent getappblocked still reports incoming connections blocked. LAN request gives empty response. Agent sudo -n retry still requires password."
+    },
+    {
+      "at": "2026-09-25T20:30:21.984763+00:00",
+      "kind": "user_report",
+      "text": "Firewall settings cannot be modified from command line on managed Mac computers."
+    },
+    {
+      "at": "2026-09-25T20:31:51.306949+00:00",
+      "kind": "user_report",
+      "text": "Loads now. Walk me through the test.",
+      "boundary": "Load confirmed; physical editing results not yet reported."
+    },
+    {
+      "at": "2026-09-25T20:34:45.450645+00:00",
+      "kind": "physical_manual_report",
+      "case": "M01",
+      "route": "/native/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "promptContext": "Physical iPhone Safari, VoiceOver off requested; tap Test birth date without changing date.",
+      "verbatim": "A calendar.",
+      "finding": "User reports a calendar appears on field activation. Selection, blur, keyboard/IME and speech remain unreported."
+    },
+    {
+      "at": "2026-09-25T20:37:05.373917+00:00",
+      "kind": "physical_manual_report",
+      "case": "M01",
+      "route": "/native/global",
+      "verbatim": "I don't understand, it's not possible to open the calendar while the \"Date input coverage\" heading is showing, they do not share the screen.",
+      "finding": "User reports calendar and page heading are not visible together. Prior heading-tap instruction is unsuitable for this presentation. Selection/blur remain unreported; not a fixture failure. No inference about exact native modal geometry or available dismissal controls."
+    },
+    {
+      "at": "2026-09-25T20:37:57.324383+00:00",
+      "kind": "physical_manual_report",
+      "case": "M01",
+      "route": "/native/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Tapping away, scrolling, and pressing the blue check mark all close the calendar.",
+      "finding": "User reports three dismissal actions close the native calendar. Automatic dismissal on date selection, resulting date, DOM blur/focus and assistive speech are not established by this observation."
+    },
+    {
+      "at": "2026-09-25T20:38:51.678568+00:00",
+      "kind": "physical_manual_report",
+      "case": "M01",
+      "route": "/native/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sept 15, 2026",
+      "finding": "After calendar dismissal, user reports authored default September 15, 2026 remains displayed. Selection of September 20 has not been confirmed; do not classify selection retention as pass or fail."
+    },
+    {
+      "at": "2026-09-25T20:39:33.126704+00:00",
+      "kind": "physical_manual_report",
+      "case": "M01",
+      "route": "/native/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sept 20, 2026",
+      "promptContext": "Open calendar, select September 20, 2026; press reported blue check mark if still open; report displayed date.",
+      "finding": "User confirms selected test date displays after native calendar selection/dismissal. No DOM blur, exact focus, IME or spoken-output claim."
+    },
+    {
+      "at": "2026-09-25T20:40:34.012490+00:00",
+      "kind": "physical_manual_report",
+      "case": "M02",
+      "route": "/eager/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sept 20, 2026",
+      "promptContext": "On iPhone open eager/global, leave Hydrate essential field untouched, select September 20 and dismiss native calendar.",
+      "finding": "User reports selected test date displayed before hydration. Route/environment follow walkthrough context; no outer-form successful-control or no-JS submission claim."
+    },
+    {
+      "at": "2026-09-25T20:42:03.127471+00:00",
+      "kind": "physical_manual_report",
+      "case": "M03",
+      "route": "/eager/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sept 20, 2026",
+      "promptContext": "On the same edited eager/global page tap Hydrate essential field; report displayed date afterward.",
+      "finding": "User confirms September 20 remains displayed after hydration. Focused-field hydration, caret/segment continuity, DOM focus, submission and AT speech were not checked."
+    },
+    {
+      "at": "2026-09-25T20:42:58.235012+00:00",
+      "kind": "physical_manual_report",
+      "case": "M02",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sept 20, 2026",
+      "promptContext": "On iPhone open deferred/global, do not tap Hydrate essential field, select September 20 and dismiss calendar.",
+      "finding": "User reports selected test date displayed before hydration, in context of requested physical route. No outer-form submission, focus, IME or AT speech claim."
+    },
+    {
+      "at": "2026-09-25T20:43:56.993398+00:00",
+      "kind": "physical_manual_report",
+      "case": "M03",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "On same edited deferred/global page tap Hydrate essential field and report displayed date afterward.",
+      "finding": "User confirms September 20 remains displayed after hydration, in context of the requested iPhone route. Focused-field hydration, caret/segment continuity, actual focus, submission and AT speech unreported."
+    },
+    {
+      "at": "2026-09-25T20:46:20.510728+00:00",
+      "kind": "physical_manual_report",
+      "case": "M08",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Our calendar, where as previously we were seeing the OS calendar.",
+      "promptContext": "On same hydrated deferred/global page tap Choose date button. Route follows user walkthrough context, not ambient desktop browser tab.",
+      "finding": "User identifies opened surface as library calendar and distinguishes it from previously observed OS calendar. Custom date selection, cancellation, actual focus restoration and AT speech remain unreported."
+    },
+    {
+      "at": "2026-09-25T20:47:49.674929+00:00",
+      "kind": "physical_manual_report",
+      "case": "M08",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Calendar closes and Sep 22, 2026 is displayed.",
+      "promptContext": "Select September 22, 2026 in library calendar on the requested hydrated deferred/global iPhone page; report dismissal and displayed date. Route follows walkthrough context, not ambient desktop browser state.",
+      "finding": "User reports selecting September 22 closes library calendar and displays selected date. Cancellation, explicit Close calendar behavior, DOM focus and physical AT restoration remain unreported."
+    },
+    {
+      "at": "2026-09-25T20:48:43.058334+00:00",
+      "kind": "physical_manual_report",
+      "case": "M08",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 22, 2026",
+      "promptContext": "Reopen via Choose date, then tap Close calendar without selecting another day; report displayed date. Route follows iPhone walkthrough context, not ambient desktop tab.",
+      "finding": "User reports September 22 remains displayed after explicit Close calendar. This does not establish other cancellation mechanisms, DOM focus restoration or VoiceOver behavior."
+    },
+    {
+      "at": "2026-09-25T20:50:58.200538+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_valid_submission",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "2026-09-22",
+      "promptContext": "Tap Submit locally on the same hydrated deferred/global iPhone page; report receipt. Route follows walkthrough context, not ambient desktop tab.",
+      "finding": "User reports local receipt date matching September 22 displayed in hydrated field. Invalid submission, validation presentation, reset, unhydrated submission and other delivery modes are not established."
+    },
+    {
+      "at": "2026-09-25T20:52:41.779185+00:00",
+      "kind": "physical_manual_report",
+      "case": "M10",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 25, 2026",
+      "promptContext": "Tap Reset date, then report Test birth date display on same hydrated page. Route follows walkthrough context and requires confirmation if investigating a defect.",
+      "finding": "Reported post-reset display differs from authored default September 15, 2026. Both original eager/global and deferred/global HTML have host and shadow input value=2026-09-15; fixture reset listener changes receipt text only. Treat as unexpected observation requiring confirmation, not established runtime defect."
+    },
+    {
+      "at": "2026-09-25T20:53:10.079367+00:00",
+      "kind": "physical_manual_correction",
+      "case": "M10",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "No, it shows Sep 15, 2026",
+      "supersedes": "Previous reported post-reset display Sep 25, 2026",
+      "finding": "User corrects post-reset display to September 15, matching authored default. Previous discrepancy is withdrawn by user correction; no reset defect established. Local receipt after reset remains unreported."
+    },
+    {
+      "at": "2026-09-25T20:54:24.538896+00:00",
+      "kind": "physical_manual_report",
+      "case": "M10",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "2026-09-15",
+      "promptContext": "Tap Submit locally after reset without editing field; report receipt. Route follows requested iPhone walkthrough context.",
+      "finding": "User reports post-reset receipt matching corrected displayed date and authored default September 15. No new validation, focus or AT claim."
+    },
+    {
+      "at": "2026-09-25T20:56:15.222446+00:00",
+      "kind": "manual_setup_report",
+      "case": "M05",
+      "route": "/deferred/global?delay=5000",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "loaded",
+      "promptContext": "Open slow fixture on iPhone, tap Hydrate essential field, leave Choose date untouched and report readiness.",
+      "finding": "User reports preparation readiness; no loading/editing result established."
+    },
+    {
+      "at": "2026-09-25T20:57:33.341255+00:00",
+      "kind": "physical_manual_report",
+      "case": "M05",
+      "route": "/deferred/global?delay=5000",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Edited normally. Our calendar did not appear.",
+      "promptContext": "Tap Choose date then immediately native date field during five-second delay; use OS calendar to select September 20, wait at least five seconds and dismiss.",
+      "finding": "User reports normal native editing and no unsolicited library-calendar appearance during this manual loading sequence. Exact timing, DOM focus, speech and latest selected date on explicit reopen are not established."
+    },
+    {
+      "at": "2026-09-25T21:00:58.151321+00:00",
+      "kind": "physical_manual_report",
+      "case": "M05",
+      "route": "/deferred/global?delay=5000",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "Tap Choose date again after native editing during optional load; report date marked selected without changing it.",
+      "finding": "User reports September 20 selected on explicit library-calendar reopen, matching prompted native edit during loading. No DOM focus or AT speech inference."
+    },
+    {
+      "at": "2026-09-25T21:02:18.325961+00:00",
+      "kind": "manual_setup_report",
+      "case": "M07",
+      "route": "/deferred/global?delay=5000",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "ready",
+      "promptContext": "Open fresh slow fixture, hydrate, set September 20 via OS calendar; leave Choose date untouched.",
+      "finding": "User confirms readiness for reset-during-loading test; reset result not yet reported."
+    },
+    {
+      "at": "2026-09-25T21:04:37.466948+00:00",
+      "kind": "physical_manual_report",
+      "case": "M07",
+      "route": "/deferred/global?delay=5000",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 15, 2026. Out calendar did not open.",
+      "promptContext": "Tap Choose date then immediately Reset date during five-second delay; after five seconds report date and any unsolicited library-calendar opening.",
+      "finding": "User reports reset restores authored default September 15 and no unsolicited library-calendar opening after delay. Exact event timing, DOM focus, selected date on later explicit reopen and AT behavior remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:05:16.289371+00:00",
+      "kind": "physical_manual_report",
+      "case": "M07",
+      "route": "/deferred/global?delay=5000",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 15, 2026.",
+      "promptContext": "Tap Choose date again after reset during optional load and report marked selected date.",
+      "finding": "User reports September 15 selected on explicit reopen, matching reset field and authored default. No DOM focus or assistive-technology claim."
+    },
+    {
+      "at": "2026-09-25T21:11:06.790005+00:00",
+      "kind": "physical_manual_report",
+      "case": "M11",
+      "route": "/deferred/global?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Calendar could not load. Try again, reload the page, or enter a date directly.",
+      "promptContext": "Open failed-load fixture on iPhone, hydrate and activate Choose date; report visible message.",
+      "finding": "User reports visible error after deliberate optional-calendar load failure. This is visible text evidence only; error speech, native editing after failure, submission and recovery are not yet reported."
+    },
+    {
+      "at": "2026-09-25T21:12:08.809919+00:00",
+      "kind": "physical_manual_report",
+      "case": "M11",
+      "route": "/deferred/global?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "Without reload or retry after failed optional load, edit native field to September 20 via OS calendar and dismiss; report display.",
+      "finding": "User reports September 20 displayed after native editing following optional-calendar failure. Submission, retry, fresh recovery and AT speech remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:12:53.706542+00:00",
+      "kind": "physical_manual_report",
+      "case": "M11",
+      "route": "/deferred/global?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "2026-09-20",
+      "promptContext": "Tap Submit locally on the same failed-load page after native edit, without reload or retry; report receipt date.",
+      "finding": "User reports local receipt 2026-09-20 matching native edit after optional-calendar failure. Same-document retry, fresh-normal recovery and AT speech remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:14:13.938337+00:00",
+      "kind": "physical_manual_report",
+      "case": "M11",
+      "route": "/deferred/global?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Calendar retry 1 failed Reload the page or enter a date directly.",
+      "promptContext": "Without reloading, tap Choose date once more on same failed-load page; report calendar opening or remaining error.",
+      "finding": "User reports same-document retry failure message. Record as observed recovery limitation in this document/module regime; fresh normal document recovery remains unreported. No inference about browser cache implementation or error speech."
+    },
+    {
+      "at": "2026-09-25T21:16:01.749807+00:00",
+      "kind": "physical_manual_report",
+      "case": "M11",
+      "route": "/deferred/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Yes.",
+      "promptContext": "Open fresh normal-loading deferred/global without failure parameter, hydrate and activate Choose date; ask whether library calendar opens.",
+      "finding": "User confirms library calendar opens in fresh normal-loading document. This is distinct from failed same-document retry; reload recovery is not established. No assistive-technology inference."
+    },
+    {
+      "at": "2026-09-25T21:17:23.249112+00:00",
+      "kind": "device_configuration_report",
+      "verbatim": "iOS 27.0",
+      "finding": "Exact reported OS version is iOS 27.0; build number remains unreported."
+    },
+    {
+      "at": "2026-09-25T21:18:24.576494+00:00",
+      "kind": "device_configuration_report",
+      "verbatim": "no",
+      "promptContext": "Asked whether tapping iOS Version shows a build number in parentheses.",
+      "finding": "User reports no build number displayed there. OS build remains unreported; do not infer it or repeatedly request the same unavailable detail."
+    },
+    {
+      "at": "2026-09-25T21:19:38.754890+00:00",
+      "kind": "device_configuration_report",
+      "verbatim": "Yes.",
+      "promptContext": "Were all these iPhone tests in a regular non-private Safari tab with VoiceOver off?",
+      "finding": "User confirms Safari regular non-private tab and VoiceOver off for prior phone checks. Exact Safari version and OS build remain unreported; no VoiceOver coverage claimed."
+    },
+    {
+      "at": "2026-09-25T21:21:08.027119+00:00",
+      "kind": "physical_manual_report",
+      "case": "M02",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "On iPhone open scoped-request deferred/shadow, leave Hydrate essential field untouched, edit via OS calendar to September 20 and dismiss.",
+      "finding": "User reports September 20 displayed before hydration on requested shadow route. Actual registry capability/mode remains unreported; this is not evidence of native scoping or outer-form submission before upgrade."
+    },
+    {
+      "at": "2026-09-25T21:21:54.136008+00:00",
+      "kind": "physical_manual_report",
+      "case": "M03",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "On same edited deferred/shadow page tap Hydrate essential field and report displayed date.",
+      "finding": "User confirms September 20 displayed after hydration. Actual scoped/global mode and capability probe not yet reported; focused hydration, caret, DOM focus and AT behavior unreported."
+    },
+    {
+      "at": "2026-09-25T21:23:24.623864+00:00",
+      "kind": "physical_fixture_diagnostics_report",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "\"scoped\" and { native: true, importMode: \"options\", dormant: false }",
+      "promptContext": "Read mode and registryCapabilities from hydrated deferred/shadow phone page.",
+      "finding": "User reports actual scoped mode and native capability with options import mode; dormant false. Classify this fixture as actual native scoped delivery, not global fallback. This does not establish every registry/SSR capability or AT behavior."
+    },
+    {
+      "at": "2026-09-25T21:24:32.254187+00:00",
+      "kind": "physical_manual_report",
+      "case": "M08",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Closes and says Sep 22, 2026",
+      "promptContext": "On hydrated deferred/shadow with confirmed native scoped mode, open Choose date and select September 22; report dismissal and field date.",
+      "finding": "User reports library calendar closes and field displays September 22 after selection in actual native scoped delivery. Explicit close/cancellation, focus and AT outcomes remain separate unreported checks."
+    },
+    {
+      "at": "2026-09-25T21:25:33.355658+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_valid_submission",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "2026-09-22",
+      "promptContext": "Tap Submit locally after library calendar selection on same native-scoped deferred/shadow page; report receipt date.",
+      "finding": "User reports receipt 2026-09-22 matching selected and displayed date in actual native scoped delivery. Empty/out-of-range validation and invalid submission blocking remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:26:16.554058+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_native_editing_control_discovery",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "A \"Reset\" option.",
+      "promptContext": "Tap date field to open OS calendar and report whether Clear button/option exists.",
+      "finding": "User reports OS calendar option labeled Reset. Its behavior is unreported; do not equate it with clearing or with the fixture outer-form Reset date button."
+    },
+    {
+      "at": "2026-09-25T21:27:41.656516+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_native_editing_control_discovery",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Sep 15, 2026",
+      "promptContext": "Tap Reset inside OS calendar and dismiss via blue check mark if still open; report field display.",
+      "finding": "User reports September 15 after OS picker Reset, matching authored default. This action did not produce an empty displayed field; it is distinct from prior outer-form Reset date observation. Empty validation, exact native events and keyboard/IME availability remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:28:42.043752+00:00",
+      "kind": "physical_manual_report",
+      "case": "M04_native_editing_availability",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "No.",
+      "promptContext": "Does the OS calendar offer a keyboard button or a way to type day, month or year?",
+      "finding": "User reports neither keyboard option nor date text entry in this observed OS picker. Text-entry/IME composition is not offered through this observed surface; no general claim about hardware keyboards, other configurations or OS controls. Empty-field validation remains unreported; OS Reset restored default rather than clearing."
+    },
+    {
+      "at": "2026-09-25T21:29:54.307065+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_native_out_of_range_selection",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Allows",
+      "promptContext": "Using OS calendar try selecting December 31, 2025; report whether selection allowed or prevented.",
+      "finding": "User reports OS picker allows attempted date before authored min 2026-01-01. Accepted field display after dismissal, validation and submission blocking remain unreported. Do not equate selectable date with valid date or validation defect."
+    },
+    {
+      "at": "2026-09-25T21:31:20.829092+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_native_out_of_range_display",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Dec 31, 2025 with a red border.",
+      "promptContext": "Dismiss OS calendar using blue check mark and report field display after attempted December 31, 2025 selection.",
+      "finding": "User reports retained December 31, 2025 and red border. Date is below authored min 2026-01-01. Visual border evidence does not alone establish constraint-validation result, message, submission blocking or AT announcement."
+    },
+    {
+      "at": "2026-09-25T21:32:52.677052+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_out_of_range_validation",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Value must be greater than or equal to 2026-01-01\n\nShows as an OS popup from the input and in red above the \"Reset date\" button.",
+      "promptContext": "Tap Check validity locally with out-of-range December 31, 2025 displayed and report visible messages.",
+      "finding": "User reports exact minimum-date error as OS popup from input and red inline text above Reset date. This establishes physical visible validation presentation, not spoken output or submission blocking."
+    },
+    {
+      "at": "2026-09-25T21:34:47.638511+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_out_of_range_submission_attempt",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Validation reopens and the OS calendar does as well.",
+      "promptContext": "With out-of-range date unchanged tap Submit locally; report validation or new local receipt.",
+      "finding": "User reports validation presentation and OS calendar reopen on submission attempt. A new receipt was not addressed explicitly, so receipt absence/submission blocking remains pending confirmation. No DOM focus or speech inferred from native picker opening."
+    },
+    {
+      "at": "2026-09-25T21:35:17.412642+00:00",
+      "kind": "physical_manual_qualification",
+      "case": "M09_out_of_range_submission_attempt",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "The OS calendar opening seems to have been a one time thing.",
+      "finding": "User qualifies prior OS-calendar reopening as apparently one-time. Do not classify native picker reopening as consistent/reproducible, and do not invent number or procedure of repeated attempts. Validation reopening remains reported; receipt absence still unconfirmed."
+    },
+    {
+      "at": "2026-09-25T21:36:21.395437+00:00",
+      "kind": "physical_manual_report",
+      "case": "M09_out_of_range_submission_attempt",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Only validation text.",
+      "promptContext": "After invalid submission attempt, ask whether receipt area shows a new Local receipt or only validation text.",
+      "finding": "User confirms only validation text and no new Local receipt after submitting out-of-range December 31, 2025. Physical invalid-submit blocking observed for this native-scoped fixture; empty-required validation, AT speech and recovery after invalid state remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:37:12.858940+00:00",
+      "kind": "physical_manual_report",
+      "case": "M10_reset_after_invalid",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "Sep 15, 2026.\n\nRed validation message is cleared.",
+      "promptContext": "Tap page Reset date button from invalid state and report displayed date and whether red validation message clears.",
+      "finding": "User reports authored default September 15 restored and red inline validation message cleared after outer-form reset on actual native-scoped fixture. Receipt after reset, DOM focus and AT behavior remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:38:21.383287+00:00",
+      "kind": "physical_manual_report",
+      "case": "M10_reset_after_invalid",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "2026-09-15",
+      "promptContext": "Submit locally without edits after outer-form reset from invalid state; report receipt.",
+      "finding": "User reports receipt 2026-09-15 matching reset display/default, establishing local submission recovery after invalid-state reset. No focus or AT claim."
+    },
+    {
+      "at": "2026-09-25T21:41:17.788725+00:00",
+      "kind": "physical_fixture_diagnostics_report",
+      "case": "M15",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "verbatim": "documentId: 1790371223314-0.924820749829057\ntimeOrigin: 1790371223285\nnavigationType: \"navigate\"\npageshows: [{persisted: false, at: 51}]",
+      "diagnostics": {
+        "documentId": "1790371223314-0.924820749829057",
+        "timeOrigin": 1790371223285,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 51
+          }
+        ]
+      },
+      "promptContext": "Set September 20 via OS picker on hydrated native-scoped page, dismiss and report navigation baseline before leaving.",
+      "finding": "User supplies initial document identity/time origin, navigate type and nonpersisted initial pageshow. No Back/restoration outcome yet; no BFCache inference from initial navigation."
+    },
+    {
+      "at": "2026-09-25T21:43:02.282714+00:00",
+      "kind": "physical_history_result",
+      "case": "M15",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryMode": "scoped",
+      "reportedDisplay": "Sep 20, 2026",
+      "diagnostics": {
+        "documentId": "1790371223314-0.924820749829057",
+        "timeOrigin": 1790371223285,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 51
+          },
+          {
+            "persisted": true,
+            "at": 1275516
+          }
+        ]
+      },
+      "promptContext": "Use fixture Leave page link then Safari Back; report date and diagnostics before Hydrate or Reset.",
+      "finding": "BFCache resume confirmed by persisted true and unchanged documentId/timeOrigin. September 20 retained. navigationType remains navigate from initial document; no new-document Back or reload claim."
+    },
+    {
+      "at": "2026-09-25T21:44:33.882478+00:00",
+      "kind": "physical_history_result",
+      "case": "M16",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "reportedDisplay": "Sep 15, 2026",
+      "diagnostics": {
+        "documentId": "1790372602243-0.9182928594743996",
+        "timeOrigin": 1790372602192,
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 66
+          }
+        ]
+      },
+      "promptContext": "Tap Reload document and report displayed date and diagnostics before Hydrate essential field.",
+      "finding": "New-document reload confirmed by changed documentId/timeOrigin, navigationType reload and pageshow persisted false. Pre-hydration display is authored default September 15 rather than prior September 20. Post-hydration result remains unreported; do not conclude final restoration loss or generalize to Back."
+    },
+    {
+      "at": "2026-09-25T21:45:44.163061+00:00",
+      "kind": "physical_history_result",
+      "case": "M16",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 15, 2026",
+      "promptContext": "Hydrate essential field in the reloaded document without editing or resetting and report displayed date.",
+      "finding": "User reports September 15 remains after hydration on confirmed new-document reload; prior September 20 was not restored in this observed reload sequence. Distinct from observed BFCache retention; no generic browser guarantee, runtime defect or persistence remediation inferred."
+    },
+    {
+      "at": "2026-09-25T21:47:04.609937+00:00",
+      "kind": "physical_fixture_diagnostics_report",
+      "case": "M14",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "diagnostics": {
+        "documentId": "1790372760784-0.8000691548605575",
+        "timeOrigin": 1790372760695,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 113
+          }
+        ]
+      },
+      "promptContext": "Open fresh deferred/shadow without hydration, edit date to September 20 via OS picker and report navigation baseline before leaving.",
+      "finding": "User supplies new document baseline: navigate and initial nonpersisted pageshow. Hydration intentionally not requested; no Back outcome or pre-upgrade outer-form support inferred."
+    },
+    {
+      "at": "2026-09-25T21:48:22.609810+00:00",
+      "kind": "physical_history_result",
+      "case": "M14",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "reportedDisplay": "Sep 20, 2026",
+      "diagnostics": {
+        "documentId": "1790372760784-0.8000691548605575",
+        "timeOrigin": 1790372760695,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 113
+          },
+          {
+            "persisted": true,
+            "at": 79846
+          }
+        ]
+      },
+      "promptContext": "Use Leave page then Safari Back from edited unhydrated page; report date and diagnostics before hydration.",
+      "finding": "Unhydrated-page BFCache resume confirmed by unchanged documentId/timeOrigin and added persisted true pageshow. September 20 remains displayed before hydration. Post-resume hydration retention and new-document Back remain unreported; no outer-form successful-control claim."
+    },
+    {
+      "at": "2026-09-25T21:49:31.320574+00:00",
+      "kind": "physical_history_result",
+      "case": "M14",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "Hydrate essential field without edits/reset on the same BFCache-returned page that was edited before initial hydration.",
+      "finding": "User confirms September 20 after post-return hydration. This completes observed value retention through unhydrated BFCache resume then hydration, distinct from reload and unobserved new-document Back; no focus/AT inference."
+    },
+    {
+      "at": "2026-09-25T21:50:36.359725+00:00",
+      "kind": "device_configuration_report",
+      "verbatim": "Yes",
+      "promptContext": "Is Safari AutoFill > Use Contact Info enabled on your iPhone?",
+      "finding": "User confirms contact AutoFill enabled. Test-contact birthday availability, actual date offer and acceptance remain unreported."
+    },
+    {
+      "at": "2026-09-25T21:52:05.606761+00:00",
+      "kind": "physical_manual_report",
+      "case": "M12",
+      "route": "/native/global",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "No",
+      "promptContext": "Open native/global comparison on iPhone and tap Test birth date; ask whether Safari offers AutoFill distinct from OS calendar, without selecting a suggestion.",
+      "finding": "User reports no browser AutoFill suggestion in native comparison with Safari Use Contact Info enabled. This is observed not-offered behavior in this HTTP fixture/configuration, not a library defect or proof of unsupported date autofill. No actual autofill acceptance occurred; test birthday profile availability unreported."
+    },
+    {
+      "at": "2026-09-25T21:56:48.350920+00:00",
+      "kind": "physical_manual_report",
+      "case": "M12",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "No.",
+      "promptContext": "Open fresh deferred/shadow without hydration and tap date field; ask whether Safari offers AutoFill suggestion.",
+      "finding": "User reports no Safari AutoFill offer before hydration on shadow-request library field. No acceptance or autofill-retention outcome; this does not establish library failure, global fallback, or pre-upgrade successful-control support."
+    },
+    {
+      "at": "2026-09-25T21:57:56.052343+00:00",
+      "kind": "physical_manual_report",
+      "case": "M13_hydrated_autofill_offer",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "No",
+      "promptContext": "Dismiss OS calendar, hydrate same deferred/shadow page, tap date field again and report Safari AutoFill offer.",
+      "finding": "User reports no Safari AutoFill suggestion after hydration. Native comparison, pre-hydration library and hydrated library each had no observed offer with Use Contact Info enabled on HTTP origin. Actual autofill acceptance/retention remains unreported; not a library failure."
+    },
+    {
+      "at": "2026-09-25T21:58:58.396633+00:00",
+      "kind": "assistive_technology_setup_report",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "verbatim": "ready",
+      "promptContext": "Dismiss OS picker, enable Settings > Accessibility > VoiceOver and return to same hydrated Safari fixture.",
+      "finding": "User confirms readiness after requested VoiceOver enablement. Begin separate physical VoiceOver segment; no spoken output, cursor behavior or other VoiceOver settings yet reported."
+    },
+    {
+      "at": "2026-09-25T22:00:22.297027+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M08_voiceover_trigger",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Choose Date September 15, 2026. Pop-up button. Dialog pop-up. Double tap to activate the picker.",
+      "promptContext": "Single-tap Choose date without activation; report exact VoiceOver announcement.",
+      "finding": "User reports actual VoiceOver trigger speech including current date, popup-button/dialog semantics and activation instruction. Calendar entry, selection, cancellation and cursor restoration remain unreported; no DOM-focus inference."
+    },
+    {
+      "at": "2026-09-25T22:02:53.153092+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M08_voiceover_calendar_entry",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Tuesday September 15, 2026. Description, September 2026, row 4, column 3, button.",
+      "promptContext": "Double-tap selected Choose date then pause; report initial VoiceOver speech and element receiving cursor.",
+      "finding": "User reports initial VoiceOver announcement identifying September 15 day button, month description and row/column. Actual speech establishes day-button announcement on entry; DOM focus and independent visual cursor location not measured."
+    },
+    {
+      "at": "2026-09-25T22:05:22.938794+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M08_voiceover_selection_attempt",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Tuesday, Tuesday September 22, 2026. Description September 2026. row 5 column 3, button.",
+      "promptContext": "Single-tap September 22 then double-tap to select; after calendar closes pause and report VoiceOver speech.",
+      "finding": "Reported speech identifies September 22 day button and includes repeated Tuesday. User has not explicitly confirmed calendar closure or speech timing relative to selection; do not infer cursor restoration success/failure or runtime defect."
+    },
+    {
+      "at": "2026-09-25T22:07:02.667541+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M08_voiceover_selection_closure",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Double click closed it.",
+      "promptContext": "Ask whether calendar closed after double-tap or remained visible.",
+      "finding": "User confirms calendar closed on activation. Prior September 22 day-button speech preserved as reported, but exact speech timing and post-close VoiceOver cursor target remain unconfirmed. No DOM-focus or restoration-failure inference."
+    },
+    {
+      "at": "2026-09-25T22:07:58.241465+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M08_voiceover_selection_restoration",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "After I double-tapped, the focus when back to the \"choose date\" button.",
+      "promptContext": "After calendar closure, without further screen interaction ask where VoiceOver focus outline is.",
+      "finding": "User explicitly reports VoiceOver focus returns to Choose date after date selection and closure. This is physical AT cursor restoration evidence, separate from DOM focus. Earlier day-button speech does not establish a restoration failure; exact post-close speech remains ambiguous."
+    },
+    {
+      "at": "2026-09-25T22:09:17.117166+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M08_voiceover_explicit_close_restoration",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Choose Date September 15, 2026. Pop-up button. Dialog pop-up. Double tap to activate the picker.\n\nBecause the \"Choose date\" button is focused.",
+      "promptContext": "Reopen Choose date and activate Close calendar without another date selection; report speech and focus target after closure.",
+      "finding": "User reports VoiceOver focus on Choose date and exact trigger speech after explicit close. Announcement names September 15 despite earlier September 22 selection attempt; committed field date was not previously confirmed in this AT sequence, so no stale-label or lost-value defect established."
+    },
+    {
+      "at": "2026-09-25T22:09:56.436442+00:00",
+      "kind": "physical_assistive_technology_correction",
+      "case": "M08_voiceover_date_consistency",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Oh, that's a mistake. It says Sptember 22",
+      "promptContext": "Ask currently visible Test birth date without changing anything after close announcement reported September 15.",
+      "finding": "User corrects reported date to September 22 and identifies preceding report as a mistake. Visible date matches attempted selection; no confirmed date mismatch or stale trigger-label defect. Preserve original speech transcription as historical with date correction, rather than fabricating a newly heard full utterance."
+    },
+    {
+      "at": "2026-09-25T22:12:07.190866+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M11_voiceover_failed_load",
+      "route": "/deferred/shadow?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Loading calendar....\n\nCalendar could not load. Try again, reload the page, or enter a date directly.",
+      "promptContext": "With VoiceOver on open fresh deferred/shadow?fail=once, hydrate, activate Choose date and pause; report actual speech when load fails.",
+      "finding": "User reports VoiceOver speaks loading status followed by full failure/recovery guidance. This is actual physical spoken output, distinct from earlier visible error and automated DOM checks. Post-error AT cursor target and native editing with VoiceOver remain unreported."
+    },
+    {
+      "at": "2026-09-25T22:12:53.106929+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M11_voiceover_post_error_cursor",
+      "route": "/deferred/shadow?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Focus stays on the \"Choose date\" button.",
+      "promptContext": "Without moving to another element after load error, report current VoiceOver focus target.",
+      "finding": "User confirms actual VoiceOver cursor remains on Choose date after loading failure and spoken error. This is physical AT evidence, not measured DOM focus; native editing with VoiceOver after failure remains unreported."
+    },
+    {
+      "at": "2026-09-25T22:14:16.010519+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M11_voiceover_native_edit_after_failure",
+      "route": "/deferred/shadow?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Sep 20, 2026",
+      "promptContext": "Without reload, use VoiceOver to activate Test birth date, select September 20 in OS calendar, dismiss and report displayed date.",
+      "finding": "User reports September 20 displayed after native date editing with VoiceOver following optional-calendar failure. Exact native-picker speech/gesture sequence and local receipt/announcement not yet reported."
+    },
+    {
+      "at": "2026-09-25T22:16:25.645874+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M11_voiceover_local_submission_after_failure",
+      "route": "/deferred/shadow?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Local receipt: eventDate = September 20, 2026. Not send or saved.",
+      "promptContext": "Activate Submit locally with VoiceOver on same failed-load page after native edit, pause and report actual speech.",
+      "finding": "User reports actual VoiceOver receipt announcement containing September 20, matching native edit after failure. Literal user transcription retained including Not send or saved; do not substitute source text or infer unsupported speech. Submission remains fixture-local."
+    },
+    {
+      "at": "2026-09-25T22:18:23.078823+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M11_voiceover_same_document_retry",
+      "route": "/deferred/shadow?fail=once",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Calendar loading...\n\nCalendar failed. Reload the page or enter a date directly.",
+      "promptContext": "Without reload activate Choose date again with VoiceOver and report actual speech.",
+      "finding": "User reports loading then failure/direct-entry guidance on same-document retry. This is an observed retry recovery limitation with actual VoiceOver announcement; fresh normal document recovery with VoiceOver remains unreported."
+    },
+    {
+      "at": "2026-09-25T22:20:40.982106+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M11_voiceover_fresh_normal_recovery",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Yes.\n\nTuesday September 15, 2026. Description: September 2026. row 4, column 3, button.",
+      "promptContext": "With VoiceOver enabled open fresh normal deferred/shadow, hydrate then activate Choose date; report opening and initial announcement.",
+      "finding": "User confirms library calendar opens in fresh normal document and VoiceOver announces September 15 day button with month/grid context. Distinct from same-document retry failure; not reload recovery or DOM focus evidence."
+    },
+    {
+      "at": "2026-09-25T22:24:26.052391+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M09_voiceover_out_of_range_validation",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Test birthday. Description: Use a test date. Values stay in this page. Values must be greater or equal to January 1, 2026. August 15, 2025. Required.",
+      "promptContext": "Close library calendar, select December 31, 2025 via native field OS picker, dismiss and activate Check validity locally with VoiceOver; report speech.",
+      "finding": "User reports actual field/description/required/minimum-date validation announcement. Spoken date is August 15, 2025 rather than requested December 31; visible/current value requires confirmation. Both dates are before min, but do not infer stale speech, wrong selection, or exact spoken-visible parity."
+    },
+    {
+      "at": "2026-09-25T22:25:09.039767+00:00",
+      "kind": "physical_assistive_technology_clarification",
+      "case": "M09_voiceover_invalid_date",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "I set August 15, 2025.",
+      "promptContext": "Ask currently visible date without changes to clarify spoken August 15 versus requested December 31.",
+      "finding": "User explicitly identifies actual entered date as August 15, 2025. This matches VoiceOver announcement and is below authored min 2026-01-01, so it remains a valid out-of-range test. No date-speech mismatch established; retain requested-versus-actual test input distinction."
+    },
+    {
+      "at": "2026-09-25T22:26:56.536490+00:00",
+      "kind": "physical_manual_clarification",
+      "case": "M09_voiceover_invalid_date",
+      "route": "/deferred/shadow",
+      "verbatim": "For the previous output.\nAug 15, 2025 current displays.",
+      "finding": "User explicitly confirms current visible date is August 15, 2025 and clarifies it was also the entered date for preceding spoken validation."
+    },
+    {
+      "at": "2026-09-25T22:26:56.536490+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M09_voiceover_invalid_submission",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "Test birthday. Description: Use a test date. Values stay in this page. Values must be greater or equal to January 1, 2026. August 15, 2025. Required.",
+      "promptContext": "Activate Submit locally with VoiceOver on unchanged invalid August 15, 2025; report announcement and whether new local receipt appears.",
+      "finding": "User reports same field/description/minimum-date/required announcement on submission. Visible invalid date now explicitly confirmed. Whether a new receipt appeared is still unanswered; do not infer its absence from spoken validation alone."
+    },
+    {
+      "at": "2026-09-25T22:29:15.087962+00:00",
+      "kind": "physical_assistive_technology_report",
+      "case": "M09_voiceover_invalid_submission",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "assistiveTechnologySession": "iphone_voiceover_1",
+      "verbatim": "No new local receipt.",
+      "promptContext": "Confirm whether final invalid submission with VoiceOver produced a new Local receipt.",
+      "finding": "User explicitly confirms no new local receipt after submission of August 15, 2025 with VoiceOver; validation speech and physical blocked submission both observed."
+    }
+  ],
+  "manualCases": "See caseFindings and summary. Only recorded observations are performed; other matrix cells remain unreported. No blanket manual acceptance.",
+  "acceptedDesktopReview": "Unchanged and closed.",
+  "networkDiagnosis": {
+    "executable": "/Users/westbrook/Library/Application Support/revedev-52ae4245/bin/node",
+    "fixturePID": 67044,
+    "firewallRule": "Block incoming connections",
+    "evidence": "socketfilterfw --listapps matches lsof executable; recent firewall log identifies fixture PID and matching Node path with verdict 2. Global firewall enabled; block-all disabled.",
+    "proposedAction": "Temporarily allow incoming connections for this executable, then restore existing block after manual review. Permission required because rule covers all servers using this executable.",
+    "changesApplied": true,
+    "permission": "User authorized Node incoming connections.",
+    "attempt": "sudo -n unblockapp failed: a password is required; no setting changed.",
+    "managementRestriction": "User reports command-line changes prohibited on managed Mac. No CLI modification or workaround will be attempted.",
+    "verification": "Node incoming connections permitted; LAN HTTP 200 with original build 6c36d9cabd4e2680.",
+    "restoration": "Restore original Node block after review through supported Settings UI; CLI is managed and disallowed.",
+    "originalFirewallRule": "Block incoming connections",
+    "currentRule": "Allow incoming connections, verified after user Settings change; restoration pending",
+    "restorationStatus": "pending_user_action",
+    "restorationBlocker": "Computer Use was not approved to use System Settings. Managed Mac also prohibits CLI firewall changes. No bypass attempted."
+  },
+  "localhostRecovery": {
+    "at": "2026-09-25T20:19:23.744851+00:00",
+    "finding": "No listener on port 4516; both localhost and 127.0.0.1 refused connection.",
+    "action": "Started original fixture using detached subprocess with start_new_session=True, stdin DEVNULL and log /private/tmp/date-input-loopback-server.log. PID 725.",
+    "verification": "HTTP 200 and original build marker verified after start. Browser tool inspection rejected by URL security policy; no workaround attempted.",
+    "url": "http://localhost:4516/native/global",
+    "boundary": "Browser usability awaits user confirmation. LAN firewall not changed."
+  },
+  "caseFindings": {
+    "M01/native/global": {
+      "status": "observed",
+      "surface": "Calendar reported on activation",
+      "dismissal": "User reports tapping away, scrolling and blue check mark each close calendar",
+      "selectionDisplay": "September 20, 2026 confirmed after explicit selection prompt",
+      "limits": "Exact OS build/browser version/settings incomplete; DOM blur/focus, IME and speech unreported."
+    },
+    "M02/eager/global": {
+      "status": "observed",
+      "selectionDisplayBeforeHydration": "September 20, 2026",
+      "limits": "Hydration retention pending; date-specific IME and exact device settings incomplete. Pre-upgrade shadow input is not an outer-form successful control."
+    },
+    "M03/eager/global": {
+      "status": "partial",
+      "dateRetention": "Observed September 20, 2026 before and after explicit hydration",
+      "unreported": [
+        "focused-field hydration and caret/segment behavior",
+        "actual focus and assistive-technology behavior"
+      ]
+    },
+    "M02/deferred/global": {
+      "status": "observed",
+      "selectionDisplayBeforeHydration": "September 20, 2026",
+      "limits": "Hydration retention pending; date-specific IME and exact device settings incomplete. Pre-upgrade shadow input is not an outer-form successful control."
+    },
+    "M03/deferred/global": {
+      "status": "partial",
+      "dateRetention": "Observed September 20, 2026 before and after explicit hydration",
+      "unreported": [
+        "focused-field hydration and caret/segment behavior",
+        "actual focus and assistive-technology behavior"
+      ]
+    },
+    "M08/deferred/global": {
+      "status": "partial",
+      "opening": "User reports Choose date opens library calendar, distinct from OS calendar opened by native field",
+      "unreported": [
+        "other cancellation mechanisms",
+        "actual focus restoration",
+        "VoiceOver entry/restoration and spoken output"
+      ],
+      "selection": "User reports calendar closes and September 22, 2026 displays after selection",
+      "explicitClose": "September 22 remains displayed after reopening and Close calendar without another selection"
+    },
+    "M09/deferred/global": {
+      "status": "partial",
+      "validLocalSubmission": "User reports receipt 2026-09-22 matching selected date after hydration",
+      "unreported": [
+        "empty required validation",
+        "out-of-range validation",
+        "invalid submission blocking",
+        "physical native validation presentation"
+      ]
+    },
+    "M10/deferred/global": {
+      "status": "observed",
+      "reportedResetDisplay": "September 15, 2026",
+      "reportedLocalReceiptAfterReset": "2026-09-15",
+      "expectedAuthoredDefault": "2026-09-15",
+      "correction": "Earlier Sep 25 display report corrected by user; not a defect finding.",
+      "limits": "Exact physical configuration details remain incomplete; no assistive-technology inference."
+    },
+    "M05/deferred/global?delay=5000": {
+      "status": "observed",
+      "editing": "User reports edited normally during prompted loading sequence",
+      "unsolicitedCalendar": "User reports library calendar did not appear",
+      "unreported": [
+        "exact DOM focus behavior",
+        "assistive-technology behavior"
+      ],
+      "timingBoundary": "Physical user execution of prompted five-second-delay sequence; no measured human action timestamps.",
+      "selectedDateOnExplicitReopen": "September 20, 2026"
+    },
+    "M07/deferred/global?delay=5000": {
+      "status": "observed",
+      "resetDisplay": "September 15, 2026",
+      "unsolicitedCalendar": "User reports calendar did not open",
+      "unreported": [
+        "DOM focus and assistive-technology behavior"
+      ],
+      "timingBoundary": "Physical user execution of prompted five-second-delay sequence; no measured action timestamps.",
+      "selectedDateOnExplicitReopen": "September 15, 2026"
+    },
+    "M11/deferred/global?fail=once": {
+      "status": "observed_with_limitation",
+      "visibleError": "Calendar could not load. Try again, reload the page, or enter a date directly.",
+      "unreported": [
+        "reload recovery",
+        "error speech and AT behavior"
+      ],
+      "nativeEditingAfterFailure": "User reports September 20, 2026 displayed after OS calendar edit without reload or retry",
+      "localSubmissionAfterFailure": "User reports receipt 2026-09-20 matching displayed date",
+      "sameDocumentRetry": {
+        "outcome": "observed limitation: retry failed",
+        "visibleMessage": "Calendar retry 1 failed Reload the page or enter a date directly.",
+        "regime": "Same document after deliberate initial optional-module failure; no reload"
+      },
+      "freshNormalRecovery": "User confirms library calendar opens after navigation to normal deferred/global, hydration and Choose date"
+    },
+    "M02/deferred/shadow": {
+      "status": "observed",
+      "selectionDisplayBeforeHydration": "September 20, 2026",
+      "actualRegistryMode": "scoped; confirmed by post-hydration diagnostics",
+      "limits": "Pre-upgrade shadow input is not an outer-form successful control; no physical IME or AT claim.",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": false
+      }
+    },
+    "M03/deferred/shadow": {
+      "status": "partial",
+      "dateRetention": "Observed September 20 before and after explicit hydration",
+      "actualRegistryMode": "scoped; confirmed by post-hydration diagnostics",
+      "unreported": [
+        "focused-field hydration and caret/segment behavior",
+        "actual focus and assistive-technology behavior"
+      ],
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": false
+      }
+    },
+    "M08/deferred/shadow": {
+      "status": "partial",
+      "actualRegistryMode": "scoped",
+      "selection": "User reports calendar closes and September 22, 2026 displays after selection",
+      "unreported": [
+        "explicit close without selection and cancellation",
+        "actual focus restoration",
+        "VoiceOver entry/restoration and spoken output"
+      ]
+    },
+    "M09/deferred/shadow": {
+      "status": "partial",
+      "actualRegistryMode": "scoped",
+      "validLocalSubmission": "User reports receipt 2026-09-22 matching displayed selection",
+      "unreported": [
+        "empty required validation",
+        "assistive-technology validation announcement"
+      ],
+      "outOfRangePickerSelection": "User reports December 31, 2025 selectable in OS calendar; committed display/validation pending",
+      "outOfRangeCommittedDisplay": "December 31, 2025 with red border, reported after native picker dismissal",
+      "outOfRangeValidation": {
+        "message": "Value must be greater than or equal to 2026-01-01",
+        "presentation": "OS popup from input and red text above Reset date, user reported"
+      },
+      "invalidSubmitPresentation": "Validation reopened; OS calendar initially reported to reopen, then user clarified it seems one-time. Native picker reopening reproducibility unestablished.",
+      "invalidSubmissionBlocking": "Observed: user confirms only validation text, no new local receipt for out-of-range date",
+      "recoveryAfterInvalidState": "Reset restores September 15 and clears red validation message, user reported"
+    },
+    "M04/deferred/shadow": {
+      "status": "not offered in observed picker",
+      "keyboardOrTextEntry": "User reports no keyboard button or way to type day/month/year",
+      "scope": "Observed iPhone Safari OS date picker, VoiceOver off; no hardware-keyboard test or physical composition evidence"
+    },
+    "M10/deferred/shadow": {
+      "status": "observed",
+      "actualRegistryMode": "scoped",
+      "reportedResetDisplay": "September 15, 2026",
+      "validationRecovery": "Red validation message cleared after reset from out-of-range state",
+      "unreported": [
+        "DOM focus and AT behavior"
+      ],
+      "reportedLocalReceiptAfterReset": "2026-09-15"
+    },
+    "M15/deferred/shadow": {
+      "status": "observed",
+      "regime": "BFCache resume",
+      "dateRetention": "September 20, 2026 retained",
+      "unreported": [
+        "new-document Back restoration",
+        "physical focus/AT restoration"
+      ]
+    },
+    "M16/deferred/shadow": {
+      "status": "observed",
+      "regime": "new-document reload",
+      "preHydrationDisplay": "September 15, 2026",
+      "priorHydratedDisplay": "September 20, 2026",
+      "unreported": [
+        "physical focus/AT restoration"
+      ],
+      "postHydrationDisplay": "September 15, 2026"
+    },
+    "M14/deferred/shadow": {
+      "status": "observed",
+      "regime": "BFCache resume",
+      "dateBeforeHydrationOnReturn": "September 20, 2026",
+      "unreported": [
+        "new-document Back restoration",
+        "physical focus/AT restoration"
+      ],
+      "dateAfterPostReturnHydration": "September 20, 2026"
+    },
+    "M12/native/global": {
+      "status": "not offered",
+      "offer": "User reports no Safari AutoFill suggestion on field activation",
+      "setting": "Use Contact Info enabled",
+      "origin": "http://192.168.1.163:4517",
+      "testBirthdayProfile": "unreported",
+      "acceptance": "unreported; no offer observed"
+    },
+    "M12/deferred/shadow": {
+      "status": "not offered",
+      "phase": "before hydration",
+      "offer": "User reports no Safari AutoFill suggestion",
+      "setting": "Use Contact Info enabled",
+      "origin": "http://192.168.1.163:4517",
+      "testBirthdayProfile": "unreported",
+      "acceptance": "unreported; no offer observed"
+    },
+    "M13/deferred/shadow": {
+      "status": "partial",
+      "hydratedOffer": "not offered, user reported",
+      "setting": "Use Contact Info enabled",
+      "origin": "http://192.168.1.163:4517",
+      "unreported": [
+        "actual autofill acceptance",
+        "autofilled value retention through hydration",
+        "autofilled receipt parity"
+      ],
+      "testBirthdayProfile": "unreported"
+    },
+    "M08/deferred/shadow/VoiceOver": {
+      "status": "partial",
+      "triggerAnnouncement": "Choose Date September 15, 2026. Pop-up button. Dialog pop-up. Double tap to activate the picker.",
+      "unreported": [
+        "exact post-selection close announcement",
+        "other cancellation mechanisms",
+        "DOM focus behavior"
+      ],
+      "calendarEntryAnnouncement": "Tuesday September 15, 2026. Description, September 2026, row 4, column 3, button.",
+      "selectionAttemptAnnouncement": "Tuesday, Tuesday September 22, 2026. Description September 2026. row 5 column 3, button.",
+      "selectionRestorationStatus": "Observed: user reports VoiceOver focus returns to Choose date",
+      "selectionCalendarClosure": "User confirms activation closed calendar",
+      "selectionSpeechBoundary": "Day-button announcement reported; timing relative to close is not established",
+      "explicitCloseRestoration": "User confirms VoiceOver focus returns to Choose date",
+      "explicitCloseAnnouncement": "Choose Date September 15, 2026. Pop-up button. Dialog pop-up. Double tap to activate the picker.",
+      "dateConsistency": "Earlier September 15 report corrected to September 22 by user; no confirmed mismatch",
+      "committedDateAfterSelection": "September 22, user confirmed by correction",
+      "explicitCloseAnnouncementCorrection": "Date corrected by user to September 22; original full transcription retained as historical"
+    },
+    "M11/deferred/shadow/VoiceOver": {
+      "status": "observed_with_limitation",
+      "loadingAnnouncement": "Loading calendar....",
+      "failureAnnouncement": "Calendar could not load. Try again, reload the page, or enter a date directly.",
+      "unreported": [
+        "reload recovery with VoiceOver"
+      ],
+      "postErrorVoiceOverCursor": "Choose date button, user reports focus stays there",
+      "nativeEditingAfterFailure": "User reports September 20 displayed after OS-calendar edit with VoiceOver enabled and no reload",
+      "localSubmissionAnnouncement": "Local receipt: eventDate = September 20, 2026. Not send or saved.",
+      "receiptDateFromSpokenReport": "September 20, 2026",
+      "sameDocumentRetryAnnouncement": "Calendar loading...\n\nCalendar failed. Reload the page or enter a date directly.",
+      "sameDocumentRetryOutcome": "Spoken failure reported; no successful retry claimed",
+      "freshNormalRecovery": "User confirms calendar opens with VoiceOver enabled",
+      "freshNormalEntryAnnouncement": "Tuesday September 15, 2026. Description: September 2026. row 4, column 3, button."
+    },
+    "M09/deferred/shadow/VoiceOver": {
+      "status": "observed",
+      "validationAnnouncement": "Test birthday. Description: Use a test date. Values stay in this page. Values must be greater or equal to January 1, 2026. August 15, 2025. Required.",
+      "spokenDate": "August 15, 2025",
+      "requestedTestDate": "December 31, 2025",
+      "unreported": [
+        "empty-required validation with VoiceOver",
+        "DOM focus behavior"
+      ],
+      "actualEnteredDate": "August 15, 2025",
+      "dateConsistency": "User confirms entered date matches spoken August 15; no mismatch",
+      "visibleDate": "August 15, 2025, explicitly user-confirmed",
+      "invalidSubmissionAnnouncement": "Test birthday. Description: Use a test date. Values stay in this page. Values must be greater or equal to January 1, 2026. August 15, 2025. Required.",
+      "invalidSubmissionBlocking": "User explicitly reports no new local receipt"
+    }
+  },
+  "configuration": {
+    "osVersion": "iOS 27.0",
+    "osBuild": "unreported; user reports not displayed after checking iOS Version",
+    "browser": "Safari",
+    "browserVersion": "unreported",
+    "profile": "regular non-private",
+    "voiceOver": "Off during first touch-only segment, explicitly confirmed by user; on for separate iphone_voiceover_1 segment; post-session setting unreported.",
+    "deferredShadowRegistry": {
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": false
+      },
+      "source": "User transcribed physical fixture diagnostics"
+    },
+    "nativePickerControl": "OS calendar Reset restores displayed September 15, 2026 in this observed sequence; no empty-field result.",
+    "safariContactAutoFill": "Use Contact Info enabled, user confirmed"
+  },
+  "historyExperiments": {
+    "M15/deferred/shadow/1": {
+      "status": "observed",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "actualRegistryModeBefore": "scoped",
+      "hydrationBefore": "hydrated per walkthrough",
+      "requestedEditedDate": "2026-09-20",
+      "baseline": {
+        "documentId": "1790371223314-0.924820749829057",
+        "timeOrigin": 1790371223285,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 51
+          }
+        ]
+      },
+      "navigationActionPending": "Fixture Leave page link then Safari Back; no reload or fresh fixture link",
+      "returned": {
+        "documentId": "1790371223314-0.924820749829057",
+        "timeOrigin": 1790371223285,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 51
+          },
+          {
+            "persisted": true,
+            "at": 1275516
+          }
+        ]
+      },
+      "returnedDisplay": "September 20, 2026",
+      "classification": "BFCache resume",
+      "evidence": "Same documentId and timeOrigin; added pageshow persisted true",
+      "limits": "Does not establish reload/new-document Back or AT/focus restoration"
+    },
+    "M16/deferred/shadow/1": {
+      "status": "observed",
+      "baseline": {
+        "documentId": "1790371223314-0.924820749829057",
+        "timeOrigin": 1790371223285,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 51
+          },
+          {
+            "persisted": true,
+            "at": 1275516
+          }
+        ]
+      },
+      "baselineDisplay": "September 20, 2026",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "sourceState": "BFCache-resumed hydrated native-scoped document",
+      "afterReloadBeforeHydration": {
+        "documentId": "1790372602243-0.9182928594743996",
+        "timeOrigin": 1790372602192,
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 66
+          }
+        ]
+      },
+      "displayBeforeHydration": "September 15, 2026",
+      "classification": "New-document reload",
+      "limits": "Single physical Safari sequence; no new-document Back or focus/AT evidence",
+      "displayAfterHydration": "September 15, 2026",
+      "outcome": "Authored default before and after hydration; prior September 20 not restored in observed reload"
+    },
+    "M14/deferred/shadow/1": {
+      "status": "observed",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "hydrationBefore": "unhydrated per walkthrough",
+      "requestedEditedDate": "2026-09-20",
+      "baseline": {
+        "documentId": "1790372760784-0.8000691548605575",
+        "timeOrigin": 1790372760695,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 113
+          }
+        ]
+      },
+      "navigationActionPending": "Fixture Leave page link then Safari Back; no hydration/reset/reload",
+      "returned": {
+        "documentId": "1790372760784-0.8000691548605575",
+        "timeOrigin": 1790372760695,
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 113
+          },
+          {
+            "persisted": true,
+            "at": 79846
+          }
+        ]
+      },
+      "returnedDisplayBeforeHydration": "September 20, 2026",
+      "classification": "BFCache resume",
+      "evidence": "Unchanged document identity/time origin and added persisted true pageshow",
+      "limits": "No new-document Back or physical focus/AT evidence; pre-upgrade shadow input not an outer-form successful control",
+      "displayAfterReturnHydration": "September 20, 2026"
+    }
+  },
+  "assistiveTechnologySessions": {
+    "iphone_voiceover_1": {
+      "status": "bounded_session_complete",
+      "startedAt": "2026-09-25T21:58:58.396633+00:00",
+      "device": "iPhone 12 Pro, previously user-reported",
+      "osVersion": "iOS 27.0",
+      "osBuild": "unreported; not displayed when user checked",
+      "browser": "Safari, regular non-private tab",
+      "voiceOver": "enabled per readiness response to enablement instruction",
+      "voiceOverVersion": "bundled with reported iOS; no independent version reported",
+      "inputMethod": "touch gestures requested; external keyboard configuration unreported",
+      "otherSettings": "unreported",
+      "route": "/deferred/shadow",
+      "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+      "observations": [
+        {
+          "at": "2026-09-25T22:00:22.297027+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M08_voiceover_trigger",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Choose Date September 15, 2026. Pop-up button. Dialog pop-up. Double tap to activate the picker.",
+          "promptContext": "Single-tap Choose date without activation; report exact VoiceOver announcement.",
+          "finding": "User reports actual VoiceOver trigger speech including current date, popup-button/dialog semantics and activation instruction. Calendar entry, selection, cancellation and cursor restoration remain unreported; no DOM-focus inference."
+        },
+        {
+          "at": "2026-09-25T22:02:53.153092+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M08_voiceover_calendar_entry",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Tuesday September 15, 2026. Description, September 2026, row 4, column 3, button.",
+          "promptContext": "Double-tap selected Choose date then pause; report initial VoiceOver speech and element receiving cursor.",
+          "finding": "User reports initial VoiceOver announcement identifying September 15 day button, month description and row/column. Actual speech establishes day-button announcement on entry; DOM focus and independent visual cursor location not measured."
+        },
+        {
+          "at": "2026-09-25T22:05:22.938794+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M08_voiceover_selection_attempt",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Tuesday, Tuesday September 22, 2026. Description September 2026. row 5 column 3, button.",
+          "promptContext": "Single-tap September 22 then double-tap to select; after calendar closes pause and report VoiceOver speech.",
+          "finding": "Reported speech identifies September 22 day button and includes repeated Tuesday. User has not explicitly confirmed calendar closure or speech timing relative to selection; do not infer cursor restoration success/failure or runtime defect."
+        },
+        {
+          "at": "2026-09-25T22:07:02.667541+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M08_voiceover_selection_closure",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Double click closed it.",
+          "promptContext": "Ask whether calendar closed after double-tap or remained visible.",
+          "finding": "User confirms calendar closed on activation. Prior September 22 day-button speech preserved as reported, but exact speech timing and post-close VoiceOver cursor target remain unconfirmed. No DOM-focus or restoration-failure inference."
+        },
+        {
+          "at": "2026-09-25T22:07:58.241465+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M08_voiceover_selection_restoration",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "After I double-tapped, the focus when back to the \"choose date\" button.",
+          "promptContext": "After calendar closure, without further screen interaction ask where VoiceOver focus outline is.",
+          "finding": "User explicitly reports VoiceOver focus returns to Choose date after date selection and closure. This is physical AT cursor restoration evidence, separate from DOM focus. Earlier day-button speech does not establish a restoration failure; exact post-close speech remains ambiguous."
+        },
+        {
+          "at": "2026-09-25T22:09:17.117166+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M08_voiceover_explicit_close_restoration",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Choose Date September 15, 2026. Pop-up button. Dialog pop-up. Double tap to activate the picker.\n\nBecause the \"Choose date\" button is focused.",
+          "promptContext": "Reopen Choose date and activate Close calendar without another date selection; report speech and focus target after closure.",
+          "finding": "User reports VoiceOver focus on Choose date and exact trigger speech after explicit close. Announcement names September 15 despite earlier September 22 selection attempt; committed field date was not previously confirmed in this AT sequence, so no stale-label or lost-value defect established."
+        },
+        {
+          "at": "2026-09-25T22:09:56.436442+00:00",
+          "kind": "physical_assistive_technology_correction",
+          "case": "M08_voiceover_date_consistency",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Oh, that's a mistake. It says Sptember 22",
+          "promptContext": "Ask currently visible Test birth date without changing anything after close announcement reported September 15.",
+          "finding": "User corrects reported date to September 22 and identifies preceding report as a mistake. Visible date matches attempted selection; no confirmed date mismatch or stale trigger-label defect. Preserve original speech transcription as historical with date correction, rather than fabricating a newly heard full utterance."
+        },
+        {
+          "at": "2026-09-25T22:12:07.190866+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M11_voiceover_failed_load",
+          "route": "/deferred/shadow?fail=once",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Loading calendar....\n\nCalendar could not load. Try again, reload the page, or enter a date directly.",
+          "promptContext": "With VoiceOver on open fresh deferred/shadow?fail=once, hydrate, activate Choose date and pause; report actual speech when load fails.",
+          "finding": "User reports VoiceOver speaks loading status followed by full failure/recovery guidance. This is actual physical spoken output, distinct from earlier visible error and automated DOM checks. Post-error AT cursor target and native editing with VoiceOver remain unreported."
+        },
+        {
+          "at": "2026-09-25T22:12:53.106929+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M11_voiceover_post_error_cursor",
+          "route": "/deferred/shadow?fail=once",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Focus stays on the \"Choose date\" button.",
+          "promptContext": "Without moving to another element after load error, report current VoiceOver focus target.",
+          "finding": "User confirms actual VoiceOver cursor remains on Choose date after loading failure and spoken error. This is physical AT evidence, not measured DOM focus; native editing with VoiceOver after failure remains unreported."
+        },
+        {
+          "at": "2026-09-25T22:14:16.010519+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M11_voiceover_native_edit_after_failure",
+          "route": "/deferred/shadow?fail=once",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Sep 20, 2026",
+          "promptContext": "Without reload, use VoiceOver to activate Test birth date, select September 20 in OS calendar, dismiss and report displayed date.",
+          "finding": "User reports September 20 displayed after native date editing with VoiceOver following optional-calendar failure. Exact native-picker speech/gesture sequence and local receipt/announcement not yet reported."
+        },
+        {
+          "at": "2026-09-25T22:16:25.645874+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M11_voiceover_local_submission_after_failure",
+          "route": "/deferred/shadow?fail=once",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Local receipt: eventDate = September 20, 2026. Not send or saved.",
+          "promptContext": "Activate Submit locally with VoiceOver on same failed-load page after native edit, pause and report actual speech.",
+          "finding": "User reports actual VoiceOver receipt announcement containing September 20, matching native edit after failure. Literal user transcription retained including Not send or saved; do not substitute source text or infer unsupported speech. Submission remains fixture-local."
+        },
+        {
+          "at": "2026-09-25T22:18:23.078823+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M11_voiceover_same_document_retry",
+          "route": "/deferred/shadow?fail=once",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Calendar loading...\n\nCalendar failed. Reload the page or enter a date directly.",
+          "promptContext": "Without reload activate Choose date again with VoiceOver and report actual speech.",
+          "finding": "User reports loading then failure/direct-entry guidance on same-document retry. This is an observed retry recovery limitation with actual VoiceOver announcement; fresh normal document recovery with VoiceOver remains unreported."
+        },
+        {
+          "at": "2026-09-25T22:20:40.982106+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M11_voiceover_fresh_normal_recovery",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Yes.\n\nTuesday September 15, 2026. Description: September 2026. row 4, column 3, button.",
+          "promptContext": "With VoiceOver enabled open fresh normal deferred/shadow, hydrate then activate Choose date; report opening and initial announcement.",
+          "finding": "User confirms library calendar opens in fresh normal document and VoiceOver announces September 15 day button with month/grid context. Distinct from same-document retry failure; not reload recovery or DOM focus evidence."
+        },
+        {
+          "at": "2026-09-25T22:24:26.052391+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M09_voiceover_out_of_range_validation",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Test birthday. Description: Use a test date. Values stay in this page. Values must be greater or equal to January 1, 2026. August 15, 2025. Required.",
+          "promptContext": "Close library calendar, select December 31, 2025 via native field OS picker, dismiss and activate Check validity locally with VoiceOver; report speech.",
+          "finding": "User reports actual field/description/required/minimum-date validation announcement. Spoken date is August 15, 2025 rather than requested December 31; visible/current value requires confirmation. Both dates are before min, but do not infer stale speech, wrong selection, or exact spoken-visible parity."
+        },
+        {
+          "at": "2026-09-25T22:25:09.039767+00:00",
+          "kind": "physical_assistive_technology_clarification",
+          "case": "M09_voiceover_invalid_date",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "I set August 15, 2025.",
+          "promptContext": "Ask currently visible date without changes to clarify spoken August 15 versus requested December 31.",
+          "finding": "User explicitly identifies actual entered date as August 15, 2025. This matches VoiceOver announcement and is below authored min 2026-01-01, so it remains a valid out-of-range test. No date-speech mismatch established; retain requested-versus-actual test input distinction."
+        },
+        {
+          "at": "2026-09-25T22:26:56.536490+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M09_voiceover_invalid_submission",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "Test birthday. Description: Use a test date. Values stay in this page. Values must be greater or equal to January 1, 2026. August 15, 2025. Required.",
+          "promptContext": "Activate Submit locally with VoiceOver on unchanged invalid August 15, 2025; report announcement and whether new local receipt appears.",
+          "finding": "User reports same field/description/minimum-date/required announcement on submission. Visible invalid date now explicitly confirmed. Whether a new receipt appeared is still unanswered; do not infer its absence from spoken validation alone."
+        },
+        {
+          "at": "2026-09-25T22:29:15.087962+00:00",
+          "kind": "physical_assistive_technology_report",
+          "case": "M09_voiceover_invalid_submission",
+          "route": "/deferred/shadow",
+          "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+          "assistiveTechnologySession": "iphone_voiceover_1",
+          "verbatim": "No new local receipt.",
+          "promptContext": "Confirm whether final invalid submission with VoiceOver produced a new Local receipt.",
+          "finding": "User explicitly confirms no new local receipt after submission of August 15, 2025 with VoiceOver; validation speech and physical blocked submission both observed."
+        }
+      ],
+      "endedAt": "2026-09-25T22:29:15.087962+00:00",
+      "remainingBoundary": "Other VoiceOver settings and cases outside this session remain unreported; user has not reported disabling VoiceOver."
+    }
+  },
+  "sessionCompletionPlan": {
+    "recordedAt": "2026-09-25T22:17:43.138644+00:00",
+    "reason": "User asked how many tests remain; establish an explicit bounded endpoint for this iPhone session. This does not mark the full matrix complete.",
+    "remainingChecks": [],
+    "afterChecks": "Consolidate physical findings and configuration limits, preserve unperformed cases as unreported, prepare findings commit and owner handoff. Coordinate restoration of temporary Node firewall exception through supported UI.",
+    "broaderUnreportedExamples": [
+      "loading cancellation via available device dismissal mechanism",
+      "eager scoped and remaining cross-arm/delivery comparisons",
+      "empty required validation",
+      "new-document Back restoration",
+      "actual autofill acceptance/retention (no offer observed)",
+      "text IME composition (not offered in observed picker)",
+      "remaining precise device/AT settings and other physical devices"
+    ],
+    "boundary": "These are three remaining scenario checks, not three individual taps; follow-up clarification may be required for ambiguous outcomes. Full matrix ownership remains open.",
+    "completedChecks": [
+      "VoiceOver same-document retry announcement/outcome",
+      "Fresh normal-loading recovery with VoiceOver enabled",
+      "Out-of-range validation and blocked submission with VoiceOver enabled"
+    ],
+    "status": "bounded_session_complete; full matrix not complete"
+  },
+  "endedAt": "2026-09-25T22:29:15.087962+00:00",
+  "recommendation": {
+    "runtime": "No runtime fix promoted by this session. Retain native editing and existing pre-upgrade form boundary.",
+    "retry": "Document observed same-document retry limitation and functioning native fallback/fresh normal recovery; do not promise successful retry or infer cache internals.",
+    "history": "Document physical Safari BFCache retention versus reload default, separately from automated engine outcomes. New-document Back remains unreported; no generic persistence recommendation.",
+    "coverage": "Retain unperformed cells and missing environment settings. Do not transfer this evidence to a different build or reopen unchanged accepted desktop Phase 6 review."
+  }
+}

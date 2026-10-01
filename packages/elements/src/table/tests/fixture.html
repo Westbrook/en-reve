@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authored native table</title>
+<style>body { padding: 24px; font-family: system-ui; } en-table { max-inline-size: 100%; } </style>
+<button id="before">Before table</button>
+<en-table label="Project assets">
+	<table>
+		<caption>Available assets</caption>
+		<thead><tr><th scope="col"><button type="button">Sort by name</button></th><th scope="col">Type</th></tr></thead>
+		<tbody><tr><th scope="row">Cover</th><td>Image</td></tr></tbody>
+	</table>
+</en-table>
+<button id="after">After table</button>
+<script type="module" src="./fixture.ts"></script>
+</html>

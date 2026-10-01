@@ -1,0 +1,54 @@
+import {html} from 'lit';
+import {AsyncDirective,directive} from 'lit/async-directive.js';
+import {ref} from 'lit/directives/ref.js';
+import {guard} from 'lit/directives/guard.js';
+import type {EnRichTextEditor,RichDocument} from '@en-reve/elements/rich-text-editor.js';
+import type {EnTokenEditor} from '@en-reve/elements/token-editor.js';
+import type {EditorExtension} from '@en-reve/elements/editor-extensions.js';
+
+// These same objects work with either backend and with a composer-owned editor.
+const references:EditorExtension={id:'references',trigger:'@',label:'Project references',provide:({query,signal})=>signal.aborted?[]:['Cover study','Brand guide','Alex Kim'].filter(label=>label.toLowerCase().includes(query.toLowerCase())).map(label=>({id:label,label,insert:[{kind:'token',id:crypto.randomUUID(),type:'reference',text:`@${label}`,label,data:{project:label}}]}))};
+const tools:EditorExtension={id:'tools',trigger:'/',label:'Tools',provide:({query})=>[
+ {id:'review',label:'Review tool',insert:[{kind:'token' as const,id:crypto.randomUUID(),type:'tool',text:'/review',label:'Review',data:{tool:'review'}}]},
+ {id:'outline',label:'Outline action',action:'outline',data:{tool:'outline'}},
+].filter(choice=>choice.label.toLowerCase().includes(query.toLowerCase()))};
+const initial:RichDocument={type:'en-rich-text',version:1,doc:{type:'doc',content:[
+ {type:'heading',attrs:{level:2},content:[{type:'text',text:'A new direction'}]},
+ {type:'paragraph',content:[{type:'text',text:'Select some words to format this project brief. '},{type:'text',text:'Make it yours.',marks:[{type:'strong'}]}]},
+ {type:'paragraph',content:[{type:'text',text:'Type @ for references or / for tools. The application owns those choices.'}]},
+]}};
+class RichTextDemo extends AsyncDirective {
+ private key:unknown;private root?:HTMLElement;private status='Nothing is sent outside this page.';
+ private editors=new Map<HTMLElement,()=>void>();
+ private connect=(element:Element|undefined)=>{this.root=element as HTMLElement|undefined;if(!element)return;void Promise.all(['en-rich-text-editor','en-token-editor'].map(name=>customElements.whenDefined(name))).then(()=>{if(!this.isConnected)return;this.setup();});};
+ private setup(){for(const editor of this.root?.querySelectorAll<EnRichTextEditor|EnTokenEditor>('en-rich-text-editor,en-token-editor')??[]){if(this.editors.has(editor))continue;const dispose=[...(editor.id==='rich-brief'?[]:[editor.registerExtension(references)]),editor.registerExtension(tools),...['reference','tool'].map(type=>editor.registerToken(type,token=>{const span=document.createElement('span');span.textContent=token.text;return span;},{extension:type==='reference'?'references':'tools',deleteBehavior:'edit'}))];this.editors.set(editor,()=>dispose.forEach(fn=>fn()));}}
+ protected override disconnected(){for(const dispose of this.editors.values())dispose();this.editors.clear();}
+ protected override reconnected(){this.setup();}
+ private refresh(){if(this.isConnected)this.setValue(this.render(this.key));}
+ private action=(event:CustomEvent)=>{if(event.detail.action==='send'){event.preventDefault();this.status=`Snapshot ready: ${event.detail.data.value}. Rich content is included in the send snapshot.`;}else{this.status=`Application action: ${event.detail.action}. No network request was made.`;}this.refresh();};
+ override render(key?:unknown){this.key=key;return html`<section data-rich-text-demo ${ref(this.connect)} @en-action=${this.action}>
+ <style>
+ [data-rich-text-demo]{display:grid;gap:var(--en-space-panel);min-inline-size:0;}
+ [data-rich-text-demo] .editor-example{display:grid;gap:var(--en-space-3);min-inline-size:0;}
+ [data-rich-text-demo] h3,[data-rich-text-demo] p{margin:0;}
+ [data-rich-text-demo] .choices{display:flex;flex-wrap:wrap;gap:var(--en-space-2);align-items:end;}
+ [data-rich-text-demo] en-rich-text-editor{--en-editor-max-size:24rem;}
+ </style>
+ <div class="editor-example"><h3>Project brief</h3><p>Use the persistent toolbar, or select text for contextual formatting. Alt+F10 enters a toolbar; Escape returns to your selection. Enter makes a paragraph; Shift+Enter makes a line break. Triple-click the content to select the whole draft.</p>
+ <en-editor-toolbar id="brief-toolbar" for="rich-brief" label="Project formatting"></en-editor-toolbar>
+ <en-editor-trigger for="rich-brief" .extension=${references}></en-editor-trigger>
+ <!-- Seed once; status updates must not replace the user's document or undo history. -->
+ <en-rich-text-editor id="rich-brief" description="Explain the goal and intended audience. Use @ to reference project material." label="Project brief editor" .document=${guard([],()=>initial)}></en-rich-text-editor>
+ <en-editor-toolbar id="selection-toolbar" for="rich-brief" mode="contextual" label="Selection formatting" .commands=${['bold','italic','link','unlink']}></en-editor-toolbar>
+ <div class="choices"><en-button variant="secondary" @click=${()=>{for(const editor of this.root?.querySelectorAll<EnRichTextEditor|EnTokenEditor>('en-rich-text-editor,en-token-editor')??[])editor.value=Array.from({length:40},(_,i)=>`Paragraph ${i+1}: A longer project draft to review scrolling, selection and editing. Type @ or / here.`).join('\n\n');}}>Load long drafts</en-button><en-select label="Contextual placement" value="auto" @en-change=${(event:CustomEvent)=>{const bar=this.root?.querySelector<HTMLElement & {placement:string}>('#selection-toolbar');if(bar)bar.placement=event.detail.proposed;}}><en-select-option value="auto">Auto (dock on mobile)</en-select-option><en-select-option value="floating">Floating by selection</en-select-option><en-select-option value="docked">Dock at editor bottom</en-select-option></en-select><en-button variant="secondary" @click=${()=>{const editor=this.root?.querySelector<EnRichTextEditor>('#rich-brief');if(editor)editor.document=initial;}}>Reset brief</en-button></div>
+ </div>
+ <div class="editor-example"><h3>Rich reply in the composer</h3><p>The composer submits a plain-text fallback and an immutable rich document. Both editors below use exactly the same reference and tool providers.</p>
+ <en-editor-toolbar for="rich-reply" label="Reply formatting" .commands=${['bold','italic','bullet-list','undo','redo']}></en-editor-toolbar>
+ <en-chat-composer label="Rich reply composer"><en-rich-text-editor slot="editor" id="rich-reply" label="Rich reply"><span slot="description">Keep the reply focused on the <strong>next step</strong>.</span></en-rich-text-editor></en-chat-composer>
+ <en-token-editor id="plain-reply" label="Token editor comparison"><span slot="description">Keep the reply focused on the <strong>next step</strong>.</span></en-token-editor>
+ </div><p role="status" aria-label="Editor result">${this.status}</p>
+ <details><summary>Review and current boundaries</summary><ul><li>Select forward/backward across lines or paragraphs, apply formatting, edit a link, then undo and redo. Try all inspired themes above.</li><li>Type @ or /, filter, use Up/Down and Enter, then undo. Click a token to reopen its picker. Backspace after a chip or Delete before it restores editable trigger text and suggestions; Backspace again removes the trigger. Undo restores the chip.</li><li>Try keyboard, phone-width docking, zoom and scrolling with a selection. Opening a contextual toolbar does not steal focus.</li><li>Copy and paste text with a reference or tool between these editors. Compatible structured clipboard content retains registered tokens; rich formatting is retained by the rich editors. The token editor uses readable text for unsupported formatting. Undo the paste as one edit.</li><li>Load long drafts, scroll within an editor, place the caret midway through a line and type @ or /. Suggestions align with the leading edge of the trigger while you type. Wrapped queries keep that horizontal alignment, with vertical placement adjusted to leave the active line clear. Scrolling the trigger out of view uses the visible caret instead; resizing and RTL retain viewport clamping. Escape preserves the typed trigger.</li><li>Clipboard imports are validated; document APIs preserve only the supported schema. There is no upload, remote tool execution or collaborative transport.</li><li>Automated DOM/keyboard tests do not replace physical iOS/Android selection, IME or VoiceOver review.</li></ul></details>
+ </section>`;}
+}
+const richDemo=directive(RichTextDemo);
+export function richTextExample(key?:unknown){return html`${richDemo(key)}`;}

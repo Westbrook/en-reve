@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Tab focus paint order</title>
+    <style>
+      body { margin: 64px; background: white; }
+      #before { margin-block-end: 24px; }
+      en-tabs {
+        display: block;
+        width: 400px;
+        --en-space-1: 2px;
+        --en-focus-width: 4px;
+        --en-focus-offset: 2px;
+        --en-color-focus: #ff00ff;
+        --en-color-surface: #202830;
+        --en-color-selected: #304050;
+        --en-color-text: white;
+        --en-duration-focus-enter: 0ms;
+        --en-duration-focus-exit: 0ms;
+      }
+      en-tab::part(base) { inline-size: 100px; }
+      en-tabs::part(panels) { background: #202830; min-block-size: 80px; }
+    </style>
+  </head>
+  <body>
+    <button id="before">Before tabs</button>
+    <en-tabs label="Focus paint review" value="one">
+      <en-tab slot="tab" value="one">One</en-tab>
+      <en-tab slot="tab" value="two">Two</en-tab>
+      <en-tab slot="tab" value="three">Three</en-tab>
+      <en-tab-panel slot="panel" value="one">First panel</en-tab-panel>
+      <en-tab-panel slot="panel" value="two">Second panel</en-tab-panel>
+      <en-tab-panel slot="panel" value="three">Third panel</en-tab-panel>
+    </en-tabs>
+    <button id="after">After tabs</button>
+    <script type="module">
+      import { EnTabs } from '../../tabs/tabs.ts';
+      import { EnTab } from '../../tab/tab.ts';
+      import { EnTabPanel } from '../../tab-panel/tab-panel.ts';
+      customElements.define('en-tab', EnTab);
+      customElements.define('en-tab-panel', EnTabPanel);
+      customElements.define('en-tabs', EnTabs);
+      const params = new URLSearchParams(location.search);
+      const tabs = document.querySelector('en-tabs');
+      tabs.dir = params.get('dir') ?? 'ltr';
+      if (params.get('contour') === 'holotable') {
+        tabs.style.setProperty('--en-focus-width', '2px');
+        tabs.style.setProperty('--en-focus-offset', '4px');
+      }
+      if (params.get('layout') === 'vertical') tabs.orientation = 'vertical';
+      if (params.get('layout') === 'wrapped') tabs.style.width = '204px';
+      await Promise.all([...document.querySelectorAll('en-tabs, en-tab, en-tab-panel')].map(element => element.updateComplete));
+      document.documentElement.dataset.ready = 'true';
+    </script>
+  </body>
+</html>

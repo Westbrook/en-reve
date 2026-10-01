@@ -1,0 +1,14 @@
+const phase6Base=process.env.PHASE6_BASE??'artifacts/scoped-registry-phase-6';
+import {chromium,firefox,webkit,expect} from '@playwright/test';
+import {writeFile} from 'node:fs/promises';
+import assert from 'node:assert/strict';
+import {serve} from '../scoped-hydration/production/server.mjs';
+import {exclusiveBrowserWork} from '../../showcases/performance/src/lock.mjs';
+const results=[];
+await exclusiveBrowserWork(async()=>{const server=await serve('candidate/eager',0,phase6Base);try{for(const [name,type]of Object.entries({chromium,firefox,webkit})){const browser=await type.launch();try{for(const mode of ['global','scoped']){const page=await browser.newPage({ignoreHTTPSErrors:true}),errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(server.url+'/?mode='+mode);await page.waitForFunction(()=>!!window.study);
+await page.evaluate(async()=>{study.picker.remove();const p=study.scope.createElement('en-date-picker');p.selection='range';p.defaultRangeValue={start:'2026-09-10',end:'2026-09-15'};p.startName='from';p.endName='to';p.today='2026-09-22';p.required=true;p.label='Trip dates';document.querySelector('#fields').append(p);window.rangePicker=p;await p.updateComplete;});
+assert.deepEqual(await page.evaluate(()=>Object.fromEntries(new FormData(document.querySelector('form')))),{from:'2026-09-10',to:'2026-09-15'});
+await page.evaluate(()=>rangePicker.showPicker());await page.locator('en-calendar button[data-date="2026-09-20"]').click();await page.locator('en-calendar button[data-date="2026-09-22"]').click();await page.getByRole('button',{name:'Apply range',exact:true}).click();assert.deepEqual(await page.evaluate(()=>Object.fromEntries(new FormData(document.querySelector('form')))),{from:'2026-09-20',to:'2026-09-22'});
+await page.evaluate(()=>rangePicker.showPicker());await page.locator('en-calendar button[data-date="2026-09-25"]').click();await page.keyboard.press('Escape');assert.deepEqual(await page.evaluate(()=>rangePicker.rangeValue),{start:'2026-09-20',end:'2026-09-22'});
+await page.evaluate(()=>document.querySelector('form').reset());assert.deepEqual(await page.evaluate(()=>rangePicker.rangeValue),{start:'2026-09-10',end:'2026-09-15'});
+assert(await page.evaluate(()=>{try{rangePicker.calendarLoading='deferred';return false;}catch{return true;}}));assert.deepEqual(errors,[]);results.push({name,mode,status:'pass'});await page.close();}}finally{await browser.close();}}}finally{await server.close();}});await writeFile((phase6Base+'/range-regression.json'),JSON.stringify({results},null,2));

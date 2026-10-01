@@ -1,0 +1,11 @@
+import {readFile,writeFile} from 'node:fs/promises';import {createHash} from 'node:crypto';import assert from 'node:assert/strict';import {resolve} from 'node:path';
+const base=resolve('artifacts/scoped-registry-phase-5-closeout/production'),sha=b=>createHash('sha256').update(b).digest('hex');
+const manifest=JSON.parse(await readFile(resolve(base,'campaign/manifest.json'))),samples=(await readFile(resolve(base,'campaign/samples.jsonl'),'utf8')).trim().split('\n').map(JSON.parse),summary=JSON.parse(await readFile(resolve(base,'campaign/summary.json')));
+assert.equal(summary.failed,0);assert.equal(summary.timing,540);assert.equal(summary.retention,15);assert.equal(samples.length,555);
+const key=j=>[j.kind,j.policy,j.browser,j.profile,j.input,j.block].join('|');assert.equal(new Set(samples.map(key)).size,555);assert.deepEqual(samples.map(key).sort(),manifest.jobs.map(key).sort());
+for(const s of samples){assert.equal(s.status,'ok');assert.deepEqual(s.errors,[]);assert.deepEqual(s.failures,[]);}
+for(const h of manifest.harness)assert.equal(sha(await readFile(resolve('probes/scoped-hydration/production',h.name))),h.sha256,h.name);
+for(const receipt of manifest.receipts){for(const a of receipt.assets)assert.equal(sha(await readFile(resolve(base,receipt.policy,'site',a.path))),a.sha256);for(const p of receipt.packages)assert.equal(sha(await readFile(p.path)),p.sha256);}
+const stage=(await readFile(resolve(base,'stage.txt'),'utf8')).trim();for(const name of ['boot.mjs','phase5.mjs','island.mjs','settle-before-focus.mjs'])assert.equal(sha(await readFile(resolve(stage,'study',name))),sha(await readFile(resolve('probes/scoped-hydration/production',name))),name);
+const reference=JSON.parse(await readFile('showcases/performance/baselines/scoped-registry-phase-5-v1/eager/receipt.json'));assert.deepEqual(manifest.receipts.find(r=>r.policy==='eager').assets,reference.assets);
+await writeFile(resolve(base,'capture-verification.json'),JSON.stringify({at:new Date().toISOString(),passed:true,timing:540,retention:15,samplesPerConfiguration:30,retentionPerPolicy:5,exactJobs:true,assetsVerified:true,runtimePackagesVerified:true,applicationSourcesVerified:true,phase4BaselineUnchanged:true,firstHydrationPolicy:'two frames, abort-aware; no repeat wait'},null,2)+'\n');console.log('Verified final 540 timings +15 retention runs');

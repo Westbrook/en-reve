@@ -1,0 +1,68 @@
+{
+  "startedAt": "2026-09-20T19:23:54.864Z",
+  "campaigns": [
+    {
+      "suite": "load",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold,warm",
+      "id": "pass2-load-matrix-v1",
+      "startedAt": "2026-09-20T19:23:54.867Z",
+      "finishedAt": "2026-09-20T19:40:55.540Z",
+      "exitCode": 0
+    },
+    {
+      "suite": "startup",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "id": "pass2-startup-v1",
+      "startedAt": "2026-09-20T19:40:55.542Z",
+      "finishedAt": "2026-09-20T19:43:15.231Z",
+      "exitCode": 0
+    },
+    {
+      "suite": "interactions",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "id": "pass2-interactions-v1",
+      "startedAt": "2026-09-20T19:43:15.231Z",
+      "finishedAt": "2026-09-20T20:00:20.269Z",
+      "exitCode": 1
+    },
+    {
+      "suite": "lighthouse",
+      "samples": "5",
+      "profiles": "mobile",
+      "caches": "cold",
+      "id": "pass2-lighthouse-v1",
+      "startedAt": "2026-09-20T20:00:20.270Z",
+      "finishedAt": "2026-09-20T20:10:46.816Z",
+      "exitCode": 0
+    },
+    {
+      "suite": "memory",
+      "samples": "1",
+      "profiles": "desktop",
+      "caches": "cold",
+      "checkpoints": "0,10,50",
+      "id": "pass2-memory-50-v1",
+      "startedAt": "2026-09-20T20:10:46.817Z",
+      "finishedAt": "2026-09-20T20:24:45.338Z",
+      "exitCode": 0
+    },
+    {
+      "suite": "startup",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "id": "pass2-startup-v3",
+      "startedAt": "2026-09-20T20:28:35.427Z",
+      "finishedAt": "2026-09-20T20:30:40.371Z",
+      "exitCode": 0,
+      "replaces": "pass2-startup-v1"
+    }
+  ],
+  "finishedAt": "2026-09-20T20:30:40.371Z"
+}

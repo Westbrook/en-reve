@@ -1,0 +1,25 @@
+{
+  "recordedAt": "2026-09-26T00:05:33.734882+00:00",
+  "status": "accepted_explicit_ownership_transfer",
+  "acceptedDeliverable": "3a6a4d8649fbc4406e2cbfff859f69ecd411f409",
+  "rootOwner": {
+    "title": "Plan scoped registry adoption",
+    "threadId": "01a0c0eb-0cb4-7e50-ab1f-acbe5383770e"
+  },
+  "transferredScope": [
+    "Future scheduling of remaining unreported physical/manual breadth using remaining-manual-handoff.md",
+    "Coordination of any optional same-document retry investigation"
+  ],
+  "boundedTaskState": "complete; no unfinished implementation, execution or user-review coordination remains owned here",
+  "unperformedCoverageStatus": "unreported; transfer is not completion or acceptance",
+  "integrationStatusAtTransfer": "Integration owner accepted queueing exact docs import after its already-running correctness run; no source mutation during that run. Final integration execution belongs to integration owner.",
+  "physicalEvidence": "Original build6c36d9ca/base66386af7 only; accepted physical/desktop evidence unchanged",
+  "firewallFollowup": "removed_at_user_request; never reopen",
+  "newExecutionOrUserReviewRequested": false,
+  "automaticArchiveOrRename": false,
+  "preservedHistoricalSha256": {
+    "manual-session-2026-09-25.json": "d619163894661b0ff772045703dfe8a1f6542ca24c0d360581525c86c1d5beec",
+    "manual-organization-verification.json": "2b7c741d3e4b65f20896fc5f84534a5e5b0427df5cdb2ba5990cd8dfa1a564c4",
+    "firewall-followup-disposition.json": "a6c57d67789b668c2fa89df562398ecac1e496b473f99a42aaa2b93602e1f82e"
+  }
+}

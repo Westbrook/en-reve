@@ -1,0 +1,4 @@
+import { pipelineOutput } from '../../tooling/test-pipeline/config-output.mjs';
+import {defineConfig} from '@playwright/test';
+export default defineConfig({
+  forbidOnly: true,testDir:'.',testMatch:'*.spec.ts',fullyParallel:true,workers:3,outputDir:'/private/tmp/en-editor-foundation/artifacts',reporter:[['list'],['json',{outputFile:'/private/tmp/en-editor-foundation/playwright.json'}]],use:{baseURL:'http://127.0.0.1:4497',trace:'retain-on-failure'},projects:[{name:'chromium',use:{browserName:'chromium'}},{name:'firefox',use:{browserName:'firefox'}},{name:'webkit',use:{browserName:'webkit'}}],webServer:{command:'node probes/composable-editor/server.mjs',cwd:new URL('../..',import.meta.url).pathname,url:'http://127.0.0.1:4497/probes/composable-editor/index.html',reuseExistingServer:false}}, pipelineOutput(import.meta.url));

@@ -1,0 +1,20 @@
+{
+  "reportedAt": "2026-09-22T18:50:55.662368+00:00",
+  "source": "User manual review",
+  "userText": "\"Real IME input\" works as expected across all three browers.",
+  "scope": "User-confirmed real IME review in Chrome, Firefox and Safari, following the provided IME checklist.",
+  "realIME": {
+    "Chrome": "pass",
+    "Firefox": "pass",
+    "Safari": "pass"
+  },
+  "inputMethodAndLanguage": "not supplied",
+  "exactBrowserVersionsForThisRetest": "not supplied",
+  "pending": [],
+  "provenance": "Follow-up acceptance after sealed Phase5 commit 4a6da1fba47ba47c32612e83e4cd9db0584ba774; frozen historical receipts remain unchanged.",
+  "scopedShadowReview": "scoped-shadow-review.json",
+  "globalDeliveryReview": "global-delivery-review.json",
+  "scopedShadowRetest": "scoped-shadow-retest.json",
+  "status": "requested_manual_checks_passed_with_retest",
+  "historyQualification": "Passing reported navigation workflow, not a guarantee across every browser restoration path."
+}

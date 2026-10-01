@@ -1,0 +1,159 @@
+{
+  "sealedAt": "2026-09-22T19:58:02.348326+00:00",
+  "parentCommit": "4a6da1fba47ba47c32612e83e4cd9db0584ba774",
+  "scope": "Phase5 manual-review fixtures, exact reviewed site, qualification evidence, user outcomes and final documentation only",
+  "fixtureSourceVersion": "3e8597a132bf2dd3b5ebd1572a961adb2dfc7b037fbd45b89302fa0318e23237",
+  "browserDeliveryConfigurations": 6,
+  "reviewDisposition": "Requested workflows pass, including focused Chrome/Safari retest. Earlier failure retained as not reproduced; restoration path unspecified.",
+  "runtimeChanged": false,
+  "performanceCampaignChanged": false,
+  "frozenArchivesVerifiedUnchanged": [
+    {
+      "name": "scoped-registry-phase-5-v1",
+      "checksumsSha256": "0e1e5727a4df9c02bc3bfbfa4b62d2a4dfdd12164e414d6d0fdc983688c0d727"
+    },
+    {
+      "name": "scoped-registry-phase-5-ssr-investigation-v1",
+      "checksumsSha256": "5fefe865e7935093813e83ffa5f9fdd63fccc8381ba4cc3053909b7964b121b1"
+    },
+    {
+      "name": "scoped-registry-phase-5-closeout-v1",
+      "checksumsSha256": "216f119e72164e98614153ca38a390f7b4b503d0db9abadd8fdb383810328685"
+    }
+  ],
+  "files": [
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/build.json",
+      "sha256": "be19b52f4dcb4beef075a9e7a6907951bb49b73201db2643db83ba809cb9e0ee"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/chromium-desktop.png",
+      "sha256": "5342fdadcdfdd56fba99f413a7a21efe4ca2bc40261fe4d5b692909b3584e696"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/chromium-mobile.png",
+      "sha256": "3c31ff53102cb5117ce533416e37646362ea066f86848f85f947a7a0c9232156"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/firefox-desktop.png",
+      "sha256": "f174207dd92aa4676ab3434af9ff631a828dab7d41419119d6f8dde565e8e1de"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/firefox-mobile.png",
+      "sha256": "b7af6c327f0f495c8cd7450918e7176f78a6ca8a21710379d215b95c4998a344"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/boot.js",
+      "sha256": "98313dc5a465ea17df667d1b41c88a2f8bbb0b22eb3aec563941c4a90b6699da"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/chunk-5SKY4AFP.js",
+      "sha256": "7a814a95527774eb6a2af7e2f4f10b4028b33a880e2d2a0146b5c2c9442b0788"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/chunk-RIO7H3RJ.js",
+      "sha256": "2e5003ce74d015467c1c1d2cd70f18a400d684c2e31549d3cdfe8a531aed8251"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/chunk-X3IKWMCH.js",
+      "sha256": "7596345ebee4f12e7f8cf74f0919b69484ce366855940329c877293856e599a3"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/form-TE6HOOXJ.js",
+      "sha256": "58a778a9d58d15f0c0ffefaede74e78887440e634b55208a8e77a330cb18b04d"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/global.html",
+      "sha256": "b2353d37f10e85736d81c9004ed449175d6745d03dfae2f9f5de576956feac8c"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/lit-element-hydrate-support-4T2CVSXR.js",
+      "sha256": "012b8c545b43c2ae977c437033295ace863da65ea87d9ead078fb40ca1619fd5"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/shadow.html",
+      "sha256": "bc118caa935d3332668b9090a1fc4e94356a9ad89923b0501dc180853b3950b7"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/site/ssr-client-KCCXODZX.js",
+      "sha256": "5d31e812828880f0eb8d9d80b41a3180959b04c523554e0f14251466defd56b7"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/verification.json",
+      "sha256": "95fb4d1cc270935ebb3930de268706ef0b8770013b3b966ef802d4523bf98cd7"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/verification.log",
+      "sha256": "a99dd48bf2ec7feeceaa8af5ccbe2ec3c837bdc8a86117f2f212fee490d51227"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/webkit-desktop.png",
+      "sha256": "db00001129126b6c3060b64bd5fbc63febd0deb60c3e67c38b6b9b84a1b9fc9f"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-form-review/webkit-mobile.png",
+      "sha256": "00a45c5de9a97181c4b8d02af18eca801965dc1e217ecfcfc5145775d519e4db"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/README.md",
+      "sha256": "8642d352a015b8d9c8b98af27db31138cbdd85a9bbb1399cce692ad133c927d6"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/global-delivery-review.json",
+      "sha256": "92d8bf2eb87982a524e8d9401407c57d30cfed157a0c696598d244c97111219b"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/scoped-shadow-retest.json",
+      "sha256": "6412ebc497176ba2813dd3406273d99aea1c4e03aaa31fd97b98e9b2ba817bd3"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/scoped-shadow-review.json",
+      "sha256": "d7e2dc717578423d50a07f4916ac40592728f48f0cd34b915d658ce455f04d42"
+    },
+    {
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/user-review.json",
+      "sha256": "c859a383572544d1d110f7695b3bd16f54d2eaae3b8335811912f5c55f1d3fbd"
+    },
+    {
+      "path": "plans/scoped-registry-phase-5.md",
+      "sha256": "4de4823cda32bc2310cb010841faf39730624a317a359ef465f3f2f1d2528e13"
+    },
+    {
+      "path": "probes/scoped-hydration/README.md",
+      "sha256": "2efdbb09fe39f2c744bd42932d415ac59a6a8087e344d69956af7493c5d45673"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/README.md",
+      "sha256": "6bc3065d3a84619d45cd244f89b1c0663df16314dd085bf7587ea69dfed5dc3d"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/boot.mjs",
+      "sha256": "578ea17677758bb770cff60ac354c69d0c4618fddf620b9b98784bad7e876223"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/build.mjs",
+      "sha256": "7c305959757a7ced76a0572837d5d3e04d876f1251f0bae49ce83b73c4d12761"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/form.mjs",
+      "sha256": "24720eda0b5527296ff81ec4914d034232ce0cabb8c9f3d594303ed114a43b01"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/page.html",
+      "sha256": "78989dd403aa28ac634fc51af060be7cbb1b9d10b63d840a734bb4844752dc6f"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/prepare.py",
+      "sha256": "ddfc027f5ceba8fda08583ecf844317b0eb665e811dd3e0ebd2d88473889e85b"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/server.mjs",
+      "sha256": "4f29c0f2370feb2082eb12cff113c0885ff10b1543fd9cceb9a9fd96ec81862e"
+    },
+    {
+      "path": "probes/scoped-hydration/form-review/verify.mjs",
+      "sha256": "46506258f3b33f1cfceb03747c51c7b82450a9bf79eb1bc044f7c6509bb5bbf6"
+    }
+  ],
+  "commitIdentity": "git log -1 --format=%H -- artifacts/scoped-registry-phase-5-manual-input-review/seal.json"
+}

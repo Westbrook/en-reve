@@ -1,0 +1,2830 @@
+{
+  "note": "Diagnostic reruns only. Trace categories can overlap; do not add category totals. Coverage means unexercised in this journey, not removable. Native source maps live in the frozen snapshots.",
+  "samples": [
+    {
+      "system": "en-reve",
+      "profile": "desktop",
+      "sampleId": "00001",
+      "status": "ok",
+      "trace": "00001-trace.json",
+      "durations": {
+        "RunTask": {
+          "count": 1474,
+          "totalMs": 419.3359999999939,
+          "maximumMs": 108.99
+        },
+        "ParseHTML": {
+          "count": 181,
+          "totalMs": 4.960000000000007,
+          "maximumMs": 2.425
+        },
+        "UpdateLayoutTree": {
+          "count": 206,
+          "totalMs": 62.761,
+          "maximumMs": 7.772
+        },
+        "Paint": {
+          "count": 85,
+          "totalMs": 21.607,
+          "maximumMs": 1.531
+        },
+        "FunctionCall": {
+          "count": 1637,
+          "totalMs": 77.84700000000018,
+          "maximumMs": 10.109
+        },
+        "Layout": {
+          "count": 48,
+          "totalMs": 14.114,
+          "maximumMs": 5.16
+        },
+        "EvaluateScript": {
+          "count": 4,
+          "totalMs": 11.311000000000002,
+          "maximumMs": 5.325
+        }
+      },
+      "startupDurations": {
+        "RunTask": 138.71900000000008,
+        "ParseHTML": 4.936000000000007,
+        "UpdateLayoutTree": 16.407999999999998,
+        "Paint": 1.575,
+        "FunctionCall": 45.955000000000055,
+        "Layout": 8.346000000000002,
+        "EvaluateScript": 5.708
+      },
+      "durationScope": "Renderer main thread only. Startup values are clipped to navigation through this diagnostic session’s LCP. Whole-journey categories may overlap; never sum them as independent work.",
+      "topSampledFunctions": [
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/dialog/dialog.js",
+          "line": 240,
+          "function": "syncDialog",
+          "samples": 236,
+          "sampledSelfMs": 28.923000000000034,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/toolbar/element.js",
+          "line": 37,
+          "function": "isDisabled",
+          "samples": 90,
+          "sampledSelfMs": 12.456000000000005,
+          "mapped": true
+        },
+        {
+          "source": "assets/index-C0meNs_7.js",
+          "line": 1,
+          "function": "(anonymous)",
+          "samples": 64,
+          "sampledSelfMs": 9.972999999999999,
+          "mapped": false
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/menu/element.js",
+          "line": 420,
+          "function": "available",
+          "samples": 73,
+          "sampledSelfMs": 9.517000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/internal/calendar-adapter.js",
+          "line": 6,
+          "function": "r",
+          "samples": 72,
+          "sampledSelfMs": 9.386000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/css-tag.js",
+          "line": 6,
+          "function": "get styleSheet",
+          "samples": 77,
+          "sampledSelfMs": 8.456000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$ET",
+          "samples": 179,
+          "sampledSelfMs": 6.9389999999999965,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "Be",
+          "samples": 122,
+          "sampledSelfMs": 4.568999999999996,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "createElement",
+          "samples": 18,
+          "sampledSelfMs": 2.426999999999999,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/styles/dist/internal/sizing.js",
+          "line": 10,
+          "function": "(anonymous)",
+          "samples": 14,
+          "sampledSelfMs": 1.9360000000000002,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/internal/interaction-availability.js",
+          "line": 2,
+          "function": "Ws",
+          "samples": 8,
+          "sampledSelfMs": 1.037,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "j",
+          "samples": 24,
+          "sampledSelfMs": 0.8830000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "finalize",
+          "samples": 6,
+          "sampledSelfMs": 0.8620000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/form-controller.js",
+          "line": 14,
+          "function": "sync",
+          "samples": 8,
+          "sampledSelfMs": 0.8400000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "_$AR",
+          "samples": 21,
+          "sampledSelfMs": 0.7860000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "e",
+          "samples": 15,
+          "sampledSelfMs": 0.646,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "performUpdate",
+          "samples": 13,
+          "sampledSelfMs": 0.614,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "connectedCallback",
+          "samples": 5,
+          "sampledSelfMs": 0.607,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/signal-polyfill/dist/index.js",
+          "line": 265,
+          "function": "producerRecomputeValue",
+          "samples": 5,
+          "sampledSelfMs": 0.563,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "_$AC",
+          "samples": 5,
+          "sampledSelfMs": 0.51,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/popover/floating-surface.js",
+          "line": 257,
+          "function": "syncTriggerAttributes",
+          "samples": 12,
+          "sampledSelfMs": 0.494,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/dialog/trigger-controller.js",
+          "line": 59,
+          "function": "sync",
+          "samples": 9,
+          "sampledSelfMs": 0.4779999999999999,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "_$AI",
+          "samples": 11,
+          "sampledSelfMs": 0.41000000000000003,
+          "mapped": true
+        },
+        {
+          "source": "../../src/template.ts",
+          "line": 826,
+          "function": "Ac",
+          "samples": 3,
+          "sampledSelfMs": 0.403,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "M",
+          "samples": 5,
+          "sampledSelfMs": 0.399,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/avatar/element.js",
+          "line": 36,
+          "function": "get fallbackInitials",
+          "samples": 3,
+          "sampledSelfMs": 0.384,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/roving-focus.js",
+          "line": 44,
+          "function": "refresh",
+          "samples": 3,
+          "sampledSelfMs": 0.382,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "C",
+          "samples": 7,
+          "sampledSelfMs": 0.36400000000000005,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "requestUpdate",
+          "samples": 6,
+          "sampledSelfMs": 0.34199999999999997,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$Ev",
+          "samples": 4,
+          "sampledSelfMs": 0.3330000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/styles/dist/internal/sizing.js",
+          "line": 9,
+          "function": "R",
+          "samples": 2,
+          "sampledSelfMs": 0.312,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "Ve",
+          "samples": 5,
+          "sampledSelfMs": 0.304,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/signal-polyfill/dist/index.js",
+          "line": 104,
+          "function": "Pt",
+          "samples": 3,
+          "sampledSelfMs": 0.29500000000000004,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$AE",
+          "samples": 3,
+          "sampledSelfMs": 0.29200000000000004,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/selection-children.js",
+          "line": 162,
+          "function": "current",
+          "samples": 2,
+          "sampledSelfMs": 0.27999999999999997,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "get observedAttributes",
+          "samples": 2,
+          "sampledSelfMs": 0.272,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/roving-focus.js",
+          "line": 18,
+          "function": "hostConnected",
+          "samples": 2,
+          "sampledSelfMs": 0.267,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/signal-polyfill/dist/index.js",
+          "line": 11,
+          "function": "xt",
+          "samples": 2,
+          "sampledSelfMs": 0.267,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "getPropertyDescriptor",
+          "samples": 2,
+          "sampledSelfMs": 0.266,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/signal-utils/dist/subtle/reaction.ts.js",
+          "line": 27,
+          "function": "gn",
+          "samples": 2,
+          "sampledSelfMs": 0.266,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/internal/calendar-adapter.js",
+          "line": 63,
+          "function": "format",
+          "samples": 2,
+          "sampledSelfMs": 0.265,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/segmented-control/element.js",
+          "line": 118,
+          "function": "currentItems",
+          "samples": 1,
+          "sampledSelfMs": 0.261,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/command-palette/element.js",
+          "line": 124,
+          "function": "syncDialog",
+          "samples": 2,
+          "sampledSelfMs": 0.257,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/css-tag.js",
+          "line": 6,
+          "function": "i",
+          "samples": 2,
+          "sampledSelfMs": 0.252,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+          "line": 49,
+          "function": "hostUpdated",
+          "samples": 5,
+          "sampledSelfMs": 0.252,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/registration.js",
+          "line": 41,
+          "function": "r",
+          "samples": 2,
+          "sampledSelfMs": 0.249,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "handleEvent",
+          "samples": 3,
+          "sampledSelfMs": 0.23600000000000002,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/button/element.js",
+          "line": 86,
+          "function": "(anonymous)",
+          "samples": 2,
+          "sampledSelfMs": 0.23299999999999998,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/segmented-control/element.js",
+          "line": 58,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.225,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/internal/id-reference.js",
+          "line": 89,
+          "function": "Li",
+          "samples": 2,
+          "sampledSelfMs": 0.192,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "O",
+          "samples": 2,
+          "sampledSelfMs": 0.192,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/forms-private/form-field.js",
+          "line": 58,
+          "function": "q",
+          "samples": 1,
+          "sampledSelfMs": 0.175,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "createProperty",
+          "samples": 1,
+          "sampledSelfMs": 0.168,
+          "mapped": true
+        },
+        {
+          "source": "../../src/app.ts",
+          "line": 22,
+          "function": "jc",
+          "samples": 1,
+          "sampledSelfMs": 0.166,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/checkbox/choice-base.js",
+          "line": 46,
+          "function": "control",
+          "samples": 1,
+          "sampledSelfMs": 0.164,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "u",
+          "samples": 3,
+          "sampledSelfMs": 0.163,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/forms-private/form-field.js",
+          "line": 198,
+          "function": "validateAcceptedValue",
+          "samples": 3,
+          "sampledSelfMs": 0.16200000000000003,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/signal-controller.js",
+          "line": 15,
+          "function": "hostConnected",
+          "samples": 1,
+          "sampledSelfMs": 0.156,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "$",
+          "samples": 1,
+          "sampledSelfMs": 0.152,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/css-tag.js",
+          "line": 6,
+          "function": "S",
+          "samples": 2,
+          "sampledSelfMs": 0.14700000000000002,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/forms-private/form-field.js",
+          "line": 191,
+          "function": "syncForm",
+          "samples": 1,
+          "sampledSelfMs": 0.144,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/slider/numeric-base.js",
+          "line": 61,
+          "function": "set value",
+          "samples": 2,
+          "sampledSelfMs": 0.143,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+          "line": 67,
+          "function": "#e.updateComplete.then.#n",
+          "samples": 1,
+          "sampledSelfMs": 0.142,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/toolbar/element.js",
+          "line": 63,
+          "function": "items",
+          "samples": 1,
+          "sampledSelfMs": 0.14,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/signal-utils/dist/subtle/reaction.ts.js",
+          "line": 33,
+          "function": "a",
+          "samples": 1,
+          "sampledSelfMs": 0.14,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/styles/dist/internal/token-values.js",
+          "line": 4,
+          "function": "Sn",
+          "samples": 1,
+          "sampledSelfMs": 0.138,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "c",
+          "samples": 1,
+          "sampledSelfMs": 0.138,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/toolbar/element.js",
+          "line": 44,
+          "function": "usesNativeNavigation",
+          "samples": 1,
+          "sampledSelfMs": 0.137,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/styles/dist/internal/token-values.js",
+          "line": 10,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "finalizeStyles",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/roving-focus.js",
+          "line": 157,
+          "function": "#p",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "Ee",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/menu/element.js",
+          "line": 59,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.134,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/dialog/dialog.js",
+          "line": 333,
+          "function": "get dialogView",
+          "samples": 1,
+          "sampledSelfMs": 0.134,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/forms-private/editable-field.js",
+          "line": 5,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.133,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/css-tag.js",
+          "line": 6,
+          "function": "ne",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../src/template.ts",
+          "line": 46,
+          "function": "pc",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/command-palette/model.js",
+          "line": 37,
+          "function": "a",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/primitives/dist/interactions/editing-controller.js",
+          "line": 17,
+          "function": "hostUpdated",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@en-reve/elements/dist/forms-private/form-field.js",
+          "line": 76,
+          "function": "validate",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        }
+      ],
+      "coverage": {
+        "js": [
+          {
+            "url": "/Users/westbrook/Documents/repos/design-system/showcases/performance/runs/en-reve-main-diagnostic-v1/collector.js",
+            "totalCharacters": 20476,
+            "coveredCharacters": 14049,
+            "uncoveredFraction": 0.3138796639968744
+          },
+          {
+            "url": "https://127.0.0.1:4617/assets/index-C0meNs_7.js",
+            "totalCharacters": 449978,
+            "coveredCharacters": 328098,
+            "uncoveredFraction": 0.27085768637577834
+          }
+        ],
+        "css": [
+          {
+            "url": "https://127.0.0.1:4617/assets/index-CDV5OawH.css",
+            "totalCharacters": 44562,
+            "coveredCharacters": 44376,
+            "uncoveredFraction": 0.004173959876127675
+          }
+        ]
+      },
+      "dom": {
+        "documents": 7,
+        "nodes": 7667,
+        "jsEventListeners": 673
+      },
+      "connectedDOM": {
+        "connectedNodes": 4668,
+        "connectedElements": 1580,
+        "openShadowRoots": 167,
+        "styleElements": 0,
+        "stylesheetAdoptions": 598,
+        "uniqueAdoptedStylesheets": 34,
+        "note": "Connected DOM including accessible open shadow roots. Closed roots are not inspected. CDP DOM counters additionally include retained/detached nodes and are not equivalent.",
+        "elementsByTag": {
+          "slot": 414,
+          "div": 299,
+          "span": 219,
+          "button": 106,
+          "en-button": 49,
+          "td": 48,
+          "label": 42,
+          "input": 35,
+          "p": 29,
+          "h2": 24,
+          "svg": 23,
+          "path": 23,
+          "en-icon": 19,
+          "section": 17,
+          "en-card": 16,
+          "th": 15,
+          "tr": 14,
+          "a": 12,
+          "en-checkbox": 9,
+          "option": 9,
+          "en-select-option": 9,
+          "strong": 8,
+          "dialog": 6,
+          "en-textarea": 5,
+          "textarea": 5,
+          "en-badge": 5,
+          "en-switch": 5,
+          "li": 5,
+          "en-text-field": 4,
+          "en-dialog": 4,
+          "en-menu-item": 3,
+          "nav": 3,
+          "en-swatch": 3,
+          "small": 3,
+          "br": 3,
+          "dt": 3,
+          "dd": 3,
+          "en-select": 3,
+          "select": 3,
+          "selectedcontent": 3,
+          "meta": 2,
+          "en-navigation": 2,
+          "en-tab": 2,
+          "en-tab-panel": 2,
+          "en-radio": 2,
+          "fieldset": 2,
+          "legend": 2,
+          "en-segmented-item": 2,
+          "table": 2,
+          "thead": 2,
+          "tbody": 2,
+          "i": 2,
+          "b": 2,
+          "en-popover": 2,
+          "en-avatar": 2,
+          "h3": 2,
+          "html": 1,
+          "head": 1,
+          "title": 1,
+          "script": 1,
+          "link": 1,
+          "body": 1,
+          "en-showcase-app": 1,
+          "main": 1,
+          "h1": 1,
+          "en-toolbar": 1,
+          "en-menu": 1,
+          "en-command-palette": 1,
+          "en-breadcrumbs": 1,
+          "ol": 1,
+          "en-tabs": 1,
+          "en-radio-group": 1,
+          "en-accordion": 1,
+          "en-accordion-item": 1,
+          "en-color-field": 1,
+          "en-segmented-control": 1,
+          "figure": 1,
+          "figcaption": 1,
+          "details": 1,
+          "summary": 1,
+          "caption": 1,
+          "en-progress-bar": 1,
+          "progress": 1,
+          "dl": 1,
+          "circle": 1,
+          "en-rating": 1,
+          "form": 1,
+          "en-date-picker": 1,
+          "rect": 1,
+          "en-calendar": 1,
+          "en-slider": 1,
+          "en-number-field": 1,
+          "en-drawer": 1,
+          "en-stack": 1,
+          "ul": 1,
+          "en-combobox": 1
+        }
+      },
+      "browserMetrics": {
+        "Timestamp": 3563229.831701,
+        "AudioHandlers": 0,
+        "AudioWorkletProcessors": 0,
+        "Documents": 7,
+        "Frames": 5,
+        "JSEventListeners": 673,
+        "LayoutObjects": 1841,
+        "MediaKeySessions": 0,
+        "MediaKeys": 0,
+        "Nodes": 7667,
+        "Resources": 3,
+        "ContextLifecycleStateObservers": 59,
+        "V8PerContextDatas": 5,
+        "WorkerGlobalScopes": 0,
+        "UACSSResources": 0,
+        "RTCPeerConnections": 0,
+        "ResourceFetchers": 7,
+        "AdSubframes": 0,
+        "DetachedScriptStates": 2,
+        "ArrayBufferContents": 0,
+        "LayoutCount": 46,
+        "RecalcStyleCount": 204,
+        "LayoutDuration": 0.01425,
+        "RecalcStyleDuration": 0.062655,
+        "DevToolsCommandDuration": 0.115551,
+        "ScriptDuration": 0.068161,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.4199,
+        "TaskOtherDuration": 0.159283,
+        "ThreadTime": 0.552966,
+        "ProcessTime": 0.95686,
+        "JSHeapUsedSize": 10531720,
+        "JSHeapTotalSize": 18481152,
+        "FirstMeaningfulPaint": 3563225.651289,
+        "DomContentLoaded": 3563225.634178,
+        "NavigationStart": 3563225.483882
+      },
+      "lcpAttribution": {
+        "timeToFirstByte": 22.59999990463257,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 145.40000009536743,
+        "target": "#showcase-project>en-card>div.showcase-card-body>p",
+        "lcpEntry": {
+          "name": "",
+          "entryType": "largest-contentful-paint",
+          "startTime": 168,
+          "duration": 0,
+          "navigationId": 4699,
+          "paintTime": 153.7999997138977,
+          "presentationTime": 168,
+          "size": 12054,
+          "renderTime": 168,
+          "loadTime": 0,
+          "id": "",
+          "url": "",
+          "element": "#showcase-project >>> p"
+        },
+        "navigationEntry": {
+          "name": "https://127.0.0.1:4617/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 156,
+          "navigationId": 4699,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "h2",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "br",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 3.0999999046325684,
+          "domainLookupStart": 4.599999904632568,
+          "domainLookupEnd": 4.599999904632568,
+          "connectStart": 4.599999904632568,
+          "secureConnectionStart": 4.699999809265137,
+          "connectEnd": 21.40000009536743,
+          "requestStart": 21.699999809265137,
+          "responseStart": 22.59999990463257,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 22.59999990463257,
+          "responseEnd": 23,
+          "transferSize": 461,
+          "encodedBodySize": 161,
+          "decodedBodySize": 359,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 34.59999990463257,
+          "domContentLoadedEventStart": 150.2999997138977,
+          "domContentLoadedEventEnd": 151.09999990463257,
+          "domComplete": 155.7999997138977,
+          "loadEventStart": 155.7999997138977,
+          "loadEventEnd": 156,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {}
+        }
+      },
+      "inpAttribution": {
+        "interactionTarget": "#showcase-actions>en-card>div.showcase-card-body>en-toolbar>en-button",
+        "interactionType": "pointer",
+        "interactionTime": 1765.4000000953674,
+        "nextPaintTime": 1813.4000000953674,
+        "processedEventEntries": [],
+        "longAnimationFrameEntries": [],
+        "inputDelay": 0.5,
+        "processingDuration": 1.5,
+        "presentationDelay": 46,
+        "loadState": "complete"
+      }
+    },
+    {
+      "system": "web-awesome",
+      "profile": "desktop",
+      "sampleId": "00002",
+      "status": "ok",
+      "trace": "00002-trace.json",
+      "durations": {
+        "RunTask": {
+          "count": 1751,
+          "totalMs": 412.31799999999197,
+          "maximumMs": 72.925
+        },
+        "ParseHTML": {
+          "count": 127,
+          "totalMs": 1.7039999999999937,
+          "maximumMs": 0.414
+        },
+        "UpdateLayoutTree": {
+          "count": 259,
+          "totalMs": 64.07799999999999,
+          "maximumMs": 10.188
+        },
+        "FunctionCall": {
+          "count": 1729,
+          "totalMs": 41.87399999999994,
+          "maximumMs": 2.63
+        },
+        "Layout": {
+          "count": 48,
+          "totalMs": 13.021,
+          "maximumMs": 7.217
+        },
+        "Paint": {
+          "count": 144,
+          "totalMs": 30.868999999999996,
+          "maximumMs": 1.397
+        },
+        "EvaluateScript": {
+          "count": 4,
+          "totalMs": 11.064000000000002,
+          "maximumMs": 5.203
+        }
+      },
+      "startupDurations": {
+        "RunTask": 100.15600000000018,
+        "ParseHTML": 1.609999999999994,
+        "UpdateLayoutTree": 10.994000000000002,
+        "FunctionCall": 6.058999999999978,
+        "Layout": 7.5089999999999995,
+        "Paint": 1.413,
+        "EvaluateScript": 5.566000000000001
+      },
+      "durationScope": "Renderer main thread only. Startup values are clipped to navigation through this diagnostic session’s LCP. Whole-journey categories may overlap; never sum them as independent work.",
+      "topSampledFunctions": [
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.3H27LNYN.js",
+          "line": 254,
+          "function": "updateScrollControls",
+          "samples": 133,
+          "sampledSelfMs": 17.341999999999988,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$ET",
+          "samples": 516,
+          "sampledSelfMs": 10.694999999999995,
+          "mapped": true
+        },
+        {
+          "source": "assets/index-BG3Zw-nj.js",
+          "line": 1,
+          "function": "(anonymous)",
+          "samples": 78,
+          "sampledSelfMs": 10.486999999999998,
+          "mapped": false
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.YSHBD3IU.js",
+          "line": 89,
+          "function": "requestClose",
+          "samples": 66,
+          "sampledSelfMs": 8.636000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.YSHBD3IU.js",
+          "line": 170,
+          "function": "show",
+          "samples": 62,
+          "sampledSelfMs": 7.973,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/css-tag.js",
+          "line": 6,
+          "function": "get styleSheet",
+          "samples": 45,
+          "sampledSelfMs": 5.6919999999999975,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@shoelace-style/localize/dist/index.js",
+          "line": 119,
+          "function": "number",
+          "samples": 36,
+          "sampledSelfMs": 4.66,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "set",
+          "samples": 11,
+          "sampledSelfMs": 1.297,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "j",
+          "samples": 57,
+          "sampledSelfMs": 1.2759999999999996,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "Ae",
+          "samples": 55,
+          "sampledSelfMs": 1.222,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 277,
+          "function": "(anonymous)",
+          "samples": 9,
+          "sampledSelfMs": 1.089,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-element/lit-element.js",
+          "line": 6,
+          "function": "update",
+          "samples": 10,
+          "sampledSelfMs": 0.849,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "e",
+          "samples": 9,
+          "sampledSelfMs": 0.615,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.GWSUX3V5.js",
+          "line": 4,
+          "function": "kn",
+          "samples": 4,
+          "sampledSelfMs": 0.605,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "requestUpdate",
+          "samples": 4,
+          "sampledSelfMs": 0.517,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@ctrl/tinycolor/dist/module/format-input.js",
+          "line": 108,
+          "function": "yr",
+          "samples": 4,
+          "sampledSelfMs": 0.513,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.AOKMSJXD.js",
+          "line": 65,
+          "function": "set",
+          "samples": 7,
+          "sampledSelfMs": 0.45399999999999996,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.7VGCIHDG.js",
+          "line": 7,
+          "function": "x",
+          "samples": 3,
+          "sampledSelfMs": 0.44000000000000006,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$AE",
+          "samples": 4,
+          "sampledSelfMs": 0.41700000000000004,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.VQZ46MYI.js",
+          "line": 13,
+          "function": "Ra",
+          "samples": 5,
+          "sampledSelfMs": 0.41100000000000003,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "performUpdate",
+          "samples": 10,
+          "sampledSelfMs": 0.398,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$AK",
+          "samples": 4,
+          "sampledSelfMs": 0.391,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "createRenderRoot",
+          "samples": 3,
+          "sampledSelfMs": 0.377,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KBXNFZQL.js",
+          "line": 275,
+          "function": "updateValidity",
+          "samples": 4,
+          "sampledSelfMs": 0.325,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.UC2I4UJD.js",
+          "line": 128,
+          "function": "setIcon",
+          "samples": 3,
+          "sampledSelfMs": 0.323,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "get",
+          "samples": 3,
+          "sampledSelfMs": 0.312,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "finalizeStyles",
+          "samples": 2,
+          "sampledSelfMs": 0.30000000000000004,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.HKHINDC2.js",
+          "line": 36,
+          "function": "check",
+          "samples": 5,
+          "sampledSelfMs": 0.294,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KBXNFZQL.js",
+          "line": 190,
+          "function": "setValidity",
+          "samples": 3,
+          "sampledSelfMs": 0.272,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/decorators/property.js",
+          "line": 6,
+          "function": "(anonymous)",
+          "samples": 2,
+          "sampledSelfMs": 0.269,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "p",
+          "samples": 3,
+          "sampledSelfMs": 0.261,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.XXAN4K2L.js",
+          "line": 433,
+          "function": "parseColor",
+          "samples": 2,
+          "sampledSelfMs": 0.255,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.BV5W4T7H.js",
+          "line": 99,
+          "function": "updated",
+          "samples": 2,
+          "sampledSelfMs": 0.24,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "createProperty",
+          "samples": 2,
+          "sampledSelfMs": 0.23399999999999999,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "_$AI",
+          "samples": 6,
+          "sampledSelfMs": 0.23200000000000004,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.4REDHNL6.js",
+          "line": 169,
+          "function": "render",
+          "samples": 3,
+          "sampledSelfMs": 0.23099999999999998,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.UC2I4UJD.js",
+          "line": 45,
+          "function": "D.resolveIcon",
+          "samples": 2,
+          "sampledSelfMs": 0.222,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "createElement",
+          "samples": 6,
+          "sampledSelfMs": 0.20400000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KBXNFZQL.js",
+          "line": 165,
+          "function": "get validity",
+          "samples": 2,
+          "sampledSelfMs": 0.196,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/decorators/query.js",
+          "line": 6,
+          "function": "a",
+          "samples": 2,
+          "sampledSelfMs": 0.16599999999999998,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KBXNFZQL.js",
+          "line": 104,
+          "function": "willUpdate",
+          "samples": 2,
+          "sampledSelfMs": 0.154,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$Ei",
+          "samples": 1,
+          "sampledSelfMs": 0.15,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KBXNFZQL.js",
+          "line": 263,
+          "function": "get allValidators",
+          "samples": 2,
+          "sampledSelfMs": 0.147,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/lit-html/lit-html.js",
+          "line": 6,
+          "function": "$",
+          "samples": 2,
+          "sampledSelfMs": 0.14600000000000002,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@shoelace-style/localize/dist/index.js",
+          "line": 58,
+          "function": "lang",
+          "samples": 3,
+          "sampledSelfMs": 0.14500000000000002,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "finalize",
+          "samples": 1,
+          "sampledSelfMs": 0.143,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.3H27LNYN.js",
+          "line": 232,
+          "function": "setAriaLabels",
+          "samples": 1,
+          "sampledSelfMs": 0.143,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/css-tag.js",
+          "line": 6,
+          "function": "S",
+          "samples": 1,
+          "sampledSelfMs": 0.142,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "scheduleUpdate",
+          "samples": 6,
+          "sampledSelfMs": 0.142,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.PZAN6FPN.js",
+          "line": 13,
+          "function": "(anonymous)",
+          "samples": 2,
+          "sampledSelfMs": 0.141,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.LKUZUNJV.js",
+          "line": 506,
+          "function": "selectionChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.14,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KBXNFZQL.js",
+          "line": 96,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.139,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "_$Ev",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.YSHBD3IU.js",
+          "line": 221,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../src/ui.js",
+          "line": 57,
+          "function": "as",
+          "samples": 1,
+          "sampledSelfMs": 0.134,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 142,
+          "function": "readiness",
+          "samples": 1,
+          "sampledSelfMs": 0.134,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.SM7BXFVA.js",
+          "line": 79,
+          "function": "set value",
+          "samples": 1,
+          "sampledSelfMs": 0.134,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.RWNXKUCF.js",
+          "line": 5,
+          "function": "un",
+          "samples": 1,
+          "sampledSelfMs": 0.133,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "ae",
+          "samples": 2,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.KDHMXIWH.js",
+          "line": 192,
+          "function": "render",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.AOKMSJXD.js",
+          "line": 55,
+          "function": "E",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.AOKMSJXD.js",
+          "line": 109,
+          "function": "connectedCallback",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/reactive-element.js",
+          "line": 6,
+          "function": "addController",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@shoelace-style/localize/dist/index.js",
+          "line": 52,
+          "function": "hostDisconnected",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.7Y7NOWJ7.js",
+          "line": 51,
+          "function": "get validators",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.L6CIKOFQ.js",
+          "line": 17,
+          "function": "o",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@lit/reactive-element/decorators/property.js",
+          "line": 6,
+          "function": "n",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 165,
+          "function": "Ps",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.LKUZUNJV.js",
+          "line": 290,
+          "function": "connectedCallback",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.LKUZUNJV.js",
+          "line": 404,
+          "function": "processSlotChange",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.HPDZB3OW.js",
+          "line": 144,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.VQZ46MYI.js",
+          "line": 40,
+          "function": "Va",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@ctrl/tinycolor/dist/module/format-input.js",
+          "line": 23,
+          "function": "mr",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.T5JTFFW3.js",
+          "line": 91,
+          "function": "connectedCallback",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../src/ui.js",
+          "line": 66,
+          "function": "us",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@ctrl/tinycolor/dist/module/index.js",
+          "line": 133,
+          "function": "toHsl",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.4REDHNL6.js",
+          "line": 64,
+          "function": "handleSizeChange",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.LKUZUNJV.js",
+          "line": 221,
+          "function": "get validators",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.OFIRCJ3D.js",
+          "line": 9,
+          "function": "O",
+          "samples": 1,
+          "sampledSelfMs": 0.127,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@awesome.me/webawesome/dist/chunks/chunk.UC2I4UJD.js",
+          "line": 98,
+          "function": "getIconSource",
+          "samples": 1,
+          "sampledSelfMs": 0.127,
+          "mapped": true
+        }
+      ],
+      "coverage": {
+        "js": [
+          {
+            "url": "/Users/westbrook/Documents/repos/design-system/showcases/performance/runs/en-reve-main-diagnostic-v1/collector.js",
+            "totalCharacters": 20476,
+            "coveredCharacters": 14038,
+            "uncoveredFraction": 0.3144168782965423
+          },
+          {
+            "url": "https://127.0.0.1:4618/assets/index-BG3Zw-nj.js",
+            "totalCharacters": 480999,
+            "coveredCharacters": 348690,
+            "uncoveredFraction": 0.27507125794440324
+          }
+        ],
+        "css": [
+          {
+            "url": "https://127.0.0.1:4618/assets/index-D7icV0LY.css",
+            "totalCharacters": 54664,
+            "coveredCharacters": 53535,
+            "uncoveredFraction": 0.020653446509585782
+          }
+        ]
+      },
+      "dom": {
+        "documents": 16,
+        "nodes": 6701,
+        "jsEventListeners": 880
+      },
+      "connectedDOM": {
+        "connectedNodes": 4212,
+        "connectedElements": 1401,
+        "openShadowRoots": 197,
+        "styleElements": 0,
+        "stylesheetAdoptions": 611,
+        "uniqueAdoptedStylesheets": 36,
+        "note": "Connected DOM including accessible open shadow roots. Closed roots are not inspected. CDP DOM counters additionally include retained/detached nodes and are not equivalent.",
+        "elementsByTag": {
+          "slot": 497,
+          "div": 241,
+          "span": 87,
+          "button": 63,
+          "wa-button": 55,
+          "svg": 38,
+          "wa-icon": 36,
+          "path": 36,
+          "label": 34,
+          "input": 30,
+          "p": 24,
+          "h2": 21,
+          "section": 16,
+          "wa-card": 16,
+          "small": 15,
+          "a": 12,
+          "wa-option": 12,
+          "strong": 10,
+          "wa-checkbox": 9,
+          "wa-popup": 8,
+          "th": 8,
+          "wa-input": 7,
+          "tr": 7,
+          "dialog": 7,
+          "td": 6,
+          "wa-textarea": 5,
+          "textarea": 5,
+          "wa-badge": 5,
+          "wa-switch": 5,
+          "wa-radio": 4,
+          "wa-select": 4,
+          "wa-dialog": 4,
+          "wa-dropdown-item": 3,
+          "nav": 3,
+          "wa-breadcrumb-item": 3,
+          "br": 3,
+          "dt": 3,
+          "dd": 3,
+          "meta": 2,
+          "wa-tab": 2,
+          "wa-tab-panel": 2,
+          "wa-radio-group": 2,
+          "fieldset": 2,
+          "circle": 2,
+          "details": 2,
+          "summary": 2,
+          "i": 2,
+          "b": 2,
+          "wa-popover": 2,
+          "li": 2,
+          "wa-avatar": 2,
+          "h3": 2,
+          "html": 1,
+          "head": 1,
+          "title": 1,
+          "script": 1,
+          "link": 1,
+          "body": 1,
+          "main": 1,
+          "h1": 1,
+          "wa-dropdown": 1,
+          "wa-breadcrumb": 1,
+          "wa-tab-group": 1,
+          "wa-details": 1,
+          "wa-color-picker": 1,
+          "wa-button-group": 1,
+          "figure": 1,
+          "figcaption": 1,
+          "table": 1,
+          "caption": 1,
+          "thead": 1,
+          "tbody": 1,
+          "wa-progress-bar": 1,
+          "dl": 1,
+          "wa-rating": 1,
+          "wa-slider": 1,
+          "wa-number-input": 1,
+          "ul": 1,
+          "ol": 1,
+          "wa-drawer": 1
+        }
+      },
+      "browserMetrics": {
+        "Timestamp": 3563235.666365,
+        "AudioHandlers": 0,
+        "AudioWorkletProcessors": 0,
+        "Documents": 16,
+        "Frames": 5,
+        "JSEventListeners": 880,
+        "LayoutObjects": 1471,
+        "MediaKeySessions": 0,
+        "MediaKeys": 0,
+        "Nodes": 6701,
+        "Resources": 12,
+        "ContextLifecycleStateObservers": 56,
+        "V8PerContextDatas": 5,
+        "WorkerGlobalScopes": 0,
+        "UACSSResources": 1,
+        "RTCPeerConnections": 0,
+        "ResourceFetchers": 16,
+        "AdSubframes": 0,
+        "DetachedScriptStates": 2,
+        "ArrayBufferContents": 14,
+        "LayoutCount": 46,
+        "RecalcStyleCount": 258,
+        "LayoutDuration": 0.013144,
+        "RecalcStyleDuration": 0.063984,
+        "DevToolsCommandDuration": 0.130011,
+        "ScriptDuration": 0.051055,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.41324,
+        "TaskOtherDuration": 0.155046,
+        "ThreadTime": 0.600148,
+        "ProcessTime": 1.069966,
+        "JSHeapUsedSize": 12045452,
+        "JSHeapTotalSize": 17694720,
+        "FirstMeaningfulPaint": 3563230.277458,
+        "DomContentLoaded": 3563230.262849,
+        "NavigationStart": 3563230.159259
+      },
+      "lcpAttribution": {
+        "timeToFirstByte": 16.700000286102295,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 103.2999997138977,
+        "target": "#showcase-project>wa-card>div.card-body>p",
+        "lcpEntry": {
+          "name": "",
+          "entryType": "largest-contentful-paint",
+          "startTime": 120,
+          "duration": 0,
+          "navigationId": 1331,
+          "paintTime": 106.30000019073486,
+          "presentationTime": 120,
+          "size": 12628,
+          "renderTime": 120,
+          "loadTime": 0,
+          "id": "",
+          "url": "",
+          "element": "#showcase-project >>> p"
+        },
+        "navigationEntry": {
+          "name": "https://127.0.0.1:4618/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 108.30000019073486,
+          "navigationId": 1331,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "h2",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "br",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 2,
+          "domainLookupStart": 3,
+          "domainLookupEnd": 3,
+          "connectStart": 3,
+          "secureConnectionStart": 3.1000003814697266,
+          "connectEnd": 16.100000381469727,
+          "requestStart": 16.300000190734863,
+          "responseStart": 16.700000286102295,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 16.700000286102295,
+          "responseEnd": 17,
+          "transferSize": 471,
+          "encodedBodySize": 171,
+          "decodedBodySize": 419,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 25.100000381469727,
+          "domContentLoadedEventStart": 103.60000038146973,
+          "domContentLoadedEventEnd": 104.10000038146973,
+          "domComplete": 108.10000038146973,
+          "loadEventStart": 108.2000002861023,
+          "loadEventEnd": 108.30000019073486,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {}
+        }
+      },
+      "inpAttribution": {
+        "interactionTarget": "#showcase-actions>wa-card>div.card-body>div>div.row>wa-button",
+        "interactionType": "pointer",
+        "interactionTime": 1722.5,
+        "nextPaintTime": 1770.5,
+        "processedEventEntries": [],
+        "longAnimationFrameEntries": [],
+        "inputDelay": 0.3000001907348633,
+        "processingDuration": 0.9000000953674316,
+        "presentationDelay": 46.799999713897705,
+        "loadState": "complete"
+      }
+    },
+    {
+      "system": "fluent-web-components",
+      "profile": "desktop",
+      "sampleId": "00003",
+      "status": "ok",
+      "trace": "00003-trace.json",
+      "durations": {
+        "RunTask": {
+          "count": 1810,
+          "totalMs": 404.58699999999294,
+          "maximumMs": 46.28
+        },
+        "ParseHTML": {
+          "count": 67,
+          "totalMs": 1.863999999999996,
+          "maximumMs": 0.914
+        },
+        "UpdateLayoutTree": {
+          "count": 262,
+          "totalMs": 39.54999999999999,
+          "maximumMs": 7.313
+        },
+        "FunctionCall": {
+          "count": 1200,
+          "totalMs": 62.05799999999992,
+          "maximumMs": 6.841
+        },
+        "Layout": {
+          "count": 32,
+          "totalMs": 13.849000000000002,
+          "maximumMs": 7.841
+        },
+        "Paint": {
+          "count": 238,
+          "totalMs": 24.96399999999999,
+          "maximumMs": 1.467
+        },
+        "EvaluateScript": {
+          "count": 4,
+          "totalMs": 11.441,
+          "maximumMs": 5.576
+        }
+      },
+      "startupDurations": {
+        "RunTask": 78.56500000000005,
+        "ParseHTML": 1.7439999999999967,
+        "UpdateLayoutTree": 10.363,
+        "FunctionCall": 27.60800000000001,
+        "Layout": 8.472000000000001,
+        "Paint": 1.6869999999999998,
+        "EvaluateScript": 5.879
+      },
+      "durationScope": "Renderer main thread only. Startup values are clipped to navigation through this diagnostic session’s LCP. Whole-journey categories may overlap; never sum them as independent work.",
+      "topSampledFunctions": [
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/fast-definitions.js",
+          "line": 212,
+          "function": "define",
+          "samples": 506,
+          "sampledSelfMs": 9.843999999999983,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/dialog/dialog.js",
+          "line": 110,
+          "function": "(anonymous)",
+          "samples": 55,
+          "sampledSelfMs": 7.327000000000002,
+          "mapped": true
+        },
+        {
+          "source": "assets/index-DHbL8u7_.js",
+          "line": 1,
+          "function": "(anonymous)",
+          "samples": 53,
+          "sampledSelfMs": 6.836,
+          "mapped": false
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/dialog/dialog.js",
+          "line": 130,
+          "function": "hide",
+          "samples": 44,
+          "sampledSelfMs": 5.284000000000001,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/dropdown/dropdown.base.js",
+          "line": 95,
+          "function": "get displayValue",
+          "samples": 37,
+          "sampledSelfMs": 4.965999999999998,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 711,
+          "function": "(anonymous)",
+          "samples": 31,
+          "sampledSelfMs": 2.1690000000000005,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/avatar/avatar.js",
+          "line": 37,
+          "function": "generateInitials",
+          "samples": 12,
+          "sampledSelfMs": 1.541,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/slider/slider.js",
+          "line": 397,
+          "function": "G.setupTrackConstraints",
+          "samples": 9,
+          "sampledSelfMs": 1.268,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/dom.js",
+          "line": 83,
+          "function": "setAttribute",
+          "samples": 7,
+          "sampledSelfMs": 0.657,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/tokens/lib/utils/createLightTheme.js",
+          "line": 8,
+          "function": "(anonymous)",
+          "samples": 4,
+          "sampledSelfMs": 0.52,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/theme/set-theme.js",
+          "line": 83,
+          "function": "kf",
+          "samples": 4,
+          "sampledSelfMs": 0.52,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/fast-definitions.js",
+          "line": 155,
+          "function": "e",
+          "samples": 4,
+          "sampledSelfMs": 0.516,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 224,
+          "function": "compile",
+          "samples": 4,
+          "sampledSelfMs": 0.441,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 277,
+          "function": "(anonymous)",
+          "samples": 3,
+          "sampledSelfMs": 0.327,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/html-binding-directive.js",
+          "line": 213,
+          "function": "bind",
+          "samples": 3,
+          "sampledSelfMs": 0.303,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 55,
+          "function": "setValue",
+          "samples": 4,
+          "sampledSelfMs": 0.291,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/notifier.js",
+          "line": 127,
+          "function": "notify",
+          "samples": 4,
+          "sampledSelfMs": 0.266,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 261,
+          "function": "isVolatileBinding",
+          "samples": 2,
+          "sampledSelfMs": 0.255,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 140,
+          "function": "Wn",
+          "samples": 2,
+          "sampledSelfMs": 0.172,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 633,
+          "function": "forCustomElement",
+          "samples": 3,
+          "sampledSelfMs": 0.166,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/radio-group/radio-group.base.js",
+          "line": 228,
+          "function": "checkRadio",
+          "samples": 1,
+          "sampledSelfMs": 0.161,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 49,
+          "function": "addFactory",
+          "samples": 1,
+          "sampledSelfMs": 0.155,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 210,
+          "function": "(anonymous)",
+          "samples": 2,
+          "sampledSelfMs": 0.153,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/avatar/avatar.base.js",
+          "line": 105,
+          "function": "cleanupSlottedContent",
+          "samples": 1,
+          "sampledSelfMs": 0.143,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/notifier.js",
+          "line": 38,
+          "function": "subscribe",
+          "samples": 1,
+          "sampledSelfMs": 0.143,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 281,
+          "function": "set",
+          "samples": 1,
+          "sampledSelfMs": 0.137,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 89,
+          "function": "get",
+          "samples": 3,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 15,
+          "function": "ft",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/dropdown/dropdown.base.js",
+          "line": 135,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/fast-element.js",
+          "line": 12,
+          "function": "$emit",
+          "samples": 1,
+          "sampledSelfMs": 0.135,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/styles/css.js",
+          "line": 3,
+          "function": "jt",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/textarea/textarea.js",
+          "line": 12,
+          "function": "ml",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/update-queue.js",
+          "line": 25,
+          "function": "me",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/textarea/textarea.base.js",
+          "line": 163,
+          "function": "set defaultValue",
+          "samples": 1,
+          "sampledSelfMs": 0.132,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/fast-element-registry.js",
+          "line": 15,
+          "function": "register",
+          "samples": 1,
+          "sampledSelfMs": 0.131,
+          "mapped": true
+        },
+        {
+          "source": "../../src/ui.js",
+          "line": 28,
+          "function": "select",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/field/field.base.js",
+          "line": 29,
+          "function": "labelSlotChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.13,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/tslib/tslib.es6.mjs",
+          "line": 55,
+          "function": "I",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/template.js",
+          "line": 155,
+          "function": "create",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/node-observation.js",
+          "line": 25,
+          "function": "set id",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 165,
+          "function": "Vm",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 179,
+          "function": "Kn",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 104,
+          "function": "createView",
+          "samples": 1,
+          "sampledSelfMs": 0.129,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/styles/css.js",
+          "line": 37,
+          "function": "v",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/theme/set-theme.js",
+          "line": 65,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/fast-element.js",
+          "line": 39,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/template.js",
+          "line": 74,
+          "function": "compile",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/utils/get-initials.js",
+          "line": 52,
+          "function": "Lc",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 253,
+          "function": "binding",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/tab/tab.js",
+          "line": 25,
+          "function": "connectedCallback",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/update-queue.js",
+          "line": 10,
+          "function": "pe",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 532,
+          "function": "disconnect",
+          "samples": 1,
+          "sampledSelfMs": 0.128,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/view.js",
+          "line": 213,
+          "function": "bind",
+          "samples": 1,
+          "sampledSelfMs": 0.127,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/text-input/text-input.base.js",
+          "line": 217,
+          "function": "connectedCallback",
+          "samples": 1,
+          "sampledSelfMs": 0.127,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/textarea/textarea.base.js",
+          "line": 66,
+          "function": "disabledChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.127,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/theme/set-theme.js",
+          "line": 56,
+          "function": "wf",
+          "samples": 1,
+          "sampledSelfMs": 0.126,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 162,
+          "function": "e",
+          "samples": 4,
+          "sampledSelfMs": 0.126,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 471,
+          "function": "observeLateAttributes",
+          "samples": 1,
+          "sampledSelfMs": 0.126,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 150,
+          "function": "output",
+          "samples": 1,
+          "sampledSelfMs": 0.125,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 230,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.125,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/textarea/textarea.template.js",
+          "line": 22,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.123,
+          "mapped": true
+        },
+        {
+          "source": "../../../shared/web-showcase.js",
+          "line": 209,
+          "function": "Wm",
+          "samples": 2,
+          "sampledSelfMs": 0.117,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/element-controller.js",
+          "line": 779,
+          "function": "St",
+          "samples": 2,
+          "sampledSelfMs": 0.112,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/dropdown/dropdown.base.js",
+          "line": 124,
+          "function": "listboxChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.106,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/avatar/avatar.base.js",
+          "line": 19,
+          "function": "defaultSlotChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.099,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/dropdown/dropdown.base.js",
+          "line": 217,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.099,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/components/attributes.js",
+          "line": 149,
+          "function": "(anonymous)",
+          "samples": 2,
+          "sampledSelfMs": 0.099,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 49,
+          "function": "getValue",
+          "samples": 2,
+          "sampledSelfMs": 0.097,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/option/option.js",
+          "line": 66,
+          "function": "descriptionSlotChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.087,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/html-binding-directive.js",
+          "line": 21,
+          "function": "Nn",
+          "samples": 1,
+          "sampledSelfMs": 0.084,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 101,
+          "function": "observe",
+          "samples": 1,
+          "sampledSelfMs": 0.073,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/volatile.js",
+          "line": 11,
+          "function": "get",
+          "samples": 1,
+          "sampledSelfMs": 0.072,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/accordion/accordion.js",
+          "line": 31,
+          "function": "(anonymous)",
+          "samples": 1,
+          "sampledSelfMs": 0.071,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/slider/slider.js",
+          "line": 215,
+          "function": "directionChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.07,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/observation/observable.js",
+          "line": 200,
+          "function": "track",
+          "samples": 3,
+          "sampledSelfMs": 0.06999999999999999,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/field/field.base.js",
+          "line": 162,
+          "function": "setLabelProperties",
+          "samples": 1,
+          "sampledSelfMs": 0.052,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 115,
+          "function": "Un",
+          "samples": 1,
+          "sampledSelfMs": 0.041,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/option/option.js",
+          "line": 194,
+          "function": "W",
+          "samples": 1,
+          "sampledSelfMs": 0.038,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@microsoft/fast-element/dist/esm/templating/compiler.js",
+          "line": 16,
+          "function": "Ln",
+          "samples": 1,
+          "sampledSelfMs": 0.037,
+          "mapped": true
+        },
+        {
+          "source": "../../node_modules/@fluentui/web-components/dist/esm/accordion/accordion.js",
+          "line": 102,
+          "function": "slottedAccordionItemsChanged",
+          "samples": 1,
+          "sampledSelfMs": 0.037,
+          "mapped": true
+        }
+      ],
+      "coverage": {
+        "js": [
+          {
+            "url": "/Users/westbrook/Documents/repos/design-system/showcases/performance/runs/en-reve-main-diagnostic-v1/collector.js",
+            "totalCharacters": 20476,
+            "coveredCharacters": 14285,
+            "uncoveredFraction": 0.30235397538581754
+          },
+          {
+            "url": "https://127.0.0.1:4615/assets/index-DHbL8u7_.js",
+            "totalCharacters": 287939,
+            "coveredCharacters": 223304,
+            "uncoveredFraction": 0.22447462830668996
+          }
+        ],
+        "css": [
+          {
+            "url": "https://127.0.0.1:4615/assets/index-7X1QEckn.css",
+            "totalCharacters": 4300,
+            "coveredCharacters": 3750,
+            "uncoveredFraction": 0.12790697674418605
+          }
+        ]
+      },
+      "dom": {
+        "documents": 7,
+        "nodes": 4395,
+        "jsEventListeners": 689
+      },
+      "connectedDOM": {
+        "connectedNodes": 2889,
+        "connectedElements": 1284,
+        "openShadowRoots": 169,
+        "styleElements": 0,
+        "stylesheetAdoptions": 221,
+        "uniqueAdoptedStylesheets": 32,
+        "note": "Connected DOM including accessible open shadow roots. Closed roots are not inspected. CDP DOM counters additionally include retained/detached nodes and are not equivalent.",
+        "elementsByTag": {
+          "slot": 457,
+          "div": 223,
+          "span": 71,
+          "svg": 64,
+          "path": 64,
+          "label": 48,
+          "fluent-button": 47,
+          "p": 24,
+          "h2": 21,
+          "fluent-field": 20,
+          "fluent-option": 19,
+          "section": 16,
+          "small": 15,
+          "fluent-link": 12,
+          "a": 12,
+          "strong": 10,
+          "input": 9,
+          "fluent-checkbox": 9,
+          "button": 9,
+          "th": 8,
+          "fluent-text-input": 7,
+          "tr": 7,
+          "fluent-dropdown": 6,
+          "fluent-listbox": 6,
+          "td": 6,
+          "fluent-textarea": 5,
+          "textarea": 5,
+          "fluent-badge": 5,
+          "fluent-switch": 5,
+          "dialog": 5,
+          "fluent-dialog": 4,
+          "fluent-dialog-body": 4,
+          "fluent-menu-item": 3,
+          "nav": 3,
+          "br": 3,
+          "dt": 3,
+          "dd": 3,
+          "meta": 2,
+          "fluent-tab": 2,
+          "fluent-radio": 2,
+          "i": 2,
+          "b": 2,
+          "li": 2,
+          "fluent-avatar": 2,
+          "h3": 2,
+          "html": 1,
+          "head": 1,
+          "title": 1,
+          "script": 1,
+          "link": 1,
+          "body": 1,
+          "main": 1,
+          "h1": 1,
+          "fluent-menu": 1,
+          "fluent-menu-button": 1,
+          "fluent-menu-list": 1,
+          "fluent-tablist": 1,
+          "fluent-radio-group": 1,
+          "fluent-accordion": 1,
+          "fluent-accordion-item": 1,
+          "figure": 1,
+          "figcaption": 1,
+          "details": 1,
+          "summary": 1,
+          "table": 1,
+          "caption": 1,
+          "thead": 1,
+          "tbody": 1,
+          "fluent-progress-bar": 1,
+          "dl": 1,
+          "fluent-slider": 1,
+          "ul": 1,
+          "ol": 1,
+          "fluent-drawer": 1,
+          "fluent-drawer-body": 1
+        }
+      },
+      "browserMetrics": {
+        "Timestamp": 3563241.846663,
+        "AudioHandlers": 0,
+        "AudioWorkletProcessors": 0,
+        "Documents": 7,
+        "Frames": 5,
+        "JSEventListeners": 689,
+        "LayoutObjects": 1445,
+        "MediaKeySessions": 0,
+        "MediaKeys": 0,
+        "Nodes": 4395,
+        "Resources": 3,
+        "ContextLifecycleStateObservers": 67,
+        "V8PerContextDatas": 5,
+        "WorkerGlobalScopes": 0,
+        "UACSSResources": 1,
+        "RTCPeerConnections": 0,
+        "ResourceFetchers": 7,
+        "AdSubframes": 0,
+        "DetachedScriptStates": 2,
+        "ArrayBufferContents": 0,
+        "LayoutCount": 30,
+        "RecalcStyleCount": 264,
+        "LayoutDuration": 0.013624,
+        "RecalcStyleDuration": 0.039773,
+        "DevToolsCommandDuration": 0.158388,
+        "ScriptDuration": 0.052055,
+        "V8CompileDuration": 0,
+        "TaskDuration": 0.405487,
+        "TaskOtherDuration": 0.141647,
+        "ThreadTime": 0.608881,
+        "ProcessTime": 1.098141,
+        "JSHeapUsedSize": 10353452,
+        "JSHeapTotalSize": 18219008,
+        "FirstMeaningfulPaint": 3563236.072502,
+        "DomContentLoaded": 3563236.034907,
+        "NavigationStart": 3563235.975253
+      },
+      "lcpAttribution": {
+        "timeToFirstByte": 17.5,
+        "resourceLoadDelay": 0,
+        "resourceLoadDuration": 0,
+        "elementRenderDelay": 82.5,
+        "target": "#panel-idea>p",
+        "lcpEntry": {
+          "name": "",
+          "entryType": "largest-contentful-paint",
+          "startTime": 100,
+          "duration": 0,
+          "navigationId": 9377,
+          "paintTime": 85.90000009536743,
+          "presentationTime": 100,
+          "size": 16587,
+          "renderTime": 100,
+          "loadTime": 0,
+          "id": "",
+          "url": "",
+          "element": "#showcase-brief >>> p"
+        },
+        "navigationEntry": {
+          "name": "https://127.0.0.1:4615/",
+          "entryType": "navigation",
+          "startTime": 0,
+          "duration": 88.10000038146973,
+          "navigationId": 9377,
+          "initiatorType": "navigation",
+          "deliveryType": "",
+          "nextHopProtocol": "h2",
+          "renderBlockingStatus": "non-blocking",
+          "contentType": "text/html",
+          "contentEncoding": "br",
+          "workerStart": 0,
+          "workerRouterEvaluationStart": 0,
+          "workerCacheLookupStart": 0,
+          "workerMatchedSourceType": "",
+          "workerFinalSourceType": "",
+          "redirectStart": 0,
+          "redirectEnd": 0,
+          "fetchStart": 2.700000286102295,
+          "domainLookupStart": 3.6000003814697266,
+          "domainLookupEnd": 3.6000003814697266,
+          "connectStart": 3.6000003814697266,
+          "secureConnectionStart": 3.700000286102295,
+          "connectEnd": 17,
+          "requestStart": 17.200000286102295,
+          "responseStart": 17.5,
+          "firstInterimResponseStart": 0,
+          "finalResponseHeadersStart": 17.5,
+          "responseEnd": 17.800000190734863,
+          "transferSize": 477,
+          "encodedBodySize": 177,
+          "decodedBodySize": 373,
+          "responseStatus": 200,
+          "serverTiming": [],
+          "unloadEventStart": 0,
+          "unloadEventEnd": 0,
+          "domInteractive": 25.40000009536743,
+          "domContentLoadedEventStart": 59.700000286102295,
+          "domContentLoadedEventEnd": 60.40000009536743,
+          "domComplete": 88,
+          "loadEventStart": 88,
+          "loadEventEnd": 88.10000038146973,
+          "type": "navigate",
+          "redirectCount": 0,
+          "activationStart": 0,
+          "criticalCHRestart": 0,
+          "notRestoredReasons": null,
+          "confidence": {}
+        }
+      },
+      "inpAttribution": {
+        "interactionTarget": "#showcase-actions>div.native-card>div.card-body>div>div.row>fluent-button",
+        "interactionType": "pointer",
+        "interactionTime": 1623.2000002861023,
+        "nextPaintTime": 1663.2000002861023,
+        "processedEventEntries": [],
+        "longAnimationFrameEntries": [],
+        "inputDelay": 0.5,
+        "processingDuration": 1.0999999046325684,
+        "presentationDelay": 38.40000009536743,
+        "loadState": "complete"
+      }
+    }
+  ]
+}

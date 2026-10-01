@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "reviewer": "user",
+  "availability": "Manual review accepted; no further approval required to seal Phase 4.",
+  "fixtures": {
+    "basis": "Phase 4 verified settings fixture; artificial delay extended from 300 to 3000 ms for manual announcement review only",
+    "changedFiles": [
+      "chunks/chunk-MFUP3G7M.js"
+    ],
+    "notPerformanceEvidence": true,
+    "changedChunkSha256": "f8ed15ae35ec557e154a460ea2f209c6327ca906747ebb61576f712f2a86b4cc",
+    "exactlyOnePreparationDelayChanged": true,
+    "archive": {
+      "path": "manual-review.tar.gz",
+      "sha256": "ea7b9cc5f392e074c9ac01c7889787bbf9ed00e8e459a5be9f506c9b270a5067"
+    }
+  },
+  "urls": [
+    "http://127.0.0.1:4211/lazy-ssr.html?mode=global&intent&hold",
+    "http://127.0.0.1:4211/lazy-ssr.html?mode=global&intent&hold&fail"
+  ],
+  "checks": [
+    "loading announcement",
+    "error announcement",
+    "explicit retry",
+    "focus enters command search",
+    "Escape restores trigger focus"
+  ],
+  "screenReader": null,
+  "browser": null,
+  "findings": [
+    {
+      "id": "escape-close-announcement",
+      "status": "accepted_with_known_limitation",
+      "reportedBy": "user",
+      "scenario": "Loading, then successful opening",
+      "observation": "Focus returns as expected for both Escape and X. Escape initially announces \", selected\"; X clearly announces \"Search Commands, popup Dialog...\".",
+      "browser": null,
+      "screenReader": null,
+      "fixtureArchiveSha256": "ea7b9cc5f392e074c9ac01c7889787bbf9ed00e8e459a5be9f506c9b270a5067",
+      "diagnostic": "dismissal-trace.json",
+      "evidence": "In Chromium, Firefox and WebKit, Escape changes aria-expanded and removes aria-activedescendant while en-command-search is focused, before dialog.close restores trigger focus. Keyboard and pointer close-button activation perform those mutations after focus leaves the search field. All nine cases restore trigger focus and close the dialog.",
+      "limitation": "DOM tracing cannot establish spoken announcements or causal screen-reader behavior. Browser/screen-reader details and manual comparison remain pending.",
+      "proposedFollowup": "Test closing the accepted modal and restoring focus before clearing combobox ARIA state; preserve canceled closes and composition behavior. Retest exact announcement before claiming a fix.",
+      "candidateStatus": "accepted"
+    }
+  ],
+  "scenarioResults": {
+    "failure-then-retry": {
+      "status": "passed",
+      "reviewer": "user",
+      "reportedAt": "2026-09-21T20:43:28.729969+00:00",
+      "userText": "The \"Failure, then retry\" workflow worked great and messaged all of the important \"loading\" and \"failure\" messages.",
+      "scope": "User acceptance of the failure-then-retry fixture workflow, including loading and failure announcements. Does not resolve the separate dismissal announcement finding.",
+      "fixtureArchiveSha256": "ea7b9cc5f392e074c9ac01c7889787bbf9ed00e8e459a5be9f506c9b270a5067"
+    }
+  },
+  "currentCandidate": {
+    "receipt": "dismissal-candidate.json",
+    "archive": {
+      "path": "manual-review-close-order.tar.gz",
+      "sha256": "eb6dedc8847608001488df3084f609b2ebf3a981b8ea65ff63b7134c16e5259d"
+    },
+    "urls": {
+      "success": "http://127.0.0.1:4212/lazy-ssr.html?mode=global&intent&hold",
+      "failureRetry": "http://127.0.0.1:4212/lazy-ssr.html?mode=global&intent&hold&fail"
+    },
+    "status": "accepted_with_chrome_announcement_limitation",
+    "note": "Prior failure/retry acceptance belongs to the original fixture; dismissal speech on this changed candidate has not been accepted."
+  },
+  "acceptedAt": "2026-09-21T21:07:23.739778+00:00",
+  "acceptance": "User accepts Phase 4 and authorizes sealing it. Escape closure works as expected in Firefox and Safari. Chrome retains an incorrect announcement but restores focus correctly; accepted as a known limitation."
+}

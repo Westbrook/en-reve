@@ -1,0 +1,15 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>En Reve · Document scrolling</title>
+<style>body{margin:0;font:16px system-ui;color:#252525;background:#fafafa}main{max-width:60rem;margin:auto;padding:1rem}header{position:fixed;inset:0 0 auto;height:48px;background:#eee;z-index:1}footer{position:fixed;inset:auto 0 0;height:24px;background:#eee;z-index:1}#before{height:900px}#after{height:1000px}button{font:inherit;margin:4px}.report{position:fixed;right:1rem;bottom:2rem;z-index:2;background:white;padding:.5rem}</style></head><body>
+<header>En Reve · Document collection</header><main><section id="before"><h1>Keep your place in a document</h1><p>Scroll into the records, then change row heights or the preceding section. Reveal Record 300 instantly or smoothly. Wheel, touch, pointer and keyboard input interrupt a reveal.</p>
+<button id="reveal">Reveal Record 300</button><button id="smooth">Smooth reveal</button><button id="heights">Toggle row heights</button><button id="preceding">Grow preceding section</button></section>
+<document-scroll-demo></document-scroll-demo><section id="after">End of collection</section></main><footer>Sticky footer · 24px</footer>
+<script type="module">
+import './src/document-scroll-demo.ts';
+const demo=document.querySelector('document-scroll-demo');
+if(new URL(location.href).searchParams.has('element'))demo.elementMode=true;
+document.querySelector('#reveal').onclick=()=>demo.controller.scrollToKey('row-300',{behavior:'instant',block:'start'});
+document.querySelector('#smooth').onclick=()=>demo.controller.scrollToKey('row-300',{behavior:'smooth',block:'start'});
+document.querySelector('#heights').onclick=()=>{demo.large=!demo.large;};
+document.querySelector('#preceding').onclick=()=>{const before=document.querySelector('#before');before.style.height=before.offsetHeight+180+'px';};
+if(new URL(location.href).searchParams.has('progress-report')){const a=document.createElement('a');a.className='report';a.href='http://127.0.0.1:4177';a.textContent='Progress Report';document.body.append(a);}
+</script></body></html>

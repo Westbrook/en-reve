@@ -1,0 +1,1118 @@
+{
+  "buildId": "6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "scope": "Automated DOM, focus, local form and navigation supporting checks; no physical IME, OS picker, autofill or speech claim.",
+  "results": [
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "native/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "native comparison; no registry required",
+      "registryCapabilities": "not applicable to native comparison; library probe pending",
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 48
+        }
+      ],
+      "documentId": "56addd92-4610-439d-bc76-ea0364f02c7a",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "native/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "native comparison; no registry required",
+      "registryCapabilities": "not applicable to native comparison; library probe pending",
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 23
+        }
+      ],
+      "documentId": "8261427d-02c4-4fc1-9f46-056eb4191e1a",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "eager/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 36
+        }
+      ],
+      "documentId": "f8170466-4413-4c0c-a341-da6a5cc97922",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "eager/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 28
+        }
+      ],
+      "documentId": "4f0c58bd-1909-4f5b-b5dd-91f05fa8687a",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 27
+        }
+      ],
+      "documentId": "fd4ca3df-c8c1-4475-8001-ec23d25a4d3b",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 29
+        }
+      ],
+      "documentId": "3c7a9aa0-9e9f-4ac1-9e30-5b8bfece856b",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/global: slow load editing, blur and reset cancellation",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 17
+        }
+      ],
+      "documentId": "62f18bc4-b0e4-4c5f-9953-e77944859202"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/global: real HTTP failure, native editing, retry and fresh page recovery",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 21
+        }
+      ],
+      "documentId": "62ee1154-9022-46f7-b6ab-b264da754426",
+      "retry": "rejected",
+      "opened": false,
+      "recovery": "fresh normal page succeeds; no speech claim"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/shadow: slow load editing, blur and reset cancellation",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 22
+        }
+      ],
+      "documentId": "d87183e5-2141-4a16-9a09-e4fc4a8ada19"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/shadow: real HTTP failure, native editing, retry and fresh page recovery",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 70
+        }
+      ],
+      "documentId": "bfb3563d-dd54-4137-8969-c447a0f37aa3",
+      "retry": "rejected",
+      "opened": false,
+      "recovery": "fresh normal page succeeds; no speech claim"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "native/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 46
+          }
+        ],
+        "documentId": "0a274154-1ebb-46e5-a1ed-eb3a866a39f7"
+      },
+      "back": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 46
+          },
+          {
+            "persisted": true,
+            "at": 311
+          }
+        ],
+        "documentId": "0a274154-1ebb-46e5-a1ed-eb3a866a39f7"
+      },
+      "reload": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 18
+          }
+        ],
+        "documentId": "4569fc76-3e9e-4053-874d-e7613ffb7278"
+      },
+      "backValueMatches": true,
+      "afterHydrationMatches": true,
+      "classification": "BFCache resume",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "eager/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 44
+          }
+        ],
+        "documentId": "46ccb310-6d8e-4240-aa75-d3252ed69012"
+      },
+      "back": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 44
+          },
+          {
+            "persisted": true,
+            "at": 259
+          }
+        ],
+        "documentId": "46ccb310-6d8e-4240-aa75-d3252ed69012"
+      },
+      "reload": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 19
+          }
+        ],
+        "documentId": "6fa6b666-9e89-468c-ab09-a3d4aeb5a211"
+      },
+      "backValueMatches": true,
+      "afterHydrationMatches": true,
+      "classification": "BFCache resume",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "chromium",
+      "version": "153.0.8010.12",
+      "scenario": "deferred/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 39
+          }
+        ],
+        "documentId": "5fe0db51-cd15-41a8-ab19-700f39b7bc73"
+      },
+      "back": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 39
+          },
+          {
+            "persisted": true,
+            "at": 231
+          }
+        ],
+        "documentId": "5fe0db51-cd15-41a8-ab19-700f39b7bc73"
+      },
+      "reload": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 16
+          }
+        ],
+        "documentId": "fc88bab3-b6c8-4183-8a90-fe8f130ac0f6"
+      },
+      "backValueMatches": true,
+      "afterHydrationMatches": true,
+      "classification": "BFCache resume",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "native/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "native comparison; no registry required",
+      "registryCapabilities": "not applicable to native comparison; library probe pending",
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 160
+        }
+      ],
+      "documentId": "c95898bf-b802-4175-8e67-8b7332ad3bff",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "native/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "native comparison; no registry required",
+      "registryCapabilities": "not applicable to native comparison; library probe pending",
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 46
+        }
+      ],
+      "documentId": "8917c440-a997-4f80-8125-36a1d56240cf",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "eager/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 59
+        }
+      ],
+      "documentId": "35ca3a8f-3f1e-49db-b530-158916a7eb42",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "eager/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 59
+        }
+      ],
+      "documentId": "5488b3dd-2be8-46ff-b139-252e801df644",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 59
+        }
+      ],
+      "documentId": "30ae4121-8440-4225-9d89-775f3cc53ea3",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 54
+        }
+      ],
+      "documentId": "4162d01c-c89e-455d-b8ca-3d3c139e7dfd",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/global: slow load editing, blur and reset cancellation",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 27
+        }
+      ],
+      "documentId": "974c69a9-f91f-4347-adcf-bb9bc6998fb5"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/global: real HTTP failure, native editing, retry and fresh page recovery",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 24
+        }
+      ],
+      "documentId": "b08d5af3-f86a-4335-bdb8-85f21e006ac5",
+      "retry": "resolved",
+      "opened": true,
+      "recovery": "fresh normal page succeeds; no speech claim"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/shadow: slow load editing, blur and reset cancellation",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 21
+        }
+      ],
+      "documentId": "847be672-a2e7-484c-aa08-1ebee1838eb5"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/shadow: real HTTP failure, native editing, retry and fresh page recovery",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": false,
+        "importMode": "global",
+        "dormant": false
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 27
+        }
+      ],
+      "documentId": "691d2144-6a59-4d9d-8ceb-57bd2c512d7c",
+      "retry": "resolved",
+      "opened": true,
+      "recovery": "fresh normal page succeeds; no speech claim"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "native/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 47
+          }
+        ],
+        "documentId": "7377a1e2-2e72-4699-9ff3-ed32db7c0831"
+      },
+      "back": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "back_forward",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 25
+          }
+        ],
+        "documentId": "a89f9ddf-753b-445c-9d0c-25f40451ef1c"
+      },
+      "reload": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 16
+          }
+        ],
+        "documentId": "83cca120-b14c-4403-b839-aeeb047d3687"
+      },
+      "backValueMatches": true,
+      "afterHydrationMatches": true,
+      "classification": "new-document Back",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "eager/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": false,
+          "importMode": "global",
+          "dormant": false
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 43
+          }
+        ],
+        "documentId": "2a46db60-a3e3-4819-a503-8fc003b09388"
+      },
+      "back": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": false,
+          "importMode": "global",
+          "dormant": false
+        },
+        "navigationType": "back_forward",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 30
+          }
+        ],
+        "documentId": "d7079c2b-27de-4be4-9e13-7fe684932b2a"
+      },
+      "reload": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": false,
+          "importMode": "global",
+          "dormant": false
+        },
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 20
+          }
+        ],
+        "documentId": "edd9657a-cafa-4e22-a819-40f820730d2d"
+      },
+      "backValueMatches": false,
+      "afterHydrationMatches": true,
+      "classification": "new-document Back",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "firefox",
+      "version": "155.0",
+      "scenario": "deferred/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": false,
+          "importMode": "global",
+          "dormant": false
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 45
+          }
+        ],
+        "documentId": "7dc2e08e-667c-4446-8395-1d2b9aba5142"
+      },
+      "back": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": false,
+          "importMode": "global",
+          "dormant": false
+        },
+        "navigationType": "back_forward",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 24
+          }
+        ],
+        "documentId": "bb24ea00-6db0-4ae2-ab76-d87315320752"
+      },
+      "reload": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": false,
+          "importMode": "global",
+          "dormant": false
+        },
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 20
+          }
+        ],
+        "documentId": "bf05758c-5b46-4c39-a43c-7a1d713dfb1c"
+      },
+      "backValueMatches": false,
+      "afterHydrationMatches": true,
+      "classification": "new-document Back",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "native/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "native comparison; no registry required",
+      "registryCapabilities": "not applicable to native comparison; library probe pending",
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 31
+        }
+      ],
+      "documentId": "3e0fe996-0f74-4cd5-8978-deb195a8db88",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "native/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "native comparison; no registry required",
+      "registryCapabilities": "not applicable to native comparison; library probe pending",
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 11
+        }
+      ],
+      "documentId": "16286441-5e61-431d-b856-207df34525d3",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "eager/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 34
+        }
+      ],
+      "documentId": "e7457f23-4d60-4d49-9a88-9bc98df12835",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "eager/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 25
+        }
+      ],
+      "documentId": "3a877497-caba-4d7b-ab86-8b9ab7921819",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/global: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 23
+        }
+      ],
+      "documentId": "c26eef0a-f2e7-4606-8ea7-b2b1d0120e45",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/shadow: initial edit, hydrate, reset, constraints, local submit",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 25
+        }
+      ],
+      "documentId": "6b88df4e-cc4d-47c0-907c-de9c68f8270a",
+      "inputEvidence": "synthetic assignment before upgrade; Playwright fill after upgrade; DOM/focus only"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/global: slow load editing, blur and reset cancellation",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 14
+        }
+      ],
+      "documentId": "2cc477ad-66d5-4cb6-81fb-c5ced13a2066"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/global: real HTTP failure, native editing, retry and fresh page recovery",
+      "status": "pass",
+      "mode": "global",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 17
+        }
+      ],
+      "documentId": "7fe635d8-098e-4636-98c9-6446f16dfa1a",
+      "retry": "rejected",
+      "opened": false,
+      "recovery": "fresh normal page succeeds; no speech claim"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/shadow: slow load editing, blur and reset cancellation",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 16
+        }
+      ],
+      "documentId": "f4b852f8-1660-4dc9-87f3-bc36b2f4bed3"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/shadow: real HTTP failure, native editing, retry and fresh page recovery",
+      "status": "pass",
+      "mode": "scoped",
+      "registryCapabilities": {
+        "native": true,
+        "importMode": "options",
+        "dormant": true
+      },
+      "navigationType": "navigate",
+      "pageshows": [
+        {
+          "persisted": false,
+          "at": 15
+        }
+      ],
+      "documentId": "63cee943-aa9e-4682-960c-cc26453d1344",
+      "retry": "rejected",
+      "opened": false,
+      "recovery": "fresh normal page succeeds; no speech claim"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "native/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 12
+          }
+        ],
+        "documentId": "fde10c3a-2be9-4179-a4c8-b70eb3c9519c"
+      },
+      "back": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "back_forward",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 4
+          }
+        ],
+        "documentId": "4b356ae3-52dd-4a63-a7cd-97554b844aa9"
+      },
+      "reload": {
+        "mode": "native comparison; no registry required",
+        "registryCapabilities": "not applicable to native comparison; library probe pending",
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 6
+          }
+        ],
+        "documentId": "d3712593-92f2-4f3b-853c-6299ae17ecd9"
+      },
+      "backValueMatches": true,
+      "afterHydrationMatches": true,
+      "classification": "new-document Back",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "eager/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 27
+          }
+        ],
+        "documentId": "d8239034-b51d-443f-ac3f-4e6792e316ec"
+      },
+      "back": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "back_forward",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 18
+          }
+        ],
+        "documentId": "fa22f07c-b893-4506-8d03-58faea243ba1"
+      },
+      "reload": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 15
+          }
+        ],
+        "documentId": "77e814aa-794e-4a5b-aa2d-4edf2ba36e64"
+      },
+      "backValueMatches": false,
+      "afterHydrationMatches": true,
+      "classification": "new-document Back",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    },
+    {
+      "browser": "webkit",
+      "version": "26.6",
+      "scenario": "deferred/global: classified navigation observations",
+      "status": "pass",
+      "initial": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "navigate",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 23
+          }
+        ],
+        "documentId": "9bf94d3d-0879-4a8f-ac19-087a02ce071b"
+      },
+      "back": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "back_forward",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 14
+          }
+        ],
+        "documentId": "f9cca880-1faf-4293-9ae6-20e5f68193cc"
+      },
+      "reload": {
+        "mode": "global",
+        "registryCapabilities": {
+          "native": true,
+          "importMode": "options",
+          "dormant": true
+        },
+        "navigationType": "reload",
+        "pageshows": [
+          {
+            "persisted": false,
+            "at": 12
+          }
+        ],
+        "documentId": "ac8117a1-ee51-4cb2-a606-2605484ab90f"
+      },
+      "backValueMatches": false,
+      "afterHydrationMatches": true,
+      "classification": "new-document Back",
+      "inputEvidence": "Playwright fill; not browser autofill or physical review"
+    }
+  ],
+  "failures": []
+}

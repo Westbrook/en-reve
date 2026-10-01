@@ -1,0 +1,95 @@
+{
+  "reason": "Earlier narrative incorrectly said the journey appends reviews. Frozen En Reve feedback overwrites app.data.feedback; shared React FeedbackBody replaces status through setStatus, and shared Web Component feedback replaces status text. The measured node/heap changes remain valid observations but are not attributable to accumulated review records.",
+  "scope": "Interpretation correction, no raw memory sample invalidated.",
+  "nextExperiment": "Repeat controlled cycles and inspect connected versus detached DOM/heap retainers; include a minimal repeated-input automation control and close/release UI before attributing growth to library leaks.",
+  "frozenSourceEvidence": [
+    {
+      "system": "en-reve",
+      "sources": [
+        {
+          "source": "../../src/template.ts",
+          "sourceSha256": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+          "sourceMap": "showcases/performance/.cache/snapshots/en-reve/assets/index-CSoEuTYL.js.map",
+          "sourceMapSha256": "402e698cdc38f4656469175f966e6d5656d4083a9da29367d9bc27686d556051"
+        }
+      ]
+    },
+    {
+      "system": "radix-react",
+      "sources": [
+        {
+          "source": "../../../shared/Showcase.jsx",
+          "sourceSha256": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+          "sourceMap": "showcases/performance/.cache/snapshots/radix-react/assets/index-C-Yx8hkh.js.map",
+          "sourceMapSha256": "586bec5bcb4ec6266aabb043e79d17b0cc3e25d3558dd52559e0adc047d6d953"
+        }
+      ]
+    },
+    {
+      "system": "fluent-react",
+      "sources": [
+        {
+          "source": "../../../shared/Showcase.jsx",
+          "sourceSha256": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+          "sourceMap": "showcases/performance/.cache/snapshots/fluent-react/assets/index-iOgXJCQZ.js.map",
+          "sourceMapSha256": "8e2c577f775c3bd7adf0809a018979195edd2ea1282189b4cb35e980f1fa16c0"
+        }
+      ]
+    },
+    {
+      "system": "spectrum-react",
+      "sources": [
+        {
+          "source": "../../../shared/Showcase.jsx",
+          "sourceSha256": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+          "sourceMap": "showcases/performance/.cache/snapshots/spectrum-react/assets/index-CmMecXP4.js.map",
+          "sourceMapSha256": "72c4ef691221692b1c9312a3fb887481c094ce244e06ab3ea3c7e40a2015b956"
+        }
+      ]
+    },
+    {
+      "system": "astryx-react",
+      "sources": [
+        {
+          "source": "../../../shared/Showcase.jsx",
+          "sourceSha256": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+          "sourceMap": "showcases/performance/.cache/snapshots/astryx-react/assets/index-BBSG2wCJ.js.map",
+          "sourceMapSha256": "e0fcd9fa7a0c610b887971a99c213a20321fa1f54369851a59dd09cdc8b02a10"
+        }
+      ]
+    },
+    {
+      "system": "shadcn-react",
+      "sources": [
+        {
+          "source": "../../../shared/Showcase.jsx",
+          "sourceSha256": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+          "sourceMap": "showcases/performance/.cache/snapshots/shadcn-react/assets/index-9zXTxq3o.js.map",
+          "sourceMapSha256": "cca36d45b78b3ace46565c9d730a8a970ee1984fb6ff6fc93df242ec7ede8e02"
+        }
+      ]
+    },
+    {
+      "system": "fluent-web-components",
+      "sources": [
+        {
+          "source": "../../../shared/web-showcase.js",
+          "sourceSha256": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+          "sourceMap": "showcases/performance/.cache/snapshots/fluent-web-components/assets/index-DHbL8u7_.js.map",
+          "sourceMapSha256": "8a1aabf6b25e7b9073fed887617a8f0c2cc64b0d13da29466effa228608f1d7b"
+        }
+      ]
+    },
+    {
+      "system": "spectrum-web-components",
+      "sources": [
+        {
+          "source": "../../../shared/web-showcase.js",
+          "sourceSha256": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+          "sourceMap": "showcases/performance/.cache/snapshots/spectrum-web-components/assets/index-BKxPXhH6.js.map",
+          "sourceMapSha256": "972a9223bab533cb0e1e625562d1261c91d61dc3761db911abee268451b3b0e1"
+        }
+      ]
+    }
+  ]
+}

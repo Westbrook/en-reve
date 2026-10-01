@@ -1,0 +1,39 @@
+{
+  "name": "@en-reve/primitives",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "docs",
+    "README.md",
+    "verification.json"
+  ],
+  "exports": {
+    "./state/*.js": {
+      "types": "./dist/state/*.d.ts",
+      "default": "./dist/state/*.js"
+    },
+    "./templates/*.js": {
+      "types": "./dist/templates/*.d.ts",
+      "default": "./dist/templates/*.js"
+    },
+    "./interactions/*.js": {
+      "types": "./dist/interactions/*.d.ts",
+      "default": "./dist/interactions/*.js"
+    }
+  },
+  "scripts": {
+    "build": "node ../../node_modules/typescript/bin/tsc -b",
+    "test": "node ../../tooling/testing/invoke.mjs public --view='packages/primitives#test' --",
+    "test:types": "node ../../node_modules/typescript/bin/tsc --ignoreConfig --noEmit --strict --skipLibCheck --target ES2022 --module NodeNext tests/virtual-collection.consumer.types.ts",
+    "test:browser": "node ../../tooling/testing/invoke.mjs public --view='packages/primitives#test:browser' --"
+  },
+  "peerDependencies": {
+    "lit": "^3.3.3",
+    "signal-polyfill": "^0.2.2",
+    "signal-utils": "^0.21.1"
+  }
+}

@@ -1,0 +1,26 @@
+import '@en-reve/tokens/default.css';
+import '@en-reve/styles/foundations.css';
+import '@en-reve/styles/calendar.css';
+import '@en-reve/elements/define/token-editor.js';
+import '@en-reve/elements/define/rich-text-editor.js';
+import '@en-reve/elements/define/editor-toolbar.js';
+import '@en-reve/elements/define/data-table.js';
+import '@en-reve/elements/define/presence-group.js';
+import '@en-reve/elements/define/color-picker.js';
+import '@en-reve/elements/define/color-wheel.js';
+import '@en-reve/elements/define/calendar.js';
+import '@en-reve/elements/define/time-field.js';
+import '@en-reve/elements/define/slider.js';
+import {emitThemeCSS,resolveTheme,emitPropertyRegistrations} from '@en-reve/tokens';
+Object.assign(window,{emitThemeCSS,resolveTheme,emitPropertyRegistrations});
+document.body.dataset.ready='true';
+
+import '@en-reve/elements/define/card.js';
+import '@en-reve/elements/define/activity-item.js';
+import '@en-reve/elements/define/accordion-item.js';
+import '@en-reve/elements/define/navigation.js';
+import '@en-reve/elements/define/navigation-group.js';
+import '@en-reve/elements/define/progress-steps.js';
+import '@en-reve/elements/define/toast-region.js';
+import '@en-reve/elements/define/validation-summary.js';
+import '@en-reve/elements/define/command-palette.js';

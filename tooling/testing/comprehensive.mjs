@@ -1,0 +1,160 @@
+import { readFile } from 'node:fs/promises';
+import { resolve, dirname } from 'node:path';
+import { publicGraph, root } from './pathways.mjs';
+import { maintainedFiles, configurationRole } from './workload.mjs';
+import { workloadFamilies } from './families.mjs';
+import { deliveryBrowserOwners, deliveryNodeSources } from './lazy-delivery-closure.mjs';
+
+// Concrete current-library prerequisites. Historical cohorts remain separately named.
+const preparations = {
+ 'consumer-contracts': {file:'probes/consumer-contracts/prepare.mjs',dependencies:['metadata','build:ssr'],environment:{EN_CONSUMER_CONTRACTS_OUT:'$RUN/fixtures/consumer-contracts'}},
+ 'scoped-registry': {file:'probes/scoped-registry/prepare-packed.mjs',environment:{EN_SCOPED_REGISTRY_OUT:'$RUN/fixtures/scoped-registry'}},
+ 'lazy-registry': {file:'probes/lazy-registry/prepare.mjs',environment:{EN_LAZY_OUT:'$RUN/fixtures/lazy-registry'}},
+ 'lazy-delivery': {file:'probes/lazy-delivery/prepare.mjs',dependencies:['metadata','build:ssr','prepare:packages'],environment:{EN_LAZY_DELIVERY_OUT:'$RUN/fixtures/lazy-delivery'}},
+ 'lazy-delivery-editor': {file:'probes/lazy-delivery-editor/prepare.mjs',dependencies:['metadata','build:ssr','prepare:packages'],environment:{EN_LAZY_DELIVERY_EDITOR_OUT:'$RUN/fixtures/lazy-delivery-editor'}},
+ 'lazy-delivery-pagination': {file:'probes/lazy-delivery-pagination/prepare.mjs',dependencies:['metadata','build:ssr','prepare:packages'],environment:{EN_LAZY_DELIVERY_PAGINATION_OUT:'$RUN/fixtures/lazy-delivery-pagination'}},
+ 'activation-registry': {file:'probes/activation-registry/prepare.mjs',environment:{EN_ACTIVATION_OUT:'$RUN/fixtures/activation-registry'}},
+ 'activation-library': {file:'probes/activation-library/prepare.mjs',requires:['activation-registry'],environment:{EN_ACTIVATION_OUT:'$RUN/fixtures/activation-registry',EN_ACTIVATION_LIBRARY_OUT:'$RUN/fixtures/activation-library'}},
+ 'scoped-hydration': {file:'probes/scoped-hydration/prepare.mjs',environment:{EN_SCOPED_HYDRATION_OUT:'$RUN/fixtures/scoped-hydration'}},
+};
+const direct = [
+ ['cem','tooling/metadata/generate-elements.ts',['--check']],
+ ['types','tooling/metadata/prepared-types.ts',['--check']],
+ ['lazy','tooling/metadata/lazy-manifest.ts',['--check']],
+ ['delivery-inventory','tooling/metadata/verify-delivery-inventory.ts',[]],
+ ['watch','tooling/css-authoring/verify-watch.mjs',[]],
+ ['authoring-corpus','tooling/theme-candidates/verify-authoring.mjs',[]],
+ ['portable','packages/tokens/test/portability/portability.test.mjs',[], 'node-browser'],
+ ['paired-css','packages/tokens/test/paired-browser/verify.mjs',[],'custom-browser'],
+ ['packed-registration','tooling/registration/verify-packed.mjs',[],'custom-browser'],
+ ['sticker-sheet','tooling/sticker-sheet/verify.mjs',[],'built-browser'],
+ ['highlighting-production','tooling/highlighting/verify.mjs',[],'built-browser'],
+ ['highlighting-development','tooling/highlighting/verify.mjs',[],'development-browser'],
+ ['swatch','tooling/swatch/verify-production.mjs',[],'built-browser'],
+ ['slider','tooling/slider/verify-production.mjs',[],'built-browser'],
+ ['typography','tooling/typography/verify.mjs',[],'built-browser'],
+ ['typography-production','tooling/typography/verify-production.mjs',[],'built-browser'],
+ ['authoring-production','tooling/theme-authoring-pilot/verify.mjs',['--production-authoring'],'built-browser'],
+ ['api-examples','apps/docs/tests/api-examples-smoke.mjs',[],'built-browser'],
+ ['candidate-import','tooling/theme-candidates/verify.mjs',[],'built-browser'],
+ ['candidate-assets','tooling/theme-candidates/verify-assets.mjs',[],'built-browser'],
+ ['lazy-docs','probes/lazy-registry/docs-check.mjs',[],'built-browser'],
+];
+/** Broad correctness graph: do not infer equivalence from matching test titles. */
+export async function comprehensiveGraph({workspaceRoot=root}={}) {
+ const graph=await publicGraph({workspaceRoot}), tasks=new Map(graph.tasks.map(task=>[task.id,task])), files=await maintainedFiles(workspaceRoot);
+ const add=task=>{const previous=tasks.get(task.id);tasks.set(task.id,previous?{...previous,...task,dependencies:previous.dependencies}:task);return task.id;};
+ const node=process.execPath,npm=process.platform==='win32'?'npm.cmd':'npm';
+ const units=[],browser=[],checks=[],inactive=[],unresolved=[];
+ for(const file of files) {
+  if(!/\.[cm]?[jt]s$/.test(file))continue;
+  const source=await readFile(resolve(workspaceRoot,file),'utf8');
+  if(/\.test\.[cm]?[jt]s$/.test(file) && (source.includes('node:test') || /catalogue-group-\d\.test/.test(file))) {
+   if(file.startsWith('tooling/theme-authoring-pilot/')){inactive.push({file,classification:'optional-historical-external-engine',reason:'Superseded by production CSS authoring; requires an independently supplied audited external source and LightningCSS1.32.0.'});continue;}
+   if(file==='tooling/theme-candidates/catalogue.test.mjs')continue; // Compatibility view of the same registered cases.
+   if(file.includes('/portability/'))continue; // Browser-owning Node suite runs serially below.
+   const dependencies=file.startsWith('probes/lazy-delivery/')?['build:ssr']:file.startsWith('showcases/performance-results/')?[]:file.startsWith('packages/tokens/')?['build:tokens']:file.startsWith('packages/primitives/')?['build:primitives']:file.startsWith('packages/ssr/')?['build:ssr']:file.startsWith('packages/elements/')?['build:elements']:file.startsWith('tooling/css-authoring/')?['build:styles']:['build'];
+   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies}));
+  }
+  if(file.includes('config.') && source.includes('@playwright/test') && source.includes('defineConfig')) {
+   const role=configurationRole(file);
+   if(role.kind==='orchestration-wrapper'){inactive.push({file,classification:role.kind,...role});continue;}
+   const id=`browser:${file}`,dependencies=[file.startsWith('packages/ssr/')?'build:ssr':file==='packages/styles/tests/state-paint/review.config.ts'?'build':file.startsWith('packages/elements/')||file.startsWith('packages/styles/')?'build:elements':file.startsWith('packages/primitives/')?'build:styles':'build'],environment={};
+   if(file.startsWith('packages/primitives/'))dependencies.push('build:primitives');
+   if(file==='packages/ssr/playwright.config.ts')dependencies.push('prepare:ssr-minification');
+   for(const [name,preparation] of Object.entries(preparations))if(file.startsWith(`probes/${name}/`)) {
+    const prepareId=`prepare:${name}`;
+    add({id:prepareId,kind:'producer',command:[node,preparation.file],dependencies:preparation.dependencies??['build:ssr',...(['scoped-registry','lazy-registry','activation-registry'].includes(name)?['prepare:packages']:[]),...(preparation.requires??[]).map(name=>`prepare:${name}`)],environment:preparation.environment});dependencies.push(prepareId);Object.assign(environment,preparation.environment);
+   }
+   if(file.startsWith('probes/framework-consumption/'))dependencies.splice(0,dependencies.length,'prepare:framework');
+   if(Object.keys(preparations).some(name=>file.startsWith(`probes/${name}/`)))dependencies.splice(0,1);
+   if(file.startsWith('showcases/performance-results/'))dependencies.splice(0,dependencies.length,'prepare:reader');
+   if(file==='probes/component-patterns/playwright.config.ts')Object.assign(environment,{EN_PATTERN_GALLERY_URL:'$DOCS_ORIGIN'});
+   if(file==='packages/ssr/playwright.config.ts')environment.EN_SSR_TEST_PORT='4292';
+   const reader=file.startsWith('showcases/performance-results/');
+   const declared=source.match(/\bworkers\s*:\s*(\d+)/)?.[1];
+   // Unknown inherited limits remain conservative until resolved discovery supplies the exact bound.
+   browser.push(add({id,kind:'browser',config:file,command:[node,reader?'showcases/performance-results/node_modules/@playwright/test/cli.js':'node_modules/@playwright/test/cli.js','test','--config',file],dependencies,environment,workerBudget:{maximum:3,declared:declared?Number(declared):null,requiresResolvedDiscovery:true}}));
+  }
+ }
+ add({id:'prepare:ssr-minification',kind:'producer',command:[node,'packages/ssr/tests/minification/build.mjs','--source-only'],dependencies:['build:ssr'],scope:'Bind deterministic generated source before consumer identities; each owned SSR server acquires one fresh registry-isolated fixture shared by all engines.'});
+ add({id:'prepare:packages',kind:'producer',command:[node,'tooling/evidence/prepare-packages.mjs','$RUN/packages'],dependencies:['metadata','build:ssr']});
+ add({id:'install:framework',kind:'producer',command:[node,'probes/framework-consumption/install.mjs'],dependencies:[],environment:{EN_FRAMEWORK_INSTALL_RECEIPT:'$RUN/framework-install.json'}});
+ add({id:'prepare:framework',kind:'producer',command:[node,'probes/framework-consumption/build.mjs'],dependencies:['install:framework','build:ssr']});
+ add({id:'prepare:reader',kind:'producer',command:[npm,'run','build','--prefix','showcases/performance-results'],dependencies:[]});
+ add({id:'prepare:candidates',kind:'producer',command:[node,'tooling/testing/prepare-candidates.mjs','$RUN/fixtures/candidates'],dependencies:['build']});
+ for(const [name,file,args,kind='check'] of direct)checks.push(add({id:`direct:${name}`,kind,command:[node,...(kind==='node-browser'?['--test','--test-reporter=tap']:[]),file,...args],dependencies:name==='packed-registration'?['metadata','build:ssr']:name.startsWith('candidate-')?['prepare:candidates']:['build'],assertionSources:[file]}));
+ for(const name of ['view','en-reve-main','spectrum-gen2','calendar-variants'])checks.push(add({id:`direct:reader-${name}`,kind:'reader-browser',command:[node,`showcases/performance-results/scripts/verify-${name}.mjs`],dependencies:['browser:showcases/performance-results/playwright.config.js'],assertionSources:[`showcases/performance-results/scripts/verify-${name}.mjs`]}));
+ checks.push(add({id:'styles-check',kind:'types',command:[npm,'run','check','-w','@en-reve/styles'],dependencies:['build:tokens'],assertionSources:['packages/styles/tsconfig.json']}));
+ checks.push(add({id:'consumer-types',kind:'types',command:[node,'tooling/test-pipeline/consumer-types.mjs'],dependencies:['build']}));
+ checks.push(add({id:'scoped-consumer-types',kind:'types',command:[node,'node_modules/typescript/bin/tsc','--ignoreConfig','--strict','--noEmit','--target','ES2022','--module','NodeNext','--moduleResolution','NodeNext','--skipLibCheck','probes/scoped-registry/consumer.types.ts'],dependencies:['build:elements'],assertionSources:['probes/scoped-registry/consumer.types.ts']}));
+ checks.push(add({id:'breadcrumbs-types',kind:'types',command:[node,'node_modules/typescript/bin/tsc','--ignoreConfig','--strict','--noUnusedLocals','--noUnusedParameters','--noEmit','--target','ES2022','--module','NodeNext','--moduleResolution','NodeNext','--skipLibCheck','probes/breadcrumbs-ssr-adapter/consumer.types.ts'],dependencies:['build:ssr']}));
+ checks.push(add({id:'primitives-types',kind:'types',command:[npm,'run','test:types','-w','@en-reve/primitives'],dependencies:['build:primitives']}));
+ checks.push(add({id:'python-budgets',kind:'python',command:['python3','probes/date-picker-performance/budget-check.test.py'],dependencies:[]}));
+ // Other execution tiers are mapped in the complete execution manifest. They
+ // remain outside this correctness selection because their fixtures, acquisition
+ // protocols and human inputs are distinct obligations.
+ graph.separateFamilies=workloadFamilies.filter(family=>family.tier!=='correctness');
+ graph.families=workloadFamilies;
+ graph.pathways.framework=browser.filter(id=>id.includes('probes/framework-consumption/'));
+ graph.pathways.registry=units.filter(id=>/node:probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('consumer-types',browser.filter(id=>/probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('direct:packed-registration'));
+ graph.pathways.hydration=browser.filter(id=>id.includes('probes/scoped-hydration/'));
+ graph.pathways.reader=[...units,...browser].filter(id=>id.includes('showcases/performance-results/')).concat(checks.filter(id=>id.startsWith('direct:reader-')));
+ for(const name of ['tokens','primitives','ssr'])graph.pathways[name]=units.filter(id=>new RegExp(`^node:packages/${name}/${name==='tokens'?'test':'tests'}/[^/]+\\.test\\.mjs$`).test(id));
+ graph.pathways.breadcrumbs=['breadcrumbs-types','node:probes/breadcrumbs-ssr-adapter/adapter.test.mjs','node:probes/breadcrumbs-ssr-adapter/stream-gates.test.mjs'];
+ graph.pathways['breadcrumbs-browser']=['browser:probes/breadcrumbs-ssr-adapter/playwright.config.ts'];
+ graph.pathways.primitives.push('primitives-types');
+ graph.pathways['primitives-browser']=['browser:packages/primitives/playwright.config.ts'];
+ graph.pathways['ssr-browser']=['browser:packages/ssr/playwright.config.ts'];
+ graph.pathways['styles-authoring']=units.filter(id=>id.startsWith('node:tooling/css-authoring/'));
+ graph.pathways.probes=['browser:probes/playwright.config.ts'];
+ graph.pathways.properties=['properties'];graph.pathways.scopes=['scopes'];graph.pathways.sheet=['direct:sticker-sheet'];
+ graph.pathways.minify=units.filter(id=>/^node:tooling\/minify\/[^/]+\.test\.mjs$/.test(id));
+ graph.pathways.tooling=graph.pathways.api.filter(id=>id.startsWith('node:'));
+ graph.pathways['docs-workflows-core']=['node:apps/docs/tests/workflow-core.test.ts'];
+ graph.pathways['docs-workflows']=['browser:apps/docs/tests/playwright.config.ts'];
+ // Keep the explicit extended-runner list authoritative, including newly added
+ // docs generator regression files. Reject an unfamiliar selector expression.
+ const extendedProgram=await readFile(resolve(workspaceRoot,'tooling/test-pipeline/node-suite.mjs'),'utf8');
+ const extendedExpression=extendedProgram.match(/const files\s*=\s*\[([\s\S]*?)\];/)?.[1];
+ if(!extendedExpression)throw new Error('Review changed extended Node selector before activation');
+ const discoveryRoots=[...extendedExpression.matchAll(/\.\.\.await discover\((['"])([^'"]+)\1\)/g)].map(match=>match[2]);
+ let explicitExpression=extendedExpression.replace(/\.\.\.await discover\((['"])([^'"]+)\1\)/g,'');
+ const explicitSources=[...explicitExpression.matchAll(/(['"])([^'"]+)\1/g)].map(match=>match[2]);
+ explicitExpression=explicitExpression.replace(/(['"])([^'"]+)\1/g,'').replace(/[\s,]/g,'');
+ if(explicitExpression||!discoveryRoots.length)throw new Error('Unresolved extended Node selector expression');
+ const extendedSources=[...new Set([...files.filter(file=>discoveryRoots.some(prefix=>file.startsWith(prefix+'/'))&&/\.test\.[cm]?ts$|\.test\.mjs$/.test(file)),...explicitSources])].sort();
+ graph.pathways['extended-node']=extendedSources.map(file=>{
+  if(!files.includes(file))throw new Error('Missing declared extended Node source: '+file);
+  const id=`node:${file}`;
+  if(!tasks.has(id)){add({id,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies:['build']});units.push(id);}
+  return id;
+ });
+ graph.pathways['extended-button']=['browser:packages/elements/src/button/playwright.config.mjs'];
+ graph.pathways['extended-portability']=['direct:portable'];graph.pathways['extended-types']=['consumer-types'];
+ graph.pathways['styles-check']=['styles-check'];
+ graph.pathways['scoped-registries']=['scoped-consumer-types','prepare:scoped-registry','browser:probes/scoped-registry/playwright.config.ts','browser:probes/scoped-registry/context-regressions.config.ts'];
+ graph.pathways['lazy-registries']=['direct:lazy','node:probes/lazy-registry/loader.test.mjs','prepare:lazy-registry','browser:probes/lazy-registry/playwright.config.ts'];
+ graph.pathways['lazy-delivery']=['node:probes/lazy-delivery/contract.test.mjs','prepare:lazy-delivery','browser:probes/lazy-delivery/playwright.config.ts'];
+ graph.pathways['lazy-delivery-editor']=['prepare:lazy-delivery-editor','browser:probes/lazy-delivery-editor/playwright.config.ts'];
+ graph.pathways['lazy-delivery-pagination']=['prepare:lazy-delivery-pagination','browser:probes/lazy-delivery-pagination/playwright.config.ts'];
+ add({id:'check:delivery-final',kind:'check',command:[node,'tooling/metadata/verify-delivery-inventory.ts','--require-final'],dependencies:['direct:delivery-inventory']});
+ graph.pathways['delivery-closeout']=['check:delivery-final'];
+ graph.pathways['delivery-gallery']=['browser:probes/component-patterns/playwright.config.ts'];
+ // Curated full owners, not changed-only selection or historical performance recipes.
+ // Production workflow coverage is separately named so focused qualification can
+ // record a supported docs subset; final integration always runs its full owner.
+ graph.pathways['lazy-delivery-regressions']=[...new Set([
+  ...graph.pathways.api,...graph.pathways.registry,...graph.pathways.hydration,
+  ...graph.pathways.ssr,...graph.pathways['ssr-browser'],...graph.pathways['extended-types'],
+  ...graph.pathways['docs-workflows-core'],...graph.pathways['delivery-gallery'],
+  ...deliveryBrowserOwners.map(([,config])=>`browser:${config}`),
+  ...deliveryNodeSources.map(file=>`node:${file}`),
+  'browser:probes/consumer-contracts/playwright.config.ts',
+  'browser:packages/elements/src/commands/tests/playwright.config.ts',
+  'direct:cem','direct:types','direct:lazy','direct:delivery-inventory','customization',
+ ])];
+ graph.tasks=[...tasks.values()];graph.pathways.correctness=[...new Set([...Object.entries(graph.pathways).filter(([name])=>name!=='delivery-closeout').flatMap(([,ids])=>ids),...units,...browser,...checks])];
+ graph.inactive=inactive;graph.unresolved=unresolved;graph.completeness='Current-library correctness graph; separately mapped specialized, historical and manual obligations are inventoried by execution-manifest.mjs';
+ return graph;
+}

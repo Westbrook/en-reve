@@ -1,0 +1,132 @@
+# Nine themes, one component system
+
+September 20, 2026 · local implementation and research report
+
+The five original inspired theme pairs have been refreshed against their source designs and the current theme API. A sixth inspired pair now adds Radix Themes, with a comparison of component coverage across all five external component libraries. Three new paired themes—**Vellum, Signal, and Kinetic**—exercise typography, density, shape, surface hierarchy, focus, motion, selection, collaboration surfaces and elevation using the same reusable components.
+
+The most consequential finding was an integration restriction: the theme compiler already supports custom font stacks, precise typography and geometry, layered/inset shadows and typed source extensions, but the site's presets started from the default managed editor. This refresh removes that restriction through trusted per-appearance baselines. It does not add a new core theme API or weaken imported-file validation.
+
+## Review the results
+
+Use the same [Showcase](/showcase?progress-report) and its **Theme** and **Appearance** controls for every design. The existing workflows and isolated API examples share the expanded catalogue. Theme switching preserves example data and component behavior. Download JSON opens again in the same build's Theme Review.
+
+| Direction | Live preview | What to inspect |
+| --- | --- | --- |
+| Radix Themes | [Light](/showcase?theme=radix-inspired&appearance=light&progress-report) · [Dark](/showcase?theme=radix-inspired&appearance=dark&progress-report) | Indigo actions, slate neutrals, compact system typography, restrained corners and layered elevation. |
+| Vellum | [Light](/showcase?theme=vellum&appearance=light&progress-report) · [Dark](/showcase?theme=vellum&appearance=dark&progress-report) | Bookish serif body and controls, warm paper/oxblood, large quiet headings, fine corners, engraved elevation and gold focus. |
+| Signal | [Light](/showcase?theme=signal&appearance=light&progress-report) · [Dark](/showcase?theme=signal&appearance=dark&progress-report) | Industrial monospace, black/yellow identity, square controls, strong rules, hard offset elevation and explicit selected-state ink. |
+| Kinetic | [Light](/showcase?theme=kinetic&appearance=light&progress-report) · [Dark](/showcase?theme=kinetic&appearance=dark&progress-report) | Large expressive type, expansive spacing, pill forms, coral identity/violet actions/mint collaboration surfaces, colored layered elevation and supplementary motion. |
+
+These themes contain no alternate component templates or theme-specific behavior. Their design logic lives in typed source foundations plus managed edits. The three originals each exercise 196 managed edits and 11–12 source definitions per appearance; the goal is distinct results, not a claim that every optional hook should be pinned. Unpinned contextual fallbacks remain valuable, especially for button variants and specialized calendar states. Fonts can differ across platforms when a named local face is unavailable.
+
+## What changed in the inspired themes
+
+The intent remains **inspired**, with explicit distinctions between observed values, semantic mappings and accessibility/behavior adaptations. None of these is an official implementation or endorsement of its source system.
+
+| Theme | Source identity and flavor | Material improvements |
+| --- | --- | --- |
+| Spectrum 2 | `@adobe/spectrum-tokens` **15.4.1**; React Spectrum S2 **1.7.1**. [Official tokens](https://opensource.adobe.com/spectrum-design-data/s2-tokens-viewer/) | Default desktop M UI metrics rather than the previous L-like 16/20 treatment; source heading/metadata hierarchy; separate filled/status content roles; true three-layer elevation; toast geometry and source fill colors. |
+| Fluent 2 | Actual [Fluent 2 website](https://fluent2.microsoft.design/), inspected in light and dark on September 20. Website CSS and rendered consumers are primary; official web guidance fills unrepresented roles. | Reworked website palette and hierarchy: neutral filled actions, rose selection, Segoe editorial headings, rounded tiles and controls, underlined neutral article links, independent popup/dialog/toast elevation and visible focus. The earlier React v9 default blue recipe is superseded. |
+| Astryx | Branded [Astryx documentation skin](https://astryx.atmeta.com/), distinct from its Neutral component preview | Bundled Figtree; exact headings, metadata, size outputs and nested geometry; source durations/easing and popup treatment; layered elevation and separate popup/toast levels; updated editor-token treatment. Button press shrink remains an explicitly uncaptured detail. |
+| shadcn/ui | Homepage **Rhea / Neutral**, not a generic New York theme. [Official site](https://ui.shadcn.com/) | Bundled Geist and Geist Mono, exact type hierarchy and source geometry, layered shadows, neutral surfaces/row treatment, transparent checked options and precise focus relationships. |
+| Radix Themes | [Radix homepage](https://www.radix-ui.com/) and [Themes playground](https://www.radix-ui.com/themes/playground), default indigo/slate, medium radius, 100% scale | New paired interpretation of default product typography, semantic/alpha ramps, family geometry and layered popup elevation. Classic gradients, local color/variant axes and surface anatomy remain documented limits. |
+| Holotable | Fresh authenticated home/archive inspection, observed asset `index.KHRTEubt.css`. [Reference](https://swccg-holotable.reve-ai-0869.chatgpt.site/) | Arial stack; observed heading hierarchy; exact 5/7/8.4/6.4px component geometry expressed in rem; two-layer popup shadow; bright popup border; transparent selected options; catalog-specific field focus. |
+
+Light and dark are authored separately. Holotable's light version remains a warm-paper adaptation: no light source appearance was established. Native picker fallbacks, protected target floors, immediate primary focus and stable anchored-popup coordinates remain part of the reusable system. Source artwork, page layout, application behaviors and unlicensed font assets are not silently copied into a theme.
+
+Detailed evidence, source URLs and value mappings: [Spectrum and historical Fluent checkpoint](theme-refresh-spectrum-fluent.md), [current Fluent 2 website rework](theme-refresh-fluent2.md), [Fluent 2 API findings](theme-refresh-fluent2-api-findings.md), [Astryx/shadcn](theme-refresh-astryx-shadcn.md), [Holotable](theme-refresh-holotable.md), [original designs](theme-refresh-originals.md), [Radix mapping](theme-refresh-radix.md), [five-library component comparison](theme-refresh-library-comparison.md), and [API audit](theme-refresh-api-audit.md). Earlier provenance files remain historical checkpoints; the current reports and recipe hashes identify the delivered versions. React v9 already implements Fluent 2: this follow-up changes the reference flavor to the website, rather than claiming a Fluent 1 → 2 migration.
+
+## Current API use and delivery changes
+
+1. **Trusted source foundations reach every preset consumer.** Canonical definitions now allow `baseOptions.light` and `.dark` using existing `ThemeOptions`. Source font stacks, exact dimensions/weights/durations and structured shadows no longer have to fit the default editor's finite choices. Managed edits remain validated relative to that foundation.
+2. **One catalogue drives selectors and artifact tooling.** All nine presets are available from the shared selector, workflow consumers and candidate generator. Compact generated selector data avoids loading all theme recipes just to show a menu.
+3. **Downloaded candidates retain authoritative bases.** Reopening selects the trusted repository baseline for that pair ID and still recomputes/validates the candidate, build identity and generated artifacts. Changing the source baseline in an imported file is rejected. Arbitrary imported CSS is not executed.
+4. **Font assets are explicit application dependencies.** Redistributable Figtree, Geist and Geist Mono assets and licenses are bundled locally for the reference themes. Theme CSS names fonts; a JSON export does not embed them. The consuming application must supply those assets or accept the declared fallbacks. Spectrum/Fluent depend on available local fonts and fallback stacks.
+5. **Application paint respects semantic roles.** Header lettering and decorative foreground icons now use action-text rather than brand fill, so fluorescent identity colors remain visible. The brand mark retains its explicit on-brand foreground.
+6. **Preview links are reproducible.** Showcase accepts validated theme and appearance query parameters, preserving the Progress Report return path. Both appearances can be reviewed without changing example markup. Narrow-screen summary metrics now stack, and large scope headings can wrap, so expressive typography remains usable at 200% text size.
+
+## Recommendations before the first official theme API
+
+Follow-up audit: [button-like controls and pressed-state coverage](button-like-press-audit.md) distinguishes existing shared-button consumers from segmented choices, tabs, disclosures and other families that still lack independent pressed-state customization. The [implementation follow-up](button-like-press-implementation.md) adds independent family paint, bounded motion and thumb geometry, with theme mappings and verification.
+
+Preset adoption update: see [theme-level integration across all nine presets](theme-inspired-adoption.md) for the shipped companions, source-specific refinements and the new original-theme treatments.
+
+Implementation update: all eleven recommendations below have been taken into implementation. See the [delivered API contract](theme-api-authoring-contract.md) and [implementation and verification report](theme-api-implementation.md) for current behavior and limits. The table below preserves the research checkpoint that motivated the work; it is not a description of the updated API.
+
+The original [pressed-state audit](theme-refresh-pressed-states.md) answered three additional questions:
+
+| Question | Current answer |
+| --- | --- |
+| Can a theme customize pressed states? | Yes for paint: semantic action ramps, six button rest/hover/pressed fill/ink hooks, option state hooks, and specialized calendar/editor-token controls. Button state hooks are CSS-only in the stock schema, but typed source extensions can expose them to managed editing. |
+| Can it reproduce press shrink, movement or elevation? | Scoped public CSS/Parts can do this today. There are no connected pressed-motion/elevation theme roles or portable companion-rule contract, so current Astryx/Rhea theme JSON does not reproduce those source effects. Existing surface-scale tokens control overlays, not buttons. |
+| Does the default theme make press feedback visible everywhere? | No. Primary buttons change fill; secondary/ghost/danger retain hover paint, options fall through without explicit pressed overrides, and several other families have no transient press rule. Selected, checked, open and focus states are different feedback. |
+
+The focused report includes the actual source exceptions, a consumer-coverage inventory, rendered held-state measurements, and proposed API/default-design work. It does not silently implement those proposals in this reporting follow-up.
+
+The user subsequently authorized implementation of these eleven recommendations. Their original priorities and completion criteria are retained here. The separate component roadmap remains proposed future work.
+
+| Priority | Proposal | Evidence and concrete completion criterion |
+| --- | --- | --- |
+| P1 | **Publish the complete authoring contract.** Explain typed source, managed choices, semantic tokens, family overrides, scoped CSS and Parts as distinct supported layers. | The same valid source font or shadow was previously impossible to introduce through the site's default editor. Retain the nine themes as a release corpus; require source → selector → edit/undo → export → same-build reopen/re-export parity. Clearly distinguish portable theme source/CSS from exact-build review evidence. |
+| P1 | **Define a portable companion CSS/variant recipe.** Preserve public hooks and Parts without exploding every token into a variant cross-product. | Existing button rest/hover/pressed hooks apply across variants; indiscriminate theme-wide pins can flatten ghost, secondary and danger buttons. Document scope/cascade, selector grammar, artifact identity and accessibility alternatives before packaging a CSS companion. Never treat imported review CSS as executable input. |
+| P1 | **Define pressed presentation and default feedback coverage.** | Current button hooks customize pressed paint; no connected pressed scale, translation or elevation roles reproduce Astryx's shrink or Rhea's shift. Default primary buttons change fill, while secondary/ghost/danger retain hover paint and many other families lack a distinct down state. Add bounded opt-in presentation roles, source-specific group/popup exceptions, stable hit/focus geometry and family-appropriate default feedback. Verify held states, not just click outcomes. See the [pressed-state audit](theme-refresh-pressed-states.md). |
+| P1 | **Add rendered relationship validation.** Extend existing verification around actual component roles and alpha composites. | Zero compiler diagnostics only covers six declared semantic color relationships. Test field, option selected-hover, button variant, link, status badge, toast and adjacent focus surfaces in both appearances. Unknown composition should remain explicitly unknown. Keep platform/AT qualification separate. |
+| P1 | **Make hook impact discoverable.** Expose registered consumer coverage, contextual fallback, selected-size behavior and authoring layer. | Some hooks are CSS-only; custom typed `component.*` tokens can emit valid but unused CSS. Offer an opt-in unknown-component-hook warning while allowing application-defined tokens. Show concrete consumers and conditional Parts reachability rather than promising every role affects every component. |
+| P1 | **Record provenance at the consumed-role level.** Separate rendered website styling, published system guidance and our adaptations. | Fluent 2's website includes a generic product token table alongside a distinct rose/neutral skin. Store source URL/hash, selector, appearance and viewport for measured values. Do not confuse unused declarations or browser-default anchor colors with intentional brand roles. Preserve disagreement between the elevation article and the site's consumed CSS. |
+| P2 | **Add narrow field geometry and state roles where repeated usage warrants them.** | Fields expose background/ink/padding/focus, but share border/radius anatomy. Compare text, select, combobox, number, date and editor frames before defining input radius/border/hover/invalid roles. Verify broader control pins still fall back correctly. |
+| P2 | **Separate navigation and tab state recipes.** | Fluent 2's sidebar distinguishes hover from current-page fill/ink; the current navigation hooks collapse those contexts. Add bounded state paints and evaluate a current-indicator slot. Keep wrapping, disclosure, drawer breakpoints and tab overflow as component/application behavior, rather than visual theme switches. |
+| P2 | **Add surface/card elevation and typography detail.** | Hard shadows, inset engraving and colored elevation already exist as typed shadow values, but cards need a public Part treatment to use them. A surface/card shadow role would remove repeated CSS. Tracking and role-specific style are the highest-value type additions for editorial and technical themes; variable-font axes and fluid expressions can remain CSS until there is a stable contract. |
+| P2 | **Separate family motion and composite geometry where references require it.** | Source popup, dialog and toast timing differs; choice/switch anatomy can differ from global icon sizing. Preserve immediate focus/behavior while defining family visual profiles. Retain stress tests for large type and narrow compound controls, including the numeric stepper found by Kinetic. |
+| P2 | **Document fonts and responsive typography as a delivery concern.** | Named fonts alone cannot reproduce Figtree, Geist, Adobe Clean or Segoe everywhere. Provide a licensed asset manifest/consumption recipe, fallback measurements and loading expectations. Source pointer-specific type scales (such as Spectrum touch sizing) require an explicit responsive strategy, distinct from hit-target floors. |
+
+The original themes reinforce these priorities. Vellum needs tracking/italic detail to feel fully typeset. Signal exposes the missing surface elevation role despite already valid hard-shadow tokens. Kinetic demonstrates the value of distinct brand/action/collaboration colors, but gradients and asymmetrical shapes still belong in public CSS/Parts. Those are focused opportunities; a wholesale theme-engine redesign is not supported by this exercise.
+
+The [five-library comparison](theme-refresh-library-comparison.md) adds a separate component roadmap covering Radix, Spectrum 2, Fluent 2, Astryx and shadcn/ui. It credits all 77 existing elements and native recipes, distinguishes visual variants from missing behavior, and proposes toggles, multivalue/tag pickers, choice-card presentation, context invocation, confirmation semantics, field adornments and interval sliders where justified. These proposals are not implemented components or automatic blockers for theme v1.
+
+Preserve the current boundaries: theme changes must not alter semantics, selection, dismissal or modality; target floors and immediate focus remain protected; specialized range-calendar anatomy remains deliberate. Display-P3, arbitrary decorative geometry and a generalized responsive token language are optional future capabilities, not prerequisites demonstrated by this work. Carry existing THEME-02/06 migration notes into the release rather than treating the new presets as a package-version bump.
+
+## Verification and remaining review
+
+The original eight-theme delivery passed the following checks. These are retained as a historical checkpoint; the Fluent 2 website follow-up has its own recipe and rendered receipts described below.
+
+| Check | Result and scope |
+| --- | --- |
+| Token suite | **126 passed**. |
+| Catalogue transport and trust | **12 passed**, covering all sixteen branches through managed edit/undo, source/font/shadow preservation, exact CSS and byte-identical export/reopen/export, plus unauthorized-baseline rejection. |
+| Document stylesheet/font delivery | **10 passed**, including permitted local fonts and rejection of unsupported dependencies, traversal and escaping symlinks. |
+| Supplemental original-theme contrast | **324 passed**: 54 declared opaque relationships for each of six appearances. Source/alpha checks for the inspired references are recorded in their companion receipts. |
+| Chromium, Firefox and WebKit | **32 passed, 1 documented skip, 0 failures**. All sixteen appearances render and round-trip in each engine. Checks cover typography/geometry, representative interaction states and contrast, retained field data/nodes, dialog elevation/focus and Theme Review reopening. Vellum additionally exercises managed editing and Undo through the browser UI. |
+| Responsive and preference behavior | All three originals pass 320/390px reflow, RTL, 200% root text and independent reduced-motion checks. Forced colors pass in Chromium and Firefox; WebKit's unavailable forced-colors emulation is the explicit skip. |
+
+The rendered matrix is bound to build `sha256:ba73d58d8530dbca704b61ddb6a6155e415632e2b81902e10ec67ed4e5ce7694`. The delivery build copies this completed report; a runtime-asset comparison and final-build Kinetic export/reopen smoke distinguish that documentation-only rebuild from a new untested implementation. Final build identity, checks and hashes live in `artifacts/theme-refresh/verification.json`; prepared CSS/JSON and their exact-build manifest live in `artifacts/theme-refresh/candidates/`. Browser receipts, captures and downloaded bundles are in `artifacts/theme-refresh/final/`.
+
+All six original desktop appearances received visual inspection. Kinetic's large-text review found and corrected cramped numeric-control sizing and two shared application reflow constraints. These checks do not establish pixel equivalence with source systems or comprehensive accessibility acceptance. Native device/assistive-technology qualification and user design review remain separate. No new site publication or package release is asserted by this report.
+
+## Fluent 2 website follow-up
+
+The Fluent pair is now based on [fluent2.microsoft.design](https://fluent2.microsoft.design/), with the user-supplied [Web Components Combobox Storybook](https://storybooks.fluentui.dev/web-components/?path=/docs/components-combobox--docs) cross-checked for component anatomy. The website remains the visual authority; the Web Components product defaults provide secondary evidence. The [Web Components audit](theme-refresh-fluent2-web-components.md) records the inspected source commit separately from the deployed Storybook version, which is not established.
+
+The corrected pair uses 118 managed operations and 129 pins per appearance. Both branches compile without diagnostics and preserve exact export/reopen bytes. The extra declared text relationships reach a minimum of 4.6352:1 light and 5.6301:1 dark; semantic icon pairs exceed 3:1. All twelve catalogue transport/trust tests pass after regenerating the trusted catalogue. The other seven canonical definitions and recipe files are unchanged by this follow-up.
+
+Live source inspection established both the website's typography/selection and the Search modal's actual 6px corner and two-layer shadow. The linked Web Component combines an immediate full focus contour with a bottom accent; it also distinguishes option active-border treatment from checkmark selection. These observations revise the previous React-only rationale. Our rose selected row is an intentional website-skin mapping, not a claim that the product's Web Component option has that fill.
+
+The new rendered checks cover both Fluent appearances in Chromium, Firefox and WebKit: current source label, typed paint/geometry, focus and representative states, retained content, JSON download/import and Theme Review reopen, 320/390px LTR/RTL, 200% text and independent reduced motion. Initial enlarged-text testing caught overflow in the Showcase heading; its shared flex child can now shrink and long headings can wrap. The same review exposed an unbreakable team-role label; that ordinary metadata now wraps within its grid cell. The final verification also repeats the original themes' reflow checks because that application rule is shared.
+
+Exact final-build results, scope-preservation hashes and any initial failure/correction history are retained in `artifacts/fluent2-refresh/verification.json`, with browser receipts under `artifacts/fluent2-refresh/browser-final/` and exact-build CSS/JSON under `artifacts/fluent2-refresh/candidates/`. These receipts supersede earlier Fluent results; the original eight-theme matrix above remains a historical checkpoint. Updated API priorities include consumed-role provenance, independent navigation/current states, field-edge/focus layering, typography detail, surface elevation and a bounded CSS/asset companion. The [focused findings](theme-refresh-fluent2-api-findings.md) and [Web Components audit](theme-refresh-fluent2-web-components.md) explain those proposals without turning component behavior into theme settings.
+
+## Radix Themes follow-up
+
+The ninth pair, **Radix Themes-inspired**, uses the default product theme shown in the [playground](https://www.radix-ui.com/themes/playground) and embedded homepage examples: indigo, auto/slate neutrals, medium corners, 100% scale and translucent panels. Live inspection confirms the homepage's serif marketing headline is a separate styling context; it is not imposed on default component typography. The [mapping report](theme-refresh-radix.md) retains pinned Themes/Colors provenance and the distinction between live P3 rendering and our sRGB source mapping.
+
+Both appearances preserve system typography, source-sized corner tiers, alpha surfaces, solid indigo option highlights and structured popup/dialog elevation through current typed baselines and managed edits. Protected targets, stronger functional boundaries and a contrast-adjusted dark primary hover/press ramp are disclosed adaptations. Classic gradients and inset surface anatomy, backdrop blur, local color/presentation/high-contrast axes and exact press filters remain explicit API limits. Inset and multilayer shadow values themselves already work; missing consumers must not be confused with missing serialization.
+
+The [component comparison](theme-refresh-library-comparison.md) covers all five external libraries, with detailed [Radix](theme-refresh-library-gaps-radix.md), [Spectrum/Fluent](theme-refresh-library-gaps-spectrum-fluent.md), and [Astryx/shadcn](theme-refresh-library-gaps-astryx-shadcn.md) inventories. Native layout, content and field recipes count as coverage. New interaction proposals specify semantics and ownership instead of suggesting a new custom element for every React export.
+
+The Radix delivery's exact build, catalogue transport checks, rendered interaction/reflow/preference checks, initial findings and preservation hashes are recorded in `artifacts/radix-refresh/verification.json`. Prepared candidates live in `artifacts/radix-refresh/candidates/`; browser receipts live in `artifacts/radix-refresh/browser-final/`. Earlier verification sections remain historical. No site publication or new component implementation is included in this follow-up.
+
+The [whole-button press correction](theme-press-correction.md) supersedes the content-only press adaptation and documents Astryx versus shadcn popup-trigger behavior.
+
+
+## Component pattern implementation
+
+The subsequent gap-closure implementation is documented in [Component gap implementation](component-gap-implementation.md), alongside the [plan](component-gap-closure.md). Its [themed comparison page](/component-patterns.html) exercises the added controls, native recipes and local workflows under the existing inspired and original themes.

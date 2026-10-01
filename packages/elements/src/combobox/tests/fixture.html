@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Combobox consumer verification</title>
+		<link rel="stylesheet" href="/packages/tokens/dist/default.css">
+		<!-- import-map -->
+		<style>
+			body { margin: 24px; font-family: system-ui; color: #1b1f24; background: white; }
+			main { max-inline-size: 42rem; margin-inline: auto; }
+			form, fieldset { display: grid; gap: 20px; min-inline-size: 0; }
+			fieldset { margin: 0; border: 1px solid #7b8798; padding: 20px; }
+			.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+			#hidden-label::part(label) { position: absolute; inline-size: 1px; block-size: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+			#scroll-region { margin-block: 32px; block-size: 200px; overflow: auto; border: 2px solid #7b8798; }
+			.scroll-space { block-size: 240px; }
+			#clip { overflow: hidden; block-size: 105px; padding: 12px; }
+			#geometry { max-inline-size: 28rem; }
+			button { font: inherit; min-block-size: 32px; }
+			@media (max-width: 480px) { body { margin: 12px; } fieldset { padding: 12px; } }
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Combobox consumer verification</h1>
+			<form id="asset-form">
+				<fieldset id="asset-fields">
+					<legend>Project settings</legend>
+					<button type="button" id="before">Before picker</button>
+					<en-combobox id="asset" label="Asset" description="Choose an existing creative asset." name="asset" value="forest" required></en-combobox>
+					<button type="button" id="after">After picker</button>
+				</fieldset>
+				<div class="actions"><button type="submit">Save project</button><button type="reset">Reset project</button></div>
+				<output id="submission" aria-live="polite">No submissions</output>
+			</form>
+			<section aria-label="Field naming examples">
+				<h2>Field names and supporting content</h2>
+				<en-combobox id="slotted" label="Fallback asset" description="Fallback description" value="forest">
+					<span slot="label"><strong>Review asset</strong></span>
+					<span slot="description">Use a <em>shared</em> asset.</span>
+				</en-combobox>
+				<en-combobox id="hidden-label" label="Private asset" description="An accessible name without a visible label." value="forest"></en-combobox>
+			</section>
+			<section id="scroll-region" aria-label="Scrollable layout" tabindex="0">
+				<div class="scroll-space"></div>
+				<div id="clip"><en-combobox id="geometry" label="Pinned asset" value="forest"></en-combobox></div>
+				<div class="scroll-space"></div>
+			</section>
+		</main>
+		<script type="module" src="/fixture.mjs"></script>
+	</body>
+</html>

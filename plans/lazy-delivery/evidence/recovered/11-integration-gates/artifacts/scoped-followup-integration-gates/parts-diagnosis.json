@@ -1,0 +1,37 @@
+{
+  "status": "unresolved-integration-gate",
+  "classification": "harness-coverage-gap-supported-by-source",
+  "qualificationCommit": "20dfcee90f7c5b6aecdd02848f5774e8660ff381",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "missingPart": "range-decoration",
+  "engines": [
+    "chromium",
+    "firefox",
+    "webkit"
+  ],
+  "originalExitCode": 1,
+  "originalResults": "qualification/parts/playwright.json",
+  "sourceIdentity": [
+    {
+      "path": "probes/api-contracts/parts.spec.ts",
+      "sha256": "f321486bce56254ee74ae7a41963e35c6e7e8dabf1bf760d4aa0d4fa79f939eb",
+      "identicalToBase": true
+    },
+    {
+      "path": "packages/elements/src/rich-text-editor/element.ts",
+      "sha256": "a64fcd2ecc89dec5184e6fb296c56e145ee1edb9fa04acd5413db7a74bd808fe",
+      "identicalToBase": true
+    }
+  ],
+  "evidence": [
+    "All three engines report only range-decoration unreachable.",
+    "Runtime exposes range-decoration only for nonempty validated decorateRanges entries.",
+    "Existing Parts fixture never invokes decorateRanges; its content and runtime are byte-identical to base.",
+    "No assertion, contract or runtime was changed by this task."
+  ],
+  "limits": [
+    "A targeted corrected-fixture or family-runtime diagnosis remains for the family/API owner.",
+    "This classification does not change the failed receipt or establish a full green release."
+  ],
+  "nextAction": "Family/API owner should add a meaningful range-decoration state using the existing public API, then rerun Parts with unchanged reachability expectations."
+}

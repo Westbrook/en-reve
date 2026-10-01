@@ -1,0 +1,2971 @@
+{
+  "label": "ssr-final-staged",
+  "at": "2026-09-08T20:26:34.699Z",
+  "baseURL": "http://127.0.0.1:4196/",
+  "environment": {
+    "platform": "darwin",
+    "osRelease": "25.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M5 Max",
+    "node": "v24.16.0",
+    "syntheticCPUThrottleRate": 1,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "network": "unthrottled loopback"
+  },
+  "scenario": {
+    "gated": true,
+    "allDisclosures": false
+  },
+  "caveats": [
+    "Local diagnostic samples during concurrent development; not field data or a performance budget.",
+    "Encoded sizes computed offline rather than observed production transfer.",
+    "CPU throttle is a synthetic multiplier on this host, not a named mobile device.",
+    "Click-to-two-frames and client-release-to-app-update are diagnostic intervals, not INP or isolated hydration CPU."
+  ],
+  "assets": [
+    {
+      "path": "index.html",
+      "raw": 3656771,
+      "gzip9": 280688,
+      "brotli11": 27232,
+      "sha256": "fecd44ee2c483d2a4ac143e952f7456a73c7a11a6253088994227238be9698d8"
+    },
+    {
+      "path": "assets/assembly-DPR7ge0a.js",
+      "raw": 2194,
+      "gzip9": 1153,
+      "brotli11": 1011,
+      "sha256": "e819c296f1cfdd0f16b0dc97959e5e18aa46907ba4a8204d0b34677c8751a598"
+    },
+    {
+      "path": "assets/bash-CTGqQrES.js",
+      "raw": 835,
+      "gzip9": 488,
+      "brotli11": 409,
+      "sha256": "cf03dd131d3ebf261f6a57f1478e5f5fc1ac941990f2b215b8b03e19f2e8f18c"
+    },
+    {
+      "path": "assets/c-Dhy51hGj.js",
+      "raw": 1890,
+      "gzip9": 908,
+      "brotli11": 772,
+      "sha256": "a61b3199933e63415719b7c57380b56a1a033e2428c9d5de66ea8a991215e6f5"
+    },
+    {
+      "path": "assets/cpp-eNXJAyMQ.js",
+      "raw": 1623,
+      "gzip9": 820,
+      "brotli11": 721,
+      "sha256": "dc03c93575d3242aaf43a653423d2c3b6d1d7fba7ccd4235b9f66b4d1e1ddff2"
+    },
+    {
+      "path": "assets/csharp-NbqyzKa_.js",
+      "raw": 2367,
+      "gzip9": 1078,
+      "brotli11": 930,
+      "sha256": "4a70beb6025f43127a472fa7ac54c5d7bd6197527a8ef5a15edf483b145fa6b5"
+    },
+    {
+      "path": "assets/css-U_D0_A8w.js",
+      "raw": 2142,
+      "gzip9": 846,
+      "brotli11": 713,
+      "sha256": "e261f22c177d6d50e84b65aa8d301bc707d7cdf2839210668695f135857677fc"
+    },
+    {
+      "path": "assets/dart-D4XkxHVF.js",
+      "raw": 2081,
+      "gzip9": 999,
+      "brotli11": 848,
+      "sha256": "424ea04c63a5abdbe26112a207426709955c5d3504de622b7e66889d79b1a1dc"
+    },
+    {
+      "path": "assets/dist-D79Cwl_Q.js",
+      "raw": 7441,
+      "gzip9": 3036,
+      "brotli11": 2761,
+      "sha256": "385feee9e41fbc294e198e400f1552f30e34a25481397e6d89ac5e312b7bd0aa"
+    },
+    {
+      "path": "assets/dockerfile-3581-2uB.js",
+      "raw": 1189,
+      "gzip9": 697,
+      "brotli11": 577,
+      "sha256": "9f4c0faa20213bd2081b848eb35d161957aad38764c664254238aaf43cf5a930"
+    },
+    {
+      "path": "assets/elixir-Bsi39qqS.js",
+      "raw": 2526,
+      "gzip9": 1013,
+      "brotli11": 890,
+      "sha256": "66d66f2da6f78a581adafd39a13008d3474551a449bef3a20b8ec447be863441"
+    },
+    {
+      "path": "assets/git-diff-DLvJhIRi.js",
+      "raw": 599,
+      "gzip9": 362,
+      "brotli11": 309,
+      "sha256": "e43b767aa1e121e5a12618fba6f27bfb38893e4c15063d577c7d0f46fed81286"
+    },
+    {
+      "path": "assets/go-BWffa-Wk.js",
+      "raw": 1953,
+      "gzip9": 917,
+      "brotli11": 809,
+      "sha256": "b84f887856de65f4c95abbad2195e4835cd4be9f6675f2665063473fee9e2881"
+    },
+    {
+      "path": "assets/graphql-Boa9SdRl.js",
+      "raw": 1504,
+      "gzip9": 683,
+      "brotli11": 580,
+      "sha256": "f300031ecf3d85213c8e331506776787f75a4d32b2f6b5b6e928b6cd6518e37a"
+    },
+    {
+      "path": "assets/heex--O2NdK1_.js",
+      "raw": 1794,
+      "gzip9": 560,
+      "brotli11": 489,
+      "sha256": "6e5e5a6deae6ddea8477daaf5528f1ae836a8efa518dad2dfcf97375e5fb2f83"
+    },
+    {
+      "path": "assets/html-_NMB5HS6.js",
+      "raw": 3587,
+      "gzip9": 949,
+      "brotli11": 830,
+      "sha256": "991aff96351f33a5eeca1ce567bb5ae5829aad335004ea2eee35d19b50bab028"
+    },
+    {
+      "path": "assets/index-Dan92JV5.css",
+      "raw": 36937,
+      "gzip9": 5628,
+      "brotli11": 4820,
+      "sha256": "8113fbd1f8d64ba0cec5781b6ff1c48b299776cccdb4450bdb67fef6b50a6ae3"
+    },
+    {
+      "path": "assets/index-DuQAJN2i.js",
+      "raw": 252596,
+      "gzip9": 63650,
+      "brotli11": 53398,
+      "sha256": "d839c7dd802e25e7826f8a6681ab063b127433175478febd652d3c57cc3c2200"
+    },
+    {
+      "path": "assets/java-CiVIYlYr.js",
+      "raw": 1969,
+      "gzip9": 988,
+      "brotli11": 846,
+      "sha256": "06970118276a9232eb7d9408734214c70b6e73fb25bdf055de54e592b45dc9a0"
+    },
+    {
+      "path": "assets/javascript-CYp17dmN.js",
+      "raw": 3899,
+      "gzip9": 1457,
+      "brotli11": 1240,
+      "sha256": "e4bbce8f38198dbb6a0326d433528235c4bbb0dd3e328302942a910e93b1683c"
+    },
+    {
+      "path": "assets/json-CanpwNNp.js",
+      "raw": 451,
+      "gzip9": 293,
+      "brotli11": 236,
+      "sha256": "cdabfbbf0cd2f9d3b940b897ae9b9699b8bc36daa8ec609c63724b7cd7ea7435"
+    },
+    {
+      "path": "assets/kotlin-zMYUVmDn.js",
+      "raw": 2162,
+      "gzip9": 1043,
+      "brotli11": 897,
+      "sha256": "5f703bea2d1bc768e4b5dd9bbec5e60d9e8496a084ce33ac5ac3856447cf231b"
+    },
+    {
+      "path": "assets/lua-_JK9G2ZV.js",
+      "raw": 1669,
+      "gzip9": 818,
+      "brotli11": 723,
+      "sha256": "26c25240fdd51b800de0a048300965984a054e9565ddb9d5b314fd16202e6a17"
+    },
+    {
+      "path": "assets/markdown-o_F_WZOE.js",
+      "raw": 1065,
+      "gzip9": 546,
+      "brotli11": 470,
+      "sha256": "e31ee3cda95a07b53a4ffd9716c0893fd85cc5895e25ec9017354c87ab08aa22"
+    },
+    {
+      "path": "assets/objective-c-DmhHTQVO.js",
+      "raw": 1922,
+      "gzip9": 850,
+      "brotli11": 704,
+      "sha256": "b45de01500ad030de849c2bf294c7c2d496bc02da9a2712e84fa86a524611fa2"
+    },
+    {
+      "path": "assets/perl-Cb5OqCjF.js",
+      "raw": 1809,
+      "gzip9": 954,
+      "brotli11": 844,
+      "sha256": "5d9bac54903427a87ba39063c352a39e602968787f2bcf64cd0d826551a82cab"
+    },
+    {
+      "path": "assets/php-D2FxEI_u.js",
+      "raw": 2207,
+      "gzip9": 1025,
+      "brotli11": 886,
+      "sha256": "640ec71994a73819c954dd88fb5bfd89cf519c4066ade77f1c6d94beb9e9d9bf"
+    },
+    {
+      "path": "assets/powershell-BgjMODdb.js",
+      "raw": 1607,
+      "gzip9": 770,
+      "brotli11": 646,
+      "sha256": "aaa3e68d6256dc98cc011e6c949dd244d08a2cf63b6afd38644771f8ba505cf2"
+    },
+    {
+      "path": "assets/preload-helper-Czpn1I53.js",
+      "raw": 1196,
+      "gzip9": 675,
+      "brotli11": 558,
+      "sha256": "aba87f2a53e45ecdc9113fc30387d16e449d1676428cf5f82dd624c1df97d152"
+    },
+    {
+      "path": "assets/python-Bwgiqpbg.js",
+      "raw": 2230,
+      "gzip9": 1066,
+      "brotli11": 934,
+      "sha256": "279bbd9dfdc3f97fd10e7e91dc15966a9edb766f6c3ab3403a8a7f86aab54c1c"
+    },
+    {
+      "path": "assets/r-ChXOp-hi.js",
+      "raw": 1527,
+      "gzip9": 789,
+      "brotli11": 681,
+      "sha256": "3fa2b9ff9fdba10dafe16290772a99b1cbb546383f375838f7ee2acdebc253d3"
+    },
+    {
+      "path": "assets/ruby-DaLcPhru.js",
+      "raw": 1272,
+      "gzip9": 659,
+      "brotli11": 570,
+      "sha256": "edcb2d4112de37f7a6706616728b0121fafdc57cacdfda08564cc0a241527af5"
+    },
+    {
+      "path": "assets/rust-CeiapGMw.js",
+      "raw": 2169,
+      "gzip9": 1031,
+      "brotli11": 910,
+      "sha256": "00db76f48f8304e8c67709ac04d218e9716fca5c32f5ea3d2de4bed05fb01097"
+    },
+    {
+      "path": "assets/scss-BpcIsThU.js",
+      "raw": 692,
+      "gzip9": 404,
+      "brotli11": 338,
+      "sha256": "542873a509860cccd075b93dc46d78af129a45296cbc01d2cf9f3441f62494f1"
+    },
+    {
+      "path": "assets/sql-FrW3f4Q0.js",
+      "raw": 1756,
+      "gzip9": 929,
+      "brotli11": 778,
+      "sha256": "9c0e9e54de4f1606d8887dd13207028cdf214d358efb90c3c2dfcda3cca0d115"
+    },
+    {
+      "path": "assets/svelte-BeLQbvAA.js",
+      "raw": 2408,
+      "gzip9": 750,
+      "brotli11": 672,
+      "sha256": "9427fc8dd4698717e64727c4992cb3f4a808a831d734de6ad9f509ef50545f3a"
+    },
+    {
+      "path": "assets/swift-BWxtkLWn.js",
+      "raw": 1983,
+      "gzip9": 984,
+      "brotli11": 838,
+      "sha256": "ee2ca1b504c18c4f0713e1ac0b115d193dc568b63a03338e86a6636b9b114605"
+    },
+    {
+      "path": "assets/toml-6kVxwe1G.js",
+      "raw": 1472,
+      "gzip9": 678,
+      "brotli11": 598,
+      "sha256": "f5451d1b4a4262f5f793bf2129825aa7b189f808044c8c6932f466e76926a209"
+    },
+    {
+      "path": "assets/tsx-3_UcUQoa.js",
+      "raw": 863,
+      "gzip9": 306,
+      "brotli11": 246,
+      "sha256": "ae3941ebc1bf3d2984b7130476f5b409f333aa5abcee4b1b85598b58428c3397"
+    },
+    {
+      "path": "assets/typescript-vuaC8X65.js",
+      "raw": 1221,
+      "gzip9": 537,
+      "brotli11": 443,
+      "sha256": "340fd4212945fed99c8ca6d8328e444d6bd7e3c0aebbe673447abc0b1bdfcf56"
+    },
+    {
+      "path": "assets/vue-c9ei88Mz.js",
+      "raw": 2403,
+      "gzip9": 665,
+      "brotli11": 589,
+      "sha256": "f55a87d0ecfac2dc435cad3cc69d48b689cd32af0a471481535afe71aefa59d6"
+    },
+    {
+      "path": "assets/yaml-DbkolDLY.js",
+      "raw": 749,
+      "gzip9": 462,
+      "brotli11": 399,
+      "sha256": "e51f0364ad9b302448655b385ae34eafa4ffccaca5627d7dbb7ce2ae540750f5"
+    }
+  ],
+  "styles": {
+    "dsdRoots": 149,
+    "count": 150,
+    "rawBytes": 3431473,
+    "uniqueBytes": 461019,
+    "groups": [
+      {
+        "sha256": "6213cf3edc9a3d2bb949b6eb4d4daadab1361b57988dc11aa3515218e3258cb6",
+        "bytes": 29612,
+        "count": 39,
+        "hosts": {
+          "en-button": 39
+        }
+      },
+      {
+        "sha256": "24e12d1a053f66f17d60dc46edb19d189b16c29a399f8c86cfb9c6cbfd3879a7",
+        "bytes": 44023,
+        "count": 14,
+        "hosts": {
+          "en-checkbox": 6,
+          "en-switch": 2,
+          "en-radio-group": 1,
+          "en-radio": 3,
+          "en-slider": 1,
+          "en-rating": 1
+        }
+      },
+      {
+        "sha256": "a8f154361f81343cf0793680e64417bcbbbb39975aea79c71caf789588f45fbd",
+        "bytes": 15161,
+        "count": 29,
+        "hosts": {
+          "en-accordion-item": 27,
+          "en-tabs": 1,
+          "en-accordion": 1
+        }
+      },
+      {
+        "sha256": "318fbf014e5b62093e6a9a399f10e3d119d720023ce113101868d0463f456f68",
+        "bytes": 31274,
+        "count": 11,
+        "hosts": {
+          "en-color-field": 1,
+          "en-text-field": 5,
+          "en-textarea": 2,
+          "en-search-input": 1,
+          "en-date-input": 1,
+          "en-number-field": 1
+        }
+      },
+      {
+        "sha256": "b85783763ba138c4744edff566177d11543229880bacff085f83196c659d21d1",
+        "bytes": 39295,
+        "count": 4,
+        "hosts": {
+          "en-alert": 4
+        }
+      },
+      {
+        "sha256": "2c261f8752fb8dd3cf699d50dc25210b030ea1b5de837ee81a7a72c2bcc98c7f",
+        "bytes": 35514,
+        "count": 4,
+        "hosts": {
+          "en-select": 4
+        }
+      },
+      {
+        "sha256": "1115b1f70caa02b5bf81fcf7ea18c5c1280e330ce6719f11e9bb455c5e73fc55",
+        "bytes": 12382,
+        "count": 9,
+        "hosts": {
+          "en-badge": 9
+        }
+      },
+      {
+        "sha256": "48459d0077d66d664c3687055dac6a6fe0274b731e5b603ae19eba0c018d5978",
+        "bytes": 36060,
+        "count": 2,
+        "hosts": {
+          "en-dialog": 1,
+          "en-drawer": 1
+        }
+      },
+      {
+        "sha256": "91fbf7208c044518c6c202bba07ce60b717c88298ab148788e03464ca37e7371",
+        "bytes": 4883,
+        "count": 12,
+        "hosts": {
+          "en-icon": 12
+        }
+      },
+      {
+        "sha256": "b7dd863cb5fb76817e65313ca1742481ee3acade5eec90a7c405efb3313b32d5",
+        "bytes": 12348,
+        "count": 4,
+        "hosts": {
+          "en-progress-bar": 1,
+          "en-skeleton": 3
+        }
+      },
+      {
+        "sha256": "d2ad662ae267e5f317267b1fae475ff07889b840e52abd855fb4796d611e987e",
+        "bytes": 15244,
+        "count": 3,
+        "hosts": {
+          "en-tab-panel": 3
+        }
+      },
+      {
+        "sha256": "af7adb37f187f5e5cf4a96f971f9c0049ccccc17392669dae4281e327e9239fd",
+        "bytes": 15215,
+        "count": 3,
+        "hosts": {
+          "en-tab": 3
+        }
+      },
+      {
+        "sha256": "1dc9fe30dab573858e7e02e09bc95d3162264dbd810ce77dc8ee777004758880",
+        "bytes": 41328,
+        "count": 1,
+        "hosts": {
+          "document": 1
+        }
+      },
+      {
+        "sha256": "8276568a372229bcf51bbc8a0d693a3d8b51f2fa877afd5e50dac885858b2aa9",
+        "bytes": 36060,
+        "count": 1,
+        "hosts": {
+          "en-popover": 1
+        }
+      },
+      {
+        "sha256": "03f9d64c416ca243747c4449f35c06a2654189c58e59fdb0b745cb17971b36d7",
+        "bytes": 27050,
+        "count": 1,
+        "hosts": {
+          "en-link": 1
+        }
+      },
+      {
+        "sha256": "3a504f100617d3ef5e552feeaae87054a0fd4ed78cfbcc95e20d039dab75a4ee",
+        "bytes": 19439,
+        "count": 1,
+        "hosts": {
+          "en-segmented-control": 1
+        }
+      },
+      {
+        "sha256": "5ffb22904c914a49671e2de02a7099aac28810532fec95d7fee65dc1355be0a7",
+        "bytes": 4829,
+        "count": 4,
+        "hosts": {
+          "en-avatar": 4
+        }
+      },
+      {
+        "sha256": "1a8509688542f50588982df604a425bf32607bdd5dfeb3b2feb5e93a6852f04b",
+        "bytes": 4973,
+        "count": 3,
+        "hosts": {
+          "en-card": 3
+        }
+      },
+      {
+        "sha256": "71ecb19609f8886d0e0df06f74f5804c3c0841f413cd5809044a3e6a608fcdfc",
+        "bytes": 8042,
+        "count": 1,
+        "hosts": {
+          "en-splitter": 1
+        }
+      },
+      {
+        "sha256": "7e8be5cdfbec786a0826f188c41d9097e99718154b61f30c1b4dac351819ff89",
+        "bytes": 7794,
+        "count": 1,
+        "hosts": {
+          "en-split-view": 1
+        }
+      },
+      {
+        "sha256": "2be1ad938d7e87a0925ae721d05918897940c42c194da3df4cfc59750aba298e",
+        "bytes": 7784,
+        "count": 1,
+        "hosts": {
+          "en-tooltip": 1
+        }
+      },
+      {
+        "sha256": "07ec414afa14595e31fde495502b001ef690a207b7bf5e2d50e32f73ac4e26c1",
+        "bytes": 7681,
+        "count": 1,
+        "hosts": {
+          "en-stack": 1
+        }
+      },
+      {
+        "sha256": "c2d45d30211663c4a131441f6e2500df37c8156b32081de9cafaafd37b61d6a4",
+        "bytes": 5028,
+        "count": 1,
+        "hosts": {
+          "en-spinner": 1
+        }
+      }
+    ]
+  },
+  "browser": "153.0.8010.12",
+  "runs": [
+    {
+      "sample": 0,
+      "errors": [],
+      "htmlSha256": "fecd44ee2c483d2a4ac143e952f7456a73c7a11a6253088994227238be9698d8",
+      "serverRendered": {
+        "at": 195,
+        "readyState": "interactive",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 2447,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.5999999046325684,
+            "domainLookupStart": 3.0999999046325684,
+            "domainLookupEnd": 3.299999713897705,
+            "connectStart": 3.299999713897705,
+            "secureConnectionStart": 0,
+            "connectEnd": 3.4000000953674316,
+            "requestStart": 3.4000000953674316,
+            "responseStart": 3.799999713897705,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 3.799999713897705,
+            "responseEnd": 10.199999809265137,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.299999713897705,
+            "domContentLoadedEventStart": 0,
+            "domContentLoadedEventEnd": 0,
+            "domComplete": 0,
+            "loadEventStart": 0,
+            "loadEventEnd": 0,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 64,
+            "duration": 0,
+            "navigationId": 2447,
+            "paintTime": 50.19999980926514,
+            "presentationTime": 64
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 64,
+            "duration": 0,
+            "navigationId": 2447,
+            "paintTime": 50.19999980926514,
+            "presentationTime": 64
+          }
+        ],
+        "elements": 2983,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "lcp": [
+            {
+              "startTime": 64,
+              "renderTime": 64,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 0,
+          "themeMutations": 0,
+          "clicks": [],
+          "highlightReady": []
+        },
+        "button": {
+          "width": 124.96875,
+          "height": 40,
+          "background": "rgb(36, 87, 214)"
+        }
+      },
+      "clientReady": {
+        "at": 790.2999997138977,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 255.09999990463257,
+            "navigationId": 2447,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.5999999046325684,
+            "domainLookupStart": 3.0999999046325684,
+            "domainLookupEnd": 3.299999713897705,
+            "connectStart": 3.299999713897705,
+            "secureConnectionStart": 0,
+            "connectEnd": 3.4000000953674316,
+            "requestStart": 3.4000000953674316,
+            "responseStart": 3.799999713897705,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 3.799999713897705,
+            "responseEnd": 10.199999809265137,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.299999713897705,
+            "domContentLoadedEventStart": 253.5,
+            "domContentLoadedEventEnd": 253.5,
+            "domComplete": 254.90000009536743,
+            "loadEventStart": 255.09999990463257,
+            "loadEventEnd": 255.09999990463257,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 64,
+            "duration": 0,
+            "navigationId": 2447,
+            "paintTime": 50.19999980926514,
+            "presentationTime": 64
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 64,
+            "duration": 0,
+            "navigationId": 2447,
+            "paintTime": 50.19999980926514,
+            "presentationTime": 64
+          }
+        ],
+        "elements": 2983,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DuQAJN2i.js",
+            "initiatorType": "script",
+            "duration": 196.09999990463257,
+            "transferSize": 252896,
+            "encodedBodySize": 252596,
+            "decodedBodySize": 252596
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 196,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "lcp": [
+            {
+              "startTime": 64,
+              "renderTime": 64,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 1,
+          "themeMutations": 0,
+          "clicks": [],
+          "highlightReady": []
+        }
+      },
+      "clientReleaseToAppUpdatedMs": 56.5,
+      "initialHighlights": 0,
+      "themes": [
+        {
+          "mode": "dark",
+          "elapsedIncludingDriverAndFramesMs": 106.39999961853027,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 64,
+                "renderTime": 64,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 1,
+            "clicks": [
+              {
+                "at": 822.6999998092651,
+                "toTwoFramesMs": 51.30000019073486
+              },
+              {
+                "at": 822.9000000953674,
+                "toTwoFramesMs": 51.09999990463257
+              }
+            ],
+            "highlightReady": []
+          }
+        },
+        {
+          "mode": "light",
+          "elapsedIncludingDriverAndFramesMs": 83,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 64,
+                "renderTime": 64,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 2,
+            "clicks": [
+              {
+                "at": 822.6999998092651,
+                "toTwoFramesMs": 51.30000019073486
+              },
+              {
+                "at": 822.9000000953674,
+                "toTwoFramesMs": 51.09999990463257
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              }
+            ],
+            "highlightReady": []
+          }
+        },
+        {
+          "mode": "dark",
+          "elapsedIncludingDriverAndFramesMs": 82.69999980926514,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 64,
+                "renderTime": 64,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 822.6999998092651,
+                "toTwoFramesMs": 51.30000019073486
+              },
+              {
+                "at": 822.9000000953674,
+                "toTwoFramesMs": 51.09999990463257
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              }
+            ],
+            "highlightReady": []
+          }
+        }
+      ],
+      "disclosures": [
+        {
+          "id": "typography",
+          "elapsedIncludingDriverAndFramesMs": 99.7999997138977,
+          "highlights": 5,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1107.5,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 64,
+                "renderTime": 64,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 822.6999998092651,
+                "toTwoFramesMs": 51.30000019073486
+              },
+              {
+                "at": 822.9000000953674,
+                "toTwoFramesMs": 51.09999990463257
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1105.9000000953674,
+                "toTwoFramesMs": 29.899999618530273
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 20
+              }
+            ]
+          }
+        },
+        {
+          "id": "structured-values",
+          "elapsedIncludingDriverAndFramesMs": 98.59999990463257,
+          "highlights": 7,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1107.5,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1206.5,
+                "value": 0.05898728841145834,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 64,
+                "renderTime": 64,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 822.6999998092651,
+                "toTwoFramesMs": 51.30000019073486
+              },
+              {
+                "at": 822.9000000953674,
+                "toTwoFramesMs": 51.09999990463257
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1105.9000000953674,
+                "toTwoFramesMs": 29.899999618530273
+              },
+              {
+                "at": 1205.5,
+                "toTwoFramesMs": 30.09999990463257
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 20
+              },
+              {
+                "id": "structured-values",
+                "afterClickMs": 16.40000009536743
+              }
+            ]
+          }
+        },
+        {
+          "id": "dialog-drawer",
+          "elapsedIncludingDriverAndFramesMs": 100,
+          "highlights": 9,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1107.5,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1206.5,
+                "value": 0.05898728841145834,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1306.0999999046326,
+                "value": 0.15175103515625,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 64,
+                "renderTime": 64,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 822.6999998092651,
+                "toTwoFramesMs": 51.30000019073486
+              },
+              {
+                "at": 822.9000000953674,
+                "toTwoFramesMs": 51.09999990463257
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 938.9000000953674,
+                "toTwoFramesMs": 30.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1021.5,
+                "toTwoFramesMs": 31.199999809265137
+              },
+              {
+                "at": 1105.9000000953674,
+                "toTwoFramesMs": 29.899999618530273
+              },
+              {
+                "at": 1205.5,
+                "toTwoFramesMs": 30.09999990463257
+              },
+              {
+                "at": 1305.2999997138977,
+                "toTwoFramesMs": 31.100000381469727
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 20
+              },
+              {
+                "id": "structured-values",
+                "afterClickMs": 16.40000009536743
+              },
+              {
+                "id": "dialog-drawer",
+                "afterClickMs": 16.200000286102295
+              }
+            ]
+          }
+        }
+      ],
+      "idleHalfSecond": {
+        "observerCallbacks": 0,
+        "themeMutations": 0,
+        "longtasks": []
+      },
+      "end": {
+        "at": 1876.1999998092651,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 255.09999990463257,
+            "navigationId": 2447,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.5999999046325684,
+            "domainLookupStart": 3.0999999046325684,
+            "domainLookupEnd": 3.299999713897705,
+            "connectStart": 3.299999713897705,
+            "secureConnectionStart": 0,
+            "connectEnd": 3.4000000953674316,
+            "requestStart": 3.4000000953674316,
+            "responseStart": 3.799999713897705,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 3.799999713897705,
+            "responseEnd": 10.199999809265137,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.299999713897705,
+            "domContentLoadedEventStart": 253.5,
+            "domContentLoadedEventEnd": 253.5,
+            "domComplete": 254.90000009536743,
+            "loadEventStart": 255.09999990463257,
+            "loadEventEnd": 255.09999990463257,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 64,
+            "duration": 0,
+            "navigationId": 2447,
+            "paintTime": 50.19999980926514,
+            "presentationTime": 64
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 64,
+            "duration": 0,
+            "navigationId": 2447,
+            "paintTime": 50.19999980926514,
+            "presentationTime": 64
+          }
+        ],
+        "elements": 2984,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DuQAJN2i.js",
+            "initiatorType": "script",
+            "duration": 196.09999990463257,
+            "transferSize": 252896,
+            "encodedBodySize": 252596,
+            "decodedBodySize": 252596
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 196,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/dist-D79Cwl_Q.js",
+            "initiatorType": "script",
+            "duration": 3.299999713897705,
+            "transferSize": 7741,
+            "encodedBodySize": 7441,
+            "decodedBodySize": 7441
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/typescript-vuaC8X65.js",
+            "initiatorType": "script",
+            "duration": 1.9000000953674316,
+            "transferSize": 1521,
+            "encodedBodySize": 1221,
+            "decodedBodySize": 1221
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/javascript-CYp17dmN.js",
+            "initiatorType": "script",
+            "duration": 1.200000286102295,
+            "transferSize": 4199,
+            "encodedBodySize": 3899,
+            "decodedBodySize": 3899
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [
+            {
+              "startTime": 1107.5,
+              "value": 0.08151513142903645,
+              "hadRecentInput": true
+            },
+            {
+              "startTime": 1206.5,
+              "value": 0.05898728841145834,
+              "hadRecentInput": true
+            },
+            {
+              "startTime": 1306.0999999046326,
+              "value": 0.15175103515625,
+              "hadRecentInput": true
+            }
+          ],
+          "lcp": [
+            {
+              "startTime": 64,
+              "renderTime": 64,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 1,
+          "themeMutations": 3,
+          "clicks": [
+            {
+              "at": 822.6999998092651,
+              "toTwoFramesMs": 51.30000019073486
+            },
+            {
+              "at": 822.9000000953674,
+              "toTwoFramesMs": 51.09999990463257
+            },
+            {
+              "at": 938.9000000953674,
+              "toTwoFramesMs": 30.199999809265137
+            },
+            {
+              "at": 938.9000000953674,
+              "toTwoFramesMs": 30.199999809265137
+            },
+            {
+              "at": 1021.5,
+              "toTwoFramesMs": 31.199999809265137
+            },
+            {
+              "at": 1021.5,
+              "toTwoFramesMs": 31.199999809265137
+            },
+            {
+              "at": 1105.9000000953674,
+              "toTwoFramesMs": 29.899999618530273
+            },
+            {
+              "at": 1205.5,
+              "toTwoFramesMs": 30.09999990463257
+            },
+            {
+              "at": 1305.2999997138977,
+              "toTwoFramesMs": 31.100000381469727
+            }
+          ],
+          "highlightReady": [
+            {
+              "id": "typography",
+              "afterClickMs": 20
+            },
+            {
+              "id": "structured-values",
+              "afterClickMs": 16.40000009536743
+            },
+            {
+              "id": "dialog-drawer",
+              "afterClickMs": 16.200000286102295
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample": 1,
+      "errors": [],
+      "htmlSha256": "fecd44ee2c483d2a4ac143e952f7456a73c7a11a6253088994227238be9698d8",
+      "serverRendered": {
+        "at": 203.40000009536743,
+        "readyState": "interactive",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 4908,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 3,
+            "domainLookupStart": 4.199999809265137,
+            "domainLookupEnd": 4.199999809265137,
+            "connectStart": 4.199999809265137,
+            "secureConnectionStart": 0,
+            "connectEnd": 4.299999713897705,
+            "requestStart": 4.299999713897705,
+            "responseStart": 4.699999809265137,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4.699999809265137,
+            "responseEnd": 10.799999713897705,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.299999713897705,
+            "domContentLoadedEventStart": 0,
+            "domContentLoadedEventEnd": 0,
+            "domComplete": 0,
+            "loadEventStart": 0,
+            "loadEventEnd": 0,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 4908,
+            "paintTime": 46.5,
+            "presentationTime": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 4908,
+            "paintTime": 46.5,
+            "presentationTime": 60
+          }
+        ],
+        "elements": 2983,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6.099999904632568,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "lcp": [
+            {
+              "startTime": 60,
+              "renderTime": 60,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 0,
+          "themeMutations": 0,
+          "clicks": [],
+          "highlightReady": []
+        },
+        "button": {
+          "width": 124.96875,
+          "height": 40,
+          "background": "rgb(36, 87, 214)"
+        }
+      },
+      "clientReady": {
+        "at": 794,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 266.09999990463257,
+            "navigationId": 4908,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 3,
+            "domainLookupStart": 4.199999809265137,
+            "domainLookupEnd": 4.199999809265137,
+            "connectStart": 4.199999809265137,
+            "secureConnectionStart": 0,
+            "connectEnd": 4.299999713897705,
+            "requestStart": 4.299999713897705,
+            "responseStart": 4.699999809265137,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4.699999809265137,
+            "responseEnd": 10.799999713897705,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.299999713897705,
+            "domContentLoadedEventStart": 263.90000009536743,
+            "domContentLoadedEventEnd": 263.90000009536743,
+            "domComplete": 265.59999990463257,
+            "loadEventStart": 266.09999990463257,
+            "loadEventEnd": 266.09999990463257,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 4908,
+            "paintTime": 46.5,
+            "presentationTime": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 4908,
+            "paintTime": 46.5,
+            "presentationTime": 60
+          }
+        ],
+        "elements": 2983,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DuQAJN2i.js",
+            "initiatorType": "script",
+            "duration": 202.69999980926514,
+            "transferSize": 252896,
+            "encodedBodySize": 252596,
+            "decodedBodySize": 252596
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6.099999904632568,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 202.80000019073486,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "lcp": [
+            {
+              "startTime": 60,
+              "renderTime": 60,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 1,
+          "themeMutations": 0,
+          "clicks": [],
+          "highlightReady": []
+        }
+      },
+      "clientReleaseToAppUpdatedMs": 61,
+      "initialHighlights": 0,
+      "themes": [
+        {
+          "mode": "dark",
+          "elapsedIncludingDriverAndFramesMs": 111.80000019073486,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 1,
+            "clicks": [
+              {
+                "at": 826.5,
+                "toTwoFramesMs": 46.5
+              },
+              {
+                "at": 826.6999998092651,
+                "toTwoFramesMs": 46.30000019073486
+              }
+            ],
+            "highlightReady": []
+          }
+        },
+        {
+          "mode": "light",
+          "elapsedIncludingDriverAndFramesMs": 82.69999980926514,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 2,
+            "clicks": [
+              {
+                "at": 826.5,
+                "toTwoFramesMs": 46.5
+              },
+              {
+                "at": 826.6999998092651,
+                "toTwoFramesMs": 46.30000019073486
+              },
+              {
+                "at": 943.2999997138977,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 943.5,
+                "toTwoFramesMs": 30.799999713897705
+              }
+            ],
+            "highlightReady": []
+          }
+        },
+        {
+          "mode": "dark",
+          "elapsedIncludingDriverAndFramesMs": 82.7000002861023,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 826.5,
+                "toTwoFramesMs": 46.5
+              },
+              {
+                "at": 826.6999998092651,
+                "toTwoFramesMs": 46.30000019073486
+              },
+              {
+                "at": 943.2999997138977,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 943.5,
+                "toTwoFramesMs": 30.799999713897705
+              },
+              {
+                "at": 1027.0999999046326,
+                "toTwoFramesMs": 30.5
+              },
+              {
+                "at": 1027.1999998092651,
+                "toTwoFramesMs": 30.40000009536743
+              }
+            ],
+            "highlightReady": []
+          }
+        }
+      ],
+      "disclosures": [
+        {
+          "id": "typography",
+          "elapsedIncludingDriverAndFramesMs": 99,
+          "highlights": 5,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1112.4000000953674,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 826.5,
+                "toTwoFramesMs": 46.5
+              },
+              {
+                "at": 826.6999998092651,
+                "toTwoFramesMs": 46.30000019073486
+              },
+              {
+                "at": 943.2999997138977,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 943.5,
+                "toTwoFramesMs": 30.799999713897705
+              },
+              {
+                "at": 1027.0999999046326,
+                "toTwoFramesMs": 30.5
+              },
+              {
+                "at": 1027.1999998092651,
+                "toTwoFramesMs": 30.40000009536743
+              },
+              {
+                "at": 1110.5,
+                "toTwoFramesMs": 30.5
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 22
+              }
+            ]
+          }
+        },
+        {
+          "id": "structured-values",
+          "elapsedIncludingDriverAndFramesMs": 99.40000009536743,
+          "highlights": 7,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1112.4000000953674,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1210.5999999046326,
+                "value": 0.05898728841145834,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 826.5,
+                "toTwoFramesMs": 46.5
+              },
+              {
+                "at": 826.6999998092651,
+                "toTwoFramesMs": 46.30000019073486
+              },
+              {
+                "at": 943.2999997138977,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 943.5,
+                "toTwoFramesMs": 30.799999713897705
+              },
+              {
+                "at": 1027.0999999046326,
+                "toTwoFramesMs": 30.5
+              },
+              {
+                "at": 1027.1999998092651,
+                "toTwoFramesMs": 30.40000009536743
+              },
+              {
+                "at": 1110.5,
+                "toTwoFramesMs": 30.5
+              },
+              {
+                "at": 1209.7999997138977,
+                "toTwoFramesMs": 31.300000190734863
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 22
+              },
+              {
+                "id": "structured-values",
+                "afterClickMs": 16.40000009536743
+              }
+            ]
+          }
+        },
+        {
+          "id": "dialog-drawer",
+          "elapsedIncludingDriverAndFramesMs": 99.5,
+          "highlights": 9,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1112.4000000953674,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1210.5999999046326,
+                "value": 0.05898728841145834,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1310.5999999046326,
+                "value": 0.15175103515625,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 826.5,
+                "toTwoFramesMs": 46.5
+              },
+              {
+                "at": 826.6999998092651,
+                "toTwoFramesMs": 46.30000019073486
+              },
+              {
+                "at": 943.2999997138977,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 943.5,
+                "toTwoFramesMs": 30.799999713897705
+              },
+              {
+                "at": 1027.0999999046326,
+                "toTwoFramesMs": 30.5
+              },
+              {
+                "at": 1027.1999998092651,
+                "toTwoFramesMs": 30.40000009536743
+              },
+              {
+                "at": 1110.5,
+                "toTwoFramesMs": 30.5
+              },
+              {
+                "at": 1209.7999997138977,
+                "toTwoFramesMs": 31.300000190734863
+              },
+              {
+                "at": 1309.7999997138977,
+                "toTwoFramesMs": 31
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 22
+              },
+              {
+                "id": "structured-values",
+                "afterClickMs": 16.40000009536743
+              },
+              {
+                "id": "dialog-drawer",
+                "afterClickMs": 17.300000190734863
+              }
+            ]
+          }
+        }
+      ],
+      "idleHalfSecond": {
+        "observerCallbacks": 0,
+        "themeMutations": 0,
+        "longtasks": []
+      },
+      "end": {
+        "at": 1881.5999999046326,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 266.09999990463257,
+            "navigationId": 4908,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 3,
+            "domainLookupStart": 4.199999809265137,
+            "domainLookupEnd": 4.199999809265137,
+            "connectStart": 4.199999809265137,
+            "secureConnectionStart": 0,
+            "connectEnd": 4.299999713897705,
+            "requestStart": 4.299999713897705,
+            "responseStart": 4.699999809265137,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4.699999809265137,
+            "responseEnd": 10.799999713897705,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.299999713897705,
+            "domContentLoadedEventStart": 263.90000009536743,
+            "domContentLoadedEventEnd": 263.90000009536743,
+            "domComplete": 265.59999990463257,
+            "loadEventStart": 266.09999990463257,
+            "loadEventEnd": 266.09999990463257,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 4908,
+            "paintTime": 46.5,
+            "presentationTime": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 4908,
+            "paintTime": 46.5,
+            "presentationTime": 60
+          }
+        ],
+        "elements": 2984,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DuQAJN2i.js",
+            "initiatorType": "script",
+            "duration": 202.69999980926514,
+            "transferSize": 252896,
+            "encodedBodySize": 252596,
+            "decodedBodySize": 252596
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6.099999904632568,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 202.80000019073486,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/dist-D79Cwl_Q.js",
+            "initiatorType": "script",
+            "duration": 3.5999999046325684,
+            "transferSize": 7741,
+            "encodedBodySize": 7441,
+            "decodedBodySize": 7441
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/typescript-vuaC8X65.js",
+            "initiatorType": "script",
+            "duration": 2.1000003814697266,
+            "transferSize": 1521,
+            "encodedBodySize": 1221,
+            "decodedBodySize": 1221
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/javascript-CYp17dmN.js",
+            "initiatorType": "script",
+            "duration": 1.5,
+            "transferSize": 4199,
+            "encodedBodySize": 3899,
+            "decodedBodySize": 3899
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [
+            {
+              "startTime": 1112.4000000953674,
+              "value": 0.08151513142903645,
+              "hadRecentInput": true
+            },
+            {
+              "startTime": 1210.5999999046326,
+              "value": 0.05898728841145834,
+              "hadRecentInput": true
+            },
+            {
+              "startTime": 1310.5999999046326,
+              "value": 0.15175103515625,
+              "hadRecentInput": true
+            }
+          ],
+          "lcp": [
+            {
+              "startTime": 60,
+              "renderTime": 60,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 1,
+          "themeMutations": 3,
+          "clicks": [
+            {
+              "at": 826.5,
+              "toTwoFramesMs": 46.5
+            },
+            {
+              "at": 826.6999998092651,
+              "toTwoFramesMs": 46.30000019073486
+            },
+            {
+              "at": 943.2999997138977,
+              "toTwoFramesMs": 31
+            },
+            {
+              "at": 943.5,
+              "toTwoFramesMs": 30.799999713897705
+            },
+            {
+              "at": 1027.0999999046326,
+              "toTwoFramesMs": 30.5
+            },
+            {
+              "at": 1027.1999998092651,
+              "toTwoFramesMs": 30.40000009536743
+            },
+            {
+              "at": 1110.5,
+              "toTwoFramesMs": 30.5
+            },
+            {
+              "at": 1209.7999997138977,
+              "toTwoFramesMs": 31.300000190734863
+            },
+            {
+              "at": 1309.7999997138977,
+              "toTwoFramesMs": 31
+            }
+          ],
+          "highlightReady": [
+            {
+              "id": "typography",
+              "afterClickMs": 22
+            },
+            {
+              "id": "structured-values",
+              "afterClickMs": 16.40000009536743
+            },
+            {
+              "id": "dialog-drawer",
+              "afterClickMs": 17.300000190734863
+            }
+          ]
+        }
+      }
+    },
+    {
+      "sample": 2,
+      "errors": [],
+      "htmlSha256": "fecd44ee2c483d2a4ac143e952f7456a73c7a11a6253088994227238be9698d8",
+      "serverRendered": {
+        "at": 202.40000009536743,
+        "readyState": "interactive",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 3606,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.10000038146972656,
+            "domainLookupStart": 1.1000003814697266,
+            "domainLookupEnd": 1.3000001907348633,
+            "connectStart": 1.3000001907348633,
+            "secureConnectionStart": 0,
+            "connectEnd": 1.5,
+            "requestStart": 1.5,
+            "responseStart": 1.9000000953674316,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1.9000000953674316,
+            "responseEnd": 8.300000190734863,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.90000009536743,
+            "domContentLoadedEventStart": 0,
+            "domContentLoadedEventEnd": 0,
+            "domComplete": 0,
+            "loadEventStart": 0,
+            "loadEventEnd": 0,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 3606,
+            "paintTime": 46.80000019073486,
+            "presentationTime": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 3606,
+            "paintTime": 46.80000019073486,
+            "presentationTime": 60
+          }
+        ],
+        "elements": 2983,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6.199999809265137,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "lcp": [
+            {
+              "startTime": 60,
+              "renderTime": 60,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 0,
+          "themeMutations": 0,
+          "clicks": [],
+          "highlightReady": []
+        },
+        "button": {
+          "width": 124.96875,
+          "height": 40,
+          "background": "rgb(36, 87, 214)"
+        }
+      },
+      "clientReady": {
+        "at": 795.6000003814697,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 261.90000009536743,
+            "navigationId": 3606,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.10000038146972656,
+            "domainLookupStart": 1.1000003814697266,
+            "domainLookupEnd": 1.3000001907348633,
+            "connectStart": 1.3000001907348633,
+            "secureConnectionStart": 0,
+            "connectEnd": 1.5,
+            "requestStart": 1.5,
+            "responseStart": 1.9000000953674316,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1.9000000953674316,
+            "responseEnd": 8.300000190734863,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.90000009536743,
+            "domContentLoadedEventStart": 260,
+            "domContentLoadedEventEnd": 260,
+            "domComplete": 261.6000003814697,
+            "loadEventStart": 261.90000009536743,
+            "loadEventEnd": 261.90000009536743,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 3606,
+            "paintTime": 46.80000019073486,
+            "presentationTime": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 3606,
+            "paintTime": 46.80000019073486,
+            "presentationTime": 60
+          }
+        ],
+        "elements": 2983,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6.199999809265137,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 203.5,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DuQAJN2i.js",
+            "initiatorType": "script",
+            "duration": 203.69999980926514,
+            "transferSize": 252896,
+            "encodedBodySize": 252596,
+            "decodedBodySize": 252596
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "lcp": [
+            {
+              "startTime": 60,
+              "renderTime": 60,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 1,
+          "themeMutations": 0,
+          "clicks": [],
+          "highlightReady": []
+        }
+      },
+      "clientReleaseToAppUpdatedMs": 57,
+      "initialHighlights": 0,
+      "themes": [
+        {
+          "mode": "dark",
+          "elapsedIncludingDriverAndFramesMs": 111.09999990463257,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 1,
+            "clicks": [
+              {
+                "at": 828.7000002861023,
+                "toTwoFramesMs": 53.40000009536743
+              },
+              {
+                "at": 829,
+                "toTwoFramesMs": 53.10000038146973
+              }
+            ],
+            "highlightReady": []
+          }
+        },
+        {
+          "mode": "light",
+          "elapsedIncludingDriverAndFramesMs": 82.69999980926514,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 2,
+            "clicks": [
+              {
+                "at": 828.7000002861023,
+                "toTwoFramesMs": 53.40000009536743
+              },
+              {
+                "at": 829,
+                "toTwoFramesMs": 53.10000038146973
+              },
+              {
+                "at": 944.7000002861023,
+                "toTwoFramesMs": 31.09999990463257
+              },
+              {
+                "at": 944.8000001907349,
+                "toTwoFramesMs": 31
+              }
+            ],
+            "highlightReady": []
+          }
+        },
+        {
+          "mode": "dark",
+          "elapsedIncludingDriverAndFramesMs": 82.90000009536743,
+          "observations": {
+            "longtasks": [],
+            "shifts": [],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 828.7000002861023,
+                "toTwoFramesMs": 53.40000009536743
+              },
+              {
+                "at": 829,
+                "toTwoFramesMs": 53.10000038146973
+              },
+              {
+                "at": 944.7000002861023,
+                "toTwoFramesMs": 31.09999990463257
+              },
+              {
+                "at": 944.8000001907349,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 1027.9000000953674,
+                "toTwoFramesMs": 30.90000009536743
+              },
+              {
+                "at": 1028,
+                "toTwoFramesMs": 30.800000190734863
+              }
+            ],
+            "highlightReady": []
+          }
+        }
+      ],
+      "disclosures": [
+        {
+          "id": "typography",
+          "elapsedIncludingDriverAndFramesMs": 99.7000002861023,
+          "highlights": 5,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1112.9000000953674,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 828.7000002861023,
+                "toTwoFramesMs": 53.40000009536743
+              },
+              {
+                "at": 829,
+                "toTwoFramesMs": 53.10000038146973
+              },
+              {
+                "at": 944.7000002861023,
+                "toTwoFramesMs": 31.09999990463257
+              },
+              {
+                "at": 944.8000001907349,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 1027.9000000953674,
+                "toTwoFramesMs": 30.90000009536743
+              },
+              {
+                "at": 1028,
+                "toTwoFramesMs": 30.800000190734863
+              },
+              {
+                "at": 1111.2000002861023,
+                "toTwoFramesMs": 30.90000009536743
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 22.199999809265137
+              }
+            ]
+          }
+        },
+        {
+          "id": "structured-values",
+          "elapsedIncludingDriverAndFramesMs": 99.19999980926514,
+          "highlights": 7,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1112.9000000953674,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1211.3000001907349,
+                "value": 0.05898728841145834,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 828.7000002861023,
+                "toTwoFramesMs": 53.40000009536743
+              },
+              {
+                "at": 829,
+                "toTwoFramesMs": 53.10000038146973
+              },
+              {
+                "at": 944.7000002861023,
+                "toTwoFramesMs": 31.09999990463257
+              },
+              {
+                "at": 944.8000001907349,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 1027.9000000953674,
+                "toTwoFramesMs": 30.90000009536743
+              },
+              {
+                "at": 1028,
+                "toTwoFramesMs": 30.800000190734863
+              },
+              {
+                "at": 1111.2000002861023,
+                "toTwoFramesMs": 30.90000009536743
+              },
+              {
+                "at": 1210.5,
+                "toTwoFramesMs": 31.90000009536743
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 22.199999809265137
+              },
+              {
+                "id": "structured-values",
+                "afterClickMs": 16.90000009536743
+              }
+            ]
+          }
+        },
+        {
+          "id": "dialog-drawer",
+          "elapsedIncludingDriverAndFramesMs": 99.69999980926514,
+          "highlights": 9,
+          "actualCodeHasRanges": true,
+          "observations": {
+            "longtasks": [],
+            "shifts": [
+              {
+                "startTime": 1112.9000000953674,
+                "value": 0.08151513142903645,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1211.3000001907349,
+                "value": 0.05898728841145834,
+                "hadRecentInput": true
+              },
+              {
+                "startTime": 1312.4000000953674,
+                "value": 0.15175103515625,
+                "hadRecentInput": true
+              }
+            ],
+            "lcp": [
+              {
+                "startTime": 60,
+                "renderTime": 60,
+                "loadTime": 0,
+                "size": 13870,
+                "tagName": "h1"
+              }
+            ],
+            "resizeObserverCalls": 1,
+            "themeMutations": 3,
+            "clicks": [
+              {
+                "at": 828.7000002861023,
+                "toTwoFramesMs": 53.40000009536743
+              },
+              {
+                "at": 829,
+                "toTwoFramesMs": 53.10000038146973
+              },
+              {
+                "at": 944.7000002861023,
+                "toTwoFramesMs": 31.09999990463257
+              },
+              {
+                "at": 944.8000001907349,
+                "toTwoFramesMs": 31
+              },
+              {
+                "at": 1027.9000000953674,
+                "toTwoFramesMs": 30.90000009536743
+              },
+              {
+                "at": 1028,
+                "toTwoFramesMs": 30.800000190734863
+              },
+              {
+                "at": 1111.2000002861023,
+                "toTwoFramesMs": 30.90000009536743
+              },
+              {
+                "at": 1210.5,
+                "toTwoFramesMs": 31.90000009536743
+              },
+              {
+                "at": 1311.5,
+                "toTwoFramesMs": 31
+              }
+            ],
+            "highlightReady": [
+              {
+                "id": "typography",
+                "afterClickMs": 22.199999809265137
+              },
+              {
+                "id": "structured-values",
+                "afterClickMs": 16.90000009536743
+              },
+              {
+                "id": "dialog-drawer",
+                "afterClickMs": 16.800000190734863
+              }
+            ]
+          }
+        }
+      ],
+      "idleHalfSecond": {
+        "observerCallbacks": 0,
+        "themeMutations": 0,
+        "longtasks": []
+      },
+      "end": {
+        "at": 1880.6000003814697,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 261.90000009536743,
+            "navigationId": 3606,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.10000038146972656,
+            "domainLookupStart": 1.1000003814697266,
+            "domainLookupEnd": 1.3000001907348633,
+            "connectStart": 1.3000001907348633,
+            "secureConnectionStart": 0,
+            "connectEnd": 1.5,
+            "requestStart": 1.5,
+            "responseStart": 1.9000000953674316,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 1.9000000953674316,
+            "responseEnd": 8.300000190734863,
+            "transferSize": 3657071,
+            "encodedBodySize": 3656771,
+            "decodedBodySize": 3656771,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 54.90000009536743,
+            "domContentLoadedEventStart": 260,
+            "domContentLoadedEventEnd": 260,
+            "domComplete": 261.6000003814697,
+            "loadEventStart": 261.90000009536743,
+            "loadEventEnd": 261.90000009536743,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 3606,
+            "paintTime": 46.80000019073486,
+            "presentationTime": 60
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 60,
+            "duration": 0,
+            "navigationId": 3606,
+            "paintTime": 46.80000019073486,
+            "presentationTime": 60
+          }
+        ],
+        "elements": 2984,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-Dan92JV5.css",
+            "initiatorType": "link",
+            "duration": 6.199999809265137,
+            "transferSize": 37237,
+            "encodedBodySize": 36937,
+            "decodedBodySize": 36937
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 203.5,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DuQAJN2i.js",
+            "initiatorType": "script",
+            "duration": 203.69999980926514,
+            "transferSize": 252896,
+            "encodedBodySize": 252596,
+            "decodedBodySize": 252596
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/dist-D79Cwl_Q.js",
+            "initiatorType": "script",
+            "duration": 2.799999713897705,
+            "transferSize": 7741,
+            "encodedBodySize": 7441,
+            "decodedBodySize": 7441
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/typescript-vuaC8X65.js",
+            "initiatorType": "script",
+            "duration": 1.9000000953674316,
+            "transferSize": 1521,
+            "encodedBodySize": 1221,
+            "decodedBodySize": 1221
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/javascript-CYp17dmN.js",
+            "initiatorType": "script",
+            "duration": 1.0999999046325684,
+            "transferSize": 4199,
+            "encodedBodySize": 3899,
+            "decodedBodySize": 3899
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [
+            {
+              "startTime": 1112.9000000953674,
+              "value": 0.08151513142903645,
+              "hadRecentInput": true
+            },
+            {
+              "startTime": 1211.3000001907349,
+              "value": 0.05898728841145834,
+              "hadRecentInput": true
+            },
+            {
+              "startTime": 1312.4000000953674,
+              "value": 0.15175103515625,
+              "hadRecentInput": true
+            }
+          ],
+          "lcp": [
+            {
+              "startTime": 60,
+              "renderTime": 60,
+              "loadTime": 0,
+              "size": 13870,
+              "tagName": "h1"
+            }
+          ],
+          "resizeObserverCalls": 1,
+          "themeMutations": 3,
+          "clicks": [
+            {
+              "at": 828.7000002861023,
+              "toTwoFramesMs": 53.40000009536743
+            },
+            {
+              "at": 829,
+              "toTwoFramesMs": 53.10000038146973
+            },
+            {
+              "at": 944.7000002861023,
+              "toTwoFramesMs": 31.09999990463257
+            },
+            {
+              "at": 944.8000001907349,
+              "toTwoFramesMs": 31
+            },
+            {
+              "at": 1027.9000000953674,
+              "toTwoFramesMs": 30.90000009536743
+            },
+            {
+              "at": 1028,
+              "toTwoFramesMs": 30.800000190734863
+            },
+            {
+              "at": 1111.2000002861023,
+              "toTwoFramesMs": 30.90000009536743
+            },
+            {
+              "at": 1210.5,
+              "toTwoFramesMs": 31.90000009536743
+            },
+            {
+              "at": 1311.5,
+              "toTwoFramesMs": 31
+            }
+          ],
+          "highlightReady": [
+            {
+              "id": "typography",
+              "afterClickMs": 22.199999809265137
+            },
+            {
+              "id": "structured-values",
+              "afterClickMs": 16.90000009536743
+            },
+            {
+              "id": "dialog-drawer",
+              "afterClickMs": 16.800000190734863
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "finalHtmlSha256": "fecd44ee2c483d2a4ac143e952f7456a73c7a11a6253088994227238be9698d8",
+  "buildChangedDuringProbe": false
+}

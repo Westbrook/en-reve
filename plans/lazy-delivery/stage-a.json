@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "kind": "lazy-delivery-stage-a-freeze",
+  "at": "2026-09-28T20:55:31.381250+00:00",
+  "baseCommit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+  "canonicalTags": 96,
+  "features": 161,
+  "unqualifiedCandidates": 10,
+  "runtimeChanges": false,
+  "files": [
+    {
+      "path": "plans/lazy-delivery/api.md",
+      "sha256": "1c6c1e390a5f3e3962c0776ef283a92321fe83a8a423b661c2202d80e3b734c9"
+    },
+    {
+      "path": "plans/lazy-delivery/budgets.json",
+      "sha256": "2bcb3eeaa954019f7ac3b002552362c89e65a7c05d1431a7e2c8ae4a6a4ddd6c"
+    },
+    {
+      "path": "plans/lazy-delivery/family-designs.json",
+      "sha256": "03dd213a233ea52c0dd39e2252adfd994ee845793f1b827562fdcb601f896c60"
+    },
+    {
+      "path": "plans/lazy-delivery/editor.md",
+      "sha256": "6267adbc4361b592d2664dab1a39bdd8f3f4a3ab87e252e5fee8fffa78550991"
+    },
+    {
+      "path": "plans/lazy-delivery/validation.md",
+      "sha256": "ec980ea95060e8b79ac365bc4372093c23b97d9e7e35e7823a086abd709c6e72"
+    },
+    {
+      "path": "plans/lazy-delivery/range-content.md",
+      "sha256": "5e49ad1625ef25f92ace14e967306746e12be537fee177cd4df3a8befc5a57a1"
+    },
+    {
+      "path": "plans/lazy-delivery/range-content.json",
+      "sha256": "d9e430d924a1a82ec68ed7f94720bd2a2de299bd8353ae89495152e1a247deee"
+    },
+    {
+      "path": "plans/lazy-delivery/recipes.md",
+      "sha256": "e65f5ebecf9c2670f014f36508113ccb2e3785446ae4c0e7a253a9003d29c6c5"
+    },
+    {
+      "path": "tooling/metadata/delivery-inventory.json",
+      "sha256": "af0f5e59ca42497aa1f90b569587a67f122c3540b28bd5d07fea78ace12ebcbf"
+    },
+    {
+      "path": "plans/lazy-delivery/evidence/evidence-index.json",
+      "sha256": "80eda326c63b83f2acd582b081a03d16a3661c5411a57c8584768d54b6bcb229"
+    }
+  ],
+  "verification": [
+    "Independent canonical graph and manifest set equality",
+    "646 source anchors / 251 source files checked for hashes and line bounds",
+    "Baseline exact-lock install and five metadata freshness checks passed after prerequisite builds",
+    "Baseline docs build and checks passed; exact frozen archive read back 1172 files",
+    "JSON parses; source documentation diff whitespace check"
+  ],
+  "evidenceLimit": "No candidate performance promotion. Ten candidates and full implementation/qualification remain outstanding.",
+  "rawEvidenceWhitespace": "Exact Vite producer log retains one trailing space; raw log bytes intentionally preserved."
+}

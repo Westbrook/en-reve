@@ -1,0 +1,30 @@
+sp-theme {
+  display: block;
+  min-height: 100vh;
+  font-family: var(--swc-sans-font-family-stack);
+  font-size: var(--swc-font-size-100);
+  color: var(--swc-gray-900);
+  background: var(--swc-gray-25);
+  --art-accent: var(--swc-accent-color-900);
+  --art-surface: var(--swc-gray-100);
+}
+.native-card {
+  padding: 20px;
+  border: 1px solid var(--swc-gray-300);
+  border-radius: 12px;
+  background: var(--swc-gray-50);
+}
+sp-textfield,
+sp-picker,
+sp-combobox,
+sp-number-field,
+sp-color-field {
+  width: 100%;
+  min-width: 0;
+}
+[hidden] {
+  display: none !important;
+}
+sp-dialog {
+  max-width: 90vw;
+}

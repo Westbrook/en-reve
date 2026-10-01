@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 1,
+  "scope": "Bounded canonical inspired popup-motion extension; no release refresh or theme adoption.",
+  "recordedDate": "2026-09-10",
+  "sourcePolicy": "Reuse pinned reviewed sources; fresh primary Astryx layer source fetched at that same commit. Fluent official motion guidance reread live.",
+  "values": {
+    "spectrum": {
+      "duration.enter": {
+        "value": 200,
+        "unit": "ms"
+      },
+      "duration.exit": {
+        "value": 200,
+        "unit": "ms"
+      },
+      "ease.enter": [
+        0,
+        0,
+        0.58,
+        1
+      ],
+      "ease.exit": [
+        0.42,
+        0,
+        1,
+        1
+      ],
+      "motion.surface-offset": {
+        "value": 4,
+        "unit": "px"
+      },
+      "motion.surface-scale": 1
+    },
+    "fluent": {
+      "duration.enter": {
+        "value": 200,
+        "unit": "ms"
+      },
+      "duration.exit": {
+        "value": 150,
+        "unit": "ms"
+      },
+      "ease.enter": [
+        0,
+        0,
+        0,
+        1
+      ],
+      "ease.exit": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "motion.surface-offset": {
+        "value": 0,
+        "unit": "px"
+      },
+      "motion.surface-scale": 1
+    },
+    "astryx": {
+      "duration.enter": {
+        "value": 230,
+        "unit": "ms"
+      },
+      "duration.exit": {
+        "value": 130,
+        "unit": "ms"
+      },
+      "ease.enter": "{ease.standard}",
+      "ease.exit": "{ease.standard}",
+      "motion.surface-offset": {
+        "value": 8,
+        "unit": "px"
+      },
+      "motion.surface-scale": 0.95
+    },
+    "shadcn": {
+      "duration.enter": {
+        "value": 100,
+        "unit": "ms"
+      },
+      "duration.exit": {
+        "value": 100,
+        "unit": "ms"
+      },
+      "ease.enter": "{ease.standard}",
+      "ease.exit": "{ease.standard}",
+      "motion.surface-offset": {
+        "value": 0,
+        "unit": "px"
+      },
+      "motion.surface-scale": 0.95
+    }
+  },
+  "sources": {
+    "spectrum": {
+      "version": "@react-spectrum/s2 1.7.1",
+      "commit": "4dd44e0f400636a87a9ad4390903e78c5ae6113c",
+      "url": "https://github.com/adobe/react-spectrum/blob/4dd44e0f400636a87a9ad4390903e78c5ae6113c/packages/%40react-spectrum/s2/src/Popover.tsx",
+      "retainedFile": "/private/tmp/en-spectrum2-latest/react-stable/Popover.tsx",
+      "observed": "200ms opacity/translate transitions; placement-directed4px displacement, submenu0; exiting timing macro in; exiting pointer-events none.",
+      "adaptation": "Shared modal4px travel maps a Popover reference across families. Anchored rectangles are not transformed. Native CSS ease-out/ease-in curves are explicit en-reve interpretations; exact emitted Spectrum timing macro curves were not established. No scale added.",
+      "sourceHashes": {
+        "/private/tmp/en-spectrum2-latest/react-stable/Popover.tsx": "sha256:a87d625f548a1b33ec8d8f033a68d1fd91035b4b6ac5f08926f217ba130245d7"
+      }
+    },
+    "fluent": {
+      "version": "@fluentui/react-theme 9.2.2; @fluentui/tokens 1.0.0-alpha.24",
+      "commit": "2dd2a9a96210919c35b210a1aa8e873ab67dbada",
+      "urls": [
+        "https://registry.npmjs.org/@fluentui/tokens/-/tokens-1.0.0-alpha.24.tgz",
+        "https://fluent2.microsoft.design/motion"
+      ],
+      "retainedFiles": [
+        "/private/tmp/en-paired-themes-references/fluent-token-package/lib-commonjs/global/durations.cjs",
+        "/private/tmp/en-paired-themes-references/fluent-token-package/lib-commonjs/global/curves.cjs"
+      ],
+      "observed": "Published durationNormal200ms, durationFast150ms, curveDecelerateMid(0,0,0,1), curveAccelerateMid(1,0,1,1). Official motion guidance discusses enter/exit for menus/dialogs and a no-motion alternative.",
+      "adaptation": "Assigning normal/decelerate to entry and fast/accelerate to exit is a finite en-reve motion recipe, not a claim that all Fluent v9 popup components use these exact values. Offset0/scale1 avoid inventing geometric travel.",
+      "sourceHashes": {
+        "/private/tmp/en-paired-themes-references/fluent-token-package/lib-commonjs/global/durations.cjs": "sha256:8dd07e2939da48ae0981d4df1b99e5d81b22a29270489bdd406bacf08ea3803b",
+        "/private/tmp/en-paired-themes-references/fluent-token-package/lib-commonjs/global/curves.cjs": "sha256:7b9a009fecd8ebe96e134f69e1d87bf14038e94f5fadf213dab505dcce365200"
+      }
+    },
+    "astryx": {
+      "commit": "1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc",
+      "urls": [
+        "https://github.com/facebook/astryx/blob/1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc/packages/core/src/Layer/layerAnimations.stylex.ts",
+        "https://github.com/facebook/astryx/blob/1e0c2acf27b7c0a1d56f64088aaa664cf15be6bc/packages/core/src/theme/tokens.stylex.ts"
+      ],
+      "retainedFiles": [
+        "/private/tmp/en-next-slices/inspired-popup-motion/astryx-layerAnimations.stylex.ts",
+        "/private/tmp/en-menu-customization/references/astryx-tokens.stylex.ts"
+      ],
+      "observed": "Layer entry uses duration-fast-max230ms, ease-standard(.24,1,.4,1), spacing-2=8px directional translate and scale.95; reduced-motion disables keyframes.",
+      "adaptation": "No source exit animation was established.130ms exit uses source fast-min as an explicitly authored dismissal counterpart. Existing candidate ease.standard remains a live alias. Translation/scale apply only to modal-family surfaces; anchored layer fidelity is intentionally reduced.",
+      "sourceHashes": {
+        "/private/tmp/en-next-slices/inspired-popup-motion/astryx-layerAnimations.stylex.ts": "sha256:c3015a91b210970b7f5b7b8ac5e1e0be394d1ee42f713bf1710b63fa3ab00e33",
+        "/private/tmp/en-menu-customization/references/astryx-tokens.stylex.ts": "sha256:7d5b5321220e0924213d9b37cf4acf9ba5bb16f3de1485710dd543f964676f81"
+      }
+    },
+    "shadcn": {
+      "flavor": "Homepage Rhea / Neutral",
+      "commit": "3ba91b1cc83e1bbe4ab35a422ff2a694849c5048",
+      "url": "https://github.com/shadcn-ui/ui/blob/3ba91b1cc83e1bbe4ab35a422ff2a694849c5048/apps/v4/registry/styles/style-rhea.css",
+      "retainedFile": "/private/tmp/en-menu-customization/references/shadcn-rhea-style-rhea.css",
+      "observed": "Rhea select uses100ms enter/exit fade, zoom.95 and placement slide; dialog uses100ms fade/zoom.95.",
+      "adaptation": "Modal offset0/scale.95 follows dialog anatomy. Anchored surfaces keep fixed measured rectangles. Existing candidate ease.standard(.4,0,.2,1) is retained as a live alias; this is not a claim of an inspected computed animation easing for every Rhea popup.",
+      "sourceHashes": {
+        "/private/tmp/en-menu-customization/references/shadcn-rhea-style-rhea.css": "sha256:bcb242a7845316f93b0562345dd5c32a46a2988b506a8e8d7df1c836a1637b49"
+      }
+    }
+  },
+  "recipes": {
+    "spectrum": {
+      "light": {
+        "sourceBefore": "sha256:78345a236c6cf1d885a4dcaa9a99dd7ae323b06068a75cbd7458127ce8c94f40",
+        "sourceAfter": "sha256:7ffeca35acfa44df0bbfd76e9b7adb038d21c61ea053eca95e5ccfda39dd95f2",
+        "appendedEdits": 6,
+        "priorEditCount": 57,
+        "newEditCount": 63
+      },
+      "dark": {
+        "sourceBefore": "sha256:aafc41e6dc86c2884007c21223d14201f8bbfd978b43c638da57c350c124f1c0",
+        "sourceAfter": "sha256:5cf1ec6131beb8e00f345e766c26b4714c23616a7d423d221564884dd011ba78",
+        "appendedEdits": 6,
+        "priorEditCount": 59,
+        "newEditCount": 65
+      }
+    },
+    "fluent": {
+      "light": {
+        "sourceBefore": "sha256:7b11e83cd59dd845477cac1df98069e042335069be029a16f8b86d220e378587",
+        "sourceAfter": "sha256:7a77d1ef5c2ebb84d99241aa68bb8264e6a7da8e885dfbff73fca1fb00cea045",
+        "appendedEdits": 6,
+        "priorEditCount": 74,
+        "newEditCount": 80
+      },
+      "dark": {
+        "sourceBefore": "sha256:eaee5d54b1565669df8d26e624fb5617637b2586eb4be44b32769faf00e9d2dd",
+        "sourceAfter": "sha256:835f28ad808e0074034b028e1f85cd3fa32417045afd58c53ecb2200c6497e68",
+        "appendedEdits": 6,
+        "priorEditCount": 80,
+        "newEditCount": 86
+      }
+    },
+    "astryx": {
+      "light": {
+        "sourceBefore": "sha256:335183851b101783e86f02e1120f451e8f354d84a6883602b7e856ad0bc3395c",
+        "sourceAfter": "sha256:efc8182833f8892104fe22f17e92c2b43cd5cc85433b9c687581faafdbc195ee",
+        "appendedEdits": 6,
+        "priorEditCount": 75,
+        "newEditCount": 81
+      },
+      "dark": {
+        "sourceBefore": "sha256:bdd7e7060eeab0194fa8aafda93b6a35a41d3ae03449819f32a6bde6dbb7e338",
+        "sourceAfter": "sha256:566dd0beb5afffe2712ee02f0182280cbea96f4055319383e8e83c8c92fdf016",
+        "appendedEdits": 6,
+        "priorEditCount": 76,
+        "newEditCount": 82
+      }
+    },
+    "shadcn": {
+      "light": {
+        "sourceBefore": "sha256:400bb3ae9954e21a40c6c9720ed7d793aa11abcb6e86cc66349b9562a884960d",
+        "sourceAfter": "sha256:e5501362f4d47dfaa5d43bef28b757266d8b4004eb555318bdc036c93ce0f62c",
+        "appendedEdits": 6,
+        "priorEditCount": 77,
+        "newEditCount": 83
+      },
+      "dark": {
+        "sourceBefore": "sha256:919b01ff7612cd06e0cba9b167becfae5a632530380ba0feccc76e4cff50af54",
+        "sourceAfter": "sha256:4264f2f6f729642e580b03fcf92ccabf7ec9baa7442d5ca6e5bdff7e1d4c9692",
+        "appendedEdits": 6,
+        "priorEditCount": 78,
+        "newEditCount": 84
+      }
+    }
+  },
+  "validation": {
+    "pairedNewPins": "identical by static JSON comparison",
+    "managedRails": "literal values within documented finite rails; aliases unchanged",
+    "compilerReplay": "not run",
+    "build": "not run",
+    "browser": "not run",
+    "visual": "not run"
+  },
+  "runtimeBoundary": "Focus remains immediate and opaque. Anchored combo/menu/popover geometry is never transformed. Menu/popover use elevation entry, combobox fade. Modal travel/scale and exit paint use discrete CSS support; reduced motion is immediate. Unsupported paths keep immediate state changes. Data, focus, events and dismissal are not delayed for motion."
+}

@@ -1,0 +1,503 @@
+{
+  "schemaVersion": 1,
+  "auditDate": "2026-09-18",
+  "scope": "Current source tokens and finite reset registry evaluated directly; @cssprop entries lexically inventoried from packages/elements/src/**/*.ts. No builds or browser checks.",
+  "method": {
+    "node": "v24.16.0",
+    "tokenSource": "packages/tokens/src/source.ts:createSourceTokens default light/comfortable",
+    "registry": "packages/tokens/src/overrides.ts:styleOverrideNames",
+    "annotationRegex": "@cssprop\\s+(--en-[a-z0-9]+(?:-[a-z0-9]+)*)",
+    "stateExclusions": "packages/styles/src/metadata.ts:styleStateProperties",
+    "limits": [
+      "Counts are names, not consumers, rendered behavior, or complete CSS APIs.",
+      "Annotation regex is not a CEM inheritance/exportparts reconciliation.",
+      "No assumption that every CSS-only hook should become a managed token.",
+      "New consumer source overlays can add compatible typed roles; these counts concern built-in roles.",
+      "Grouping uses first segment after --en-, so compound family names are combined."
+    ]
+  },
+  "counts": {
+    "tokens": 428,
+    "componentTokens": 126,
+    "resetNames": 208,
+    "resetNamesWithComponentToken": 126,
+    "resetNamesWithoutBuiltInToken": 82,
+    "annotatedNames": 250,
+    "annotatedNamesWithoutTokenResetOrState": 31
+  },
+  "registryWithoutBuiltInToken": [
+    "--en-alert-background",
+    "--en-alert-border-color",
+    "--en-alert-color",
+    "--en-avatar-radius",
+    "--en-avatar-size",
+    "--en-badge-background",
+    "--en-badge-color",
+    "--en-badge-radius",
+    "--en-button-border-color",
+    "--en-cluster-gap",
+    "--en-control-background",
+    "--en-control-border-color",
+    "--en-control-color",
+    "--en-control-inline-padding",
+    "--en-control-min-size",
+    "--en-control-radius",
+    "--en-data-table-selection-width",
+    "--en-divider-color",
+    "--en-field-gap",
+    "--en-file-list-gap",
+    "--en-file-list-media-size",
+    "--en-file-list-metadata-gap",
+    "--en-file-list-padding",
+    "--en-grid-gap",
+    "--en-grid-item-min",
+    "--en-icon-size",
+    "--en-inset-child-radius",
+    "--en-inset-distance",
+    "--en-inset-outer-radius",
+    "--en-media-aspect-ratio",
+    "--en-media-radius",
+    "--en-navigation-active-background",
+    "--en-navigation-active-color",
+    "--en-navigation-background",
+    "--en-navigation-border-color",
+    "--en-navigation-color",
+    "--en-navigation-gap",
+    "--en-navigation-indent",
+    "--en-navigation-link-radius",
+    "--en-option-background",
+    "--en-option-color",
+    "--en-overlay-background",
+    "--en-overlay-border-color",
+    "--en-overlay-color",
+    "--en-overlay-max-block-size",
+    "--en-overlay-max-inline-size",
+    "--en-overlay-padding",
+    "--en-overlay-radius",
+    "--en-progress-color",
+    "--en-progress-size",
+    "--en-progress-track-color",
+    "--en-prose-max-inline-size",
+    "--en-select-appearance",
+    "--en-skeleton-color",
+    "--en-skeleton-size",
+    "--en-slider-length",
+    "--en-stack-gap",
+    "--en-surface-background",
+    "--en-surface-border-color",
+    "--en-surface-color",
+    "--en-surface-padding",
+    "--en-surface-radius",
+    "--en-swatch-size",
+    "--en-tab-background",
+    "--en-tab-color",
+    "--en-table-background",
+    "--en-table-border-color",
+    "--en-table-cell-padding-block",
+    "--en-table-cell-padding-inline",
+    "--en-table-color",
+    "--en-table-footer-background",
+    "--en-table-footer-color",
+    "--en-table-header-background",
+    "--en-table-header-color",
+    "--en-table-radius",
+    "--en-table-row-hover-background",
+    "--en-table-row-selected-background",
+    "--en-table-row-selected-color",
+    "--en-table-row-selected-indicator-color",
+    "--en-toast-region-layer",
+    "--en-toast-region-max-size",
+    "--en-toast-stack-offset"
+  ],
+  "annotatedWithoutTokenResetOrState": [
+    {
+      "name": "--en-activity-viewport-size",
+      "sources": [
+        "packages/elements/src/activity-feed.ts:50"
+      ]
+    },
+    {
+      "name": "--en-calendar-day-radius",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:46"
+      ]
+    },
+    {
+      "name": "--en-calendar-day-size",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:42"
+      ]
+    },
+    {
+      "name": "--en-calendar-gap",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:45"
+      ]
+    },
+    {
+      "name": "--en-calendar-inline-size",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:41"
+      ]
+    },
+    {
+      "name": "--en-calendar-range-background",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:37"
+      ]
+    },
+    {
+      "name": "--en-calendar-range-endpoint-background",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:38"
+      ]
+    },
+    {
+      "name": "--en-calendar-range-preview-background",
+      "sources": [
+        "packages/elements/src/calendar/element.ts:39"
+      ]
+    },
+    {
+      "name": "--en-carousel-viewport-size",
+      "sources": [
+        "packages/elements/src/carousel.ts:44"
+      ]
+    },
+    {
+      "name": "--en-chat-background",
+      "sources": [
+        "packages/elements/src/chat-composer/element.ts:24",
+        "packages/elements/src/chat-message/element.ts:21"
+      ]
+    },
+    {
+      "name": "--en-chat-border-color",
+      "sources": [
+        "packages/elements/src/chat-composer/element.ts:26",
+        "packages/elements/src/chat-message/element.ts:23"
+      ]
+    },
+    {
+      "name": "--en-chat-color",
+      "sources": [
+        "packages/elements/src/chat-composer/element.ts:25",
+        "packages/elements/src/chat-message/element.ts:22"
+      ]
+    },
+    {
+      "name": "--en-chat-outgoing-background",
+      "sources": [
+        "packages/elements/src/chat-message/element.ts:24"
+      ]
+    },
+    {
+      "name": "--en-chat-padding",
+      "sources": [
+        "packages/elements/src/chat-composer/element.ts:27",
+        "packages/elements/src/chat-message/element.ts:25"
+      ]
+    },
+    {
+      "name": "--en-chat-radius",
+      "sources": [
+        "packages/elements/src/chat-composer/element.ts:28",
+        "packages/elements/src/chat-message/element.ts:26"
+      ]
+    },
+    {
+      "name": "--en-color-plane-block-size",
+      "sources": [
+        "packages/elements/src/color-plane.ts:31"
+      ]
+    },
+    {
+      "name": "--en-color-plane-radius",
+      "sources": [
+        "packages/elements/src/color-plane.ts:32"
+      ]
+    },
+    {
+      "name": "--en-color-plane-thumb-size",
+      "sources": [
+        "packages/elements/src/color-plane.ts:33"
+      ]
+    },
+    {
+      "name": "--en-color-wheel-size",
+      "sources": [
+        "packages/elements/src/color-wheel.ts:24"
+      ]
+    },
+    {
+      "name": "--en-color-wheel-thumb-size",
+      "sources": [
+        "packages/elements/src/color-wheel.ts:26"
+      ]
+    },
+    {
+      "name": "--en-color-wheel-track-size",
+      "sources": [
+        "packages/elements/src/color-wheel.ts:25"
+      ]
+    },
+    {
+      "name": "--en-data-table-min-inline-size",
+      "sources": [
+        "packages/elements/src/data-table/element.ts:31"
+      ]
+    },
+    {
+      "name": "--en-data-table-viewport-size",
+      "sources": [
+        "packages/elements/src/data-table/element.ts:33"
+      ]
+    },
+    {
+      "name": "--en-editor-max-size",
+      "sources": [
+        "packages/elements/src/rich-text-editor/element.ts:36",
+        "packages/elements/src/token-editor/element.ts:25"
+      ]
+    },
+    {
+      "name": "--en-editor-toolbar-background",
+      "sources": [
+        "packages/elements/src/editor-toolbar.ts:15"
+      ]
+    },
+    {
+      "name": "--en-editor-toolbar-gap",
+      "sources": [
+        "packages/elements/src/editor-toolbar.ts:16"
+      ]
+    },
+    {
+      "name": "--en-pagination-align",
+      "sources": [
+        "packages/elements/src/pagination/element.ts:35"
+      ]
+    },
+    {
+      "name": "--en-progress-steps-gap",
+      "sources": [
+        "packages/elements/src/progress-steps/element.ts:32"
+      ]
+    },
+    {
+      "name": "--en-tree-viewport-size",
+      "sources": [
+        "packages/elements/src/tree/element.ts:35"
+      ]
+    },
+    {
+      "name": "--en-validation-summary-padding",
+      "sources": [
+        "packages/elements/src/validation-summary/element.ts:25"
+      ]
+    },
+    {
+      "name": "--en-validation-summary-radius",
+      "sources": [
+        "packages/elements/src/validation-summary/element.ts:26"
+      ]
+    }
+  ],
+  "groups": {
+    "carousel": {
+      "registered": 5,
+      "typedComponent": 5,
+      "withoutBuiltInToken": 0
+    },
+    "presence": {
+      "registered": 10,
+      "typedComponent": 10,
+      "withoutBuiltInToken": 0
+    },
+    "activity": {
+      "registered": 5,
+      "typedComponent": 5,
+      "withoutBuiltInToken": 0
+    },
+    "color": {
+      "registered": 10,
+      "typedComponent": 10,
+      "withoutBuiltInToken": 0
+    },
+    "editor": {
+      "registered": 10,
+      "typedComponent": 10,
+      "withoutBuiltInToken": 0
+    },
+    "toast": {
+      "registered": 28,
+      "typedComponent": 25,
+      "withoutBuiltInToken": 3
+    },
+    "button": {
+      "registered": 10,
+      "typedComponent": 9,
+      "withoutBuiltInToken": 1
+    },
+    "input": {
+      "registered": 10,
+      "typedComponent": 10,
+      "withoutBuiltInToken": 0
+    },
+    "option": {
+      "registered": 32,
+      "typedComponent": 30,
+      "withoutBuiltInToken": 2
+    },
+    "overlay": {
+      "registered": 12,
+      "typedComponent": 5,
+      "withoutBuiltInToken": 7
+    },
+    "segmented": {
+      "registered": 1,
+      "typedComponent": 1,
+      "withoutBuiltInToken": 0
+    },
+    "control": {
+      "registered": 6,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 6
+    },
+    "card": {
+      "registered": 1,
+      "typedComponent": 1,
+      "withoutBuiltInToken": 0
+    },
+    "radio": {
+      "registered": 1,
+      "typedComponent": 1,
+      "withoutBuiltInToken": 0
+    },
+    "field": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "select": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "tab": {
+      "registered": 2,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 2
+    },
+    "surface": {
+      "registered": 5,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 5
+    },
+    "inset": {
+      "registered": 3,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 3
+    },
+    "table": {
+      "registered": 14,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 14
+    },
+    "data": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "file": {
+      "registered": 4,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 4
+    },
+    "stack": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "cluster": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "grid": {
+      "registered": 2,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 2
+    },
+    "pagination": {
+      "registered": 3,
+      "typedComponent": 3,
+      "withoutBuiltInToken": 0
+    },
+    "alert": {
+      "registered": 3,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 3
+    },
+    "badge": {
+      "registered": 3,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 3
+    },
+    "progress": {
+      "registered": 3,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 3
+    },
+    "avatar": {
+      "registered": 2,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 2
+    },
+    "media": {
+      "registered": 2,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 2
+    },
+    "navigation": {
+      "registered": 8,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 8
+    },
+    "swatch": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "slider": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "rating": {
+      "registered": 1,
+      "typedComponent": 1,
+      "withoutBuiltInToken": 0
+    },
+    "skeleton": {
+      "registered": 2,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 2
+    },
+    "divider": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "prose": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    },
+    "icon": {
+      "registered": 1,
+      "typedComponent": 0,
+      "withoutBuiltInToken": 1
+    }
+  }
+}

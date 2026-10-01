@@ -1,0 +1,11 @@
+import {EnEditorToolbar} from '@en-reve/elements/editor-toolbar.js';
+import {EnRichTextEditor} from '@en-reve/elements/rich-text-editor.js';
+import {editorToolbarDefinition} from '@en-reve/elements/definitions/editor-toolbar.js';
+import {richTextEditorDefinition} from '@en-reve/elements/definitions/rich-text-editor.js';
+import {createElementScope} from '@en-reve/elements/element-scope.js';
+const scope = createElementScope({document});
+scope.register([editorToolbarDefinition, richTextEditorDefinition]);
+const editor: EnRichTextEditor = scope.createElement('en-rich-text-editor');
+const toolbar: EnEditorToolbar = scope.createElement('en-editor-toolbar');
+toolbar.editor = editor; toolbar.mode = 'contextual';
+toolbar.commands = ['bold', 'italic', 'link', 'undo'];

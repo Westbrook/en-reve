@@ -1,0 +1,218 @@
+{
+  "diagnosticOnly": true,
+  "instrumented": true,
+  "at": "2026-09-22T12:40:21.804Z",
+  "error": "expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('#showcase-asset').locator('[data-layout]').first()\nExpected: \"landscape\"\nReceived: \"portrait\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('#showcase-asset').locator('[data-layout]').first() with timeout 5000ms\n  - waiting for locator('#showcase-asset').locator('[data-layout]').first()\n    14 × locator resolved to <div role=\"img\" class=\"art\" data-layout=\"portrait\" aria-label=\"portrait composition with overlapping shapes\">…</div>\n       - unexpected value \"portrait\"\n",
+  "events": [
+    {
+      "kind": "capture",
+      "at": 2564.7000002861023,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2564.800000190735,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2682.0999999046326,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "bubble",
+      "at": 2682.0999999046326,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "capture",
+      "at": 2749.7000002861023,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2749.7000002861023,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2809.5,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2809.5,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2883.2000002861023,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2883.2000002861023,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2962.9000000953674,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2962.9000000953674,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 3243.4000000953674,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "preventDefault",
+      "at": 3243.5,
+      "stack": "Error\n    at Event.<computed> [as preventDefault] (<anonymous>:15:22)\n    at HTMLDocument.S (https://127.0.0.1:4616/assets/focus-trap.esm-GrKRp3fm.js:2:7701)"
+    },
+    {
+      "kind": "stopImmediatePropagation",
+      "at": 3243.5,
+      "stack": "Error\n    at Event.<computed> [as stopImmediatePropagation] (<anonymous>:15:22)\n    at HTMLDocument.S (https://127.0.0.1:4616/assets/focus-trap.esm-GrKRp3fm.js:2:7720)"
+    }
+  ],
+  "focusTrapResources": [
+    {
+      "name": "https://127.0.0.1:4616/assets/focus-trap.esm-GrKRp3fm.js",
+      "entryType": "resource",
+      "startTime": 2899.4000000953674,
+      "duration": 110.5,
+      "navigationId": 7330,
+      "initiatorType": "script",
+      "deliveryType": "",
+      "nextHopProtocol": "h2",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/javascript",
+      "contentEncoding": "br",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 2899.4000000953674,
+      "domainLookupStart": 2899.4000000953674,
+      "domainLookupEnd": 2899.4000000953674,
+      "connectStart": 2899.4000000953674,
+      "secureConnectionStart": 2899.4000000953674,
+      "connectEnd": 2899.4000000953674,
+      "requestStart": 2900,
+      "responseStart": 2900.5,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 2900.5,
+      "responseEnd": 3009.9000000953674,
+      "transferSize": 5344,
+      "encodedBodySize": 5044,
+      "decodedBodySize": 16692,
+      "responseStatus": 200,
+      "serverTiming": []
+    }
+  ],
+  "overlays": [
+    {
+      "id": "create-dialog",
+      "open": false,
+      "state": "closed",
+      "focusTrapActive": true
+    },
+    {
+      "id": "preview-dialog",
+      "open": false,
+      "state": "closed",
+      "focusTrapActive": null
+    },
+    {
+      "id": "commands-dialog",
+      "open": false,
+      "state": "closed",
+      "focusTrapActive": null
+    },
+    {
+      "id": "approve-dialog",
+      "open": false,
+      "state": "closed",
+      "focusTrapActive": null
+    },
+    {
+      "id": "export-dialog",
+      "open": false,
+      "state": "closed",
+      "focusTrapActive": null
+    }
+  ]
+}

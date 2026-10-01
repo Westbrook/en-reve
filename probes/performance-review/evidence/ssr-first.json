@@ -1,0 +1,960 @@
+{
+  "label": "ssr-first",
+  "at": "2026-09-08T20:12:23.670Z",
+  "baseURL": "http://127.0.0.1:4196/",
+  "environment": {
+    "platform": "darwin",
+    "osRelease": "25.6.0",
+    "arch": "arm64",
+    "cpu": "Apple M5 Max",
+    "node": "v24.16.0"
+  },
+  "caveats": [
+    "Local diagnostic samples during concurrent development; not field data or a performance budget.",
+    "Loopback static server, no throttling, encoded sizes computed offline rather than observed production transfer."
+  ],
+  "assets": [
+    {
+      "path": "index.html",
+      "raw": 3412120,
+      "gzip9": 191273,
+      "brotli11": 25608,
+      "sha256": "f31a718cfcb28bac5db042a33a8e852fa3cb7b640d41b5f7c0f0fc2e6fa22cd6"
+    },
+    {
+      "path": "assets/dist-CXI9CZeZ.js",
+      "raw": 4607,
+      "gzip9": 2168,
+      "brotli11": 1970,
+      "sha256": "f4b2cd1dcdffec928d93cbc762a165b2c4d21b457af45f766079fb5448b728aa"
+    },
+    {
+      "path": "assets/index-BYqLhZNq.css",
+      "raw": 34060,
+      "gzip9": 5342,
+      "brotli11": 4589,
+      "sha256": "3a7157ceccdee57ed11e7888ebf7f12e33cd630c3f30bfdd70d92a517e27314a"
+    },
+    {
+      "path": "assets/index-DF-g8Btp.js",
+      "raw": 237383,
+      "gzip9": 60679,
+      "brotli11": 51114,
+      "sha256": "550983ec901e2b4f9a334cdb3158bc46a3bdb583425786b2f77c36a2bb33593c"
+    },
+    {
+      "path": "assets/preload-helper-Czpn1I53.js",
+      "raw": 1196,
+      "gzip9": 675,
+      "brotli11": 558,
+      "sha256": "aba87f2a53e45ecdc9113fc30387d16e449d1676428cf5f82dd624c1df97d152"
+    }
+  ],
+  "styles": {
+    "dsdRoots": 149,
+    "count": 150,
+    "rawBytes": 3190269,
+    "uniqueBytes": 463042,
+    "groups": [
+      {
+        "sha256": "b6aa86031ac5c5c6250a27dcb803a6133b9a24579285971fb40875438ad27dba",
+        "bytes": 24755,
+        "count": 39,
+        "hosts": {
+          "en-button": 39
+        }
+      },
+      {
+        "sha256": "1771e39208db50db2c79c79ff3111fb59046dda311c8f0357af6409abb84d1a9",
+        "bytes": 16899,
+        "count": 29,
+        "hosts": {
+          "en-accordion-item": 27,
+          "en-tabs": 1,
+          "en-accordion": 1
+        }
+      },
+      {
+        "sha256": "511ea108b2e28fc773d6e3f4d6080df162e413d497583ed4b4f93ac7c64dd2b8",
+        "bytes": 32212,
+        "count": 14,
+        "hosts": {
+          "en-checkbox": 6,
+          "en-switch": 2,
+          "en-radio-group": 1,
+          "en-radio": 3,
+          "en-slider": 1,
+          "en-rating": 1
+        }
+      },
+      {
+        "sha256": "64e8b0c6fc0b39732eccf2ef2e393b44b6af01fa3ef4b1544a07112d0c5b8b25",
+        "bytes": 25311,
+        "count": 11,
+        "hosts": {
+          "en-color-field": 1,
+          "en-text-field": 5,
+          "en-textarea": 2,
+          "en-search-input": 1,
+          "en-date-input": 1,
+          "en-number-field": 1
+        }
+      },
+      {
+        "sha256": "23e17709a063d0fc365c3c405546d31d13082549e10ccd476f79884ca812e3d3",
+        "bytes": 16400,
+        "count": 9,
+        "hosts": {
+          "en-badge": 9
+        }
+      },
+      {
+        "sha256": "572e8b82db71dd7ee9f6daf6d274af604baf89a6065431528656bb665774978d",
+        "bytes": 11688,
+        "count": 12,
+        "hosts": {
+          "en-icon": 12
+        }
+      },
+      {
+        "sha256": "840672a4879a87de946e1225b8b5743a30e61c82468c4749f05d6432fe3bf126",
+        "bytes": 31176,
+        "count": 4,
+        "hosts": {
+          "en-alert": 4
+        }
+      },
+      {
+        "sha256": "fe169db5b0d94d9bda281ce05b8033005e591eed3a3791db4a474ab578831d94",
+        "bytes": 27978,
+        "count": 4,
+        "hosts": {
+          "en-select": 4
+        }
+      },
+      {
+        "sha256": "f3831b82afde7bb0feb5d0c95e60111f125db9deb25186ee9b13bc0395693b6e",
+        "bytes": 16366,
+        "count": 4,
+        "hosts": {
+          "en-progress-bar": 1,
+          "en-skeleton": 3
+        }
+      },
+      {
+        "sha256": "01e8b572cd129985edef66ac559cfa20784f04acc473eddb5b7e9ddcc3e33dcd",
+        "bytes": 28955,
+        "count": 2,
+        "hosts": {
+          "en-dialog": 1,
+          "en-drawer": 1
+        }
+      },
+      {
+        "sha256": "4973b814400932f43b34214dd787ca03a132aedc40dfcbcff852f90dec378275",
+        "bytes": 16982,
+        "count": 3,
+        "hosts": {
+          "en-tab-panel": 3
+        }
+      },
+      {
+        "sha256": "10085dd5a046ff6f11c109dab51a9cf6535d95654ba990c5016229163859b8ef",
+        "bytes": 16953,
+        "count": 3,
+        "hosts": {
+          "en-tab": 3
+        }
+      },
+      {
+        "sha256": "7c0f1782e3e31516721eb950f57b9419a56276108e22cfbbf1a9e50da5179d7b",
+        "bytes": 11634,
+        "count": 4,
+        "hosts": {
+          "en-avatar": 4
+        }
+      },
+      {
+        "sha256": "ba05a540797c3fa0bb4e6af412fd5d796e805f5bf515fd23a2496af2cc81252d",
+        "bytes": 35166,
+        "count": 1,
+        "hosts": {
+          "document": 1
+        }
+      },
+      {
+        "sha256": "bdb31bb70e0d06d0c4b1b62ca649cf1135f57c3a1c57a1bf1588c20755d5049c",
+        "bytes": 11722,
+        "count": 3,
+        "hosts": {
+          "en-card": 3
+        }
+      },
+      {
+        "sha256": "44630f3b331417222f2244454363861d2c591e3995ac184b91b4287fe2b59264",
+        "bytes": 28955,
+        "count": 1,
+        "hosts": {
+          "en-popover": 1
+        }
+      },
+      {
+        "sha256": "7d930d2ba133cdfec3c7bf727f0cc285f925f771964236209ab236ee5097ef10",
+        "bytes": 23190,
+        "count": 1,
+        "hosts": {
+          "en-link": 1
+        }
+      },
+      {
+        "sha256": "4f6e1b4dfb99e8ae0ee00bc0134a162580c7954c6da268b04b4c6c034ae59ccb",
+        "bytes": 19074,
+        "count": 1,
+        "hosts": {
+          "en-segmented-control": 1
+        }
+      },
+      {
+        "sha256": "62e9eda4727c0355d17a0a0de3f6d8e03a345db990e5541c2d1f31f1e60ce926",
+        "bytes": 14273,
+        "count": 1,
+        "hosts": {
+          "en-splitter": 1
+        }
+      },
+      {
+        "sha256": "753953937e44713d3e7891eb6756e9f969158f13c71fe10f8b245fa8d70620b3",
+        "bytes": 14025,
+        "count": 1,
+        "hosts": {
+          "en-split-view": 1
+        }
+      },
+      {
+        "sha256": "49b18f448ed195d947fd0c0db3016c1327f7d9972dbb14572e8c3371dc669050",
+        "bytes": 13912,
+        "count": 1,
+        "hosts": {
+          "en-stack": 1
+        }
+      },
+      {
+        "sha256": "4c9f960214c07ccde1ccaf03956d8afdf960ac7643c0ee0fafb82595ce8cbfa9",
+        "bytes": 13844,
+        "count": 1,
+        "hosts": {
+          "en-tooltip": 1
+        }
+      },
+      {
+        "sha256": "31cf1a046f227fb1b025337220f3b3a62ba78621dd9c8c9477c4cb182165fcac",
+        "bytes": 11572,
+        "count": 1,
+        "hosts": {
+          "en-spinner": 1
+        }
+      }
+    ]
+  },
+  "browser": "153.0.8010.12",
+  "runs": [
+    {
+      "sample": 0,
+      "errors": [],
+      "serverRendered": {
+        "at": 98.90000009536743,
+        "readyState": "interactive",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 6857,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 4.400000095367432,
+            "domainLookupStart": 6.699999809265137,
+            "domainLookupEnd": 6.800000190734863,
+            "connectStart": 6.800000190734863,
+            "secureConnectionStart": 0,
+            "connectEnd": 6.900000095367432,
+            "requestStart": 7.099999904632568,
+            "responseStart": 7.300000190734863,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 7.300000190734863,
+            "responseEnd": 13.5,
+            "transferSize": 3412420,
+            "encodedBodySize": 3412120,
+            "decodedBodySize": 3412120,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 63.5,
+            "domContentLoadedEventStart": 0,
+            "domContentLoadedEventEnd": 0,
+            "domComplete": 0,
+            "loadEventStart": 0,
+            "loadEventEnd": 0,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 68,
+            "duration": 0,
+            "navigationId": 6857,
+            "paintTime": 56.59999990463257,
+            "presentationTime": 68
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 68,
+            "duration": 0,
+            "navigationId": 6857,
+            "paintTime": 56.59999990463257,
+            "presentationTime": 68
+          }
+        ],
+        "elements": 2818,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-BYqLhZNq.css",
+            "initiatorType": "link",
+            "duration": 6.199999809265137,
+            "transferSize": 34360,
+            "encodedBodySize": 34060,
+            "decodedBodySize": 34060
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "resizeObserverCalls": 0,
+          "themeMutations": 0
+        },
+        "button": {
+          "width": 124.96875,
+          "height": 40,
+          "background": "rgb(36, 87, 214)"
+        }
+      },
+      "clientReady": {
+        "at": 182,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 155.90000009536743,
+            "navigationId": 6857,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 4.400000095367432,
+            "domainLookupStart": 6.699999809265137,
+            "domainLookupEnd": 6.800000190734863,
+            "connectStart": 6.800000190734863,
+            "secureConnectionStart": 0,
+            "connectEnd": 6.900000095367432,
+            "requestStart": 7.099999904632568,
+            "responseStart": 7.300000190734863,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 7.300000190734863,
+            "responseEnd": 13.5,
+            "transferSize": 3412420,
+            "encodedBodySize": 3412120,
+            "decodedBodySize": 3412120,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 63.5,
+            "domContentLoadedEventStart": 154.19999980926514,
+            "domContentLoadedEventEnd": 154.30000019073486,
+            "domComplete": 155.69999980926514,
+            "loadEventStart": 155.90000009536743,
+            "loadEventEnd": 155.90000009536743,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 68,
+            "duration": 0,
+            "navigationId": 6857,
+            "paintTime": 56.59999990463257,
+            "presentationTime": 68
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 68,
+            "duration": 0,
+            "navigationId": 6857,
+            "paintTime": 56.59999990463257,
+            "presentationTime": 68
+          }
+        ],
+        "elements": 2818,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-DF-g8Btp.js",
+            "initiatorType": "script",
+            "duration": 96.40000009536743,
+            "transferSize": 237683,
+            "encodedBodySize": 237383,
+            "decodedBodySize": 237383
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-BYqLhZNq.css",
+            "initiatorType": "link",
+            "duration": 6.199999809265137,
+            "transferSize": 34360,
+            "encodedBodySize": 34060,
+            "decodedBodySize": 34060
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 96.09999990463257,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "resizeObserverCalls": 1,
+          "themeMutations": 0
+        }
+      },
+      "clientReleaseToAppUpdatedMs": 53,
+      "initialHighlights": 0,
+      "themes": [],
+      "failure": "TimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'Dark', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"radio\" value=\"dark\" name=\"choice\" tabindex=\"-1\" part=\"control\" checked=\"false\" class=\"en-segmented-input en-sr-only\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  55 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "sample": 1,
+      "errors": [],
+      "serverRendered": {
+        "at": 130.5,
+        "readyState": "interactive",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 6377,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.09999990463256836,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2.1999998092651367,
+            "connectStart": 2.1999998092651367,
+            "secureConnectionStart": 0,
+            "connectEnd": 2.1999998092651367,
+            "requestStart": 2.299999713897705,
+            "responseStart": 3.1999998092651367,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 3.1999998092651367,
+            "responseEnd": 9.599999904632568,
+            "transferSize": 3007319,
+            "encodedBodySize": 3007019,
+            "decodedBodySize": 3007019,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 52.19999980926514,
+            "domContentLoadedEventStart": 0,
+            "domContentLoadedEventEnd": 0,
+            "domComplete": 0,
+            "loadEventStart": 0,
+            "loadEventEnd": 0,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 96,
+            "duration": 0,
+            "navigationId": 6377,
+            "paintTime": 79.09999990463257,
+            "presentationTime": 96
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 96,
+            "duration": 0,
+            "navigationId": 6377,
+            "paintTime": 79.09999990463257,
+            "presentationTime": 96
+          }
+        ],
+        "elements": 2883,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-ig15B5yQ.css",
+            "initiatorType": "link",
+            "duration": 8.5,
+            "transferSize": 35683,
+            "encodedBodySize": 35383,
+            "decodedBodySize": 35383
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "resizeObserverCalls": 0,
+          "themeMutations": 0
+        },
+        "button": {
+          "width": 124.96875,
+          "height": 40,
+          "background": "rgb(36, 87, 214)"
+        }
+      },
+      "clientReady": {
+        "at": 229.2999997138977,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 205,
+            "navigationId": 6377,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 0.09999990463256836,
+            "domainLookupStart": 2,
+            "domainLookupEnd": 2.1999998092651367,
+            "connectStart": 2.1999998092651367,
+            "secureConnectionStart": 0,
+            "connectEnd": 2.1999998092651367,
+            "requestStart": 2.299999713897705,
+            "responseStart": 3.1999998092651367,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 3.1999998092651367,
+            "responseEnd": 9.599999904632568,
+            "transferSize": 3007319,
+            "encodedBodySize": 3007019,
+            "decodedBodySize": 3007019,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 52.19999980926514,
+            "domContentLoadedEventStart": 203,
+            "domContentLoadedEventEnd": 203,
+            "domComplete": 204.7999997138977,
+            "loadEventStart": 205,
+            "loadEventEnd": 205,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 96,
+            "duration": 0,
+            "navigationId": 6377,
+            "paintTime": 79.09999990463257,
+            "presentationTime": 96
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 96,
+            "duration": 0,
+            "navigationId": 6377,
+            "paintTime": 79.09999990463257,
+            "presentationTime": 96
+          }
+        ],
+        "elements": 2883,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-D90y5LeT.js",
+            "initiatorType": "script",
+            "duration": 136.40000009536743,
+            "transferSize": 242817,
+            "encodedBodySize": 242517,
+            "decodedBodySize": 242517
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 136.80000019073486,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-ig15B5yQ.css",
+            "initiatorType": "link",
+            "duration": 8.5,
+            "transferSize": 35683,
+            "encodedBodySize": 35383,
+            "decodedBodySize": 35383
+          }
+        ],
+        "observations": {
+          "longtasks": [
+            {
+              "name": "self",
+              "entryType": "longtask",
+              "startTime": 147.69999980926514,
+              "duration": 55,
+              "navigationId": 6377,
+              "attribution": [
+                {
+                  "name": "unknown",
+                  "entryType": "taskattribution",
+                  "startTime": 0,
+                  "duration": 0,
+                  "navigationId": 6377,
+                  "containerType": "window",
+                  "containerSrc": "",
+                  "containerId": "",
+                  "containerName": ""
+                }
+              ]
+            }
+          ],
+          "shifts": [],
+          "resizeObserverCalls": 1,
+          "themeMutations": 0
+        }
+      },
+      "clientReleaseToAppUpdatedMs": 69.10000038146973,
+      "initialHighlights": 0,
+      "themes": [],
+      "failure": "TimeoutError: locator.check: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'Dark', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"radio\" value=\"dark\" name=\"choice\" tabindex=\"-1\" part=\"control\" class=\"en-segmented-input en-sr-only\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  55 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n"
+    },
+    {
+      "sample": 2,
+      "errors": [],
+      "serverRendered": {
+        "at": 97.80000019073486,
+        "readyState": "interactive",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 0,
+            "navigationId": 4437,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 2.6000003814697266,
+            "domainLookupStart": 3.8000001907348633,
+            "domainLookupEnd": 3.8000001907348633,
+            "connectStart": 3.8000001907348633,
+            "secureConnectionStart": 0,
+            "connectEnd": 4,
+            "requestStart": 4,
+            "responseStart": 4.900000095367432,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4.900000095367432,
+            "responseEnd": 9.800000190734863,
+            "transferSize": 3007319,
+            "encodedBodySize": 3007019,
+            "decodedBodySize": 3007019,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 27.300000190734863,
+            "domContentLoadedEventStart": 0,
+            "domContentLoadedEventEnd": 0,
+            "domComplete": 0,
+            "loadEventStart": 0,
+            "loadEventEnd": 0,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 72,
+            "duration": 0,
+            "navigationId": 4437,
+            "paintTime": 58.200000286102295,
+            "presentationTime": 72
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 72,
+            "duration": 0,
+            "navigationId": 4437,
+            "paintTime": 58.200000286102295,
+            "presentationTime": 72
+          }
+        ],
+        "elements": 2883,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-ig15B5yQ.css",
+            "initiatorType": "link",
+            "duration": 5,
+            "transferSize": 35683,
+            "encodedBodySize": 35383,
+            "decodedBodySize": 35383
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "resizeObserverCalls": 0,
+          "themeMutations": 0
+        },
+        "button": {
+          "width": 124.96875,
+          "height": 40,
+          "background": "rgb(36, 87, 214)"
+        }
+      },
+      "clientReady": {
+        "at": 196.10000038146973,
+        "readyState": "complete",
+        "navigation": [
+          {
+            "name": "http://127.0.0.1:4196/",
+            "entryType": "navigation",
+            "startTime": 0,
+            "duration": 158.5,
+            "navigationId": 4437,
+            "initiatorType": "navigation",
+            "deliveryType": "",
+            "nextHopProtocol": "http/1.0",
+            "renderBlockingStatus": "non-blocking",
+            "contentType": "text/html",
+            "contentEncoding": "",
+            "workerStart": 0,
+            "workerRouterEvaluationStart": 0,
+            "workerCacheLookupStart": 0,
+            "workerMatchedSourceType": "",
+            "workerFinalSourceType": "",
+            "redirectStart": 0,
+            "redirectEnd": 0,
+            "fetchStart": 2.6000003814697266,
+            "domainLookupStart": 3.8000001907348633,
+            "domainLookupEnd": 3.8000001907348633,
+            "connectStart": 3.8000001907348633,
+            "secureConnectionStart": 0,
+            "connectEnd": 4,
+            "requestStart": 4,
+            "responseStart": 4.900000095367432,
+            "firstInterimResponseStart": 0,
+            "finalResponseHeadersStart": 4.900000095367432,
+            "responseEnd": 9.800000190734863,
+            "transferSize": 3007319,
+            "encodedBodySize": 3007019,
+            "decodedBodySize": 3007019,
+            "responseStatus": 200,
+            "serverTiming": [],
+            "unloadEventStart": 0,
+            "unloadEventEnd": 0,
+            "domInteractive": 27.300000190734863,
+            "domContentLoadedEventStart": 156.7000002861023,
+            "domContentLoadedEventEnd": 156.80000019073486,
+            "domComplete": 158.40000009536743,
+            "loadEventStart": 158.5,
+            "loadEventEnd": 158.5,
+            "type": "navigate",
+            "redirectCount": 0,
+            "activationStart": 0,
+            "criticalCHRestart": 0,
+            "notRestoredReasons": null,
+            "confidence": {
+              "randomizedTriggerRate": 0.4994798,
+              "value": "high"
+            }
+          }
+        ],
+        "paints": [
+          {
+            "name": "first-paint",
+            "entryType": "paint",
+            "startTime": 72,
+            "duration": 0,
+            "navigationId": 4437,
+            "paintTime": 58.200000286102295,
+            "presentationTime": 72
+          },
+          {
+            "name": "first-contentful-paint",
+            "entryType": "paint",
+            "startTime": 72,
+            "duration": 0,
+            "navigationId": 4437,
+            "paintTime": 58.200000286102295,
+            "presentationTime": 72
+          }
+        ],
+        "elements": 2883,
+        "shadowRoots": 149,
+        "styles": 150,
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4196/assets/index-D90y5LeT.js",
+            "initiatorType": "script",
+            "duration": 98.30000019073486,
+            "transferSize": 242817,
+            "encodedBodySize": 242517,
+            "decodedBodySize": 242517
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/preload-helper-Czpn1I53.js",
+            "initiatorType": "other",
+            "duration": 98,
+            "transferSize": 1496,
+            "encodedBodySize": 1196,
+            "decodedBodySize": 1196
+          },
+          {
+            "name": "http://127.0.0.1:4196/assets/index-ig15B5yQ.css",
+            "initiatorType": "link",
+            "duration": 5,
+            "transferSize": 35683,
+            "encodedBodySize": 35383,
+            "decodedBodySize": 35383
+          }
+        ],
+        "observations": {
+          "longtasks": [],
+          "shifts": [],
+          "resizeObserverCalls": 1,
+          "themeMutations": 0
+        }
+      },
+      "clientReleaseToAppUpdatedMs": 57.19999980926514,
+      "initialHighlights": 0,
+      "themes": [],
+      "failure": "Error: locator.check: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for getByRole('radio', { name: 'Dark', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <input type=\"radio\" value=\"dark\" name=\"choice\" tabindex=\"-1\" part=\"control\" class=\"en-segmented-input en-sr-only\"/>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is not stable\u001b[22m\n\u001b[2m  30 × retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\u001b[2m       - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <span part=\"option-label\" class=\"en-segmented-label\">…</span> intercepts pointer events\u001b[22m\n\u001b[2m  - retrying click action\u001b[22m\n\u001b[2m    - waiting 500ms\u001b[22m\n"
+    }
+  ],
+  "finalHtmlSha256": "0cc01a8e21d504f1626665ed9163afbfd8e98f7c0e834e06a9d6fa49a4edbbea",
+  "buildChangedDuringProbe": true
+}

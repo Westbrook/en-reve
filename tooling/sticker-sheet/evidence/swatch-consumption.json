@@ -1,0 +1,131 @@
+[
+  {
+    "engine": "chromium",
+    "status": "passed",
+    "nativeCopies": [
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      },
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      },
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      }
+    ],
+    "geometry": {
+      "host": {
+        "x": 124.203125,
+        "y": 952.578125,
+        "width": 562.796875,
+        "height": 64,
+        "top": 952.578125,
+        "right": 687,
+        "bottom": 1016.578125,
+        "left": 124.203125
+      },
+      "button": {
+        "x": 124.203125,
+        "y": 952.578125,
+        "width": 562.796875,
+        "height": 64,
+        "top": 952.578125,
+        "right": 687,
+        "bottom": 1016.578125,
+        "left": 124.203125
+      }
+    },
+    "violations": [],
+    "errors": [],
+    "pickerScope": "Trusted activation to instrumented native method; real native input value edits separately. OS picker display/selection not verified."
+  },
+  {
+    "engine": "firefox",
+    "status": "passed",
+    "nativeCopies": [
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      },
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      },
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      }
+    ],
+    "geometry": {
+      "host": {
+        "x": 124.19999694824219,
+        "y": 952.5999755859375,
+        "width": 562.7999877929688,
+        "height": 64,
+        "top": 952.5999755859375,
+        "right": 686.9999847412109,
+        "bottom": 1016.5999755859375,
+        "left": 124.19999694824219
+      },
+      "button": {
+        "x": 124.19999694824219,
+        "y": 952.5999755859375,
+        "width": 562.7999877929688,
+        "height": 64,
+        "top": 952.5999755859375,
+        "right": 686.9999847412109,
+        "bottom": 1016.5999755859375,
+        "left": 124.19999694824219
+      }
+    },
+    "violations": [],
+    "errors": [],
+    "pickerScope": "Trusted activation to instrumented native method; real native input value edits separately. OS picker display/selection not verified."
+  },
+  {
+    "engine": "webkit",
+    "status": "passed",
+    "nativeCopies": [
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      },
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      },
+      {
+        "text": "var(--en-color-action)",
+        "active": true
+      }
+    ],
+    "geometry": {
+      "host": {
+        "x": 124.203125,
+        "y": 952.578125,
+        "width": 562.796875,
+        "height": 64,
+        "top": 952.578125,
+        "right": 687,
+        "bottom": 1016.578125,
+        "left": 124.203125
+      },
+      "button": {
+        "x": 124.203125,
+        "y": 952.578125,
+        "width": 562.796875,
+        "height": 64,
+        "top": 952.578125,
+        "right": 687,
+        "bottom": 1016.578125,
+        "left": 124.203125
+      }
+    },
+    "violations": [],
+    "errors": [],
+    "pickerScope": "Trusted activation to instrumented native method; real native input value edits separately. OS picker display/selection not verified."
+  }
+]

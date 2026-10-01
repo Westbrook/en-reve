@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "Synthetic fixture only; not the en-reve component manifest.",
+  "modules": [{
+    "kind": "javascript-module",
+    "path": "sample-control.js",
+    "declarations": [{
+      "kind": "class",
+      "name": "SampleControl",
+      "customElement": true,
+      "tagName": "en-sample-control",
+      "members": [{ "kind": "field", "name": "value", "type": { "text": "string" }, "default": "''" }],
+      "attributes": [{ "name": "value", "fieldName": "value", "type": { "text": "string" } }],
+      "events": [{ "name": "en-sample-change", "type": { "text": "CustomEvent<string>" } }],
+      "slots": [{ "name": "", "description": "Label content" }],
+      "cssProperties": [{ "name": "--en-sample-control-color", "description": "Sample foreground" }],
+      "cssParts": [{ "name": "control", "description": "The sample control" }]
+    }],
+    "exports": [{ "kind": "custom-element-definition", "name": "en-sample-control", "declaration": { "name": "SampleControl", "module": "sample-control.js" } }]
+  }]
+}

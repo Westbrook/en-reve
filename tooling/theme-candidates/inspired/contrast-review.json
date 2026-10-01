@@ -1,0 +1,58 @@
+{
+  "status": "Numeric declared-pair checks; browser coverage remains root-owned",
+  "pairs": [
+    {
+      "purpose": "Spectrum focus on active option",
+      "before": "#4069fd",
+      "after": "#5681ff",
+      "background": "#323232",
+      "threshold": 3,
+      "beforeRatio": 2.8432376230031284,
+      "afterRatio": 3.650841955690644
+    },
+    {
+      "purpose": "Fluent error on base",
+      "before": "#dc626d",
+      "after": "#eeacb2",
+      "background": "#292929",
+      "threshold": 4.5,
+      "beforeRatio": 4.164267409753561,
+      "afterRatio": 7.744704798628001
+    },
+    {
+      "purpose": "Spectrum link on base",
+      "after": "#5681ff",
+      "background": "#111111",
+      "threshold": 4.5,
+      "afterRatio": 5.376987101686761
+    },
+    {
+      "purpose": "Fluent link on base",
+      "after": "#479ef5",
+      "background": "#292929",
+      "threshold": 4.5,
+      "afterRatio": 5.179974033231973
+    }
+  ],
+  "initialLinkProposal": "The original independent link#5681ff proposal was superseded; both recipes now inherit action-text.",
+  "finalPairs": {
+    "spectrum": {
+      "linkOnBase": 6.591790079483306,
+      "linkOnRaised": 5.553934170881192,
+      "linkOnSubtle": 4.875041605552236,
+      "linkOnSelected": 4.919835706153991,
+      "errorOnBase": 5.37843767416872,
+      "errorOnRaised": 4.531620155425501,
+      "focusOnActive": 3.650841955690644
+    },
+    "fluent": {
+      "linkOnBase": 5.179974033231973,
+      "linkOnRaised": 5.179974033231973,
+      "linkOnSubtle": 6.55945536454363,
+      "linkOnSelected": 5.717185721088566,
+      "errorOnBase": 7.744704798628001,
+      "errorOnRaised": 7.744704798628001,
+      "focusOnActive": null
+    }
+  }
+}

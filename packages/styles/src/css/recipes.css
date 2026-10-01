@@ -1,0 +1,9 @@
+/* Internal build-time recipes. Consumers receive ordinary CSS. */
+@mixin --en-font(--weight, --size, --leading, --family) {
+  @result {
+    font: var(--weight) var(--size) / var(--leading) var(--family);
+  }
+}
+@function --en-inset-radius(--outer, --inset) {
+  result: max(0px, var(--outer) - var(--inset));
+}

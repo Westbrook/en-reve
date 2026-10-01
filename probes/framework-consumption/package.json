@@ -1,0 +1,14 @@
+{
+  "name": "en-reve-framework-consumption",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "install:matrix": "node install.mjs",
+    "build": "node build.mjs",
+    "test": "playwright test --config playwright.config.ts"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

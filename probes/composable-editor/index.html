@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Composer editor foundation experiment</title>
+<style>body{font:16px system-ui;margin:2rem;max-width:55rem}button{min-height:2.75rem;margin:.25rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}en-chat-composer{display:block;border:1px solid;padding:1rem}</style>
+<h1>Composer editor foundation experiment</h1><p>Isolated research fixture. Token insertion uses a native undo candidate, not a shipped token editor.</p>
+<en-chat-composer><probe-editor slot="editor"></probe-editor></en-chat-composer>
+<button id="insert">Insert reference</button><button id="undo">Undo insertion</button><button id="redo">Redo insertion</button><button id="outside">Outside focus</button>
+<pre id="snapshot" aria-label="Last send snapshot"></pre>
+<script type="module" src="./fixture.ts"></script></html>

@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "systems": [
+    "en-reve",
+    "fluent-web-components",
+    "web-awesome"
+  ],
+  "frozenControls": [
+    "en-reve",
+    "fluent-web-components"
+  ],
+  "campaigns": {
+    "load": "web-awesome-load-v1",
+    "startup": "web-awesome-startup-v1",
+    "interactions": "web-awesome-interactions-v1",
+    "lighthouse": "web-awesome-lighthouse-v1",
+    "memory": "web-awesome-memory-v2",
+    "diagnostic": "web-awesome-diagnostic-v1",
+    "bfcache": "web-awesome-bfcache-v1",
+    "overhead": "web-awesome-overhead-v1"
+  },
+  "bundlePath": "reports/web-awesome/bundles.json",
+  "inventoryPath": "reports/web-awesome/inventory.json",
+  "historicalTablesPath": "reports/pass2-tables.json",
+  "historicalBundlePath": "reports/bundles.json",
+  "historicalDOMPath": "reports/dom-review/census.json",
+  "dom": {
+    "customDateSystems": [
+      "en-reve"
+    ],
+    "snapshotsPath": "runs/web-awesome-dom-v1/snapshots.json",
+    "manifestPath": "runs/web-awesome-dom-v1/manifest.json",
+    "ownershipPath": "reports/web-awesome/shadow-ownership.json"
+  },
+  "context": "The new panel uses 10 blocks per profile/cache load cell, 10 startup and settled-interaction blocks per profile, five mobile Lighthouse audits, one 0/10/50-cycle memory session, one desktop diagnostic, five back-forward-cache checks and five paired observer on/off blocks per implementation. The requested total is 306 performance samples, plus 30 connected-DOM snapshots and three initial ownership snapshots.\n\nNative Web Awesome uses its supported native date input; En Reve retains its custom calendar. Web Awesome also includes native Card, Rating and ColorPicker components; the custom color popup differs from several peers' native color input. Its free select supports participant selection but not the Pro Combobox's searchable filtering. These native capability and composition differences remain part of whole-page costs.\n\nWeb Awesome retains its native offscreen tab activation and layout behavior: tab content nodes are mounted, while the library activates and lays out panels according to its own visibility lifecycle. Initial-panel qualification scrolls the real page to the component and verifies the resulting visible panel; the CSR fixture does not force active attributes onto tab or panel children.\n\nIn the observed Chromium accessibility tree, Web Awesome 3.13.0's visible dialog/drawer labels and headings do not provide an accessible name for their internal native dialogs. The test adapter verifies the visible native `:modal` dialog while preserving stock output; this accommodation is not an accessibility fix or certification. [Native fixture qualification notes](../showcases/web-awesome/README.md).\n\nCollection paused after 255 successful loading/startup/interaction/Lighthouse samples because another task held the shared browser-measurement lock. The memory-v1 attempt stopped before creating a manifest or recording a sample. After the lock became available, the remaining 51 samples ran under one continuous lock, starting with memory-v2. No successful sample was lost, replaced or retried. The final total is 306/306 successful performance samples, plus 30/30 DOM snapshots and three ownership snapshots. [Preserved pre-memory interruption receipt](../showcases/performance/reports/web-awesome/execution-blocked-before-memory.json).",
+  "findings": "**Warm initialization is the clearest measured En Reve opportunity against this new reference.** Mobile warm LCP is 298 ms for En Reve, 246 ms for Web Awesome and 218 ms for Fluent WC. The En Reve minus Web Awesome paired difference is 52 ms, with an exploratory 95% interval of 36\u201368 ms. Desktop warm LCP is 44 versus 36 ms. Mobile warm style work is 42.3 versus 15.8 ms and task work is 241.2 versus 192.1 ms. Corrected warm HTTP transfer is effectively just the document in both fixtures (249 versus 260 bytes). This points to a warm initialization/style investigation; counters and timing associations do not establish its cause.\n\n**Cold delivery is much closer to Web Awesome.** Mobile cold LCP is 614 versus 604 ms, with an En Reve difference interval of \u22124 to 54.05 ms; desktop cold LCP is 96 ms for both. En Reve already emits less JavaScript (404.7 versus 469.8 KiB raw, 80.4 versus 86.4 KiB Brotli) and transfers fewer cold HTTP response bytes (88,632 versus 94,111). All three fixtures emit one JS file and one CSS file with no dynamic import edges. Mobile startup result is 628 versus 615 ms; settled scripted INP is 56 versus 48 ms, with the latter difference interval touching zero. These results do not establish a universal responsiveness ranking. All 15 Lighthouse audits report zero TBT and CLS in their bounded audit windows.\n\n**En Reve is nearly at element-count parity with Web Awesome once complete date fields are excluded.** The non-date trees contain 4,019 nodes / 1,397 elements for En Reve and 4,182 / 1,393 for Web Awesome: En Reve has 163 fewer nodes and only four more elements. Whole-page totals are 4,642 / 1,578 versus 4,210 / 1,401; date fields contribute 623 / 181 versus 28 / 8. Date composition therefore explains more than the entire node-count difference and 173 of the 177 extra elements. This does not make browser-native dates equivalent to the custom calendar; native picker internals are unavailable. Fluent WC remains smaller at 2,859 non-date nodes / 1,272 elements. The earlier source audit remains useful, but the new comparison weakens a blanket \u201ctoo many DOM nodes\u201d diagnosis. Web Awesome has 97 non-date base parts versus En Reve\u2019s 50, further demonstrating that the name alone is not evidence of a redundant wrapper.\n\n**Diagnostics support focused experiments, not conclusions about causality or leaks.** The separate single cold desktop trace records 21.8 ms of layout-tree update work for En Reve versus 13.6 ms for Web Awesome; it is not a trace of the warm cohort. Whole-journey sampling identifies En Reve dialog synchronization, toolbar/menu availability checks and calendar adapter work as inspection targets; those totals cannot be assigned to startup without looking at the trace. At 50 journeys, API memory is about 5.46 MiB for En Reve, 4.86 MiB for Web Awesome and 4.36 MiB for Fluent WC, with only one session each. From 10 to 50 journeys, En Reve and Web Awesome each add 40 browser-counter nodes with stable listener counts; these broad counters include more than the connected page census. Retention, browser input state, automation and garbage collection still require separation before any leak claim.",
+  "followUps": [
+    [
+      "1",
+      "Warm initialization and style work",
+      "Mobile warm LCP +52 ms versus Web Awesome; style 42.3 versus 15.8 ms",
+      "Capture matched warm traces, inspect style/layout triggers and selector/invalidation work, then change one repeated component or style-adoption decision",
+      "Improve warm LCP and task work without moving the cost to cold startup, first interaction or scroll activation"
+    ],
+    [
+      "1",
+      "Custom date mounting and lifecycle",
+      "Date field accounts for 623 nodes / 181 elements; native reference has 28 / 8",
+      "Prototype calendar-only and full-overlay deferral separately; compare retained-after-close with recreated state",
+      "Preserve date/form/locale/keyboard/accessibility contracts; measure first open, reopen, close, startup and retained memory"
+    ],
+    [
+      "2",
+      "Repeated button, card and field structure",
+      "Non-date total is nearly equal to Web Awesome; En Reve button still owns six shadow elements per instance",
+      "Use the existing source catalog for targeted host-surface or optional-region prototypes; keep native controls and public slots",
+      "Document part API migration; verify geometry, focus, names/descriptions, dynamic slots, themes and hydration; pair count reductions with measured delivery gains"
+    ],
+    [
+      "2",
+      "Whole-journey interaction hotspots",
+      "Separate trace samples identify dialog synchronization, toolbar/menu checks and calendar-adapter work",
+      "Inspect exact trace intervals, repeated geometry reads and redundant updates around the measured actions",
+      "Attribute improvement to the relevant action and verify first/repeated behavior; do not assign whole-journey samples to warm startup"
+    ],
+    [
+      "3",
+      "Chunking and lifecycle follow-through",
+      "All fixtures have one eager JS file; memory remains a one-session diagnostic",
+      "Use realistic optional-feature mounting/import boundaries and targeted retention controls, preserving the frozen references",
+      "Measure transferred bytes plus first-use latency and retained state; do not delete merely unexercised code or infer a leak from broad DOM counters"
+    ]
+  ]
+}

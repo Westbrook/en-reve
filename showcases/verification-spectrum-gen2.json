@@ -1,0 +1,196 @@
+{
+  "verifiedAt": "2026-09-22T12:13:22.247Z",
+  "browser": "Chromium 153.0.8010.12",
+  "node": "v24.16.0",
+  "platform": "darwin",
+  "rendering": "client",
+  "scope": "Functional qualification and desktop visual review; not performance profiling or accessibility certification",
+  "checksPassed": 22,
+  "projects": [
+    {
+      "name": "spectrum-web-components",
+      "url": "http://127.0.0.1:4516",
+      "sourceSha256": "74427b4d5b1a35d3d2d0c74e0091b0b97b767addc89439b821b90acf823f49ce",
+      "sourceHashes": {
+        "spectrum-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-web-components/index.html": "bc5782b3b1052630466e1952557f035eefe3ecfdbf79669b2d593ca477f8654e",
+        "spectrum-web-components/package-lock.json": "00503fdc63606bb225c1bc87a882de5b608e27d358a03ed3e77795894f5505b2",
+        "spectrum-web-components/package.json": "15a4d5be88b4eb86c9cea5321b3f2200caefcfaf5b1e8b43f668068894786610",
+        "spectrum-web-components/README.md": "d713e92c84f1162f9d6eba214f6592e61879162865e7744a745ef54b2267a494",
+        "spectrum-web-components/src/main.js": "ec2dced3ff38d966124ace13ef6a2cfe47ac655ba5cdb549382f4034ec9ba2a0",
+        "spectrum-web-components/src/style.css": "b58fc72d734f84f8d851ad7bbd6e6b612af9422fef5a00432673cefc8085a657",
+        "spectrum-web-components/src/ui.js": "eff3444972a72518ef3c6beaf9eb58427ac9dbdc5aa396177b402dea35597763",
+        "spectrum-web-components/vite.config.js": "fabcbea3a3ea88d5887ede1995814bb5a54f620fc97d62d899f6b45d4f2e7244",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-spectrum-web-components",
+        "dependencies": {
+          "@adobe/spectrum-wc": "2.0.0-beta.3",
+          "@spectrum-web-components/checkbox": "1.12.2",
+          "@spectrum-web-components/color-field": "1.12.2",
+          "@spectrum-web-components/combobox": "1.12.2",
+          "@spectrum-web-components/dialog": "1.12.2",
+          "@spectrum-web-components/field-label": "1.12.2",
+          "@spectrum-web-components/menu": "1.12.2",
+          "@spectrum-web-components/number-field": "1.12.2",
+          "@spectrum-web-components/overlay": "1.12.2",
+          "@spectrum-web-components/picker": "1.12.2",
+          "@spectrum-web-components/popover": "1.12.2",
+          "@spectrum-web-components/radio": "1.12.2",
+          "@spectrum-web-components/slider": "1.12.2",
+          "@spectrum-web-components/switch": "1.12.2",
+          "@spectrum-web-components/textfield": "1.12.2",
+          "@spectrum-web-components/theme": "1.12.2"
+        },
+        "devDependencies": {
+          "esbuild": "0.28.2",
+          "typescript": "7.0.2",
+          "vite": "8.2.2"
+        },
+        "lockfileSha256": "00503fdc63606bb225c1bc87a882de5b608e27d358a03ed3e77795894f5505b2",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "spectrum-web-components/dist/assets/Base-C029uGPE.js": "470c435781780f9c9dc55a8aa69b48a0af13f58d7ddf1402ea8559a69b2c8aec",
+        "spectrum-web-components/dist/assets/Base-C029uGPE.js.map": "cf1e79a9f3180dbc3acbd1a60c3178bbf17905fe89215f7273a15c11374bbfe8",
+        "spectrum-web-components/dist/assets/LanguageResolution-DfbByoSu.js": "e742b8f7d084106e4bf835aa98718b64c4d4f04bae6056f70a5b80d3848c5d0d",
+        "spectrum-web-components/dist/assets/LanguageResolution-DfbByoSu.js.map": "666e1f78e01c77133c11315a495060f954fbc2cad1a709752d346aab9d078acd",
+        "spectrum-web-components/dist/assets/Overlay-CxVeWGv5.js": "981ac2c5cb256ad71e491b4a6c935deb713a260ecb8c75424895a497333f0984",
+        "spectrum-web-components/dist/assets/Overlay-CxVeWGv5.js.map": "0e03b0fcf8540c652ff8822b1d1524afb8d9fd1a06b105b9fd4a63ba2a1ba9fc",
+        "spectrum-web-components/dist/assets/define-element-BlONwTYC.js": "eb8518b0f2c27fada891f9de32970d3130cff3d2bc319dea90570ee34d0bcd25",
+        "spectrum-web-components/dist/assets/define-element-BlONwTYC.js.map": "ef0bf816e1f7981ae543bf33f4a003bf6739b8e4a5fbb855950f1f59bf153d1d",
+        "spectrum-web-components/dist/assets/first-focusable-in-HCIc6lth.js": "ac753b7149f0c4a22d5082b6c637648f9ec202710480489f88c08b451b666f54",
+        "spectrum-web-components/dist/assets/first-focusable-in-HCIc6lth.js.map": "d4e1bb0b5490eddff23737f5c9b54fcca7ccac52d40ce15728e581fe38666860",
+        "spectrum-web-components/dist/assets/focus-trap.esm-GrKRp3fm.js": "24260c354bbbbb401dc157a37f93ee9961b4c2adb7e5594810a8e65cc863dd3c",
+        "spectrum-web-components/dist/assets/focus-trap.esm-GrKRp3fm.js.map": "f0b1039fb0142191d3fb37827e354a5ed2e965d7d10c2260d69cce81c2d25ef4",
+        "spectrum-web-components/dist/assets/focus-visible-D6fgymCV.js": "b8630cc1dd7b4c153a00f8cf39a7cf78cd0c1ab9b1082561d9cb6bb52f7d2a62",
+        "spectrum-web-components/dist/assets/focus-visible-D6fgymCV.js.map": "546b965798bdd9ffc1fd8789224d072af905d97cbff225475bebcbd48a6b602c",
+        "spectrum-web-components/dist/assets/focusable-selectors-CbRTteoW.js": "1e81176f2810691a8b5c4a51da1faa8737c1135800cd7e5f7ff3ba15f64dbaf4",
+        "spectrum-web-components/dist/assets/focusable-selectors-CbRTteoW.js.map": "16c277b5ea0ac50ec0e5bdc520ab25fb0be4979f0928119defbb601769955d5c",
+        "spectrum-web-components/dist/assets/if-defined-C3tNhnpJ.js": "b9108421d2351562f08689114af8a545a043eac1d1ce3afbd75cbaa170b7602a",
+        "spectrum-web-components/dist/assets/if-defined-C3tNhnpJ.js.map": "fc4a2b761b01e1e12db734d4181a3d95e5ed1b9a48da0271df84acad9b8cfaca",
+        "spectrum-web-components/dist/assets/index-C-QHQ0iw.js": "6ea38dcb8fa7b80f52c0b8d7e4c58edb55cffcec7dfebbaa2f98d43f582beb57",
+        "spectrum-web-components/dist/assets/index-C-QHQ0iw.js.map": "12e4eebf7cda4d99c6beb1ac7141ebd725ebc6e4f1a779a139a0f2ab5585c819",
+        "spectrum-web-components/dist/assets/index-DcTSzvzD.css": "dbc3b0821a8b4ff6665b4bab114fa1ad9362934de15432dc759462994268c7bd",
+        "spectrum-web-components/dist/assets/platform-BZDoCuRt.js": "d77e473ba4d7a14b80ebae6ee0fc4bfbf125494cb151d20ea3ad449660ac9e12",
+        "spectrum-web-components/dist/assets/platform-BZDoCuRt.js.map": "9804269a328b38461a78f92d5e86f55865c0891a40a39aa111d684fcc32b1e5e",
+        "spectrum-web-components/dist/assets/preload-helper-Czpn1I53.js": "aba87f2a53e45ecdc9113fc30387d16e449d1676428cf5f82dd624c1df97d152",
+        "spectrum-web-components/dist/assets/query-Df4-SAIv.js": "711201f990f269cde9e54095f81a441fd43433c5c7c5b3849032ee95e2e96d9a",
+        "spectrum-web-components/dist/assets/query-Df4-SAIv.js.map": "f3df8d1ef54c6f04a09019fab91ca4b9ff4d4c03acf6c4f7cd132f1e02f00469",
+        "spectrum-web-components/dist/assets/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+        "spectrum-web-components/dist/assets/sp-color-handle-B55znA3s.js": "04e05a497498b0c9b49b507c187909a17a62fa9b5b2d89e0567c6b0c852e13e6",
+        "spectrum-web-components/dist/assets/sp-color-handle-B55znA3s.js.map": "d591b56ce38727eb687b20ec42c9a4b90fb28a8767ee4224e4f950849e06a47f",
+        "spectrum-web-components/dist/assets/sp-tooltip-BtiMV8tj.js": "f954de28ff391028c7e86a67c2e290c471497fef2b2242a99f7f2c9c06e630af",
+        "spectrum-web-components/dist/assets/sp-tooltip-BtiMV8tj.js.map": "5aac0b30638396810125cf4260a84392b579fafa756c4797d181bae149ababbb",
+        "spectrum-web-components/dist/assets/sp-tray-CaP6Ufey.js": "b3af044a8d4d09feaf120145a76b1fe67ff9f0477e66cb06c3fa4038338fbd4f",
+        "spectrum-web-components/dist/assets/sp-tray-CaP6Ufey.js.map": "39f369b561ba055fdc082a2efa210195e3a08ade89fdcd00d65a299781ef1520",
+        "spectrum-web-components/dist/assets/state-CRZlQpoJ.js": "252f3857c3098e6b9165b1c8805f6fee97fc8a59eac8188cbc4469f04151f524",
+        "spectrum-web-components/dist/assets/state-CRZlQpoJ.js.map": "27b4fbc0bc129e384e72480c7e6603eceba014159e0443e71c733e194064e621",
+        "spectrum-web-components/dist/build-metadata.json": "76ffae610ddd72c133a8a3725402df33a21640e72aa78176dc2d0014677de1ad",
+        "spectrum-web-components/dist/index.html": "79a80c62e21bea2e5c5200dd4535798ebdeec68e34380711846524d339602e7c"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "vendorLimitations": [],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "/Users/westbrook/Documents/repos/design-system/showcases/artifacts/spectrum-gen2-performance/spectrum-web-components.png"
+    }
+  ]
+}

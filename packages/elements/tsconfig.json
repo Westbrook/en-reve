@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist"
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
+    "src/**/tests/**",
+    "src/**/*-fixture.ts"
+  ],
+  "references": [
+    {
+      "path": "../styles"
+    },
+    {
+      "path": "../primitives"
+    }
+  ]
+}

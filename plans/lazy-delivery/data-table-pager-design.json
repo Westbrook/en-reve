@@ -1,0 +1,416 @@
+{
+  "schemaVersion": 1,
+  "feature": "en-reve/en-data-table/inactive-generated-pager",
+  "version": 1,
+  "status": "source-assessed-construction-candidate; deterministic full-node screen still required; not implemented or performance-qualified",
+  "recordedAt": "2026-09-28T21:13:11.748197+00:00",
+  "sourceWorkspace": "/Users/westbrook/.codex/worktrees/lazy-delivery/design-system",
+  "proposedDesign": {
+    "owner": "en-data-table",
+    "axis": "construction only",
+    "boundary": "Entire library-generated en-pagination host and its native shadow subtree while mode is not paginated or pageCount < 2, until first usable pagination.",
+    "optIn": "Use shared per-instance construction policy/capability vocabulary; eager default unchanged.",
+    "trigger": "At owner render after model reconciliation, when mode === paginated and pageCount >= 2. A visible initial pager is constructed in the first render. Authoritative items/filter/pageSize/mode changes may make it needed; no user activation is delayed.",
+    "retention": "Once constructed, keep the same connected host through subsequent inapplicable states using existing hidden behavior, preserving child identity/drafts/listeners and avoiding detach/recreate.",
+    "code": "Keep canonical definitions graph and synchronous runtime imports; no byte or registration saving claimed."
+  },
+  "predeclaredQualificationGates": {
+    "source": "Adopt plans/lazy-delivery/budgets.json constructionFeature unchanged for this newly named boundary before any new quantitative benefit screen. There is no new family exception or postmeasurement gate relaxation.",
+    "minimumUnusedComponentNodeReductionPercent": 40,
+    "minimumUnusedWholeRouteNodeReductionPercent": 10,
+    "maximumAddedFirstReadyMs": {
+      "desktop": 16,
+      "constrained": 50
+    },
+    "maximumAddedRepeatReadyMs": {
+      "desktop": 4,
+      "constrained": 10
+    },
+    "maximumAddedShellReadyMs": {
+      "desktop": 16,
+      "constrained": 50
+    },
+    "maximumAddedUnusedDeliveryBytes": 4096,
+    "minimumSuccessfulTimingSamplesPerCell": 30,
+    "minimumSamplesForP95": 100,
+    "retention": {
+      "freshContextsPerArm": 5,
+      "cyclesPerContext": 100,
+      "checkpoints": [
+        0,
+        10,
+        50,
+        100
+      ],
+      "maximumGrowth10To100NodesEveryRepetition": 20,
+      "maximumGrowth10To100ListenersEveryRepetition": 10,
+      "maximumAdditionalMedianHeapGrowthVersusPairedEagerBytes": 262144
+    },
+    "requiresNamedRealConsumerAndUsageAssumptions": true,
+    "measurementScope": "Recursively connected full en-data-table component and full real route; count complete pager removal without double-counting direct-entry child savings. Do not use child-only percent as component or route benefit.",
+    "decision": "A source-backed deterministic bound failing benefit can establish no-change without timing. Promotion requires matched exact-lock source arms and all prescribed correctness, SSR, lifecycle, timing and retention checks. Never repack/modify frozen historical viewers or vendors."
+  },
+  "measurementPerformed": false,
+  "runtimeEdited": false,
+  "completedAt": "2026-09-28T21:16:06.505932+00:00",
+  "sourceIdentity": {
+    "acceptedRuntimeBase": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+    "observedCurrentHead": "e98842ad764e80a2ff460ddab8f4ac713253ea0d",
+    "files": [
+      {
+        "path": "packages/elements/src/data-table/element.ts",
+        "sha256": "73976fcb13ded6d2db4cd7e3e62433b798c25633b6454f6874ec543464fdf821",
+        "matchesAcceptedRuntimeBase": true
+      },
+      {
+        "path": "packages/elements/src/pagination/element.ts",
+        "sha256": "104fb91da88413bc0cb4b5b58560fbcb8f9c399251730a5a2ec8a3372b53f09a",
+        "matchesAcceptedRuntimeBase": true
+      },
+      {
+        "path": "packages/elements/src/pagination/template.ts",
+        "sha256": "4d6ba9f9176ead613b796f3bd7ed675fbc8564b8a35507092dbc0a4118ae9e97",
+        "matchesAcceptedRuntimeBase": true
+      },
+      {
+        "path": "packages/elements/src/pagination/state.ts",
+        "sha256": "dc4c58e11a3d5be41a3096e8fbd91468475ae76ba268c5b81e9ac534d564d292",
+        "matchesAcceptedRuntimeBase": true
+      },
+      {
+        "path": "packages/primitives/src/state/table.ts",
+        "sha256": "d9983764b2d61fb7549dfe4d970e776e88574d3a5b0111940679cb3e9f75995f",
+        "matchesAcceptedRuntimeBase": true
+      },
+      {
+        "path": "showcases/performance-results/src/main.js",
+        "sha256": "7a511548e357c9046b2a32844d51dcd8442da4dd3fc1e211253c461f8a1aed44",
+        "matchesAcceptedRuntimeBase": true
+      }
+    ],
+    "note": "Shared checkout contains other agents work. This agent changed no repository file."
+  },
+  "recommendation": {
+    "disposition": "candidate",
+    "splitInventoryRow": "Keep en-reve/en-data-table/sorting-selection-paging-access essential-eager for active paging, sorting and selection, but remove its claim that no independent unused generated subtree exists. Add inactive-generated-pager as a separate construction candidate until its complete boundary is screened.",
+    "reason": "The entire library-generated pager is eagerly constructed before being hidden in all/virtual/windowed modes or for fewer than two pages. An existing real report reader initializes every data table in all mode, making this a distinct unused subtree. The five-element direct-entry body census cannot establish the whole-pager outcome.",
+    "noChangeLimits": "No source-backed failed full-node or route gate has been established in this audit. An element-only bound, a frozen historical table count, or a pagination-child-only probe cannot justify rejected-with-evidence for this owner boundary. The final inventory must resolve this candidate before rollout completion.",
+    "nextAction": "Integration/evidence owner should screen the complete pager host plus shadow tree in a faithful independent current-source rendering of the existing report data, retaining immutable viewer/vendor/history. Failures can produce deterministic no-change without a timing campaign; passing bounds require design implementation and complete matched qualification."
+  },
+  "completeGeneratedSubtree": {
+    "root": "The en-pagination host at data-table/element.ts:175\u2013176 and its whole shadow root. Do not retain an empty pager shell merely to call the five-element chooser body lazy.",
+    "descendants": [
+      "labelled nav and actions wrapper",
+      "native Previous/Next buttons, named slots, decorative wrapper spans and inline SVG/path chevrons",
+      "bounded numbered page buttons and responsive intermediate gap wrappers/actions",
+      "compact and expanded status spans",
+      "compact direct-entry invoker and gap invokers",
+      "native #page-jump popover/dialog shell, jump wrapper, label, number input, Cancel and Go buttons"
+    ],
+    "nonDomOwnedCosts": [
+      "One EnPagination instance and its page value model/SignalController",
+      "static-style controller and pagination style adoption",
+      "focusin/focusout instance listeners",
+      "Lit parts/directives/event listeners for the complete native template"
+    ],
+    "notInitiallySaved": [
+      "The child definition, class, template and styles remain imported/registered through canonical data-table dependencies",
+      "ResizeObserver, viewport listeners and jump positioning frames are already acquired only after popover opening",
+      "Parent TableModel/TableController, records, row rendering, sort, selection and virtualization remain eager according to current mode"
+    ],
+    "nativeElementCardinalitySourceOnly": {
+      "formula": "25 + rendered numbered pages + (pageCount > 5 ? 8 : 0), including host and excluding styles/ShadowRoot/text/comments",
+      "rangeKnownCount": [
+        26,
+        40
+      ],
+      "scope": "Current data-table has pageCount >= 1; six/seven pages yield 39/40 elements, large totals use bounded five/six numbered pages. Source element arithmetic is not the all-node census budget.",
+      "evidence": [
+        "packages/elements/src/pagination/template.ts:25\u201385",
+        "packages/elements/src/pagination/state.ts:14\u201324",
+        "packages/elements/src/icon/template.ts:25,35\u201350"
+      ]
+    }
+  },
+  "ownershipAndSemanticDependencies": {
+    "generatedOwner": "en-data-table owns the pager host and event forwarding; en-pagination owns its native subtree. before/after slots, all cells, custom renderCell content, and table reading content remain untouched.",
+    "canonicalDependencies": [
+      "en-table",
+      "en-checkbox",
+      "en-pagination",
+      "en-button",
+      "en-icon"
+    ],
+    "pagerDependencies": "paginationDefinition declares no child custom-element dependencies. Its buttons are native and default icons are inline SVG; en-icon is needed only for explicitly authored slotted icons, which this generated pager does not supply.",
+    "registry": "Create the pager through the existing owner render root/Lit creationScope, using that root actual registry and ownerDocument. Preserve scoped/null dormancy/nested roots and irreversible identity. No manual document.createElement into a different/global registry, no re-registration or global fallback on error.",
+    "transaction": "Child en-change is stopped and canceled synchronously. The table owns en-page-change with dispatchChange staging/rollback, synchronous cancelability, silent authoritative page writes, and revision protection. Never make event acceptance async or replay a click after await.",
+    "model": "TableModel.pageCount is at least 1 and depends on filtered records/pageSize even in all or virtual modes. Preserve model processing before gate evaluation; page clamping, mode resets, filtering/sorting and scrollToKey semantics do not depend on whether a pager exists.",
+    "forms": "Neither EnDataTable nor EnPagination is form-associated. The direct-entry number input is generated inside pagination shadow DOM, has no name, and uses reportValidity only when Go/Enter is invoked; every action has type=button. Do not move it into an outer form or replace native validity behavior. Preserve its current draft behavior and existing child lifecycle once created.",
+    "focus": "An initially inapplicable pager is hidden, absent from normal navigation and not an initial focus target. First construction must not steal focus from the mode switch/current table cell. Once used, retain the same connected host when hidden again; do not destroy an active input/numbered window or alter current close/focus-return behavior. Qualify mode/count changes with an open chooser, focused page/input, disable, removal/reconnect and external focus; do not silently fix/change unrelated existing hidden/open behavior.",
+    "readiness": "Do not equate owner updateComplete with child readiness. Any readiness/preparation observation must wait for child updateComplete when it is constructed, without changing existing synchronous public return types. Required visible pager should be populated before first presentation/Tab access.",
+    "retention": "One-way has-materialized latch per owner instance; once needed keep same pager and current ?hidden behavior for subsequent inactive states. No cache, eviction, detach/recreate, separate scheduler or async code path is needed. Removal should invoke normal child disconnectedCallback, which cancels jump observers/listeners/frames.",
+    "preparation": "Load/prepare remains code/registration only and must not construct a never-needed pager. Construction follows owner semantic state, never a prefetch signal.",
+    "customization": "Preserve pagination and forwarded control/previous/page/next Parts and tokens whenever materialized. Document opt-in absence while never needed; internal shadow ancestry is not public.",
+    "announcements": "Pagination status is deliberately not a live region. Preserve application-owned result announcements; materialization itself emits no announcement or page change."
+  },
+  "ssrAndReading": {
+    "snapshot": "Use identical explicit opt-in policy plus initial records/columns/keys/page/pageSize/mode on server and client. Inactive first render omits pager in both; active first render retains complete existing pager markup. Do not infer policy from browser width or client-only registries.",
+    "ownership": "One hydration owner per root; construction policy is not delayed hydration. Preserve data-table and table/cell identity. Never re-render an already hydrated tree under a second owner.",
+    "noJavaScript": "All mode/current paginated rows and authored links remain readable. Existing README states selection/sort/paging need JavaScript. A missing never-applicable pager removes no useful no-JS content; active pager SSR stays complete. Do not defer essential table rows or the authored fallback.",
+    "findHashPrintAT": "Only inapplicable generated navigation is omitted. No row, header, caption, authored before/after content, Find/hash target or static report fallback is removed. Existing virtual-row traversal limitations and manual AT dispositions remain unchanged; any changed interaction needs fresh manual review."
+  },
+  "actualConsumers": [
+    {
+      "route": "http://127.0.0.1:4188/?progress-report#first-reference-comparison",
+      "name": "Existing performance results reader",
+      "source": "showcases/performance-results/src/main.js:14\u201322,48\u201385",
+      "initialState": "mode=all before append for every real report table; ordinary sorting/CSV reader never switches it to pagination",
+      "dataSource": "plans/native-showcase-performance-results.md through the existing render.mjs table(token) mapping",
+      "usageAssumption": "Pager is never applicable in the current authored reader; no fabricated rows, replicated hosts or automatic threshold. Keep exact original report data and fallback.",
+      "qualificationBoundary": "Reader has its own frozen vendor tarballs and lock. No repacking/mutation of historical reader/vendors is authorized by this audit; isolate a faithful current-source qualification fixture and label it as new evidence rather than historical measured viewer."
+    },
+    {
+      "route": "/api-examples/data-table.html?progress-report",
+      "name": "Current data-table comparison plus API-reference embedding",
+      "source": "apps/docs/src/examples.ts:1127\u20131135,1187; apps/docs/src/examples.ts:2082",
+      "initialState": "1000 rows, paginated mode, page-size=10; initially visible pager",
+      "qualificationBoundary": "Useful behavior regression fixture; not an initial-hidden workload. Switching to virtual afterward cannot retrospectively save its already constructed pager under keep-after-use policy."
+    },
+    {
+      "route": "/theme-proof.html and /theme-composition.html",
+      "name": "Theme specimens",
+      "source": "apps/docs/src/theme-proof-demo.ts:23,31; apps/docs/src/theme-composition-demo.ts:16",
+      "initialState": "3 rows/page-size2 and 8 rows/page-size3; initially visible pager",
+      "qualificationBoundary": "No initial inactive-pager saving."
+    }
+  ],
+  "nonConsumerEvidence": [
+    {
+      "path": "probes/api-contracts/parts.spec.ts",
+      "line": 44,
+      "description": "One-row Parts fixture; meaningful API contract, not real application benefit workload."
+    },
+    {
+      "path": "packages/styles/tests/target-floors/targets.spec.ts",
+      "line": 74,
+      "description": "Single-row target-size test; not a qualifying application consumer."
+    },
+    {
+      "path": "packages/styles/tests/composition/composition.spec.ts",
+      "line": 57,
+      "description": "Empty typography fixture; not a qualifying application consumer."
+    },
+    {
+      "path": "showcases/performance-results/verification.json",
+      "line": 12,
+      "description": "Historical table count (142) does not describe current Markdown; do not mix acquisition identities."
+    }
+  ],
+  "requiredQualification": [
+    "Complete deterministic recursive connected-node census of all real current-source report table instances and the entire document, with raw per-instance counts, aggregate counts, owner state and registry identity; count elements, text, comments and ShadowRoot nodes consistently with family census. Never add five-element child savings to whole-pager savings.",
+    "Explicitly record all-mode never-use, visible-initial paginated control, initially one-page then two-page transition, virtual/windowed/all to paginated, filter/remove/page-size/mode transitions and page clamping. If full-node gates fail, retain exact failure and close no-change without runtime edits or timing.",
+    "If promoted, default eager imports/markup/graph unchanged, new opt-in SSR snapshot parity, no-JS readable tables, no child registration leak across actual global/scoped/null/nested roots, owning document/adoption and unsupported-engine fallback.",
+    "Cancelable page proposal, nested transaction and authoritative-write supersession; sorting/selection and row keys unchanged; disabled transitions; scrollToKey remains synchronous boolean without focusing.",
+    "First construction reaches full child readiness, preserves current table/mode-control focus, renders page names/status/boundaries before navigation, and does not replay native activation. First hidden-to-visible transition is the activation endpoint, not popover open.",
+    "Once materialized, host identity survives mode/count toggles; opening/closing direct chooser, invalid numeric draft, cancellation, Escape/Cancel focus return, responsive retained page window, RTL, dynamic count changes and disabling remain coherent.",
+    "Remove/reconnect/adopt before and after first use; no late mount/focus or retained owner after disposal; no new modal/listener/observer leaks across five fresh-context arms and 100-cycle retention sequence.",
+    "Matched eager/construction arms with identical report data, source/lock/browser/harness identities and declared budgets; no new optional-code savings claim. Report unavailable cold-code/prepared distinctions accurately for a construction-only boundary.",
+    "Portable Chromium/Firefox/WebKit checks plus ready manual fixture for any changed interaction. DOM focus cannot establish actual VoiceOver/TalkBack speech."
+  ],
+  "evidence": [
+    {
+      "path": "packages/elements/src/data-table/element.ts",
+      "startLine": 103,
+      "endLine": 108,
+      "sha256": "73976fcb13ded6d2db4cd7e3e62433b798c25633b6454f6874ec543464fdf821"
+    },
+    {
+      "path": "packages/elements/src/data-table/element.ts",
+      "startLine": 110,
+      "endLine": 139,
+      "sha256": "73976fcb13ded6d2db4cd7e3e62433b798c25633b6454f6874ec543464fdf821"
+    },
+    {
+      "path": "packages/elements/src/data-table/element.ts",
+      "startLine": 149,
+      "endLine": 177,
+      "sha256": "73976fcb13ded6d2db4cd7e3e62433b798c25633b6454f6874ec543464fdf821"
+    },
+    {
+      "path": "packages/elements/src/data-table/README.md",
+      "startLine": 73,
+      "endLine": 76,
+      "sha256": "b8deda442a007f18fdd507166843ec8e7044ca5bc722ee7fd52af33e7723e251"
+    },
+    {
+      "path": "packages/elements/src/data-table/README.md",
+      "startLine": 78,
+      "endLine": 123,
+      "sha256": "b8deda442a007f18fdd507166843ec8e7044ca5bc722ee7fd52af33e7723e251"
+    },
+    {
+      "path": "packages/elements/src/definitions/data-table.ts",
+      "startLine": 1,
+      "endLine": 14,
+      "sha256": "e1ef3ada9c25f0ceb8b039c7eff09534f94d31507504076c0227c85c410dedbd"
+    },
+    {
+      "path": "packages/elements/src/pagination/template.ts",
+      "startLine": 25,
+      "endLine": 85,
+      "sha256": "4d6ba9f9176ead613b796f3bd7ed675fbc8564b8a35507092dbc0a4118ae9e97"
+    },
+    {
+      "path": "packages/elements/src/pagination/state.ts",
+      "startLine": 14,
+      "endLine": 24,
+      "sha256": "dc4c58e11a3d5be41a3096e8fbd91468475ae76ba268c5b81e9ac534d564d292"
+    },
+    {
+      "path": "packages/elements/src/pagination/element.ts",
+      "startLine": 64,
+      "endLine": 76,
+      "sha256": "104fb91da88413bc0cb4b5b58560fbcb8f9c399251730a5a2ec8a3372b53f09a"
+    },
+    {
+      "path": "packages/elements/src/pagination/element.ts",
+      "startLine": 115,
+      "endLine": 124,
+      "sha256": "104fb91da88413bc0cb4b5b58560fbcb8f9c399251730a5a2ec8a3372b53f09a"
+    },
+    {
+      "path": "packages/elements/src/pagination/element.ts",
+      "startLine": 153,
+      "endLine": 217,
+      "sha256": "104fb91da88413bc0cb4b5b58560fbcb8f9c399251730a5a2ec8a3372b53f09a"
+    },
+    {
+      "path": "packages/elements/src/pagination/element.ts",
+      "startLine": 223,
+      "endLine": 291,
+      "sha256": "104fb91da88413bc0cb4b5b58560fbcb8f9c399251730a5a2ec8a3372b53f09a"
+    },
+    {
+      "path": "packages/elements/src/pagination/README.md",
+      "startLine": 95,
+      "endLine": 118,
+      "sha256": "f07bb690df80ea33b43b92f667801beaf9de8c3343320ea077b22743030d972f"
+    },
+    {
+      "path": "packages/elements/src/pagination/README.md",
+      "startLine": 155,
+      "endLine": 178,
+      "sha256": "f07bb690df80ea33b43b92f667801beaf9de8c3343320ea077b22743030d972f"
+    },
+    {
+      "path": "packages/elements/src/definitions/pagination.ts",
+      "startLine": 1,
+      "endLine": 8,
+      "sha256": "262fa7b88da634e8e1cc50fab3d2b757e1a4381d79bb2453b0c67d72f340c907"
+    },
+    {
+      "path": "packages/elements/src/icon/template.ts",
+      "startLine": 25,
+      "endLine": 25,
+      "sha256": "68c89ef6943e53739c1ef23a7371a14c98949ebbc8685ebbfcb3b04e63385022"
+    },
+    {
+      "path": "packages/elements/src/icon/template.ts",
+      "startLine": 35,
+      "endLine": 50,
+      "sha256": "68c89ef6943e53739c1ef23a7371a14c98949ebbc8685ebbfcb3b04e63385022"
+    },
+    {
+      "path": "packages/primitives/src/state/table.ts",
+      "startLine": 89,
+      "endLine": 105,
+      "sha256": "d9983764b2d61fb7549dfe4d970e776e88574d3a5b0111940679cb3e9f75995f"
+    },
+    {
+      "path": "packages/primitives/src/templates/table.ts",
+      "startLine": 33,
+      "endLine": 60,
+      "sha256": "2913c5a85a7df64774e6eeb7744391195498bb58feebb06cf4624ab2749c7371"
+    },
+    {
+      "path": "packages/elements/src/internal/en-element.ts",
+      "startLine": 53,
+      "endLine": 119,
+      "sha256": "3e31bed674143e3a53cb7584252b8f7a35d446c65a1360f696faa7fe4f3d73bd"
+    },
+    {
+      "path": "showcases/performance-results/src/main.js",
+      "startLine": 14,
+      "endLine": 22,
+      "sha256": "7a511548e357c9046b2a32844d51dcd8442da4dd3fc1e211253c461f8a1aed44"
+    },
+    {
+      "path": "showcases/performance-results/src/main.js",
+      "startLine": 48,
+      "endLine": 85,
+      "sha256": "7a511548e357c9046b2a32844d51dcd8442da4dd3fc1e211253c461f8a1aed44"
+    },
+    {
+      "path": "showcases/performance-results/README.md",
+      "startLine": 3,
+      "endLine": 22,
+      "sha256": "58492adc53566686bb36bbcb1b42c9fae080b3b7f9d28a95f6ad195d12097a7d"
+    },
+    {
+      "path": "showcases/performance-results/package.json",
+      "startLine": 12,
+      "endLine": 20,
+      "sha256": "8f2b16ec6eda3e5f4bfaa4e2ff8c546d22c9f5461594c12ebf0e39a8fb679c23"
+    },
+    {
+      "path": "showcases/performance-results/scripts/render.mjs",
+      "startLine": 74,
+      "endLine": 106,
+      "sha256": "81ff75b8348edfdc0625557ccbd6319b7587beb84d63568fb123949edee14c52"
+    },
+    {
+      "path": "apps/docs/src/examples.ts",
+      "startLine": 1127,
+      "endLine": 1135,
+      "sha256": "e2f87e44a07f6bd720794b06a88dc86a2cdd08483de62e440d0f73a4028c10e2"
+    },
+    {
+      "path": "apps/docs/src/examples.ts",
+      "startLine": 1180,
+      "endLine": 1188,
+      "sha256": "e2f87e44a07f6bd720794b06a88dc86a2cdd08483de62e440d0f73a4028c10e2"
+    },
+    {
+      "path": "apps/docs/src/theme-proof-demo.ts",
+      "startLine": 23,
+      "endLine": 31,
+      "sha256": "19f549d9a7ca537e8a5f8374330955b53e998051a08d2da04dbc099d7868f302"
+    },
+    {
+      "path": "apps/docs/src/theme-composition-demo.ts",
+      "startLine": 16,
+      "endLine": 16,
+      "sha256": "b4d15c0ff416f5b53b3d829bedf2040715f9c1919928bb6e3d812c9c471fa1d5"
+    },
+    {
+      "path": "apps/docs/tests/data-table.spec.ts",
+      "startLine": 26,
+      "endLine": 55,
+      "sha256": "a8f8f49affaaaf82a9aaa52b949f08b8477d598f739e0f60127da585dade0b72"
+    },
+    {
+      "path": "probes/lazy-delivery-families/census.mjs",
+      "startLine": 116,
+      "endLine": 144,
+      "sha256": "c9796e6be8494a1a52c41792645e254fb153cfc7a0d323fa00ff8fe8d9de05ad"
+    }
+  ],
+  "auditLimits": {
+    "repositoryEdits": false,
+    "browserRuns": false,
+    "timingOrRetentionRuns": false,
+    "fullConnectedNodeCensus": false,
+    "sourceElementArithmeticOnly": true,
+    "reportStateOwner": "Root/inventory parent; this agent read existing report handoff and unresolved-feedback state but did not write canonical report."
+  }
+}

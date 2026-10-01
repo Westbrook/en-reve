@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Overlay interaction fixtures</title>
+<link rel="stylesheet" href="/theme.css">
+<body>
+  <button id="open-dialog">Open dialog</button>
+  <button id="open-drawer">Open drawer</button>
+  <button id="open-command-palette">Open command palette</button>
+  <button id="outside">Outside action</button>
+  <en-dialog id="dialog" label="Review changes" backdrop-dismiss>
+    <label>Review note <input id="note"></label>
+    <div slot="footer"><label>Approval note <input></label><button>Adopt changes</button></div>
+  </en-dialog>
+  <en-drawer id="drawer" label="Theme options" placement="start"><p>Choose a theme.</p></en-drawer>
+  <en-command-palette id="command-palette" label="Project commands"></en-command-palette>
+  <en-fallback-dialog id="fallback-dialog" label="Fallback policy"><label>Fallback note <input></label></en-fallback-dialog>
+  <button id="share-trigger">Share options</button>
+  <en-popover id="popover" for="share-trigger" label="Share settings">
+    <label>Permission <select><option>Can view</option><option>Can edit</option></select></label>
+  </en-popover>
+  <button id="history-trigger" aria-describedby="extra-description">History</button>
+  <en-tooltip id="tooltip" for="history-trigger" show-delay="0"><span slot="content">View previous revisions</span></en-tooltip>
+  <en-button id="component-share-trigger">Component share</en-button>
+  <en-popover id="component-popover" for="component-share-trigger" label="Component share settings"><p>Review permissions.</p></en-popover>
+  <en-button id="component-history-trigger" aria-describedby="extra-description">Component history</en-button>
+  <en-tooltip id="component-tooltip" for="component-history-trigger" show-delay="0"><span slot="content">Browse component revisions</span></en-tooltip>
+  <button id="alternate-trigger">Alternate share</button>
+  <button id="same-trigger">Document decoy</button>
+  <div id="shadow-a"></div><div id="shadow-b"></div><div id="shadow-missing"></div>
+  <span id="extra-description">Your project history.</span>
+  <script type="module" src="./fixture.mjs"></script>
+</body>
+</html>

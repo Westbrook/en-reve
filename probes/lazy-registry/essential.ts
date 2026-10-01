@@ -1,0 +1,13 @@
+import {buttonDefinition} from '@en-reve/elements/definitions/button.js';
+import {checkboxDefinition} from '@en-reve/elements/definitions/checkbox.js';
+import {toastRegionDefinition} from '@en-reve/elements/definitions/toast-region.js';
+import {sliderDefinition} from '@en-reve/elements/definitions/slider.js';
+import {menuDefinition} from '@en-reve/elements/definitions/menu.js';
+import {menuItemDefinition} from '@en-reve/elements/definitions/menu-item.js';
+import {toolbarDefinition} from '@en-reve/elements/definitions/toolbar.js';
+import {treeDefinition} from '@en-reve/elements/definitions/tree.js';
+import {treeItemDefinition} from '@en-reve/elements/definitions/tree-item.js';
+import {tooltipDefinition} from '@en-reve/elements/definitions/tooltip.js';
+import {selectDefinition} from '@en-reve/elements/definitions/select.js';
+import {segmentedControlDefinition} from '@en-reve/elements/definitions/segmented-control.js';
+export const essential = [buttonDefinition,checkboxDefinition,toastRegionDefinition,sliderDefinition,menuDefinition,menuItemDefinition,toolbarDefinition,treeDefinition,treeItemDefinition,tooltipDefinition,selectDefinition,segmentedControlDefinition];

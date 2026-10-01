@@ -1,0 +1,24 @@
+{
+  "name": "@wc-toolkit/cem-generator",
+  "upstreamVersion": "0.1.10",
+  "localVersion": "0.1.10-en-cem.14",
+  "upstreamUrl": "https://registry.npmjs.org/@wc-toolkit/cem-generator/-/cem-generator-0.1.10.tgz",
+  "upstreamIntegrity": "sha512-oSq03C/DcD1UEhhdGpims3MAaxJF2Db2VUhUMBRJjDGmvLSaexIvQaQ9erHMSYV0mcpC9QMyYC5gO1exPUwkYw==",
+  "upstreamSha256": "e219331196b91ea24ef4944972abf61bc876f69433781ebd7dfeac7c94890417",
+  "verifiedAt": "2026-09-26T19:23:07.127890+00:00",
+  "overlays": [
+    "api-events.js",
+    "api-members.js",
+    "framework-api-discovery.js",
+    "index.d.ts",
+    "index.js",
+    "pipeline.d.ts",
+    "pipeline.js",
+    "validation-provenance.js",
+    "validation.d.ts",
+    "validation.js",
+    "vanilla-builtin.d.ts",
+    "vanilla-builtin.js"
+  ],
+  "reason": "Compiler-owned strict export validation and correct inferred method return types. Namespace export identity and inherited external class declaration provenance. External base implicit defaults remain dependency-owned; authored and project-local heritage remains strict. Implicit external defaults exempted only through direct named base symbol identity; computed and constructor-valued alias contracts retain full validation. Ancestor identity traversal follows declared types across generic instantiations. Preserve accessor documentation across getter/setter order, getter-only readonly facts and implicit public visibility. Recover direct constructor defaults/fields and distinguish absent/static/dynamic slot names. Keep authored CSS/state source separate from normalized markup so dynamic template sentinels never enter CSS metadata. Preserve undefined in optional field metadata across all privacy levels. Preserve method source scope in parsed return types. Optional explicit vanilla detector installation supports per-class framework routing without changing conflict policy or default built-ins. Add reviewed own-constructor extraction and provenance bindings for the separately qualified composition tier; preserve the ordinary production route. Bind event dispatch to original compiler-owned receiver and constructor identity. Retain direct JSDoc ownership and source scope in shared parsing. Optional exact class-node predicate limits vanilla extraction to the selected ordinary cohort before name-keyed fragment generation."
+}

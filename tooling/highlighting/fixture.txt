@@ -1,0 +1,21 @@
+import { html, svg } from 'lit';
+const ordinary = `<fake-template untouched="yes">${Math.max(1, 2)}</fake-template>`;
+const quoted = 'html`<fake-string fake-attribute="yes">`';
+// html`<fake-comment fake-attribute="yes">`
+export function languageProbe(enabled: boolean = true) {
+	return html`
+		<en-card
+			.value=${{ title: `Draft ${2 + 3}`, nested: { ok: true } }}
+			?hidden=${!enabled}
+			@click=${(event: Event) => { if (event) { console.log("}"); } }}
+			label="Hello ${enabled ? 'world' : html`<strong role="status">${Math.max(4, 5)}</strong>`}"
+			data-items=${[1, 2].map(item => html`<span data-id=${item}>${item}</span>`)}
+			disabled
+		>
+			<p data-raw="A &amp; B">Escaped \` and \${literal}.</p>
+			${/[}]/.test('}') ? html`<em>Nested</em>` : svg`<path d="M0 0" />`}
+			<textarea><fake-raw></textarea>
+			<script>globalThis.__highlightExecuted = true;</script>
+		</en-card>
+	`;
+}

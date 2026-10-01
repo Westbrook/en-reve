@@ -1,0 +1,3 @@
+export function usedImports(source: string, fileName: string): string;
+export function specimenSources(authoredSource: string, tokenCopySource: string, virtualDemoSource?: string, fileUploadDemoSource?: string, treeDataDemoSource?: string, calendarDemoSource?: string, multiStepDemoSource?: string, toastDemoSource?: string, chatDemoSource?: string, composableDemoSource?: string, presenceDemoSource?: string, carouselDemoSource?: string, richDemoSource?: string, localSources?: Record<string, string>): Record<string, string>;
+export function inlineSpecimenModules(source: string, modules: Record<string, string>): string;

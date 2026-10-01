@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8"><title>Structural component interactions</title></head>
+  <body>
+    <main>
+      <h1>Structural component interactions</h1>
+      <en-accordion id="sections">
+        <en-accordion-item value="layers" label="Layers fallback"><span slot="label">Layers</span><button>New layer</button></en-accordion-item>
+        <en-accordion-item value="history" label="History"><button>Restore version</button></en-accordion-item>
+      </en-accordion>
+      <en-accordion-item id="standalone-section" label="Standalone details">Standalone content</en-accordion-item>
+      <en-tabs id="settings" label="Settings categories" value="design">
+        <en-tab slot="tab" value="design" id="tab-design">Design</en-tab>
+        <en-tab slot="tab" value="prototype" id="tab-prototype" disabled>Prototype</en-tab>
+        <en-tab slot="tab" value="inspect" id="tab-inspect">Inspect</en-tab>
+        <en-tab-panel slot="panel" value="design" id="panel-design"><button>Change color</button></en-tab-panel>
+        <en-tab-panel slot="panel" value="prototype" id="panel-prototype">Prototype settings</en-tab-panel>
+        <en-tab-panel slot="panel" value="inspect" id="panel-inspect"><button>Copy code</button></en-tab-panel>
+      </en-tabs>
+      <en-split-view id="workspace" label="Resize library pane" style="display:block;width:640px;height:240px" value="50" min="20" max="80">
+        <div slot="primary"><button>Browse library</button></div>
+        <div slot="secondary"><button>Edit canvas</button></div>
+      </en-split-view>
+      <en-split-view id="workspace-vertical" orientation="vertical" label="Resize top pane" style="display:block;width:640px;height:320px" value="40" min="20" max="80">
+        <div slot="primary"><button>Top editor</button></div>
+        <div slot="secondary"><button>Bottom preview</button></div>
+      </en-split-view>
+      <div style="width:640px;height:80px">
+        <en-splitter id="standalone-splitter" label="Resize standalone pane" style="width:24px;height:100%" value="50" min="20" max="80"></en-splitter>
+      </div>
+    </main>
+    <script type="module">
+      import { EnAccordion } from '../accordion.ts';
+      import { EnAccordionItem } from '../../accordion-item/accordion-item.ts';
+      import { EnTabs } from '../../tabs/tabs.ts';
+      import { EnTab } from '../../tab/tab.ts';
+      import { EnTabPanel } from '../../tab-panel/tab-panel.ts';
+      import { EnSplitView } from '../../split-view/split-view.ts';
+      import { EnSplitter } from '../../splitter/splitter.ts';
+      for (const [name, Constructor] of Object.entries({
+        'en-accordion-item': EnAccordionItem, 'en-accordion': EnAccordion,
+        'en-tab': EnTab, 'en-tab-panel': EnTabPanel, 'en-tabs': EnTabs,
+        'en-splitter': EnSplitter, 'en-split-view': EnSplitView,
+      })) customElements.define(name, Constructor);
+      document.querySelector('en-accordion').value = ['layers'];
+      await Promise.all([...document.querySelectorAll('*')].filter((element) => 'updateComplete' in element).map((element) => element.updateComplete));
+      document.documentElement.dataset.ready = 'true';
+    </script>
+  </body>
+</html>

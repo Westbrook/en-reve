@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shared tooltip warm-up</title>
+<style>
+	body { margin: 0; padding: 40px; font-family: system-ui; }
+	.group { display: flex; gap: 24px; margin-block-end: 120px; }
+	button { inline-size: 100px; block-size: 44px; font: inherit; }
+	en-tooltip { --en-space-2: 8px; --en-duration-enter: 0ms; --en-duration-exit: 0ms; }
+</style>
+<button id="before">Before</button>
+<div id="tools" class="group" role="toolbar" aria-label="Editing tools">
+	<button id="one">One</button><button id="two">Two</button><button id="three">Three</button>
+</div>
+<div id="other-tools" class="group" role="toolbar" aria-label="Other tools">
+	<button id="other">Other</button>
+</div>
+<en-tooltip id="tip-one" for="one" warmup-group="tools"><span slot="content">First description</span></en-tooltip>
+<en-tooltip id="tip-two" for="two" warmup-group="tools"><span slot="content">Second description</span></en-tooltip>
+<en-tooltip id="tip-three" for="three" warmup-group="tools"><span slot="content">Third description</span></en-tooltip>
+<en-tooltip id="tip-other" for="other" warmup-group="other-tools"><span slot="content">Other description</span></en-tooltip>
+<div id="shadow-fixture"></div>
+<script type="module" src="./fixture.ts"></script>
+</html>

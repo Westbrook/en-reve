@@ -1,0 +1,20 @@
+/* Shared by static tables and the native data table's shadow root. */
+th.implementation-column,
+td.implementation-column {
+  position: sticky;
+  inset-inline-start: 0;
+  z-index: 1;
+  background: var(--en-color-surface);
+  box-shadow: 1px 0 0 var(--en-color-line);
+}
+thead th.implementation-column {
+  background: var(--en-color-surface-subtle);
+  z-index: 3;
+}
+@media print {
+  th.implementation-column,
+  td.implementation-column {
+    position: static;
+    box-shadow: none;
+  }
+}

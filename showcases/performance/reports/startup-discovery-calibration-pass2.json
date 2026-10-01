@@ -1,0 +1,56 @@
+{
+  "at": "2026-09-20T20:28:22.084Z",
+  "status": "passed",
+  "priorSourceSha256": "c627b8b35b3efc2a588af5dd738d9cc6ee893baff5473bf30ed9618db85ce8e3",
+  "currentSourceSha256": "24cba869b8a2175487adbe7faf63bfa1ff21c147f93dd49f72abb4b165bffa81",
+  "samples": [
+    {
+      "name": "v1",
+      "shownAt": 377.2999997138977,
+      "visibleObserved": 824.9000000953674,
+      "inputAt": 835.7999997138977,
+      "resultAt": 836.5,
+      "frameAt": 860,
+      "dispatchLag": 10.899999618530273,
+      "semanticMs": 0.7000002861022949,
+      "frameMs": 24.200000286102295,
+      "point": {
+        "x": 48.6171875,
+        "y": 18.5
+      },
+      "status": "ok",
+      "interpretation": "Navigation-relative successful early visible-control probe. Automation discovery/dispatch overhead is exposed; not a minimal readiness boundary or field first-input time.",
+      "discoveryDelay": 447.6000003814697
+    },
+    {
+      "name": "v3",
+      "shownAt": 361.90000009536743,
+      "frames": 22,
+      "probeDurationMs": 1.1999993324279785,
+      "found": true,
+      "visibleObserved": 376.6000003814697,
+      "point": {
+        "x": 48.6171875,
+        "y": 18.5
+      },
+      "tag": "button",
+      "initialPoint": {
+        "x": 48.6171875,
+        "y": 18.5
+      },
+      "dispatchGeometryAt": 378.7000002861023,
+      "geometryChanged": false,
+      "targetHit": true,
+      "inputAt": 379.90000009536743,
+      "resultAt": 381,
+      "frameAt": 415,
+      "dispatchLag": 3.299999713897705,
+      "semanticMs": 1.0999999046325684,
+      "frameMs": 35.09999990463257,
+      "status": "ok",
+      "interpretation": "Animation-frame-observed geometry, fresh dispatch coordinates and one verified-target trusted click. Navigation timestamps include exposed dispatch overhead. No claim of minimal readiness, field first-input time or compositor presentation.",
+      "discoveryDelay": 14.700000286102295
+    }
+  ],
+  "note": "Synthetic control appears 350ms after setup. Both send one trusted click. V3 must detect within 100ms and earlier than backoff-based V1. This calibrates discovery, not library speed."
+}

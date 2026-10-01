@@ -1,0 +1,68 @@
+{
+  "origin": "http://127.0.0.1:4283",
+  "rows": [
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 1280,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "chromium",
+      "version": "153.0.8010.12",
+      "width": 390,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 1280,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "firefox",
+      "version": "155.0",
+      "width": 390,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "width": 1280,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    },
+    {
+      "engine": "webkit",
+      "version": "26.6",
+      "width": 390,
+      "upgraded": true,
+      "overflow": false,
+      "sort": "all columns ascending/descending; numeric values verified",
+      "returnLink": "present only with flag",
+      "status": "pass"
+    }
+  ],
+  "limitations": "DOM/visual checks; not assistive technology speech acceptance",
+  "testedReportSha256": "2d287f07ade3f2bdd0f826eb36b8d34ab3235d6aebabf976467e732946f8e425",
+  "finalContentNote": "Browser checks precede final text-only disclosure of phone-width failures; no table/interaction/style change. Screenshots show that prior wording."
+}

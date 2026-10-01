@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {readFile,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {root,sha,json} from '../src/config.mjs';
+const read=async p=>JSON.parse(await readFile(resolve(root,p)));
+const data=await read('reports/en-reve-main/tables.json'),reader=await read('reports/en-reve-main/reader/verification.json'),preservation=await read('reports/en-reve-main/preservation-verification.json'),pages=await read('reports/en-reve-main/page-refresh.json'),integration=await read('reports/en-reve-main/main-integration.json');
+const main=await readFile(resolve(root,'../../plans/native-showcase-performance-results.md'));
+assert.equal(data.status,'complete');assert(reader.passed&&preservation.passed);
+assert.equal(reader.sourceHash,sha(main));assert.equal(pages.mainReportSha256,sha(main));
+assert.equal(integration.tables.length,35); // En Reve also has an existing observer-overhead row to refresh.assert.equal(pages.historicalPages.length,3);
+for(const page of pages.historicalPages)assert.equal(sha(await readFile(resolve(root,'../../plans',page.path))),page.after);
+for(const c of Object.values(data.campaigns))assert(c.completed);
+const count=Object.values(data.campaigns).reduce((n,c)=>n+c.observed,0),successful=Object.values(data.campaigns).reduce((n,c)=>n+c.successful,0);assert.equal(count,306);
+const dom=await read('runs/en-reve-main-dom-v1/manifest.json');assert.equal(dom.successfulSnapshots,30);assert.equal(dom.failures,0);
+const ownership=await read('reports/en-reve-main/shadow-ownership.json');assert.equal(ownership.rows.length,3);
+const enSamples=[];for(const [suite,c] of Object.entries(data.campaigns)){const rows=(await readFile(resolve(root,'runs',c.id,'samples.jsonl'),'utf8')).trim().split('\n').map(JSON.parse);enSamples.push(...rows.filter(s=>s.system==='en-reve'));}
+const enSuccessful=enSamples.filter(s=>s.status==='ok').length;
+const memory=enSamples.filter(s=>s.suite==='memory').flatMap(s=>s.memory?.map(p=>({cycles:p.cycles,status:p.api?.status}))??[]);
+const summary=`${count} primary samples collected (${successful} successful, ${count-successful} failed); En Reve ${enSuccessful}/${enSamples.length} successful. Thirty connected-DOM and three ownership snapshots. ${integration.tables.length} main tables refreshed, ${data.tables.length} current-cohort tables, three historical report summaries updated. ${reader.selectedTables.length} current En Reve tables verified in Chromium, Firefox and WebKit with numeric sorting and sticky Implementation columns.`;
+const limitations='Exploratory workstation timings; 10 samples per primary cell and one memory session per implementation. Eager global CSR fixture only: scoped/lazy delivery, deferred-date opt-in and SSR are separate consumer-policy experiments. Historical timings are retained, not paired with main. API-memory timeout/error readings remain unavailable; no timing baseline promoted.';
+const result={at:new Date().toISOString(),passed:true,interpretation:'Evidence and reader qualification; inspect explicit failed sample counts rather than assuming a completed acquisition means every app sample passed.',url:'http://127.0.0.1:4188/?progress-report#loading-and-visual-stability',sourceCommit:'6d09b31cf43523ac8c75352208ab9697b62e2673',summary,limitations,count,successful,enSuccessful,enSamples:enSamples.length,memory,sourceHash:reader.sourceHash,buildHash:reader.buildHash,preservation,reader};
+await writeFile(resolve(root,'reports/en-reve-main/verification.json'),json(result));console.log(json({summary,memory,passed:true}));

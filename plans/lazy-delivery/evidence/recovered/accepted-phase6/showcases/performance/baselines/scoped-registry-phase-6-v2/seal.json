@@ -1,0 +1,417 @@
+{
+  "createdAt": "2026-09-23T22:11:24.654221+00:00",
+  "checksumsSha256": "c220b7436dd3151134bb8fbee008201e8e5232d6983d71f6e9100676814c24b0",
+  "files": 293,
+  "parentCommit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+  "status": "Final automated gates passed; targeted manual review accepted with documented browser limits. Source identity is frozen-input/manifest.json; source commit follows this seal.",
+  "campaigns": {
+    "final-cold": {
+      "timing": 720,
+      "retention": 20,
+      "cells": [
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "webkit",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "firefox",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "constrained",
+            "unused",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "webkit",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "firefox",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "constrained-mobile",
+            "touch",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "firefox",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "constrained",
+            "unused",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "constrained-mobile",
+            "touch",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "constrained-mobile",
+            "touch",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "constrained",
+            "unused",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "constrained",
+            "unused",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "constrained-mobile",
+            "touch",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "webkit",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "firefox",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "webkit",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "retention"
+          ],
+          "n": 5
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "retention"
+          ],
+          "n": 5
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "retention"
+          ],
+          "n": 5
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "retention"
+          ],
+          "n": 5
+        }
+      ]
+    },
+    "final-warm": {
+      "timing": 240,
+      "retention": 0,
+      "cells": [
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "global",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "global",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "parent/eager",
+            "scoped",
+            "chromium",
+            "constrained",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        },
+        {
+          "configuration": [
+            "candidate/dom",
+            "scoped",
+            "chromium",
+            "desktop",
+            "keyboard",
+            "timing"
+          ],
+          "n": 30
+        }
+      ]
+    }
+  }
+}

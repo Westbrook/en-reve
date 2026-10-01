@@ -1,0 +1,44 @@
+body {
+  font: var(--fontSizeBase300)/var(--lineHeightBase300) var(--fontFamilyBase);
+  color: var(--colorNeutralForeground1);
+  background: var(--colorNeutralBackground2);
+  --art-accent: var(--colorBrandBackground);
+  --art-surface: var(--colorNeutralBackground3);
+}
+.native-card {
+  padding: 20px;
+  background: var(--colorNeutralBackground1);
+  border: 1px solid var(--colorNeutralStroke1);
+  border-radius: var(--borderRadiusMedium);
+  box-shadow: var(--shadow4);
+}
+a {
+  color: var(--colorBrandForegroundLink);
+}
+.native-popover {
+  max-width: 320px;
+  padding: 20px;
+  background: var(--colorNeutralBackground1);
+  color: var(--colorNeutralForeground1);
+  border: 1px solid var(--colorNeutralStroke1);
+  border-radius: var(--borderRadiusMedium);
+  box-shadow: var(--shadow16);
+}
+fluent-text-input,
+fluent-textarea,
+fluent-dropdown,
+fluent-field {
+  min-width: 0;
+  width: 100%;
+}
+fluent-dialog-body,
+fluent-drawer-body {
+  max-width: min(500px, 90vw);
+}
+[hidden] {
+  display: none !important;
+}
+
+fluent-slider {
+  width: 100%;
+}

@@ -1,0 +1,530 @@
+{
+  "verifiedAt": "2026-09-10T14:46:36.629134+00:00",
+  "method": "Live primary release metadata, integrity-verified published tokens, version-pinned official component source; no light inversion",
+  "spectrum": {
+    "tokens": {
+      "package": "@adobe/spectrum-tokens",
+      "version": "15.4.0",
+      "published": "2026-09-10T00:39:45.505Z",
+      "registry": "https://registry.npmjs.org/@adobe%2Fspectrum-tokens",
+      "integrity": "sha512-isDu8BBd7ZwvHMQekVa+y2IraGDCVZVsZPToVNO6Izg95fUrMobNlBEk5ya3PGQXwz54mN+IPXVlEkIUqTNekw==",
+      "tarball": "https://registry.npmjs.org/@adobe/spectrum-tokens/-/spectrum-tokens-15.4.0.tgz",
+      "matchesPreviouslyVerifiedArchive": true
+    },
+    "designDataMain": {
+      "commit": "63daf55e40fe469dc1b30248e57df7664afa005a",
+      "committed": "2026-09-10T07:11:10Z",
+      "ref": "https://github.com/adobe/spectrum-design-data/commit/63daf55e40fe469dc1b30248e57df7664afa005a"
+    },
+    "reactS2": {
+      "package": "@react-spectrum/s2",
+      "version": "1.7.1",
+      "published": "2026-09-04T19:18:40.225Z",
+      "sourceCommit": "4dd44e0f400636a87a9ad4390903e78c5ae6113c",
+      "registry": "https://registry.npmjs.org/@react-spectrum%2Fs2",
+      "integrity": "sha512-MMuEtebNabzzglLiGGSyXkg/yEig1cLqmq/JSKlYS+9cKzQoxwUIWtbdZLFFE9Ju0MPH9zNfpHXma1q9+hC+Yg=="
+    },
+    "latestReconfirmed": "15.4.0"
+  },
+  "fluent": {
+    "publishedSources": {
+      "reactTheme": {
+        "name": "@fluentui/react-theme",
+        "version": "9.2.2",
+        "published": "2026-08-11T17:16:29.848Z",
+        "sourceCommit": "2dd2a9a96210919c35b210a1aa8e873ab67dbada",
+        "dependencies": {
+          "@swc/helpers": "^0.5.1",
+          "@fluentui/tokens": "1.0.0-alpha.24"
+        },
+        "tarball": "https://registry.npmjs.org/@fluentui/react-theme/-/react-theme-9.2.2.tgz",
+        "integrity": "sha512-yUQMQkMLGvo6+Q/RITxpLh00STvI299gnk1IV/QHc2DW5EKiCcmIp9xma7+lJzfLACfDkwJDy5hZSl+7MIYf9w=="
+      },
+      "tokens": {
+        "name": "@fluentui/tokens",
+        "version": "1.0.0-alpha.24",
+        "published": "2026-08-11T17:16:20.966Z",
+        "sourceCommit": "2dd2a9a96210919c35b210a1aa8e873ab67dbada",
+        "dependencies": {
+          "@swc/helpers": "^0.5.1"
+        },
+        "tarball": "https://registry.npmjs.org/@fluentui/tokens/-/tokens-1.0.0-alpha.24.tgz",
+        "integrity": "sha512-YrjGQfnxBR+9o8wXyTflON3Ohsv7OrZWYLVRU+7RaiFO1gcu36iDm3WjudlVmYuWRLDO0Gmxotm6RQNhbZuEQQ=="
+      }
+    },
+    "tokenArchiveIntegrityVerified": true,
+    "resolvedThemeSource": "fluent-token-package/lib-commonjs/themes/web/darkTheme.cjs",
+    "resolvedThemeFile": "fluent-web-dark.json",
+    "masterAtRetrieval": "43665d5fb41408837ad1e85eb662575da9e0c4d0",
+    "sourcePolicy": "Published9.2.2 dependency source2dd2a9a..., not later master, determines numeric values",
+    "componentSourceFiles": {
+      "brandColors.ts": "96cb090622261ef2abfc90422d1297b35eca81beb8f45f2216ae9bccf054774e",
+      "darkColor.ts": "ed15b83e605999aa196ba04ac9d03557cf943a3ba7ce3a3979650992505c2bea",
+      "useComboboxStyles.styles.ts": "8e59406ff5493cd98f566c200710489e7fe402e8715631c5c463f4f46e9af597",
+      "useOptionStyles.styles.ts": "aa113de8ab0f5167adcefed42881bef0ae5f8bfef254ea100bb81cf1dee0411f",
+      "darkColorPalette.ts": "99703b52eeb525462bc042415d93816f174cd8f5c16b044324be9da92e5c6f58",
+      "useListboxStyles.styles.ts": "42597edf7fd8e38989faf7d860c3cfc053bf89371a9828d9160dc8c90a9f3092"
+    },
+    "radioSelectedReview": {
+      "recordedDate": "2026-09-10",
+      "token": "component.radio.selected-color",
+      "cssProperty": "--en-radio-selected-color",
+      "value": "{palette.accent}",
+      "resolvedValue": "#479ef5",
+      "sourceRoles": [
+        "colorCompoundBrandStroke",
+        "colorCompoundBrandForeground1"
+      ],
+      "componentSource": "https://github.com/microsoft/fluentui/blob/2dd2a9a96210919c35b210a1aa8e873ab67dbada/packages/react-components/react-radio/library/src/components/Radio/useRadioStyles.styles.ts",
+      "componentSourceSha256": "ffed7e2b769cf5c429ba5219ee1974829388222abad37e5df6f39e0ed42bdecd",
+      "previousActionFill": "#115ea3",
+      "filledActionUnchanged": true,
+      "numericPairs": [
+        {
+          "background": "#292929",
+          "beforeRatio": 2.1848514390200067,
+          "afterRatio": 5.179974033231973
+        },
+        {
+          "background": "#1f1f1f",
+          "beforeRatio": 2.4754169488215143,
+          "afterRatio": 5.868863798844472
+        }
+      ],
+      "adaptations": [
+        "One optional rest-state checked rim/dot role; no new Fluent hover/pressed state APIs.",
+        "Default alias preserves other branches; disabled/focus/forced-colors remain library-owned styles."
+      ],
+      "validation": "Source and numeric-pair review only. New maintained tests await root build and execution."
+    }
+  },
+  "recipes": {
+    "spectrum": {
+      "baseRecipe": "/Users/westbrook/Documents/repos/design-system/artifacts/theme-candidates/spectrum2-latest/spectrum-edits.json",
+      "baseSha256": "9af3f7daa3f7b3ad67c9b4ddb57d55b058b741f9bfb2ffb210c48d5f1d0aa442",
+      "originalOperations": 54,
+      "darkOperations": 57,
+      "darkPins": 56,
+      "reviewCorrections": [
+        {
+          "id": "palette.focus",
+          "before": {
+            "colorSpace": "srgb",
+            "components": [
+              0.25098039215686274,
+              0.4117647058823529,
+              0.9921568627450981
+            ]
+          },
+          "after": {
+            "colorSpace": "srgb",
+            "components": [
+              0.33725490196078434,
+              0.5058823529411764,
+              1.0
+            ]
+          }
+        },
+        {
+          "id": "color.link",
+          "before": null,
+          "after": "{palette.accent}"
+        }
+      ],
+      "linkPolicy": "Unpinned color.link inherits color.action-text; consumer retains independent color.link override.",
+      "lightContextReview": {
+        "base": "/Users/westbrook/Documents/repos/design-system/artifacts/theme-candidates/spectrum2-latest/spectrum-edits.json",
+        "baseSha256": "9af3f7daa3f7b3ad67c9b4ddb57d55b058b741f9bfb2ffb210c48d5f1d0aa442",
+        "file": "spectrum-light-edits.json",
+        "operations": 55,
+        "pins": 54,
+        "changes": {
+          "color.action-text": {
+            "reference": "accent-content-color-hover / down / selected",
+            "value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.15294117647058825,
+                0.30196078431372547,
+                0.9176470588235294
+              ]
+            }
+          },
+          "palette.danger-text": {
+            "reference": "negative-content-color-hover / down / key-focus",
+            "value": {
+              "colorSpace": "srgb",
+              "components": [
+                0.7176470588235294,
+                0.1568627450980392,
+                0.09411764705882353
+              ]
+            }
+          }
+        }
+      }
+    },
+    "fluent": {
+      "baseRecipe": "/Users/westbrook/Documents/repos/design-system/artifacts/theme-candidates/spectrum2-latest/fluent-edits.json",
+      "baseSha256": "f987aa4b26d784f85df038762112f0ca95f18fc402f5aaaec48097e63a7e4983",
+      "originalOperations": 68,
+      "darkOperations": 74,
+      "darkPins": 73,
+      "reviewCorrections": [
+        {
+          "id": "palette.danger-text",
+          "before": {
+            "colorSpace": "srgb",
+            "components": [
+              0.8627450980392157,
+              0.3843137254901961,
+              0.42745098039215684
+            ]
+          },
+          "after": {
+            "colorSpace": "srgb",
+            "components": [
+              0.9333333333333333,
+              0.6745098039215687,
+              0.6980392156862745
+            ]
+          }
+        },
+        {
+          "id": "color.link",
+          "before": null,
+          "after": "{palette.accent}"
+        }
+      ],
+      "linkPolicy": "Unpinned color.link inherits color.action-text; consumer retains independent color.link override."
+    }
+  },
+  "checks": {
+    "spectrum": {
+      "phase": "After rendered tab/badge contrast findings",
+      "mode": "dark",
+      "editCount": 57,
+      "diagnostics": [],
+      "sourceHash": "sha256:b9a5a83895b9c5c76c9db75554a93b3e869fc147028dda8fc18c6bf29c936a02",
+      "exactTokenRoundTrip": true,
+      "exactReexport": true,
+      "pairs": {
+        "actionTextOnSelected": 4.919835706153991,
+        "actionTextOnSubtle": 4.875041605552236,
+        "dangerTextOnSubtle": 4.872178679924851,
+        "linkOnBase": 6.591790079483306,
+        "linkOnRaised": 5.553934170881192
+      },
+      "paint": {
+        "color.action-text": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4117647058823529,
+            0.5843137254901961,
+            0.996078431372549
+          ]
+        },
+        "color.link": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4117647058823529,
+            0.5843137254901961,
+            0.996078431372549
+          ]
+        },
+        "color.danger-text": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            0.403921568627451,
+            0.33725490196078434
+          ]
+        },
+        "color.action": {
+          "colorSpace": "srgb",
+          "components": [
+            0.25098039215686274,
+            0.4117647058823529,
+            0.9921568627450981
+          ]
+        },
+        "color.action-hover": {
+          "colorSpace": "srgb",
+          "components": [
+            0.20392156862745098,
+            0.3568627450980392,
+            0.9725490196078431
+          ]
+        },
+        "color.action-pressed": {
+          "colorSpace": "srgb",
+          "components": [
+            0.20392156862745098,
+            0.3568627450980392,
+            0.9725490196078431
+          ]
+        }
+      }
+    },
+    "fluent": {
+      "phase": "Final focus/error/action-text corrections; link inherits action-text",
+      "mode": "dark",
+      "density": "compact",
+      "editCount": 73,
+      "sourceHash": "sha256:f3f9d42a420cef8cf6bc8bd4a39719902d71bdd7564d0ffd8238adec76c2e16b",
+      "diagnostics": [],
+      "exactTokenRoundTrip": true,
+      "exactReexport": true,
+      "pairs": {
+        "linkOnBase": 5.179974033231973,
+        "linkOnRaised": 5.179974033231973,
+        "linkOnSubtle": 6.55945536454363,
+        "linkOnSelected": 5.717185721088566,
+        "errorOnBase": 7.744704798628001,
+        "errorOnRaised": 7.744704798628001,
+        "focusOnActive": null
+      },
+      "paint": {
+        "color.action-text": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2784313725490196,
+            0.6196078431372549,
+            0.9607843137254902
+          ]
+        },
+        "color.link": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2784313725490196,
+            0.6196078431372549,
+            0.9607843137254902
+          ]
+        },
+        "color.focus": {
+          "colorSpace": "srgb",
+          "components": [
+            1,
+            1,
+            1
+          ]
+        },
+        "color.danger-text": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9333333333333333,
+            0.6745098039215687,
+            0.6980392156862745
+          ]
+        },
+        "color.action": {
+          "colorSpace": "srgb",
+          "components": [
+            0.06666666666666667,
+            0.3686274509803922,
+            0.6392156862745098
+          ]
+        },
+        "color.action-hover": {
+          "colorSpace": "srgb",
+          "components": [
+            0.058823529411764705,
+            0.4235294117647059,
+            0.7411764705882353
+          ]
+        },
+        "color.action-pressed": {
+          "colorSpace": "srgb",
+          "components": [
+            0.047058823529411764,
+            0.23137254901960785,
+            0.3686274509803922
+          ]
+        }
+      }
+    },
+    "spectrumLight": {
+      "phase": "After rendered tab/badge contrast findings",
+      "mode": "light",
+      "editCount": 55,
+      "diagnostics": [],
+      "sourceHash": "sha256:c149474859ba586d39b5bec8ecca6d9f7b53ceb62ce105f40dd2d4aa51432d7c",
+      "exactTokenRoundTrip": true,
+      "exactReexport": true,
+      "pairs": {
+        "actionTextOnSelected": 5.463796122087738,
+        "actionTextOnSubtle": 5.185055081455869,
+        "dangerTextOnSubtle": 5.194020671153096,
+        "linkOnBase": 6.295114082001913,
+        "linkOnRaised": 6.295114082001913
+      },
+      "paint": {
+        "color.action-text": {
+          "colorSpace": "srgb",
+          "components": [
+            0.15294117647058825,
+            0.30196078431372547,
+            0.9176470588235294
+          ]
+        },
+        "color.link": {
+          "colorSpace": "srgb",
+          "components": [
+            0.15294117647058825,
+            0.30196078431372547,
+            0.9176470588235294
+          ]
+        },
+        "color.danger-text": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7176470588235294,
+            0.1568627450980392,
+            0.09411764705882353
+          ]
+        },
+        "color.action": {
+          "colorSpace": "srgb",
+          "components": [
+            0.23137254901960785,
+            0.38823529411764707,
+            0.984313725490196
+          ]
+        },
+        "color.action-hover": {
+          "colorSpace": "srgb",
+          "components": [
+            0.15294117647058825,
+            0.30196078431372547,
+            0.9176470588235294
+          ]
+        },
+        "color.action-pressed": {
+          "colorSpace": "srgb",
+          "components": [
+            0.15294117647058825,
+            0.30196078431372547,
+            0.9176470588235294
+          ]
+        }
+      }
+    }
+  },
+  "artifacts": {
+    "spectrum-dark-edits.json": {
+      "sha256": "1eb18e0b62f4f5f3dc4b30c200f080bd30a849114522f968da08d925bffe50dd"
+    },
+    "fluent-dark-edits.json": {
+      "sha256": "4fcea77a5d04442c3e4e31286c63984ac728a7988a1b550d9dc4679b3f53b63e"
+    },
+    "mapping.md": {
+      "sha256": "7f3ec79ee6fad155ba359ab9b69f8acce8f9b58f03dd14ca8da3d027c84f37a4"
+    },
+    "recipe-source-maps.json": {
+      "sha256": "bf388312d51bccf9630cc50bab070ec137c0abc3f762a2f02e6dcdb6d995aa6d"
+    },
+    "draft-validation.json": {
+      "sha256": "45737309775848d9b4915277264f908f7a13fdec79b9cfe987a71f66ef47e473"
+    },
+    "fluent-web-dark.json": {
+      "sha256": "55f892afb3b18e97ba0a97ae91c14a3f934acef2cabd83d2ef2da7af5d1ad7f5"
+    },
+    "contrast-review.json": {
+      "sha256": "4e27bc1608fd98d1d5241dafcaadecedb5cd3f16d9b4bb523985afca63a4c5d9"
+    },
+    "spectrum-light-edits.json": {
+      "sha256": "bdb7886862585c67137017c8a707d2ace53409dc2ea28ffbaf875eca68040e12"
+    }
+  },
+  "constraints": {
+    "checkoutEdits": false,
+    "installs": false,
+    "builds": false,
+    "browserChecks": false,
+    "siteOperations": false,
+    "purePublishedTokenRead": true,
+    "pureExistingDraftValidation": true
+  },
+  "contrastReviewAt": "2026-09-10T15:00:00.745723+00:00",
+  "contrastReview": {
+    "status": "Numeric declared-pair checks; browser coverage remains root-owned",
+    "pairs": [
+      {
+        "purpose": "Spectrum focus on active option",
+        "before": "#4069fd",
+        "after": "#5681ff",
+        "background": "#323232",
+        "threshold": 3,
+        "beforeRatio": 2.8432376230031284,
+        "afterRatio": 3.650841955690644
+      },
+      {
+        "purpose": "Fluent error on base",
+        "before": "#dc626d",
+        "after": "#eeacb2",
+        "background": "#292929",
+        "threshold": 4.5,
+        "beforeRatio": 4.164267409753561,
+        "afterRatio": 7.744704798628001
+      },
+      {
+        "purpose": "Spectrum link on base",
+        "after": "#5681ff",
+        "background": "#111111",
+        "threshold": 4.5,
+        "afterRatio": 5.376987101686761
+      },
+      {
+        "purpose": "Fluent link on base",
+        "after": "#479ef5",
+        "background": "#292929",
+        "threshold": 4.5,
+        "afterRatio": 5.179974033231973
+      }
+    ],
+    "initialLinkProposal": "The original independent link#5681ff proposal was superseded; both recipes now inherit action-text.",
+    "finalPairs": {
+      "spectrum": {
+        "linkOnBase": 6.591790079483306,
+        "linkOnRaised": 5.553934170881192,
+        "linkOnSubtle": 4.875041605552236,
+        "linkOnSelected": 4.919835706153991,
+        "errorOnBase": 5.37843767416872,
+        "errorOnRaised": 4.531620155425501,
+        "focusOnActive": 3.650841955690644
+      },
+      "fluent": {
+        "linkOnBase": 5.179974033231973,
+        "linkOnRaised": 5.179974033231973,
+        "linkOnSubtle": 6.55945536454363,
+        "linkOnSelected": 5.717185721088566,
+        "errorOnBase": 7.744704798628001,
+        "errorOnRaised": 7.744704798628001,
+        "focusOnActive": null
+      }
+    }
+  },
+  "finalPolicy": {
+    "spectrum": {
+      "actionText": "#6995fe",
+      "link": "inherits action-text",
+      "focus": "#5681ff",
+      "filledActionUnchanged": true,
+      "dangerText": "#ff6756"
+    },
+    "fluent": {
+      "actionText": "#479ef5",
+      "link": "inherits action-text",
+      "error": "#eeacb2",
+      "filledActionUnchanged": true
+    },
+    "spectrumLight": {
+      "actionText": "#274dea",
+      "dangerText": "#b72818",
+      "link": "inherits action-text",
+      "filledActionUnchanged": true
+    }
+  },
+  "renderedContextReviewAt": "2026-09-10T15:06:53.709234+00:00",
+  "renderedFindingSource": "artifacts/theme-candidates/paired-appearances/rendered/verification.json"
+}

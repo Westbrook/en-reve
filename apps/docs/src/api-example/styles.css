@@ -1,0 +1,38 @@
+en-api-example-app { display:block; }
+en-api-example-app > main { min-inline-size:0; padding:var(--en-space-panel); margin:0; }
+en-api-example-app .api-example-content { min-inline-size:0; }
+/* The frame owns its scroll viewport. Top-layer examples stay inside it. */
+html, body { min-inline-size:0; }
+body { overflow-wrap:anywhere; }
+
+/* Append to api-example/styles.css, after site.css. The flag is set only after
+   hydration/registration and only for a supported top-level review document. */
+.api-standalone-tools { display:none; }
+html[data-example-standalone] .api-standalone-tools {
+  display:flex; flex-wrap:wrap; align-items:end; gap:var(--en-space-4);
+  padding-block:var(--en-space-4); margin-block-end:var(--en-space-5);
+  border-block-end:var(--en-border-width) solid var(--en-color-line);
+}
+html[data-example-standalone] .api-standalone-tools > en-select {
+  flex:1 1 9rem; min-inline-size:0; max-inline-size:18rem;
+}
+/* Keep the longer theme names readable before sharing a row with other controls. */
+html[data-example-standalone] .api-standalone-tools > en-select[label="Inspired theme"] {
+  flex-basis:20rem; max-inline-size:none;
+}
+html[data-example-standalone] .api-example-title {
+  position:static; inline-size:auto; block-size:auto; padding:0; margin:0;
+  overflow:visible; clip-path:none; white-space:normal; border:0;
+}
+
+.api-standalone-progress { display:none; }
+html[data-example-progress-report] .api-standalone-progress { display:inline-flex; align-items:center; min-block-size:var(--en-size-target-min); }
+
+.api-example-source { margin-block-start:var(--en-space-5); min-inline-size:0; }
+.api-example-source pre { box-sizing:border-box; }
+
+.api-collection-review { margin-block:var(--en-space-4); }
+.api-collection-review summary { cursor:pointer; min-block-size:var(--en-size-target-min); align-content:center; }
+
+.api-example-navigation { padding:var(--en-space-3) var(--en-space-panel); border-block-end:var(--en-border-width) solid var(--en-color-line); }
+.api-example-navigation a { display:inline-flex; align-items:center; min-block-size:var(--en-size-target-min); }

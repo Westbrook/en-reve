@@ -1,0 +1,440 @@
+{
+  "status": "accepted_with_documented_browser_limits",
+  "url": "http://127.0.0.1:4240/?progress-report",
+  "fixture": "Final production closeout candidate. User speech evidence remains attached to the specific earlier fixtures and accepted unchanged behaviors; no new manual pass is inferred from automated checks.",
+  "required": [
+    "Construction-only first open: dialog/grid naming, VoiceOver cursor and selected date announcement",
+    "Slow chunk: loading announcement, current edited value, Escape/focus-away cancellation",
+    "Selection, month navigation, unavailable days, repeat opening and Escape/Close focus restoration",
+    "Real failed chunk: error announcement, native editing/form recovery and browser-dependent retry",
+    "Native date editing and physical input where applicable"
+  ],
+  "notInferred": [
+    "Phase 5 manual passes do not certify the new date interaction",
+    "Automated DOM focus does not establish VoiceOver cursor or speech",
+    "Emulated touch is not physical-device acceptance"
+  ],
+  "results": [
+    {
+      "at": "2026-09-22T21:56:17.619582+00:00",
+      "scenario": "construction-only-first-opening",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Dialog/calendar naming, selected date, VoiceOver cursor entry and keyboard navigation into calendar.",
+      "userText": "This workflow works great across all three browsers; Chrome, FireFox and Safari.",
+      "exception": "Firefox native date input calendar button remains visible; tracked separately as styling feedback."
+    },
+    {
+      "at": "2026-09-23T19:39:30.613882+00:00",
+      "scenario": "day-and-month-navigation",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass_with_announcement_redundancy",
+      "userText": "All browsers report focused date and updated month as expected. Chrome and Firefox announce Mon Monday, Tue Tuesday on horizontal movement only; not vertical.",
+      "scope": "Focused-date and month-change announcements; selection and dismissal not yet reviewed."
+    },
+    {
+      "at": "2026-09-23T19:41:13.858065+00:00",
+      "scenario": "date-selection",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Keyboard selection of another date closes calendar, updates native field, restores keyboard focus and VoiceOver to Choose date.",
+      "userText": "That works as expected across all three browsers."
+    },
+    {
+      "at": "2026-09-23T19:43:48.820096+00:00",
+      "scenario": "reopening-and-escape-dismissal",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Reopening focuses selected date and announces selection; Escape closes with unchanged value and restores keyboard focus and VoiceOver to Choose date.",
+      "userText": "That works as expected across all three browsers."
+    },
+    {
+      "at": "2026-09-23T19:45:17.935868+00:00",
+      "scenario": "close-button-dismissal",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Keyboard activation of Close calendar closes dialog, preserves selected value and restores keyboard focus and VoiceOver to Choose date.",
+      "userText": "Works as expected across all three browsers."
+    },
+    {
+      "at": "2026-09-23T19:49:14.580504+00:00",
+      "scenario": "local-form-values",
+      "source": "User manual review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Selecting a non-initial date and activating Check local form values shows matching eventDate in YYYY-MM-DD format.",
+      "userText": "Works in all three browsers."
+    },
+    {
+      "at": "2026-09-23T19:51:21.084584+00:00",
+      "scenario": "slow-load-success",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Loading announced; after delay calendar opens with keyboard focus and VoiceOver cursor inside and selected date announced.",
+      "userText": "Works in all three browsers."
+    },
+    {
+      "at": "2026-09-23T19:53:37.209585+00:00",
+      "scenario": "editing-during-loading",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Native date remains editable during delayed calendar load; moving to field prevents late opening and focus theft; explicit reopening selects and focuses edited date.",
+      "userText": "Works in all three browsers."
+    },
+    {
+      "at": "2026-09-23T19:57:35.224543+00:00",
+      "scenario": "escape-during-loading",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Escape during delayed loading cancels pending opening; calendar remains closed after delay, value unchanged and focus remains on Choose date; later explicit opening works.",
+      "userText": "Works as expected in all three browsers."
+    },
+    {
+      "at": "2026-09-23T20:00:10.242370+00:00",
+      "scenario": "reset-during-loading",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Reset date during delayed loading restores September 15, 2026, prevents late opening and focus theft; later explicit opening selects and focuses the reset date.",
+      "userText": "Works as expected across all three browsers."
+    },
+    {
+      "at": "2026-09-23T20:02:18.864008+00:00",
+      "scenario": "failed-calendar-native-recovery",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Failed calendar download announces error, leaves calendar closed and focus on Choose date; native date editing and matching local eventDate remain usable. Retry not yet reviewed.",
+      "userText": "Works as expected across all three browsers."
+    },
+    {
+      "at": "2026-09-23T20:08:39.246356+00:00",
+      "scenario": "retry-after-failed-calendar",
+      "source": "User manual VoiceOver review",
+      "fixture": "HTTP 503 once; same page, without reload",
+      "outcomes": {
+        "Chrome": {
+          "opens": false,
+          "announcements": "loading and failed load",
+          "nativeEditing": true
+        },
+        "Firefox": {
+          "opens": true,
+          "selectionAndFocus": "works as expected"
+        },
+        "Safari": {
+          "opens": false,
+          "announcements": "none during retry",
+          "nativeEditing": true
+        }
+      },
+      "result": "browser_dependent_retry_with_safari_announcement_issue",
+      "userText": "Chrome remains closed, announces loading and failure, editing works. Firefox opens; date selection and focus work. Safari remains closed, no opening-process announcement, editing works."
+    },
+    {
+      "at": "2026-09-23T20:11:39.078871+00:00",
+      "scenario": "fresh-page-recovery-after-failed-retry",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "Fresh working copy opens calendar, moves keyboard focus inside and VoiceOver enters; fixture date resets.",
+      "userText": "Opened, focused, and VoiceOver entered in both browsers."
+    },
+    {
+      "at": "2026-09-23T20:14:51.430641+00:00",
+      "scenario": "unavailable-date-minimum",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Chrome",
+        "Firefox",
+        "Safari"
+      ],
+      "result": "pass",
+      "scope": "From January 1, 2026 move to December 31, 2025; unavailable/disabled announcement and blocked selection with unchanged field value and open calendar.",
+      "userText": "Performs as expected across all three browsers."
+    },
+    {
+      "at": "2026-09-23T20:24:56.831803+00:00",
+      "scenario": "safari-retry-announcement-experiment-a",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Safari"
+      ],
+      "result": "failed",
+      "userText": "No announcement and the calendar stays closed.",
+      "scope": "Clear-and-restore after two animation frames did not resolve reported silence; no library integration."
+    },
+    {
+      "at": "2026-09-23T20:28:34.560157+00:00",
+      "scenario": "safari-retry-announcement-experiment-b-first-retry",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Safari"
+      ],
+      "result": "announcement_pass",
+      "userText": "Calendar retry 1 failed. Reload the page or enter a date directly. was reported in this new test.",
+      "scope": "Distinct first retry failure message announced in Safari; successive retries and production integration not yet manually verified."
+    },
+    {
+      "at": "2026-09-23T20:37:04.465901+00:00",
+      "scenario": "safari-retry-announcement-experiment-b-successive-retries",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Safari"
+      ],
+      "result": "pass",
+      "userText": "Successive Choose date activations increment the retry count in VoiceOver; native field editing and Check local form values still work.",
+      "scope": "Fixture experiment B, not yet the integrated library build."
+    },
+    {
+      "at": "2026-09-23T20:47:09.068032+00:00",
+      "scenario": "safari-integrated-counted-retry",
+      "source": "User manual VoiceOver review",
+      "browsers": [
+        "Safari"
+      ],
+      "result": "pass",
+      "userText": "Yes, the retry count continues to increment with additional Choose date button activations.",
+      "scope": "Integrated library fixture port4237; confirms successive counted retry announcements. Prior native editing/form-value pass retained for experiment; no new claim of integrated native manual recheck."
+    },
+    {
+      "at": "2026-09-23T21:00:33.551323+00:00",
+      "scenario": "weekday-experiment-navigation",
+      "source": "User manual VoiceOver review",
+      "browser": "Chrome",
+      "browserAttribution": "Chrome was requested; response did not explicitly repeat browser name.",
+      "result": "horizontal_repetition_removed_vertical_date_announced",
+      "userText": "Left/right reports the whole day of the week correctly without duplication. Up/down reports the date correctly without reporting the day of the week.",
+      "scope": "Horizontal and vertical navigation only; initial-focus speech not yet reported."
+    },
+    {
+      "at": "2026-09-23T21:02:25.292541+00:00",
+      "scenario": "weekday-experiment-navigation",
+      "source": "User manual VoiceOver review",
+      "browser": "Firefox",
+      "result": "horizontal_repetition_removed_vertical_date_announced",
+      "userText": "Firefox does the same.",
+      "scope": "Matches prior Chrome horizontal full-weekday/no-duplication and vertical date-only report; initial-focus speech not explicitly confirmed."
+    },
+    {
+      "at": "2026-09-23T21:02:25.292541+00:00",
+      "scenario": "weekday-experiment-navigation",
+      "source": "User manual VoiceOver review",
+      "browser": "WebKit (user label)",
+      "result": "weekday_context_missing",
+      "userText": "Against this test, WebKit does not report the day of the week in either direction.",
+      "scope": "Horizontal and vertical navigation in column-weekday experiment; do not infer a separate browser/version from user label."
+    },
+    {
+      "at": "2026-09-23T21:12:01.604149+00:00",
+      "scenario": "weekday-label-disposition",
+      "source": "User decision",
+      "result": "accepted_retain_original",
+      "userText": "Let\u2019s follow your recommendation, it sounds the closest to right in all situations.",
+      "scope": "Retain original semantic weekday headers and full weekday/date button names; do not integrate column-weekday experiment."
+    }
+  ],
+  "followUps": [
+    {
+      "id": "firefox-native-calendar-button",
+      "status": "open",
+      "userText": "Native Calendar, collapsed, button in the input is visible; should hide with CSS.",
+      "finding": "Existing WebKit calendar-picker-indicator rule is not honored by Firefox. Mozilla has an open request for a hide/style hook; no runtime change made.",
+      "source": "https://bugzilla.mozilla.org/show_bug.cgi?id=1830890"
+    },
+    {
+      "id": "weekday-announcement-redundancy",
+      "status": "resolved",
+      "browsers": [
+        "Chrome",
+        "Firefox"
+      ],
+      "finding": "Moving weekday solely to column headers reduces repetition in Chrome/Firefox but removes spoken weekday in both directions in WebKit. Keep full weekday/date button labels; do not adopt isolated patch.",
+      "sourceFile": "packages/elements/src/calendar/element.ts:301",
+      "userText": "Mon Monday / Tue Tuesday on horizontal navigation only.",
+      "recommendation": "Retain original semantic headers and full date-button names. Document repeated header/date weekday speech as an observed browser/VoiceOver difference, not a missing semantic or double selection.",
+      "resolvedAt": "2026-09-23T21:12:01.604149+00:00",
+      "resolution": "User accepted retaining original labels and documenting the Chrome/Firefox repetition after experimental WebKit context loss."
+    },
+    {
+      "id": "safari-silent-failed-retry",
+      "status": "resolved",
+      "finding": "User reports Safari retry stays closed without loading/error speech. Code updates the same polite status from error to loading and back to identical error around import. A rapid rejection may not expose a distinct accessibility update; hypothesis only. No runtime change made.",
+      "nextAction": "Trace retry status timing and validate a targeted announcement remedy with manual VoiceOver retest. Keep manual Safari evidence distinct from automated WebKit retry success.",
+      "resolvedAt": "2026-09-23T20:47:09.068032+00:00",
+      "resolution": "Localizable counted failed-retry message integrated; user confirms successive Safari VoiceOver announcements. No delay or focus workaround."
+    },
+    {
+      "id": "disabled-trigger-reenable",
+      "status": "resolved",
+      "finding": "During integration qualification, disabling/re-enabling date field leaves nested Choose date disabled. Original port4234 and revised port4237 reproduced in Chromium; host disabled/attribute/effectiveDisabled false, nested button remains disabled.",
+      "verification": "probes/date-picker-performance/diagnose-disabled-recovery.mjs",
+      "resolvedAt": "2026-09-23T20:48:36.454495+00:00",
+      "resolution": "Date picker requests a follow-up render on native re-enable, after attribute reflection; 72 scenarios x3 cycles across three browsers, global/scoped requests and eager/deferred/range pass; 36 retry scenarios pass."
+    }
+  ],
+  "nextReview": "No required manual review remains. Final automated and performance qualification then seal.",
+  "environment": {
+    "recordedAt": "2026-09-23T20:16:46.858305+00:00",
+    "source": "User confirmation for Phase 6 manual review",
+    "macOS": "26.6.1 (25G76)",
+    "Chrome": "153.0.8010.52",
+    "Firefox": "156.0.1",
+    "Safari": "27.0 (21625.1.29.18.28)",
+    "VoiceOver": {
+      "arrowKeyQuickNav": false,
+      "singleKeyQuickNav": false,
+      "alwaysAllowTypingInTextFields": true,
+      "settingsEvidence": "Earlier screenshot plus user confirmation that Quick Nav options have not changed."
+    }
+  },
+  "retryAnnouncementExperiment": {
+    "status": "manual_successive_retry_pass",
+    "variant": "B: distinct retry error text",
+    "url": "http://127.0.0.1:4236/?fail&retry-review=distinct&progress-report",
+    "readyMarker": "Retry experiment B: distinct error text \u2014 ready.",
+    "scope": "Fixture-only reactive public error-label update after failed retry; successive failures have distinct text. No timers or focus changes. Library and frozen candidate unchanged.",
+    "verification": "artifacts/scoped-registry-phase-6/retry-announcement-review/distinct-verification.json",
+    "sourceSHA256": "61e45277c546b0d6ae285efae19d4989531e81d4aa7413f9e6fd3924f33f06b2",
+    "automatedResult": "6 baseline/experimental cases pass across three engines; experimental cases include two successive failed retries. Speech remains unverified."
+  },
+  "retryAnnouncementExperimentHistory": [
+    {
+      "status": "manual_retest_failed",
+      "url": "http://127.0.0.1:4235/?fail&retry-review&progress-report",
+      "scope": "Fixture-only error clear and restore after two animation frames on failed retry. Library and frozen candidate unchanged.",
+      "verification": "artifacts/scoped-registry-phase-6/retry-announcement-review/verification.json",
+      "finding": "Forced repeated-failure automated WebKit retry loading-to-error transition took about 1 ms; experiment gives empty-to-error distinct rendering opportunity. DOM/focus/form checks pass 6 cases; speech not established."
+    }
+  ],
+  "retryIntegration": {
+    "status": "manual_safari_successive_retry_pass",
+    "url": "http://127.0.0.1:4237/?fail&progress-report",
+    "candidate": "artifacts/scoped-registry-phase-6-retry-closeout/candidate",
+    "api": "loadRetryErrorLabel / load-retry-error-label with {attempt} placeholder; failed retry count; no timing/focus workaround",
+    "verification": "artifacts/scoped-registry-phase-6-retry-closeout/retry-integration-verification.json",
+    "automated": "30 full retry/localization/cancellation/reconnect/native-editing cases pass; 6 disabled cancellations checked. Isolated node, SSR, API and type checks pass.",
+    "knownSeparateIssue": "Original and integrated fixtures both retain disabled nested trigger after host disabled=true then false. Chromium baseline comparison confirmed.",
+    "metrics": "New runtime revision; original freeze unchanged. Preliminary total JS gzip rises 141 bytes versus frozen DOM candidate; final payload budget and timing/retention qualification still required."
+  },
+  "reenableIntegration": {
+    "status": "automated_qualification_pass",
+    "candidate": "artifacts/scoped-registry-phase-6-lifecycle-closeout/candidate",
+    "verification": [
+      "artifacts/scoped-registry-phase-6-lifecycle-closeout/reenable-verification.json",
+      "artifacts/scoped-registry-phase-6-lifecycle-closeout/retry-integration-verification.json",
+      "artifacts/scoped-registry-phase-6-lifecycle-closeout/node-tests.log"
+    ],
+    "scope": "One follow-up microtask update after re-enable; no extra wait in showPicker. No generic FormController change.",
+    "metrics": "Current total JS gzip is 153 bytes above the frozen DOM candidate; timing/retention and unchanged payload budget still require qualification."
+  },
+  "weekdayAnnouncementExperiment": {
+    "at": "2026-09-23T20:56:52.914498+00:00",
+    "status": "experiment_not_adopted",
+    "url": "http://127.0.0.1:4238/?policy=dom&progress-report",
+    "scope": "Isolated compiled source experiment only; repository calendar source and frozen performance campaign unchanged.",
+    "source": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/examples/datepicker-dialog/",
+    "finding": "Original DOM accessible-name snapshots show abbreviated column headers and full weekday/date button names. Horizontal changes column; vertical stays in column. Matches user repetition but does not establish platform speech causation.",
+    "change": "Retain th/col semantics and abbr, add full localized header aria-label; remove weekday from date button formatting, retaining day/month/year/era and range endpoint suffixes. No hidden headings or platform sniffing.",
+    "verified": "24 original/experimental cases across 3 engines, global/scoped requests, en/fr. Grid headers, selected/disabled states, initial/horizontal/vertical/month/year boundary navigation, selection/form value pass.",
+    "limitations": "Playwright ARIA snapshots are DOM-derived, not VoiceOver or native platform speech evidence. Initial focus and vertical navigation may provide less spoken weekday context; manual decision required. Range/calendar-era speech not manually qualified.",
+    "sourcePatchSHA256": "0abfd0c8dc715cf3842e5d3d88db61dd6d3efd21d6254b7a2f74d647456abe00",
+    "nextReview": "No further testing of this experiment needed. Original calendar labels remain unchanged; Firefox native calendar-button styling remains to disposition.",
+    "chromeNavigation": {
+      "at": "2026-09-23T21:00:33.551323+00:00",
+      "scenario": "weekday-experiment-navigation",
+      "source": "User manual VoiceOver review",
+      "browser": "Chrome",
+      "browserAttribution": "Chrome was requested; response did not explicitly repeat browser name.",
+      "result": "horizontal_repetition_removed_vertical_date_announced",
+      "userText": "Left/right reports the whole day of the week correctly without duplication. Up/down reports the date correctly without reporting the day of the week.",
+      "scope": "Horizontal and vertical navigation only; initial-focus speech not yet reported."
+    },
+    "firefoxNavigation": {
+      "at": "2026-09-23T21:02:25.292541+00:00",
+      "scenario": "weekday-experiment-navigation",
+      "source": "User manual VoiceOver review",
+      "browser": "Firefox",
+      "result": "horizontal_repetition_removed_vertical_date_announced",
+      "userText": "Firefox does the same.",
+      "scope": "Matches prior Chrome horizontal full-weekday/no-duplication and vertical date-only report; initial-focus speech not explicitly confirmed."
+    },
+    "webkitNavigation": {
+      "at": "2026-09-23T21:02:25.292541+00:00",
+      "scenario": "weekday-experiment-navigation",
+      "source": "User manual VoiceOver review",
+      "browser": "WebKit (user label)",
+      "result": "weekday_context_missing",
+      "userText": "Against this test, WebKit does not report the day of the week in either direction.",
+      "scope": "Horizontal and vertical navigation in column-weekday experiment; do not infer a separate browser/version from user label."
+    },
+    "conclusion": "Moving weekday solely to column headers reduces repetition in Chrome/Firefox but removes spoken weekday in both directions in WebKit. Keep full weekday/date button labels; do not adopt isolated patch.",
+    "recommendation": "Retain original semantic headers and full date-button names. Document repeated header/date weekday speech as an observed browser/VoiceOver difference, not a missing semantic or double selection.",
+    "disposition": "user_accepted_retain_original",
+    "acceptedAt": "2026-09-23T21:12:01.604149+00:00"
+  },
+  "closeoutDisposition": {
+    "weekday": "Original full date names and semantic headers retained; horizontal header/date repetition accepted. Experimental weekday-only headers not adopted.",
+    "firefoxNativeButton": "Retained; user authorized recommended closeout. No accessible supported cross-browser CSS hiding hook established.",
+    "speech": "Integrated Safari counted retry message accepted by user; loading/focus/native editing walkthrough preserved.",
+    "limits": "No claim of physical mobile or date-specific IME acceptance.",
+    "authorization": "User: Please take on the rest of this work.",
+    "payload": "Only private developer-facing errors shortened after the first closeout capture; accepted loading/retry labels and focus behavior unchanged.",
+    "metadata": "Narrow commit metadata regenerates date member/attribute ordering from the merged manifest, then passes isolated check:api and check:types."
+  }
+}

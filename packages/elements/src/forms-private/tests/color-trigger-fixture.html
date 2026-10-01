@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Color trigger integration</title>
+<body><main>
+  <h1>Color trigger integration</h1>
+  <button type="button">Native focus baseline</button>
+  <form id="picker-form">
+    <button id="native-trigger">Choose accent with native button</button>
+    <en-button id="component-trigger">Choose accent with component button</en-button>
+    <en-swatch id="swatch-trigger" label="Choose accent color"></en-swatch>
+    <fieldset id="color-group"><legend>Accent settings</legend>
+      <en-color-field id="color-field" for="native-trigger" label="Accent color" description="Choose a six-digit sRGB color." name="accent" value="#336699"></en-color-field>
+    </fieldset>
+    <button type="submit" id="submit-picker">Submit accent</button>
+    <button type="reset">Reset accent</button>
+  </form>
+  <div id="color-shadow"></div>
+</main>
+<script type="module">
+  import { EnColorField } from '../../color-field/element.ts';
+  import { EnSwatch } from '../../swatch/element.ts';
+  import { EnButton } from '../../button/element.ts';
+  customElements.define('en-color-field', EnColorField);
+  customElements.define('en-swatch', EnSwatch);
+  customElements.define('en-button', EnButton);
+  const field = document.getElementById('color-field');
+  const swatch = document.getElementById('swatch-trigger');
+  window.colorTriggerFixture = { events: [], submissions: [], calls: [] };
+  for (const type of ['en-action', 'en-input', 'en-change']) {
+    document.addEventListener(type, event => window.colorTriggerFixture.events.push({ id: event.target.id, type, detail: event.detail }));
+  }
+  const syncSwatch = () => { swatch.color = field.value; };
+  window.acceptAccent = value => { field.value = value; syncSwatch(); };
+  // A later consumer may cancel: derive the swatch from settled state after dispatch.
+  field.addEventListener('en-change', () => queueMicrotask(syncSwatch));
+  document.getElementById('picker-form').addEventListener('submit', event => {
+    event.preventDefault();
+    window.colorTriggerFixture.submissions.push(Array.from(new FormData(event.target).entries()));
+  });
+  document.getElementById('picker-form').addEventListener('reset', event => {
+    // The reset event precedes native default action and FACE reset callbacks.
+    // A new task reads the resulting accepted value, including canceled reset.
+    setTimeout(() => { if (!event.defaultPrevented) syncSwatch(); }, 0);
+  });
+  await Promise.all([field.updateComplete, swatch.updateComplete, document.getElementById('component-trigger').updateComplete]);
+  syncSwatch();
+  await swatch.updateComplete;
+  document.body.dataset.ready = 'true';
+</script></body></html>

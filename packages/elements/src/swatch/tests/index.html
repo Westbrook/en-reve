@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swatch integration</title>
+<style>
+  body { --en-color-action: #2457d6; font-family: system-ui; padding: 32px; }
+  main { display: grid; gap: 24px; max-width: 400px; }
+</style>
+<main>
+  <button id="before">Before swatch</button>
+  <en-swatch id="primary" token="--en-color-action" label="Choose action color"></en-swatch>
+  <button id="after">After swatch</button>
+  <label>After swatch field <input id="after-field"></label>
+  <div style="--en-color-action: #942fb7">
+    <en-swatch id="scoped" token="--en-color-action" label="Scoped fallback"><span slot="label">Choose scoped action color</span></en-swatch>
+  </div>
+  <en-swatch id="disabled" token="--en-color-action" label="Disabled action" disabled></en-swatch>
+  <en-swatch id="invalid" label="Missing token"></en-swatch>
+</main>
+<script type="module">
+  import { EnSwatch } from '../element.ts';
+  customElements.define('en-swatch', EnSwatch);
+  window.swatchEvents = [];
+  for (const type of ['en-action']) {
+    document.addEventListener(type, event => window.swatchEvents.push({ type, detail: event.detail, id: event.target.id, cancelable: event.cancelable, composed: event.composed, bubbles: event.bubbles }));
+  }
+</script>
+</html>

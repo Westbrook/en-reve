@@ -1,0 +1,31 @@
+{
+  "name": "en-reve-performance-lab",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:lab": "node src/prepare.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "qualify": "node src/cli.mjs qualify",
+    "pilot": "node src/cli.mjs run --suite load --samples 5",
+    "baseline": "node src/cli.mjs run --suite load --samples 30",
+    "interactions": "node src/cli.mjs run --suite interactions --samples 30",
+    "memory": "node src/cli.mjs run --suite memory --samples 5",
+    "lighthouse": "node src/cli.mjs run --suite lighthouse --samples 5",
+    "report": "node src/cli.mjs report",
+    "serve": "node src/server.mjs",
+    "check": "node src/cli.mjs check",
+    "registry": "node src/cli.mjs registry",
+    "test:registry:browser": "node tests/registry-browser.mjs"
+  },
+  "devDependencies": {
+    "@jridgewell/trace-mapping": "0.3.31",
+    "@playwright/test": "1.63.0",
+    "chrome-launcher": "1.2.1",
+    "es-module-lexer": "3.0.2",
+    "esbuild": "0.28.2",
+    "lighthouse": "13.5.0",
+    "simple-statistics": "7.12.1",
+    "web-vitals": "6.2.2"
+  }
+}

@@ -1,0 +1,15 @@
+# Encapsulated navigation consumer verification
+
+Build the workspace packages first, then run from the repository root:
+
+```sh
+PLAYWRIGHT_BROWSERS_PATH=/private/tmp/en-reve-playwright npx playwright test --config packages/elements/src/navigation/tests/playwright.config.ts
+```
+
+`EN_NAVIGATION_ELEMENTS_TEST_OUTPUT_DIR` selects an evidence directory; `EN_NAVIGATION_ELEMENTS_TEST_PORT` overrides the isolated server's default port 4395. These tests import the built public constructors and explicitly register only `en-navigation` and `en-breadcrumbs`. No catalog or documentation-site stylesheet is loaded. Both fixtures author native light DOM children: the client appends anchors/spans with ordinary JavaScript, while the server renders a Lit template through `@en-reve/ssr` and delays registration/hydration until the test requests it. Navigation uses its ordinary named default slot; breadcrumbs use automatic public SSR projection without a caller mapping plan or custom renderer. Stylesheets use native `<link>` elements.
+
+Seventeen user/consumer processes run in Chromium, Firefox and WebKit: initial SSR without JavaScript; native tab order and fragment activation after plain JavaScript creation; consumer cancellation and authored new-tab relationships; Shadow DOM isolation and CSS Parts; tokens/RTL/implicit medium sizing; native-child/attribute updates with focused-node retention; removal/reinsertion; exact SSR native-anchor/root/slot/focus/listener/geometry retention through hydration; public breadcrumb automatic projection; native child insertion/reordering and href-less anchor semantics; initial hidden/reveal behavior in server and client roots; and actual rich-label glyph spacing/wrapping in both elements without authored-node replacement. Navigation retains its ordinary named default slot for server and client roots; breadcrumbs exercise named SSR roots and manual client roots. Both elements' authored anchors remain consumer-owned light DOM, including their CSS scope. Only their private layout is encapsulated: navigation's `base` Part, and the breadcrumb landmark/list/items/separators. Assertions inspect actual native semantics, rendering and interaction rather than generated source strings. WebKit uses Alt+Tab for native all-controls keyboard traversal, matching its browser preference behavior.
+
+The fixture owns the document fragment destinations and their focusability. The wrappers do not implement routing, selection state or destination focus. Sticky host coordination is covered by the documentation navigation/controller integration checks; this fixture checks the public sticky property only. These installed-engine checks do not certify the current-minus-one matrix, physical input devices or manual assistive-technology use.
+
+The larger `probes/breadcrumbs-ssr-adapter` regression matrix additionally exercises the same production breadcrumb implementation through a thin probe subclass, including minification, actual nested shadow hosts, controlled delivery of buffered HTML, property-bound labels and slot ownership diagnostics.

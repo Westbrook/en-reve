@@ -1,0 +1,1777 @@
+{
+  "config": {
+    "argv": [
+      "/Users/westbrook/Library/Application Support/revedev-52ae4245/bin/node",
+      "/Users/westbrook/Documents/repos/design-system/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "packages/tokens/test/browser/playwright.config.mjs"
+    ],
+    "configFile": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser/playwright.config.mjs",
+    "rootDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser/evidence/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser/evidence/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser/evidence/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser",
+        "testIgnore": [],
+        "testMatch": [
+          "*.spec.mjs"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/Users/westbrook/Documents/repos/design-system/packages/tokens/test/browser/evidence/playwright.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 3,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "scopes.spec.mjs",
+      "file": "scopes.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "page theme, full child theme and local component styling reach real shadow controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 916,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:28.724Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "initial-scopes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicGFnZSI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMzYsIDg3LCAyMTQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgImNoaWxkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJsb2NhbCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMzYsIDg3LCAyMTQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-d3caa8a2554a5c1fadb6",
+          "file": "scopes.spec.mjs",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "preview controls apply accent, rhythm, density and mode while preserving local overrides",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1878,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:28.737Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "custom-preview.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicGFnZSI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9LAogICAgImNoaWxkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiMzhweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICI4cHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgInBhZ2VDYXJkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjcsIDMxLCAzNikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjE2cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIzMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjMycHgiLAogICAgICAiZ2FwIjogIjMycHgiCiAgICB9LAogICAgImNoaWxkQ2FyZCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjgsIDMzLCAzOSkiLAogICAgICAiY29sb3IiOiAicmdiKDI0MywgMjQ1LCAyNDcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIxNnB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICIwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxNnB4IiwKICAgICAgImdhcCI6ICIxNnB4IgogICAgfSwKICAgICJsb2NhbCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-56643823d3dd96cfbf66",
+          "file": "scopes.spec.mjs",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "a full child boundary resets inherited component pins; a partial region preserves unrelated inheritance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 783,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:28.745Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "rebase-and-partial.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiaW5oZXJpdGVkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyMDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgInJlYmFzZWQiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE3MCwgMTkzLCAyNTUpIiwKICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgInBhcnRpYWwiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDAsIDEwMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibG9jYWwiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDAsIDAsIDIwMCkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-5bbac5bb100bd7f81b91",
+          "file": "scopes.spec.mjs",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "primitive overrides require a complete boundary to rebase inherited aliases",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 661,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:29.861Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "primitive-rebase.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiYWZ0ZXJSZWJhc2UiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDM2LCA4NywgMjE0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIyNHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9LAogICAgImJlZm9yZVBhZGRpbmciOiAiMTJweCIKICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-81054513fc56471448fa",
+          "file": "scopes.spec.mjs",
+          "line": 123,
+          "column": 1
+        },
+        {
+          "title": "granular rhythm and hover pins survive system changes and restore rejoins the derived graph",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1222,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:29.991Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "pin-and-restore.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiYWZ0ZXJSZXN0b3JlIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI1MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjI0cHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMTJweCIsCiAgICAgICJnYXAiOiAiMTZweCIKICAgIH0sCiAgICAicGlubmVkUGFkZGluZyI6ICI0LjhweCIsCiAgICAicGlubmVkSG92ZXIiOiAicmdiKDMyLCAzMiwgMzIpIgogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-cb76d4b3e3837346cfa5",
+          "file": "scopes.spec.mjs",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "unlayered author overrides follow the CSS cascade and survive a theme refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 878,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:30.533Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "author-cascade.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiY2hpbGQiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDEwLCA4MCwgOTApIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-3cf4aaf55e5b07975901",
+          "file": "scopes.spec.mjs",
+          "line": 166,
+          "column": 1
+        },
+        {
+          "title": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 918,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:30.948Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "default-accent-recipes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicm9sZXMiOiB7CiAgICAgICJjb2xvci5icmFuZCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDM2LCA4NywgMjE0KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMzYsIDg3LCAyMTQpIgogICAgICB9LAogICAgICAiY29sb3Iub24tYnJhbmQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY3Rpb24iOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigzNiwgODcsIDIxNCkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDM2LCA4NywgMjE0KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjdGlvbi1ob3ZlciI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDMxLCA3NywgMTkxKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMzEsIDc3LCAxOTEpIgogICAgICB9LAogICAgICAiY29sb3IuYWN0aW9uLXByZXNzZWQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNiwgNjcsIDE2OSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDI2LCA2NywgMTY5KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjY2VudC1zdWJ0bGUiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyMjcsIDIzNiwgMjUyKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjI3LCAyMzYsIDI1MikiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY2NlbnQtYm9yZGVyIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMTgyLCAyMDMsIDI0NikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE4MiwgMjAzLCAyNDYpIgogICAgICB9LAogICAgICAiY29sb3Iub24tYWN0aW9uIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgICB9LAogICAgICAiY29sb3IuZGFuZ2VyLXRleHQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxODAsIDM1LCAyNCkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE4MCwgMzUsIDI0KSIKICAgICAgfQogICAgfSwKICAgICJkYW5nZXIiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImNvbG9yIjogInJnYigxODAsIDM1LCAyNCkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    },
+                    {
+                      "name": "custom-accent-recipes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicm9sZXMiOiB7CiAgICAgICJjb2xvci5icmFuZCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE2MSwgNTQsIDE1MikiCiAgICAgIH0sCiAgICAgICJjb2xvci5vbi1icmFuZCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjdGlvbiI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE2MSwgNTQsIDE1MikiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY3Rpb24taG92ZXIiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxNDQsIDQ3LCAxMzYpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxNDQsIDQ3LCAxMzYpIgogICAgICB9LAogICAgICAiY29sb3IuYWN0aW9uLXByZXNzZWQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxMjcsIDQxLCAxMTkpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxMjcsIDQxLCAxMTkpIgogICAgICB9LAogICAgICAiY29sb3IuYWNjZW50LXN1YnRsZSI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDI0NSwgMjMxLCAyNDMpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigyNDUsIDIzMSwgMjQzKSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjY2VudC1ib3JkZXIiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyMjgsIDE5MiwgMjIyKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjI4LCAxOTIsIDIyMikiCiAgICAgIH0sCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICAgIH0sCiAgICAgICJjb2xvci5kYW5nZXItdGV4dCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE4MCwgMzUsIDI0KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMTgwLCAzNSwgMjQpIgogICAgICB9CiAgICB9LAogICAgImRhbmdlciI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDE4MCwgMzUsIDI0KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-d87b866527979200ca69",
+          "file": "scopes.spec.mjs",
+          "line": 176,
+          "column": 1
+        },
+        {
+          "title": "branding and actions share a seed while independent pins and restoration stay isolated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1751,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:31.222Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "brand-shared-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICB9LAogICAgIndvcmRtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAibm9ybWFsIgogICAgfSwKICAgICJidXR0b24iOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0KICB9Cn0="
+                    },
+                    {
+                      "name": "brand-action-independent-pins.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigyMSwgNTksIDEwNCkiLAogICAgICAiY29sb3Iub24tYWN0aW9uIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgIH0sCiAgICAid29yZG1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE4cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-action-pins-survive-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigyMSwgNTksIDEwNCkiLAogICAgICAiY29sb3Iub24tYWN0aW9uIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgIH0sCiAgICAid29yZG1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE4cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-only-restored.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvci5hY3Rpb24iOiAicmdiKDIxLCA1OSwgMTA0KSIsCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgfSwKICAgICJ3b3JkbWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2JhKDAsIDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-action-rejoined-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvci5hY3Rpb24iOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgfSwKICAgICJ3b3JkbWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2JhKDAsIDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "action-palette-override.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvci5hY3Rpb24iOiAicmdiKDIxMywgOTcsIDMpIiwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICB9LAogICAgIndvcmRtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE4cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIm5vcm1hbCIKICAgIH0sCiAgICAiYnV0dG9uIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyMTMsIDk3LCAzKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-f2ace11fb8715ffd1189",
+          "file": "scopes.spec.mjs",
+          "line": 217,
+          "column": 1
+        },
+        {
+          "title": "a full child theme resets brand and action roles while a partial brand region preserves actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 964,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:31.418Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "brand-scoped-reset.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicGFyZW50IjogewogICAgICAibWFyayI6IHsKICAgICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjE2cHgiLAogICAgICAgICJnYXAiOiAibm9ybWFsIgogICAgICB9LAogICAgICAiYWN0aW9uIjogewogICAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICAgImdhcCI6ICI4cHgiCiAgICAgIH0KICAgIH0sCiAgICAiY2hpbGQiOiB7CiAgICAgICJtYXJrIjogewogICAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE3MCwgMTkzLCAyNTUpIiwKICAgICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICAgIm1pbkJsb2NrU2l6ZSI6ICIwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxNnB4IiwKICAgICAgICAiZ2FwIjogIm5vcm1hbCIKICAgICAgfSwKICAgICAgImFjdGlvbiI6IHsKICAgICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICAgImdhcCI6ICI4cHgiCiAgICAgIH0KICAgIH0sCiAgICAicGFydGlhbCI6IHsKICAgICAgIm1hcmsiOiB7CiAgICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiMHB4IiwKICAgICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMTZweCIsCiAgICAgICAgImdhcCI6ICJub3JtYWwiCiAgICAgIH0sCiAgICAgICJhY3Rpb24iOiB7CiAgICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTcwLCAxOTMsIDI1NSkiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAgICJnYXAiOiAiOHB4IgogICAgICB9CiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-8977b2ee690b46d1c331",
+          "file": "scopes.spec.mjs",
+          "line": 273,
+          "column": 1
+        },
+        {
+          "title": "page theme, full child theme and local component styling reach real shadow controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 1831,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:33.457Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "initial-scopes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicGFnZSI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMzYsIDg3LCAyMTQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgImNoaWxkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJsb2NhbCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMzYsIDg3LCAyMTQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-8229b61dbe8cb4962a03",
+          "file": "scopes.spec.mjs",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "preview controls apply accent, rhythm, density and mode while preserving local overrides",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2547,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:33.875Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "custom-preview.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicGFnZSI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9LAogICAgImNoaWxkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiMzhweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICI4cHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgInBhZ2VDYXJkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjcsIDMxLCAzNikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjE2cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIzMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjMycHgiLAogICAgICAiZ2FwIjogIjMycHgiCiAgICB9LAogICAgImNoaWxkQ2FyZCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjgsIDMzLCAzOSkiLAogICAgICAiY29sb3IiOiAicmdiKDI0MywgMjQ1LCAyNDcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIxNnB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICIwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxNnB4IiwKICAgICAgImdhcCI6ICIxNnB4IgogICAgfSwKICAgICJsb2NhbCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-f8cc0ce7e2754d8d4577",
+          "file": "scopes.spec.mjs",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "a full child boundary resets inherited component pins; a partial region preserves unrelated inheritance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1523,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:33.879Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "rebase-and-partial.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiaW5oZXJpdGVkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyMDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgInJlYmFzZWQiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE3MCwgMTkzLCAyNTUpIiwKICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgInBhcnRpYWwiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDAsIDEwMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibG9jYWwiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDAsIDAsIDIwMCkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-e3202590ed05f518f6ee",
+          "file": "scopes.spec.mjs",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "primitive overrides require a complete boundary to rebase inherited aliases",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 650,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:36.069Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "primitive-rebase.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiYWZ0ZXJSZWJhc2UiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDM2LCA4NywgMjE0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIyNHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9LAogICAgImJlZm9yZVBhZGRpbmciOiAiMTJweCIKICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-109462dc234c49adf64a",
+          "file": "scopes.spec.mjs",
+          "line": 123,
+          "column": 1
+        },
+        {
+          "title": "granular rhythm and hover pins survive system changes and restore rejoins the derived graph",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1063,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:36.593Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "pin-and-restore.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiYWZ0ZXJSZXN0b3JlIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI1MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjI0cHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMTJweCIsCiAgICAgICJnYXAiOiAiMTZweCIKICAgIH0sCiAgICAicGlubmVkUGFkZGluZyI6ICI0LjhweCIsCiAgICAicGlubmVkSG92ZXIiOiAicmdiKDMyLCAzMiwgMzIpIgogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-7f9f4ed222b426a99642",
+          "file": "scopes.spec.mjs",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "unlayered author overrides follow the CSS cascade and survive a theme refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 877,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:36.726Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "author-cascade.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiY2hpbGQiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDEwLCA4MCwgOTApIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-b8643853abe336a1bd86",
+          "file": "scopes.spec.mjs",
+          "line": 166,
+          "column": 1
+        },
+        {
+          "title": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1204,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:37.216Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "default-accent-recipes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicm9sZXMiOiB7CiAgICAgICJjb2xvci5icmFuZCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDM2LCA4NywgMjE0KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMzYsIDg3LCAyMTQpIgogICAgICB9LAogICAgICAiY29sb3Iub24tYnJhbmQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY3Rpb24iOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigzNiwgODcsIDIxNCkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDM2LCA4NywgMjE0KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjdGlvbi1ob3ZlciI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDMxLCA3NywgMTkxKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMzEsIDc3LCAxOTEpIgogICAgICB9LAogICAgICAiY29sb3IuYWN0aW9uLXByZXNzZWQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNiwgNjcsIDE2OSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDI2LCA2NywgMTY5KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjY2VudC1zdWJ0bGUiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyMjcsIDIzNiwgMjUyKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjI3LCAyMzYsIDI1MikiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY2NlbnQtYm9yZGVyIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMTgyLCAyMDMsIDI0NikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE4MiwgMjAzLCAyNDYpIgogICAgICB9LAogICAgICAiY29sb3Iub24tYWN0aW9uIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgICB9LAogICAgICAiY29sb3IuZGFuZ2VyLXRleHQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxODAsIDM1LCAyNCkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE4MCwgMzUsIDI0KSIKICAgICAgfQogICAgfSwKICAgICJkYW5nZXIiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImNvbG9yIjogInJnYigxODAsIDM1LCAyNCkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    },
+                    {
+                      "name": "custom-accent-recipes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicm9sZXMiOiB7CiAgICAgICJjb2xvci5icmFuZCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE2MSwgNTQsIDE1MikiCiAgICAgIH0sCiAgICAgICJjb2xvci5vbi1icmFuZCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjdGlvbiI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE2MSwgNTQsIDE1MikiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY3Rpb24taG92ZXIiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxNDQsIDQ3LCAxMzYpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxNDQsIDQ3LCAxMzYpIgogICAgICB9LAogICAgICAiY29sb3IuYWN0aW9uLXByZXNzZWQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxMjcsIDQxLCAxMTkpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxMjcsIDQxLCAxMTkpIgogICAgICB9LAogICAgICAiY29sb3IuYWNjZW50LXN1YnRsZSI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDI0NSwgMjMxLCAyNDMpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigyNDUsIDIzMSwgMjQzKSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjY2VudC1ib3JkZXIiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyMjgsIDE5MiwgMjIyKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjI4LCAxOTIsIDIyMikiCiAgICAgIH0sCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICAgIH0sCiAgICAgICJjb2xvci5kYW5nZXItdGV4dCI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE4MCwgMzUsIDI0KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMTgwLCAzNSwgMjQpIgogICAgICB9CiAgICB9LAogICAgImRhbmdlciI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDE4MCwgMzUsIDI0KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-12203893efeab383c187",
+          "file": "scopes.spec.mjs",
+          "line": 176,
+          "column": 1
+        },
+        {
+          "title": "branding and actions share a seed while independent pins and restoration stay isolated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 2163,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:37.610Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "brand-shared-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICB9LAogICAgIndvcmRtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAibm9ybWFsIgogICAgfSwKICAgICJidXR0b24iOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0KICB9Cn0="
+                    },
+                    {
+                      "name": "brand-action-independent-pins.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigyMSwgNTksIDEwNCkiLAogICAgICAiY29sb3Iub24tYWN0aW9uIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgIH0sCiAgICAid29yZG1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE4cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-action-pins-survive-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigyMSwgNTksIDEwNCkiLAogICAgICAiY29sb3Iub24tYWN0aW9uIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgIH0sCiAgICAid29yZG1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE4cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-only-restored.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvci5hY3Rpb24iOiAicmdiKDIxLCA1OSwgMTA0KSIsCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgfSwKICAgICJ3b3JkbWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2JhKDAsIDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-action-rejoined-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvci5hY3Rpb24iOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgfSwKICAgICJ3b3JkbWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2JhKDAsIDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "action-palette-override.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiZXhwZWN0ZWQiOiB7CiAgICAgICJjb2xvci5icmFuZCI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvci5hY3Rpb24iOiAicmdiKDIxMywgOTcsIDMpIiwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICB9LAogICAgIndvcmRtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE4cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIm5vcm1hbCIKICAgIH0sCiAgICAiYnV0dG9uIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyMTMsIDk3LCAzKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-3e3f622c81d041a57870",
+          "file": "scopes.spec.mjs",
+          "line": 217,
+          "column": 1
+        },
+        {
+          "title": "a full child theme resets brand and action roles while a partial brand region preserves actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1236,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:37.663Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "brand-scoped-reset.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAicGFyZW50IjogewogICAgICAibWFyayI6IHsKICAgICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjE2cHgiLAogICAgICAgICJnYXAiOiAibm9ybWFsIgogICAgICB9LAogICAgICAiYWN0aW9uIjogewogICAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICAgImdhcCI6ICI4cHgiCiAgICAgIH0KICAgIH0sCiAgICAiY2hpbGQiOiB7CiAgICAgICJtYXJrIjogewogICAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE3MCwgMTkzLCAyNTUpIiwKICAgICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICAgIm1pbkJsb2NrU2l6ZSI6ICIwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxNnB4IiwKICAgICAgICAiZ2FwIjogIm5vcm1hbCIKICAgICAgfSwKICAgICAgImFjdGlvbiI6IHsKICAgICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICAgImdhcCI6ICI4cHgiCiAgICAgIH0KICAgIH0sCiAgICAicGFydGlhbCI6IHsKICAgICAgIm1hcmsiOiB7CiAgICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjQ0LCAyMjMsIDU1KSIsCiAgICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiMHB4IiwKICAgICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMTZweCIsCiAgICAgICAgImdhcCI6ICJub3JtYWwiCiAgICAgIH0sCiAgICAgICJhY3Rpb24iOiB7CiAgICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTcwLCAxOTMsIDI1NSkiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAgICJnYXAiOiAiOHB4IgogICAgICB9CiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-f5a764a694cbf4bcbdad",
+          "file": "scopes.spec.mjs",
+          "line": 273,
+          "column": 1
+        },
+        {
+          "title": "page theme, full child theme and local component styling reach real shadow controls",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 938,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:41.018Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "initial-scopes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgInBhZ2UiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDM2LCA4NywgMjE0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJjaGlsZCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTcwLCAxOTMsIDI1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0sCiAgICAibG9jYWwiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDM2LCA4NywgMjE0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-ac4b545987a3dd00264c",
+          "file": "scopes.spec.mjs",
+          "line": 35,
+          "column": 1
+        },
+        {
+          "title": "preview controls apply accent, rhythm, density and mode while preserving local overrides",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1938,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:41.037Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "custom-preview.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgInBhZ2UiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjUwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxMnB4IiwKICAgICAgImdhcCI6ICIxNnB4IgogICAgfSwKICAgICJjaGlsZCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTcwLCAxOTMsIDI1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjM4cHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiOHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJwYWdlQ2FyZCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDI3LCAzMSwgMzYpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIxNnB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICIwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMzJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIzMnB4IiwKICAgICAgImdhcCI6ICIzMnB4IgogICAgfSwKICAgICJjaGlsZENhcmQiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI4LCAzMywgMzkpIiwKICAgICAgImNvbG9yIjogInJnYigyNDMsIDI0NSwgMjQ3KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiMTZweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiMHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjE2cHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMTZweCIsCiAgICAgICJnYXAiOiAiMTZweCIKICAgIH0sCiAgICAibG9jYWwiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjUwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxMnB4IiwKICAgICAgImdhcCI6ICIxNnB4IgogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-76a0b73aee6a8f5032ab",
+          "file": "scopes.spec.mjs",
+          "line": 52,
+          "column": 1
+        },
+        {
+          "title": "a full child boundary resets inherited component pins; a partial region preserves unrelated inheritance",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 819,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:41.137Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "rebase-and-partial.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImluaGVyaXRlZCI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJyZWJhc2VkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJwYXJ0aWFsIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigwLCAxMDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgImxvY2FsIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigwLCAwLCAyMDApIiwKICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-69e05ac4b924dc3febb6",
+          "file": "scopes.spec.mjs",
+          "line": 90,
+          "column": 1
+        },
+        {
+          "title": "primitive overrides require a complete boundary to rebase inherited aliases",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 606,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:42.235Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "primitive-rebase.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImFmdGVyUmViYXNlIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigzNiwgODcsIDIxNCkiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjUwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMjRweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxMnB4IiwKICAgICAgImdhcCI6ICIxNnB4IgogICAgfSwKICAgICJiZWZvcmVQYWRkaW5nIjogIjEycHgiCiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-d4ee7ee476391d837b17",
+          "file": "scopes.spec.mjs",
+          "line": 123,
+          "column": 1
+        },
+        {
+          "title": "granular rhythm and hover pins survive system changes and restore rejoins the derived graph",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1174,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:42.301Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "pin-and-restore.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImFmdGVyUmVzdG9yZSI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNTBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIyNHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjEycHgiLAogICAgICAiZ2FwIjogIjE2cHgiCiAgICB9LAogICAgInBpbm5lZFBhZGRpbmciOiAiNC44cHgiLAogICAgInBpbm5lZEhvdmVyIjogInJnYigzMiwgMzIsIDMyKSIKICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-a1bb6db1cc22cc708ef2",
+          "file": "scopes.spec.mjs",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "unlayered author overrides follow the CSS cascade and survive a theme refresh",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 984,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:42.850Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "author-cascade.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImNoaWxkIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxMCwgODAsIDkwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-611413ccb941d54b1185",
+          "file": "scopes.spec.mjs",
+          "line": 166,
+          "column": 1
+        },
+        {
+          "title": "derived accent roles render their resolved colors in surfaces and real hover and pressed states",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1066,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:43.301Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "default-accent-recipes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgInJvbGVzIjogewogICAgICAiY29sb3IuYnJhbmQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigzNiwgODcsIDIxNCkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDM2LCA4NywgMjE0KSIKICAgICAgfSwKICAgICAgImNvbG9yLm9uLWJyYW5kIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgICB9LAogICAgICAiY29sb3IuYWN0aW9uIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMzYsIDg3LCAyMTQpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigzNiwgODcsIDIxNCkiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY3Rpb24taG92ZXIiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigzMSwgNzcsIDE5MSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDMxLCA3NywgMTkxKSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjdGlvbi1wcmVzc2VkIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjYsIDY3LCAxNjkpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigyNiwgNjcsIDE2OSkiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY2NlbnQtc3VidGxlIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjI3LCAyMzYsIDI1MikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDIyNywgMjM2LCAyNTIpIgogICAgICB9LAogICAgICAiY29sb3IuYWNjZW50LWJvcmRlciI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDE4MiwgMjAzLCAyNDYpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxODIsIDIwMywgMjQ2KSIKICAgICAgfSwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6IHsKICAgICAgICAiZXhwZWN0ZWQiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgICAgfSwKICAgICAgImNvbG9yLmRhbmdlci10ZXh0IjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMTgwLCAzNSwgMjQpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxODAsIDM1LCAyNCkiCiAgICAgIH0KICAgIH0sCiAgICAiZGFuZ2VyIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMTgwLCAzNSwgMjQpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0KICB9Cn0="
+                    },
+                    {
+                      "name": "custom-accent-recipes.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgInJvbGVzIjogewogICAgICAiY29sb3IuYnJhbmQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxNjEsIDU0LCAxNTIpIgogICAgICB9LAogICAgICAiY29sb3Iub24tYnJhbmQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY3Rpb24iOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgICAiYWN0dWFsIjogInJnYigxNjEsIDU0LCAxNTIpIgogICAgICB9LAogICAgICAiY29sb3IuYWN0aW9uLWhvdmVyIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMTQ0LCA0NywgMTM2KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMTQ0LCA0NywgMTM2KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjdGlvbi1wcmVzc2VkIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMTI3LCA0MSwgMTE5KSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMTI3LCA0MSwgMTE5KSIKICAgICAgfSwKICAgICAgImNvbG9yLmFjY2VudC1zdWJ0bGUiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigyNDUsIDIzMSwgMjQzKSIsCiAgICAgICAgImFjdHVhbCI6ICJyZ2IoMjQ1LCAyMzEsIDI0MykiCiAgICAgIH0sCiAgICAgICJjb2xvci5hY2NlbnQtYm9yZGVyIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjI4LCAxOTIsIDIyMikiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDIyOCwgMTkyLCAyMjIpIgogICAgICB9LAogICAgICAiY29sb3Iub24tYWN0aW9uIjogewogICAgICAgICJleHBlY3RlZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgICB9LAogICAgICAiY29sb3IuZGFuZ2VyLXRleHQiOiB7CiAgICAgICAgImV4cGVjdGVkIjogInJnYigxODAsIDM1LCAyNCkiLAogICAgICAgICJhY3R1YWwiOiAicmdiKDE4MCwgMzUsIDI0KSIKICAgICAgfQogICAgfSwKICAgICJkYW5nZXIiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImNvbG9yIjogInJnYigxODAsIDM1LCAyNCkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-496fb73a89f7789affce",
+          "file": "scopes.spec.mjs",
+          "line": 176,
+          "column": 1
+        },
+        {
+          "title": "branding and actions share a seed while independent pins and restoration stay isolated",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1810,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:43.482Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "brand-shared-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImV4cGVjdGVkIjogewogICAgICAiY29sb3IuYnJhbmQiOiAicmdiKDE2MSwgNTQsIDE1MikiLAogICAgICAiY29sb3Iub24tYnJhbmQiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImNvbG9yLmFjdGlvbiI6ICJyZ2IoMTYxLCA1NCwgMTUyKSIsCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgfSwKICAgICJ3b3JkbWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2JhKDAsIDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMThweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICJhdXRvIiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjBweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIwcHgiLAogICAgICAiZ2FwIjogIm5vcm1hbCIKICAgIH0sCiAgICAiYnV0dG9uIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNjEsIDU0LCAxNTIpIiwKICAgICAgImNvbG9yIjogInJnYigyNTUsIDI1NSwgMjU1KSIsCiAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9CiAgfQp9"
+                    },
+                    {
+                      "name": "brand-action-independent-pins.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImV4cGVjdGVkIjogewogICAgICAiY29sb3IuYnJhbmQiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAiY29sb3Iub24tYnJhbmQiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImNvbG9yLmFjdGlvbiI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICB9LAogICAgIndvcmRtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAibm9ybWFsIgogICAgfSwKICAgICJidXR0b24iOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDIxLCA1OSwgMTA0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    },
+                    {
+                      "name": "brand-action-pins-survive-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImV4cGVjdGVkIjogewogICAgICAiY29sb3IuYnJhbmQiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAiY29sb3Iub24tYnJhbmQiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImNvbG9yLmFjdGlvbiI6ICJyZ2IoMjEsIDU5LCAxMDQpIiwKICAgICAgImNvbG9yLm9uLWFjdGlvbiI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiCiAgICB9LAogICAgIndvcmRtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYmEoMCwgMCwgMCwgMCkiLAogICAgICAiY29sb3IiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAibm9ybWFsIgogICAgfSwKICAgICJidXR0b24iOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDIxLCA1OSwgMTA0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    },
+                    {
+                      "name": "brand-only-restored.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImV4cGVjdGVkIjogewogICAgICAiY29sb3IuYnJhbmQiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigyMSwgNTksIDEwNCkiLAogICAgICAiY29sb3Iub24tYWN0aW9uIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgIH0sCiAgICAid29yZG1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMThweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAibm9ybWFsIgogICAgfSwKICAgICJidXR0b24iOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDIxLCA1OSwgMTA0KSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    },
+                    {
+                      "name": "brand-action-rejoined-seed.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImV4cGVjdGVkIjogewogICAgICAiY29sb3IuYnJhbmQiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiY29sb3Iub24tYWN0aW9uIjogInJnYigyNTUsIDI1NSwgMjU1KSIKICAgIH0sCiAgICAid29yZG1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiYSgwLCAwLCAwLCAwKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMThweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfSwKICAgICJtYXJrIjogewogICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogImF1dG8iLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMHB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjBweCIsCiAgICAgICJnYXAiOiAibm9ybWFsIgogICAgfSwKICAgICJidXR0b24iOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiNDBweCIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjZweCIsCiAgICAgICJnYXAiOiAiOHB4IgogICAgfQogIH0KfQ=="
+                    },
+                    {
+                      "name": "action-palette-override.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImV4cGVjdGVkIjogewogICAgICAiY29sb3IuYnJhbmQiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvci5vbi1icmFuZCI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiY29sb3IuYWN0aW9uIjogInJnYigyMTMsIDk3LCAzKSIsCiAgICAgICJjb2xvci5vbi1hY3Rpb24iOiAicmdiKDI1NSwgMjU1LCAyNTUpIgogICAgfSwKICAgICJ3b3JkbWFyayI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2JhKDAsIDAsIDAsIDApIiwKICAgICAgImNvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxOHB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICI4cHgiCiAgICB9LAogICAgIm1hcmsiOiB7CiAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDQ4LCAxMjcsIDgyKSIsCiAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICJtaW5CbG9ja1NpemUiOiAiYXV0byIsCiAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIwcHgiLAogICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMHB4IiwKICAgICAgImdhcCI6ICJub3JtYWwiCiAgICB9LAogICAgImJ1dHRvbiI6IHsKICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMjEzLCA5NywgMykiLAogICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgImJvcmRlclJhZGl1cyI6ICI4cHgiLAogICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTJweCIsCiAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAiZ2FwIjogIjhweCIKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-080f2aa400bd7fe096b6",
+          "file": "scopes.spec.mjs",
+          "line": 217,
+          "column": 1
+        },
+        {
+          "title": "a full child theme resets brand and action roles while a partial brand region preserves actions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 934,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:43.841Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "brand-scoped-reset.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgInBhcmVudCI6IHsKICAgICAgIm1hcmsiOiB7CiAgICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoNDgsIDEyNywgODIpIiwKICAgICAgICAiY29sb3IiOiAicmdiKDI1NSwgMjU1LCAyNTUpIiwKICAgICAgICAiYm9yZGVyUmFkaXVzIjogIjBweCIsCiAgICAgICAgIm1pbkJsb2NrU2l6ZSI6ICIwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICIxNnB4IiwKICAgICAgICAiZ2FwIjogIm5vcm1hbCIKICAgICAgfSwKICAgICAgImFjdGlvbiI6IHsKICAgICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYig0OCwgMTI3LCA4MikiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMjU1LCAyNTUsIDI1NSkiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAgICJnYXAiOiAiOHB4IgogICAgICB9CiAgICB9LAogICAgImNoaWxkIjogewogICAgICAibWFyayI6IHsKICAgICAgICAiYmFja2dyb3VuZENvbG9yIjogInJnYigxNzAsIDE5MywgMjU1KSIsCiAgICAgICAgImNvbG9yIjogInJnYigxNiwgMjcsIDU3KSIsCiAgICAgICAgImJvcmRlclJhZGl1cyI6ICIwcHgiLAogICAgICAgICJtaW5CbG9ja1NpemUiOiAiMHB4IiwKICAgICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiMTZweCIsCiAgICAgICAgImdhcCI6ICJub3JtYWwiCiAgICAgIH0sCiAgICAgICJhY3Rpb24iOiB7CiAgICAgICAgImJhY2tncm91bmRDb2xvciI6ICJyZ2IoMTcwLCAxOTMsIDI1NSkiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiOHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjQwcHgiLAogICAgICAgICJmb250U2l6ZSI6ICIxNnB4IiwKICAgICAgICAicGFkZGluZ0lubGluZVN0YXJ0IjogIjEycHgiLAogICAgICAgICJwYWRkaW5nQmxvY2tTdGFydCI6ICI2cHgiLAogICAgICAgICJnYXAiOiAiOHB4IgogICAgICB9CiAgICB9LAogICAgInBhcnRpYWwiOiB7CiAgICAgICJtYXJrIjogewogICAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDI0NCwgMjIzLCA1NSkiLAogICAgICAgICJjb2xvciI6ICJyZ2IoMTYsIDI3LCA1NykiLAogICAgICAgICJib3JkZXJSYWRpdXMiOiAiMHB4IiwKICAgICAgICAibWluQmxvY2tTaXplIjogIjBweCIsCiAgICAgICAgImZvbnRTaXplIjogIjE2cHgiLAogICAgICAgICJwYWRkaW5nSW5saW5lU3RhcnQiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdCbG9ja1N0YXJ0IjogIjE2cHgiLAogICAgICAgICJnYXAiOiAibm9ybWFsIgogICAgICB9LAogICAgICAiYWN0aW9uIjogewogICAgICAgICJiYWNrZ3JvdW5kQ29sb3IiOiAicmdiKDE3MCwgMTkzLCAyNTUpIiwKICAgICAgICAiY29sb3IiOiAicmdiKDE2LCAyNywgNTcpIiwKICAgICAgICAiYm9yZGVyUmFkaXVzIjogIjhweCIsCiAgICAgICAgIm1pbkJsb2NrU2l6ZSI6ICI0MHB4IiwKICAgICAgICAiZm9udFNpemUiOiAiMTZweCIsCiAgICAgICAgInBhZGRpbmdJbmxpbmVTdGFydCI6ICIxMnB4IiwKICAgICAgICAicGFkZGluZ0Jsb2NrU3RhcnQiOiAiNnB4IiwKICAgICAgICAiZ2FwIjogIjhweCIKICAgICAgfQogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "90e11a22db45cd8a3da1-9a2424ce93a29bbd55ea",
+          "file": "scopes.spec.mjs",
+          "line": 273,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "sizes.spec.mjs",
+      "file": "sizes.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "three densities preserve type while all visual sizes retain independent target floors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 1184,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:31.876Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiY29tcGFjdC1zbWFsbCI6IHsKICAgICAgIndpZHRoIjogNjQuNzAzMTI1LAogICAgICAiaGVpZ2h0IjogMzYuNSwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjM2LjVweCIsCiAgICAgICJwYWRkaW5nIjogIjUuMjVweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMC41LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogMzUsCiAgICAgICJjbGllbnRIZWlnaHQiOiAzNQogICAgfSwKICAgICJjb21wYWN0LW1lZGl1bSI6IHsKICAgICAgIndpZHRoIjogNjYuNzAzMTI1LAogICAgICAiaGVpZ2h0IjogMzgsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIzOHB4IiwKICAgICAgInBhZGRpbmciOiAiNnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDEyLAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogMzYsCiAgICAgICJjbGllbnRIZWlnaHQiOiAzNgogICAgfSwKICAgICJjb21wYWN0LWxhcmdlIjogewogICAgICAid2lkdGgiOiA3Ni4wNDY4NzUsCiAgICAgICJoZWlnaHQiOiA0NCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjQ0cHgiLAogICAgICAicGFkZGluZyI6ICI3LjVweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQyLAogICAgICAiY2xpZW50SGVpZ2h0IjogNDIKICAgIH0sCiAgICAiY29tZm9ydGFibGUtc21hbGwiOiB7CiAgICAgICJ3aWR0aCI6IDcxLjcwMzEyNSwKICAgICAgImhlaWdodCI6IDM2LjUsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIzNi41cHgiLAogICAgICAicGFkZGluZyI6ICI1LjI1cHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTAuNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDM1LAogICAgICAiY2xpZW50SGVpZ2h0IjogMzUKICAgIH0sCiAgICAiY29tZm9ydGFibGUtbWVkaXVtIjogewogICAgICAid2lkdGgiOiA3NC43MDMxMjUsCiAgICAgICJoZWlnaHQiOiA0MCwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjQwcHgiLAogICAgICAicGFkZGluZyI6ICI2cHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTIsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiAzOCwKICAgICAgImNsaWVudEhlaWdodCI6IDM4CiAgICB9LAogICAgImNvbWZvcnRhYmxlLWxhcmdlIjogewogICAgICAid2lkdGgiOiA4Ni4wNDY4NzUsCiAgICAgICJoZWlnaHQiOiA1MCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjUwcHgiLAogICAgICAicGFkZGluZyI6ICI3LjVweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQ4LAogICAgICAiY2xpZW50SGVpZ2h0IjogNDgKICAgIH0sCiAgICAic3BhY2lvdXMtc21hbGwiOiB7CiAgICAgICJ3aWR0aCI6IDc4LjcwMzEyNSwKICAgICAgImhlaWdodCI6IDQyLAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiNDJweCIsCiAgICAgICJwYWRkaW5nIjogIjUuMjVweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMC41LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNDAsCiAgICAgICJjbGllbnRIZWlnaHQiOiA0MAogICAgfSwKICAgICJzcGFjaW91cy1tZWRpdW0iOiB7CiAgICAgICJ3aWR0aCI6IDgyLjcwMzEyNSwKICAgICAgImhlaWdodCI6IDQ4LAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiNDhweCIsCiAgICAgICJwYWRkaW5nIjogIjZweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMiwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQ2LAogICAgICAiY2xpZW50SGVpZ2h0IjogNDYKICAgIH0sCiAgICAic3BhY2lvdXMtbGFyZ2UiOiB7CiAgICAgICJ3aWR0aCI6IDk2LjA0Njg3NSwKICAgICAgImhlaWdodCI6IDYwLAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiNjBweCIsCiAgICAgICJwYWRkaW5nIjogIjcuNXB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDE1LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNTgsCiAgICAgICJjbGllbnRIZWlnaHQiOiA1OAogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-78509a5f0f6678be9615",
+          "file": "sizes.spec.mjs",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "explicit inherited size rebases inside a full child theme while absent size remains medium",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 668,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:32.393Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiaW5oZXJpdGVkIjogewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAiaGVpZ2h0IjogMTEyLjUsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIwcHgiLAogICAgICAicGFkZGluZyI6ICIyMXB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDQyLAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogMTExLAogICAgICAiY2xpZW50SGVpZ2h0IjogMTExCiAgICB9LAogICAgInJlYmFzZWQiOiB7CiAgICAgICJ3aWR0aCI6IDEyODAsCiAgICAgICJoZWlnaHQiOiAyMjgsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIwcHgiLAogICAgICAicGFkZGluZyI6ICI1NnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDExMiwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDIyNiwKICAgICAgImNsaWVudEhlaWdodCI6IDIyNgogICAgfSwKICAgICJleHBsaWNpdCI6IHsKICAgICAgIndpZHRoIjogMTg2LjQwNjI1LAogICAgICAiaGVpZ2h0IjogNTAsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI1MHB4IiwKICAgICAgInBhZGRpbmciOiAiMTJweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAyNCwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQ4LAogICAgICAiY2xpZW50SGVpZ2h0IjogNDgKICAgIH0sCiAgICAiZGVmYXVsdCI6IHsKICAgICAgIndpZHRoIjogMTg2LjEwOTM3NSwKICAgICAgImhlaWdodCI6IDUwLAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiNTBweCIsCiAgICAgICJwYWRkaW5nIjogIjEycHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMjQsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA0OCwKICAgICAgImNsaWVudEhlaWdodCI6IDQ4CiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-639ceb62de1e2286c3ff",
+          "file": "sizes.spec.mjs",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "family output pins and direct component overrides survive coordinated size changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 573,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:32.984Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiYXZhdGFyIjogewogICAgICAid2lkdGgiOiA2MCwKICAgICAgImhlaWdodCI6IDYwLAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiMHB4IiwKICAgICAgInBhZGRpbmciOiAiMHB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDAsCiAgICAgICJibG9ja0JvcmRlciI6IDAsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA2MCwKICAgICAgImNsaWVudEhlaWdodCI6IDYwCiAgICB9LAogICAgInNwaW5uZXIiOiB7CiAgICAgICJ3aWR0aCI6IDQyLjA2Mzc3NzkyMzU4Mzk4NCwKICAgICAgImhlaWdodCI6IDQyLjA2NDQ1MzEyNSwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjBweCIsCiAgICAgICJwYWRkaW5nIjogIjBweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAwLAogICAgICAiYmxvY2tCb3JkZXIiOiA0LAogICAgICAic2Nyb2xsSGVpZ2h0IjogMjYsCiAgICAgICJjbGllbnRIZWlnaHQiOiAyNgogICAgfSwKICAgICJsb2NhbCI6IHsKICAgICAgIndpZHRoIjogMTU2LjI2NTYyNSwKICAgICAgImhlaWdodCI6IDY0LAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiNjRweCIsCiAgICAgICJwYWRkaW5nIjogIjlweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxOCwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDYyLAogICAgICAiY2xpZW50SGVpZ2h0IjogNjIKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-c748a82ad716a81c7e64",
+          "file": "sizes.spec.mjs",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "a very small code-authored visual scale does not multiply the interactive target floor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 468,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:33.068Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiY2hyb21pdW0iLAogICJ2ZXJzaW9uIjogIjE1My4wLjgwMTAuMTIiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAid2lkdGgiOiAyNCwKICAgICJoZWlnaHQiOiAzNiwKICAgICJmb250IjogIjE2cHgiLAogICAgIm1pbmltdW0iOiAiMzZweCIsCiAgICAicGFkZGluZyI6ICIwLjc1cHgiLAogICAgImxpbmUiOiAyNCwKICAgICJibG9ja1BhZGRpbmciOiAxLjUsCiAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgInNjcm9sbEhlaWdodCI6IDM0LAogICAgImNsaWVudEhlaWdodCI6IDM0CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-240b5a6fd233044f5354",
+          "file": "sizes.spec.mjs",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "three densities preserve type while all visual sizes retain independent target floors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 2008,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:38.432Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiY29tcGFjdC1zbWFsbCI6IHsKICAgICAgIndpZHRoIjogNjQuNjQ5OTkzODk2NDg0MzgsCiAgICAgICJoZWlnaHQiOiAzNi41LAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiMzYuNXB4IiwKICAgICAgInBhZGRpbmciOiAiNS4yNXB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDEwLjUsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiAzNSwKICAgICAgImNsaWVudEhlaWdodCI6IDM1CiAgICB9LAogICAgImNvbXBhY3QtbWVkaXVtIjogewogICAgICAid2lkdGgiOiA2Ni42NTAwMDkxNTUyNzM0NCwKICAgICAgImhlaWdodCI6IDM4LAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiMzhweCIsCiAgICAgICJwYWRkaW5nIjogIjZweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMiwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDM2LAogICAgICAiY2xpZW50SGVpZ2h0IjogMzYKICAgIH0sCiAgICAiY29tcGFjdC1sYXJnZSI6IHsKICAgICAgIndpZHRoIjogNzYuMDgzMzI4MjQ3MDcwMzEsCiAgICAgICJoZWlnaHQiOiA0NCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjQ0cHgiLAogICAgICAicGFkZGluZyI6ICI3LjVweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQyLAogICAgICAiY2xpZW50SGVpZ2h0IjogNDIKICAgIH0sCiAgICAiY29tZm9ydGFibGUtc21hbGwiOiB7CiAgICAgICJ3aWR0aCI6IDcxLjY0OTk5Mzg5NjQ4NDM4LAogICAgICAiaGVpZ2h0IjogMzYuNSwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjM2LjVweCIsCiAgICAgICJwYWRkaW5nIjogIjUuMjVweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMC41LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogMzUsCiAgICAgICJjbGllbnRIZWlnaHQiOiAzNQogICAgfSwKICAgICJjb21mb3J0YWJsZS1tZWRpdW0iOiB7CiAgICAgICJ3aWR0aCI6IDc0LjY1MDAwOTE1NTI3MzQ0LAogICAgICAiaGVpZ2h0IjogNDAsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI0MHB4IiwKICAgICAgInBhZGRpbmciOiAiNnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDEyLAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogMzgsCiAgICAgICJjbGllbnRIZWlnaHQiOiAzOAogICAgfSwKICAgICJjb21mb3J0YWJsZS1sYXJnZSI6IHsKICAgICAgIndpZHRoIjogODYuMDgzMzI4MjQ3MDcwMzEsCiAgICAgICJoZWlnaHQiOiA1MCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjUwcHgiLAogICAgICAicGFkZGluZyI6ICI3LjVweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQ4LAogICAgICAiY2xpZW50SGVpZ2h0IjogNDgKICAgIH0sCiAgICAic3BhY2lvdXMtc21hbGwiOiB7CiAgICAgICJ3aWR0aCI6IDc4LjY0OTk5Mzg5NjQ4NDM4LAogICAgICAiaGVpZ2h0IjogNDIsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI0MnB4IiwKICAgICAgInBhZGRpbmciOiAiNS4yNXB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDEwLjUsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA0MCwKICAgICAgImNsaWVudEhlaWdodCI6IDQwCiAgICB9LAogICAgInNwYWNpb3VzLW1lZGl1bSI6IHsKICAgICAgIndpZHRoIjogODIuNjUwMDA5MTU1MjczNDQsCiAgICAgICJoZWlnaHQiOiA0OCwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjQ4cHgiLAogICAgICAicGFkZGluZyI6ICI2cHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTIsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA0NiwKICAgICAgImNsaWVudEhlaWdodCI6IDQ2CiAgICB9LAogICAgInNwYWNpb3VzLWxhcmdlIjogewogICAgICAid2lkdGgiOiA5Ni4wODMzMjgyNDcwNzAzMSwKICAgICAgImhlaWdodCI6IDYwLAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiNjBweCIsCiAgICAgICJwYWRkaW5nIjogIjcuNXB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDE1LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNTgsCiAgICAgICJjbGllbnRIZWlnaHQiOiA1OAogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-d1e4dadfcca216848dbc",
+          "file": "sizes.spec.mjs",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "explicit inherited size rebases inside a full child theme while absent size remains medium",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 922,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:38.912Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiaW5oZXJpdGVkIjogewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAiaGVpZ2h0IjogMTEyLjUsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIwcHgiLAogICAgICAicGFkZGluZyI6ICIyMXB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDQyLAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogMTExLAogICAgICAiY2xpZW50SGVpZ2h0IjogMTExCiAgICB9LAogICAgInJlYmFzZWQiOiB7CiAgICAgICJ3aWR0aCI6IDEyODAsCiAgICAgICJoZWlnaHQiOiAyMjgsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIwcHgiLAogICAgICAicGFkZGluZyI6ICI1NnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDExMiwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDIyNiwKICAgICAgImNsaWVudEhlaWdodCI6IDIyNgogICAgfSwKICAgICJleHBsaWNpdCI6IHsKICAgICAgIndpZHRoIjogMTg2LjY2NjY1NjQ5NDE0MDYyLAogICAgICAiaGVpZ2h0IjogNTAsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI1MHB4IiwKICAgICAgInBhZGRpbmciOiAiMTJweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAyNCwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQ4LAogICAgICAiY2xpZW50SGVpZ2h0IjogNDgKICAgIH0sCiAgICAiZGVmYXVsdCI6IHsKICAgICAgIndpZHRoIjogMTg2LjM1MDAwNjEwMzUxNTYyLAogICAgICAiaGVpZ2h0IjogNTAsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI1MHB4IiwKICAgICAgInBhZGRpbmciOiAiMTJweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAyNCwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQ4LAogICAgICAiY2xpZW50SGVpZ2h0IjogNDgKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-4cf839fd17ea56691206",
+          "file": "sizes.spec.mjs",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "family output pins and direct component overrides survive coordinated size changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 848,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:39.787Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAiYXZhdGFyIjogewogICAgICAid2lkdGgiOiA2MCwKICAgICAgImhlaWdodCI6IDYwLAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiMHB4IiwKICAgICAgInBhZGRpbmciOiAiMHB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDAsCiAgICAgICJibG9ja0JvcmRlciI6IDAsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA2MCwKICAgICAgImNsaWVudEhlaWdodCI6IDYwCiAgICB9LAogICAgInNwaW5uZXIiOiB7CiAgICAgICJ3aWR0aCI6IDQyLjA2NjY4MDkwODIwMzEyNSwKICAgICAgImhlaWdodCI6IDQyLjA2NjY2NTY0OTQxNDA2LAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiMHB4IiwKICAgICAgInBhZGRpbmciOiAiMHB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDAsCiAgICAgICJibG9ja0JvcmRlciI6IDQsCiAgICAgICJzY3JvbGxIZWlnaHQiOiAyNiwKICAgICAgImNsaWVudEhlaWdodCI6IDI2CiAgICB9LAogICAgImxvY2FsIjogewogICAgICAid2lkdGgiOiAxNTYuODAwMDAzMDUxNzU3OCwKICAgICAgImhlaWdodCI6IDY0LAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiNjRweCIsCiAgICAgICJwYWRkaW5nIjogIjlweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxOCwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDYyLAogICAgICAiY2xpZW50SGVpZ2h0IjogNjIKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-8acbc00f2320ea6da417",
+          "file": "sizes.spec.mjs",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "a very small code-authored visual scale does not multiply the interactive target floor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "firefox",
+              "projectName": "firefox",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 621,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:39.841Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAiZmlyZWZveCIsCiAgInZlcnNpb24iOiAiMTU1LjAiLAogICJtZWFzdXJlbWVudHMiOiB7CiAgICAid2lkdGgiOiAyNCwKICAgICJoZWlnaHQiOiAzNiwKICAgICJmb250IjogIjE2cHgiLAogICAgIm1pbmltdW0iOiAiMzZweCIsCiAgICAicGFkZGluZyI6ICIwLjc1cHgiLAogICAgImxpbmUiOiAyNCwKICAgICJibG9ja1BhZGRpbmciOiAxLjUsCiAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgInNjcm9sbEhlaWdodCI6IDM0LAogICAgImNsaWVudEhlaWdodCI6IDM0CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-45665ab551d0962ecea1",
+          "file": "sizes.spec.mjs",
+          "line": 120,
+          "column": 1
+        },
+        {
+          "title": "three densities preserve type while all visual sizes retain independent target floors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1545,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:44.379Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImNvbXBhY3Qtc21hbGwiOiB7CiAgICAgICJ3aWR0aCI6IDY0LjcwMzEyNSwKICAgICAgImhlaWdodCI6IDM2LjUsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIzNi41cHgiLAogICAgICAicGFkZGluZyI6ICI1LjI1cHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTAuNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDM1LAogICAgICAiY2xpZW50SGVpZ2h0IjogMzUKICAgIH0sCiAgICAiY29tcGFjdC1tZWRpdW0iOiB7CiAgICAgICJ3aWR0aCI6IDY2LjcwMzEyNSwKICAgICAgImhlaWdodCI6IDM4LAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiMzhweCIsCiAgICAgICJwYWRkaW5nIjogIjZweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMiwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDM2LAogICAgICAiY2xpZW50SGVpZ2h0IjogMzYKICAgIH0sCiAgICAiY29tcGFjdC1sYXJnZSI6IHsKICAgICAgIndpZHRoIjogNzYuMDMxMjUsCiAgICAgICJoZWlnaHQiOiA0NCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjQ0cHgiLAogICAgICAicGFkZGluZyI6ICI3LjVweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDQyLAogICAgICAiY2xpZW50SGVpZ2h0IjogNDIKICAgIH0sCiAgICAiY29tZm9ydGFibGUtc21hbGwiOiB7CiAgICAgICJ3aWR0aCI6IDcxLjcwMzEyNSwKICAgICAgImhlaWdodCI6IDM2LjUsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICIzNi41cHgiLAogICAgICAicGFkZGluZyI6ICI1LjI1cHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTAuNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDM1LAogICAgICAiY2xpZW50SGVpZ2h0IjogMzUKICAgIH0sCiAgICAiY29tZm9ydGFibGUtbWVkaXVtIjogewogICAgICAid2lkdGgiOiA3NC43MDMxMjUsCiAgICAgICJoZWlnaHQiOiA0MCwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjQwcHgiLAogICAgICAicGFkZGluZyI6ICI2cHgiLAogICAgICAibGluZSI6IDI0LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTIsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiAzOCwKICAgICAgImNsaWVudEhlaWdodCI6IDM4CiAgICB9LAogICAgImNvbWZvcnRhYmxlLWxhcmdlIjogewogICAgICAid2lkdGgiOiA4Ni4wMzEyNSwKICAgICAgImhlaWdodCI6IDUwLAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiNTBweCIsCiAgICAgICJwYWRkaW5nIjogIjcuNXB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDE1LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNDgsCiAgICAgICJjbGllbnRIZWlnaHQiOiA0OAogICAgfSwKICAgICJzcGFjaW91cy1zbWFsbCI6IHsKICAgICAgIndpZHRoIjogNzguNzAzMTI1LAogICAgICAiaGVpZ2h0IjogNDIsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI0MnB4IiwKICAgICAgInBhZGRpbmciOiAiNS4yNXB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDEwLjUsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA0MCwKICAgICAgImNsaWVudEhlaWdodCI6IDQwCiAgICB9LAogICAgInNwYWNpb3VzLW1lZGl1bSI6IHsKICAgICAgIndpZHRoIjogODIuNzAzMTI1LAogICAgICAiaGVpZ2h0IjogNDgsCiAgICAgICJmb250IjogIjE2cHgiLAogICAgICAibWluaW11bSI6ICI0OHB4IiwKICAgICAgInBhZGRpbmciOiAiNnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDEyLAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNDYsCiAgICAgICJjbGllbnRIZWlnaHQiOiA0NgogICAgfSwKICAgICJzcGFjaW91cy1sYXJnZSI6IHsKICAgICAgIndpZHRoIjogOTYuMDMxMjUsCiAgICAgICJoZWlnaHQiOiA2MCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjYwcHgiLAogICAgICAicGFkZGluZyI6ICI3LjVweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAxNSwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDU4LAogICAgICAiY2xpZW50SGVpZ2h0IjogNTgKICAgIH0KICB9Cn0="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-5cc0574cd33d85d44716",
+          "file": "sizes.spec.mjs",
+          "line": 27,
+          "column": 1
+        },
+        {
+          "title": "explicit inherited size rebases inside a full child theme while absent size remains medium",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 822,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:44.786Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImluaGVyaXRlZCI6IHsKICAgICAgIndpZHRoIjogMTI4MCwKICAgICAgImhlaWdodCI6IDExMi41LAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiMHB4IiwKICAgICAgInBhZGRpbmciOiAiMjFweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiA0MiwKICAgICAgImJsb2NrQm9yZGVyIjogMiwKICAgICAgInNjcm9sbEhlaWdodCI6IDExMSwKICAgICAgImNsaWVudEhlaWdodCI6IDExMQogICAgfSwKICAgICJyZWJhc2VkIjogewogICAgICAid2lkdGgiOiAxMjgwLAogICAgICAiaGVpZ2h0IjogMjI4LAogICAgICAiZm9udCI6ICIxNnB4IiwKICAgICAgIm1pbmltdW0iOiAiMHB4IiwKICAgICAgInBhZGRpbmciOiAiNTZweCIsCiAgICAgICJsaW5lIjogMjQsCiAgICAgICJibG9ja1BhZGRpbmciOiAxMTIsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiAyMjYsCiAgICAgICJjbGllbnRIZWlnaHQiOiAyMjYKICAgIH0sCiAgICAiZXhwbGljaXQiOiB7CiAgICAgICJ3aWR0aCI6IDE4Ni4zOTA2MjUsCiAgICAgICJoZWlnaHQiOiA1MCwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjUwcHgiLAogICAgICAicGFkZGluZyI6ICIxMnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDI0LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNDgsCiAgICAgICJjbGllbnRIZWlnaHQiOiA0OAogICAgfSwKICAgICJkZWZhdWx0IjogewogICAgICAid2lkdGgiOiAxODYuMDkzNzUsCiAgICAgICJoZWlnaHQiOiA1MCwKICAgICAgImZvbnQiOiAiMTZweCIsCiAgICAgICJtaW5pbXVtIjogIjUwcHgiLAogICAgICAicGFkZGluZyI6ICIxMnB4IiwKICAgICAgImxpbmUiOiAyNCwKICAgICAgImJsb2NrUGFkZGluZyI6IDI0LAogICAgICAiYmxvY2tCb3JkZXIiOiAyLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNDgsCiAgICAgICJjbGllbnRIZWlnaHQiOiA0OAogICAgfQogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-094093b3cdf5f83cfc3f",
+          "file": "sizes.spec.mjs",
+          "line": 67,
+          "column": 1
+        },
+        {
+          "title": "family output pins and direct component overrides survive coordinated size changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 1,
+                  "status": "passed",
+                  "duration": 734,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:45.313Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgImF2YXRhciI6IHsKICAgICAgIndpZHRoIjogNjAsCiAgICAgICJoZWlnaHQiOiA2MCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjBweCIsCiAgICAgICJwYWRkaW5nIjogIjBweCIsCiAgICAgICJsaW5lIjogMjcsCiAgICAgICJibG9ja1BhZGRpbmciOiAwLAogICAgICAiYmxvY2tCb3JkZXIiOiAwLAogICAgICAic2Nyb2xsSGVpZ2h0IjogNjAsCiAgICAgICJjbGllbnRIZWlnaHQiOiA2MAogICAgfSwKICAgICJzcGlubmVyIjogewogICAgICAid2lkdGgiOiAzNC45MDE2ODM4MDczNzMwNSwKICAgICAgImhlaWdodCI6IDM0LjkwMjM0Mzc1LAogICAgICAiZm9udCI6ICIxOHB4IiwKICAgICAgIm1pbmltdW0iOiAiMHB4IiwKICAgICAgInBhZGRpbmciOiAiMHB4IiwKICAgICAgImxpbmUiOiAyNywKICAgICAgImJsb2NrUGFkZGluZyI6IDAsCiAgICAgICJibG9ja0JvcmRlciI6IDQsCiAgICAgICJzY3JvbGxIZWlnaHQiOiAyNiwKICAgICAgImNsaWVudEhlaWdodCI6IDI2CiAgICB9LAogICAgImxvY2FsIjogewogICAgICAid2lkdGgiOiAxNTYuMjUsCiAgICAgICJoZWlnaHQiOiA2NCwKICAgICAgImZvbnQiOiAiMThweCIsCiAgICAgICJtaW5pbXVtIjogIjY0cHgiLAogICAgICAicGFkZGluZyI6ICI5cHgiLAogICAgICAibGluZSI6IDI3LAogICAgICAiYmxvY2tQYWRkaW5nIjogMTgsCiAgICAgICJibG9ja0JvcmRlciI6IDIsCiAgICAgICJzY3JvbGxIZWlnaHQiOiA2MiwKICAgICAgImNsaWVudEhlaWdodCI6IDYyCiAgICB9CiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-61b054773fcf078204f8",
+          "file": "sizes.spec.mjs",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "a very small code-authored visual scale does not multiply the interactive target floor",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "webkit",
+              "projectName": "webkit",
+              "results": [
+                {
+                  "workerIndex": 8,
+                  "parallelIndex": 2,
+                  "status": "passed",
+                  "duration": 583,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-09-09T00:30:45.616Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "size-density.json",
+                      "contentType": "application/json",
+                      "body": "ewogICJlbmdpbmUiOiAid2Via2l0IiwKICAidmVyc2lvbiI6ICIyNi42IiwKICAibWVhc3VyZW1lbnRzIjogewogICAgIndpZHRoIjogMjQsCiAgICAiaGVpZ2h0IjogMzYsCiAgICAiZm9udCI6ICIxNnB4IiwKICAgICJtaW5pbXVtIjogIjM2cHgiLAogICAgInBhZGRpbmciOiAiMC43NXB4IiwKICAgICJsaW5lIjogMjQsCiAgICAiYmxvY2tQYWRkaW5nIjogMS41LAogICAgImJsb2NrQm9yZGVyIjogMiwKICAgICJzY3JvbGxIZWlnaHQiOiAzNCwKICAgICJjbGllbnRIZWlnaHQiOiAzNAogIH0KfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2878ccad86838d5e7abe-9a269389ac448c3b1661",
+          "file": "sizes.spec.mjs",
+          "line": 120,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-09-09T00:30:28.187Z",
+    "duration": 18069.531,
+    "expected": 39,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

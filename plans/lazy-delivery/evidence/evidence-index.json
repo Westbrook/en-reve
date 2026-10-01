@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Durable copied source documents for inherited lazy-delivery decisions; historical evidence, not current-source qualification. Copy recovered files and this index into the rollout artifacts before relying on them.",
+  "recoveryRepository": "/Users/westbrook/Documents/repos/design-system",
+  "observedMain": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+  "records": [
+    {
+      "id": "01-consumer",
+      "commit": "a0c814395bbbf7d56733a1efc37c7eaaed1b8a2b",
+      "path": "plans/scoped-followup-consumer.md",
+      "gitBlob": "71e98238b93ad2deb552fe2e980b743b73a59e71",
+      "sha256": "a380c957bf90aa4f34b7e8f238aa50d4b9adbc5faf18c8d2d7c851b08f3b25bc",
+      "bytes": 13365,
+      "recoveredPath": "recovered/01-consumer/plans/scoped-followup-consumer.md"
+    },
+    {
+      "id": "01-consumer",
+      "commit": "a0c814395bbbf7d56733a1efc37c7eaaed1b8a2b",
+      "path": "artifacts/scoped-followup-consumer/verification.json",
+      "gitBlob": "3c56e117821fd478aa623345ec17a41fbfbef09f",
+      "sha256": "d8ed411bdb2c253afdc2e19bbc560bae10b4c7ee4489d00e600c010b86cd44a0",
+      "bytes": 1364,
+      "recoveredPath": "recovered/01-consumer/artifacts/scoped-followup-consumer/verification.json"
+    },
+    {
+      "id": "02-date-cost",
+      "commit": "c47797ca012befd6e0378c79c8e59796e1e22497",
+      "path": "plans/scoped-followup-date-cost.md",
+      "gitBlob": "12107cd7938ff2a5021b88bab6e0b63413d6e380",
+      "sha256": "2446c57be4c2ea97eba95d008cc736c9ef745d3fb3127ea52c35c8e5fff66e7a",
+      "bytes": 16289,
+      "recoveredPath": "recovered/02-date-cost/plans/scoped-followup-date-cost.md"
+    },
+    {
+      "id": "02-date-cost",
+      "commit": "c47797ca012befd6e0378c79c8e59796e1e22497",
+      "path": "artifacts/scoped-followup-date-cost/verification.json",
+      "gitBlob": "7f63838e35b875a700fc50af51d14f7e080b401d",
+      "sha256": "0815c7a3f882d3db996622970330e5144240849e2a8c26822be8e3cff07c1af1",
+      "bytes": 1034,
+      "recoveredPath": "recovered/02-date-cost/artifacts/scoped-followup-date-cost/verification.json"
+    },
+    {
+      "id": "03-date-retention",
+      "commit": "6cfe079137e2d460fe20a25edd8ad15c9b18e6d8",
+      "path": "plans/scoped-followup-date-retention.md",
+      "gitBlob": "d6568ebb34ba34d6cd47ae18c14ec09284227ead",
+      "sha256": "7362dc24fcc10542641fb710fc264a002ab112ad00a2ab13b16b92bba2bffc03",
+      "bytes": 8222,
+      "recoveredPath": "recovered/03-date-retention/plans/scoped-followup-date-retention.md"
+    },
+    {
+      "id": "03-date-retention",
+      "commit": "6cfe079137e2d460fe20a25edd8ad15c9b18e6d8",
+      "path": "artifacts/scoped-followup-date-retention/verification.json",
+      "gitBlob": "28e4cdbde3e4413a55dab5cf69b2b962f394fcfe",
+      "sha256": "57bf4ee51cb8cf8e689413851f0eec730a8ef6b80848aa9fc2a26736c2d6fb33",
+      "bytes": 427,
+      "recoveredPath": "recovered/03-date-retention/artifacts/scoped-followup-date-retention/verification.json"
+    },
+    {
+      "id": "03-date-retention",
+      "commit": "6cfe079137e2d460fe20a25edd8ad15c9b18e6d8",
+      "path": "artifacts/scoped-followup-date-retention/results.md",
+      "gitBlob": "94a34ac268b04957e08ab508deec4e1dba888cd7",
+      "sha256": "071c98985cb72387b7b2deffe90266daaf75a054ce1999cc054467c48fa11674",
+      "bytes": 10145,
+      "recoveredPath": "recovered/03-date-retention/artifacts/scoped-followup-date-retention/results.md"
+    },
+    {
+      "id": "04-color-tools",
+      "commit": "8969cde312b09fec670fc8cc0927b49bae30ff8d",
+      "path": "plans/scoped-followup-color-tools.md",
+      "gitBlob": "329bb11c5dd0988aef7cd00316d33a00f45a53d9",
+      "sha256": "478408b81eb8085c15fc706d892746f13950b2ffd045da65ba4165c7f8a772b7",
+      "bytes": 12683,
+      "recoveredPath": "recovered/04-color-tools/plans/scoped-followup-color-tools.md"
+    },
+    {
+      "id": "04-color-tools",
+      "commit": "8969cde312b09fec670fc8cc0927b49bae30ff8d",
+      "path": "artifacts/scoped-followup-color-tools/report-verification.json",
+      "gitBlob": "9e33d124318316f0ad2c0159a6dbf4b3cfd9d3ad",
+      "sha256": "1353edd7e629beb589215f36a7866fe9f1101069e76f0f4935e7b0ffd0599bae",
+      "bytes": 1829,
+      "recoveredPath": "recovered/04-color-tools/artifacts/scoped-followup-color-tools/report-verification.json"
+    },
+    {
+      "id": "05-auxiliary-ui",
+      "commit": "1033a1e87fbf3294dd3e5417d2899ee076d1f9b7",
+      "path": "plans/scoped-followup-auxiliary-ui.md",
+      "gitBlob": "5ff74c90f08c956bf9a2672735444ac0cdf48791",
+      "sha256": "ca4d9cd1d3d8c12692af7e1442121d4b01a135cb0eb332c1af166be82a67c797",
+      "bytes": 17405,
+      "recoveredPath": "recovered/05-auxiliary-ui/plans/scoped-followup-auxiliary-ui.md"
+    },
+    {
+      "id": "05-auxiliary-ui",
+      "commit": "1033a1e87fbf3294dd3e5417d2899ee076d1f9b7",
+      "path": "artifacts/scoped-followup-auxiliary-ui/report-verification.json",
+      "gitBlob": "8b3b84121591bfedda2d18a2619efc3b75512ec5",
+      "sha256": "6eb7cd895648ffb5cbfeec26dd0c9b3b9bf5137798ac94c6dacac86785d5e8e1",
+      "bytes": 2093,
+      "recoveredPath": "recovered/05-auxiliary-ui/artifacts/scoped-followup-auxiliary-ui/report-verification.json"
+    },
+    {
+      "id": "06-panels-collections",
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "plans/scoped-followup-panels-collections.md",
+      "gitBlob": "e90b3b7ef9d35cf70fb6b47c210e7c9585cae2c1",
+      "sha256": "d719ebfb0cb24bb94acd47adfa3956c5c092c79f8241735bc01fc45bae14b9d9",
+      "bytes": 17267,
+      "recoveredPath": "recovered/06-panels-collections/plans/scoped-followup-panels-collections.md"
+    },
+    {
+      "id": "06-panels-collections",
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "artifacts/scoped-followup-panels-collections/verification.json",
+      "gitBlob": "462c1fe7d799cf4d0699e08a85b1d601df601c56",
+      "sha256": "ea3ecc164f84054f69b63676384abf55dddc63152f8a76b0069305be382af5dd",
+      "bytes": 1659,
+      "recoveredPath": "recovered/06-panels-collections/artifacts/scoped-followup-panels-collections/verification.json"
+    },
+    {
+      "id": "07-date-input-coverage",
+      "commit": "f9077106ddf4a12f6f30faef73e54b307408f433",
+      "path": "plans/scoped-followup-date-input-coverage.md",
+      "gitBlob": "e9039c55b1bace1919ebe8b98b49fa17c9dec647",
+      "sha256": "7a7921f52015e0abc28b493eb06a800122f88f354839bec61df5f8d1b3814645",
+      "bytes": 10484,
+      "recoveredPath": "recovered/07-date-input-coverage/plans/scoped-followup-date-input-coverage.md"
+    },
+    {
+      "id": "07-date-input-coverage",
+      "commit": "f9077106ddf4a12f6f30faef73e54b307408f433",
+      "path": "artifacts/scoped-followup-date-input-coverage/verification.json",
+      "gitBlob": "7767369557ee39a206375f6cf16d37dcb94b2fea",
+      "sha256": "157239778c599736e62c9dab1ba60eb1b1438fe4394361c74ba07e77d25ac519",
+      "bytes": 32873,
+      "recoveredPath": "recovered/07-date-input-coverage/artifacts/scoped-followup-date-input-coverage/verification.json"
+    },
+    {
+      "id": "07-date-input-coverage",
+      "commit": "f9077106ddf4a12f6f30faef73e54b307408f433",
+      "path": "artifacts/scoped-followup-date-input-coverage/consolidation/manual-summary-2026-09-25.md",
+      "gitBlob": "775abcb4fe0e5004c833abca8142dfc031019a44",
+      "sha256": "23cf09f1e858c664ba11759f0b53f253432f7fb8c68fe50e8b56dd2678e831c2",
+      "bytes": 13138,
+      "recoveredPath": "recovered/07-date-input-coverage/artifacts/scoped-followup-date-input-coverage/consolidation/manual-summary-2026-09-25.md"
+    },
+    {
+      "id": "07-date-input-coverage",
+      "commit": "f9077106ddf4a12f6f30faef73e54b307408f433",
+      "path": "artifacts/scoped-followup-date-input-coverage/consolidation/manual-session-2026-09-25.json",
+      "gitBlob": "225a2e886ded956d1166b3cb192662cac4abb95c",
+      "sha256": "d619163894661b0ff772045703dfe8a1f6542ca24c0d360581525c86c1d5beec",
+      "bytes": 95709,
+      "recoveredPath": "recovered/07-date-input-coverage/artifacts/scoped-followup-date-input-coverage/consolidation/manual-session-2026-09-25.json"
+    },
+    {
+      "id": "07-date-input-coverage",
+      "commit": "f9077106ddf4a12f6f30faef73e54b307408f433",
+      "path": "artifacts/scoped-followup-date-input-coverage/consolidation/remaining-manual-handoff.md",
+      "gitBlob": "21483218a78502837a9b56643f4ca6c441eba210",
+      "sha256": "9cc98ba2d726b634100ba0c188c9f5b58fb43ec0fa37cc7b3781c1710f2004e6",
+      "bytes": 11047,
+      "recoveredPath": "recovered/07-date-input-coverage/artifacts/scoped-followup-date-input-coverage/consolidation/remaining-manual-handoff.md"
+    },
+    {
+      "id": "07-date-input-coverage",
+      "commit": "f9077106ddf4a12f6f30faef73e54b307408f433",
+      "path": "artifacts/scoped-followup-date-input-coverage/consolidation/ownership-transfer.json",
+      "gitBlob": "3a91992f772f654a15084023ee89523742239785",
+      "sha256": "1efab8cb0a29b687a3698a9f0f51695ebda37a2bb552444ea88d5a7ab24e63a1",
+      "bytes": 1564,
+      "recoveredPath": "recovered/07-date-input-coverage/artifacts/scoped-followup-date-input-coverage/consolidation/ownership-transfer.json"
+    },
+    {
+      "id": "08-range-feasibility",
+      "commit": "1f82ebd80890267d6a56a22abd58b2b3d97fe01e",
+      "path": "plans/scoped-followup-range-feasibility.md",
+      "gitBlob": "4066eec082807f2b19be07a817b08a9753e63207",
+      "sha256": "b70a9152ee3c7e957949025c6a43d35e80a82df3de8f059fd43eeeb87527c58d",
+      "bytes": 31645,
+      "recoveredPath": "recovered/08-range-feasibility/plans/scoped-followup-range-feasibility.md"
+    },
+    {
+      "id": "08-range-feasibility",
+      "commit": "1f82ebd80890267d6a56a22abd58b2b3d97fe01e",
+      "path": "artifacts/scoped-followup-range-feasibility/verification.json",
+      "gitBlob": "7b5feba2b0d69b5dc2ae57f7c409a495b231d606",
+      "sha256": "5b79421066f773ba1a53b49e46c45456f574567890ed55de962e20c4762b6702",
+      "bytes": 2355,
+      "recoveredPath": "recovered/08-range-feasibility/artifacts/scoped-followup-range-feasibility/verification.json"
+    },
+    {
+      "id": "09-registry-diagnostics",
+      "commit": "c98c2d59b94b7f9bdd460ac507147cab0c3471f9",
+      "path": "plans/scoped-followup-registry-diagnostics.md",
+      "gitBlob": "9691d595595a4a8bdecf28d7c030555cadad9831",
+      "sha256": "eaaf47cf533948fb6b5846e16b648a192068abcb847a08e06ece215fa9456d66",
+      "bytes": 9624,
+      "recoveredPath": "recovered/09-registry-diagnostics/plans/scoped-followup-registry-diagnostics.md"
+    },
+    {
+      "id": "09-registry-diagnostics",
+      "commit": "c98c2d59b94b7f9bdd460ac507147cab0c3471f9",
+      "path": "artifacts/scoped-followup-registry-diagnostics/verification.json",
+      "gitBlob": "5277f459093436f76b2e66fb52f1e5568451617a",
+      "sha256": "537fac011815d9b22bc3ebf3e913d2b6169fb5c2bc0350fdafd5725afcf8d3cf",
+      "bytes": 8016,
+      "recoveredPath": "recovered/09-registry-diagnostics/artifacts/scoped-followup-registry-diagnostics/verification.json"
+    },
+    {
+      "id": "10-consumer-contracts",
+      "commit": "6c18442d2a240f8e24166574f465ac05963e85f0",
+      "path": "plans/scoped-followup-consumer-contracts.md",
+      "gitBlob": "ed36a94764f3b7754c770d5753a40fd533edbda7",
+      "sha256": "8bf1b28888b69990d847e526fc92b30aa7179ab4fc4311a232490f9ba4d8fd36",
+      "bytes": 8434,
+      "recoveredPath": "recovered/10-consumer-contracts/plans/scoped-followup-consumer-contracts.md"
+    },
+    {
+      "id": "10-consumer-contracts",
+      "commit": "6c18442d2a240f8e24166574f465ac05963e85f0",
+      "path": "artifacts/scoped-followup-consumer-contracts/verification.json",
+      "gitBlob": "ae3883f9986434b453ef5746ce2edd2c25dd8d9a",
+      "sha256": "07457490b3c54abcd92db40ae200366e5b36bce7fd0e5ce77961cc6ccf0cb27f",
+      "bytes": 6634,
+      "recoveredPath": "recovered/10-consumer-contracts/artifacts/scoped-followup-consumer-contracts/verification.json"
+    },
+    {
+      "id": "11-integration-gates",
+      "commit": "d1f225b3f8944985bdbc044ad77df0df0f9b7b16",
+      "path": "plans/scoped-followup-integration-gates.md",
+      "gitBlob": "54609750ce5376c56dec6a5e158fbc72ab6f3f3c",
+      "sha256": "170443093fa03a51232f5e4a6a9e57a285c87a6371066a1ecc3ec7ca25292d5d",
+      "bytes": 12026,
+      "recoveredPath": "recovered/11-integration-gates/plans/scoped-followup-integration-gates.md"
+    },
+    {
+      "id": "11-integration-gates",
+      "commit": "d1f225b3f8944985bdbc044ad77df0df0f9b7b16",
+      "path": "artifacts/scoped-followup-integration-gates/verification.json",
+      "gitBlob": "4c4594aa63c91710909cca191bc20efd8c76415d",
+      "sha256": "4881c40800d8f2deee060ec713906a8d5239a3508b23d4b81f725a51784f2386",
+      "bytes": 4418,
+      "recoveredPath": "recovered/11-integration-gates/artifacts/scoped-followup-integration-gates/verification.json"
+    },
+    {
+      "id": "11-integration-gates",
+      "commit": "d1f225b3f8944985bdbc044ad77df0df0f9b7b16",
+      "path": "artifacts/scoped-followup-integration-gates/parts-diagnosis.json",
+      "gitBlob": "cb8c8bc038f2cef519e82ddcf0476dabcb242d5f",
+      "sha256": "04c2698c2baafe2f2177ebafeb02f05e28e23df1403114796f85f01bc4bd2a86",
+      "bytes": 1562,
+      "recoveredPath": "recovered/11-integration-gates/artifacts/scoped-followup-integration-gates/parts-diagnosis.json"
+    },
+    {
+      "id": "accepted-phase6",
+      "commit": "220d2dd3e4f55c6f2557d7e7fc593d5d16099bba",
+      "path": "plans/scoped-registry-phase-6-results.md",
+      "gitBlob": "51270a9175a58bd46d8eccebe54184f29879ac88",
+      "sha256": "e9967497beb1326aae6116a232cb3543995f8c6e17760c3d2c94b885c052b23b",
+      "bytes": 15661,
+      "recoveredPath": "recovered/accepted-phase6/plans/scoped-registry-phase-6-results.md"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/README.md",
+      "gitBlob": "15a1f72b4a595c112ec7044f6052d71f9da57ab6",
+      "sha256": "8642d352a015b8d9c8b98af27db31138cbdd85a9bbb1399cce692ad133c927d6",
+      "bytes": 2485,
+      "recoveredPath": "recovered/accepted-phase5/artifacts/scoped-registry-phase-5-manual-input-review/README.md"
+    },
+    {
+      "id": "later-date-opening",
+      "commit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "path": "plans/scoped-followup-date-opening-results.md",
+      "gitBlob": "28e8fd144c488bcf1b1a3004d007058f28291656",
+      "sha256": "2447e779c1ade17b8430d9303e489833b51f55a6452bf2281870ee7355e072d5",
+      "bytes": 4862,
+      "recoveredPath": "recovered/later-date-opening/plans/scoped-followup-date-opening-results.md"
+    },
+    {
+      "id": "later-date-opening",
+      "commit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "path": "artifacts/scoped-followup-date-opening/rejected-formatter-20260927/README.md",
+      "gitBlob": "2268aa40b32797c39d268e2031eeb9d4d40c1e20",
+      "sha256": "9396010badb9326b5f515d8c1f609b4bc4af3ab2bd2886c22f44f2e5ae711a4c",
+      "bytes": 8147,
+      "recoveredPath": "recovered/later-date-opening/artifacts/scoped-followup-date-opening/rejected-formatter-20260927/README.md"
+    },
+    {
+      "id": "later-retention-attribution",
+      "commit": "ceb3af8bcb81cfb6e3e12759de407c0f41f28349",
+      "path": "artifacts/scoped-retention-attribution/results.md",
+      "gitBlob": "a968d0fd6977b42d738ae1e95a6dd9b751a1354e",
+      "sha256": "a53806799cffeebf30d329bddb45771575d386a3714b5ea6ac782b5941d1598a",
+      "bytes": 9911,
+      "recoveredPath": "recovered/later-retention-attribution/artifacts/scoped-retention-attribution/results.md"
+    },
+    {
+      "id": "later-retention-attribution",
+      "commit": "ceb3af8bcb81cfb6e3e12759de407c0f41f28349",
+      "path": "artifacts/scoped-retention-attribution/verification.json",
+      "gitBlob": "1d5a0f934216e3ca73cca24c3c53d03d6c523079",
+      "sha256": "0782a907a30b28d939bfdec294a3e72164391746733ca0aa642cabc75c0b4525",
+      "bytes": 389,
+      "recoveredPath": "recovered/later-retention-attribution/artifacts/scoped-retention-attribution/verification.json"
+    },
+    {
+      "id": "current-compatibility",
+      "commit": "37a4dbac332b5324afe07c61b1e701ced07bfe57",
+      "path": "packages/elements/src/date-picker/README.md",
+      "gitBlob": "bba6cf2cb8d49cc12aa21d24dcb9430049d75413",
+      "sha256": "d85635fc7325d49f69d1ed7e6463b955847df98671e1937b565849f3ac14d3e4",
+      "bytes": 9755,
+      "recoveredPath": "recovered/current-compatibility/packages/elements/src/date-picker/README.md"
+    },
+    {
+      "id": "current-compatibility",
+      "commit": "37a4dbac332b5324afe07c61b1e701ced07bfe57",
+      "path": "packages/elements/src/forms-private/README.md",
+      "gitBlob": "d3e14c954390dd7acb41a9db9979dfb461487cf5",
+      "sha256": "e209105e58025adb41b5797464be9aa5e72d107ad0e7994e614c824576e3663e",
+      "bytes": 15525,
+      "recoveredPath": "recovered/current-compatibility/packages/elements/src/forms-private/README.md"
+    },
+    {
+      "id": "current-integration",
+      "commit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "path": "artifacts/scoped-followup-integration-gates/current-library-validation-20260928/README.md",
+      "gitBlob": "ea880e43aa85f994009f081a556bda0e72189025",
+      "sha256": "3c2d04f4215e1821b33f835dad1529d1923deecca1e965a61c7bb7d403e1e5d8",
+      "bytes": 8254,
+      "recoveredPath": "recovered/current-integration/artifacts/scoped-followup-integration-gates/current-library-validation-20260928/README.md"
+    },
+    {
+      "id": "accepted-phase6",
+      "commit": "220d2dd3e4f55c6f2557d7e7fc593d5d16099bba",
+      "path": "showcases/performance/baselines/scoped-registry-phase-6-v2/manual-review.json",
+      "gitBlob": "4c31b9b8b3e62c565ed1dc97448708d287c4da8d",
+      "sha256": "e580f73c83481accc10abebb4ba8c75d4ea31fc4e518fbb002f54e3e31c254bd",
+      "bytes": 24068,
+      "recoveredPath": "recovered/accepted-phase6/showcases/performance/baselines/scoped-registry-phase-6-v2/manual-review.json"
+    },
+    {
+      "id": "accepted-phase6",
+      "commit": "220d2dd3e4f55c6f2557d7e7fc593d5d16099bba",
+      "path": "showcases/performance/baselines/scoped-registry-phase-6-v2/seal.json",
+      "gitBlob": "8784c5b20dc8a8ff45f30c0a87955e186d13a900",
+      "sha256": "766388317aadda00fbaf50e0a788e699c01434394f4c352f0876ffe568ae4d24",
+      "bytes": 8734,
+      "recoveredPath": "recovered/accepted-phase6/showcases/performance/baselines/scoped-registry-phase-6-v2/seal.json"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/user-review.json",
+      "gitBlob": "1542403dcd9bb00728a35168fc1c85251397f136",
+      "sha256": "c859a383572544d1d110f7695b3bd16f54d2eaae3b8335811912f5c55f1d3fbd",
+      "bytes": 982,
+      "recoveredPath": "recovered/accepted-phase5/artifacts/scoped-registry-phase-5-manual-input-review/user-review.json"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/global-delivery-review.json",
+      "gitBlob": "4035d3b40067fc6d7058d4b81de60dfa29a7747e",
+      "sha256": "92d8bf2eb87982a524e8d9401407c57d30cfed157a0c696598d244c97111219b",
+      "bytes": 1670,
+      "recoveredPath": "recovered/accepted-phase5/artifacts/scoped-registry-phase-5-manual-input-review/global-delivery-review.json"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/scoped-shadow-review.json",
+      "gitBlob": "ccb914a7dd7f27844aa960e9484788c98cda3387",
+      "sha256": "d7e2dc717578423d50a07f4916ac40592728f48f0cd34b915d658ce455f04d42",
+      "bytes": 1754,
+      "recoveredPath": "recovered/accepted-phase5/artifacts/scoped-registry-phase-5-manual-input-review/scoped-shadow-review.json"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/scoped-shadow-retest.json",
+      "gitBlob": "b371b1090feb853d85df3a2d6e51770d75c2e8ad",
+      "sha256": "6412ebc497176ba2813dd3406273d99aea1c4e03aaa31fd97b98e9b2ba817bd3",
+      "bytes": 915,
+      "recoveredPath": "recovered/accepted-phase5/artifacts/scoped-registry-phase-5-manual-input-review/scoped-shadow-retest.json"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "2dc77b5773839f7afdd52ce0b4fc68a6af35d0f4",
+      "path": "artifacts/scoped-registry-phase-5-manual-input-review/seal.json",
+      "gitBlob": "f52d8f3c07613d92b049003f4b720d9f87fa844c",
+      "sha256": "cbb1e093984c8155e6d0551931f2ab50f6f53a192aa418661319f78c6ce13240",
+      "bytes": 7003,
+      "recoveredPath": "recovered/accepted-phase5/artifacts/scoped-registry-phase-5-manual-input-review/seal.json"
+    },
+    {
+      "id": "accepted-phase5",
+      "commit": "4a6da1fba47ba47c32612e83e4cd9db0584ba774",
+      "path": "plans/scoped-registry-phase-5.md",
+      "gitBlob": "088531b87c9059931ccab70b38006f15f1dae4fa",
+      "sha256": "8623a26e5634d882083c8a9288adfb9c78f759436327e44c95f8ac9e80ee85b8",
+      "bytes": 10947,
+      "recoveredPath": "recovered/accepted-phase5/plans/scoped-registry-phase-5.md"
+    },
+    {
+      "id": "accepted-phase4",
+      "commit": "5cab32d9311cb1a730fa9741e3334d03f7fc442a",
+      "path": "artifacts/scoped-registry-phase-4-closeout/manual-review-result.json",
+      "gitBlob": "9574ad053ab60ba329559f583bbbce8384802c9b",
+      "sha256": "2587bc4d701feb7334a0ffb14a18faa03fed11ff4588bb9e2e5e577cf2128e52",
+      "bytes": 3901,
+      "recoveredPath": "recovered/accepted-phase4/artifacts/scoped-registry-phase-4-closeout/manual-review-result.json"
+    },
+    {
+      "id": "historical-hydration-candidate",
+      "commit": "f390f9442cb57bcc4253e18921c976d3a25e1d87",
+      "path": "plans/scoped-hydration-selection-closeout.md",
+      "gitBlob": "ac889803ff30ed56b8e7b0f98df46bfccc8541da",
+      "sha256": "cbcffff7b1ed3737aa2dc737c1da4e9e3626a25800a728aeb291c81760da8f3c",
+      "bytes": 4058,
+      "recoveredPath": "recovered/historical-hydration-candidate/plans/scoped-hydration-selection-closeout.md"
+    },
+    {
+      "id": "historical-reveal-candidate",
+      "commit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "path": "artifacts/scoped-followup-integration-gates/consolidation/matched-retention-preservation-result-source-policy-20260928-01/README.md",
+      "gitBlob": "576373b0d97ba59da6f7955f2be4fafa62a8170f",
+      "sha256": "9c3828e593c4c5970629641129ec1bc4e0af65bc5f731d5591185f64b4dda4f2",
+      "bytes": 1602,
+      "recoveredPath": "recovered/historical-reveal-candidate/artifacts/scoped-followup-integration-gates/consolidation/matched-retention-preservation-result-source-policy-20260928-01/README.md"
+    },
+    {
+      "id": "current-hydration-fix",
+      "commit": "13e3a930c32723576eada920f91714ab14c59bfb",
+      "path": "packages/elements/src/forms-private/form-field.ts",
+      "gitBlob": "b054aeca1f84c213055dd7cc1f10d96e9b2d8eff",
+      "sha256": "0962086c61c18e98818ed658aaab8efe76f5204af42aff0e3b340e1efafffc49",
+      "bytes": 12098,
+      "recoveredPath": "recovered/current-hydration-fix/packages/elements/src/forms-private/form-field.ts"
+    }
+  ],
+  "externalRecords": [
+    {
+      "path": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/data/project.json",
+      "sha256": "2dcb9b5b5ad69ae6a81c09adc489f85e7e2bfc3c8191cebaa7b2e674da6d91e8",
+      "revision": 3097,
+      "copy": "report-excerpt.json",
+      "copySha256": "706ac5d1930d40a3e18f36a92b356e0583b1a32ebbec7b60dd6db5a9c5a77a45",
+      "note": "Selective JSON handoff excerpt; source hash binds full canonical report."
+    },
+    {
+      "path": "/Users/westbrook/Documents/repos/design-system/artifacts/scoped-registry-followup-review/assessment-2026-09-24.md",
+      "sha256": "f234951920a37366068d00f4d12b8557d344c91fd68abd098ba75bab9272c0eb",
+      "copy": "assessment-2026-09-24.md",
+      "note": "Initial assessment plus dated continuation is historical, not latest state."
+    }
+  ],
+  "missing": [],
+  "recoveryNotes": [
+    "All 11 original followup plans were recovered from immutable Git objects, not historical worktree locations.",
+    "Phase 6 artifacts/scoped-registry-phase-6/manual-review.json is an ignored local historical copy. Use the sealed Git-backed baseline/scoped-registry-phase-6-v2/manual-review.json recovered here, whose final status is accepted_with_documented_browser_limits.",
+    "Reconciliation documents are separate evidence. Original failed or rejected campaigns remain unchanged.",
+    "This archive is copied into plans/lazy-delivery/evidence; temporary recovery location is provenance only. Recovered Markdown links retain original context; use the Git commit:path tuple for documents not copied."
+  ],
+  "investigations": [
+    {
+      "evidenceId": "01-consumer",
+      "id": "real-consumer-adoption",
+      "disposition": "rejected-with-evidence",
+      "finding": "Keep /workflows/multi-step.html eager. 751 fewer initial nodes / 33.1% route saving missed predeclared 40% node or 10% startup-JS gate. Both original 100-cycle retention arms failed; 48 diagnostic timings (3/cell) are not promotion evidence.",
+      "reopeningTrigger": "Changed route costs or genuine usage, with a newly predeclared workload; do not relax the original gate."
+    },
+    {
+      "evidenceId": "02-date-cost",
+      "id": "date-payload-first-use",
+      "disposition": "rejected-with-evidence",
+      "finding": "Retain guard. Removing it saved 221 gzip bytes but changed 7/8 construction-only cases from 3 to 5 calendar renders; WebKit global reached 4. No timing promotion.",
+      "reopeningTrigger": "A different mechanism with matched first-use evidence; preserve synchronization and authoritative range semantics."
+    },
+    {
+      "evidenceId": "03-date-retention",
+      "id": "calendar-retention",
+      "disposition": "rejected-with-evidence",
+      "finding": "Keep connected-after-use. Warm detachment added roughly 989 KiB heap without qualifying style benefit; recreation changes active-date reopen semantics. 1080 timings and 80 retention runs belong to this historical workload.",
+      "reopeningTrigger": "New mechanism preserving active date/focus/transactions with matched functional, SSR, retention and manual evidence."
+    },
+    {
+      "evidenceId": "04-color-tools",
+      "id": "optional-color-tools",
+      "disposition": "rejected-with-evidence",
+      "finding": "Keep current boundaries: plane split saves 1569 gzip bytes and zero nodes; wheel already separate (2927 marginal bytes / 44 nodes); pointer plane only two nodes. Misses 4096-byte / 50-node gates.",
+      "reopeningTrigger": "Named independently useful tool with material unused cost; never defer the trusted native-picker gesture."
+    },
+    {
+      "evidenceId": "05-auxiliary-ui",
+      "id": "editor-media-auxiliaries",
+      "disposition": "candidate",
+      "finding": "No prior runtime promotion. Four-command contextual toolbar is 135 nodes/46 elements with zero unique library modules. Six phone-width input attempts were intercepted; visible-toolbar followup unperformed.",
+      "reopeningTrigger": "Real occasional-formatting consumer; first reproduce phone interception and qualify bookmark/link draft ownership. Candidate is construction only unless unique code is measured."
+    },
+    {
+      "evidenceId": "06-panels-collections",
+      "id": "inactive-panels-collections",
+      "disposition": "rejected-with-evidence",
+      "finding": "Keep APIs: Activity controls 38 nodes, carousel rotation 19, idle Tree Move shell 7; large Move body already on demand; larger bodies authored. 57 automated checks do not close Find/print/actual AT or separate virtual-table VoiceOver concern.",
+      "reopeningTrigger": "Larger generated surface or explicit authored-content design meeting Find/hash/print/no-JS/AT obligations."
+    },
+    {
+      "evidenceId": "07-date-input-coverage",
+      "id": "physical-date",
+      "disposition": "bounded-manual-evidence",
+      "finding": "Fixtures and 60 original automated cases; later bounded iPhone session completed on original base/build only. BFCache retention observed; reload restored default. Same-document retry failed with usable native editing; fresh normal recovery worked. Broader matrix remains unreported.",
+      "reopeningTrigger": "Changed date interactions need focused manual qualification. Remaining breadth belongs to current root; do not reopen removed firewall followup."
+    },
+    {
+      "evidenceId": "08-range-feasibility",
+      "id": "range-date",
+      "disposition": "essential-eager",
+      "finding": "Keep range eager. 506-node calendar upper bound does not establish net saving. Prototype lacks production-equivalent essential endpoint editor, draft/transaction, SSR identity, validation/form/event and localized/focus parity; prototype bytes are incomparable.",
+      "reopeningTrigger": "Complete production fallback design and qualify real source before optional construction/code split."
+    },
+    {
+      "evidenceId": "09-registry-diagnostics",
+      "id": "registry-diagnostics",
+      "disposition": "implemented",
+      "finding": "Developer-only diagnostics delivered with no product runtime dependency. Original sealed fixture was historical; current output/port adapter and current-main provider restored later. No new production tracing API implied.",
+      "reopeningTrigger": "Changes to loader/activation must retain disabled-path inertness, bounded diagnostics and fresh caller-owned outputs."
+    },
+    {
+      "evidenceId": "10-consumer-contracts",
+      "id": "packed-public-consumers",
+      "disposition": "implemented",
+      "finding": "Packed recipes/docs and conformance delivered: 38 browser passes, one native-only skip plus types/import/SSR isolation. Current-main selected run requalified them.",
+      "reopeningTrigger": "Public delivery changes require current packed API/recipe conformance, including actual fallback and pure imports."
+    },
+    {
+      "evidenceId": "11-integration-gates",
+      "id": "integration-tooling",
+      "disposition": "implemented",
+      "finding": "Original tooling run was non-green with Parts fixture failures. Later integrated providers and exact selected c69ee671 run passed 16 required stages, 176 browser passes and 13 explicit skips. Historical full failures remain failed.",
+      "reopeningTrigger": "New combined source must run selected full affected closure; branch receipts do not certify it."
+    }
+  ],
+  "laterEvidence": [
+    {
+      "evidenceId": "later-retention-attribution",
+      "finding": "26 historical eager-build Chromium control runs attribute whole-workflow growth to connected app Lit keyed child part retaining old TemplateInstances. Minimal fields and native replacement were flat; a private cleanup intervention flattened workflow growth. Never ship private-hook intervention. This neither repairs current source nor overturns independent route benefit failure."
+    },
+    {
+      "evidenceId": "later-date-opening",
+      "finding": "Reject formatter-only trial: 2160 successful cold observations across72cells (30/cell), constrained scoped keyboard median34.70 to54.20ms; cold optional227.15 to247.35ms. Necessary benefit gates fail. No warm/retention campaign; synchronization hypothesis source-reviewed only."
+    },
+    {
+      "evidenceId": "current-compatibility",
+      "finding": "37a4dbac changed native button/date/color-slider/range-slider description and invalid-state associations after all original11 base66386af7 investigations. Old native accessibility observations cannot qualify this new source."
+    },
+    {
+      "evidenceId": "current-integration",
+      "finding": "Current selected c69ee671 correctness is a separate current source/build receipt, not timing or new manual acceptance. Metadata two-path reproduction at20b1017f transferred narrowly because all63 source and7 generated hashes stayed unchanged."
+    },
+    {
+      "evidenceId": "current-hydration-fix",
+      "finding": "13e3a930 adds control.value = control.value immediately before control.defaultValue assignment in FormFieldController.updated(), to preserve early SSR native selection. Earlier editable-field.ts correction cb2aafd9/ef46e79d is NOT on main. Source inspection is not proof every old failing case now passes. Runtime/toolchain changed; old measured receipts do not certify latest source."
+    },
+    {
+      "evidenceId": "historical-hydration-candidate",
+      "finding": "The earlier separate editable-field correction remains excluded: campaigns03 and04 each complete2400timings+40retention,41/44pass and3inconclusive, stop rule reached. This is not qualification or rejection of the different later form-field fix."
+    },
+    {
+      "evidenceId": "historical-reveal-candidate",
+      "finding": "Matched virtual reveal candidate stays excluded: retention2successful/1failed/17not-run, six unresolved heap signals, cause unclassified. Portable evidence preservation succeeded independently; it is not performance promotion."
+    }
+  ],
+  "manualDecisions": [
+    {
+      "evidenceId": "accepted-phase4",
+      "decision": "Retain accepted command-palette browser speech limitations exactly as reviewed; do not generalize to date."
+    },
+    {
+      "evidenceId": "accepted-phase5",
+      "decision": "Retain user-tested application-owned first-hydration two-animation-frame readiness for palette only; generic hydration/dialogs do not inherit it. Actual IME, autofill and history followup passed reported Chrome/Safari/Firefox workflows. Initial scoped pre-hydration history failure is not reproduced on retest, not a code fix; versions/BFCache paths unreported for those retests."
+    },
+    {
+      "evidenceId": "accepted-phase6",
+      "decision": "Keep full weekday/date button names and semantic headers; accept horizontal weekday repetition. Rejected column-weekday experiment loses weekday context in user-labeled WebKit. Retain functional Firefox native date button. Integrated Safari counted-retry announcement accepted. No date-specific IME/mobile acceptance inferred."
+    },
+    {
+      "evidenceId": "07-date-input-coverage",
+      "decision": "Preserve bounded physical iPhone12Pro/iOS27.0 Safari touch and separate VoiceOver observations on build6c36d9cabd4e2680301f8241eeca9ecc5b43cf8b32f074c715f632e3af604df9/base66386af7. Exact OS build/Safari version and full cross-device matrix remain unreported. Ownership transfer is not completion of missing coverage."
+    }
+  ]
+}

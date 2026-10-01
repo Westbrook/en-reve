@@ -1,0 +1,26 @@
+{
+  "name": "@en-reve/docs",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:docs": "node scripts/prepare-docs.mjs",
+    "predev": "npm run prepare:docs",
+    "prebuild": "npm run prepare:docs",
+    "dev": "vite --host 127.0.0.1 --port 4180",
+    "build": "node ../../node_modules/typescript/bin/tsc --noEmit -p tsconfig.json && node scripts/build-ssr.mjs",
+    "test:workflows:core": "node ../../tooling/testing/invoke.mjs public --view='apps/docs#test:workflows:core' --",
+    "test:workflows": "node ../../tooling/testing/invoke.mjs public --view='apps/docs#test:workflows' --"
+  },
+  "dependencies": {
+    "lit": "3.3.3",
+    "signal-polyfill": "0.2.2",
+    "@en-reve/primitives": "0.1.0",
+    "@en-reve/ssr": "0.1.0",
+    "@en-reve/elements": "0.1.0",
+    "@en-reve/styles": "0.1.0",
+    "@lit-labs/ssr-client": "1.1.8",
+    "microlighter": "2.1.0",
+    "@en-reve/tokens": "0.1.0"
+  }
+}

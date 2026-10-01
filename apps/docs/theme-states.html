@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<title>en-reve · State paint</title><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/styles/tokens.css"><link rel="stylesheet" href="/src/site.css">
+<style>
+@layer en.docs {
+.state-page{max-inline-size:72rem;margin:auto;padding:clamp(1rem,4vw,3rem)}
+.state-nav,.settings,.sample-row{display:flex;align-items:center;gap:1.25rem;flex-wrap:wrap}
+.state-page h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.1;letter-spacing:-.035em;margin-block:2rem 1rem}
+.state-page p{max-inline-size:65ch;line-height:1.6;margin-block:1rem}
+.settings{margin-block:2rem}.settings label{display:flex;align-items:center;gap:.65rem}
+.settings select{font:inherit;padding:.6rem;color:var(--en-color-text);background:var(--en-color-surface);border:1px solid var(--en-color-boundary);border-radius:var(--en-radius-control)}
+.comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2rem}
+.comparison section{min-inline-size:0;padding-block:1.5rem;border-block-start:1px solid var(--en-color-line)}
+.comparison h2{font-size:1.4rem;margin-block-end:.75rem}
+.samples{--en-button-background:light-dark(#705098,#bea0e6);--en-button-color:light-dark(white,#251535)}
+.refined{--en-button-hover-background:light-dark(#583675,#d1b8ef);--en-button-hover-color:light-dark(white,#251535);--en-button-pressed-background:light-dark(#3f2458,#e2d1f5);--en-button-pressed-color:light-dark(white,#251535)}
+.sample-row{min-block-size:5rem}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.875rem;margin-block:1.5rem}
+.state-note{border-block-start:1px solid var(--en-color-line);margin-block-start:2rem;padding-block-start:1rem}
+.progress-return{position:fixed;inset-inline-end:1rem;inset-block-end:max(1rem,env(safe-area-inset-bottom));padding:.65rem 1rem;background:var(--en-color-surface);color:var(--en-color-text);border:1px solid var(--en-color-boundary);border-radius:999px;z-index:50}
+.progress-return[hidden]{display:none}
+@media(max-width:640px){.comparison{grid-template-columns:1fr;gap:.5rem}}
+}
+</style></head><body>
+<main class="state-page">
+<nav class="state-nav" aria-label="Theme reviews"><a href="/theme-customization.html" data-preserve-report>Customization contract</a><a href="/reviews/theme-customization.html#THEME-03" data-preserve-report>THEME-03 decision</a></nav>
+<h1>Base paint, with room for feedback.</h1>
+<p>Both examples use the same purple button background. The second adds explicit hover and pressed refinements. These are real components: hover, hold a press, or use keyboard focus and Space to compare.</p>
+<div class="settings">
+<label>Appearance <select id="appearance"><option value="light">Light</option><option value="dark">Dark</option></select></label>
+<label>Variant <select id="variant"><option value="primary">Primary</option><option value="secondary">Secondary</option><option value="ghost">Ghost</option><option value="danger">Danger</option></select></label>
+<label><input id="disabled" type="checkbox"> Disabled</label>
+</div>
+<div class="comparison">
+<section class="samples" aria-labelledby="before-title"><h2 id="before-title">Existing broad paint</h2><p>The base pin fills hover and pressed states too. Ghost rest remains transparent.</p><div class="sample-row"><en-button id="before">Save changes</en-button></div><pre><code>--en-button-background: #705098;
+--en-button-color: white;</code></pre></section>
+<section class="samples refined" aria-labelledby="after-title"><h2 id="after-title">Explicit state refinements</h2><p>State paint overrides the base pin. Focus and disabled behavior keep their own treatments.</p><div class="sample-row"><en-button id="after">Save changes</en-button></div><pre><code>--en-button-background: #705098;
+--en-button-hover-background: #583675;
+--en-button-pressed-background: #3f2458;
+--en-button-color: white;</code></pre></section>
+</div>
+<p id="activation" role="status">Try either button.</p>
+<div class="state-note"><p>Rest, hover and pressed background and foreground hooks can be set independently. Existing themes preserve their defaults until refinements are supplied. The code above shows the light palette; this example supplies a paired dark palette.</p><p><a href="/reviews/theme-customization/theme-03-state-paint.md">State contract, family membership and compatibility</a></p></div>
+</main>
+<nav aria-label="Developer tools" id="progress-return" hidden><a class="progress-return" href="http://127.0.0.1:4177/#review-theme-03">Progress Report</a></nav>
+<script type="module" src="/src/theme-states-demo.ts"></script>
+</body></html>

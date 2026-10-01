@@ -1,0 +1,7 @@
+# Phase 4 delivery policy experiment
+
+The authorized comparison preserves production defaults. `prepare.mjs` verifies the frozen Phase4 archive, copies its exact intent control, and builds route/eager variants by changing only `settings-entry.ts`. Route starts nonblocking `load()` at entry evaluation; eager uses the existing eager consumer path with no lazy callback. A preflight eager build that retained a dynamic wrapper is preserved separately, never measured.
+
+Run from repo root: `node probes/production-registry/phase4-followup/prepare.mjs`, then `verify-functional.mjs`, `campaign.mjs --qualify`, `campaign.mjs`, and `analyze.mjs`. All browser work uses the shared benchmark lock. Never run campaigns concurrently. Commands refuse to overwrite capture directories; failures are preserved. Repeat with `--run=distinct-name` only after recording the reason.
+
+Protocol, results and artifacts live in `artifacts/scoped-registry-phase-4-followup`; final frozen reference gets a new name. Keyboard readiness remains the historical algorithm. Touch uses a trusted-click start and the same readiness predicate, never a simulated keyboard action. Reports retain action-to-focus and navigation-to-focus alongside benchmark readiness; no confirmed-paint/INP claim. Abandoned focus observation is500ms and does not model navigation cancellation or field prediction rates. Manual screen-reader review remains outstanding.

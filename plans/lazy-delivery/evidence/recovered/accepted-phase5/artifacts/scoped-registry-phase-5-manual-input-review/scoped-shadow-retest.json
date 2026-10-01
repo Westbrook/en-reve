@@ -1,0 +1,23 @@
+{
+  "reportedAt": "2026-09-22T19:53:09.458833+00:00",
+  "source": "User focused manual retest",
+  "fixture": "http://127.0.0.1:4233/shadow.html?progress-report",
+  "fixtureSourceVersion": "3e8597a132bf2dd3b5ebd1572a961adb2dfc7b037fbd45b89302fa0318e23237",
+  "results": {
+    "Chrome": {
+      "nativeAndManagedFieldsRetainedOnBack": "pass",
+      "valuesPreservedAfterHydration": "pass"
+    },
+    "Safari": {
+      "nativeAndManagedFieldsRetainedOnBack": "pass",
+      "valuesPreservedAfterHydration": "pass"
+    }
+  },
+  "disposition": "Earlier loss not reproduced in focused retest; no code fix or user-error attribution established.",
+  "notSpecified": [
+    "BFCache versus new-document return path",
+    "Exact browser versions for this retest"
+  ],
+  "scope": "Passing reported navigation workflow, not a guarantee across every browser restoration path.",
+  "previousEvidence": "scoped-shadow-review.json"
+}

@@ -1,0 +1,146 @@
+{
+  "schemaVersion": 1,
+  "theme": "holotable-inspired",
+  "status": "draft; not built or browser-reviewed",
+  "source": {
+    "url": "https://swccg-holotable.reve-ai-0869.chatgpt.site/",
+    "stylesheetURL": "https://swccg-holotable.reve-ai-0869.chatgpt.site/_next/static/css/index.BKbit8v0.css",
+    "observedDateUTC": "2026-09-11",
+    "method": "Authenticated CUA inspection by root, with exact CSS declarations and opened select observations transmitted to the token specialist. No anonymous body/source retrieval succeeded.",
+    "version": "Observed stylesheet asset identifier BKbit8v0; no release, repository revision, complete CSS bytes or content hash established.",
+    "view": "Initial site and ?view=cards; opened Side select.",
+    "appearance": "Dark appearance established. No light branch established from the inspected source. This does not claim that the site cannot have another appearance."
+  },
+  "observed": {
+    "root": {
+      "background": "#0c0e10",
+      "foreground": "#f2efe8",
+      "card": "#131619",
+      "popover": "#181c20",
+      "primary": "#edac62",
+      "primary-foreground": "#17120e",
+      "secondary": "#23282d",
+      "muted": "#1a1e22",
+      "muted-foreground": "#969b9e",
+      "accent": "#262a2d",
+      "destructive": "#ef7474",
+      "border": "#292d31",
+      "input": "#32373c",
+      "ring": "#edac62",
+      "radius": ".65rem",
+      "sidebar": "#101214",
+      "sidebar-accent": "#242321"
+    },
+    "body": {
+      "fontFamily": "Arial, Helvetica, sans-serif",
+      "fontSize": "14px"
+    },
+    "focus": {
+      "selectors": "button:focus-visible, a:focus-visible",
+      "outline": "2px solid #edac62",
+      "outlineOffset": "4px"
+    },
+    "button": {
+      "background": "#20262b",
+      "border": "1px solid #3c4146",
+      "radius": "5px",
+      "minHeight": "43px",
+      "padding": "12px 16px",
+      "fontSize": "12px",
+      "fontWeight": 600,
+      "primaryBackground": "#edac62",
+      "primaryColor": "#1e1a15"
+    },
+    "navigationCurrent": {
+      "background": "#29241f",
+      "color": "#edac62",
+      "border": "#493728",
+      "radius": "6px"
+    },
+    "modeCard": {
+      "background": "#141719",
+      "border": "#303338",
+      "radius": "7px",
+      "hoverBackground": "#1c1d1e",
+      "hoverBorder": "#857055"
+    },
+    "deckTile": {
+      "background": "#15181b",
+      "border": "#33363a",
+      "radius": "7px"
+    },
+    "search": {
+      "background": "#11161a",
+      "border": "#30373d",
+      "radius": "5px",
+      "color": "#e7e6e2",
+      "inputHeight": "41px"
+    },
+    "selectTrigger": {
+      "background": "#161c21",
+      "color": "#d6dadc",
+      "border": "1px solid #32373c",
+      "radius": "8.4px",
+      "padding": "8px 12px",
+      "fontFamily": "Arial",
+      "fontSize": "12px",
+      "transition": "background/border-color/transform .18s"
+    },
+    "selectListbox": {
+      "background": "#181c20",
+      "color": "#f2efe8",
+      "border": "1px solid #f2efe8",
+      "radius": "8.4px",
+      "boxShadow": "0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)",
+      "entry": "150ms fade/zoom via Radix; exact scale/easing/exit values not established"
+    },
+    "option": {
+      "color": "#f2efe8",
+      "focusedBackground": "#262a2d",
+      "radius": "6.4px",
+      "padding": "6px 32px 6px 8px",
+      "fontSize": "14px",
+      "lineHeight": "20px"
+    }
+  },
+  "adaptations": [
+    "Light is a separately authored warm-paper interpretation, not a discovered source branch or inverted dark palette.",
+    "Aligned UI/input/option type stays16px/24px; body is14px/21px. The source12px control and14px/20px option text is not copied. Existing small size keeps the chosen base, large remains explicit scaling.",
+    "System sans replaces Arial because current managed font choices contain system and monospace stacks; no font asset, new font schema or unverified exact font identity is introduced.",
+    "Comfortable density and existing target/content envelope replace literal41/43px control heights. Coarse pointer, text expansion and RTL remain required rendered checks.",
+    "8px controls/popups approximate source select8.4px;6px button approximates5px;8px cards approximate7px;6px rows approximate6.4px. Popup4px inset and symmetric8px row inline padding use existing hooks; library checkmark layout replaces source32px trailing reserve.",
+    "Source muted foreground #969b9e also supplies a stronger shared boundary. The source subtle field rims and very bright opened-popup border are not reproduced literally.",
+    "Dark action hover #f2be7f and pressed #e29a49 are authored amber variations; source action hover/pressed were not established. Selected option/pressed paint reuses the source current-navigation #29241f, an explicit cross-surface mapping.",
+    "The card component uses deck-tile #15181b and input uses observed select #161c21; search-specific #11161a and mode-card #141719 remain examples rather than new component subclasses.",
+    "Source warning/status semantics were not established. Warning uses amber; success retains library mode default. All unchanged tokens remain library defaults, not Holotable findings.",
+    "Existing one-layer shadow.overlay substitutes for the source two-layer popup elevation because managed shadow editing offers existing presets.",
+    "150ms surface entry maps the measured select entry duration. The shared anchored-popup implementation fades without transform; unmeasured zoom amount/easing and exit use baseline behavior. Dialog use of the shared entry duration is an adaptation. No decorative continuous motion or image filter is added.",
+    "The source button/link focus treatment becomes the shared2px contour with4px offset. Owned option focus remains inset for complete visible row focus; no supplemental halo/accent is claimed from this source.",
+    "Asset images remain caller-authored content. Tokens style card/image fallbacks and supporting surfaces; they do not recolor artwork or promise source card imagery."
+  ],
+  "evidence": {
+    "opaquePaletteArithmetic": "palette-checks.json in the drafting directory; not a source artifact or browser certificate.",
+    "managedReplay": "pending root build with new motion tokens",
+    "pairedExportReopen": "pending",
+    "renderedContrast": "pending",
+    "visualReview": "pending",
+    "manualAT": "not run",
+    "themeAdoption": "not requested"
+  },
+  "recipes": {
+    "light": {
+      "path": "tooling/theme-candidates/inspired/holotable.light.json",
+      "sha256": "sha256:9b9eb1e84aa2c4f253424bf8b06e3c481c6eb2bcd032aed6f45420736e7b549e",
+      "editCount": 73,
+      "tokenEditCount": 72,
+      "appearanceBasis": "independently authored adaptation"
+    },
+    "dark": {
+      "path": "tooling/theme-candidates/inspired/holotable.dark.json",
+      "sha256": "sha256:361238e4f140e62c75556b98bd26a15481f2089656802ea522de1a9410ff168a",
+      "editCount": 73,
+      "tokenEditCount": 72,
+      "appearanceBasis": "observed dark with documented adaptations"
+    }
+  }
+}

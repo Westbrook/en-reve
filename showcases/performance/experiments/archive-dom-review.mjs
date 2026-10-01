@@ -1,0 +1,10 @@
+import{readFile,writeFile,mkdir}from'node:fs/promises';import{resolve}from'node:path';import{gzipSync}from'node:zlib';import{root,json,sha}from'../src/config.mjs';
+const repo=resolve(root,'../..'),out=resolve(root,'reports/dom-review'),inv=JSON.parse(await readFile(resolve(out,'base-wrapper-inventory.json'))),manifest=JSON.parse(await readFile(resolve(out,'manifest.json'))),paths=new Set(['experiments/dom-census.mjs','experiments/run-dom-review.mjs','experiments/dom-ownership.mjs','experiments/run-dom-ownership.mjs','experiments/report-dom-review.mjs','experiments/archive-dom-review.mjs','scenarios/journey.mjs'].map(p=>resolve(root,p)));
+for(const e of inv.additionalStandalonePrimitiveSites)paths.add(resolve(repo,e.file));
+const expected=new Map();for(const e of inv.entries)for(const [p,h]of Object.entries({...e.currentSourceHashes,...e.frozenSourceHashes})){paths.add(resolve(repo,p));expected.set(resolve(repo,p),h);}
+const sources={};for(const p of paths){const text=await readFile(p,'utf8'),digest=sha(text);if(expected.has(p)&&expected.get(p)!==digest)throw Error('Reviewed source changed: '+p);sources[p.slice(repo.length+1)]={sha256:digest,text};}
+for(const [p,h]of Object.entries(manifest.sources))if(sha(await readFile(resolve(root,p)))!==h)throw Error('Measured collector changed: '+p);
+const data=Buffer.from(json({scope:'Exact census scripts and base-inventory reviewed source files; original frozen snapshot hashes remain in manifest',sources})),gz=gzipSync(data);await writeFile(resolve(out,'reviewed-sources.json.gz'),gz);
+const receipt={at:new Date().toISOString(),runId:manifest.id,files:{},reviewedSources:{count:paths.size,compressedSha256:sha(gz),uncompressedSha256:sha(data),archive:'reviewed-sources.json.gz'}};
+for(const p of ['census.json','manifest.json','collector-control.json','shadow-ownership.json','base-wrapper-audit.md','base-wrapper-inventory.json','date-dom-audit.md','method-review.md','verification.json'])receipt.files[p]=sha(await readFile(resolve(out,p)));
+await writeFile(resolve(out,'evidence-receipt.json'),json(receipt));console.log('Archived',paths.size,'source files;',gz.length,'bytes');

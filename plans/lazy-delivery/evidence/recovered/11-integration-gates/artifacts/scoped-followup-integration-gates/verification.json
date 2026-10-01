@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 1,
+  "status": "tooling-complete-integration-non-green",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "baseTree": "6f0cd79db801f483dd40b51885742580c951b8a0",
+  "phase6Seal": "220d2dd3e4f55c6f2557d7e7fc593d5d16099bba",
+  "remoteConfigured": false,
+  "branch": "codex/scoped-integration-gates",
+  "implementationCommit": "c9721f5b85bf621093dfc2569512e5ae5437b585",
+  "browserQualificationCommit": "20dfcee90f7c5b6aecdd02848f5774e8660ff381",
+  "browserQualificationTree": "ae0431da6a5c664b33f8b459ffbb2672b5b202eb",
+  "browserQualificationExitCode": 1,
+  "browserStats": [
+    {
+      "stage": "parts",
+      "startTime": "2026-09-24T12:01:34.819Z",
+      "duration": 105627.166,
+      "expected": 288,
+      "skipped": 0,
+      "unexpected": 3,
+      "flaky": 0
+    },
+    {
+      "stage": "geometry",
+      "startTime": "2026-09-24T12:03:20.865Z",
+      "duration": 15097.304,
+      "expected": 54,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "theme-cascade",
+      "startTime": "2026-09-24T12:03:36.472Z",
+      "duration": 11328.186,
+      "expected": 33,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "theme-states",
+      "startTime": "2026-09-24T12:03:48.188Z",
+      "duration": 11917.516,
+      "expected": 30,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "scope",
+      "startTime": "2026-09-24T12:04:09.720Z",
+      "duration": 24347.349,
+      "expected": 64,
+      "skipped": 11,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "context",
+      "startTime": "2026-09-24T12:04:34.382Z",
+      "duration": 24615.763,
+      "expected": 55,
+      "skipped": 2,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "lazy",
+      "startTime": "2026-09-24T12:05:04.488Z",
+      "duration": 34397.700999999994,
+      "expected": 69,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "activation",
+      "startTime": "2026-09-24T12:05:42.993Z",
+      "duration": 13125.689999999999,
+      "expected": 48,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "activation-library",
+      "startTime": "2026-09-24T12:05:56.671Z",
+      "duration": 5140.917,
+      "expected": 9,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    {
+      "stage": "hydration",
+      "startTime": "2026-09-24T12:06:03.557Z",
+      "duration": 15435.71,
+      "expected": 44,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    }
+  ],
+  "browserTotals": {
+    "expected": 694,
+    "skipped": 14,
+    "unexpected": 3,
+    "flaky": 0
+  },
+  "nodeChecks": {
+    "orchestration": 14,
+    "ssrAndRegistration": 76,
+    "lazyLoader": 6,
+    "registryTypeConsumers": "passed"
+  },
+  "evidence": {
+    "qualification": "qualification/receipt.json",
+    "originalQualification": "qualification/receipt.original.json",
+    "supplements": "supplements.json",
+    "diagnosis": "parts-diagnosis.json",
+    "reproduction": "repro-remote-free/receipt.json",
+    "initialReproduction": "repro-initial/receipt.json",
+    "frozen": "initial-seal-check/frozen/frozen.json"
+  },
+  "sourceAndBuildBinding": "supplements.json verifies all built asset hashes from qualification unchanged at final catalog/test supplement",
+  "frozen": {
+    "archives": 15,
+    "files": 30604,
+    "sealVerification": "passed",
+    "changesFromBase": []
+  },
+  "limits": [
+    "Full final-commit integration selection was not claimed or run: proportional changed-tooling checks are recorded by stage.",
+    "Parts: range-decoration missing from rich-text-editor fixture in three engines remains an unresolved integration gate; raw failures and traces retained.",
+    "No product runtime changes or performance campaign. No pooling, budget changes, freeze regeneration or external migration.",
+    "No assistive-technology, physical-device, real IME/autofill/native-dialog review was performed or reopened.",
+    "Task 10 commits remain unmerged; task 9 diagnostics coordination contract is documented for future activation."
+  ],
+  "nextAction": "Family/API owner should cover range-decoration with a meaningful public-API state, then rerun Parts. Invoke complete exact-commit integration when qualifying a release; do not interpret this tooling delivery as a green release."
+}

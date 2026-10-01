@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark"><title>en-reve · Theme authoring</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles/tokens.css"><link rel="stylesheet" href="/src/site.css">
+  <style>
+    @layer en.docs {
+      main { max-inline-size:78rem; }
+      .authoring-heading { padding-block:2rem 3rem; max-inline-size:52rem; }
+      .eyebrow { font:600 .75rem var(--en-font-code-family); letter-spacing:.1em; color:var(--en-color-text-muted); margin-block-end:1rem; }
+      h1 { font-size:clamp(2rem,5vw,3.75rem); line-height:1.1; letter-spacing:-.04em; }
+      .lede { margin-block-start:1.25rem; max-inline-size:65ch; line-height:1.65; }
+      .lab { padding-block:2rem; border-block-start:1px solid var(--en-color-line); }
+      .lab > p { max-inline-size:78ch; margin-block:1rem; line-height:1.6; }
+      .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5rem; margin-block:1.5rem; }
+      .specimen { padding:1.5rem; border:1px solid var(--en-color-line); border-radius:1rem; background:var(--en-color-surface); min-inline-size:0; }
+      .specimen > h3 { margin-block-end:.5rem; }
+      .specimen > p { color:var(--en-color-text-muted); line-height:1.5; margin-block-end:1.5rem; }
+      .sample { padding:1rem; border-radius:.5rem; background:var(--en-color-canvas); display:grid; gap:1rem; }
+      en-text-field,en-card { display:block; } en-button { justify-self:start; }
+      .toolbar { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; margin-block:1rem; }
+      .toolbar label { min-inline-size:0; max-inline-size:100%; display:flex; align-items:center; flex-wrap:wrap; gap:.7rem; }
+      select,button,.file-label { min-block-size:2.75rem; padding:.5rem .8rem; border:1px solid var(--en-color-boundary); border-radius:.5rem; background:var(--en-color-surface); color:var(--en-color-text); font:inherit; }
+      button { cursor:pointer; } select { min-inline-size:0; max-inline-size:100%; } #shadow-choice { inline-size:min(100%,32rem); }
+      .file-label { position:relative; cursor:pointer; } .file-label input { position:absolute; inset:0; opacity:0; inline-size:100%; cursor:pointer; }
+      .file-label:focus-within { outline:2px solid var(--en-color-focus); outline-offset:3px; }
+      output,.status { display:block; margin-block:1rem; line-height:1.6; overflow-wrap:anywhere; }
+      .readout { font:.85rem/1.6 var(--en-font-code-family); }
+      pre { overflow:auto; padding:1rem; background:var(--en-color-canvas); border-radius:.5rem; max-inline-size:100%; }
+      details { margin-block:1rem; } summary { cursor:pointer; }
+      table { inline-size:100%; border-collapse:collapse; font-size:.9rem; } th,td { padding:1rem; text-align:start; vertical-align:top; border-block-end:1px solid var(--en-color-line); line-height:1.5; }
+      .table-scroll { overflow:auto; }
+      #rich en-card::part(base) { box-shadow:var(--en-shadow-overlay); font-family:var(--en-font-ui-family); font-weight:var(--en-font-ui-weight); }
+      #css-art en-card::part(base) { background:linear-gradient(120deg,var(--en-color-surface),var(--en-color-selected)); border-radius:1.5rem .25rem; }
+      .site-header nav { display:flex; flex-wrap:wrap; gap:1rem; }
+      @media(max-width:48rem) { .grid { grid-template-columns:minmax(0,1fr); } .specimen { padding:1rem; } th,td { padding:.7rem; } }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header"><a class="wordmark" href="/" data-preserve-report><span class="mark" aria-hidden="true">en</span> en-reve</a><nav aria-label="Documentation"><a href="/theme-review.html" data-preserve-report>Theme Review</a><a href="/reviews/theme-customization?progress-report#THEME-05">Decision register</a></nav></header>
+  <main>
+    <div class="authoring-heading"><p class="eyebrow">THEME-05 · IMPLEMENTATION REVIEW</p><h1>Choose how you author.</h1><p class="lede">Managed choices, typed code, and ordinary CSS each have a clear role. Use the editor for shared controls, seed richer values in code, and keep CSS and Parts for expressive details.</p></div>
+    <section class="lab" aria-labelledby="geometry-title">
+      <h2 id="geometry-title">The same corners, two authoring routes</h2>
+      <p>Shared controls use a 12px radius; a button refinement stays at 8px. The left specimen uses existing CSS hooks. The right uses the new managed token. Restore releases the shared hook to its size-aware fallback.</p>
+      <div class="toolbar"><label>Shared radius <select id="shared-radius" aria-label="Shared radius"><option value="0">0px</option><option value="8">8px</option><option value="12" selected>12px</option><option value="24">24px</option></select></label><button id="apply-radius" type="button">Apply radius</button><button id="restore-radius" type="button">Restore shared radius</button><label>Appearance <select id="appearance" aria-label="Appearance"><option value="light">Light</option><option value="dark">Dark</option></select></label></div>
+      <div class="grid">
+        <article class="specimen"><h3>Before · CSS authoring</h3><p>The shared hook works in CSS, independently of editor support.</p><div class="sample" id="css-sample"><en-text-field label="Project name" value="Studio"></en-text-field><en-button>Save project</en-button></div><output id="css-readout" class="readout"></output></article>
+        <article class="specimen"><h3>After · Managed token</h3><p>The same hook is available in typed themes, editor choices, and review files.</p><div class="sample" id="managed-sample"><en-text-field label="Project name" value="Studio"></en-text-field><en-button>Save project</en-button></div><output id="managed-readout" class="readout"></output></article>
+      </div>
+      <p class="status" id="geometry-status" role="status"></p>
+      <details><summary>Compare the emitted code</summary><div class="grid"><pre id="css-source"></pre><pre id="managed-source"></pre></div></details>
+    </section>
+    <section class="lab" aria-labelledby="rich-title">
+      <h2 id="rich-title">A custom baseline remains editable</h2><p>This code-authored baseline uses a Georgia font stack, a weight of 450, and a two-layer shadow. The compiler already supports them. The menu offers shadows present in the baseline; it does not restrict what typed code can author.</p>
+      <div class="toolbar"><label>Baseline shadow <select id="shadow-choice" aria-label="Baseline shadow"></select></label><button id="apply-shadow" type="button">Apply shadow</button><button id="reset-baseline" type="button">Reset baseline</button><button id="export-draft" type="button">Export authoring draft</button><label class="file-label">Reopen authoring draft<input id="reopen-draft" type="file" accept=".json,application/json" aria-label="Reopen authoring draft"></label></div>
+      <div class="grid"><article class="specimen" id="rich"><h3>Typed font and shadow</h3><p>The card Part applies the semantic shadow. No new card-shadow hook is introduced.</p><en-card><span slot="header">A little more character.</span>Keep a deliberate font stack and layered elevation while editing supported theme controls.</en-card><output id="rich-readout" class="readout"></output></article><article class="specimen" id="css-art"><h3>CSS and Parts</h3><p>Gradients and asymmetric corners remain ordinary CSS. This separate stylesheet is not included in the typed draft export.</p><en-card><span slot="header">Room for expression.</span>A local Part treatment can complement a portable typed theme.</en-card><details><summary>CSS treatment</summary><pre>en-card::part(base) {
+  background: linear-gradient(120deg,
+    var(--en-color-surface), var(--en-color-selected));
+  border-radius: 1.5rem .25rem;
+}</pre></details></article></div>
+      <p id="draft-status" class="status" role="status">Export and reopen here to verify the typed baseline and edits. This is a token review draft, not the documentation app’s build-bound candidate wrapper.</p>
+      <details><summary>Code-authored baseline and review workflow</summary><pre id="baseline-source"></pre></details>
+    </section>
+    <section class="lab" aria-labelledby="capability-title"><h2 id="capability-title">Three supported surfaces</h2><div class="table-scroll" tabindex="0" role="region" aria-label="Authoring capabilities"><table><thead><tr><th scope="col">Capability</th><th scope="col">Typed code</th><th scope="col">Managed editor</th><th scope="col">CSS / Parts</th></tr></thead><tbody>
+      <tr><th scope="row">Geometry</th><td>Numeric px or rem</td><td>Curated dimensions and compatible aliases</td><td>Responsive expressions and multi-value corners where the consumer supports them</td></tr>
+      <tr><th scope="row">Typography</th><td>Custom family stacks and weights 1–1000</td><td>Baseline family choices and curated weights; exact existing values are preserved</td><td>Font features and local treatments; applications load fonts</td></tr>
+      <tr><th scope="row">Elevation</th><td>Structured multi-layer and inset shadows</td><td>Shadows seeded in the baseline</td><td>Additional material effects and family Parts</td></tr>
+      <tr><th scope="row">Color</th><td>sRGB and alpha</td><td>sRGB; opacity only on designated controls</td><td>Wider CSS colors on compatible hooks, subject to browser and registration policy</td></tr>
+    </tbody></table></div><p>Display-P3 is not a typed theme format. A wide-gamut color picker does not change the compiler schema, derived colors, or serialization. No arbitrary CSS strings are accepted as typed colors or dimensions.</p><p><a href="/reviews/theme-customization/theme-05-authoring.md">Authoring guide and promoted hooks</a></p></section>
+  </main>
+  <footer class="site-footer">en-reve · Real components and the installed token compiler<a id="progress-return" class="progress-return" href="http://127.0.0.1:4177" hidden>Progress Report</a></footer>
+  <script type="module" src="/src/theme-authoring-demo.ts"></script>
+</body>
+</html>

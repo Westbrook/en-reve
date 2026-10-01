@@ -1,0 +1,163 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "at": "2026-09-24T11:58:24.778211+00:00",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "baseSelection": "latest local main at task start; no fetch or candidate substitution",
+  "phase6Seal": "220d2dd3e4f55c6f2557d7e7fc593d5d16099bba",
+  "phase6AncestorVerified": true,
+  "sourceCommit": "c09fb022b5a7f9484a7edfce549f2fbe54bbcb46",
+  "branch": "codex/scoped-consumer-contracts",
+  "workspace": "/Users/westbrook/.codex/worktrees/scoped-consumer-contracts/design-system",
+  "scope": "Current central docs, executable examples and focused conformance tests only; no library runtime promotion",
+  "build": "Full npm run build passed; compiled library runtime equals exact base sources",
+  "checks": {
+    "packedPublicDeclarations": "passed; strict TypeScript compilation of all recipes and API negative cases",
+    "productionGraph": "passed; selective static startup closures, emitted hard dependencies, no eager/catalog/barrel/unselected family, packed-only @en-reve paths",
+    "metadata": "CEM freshness, types, API, lazy and customization checks passed",
+    "nodeTests": {
+      "passed": 9,
+      "failed": 0
+    },
+    "browser": {
+      "startTime": "2026-09-24T11:56:32.254Z",
+      "duration": 14565.06,
+      "expected": 38,
+      "skipped": 1,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "testedEngines": {
+      "chromium": "chromium 153.0.8010.12; automated desktop, not retail Safari or physical-device review",
+      "firefox": "firefox 155.0; automated desktop, not retail Safari or physical-device review",
+      "webkit": "webkit 26.6; automated desktop, not retail Safari or physical-device review"
+    },
+    "registryModes": {
+      "chromium": {
+        "auto": "scoped",
+        "explicitGlobal": "global"
+      },
+      "firefox": {
+        "auto": "global",
+        "explicitGlobal": "global"
+      },
+      "webkit": {
+        "auto": "scoped",
+        "explicitGlobal": "global"
+      }
+    },
+    "requestIsolation": "two packed requests with distinct snapshots and untouched calling registry",
+    "outputOverride": "EN_CONSUMER_CONTRACTS_OUT exercised with absolute qualification output"
+  },
+  "environment": {
+    "platform": "macOS-26.6.1-arm64-arm-64bit-Mach-O",
+    "node": "v24.16.0",
+    "playwright": "1.63.0",
+    "browserCache": "default installed Playwright cache; no temporary path override",
+    "cacheRegime": "fresh Playwright context per case; server no-store; functional assertions only"
+  },
+  "frozenPreservation": {
+    "baselineTree": "41a6a5ef623e37e6a5a328bd57075a139ffa6d93",
+    "reviewSnapshotsTree": "2aa316abbc4351647c124f07d22500ee27e9f3f0",
+    "diffAgainstBase": "no changes to either directory or library runtime source"
+  },
+  "sourceFiles": [
+    {
+      "path": "packages/elements/SCOPED-REGISTRIES.md",
+      "sha256": "ff4d7086468ee82c1e101bc4fca0dc42fd2d8178851ca04fb82a217d35311466"
+    },
+    {
+      "path": "packages/ssr/README.md",
+      "sha256": "46b415cc5aea64de66726a1da633191bee0ebf4a93f6ce9df5f9956507467a3e"
+    },
+    {
+      "path": "plans/scoped-followup-consumer-contracts.md",
+      "sha256": "8bf1b28888b69990d847e526fc92b30aa7179ab4fc4311a232490f9ba4d8fd36"
+    },
+    {
+      "path": "probes/consumer-contracts/README.md",
+      "sha256": "0effc50fad52a189bd6097ae203aa4b0a1545d058fe44e616c5f207031ded373"
+    },
+    {
+      "path": "probes/consumer-contracts/contracts.spec.ts",
+      "sha256": "86fd8222a57032dcb29e31d0021b956fc70b8ed05c37b25b30e54334989e90a7"
+    },
+    {
+      "path": "probes/consumer-contracts/entry.ts",
+      "sha256": "bea13b1292fecb6fbd250ef7629b82601a75cf63a686bd1a3fd21de44a188bc1"
+    },
+    {
+      "path": "probes/consumer-contracts/playwright.config.ts",
+      "sha256": "ff2489bffdbb4664a6152301233b8475dfcee0b4d63ebbceb7db768c18080deb"
+    },
+    {
+      "path": "probes/consumer-contracts/prepare.mjs",
+      "sha256": "f9c978714de60d18a724d2f225946de98da7b42b65def962a877546585e33f16"
+    },
+    {
+      "path": "probes/consumer-contracts/public.types.ts",
+      "sha256": "53556ff0044e6207c9f74676b7ca8d4afcf70439087c3703afa54108507bc611"
+    },
+    {
+      "path": "probes/consumer-contracts/recipes.ts",
+      "sha256": "2b22669c7eae1c9443b92d5708624f373cf544cc2b5530016958630a1ca3fbfc"
+    },
+    {
+      "path": "probes/consumer-contracts/server.mjs",
+      "sha256": "9de92e3675ff9d0ef2c3b9424465ded3d28baa2fff4e6ba0a1e462c08b393093"
+    },
+    {
+      "path": "probes/consumer-contracts/ssr-entry.ts",
+      "sha256": "d93ba7f8697dac12b3f28e4d3b87fe2fdf809e2e62d3368ae4c05037d6236eda"
+    },
+    {
+      "path": "probes/consumer-contracts/ssr-module.ts",
+      "sha256": "199149c94c02519de19f35c759ed50d1e8f0077422e7d8b91a54286f2dac8d80"
+    }
+  ],
+  "finalEvidence": [
+    "qualification/packed.json",
+    "qualification/metafile.json",
+    "qualification/browser.json",
+    "qualification/site",
+    "build.log",
+    "node-tests.log",
+    "check-metadata.log",
+    "check-types.log",
+    "check-api.log",
+    "check-lazy.log",
+    "check-customization.log"
+  ],
+  "rejectedAttempts": [
+    {
+      "path": "prepare-initial-failure.log",
+      "cause": "lit barrel evaluated LitElement at startup; recipe corrected to lit-html"
+    },
+    {
+      "path": "browser-missing-executables.log",
+      "cause": "historical temporary cache directories lacked executables; all 33 cases could not launch"
+    },
+    {
+      "path": "browser-pointer-focus-failure.log",
+      "cause": "one native pointer-click focus assumption failed in WebKit; keyboard focus intent now explicit"
+    },
+    {
+      "note": "Raw failure logs and traces preserved; early JSON summaries were overwritten before fixing reporter path and are not claimed recovered"
+    }
+  ],
+  "limits": [
+    "Automated WebKit 26.6 is not retail Safari qualification",
+    "No new screen-reader speech, physical device/touch, real IME, autofill, or actual history/BFCache acceptance",
+    "Synthetic persisted pagehide only verifies retained versus terminal lifetime branch",
+    "No performance/retention or browser cache-recovery claim",
+    "Prior accepted Phase 5/6 manual behavior unchanged; no review reopened",
+    "No merge, publish, deploy, external issue or family API adoption"
+  ],
+  "primarySourcesChecked": "2026-09-24",
+  "primarySources": [
+    "https://html.spec.whatwg.org/multipage/custom-elements.html#scoped-custom-element-registries",
+    "https://raw.githubusercontent.com/lit/lit/main/packages/lit-html/src/lit-html.ts",
+    "https://developer.chrome.com/blog/scoped-registries/",
+    "https://webkit.org/blog/17862/webkit-features-for-safari-26-4/"
+  ]
+}

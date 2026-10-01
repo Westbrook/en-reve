@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "sample": true,
+  "packageTrain": ["@en-reve/sample-only"],
+  "baseVersion": "0.1.0",
+  "baseArtifacts": { "sample": "sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" },
+  "candidateArtifacts": { "sample": "sha256:bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb" },
+  "changes": [{
+    "id": "sample-disabled-state",
+    "components": ["en-sample-control"],
+    "level": "feature",
+    "summary": "Add a disabled state to the synthetic control.",
+    "rationale": "Exercises an additive CEM comparison and draft release generation.",
+    "evidence": [{
+      "kind": "old-new-demo",
+      "label": "Sample old/new demo — not implemented",
+      "href": "sample://old-new-control",
+      "status": "not-run",
+      "reason": "This fixture demonstrates the release format; it does not supply real browser or review evidence."
+    }]
+  }]
+}

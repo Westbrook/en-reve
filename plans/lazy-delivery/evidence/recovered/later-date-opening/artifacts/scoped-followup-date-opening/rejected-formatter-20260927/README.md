@@ -1,0 +1,40 @@
+# Formatter trial rejected after complete cold analysis
+
+Do not promote the formatter runtime trial. Both predeclared necessary first-opening benefit conditions fail. This closes the bounded formatter proposal; the synchronization hypothesis remains unapplied. The full practical promotion gates were not evaluated. No causal mechanism for the observed slowdown is established.
+
+## Matched result
+
+The fixed source cohort is local-main base `37a4dbac332b5324afe07c61b1e701ced07bfe57` versus formatter-only `0a927d4ecd58e10c7f9500791397125a20c58021`; sealed Phase 6 `220d2dd3e4f55c6f2557d7e7fc593d5d16099bba` is an ancestor. This is the current-base cohort fixed at experiment creation, not today's advancing main and not a historical Phase 0–6 series.
+
+| Necessary cold check | Parent median ms | Candidate median ms | Change ms | Change % | Exploratory paired interval ms | Condition |
+| --- | ---: | ---: | ---: | ---: | --- | --- |
+| Primary: scoped Chromium, constrained keyboard, construction-only deferred | 34.70 | 54.20 | +19.50 | +56.20 | +17.05 to +21.05 | Upper interval below zero: false |
+| Corroborating: same configuration, cold optional | 227.15 | 247.35 | +20.20 | +8.89 | +16.85 to +23.35 | Lower candidate median: false |
+
+Every change column is candidate minus matched same-policy parent; positive means slower or more bytes, negative means lower cost. Both latency changes are below the unchanged **added 50 ms** constrained limit. Rejection is due to absent required benefit, not a breach of that limit.
+
+[Sortable complete results](results.html), [machine-readable analysis](analysis.json) and [all-cell CSV](cold-cells.csv) report all 2,160 accepted observations: 72 cells × 30 blocks, zero failures/replacements, 1,008 metric rows and 384 matched comparisons. All 144 evaluated cold latency/delivery checks are within their unchanged limits, and all 24 deferred-policy benefit rows pass. These partial results do not establish full practical qualification. Each comparison uses the frozen 3,000 paired-block bootstrap resamples and seed 62026; intervals are exploratory, unadjusted, with no p95. Optional missing/not-applicable fields retain the sealed analyzer's semantics and are not failed attempts.
+
+Warm 720 and repeated-retention 60 are **not run**. Those lanes cannot repair failed necessary cold benefit conditions, so the coordinating owner agreed they are unnecessary for rejection. Qualification's 108 excluded observations, including brief warm/retention prerequisites, do not substitute for either campaign. Historical failures remain failed and excluded. No new timing campaign was run for this documentation conclusion.
+
+## Delivery and first-opening work
+
+Exact cold-arm gzip6 assets reproduce base initial shell 50,678 B (23,833 B entry +26,845 B shared) and 5,898 B optional calendar closure; all emitted 56,576 B. Candidate initial/all emitted are 50,695/56,593 B, adding 17 B. Construction-only initial is 55,792→55,807 B (+15 B); eager 55,784→55,800 B (+16 B). Eager/construction-only each emit an unused 84 B wrapper outside their initial closure. These deterministic per-file gzip/static-closure totals are separate from observed encoded-body bytes, transferSize and requests shown in the cell overview and raw Resource Timing entries. They are not inferred network savings.
+
+The shell retains date-picker/dialog, native forms/editing, buttons/icons and style/token/reactive dependencies. Optional bytes contain the calendar implementation/style and small value/definition dependencies. Raw module attribution is explanatory and cannot be summed into gzip savings. The 48 separately instrumented diagnostics preserve registration, construction/update, dialog/focus marks and Chromium style/layout traces in `../summary-diagnostics/`; they are not pooled into timing statistics. Deferred opening retains three calendar renders while formatter constructions fall from 19 to 11; eager retains one render while construction count falls from four to two. A lower constructor count did not satisfy the required latency benefit.
+
+The second opportunity was an unapplied synchronization patch (`9267fa81b6997f77039d69149518f3649fa8633aba089affeda691bd41a6d2ab`). Naive unconditional deletion was rejected because `dialog.show()` emits no change when already open; that branch still requires explicit synchronization. No browser qualification or performance claim exists for the patch. No third trial, minifier change, shortened accessibility labels, weekday-only-header experiment, browser-specific focus delay, storage-policy, range or framework rewrite was introduced.
+
+## Evidence and exact boundaries
+
+- [Accepted cold archive and independent admissibility review](../measurement-active-desktop-v6-evidence/cold-01/README.md): actual host session 4823, chunk c3ab8b, exit 0 and normal four-resource return; 54 raw execution files preserved in the verified 98,816,453-byte archive. Archive bytes are evidence storage, not production delivery.
+- [V6 excluded qualification](../measurement-active-desktop-v6-evidence/qualification-01/README.md): 108 ordered excluded observations and exact source/asset/tool/browser pins. Native Chromium/WebKit and actual Firefox global fallback are recorded.
+- [Packed product correctness](../qualification-launch/formatter-v2-01/README.md): 24 stages; paired states, first/repeat/already-open behavior, native editing/form transactions, range defaults, locale/date/header semantics, loading/failure/retry/cancellation, re-enable, two-instance/owner containment and SSR identity on exact packages. These are automated DOM/focus checks, not actual assistive-technology or physical-device review. No accepted Phase 0–6 manual result was reopened or reinterpreted.
+- [Independent full numerical/static HTML review](independent-full-review.json) reproduces every completed cell and comparison; [primary review](independent-primary-review.json) separately reproduces the predeclared decision. Neither review opened a browser. Live sorting/filtering, rendered layout and keyboard interaction for this new report were not freshly checked; its bundled controller equals the frozen verified template. Six sortable en-table sections and direction metadata were checked in source.
+- Complete V1/V5 failed outer attempts, original paired-state failure, controls and administrative recovery stay in their own immutable sibling archives. No failed run becomes passing through this analysis. The accepted active-desktop run does not establish strict machine isolation or observe any V6 process-generation retirement/rebinding branch; those branches have synthetic coverage only.
+
+The report generator verifies the sealed samples/jobs/assets, protocol/bindings and original analyzer/template hashes. It reuses their exact numerical functions and cold loops while omitting missing-lane retention/final promotion expressions; no synthetic missing-lane results are inserted. Original sources are untouched. Preserved paths inside receipts identify their actual execution locations.
+
+To regenerate the offline report, extract the accepted cold archive into a fresh directory, identify its `measurement/` directory, and invoke `python3 -I -S -B cold-report.py --root <checkout-containing-the-preserved-artifacts> --cold <measurement-directory> --out <new-output-directory>`. Required frozen source dependencies are `../measurement-prep/{manifest.json,analyze.py,integrity.py}`, `../measurement-protocol/{manifest.json,protocol.json,bindings.json}`, and `../qualification-launch/formatter-v2-01/{manifest.json,results.html}`. Output embeds the generator's identical bytes as its hash. No browser or build is needed. Historical wrappers additionally require external pinned runtimes/dependencies and the fixed Git cohort; an artifact-only main landing is not a promise that those historical execution wrappers run unchanged on current main.
+
+No runtime promotion, current-main compatibility claim, merge, publishing or deployment is part of this closeout. Integration is an exact artifact/document handoff to the coordinating owner; the branch's experimental product file is excluded.

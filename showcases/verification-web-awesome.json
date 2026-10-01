@@ -1,0 +1,154 @@
+{
+  "verifiedAt": "2026-09-21T17:59:09.246Z",
+  "browser": "Chromium 153.0.8010.12",
+  "node": "v24.16.0",
+  "platform": "darwin",
+  "rendering": "client",
+  "scope": "Functional qualification and desktop visual review; not performance profiling or accessibility certification",
+  "checksPassed": 23,
+  "projects": [
+    {
+      "name": "web-awesome",
+      "url": "http://127.0.0.1:4518",
+      "sourceSha256": "6506efbdf150c47f26b8486d75b7f58a63c6f1b0d6cc0d98e7eb0dd2bdd24a26",
+      "sourceHashes": {
+        "web-awesome/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "web-awesome/index.html": "a587b3f098e2b993dd611e382c786e02f48be99c3b65c01de04f9055e7b26553",
+        "web-awesome/package-lock.json": "22ed89679d56105b8a5124ed27b982c843a608ef3b881c903aa33cd6b9116e28",
+        "web-awesome/package.json": "42a43d8408313fba401c51a308a398b780178c44cd5d781078863805b5baec6c",
+        "web-awesome/README.md": "26bbf63fa08bbbffb01d948a0b528337a91c83675ca120fc57fd7029c8d8edfe",
+        "web-awesome/src/main.js": "46942cee643f2440daec4b8aedd93ab83cfc237c06a60d6267f49cae577a6987",
+        "web-awesome/src/style.css": "1082ce06058970cbffc901dcdfc79c69bf21f74623464a680728238fb094ff15",
+        "web-awesome/src/ui.js": "447c86d29f839b2206a77c9f8011eba2e152bdffca194b0db14f78bdda693d81",
+        "web-awesome/vite.config.js": "a220af1aa272eb175c021c96704dc8dfdac12d317b51ba2bf8c35fcf7b6f75d5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-web-awesome",
+        "dependencies": {
+          "@awesome.me/webawesome": "3.13.0"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "22ed89679d56105b8a5124ed27b982c843a608ef3b881c903aa33cd6b9116e28",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "outputHashes": {
+        "web-awesome/dist/assets/index-BG3Zw-nj.js": "cfbb769a0ca258a312711011f6f7a97980b7a4e1515dbbbb252fa9b340dd8c68",
+        "web-awesome/dist/assets/index-BG3Zw-nj.js.map": "2ee9c765465022fd6726cea35a08267ba86e2347b347ee169d97b4d414c1f92c",
+        "web-awesome/dist/assets/index-D7icV0LY.css": "c84822efd68d8d4ac65c0e31e3aede38acd7f6ae5d340b258b1a99d371311e8a",
+        "web-awesome/dist/build-metadata.json": "8d175c9e4be63483ac9a8b2ffa0c86229ecbec60f010b030c72b34e163659d0b",
+        "web-awesome/dist/index.html": "5e6c34e3187bad9a437cfb11787e781c17264a41653af0defe03173b1023a621"
+      },
+      "checks": [
+        {
+          "name": "sixteen cards; no docs/theme controls",
+          "pass": true
+        },
+        {
+          "name": "native brief activation on first viewport exposure and tab return",
+          "pass": true
+        },
+        {
+          "name": "canvas changes artwork",
+          "pass": true
+        },
+        {
+          "name": "create dialog",
+          "pass": true
+        },
+        {
+          "name": "preview dialog",
+          "pass": true
+        },
+        {
+          "name": "commands dialog",
+          "pass": true
+        },
+        {
+          "name": "native action menu",
+          "pass": true
+        },
+        {
+          "name": "brief tabs",
+          "pass": true
+        },
+        {
+          "name": "checklist enables approval",
+          "pass": true
+        },
+        {
+          "name": "project creation",
+          "pass": true
+        },
+        {
+          "name": "output slider updates art",
+          "pass": true
+        },
+        {
+          "name": "export overlay",
+          "pass": true
+        },
+        {
+          "name": "review submission",
+          "pass": true
+        },
+        {
+          "name": "notification save",
+          "pass": true
+        },
+        {
+          "name": "chat response",
+          "pass": true
+        },
+        {
+          "name": "empty collection and reset",
+          "pass": true
+        },
+        {
+          "name": "reset preserves another card",
+          "pass": true
+        },
+        {
+          "name": "390px reflow",
+          "pass": true
+        },
+        {
+          "name": "progress return only when flagged",
+          "pass": true
+        },
+        {
+          "name": "activity period updates data",
+          "pass": true
+        },
+        {
+          "name": "teammate invitation",
+          "pass": true
+        },
+        {
+          "name": "study popover",
+          "pass": true
+        },
+        {
+          "name": "tablet two columns",
+          "pass": true
+        }
+      ],
+      "vendorLimitations": [
+        "Web Awesome 3.13.0 renders the public dialog/drawer label as a heading but does not give the internal native dialog an accessible name. Qualification identifies the public host label, visible heading and native dialog; it does not repair vendor internals or certify accessible naming."
+      ],
+      "consoleErrors": [],
+      "desktopOverflow": false,
+      "screenshot": "/Users/westbrook/Documents/repos/design-system/showcases/artifacts/web-awesome-final/web-awesome.png"
+    }
+  ]
+}

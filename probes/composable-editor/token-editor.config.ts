@@ -1,0 +1,4 @@
+import { pipelineOutput } from '../../tooling/test-pipeline/config-output.mjs';
+import {defineConfig} from '@playwright/test';
+export default defineConfig({
+  forbidOnly: true,testDir:'.',testMatch:'token-editor.spec.ts',workers:3,outputDir:'/private/tmp/en-token-editor-tests/artifacts',reporter:[['list'],['json',{outputFile:'/private/tmp/en-token-editor-tests/playwright.json'}]],use:{baseURL:'http://127.0.0.1:4497',trace:'retain-on-failure'},projects:[{name:'chromium',use:{browserName:'chromium'}},{name:'firefox',use:{browserName:'firefox'}},{name:'webkit',use:{browserName:'webkit'}}],webServer:{command:'node probes/composable-editor/server.mjs',cwd:new URL('../..',import.meta.url).pathname,url:'http://127.0.0.1:4497/probes/composable-editor/token-editor.html',reuseExistingServer: process.env.EN_EXECUTION_OWN_SERVERS !== '1'}}, pipelineOutput(import.meta.url));

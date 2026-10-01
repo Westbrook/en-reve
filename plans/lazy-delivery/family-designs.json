@@ -1,0 +1,1540 @@
+{
+  "schemaVersion": 1,
+  "sourceCommit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+  "status": "stage-a-predeclared-designs-not-runtime-qualification",
+  "commonPolicy": {
+    "property": "contentRendering",
+    "attribute": "content-rendering",
+    "values": [
+      "eager",
+      "on-demand"
+    ],
+    "default": "eager",
+    "timing": "Set before first update.",
+    "cost": "Construction only; current static definition dependencies remain eager.",
+    "retention": "Retain after first accepted settled opening; no eviction."
+  },
+  "designs": {
+    "media-design": {
+      "schemaVersion": 1,
+      "audit": "media-viewer-generated-body-source-design",
+      "checkout": "/Users/westbrook/.codex/worktrees/scoped-main-closeout/design-system",
+      "sourceCommit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "performed": [
+        "source reads",
+        "source hashing",
+        "design and proposed numeric gates"
+      ],
+      "notPerformed": [
+        "runtime edits",
+        "builds",
+        "tests",
+        "browser runs",
+        "timing",
+        "retention",
+        "commits"
+      ],
+      "status": "design proposal for parent selection; not a final promoted disposition",
+      "candidate": {
+        "tag": "en-media-viewer",
+        "boundary": "Generated carousel, slides, images and image-view tools until first render observing settled accepted open",
+        "mechanism": "construction-only",
+        "publicOptIn": "contentRendering: 'eager' | 'on-demand'; attribute content-rendering; author before first update; same constructor, eager default",
+        "default": "eager",
+        "retainAfterFirstUse": true,
+        "uniqueOptionalCodeClaim": false,
+        "tagLoading": "Already supported by packages/elements/src/lazy-manifest.ts:5",
+        "provisionalDisposition": "eligible generated-body candidate requiring deterministic, functional, matched timing and retention gates; do not label implemented"
+      },
+      "realConsumers": [
+        {
+          "route": "/component-patterns.html#media",
+          "source": "apps/docs/src/component-patterns.ts:24-25,37",
+          "entry": "apps/docs/component-patterns.html:3",
+          "workload": "Exactly two data-URI SVG images, already displayed as preview images; click writes activeKey then calls synchronous show().",
+          "registration": "Eager registerAll() at component-patterns.ts:2,15",
+          "limits": [
+            "Only real non-test authored media-viewer consumer found by source search in apps/packages/probes/tooling/showcases excluding historical baselines and artifacts.",
+            "All media sources are already previewed on this route: no distinct image-request saving is available.",
+            "Whole catalog registration means construction-only deferral cannot save unique startup component modules on this route.",
+            "Usage probability is unknown. Do not enlarge image count or invent repeated viewers to meet a gate."
+          ]
+        }
+      ],
+      "currentConstruction": {
+        "anchors": [
+          "packages/elements/src/media-viewer.ts:57-60",
+          "packages/elements/src/dialog/template.ts:27-48",
+          "packages/elements/src/carousel.ts:241-276,659-699",
+          "packages/elements/src/carousel-slide.ts:38-39"
+        ],
+        "facts": [
+          "Viewer builds its generated body whenever activeKey resolves an item, irrespective of open. Empty items alone select No media available.",
+          "Source-level direct generated element formula is 11 + 5*N for N nonempty items, before nested component shadow DOM; N=2 gives 21 direct elements. This is static accounting, not measured connected-node evidence.",
+          "Each media image has src immediately. The carousel also creates thumbnail img nodes after readiness and owns resize/mutation/motion/visibility listeners while connected.",
+          "Current repeat retains keyed slide DOM during rerenders; dialog close does not recreate it."
+        ],
+        "registrationClosure": [
+          "en-media-viewer",
+          "en-button",
+          "en-icon",
+          "en-carousel",
+          "en-tooltip",
+          "en-carousel-slide"
+        ],
+        "definitionAnchors": [
+          "packages/elements/src/definitions/media-viewer.ts:1-6",
+          "packages/elements/src/definitions/carousel.ts:1-13"
+        ]
+      },
+      "ownership": {
+        "semanticOpen": "EnDialog owns open, silent authoritative property writes, synchronous show/hide ChangeOutcome, cancelable staged dispatch, close reasons and native close reconciliation (dialog/dialog.ts:106-117,165-196,272-333).",
+        "focus": "EnDialog captures current/associated opener, changes native modality after accepted render, handles initial-focus only among authored light descendants, restores focus on close, and clears refs on disconnect (dialog/dialog.ts:88-97,214-237,272-303). Keep this shell and owner intact.",
+        "trigger": "External native/en-button lookup stays same Document/ShadowRoot; for= trigger ownership, eligibility and ARIA cleanup remain ModalTriggerController (dialog/trigger-controller.ts:18-66). Real gallery uses its explicit click handler instead.",
+        "mediaSelection": "Viewer owns activeKey, revision, zoom/pan/gesture. Author activeKey writes are silent, increment revision and reset view; media selection dispatches reversible staged stable keys and commits reset only if connected and key remains (media-viewer.ts:35-55).",
+        "lifecycle": "Viewer cancels gesture on disconnect (media-viewer.ts:56); carousel disconnect releases motion/visibility/observers/timers/RAF/context and reconnect guards deferred setup by connectionGeneration (carousel.ts:241-276). Retain constructed body across hide/reopen; do not add detached caches or per-instance registries.",
+        "registry": "Existing EnElement creates generated descendants through actual render-root ownership, respects null and existing DSD, and updates owner document after adoption (internal/en-element.ts:53-65,89-119). No new registration operation is necessary for construction-only deferral.",
+        "ssr": "One containing hydration owner; same initial delivery/open/items/activeKey snapshot and same branch server/client (packages/ssr/README.md:474-486). Initial-open must render full body; closed opt-in may omit body. Keep shell, label, description, close control, slots and native inertness. Do not pick first hydration branch from DOM scans, connection or browser capabilities."
+      },
+      "proposedMechanism": [
+        "Keep canonical class/definitions/dependency closure/eager imports untouched. Add contentRendering: 'eager' | 'on-demand' (content-rendering), default eager; author before the first update. This is a construction policy, not a definition profile/code boundary.",
+        "Always call dialogTemplate with the existing dialogView. Change only its generated body argument. Before activation pass an empty TemplateResult, not undefined (undefined restores authored default slot). No generic authored-content deferral.",
+        "Use a per-instance retained body-activated bit. Candidate media-local implementation wraps protected requestOpen in a synchronous depth counter and try/finally around super.requestOpen; willUpdate may latch only at depth zero with open true. This avoids a shared superclass API solely for one candidate. Alternative is a shared settled-open hook owned by Stage B. Define release as first rendering that observes settled accepted open: synchronous show(); hide() or open=true; open=false before render leaves unused body absent. This is intentionally narrower than any accepted transition permanently releasing construction.",
+        "Never gate or latch solely on this.open: it is deliberately tentative during en-change, and listeners may call performUpdate. Canceled/superseded open must leave a previously unused body absent. Do not duplicate dispatchChange or convert show/hide to Promise.",
+        "Initial open=true from author/SSR snapshot must render the body on the matching first render. Silent authoritative writes, nested transactions, same-value writes and removal/reconnect require explicit regressions before accepting the local-depth proposal.",
+        "Keep retained body after close so zoom/pan/current slide/native nodes and carousel ownership retain existing behavior. activeKey and items still update/reset according to existing methods before or after activation.",
+        "No optional-code preparation operation is needed here: existing tag load/ensure remain separate. A common code-only prepare must not activate body, open or focus any instance. Do not advertise a fake optional-code saving or mount siblings when one opens.",
+        "Readiness is separate from synchronous show outcome. For measurements, observe accepted native modality/focus plus selected decoded image and operative carousel/tools; do not delay and replay the initial native interaction or add late focus choreography.",
+        "A body constructed under eager policy must also count as activated; a later policy write cannot remove existing body. Freeze how unsupported late policy writes are handled through common API contract. Per-request SSR component instances start fresh; do not reuse previously opened server instances without carrying matching construction state."
+      ],
+      "requiredFunctionalCells": [
+        "Default eager produces same body before open; explicit on-open omits only generated body; no change to pure/eager import or registration graphs.",
+        "Canceled first show with synchronous performUpdate/update flush leaves body absent; canceled hide retains body/open; nested/superseding open/close and authoritative same-value writes obey dispatchChange.",
+        "show(); hide() and open=true; open=false in one turn before rendering leave the unused body absent; after actual body construction, closing or subsequent policy writes never remove it.",
+        "Programmatic show/hide retain synchronous ChangeOutcome; open property and initial open attribute are silent; preview click activeKey then show selects requested image; no contentless visible modal.",
+        "First opening before optional descendants finish their update has correct shell focus and correct final usable controls; no late focus theft; Escape/close-button/backdrop policy and for= focus return stay unchanged.",
+        "Media en-change cancellation and author writes preserve accepted key and view resets; item removal/replacement before first open and while open uses current model; empty items retain No media available behavior.",
+        "Zoom/pan/pointercancel and repeated close/open retain state/node identity exactly as eager reference; disconnected gestures cannot act later.",
+        "Remove before pending render/readiness, reconnect, adopt same-origin document, two viewers sharing a registry, nested ordinary/shadow scopes, null dormancy and actual unsupported-engine global fallback. Opening one viewer must not construct sibling bodies.",
+        "SSR initial eager closed, opt-in closed and opt-in open, same initial snapshot hydration identity, streamed containing owner, pre-hydration trigger policy; fresh items assigned after hydration. Existing description SSR fixture has no media items and cannot prove media body hydration.",
+        "Phone 390x844 and desktop, keyboard and pointer, LTR/RTL, light/dark; changed first-open behavior requires a ready one-at-a-time human AT review. Automated DOM focus alone does not certify speech."
+      ],
+      "existingEvidenceLimits": [
+        {
+          "source": "packages/elements/src/patterns/tests/advanced.spec.ts:16",
+          "covers": "eager gallery navigation, zoom/reset, native modal focus return",
+          "missing": "opt-in, canceled or reentrant open, nonempty SSR body, body absence and retention campaign"
+        },
+        {
+          "source": "packages/ssr/tests/fixtures/description-content-template.mjs:14,24-29",
+          "covers": "media viewer included in shared description contract",
+          "missing": "nonempty media items and candidate render branch"
+        },
+        {
+          "source": "probes/component-patterns/gallery.spec.ts:5-43,46-56",
+          "covers": "real route theme/axe/mobile overflow and report return link",
+          "missing": "first media opening/ready path and performance"
+        }
+      ],
+      "proposedBudgets": {
+        "status": "PROPOSED pre-runtime selection gates; parent must freeze or explicitly revise before any runtime edits or measurements. None are observed outcomes.",
+        "reference": "Fresh exact-lock accepted eager build; same two-image component workload and existing uninflated component-patterns route, exact source/build/runtime/browser/harness identities.",
+        "arms": [
+          "eager reference",
+          "construction-only on-open candidate",
+          "explicit code-only tag preparation + on-open candidate with recorded lead/unused traffic"
+        ],
+        "optionalColdCodeArm": "not applicable to this boundary: unchanged eager definition graph; report this explicitly rather than inventing a split",
+        "componentUnused": {
+          "generatedCarouselInstances": 0,
+          "generatedSlideInstances": 0,
+          "generatedMediaImageNodes": 0,
+          "imageViewToolNodes": 0,
+          "connectedElementReductionPercentMin": 75,
+          "connectedElementReductionAbsoluteMin": 50,
+          "description": "Compare full deep viewer connected elements after initial stable closed state. Count native/elements separately from comments/text and report all-node totals independently."
+        },
+        "routeBenefit": {
+          "deepConnectedElementReductionPercentMin": 5,
+          "deepConnectedElementReductionAbsoluteMin": 50,
+          "description": "Both necessary on unchanged /component-patterns.html at stable never-open state; component pass alone permits no route adoption claim. Bytes/requests must not increase except declared additive API overhead; no media request saving claimed for reused data-URI previews."
+        },
+        "deliveryOverhead": {
+          "incrementalPackedEntryGzipBytesMax": 512,
+          "startupP75RegressionMsMax": 8,
+          "startupP75RegressionThrottledMsMax": 25,
+          "initialUnexpectedRequestsMax": 0
+        },
+        "firstUse": {
+          "normalP75ReadyMsMax": 200,
+          "throttledP75ReadyMsMax": 500,
+          "normalP75AddedVsEagerMsMax": 16,
+          "throttledP75AddedVsEagerMsMax": 50,
+          "definition": "From actual pointer/keyboard activation to accepted native open, correct focus, current selected image decoded and carousel/tool controls usable. Both absolute and additive ceilings are necessary. Freeze the exact constrained CPU/network profile before run."
+        },
+        "repeatUse": {
+          "normalP75AddedVsEagerMsMax": 8,
+          "throttledP75AddedVsEagerMsMax": 25,
+          "recreatedGalleryNodesMax": 0
+        },
+        "retention": {
+          "freshContextRepetitionsPerArm": 5,
+          "cyclesPerRepetition": 100,
+          "compareCycles": [
+            10,
+            100
+          ],
+          "connectedNodeGrowthMax": 0,
+          "detachedNodeGrowthMax": 0,
+          "listenerGrowthMax": 0,
+          "postGcHeapGrowthPercentMax": 5,
+          "postGcHeapGrowthBytesMax": 524288,
+          "description": "Both heap ceilings necessary; preserve raw repetitions and all failures. Body retained after first use is expected; test cycle-10 baseline after activation, plus disposed-host collection separately."
+        },
+        "sampling": {
+          "successfulTimingSamplesPerConfigurationMin": 30,
+          "p95SamplesPerConfigurationMin": 100,
+          "retainFailedAndAborted": true,
+          "statistics": [
+            "n",
+            "median",
+            "p75",
+            "spread",
+            "uncertainty"
+          ],
+          "contention": "Serialize browser/performance resources through existing owner/lease protocol; retain invalid runs per predeclared rules. Do not selectively replace failing cells."
+        }
+      },
+      "selectionRecommendation": "Advance only this construction boundary after common API freeze and deterministic source/build verification. If component or real-route benefit gates fail, record evidence-backed rejected/no-change for that scope; preserve eager route and defaults. No source audit can claim delivered optimization.",
+      "sources": [
+        {
+          "path": "packages/elements/src/media-viewer.ts",
+          "sha256": "210a81d3678292bc3cfb0418b764a20c179744fe15658c9c96ac12261ca6811a"
+        },
+        {
+          "path": "packages/elements/src/dialog/dialog.ts",
+          "sha256": "25ec797a18d35809cd83e619e21fbbba047b8f6bb278d346d19dbdb14282079e"
+        },
+        {
+          "path": "packages/elements/src/dialog/template.ts",
+          "sha256": "d16d823625f4a40da57cb53982350d03e50749f1fcf54cfba0c896423ac86dd4"
+        },
+        {
+          "path": "packages/elements/src/dialog/trigger-controller.ts",
+          "sha256": "7887f20050af28a99f6aba8ae9f27f5e5ba3f32cd39d2ce2d4f0bfa8eee283c7"
+        },
+        {
+          "path": "packages/elements/src/carousel.ts",
+          "sha256": "adbb1960362efba2929c2eaf363409ecbf09cc1d69a2638b1cef9cc2263d2763"
+        },
+        {
+          "path": "packages/elements/src/carousel-slide.ts",
+          "sha256": "9981dd325c87a31f602c5ec259f211fc0e3f4453f24d55eb54314921437277ec"
+        },
+        {
+          "path": "packages/elements/src/definitions/media-viewer.ts",
+          "sha256": "b899e69a4c3b6413ba89ad878f26ede4849de4b2570e7d10530d3d1aa681561f"
+        },
+        {
+          "path": "packages/elements/src/definitions/carousel.ts",
+          "sha256": "1bbd50b67c9bf92d2ac0c952d2faea3ab5a2a3aee511a97cc1cb8007e261bb3f"
+        },
+        {
+          "path": "packages/elements/src/internal/en-element.ts",
+          "sha256": "3e31bed674143e3a53cb7584252b8f7a35d446c65a1360f696faa7fe4f3d73bd"
+        },
+        {
+          "path": "packages/primitives/src/interactions/events.ts",
+          "sha256": "0d4a8948ca160189c50b8349c8b34b27bd911c09f29bdf30369b15de41c866b9"
+        },
+        {
+          "path": "packages/ssr/README.md",
+          "sha256": "10e306d55fab7be975f162f7d7332a2aac052fc8d0e12cc00e9820ba8acfd726"
+        },
+        {
+          "path": "packages/ssr/tests/fixtures/description-content-template.mjs",
+          "sha256": "4aa074f8971d08bbf03e2f62e5150cd04419c99106ef462f3885f6ea1a1b591b"
+        },
+        {
+          "path": "packages/ssr/tests/browser/description-content.spec.ts",
+          "sha256": "89cc735ae05000fddfc07f79f59046cab8bd62a515a4c414a002ef6446b48221"
+        },
+        {
+          "path": "packages/elements/src/patterns/tests/advanced.spec.ts",
+          "sha256": "c9ffaa1f67fd1cc484042eaf0d53298a58311ee94a7c9ec8e70499b71cd2d515"
+        },
+        {
+          "path": "apps/docs/src/component-patterns.ts",
+          "sha256": "04c0dbfd1464cd663c996337029b549fa8193d6a6d36a69807c42bc95871411c"
+        },
+        {
+          "path": "apps/docs/component-patterns.html",
+          "sha256": "9c3ce733751fc524ef56dfd09bb576905ce74d4b4329aefbc91e081d7719d6db"
+        },
+        {
+          "path": "probes/component-patterns/gallery.spec.ts",
+          "sha256": "625a2a6a1c7c516db32a8b0bb398913748a74c2d91ed30256079dd694a3209ed"
+        },
+        {
+          "path": "plans/lazy-delivery-rollout.md",
+          "sha256": "039715849bcfd1465d845c2f73e95bdc6e28b92cdbab1e7cfed300b7891c37f7"
+        }
+      ],
+      "independentSourceReview": {
+        "reviewer": "media_ssr_check subagent",
+        "conclusion": "Local request-depth wrapper is plausible for first settled-open rendering; same-turn accepted open then close is not literal first-acceptance release. Match server/client branch without connection or browser-capability gates. No tests or browser run."
+      }
+    },
+    "selection-design": {
+      "schemaVersion": 1,
+      "design": "construction-only-selection-options",
+      "sourceCommit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "status": "candidate-design; not runtime-qualified or promoted",
+      "writes": "Only audit drafts under /private/tmp; no product changes, browser runs or measurements.",
+      "ownership": {
+        "integrationOwner": "root/shared API owner must choose final capability IDs and public property vocabulary before implementation",
+        "familyOwner": "forms/selection implementer after contract freeze",
+        "reportOwner": "root only"
+      },
+      "coreFinding": "Combobox and multiselect generate option DOM before opening, but their native text inputs and accepted selection/form state are essential eager owners. Construction-only opt-ins can be evaluated without a new loader/cache/state machine. Code, registration, data and virtualization remain independent.",
+      "consumers": [
+        {
+          "tag": "en-combobox",
+          "route": "/workflows/selection",
+          "catalogSize": 40,
+          "suitability": "Existing project-assignment workflow with initial project-01 accepted; it can submit unchanged after reading the brief. The 40-project picker is central to this route task, so do not claim occasional-use probability or a secondary tool. Its startup deferral before the user reaches/opens it is a legitimate existing workload for qualification; preserve the original catalog.",
+          "sourceEvidence": [
+            {
+              "path": "apps/docs/src/workflows/selection/model.ts",
+              "lines": [
+                1,
+                43
+              ],
+              "claim": "Forty deterministic local project items, three unavailable."
+            },
+            {
+              "path": "apps/docs/src/workflows/selection/model.ts",
+              "lines": [
+                51,
+                53
+              ],
+              "claim": "Initial accepted selection."
+            },
+            {
+              "path": "apps/docs/src/workflows/selection/template.ts",
+              "lines": [
+                27,
+                45
+              ],
+              "claim": "Real field below the brief in a native form."
+            },
+            {
+              "path": "apps/docs/src/workflows/selection/index.ts",
+              "lines": [
+                15,
+                65
+              ],
+              "claim": "Reset, generation-guarded invalid focus, accepted changes and actual FormData submission."
+            },
+            {
+              "path": "apps/docs/src/workflow-pages/selection.ts",
+              "lines": [
+                6,
+                16
+              ],
+              "claim": "Own existing route definition."
+            },
+            {
+              "path": "apps/docs/src/workflows/selection/README.md",
+              "lines": [
+                3,
+                28
+              ],
+              "claim": "SSR snapshot, native form contract and manual/automated review boundaries."
+            }
+          ]
+        },
+        {
+          "tag": "en-multiselect",
+          "route": "/component-patterns.html",
+          "catalogSize": 3,
+          "suitability": "Existing Invite teams example with Design/Engineering/Research. The initial selection can submit unchanged, but only three generated option buttons can be deferred. A construction capability could be tested here for compatibility, but this source shape cannot satisfy the proposed substantial absolute element-savings gate. Do not enlarge this catalog merely to manufacture a win.",
+          "sourceEvidence": [
+            {
+              "path": "apps/docs/src/component-patterns.ts",
+              "lines": [
+                22,
+                28
+              ],
+              "claim": "Three choices, one selected team and native Inspect values/Reset form."
+            }
+          ]
+        },
+        {
+          "tag": "en-combobox",
+          "route": "showcase team editing",
+          "catalogSize": 3,
+          "suitability": "Existing optional Add a teammate activity among 16 showcase cards. This is a legitimate occasional-use action, with unknown observed usage probability, but three option rows offer only 12 row elements and therefore fail the proposed 24-element substantial-savings gate. Do not enlarge the catalog to pass.",
+          "sourceEvidence": [
+            {
+              "path": "apps/docs/src/showcase/template.ts",
+              "lines": [
+                166,
+                167
+              ],
+              "claim": "Member list and Add a teammate field."
+            },
+            {
+              "path": "showcases/en-reve/src/template.ts",
+              "lines": [
+                680,
+                702
+              ],
+              "claim": "Packed showcase counterpart."
+            },
+            {
+              "path": "apps/docs/src/showcase/model.ts",
+              "lines": [
+                2,
+                6
+              ],
+              "claim": "Three people."
+            },
+            {
+              "path": "showcases/en-reve/src/model.ts",
+              "lines": [
+                2,
+                6
+              ],
+              "claim": "Three people in standalone counterpart."
+            },
+            {
+              "path": "apps/docs/tests/showcase.spec.ts",
+              "lines": [
+                152,
+                168
+              ],
+              "claim": "Actual invite and independent reset workflow test."
+            }
+          ]
+        }
+      ],
+      "contractSketch": {
+        "publicPolicy": "Stage A alignment: additive contentRendering: eager | on-demand, attribute content-rendering. Default eager; construction only with static dependencies/imports unchanged. Require policy before first update, and require SSR/first client snapshot agreement. Do not silently repurpose loading/items.",
+        "featureIds": "Proposed meaning: combobox suggestion rows and multiselect picker rows. IDs must follow Stage B shared descriptor scheme; do not create a competing profile manifest.",
+        "canonicalClasses": "One existing constructor per tag; no alternative shell constructor is needed for construction-only option rows.",
+        "entryProfiles": "Canonical tag class/definition imports, dependency closure and registration remain identical. Metadata can advertise construction policy and no optional code loader. Selective imports remain usable without full manifest.",
+        "loadPrepare": "Existing tag load/preparation may load code only and cannot construct rows, focus, upgrade a dormant instance, open, change accepted values or announce opening. Since optional code is not split, optional-code cold/prepared performance cells are explicitly not applicable, not zero-cost success claims.",
+        "instanceMechanism": "One per-instance monotonic rowsUsed boolean, derived showRows = contentRendering === eager || rowsUsed. Set rowsUsed synchronously when the first valid semantic open request is accepted, before its scheduled render; no Promise or separate loader/cache/state machine. Preserve stable native input, popup/listbox shell and same-root labels. Retain rows after first accepted opening and construction, including when closed; subsequent catalog changes reconcile keyed rows exactly as eager behavior.",
+        "notChanged": [
+          "No deferred native editor/control or form adapter.",
+          "No per-instance registry and no new generated custom-element dependency.",
+          "No implicit intersection scanner, prefetch scheduler or URL loading.",
+          "No data fetcher, remote result window or virtualization.",
+          "No new await/replay of a trusted native action.",
+          "No change to synchronous focus/select/validity/reset or transactional events."
+        ]
+      },
+      "openingAndState": {
+        "combobox": [
+          "Cover every opening path: showOptions() from trigger/Arrow keys and onQueryInput() directly calling optionsModel.show(). Setting rowsUsed only in showOptions would miss typing-triggered opening.",
+          "Arrow key handler opens and moves the active model synchronously; rendered active-descendant must reference an existing row only when popup is presented. First ArrowDown and immediate ArrowUp while layout is pending already have regression tests.",
+          "Opening must preserve focused native query. Typing only filters; it never accepts a catalog ID. Empty/disabled/unavailable item rules and last known label remain current.",
+          "On canceled en-change, keep native query/selection/popup; author value writes supersede rollback and close/reconcile. Catalog replacement during a transaction cannot accept obsolete candidates.",
+          "Keep popup shell identity so Popover/fallback setup, beforetoggle, exit paint and first-use layout measurement have existing ownership. PositionController and outside-dismissal resources already start only while open.",
+          "While loading/error blocks suggestions, construction state must not create fake selectable rows. Loading/error is application catalog state, not delivery state.",
+          "Reset/restore/disable/readonly/disconnect close intent. A queued Lit update after removal must not open/focus; no async import exists but lifecycle races still need regression coverage."
+        ],
+        "multiselect": [
+          "Opening can happen on query click, input, Enter when closed, Arrow navigation, and authoritative changes may reset active choice. Gate only picker kind; checkbox-group/toggle-group/selection-collection retain normal visible alternatives.",
+          "Preserve #query identity and its current live(query) behavior, including hydrationQuery capture in first willUpdate; do not add competing EditingController as part of the lazy-row change.",
+          "Selected tags and their remove buttons stay eager and independently operable while options are absent. Repeated form values, required/unavailable validation and default/reset stay synchronous.",
+          "Keep #choices shell and ensure expanded aria-activedescendant resolves to an existing row after first render. New option rows use the original keyed repeat and same labels/IDs; no remote/windowed results.",
+          "Authored en-choice-option metadata remains in the authored tree and the SelectionChildrenController keeps its current synchronous catalog/SSR snapshot duties, even before option buttons exist.",
+          "Current outside-pointer listener attaches on connection even while closed; separating that listener is a distinct runtime-resource opportunity and must not be conflated with option DOM savings."
+        ],
+        "sourceEvidence": [
+          {
+            "path": "packages/elements/src/combobox/element.ts",
+            "lines": [
+              150,
+              182
+            ],
+            "claim": "Native editing and separate open/position/feedback owners."
+          },
+          {
+            "path": "packages/elements/src/combobox/element.ts",
+            "lines": [
+              204,
+              242
+            ],
+            "claim": "Author catalog/value writes and synchronous select."
+          },
+          {
+            "path": "packages/elements/src/combobox/element.ts",
+            "lines": [
+              254,
+              289
+            ],
+            "claim": "Typing and explicit show paths; restore closes and reconciles."
+          },
+          {
+            "path": "packages/elements/src/combobox/element.ts",
+            "lines": [
+              291,
+              345
+            ],
+            "claim": "Selection transactions, accepted validity/reset/restore/disable/disconnect."
+          },
+          {
+            "path": "packages/elements/src/combobox/element.ts",
+            "lines": [
+              347,
+              394
+            ],
+            "claim": "Native popup sync and current unconditional options view."
+          },
+          {
+            "path": "packages/elements/src/combobox/interaction-controller.ts",
+            "lines": [
+              41,
+              82
+            ],
+            "claim": "Immediate key, trigger and focusout behavior."
+          },
+          {
+            "path": "packages/elements/src/internal/multiple-choice.ts",
+            "lines": [
+              70,
+              85
+            ],
+            "claim": "Form and reset owner."
+          },
+          {
+            "path": "packages/elements/src/internal/multiple-choice.ts",
+            "lines": [
+              121,
+              246
+            ],
+            "claim": "Catalog/validation, synchronous toggle/navigation and hydration."
+          },
+          {
+            "path": "packages/elements/src/internal/multiple-choice.ts",
+            "lines": [
+              249,
+              286
+            ],
+            "claim": "Native option template and unconditional hidden list rows."
+          }
+        ]
+      },
+      "ssrAndHydration": {
+        "initialPolicy": "Serialize/author construction policy in the same server/client template. Eager default must preserve existing HTML. Opt-in SSR may omit only generated option rows; keep text input, labels, current selection/tags and validation associations intact.",
+        "identity": "Reuse DSD input/root/popup/listbox. Existing SSR input pre-edits must hydrate without replacement or automatic suggestion opening; existing component deliberately avoids opening on hydrate input type.",
+        "multiselectAdapter": "SelectionChildren SSR adapter matches concrete EnMultiselect identity and captures/restores the authored snapshot. The new construction policy, if introduced, must be present on the captured server/client element; do not create a second adapter owner or skip descriptor preparation.",
+        "noJS": "These custom comboboxes already require their interaction code to open generated options; preserving the persistent text input and accepted state is necessary. Do not claim that omitted options provide a fully functional no-JS native select fallback; test/document actual fallback and any accepted-value form proxies.",
+        "sourceEvidence": [
+          {
+            "path": "packages/ssr/src/selection-children-adapter.ts",
+            "lines": [
+              45,
+              70
+            ],
+            "claim": "Single-use SSR adapter and per-instance snapshot/restore for multiselect."
+          },
+          {
+            "path": "packages/primitives/src/interactions/selection-children.ts",
+            "lines": [
+              108,
+              169
+            ],
+            "claim": "One controller/host, server snapshot, mutation observation and disconnect."
+          },
+          {
+            "path": "packages/ssr/tests/browser/component-patterns.spec.ts",
+            "lines": [
+              2,
+              10
+            ],
+            "claim": "Current early native multiselect query, hydration and FormData/reset coverage."
+          },
+          {
+            "path": "packages/ssr/tests/fixtures/patterns-template.mjs",
+            "lines": [
+              1,
+              2
+            ],
+            "claim": "Current authored-descriptor SSR fixture."
+          }
+        ]
+      },
+      "proposedPromotionGates": {
+        "status": "Proposed BEFORE runtime edits; integration owner must freeze exact values/workloads/runtime/lock/harness identities before implementation or timing. These are not measured results, approvals or inherited date thresholds.",
+        "structuralEligibility": {
+          "affectedComponentClosedUnusedOptionRowElementsRemovedPercent": 100,
+          "minimumInitiallyDeferredGeneratedElements": 24,
+          "minimumComponentAllNodeReductionPercent": 40,
+          "explanation": "A meaningful generated surface should remove at least 24 elements and 40% of component subtree nodes before first use. Combobox source has four elements per row, giving a source opportunity of 160 row elements for its existing 40-item workflow. Multiselect has one option button per row and three choices in its existing consumer, so current consumer cannot reach 24; report no promotion for that route without manipulating workload."
+        },
+        "realRouteBenefit": {
+          "minimumRouteAllNodeReductionPercent": 10,
+          "minimumRouteElementsRemoved": 24,
+          "maximumStartupReadyP75RegressionMs": 5,
+          "maximumStartupReadyP75RegressionPercent": 5,
+          "maximumSSRRenderP75RegressionMs": 5,
+          "maximumSSRRenderP75RegressionPercent": 5,
+          "rule": "Meet both DOM thresholds and both timing regression ceilings per applicable exact route/configuration. Route failure remains failure even if component-only gate passes."
+        },
+        "firstUse": {
+          "maxActionToUsableOptionsP75Ms": 100,
+          "maxActionToUsableOptionsP75At4xCPUThrottleMs": 200,
+          "maxAddedFirstUseP75Ms": 16,
+          "maxAddedFirstUseP75At4xCPUThrottleMs": 50,
+          "maxRepeatP75RegressionMs": 5,
+          "maxRepeatP75RegressionPercent": 10,
+          "readinessDefinition": "Actual presented popup/listbox with requested active option, resolved ARIA reference, stable input focus and usable selection, including style/layout and viewport positioning; updateComplete alone is insufficient."
+        },
+        "packaging": {
+          "maxAddedGzipBytesPerChangedSelectiveEntry": 768,
+          "maxAdditionalRequestsForConstructionOnlyPolicy": 0,
+          "expectedUniqueOptionalCodeSavingsBytes": 0,
+          "rule": "Measure incremental public policy/shared metadata separately; no network savings claimed for construction-only rows."
+        },
+        "retention": {
+          "freshContextsPerArm": 5,
+          "cyclesPerContext": 100,
+          "compareCycles": [
+            10,
+            100
+          ],
+          "maximumUnexplainedConnectedNodeGrowth": 0,
+          "maximumDetachedHostOrNativeInputGrowth": 0,
+          "maximumPersistentListenerGrowth": 0,
+          "maximumCandidateMinusReferenceMedianHeapGrowthBytes": 1048576,
+          "rule": "Heap threshold applies only with supported reliable measurement and reported uncertainty. Unsupported heap is unmeasured, never zero. Intentional rows retained after first use must be reported separately from leaked instances; their bounded count must match current catalog."
+        },
+        "sampling": {
+          "successfulSamplesPerConfiguration": 30,
+          "p95MinimumSamples": 100,
+          "failedAndAbortedAttemptsRetained": true,
+          "interleaveMatchedArms": true,
+          "requiredArms": [
+            "eager",
+            "construction-only deferred (same code)"
+          ],
+          "optionalCodeArms": "cold optional-code and explicit feature preparation not applicable unless a real separate module boundary is subsequently proposed/frozen. Tag-level load/preparation remains separate existing coverage."
+        },
+        "fallbackDecision": "If deterministic source/DOM eligibility fails for a current workload, record rejected-with-evidence/no route adoption without a promotion campaign. Do not call a microbenchmark the route benefit, enlarge the real catalog to pass, lower thresholds afterward, or mark a candidate complete on this audit."
+      },
+      "qualificationChecklist": [
+        "Run existing relevant selection workflow/combobox/form/SSR/selection-authoring/API/packed integration closure selected by supported test pipeline; exact combined source must be qualified.",
+        "Fresh fixture: eager default plus opt-in sibling sharing one registry; definitions/imports in both orders; scoped ordinary/shadow/nested owners and actual global fallback. Construction-only rows generate no custom child registrations, but host ownership/hydration must remain correct.",
+        "Deterministic first-use rows absent then present and retained; load/prepare does not mount; used sibling does not construct unused sibling; repeated filter replacements stable keyed input identity.",
+        "Cover first typing, ArrowDown/Up, Enter, mouse/touch trigger and option selection, concurrent lifecycle/config changes, cancellation/authoritative writes, no-results/loading/error, readonly/disabled/reset and catalog mutation.",
+        "Combobox phone/tablet viewport/no-room/feedback and touch-scroll cases must remain; simulated no-Popover test is not proof of actual unsupported-engine registry fallback.",
+        "SSR direct/streaming profile agreement and early input identity/draft/selection/composition/form state; preserve descriptor adapter and one hydration owner.",
+        "Provide focused first-use manual review for changed timing/announcements with VoiceOver/TalkBack distinct from automated focus/accessibility assertions; carry historical acceptance only where behavior unchanged."
+      ],
+      "existingEvidenceEntryPoints": [
+        {
+          "path": "packages/elements/src/combobox/tests/combobox.spec.ts",
+          "lines": [
+            42,
+            70
+          ],
+          "claim": "Native module purity, filter/accepted FormData separation and keyboard acceptance."
+        },
+        {
+          "path": "packages/elements/src/combobox/tests/catalog-transaction.spec.ts",
+          "lines": [
+            12,
+            29
+          ],
+          "claim": "Retained query focus/text selection/form state after catalog transaction."
+        },
+        {
+          "path": "packages/elements/src/combobox/tests/viewport.spec.ts",
+          "lines": [
+            60,
+            67
+          ],
+          "claim": "First ArrowDown usable popup with same input/popup identity."
+        },
+        {
+          "path": "packages/elements/src/combobox/tests/viewport.spec.ts",
+          "lines": [
+            148,
+            158
+          ],
+          "claim": "Immediate ArrowUp during opening layout retains last candidate."
+        },
+        {
+          "path": "packages/elements/src/combobox/tests/combobox.spec.ts",
+          "lines": [
+            426,
+            457
+          ],
+          "claim": "Simulated missing-Popover fallback, explicitly not actual engine support evidence."
+        },
+        {
+          "path": "apps/docs/src/workflows/selection/template.ts",
+          "lines": [
+            60,
+            70
+          ],
+          "claim": "Existing concrete phone/AT manual steps."
+        },
+        {
+          "path": "apps/docs/tests/selection.spec.ts",
+          "lines": [
+            81,
+            113
+          ],
+          "claim": "Real route SSR native identity/focus/early query/backward selection and accepted ID."
+        },
+        {
+          "path": "apps/docs/tests/selection.spec.ts",
+          "lines": [
+            115,
+            169
+          ],
+          "claim": "40/3 catalog, real selection/submission, unavailable items, invalid query, Escape/reset."
+        },
+        {
+          "path": "packages/elements/src/patterns/tests/core.spec.ts",
+          "lines": [
+            12,
+            25
+          ],
+          "claim": "Multiselect tentative FormData, cancellation, reset, disabled/filter/removal-focus behavior."
+        }
+      ]
+    },
+    "overlay-design": {
+      "schema": "overlay-design-consolidation/v1",
+      "head": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "sharedPolicy": {
+        "property": "contentRendering",
+        "values": [
+          "eager",
+          "on-demand"
+        ],
+        "attribute": "content-rendering",
+        "default": "eager",
+        "timing": "configure before first update",
+        "axis": "construction only; static imports/dependencies remain eager",
+        "lifetime": "retain constructed body after first accepted opening; do not tear down on close",
+        "status": "Shared Stage A interface decision relayed by root; no implementation claim"
+      },
+      "featureInventory": "tooling/metadata/delivery-inventory.json",
+      "designFiles": [
+        "plans/lazy-delivery/family-designs.json#/designs/command-palette-design",
+        "plans/lazy-delivery/family-designs.json#/designs/compact-overlay-design",
+        "plans/lazy-delivery/family-designs.json#/designs/toast-history-design"
+      ],
+      "pending": [],
+      "priorities": [
+        {
+          "component": "en-command-palette",
+          "opportunity": "generated closed search/results",
+          "consumer": "real settings workflow has 4 commands; verify route benefit without inflation"
+        },
+        {
+          "component": "en-menubar",
+          "opportunity": "generated inactive command items",
+          "constraint": "retain native trigger/menu shells and ensure first activation readiness"
+        },
+        {
+          "component": "en-toast-region",
+          "opportunity": "closed history waiting/recent generated rows",
+          "constraint": "retain synchronous snapshot data and persistent live channels",
+          "consumer": "Real toast API example history-limit=5, one initial message/max3 gives zero initial history rows; larger synthetic histories cannot establish route benefit."
+        },
+        {
+          "component": "en-action-overflow",
+          "opportunity": "closed extra actions after measurement",
+          "constraint": "count=Infinity constructs all controls first; gate alone offers zero startup construction savings"
+        },
+        {
+          "component": "en-pagination",
+          "opportunity": "bounded direct-page editor body",
+          "constraint": "maximum 5 generated native elements saved per known-total pager; preserve native target shell"
+        }
+      ],
+      "boundedPrimaryShells": {
+        "classification": "essential-eager for generated primary shell; no independent worthwhile hidden feature proven",
+        "counts": {
+          "en-dialog": 22,
+          "en-drawer": 22,
+          "en-sheet": 26,
+          "en-popover": 9,
+          "en-hover-card": 9
+        },
+        "counting_scope": "Source-level literal element upper bounds including shared generated close-control internals; excludes styles/Lit markers/text/authored descendants, not a browser measurement",
+        "reason": "Removing primary shell removes authored slot projection; preserving native shell and slots leaves tiny existing-conditional chrome and no optional-code/data payload."
+      },
+      "evidenceLimits": "Read-only source analysis; no timing, builds, browser execution, qualification or promotion/rejection based on measured performance."
+    },
+    "command-palette-design": {
+      "schemaVersion": 1,
+      "audit": "read-only source design audit; no tests, browsers, timing or implementation",
+      "checkout": "/Users/westbrook/.codex/worktrees/scoped-main-closeout/design-system",
+      "commit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "tag": "en-command-palette",
+      "status": "candidate-requires-qualification",
+      "terminalDisposition": null,
+      "finding": "Closed palettes currently generate the search editor, listbox, status region and every command row. First-open construction is a concrete candidate distinct from existing tag-level load/registration. No source-only audit can establish route benefit or reject this candidate conclusively.",
+      "boundaries": {
+        "tagCodeLoading": "Existing literal definition import and canonical lazy manifest; no proposed change to default eager graph.",
+        "registration": "Palette definition depends on button and icon. Registry registration is separate and may upgrade sibling palettes. Per-instance construction must remain dormant for opted-in closed siblings.",
+        "construction": "Candidate: skip only generated search/command content until an accepted first opening, then retain it. Native dialog shell, trigger linkage and authored slots remain present.",
+        "optionalCode": "No unique optional dependency has been established. Keep identical modules in eager/construction-only arms; do not claim code savings from this candidate.",
+        "hydration": "Closed server/client opt-in can omit identical generated content; matching open initial state includes it. One hydration owner, matching profile/config/catalog snapshots, retained native editor identity.",
+        "data": "commands remains synchronously validated and atomically copied on assignment even before construction. No asynchronous provider, network data or data-fetch deferral is implied.",
+        "virtualization": "All eligible commands are rendered on first use; this candidate does not virtualize or change filtering semantics.",
+        "alreadyConditional": "Visual viewport listeners/RAF work already start only for an actually open modal and stop on close/disconnect. Do not count this as a new saving."
+      },
+      "consumers": [
+        {
+          "route": "/workflows/settings.html",
+          "priority": "primary production-like consumer",
+          "source": "apps/docs/vite.config.ts:40; apps/docs/src/workflows/settings/template.ts:201-222; apps/docs/src/workflows/settings/commands.ts:12-18",
+          "catalog": "Four real commands with changing availability: save/retry save, restore opacity, cancel save, review incoming change. Do not inflate the catalog for a route-benefit claim.",
+          "existingDelivery": "apps/docs/src/workflow-pages/settings-entry.ts:11-16,23 load code on route entry without registration; index.ts:226-270 intent preload and explicit ensure/readiness/open with retry, Escape cancellation and focus-generation guards.",
+          "applicationOwnership": "apps/docs/src/workflows/settings/index.ts:307-310 hands trigger clicks to the upgraded component; README.md:15-17 requires accepted close before executing current app capability. Preserve existing load/ensure/open separation."
+        },
+        {
+          "route": "/showcase.html",
+          "priority": "secondary real small-catalog consumer",
+          "source": "apps/docs/vite.config.ts:36; apps/docs/src/showcase/template.ts:27-41",
+          "qualification": "Palette shares layout commands with a menu/toolbar; account for shared dependencies and complete route cost."
+        },
+        {
+          "route": "command-surfaces docs specimen / API example target #specimen-command-palette",
+          "priority": "discoverable recipe and correctness consumer",
+          "source": "apps/docs/src/examples.ts:263-269,287-304,306-329; apps/docs/scripts/api-control-targets.mjs:40-43; apps/docs/src/api-example/README.md:29-31",
+          "qualification": "Three real commands, two enabled and publish disabled; separate demo benefit from whole-route benefit."
+        }
+      ],
+      "proposedMechanism": {
+        "apiSketchOnly": "Use agreed contentRendering: eager|on-demand, attribute content-rendering, eager default; configure pre-first-update. Earlier spelling suggestions are superseded.",
+        "renderBoundary": "Keep the dialogTemplate and command body wrapper/default slot stable. Gate the generated label, focus-frame/input, listbox/options and polite status inside commandPaletteTemplate. Preserve named/default authored slots, IDs of mounted generated descendants and keyed rows.",
+        "activation": "Mark an instance constructed only after accepted opening or an authoritative open=true write, before the next opening render. Do not infer acceptance merely from tentative this.open inside render; en-change listeners can synchronously flush Lit while open is tentative. Use acceptance-owned hooks/overrides around requestOpen and the authoritative open setter, preserving revision semantics. Inherited show()/hide() remain synchronous ChangeOutcome APIs with no Promise or deferred native gesture replay.",
+        "initialOpen": "Initial server/client open=true is immediately eligible for generated content; native modality still begins through existing connected/updated syncDialog lifecycle.",
+        "stickyRetention": "Once built, retain the native editor and generated root through close/reopen/removal/reconnect. Do not detach/recreate to reclaim nodes: accepted-close reset, orphaned composition and node identity are existing contracts. Switching policy after materialization cannot destroy content.",
+        "preparation": "Shared code preparation remains load-only and does not set construction eligibility. No new import cache/controller/scheduler is needed. Existing app readiness then authoritative open works unchanged.",
+        "catalog": "Keep atomic commandSnapshot and model ownership before first use. Deferring model creation/filtering is a separate CPU/data proposal that is not justified by this construction design.",
+        "failure": "No network or new async construction failure state added. Existing tag-level load/ensure failure UI remains application-owned. Incompatible SSR/client construction configuration must be diagnosed by shared profile agreement before destructive reconciliation.",
+        "scopes": "Same constructor/definition and owning registry as eager. No per-instance registry, global retry, registration side effect from profile preparation, or sibling construction."
+      },
+      "contracts": [
+        {
+          "topic": "Synchronous state and cancellation",
+          "source": "packages/elements/src/dialog/dialog.ts:106-117,165-196,201-202,272-303",
+          "obligation": "Preserve tentative en-change, rollback, equal authoritative writes, nested accepted transitions, ChangeOutcome return, deferred native modality and opener restoration."
+        },
+        {
+          "topic": "Close/reset/focus order",
+          "source": "packages/elements/src/command-palette/element.ts:127-149",
+          "obligation": "Accepted close restores focus before combobox ARIA/reset; hydration reads retained input rather than overwriting it."
+        },
+        {
+          "topic": "Action ownership",
+          "source": "packages/elements/src/command-palette/element.ts:154-164; packages/elements/src/command-palette/README.md:32-53",
+          "obligation": "Full synchronous en-action dispatch precedes default close; cancel action/close or equal author write preserves ownership. Current enabled catalog is rechecked."
+        },
+        {
+          "topic": "Native editing/composition",
+          "source": "packages/elements/src/command-palette/template.ts:26-49; packages/elements/src/command-palette/interaction-controller.ts:20-56",
+          "obligation": "No Lit .value writer; native text, selection, composition and interaction reset remain owned by current editor/controller."
+        },
+        {
+          "topic": "Catalog and candidate",
+          "source": "packages/elements/src/command-palette/model.ts:14-32,35-65; packages/elements/src/command-palette/element.ts:103-110",
+          "obligation": "Validation/copying stays atomic before/after mount. Query/candidate replacement and disabled action rules unchanged."
+        },
+        {
+          "topic": "SSR",
+          "source": "packages/elements/src/command-palette/README.md:63-67; packages/ssr/tests/popup-motion/fixture.mjs:18-31",
+          "obligation": "Same finite snapshot/profile server/client; pure imports/initial rendering; no document work, fetch, scheduling or modality during SSR."
+        },
+        {
+          "topic": "Generated child registrations",
+          "source": "packages/elements/src/definitions/command-palette.ts:1-11; packages/elements/src/dialog/template.ts:26-48",
+          "obligation": "button/icon dependencies remain declared once. Keeping shell eager means no claim to defer those dependencies."
+        },
+        {
+          "topic": "Already conditional viewport",
+          "source": "packages/elements/src/command-palette/viewport-controller.ts:13-29,30-51",
+          "obligation": "No additional savings claimed from existing open-only listeners and geometry."
+        }
+      ],
+      "proposedAcceptanceGates": {
+        "state": "Proposals only, not frozen or measured. Integration owner must freeze exact workloads, builds, reference/candidate hashes, thresholds and contention protocol before candidate timing.",
+        "samplePlan": "At least 30 successful samples per timing cell/configuration; retain every failure/abort. Report n, median, p75, spread/uncertainty. p95 only with at least 100 samples. Retention separately: five fresh-context repetitions per arm, 100 open/close cycles, compare cycles 10 and 100.",
+        "deterministicConstruction": "Opted-in never-open instances have 0 generated comboboxes, 0 generated listboxes, 0 command options and 0 generated search-status nodes. After first accepted open exactly 1 combobox, 1 listbox and the exact eligible rows; opening one of 10 opted-in siblings constructs only that instance. Eager default DOM remains unchanged. Canceled first open constructs 0 generated search nodes unless an authoritative or nested accepted transition explicitly supersedes it.",
+        "componentBenefit": "Unused connected DOM reduction >=20 nodes and >=20% of complete palette inclusive shadow descendant nodes on the real four-command settings catalog. Count light/shadow nodes consistently; retain live/inert/detached counts separately.",
+        "routeBenefit": "For route adoption require unused whole-route connected DOM reduction >=2%, and initial-ready median improvement >=max(2 ms, 3% of matched eager). A component pass without the whole-route pass is not route promotion.",
+        "firstUse": "Same-code construction-only palette action-to-ready p75 <=100 ms, p75 regression <=max(8 ms, 10% of eager); at 4x declared CPU throttling p75 <=200 ms and regression <=max(16 ms, 10%). Readiness includes actual modality, search focus, visible current catalog and correct ARIA. Additive profile overhead on eager median <=max(1 ms, 2%).",
+        "repeat": "Repeat action-to-ready p75 regression <=max(2 ms, 5% of eager); native input object identity unchanged across all 100 close/reopen cycles and reconnect checks.",
+        "bytes": "Construction-only candidate adds 0 requests; route transferred/evaluated bytes remain identical aside from documented profile/policy implementation overhead bounded at <=1024 gzip bytes. No optional-code saving claim without separately proving a unique emitted chunk on the real route.",
+        "retention": "For each repetition, cycle-10 to cycle-100 live node/listener count growth is 0 and candidate detached-node growth <= matched eager + 2 nodes. Post-GC heap delta growth <=max(64 KiB, 1% of cycle-10 candidate heap) and no retained removed hosts attributable to shared state. Report raw counts and noise; gate failure is not repaired by selected replacement runs.",
+        "trafficPreparation": "Compare eager tag path, construction-only identical code, existing cold tag code+registration, and explicitly prepared tag code. Report 0/50/200 ms preparation leads plus never-used preparation; preparation is not opening, and hidden early traffic is not a startup benefit. Tag-code cold/prepared cases use separately frozen shared loader budgets."
+      },
+      "qualificationMatrix": [
+        "All existing command/dialog/SSR tests in affected closure plus opt-in counterparts; serialized supported entry points with fresh EN_EXECUTION_OUTPUT and ownership leases.",
+        "Open by real native/en-button trigger, programmatic show, property open, app shortcut; initial open; canceled first open; listener-performed synchronous Lit update; equal author assignment; nested accepted open/close.",
+        "First keyboard focus/search/type/selection/Home-End/Tab, IME Enter/Escape, touch-scroll cancellation, disabled/current catalog replacement, action and close veto, focus restoration before ARIA collapse.",
+        "Never-open removal/reconnect/adoption, opened removal/reconnect/adoption, orphaned composition and accepted-close reset; exact native node identity after first construction.",
+        "Ordinary/shadow/nested/shared scopes and actual unsupported-engine fallback; eager/lazy siblings in both registration orders; preparation/ensure alone constructs no opted-in search body.",
+        "SSR matching closed deferred/open deferred/eager, no-JS useful surrounding route, pre-hydration retained editor typing, stream/definition order, profile mismatch; one hydration owner.",
+        "Real settings route current action execution and loading/retry/Escape/focus-generation guard behavior. No shared-bundle saving inferred from isolated module fixture.",
+        "One-at-a-time manual first-open focus/announcement fixture for changed behavior; DOM focus and synthetic composition do not establish screen-reader or physical-IME acceptance."
+      ],
+      "existingTestsToExtend": [
+        "packages/elements/src/commands/tests/commands.spec.ts:248-427,458-511",
+        "packages/elements/src/commands/tests/commands.mobile.spec.ts:17-68",
+        "packages/elements/src/dialog/tests/modal-for.spec.ts",
+        "packages/elements/src/dialog/tests/modal-close.spec.ts",
+        "packages/ssr/tests/browser/modal-close.spec.ts",
+        "packages/ssr/tests/popup-motion/fixture.mjs:18-38",
+        "packages/elements/src/commands/tests/README.md:10-16 (matrix and evidence limits)"
+      ],
+      "nextOwnerAction": "Shared API/integration owner chooses stable construction policy naming and freezes gates; implementation owner builds focused sticky construction candidate; validation owner qualifies real settings/showcase workloads. Leave the row unfinished until promoted or evidence-backed rejected.",
+      "sharedPolicy": {
+        "property": "contentRendering",
+        "values": [
+          "eager",
+          "on-demand"
+        ],
+        "attribute": "content-rendering",
+        "default": "eager",
+        "timing": "configure before first update",
+        "axis": "construction only; static imports/dependencies remain eager",
+        "lifetime": "retain constructed body after first accepted opening; do not tear down on close",
+        "status": "Shared Stage A interface decision relayed by root; no implementation claim"
+      }
+    },
+    "compact-overlay-design": {
+      "audit": "compact-overlay generated-content source design audit",
+      "head": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "scope": [
+        "en-menubar",
+        "en-action-overflow",
+        "en-pagination"
+      ],
+      "method": "Read-only source audit. No tests, browser, timing, generated metadata changes, or product edits. All numeric gates below are proposed before experiments; none are measured results. JSON is an agent handoff, not the completed rollout disposition.",
+      "common_contract": {
+        "default": "Existing eager rendering and import/definition graph remain unchanged unless the consumer explicitly opts into a versioned generated-content construction feature.",
+        "boundary": "Separate construction state from tag code load, registration, ready state and semantic opening. These candidates expose no unique optional code split from the inspected implementation; do not claim transfer savings or invent async semantic APIs.",
+        "data": "Consumer arrays and scalar page state are already resident. Deferring generated DOM does not defer array retrieval, data allocation, filtering, server serialization of data, or registration. No application data loader belongs in these components.",
+        "registration": "Keep existing definitions/dependencies and same constructors; existing scoped registry owner is inherited. Do not create per-instance registries or call registerAll inside features.",
+        "hydration": "Opt-in initial render state must match server and client snapshot exactly. Instance-local activated state cannot be reconstructed from module globals. Preserve authored nodes and native first-paint semantics; server construction savings and browser construction savings must be reported separately.",
+        "retention": "Retain first-use generated nodes after close for identity/focus/draft safety; prune only data identities actually removed under existing author update semantics. Disconnect/adoption must cancel pending presentation work. Late async state must not mount or focus detached/rebound instances.",
+        "synchronous": "Never change existing synchronous show/hide/change returns to promises. Prepare generated content within the same synchronous opening lifecycle, or guard presentation internally after the semantic transaction while preserving its immediate return. Never await then replay native activation.",
+        "numeric_protocol": "For any promoted claim: freeze exact source/lock/runtime/browser/harness and budgets first; at least 30 successful timings per configuration, retain failures/aborts, report median/p75/spread; do not publish p95 below n=100. Five fresh contexts per retention arm, 100 cycles each, compare cycle 10 to 100. Construction-only candidates compare identical loaded code; cold/prepared code arms are not applicable unless a real separate dependency is found.",
+        "cross_cutting_evidence": [
+          {
+            "path": "packages/ssr/README.md",
+            "lines": [
+              3,
+              26
+            ]
+          },
+          {
+            "path": "packages/ssr/README.md",
+            "lines": [
+              102,
+              128
+            ]
+          },
+          {
+            "path": "plans/lazy-delivery-rollout.md",
+            "lines": [
+              153,
+              165
+            ]
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "tag": "en-menubar",
+          "feature": "Generated menu items for unopened root command menus",
+          "proposed_id": "en-menubar/generated-items@1",
+          "qualification_status": "source-assessed; worth qualifying; no final rollout disposition yet",
+          "eager_cost": "The menubar repeats every root button, every en-menu shell and every en-menu-item in every item.items array on its first render, although all root menus start closed. Cost scales with the sum of all command counts. Generated en-menu-item construction/upgrade/inner DOM are the removable work; retaining root en-menu shells retains their controllers and trigger discovery.",
+          "code_vs_data": "menubar imports EnMenu only as a type, but menubarDefinition statically declares menuDefinition and menuItemDefinition. There is no existing lazy loader or unique optional implementation branch. All command arrays remain application data and remain available. Construction-only deferral does not remove menu/menu-item modules from the entry graph.",
+          "mechanism": "Add opt-in generated-items construction policy with an instance-local activated-root key set; retain every root button and en-menu shell so same-tree for references and trigger listeners work immediately. Render item.items only for activated keys. On any first open proposal, prepare the generated commands before menu child discovery, positioning and focus; then retain them across close/reopen. Key activation by stable item.value rather than trigger index and reconcile removed keys. An implementation must cover both menubar switchTo and EnMenu-owned trigger click/ArrowDown/ArrowUp; a switchTo-only implementation misses direct trigger listeners.",
+          "design_obligation": "A private owner readiness handshake between generated-content owner and EnMenu is safer than an async show wrapper. EnMenu show() synchronously returns dispatchChange outcome; native presentation happens later through updated/syncPopover. If a synchronous en-change handler schedules the parent construction render, prove ordering through child update/readChildren/positioning rather than assuming MutationObserver/slotchange fires before focus. Cancellation or authoritative open writes must still resolve immediately. The native presentation must never show an empty menu or steal focus after the user moves away. This audit does not assert such a handshake already exists.",
+          "triggers": [
+            "Native root button click/Enter/Space handled by each EnMenu trigger connection",
+            "ArrowDown/ArrowUp handled by EnMenu and menubar key path",
+            "ArrowLeft/ArrowRight with an open menu and pointer hover across roots via switchTo",
+            "Internal generated EnMenu show() and silent open writes if supported by a documented internal owner path"
+          ],
+          "fallback": "Default stays eager. Opt-in keeps real labelled menubar buttons and trigger semantics present at initial render. This application command widget already requires JavaScript for execution; commands absent in a lazy SSR branch must not be advertised as browser Find/print-equivalent authored content. All content here is data-generated, not user-authored slots.",
+          "ssr_ownership": "SSR must render the same unopened generated-items branch as initial client hydration. Menubar owns generated light DOM of each generated EnMenu; EnMenu owns its native popover/slot and focus behavior. No island or second hydration owner may be inserted around individual command children.",
+          "boundedness": "Unbounded consumer command count; unopened command bodies are the only large source-backed opportunity here. Root shells remain O(root count). Activated key set must be pruned when roots are removed to avoid monotonic key accumulation.",
+          "actual_consumers": [
+            {
+              "route": "/component-patterns.html#navigation",
+              "source": {
+                "path": "apps/docs/src/component-patterns.ts",
+                "lines": [
+                  2,
+                  15
+                ]
+              },
+              "render": {
+                "path": "apps/docs/src/component-patterns.ts",
+                "lines": [
+                  32,
+                  32
+                ]
+              },
+              "size": "Two root menus with two commands each; uses catalog registerAll at route entry. No external real application adoption or occasional-use frequency is established by this source."
+            }
+          ],
+          "evidence": [
+            {
+              "path": "packages/elements/src/menubar.ts",
+              "lines": [
+                7,
+                16
+              ]
+            },
+            {
+              "path": "packages/elements/src/menubar.ts",
+              "lines": [
+                22,
+                60
+              ]
+            },
+            {
+              "path": "packages/elements/src/definitions/menubar.ts",
+              "lines": [
+                1,
+                5
+              ]
+            },
+            {
+              "path": "packages/elements/src/popover/floating-surface.ts",
+              "lines": [
+                82,
+                120
+              ]
+            },
+            {
+              "path": "packages/elements/src/popover/floating-surface.ts",
+              "lines": [
+                177,
+                195
+              ]
+            },
+            {
+              "path": "packages/elements/src/popover/floating-surface.ts",
+              "lines": [
+                268,
+                285
+              ]
+            },
+            {
+              "path": "packages/elements/src/menu/element.ts",
+              "lines": [
+                118,
+                129
+              ]
+            },
+            {
+              "path": "packages/elements/src/menu/element.ts",
+              "lines": [
+                212,
+                253
+              ]
+            },
+            {
+              "path": "packages/elements/src/menu/element.ts",
+              "lines": [
+                304,
+                332
+              ]
+            },
+            {
+              "path": "packages/elements/src/menu/template.ts",
+              "lines": [
+                13,
+                19
+              ]
+            }
+          ],
+          "existing_test": {
+            "path": "packages/elements/src/patterns/tests/advanced.spec.ts",
+            "lines": [
+              10,
+              10
+            ]
+          },
+          "required_qualification": [
+            "Actual docs root menu click, ArrowDown, ArrowUp last-item entry, left/right RTL traversal, hover switch, Escape/outside/Tab dismissal and original action identity",
+            "Cancelable close when changing roots; canceled/superseded first open; disabled/replaced data before construction; rapid cross-root intent and focus movement",
+            "Remove/reconnect/adopt menubar before internal readiness; independent/scoped registry ownership and mixed eager/lazy sibling menus",
+            "SSR marker/node identity for shells with matching opt-in snapshot; eager SSR parity remains unchanged",
+            "Compare actual four-command consumer first; larger fixture may establish scaling but cannot replace real route benefit"
+          ],
+          "proposed_numeric_gates": {
+            "not_measured": true,
+            "component_never_used": "At least 20% fewer recursively connected component nodes and at least 24 fewer nodes at idle versus identical eager code. Count generated item constructors separately; zero constructors for unopened command items. If actual four-command route cannot reach this, do not invent a larger adoption workload.",
+            "whole_route": "At least 5% fewer recursively connected route nodes and at least 32 absolute nodes saved on the actual consuming route; startup median and p75 no more than 5% worse. Component qualification alone does not permit route adoption.",
+            "first_use": "Action-to-ready p75 <=50 ms and incremental p75 over eager <=32 ms; median incremental <=16 ms. Ready includes expected first/last item focus and final usable menu geometry.",
+            "repeat": "Repeat action-to-ready p75 <=eager p75+8 ms; no additional generated item construction for unchanged already-used keys.",
+            "retention": "After cycles 10 to 100, zero additional generated elements/listeners for a fixed data set; same retained item identities; median post-GC heap growth <=64 KiB per arm, subject to predeclared measurement noise protocol."
+          }
+        },
+        {
+          "tag": "en-action-overflow",
+          "feature": "Closed generated overflow actions",
+          "proposed_id": "en-action-overflow/generated-extra@1",
+          "qualification_status": "source-assessed; design-sensitive candidate requiring actual opportunity qualification; no final rollout disposition yet",
+          "eager_cost": "The measurement rack always constructs one native button per item plus a More button. count begins Infinity, so the first live row also constructs every action before measurement. Once measured, actions after count render as another repeat inside closed details .extra. Merely making the later .extra conditional cannot claim startup construction savings: every action was already built in the first live row.",
+          "code_vs_data": "One compact static class using native details/buttons and visibleActionCount; no generated child custom elements or unique optional code subtree. Item array and measurement data remain resident. Measurement buttons are essential for exact arbitrary labels/themes/font sizes; changing them is a separate layout algorithm, not lazy delivery.",
+          "mechanism": "Construction candidate must be explicit about the unknown-width first render. Variant A only omits never-opened .extra after width measurement; this reduces settled hidden DOM but not initial constructors and may still reduce later recreations after layout changes. Variant B begins opt-in in a deterministic unmeasured state with measurement rack and functioning More disclosure holding commands constructed on opening, then constructs only the measured visible subset; it requires new SSR/no-JS/failure and first-paint geometry qualification before any promotion. Do not silently apply Variant B to defaults or call Variant A an initial construction optimization. Keep the native details and summary mounted; materialize the extra body synchronously on summary click/keyboard activation before native default toggle, with open/toggle reconciliation for programmatic details.open changes. Retain extra nodes after first use where they remain part of the current partition.",
+          "design_obligation": "Resize focus migration is an opening trigger too. Existing measure() captures a focused data-action, updates count, then finds its new row button, opens details if it moved and focuses it. A lazy partition must activate its body before that update and before the post-update query. Native summary activation and programmatic details.open must never expose an empty first-open panel. Native toggle has no synchronous cancelable semantic contract; no async replay of clicks or synthetic keypresses is acceptable. Repartitioning across independently keyed repeats currently recreates controls; new retention claims must not presume identity across partitions.",
+          "triggers": [
+            "Native details summary click/Enter/Space",
+            "Resize/measurement moving focused action into extra",
+            "Programmatic details.open/toggle observation where existing DOM behavior is preserved",
+            "Items/labels/theme/font/container changes requiring measurement and redistribution"
+          ],
+          "fallback": "Eager default remains a complete SSR action row. Variant A keeps that. Variant B cannot be promoted until an explicit no-JS/failure reading/action fallback exists and matches SSR/client; otherwise keep the conservative initial eager row and report narrower settled-DOM opportunity honestly.",
+          "ssr_ownership": "Current server has count Infinity and does not know browser width; it renders all live actions plus inert measurement rack, with no details. Hydration must match that unless a separately documented opt-in branch intentionally changes initial state. Native controls are library-generated; consumer has no authored slot subtree here.",
+          "boundedness": "At steady state the only omitted controls are N-visibleCount, but the mandatory rack stays O(N). Existing actual example is five actions and may have no extras at a wide viewport. First-use/width must be declared with any claimed savings. No saving is possible on a route whose actions all fit.",
+          "actual_consumers": [
+            {
+              "route": "/component-patterns.html#collection",
+              "render": {
+                "path": "apps/docs/src/component-patterns.ts",
+                "lines": [
+                  31,
+                  31
+                ]
+              },
+              "size": "Five actions; disclosure only appears when measured width requires it; catalog registered eagerly on this route."
+            }
+          ],
+          "evidence": [
+            {
+              "path": "packages/elements/src/action-overflow.ts",
+              "lines": [
+                18,
+                60
+              ]
+            },
+            {
+              "path": "packages/elements/src/definitions/action-overflow.ts",
+              "lines": [
+                1,
+                3
+              ]
+            },
+            {
+              "path": "packages/ssr/tests/component-patterns.test.mjs",
+              "lines": [
+                13,
+                13
+              ]
+            },
+            {
+              "path": "packages/ssr/tests/fixtures/patterns-template.mjs",
+              "lines": [
+                2,
+                2
+              ]
+            }
+          ],
+          "existing_test": {
+            "path": "packages/elements/src/patterns/tests/advanced.spec.ts",
+            "lines": [
+              9,
+              9
+            ]
+          },
+          "required_qualification": [
+            "Declare wide and narrow actual consumer widths; count first-render constructions separately from settled DOM and later layout churn",
+            "Summary native mouse/keyboard and rapid close/open; first Tab reaches first enabled extra; Escape returns focus to summary",
+            "Focused visible action migrating into extra during shrink, extra returning to row on grow, removed/disabled focused actions, changed action data and cancellation-free exact action identity",
+            "Zero use, repeated use and reconnection with ResizeObserver cleanup; font/theme sizing changes preserve visibleActionCount decisions",
+            "SSR/no-JS markup and hydration initial branch; independent generated DOM ownership; no modifications to authored nodes"
+          ],
+          "proposed_numeric_gates": {
+            "not_measured": true,
+            "component_never_used": "For Variant B startup claims: >=20% fewer recursively connected component nodes and >=10 absolute nodes/constructed controls saved for actual consumer at a declared narrow width, counting the mandatory measurement rack in both arms. Variant A may qualify only settled-DOM reduction, never initial construction savings; require >=20% and >=10 nodes saved after measurement.",
+            "whole_route": "At least 5% fewer recursively connected route nodes and at least 32 absolute nodes on actual route; initial visible action geometry must differ by <=1 CSS px once ready; startup median/p75 <=eager*1.05.",
+            "first_use": "Summary action-to-ready p75 <=50 ms and <=eager p75+16 ms; native disclosure must be populated before its first visible presentation. Resize focus migration succeeds in every functional repetition.",
+            "repeat": "Repeat open p75 <=eager p75+8 ms with no new controls for unchanged previously-used partition.",
+            "retention": "Zero cycle-10-to-100 extra generated elements/listeners for fixed items and width sequence; median post-GC heap growth <=64 KiB per arm."
+          }
+        },
+        {
+          "tag": "en-pagination",
+          "feature": "Generated direct-page chooser body",
+          "proposed_id": "en-pagination/direct-entry@1",
+          "qualification_status": "source-assessed; bounded candidate requiring deterministic benefit screen; no final rejected disposition",
+          "eager_cost": "Known totals render the native page-jump popover and its five-element descendant body (jump div, label, input, Cancel button, Go button) while closed. Unknown totals already omit all direct-entry controls. Numbered page computation is bounded to seven logical positions; huge pageCount does not create an enormous page collection.",
+          "code_vs_data": "No custom child registration dependencies and no unique optional module. Native chooser and handlers live in pagination template/element; page-count is scalar state, not record loading. The current .value input binding, native validity, transactional page changes, and owner callbacks all stay together.",
+          "mechanism": "If worth measured complexity, add opt-in construction flag retaining the #page-jump native popover shell and every popovertarget invoker. Gate only the five-element body until first invocation. Prepare body synchronously in the existing click/pointerdown path (click covers keyboard), and cover beforetoggle for direct native showPopover calls so native default action never opens an empty shell. Preserve native opening rather than await then replay. Retain body after close; pageCount=0 keeps its established full removal behavior and focus recovery. Do not gate numbered pages or essential Previous/Next/status.",
+          "design_obligation": "A requestUpdate in click is asynchronous; qualification must prove content is ready before native popover opening and observeJump focus/position. A beforetoggle synchronous construction hook can preserve native default invocation but must not call performUpdate reentrantly during another Lit update; prepare/flush design must account for this. Native popovertarget shell needs stable identity and same-root target resolution; removing it until click can break direct invocation and declarative semantics.",
+          "triggers": [
+            "Native gap/compact chooser click, Enter and Space via popovertarget",
+            "Pointerdown invoker retention followed by click",
+            "Direct native popover opening, if preserving accessible internal native behavior",
+            "Known-to-unknown count transition and disabled update while open"
+          ],
+          "fallback": "All essential page actions, status, boundaries, slot content and page semantics remain eagerly SSR-rendered. Default chooser remains complete. Lazy chooser body has no authored content; no records are removed from reading/Find/print. Opt-in should document JavaScript dependence consistent with pagination README, and avoid exposing a blank usable popover before hydration.",
+          "ssr_ownership": "Pagination owns native shadow content; Previous/Next authored slot nodes stay owned by consumer. Server/client opt-in must agree on omitted body. If user typed before hydration in eager/default SSR, preserve existing identity; a construction opt-in must not accidentally remove an existing server input/draft.",
+          "boundedness": "Exactly five descendant elements per known-total pager can be gated while retaining shell; no custom-element constructor savings. More than one hundred million pages still use at most seven logical page positions. Existing dedicated docs example has several pagers so aggregated fixed-node savings are possible, but a single workflow pager offers only five elements; neither route benefit nor no-change rejection is established by this source audit alone.",
+          "actual_consumers": [
+            {
+              "route": "/api-examples/pagination.html?progress-report",
+              "source": {
+                "path": "apps/docs/src/examples.ts",
+                "lines": [
+                  958,
+                  1010
+                ]
+              },
+              "test": {
+                "path": "apps/docs/tests/pagination.spec.ts",
+                "lines": [
+                  4,
+                  39
+                ]
+              },
+              "size": "Primary pager plus intermediate, mobile, alignment, slotted/text and unknown-total examples."
+            },
+            {
+              "route": "/api-reference?component=en-pagination&progress-report",
+              "source": {
+                "path": "apps/docs/src/api-reference/pagination.ts",
+                "lines": [
+                  6,
+                  9
+                ]
+              },
+              "test": {
+                "path": "apps/docs/tests/pagination.spec.ts",
+                "lines": [
+                  120,
+                  125
+                ]
+              }
+            },
+            {
+              "route": "/api-examples/virtual-collection.html?progress-report",
+              "source": {
+                "path": "apps/docs/src/virtual-collection-demo.ts",
+                "lines": [
+                  224,
+                  225
+                ]
+              },
+              "test": {
+                "path": "apps/docs/tests/pagination.spec.ts",
+                "lines": [
+                  107,
+                  117
+                ]
+              }
+            },
+            {
+              "route": "/workflows/assets",
+              "source": {
+                "path": "apps/docs/src/workflows/assets/template.ts",
+                "lines": [
+                  113,
+                  114
+                ]
+              },
+              "route_definition": {
+                "path": "apps/docs/src/workflow-pages/navigation.ts",
+                "lines": [
+                  16,
+                  16
+                ]
+              }
+            },
+            {
+              "component": "en-data-table",
+              "source": {
+                "path": "packages/elements/src/data-table/element.ts",
+                "lines": [
+                  164,
+                  177
+                ]
+              },
+              "note": "Pager constructed even hidden when nonpaginated or <2 pages; data-table owner adoption must be explicit and may have a broader separate generated-pager construction opportunity."
+            }
+          ],
+          "evidence": [
+            {
+              "path": "packages/elements/src/pagination/template.ts",
+              "lines": [
+                25,
+                83
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/state.ts",
+              "lines": [
+                14,
+                23
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/element.ts",
+              "lines": [
+                158,
+                173
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/element.ts",
+              "lines": [
+                174,
+                217
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/element.ts",
+              "lines": [
+                223,
+                235
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/element.ts",
+              "lines": [
+                250,
+                281
+              ]
+            },
+            {
+              "path": "packages/elements/src/definitions/pagination.ts",
+              "lines": [
+                1,
+                8
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/README.md",
+              "lines": [
+                14,
+                18
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/README.md",
+              "lines": [
+                87,
+                109
+              ]
+            },
+            {
+              "path": "packages/elements/src/pagination/README.md",
+              "lines": [
+                141,
+                178
+              ]
+            }
+          ],
+          "existing_tests": [
+            {
+              "path": "apps/docs/tests/pagination.spec.ts",
+              "lines": [
+                18,
+                39
+              ]
+            },
+            {
+              "path": "apps/docs/tests/pagination.spec.ts",
+              "lines": [
+                41,
+                61
+              ]
+            },
+            {
+              "path": "apps/docs/tests/pagination.spec.ts",
+              "lines": [
+                77,
+                104
+              ]
+            },
+            {
+              "path": "apps/docs/tests/pagination.spec.ts",
+              "lines": [
+                245,
+                283
+              ]
+            }
+          ],
+          "required_qualification": [
+            "Native popovertarget opens on first click/Enter/Space with field focus and usable positioned panel; Escape/Cancel/outside dismissal and original invoker focus",
+            "Native validity, Enter/Go, cancelable page transaction and authoritative property writes keep current behavior; canceled changes keep chooser open",
+            "Resize across wide/intermediate/compact, RTL, mobile visual viewport and nested shadow scrolling with input node identity preserved",
+            "Disabled/unknown totals while focused recover focus; reconnect/adopt before any pending readiness cannot steal focus",
+            "SSR/default no-JS labels/current page/status and hydrated native identity remain; authored previous/next slots remain present",
+            "Screen deterministic five-node-per-pager opportunity against declared actual route node totals before investing in promotion timing; if insufficient, record evidence-backed no-change rather than inventing a giant page list"
+          ],
+          "proposed_numeric_gates": {
+            "not_measured": true,
+            "component_never_used": "For fixed chooser body require >=10% fewer recursively connected component nodes on actual known-total pager; the absolute source ceiling is five elements, to be verified by browser DOM accounting, and zero code bytes. No unbounded page-count saving claim is allowed.",
+            "whole_route": "At least 5% fewer recursively connected nodes and >=32 absolute nodes saved on an actual route; dedicated multi-pager docs is a separate route from single-pager workflows. Startup median/p75 must be <=eager*1.05.",
+            "first_use": "Native chooser action-to-ready p75 <=50 ms and <=eager p75+8 ms, with input ready/focused by first visible chooser presentation. Five-node saving does not justify a larger first-use regression.",
+            "repeat": "Repeat open p75 <=eager p75+4 ms and retained input identity/draft semantics match eager.",
+            "retention": "Zero additional chooser elements/listeners from cycle 10 to 100 for fixed known pageCount; median post-GC heap growth <=32 KiB per arm."
+          }
+        }
+      ],
+      "follow_up_owner_guidance": "Integrating inventory owner must assign final implemented/already-conditional/essential-eager/not-applicable/rejected-with-evidence only after relevant deterministic or measured qualification. These source proposals are not permission to mark full rollout complete. Shared generated-content preparation/metadata naming belongs to common API owner; family implementations must not each introduce loaders/caches.",
+      "sharedPolicy": {
+        "property": "contentRendering",
+        "values": [
+          "eager",
+          "on-demand"
+        ],
+        "attribute": "content-rendering",
+        "default": "eager",
+        "timing": "configure before first update",
+        "axis": "construction only; static imports/dependencies remain eager",
+        "lifetime": "retain constructed body after first accepted opening; do not tear down on close",
+        "status": "Shared Stage A interface decision relayed by root; no implementation claim"
+      }
+    },
+    "toast-history-design": {
+      "audit": "read-only source design audit; no edits, tests, browser runs or timing measurements",
+      "head": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "tag": "en-toast-region",
+      "feature": "generated waiting/recent history disclosure rows",
+      "classification": "construction-only candidate; public history feature is already conditional; no verified consumer-benefit or promotion disposition in this audit",
+      "sourceFacts": [
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:29-50",
+          "finding": "history boolean is public; recent and waiting state are per instance; historyItems synchronously returns copied records; clearHistory synchronously replaces recent with [] and schedules render; retention clamps to 0..1000 or 20 for invalid values."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:72",
+          "finding": "Default history=false, historyLimit=20. Existing eager defaults must remain unchanged."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:85-109",
+          "finding": "sync retains accepted closed snapshots only while history=true, tracks prior open state, updates active/waiting presentation, queues announcements for admitted messages, and derives plain waiting message strings independently of the history disclosure."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:95-96",
+          "finding": "Recent capture requires previous recorded open state and current open===false; preserve snapshot observation timing and retention behavior while deferring only construction."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:119,123-127",
+          "finding": "en-change processing queues a microtask; MutationObserver/updated/firstUpdated drive synchronization. Snapshot getter is synchronous over current recorded state, but captures are not promised synchronously inside the original dismissal listener. Disable-history and limit trimming occur in updated."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:128",
+          "finding": "history=false omits details entirely. history=true creates native details without open binding; summary, all waiting <li>s, all retained recent <li>s and clear en-button are constructed even while disclosure is closed. No toggle handler exists."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:76-80,111-118,128",
+          "finding": "notify returns created element immediately; insertion waits initial empty persistent announcers. Admission announcements and persistent status/alert nodes must remain outside history construction."
+        },
+        {
+          "evidence": "packages/elements/src/definitions/toast-region.ts:6-10; packages/elements/src/definitions/toast.ts:7-11",
+          "finding": "Region static dependency is toast, whose static dependencies include button and icon. Clear button already follows that graph; construction deferral must not imply module/registration savings."
+        },
+        {
+          "evidence": "packages/elements/src/toast/element.ts:85-99,113-121",
+          "finding": "Dismissal is synchronous cancelable staging; plain message text excludes slotted actions; queue admission independently controls timeout. History previews must neither replay interactive DOM nor promote waiting toasts."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/README.md:54-73",
+          "finding": "Documented native keyboard disclosure, no announcement replay, previews do not affect admission/timers, copied snapshots, closure ordering, clearing, instance-only ownership and clear-button focus retention."
+        }
+      ],
+      "consumers": [
+        {
+          "kind": "real docs feature consumer",
+          "route": "/api-examples/toast.html",
+          "evidence": "apps/docs/src/toast-demo.ts:25,39-44; apps/docs/tests/toast.spec.ts:3-6",
+          "shape": "history=true, history-limit=5, initial one authored open toast, max starts3. User controls create messages; reset clears history. Initial source workload has zero retained rows and zero queued rows. This real route does not establish a large initial-row benefit."
+        },
+        {
+          "kind": "shared docs catalogue",
+          "evidence": "apps/docs/src/examples.ts:9,886,2063",
+          "shape": "toastExample is the interactive Notifications and toast actions catalogue entry."
+        },
+        {
+          "kind": "API guidance",
+          "route": "/api-examples/toast",
+          "evidence": "apps/docs/src/api-reference/toast.ts:3,24; apps/docs/src/api-reference/app.ts:173,183",
+          "shape": "toast and toast-region API pages share a history guide, and link to isolated toast example."
+        },
+        {
+          "kind": "real eager non-history consumer",
+          "route": "/workflows/settings",
+          "evidence": "apps/docs/src/workflows/settings/template.ts:240; apps/docs/src/api-reference/toast.ts:3",
+          "shape": "Settings notification region has no history opt-in; no construction savings from this feature."
+        },
+        {
+          "kind": "real eager non-history consumer",
+          "evidence": "apps/docs/src/theme-proof-demo.ts:46",
+          "shape": "Theme proof notifications region has no history opt-in."
+        }
+      ],
+      "ssrOwnership": [
+        {
+          "evidence": "packages/ssr/src/toast-stack-adapter.ts:13-22,25-49",
+          "finding": "Adapter records max per renderer/request with request-local Map and nonce, annotates authored/forwarded queued children and stack summary, and does not derive history rows. Do not add shared state, move authored nodes, change open/hidden, or introduce another hydration owner."
+        },
+        {
+          "evidence": "packages/elements/src/toast-region/element.ts:43-45,128; packages/ssr/tests/toast.test.mjs:11-33",
+          "finding": "Fresh instance history arrays start empty. Persistent announcers render empty, authored messages stay readable and server stack annotations preserve state. New opt-in initial lazy branch must match server/client; existing SSR tests are source evidence only, not run for this audit."
+        }
+      ],
+      "proposedMechanism": {
+        "interface": "contentRendering: 'eager' | 'on-demand', attribute content-rendering; set before first update; default eager",
+        "scope": "Only library-generated history body/list construction while history=true. Keep authored notification slot, stack summary, history details/summary, retention/copy/clear APIs, static definitions and announcement/timer machinery eager.",
+        "mount": "For on-demand, observe native details toggle without preventDefault or gesture replay; first native open latches construction. Pointer, Enter/Space activation and programmatic details.open must be covered. Observe an already-open native details at first update/hydration so pre-hydration interaction is preserved. No controlled .open binding.",
+        "retention": "Retain constructed body across close/reopen after first open; never destroy focused clear button during ordinary data clear. Preserve existing history=false subtree removal and snapshot clearing; latch state remains instance-local and sticky under the agreed contract.",
+        "preparation": "No dynamic import, async API, new cache or registry operation is justified for this boundary. Module code and generated child dependencies remain eager. A shared content-rendering opt-in controls only construction.",
+        "synchronousContract": "historyItems immediately reflects current recorded snapshots before first open; clearHistory empties stored recent records immediately, including while closed/unconstructed. Do not postpone data capture, retention clamps, pending additions, cancelable dismissal, focus recovery or queuedCount.",
+        "adoptionLifecycle": "Use a local bound toggle handler through Lit template, no global listeners, shared Signals or additional timers. Reconnect/adoption must not reset recorded snapshots or sticky construction beyond existing behavior; history opt-out continues current clearing semantics.",
+        "firstOpenRisk": "Native toggle fires after native state changes. Qualify no empty visible history body/frame at first reveal and no click/keyboard regression; do not claim first-open readiness from load()/ensure()."
+      },
+      "proposedNumericGates": {
+        "status": "PREDECLARED PROPOSALS ONLY: no measurements, accepted budgets, or performance claims from this audit",
+        "workloads": "Keep real toast route (5 recent limit, max3, initial 1 message) as actual consumer evidence. Use 20-recent +20-waiting typical stress and 1000-recent+100-waiting hard stress only as synthetic component evidence; do not substitute them for a real route benefit.",
+        "initialConstruction": "Before first open with opt-in: exactly 0 generated history li nodes; eager and post-open arms must render exactly waiting+retained snapshot count. Preserve all authored notification element identities. Require >=40% reduction of history-body element nodes and >=50 fewer total constructed elements at a qualifying real deferred-use consumer before promotion as a worthwhile consumer optimization.",
+        "startupCost": "Matched initial route readiness median must improve >=5% with uncertainty excluding a regression; p75 regression allowance <=5% and <=5ms. A route initially having zero history entries cannot satisfy the row-construction benefit gate by synthetic seeding.",
+        "firstUse": "At typical qualified workload: first-open content-ready p75 <=100ms and added cost versus eager <=50ms. At hard-cap stress: p75 <=200ms and no individual task >100ms. These are proposed gates to freeze before timing, not current observations.",
+        "traffic": "Unique module/request saving target is exactly 0; require zero additional requests or delayed registration for this construction-only boundary. Do not claim code-load benefit.",
+        "retention": "Five fresh-context arms, 100 open/close cycles each; compare cycle10 to100: no growth in generated row count for unchanged records, 0 additional retained event listeners, heap growth <=5% and <=1MiB after identical collection protocol. Sticky retained first-use body is expected, repeated-cycle growth is not.",
+        "sampling": "At least30 successful timing samples/configuration with all failures retained; report n, median, p75 and uncertainty, not p95 unless n>=100. Declare exact reference/candidate locks, source/build/runtime/browser identities before campaign."
+      },
+      "qualificationNeeded": [
+        "Real history consumer with sufficient unopened retained/backlog rows; current docs route initial source establishes no such benefit.",
+        "Eager/default parity; opt-in absent rows before first open; updates/clear before first open; history=false reset; clamps0/20/1000; historyItems copy mutation cannot mutate storage.",
+        "Native pointer, Enter, Space and programmatic open; no-JS/SSR/default content; pre-hydration opening; no redundant live-region announcements; clear retains focus; no waiting toast admission or timer changes.",
+        "Vetoed/accepted dismissals, timeout and silent author close; removal exclusion; forwarded slots; scoped owning registration; reconnect/adoption and simultaneous regions; request isolation.",
+        "Existing test extension anchors apps/docs/tests/toast.spec.ts:296-311 and packages/ssr/tests/toast.test.mjs:11-33. These tests were inspected, not executed.",
+        "Because native interaction timing changes, provide a ready fixture for short human keyboard/assistive-technology check; DOM/AX assertions cannot prove spoken output."
+      ],
+      "recommendation": "Implement only if shared content-rendering machinery and a qualifying deferred-use consumer justify cost. No unique code boundary; core toast delivery, timers, data retention and announcers are essential eager. The existing empty-initial docs consumer provides deterministic no-initial-row-benefit evidence, so do not claim promoted consumer benefit merely from the 1000-snapshot cap."
+    }
+  },
+  "budgetDecision": {
+    "status": "frozen-before-runtime-edits-and-measurements",
+    "at": "2026-09-28T20:53:20.711573+00:00",
+    "owner": "integration lead",
+    "scope": "Every numeric family gate in this file is adopted as written. Historical estimates are source opportunities, not measurements.",
+    "precedence": "Per-family gates here govern media, selection, commands, menubar, overflow, pagination and toast. Contextual toolbar uses editor.md. Shared API/date protocol uses budgets.json. Generic constructionFeature in budgets.json is only a template and does not override a named family.",
+    "changeRule": "Changes require a new declared candidate/protocol before new measurements; existing failures and thresholds remain preserved."
+  }
+}

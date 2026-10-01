@@ -1,0 +1,27 @@
+/* Application composition uses the package's unmodified default theme tokens. */
+body {
+  font: var(--wa-font-weight-body) var(--wa-font-size-m) / var(--wa-line-height-normal) var(--wa-font-family-body);
+  color: var(--wa-color-text-normal);
+  background: var(--wa-color-surface-lowered);
+  --art-accent: var(--wa-color-brand-fill-loud);
+  --art-surface: var(--wa-color-surface-lowered);
+}
+a {
+  color: var(--wa-color-text-link);
+  text-decoration: var(--wa-link-decoration-default);
+}
+a:hover { text-decoration: var(--wa-link-decoration-hover); }
+wa-card,
+wa-input,
+wa-textarea,
+wa-select,
+wa-number-input,
+wa-slider,
+wa-progress-bar,
+wa-tab-group {
+  width: 100%;
+  min-width: 0;
+}
+wa-dialog { --width: 500px; }
+wa-popover { --max-width: 320px; }
+[hidden] { display: none !important; }

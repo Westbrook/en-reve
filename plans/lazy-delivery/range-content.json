@@ -1,0 +1,1060 @@
+{
+  "schemaVersion": 1,
+  "scope": "Stage D essential range editing and authored-content designs",
+  "sourceCommit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+  "sourceTree": "758b9365f2270f5540885c803801a4b6d45ed9d2",
+  "runtimeChanged": false,
+  "browserRuns": 0,
+  "performanceRuns": 0,
+  "newManualAcceptance": false,
+  "sourceAuditMethod": "Read current runtime/contracts/tests; recover inherited Git artifacts; diff range runtime and helpers from old evidence base to accepted main. No current browser or timing claims.",
+  "inheritedRangeReconciliation": {
+    "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+    "changed": [
+      "packages/elements/src/date-picker/element.ts"
+    ],
+    "change": "Only field help/error association and trigger refresh changes; calendar, range helper and calendar adapter unchanged. Essential ownership remains unchanged."
+  },
+  "sources": [
+    {
+      "path": "apps/docs/src/api-reference/presence-activity.ts",
+      "sha256": "687b86192108d777f5c27bf57f58fa23f79dfa26f402ea6b2c5f6ec7f3d91fc4"
+    },
+    {
+      "path": "apps/docs/tests/date-ranges.spec.ts",
+      "sha256": "2f3c34737bc76b0083a8ce55c68a64e63be6f5c3f606fe559bedac2f4d05ad17"
+    },
+    {
+      "path": "packages/elements/src/accordion-item/README.md",
+      "sha256": "0a4e6287722cc341be339cb1ce5452b74fe5f5420da3302c889c94a640137433"
+    },
+    {
+      "path": "packages/elements/src/accordion-item/template.ts",
+      "sha256": "34f1eccc98e36d69d8088746c2c73a0412eae73d2f6d403c769a8acc3c52a25d"
+    },
+    {
+      "path": "packages/elements/src/accordion/README.md",
+      "sha256": "3e48fd304fab76d26ef757f105af75d6940a1a8bac5488f2a1c3f9c7fb6b27eb"
+    },
+    {
+      "path": "packages/elements/src/accordion/template.ts",
+      "sha256": "45492c934ffd229d339144401184a7f82abac03f1fab5e71d7c115169602b46f"
+    },
+    {
+      "path": "packages/elements/src/activity-feed.ts",
+      "sha256": "3b0db3000be5ce0c2a4b454d52e66c4381f20d51e5d9a2a02f65bb5199711918"
+    },
+    {
+      "path": "packages/elements/src/activity-item.ts",
+      "sha256": "8e2ca4ea223374c220d4ae589fe27144c7645e154857eca46e1256e041702b96"
+    },
+    {
+      "path": "packages/elements/src/calendar/element.ts",
+      "sha256": "bb961f85b1c5a9b67f73109e59d86978a37a4dcb6f04ae2b3ffcd3aeb5a9c888"
+    },
+    {
+      "path": "packages/elements/src/calendar/tests/calendar-ssr.test.mjs",
+      "sha256": "1b524a527166561fd91deab31c3853d0986895027754a6adb896004de1f7673c"
+    },
+    {
+      "path": "packages/elements/src/calendar/tests/date-range.test.mjs",
+      "sha256": "56c6b9a58d61324c8244e113297c5ba05f1534b2fbfc006a830e2ed229f6f5d7"
+    },
+    {
+      "path": "packages/elements/src/carousel-slide.ts",
+      "sha256": "9981dd325c87a31f602c5ec259f211fc0e3f4453f24d55eb54314921437277ec"
+    },
+    {
+      "path": "packages/elements/src/carousel.ts",
+      "sha256": "adbb1960362efba2929c2eaf363409ecbf09cc1d69a2638b1cef9cc2263d2763"
+    },
+    {
+      "path": "packages/elements/src/data-table/README.md",
+      "sha256": "b8deda442a007f18fdd507166843ec8e7044ca5bc722ee7fd52af33e7723e251"
+    },
+    {
+      "path": "packages/elements/src/data-table/element.ts",
+      "sha256": "73976fcb13ded6d2db4cd7e3e62433b798c25633b6454f6874ec543464fdf821"
+    },
+    {
+      "path": "packages/elements/src/date-picker-shell.ts",
+      "sha256": "52dba14b3fba0d315786f7c1172014dc6c33c33401f18c6e3fd63e7369387312"
+    },
+    {
+      "path": "packages/elements/src/date-picker/README.md",
+      "sha256": "d85635fc7325d49f69d1ed7e6463b955847df98671e1937b565849f3ac14d3e4"
+    },
+    {
+      "path": "packages/elements/src/date-picker/element.ts",
+      "sha256": "485636be8a88d8c49963fa84c9ab4babee621b938a55114c33fa06a7fc2d424f"
+    },
+    {
+      "path": "packages/elements/src/date-picker/tests/deferred.test.mjs",
+      "sha256": "ce13e3106df94703bf3c36f5a4f715c3c97f95ac3c7f93927d8b125101c46e98"
+    },
+    {
+      "path": "packages/elements/src/definitions/date-picker.ts",
+      "sha256": "346b18368bc5fdcfb2e9d9b3ca0e4954d3bac4fce548b26f22d8516c555e9b1a"
+    },
+    {
+      "path": "packages/elements/src/dialog/README.md",
+      "sha256": "27f235da8bb2222a8dfd549f0aeb344281e00ceec0dd0a9297118bd5c5cfe261"
+    },
+    {
+      "path": "packages/elements/src/dialog/dialog.ts",
+      "sha256": "25ec797a18d35809cd83e619e21fbbba047b8f6bb278d346d19dbdb14282079e"
+    },
+    {
+      "path": "packages/elements/src/internal/calendar-adapter.ts",
+      "sha256": "50b132b11374eacee64846930663ad85378eed948076a53aaaf9652a5385e36c"
+    },
+    {
+      "path": "packages/elements/src/internal/date-range.ts",
+      "sha256": "96ac9861ba34e304b09ce68bb7045f054949f2cb7e279b4848eddd69b39bd8a1"
+    },
+    {
+      "path": "packages/elements/src/navigation-group.ts",
+      "sha256": "91ad15dd578142c4a36a96e04a2a8bf88214729a3860ad13db3f88171ae6386d"
+    },
+    {
+      "path": "packages/elements/src/navigation/README.md",
+      "sha256": "d461a8f70ff19cedad9fe31f5aa3c7f6f4a7a27cae656bc4fa4008c2f5667592"
+    },
+    {
+      "path": "packages/elements/src/navigation/element.ts",
+      "sha256": "fb7b048bc22d48081998943a7714e28fb219508a94d60b6f1a5103edb24dd7fc"
+    },
+    {
+      "path": "packages/elements/src/presence-group.ts",
+      "sha256": "e21c53cf3f5101e5eff643f158701bd9a2fd898c117bc7f4c77e99fddc1aa8e1"
+    },
+    {
+      "path": "packages/elements/src/presence.ts",
+      "sha256": "ee55391155b41b6c2689aaba752fd686af88a426af4c9c36fb08d7c6f8cee61f"
+    },
+    {
+      "path": "packages/elements/src/split-view/README.md",
+      "sha256": "b180239d150810a1019a36fd424ece5e3c8bbee57bd58f439f165fe86f896979"
+    },
+    {
+      "path": "packages/elements/src/split-view/template.ts",
+      "sha256": "a7c6cf13a8e898b1fb82ac6abd0358b8e2e64d63629780233b69174b83d1300f"
+    },
+    {
+      "path": "packages/elements/src/splitter/README.md",
+      "sha256": "07e36a8f8ad574e7152cea97a01e493a030e0016e225baf034e38f899e59791c"
+    },
+    {
+      "path": "packages/elements/src/splitter/splitter.ts",
+      "sha256": "252e014db988f7a32640620cfbe7cd70756ad50fd2ececb7b6bd392c6b7ce5d9"
+    },
+    {
+      "path": "packages/elements/src/splitter/template.ts",
+      "sha256": "cdea9a9a4043d3478b20f1de0f15f9ce6d0340456f74fde74295b24434156033"
+    },
+    {
+      "path": "packages/elements/src/tab-panel/tab-panel.ts",
+      "sha256": "6616e501920765d3bbc4ec8e3d44c3034b5145469af864ba8f2793dc26bb7394"
+    },
+    {
+      "path": "packages/elements/src/tab-panel/template.ts",
+      "sha256": "fc50db60ffcd7de9eaef7a0903ca3daceb476790fa5ebb02bedb820af74a62e3"
+    },
+    {
+      "path": "packages/elements/src/tab/tab.ts",
+      "sha256": "0760fa22f426532a9ed07ade79430b02be31eec105b06b23361d0aa4664aa3ef"
+    },
+    {
+      "path": "packages/elements/src/tab/template.ts",
+      "sha256": "105c504a1f15832a8f8ee23edb921e5e4491b37676680cd265b7aa18e49fada5"
+    },
+    {
+      "path": "packages/elements/src/table/README.md",
+      "sha256": "c5369c28652b68c3ed5155be30216dd861e5aca6e61f7a5468b9b581232d0eef"
+    },
+    {
+      "path": "packages/elements/src/table/template.ts",
+      "sha256": "1d2433bdcfe0e37c61dd7336eb6bfc9311ad5071610ece83605cfc9758fa9917"
+    },
+    {
+      "path": "packages/elements/src/tabs/README.md",
+      "sha256": "6acdb97a0a96b5334e9b7ba2d44f79be313b5b7f864aa14c13b1a95b8adde1be"
+    },
+    {
+      "path": "packages/elements/src/tabs/tabs.ts",
+      "sha256": "8f2e7cc34e5bbc0d082883ff2b10d0e8c11785ba49293887357eec395a561399"
+    },
+    {
+      "path": "packages/elements/src/tabs/template.ts",
+      "sha256": "c94787fe56f1e8096b95269536e9f8828efd39970fb9cdf5343bd61f7d999ce6"
+    },
+    {
+      "path": "packages/elements/src/tree-item/template.ts",
+      "sha256": "c2866d64ae8e9e205d1a163b381b2f37735ca90aba0c03f2d543e0f52477a0ff"
+    },
+    {
+      "path": "packages/elements/src/tree/README.md",
+      "sha256": "94f23c98033d8807712c9df9652711bb6c57fb4300da3751e0cf22b1d948e622"
+    },
+    {
+      "path": "packages/elements/src/tree/data-template.ts",
+      "sha256": "e58e3fb22dd40c67ee1afbb7513e35438cf62b2cfe4b76c3c3e36e5237f8af9b"
+    },
+    {
+      "path": "packages/elements/src/tree/element.ts",
+      "sha256": "89b9dd4bfab095dd0e6f23590ef1d1c28b9d9d630457540df32a9976deb9d079"
+    },
+    {
+      "path": "packages/elements/src/tree/interaction-controller.ts",
+      "sha256": "b5a7402788c6a307743b8e1969d44bb3858570e5a63f46e976adf1c8cc78eea1"
+    },
+    {
+      "path": "packages/elements/src/tree/move-controller.ts",
+      "sha256": "30f1d4c3f1fc8ae059e58a04ac5a930455cf688a9b8f33b0b1417392b71641f9"
+    },
+    {
+      "path": "packages/elements/src/validation-summary/README.md",
+      "sha256": "56c8aa8b8e8f035d28aee30ff5840b547f6b508814313d7929ac8930917c9d4c"
+    },
+    {
+      "path": "packages/elements/src/validation-summary/element.ts",
+      "sha256": "edcab0fbc154011adf9e37d4cfca2cac8029b83b19dbf5cb8dafde1e2bd79bfc"
+    },
+    {
+      "path": "packages/primitives/README.md",
+      "sha256": "f3ff2d50c47a645de69543221dd501c94d6c5926595e5453308b1f0df78f8478"
+    },
+    {
+      "path": "packages/primitives/src/templates/disclosure.ts",
+      "sha256": "6b44e08b75d5c71ad84225ed76e04bade1c32ca0a0e84110e556a882e532136f"
+    },
+    {
+      "path": "packages/ssr/README.md",
+      "sha256": "10e306d55fab7be975f162f7d7332a2aac052fc8d0e12cc00e9820ba8acfd726"
+    },
+    {
+      "path": "packages/ssr/tests/browser/composite-accessibility.spec.ts",
+      "sha256": "c1e3326f096310d973b44979309ec85c7180bbf3aa26a7078bbf94445cc91a93"
+    },
+    {
+      "path": "packages/styles/src/collaboration.ts",
+      "sha256": "6504410b41c48389008968cbe69ef6035ce0d8e2636098108c9d90c31656f32c"
+    },
+    {
+      "path": "packages/styles/src/table.ts",
+      "sha256": "5d34017116ac0d28b8b911c02f5bdafbba5bca0bbb3d4469bb502aff00b266e5"
+    }
+  ],
+  "evidence": [
+    {
+      "commit": "1f82ebd80890267d6a56a22abd58b2b3d97fe01e",
+      "path": "plans/scoped-followup-range-feasibility.md",
+      "gitBlob": "4066eec082807f2b19be07a817b08a9753e63207",
+      "sha256": "b70a9152ee3c7e957949025c6a43d35e80a82df3de8f059fd43eeeb87527c58d",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "1f82ebd80890267d6a56a22abd58b2b3d97fe01e",
+      "path": "artifacts/scoped-followup-range-feasibility/verification.json",
+      "gitBlob": "7b5feba2b0d69b5dc2ae57f7c409a495b231d606",
+      "sha256": "5b79421066f773ba1a53b49e46c45456f574567890ed55de962e20c4762b6702",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "1f82ebd80890267d6a56a22abd58b2b3d97fe01e",
+      "path": "artifacts/scoped-followup-range-feasibility/results.json",
+      "gitBlob": "8b53d03a8ee7b1b104a56fb698c8bbc2493f6041",
+      "sha256": "33ec77efd10b126b57e84f9cd40cc595d8b5e0022db8dac237c253ffe3ac1e11",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "1f82ebd80890267d6a56a22abd58b2b3d97fe01e",
+      "path": "artifacts/scoped-followup-range-feasibility/costs.json",
+      "gitBlob": "304427849a3d7f71d0a3fdb5bcfbd4653e64e180",
+      "sha256": "f3f6807348ebee653c925a2d43ec33adc6f9461f1856c101132d2a0c2642792e",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "plans/scoped-followup-panels-collections.md",
+      "gitBlob": "e90b3b7ef9d35cf70fb6b47c210e7c9585cae2c1",
+      "sha256": "d719ebfb0cb24bb94acd47adfa3956c5c092c79f8241735bc01fc45bae14b9d9",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "artifacts/scoped-followup-panels-collections/decision.json",
+      "gitBlob": "dd4a81bb2b3fa4fd5d2993ce171b0d6315a5116a",
+      "sha256": "b03b3bee4ceaf62d6bfbce9fc534768da854b7df20f149d75ec9ea6497c4aea7",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "artifacts/scoped-followup-panels-collections/handoff.json",
+      "gitBlob": "eae1853d658b85f0bb8b822ed8ec34bafe63ca0a",
+      "sha256": "b4609cdbd730869bb55a2ebeb92f844ac9bd94a05959485c2f85b81b9d9c538c",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "artifacts/scoped-followup-panels-collections/runs/qualification-7/raw.json",
+      "gitBlob": "0aa256fe32bd54681116dc9d2ec30e815bed2b4c",
+      "sha256": "93c37b2fe99848efa73328a73b32a265be0f04194f05927f61aa0df6f3a2f592",
+      "kind": "inherited-not-remeasured"
+    },
+    {
+      "commit": "5cd7288d466264f993145a38911c3c87078c8901",
+      "path": "artifacts/scoped-followup-panels-collections/runs/qualification-7/summary.json",
+      "gitBlob": "820f6fb54af113087c4c03872f0aa33aa79166e6",
+      "sha256": "610dfc6d7da14a75c9a84fc45f619cd8703b97c3e5a9ff9a950be224a77b484d",
+      "kind": "inherited-not-remeasured"
+    }
+  ],
+  "features": [
+    {
+      "id": "date-picker.range-calendar",
+      "tags": [
+        "en-date-picker"
+      ],
+      "disposition": "essential-eager",
+      "owner": "EnDatePicker accepted/form owner; EnCalendar draft owner",
+      "costs": {
+        "componentLoading": "existing canonical tag loader",
+        "registration": "canonical date dependency graph requires calendar",
+        "construction": "eager calendar",
+        "optionalCode": "not supported for range",
+        "hydration": "essential editor requires ordinary ordered hydration",
+        "data": "not a remote-data boundary",
+        "virtualization": "not applicable"
+      },
+      "consumer": "Existing production date-range picker and docs range workflow",
+      "trigger": "Existing picker trigger/showPicker; no new activation API",
+      "fallback": "Canonical eager range retains current JavaScript editor. No current no-JavaScript outer-form submission guarantee; associated native light-DOM fields plus server whole-pair validation required for that route.",
+      "rationale": "Closed range has no native editor; modal endpoints and Apply depend on calendar draft. Direct endpoint .value bindings are outside EditingController preservation contract. Current code guard correctly rejects deferred+range.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/date-picker/element.ts",
+          "start": 65,
+          "end": 77
+        },
+        {
+          "path": "packages/elements/src/date-picker/element.ts",
+          "start": 143,
+          "end": 205
+        },
+        {
+          "path": "packages/elements/src/date-picker/element.ts",
+          "start": 228,
+          "end": 245
+        },
+        {
+          "path": "packages/elements/src/date-picker/element.ts",
+          "start": 297,
+          "end": 309
+        },
+        {
+          "path": "packages/elements/src/date-picker/element.ts",
+          "start": 341,
+          "end": 354
+        }
+      ],
+      "synchronousConstraints": [
+        "Atomic cancelable en-change with tentative FormData and authoritative writes winning",
+        "Existing dialog show/hide ChangeOutcome semantics",
+        "Synchronous whole-interval constraints and unavailableDate predicate",
+        "No awaited replay of native trusted gestures"
+      ],
+      "ssr": "Current endpoints are unnamed inside shadow/dialog; single-date SSR identity evidence does not qualify paired endpoints. Keep server/client policy/snapshot matched and one hydration owner.",
+      "retention": "Keep eager and connected-after-use state; no detach/recreate/eviction change.",
+      "qualification": "Source-backed no-change disposition. Historical private prototype did not have production parity. No new implementation, parity pass, promotion or performance claim.",
+      "reopenWhen": [
+        "A named consumer justifies optional range calendar",
+        "Production shell owns accepted/draft/default/native editing and forms independently",
+        "Explicit useful failure/no-JavaScript authoring and server submission contract exists",
+        "Exact endpoint hydration/composition/restoration/close-veto/localization parity passes",
+        "Matched production benefit/latency/retention and focused manual gates pass"
+      ],
+      "futureRequiredWork": [
+        "Production ownership extraction",
+        "Associated no-JavaScript native form/server contract",
+        "Paired SSR identity/native editing qualification",
+        "Close-veto and locale parity",
+        "Matched performance/retention",
+        "Physical IME/autofill/AT acceptance"
+      ],
+      "doesNotProve": "Infeasibility of every future compatible essential editor; no-change retains current supported interaction contract."
+    },
+    {
+      "id": "tabs.authored-panel-body-deferral",
+      "tags": [
+        "en-tabs"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Persistent consumer-owned panels; owner synchronizes hidden/ARIA/focus after transaction acceptance, not body allocation.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/tabs/template.ts",
+          "start": 11
+        },
+        {
+          "path": "packages/elements/src/tabs/tabs.ts",
+          "start": 106
+        },
+        {
+          "path": "packages/elements/src/tabs/README.md",
+          "start": 3
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "tab.selection-affordance",
+      "tags": [
+        "en-tab"
+      ],
+      "disposition": "essential-eager",
+      "rationale": "Small label surface; public host owns tab semantics and consumer-tree panel references.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/tab/tab.ts",
+          "start": 9
+        },
+        {
+          "path": "packages/elements/src/tab/tab.ts",
+          "start": 45
+        },
+        {
+          "path": "packages/elements/src/tab/template.ts",
+          "start": 3
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "tab-panel.authored-body-deferral",
+      "tags": [
+        "en-tab-panel"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Slot remains mounted; hidden host uses display:none!important. No body ownership or reveal protocol.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/tab-panel/tab-panel.ts",
+          "start": 8
+        },
+        {
+          "path": "packages/elements/src/tab-panel/tab-panel.ts",
+          "start": 17
+        },
+        {
+          "path": "packages/elements/src/tab-panel/template.ts",
+          "start": 4
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "accordion.group-wrapper",
+      "tags": [
+        "en-accordion"
+      ],
+      "disposition": "not-applicable",
+      "rationale": "Single persistent slot wrapper; no substantial separate internal feature.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/accordion/template.ts",
+          "start": 3
+        },
+        {
+          "path": "packages/elements/src/accordion/README.md",
+          "start": 39
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "accordion-item.authored-body-deferral",
+      "tags": [
+        "en-accordion-item"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Persistent authored slot in hidden internal panel; generated native trigger and same-root relationship remain essential.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/accordion-item/template.ts",
+          "start": 15
+        },
+        {
+          "path": "packages/elements/src/accordion-item/template.ts",
+          "start": 22
+        },
+        {
+          "path": "packages/elements/src/accordion-item/README.md",
+          "start": 3
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "navigation-group.disclosure-body-deferral",
+      "tags": [
+        "en-navigation-group"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Authored links remain slotted in native details; pre-upgrade native open state is captured. Deferral would alter native disclosure/no-JS ownership.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/navigation-group.ts",
+          "start": 35
+        },
+        {
+          "path": "packages/elements/src/navigation-group.ts",
+          "start": 62
+        },
+        {
+          "path": "packages/elements/src/navigation/README.md",
+          "start": 90
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "navigation.responsive-disclosure-body-deferral",
+      "tags": [
+        "en-navigation"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Ordinary authored native anchors remain usable before definition; optional details shell retains its content and initially opens before viewport discovery.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/navigation/element.ts",
+          "start": 168
+        },
+        {
+          "path": "packages/elements/src/navigation/README.md",
+          "start": 52
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "table.authored-row-deferral",
+      "tags": [
+        "en-table"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Consumer owns complete native table; component only provides overflow/sticky shell. Print CSS removes clipping but cannot recreate omitted records.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/table/template.ts",
+          "start": 15
+        },
+        {
+          "path": "packages/elements/src/table/README.md",
+          "start": 38
+        },
+        {
+          "path": "packages/elements/src/table/README.md",
+          "start": 130
+        },
+        {
+          "path": "packages/styles/src/table.ts",
+          "start": 31
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "data-table.record-windowing",
+      "tags": [
+        "en-data-table"
+      ],
+      "disposition": "already-conditional",
+      "rationale": "Explicit all/paginated/virtual modes; paginated default; existing pins/focus retention and full reading route requirements remain.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/data-table/element.ts",
+          "start": 86
+        },
+        {
+          "path": "packages/elements/src/data-table/element.ts",
+          "start": 106
+        },
+        {
+          "path": "packages/elements/src/data-table/README.md",
+          "start": 78
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "data-table.sorting-selection-paging-access",
+      "tags": [
+        "en-data-table"
+      ],
+      "disposition": "essential-eager",
+      "rationale": "Generated selection only when requested; pager is mounted then hidden when inapplicable. Active page/sort/selection controls are required by chosen mode; no independent unused generated tool/workload identified in this audit.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/data-table/element.ts",
+          "start": 149
+        },
+        {
+          "path": "packages/elements/src/data-table/element.ts",
+          "start": 171
+        },
+        {
+          "path": "packages/elements/src/data-table/element.ts",
+          "start": 175
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "tree.data-window-and-move-body",
+      "tags": [
+        "en-tree"
+      ],
+      "disposition": "already-conditional",
+      "rationale": "virtualize only affects data; expanded-visible rows default to full render; Move fieldset/options mount only while opened, drag adornments only during drag.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/tree/element.ts",
+          "start": 102
+        },
+        {
+          "path": "packages/elements/src/tree/data-template.ts",
+          "start": 32
+        },
+        {
+          "path": "packages/elements/src/tree/data-template.ts",
+          "start": 75
+        },
+        {
+          "path": "packages/elements/src/tree/move-controller.ts",
+          "start": 234
+        },
+        {
+          "path": "packages/elements/src/tree/README.md",
+          "start": 229
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "tree.idle-move-status-split",
+      "tags": [
+        "en-tree"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Historical idle shell only 7 nodes; expensive body already on-demand. Keep status and active operation lifetime; do not repeat rejected split.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/tree/move-controller.ts",
+          "start": 246
+        },
+        {
+          "path": "packages/elements/src/tree/move-controller.ts",
+          "start": 256
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "tree-item.authored-descendant-deferral",
+      "tags": [
+        "en-tree-item"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Authored rich labels and child items retain slots; collapsed group hidden; hidden=until-found expressly unsupported.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/tree-item/template.ts",
+          "start": 23
+        },
+        {
+          "path": "packages/elements/src/tree-item/template.ts",
+          "start": 28
+        },
+        {
+          "path": "packages/elements/src/tree/interaction-controller.ts",
+          "start": 98
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "carousel.data-window-controls-picker",
+      "tags": [
+        "en-carousel"
+      ],
+      "disposition": "already-conditional",
+      "rationale": "Data entries already windowed with focused-key retention; list/pre-ready reading path paginated; controls/picker gated by explicit settings.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/carousel.ts",
+          "start": 623
+        },
+        {
+          "path": "packages/elements/src/carousel.ts",
+          "start": 644
+        },
+        {
+          "path": "packages/elements/src/carousel.ts",
+          "start": 683
+        },
+        {
+          "path": "packages/elements/src/carousel.ts",
+          "start": 690
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "carousel.rotation-control-split",
+      "tags": [
+        "en-carousel"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Historical 19-node hidden control below screened gate; essential immediate stop/start control when autoplay is enabled.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/carousel.ts",
+          "start": 670
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "carousel-slide.authored-slide-body-deferral",
+      "tags": [
+        "en-carousel-slide"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Persistent authored body slot; offscreen presentation inert/aria-hidden does not remove allocation or create cross-engine Find guarantee.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/carousel-slide.ts",
+          "start": 10
+        },
+        {
+          "path": "packages/elements/src/carousel-slide.ts",
+          "start": 39
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "activity-feed.data-window-pagination",
+      "tags": [
+        "en-activity-feed"
+      ],
+      "disposition": "already-conditional",
+      "rationale": "Authored/all reading body stays mounted; explicit data virtual/paginated modes own windowing; paging navigation conditional.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 85
+        },
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 273
+        },
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 285
+        },
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 290
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "activity-feed.hidden-generated-button-split",
+      "tags": [
+        "en-activity-feed"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Historical 38-node opportunity below screened gate, shared button dependency used by visible actions. Preserve loaded history and status.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 289
+        },
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 293
+        },
+        {
+          "path": "packages/elements/src/activity-feed.ts",
+          "start": 294
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "activity-item.authored-body-deferral",
+      "tags": [
+        "en-activity-item"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Body/author/avatar/metadata/attachments/actions are authored slots; native children preserve semantics.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/activity-item.ts",
+          "start": 6
+        },
+        {
+          "path": "packages/elements/src/activity-item.ts",
+          "start": 39
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "presence.identity-surface",
+      "tags": [
+        "en-presence"
+      ],
+      "disposition": "essential-eager",
+      "rationale": "Small authored identity/status slots with generated fallback; no separate optional heavy feature.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/presence.ts",
+          "start": 41
+        },
+        {
+          "path": "packages/elements/src/presence.ts",
+          "start": 44
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "presence-group.authored-overflow-body-deferral",
+      "tags": [
+        "en-presence-group"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Original children remain; collapsed overflow uses display:none!important, not omission. No Find/hash/print reveal contract located.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/presence-group.ts",
+          "start": 41
+        },
+        {
+          "path": "packages/elements/src/presence-group.ts",
+          "start": 53
+        },
+        {
+          "path": "packages/styles/src/collaboration.ts",
+          "start": 8
+        },
+        {
+          "path": "apps/docs/src/api-reference/presence-activity.ts",
+          "start": 22
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "split-view.authored-pane-body-deferral",
+      "tags": [
+        "en-split-view"
+      ],
+      "disposition": "rejected-with-evidence",
+      "rationale": "Persistent primary/secondary slots; collapsed wrapper hidden and inert; essential panes must initially expand for no-JS access.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/split-view/template.ts",
+          "start": 27
+        },
+        {
+          "path": "packages/elements/src/split-view/template.ts",
+          "start": 36
+        },
+        {
+          "path": "packages/elements/src/split-view/README.md",
+          "start": 44
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "splitter.separator-grip",
+      "tags": [
+        "en-splitter"
+      ],
+      "disposition": "essential-eager",
+      "rationale": "Tiny generated decorative grip; host semantics and keyboard/pointer affordance essential while usable.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/splitter/template.ts",
+          "start": 4
+        },
+        {
+          "path": "packages/elements/src/splitter/splitter.ts",
+          "start": 192
+        },
+        {
+          "path": "packages/elements/src/splitter/README.md",
+          "start": 13
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "validation-summary.empty-summary",
+      "tags": [
+        "en-validation-summary"
+      ],
+      "disposition": "already-conditional",
+      "rationale": "Whole summary omitted when no effective errors exist; active errors render eagerly with native links.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/validation-summary/element.ts",
+          "start": 65
+        },
+        {
+          "path": "packages/elements/src/validation-summary/element.ts",
+          "start": 79
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    },
+    {
+      "id": "validation-summary.active-error-delivery",
+      "tags": [
+        "en-validation-summary"
+      ],
+      "disposition": "essential-eager",
+      "rationale": "Authored errors/heading/description and generated error links must remain immediately readable; panel/cross-root reveal belongs to application via en-action.",
+      "sourceAnchors": [
+        {
+          "path": "packages/elements/src/validation-summary/element.ts",
+          "start": 82
+        },
+        {
+          "path": "packages/elements/src/validation-summary/README.md",
+          "start": 17
+        },
+        {
+          "path": "packages/elements/src/validation-summary/README.md",
+          "start": 30
+        }
+      ],
+      "componentLoading": "Existing canonical tag loader; orthogonal to internal feature disposition",
+      "qualification": "Current source audit and unchanged historical ownership reconciliation; no new browser/performance/manual acceptance",
+      "reopenWhen": "Named often-unused generated consumer with material cost, or an explicit authored discovery/reading contract qualified for actual Find/hash/print/no-JavaScript/AT behavior; preserve existing supported semantics."
+    }
+  ],
+  "manualConstraints": [
+    {
+      "id": "virtual-table-voiceover-traversal",
+      "status": "open-independent",
+      "feedbackId": "feedback-collection-voiceover-row-boundary",
+      "note": "DOM/focus/ARIA snapshots do not establish VoiceOver reading-cursor acceptance."
+    }
+  ],
+  "reviewState": "Only the user marks report items reviewed; this audit closes no unrelated feedback.",
+  "existingRegressionObligations": [
+    {
+      "path": "packages/ssr/tests/browser/composite-accessibility.spec.ts",
+      "start": 16,
+      "end": 35,
+      "coverage": "Initial DSD endpoint local descriptions and cross-root trigger limit"
+    },
+    {
+      "path": "packages/ssr/tests/browser/composite-accessibility.spec.ts",
+      "start": 156,
+      "end": 187,
+      "coverage": "Hydrated endpoint help/error/focus, Apply, paired FormData and reset"
+    },
+    {
+      "path": "packages/ssr/tests/browser/composite-accessibility.spec.ts",
+      "start": 190,
+      "end": 210,
+      "coverage": "Retains original native-control references, including range endpoints, and checks connection after hydration; pre-hydration edit targets numeric slider, not date endpoints",
+      "doesNotCover": "Paired date pre-hydration native drafts/composition/autofill/restoration"
+    }
+  ],
+  "authoredContent": {
+    "decision": "Do not add an authored-body omission/eviction profile in this compatible rollout. Preserve consumer-owned nodes and existing explicit data/window modes.",
+    "discoveryObligations": [
+      "Actual native Find reachability and owner reveal",
+      "Connected stable fragment IDs and initial/later hash reveal",
+      "Full promised print text or explicit reading/print route",
+      "No-JavaScript and failed-code reading/native interaction",
+      "Actual AT names/relationships/order/reading cursor",
+      "Editing/IME/selection/focus/drag/request lifetime"
+    ],
+    "baselineLimits": "Existing hidden/inert presentation can already limit discovery. This no-change disposition does not solve or worsen those limits, or turn them into new lazy-runtime acceptance failures.",
+    "sourceReconciliation": {
+      "historicalSourceCommit": "88427581d6aecd6e567c9bf6c3dec729b0822898",
+      "currentSourceCommit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+      "result": "Audited tabs/accordion/table/data-table/tree/item/carousel/slide/activity/item runtime render and ownership logic unchanged; tree type declarations gained exports and test configurations changed."
+    },
+    "historicalLimits": {
+      "automatedChecks": 57,
+      "automatedFailures": 0,
+      "browserConfigurations": 6,
+      "globalSSRConfigurations": 3,
+      "timingSamples": 0,
+      "retentionRuns": 0,
+      "nativeFindUI": "unperformed",
+      "nativePrintOutput": "unperformed; print-media proxy only",
+      "actualAT": "unreported",
+      "newRunsThisAudit": 0
+    }
+  }
+}

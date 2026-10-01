@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "assets": [
+    {
+      "cssFamily": "Figtree",
+      "path": "apps/docs/public/fonts/theme-references/Figtree-Variable.woff2",
+      "sha256": "6b96ce6d4783658f09e2b92d468da8e542d57aa6e4bc461ab2e7ae71565fdc64",
+      "licensePath": "apps/docs/public/fonts/theme-references/Figtree-OFL.txt",
+      "fontDisplay": "swap",
+      "weightRange": [
+        300,
+        900
+      ]
+    },
+    {
+      "cssFamily": "Geist",
+      "path": "apps/docs/public/fonts/theme-references/Geist-Variable.woff2",
+      "sha256": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",
+      "licensePath": "apps/docs/public/fonts/theme-references/Geist-OFL.txt",
+      "fontDisplay": "swap",
+      "weightRange": [
+        100,
+        900
+      ]
+    },
+    {
+      "cssFamily": "Geist Mono",
+      "path": "apps/docs/public/fonts/theme-references/GeistMono-Variable.woff2",
+      "sha256": "afaacc4c5fbba89d2ebf7a02dc4070208540874592a5504d57175782fe893101",
+      "licensePath": "apps/docs/public/fonts/theme-references/Geist-OFL.txt",
+      "fontDisplay": "swap",
+      "weightRange": [
+        100,
+        900
+      ]
+    }
+  ],
+  "localOnly": [
+    "Segoe UI",
+    "Adobe Clean",
+    "Georgia",
+    "system-ui"
+  ],
+  "fallbackPolicy": "Measure representative strings before and after document.fonts.ready; never infer identical metrics or redistribute local-only fonts."
+}

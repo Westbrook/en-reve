@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "status": "deterministic-source-and-reference-census",
+  "source": {
+    "commit": "fba5ec19b58606cf1776df44862a38a3898f4c72",
+    "tree": "758b9365f2270f5540885c803801a4b6d45ed9d2",
+    "status": " M plans/lazy-delivery-rollout.md\n?? plans/lazy-delivery/\n?? probes/lazy-delivery-editor/\n?? probes/lazy-delivery-performance/\n?? probes/lazy-delivery/\n?? tooling/metadata/delivery-inventory.json\n"
+  },
+  "rawReceiptSha256": "8153183541b8f78c859878fed43c617391a966d83b2f3c56353a437eaaa3d853",
+  "completedRouteCells": 30,
+  "familyObservations": 48,
+  "sourceUnchanged": true,
+  "siteUnchanged": true,
+  "limits": "Not a candidate implementation, speed measurement, retention measurement, physical touch, native picker, IME, or assistive-technology acceptance.",
+  "dispositions": [
+    {
+      "id": "media",
+      "proposedDisposition": "candidate",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Reference upper bound permits implementation qualification only; no achieved lazy saving or promotion.",
+      "cells": 6,
+      "unit": "elements",
+      "generatedNodes": [
+        201,
+        201
+      ],
+      "generatedElements": [
+        69,
+        69
+      ],
+      "componentPercent": [
+        75.82417582417582,
+        75.82417582417582
+      ],
+      "routePercent": [
+        6.127886323268205,
+        6.144256455921639
+      ],
+      "wholeHostNodePercentUpperBound": [
+        9.628812936420433,
+        9.66433050534858
+      ]
+    },
+    {
+      "id": "multiselect",
+      "proposedDisposition": "rejected-with-evidence",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Current three-choice consumer fails frozen24-element floor and40% component-node floor.",
+      "cells": 6,
+      "unit": "nodes",
+      "generatedNodes": [
+        24,
+        24
+      ],
+      "generatedElements": [
+        3,
+        3
+      ],
+      "componentPercent": [
+        38.70967741935484,
+        38.70967741935484
+      ],
+      "routePercent": [
+        0.8820286659316428,
+        0.885282183696053
+      ],
+      "wholeHostNodePercentUpperBound": [
+        2.278574053656744,
+        2.2869789745481373
+      ]
+    },
+    {
+      "id": "menubar",
+      "proposedDisposition": "rejected-with-evidence",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Current consuming route fails5% even under entire-host-removal bound; no general family impossibility claim.",
+      "cells": 6,
+      "unit": "nodes",
+      "generatedNodes": [
+        94,
+        94
+      ],
+      "generatedElements": [
+        28,
+        28
+      ],
+      "componentPercent": [
+        69.62962962962963,
+        69.62962962962963
+      ],
+      "routePercent": [
+        3.4546122748989343,
+        3.467355219476208
+      ],
+      "wholeHostNodePercentUpperBound": [
+        4.961411245865491,
+        4.979712283290299
+      ]
+    },
+    {
+      "id": "overflow",
+      "proposedDisposition": "rejected-with-evidence",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Current consuming route fails5% even under entire-host-removal bound; VariantB initial constructors remain unmeasured.",
+      "cells": 6,
+      "unit": "nodes",
+      "generatedNodes": [
+        0,
+        16
+      ],
+      "generatedElements": [
+        0,
+        3
+      ],
+      "componentPercent": [
+        0,
+        22.857142857142858
+      ],
+      "routePercent": [
+        0,
+        0.5882352941176471
+      ],
+      "wholeHostNodePercentUpperBound": [
+        2.2492625368731565,
+        2.5735294117647056
+      ]
+    },
+    {
+      "id": "combobox",
+      "proposedDisposition": "candidate",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Reference upper bound permits implementation qualification only; no achieved lazy saving or promotion.",
+      "cells": 6,
+      "unit": "nodes",
+      "generatedNodes": [
+        524,
+        524
+      ],
+      "generatedElements": [
+        160,
+        160
+      ],
+      "componentPercent": [
+        90.03436426116839,
+        90.03436426116839
+      ],
+      "routePercent": [
+        32.93526084223758,
+        32.97671491504091
+      ],
+      "wholeHostNodePercentUpperBound": [
+        36.580766813324956,
+        36.626809314033984
+      ]
+    },
+    {
+      "id": "command-palette",
+      "proposedDisposition": "candidate",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Reference upper bound permits implementation qualification only; no achieved lazy saving or promotion.",
+      "cells": 6,
+      "unit": "nodes",
+      "generatedNodes": [
+        80,
+        80
+      ],
+      "generatedElements": [
+        15,
+        15
+      ],
+      "componentPercent": [
+        49.079754601226995,
+        49.079754601226995
+      ],
+      "routePercent": [
+        3.1961646024770274,
+        3.2025620496397114
+      ],
+      "wholeHostNodePercentUpperBound": [
+        6.512185377546944,
+        6.5252201761409125
+      ]
+    },
+    {
+      "id": "pagination",
+      "proposedDisposition": "candidate",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Reference upper bound permits implementation qualification only; no achieved lazy saving or promotion.",
+      "cells": 6,
+      "unit": "nodes",
+      "generatedNodes": [
+        168,
+        168
+      ],
+      "generatedElements": [
+        35,
+        35
+      ],
+      "componentPercent": [
+        11.723656664340544,
+        11.723656664340544
+      ],
+      "routePercent": [
+        7.9923882017126555,
+        8.00381133873273
+      ],
+      "wholeHostNodePercentUpperBound": [
+        68.17316841103711,
+        68.27060505002382
+      ]
+    },
+    {
+      "id": "toast-history",
+      "proposedDisposition": "rejected-with-evidence",
+      "scope": "Existing exact consumer and frozen declared gates only",
+      "basis": "Current empty-history consumer wholebody bound9elements fails frozen50-element floor.",
+      "cells": 6,
+      "unit": "elements",
+      "generatedNodes": [
+        38,
+        38
+      ],
+      "generatedElements": [
+        9,
+        9
+      ],
+      "componentPercent": [
+        21.951219512195124,
+        21.951219512195124
+      ],
+      "routePercent": [
+        1.7408123791102514,
+        1.7408123791102514
+      ],
+      "wholeHostNodePercentUpperBound": [
+        8.757244043786221,
+        8.785529715762273
+      ]
+    }
+  ]
+}

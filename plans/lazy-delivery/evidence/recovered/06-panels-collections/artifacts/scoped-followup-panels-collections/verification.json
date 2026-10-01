@@ -1,0 +1,41 @@
+{
+  "decision": "no-go; retain defaults and existing explicit APIs",
+  "base": "66386af7daac295cb2e178236d45289a9ebced4f",
+  "sourceCommit": "88427581d6aecd6e567c9bf6c3dec729b0822898",
+  "runtimeChanged": false,
+  "pilotSelected": false,
+  "finalQualification": "runs/qualification-7",
+  "automatedChecks": 57,
+  "automatedFailures": 0,
+  "browserConfigurations": 6,
+  "globalSSRConfigurations": 3,
+  "reviewTables": 4,
+  "timingSamples": 0,
+  "retentionRuns": 0,
+  "coldWarmLatency": "unperformed",
+  "actualAssistiveTechnology": "unreported",
+  "physicalDevices": "unreported",
+  "nativeBrowserFindUI": "unperformed; window.find proxy recorded separately",
+  "nativePrintOutput": "unperformed; print-media layout recorded separately",
+  "frozenTrackedFilesUnchanged": 31161,
+  "originalDirtyCheckoutUnchanged": true,
+  "virtualTableVoiceOverFinding": "open, independent acceptance constraint",
+  "reviewUrl": "http://127.0.0.1:51244/?progress-report",
+  "sourceArchive": "base-source.tar.gz",
+  "packages": "packs/",
+  "builtAssets": "site/",
+  "version": "sha256:3ded3eeafa7668fb9a1a25a784140303d8d944ff193c745abc3fd7ad3da394e1",
+  "rawFailures": [
+    "build.log",
+    "qualification-1.log",
+    "qualification-2.log",
+    "qualification-3.log",
+    "qualification-4.log",
+    "setup-failures.json"
+  ],
+  "commands": {
+    "build": "normal npm workspace build tokens \u2192 styles \u2192 primitives \u2192 elements \u2192 ssr; exit 0",
+    "qualification": "AUDIT_RUN=qualification-7 node artifacts/scoped-followup-panels-collections/qualify.mjs; exit 0",
+    "review": "node artifacts/scoped-followup-panels-collections/verify-review.mjs; exit 0"
+  }
+}
