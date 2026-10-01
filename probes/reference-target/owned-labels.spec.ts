@@ -58,15 +58,16 @@ test('explicit native names supersede owned references and are retained at teard
   await open(page);
   const input = page.locator('#owned input');
   await expect.poll(() => names(page)).toEqual(['external', 'label']);
-  await input.evaluate(node => node.setAttribute('aria-label', 'Author name'));
+  await input.evaluate(node => { node.setAttribute('aria-label', 'Author name'); ((node.getRootNode() as ShadowRoot).host as any).requestUpdate(); });
   await expect.poll(() => names(page)).toEqual([]);
   await expect(input).toHaveAccessibleName('Author name');
-  await input.evaluate(node => node.removeAttribute('aria-label'));
+  await input.evaluate(node => { node.removeAttribute('aria-label'); ((node.getRootNode() as ShadowRoot).host as any).requestUpdate(); });
   await expect.poll(() => names(page)).toEqual(['external', 'label']);
   await input.evaluate(node => {
     const label = document.createElement('span'); label.id = 'author-label'; label.textContent = 'Author reference';
     node.getRootNode().appendChild(label);
     node.setAttribute('aria-labelledby', 'author-label');
+    ((node.getRootNode() as ShadowRoot).host as any).requestUpdate();
   });
   await expect(input).toHaveAccessibleName('Author reference');
   await page.locator('#owned').evaluate(host => { (window as any).detachedOwned = host; host.remove(); });

@@ -1,6 +1,6 @@
 # Customization contract coverage
 
-719 registry contracts; 597 production source files; 2284 lexical references; 885 authored annotations.
+719 registry contracts; 598 production source files; 2284 lexical references; 885 authored annotations.
 
 - References are lexical production-source evidence, not proof of runtime behavior, cascade reach, visual state coverage or accessibility.
 - Source locations include raw var(), imported token()/rawToken()/override() aliases and explicitly bounded focus, sizing and toast expansions.

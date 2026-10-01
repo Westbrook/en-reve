@@ -320,7 +320,8 @@
     "packages/elements/src/file-upload/template.ts": "cba911769aff058e56cf04886b5772c97bb54a9b28925e51682003c4126f6660",
     "packages/elements/src/forms-private/default-state.ts": "60e1b66d8f7526bab73d282f4ec83d05e808c38c8886c151f46b1b5083e09177",
     "packages/elements/src/forms-private/editable-field.ts": "b63ec2576a80fd4633e9362c199d384e62066d099d9c49265a47838abc00f0e4",
-    "packages/elements/src/forms-private/form-field.ts": "c321ca89da103a42f5ebb34fdb7a3488a3a44a4f006c35a98e8f07831e906d86",
+    "packages/elements/src/forms-private/field-labels.ts": "e03426163c27e03ea2aaf383a2eaa65c5211de4747253d7ceddf99cccc391188",
+    "packages/elements/src/forms-private/form-field.ts": "ed0f1b126c1d34baab28788f5d2397678e54497534f5f9cea7090916785dee70",
     "packages/elements/src/forms-private/validation-feedback.ts": "f40a9c04d33a33a3823117a35ba99ac6f50b698ee03a038c4bc0deeffebf457c",
     "packages/elements/src/hover-card.ts": "056eea72f05dfb82486d97e70852677a5791d464969989e0e65e02af5331f81a",
     "packages/elements/src/icon.ts": "899a4566433183b4608bf74a75295a46d7f73a197ffbb915f684be025b51eb19",
@@ -608,7 +609,7 @@
     "Registry semantic tokens may be graph-only inputs with no direct CSS consumer. Unsupported names and unwired hooks remain visible as reviewed findings."
   ],
   "summary": {
-    "productionFiles": 597,
+    "productionFiles": 598,
     "registryContracts": 719,
     "discoveredNames": 673,
     "sourceReferences": 2284,

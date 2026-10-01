@@ -11,6 +11,7 @@ import { createOptionalSlotsSsrAdapter } from './optional-slots-adapter.js';
 import { createFormChildrenSsrAdapter } from './form-children-adapter.js';
 import { createToastStackSsrAdapter } from './toast-stack-adapter.js';
 import { createTreeSsrAdapter } from './tree-adapter.js';
+import { referenceTargetAdapter } from './reference-target-adapter.js';
 
 export { createBreadcrumbsSsrAdapter };
 export type {
@@ -47,15 +48,16 @@ export async function renderToString(value: unknown, options: RenderOptions = {}
   const optionalSlots = createOptionalSlotsSsrAdapter();
   const tree = createTreeSsrAdapter();
   const toasts = createToastStackSsrAdapter();
+  const references = referenceTargetAdapter();
   const markup = await collectResult(render(value, {
-    elementRenderers: [...(options.elementRenderers ?? []), optionalSlots.Renderer, toasts.Renderer, forms.Renderer, selection.Renderer, breadcrumbs.Renderer, tree.Renderer, TextareaRenderer, EnElementRenderer],
+    elementRenderers: [...(options.elementRenderers ?? []), optionalSlots.Renderer, toasts.Renderer, forms.Renderer, selection.Renderer, breadcrumbs.Renderer, tree.Renderer, TextareaRenderer, EnElementRenderer].map(renderer => references.wrap(renderer)),
     // Lit 4.1 omits release markers for static top-level elements when this is
     // true. Ordinary SSR leaves top-level upgrades enabled; nested shadow
     // children still defer automatically until their own parent hydrates.
     deferHydration: false,
     customElementRendered: options.onCustomElementRendered,
   }));
-  return toasts.finalize(optionalSlots.finalize(await tree.finalize(await forms.finalize(await selection.finalize(await breadcrumbs.finalize(markup))))));
+  return references.finalize(toasts.finalize(optionalSlots.finalize(await tree.finalize(await forms.finalize(await selection.finalize(await breadcrumbs.finalize(markup)))))));
 }
 
 /** Construct fresh request-local models/templates for each snapshot. */

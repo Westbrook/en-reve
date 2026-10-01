@@ -25,6 +25,30 @@ Use explicit per-component registration in applications which need only a subset
 
 `renderToString(template, options)` accepts additional `elementRenderers` and an `onCustomElementRendered(tagName)` callback. It buffers the result. A future streaming API needs its own cancellation and backpressure contract; this API does not imply streaming.
 
+## Native field references
+
+The common native fields declare their semantic target through
+`shadowRootOptions.referenceTarget`. The renderer preserves this as
+`shadowrootreferencetarget` on each component's declarative root, including nested
+fields and roots produced by the buffered select/textarea adapters. Request-local
+renderer records determine the target; a tag-name search does not guess it. The
+internal recording attribute is removed before returning markup, and all existing
+Lit hydration markers remain intact. Custom renderer classes keep their existing
+selection order. Null/absent targets emit no forwarding attribute.
+
+Scoped island wrapping preserves these per-component targets. Inert-template
+materialization passes the declared target and focus-delegation option when it
+creates each shadow root. Native input nodes, drafts and selection remain under
+the existing hydration/editing contract.
+
+Supporting browsers can resolve external native labels before hydration. Other
+engines retain the field's internal label before enhancement and use the
+component-owned reflected-reference bridge after hydration. Keep an internal
+visible label for no-JavaScript naming across engines, or compose light-DOM native
+fields when external relationships must work without enhancement. This does not
+serialize arbitrary cross-root ARIA element references or establish manual AT
+coverage. See the [field contract](../elements/src/forms-private/README.md).
+
 ## Experimental scoped SSR (Phase 5)
 
 The opt-in `@en-reve/ssr/scoped.js` entry exposes `createScopedRenderer()`,

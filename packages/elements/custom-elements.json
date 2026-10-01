@@ -15723,6 +15723,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -22839,6 +22853,20 @@
               "default": "false",
               "type": {
                 "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {
@@ -33156,6 +33184,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -35175,6 +35217,20 @@
               "privacy": "private",
               "type": {
                 "text": "unknown"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {
@@ -47756,6 +47812,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -48605,6 +48675,153 @@
     },
     {
       "kind": "javascript-module",
+      "source": "src/forms-private/field-labels.ts",
+      "path": "src/forms-private/field-labels.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "customElement": false,
+          "name": "FieldLabels",
+          "members": [
+            {
+              "kind": "field",
+              "name": "binding",
+              "privacy": "private",
+              "type": {
+                "text": "{ input: Field; labels: Element[] } | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "connected",
+              "privacy": "private",
+              "default": "false",
+              "type": {
+                "text": "boolean"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "control",
+              "privacy": "private",
+              "static": false,
+              "readonly": false,
+              "type": {
+                "text": "() => Field | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "host",
+              "privacy": "private",
+              "static": false,
+              "readonly": false,
+              "type": {
+                "text": "Host"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "listeners",
+              "privacy": "private",
+              "default": "new Map<HTMLLabelElement, EventListener>()",
+              "type": {
+                "text": "Map<HTMLLabelElement, EventListener>"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "owns",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "boolean"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "release",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "stop",
+              "privacy": "private",
+              "type": {
+                "text": "(() => void) | undefined"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "sync",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "timers",
+              "privacy": "private",
+              "default": "new Map<number, Window>()",
+              "type": {
+                "text": "Map<number, Window>"
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "FieldLabels",
+          "declaration": {
+            "name": "FieldLabels",
+            "module": "src/forms-private/field-labels.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
       "source": "src/forms-private/form-field.ts",
       "path": "src/forms-private/form-field.ts",
       "declarations": [
@@ -48893,6 +49110,16 @@
               "default": "'error'",
               "type": {
                 "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {
@@ -66916,6 +67143,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -68809,6 +69050,20 @@
               },
               "type": {
                 "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {
@@ -84997,6 +85252,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -88381,6 +88650,20 @@
               },
               "type": {
                 "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {
@@ -102965,6 +103248,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -104804,6 +105101,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -106513,6 +106824,20 @@
               },
               "type": {
                 "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.controlNode)",
+              "inheritedFrom": {
+                "name": "FormFieldElement",
+                "module": "src/forms-private/form-field.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {

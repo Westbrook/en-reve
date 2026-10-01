@@ -342,6 +342,7 @@
     "@en-reve/elements/file-upload/template.js": "src/file-upload/template.ts",
     "@en-reve/elements/forms-private/default-state.js": "src/forms-private/default-state.ts",
     "@en-reve/elements/forms-private/editable-field.js": "src/forms-private/editable-field.ts",
+    "@en-reve/elements/forms-private/field-labels.js": "src/forms-private/field-labels.ts",
     "@en-reve/elements/forms-private/form-field.js": "src/forms-private/form-field.ts",
     "@en-reve/elements/forms-private/validation-feedback.js": "src/forms-private/validation-feedback.ts",
     "@en-reve/elements/hover-card.js": "src/hover-card.ts",
@@ -998,6 +999,9 @@
     "@en-reve/elements/file-upload/template.js#FileUploadView": "src/file-upload/template.ts#FileUploadView",
     "@en-reve/elements/forms-private/default-state.js#DefaultState": "src/forms-private/default-state.ts#DefaultState",
     "@en-reve/elements/forms-private/editable-field.js#EditableFieldElement": "src/forms-private/editable-field.ts#EditableFieldElement",
+    "@en-reve/elements/forms-private/field-labels.js#Field": "src/forms-private/field-labels.ts#Field",
+    "@en-reve/elements/forms-private/field-labels.js#FieldLabels": "src/forms-private/field-labels.ts#FieldLabels",
+    "@en-reve/elements/forms-private/field-labels.js#Host": "src/forms-private/field-labels.ts#Host",
     "@en-reve/elements/forms-private/form-field.js#FormFieldElement": "src/forms-private/form-field.ts#FormFieldElement",
     "@en-reve/elements/forms-private/form-field.js#NativeField": "src/forms-private/form-field.ts#NativeField",
     "@en-reve/elements/forms-private/validation-feedback.js#applicationValidation": "src/forms-private/validation-feedback.ts#applicationValidation",
@@ -2392,6 +2396,9 @@
     "@en-reve/elements/file-upload/template.js#FileUploadView": "type",
     "@en-reve/elements/forms-private/default-state.js#DefaultState": "value",
     "@en-reve/elements/forms-private/editable-field.js#EditableFieldElement": "value",
+    "@en-reve/elements/forms-private/field-labels.js#Field": "type",
+    "@en-reve/elements/forms-private/field-labels.js#FieldLabels": "value",
+    "@en-reve/elements/forms-private/field-labels.js#Host": "type",
     "@en-reve/elements/forms-private/form-field.js#FormFieldElement": "value",
     "@en-reve/elements/forms-private/form-field.js#NativeField": "type",
     "@en-reve/elements/forms-private/validation-feedback.js#applicationValidation": "value",
@@ -6546,21 +6553,57 @@
         "src/forms-private/form-field.ts#FormFieldElement"
       ]
     },
+    "src/forms-private/field-labels.ts#Field": {
+      "name": "Field",
+      "source": "src/forms-private/field-labels.ts",
+      "kind": "TypeAliasDeclaration",
+      "declaration": "export type Field = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;",
+      "references": [
+        "external:@typescript/old/lib/lib.dom.d.ts#HTMLInputElement",
+        "external:@typescript/old/lib/lib.dom.d.ts#HTMLSelectElement",
+        "external:@typescript/old/lib/lib.dom.d.ts#HTMLTextAreaElement"
+      ]
+    },
+    "src/forms-private/field-labels.ts#FieldLabels": {
+      "name": "FieldLabels",
+      "source": "src/forms-private/field-labels.ts",
+      "kind": "ClassDeclaration",
+      "declaration": "export declare class FieldLabels implements ReactiveController {\n    constructor(host: Host, control: () => Field | null);\n    hostConnected(): void;\n    hostUpdated(): void;\n    hostDisconnected(): void;\n}",
+      "references": [
+        "external:@lit/reactive-element/development/reactive-controller.d.ts#ReactiveController",
+        "src/forms-private/field-labels.ts#Field",
+        "src/forms-private/field-labels.ts#Host"
+      ]
+    },
+    "src/forms-private/field-labels.ts#Host": {
+      "name": "Host",
+      "source": "src/forms-private/field-labels.ts",
+      "kind": "TypeAliasDeclaration",
+      "declaration": "export type Host = HTMLElement & ReactiveControllerHost & {\n    readonly labels?: NodeList;\n};",
+      "references": [
+        "external:@lit/reactive-element/development/reactive-controller.d.ts#ReactiveControllerHost",
+        "external:@typescript/old/lib/lib.dom.d.ts#HTMLElement",
+        "external:@typescript/old/lib/lib.dom.d.ts#NodeList"
+      ]
+    },
     "src/forms-private/form-field.ts#FormFieldElement": {
       "name": "FormFieldElement",
       "source": "src/forms-private/form-field.ts",
       "kind": "ClassDeclaration",
-      "declaration": "export declare abstract class FormFieldElement extends EnElement {\n    static formAssociated: boolean;\n    protected readonly valueDefaults: DefaultState<string>;\n    get defaultValue(): string;\n    set defaultValue(value: string);\n    attributeChangedCallback(name: string, old: string | null, value: string | null): void;\n    static styles: import(\"lit\").CSSResult[];\n    static properties: {\n        label: {\n            type: StringConstructor;\n        };\n        description: {\n            type: StringConstructor;\n        };\n        validationText: {\n            attribute: string;\n        };\n        error: {\n            type: StringConstructor;\n            noAccessor: boolean;\n        };\n        value: {\n            type: StringConstructor;\n            noAccessor: boolean;\n            attribute: boolean;\n        };\n        defaultValue: {\n            attribute: string;\n            noAccessor: boolean;\n        };\n        name: {\n            type: StringConstructor;\n            reflect: boolean;\n        };\n        disabled: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        required: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        placeholder: {\n            type: StringConstructor;\n        };\n    };\n    label: string;\n    description: string;\n    get error(): string;\n    set error(value: string);\n    validationText: string;\n    name: string;\n    disabled: boolean;\n    required: boolean;\n    placeholder: string;\n    protected readonly model: import(\"@en-reve/primitives/state/draft.js\").DraftModel;\n    constructor();\n    get value(): string;\n    set value(value: string);\n    get form(): HTMLFormElement | null;\n    get labels(): NodeList | undefined;\n    get validity(): ValidityState | undefined;\n    get validationMessage(): string;\n    get willValidate(): boolean;\n    focus(options?: FocusOptions): void;\n    blur(): void;\n    checkValidity(): boolean;\n    reportValidity(): boolean;\n    formResetCallback(): void;\n    formDisabledCallback(disabled: boolean): void;\n    formStateRestoreCallback(state: string | File | FormData | null, mode: 'restore' | 'autocomplete'): void;\n    protected get submissionValue(): string | FormData | null;\n    protected get submissionState(): string;\n    protected get isDisabled(): boolean;\n    protected get defaultControlValue(): string;\n    protected get controlNode(): NativeField | null;\n    protected get describedBy(): string;\n    protected get visibleError(): string;\n    protected get controlAriaInvalid(): 'true' | typeof nothing;\n    protected abstract renderControl(): TemplateResult;\n    protected renderControlFrame(): TemplateResult;\n    protected get valueRevision(): number;\n    protected canCommitValue(_value: string): boolean;\n    protected abstract reconcile(): void;\n    protected stageValue(value: string): void;\n    protected requestValue(proposed: string, reason: string): void;\n    protected updated(_changed: PropertyValues): void;\n    protected syncForm(): void;\n    protected validateAcceptedValue(): FormValidation;\n    protected descriptionPart: string;\n    protected errorPart: string;\n    protected render(): TemplateResult;\n}",
+      "declaration": "export declare abstract class FormFieldElement extends EnElement {\n    static formAssociated: boolean;\n    static shadowRootOptions: {\n        referenceTarget: string;\n        clonable?: boolean;\n        customElementRegistry?: CustomElementRegistry | null;\n        delegatesFocus?: boolean;\n        mode: ShadowRootMode;\n        serializable?: boolean;\n        slotAssignment?: SlotAssignmentMode;\n    };\n    protected readonly valueDefaults: DefaultState<string>;\n    get defaultValue(): string;\n    set defaultValue(value: string);\n    attributeChangedCallback(name: string, old: string | null, value: string | null): void;\n    static styles: import(\"lit\").CSSResult[];\n    static properties: {\n        label: {\n            type: StringConstructor;\n        };\n        description: {\n            type: StringConstructor;\n        };\n        validationText: {\n            attribute: string;\n        };\n        error: {\n            type: StringConstructor;\n            noAccessor: boolean;\n        };\n        value: {\n            type: StringConstructor;\n            noAccessor: boolean;\n            attribute: boolean;\n        };\n        defaultValue: {\n            attribute: string;\n            noAccessor: boolean;\n        };\n        name: {\n            type: StringConstructor;\n            reflect: boolean;\n        };\n        disabled: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        required: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        placeholder: {\n            type: StringConstructor;\n        };\n    };\n    label: string;\n    description: string;\n    get error(): string;\n    set error(value: string);\n    validationText: string;\n    name: string;\n    disabled: boolean;\n    required: boolean;\n    placeholder: string;\n    protected readonly model: import(\"@en-reve/primitives/state/draft.js\").DraftModel;\n    constructor();\n    get value(): string;\n    set value(value: string);\n    get form(): HTMLFormElement | null;\n    get labels(): NodeList | undefined;\n    get validity(): ValidityState | undefined;\n    get validationMessage(): string;\n    get willValidate(): boolean;\n    focus(options?: FocusOptions): void;\n    blur(): void;\n    checkValidity(): boolean;\n    reportValidity(): boolean;\n    formResetCallback(): void;\n    formDisabledCallback(disabled: boolean): void;\n    formStateRestoreCallback(state: string | File | FormData | null, mode: 'restore' | 'autocomplete'): void;\n    protected get submissionValue(): string | FormData | null;\n    protected get submissionState(): string;\n    protected get isDisabled(): boolean;\n    protected get defaultControlValue(): string;\n    protected get controlNode(): NativeField | null;\n    protected get describedBy(): string;\n    protected get visibleError(): string;\n    protected get controlAriaInvalid(): 'true' | typeof nothing;\n    protected abstract renderControl(): TemplateResult;\n    protected renderControlFrame(): TemplateResult;\n    protected get valueRevision(): number;\n    protected canCommitValue(_value: string): boolean;\n    protected abstract reconcile(): void;\n    protected stageValue(value: string): void;\n    protected requestValue(proposed: string, reason: string): void;\n    protected updated(_changed: PropertyValues): void;\n    protected syncForm(): void;\n    protected validateAcceptedValue(): FormValidation;\n    protected descriptionPart: string;\n    protected errorPart: string;\n    protected render(): TemplateResult;\n}",
       "references": [
         "external:../primitives/dist/interactions/form-controller.d.ts#FormValidation",
         "external:../primitives/dist/state/draft.d.ts#DraftModel",
         "external:@lit/reactive-element/development/css-tag.d.ts#CSSResult",
         "external:@lit/reactive-element/development/reactive-element.d.ts#PropertyValues",
+        "external:@typescript/old/lib/lib.dom.d.ts#CustomElementRegistry",
         "external:@typescript/old/lib/lib.dom.d.ts#File",
         "external:@typescript/old/lib/lib.dom.d.ts#FocusOptions",
         "external:@typescript/old/lib/lib.dom.d.ts#FormData",
         "external:@typescript/old/lib/lib.dom.d.ts#HTMLFormElement",
         "external:@typescript/old/lib/lib.dom.d.ts#NodeList",
+        "external:@typescript/old/lib/lib.dom.d.ts#ShadowRootMode",
+        "external:@typescript/old/lib/lib.dom.d.ts#SlotAssignmentMode",
         "external:@typescript/old/lib/lib.dom.d.ts#ValidityState",
         "external:@typescript/old/lib/lib.es5.d.ts#BooleanConstructor",
         "external:@typescript/old/lib/lib.es5.d.ts#StringConstructor",
@@ -10132,6 +10175,8 @@
     "external:@typescript/old/lib/lib.dom.d.ts#PointerEvent",
     "external:@typescript/old/lib/lib.dom.d.ts#ShadowRoot",
     "external:@typescript/old/lib/lib.dom.d.ts#ShadowRootInit",
+    "external:@typescript/old/lib/lib.dom.d.ts#ShadowRootMode",
+    "external:@typescript/old/lib/lib.dom.d.ts#SlotAssignmentMode",
     "external:@typescript/old/lib/lib.dom.d.ts#ToggleEvent",
     "external:@typescript/old/lib/lib.dom.d.ts#ValidityState",
     "external:@typescript/old/lib/lib.dom.d.ts#Window",

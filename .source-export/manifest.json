@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "49e71cfcab7bd1cc4a3f9ecc6c3e70fb79fb0c09",
-  "exportedAt": "2026-10-01T22:39:52.354666+00:00",
+  "sourceCommit": "138829bc35cc4c361637cf47b0cb07d4d58bab19",
+  "exportedAt": "2026-10-01T23:11:22.309135+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5361,
-  "includedBytes": 144103817,
-  "qualification": "Component-owned FACE labels and SSR proof: 51 browser cases pass; four known upstream/browser failures and eight capability skips retained. Three source/import checks and four public-view checks pass. Isolated adapter preserves form ownership and hydration; production adapter and broader platform acceptance remain open.",
-  "latestUpdate": ".source-export/updates/reference-target-owned-20261001.json",
+  "includedFiles": 5371,
+  "includedBytes": 144153472,
+  "qualification": "Production external-label bridge for nine common fields, shared subscriptions and per-renderer Reference Target SSR. Focused reference suite 69 actual passes, four known failures, eight skips; forms 116 passes/one skip; SSR Node 88 passes. Full SSR browser run 231 pass/three demo locator failures; corrected description subset nine passes. New docs example three-engine qualification and source/import checks retained. Metadata freshness and production build pass. Broader manual/device/reference-family scope remains open.",
+  "latestUpdate": ".source-export/updates/reference-target-production-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

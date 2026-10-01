@@ -1,0 +1,27 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Production external field labels</title>
+<form id="fields"></form><button id="outside">Outside</button>
+<script type="module">
+  import { registerAll } from '@en-reve/elements/catalog.js';
+  import { EnTextField } from '@en-reve/elements/text-field.js';
+  import { EnTextarea } from '@en-reve/elements/textarea.js';
+  import { EnNumberField } from '@en-reve/elements/number-field.js';
+  import { EnDateInput } from '@en-reve/elements/date-input.js';
+  import { EnSearchInput } from '@en-reve/elements/search-input.js';
+  import { EnTimeField } from '@en-reve/elements/time-field.js';
+  import { EnSelect } from '@en-reve/elements/select.js';
+  import { EnCombobox } from '@en-reve/elements/combobox.js';
+  import { EnColorField } from '@en-reve/elements/color-field.js';
+  const definitions = [EnTextField, EnTextarea, EnNumberField, EnDateInput, EnSearchInput, EnTimeField, EnSelect, EnCombobox, EnColorField];
+  // Isolated page only. Force the unsupported-engine route without a public
+  // production override or modifying ShadowRoot/browser platform APIs.
+  if (new URL(location.href).searchParams.has('fallback')) for (const ctor of definitions) ctor.shadowRootOptions = { ...ctor.shadowRootOptions, referenceTarget: null };
+  registerAll();
+  const tags = ['text-field','textarea','number-field','date-input','search-input','time-field','select','combobox','color-field'];
+  for (const tag of tags) {
+    const label = document.createElement('label'); label.id = `label-${tag}`; label.htmlFor = tag; label.textContent = `External ${tag}`;
+    const host = document.createElement(`en-${tag}`); host.id = tag; host.label = `Internal ${tag}`; host.name = tag;
+    if (tag === 'select' || tag === 'combobox') host.items = [{value:'one',label:'One'}];
+    document.querySelector('#fields').append(label,host); await host.updateComplete;
+  }
+  document.body.dataset.ready = 'true';
+</script></html>

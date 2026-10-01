@@ -6,7 +6,7 @@ test('the production sticker sheet restores a newly assigned fallback after remo
     await customElements.whenDefined('en-sticker-app');
     await (element as any).updateComplete;
   });
-  const host = page.locator('[data-specimen="text-fields"] en-text-field').first();
+  const host = page.locator('[data-specimen="text-fields"] en-text-field[label="Project name"]');
   const input = host.getByRole('textbox', { name: 'Project name', exact: true });
   await host.evaluate(async element => {
     (element as any).description = 'New fallback for the project name.';

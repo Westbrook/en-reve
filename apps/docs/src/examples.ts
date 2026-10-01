@@ -453,6 +453,11 @@ export function buttonScaleExample() {
 // example-start:text-fields
 export function textFieldsExample() {
 	return html`
+		<div id="external-field-example">
+			<label class="en-label" for="example-project-code">Workspace</label>
+			<en-text-field id="example-project-code" label="Project code" name="project-code" value="STUDIO"
+				description="Click Workspace to focus this field. Its external and internal labels remain real label content."></en-text-field>
+		</div>
 		<en-text-field
 			label="Project name"
 			value="Studio studies"

@@ -13,6 +13,16 @@ const install = () => installReferenceTarget({
 // Explicit application setup, before element definitions. 'forced' is a test
 // comparison only; production must preserve the package's native routing.
 let handle = mode === 'forced' || mode === 'automatic' ? install() : null;
+// Minimal FACE isolates the requested upstream adapter from the library's own
+// label bridge. Its known policy gap remains executable after library adoption.
+class IsolatedFace extends HTMLElement {
+  static formAssociated = true;
+  constructor() {
+    super(); this.attachInternals();
+    this.attachShadow({ mode: 'open' }).innerHTML = '<label for="control">Internal isolated account</label><input id="control">';
+  }
+}
+customElements.define('probe-isolated-face', IsolatedFace);
 await import('@en-reve/elements/define/text-field.js');
 const face = document.querySelector('#face');
 await face.updateComplete;

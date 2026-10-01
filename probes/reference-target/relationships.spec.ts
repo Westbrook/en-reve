@@ -70,14 +70,14 @@ test('disabled targets do not activate and disposal restores owned naming', asyn
   if (state.native) expect(state.target).toBe('control');
 });
 
-test('fallback deliberately leaves FACE external-label naming unsupported', async ({ page }, info) => {
+test('upstream fallback deliberately leaves an isolated FACE external-label name unsupported', async ({ page }, info) => {
   await open(page);
-  const input = page.locator('#face input');
-  expect(await page.locator('#face-label').evaluate((node: HTMLLabelElement) => node.control?.id)).toBe('face');
-  await expect(input).toHaveAccessibleName('Internal account');
-  await page.locator('#face-label').click();
+  const input = page.locator('#isolated-face input');
+  expect(await page.locator('#isolated-label').evaluate((node: HTMLLabelElement) => node.control?.id)).toBe('isolated-face');
+  await expect(input).toHaveAccessibleName('Internal isolated account');
+  await page.locator('#isolated-label').click();
   info.annotations.push({ type: 'face-activation-observation', description: JSON.stringify({ focused: await input.evaluate(node => node.matches(':focus')) }) });
-  await expect(input).toHaveAccessibleName('Internal account');
+  await expect(input).toHaveAccessibleName('Internal isolated account');
   info.annotations.push({ type: 'coverage-limit', description: 'The label adapter excludes FACE hosts; this is a reproduced capability gap, not a successful external-label feature.' });
 });
 
@@ -111,8 +111,9 @@ test('Chromium native accessibility tree contains the fallback label', async ({ 
   const { nodes } = await session.send('Accessibility.getFullAXTree');
   const names = (tree: typeof nodes) => tree.filter(node => !node.ignored && node.role?.value === 'textbox').map(node => node.name?.value);
   expect(names(nodes)).toContain('External account');
-  expect(names(nodes)).toContain('Internal account');
-  expect(names(nodes)).not.toContain('External FACE account');
+  expect(names(nodes)).toContain('External FACE account Internal account');
+  expect(names(nodes)).toContain('Internal isolated account');
+  expect(names(nodes)).not.toContain('External isolated account Internal isolated account');
   await page.locator('#plain-label').evaluate(node => { node.textContent = 'Renamed account'; });
   await expect.poll(async () => names((await session.send('Accessibility.getFullAXTree')).nodes)).toContain('Renamed account');
   await page.locator('#plain-label').evaluate(node => node.remove());

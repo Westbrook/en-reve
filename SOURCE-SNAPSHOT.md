@@ -42,3 +42,7 @@ Local main `8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c` retains the pinned-source 
 ## Component-owned FACE label investigation
 
 Local main `49e71cfcab7bd1cc4a3f9ecc6c3e70fb79fb0c09` retains the component-owned FACE bridge, SSR proof and explicit adoption gaps in `probes/reference-target/README.md`. Production field semantics remain unchanged.
+
+## Production external field labels and Reference Target SSR
+
+Local main `138829bc35cc4c361637cf47b0cb07d4d58bab19` integrates external labels for the nine common fields, shared subscriptions and per-renderer SSR serialization. Qualification and remaining relationship/device/AT limits are retained in `probes/reference-target/README.md`.

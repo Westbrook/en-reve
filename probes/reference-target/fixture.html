@@ -5,6 +5,7 @@
   <section><label for="native-control">Native account</label><input id="native-control"></section>
   <section><label id="plain-label" for="plain">External account</label><div id="plain" data-reference-target="control"></div></section>
   <section><label id="face-label" for="face">External FACE account</label><form id="face-form"><en-text-field id="face" name="account" label="Internal account" data-reference-target="control"></en-text-field></form></section>
+  <section><label id="isolated-label" for="isolated-face">External isolated account</label><probe-isolated-face id="isolated-face"></probe-isolated-face></section>
   <section><label id="ssr-label" for="ssr">Pre-rendered account</label><div id="ssr" data-reference-target="control"><template shadowrootmode="open" shadowrootreferencetarget="control"><input id="control" value="server value"></template></div></section>
 </main>
 <script type="module" src="/probes/reference-target/fixture.js"></script>

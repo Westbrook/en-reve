@@ -1,4 +1,5 @@
 import { DefaultState } from './default-state.js';
+import { FieldLabels } from './field-labels.js';
 import { descriptionTemplate } from '@en-reve/primitives/templates/description.js';
 import { css, html, nothing } from 'lit';
 import type { PropertyValues, TemplateResult } from 'lit';
@@ -18,6 +19,9 @@ export type NativeField = HTMLInputElement | HTMLTextAreaElement | HTMLSelectEle
  */
 export abstract class FormFieldElement extends EnElement {
   static formAssociated = true;
+  /** @internal Native reference routing and SSR use the same owned semantic target. */
+  static override shadowRootOptions = { ...EnElement.shadowRootOptions, referenceTarget: 'control' };
+  private readonly fieldLabels = new FieldLabels(this, () => this.controlNode);
   protected readonly valueDefaults = new DefaultState<string>(this, 'value',
     attribute => attribute ?? '', value => String(value), value => { this.value = value; });
 

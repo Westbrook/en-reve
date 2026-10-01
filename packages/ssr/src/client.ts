@@ -136,7 +136,9 @@ export function createHydrationIsland({ root: initialRoot, manifest: input, snap
           for (let index = 0; index < containers.length; index++) for (const host of containers[index].querySelectorAll('*')) {
             for (const child of [...host.children]) if (child.localName === 'template' && child.hasAttribute('shadowrootmode')) {
               if (child.getAttribute('shadowrootmode') !== 'open' || host.shadowRoot) throw new Error('Template hydration requires open, unclaimed declarative roots.');
-              const shadow = scope.attachShadow(host);
+              const target = child.getAttribute('shadowrootreferencetarget');
+              const shadow = scope.attachShadow(host, { mode: 'open', delegatesFocus: child.hasAttribute('shadowrootdelegatesfocus'),
+                ...(target === null ? {} : { referenceTarget: target }) });
               shadow.append((child as HTMLTemplateElement).content); child.remove(); containers.push(shadow);
             }
           }
