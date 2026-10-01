@@ -30,3 +30,7 @@ Current source maps to local main `0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32`. Th
 ## Tooltip context checkpoint
 
 Local main `b5bb6064c2b4c26a7c62c71796a575c23abb664a` includes the component-qualified tooltip context implementation and generated metadata. Demo review controls and source sample remain pending; see `plans/tooltip-context.md`. This is a source checkpoint, not a completed publication.
+
+## Tooltip context checkpoint
+
+Local main `a277af17a110df00d582d8162d89bb28d8b7cd30` includes the component-qualified tooltip context implementation and generated metadata. Demo review controls, reset and maintained source sample pass all 12 focused browser checks; see `plans/tooltip-context.md`. Publication identity is tracked in the independent Progress Report.

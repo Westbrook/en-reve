@@ -22,6 +22,7 @@ try {
 	const define = exampleDefinitions[caseId];
 	if (!define) throw new Error('This authored example is not available.');
 	const source = caseId === 'virtual-collection' ? (await import('../generated/virtual-collection-source.js')).default
+    : caseId === 'tooltip-warmup' ? (await import('../generated/tooltip-warmup-source.js')).default
     : caseId === 'tree-data' ? (await import('../generated/tree-data-source.js')).default
     : caseId === 'composable-chat' ? (await import('../generated/composable-chat-source.js')).default
     : caseId === 'rich-text' ? (await import('../generated/rich-text-source.js')).default

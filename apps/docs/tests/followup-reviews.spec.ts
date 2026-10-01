@@ -368,6 +368,11 @@ test('tooltip-warmup: contextual demo shares timing and reset creates a cold sco
 	await expect(layerHelp).toHaveJSProperty('open', false);
 	await expect(layerHelp.getByRole('tooltip')).toBeVisible({timeout: 2500});
 	await expectTooltipDescription(layers, 'Inspect a layer’s properties.');
+	const source = page.locator('.api-example-source');
+	await source.locator('summary').click();
+	await expect(source.locator('code')).toContainText("from '@en-reve/elements/context.js'");
+	await expect(source.locator('code')).toContainText('new ContextProvider(this, {context: tooltipWarmupContext, initialValue: createTooltipWarmupGroup()})');
+	await expect(source.locator('code')).toContainText('export function acceptValueChange');
 });
 
 test('tooltip-warmup: sticker sheet keyboard navigation and reset preserve external trigger descriptions', async ({ page }) => {

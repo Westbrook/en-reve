@@ -76,6 +76,7 @@ export async function renderAPIReference() {
 
 export async function renderAPIExample(caseId: string) {
   const source = caseId === 'virtual-collection' ? (await import('../src/generated/virtual-collection-source.js')).default
+    : caseId === 'tooltip-warmup' ? (await import('../src/generated/tooltip-warmup-source.js')).default
     : caseId === 'tree-data' ? (await import('../src/generated/tree-data-source.js')).default
     : caseId === 'composable-chat' ? (await import('../src/generated/composable-chat-source.js')).default
     : caseId === 'rich-text' ? (await import('../src/generated/rich-text-source.js')).default

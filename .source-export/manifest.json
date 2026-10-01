@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "b5bb6064c2b4c26a7c62c71796a575c23abb664a",
-  "exportedAt": "2026-10-01T21:56:02.040952+00:00",
+  "sourceCommit": "a277af17a110df00d582d8162d89bb28d8b7cd30",
+  "exportedAt": "2026-10-01T22:01:38.551027+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5338,
-  "includedBytes": 143953778,
-  "qualification": "User-requested main checkpoint: 309 tooltip browser checks, ten focused WebKit repetitions, metadata freshness, consumer types and SSR/pure imports passed. Context Protocol: 55 passed, two capability skips. Docs build passed; contextual demo reset control and source-sample wiring remain unfinished. Not yet published to demo site; manual acceptance remains separate.",
-  "latestUpdate": ".source-export/updates/tooltip-context-checkpoint-20261001.json",
+  "includedFiles": 5339,
+  "includedBytes": 143956471,
+  "qualification": "User-requested main checkpoint: 309 tooltip browser checks, ten focused WebKit repetitions, metadata freshness, consumer types and SSR/pure imports passed. Context Protocol: 55 passed, two capability skips. Production docs build and all 12 focused browser checks passed. Publication follows this source push; manual acceptance remains separate.",
+  "latestUpdate": ".source-export/updates/tooltip-context-qualified-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

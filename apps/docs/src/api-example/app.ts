@@ -23,7 +23,7 @@ export function createAPIExampleApp(caseId: string, exampleSource = '') {
 	if (!specimen) throw new Error(`Unknown authored specimen: ${caseId}`);
 	// Recipe demos have no CEM property target, so own their preview controls even
 	// when embedded. Other direct review pages defer to the parent iframe controls.
-	const hasStandaloneTools = ['data-table', 'split-view', 'navigation-sidebar', 'rich-text', 'carousel', 'presence-activity', 'color-slider', 'color-picker', 'composable-chat', 'chat-patterns', 'toast', 'multi-step', 'file-upload', 'calendar', 'tree-view', 'tree-data', 'mixed-toolbar', 'menu-choices', 'focus-motion', 'popup-motion', 'child-authored-choices', 'content-recipes', 'authored-table', 'virtual-collection', 'pagination'].includes(caseId);
+	const hasStandaloneTools = ['tooltip-warmup', 'data-table', 'split-view', 'navigation-sidebar', 'rich-text', 'carousel', 'presence-activity', 'color-slider', 'color-picker', 'composable-chat', 'chat-patterns', 'toast', 'multi-step', 'file-upload', 'calendar', 'tree-view', 'tree-data', 'mixed-toolbar', 'menu-choices', 'focus-motion', 'popup-motion', 'child-authored-choices', 'content-recipes', 'authored-table', 'virtual-collection', 'pagination'].includes(caseId);
 	// Static, escaped source keeps Lit hydration markers out of highlighted code.
 	const escapedSource = exampleSource.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 	const code = staticHtml`<code class="language-lit-typescript" data-language="lit-typescript">${unsafeStatic(escapedSource)}</code>`;
@@ -229,7 +229,7 @@ export function createAPIExampleApp(caseId: string, exampleSource = '') {
 				<main id="example" aria-labelledby="example-title">
 					<h1 class="visually-hidden api-example-title" id="example-title">${specimen.title} live example</h1>
 					${hasStandaloneTools ? html`<div class="api-standalone-tools" role="group" aria-label="Review controls">
-						${['data-table', 'split-view', 'navigation-sidebar', 'rich-text', 'carousel', 'presence-activity', 'color-slider', 'color-picker', 'composable-chat', 'chat-patterns', 'toast', 'multi-step', 'file-upload', 'calendar', 'tree-view', 'tree-data', 'mixed-toolbar', 'virtual-collection', 'pagination', 'menu-choices', 'content-recipes'].includes(caseId) ? html`<en-select label="Inspired theme" .value=${this.selectedTheme}
+						${['tooltip-warmup', 'data-table', 'split-view', 'navigation-sidebar', 'rich-text', 'carousel', 'presence-activity', 'color-slider', 'color-picker', 'composable-chat', 'chat-patterns', 'toast', 'multi-step', 'file-upload', 'calendar', 'tree-view', 'tree-data', 'mixed-toolbar', 'virtual-collection', 'pagination', 'menu-choices', 'content-recipes'].includes(caseId) ? html`<en-select label="Inspired theme" .value=${this.selectedTheme}
 							.items=${presetItems}
 							@en-change=${this.themeChanged}></en-select>` : nothing}
 						<en-select label="Appearance" .items=${appearanceItems} .value=${this.reviewMode}
@@ -239,7 +239,7 @@ export function createAPIExampleApp(caseId: string, exampleSource = '') {
 						<en-button variant="secondary" @click=${this.resetReview}>Reset example</en-button>
 						<a class="api-standalone-progress" href="http://127.0.0.1:4177">Progress Report</a>
 					</div>` : nothing}
-					${['data-table', 'split-view', 'navigation-sidebar', 'rich-text', 'carousel', 'presence-activity', 'color-slider', 'color-picker', 'composable-chat', 'chat-patterns', 'toast', 'multi-step', 'file-upload', 'calendar', 'tree-view', 'tree-data', 'mixed-toolbar', 'virtual-collection', 'pagination', 'menu-choices', 'content-recipes'].includes(caseId) ? html`<p role="status" aria-label="Theme result">${this.themeFeedback}</p>` : nothing}
+					${['tooltip-warmup', 'data-table', 'split-view', 'navigation-sidebar', 'rich-text', 'carousel', 'presence-activity', 'color-slider', 'color-picker', 'composable-chat', 'chat-patterns', 'toast', 'multi-step', 'file-upload', 'calendar', 'tree-view', 'tree-data', 'mixed-toolbar', 'virtual-collection', 'pagination', 'menu-choices', 'content-recipes'].includes(caseId) ? html`<p role="status" aria-label="Theme result">${this.themeFeedback}</p>` : nothing}
 					<div class="specimen-content api-example-content" data-specimen=${caseId}>
 						${keyed(this.resetRevision, specimen.render())}
 					</div>

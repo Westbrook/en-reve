@@ -1,11 +1,10 @@
 # CONTEXT-3: contextual tooltip warmup
 
-Status: implementation, regression cases and generated public metadata are
-committed for integration into `main` at the user-requested stopping point.
-Component qualification passes; production demo qualification and publication
-remain pending. A source-only GitHub push is a checkpoint, not full acceptance.
+Status: implementation, generated public metadata and production demo are
+qualified. Publication identity and user review are tracked in the independent
+Progress Report. Automated verification does not establish manual acceptance.
 
-## Checkpoint evidence (2026-10-01)
+## Qualification evidence (2026-10-01)
 
 - Tooltip browsers: 309 checks passed across Chromium, Firefox and WebKit.
 - Late-provider callback retention fix: ten focused WebKit repetitions passed.
@@ -13,16 +12,18 @@ remain pending. A source-only GitHub push is a checkpoint, not full acceptance.
   pending references alone did not keep it alive before a provider appeared.
 - Consumer types, SSR/pure imports and regenerated metadata freshness passed.
 - Context Protocol browsers: 55 passed, two capability-dependent skips.
-- Production docs build passed. The contextual demo test fails across engines
-  because its Reset example review control is absent. The maintained source sample
-  also needs wiring before the documented review scenario is complete.
-- Local evidence: `/private/tmp/en-tooltip-context-qualification-20261001-06`
-  and `/private/tmp/en-tooltip-context-docs-20261001-07`. Large evidence remains
-  local under the approved source-only GitHub policy.
-
-Next: expose the demo review controls and maintained source sample, rerun the
-focused docs checks, and publish the qualified demo. This checkpoint does not
-claim manual assistive-technology acceptance or completion of CONTEXT-3.
+- Production docs build passed. All 12 focused docs checks pass across the three
+  engines, including contextual timing, reset to a cold scope, source sample,
+  description relationships, the sticker sheet and API/settings integration.
+- The standalone demo has theme, appearance, density and reset controls. Its code
+  sample is generated from the maintained example with explicit definition and
+  Context Protocol imports, including the actual transactional change helper.
+- Local evidence: `/private/tmp/en-tooltip-context-qualification-20261001-06`,
+  `/private/tmp/en-tooltip-context-docs-20261001-08` (production build) and
+  `/private/tmp/en-tooltip-context-docs-20261001-09` (12 browser checks).
+  The run-08 browser server could not bind under the sandbox; run 09 uses the
+  unchanged successful build with permitted loopback access. Large evidence
+  remains local under the approved source-only GitHub policy.
 
 ## API decision
 

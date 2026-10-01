@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-01T22:01:38.551027+00:00",
+  "sourceCommit": "a277af17a110df00d582d8162d89bb28d8b7cd30",
+  "previousSourceMain": "b5bb6064c2b4c26a7c62c71796a575c23abb664a",
+  "taskPaths": [
+    "apps/docs/scripts/generate-api-examples.mjs",
+    "apps/docs/scripts/render-entry.ts",
+    "apps/docs/src/api-example/app.ts",
+    "apps/docs/src/api-example/main.ts",
+    "apps/docs/tests/followup-reviews.spec.ts",
+    "plans/component-follow-up-backlog.md",
+    "plans/tooltip-context.md"
+  ],
+  "qualification": "User-requested main checkpoint: 309 tooltip browser checks, ten focused WebKit repetitions, metadata freshness, consumer types and SSR/pure imports passed. Context Protocol: 55 passed, two capability skips. Production docs build and all 12 focused browser checks passed. Publication follows this source push; manual acceptance remains separate.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}
