@@ -15,7 +15,7 @@ export function publicViews(graph) {
     'root#test:api':make('api',['check-api',{nodeGroup:nodes('tooling')},...graph.pathways.api.filter(id=>id.startsWith('browser:'))]),
     'root#test:tooling':make('tooling',[{nodeGroup:nodes('tooling')}]),
     'root#test:minify':make('minify',[{nodeGroup:nodes('minify')}]),
-    'root#test:probes':make('probes',[browser('probes/playwright.config.ts')]),
+    'root#test:probes':make('probes',[{nodeGroup:nodes('probes')},browser('probes/reference-target/playwright.config.ts'),browser('probes/playwright.config.ts')]),
     'root#test:breadcrumbs-ssr':make('breadcrumbs',['build:ssr','breadcrumbs-types',{nodeGroup:nodes('breadcrumbs')}]),
     'root#test:breadcrumbs-ssr:browser':make('breadcrumbs-browser',[browser('probes/breadcrumbs-ssr-adapter/playwright.config.ts')]),
     'root#test:properties:browser':make('properties',['properties']),

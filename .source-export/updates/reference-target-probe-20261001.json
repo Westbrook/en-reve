@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-01T22:19:59.684754+00:00",
+  "sourceCommit": "8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c",
+  "previousSourceMain": "a277af17a110df00d582d8162d89bb28d8b7cd30",
+  "taskPaths": [
+    "packages/elements/src/forms-private/README.md",
+    "plans/platform.md",
+    "probes/reference-target/README.md",
+    "probes/reference-target/fixture.html",
+    "probes/reference-target/fixture.js",
+    "probes/reference-target/playwright.config.ts",
+    "probes/reference-target/relationships.spec.ts",
+    "probes/reference-target/server.mjs",
+    "probes/reference-target/vendor.test.mjs",
+    "probes/reference-target/vendor/LICENSE",
+    "probes/reference-target/vendor/README.md",
+    "probes/reference-target/vendor/provenance.json",
+    "probes/reference-target/vendor/src/adapters/labels.js",
+    "probes/reference-target/vendor/src/core.js",
+    "probes/reference-target/vendor/src/detect.js",
+    "probes/reference-target/vendor/src/detect/surface.js",
+    "probes/reference-target/vendor/src/internal/label-utils.js",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/public-views.mjs",
+    "tooling/testing/public-views.test.mjs"
+  ],
+  "qualification": "Reference Target investigation: 24 browser cases pass, three known upstream label-replacement failures and six native/protocol skips remain explicit. Two source/import checks and four public-view checks pass. Native Chromium forwarding is verified; no production polyfill installation or general cross-root/AT support claim.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "a277af17a110df00d582d8162d89bb28d8b7cd30",
-  "exportedAt": "2026-10-01T22:01:38.551027+00:00",
+  "sourceCommit": "8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c",
+  "exportedAt": "2026-10-01T22:19:59.684754+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5339,
-  "includedBytes": 143956471,
-  "qualification": "User-requested main checkpoint: 309 tooltip browser checks, ten focused WebKit repetitions, metadata freshness, consumer types and SSR/pure imports passed. Context Protocol: 55 passed, two capability skips. Production docs build and all 12 focused browser checks passed. Publication follows this source push; manual acceptance remains separate.",
-  "latestUpdate": ".source-export/updates/tooltip-context-qualified-20261001.json",
+  "includedFiles": 5355,
+  "includedBytes": 144076879,
+  "qualification": "Reference Target investigation: 24 browser cases pass, three known upstream label-replacement failures and six native/protocol skips remain explicit. Two source/import checks and four public-view checks pass. Native Chromium forwarding is verified; no production polyfill installation or general cross-root/AT support claim.",
+  "latestUpdate": ".source-export/updates/reference-target-probe-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

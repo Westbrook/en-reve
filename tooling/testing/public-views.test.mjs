@@ -43,3 +43,12 @@ test('legacy theme and release output requests retain named child paths without 
  const one=publicViewOutput(root,'root#test:api',{}),two=publicViewOutput(root,'root#test:api',{});
  assert.notEqual(one.output,two.output);assert(!one.explicit);
 });
+
+test('platform probe view includes pinned Reference Target checks without changing legacy filter forwarding',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot:root});
+ const {plan}=publicViewPlan(graph,'root#test:probes',{root,forwarded:['--grep=FACE']});
+ assert(plan.some(task=>task.assertionSources?.includes('probes/reference-target/vendor.test.mjs')));
+ assert(plan.some(task=>task.config==='probes/reference-target/playwright.config.ts'));
+ assert.equal(plan.at(-1).config,'probes/playwright.config.ts');
+ assert(plan.slice(0,-1).every(task=>!task.command.includes('--grep=FACE')));
+});

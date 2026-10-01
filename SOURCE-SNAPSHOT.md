@@ -34,3 +34,7 @@ Local main `b5bb6064c2b4c26a7c62c71796a575c23abb664a` includes the component-qua
 ## Tooltip context checkpoint
 
 Local main `a277af17a110df00d582d8162d89bb28d8b7cd30` includes the component-qualified tooltip context implementation and generated metadata. Demo review controls, reset and maintained source sample pass all 12 focused browser checks; see `plans/tooltip-context.md`. Publication identity is tracked in the independent Progress Report.
+
+## Reference Target investigation
+
+Local main `8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c` retains the pinned-source comparison and explicit adoption gaps in `probes/reference-target/README.md`. Production field semantics remain unchanged.

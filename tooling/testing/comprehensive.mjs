@@ -124,7 +124,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  graph.pathways['primitives-browser']=['browser:packages/primitives/playwright.config.ts'];
  graph.pathways['ssr-browser']=['browser:packages/ssr/playwright.config.ts'];
  graph.pathways['styles-authoring']=units.filter(id=>id.startsWith('node:tooling/css-authoring/'));
- graph.pathways.probes=['browser:probes/playwright.config.ts'];
+ graph.pathways.probes=['node:probes/reference-target/vendor.test.mjs','browser:probes/reference-target/playwright.config.ts','browser:probes/playwright.config.ts'];
  graph.pathways.properties=['properties'];graph.pathways.scopes=['scopes'];graph.pathways.sheet=['direct:sticker-sheet'];
  graph.pathways.minify=units.filter(id=>/^node:tooling\/minify\/[^/]+\.test\.mjs$/.test(id));
  graph.pathways.tooling=graph.pathways.api.filter(id=>id.startsWith('node:'));
