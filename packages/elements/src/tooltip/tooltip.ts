@@ -2,6 +2,8 @@ import type { ChangeOutcome } from '@en-reve/primitives/interactions/events.js';
 import { observeIdReference, referenceRoot } from '../internal/id-reference.js';
 import type { ReferenceRoot } from '../internal/id-reference.js';
 import { tooltipWarmupGroup } from './warmup-group.js';
+import { tooltipWarmupContext } from './context.js';
+import { TargetContext } from '../internal/context-consumer.js';
 import { FloatingSurface } from '../popover/floating-surface.js';
 import type { OverlayTrigger } from '../popover/floating-surface.js';
 import type { OverlayReason } from '../dialog/types.js';
@@ -55,6 +57,8 @@ export class EnTooltip extends FloatingSurface {
 
   #positioning = new TooltipPositionController(this);
 
+  #warmupContext = new TargetContext(tooltipWarmupContext, () => { this.syncWarmupGroup(); this.requestUpdate(); });
+
   #group: ReturnType<typeof tooltipWarmupGroup> | null = null;
   #groupElement: Element | null = null;
   #groupRoot: ReferenceRoot | null = null;
@@ -96,7 +100,8 @@ export class EnTooltip extends FloatingSurface {
    * After a pointer-opened tooltip is displayed, peers skip show-delay until 500ms
    * after all group pointer activity ends. Displayed focused help suppresses peer hover
    * until blur or accepted Escape. Fresh hover after focused Escape is pointer-only
-   * until a new focus interaction. Missing/non-containing groups stay independent.
+   * until a new focus interaction. Missing/non-containing explicit groups stay independent.
+   * With no explicit ID, tooltipWarmupContext is requested from the trigger's ancestry.
    * @default ""
    */
   declare warmupGroup: string;
@@ -220,6 +225,7 @@ export class EnTooltip extends FloatingSurface {
     const trigger = this.trigger;
     const root = trigger ? referenceRoot(trigger) : null;
     const id = typeof this.warmupGroup === 'string' ? this.warmupGroup : '';
+    this.#warmupContext.setTarget(!id && this.eligibleTrigger() ? trigger ?? undefined : undefined);
     if (root !== this.#groupRoot || id !== this.#groupId) {
       this.#groupGeneration++;
       this.#pendingWarm = null;
@@ -239,9 +245,12 @@ export class EnTooltip extends FloatingSurface {
     const candidate = this.#groupRoot?.getElementById(this.#groupId) ?? null;
     const eligible = this.eligibleTrigger();
     const element = eligible && candidate?.isConnected && candidate.contains(trigger) ? candidate : null;
+    const resolvedGroup = element ? tooltipWarmupGroup(element)
+      : eligible && !this.#groupId ? this.#warmupContext.value ?? null : null;
     const ancestry: Node[] = [];
-    for (let node: Node | null = trigger; node; node = node.parentNode) ancestry.push(node);
-    if (element !== this.#groupElement || trigger !== this.#groupTrigger
+    for (let node: Node | null = trigger; node; node =
+      (node as Element).assignedSlot ?? node.parentNode ?? (node as ShadowRoot).host ?? null) ancestry.push(node);
+    if (resolvedGroup !== this.#group || element !== this.#groupElement || trigger !== this.#groupTrigger
       || eligible !== this.#groupEligible || ancestry.length !== this.#groupAncestry.length
       || ancestry.some((node, index) => node !== this.#groupAncestry[index])) {
       this.#groupGeneration++;
@@ -252,7 +261,7 @@ export class EnTooltip extends FloatingSurface {
       this.#groupTrigger = trigger;
       this.#groupAncestry = ancestry;
       this.#groupEligible = eligible;
-      this.#group = element ? tooltipWarmupGroup(element) : null;
+      this.#group = resolvedGroup;
       this.#pointerOpenRevision = null;
       const group = this.#group;
       group?.join(this, focus => this.handoffHover(group, focus), () => this.hasFocusedPresentation(), this.resumeHover);
@@ -274,10 +283,13 @@ export class EnTooltip extends FloatingSurface {
 
   /** A displayed successor replaces only unattended pointer help, through the normal event contract. */
   private hasFocusedPresentation(): boolean {
+    if (!this.#groupId) this.#warmupContext.setTarget(this.eligibleTrigger() ? this.trigger ?? undefined : undefined);
     return Boolean(this.focusKeepsOpen && this.presentedOpen
       && this.eligibleTrigger() && this.trigger?.matches(':focus-within')
-      && this.#groupRoot?.getElementById(this.warmupGroup) === this.#groupElement
-      && this.#groupElement?.contains(this.trigger) && this.surface?.matches(':popover-open'));
+      && (this.#groupId
+        ? this.#groupRoot?.getElementById(this.warmupGroup) === this.#groupElement && this.#groupElement?.contains(this.trigger)
+        : this.#group && this.#warmupContext.value === this.#group)
+      && this.surface?.matches(':popover-open'));
   }
 
   private resumeHover = (): void => {
@@ -305,6 +317,7 @@ export class EnTooltip extends FloatingSurface {
   }
 
   private releaseWarmupGroup(): void {
+    this.#warmupContext.disconnect();
     this.#groupGeneration++;
     this.#pendingWarm = null;
     this.#groupReference?.();

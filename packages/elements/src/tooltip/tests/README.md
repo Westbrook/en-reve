@@ -1,5 +1,12 @@
 # Shared tooltip warm-up browser checks
 
+`context.spec.ts` adds trigger-ancestry subscription checks using the public
+context entry: remote hosts, explicit-ID precedence, missing/non-containing IDs,
+nested and undefined providers, late providers, provider replacement, reparenting,
+shadow ancestry, focus/Escape, cancelable handoff and last-member cleanup. Run it
+with the existing warmup and position cases; the new subset does not replace the
+ID-based lifecycle matrix.
+
 Run from the repository root:
 
 ```sh

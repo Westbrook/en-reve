@@ -1,4 +1,5 @@
 import './color-spaces-demo.js';
+import { ContextProvider, tooltipWarmupContext, createTooltipWarmupGroup } from '@en-reve/elements/context.js';
 import { TableModel } from '@en-reve/primitives/state/table.js';
 import { tableColgroup, tableHeader, tableRows, type TableColumn } from '@en-reve/primitives/templates/table.js';
 import type { EnDataTable, TableSort, TableMode } from '@en-reve/elements/data-table.js';
@@ -1469,6 +1470,26 @@ export function popoverTooltipExample() {
 // example-end:popover-tooltip
 
 // example-start:tooltip-warmup
+/** One independent warmup scope per demo instance; tooltip hosts remain siblings of the toolbar. */
+class TooltipContextDemo extends LitElement {
+  static override styles = css`:host{display:block} p{margin-block:var(--en-space-3,.75rem)}`;
+  constructor() {
+    super();
+    new ContextProvider(this, {context: tooltipWarmupContext, initialValue: createTooltipWarmupGroup()});
+  }
+  protected override render() {
+    return html`
+      <en-toolbar label="Contextual editing guidance">
+        <en-button id="context-canvas" variant="secondary">Canvas help</en-button>
+        <en-button id="context-layers" variant="secondary">Layer help</en-button>
+      </en-toolbar>
+      <en-tooltip for="context-canvas"><span slot="content">Arrange the canvas before exporting.</span></en-tooltip>
+      <en-tooltip for="context-layers"><span slot="content">Inspect a layer’s properties.</span></en-tooltip>
+      <p>These tooltips omit <code>warmup-group</code>. Their triggers inherit one provider from this example’s host. Hover the first button, then the second; keyboard focus and Escape follow the same rules as explicit groups.</p>`;
+  }
+}
+if (!customElements.get('en-tooltip-context-demo')) customElements.define('en-tooltip-context-demo', TooltipContextDemo);
+
 /** Public logical placement API; the demo owns only its form controls. */
 class TooltipPositionDemo extends LitElement {
   static override properties = { inline: { state: true }, block: { state: true }, direction: { state: true } };
@@ -1541,6 +1562,10 @@ export function tooltipWarmupExample() {
 			<p>Export guidance belongs to an independent group. Keyboard focus opens help immediately and takes priority within its group: keep Canvas guidance focused, then hover Selection guidance to confirm it waits. Use the arrow keys to move focus or Escape to dismiss the focused help.</p>
 			<p>After Escape, a fresh hover over Canvas guidance can open it again while focus stays there; moving away closes this hover-only help normally. If the pointer was already over the trigger when Escape was pressed, leave and re-enter to start a fresh hover. Moving focus away and back restores focus-triggered help.</p>
 			<p>Touch does not start pointer warm-up. Tooltip hosts can sit outside their group; the group contains their external triggers.</p>
+			<section id="tooltip-context-example" aria-labelledby="tooltip-context-title">
+				<h3 id="tooltip-context-title">Contextual warm-up</h3>
+				<en-tooltip-context-demo></en-tooltip-context-demo>
+			</section>
 		</en-stack>
 	`;
 }

@@ -77,6 +77,43 @@ The first pointer hover keeps that tooltip's `show-delay`. Once its cancelable `
 
 Accepted Escape immediately cools this group and preserves the dismissed tooltip's redisplay suppression. Canceled changes and consumer-superseded changes do not warm or cool peers. When the next pointer tooltip is actually displayed in the group, the preceding unattended pointer tooltip requests dismissal immediately, bypassing `hide-delay`. Focused help takes priority as described below; pointer handoff alone preserves hovered help. A canceled or superseded successor opening does not dismiss earlier help, and applications can cancel the preceding tooltip’s `en-change` dismissal. Missing, disconnected or non-containing group IDs fall back to independent delay behavior. Group elements, including identical IDs in separate shadow roots, have independent state. Trigger/group rebinding, reparenting and removal invalidate pending hover work and release old membership. Disabled, loading and `aria-disabled="true"` triggers do not open on pointer hover.
 
+## Contextual groups
+
+An application can provide a shared timing/handoff group without assigning group
+IDs. Import the opt-in service from the pure context entry; this registers no
+elements and creates no document-global group:
+
+```ts
+import {ContextProvider, tooltipWarmupContext, createTooltipWarmupGroup}
+  from '@en-reve/elements/context.js';
+
+const tools = document.querySelector<HTMLElement>('#editing-tools')!;
+const provider = new ContextProvider(tools, {
+  context: tooltipWarmupContext,
+  initialValue: createTooltipWarmupGroup(),
+});
+```
+
+Omit `warmup-group` from participating tooltips. Requests originate at the external
+**trigger**, so tooltip hosts may live outside the provider. The nearest provider
+in the trigger's composed ancestry supplies the group, including across a shadow
+boundary. The tooltip's `for` reference still resolves only in its own tree.
+Providing `undefined` isolates a nested region from an outer group. Separate
+factory calls create separate groups; explicitly sharing one service shares
+timing and focus priority across those provider regions.
+
+A nonempty `warmup-group` always wins. An unresolved or non-containing explicit
+ID remains independent; it does not fall back to context. ID-based groups and
+factory-created contextual groups have separate identities. Provider value
+changes, late providers and trigger reparenting update membership, cancel stale
+opening work and release the old scope. Removing the last participant cools its
+group. The service does not own DOM, require explicit registration or move focus.
+Treat it as an identity-bearing scope; applications provide/replace it rather
+than invoking its coordination methods.
+
+Context uses the same first-hover delay, cooldown, focus/Escape policy and
+cancelable handoff described above. No new public events are introduced.
+
 ## Focus priority within a group
 
 A displayed tooltip whose trigger has an undismissed focused interval owns its resolved `warmup-group`. Hovering another trigger in that group waits until focus leaves or Escape successfully dismisses the focused help. This applies to all focus origins; the library does not guess whether focus came from a mouse, keyboard or assistive technology. Tooltips in other groups remain independent.

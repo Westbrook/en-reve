@@ -74,6 +74,9 @@ class TooltipWarmupGroup {
   }
 }
 
+/** Create an independent scope for contextual tooltip timing and handoff. No DOM or registration work. */
+export function createTooltipWarmupGroup(): TooltipWarmupGroup { return new TooltipWarmupGroup(); }
+
 export function tooltipWarmupGroup(element: Element): TooltipWarmupGroup {
   let group = groups.get(element);
   if (!group) groups.set(element, group = new TooltipWarmupGroup());
