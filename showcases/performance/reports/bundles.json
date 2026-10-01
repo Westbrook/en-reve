@@ -1,0 +1,581 @@
+{
+  "schema": 1,
+  "note": "Identical gzip9/Brotli11 offline sizes. Initial JS/CSS follows static HTML/import graph; fonts are listed separately because their actual use is browser-dependent. Remote fonts require network evidence. Source-map attribution estimates generated characters, not compressed marginal bytes; modules in multiple chunks require inspection before calling them duplicates.",
+  "systems": [
+    {
+      "id": "radix-react",
+      "fingerprint": "223c01c16189feb9ae396cc762ded72a0c4bdc8c5fa536b80012f648d4f79586",
+      "totals": {
+        "js": {
+          "files": 1,
+          "raw": 416242,
+          "gzip": 123497,
+          "brotli": 105404,
+          "initialBrotli": 105404
+        },
+        "css": {
+          "files": 1,
+          "raw": 686871,
+          "gzip": 81713,
+          "brotli": 50139,
+          "initialBrotli": 50139
+        },
+        "other": {
+          "files": 1,
+          "raw": 363,
+          "gzip": 265,
+          "brotli": 163,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-C-Yx8hkh.js",
+        "assets/index-DOSlwvYy.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "react-dom": 178325,
+        "@radix-ui/themes": 41817,
+        "application/fixture": 22813,
+        "@radix-ui/react-select": 16770,
+        "@radix-ui/react-scroll-area": 12815,
+        "@radix-ui/react-menu": 12791,
+        "@radix-ui/react-slider": 9409,
+        "react": 7857,
+        "@floating-ui/core": 7710,
+        "@floating-ui/dom": 7107,
+        "@radix-ui/react-collection": 7016,
+        "react-remove-scroll": 5688,
+        "@radix-ui/react-dismissable-layer": 5252,
+        "@radix-ui/react-radio-group": 4893,
+        "@radix-ui/react-popover": 4564,
+        "@radix-ui/react-dialog": 4546,
+        "@radix-ui/react-dropdown-menu": 4239,
+        "@radix-ui/react-popper": 3835,
+        "@floating-ui/utils": 3765,
+        "@radix-ui/react-checkbox": 3710,
+        "@radix-ui/react-focus-scope": 3627,
+        "@radix-ui/react-roving-focus": 3627,
+        "scheduler": 3499,
+        "@radix-ui/react-switch": 3392,
+        "@floating-ui/react-dom": 3153,
+        "@radix-ui/react-presence": 2657,
+        "@radix-ui/react-tooltip": 2466,
+        "@radix-ui/react-slot": 2374,
+        "@radix-ui/react-toggle-group": 2332,
+        "@radix-ui/react-tabs": 2304,
+        "@radix-ui/react-avatar": 1869,
+        "@radix-ui/react-context": 1687,
+        "@radix-ui/react-progress": 1658,
+        "react-remove-scroll-bar": 1539,
+        "aria-hidden": 1474,
+        "@radix-ui/react-use-controllable-state": 1237,
+        "use-sidecar": 1142,
+        "@radix-ui/primitive": 947,
+        "@radix-ui/react-focus-guards": 763,
+        "tslib": 743,
+        "react-style-singleton": 714,
+        "classnames": 676,
+        "use-callback-ref": 639,
+        "@radix-ui/react-use-size": 528,
+        "@radix-ui/react-primitive": 517,
+        "@radix-ui/react-compose-refs": 452,
+        "@radix-ui/react-toggle": 424,
+        "@radix-ui/react-use-effect-event": 397,
+        "@radix-ui/react-use-is-hydrated": 372,
+        "@radix-ui/react-visually-hidden": 359,
+        "@radix-ui/react-direction": 300,
+        "@radix-ui/react-portal": 283,
+        "@radix-ui/react-use-previous": 270,
+        "@radix-ui/react-id": 233,
+        "@radix-ui/react-use-callback-ref": 215,
+        "@radix-ui/number": 147,
+        "get-nonce": 76,
+        "@radix-ui/react-use-layout-effect": 53
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "fluent-react",
+      "fingerprint": "940ae94a6fa1d5787380ca5078f9e5bb99edf49ea421c7921e2dd4b67721fd03",
+      "totals": {
+        "css": {
+          "files": 1,
+          "raw": 3395,
+          "gzip": 1194,
+          "brotli": 977,
+          "initialBrotli": 977
+        },
+        "js": {
+          "files": 1,
+          "raw": 818140,
+          "gzip": 223490,
+          "brotli": 174853,
+          "initialBrotli": 174853
+        },
+        "other": {
+          "files": 1,
+          "raw": 364,
+          "gzip": 270,
+          "brotli": 164,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-iOgXJCQZ.js",
+        "assets/index-DewZRYh7.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "react-dom": 178468,
+        "tabster": 67962,
+        "@fluentui/tokens": 51400,
+        "@fluentui/react-combobox": 36575,
+        "@fluentui/react-menu": 29585,
+        "@fluentui/react-tabs": 29485,
+        "@fluentui/react-button": 28694,
+        "@fluentui/react-card": 24823,
+        "application/fixture": 22801,
+        "@fluentui/react-avatar": 22788,
+        "@fluentui/react-spinbutton": 18800,
+        "@fluentui/react-badge": 17310,
+        "@fluentui/react-positioning": 17165,
+        "@fluentui/react-dialog": 15275,
+        "@fluentui/react-slider": 14946,
+        "@fluentui/react-input": 13493,
+        "@fluentui/react-icons": 13135,
+        "@fluentui/react-switch": 12832,
+        "@fluentui/react-select": 12189,
+        "@fluentui/react-textarea": 11968,
+        "@fluentui/react-accordion": 11860,
+        "@fluentui/react-drawer": 11517,
+        "@fluentui/react-radio": 10970,
+        "@fluentui/react-popover": 10182,
+        "@fluentui/react-utilities": 9373,
+        "@fluentui/react-rating": 9240,
+        "@fluentui/react-checkbox": 9005,
+        "@griffel/core": 8688,
+        "react": 7851,
+        "@floating-ui/core": 7715,
+        "keyborg": 7497,
+        "@fluentui/react-breadcrumb": 7322,
+        "scheduler": 7005,
+        "@fluentui/react-field": 6455,
+        "@fluentui/react-motion": 6326,
+        "@fluentui/react-link": 5470,
+        "@floating-ui/dom": 5355,
+        "@fluentui/react-aria": 5125,
+        "@fluentui/react-tabster": 4800,
+        "@fluentui/react-motion-components-preview": 3975,
+        "@fluentui/react-progress": 3860,
+        "@floating-ui/utils": 3747,
+        "@fluentui/react-provider": 3345,
+        "@fluentui/react-portal": 2441,
+        "@fluentui/react-label": 1942,
+        "@fluentui/react-context-selector": 799,
+        "use-sync-external-store": 747,
+        "@griffel/react": 731,
+        "@fluentui/react-jsx-runtime": 701,
+        "@fluentui/react-shared-contexts": 664,
+        "@emotion/hash": 553,
+        "@fluentui/keyboard-keys": 35
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "spectrum-react",
+      "fingerprint": "a1d4688e35fe42ef5c7289c7f46bb0e2e3687e5fe763381ede029456729a2d6e",
+      "totals": {
+        "js": {
+          "files": 1,
+          "raw": 1004355,
+          "gzip": 285500,
+          "brotli": 221494,
+          "initialBrotli": 221494
+        },
+        "css": {
+          "files": 1,
+          "raw": 66746,
+          "gzip": 13454,
+          "brotli": 11522,
+          "initialBrotli": 11522
+        },
+        "other": {
+          "files": 1,
+          "raw": 366,
+          "gzip": 274,
+          "brotli": 169,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-CmMecXP4.js",
+        "assets/style-CJkFymtk.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "react-aria": 270772,
+        "@react-spectrum/s2": 256647,
+        "react-dom": 178581,
+        "react-stately": 133290,
+        "react-aria-components": 76379,
+        "@internationalized/date": 28564,
+        "application/fixture": 22647,
+        "@internationalized/number": 8219,
+        "react": 7825,
+        "scheduler": 3496,
+        "@internationalized/string": 1796,
+        "use-sync-external-store": 749,
+        "clsx": 363
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "astryx-react",
+      "fingerprint": "8ae620b883792c8cb0c8730c1f31f6b9c8c3d6535370a1a9165bd623fbd039a7",
+      "totals": {
+        "js": {
+          "files": 2,
+          "raw": 739557,
+          "gzip": 216609,
+          "brotli": 178387,
+          "initialBrotli": 178220
+        },
+        "css": {
+          "files": 1,
+          "raw": 196349,
+          "gzip": 33193,
+          "brotli": 27165,
+          "initialBrotli": 27165
+        },
+        "other": {
+          "files": 1,
+          "raw": 364,
+          "gzip": 269,
+          "brotli": 167,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-BBSG2wCJ.js",
+        "assets/index-B1-DuT3_.css"
+      ],
+      "dynamicImportEdges": [
+        {
+          "from": "assets/index-BBSG2wCJ.js",
+          "specifier": "./ProgressBarMarkTooltip-Dc5ShBeo.js",
+          "dynamic": true
+        }
+      ],
+      "approximateGeneratedCharactersByPackage": {
+        "@astryxdesign/core": 462809,
+        "react-dom": 178613,
+        "application/fixture": 22144,
+        "@formatjs/icu-messageformat-parser": 19684,
+        "@astryxdesign/theme-neutral": 19290,
+        "lucide-react": 8201,
+        "react": 7820,
+        "@formatjs/icu-skeleton-parser": 6733,
+        "intl-messageformat": 5654,
+        "scheduler": 3496,
+        "@stylexjs/stylex": 1423,
+        "@formatjs/fast-memoize": 950
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "shadcn-react",
+      "fingerprint": "c3b18c1eaf38dde8ff5059b18fafbc3fd1b1add64d941b9f2af1a2a91dfe678f",
+      "totals": {
+        "js": {
+          "files": 1,
+          "raw": 539071,
+          "gzip": 168840,
+          "brotli": 141977,
+          "initialBrotli": 141977
+        },
+        "css": {
+          "files": 1,
+          "raw": 78846,
+          "gzip": 12892,
+          "brotli": 11069,
+          "initialBrotli": 11069
+        },
+        "other": {
+          "files": 2,
+          "raw": 4747,
+          "gzip": 2235,
+          "brotli": 1579,
+          "initialBrotli": 0
+        },
+        "fonts": {
+          "files": 1,
+          "raw": 69760,
+          "gzip": 69740,
+          "brotli": 69765,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-9zXTxq3o.js",
+        "assets/index-CiupPIgs.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "@base-ui/react": 223212,
+        "react-dom": 178610,
+        "application/fixture": 57819,
+        "tailwind-merge": 27426,
+        "@base-ui/utils": 13488,
+        "react": 7821,
+        "@floating-ui/dom": 7032,
+        "@floating-ui/core": 6246,
+        "@floating-ui/utils": 3670,
+        "lucide-react": 3601,
+        "scheduler": 3496,
+        "@floating-ui/react-dom": 2738,
+        "use-sync-external-store": 1551,
+        "class-variance-authority": 594,
+        "clsx": 363
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "fluent-web-components",
+      "fingerprint": "46b61dac3922571774265d590a5ac56b5c2355ed489ffef9610e127a1f5428b0",
+      "totals": {
+        "css": {
+          "files": 1,
+          "raw": 4300,
+          "gzip": 1456,
+          "brotli": 1206,
+          "initialBrotli": 1206
+        },
+        "js": {
+          "files": 1,
+          "raw": 287981,
+          "gzip": 70953,
+          "brotli": 58475,
+          "initialBrotli": 58475
+        },
+        "other": {
+          "files": 1,
+          "raw": 373,
+          "gzip": 277,
+          "brotli": 177,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-DHbL8u7_.js",
+        "assets/index-7X1QEckn.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "@fluentui/web-components": 109731,
+        "@microsoft/fast-element": 45860,
+        "@fluentui/tokens": 21655,
+        "application/fixture": 18525,
+        "@microsoft/focusgroup-polyfill": 4715,
+        "tslib": 325
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "spectrum-web-components",
+      "fingerprint": "0d349ad33f30b745a0a83418f1a0d5518abe3e935b7117be6aa769ce4019b5ec",
+      "totals": {
+        "js": {
+          "files": 18,
+          "raw": 1276556,
+          "gzip": 222997,
+          "brotli": 174560,
+          "initialBrotli": 160096
+        },
+        "css": {
+          "files": 1,
+          "raw": 3971,
+          "gzip": 1379,
+          "brotli": 1141,
+          "initialBrotli": 1141
+        },
+        "other": {
+          "files": 1,
+          "raw": 1341,
+          "gzip": 499,
+          "brotli": 353,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-BKxPXhH6.js",
+        "assets/rolldown-runtime-hePW80VL.js",
+        "assets/define-element-BlONwTYC.js",
+        "assets/Base-ZN4Dbzq-.js",
+        "assets/state-9U0Jz7yL.js",
+        "assets/query-Df4-SAIv.js",
+        "assets/Overlay-Lz9pcCg9.js",
+        "assets/preload-helper-Czpn1I53.js",
+        "assets/if-defined-Vi_7t4rj.js",
+        "assets/platform-BZDoCuRt.js",
+        "assets/focusable-selectors-CbRTteoW.js",
+        "assets/first-focusable-in-HCIc6lth.js",
+        "assets/LanguageResolution-BzS_x5pe.js",
+        "assets/index-BdxRcUJm.css"
+      ],
+      "dynamicImportEdges": [
+        {
+          "from": "assets/Overlay-Lz9pcCg9.js",
+          "specifier": "./index-BKxPXhH6.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/Overlay-Lz9pcCg9.js",
+          "specifier": "./index-BKxPXhH6.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/Overlay-Lz9pcCg9.js",
+          "specifier": "./focus-trap.esm-GrKRp3fm.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/index-BKxPXhH6.js",
+          "specifier": "./focus-visible-D6fgymCV.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/index-BKxPXhH6.js",
+          "specifier": "./sp-tooltip-Bow_xdpX.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/index-BKxPXhH6.js",
+          "specifier": "./sp-tray-CPbcM0dS.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/index-BKxPXhH6.js",
+          "specifier": "./sp-tray-CPbcM0dS.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/index-BKxPXhH6.js",
+          "specifier": "./sp-color-handle-BKVt-kRK.js",
+          "dynamic": true
+        },
+        {
+          "from": "assets/sp-tooltip-Bow_xdpX.js",
+          "specifier": "./index-BKxPXhH6.js",
+          "dynamic": true
+        }
+      ],
+      "approximateGeneratedCharactersByPackage": {
+        "colorjs.io": 54694,
+        "@spectrum-web-components/overlay": 39279,
+        "@spectrum-web-components/menu": 32537,
+        "@spectrum-web-components/picker": 25571,
+        "@spectrum-web-components/reactive-controllers": 19230,
+        "application/fixture": 18048,
+        "@spectrum-web-components/slider": 17834,
+        "lit-html": 12295,
+        "@spectrum-web-components/number-field": 11478,
+        "focus-trap": 10850,
+        "@spectrum-web-components/shared": 9689,
+        "@spectrum-web-components/tabs": 9125,
+        "@lit/reactive-element": 8928,
+        "@spectrum-web-components/combobox": 7895,
+        "@internationalized/number": 7602,
+        "@spectrum-web-components/icons-ui": 7142,
+        "@spectrum-web-components/textfield": 7064,
+        "@floating-ui/dom": 7013,
+        "@floating-ui/core": 6367,
+        "tabbable": 5706,
+        "@spectrum-web-components/button": 5427,
+        "@spectrum-web-components/theme": 4612,
+        "@floating-ui/utils": 3920,
+        "@spectrum-web-components/base": 3909,
+        "@spectrum-web-components/action-button": 3837,
+        "@spectrum-web-components/radio": 3543,
+        "@spectrum-web-components/tooltip": 3444,
+        "focus-visible": 3018,
+        "@spectrum-web-components/accordion": 2835,
+        "@spectrum-web-components/checkbox": 2746,
+        "@spectrum-web-components/tray": 2555,
+        "@spectrum-web-components/progress-circle": 2542,
+        "@spectrum-web-components/progress-bar": 2475,
+        "@spectrum-web-components/alert-dialog": 2440,
+        "@lit-labs/observers": 2339,
+        "@spectrum-web-components/field-label": 2085,
+        "@spectrum-web-components/dialog": 1898,
+        "@spectrum-web-components/badge": 1698,
+        "@spectrum-web-components/help-text": 1457,
+        "@spectrum-web-components/avatar": 1355,
+        "@spectrum-web-components/color-field": 1184,
+        "@spectrum-web-components/color-handle": 1059,
+        "@spectrum-web-components/icon": 972,
+        "@spectrum-web-components/field-group": 930,
+        "@spectrum-web-components/button-group": 846,
+        "@spectrum-web-components/divider": 818,
+        "@spectrum-web-components/picker-button": 799,
+        "lit-element": 734,
+        "@spectrum-web-components/switch": 682,
+        "@spectrum-web-components/link": 678,
+        "@spectrum-web-components/underlay": 678,
+        "@spectrum-web-components/popover": 620,
+        "@spectrum-web-components/infield-button": 573,
+        "@spectrum-web-components/color-loupe": 498,
+        "@spectrum-web-components/icons-workflow": 464,
+        "@spectrum-web-components/opacity-checkerboard": 12,
+        "@spectrum-web-components/modal": 8,
+        "@spectrum-web-components/close-button": 5
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "en-reve",
+      "fingerprint": "ab6e473521da65174a73e31d19160bcd7f9c46abf2553d462a0b3506a27233a9",
+      "totals": {
+        "js": {
+          "files": 1,
+          "raw": 414455,
+          "gzip": 102519,
+          "brotli": 82291,
+          "initialBrotli": 82291
+        },
+        "css": {
+          "files": 1,
+          "raw": 40755,
+          "gzip": 6547,
+          "brotli": 5735,
+          "initialBrotli": 5735
+        },
+        "other": {
+          "files": 1,
+          "raw": 359,
+          "gzip": 266,
+          "brotli": 159,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-CSoEuTYL.js",
+        "assets/index-DADEvvIk.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "@en-reve/elements": 174982,
+        "@en-reve/styles": 45611,
+        "@en-reve/primitives": 28170,
+        "@en-reve/tokens": 14849,
+        "application/fixture": 11063,
+        "lit-html": 10882,
+        "signal-polyfill": 8212,
+        "@lit/reactive-element": 7171,
+        "lit-element": 743,
+        "signal-utils": 423
+      },
+      "sourceModulesInMultipleChunks": []
+    }
+  ]
+}

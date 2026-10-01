@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {integrateWebAwesomeMain} from '../experiments/integrate-web-awesome-main.mjs';
 const read=p=>readFileSync(new URL(p,import.meta.url),'utf8');
-const old=read('../../../artifacts/web-awesome/historical-results-before-expansion.md');
+const old=read('./fixtures/historical-results-before-web-awesome.md');
 const historical=JSON.parse(read('../reports/pass2-tables.json')), current=JSON.parse(read('../reports/web-awesome/tables.json'));
 test('main groups preserve historical cells, add only matching Web Awesome metrics, and integrate idempotently',()=>{
  const first=integrateWebAwesomeMain(old,historical,current), second=integrateWebAwesomeMain(first.markdown,historical,current);

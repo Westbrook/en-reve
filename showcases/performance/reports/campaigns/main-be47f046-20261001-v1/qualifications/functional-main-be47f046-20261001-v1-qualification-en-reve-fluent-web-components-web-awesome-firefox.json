@@ -1,0 +1,338 @@
+{
+  "at": "2026-10-01T15:59:33.003Z",
+  "name": "main-be47f046-20261001-v1-qualification-en-reve-fluent-web-components-web-awesome-firefox",
+  "engine": "firefox",
+  "suites": [
+    {
+      "suite": "smoke",
+      "exitCode": 0,
+      "results": [
+        {
+          "name": "fluent-web-components",
+          "checks": [
+            {
+              "name": "sixteen cards; no docs/theme controls",
+              "pass": true
+            },
+            {
+              "name": "canvas changes artwork",
+              "pass": true
+            },
+            {
+              "name": "create dialog",
+              "pass": true
+            },
+            {
+              "name": "preview dialog",
+              "pass": true
+            },
+            {
+              "name": "commands dialog",
+              "pass": true
+            },
+            {
+              "name": "native action menu",
+              "pass": true
+            },
+            {
+              "name": "brief tabs",
+              "pass": true
+            },
+            {
+              "name": "checklist enables approval",
+              "pass": true
+            },
+            {
+              "name": "project creation",
+              "pass": true
+            },
+            {
+              "name": "output slider updates art",
+              "pass": true
+            },
+            {
+              "name": "export overlay",
+              "pass": true
+            },
+            {
+              "name": "review submission",
+              "pass": true
+            },
+            {
+              "name": "notification save",
+              "pass": true
+            },
+            {
+              "name": "chat response",
+              "pass": true
+            },
+            {
+              "name": "empty collection and reset",
+              "pass": true
+            },
+            {
+              "name": "reset preserves another card",
+              "pass": true
+            },
+            {
+              "name": "390px reflow",
+              "pass": true
+            },
+            {
+              "name": "progress return only when flagged",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "155.0"
+        },
+        {
+          "name": "en-reve",
+          "checks": [
+            {
+              "name": "sixteen cards; no docs/theme controls",
+              "pass": true
+            },
+            {
+              "name": "canvas changes artwork",
+              "pass": true
+            },
+            {
+              "name": "create dialog",
+              "pass": true
+            },
+            {
+              "name": "preview dialog",
+              "pass": true
+            },
+            {
+              "name": "commands dialog",
+              "pass": true
+            },
+            {
+              "name": "native action menu",
+              "pass": true
+            },
+            {
+              "name": "brief tabs",
+              "pass": true
+            },
+            {
+              "name": "checklist enables approval",
+              "pass": true
+            },
+            {
+              "name": "project creation",
+              "pass": true
+            },
+            {
+              "name": "output slider updates art",
+              "pass": true
+            },
+            {
+              "name": "export overlay",
+              "pass": true
+            },
+            {
+              "name": "review submission",
+              "pass": true
+            },
+            {
+              "name": "notification save",
+              "pass": true
+            },
+            {
+              "name": "chat response",
+              "pass": true
+            },
+            {
+              "name": "empty collection and reset",
+              "pass": true
+            },
+            {
+              "name": "reset preserves another card",
+              "pass": true
+            },
+            {
+              "name": "390px reflow",
+              "pass": true
+            },
+            {
+              "name": "progress return only when flagged",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "155.0"
+        },
+        {
+          "name": "web-awesome",
+          "checks": [
+            {
+              "name": "sixteen cards; no docs/theme controls",
+              "pass": true
+            },
+            {
+              "name": "native brief activation on first viewport exposure and tab return",
+              "pass": true
+            },
+            {
+              "name": "canvas changes artwork",
+              "pass": true
+            },
+            {
+              "name": "create dialog",
+              "pass": true
+            },
+            {
+              "name": "preview dialog",
+              "pass": true
+            },
+            {
+              "name": "commands dialog",
+              "pass": true
+            },
+            {
+              "name": "native action menu",
+              "pass": true
+            },
+            {
+              "name": "brief tabs",
+              "pass": true
+            },
+            {
+              "name": "checklist enables approval",
+              "pass": true
+            },
+            {
+              "name": "project creation",
+              "pass": true
+            },
+            {
+              "name": "output slider updates art",
+              "pass": true
+            },
+            {
+              "name": "export overlay",
+              "pass": true
+            },
+            {
+              "name": "review submission",
+              "pass": true
+            },
+            {
+              "name": "notification save",
+              "pass": true
+            },
+            {
+              "name": "chat response",
+              "pass": true
+            },
+            {
+              "name": "empty collection and reset",
+              "pass": true
+            },
+            {
+              "name": "reset preserves another card",
+              "pass": true
+            },
+            {
+              "name": "390px reflow",
+              "pass": true
+            },
+            {
+              "name": "progress return only when flagged",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "155.0",
+          "vendorLimitations": [
+            "Web Awesome 3.13.0 renders the public dialog/drawer label as a heading but does not give the internal native dialog an accessible name. Qualification identifies the public host label, visible heading and native dialog; it does not repair vendor internals or certify accessible naming."
+          ]
+        }
+      ]
+    },
+    {
+      "suite": "secondary",
+      "exitCode": 0,
+      "results": [
+        {
+          "name": "fluent-web-components",
+          "checks": [
+            {
+              "name": "activity period updates data",
+              "pass": true
+            },
+            {
+              "name": "teammate invitation",
+              "pass": true
+            },
+            {
+              "name": "study popover",
+              "pass": true
+            },
+            {
+              "name": "tablet two columns",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "155.0"
+        },
+        {
+          "name": "en-reve",
+          "checks": [
+            {
+              "name": "activity period updates data",
+              "pass": true
+            },
+            {
+              "name": "teammate invitation",
+              "pass": true
+            },
+            {
+              "name": "study popover",
+              "pass": true
+            },
+            {
+              "name": "tablet two columns",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "155.0"
+        },
+        {
+          "name": "web-awesome",
+          "checks": [
+            {
+              "name": "activity period updates data",
+              "pass": true
+            },
+            {
+              "name": "teammate invitation",
+              "pass": true
+            },
+            {
+              "name": "study popover",
+              "pass": true
+            },
+            {
+              "name": "tablet two columns",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "155.0"
+        }
+      ]
+    }
+  ],
+  "fingerprints": {
+    "fluent-web-components": "7236c0854897d7e62f89a9398cbf0ec909ab7278f88a029433acc51d4af0a486",
+    "en-reve": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c",
+    "web-awesome": "5694cb62336733951bcb793f18aac9b9fc884324ef953bb44369acfdca4fd97e"
+  },
+  "passed": true
+}

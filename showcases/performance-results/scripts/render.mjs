@@ -6,10 +6,12 @@ import { Marked } from "marked";
 
 const project = fileURLToPath(new URL("..", import.meta.url));
 const repo = resolve(project, "../..");
-const source = resolve(repo, "plans/native-showcase-performance-results.md");
+const source = resolve(repo, process.env.PERF_REPORT_SOURCE || "plans/native-showcase-performance-results.md");
 // Derive measurement dates from immutable run timestamps before rendering.
-const { dateReportTables } = await import("../../performance/experiments/date-report-tables.mjs");
-await dateReportTables({ check: true });
+if (!process.env.PERF_REPORT_SOURCE) {
+  const { dateReportTables } = await import("../../performance/experiments/date-report-tables.mjs");
+  await dateReportTables({ check: true });
+}
 const markdown = await readFile(source, "utf8");
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 const escape = (value) =>
@@ -62,7 +64,7 @@ const renderer = {
     return `<h${token.depth} id="${id}">${this.parser.parseInline(token.tokens)}</h${token.depth}>\n`;
   },
   html(token) {
-    if (/^<!-- (BEGIN|END) (SECOND PASS|DOM REVIEW|WEB AWESOME|SPECTRUM GEN2|CALENDAR VARIANTS|EN REVE MAIN|EN REVE CURRENT OVERVIEW|EN REVE CURRENT DOM) -->\s*$/.test(token.text)) return "";
+    if (/^<!-- (BEGIN|END) (SECOND PASS|DOM REVIEW|WEB AWESOME|SPECTRUM GEN2|CALENDAR VARIANTS|EN REVE MAIN|EN REVE CURRENT OVERVIEW|EN REVE CURRENT DOM|LATEST MAIN|LATEST CALENDAR) -->\s*$/.test(token.text)) return "";
     return escape(token.text);
   },
   link(token) {
@@ -90,6 +92,7 @@ const renderer = {
       id,
       title: subsection,
       original,
+      caption: original && !process.env.PERF_REPORT_SOURCE ? "First reference comparison · versioned acquisitions; consult Date and Run ID" : subsection,
       headers,
       rows,
       numeric,
@@ -126,7 +129,7 @@ await writeFile(
   `<!doctype html>
 <html lang="en" style="color-scheme:light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="En Reve native showcase performance evidence and engineering backlog, with grouped sortable measurements and a prioritized engineering backlog."><title>Performance results · En Reve</title></head>
 <body><a class="skip-link" href="#content">Skip to results</a><header class="masthead"><a href="#" class="wordmark">En Rêve<span>Performance laboratory</span></a><a href="/results.md" download>Download source ↗</a></header>
-<div class="page-layout"><aside><p class="eyebrow">Research / 01</p><h2>Results &amp;<br>engineering backlog</h2><nav aria-label="Report sections">${nav}</nav><p class="source-note">Exploratory evidence<br>Dated comparison cohorts</p></aside><main id="content"><div class="report-label"><en-badge>Exploratory baseline</en-badge><span>Native implementations · grouped measurements</span></div><article>${content}</article><footer>Rendered from the results document · Source <code>${sourceHash.slice(0, 12)}</code><br><a href="/results.md">Read the original Markdown</a></footer></main></div><script type="module" src="/src/main.js"></script></body></html>`,
+<div class="page-layout"><aside><p class="eyebrow">Research / 01</p><h2>Results &amp;<br>engineering backlog</h2><nav aria-label="Report sections">${nav}</nav><p class="source-note">Exploratory evidence<br>Dated comparison cohorts</p></aside><main id="content"><div class="report-label"><en-badge>${process.env.PERF_REPORT_SOURCE ? "Campaign evidence" : "Exploratory baseline"}</en-badge><span>Native implementations · grouped measurements</span></div><article>${content}</article><footer>Rendered from the results document · Source <code>${sourceHash.slice(0, 12)}</code><br><a href="/results.md">Read the original Markdown</a></footer></main></div><script type="module" src="/src/main.js"></script></body></html>`,
 );
 const inputs = await Promise.all(
   [

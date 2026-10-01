@@ -1,0 +1,326 @@
+{
+  "createdAt": "2026-09-24T00:59:30.003Z",
+  "packageBaseline": "6d09b31cf43523ac8c75352208ab9697b62e2673",
+  "reference": {
+    "id": "en-reve",
+    "port": 4617,
+    "family": "En Reve",
+    "technology": "Web Components",
+    "cohort": "native",
+    "verificationReceipt": {
+      "path": "verification-en-reve-main.json",
+      "sha256": "9e403c340ac79b717419e85ba8c27f0a754f07f5f08c68068a1923189f5f7884",
+      "verifiedAt": "2026-09-24T00:13:52.572Z"
+    },
+    "fingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd",
+    "sourceSha256": "b2b301b2ade871b65035d62ad15c2b4d1c4ecf404152ad89460f3a8441fd38fa",
+    "sourceHashes": {
+      "en-reve/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+      "en-reve/.performance/containment.css": "b30aa0f791e8c07f7d6da41e9792425154c7dcf519b04de3f0b7c033adb7a5de",
+      "en-reve/.performance/content-visibility.js": "e29f455f7b06cbc0c7f79d01fb7fff3bf2a75231973025fbbc8ccc3832e9f7b3",
+      "en-reve/.performance/family-button.js": "0a033ce0845da4698bd93b1f04fbc95993a5c6b779eace34174fcd00da85b162",
+      "en-reve/.performance/family-date.js": "088fd0303ff5c3a504a984c44321a2e1e6f2ada085dcfc1417765ac1d4bd5748",
+      "en-reve/.performance/family-forms.js": "67ad103a2fe174bf6fbe96c3c654737deb791f364f275df26478337fabb47b22",
+      "en-reve/.performance/family-overlays.js": "4d1ea23782cab9e6e7b09e71cedf58f89c2845ffe8ff79032449a9c805debd82",
+      "en-reve/.performance/family-shell.js": "3f77ebd3bdc80202e19c63bdee3c88ec670c78b4b52911118c1afd9d289ed56e",
+      "en-reve/.performance/intent-commands.js": "615ac8d1926061bd1a318de52c5348914e282a6cc7cfdcf569e77c6a23557fc4",
+      "en-reve/.performance/lazy-commands.js": "ffddaa289fe7df1345d2315a4f7bca9903bbace664b5cb65f598e20c40d505b1",
+      "en-reve/.performance/split-vendor-edit.js": "9c9afcbd20728bb36525fcaeea2f1cae15339364a561bc9fbb17ed5a4f7005e2",
+      "en-reve/.performance/split-vendor.js": "be564590dfe6fe9eb9a862adab4bca230c06f0480ddd952e6b60f858c9baeaf6",
+      "en-reve/index.html": "7382c087e80812ef2097bfb940209c7586cf26d5298f9ec80c1fe38879a4f57d",
+      "en-reve/package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6",
+      "en-reve/package.json": "200e24dd6c4832fea863cba6e2972e536e4533c3f0ea5355030e5a1d0b4f8be6",
+      "en-reve/snapshot.json": "5b2cf3b48ed4ec307d3a3aa0b163058f483e14570c8e5be94a1e436c01d5ece8",
+      "en-reve/src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "en-reve/src/base.css": "572a50f9bd509cf1ca11dcd525be0800e5321cc94aa58e79fa26367f34efb7c0",
+      "en-reve/src/change-consumption.ts": "e1bc1b6b9d72fa561f6043721f8165c2cf78ace78720ecce3a07bc01d661c8be",
+      "en-reve/src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "en-reve/src/model.ts": "db63e21d6055808f15e9e9ea942d321871f6150b2f9b6b16c4e442e02ef79f65",
+      "en-reve/src/styles.css": "9e4ba3f86fe9662f74ee88b67a326f292652e0c5a0ecce8fc9fe5ae5d9fc14ff",
+      "en-reve/src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "en-reve/src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "en-reve/src/token-copy.ts": "ae7e2ee7882d81b89e2d9427bb3f18f01e886660fcbf62d141f714dd114dc720",
+      "en-reve/vendor/en-reve-elements-0.1.0-main-1fd12d7737b1.tgz": "1fd12d7737b1880fe160eb61d7f95021140247d92e45fae6dbdcb1388985b3aa",
+      "en-reve/vendor/en-reve-elements-0.1.0.tgz": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+      "en-reve/vendor/en-reve-primitives-0.1.0-main-3c07d968d025.tgz": "3c07d968d02516aed51844276b88137964e55b4d0ed621d336293f2d2ba0656d",
+      "en-reve/vendor/en-reve-primitives-0.1.0.tgz": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+      "en-reve/vendor/en-reve-styles-0.1.0-main-e9dd7ff5eb76.tgz": "e9dd7ff5eb76279e246ee74813e8e9febaad8bd1f776c0800fcf95c9dd204f2d",
+      "en-reve/vendor/en-reve-styles-0.1.0.tgz": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+      "en-reve/vendor/en-reve-tokens-0.1.0-main-41c2f927c730.tgz": "41c2f927c7301eb4331e6398a8b89b1d1e642d868fe46b5f03125a9daef6e140",
+      "en-reve/vendor/en-reve-tokens-0.1.0.tgz": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+      "en-reve/vite.config.js": "cd5bace161a6a47b3c7550399cf656d2fe7ba972d5bcf67442ac8e50d29479a3",
+      "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+      "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+      "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+      "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+      "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+    },
+    "sourceHashScope": "Original functional receipt",
+    "build": {
+      "project": "showcase-en-reve",
+      "dependencies": {
+        "@en-reve/tokens": "file:vendor/en-reve-tokens-0.1.0-main-41c2f927c730.tgz",
+        "@en-reve/styles": "file:vendor/en-reve-styles-0.1.0-main-e9dd7ff5eb76.tgz",
+        "@en-reve/primitives": "file:vendor/en-reve-primitives-0.1.0-main-3c07d968d025.tgz",
+        "@en-reve/elements": "file:vendor/en-reve-elements-0.1.0-main-1fd12d7737b1.tgz",
+        "lit": "3.3.3",
+        "signal-polyfill": "0.2.2"
+      },
+      "devDependencies": {
+        "vite": "8.2.2",
+        "typescript": "7.0.2"
+      },
+      "lockfileSha256": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6",
+      "mode": "production",
+      "rendering": "client",
+      "theme": "single default light appearance",
+      "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+    },
+    "assets": [
+      {
+        "path": "assets/index-C0meNs_7.js",
+        "sha256": "2b96bbe0542ee9b69891e993f33b18110e7c56c10e4195133d91b0a5bcb38eed",
+        "raw": 450035,
+        "gzip": 110874,
+        "brotli": 89035,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-C0meNs_7.js.map",
+        "sha256": "3aea1d71d753337cc9b65b905e3ef0c9f34a3c29cff4f392846b347a699de892",
+        "raw": 1209535,
+        "gzip": 272225,
+        "brotli": 206000,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+        "raw": 813,
+        "gzip": 426,
+        "brotli": 364,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "c646974e3d1bde22b4bd076bfcc9f7e157f73e7b8d99495f492018becd4c7417",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 161,
+        "diagnostic": false
+      }
+    ]
+  },
+  "variants": [
+    {
+      "id": "calendar-eager",
+      "label": "Eager reference",
+      "description": "Eager reference; unchanged 16-card application, global registry and frozen main packages",
+      "assets": [
+        {
+          "path": "assets/index-C0meNs_7.js",
+          "sha256": "2b96bbe0542ee9b69891e993f33b18110e7c56c10e4195133d91b0a5bcb38eed",
+          "raw": 450035,
+          "gzip": 110874,
+          "brotli": 89035,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-C0meNs_7.js.map",
+          "sha256": "3aea1d71d753337cc9b65b905e3ef0c9f34a3c29cff4f392846b347a699de892",
+          "raw": 1209535,
+          "gzip": 272225,
+          "brotli": 206000,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-CDV5OawH.css",
+          "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+          "raw": 44562,
+          "gzip": 6986,
+          "brotli": 6077,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+          "raw": 813,
+          "gzip": 426,
+          "brotli": 364,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "c646974e3d1bde22b4bd076bfcc9f7e157f73e7b8d99495f492018becd4c7417",
+          "raw": 359,
+          "gzip": 265,
+          "brotli": 161,
+          "diagnostic": false
+        }
+      ],
+      "fingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd",
+      "sourceInputs": {
+        "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+        "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+        "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+        "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+        "package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6"
+      },
+      "cohort": "calendar-consumer-policy",
+      "referenceFingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+    },
+    {
+      "id": "calendar-deferred",
+      "label": "Deferred construction",
+      "description": "Deferred construction; unchanged 16-card application, global registry and frozen main packages",
+      "assets": [
+        {
+          "path": "assets/index-BnFGY6RL.js",
+          "sha256": "546431141ee0c20d76a463be0911cd21effaa10646053f3130ed36b4680679a0",
+          "raw": 450063,
+          "gzip": 110891,
+          "brotli": 88936,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-BnFGY6RL.js.map",
+          "sha256": "d42388074797ca1882c5dbba5c804d1e2e0a940174bf3ddb0259070c13768631",
+          "raw": 1178246,
+          "gzip": 263425,
+          "brotli": 198606,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-CDV5OawH.css",
+          "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+          "raw": 44562,
+          "gzip": 6986,
+          "brotli": 6077,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+          "raw": 813,
+          "gzip": 426,
+          "brotli": 364,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "057c4efc6ed3f596de04dfa5874855be5c91541b0c936fac34a14911f51e67de",
+          "raw": 359,
+          "gzip": 269,
+          "brotli": 162,
+          "diagnostic": false
+        }
+      ],
+      "fingerprint": "3bf301f0d46d92b2c1eb86075f841950ea84d589b530f88d4e32e7e301e1db70",
+      "sourceInputs": {
+        "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+        "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+        "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+        "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+        "package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6"
+      },
+      "cohort": "calendar-consumer-policy",
+      "referenceFingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+    },
+    {
+      "id": "calendar-split",
+      "label": "Deferred code + construction",
+      "description": "Deferred code + construction; unchanged 16-card application, global registry and frozen main packages",
+      "assets": [
+        {
+          "path": "assets/calendar-Bnw96Yao.js",
+          "sha256": "a63480b138de0c65b218c2acb19b119a36e29ed1bf3456a33290cb05d0836888",
+          "raw": 20849,
+          "gzip": 5754,
+          "brotli": 5106,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./index-BuDGUI--.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/calendar-Bnw96Yao.js.map",
+          "sha256": "820e48577a095b52cbb06d59d60623e75ac408d0524a8b0865c3fe2791ff6187",
+          "raw": 47163,
+          "gzip": 11853,
+          "brotli": 10382,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-BuDGUI--.js",
+          "sha256": "7de2d2c17a30207b0eae99deddf0243a7d36b4a763da1faccea0b73cccac50c3",
+          "raw": 431418,
+          "gzip": 106889,
+          "brotli": 86146,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./calendar-Bnw96Yao.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/index-BuDGUI--.js.map",
+          "sha256": "07b763b9460943534d0897a20e4429635f8d7c0fa95138284caf0971855d3cfd",
+          "raw": 1129840,
+          "gzip": 253249,
+          "brotli": 191732,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-CDV5OawH.css",
+          "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+          "raw": 44562,
+          "gzip": 6986,
+          "brotli": 6077,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+          "raw": 813,
+          "gzip": 426,
+          "brotli": 364,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "df6093985a813137f53cdc54f2d5122fe984e676721dc0c6e44a52978b2c5a74",
+          "raw": 359,
+          "gzip": 267,
+          "brotli": 157,
+          "diagnostic": false
+        }
+      ],
+      "fingerprint": "89eae8a80cda7b88606038740359bdeab687a1ef9497c39ca68f29e4b008c8ba",
+      "sourceInputs": {
+        "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+        "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+        "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+        "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+        "package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6"
+      },
+      "cohort": "calendar-consumer-policy",
+      "referenceFingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "startedAt": "2026-09-21T18:49:03.559Z",
+  "scope": "DOM diagnostics only, no timing acquisition",
+  "waits": [
+    {
+      "at": "2026-09-21T18:47:40.565Z",
+      "pid": 81893
+    }
+  ],
+  "commands": [
+    {
+      "args": [
+        "experiments/run-dom-review.mjs",
+        "web-awesome-dom-v1",
+        "--systems",
+        "en-reve,fluent-web-components,web-awesome"
+      ],
+      "startedAt": "2026-09-21T18:49:13.573Z",
+      "exitCode": 0,
+      "finishedAt": "2026-09-21T18:50:03.188Z"
+    },
+    {
+      "args": [
+        "experiments/run-dom-ownership.mjs",
+        "--systems",
+        "en-reve,fluent-web-components,web-awesome",
+        "--output",
+        "reports/web-awesome/shadow-ownership.json"
+      ],
+      "startedAt": "2026-09-21T18:50:03.189Z",
+      "exitCode": 0,
+      "finishedAt": "2026-09-21T18:50:08.746Z"
+    }
+  ],
+  "acquiredAt": "2026-09-21T18:49:13.572Z",
+  "finishedAt": "2026-09-21T18:50:08.747Z"
+}

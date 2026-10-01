@@ -1,0 +1,1853 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-09-21T18:51:38.542001+00:00",
+  "status": "passed-with-analysis-correction",
+  "scope": "Independent acquired-performance-data and reference preservation review. No browser/build/benchmark executed. Correction changes analysis only; original raw samples and historical reports are untouched. DOM/ownership and final generated tables remain pending separate review.",
+  "checks": [
+    {
+      "name": "load: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "load: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "load: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "load: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "load: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "load: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "load: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "load: observed viewport and document",
+      "passed": true
+    },
+    {
+      "name": "startup: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "startup: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "startup: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "startup: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "startup: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "startup: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "startup: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "startup: observed viewport and document",
+      "passed": true
+    },
+    {
+      "name": "interactions: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "interactions: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "interactions: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "interactions: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "interactions: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "interactions: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "interactions: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "interactions: observed viewport and document",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "lighthouse: every retained audit actually configured DevTools 4x CPU/100ms/8Mbps/2Mbps",
+      "passed": true
+    },
+    {
+      "name": "memory: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "memory: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "memory: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "memory: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "memory: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "memory: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "memory: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "memory: observed viewport and document",
+      "passed": true
+    },
+    {
+      "name": "memory: isolated, observer-free 0/10/50 checkpoints with API readings",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "diagnostic: observed viewport and document",
+      "passed": true
+    },
+    {
+      "name": "bfcache: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "bfcache: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "bfcache: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "bfcache: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "bfcache: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "bfcache: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "bfcache: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "overhead: exact scheduled identity, order and count",
+      "passed": true
+    },
+    {
+      "name": "overhead: every sample successful without errors",
+      "passed": true
+    },
+    {
+      "name": "overhead: receipt and configuration match immutable campaign",
+      "passed": true
+    },
+    {
+      "name": "overhead: full balanced cells",
+      "passed": true
+    },
+    {
+      "name": "overhead: frozen implementation fingerprints match retained inventory",
+      "passed": true
+    },
+    {
+      "name": "overhead: manifest profiles match requested protocol",
+      "passed": true
+    },
+    {
+      "name": "overhead: emitted collector hash matches manifest",
+      "passed": true
+    },
+    {
+      "name": "overhead: observed viewport and document",
+      "passed": true
+    },
+    {
+      "name": "Total306successful performance samples",
+      "passed": true
+    },
+    {
+      "name": "All campaign harness identities identical at acquisition",
+      "passed": true
+    },
+    {
+      "name": "Completed255sample payloads retained byte-for-byte through resumption",
+      "passed": true,
+      "details": {
+        "web-awesome-load-v1": "7e6566a3caca02e72831ab1b9e12150af952ce223af6acf2e6f4cb02c5cf2286",
+        "web-awesome-startup-v1": "5e33c5a941a883cdf7dbd32a3d15d5bdc671256549616f303ec2103a3c44b0b9",
+        "web-awesome-interactions-v1": "774413dd004ff09a0b058a19e49ea0844992e2d6e290cb1525a0986ff766a609",
+        "web-awesome-lighthouse-v1": "2ac32084818464eb19af04ce6942608065ef014e9e0bbaf3f0575e645ea57a55"
+      }
+    },
+    {
+      "name": "Unstarted memory-v1 contributed no sample or manifest",
+      "passed": true
+    },
+    {
+      "name": "Rootpackage,rootlock,original rawreports and baseline files still preserved",
+      "passed": true
+    },
+    {
+      "name": "Firsteight frozen entries preserved",
+      "passed": true
+    },
+    {
+      "name": "Allnine frozen artifact bytes match inventory",
+      "passed": true,
+      "details": {
+        "assetFiles": 81
+      }
+    },
+    {
+      "name": "en-reve: js raw/gzip/Brotli bundle totals reconcile",
+      "passed": true
+    },
+    {
+      "name": "en-reve: css raw/gzip/Brotli bundle totals reconcile",
+      "passed": true
+    },
+    {
+      "name": "fluent-web-components: js raw/gzip/Brotli bundle totals reconcile",
+      "passed": true
+    },
+    {
+      "name": "fluent-web-components: css raw/gzip/Brotli bundle totals reconcile",
+      "passed": true
+    },
+    {
+      "name": "web-awesome: js raw/gzip/Brotli bundle totals reconcile",
+      "passed": true
+    },
+    {
+      "name": "web-awesome: css raw/gzip/Brotli bundle totals reconcile",
+      "passed": true
+    },
+    {
+      "name": "Every observed HTTP response completes in bounded primary/diagnostic samples",
+      "passed": true
+    },
+    {
+      "name": "Every correction subtracts only retained local response payload",
+      "passed": true
+    },
+    {
+      "name": "Native page has no externally hosted HTTP asset response",
+      "passed": true
+    }
+  ],
+  "campaigns": [
+    {
+      "suite": "load",
+      "id": "web-awesome-load-v1",
+      "samples": 120,
+      "successful": 120,
+      "cells": [
+        {
+          "system": "en-reve",
+          "profile": "mobile",
+          "cache": "warm",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "warm",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "warm",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "warm",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "web-awesome",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "mobile",
+          "cache": "warm",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "web-awesome",
+          "profile": "mobile",
+          "cache": "warm",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    },
+    {
+      "suite": "startup",
+      "id": "web-awesome-startup-v1",
+      "samples": 60,
+      "successful": 60,
+      "cells": [
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "web-awesome",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    },
+    {
+      "suite": "interactions",
+      "id": "web-awesome-interactions-v1",
+      "samples": 60,
+      "successful": 60,
+      "cells": [
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "web-awesome",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 10
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    },
+    {
+      "suite": "lighthouse",
+      "id": "web-awesome-lighthouse-v1",
+      "samples": 15,
+      "successful": 15,
+      "cells": [
+        {
+          "system": "en-reve",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": null,
+          "samples": 5
+        },
+        {
+          "system": "web-awesome",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": null,
+          "samples": 5
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "mobile",
+          "cache": "cold",
+          "instrument": null,
+          "samples": 5
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": null
+    },
+    {
+      "suite": "memory",
+      "id": "web-awesome-memory-v2",
+      "samples": 3,
+      "successful": 3,
+      "cells": [
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": false,
+          "samples": 1
+        },
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": false,
+          "samples": 1
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": false,
+          "samples": 1
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    },
+    {
+      "suite": "diagnostic",
+      "id": "web-awesome-diagnostic-v1",
+      "samples": 3,
+      "successful": 3,
+      "cells": [
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 1
+        },
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 1
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 1
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    },
+    {
+      "suite": "bfcache",
+      "id": "web-awesome-bfcache-v1",
+      "samples": 15,
+      "successful": 15,
+      "cells": [
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 5
+        },
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 5
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 5
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    },
+    {
+      "suite": "overhead",
+      "id": "web-awesome-overhead-v1",
+      "samples": 30,
+      "successful": 30,
+      "cells": [
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": false,
+          "samples": 5
+        },
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 5
+        },
+        {
+          "system": "web-awesome",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 5
+        },
+        {
+          "system": "en-reve",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": false,
+          "samples": 5
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": true,
+          "samples": 5
+        },
+        {
+          "system": "fluent-web-components",
+          "profile": "desktop",
+          "cache": "cold",
+          "instrument": false,
+          "samples": 5
+        }
+      ],
+      "harnessSha256": "b34f5d09f30f211ece2bda07fbbe60beec157c01044b67ac99398fd83221ce1e",
+      "collectorSha256": "e65e318d684b06cea3f13bbe3f8870797f1a0adf6cd688fc17ed2b689537a1d3"
+    }
+  ],
+  "responseAccountingCorrection": {
+    "reason": "CDP records local data/blob responses. Nine Web Awesome SVG data: fetches total4683bytes already included in the JS payload. The previous all-scheme aggregate double counted them as network transfer.",
+    "changedFiles": [
+      "src/delivery.mjs",
+      "tests/delivery.test.mjs"
+    ],
+    "rawSamplesChanged": false,
+    "unitTests": {
+      "passed": 5,
+      "failed": 0,
+      "command": "node --test tests/delivery.test.mjs"
+    },
+    "supplementalFields": [
+      "nonHTTPResponseCount",
+      "nonHTTPCompletedResponseBytes",
+      "nonHTTPIncompleteResponses"
+    ],
+    "summary": [
+      {
+        "suite": "load",
+        "profile": "desktop",
+        "cache": "cold",
+        "samples": 10,
+        "storedTotalBytes": 98794.0,
+        "correctedHTTPBytes": 94111.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "load",
+        "profile": "desktop",
+        "cache": "warm",
+        "samples": 10,
+        "storedTotalBytes": 4943.0,
+        "correctedHTTPBytes": 260.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "load",
+        "profile": "mobile",
+        "cache": "cold",
+        "samples": 10,
+        "storedTotalBytes": 98794.0,
+        "correctedHTTPBytes": 94111.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "load",
+        "profile": "mobile",
+        "cache": "warm",
+        "samples": 10,
+        "storedTotalBytes": 4943.0,
+        "correctedHTTPBytes": 260.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "startup",
+        "profile": "desktop",
+        "cache": "cold",
+        "samples": 10,
+        "storedTotalBytes": 98794.0,
+        "correctedHTTPBytes": 94111.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "startup",
+        "profile": "mobile",
+        "cache": "cold",
+        "samples": 10,
+        "storedTotalBytes": 98794.0,
+        "correctedHTTPBytes": 94111.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "interactions",
+        "profile": "desktop",
+        "cache": "cold",
+        "samples": 10,
+        "storedTotalBytes": 98794.0,
+        "correctedHTTPBytes": 94111.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "interactions",
+        "profile": "mobile",
+        "cache": "cold",
+        "samples": 10,
+        "storedTotalBytes": 98794.0,
+        "correctedHTTPBytes": 94111.0,
+        "excludedLocalCompletedBytes": 4683.0,
+        "localResponseCount": 10.0,
+        "HTTPResponseCount": 3.0
+      },
+      {
+        "suite": "diagnostic",
+        "profile": "desktop",
+        "cache": "cold",
+        "samples": 1,
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3
+      }
+    ],
+    "samples": [
+      {
+        "suite": "load",
+        "sample": "00002",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00005",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00007",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00009",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00017",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00020",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00021",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00024",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00025",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00027",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00029",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00031",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00043",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00044",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00046",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00047",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00049",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00052",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00056",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00060",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00061",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00064",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00070",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00071",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00074",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00076",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00080",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00084",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00086",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00087",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00090",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00095",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00100",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98817,
+        "correctedHTTPBytes": 94134,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00102",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00104",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00106",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00111",
+        "profile": "mobile",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00114",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00118",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "load",
+        "sample": "00120",
+        "profile": "desktop",
+        "cache": "warm",
+        "storedTotalBytes": 4943,
+        "correctedHTTPBytes": 260,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00001",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00003",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00008",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00009",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00015",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00017",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00022",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00023",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98817,
+        "correctedHTTPBytes": 94134,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00026",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00030",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00034",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00035",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00039",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00042",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00044",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00046",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00050",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00053",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00055",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "startup",
+        "sample": "00058",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00001",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00003",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00008",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00009",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98817,
+        "correctedHTTPBytes": 94134,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00015",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00017",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00022",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00023",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00026",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00030",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00034",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00035",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00039",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00042",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00044",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00046",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00050",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00053",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00055",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "interactions",
+        "sample": "00058",
+        "profile": "mobile",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      },
+      {
+        "suite": "diagnostic",
+        "sample": "00002",
+        "profile": "desktop",
+        "cache": "cold",
+        "storedTotalBytes": 98794,
+        "correctedHTTPBytes": 94111,
+        "excludedLocalCompletedBytes": 4683,
+        "localResponseCount": 10,
+        "HTTPResponseCount": 3,
+        "incompleteHTTPResponses": 0
+      }
+    ]
+  },
+  "interpretationNotes": [
+    "Cold En Reve vs Web Awesome LCP has overlapping exploratory paired intervals: desktop difference0ms CI[-6,4]; mobile10ms CI[-4,54.05]. Do not claim a firm cold-load winner.",
+    "Warm LCP difference is clearer in this cohort: En Reve minus Web Awesome mobile52ms CI[36,68], desktop8ms CI[8,12]. This is not source-level causality and richer date/other native capabilities remain confounders.",
+    "Scripted INP differs by one8ms quantization step: mobile8ms CI[0,8], desktop8ms CI[-4,8]. Avoid claiming a robust universal responsiveness winner.",
+    "All nine memory API checkpoints succeeded, but there is still only one session per implementation. Fluent WC browser DOM/listener growth is diagnostic, not proof of a leak; connected nodes and browser retention counters are distinct.",
+    "Lighthouse JSON retains unused simulation defaults rttMs150/throughputKbps1638.4 alongside the active DevTools requestLatencyMs100/download8000/upload2000 settings. Use the throttlingMethod and active fields; do not describe this as simulated Lantern throttling.",
+    "The acquisition interruption preceded creation of memory-v1. Completed255samples retain their hashes, and the new memory-v2 plus remaining51samples constitute the completed queue. No selected slow sample was replaced."
+  ],
+  "pending": [
+    "DOM/ownership acquisition reconciliation",
+    "Final generated table replay and preserved historical row comparison"
+  ],
+  "inputs": {
+    "showcases/performance/runs/web-awesome-load-v1/manifest.json": "f6f6cf74ff0e0676963aa9440ce1b24f3526d092afaa732c0af92636c6e620f2",
+    "showcases/performance/runs/web-awesome-load-v1/samples.jsonl": "7e6566a3caca02e72831ab1b9e12150af952ce223af6acf2e6f4cb02c5cf2286",
+    "showcases/performance/runs/web-awesome-startup-v1/manifest.json": "96dddfe832a7c279d55e5769c92d0301bb3ac6894fc12ea8d95ab9598e99721b",
+    "showcases/performance/runs/web-awesome-startup-v1/samples.jsonl": "5e33c5a941a883cdf7dbd32a3d15d5bdc671256549616f303ec2103a3c44b0b9",
+    "showcases/performance/runs/web-awesome-interactions-v1/manifest.json": "7867405e14db7465cd85c35d7d6b81d3b5fce5c92933a2805070addd226cbab9",
+    "showcases/performance/runs/web-awesome-interactions-v1/samples.jsonl": "774413dd004ff09a0b058a19e49ea0844992e2d6e290cb1525a0986ff766a609",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/manifest.json": "39b30b2080b2ab66d11cdf8b531f1ed5ae85ee1a6880edc62491136b31d8859d",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/samples.jsonl": "2ac32084818464eb19af04ce6942608065ef014e9e0bbaf3f0575e645ea57a55",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00001-lighthouse.json": "3419a9667096d6114b57d22e6fbe8a75cee92cb3ceaa1aab7bf2d004a030b636",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00002-lighthouse.json": "6ccafc7fb6e5277b2a06047b0f3213f9e7945101761ff9ba6572b1caa081dccc",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00003-lighthouse.json": "a0c81d1f64995afd4dc42cd19e2de7fb88d4fedf0b37093945ec46b1189e623c",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00004-lighthouse.json": "ecf897f24cf77e0950fdd34badf8502a07d5381a14afdf2955df10aac9deb441",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00005-lighthouse.json": "9ca9fb2d0226361a71c3ee41f827eb22402bd5b3a61579288f13ee16959a01cc",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00006-lighthouse.json": "031c2fc587a45a21ddd17ecacda726f4e49a97f8c7dd30ffabd39e3a9e306d7f",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00007-lighthouse.json": "49216de3d05409acd443d5db7fcd9670502f6afea07911a7231f2082d776f11a",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00008-lighthouse.json": "bf4b107374c608d9ee751196e4c25866840a1013e0b8bbfaedcafb34fe10851b",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00009-lighthouse.json": "063044b589cd3426360839cb7a12a675d01fda207214073367dd25430eb6aff6",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00010-lighthouse.json": "5bb454573d719c26bf6c609a6e58982a1d6b14c253d1cd211b134d489cec27be",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00011-lighthouse.json": "fd211b4fd650d5c1d3d937a4f3ffef8125f60b89217c3a75542594cdc2813ea7",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00012-lighthouse.json": "ca8014d8de376b2b7e39496a9eb38a6f01e51a3bc63312221c1b9d08534922f0",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00013-lighthouse.json": "3fc056fad340f631a2e753aaf8f9299104ac0854d94accc83045a74d7df8e330",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00014-lighthouse.json": "8b17a6403446058e2259525a7dbab28b7e5c8e898a9c5d1c352b6376811d905e",
+    "showcases/performance/runs/web-awesome-lighthouse-v1/00015-lighthouse.json": "7807003d5a8a42917d0817dcac276f6fbf5d0cba22481ef52eb92f785c9c609d",
+    "showcases/performance/runs/web-awesome-memory-v2/manifest.json": "8054638e0bc20a3b49c361520dd26464df3a8bf345c8b40b1d58d0159f6d46c1",
+    "showcases/performance/runs/web-awesome-memory-v2/samples.jsonl": "1e9f9fe123d28454378bed067959cc38b0e075adaeb810187a408f3f5fcfe766",
+    "showcases/performance/runs/web-awesome-diagnostic-v1/manifest.json": "8b27d07770bba1825572c1f6b8e374a0f8652eb6654464bc606e793ce6488e4a",
+    "showcases/performance/runs/web-awesome-diagnostic-v1/samples.jsonl": "3c4c83b99369a6c956d1b52f9146280519733f5a0224d766d21a0a126c1c5b98",
+    "showcases/performance/runs/web-awesome-bfcache-v1/manifest.json": "ecf667c6249bd45841806dfeb9b15ac084e5dce778284971f58c1687bdfa2349",
+    "showcases/performance/runs/web-awesome-bfcache-v1/samples.jsonl": "7d686937aa576c86ce08b7473c1f19c74658978c8d01e70055aa54c0e85b1fa1",
+    "showcases/performance/runs/web-awesome-overhead-v1/manifest.json": "efc392a270606e96afea4c1abf0c471512be2f457290beb50c7e1b0c7c7746eb",
+    "showcases/performance/runs/web-awesome-overhead-v1/samples.jsonl": "1eb2a7730d2ba4381bc7219ba600d109af23273aaaa70031cb0656a9e7011961",
+    "showcases/performance/reports/web-awesome/execution.json": "4ffe0e43dcaccdeab93000dc31f56a5e6ff039552a1b5cda5d0a8b3043d40d6d",
+    "showcases/performance/reports/web-awesome/config.json": "571aa5327ef86fe0a844e5bfbc3d8d4bb3b6fad1b85707783176e9b2a4b07c38",
+    "showcases/performance/reports/web-awesome/inventory.json": "0e556fb959fa15a3a38b278b3f2e625ccf6d52ca31217654705fe9011ad6d25a",
+    "showcases/performance/reports/web-awesome/bundles.json": "cec87249085fb6c393514cb69a70547f116b971f2d178a0c7ba683bface34c70",
+    "showcases/performance/src/delivery.mjs": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+    "showcases/performance/tests/delivery.test.mjs": "c3b4c58d68332c582e6ff54e479d2058d73d913e73bdb524a56de0c86cc43a91"
+  }
+}

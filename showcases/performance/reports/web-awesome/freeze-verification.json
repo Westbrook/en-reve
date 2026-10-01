@@ -1,0 +1,43 @@
+{
+  "at": "2026-09-21T18:20:30.084Z",
+  "passed": true,
+  "preservedSystems": [
+    "radix-react",
+    "fluent-react",
+    "spectrum-react",
+    "astryx-react",
+    "shadcn-react",
+    "fluent-web-components",
+    "spectrum-web-components",
+    "en-reve"
+  ],
+  "preservedAssetChecks": 76,
+  "newSystem": {
+    "id": "web-awesome",
+    "fingerprint": "aab9e1c57ad13cf25672dd75ab2bdddcefc1e65180b018f5655b3d77576c3778",
+    "assets": 5,
+    "sourceFiles": 14
+  },
+  "inventorySha256": "0e556fb959fa15a3a38b278b3f2e625ccf6d52ca31217654705fe9011ad6d25a",
+  "qualification": [
+    {
+      "file": "reports/functional-web-awesome.json",
+      "engine": "chromium",
+      "checks": 23,
+      "sha256": "4efa54fb5d9e70587fcfb3eff2a0cf52b321addbe3267ac22a5fc91d9541b99d"
+    },
+    {
+      "file": "reports/functional-web-awesome-firefox.json",
+      "engine": "firefox",
+      "checks": 23,
+      "sha256": "f6ccb9bcd893de15b66fb812cad1ad68203fbc30d8d94e202cda13c7bc70ce4b"
+    },
+    {
+      "file": "reports/functional-web-awesome-webkit.json",
+      "engine": "webkit",
+      "checks": 23,
+      "sha256": "d796d07988f09c25366db2f03a0d152c5f359d624f0a54247b50afb550e309cf"
+    }
+  ],
+  "dialogCalibration": "reports/web-awesome/dialog-calibration.json"
+}

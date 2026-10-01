@@ -1,0 +1,174 @@
+{
+  "at": "2026-09-21T18:51:18.019Z",
+  "passed": true,
+  "checks": 3226,
+  "snapshots": 30,
+  "ownershipSnapshots": 3,
+  "systems": [
+    "en-reve",
+    "fluent-web-components",
+    "web-awesome"
+  ],
+  "failedSnapshots": 0,
+  "protocol": {
+    "desktop": {
+      "width": 1500,
+      "height": 1100
+    },
+    "narrow": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "hasTouch": false,
+    "cpuThrottle": 1,
+    "networkThrottle": "none",
+    "desktopRepetitions": 3,
+    "narrowRepetitions": 1,
+    "settleMs": 1500,
+    "postActionSettleMs": 700,
+    "scenario": "Existing native journey, repeats=2; separate fresh custom-date opening/closing sessions",
+    "dateBoundary": "Whole field/host including label, controls, and custom popup. Popup-only body additions attributed explicitly. Closed roots, UA internals and disconnected template contents excluded."
+  },
+  "stableDesktopRepetitions": 3,
+  "controlsMatchHistorical": true,
+  "initial": [
+    {
+      "system": "en-reve",
+      "total": {
+        "nodes": 4642,
+        "elements": 1578,
+        "text": 1843,
+        "whitespaceText": 1506,
+        "comments": 1052,
+        "shadowRoots": 167,
+        "other": 2,
+        "customElements": 168,
+        "slots": 414,
+        "svgElements": 48,
+        "baseParts": 55,
+        "maxDepth": 27
+      },
+      "date": {
+        "nodes": 623,
+        "elements": 181,
+        "text": 135,
+        "whitespaceText": 77,
+        "comments": 296,
+        "shadowRoots": 11,
+        "other": 0,
+        "customElements": 11,
+        "slots": 23,
+        "svgElements": 9,
+        "baseParts": 5,
+        "maxDepth": 27
+      },
+      "withoutDate": {
+        "nodes": 4019,
+        "elements": 1397,
+        "text": 1708,
+        "whitespaceText": 1429,
+        "comments": 756,
+        "shadowRoots": 156,
+        "other": 2,
+        "customElements": 157,
+        "slots": 391,
+        "svgElements": 39,
+        "baseParts": 50,
+        "maxDepth": 22
+      }
+    },
+    {
+      "system": "fluent-web-components",
+      "total": {
+        "nodes": 2887,
+        "elements": 1284,
+        "text": 1432,
+        "whitespaceText": 1198,
+        "comments": 0,
+        "shadowRoots": 169,
+        "other": 2,
+        "customElements": 169,
+        "slots": 457,
+        "svgElements": 128,
+        "baseParts": 0,
+        "maxDepth": 18
+      },
+      "date": {
+        "nodes": 28,
+        "elements": 12,
+        "text": 14,
+        "whitespaceText": 13,
+        "comments": 0,
+        "shadowRoots": 2,
+        "other": 0,
+        "customElements": 2,
+        "slots": 6,
+        "svgElements": 0,
+        "baseParts": 0,
+        "maxDepth": 15
+      },
+      "withoutDate": {
+        "nodes": 2859,
+        "elements": 1272,
+        "text": 1418,
+        "whitespaceText": 1185,
+        "comments": 0,
+        "shadowRoots": 167,
+        "other": 2,
+        "customElements": 167,
+        "slots": 451,
+        "svgElements": 128,
+        "baseParts": 0,
+        "maxDepth": 18
+      }
+    },
+    {
+      "system": "web-awesome",
+      "total": {
+        "nodes": 4210,
+        "elements": 1401,
+        "text": 1876,
+        "whitespaceText": 1651,
+        "comments": 734,
+        "shadowRoots": 197,
+        "other": 2,
+        "customElements": 197,
+        "slots": 497,
+        "svgElements": 76,
+        "baseParts": 98,
+        "maxDepth": 21
+      },
+      "date": {
+        "nodes": 28,
+        "elements": 8,
+        "text": 13,
+        "whitespaceText": 12,
+        "comments": 6,
+        "shadowRoots": 1,
+        "other": 0,
+        "customElements": 1,
+        "slots": 4,
+        "svgElements": 0,
+        "baseParts": 1,
+        "maxDepth": 15
+      },
+      "withoutDate": {
+        "nodes": 4182,
+        "elements": 1393,
+        "text": 1863,
+        "whitespaceText": 1639,
+        "comments": 728,
+        "shadowRoots": 196,
+        "other": 2,
+        "customElements": 196,
+        "slots": 493,
+        "svgElements": 76,
+        "baseParts": 97,
+        "maxDepth": 21
+      }
+    }
+  ],
+  "sourceSha256": "6e5c91e9f906fa946a94a275b8905ec6ceecbf64feeda1aad82edb86d958ab7c"
+}

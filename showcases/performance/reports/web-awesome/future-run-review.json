@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "at": "2026-09-21T19:15:56.911391+00:00",
+  "status": "passed",
+  "scope": "Independent static review of future preparation/CI maintenance, separate from immutable acquired performance evidence.",
+  "checks": [
+    "Receipt composition rejects missing selected systems and duplicate/conflicting evidence before writes.",
+    "Non-candidate preparation preflights all selected source/output hashes before snapshot mutation.",
+    "Full, additive and selected preparation paths preserve receipt provenance, including per-system provenance across later qualification.",
+    "CI dispatch resolves command script paths and propagates child errors; pure tests use injected child stubs.",
+    "Full lane covers all eight suites; sentinel panel and baseline promotion/gates remain unchanged.",
+    "Final disabled self-hosted template has a job-level timeout of 480 minutes, with estimated runtime documented; no workflow was activated."
+  ],
+  "independentTests": {
+    "command": "node --test tests/verification-receipts.test.mjs tests/ci.test.mjs tests/additive-panel.test.mjs",
+    "cwd": "showcases/performance",
+    "passed": 14,
+    "failed": 0,
+    "executedBeforeFinalDocumentationOnlyTimeoutChange": true
+  },
+  "authorVerification": {
+    "receipt": "showcases/performance/reports/web-awesome/future-run-verification.json",
+    "reportedPassed": 26,
+    "independentlyRerun": false
+  },
+  "finalConfigurationReview": "Inspected final YAML and README diff; confirmed timeout at job scope, self-hosted label and inactive template location. No additional suite was needed for this configuration-only change.",
+  "constraints": {
+    "browserExecuted": false,
+    "buildExecuted": false,
+    "prepareExecuted": false,
+    "rawOrFrozenEvidenceModified": false
+  },
+  "blockers": [],
+  "inputs": {
+    "showcases/performance/ci/performance.yml": "46b339b43a139b8c68ee9e048080ab2d000a0ff19ac28a241ffacdea21b11e99",
+    "showcases/performance/reports/web-awesome/future-run-verification.json": "dedb16f94bf3770d5373688773350d0ae2e6f9e8f8806bce238256687bc1d317",
+    "showcases/performance/README.md": "296669cabf45978a4684a965b3d0d3cb8325b262ebd37d135d5a3b6be37d53e3",
+    "showcases/performance/src/verification-receipts.mjs": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+    "showcases/performance/src/prepare.mjs": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+    "showcases/performance/ci/execute.mjs": "ffd526bd70c1b8ccfc97e220e97f41a6b1a8a8405324fc952e9fbcccb2f546e6",
+    "showcases/performance/ci/lane-plan.mjs": "040668820548bb9ae55f4dc053e4f59ab80d055c947ee4aa98faf36cac0c8bf6",
+    "showcases/performance/ci/run-lane.mjs": "05f9557104d0ad906ee03609fa1aa1e4e8b731c9e30ee0064ec4d22a5860deb6"
+  }
+}

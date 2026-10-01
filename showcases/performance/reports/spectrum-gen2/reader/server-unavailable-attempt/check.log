@@ -1,0 +1,19 @@
+{"engine":"chromium","version":"153.0.8010.12","checkedTables":0,"sortedColumns":0,"passed":false,"error":"page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4188/?progress-report#loading-and-visual-stability\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:4188/?progress-report#loading-and-visual-stability\", waiting until \"load\"\u001b[22m\n\n    at /Users/westbrook/Documents/repos/design-system/showcases/performance-results/scripts/verify-spectrum-gen2.mjs:23:18\n    at async exclusiveBrowserWork (/Users/westbrook/Documents/repos/design-system/showcases/performance/src/lock.mjs:35:12)\n    at async file:///Users/westbrook/Documents/repos/design-system/showcases/performance-results/scripts/verify-spectrum-gen2.mjs:16:1"}
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:4188/?progress-report#loading-and-visual-stability
+Call log:
+[2m  - navigating to "http://127.0.0.1:4188/?progress-report#loading-and-visual-stability", waiting until "load"[22m
+
+    at /Users/westbrook/Documents/repos/design-system/showcases/performance-results/scripts/verify-spectrum-gen2.mjs:23:18
+    at async exclusiveBrowserWork (/Users/westbrook/Documents/repos/design-system/showcases/performance/src/lock.mjs:35:12)
+    at async file:///Users/westbrook/Documents/repos/design-system/showcases/performance-results/scripts/verify-spectrum-gen2.mjs:16:1 {
+  log: [
+    '  - navigating to "http://127.0.0.1:4188/?progress-report#loading-and-visual-stability", waiting until "load"'
+  ],
+  name: 'Error'
+}
+
+Node.js v24.16.0

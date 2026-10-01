@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "routes": [
+    {
+      "id": "native-performance-results",
+      "url": "http://127.0.0.1:4177/artifacts/native-performance-results",
+      "sha256": "5d8aa54aaf2c12f9443c5d21c9e2c5520e150445c050846123d70b4cf7c4af0b",
+      "passed": true
+    },
+    {
+      "id": "native-performance-dom",
+      "url": "http://127.0.0.1:4177/artifacts/native-performance-dom",
+      "sha256": "83c7a093979087e3dacccdb058be25a2c31190dbb1c925f94e1411ff311e04fb",
+      "passed": true
+    },
+    {
+      "id": "native-performance-web-awesome",
+      "url": "http://127.0.0.1:4177/artifacts/native-performance-web-awesome",
+      "sha256": "597f47427005f130ab0f57d57cf6330027bf31aecbeb10da6adef242f484363b",
+      "passed": true
+    },
+    {
+      "id": "spectrum-gen2-performance",
+      "url": "http://127.0.0.1:4177/artifacts/spectrum-gen2-performance",
+      "sha256": "3a28803636f7888bbfc7b38b76a75345fd63ba2306a93e48c8ea708644f15c5a",
+      "passed": true
+    }
+  ]
+}

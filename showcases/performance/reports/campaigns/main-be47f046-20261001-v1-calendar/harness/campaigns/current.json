@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "kind": "current",
+  "systems": [
+    "en-reve"
+  ],
+  "profiles": [
+    "desktop",
+    "mobile"
+  ],
+  "caches": [
+    "cold",
+    "warm"
+  ],
+  "seed": 20261001,
+  "suites": [
+    "load",
+    "startup",
+    "interactions",
+    "diagnostic",
+    "memory",
+    "lighthouse",
+    "bfcache",
+    "overhead"
+  ],
+  "samples": 30,
+  "calendarSamples": 30,
+  "preparedSamples": 10,
+  "lighthouseSamples": 5,
+  "memorySamples": 5
+}

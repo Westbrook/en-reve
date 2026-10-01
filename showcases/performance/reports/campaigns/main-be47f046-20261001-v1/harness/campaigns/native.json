@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "kind": "native",
+  "systems": [
+    "radix-react",
+    "fluent-react",
+    "spectrum-react",
+    "astryx-react",
+    "shadcn-react",
+    "fluent-web-components",
+    "spectrum-web-components",
+    "en-reve",
+    "web-awesome"
+  ],
+  "profiles": [
+    "desktop",
+    "mobile"
+  ],
+  "caches": [
+    "cold",
+    "warm"
+  ],
+  "seed": 20261001,
+  "suites": [
+    "load",
+    "startup",
+    "interactions",
+    "diagnostic",
+    "memory",
+    "lighthouse",
+    "bfcache",
+    "overhead"
+  ],
+  "samples": 30,
+  "calendarSamples": 30,
+  "preparedSamples": 10,
+  "lighthouseSamples": 5,
+  "memorySamples": 5
+}

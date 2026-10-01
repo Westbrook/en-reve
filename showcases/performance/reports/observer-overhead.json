@@ -1,0 +1,115 @@
+{
+  "note": "Collector on minus off; five paired blocks. Exploratory, not evidence of zero instrumentation cost.",
+  "effects": [
+    {
+      "system": "fluent-web-components",
+      "metric": "fcp",
+      "n": 5,
+      "difference": -12,
+      "ci95": [
+        -12,
+        4
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "fluent-web-components",
+      "metric": "scriptMs",
+      "n": 5,
+      "difference": 2.4720000000000084,
+      "ci95": [
+        -3.298000000000002,
+        4.088999999999999
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "fluent-web-components",
+      "metric": "styleMs",
+      "n": 5,
+      "difference": -0.9179999999999993,
+      "ci95": [
+        -2.211999999999996,
+        2.6039999999999957
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "fluent-web-components",
+      "metric": "layoutMs",
+      "n": 5,
+      "difference": -2.1850000000000023,
+      "ci95": [
+        -4.417000000000002,
+        -1.073000000000004
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "fluent-web-components",
+      "metric": "taskMs",
+      "n": 5,
+      "difference": 10.64500000000001,
+      "ci95": [
+        6.687999999999988,
+        19.62699999999998
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "en-reve",
+      "metric": "fcp",
+      "n": 5,
+      "difference": -16,
+      "ci95": [
+        -44,
+        8
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "en-reve",
+      "metric": "scriptMs",
+      "n": 5,
+      "difference": 1.0730000000000075,
+      "ci95": [
+        -11.646000000000008,
+        5.130000000000003
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "en-reve",
+      "metric": "styleMs",
+      "n": 5,
+      "difference": -2.3320000000000007,
+      "ci95": [
+        -7.109999999999999,
+        1.3500000000000014
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "en-reve",
+      "metric": "layoutMs",
+      "n": 5,
+      "difference": -3.0349999999999966,
+      "ci95": [
+        -5.757999999999999,
+        0.009000000000000341
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    },
+    {
+      "system": "en-reve",
+      "metric": "taskMs",
+      "n": 5,
+      "difference": 8.752999999999986,
+      "ci95": [
+        -18.78000000000003,
+        25.810000000000002
+      ],
+      "method": "Paired-block percentile bootstrap of difference in medians; exploratory, no multiple-comparison correction"
+    }
+  ]
+}

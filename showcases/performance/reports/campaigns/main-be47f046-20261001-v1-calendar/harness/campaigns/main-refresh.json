@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "kind": "current",
+  "systems": [
+    "en-reve",
+    "fluent-web-components",
+    "web-awesome"
+  ],
+  "profiles": [
+    "desktop",
+    "mobile"
+  ],
+  "caches": [
+    "cold",
+    "warm"
+  ],
+  "seed": 20261001,
+  "suites": [
+    "load",
+    "startup",
+    "interactions",
+    "diagnostic",
+    "memory",
+    "lighthouse",
+    "bfcache",
+    "overhead"
+  ],
+  "samples": 10,
+  "calendarSamples": 30,
+  "preparedSamples": 10,
+  "lighthouseSamples": 5,
+  "memorySamples": 1,
+  "suiteOptions": {
+    "memory": {
+      "profiles": [
+        "desktop"
+      ],
+      "checkpoints": [
+        0,
+        10,
+        50
+      ]
+    },
+    "lighthouse": {
+      "profiles": [
+        "mobile"
+      ]
+    },
+    "diagnostic": {
+      "profiles": [
+        "desktop"
+      ]
+    },
+    "bfcache": {
+      "profiles": [
+        "desktop"
+      ],
+      "samples": 5
+    },
+    "overhead": {
+      "profiles": [
+        "desktop"
+      ],
+      "samples": 5
+    }
+  }
+}

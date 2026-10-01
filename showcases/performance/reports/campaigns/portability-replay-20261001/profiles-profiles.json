@@ -1,0 +1,20 @@
+{
+  "desktop": {
+    "viewport": { "width": 1500, "height": 1100 },
+    "deviceScaleFactor": 1,
+    "cpuRate": 1,
+    "latency": 0,
+    "download": -1,
+    "upload": -1,
+    "description": "Desktop loopback; no simulated throttling"
+  },
+  "mobile": {
+    "viewport": { "width": 390, "height": 844 },
+    "deviceScaleFactor": 1,
+    "cpuRate": 4,
+    "latency": 100,
+    "download": 1000000,
+    "upload": 250000,
+    "description": "Mobile viewport, 4x CPU slowdown, 100ms RTT, 8Mbps down/2Mbps up; emulation, not physical hardware"
+  }
+}

@@ -1,0 +1,294 @@
+{
+  "diagnosticOnly": true,
+  "at": "2026-09-20T18:04:57.833Z",
+  "error": null,
+  "events": [
+    {
+      "kind": "capture",
+      "at": 1965.0999999046326,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 1965.1999998092651,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2040.6999998092651,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "bubble",
+      "at": 2040.6999998092651,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "capture",
+      "at": 2106.800000190735,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2106.800000190735,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2172,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2172,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2224.9000000953674,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2224.9000000953674,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2292.5999999046326,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2292.5999999046326,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2606,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2606.699999809265,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2658.4000000953674,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "bubble",
+      "at": 2658.4000000953674,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "capture",
+      "at": 2706.5999999046326,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2706.5999999046326,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2755.699999809265,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2756.4000000953674,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2806.5,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2806.5,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2856.9000000953674,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2857.5,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 3158.9000000953674,
+      "action": "review",
+      "label": "Add review",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 3159.5999999046326,
+      "action": "review",
+      "label": "Add review",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    }
+  ],
+  "overlays": [
+    {
+      "id": "create-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "preview-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "commands-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "approve-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "export-dialog",
+      "open": false,
+      "state": "closed"
+    }
+  ]
+}

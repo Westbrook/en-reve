@@ -1,0 +1,304 @@
+{
+  "schema": 1,
+  "reviewedAt": "2026-09-21T17:55:25.876454+00:00",
+  "reviewer": "independent read-only subagent",
+  "scope": "Pre-acquisition native-fixture fidelity, root dependency isolation, preserved reference hashes, planned measurement/method coverage. No browser, build, benchmark or fixture source mutation performed. This review does not certify future acquired data or final Web Awesome qualification/freeze.",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "Preserved reference files unchanged before supplemental report integration",
+      "passed": true,
+      "details": [
+        {
+          "path": "package.json",
+          "expected": "dee800795a10732438c8cc0d5daf3ed98fd18b41549cf7c3a1ed69a8c897ce05",
+          "actual": "dee800795a10732438c8cc0d5daf3ed98fd18b41549cf7c3a1ed69a8c897ce05",
+          "matches": true
+        },
+        {
+          "path": "package-lock.json",
+          "expected": "b23b9a614316b823e48093bceff32544a0a39ff44e66a54bc864e63af20917e8",
+          "actual": "b23b9a614316b823e48093bceff32544a0a39ff44e66a54bc864e63af20917e8",
+          "matches": true
+        },
+        {
+          "path": "showcases/verification.json",
+          "expected": "91a0348ddc4033fc02cce47c916d793755b4801ae7c3786d523603d74bc6a051",
+          "actual": "91a0348ddc4033fc02cce47c916d793755b4801ae7c3786d523603d74bc6a051",
+          "matches": true
+        },
+        {
+          "path": "showcases/performance/reports/bundles.json",
+          "expected": "3853855e881d22eee1c282e1874c8d4f92190da7d2ec3e470253944b267bbb21",
+          "actual": "3853855e881d22eee1c282e1874c8d4f92190da7d2ec3e470253944b267bbb21",
+          "matches": true
+        },
+        {
+          "path": "showcases/performance/reports/dom-review/census.json",
+          "expected": "c9275a20054b792a8de8c41f191983550b88a608274679d1ea46e7ff8f602ad0",
+          "actual": "c9275a20054b792a8de8c41f191983550b88a608274679d1ea46e7ff8f602ad0",
+          "matches": true
+        },
+        {
+          "path": "showcases/performance/reports/dom-review/shadow-ownership.json",
+          "expected": "70dbcca138c164061b15a03b19a87f2684034321cb52d84be6af5e5004b2da66",
+          "actual": "70dbcca138c164061b15a03b19a87f2684034321cb52d84be6af5e5004b2da66",
+          "matches": true
+        },
+        {
+          "path": "plans/native-showcase-performance-results.md",
+          "expected": "2ccff2c14a7e30ba80f68419485044d768af3c7c4bc42013cb70e125cb999172",
+          "actual": "2ccff2c14a7e30ba80f68419485044d768af3c7c4bc42013cb70e125cb999172",
+          "matches": true
+        },
+        {
+          "path": "plans/native-showcase-dom-review.md",
+          "expected": "6bf6f292fd73d2150a547c0b4e94916832facca36ef5be3f4ab0fc4f78058acb",
+          "actual": "6bf6f292fd73d2150a547c0b4e94916832facca36ef5be3f4ab0fc4f78058acb",
+          "matches": true
+        }
+      ]
+    },
+    {
+      "name": "No Web Awesome package dependency in root package.json",
+      "passed": true
+    },
+    {
+      "name": "No Web Awesome package dependency in root package-lock.json",
+      "passed": true
+    },
+    {
+      "name": "Frozen panel first eight entries identical to pre-addition inventory",
+      "passed": true
+    },
+    {
+      "name": "Frozen panel first eight entries identical to historical baseline inventory",
+      "passed": true
+    },
+    {
+      "name": "All original frozen artifact bytes match pre-addition and baseline manifest",
+      "passed": true,
+      "details": [
+        {
+          "system": "radix-react",
+          "assets": 5,
+          "allMatch": true,
+          "fingerprint": "223c01c16189feb9ae396cc762ded72a0c4bdc8c5fa536b80012f648d4f79586",
+          "mismatches": []
+        },
+        {
+          "system": "fluent-react",
+          "assets": 5,
+          "allMatch": true,
+          "fingerprint": "940ae94a6fa1d5787380ca5078f9e5bb99edf49ea421c7921e2dd4b67721fd03",
+          "mismatches": []
+        },
+        {
+          "system": "spectrum-react",
+          "assets": 5,
+          "allMatch": true,
+          "fingerprint": "a1d4688e35fe42ef5c7289c7f46bb0e2e3687e5fe763381ede029456729a2d6e",
+          "mismatches": []
+        },
+        {
+          "system": "astryx-react",
+          "assets": 7,
+          "allMatch": true,
+          "fingerprint": "8ae620b883792c8cb0c8730c1f31f6b9c8c3d6535370a1a9165bd623fbd039a7",
+          "mismatches": []
+        },
+        {
+          "system": "shadcn-react",
+          "assets": 7,
+          "allMatch": true,
+          "fingerprint": "c3b18c1eaf38dde8ff5059b18fafbc3fd1b1add64d941b9f2af1a2a91dfe678f",
+          "mismatches": []
+        },
+        {
+          "system": "fluent-web-components",
+          "assets": 5,
+          "allMatch": true,
+          "fingerprint": "46b61dac3922571774265d590a5ac56b5c2355ed489ffef9610e127a1f5428b0",
+          "mismatches": []
+        },
+        {
+          "system": "spectrum-web-components",
+          "assets": 37,
+          "allMatch": true,
+          "fingerprint": "0d349ad33f30b745a0a83418f1a0d5518abe3e935b7117be6aa769ce4019b5ec",
+          "mismatches": []
+        },
+        {
+          "system": "en-reve",
+          "assets": 5,
+          "allMatch": true,
+          "fingerprint": "ab6e473521da65174a73e31d19160bcd7f9c46abf2553d462a0b3506a27233a9",
+          "mismatches": []
+        }
+      ]
+    },
+    {
+      "name": "Registry retains first eight order/ports and appends Web Awesome at 4618",
+      "passed": true
+    },
+    {
+      "name": "Web Awesome dependency pinned consistently to 3.13.0",
+      "passed": true
+    },
+    {
+      "name": "Independent npm project disables workspaces",
+      "passed": true
+    },
+    {
+      "name": "Preview/dev retain unique port 4518",
+      "passed": true
+    },
+    {
+      "name": "Native direct component imports and default theme",
+      "passed": true,
+      "details": {
+        "directImports": [
+          "avatar",
+          "badge",
+          "breadcrumb",
+          "breadcrumb-item",
+          "button",
+          "card",
+          "checkbox",
+          "color-picker",
+          "details",
+          "dialog",
+          "drawer",
+          "dropdown",
+          "dropdown-item",
+          "input",
+          "number-input",
+          "option",
+          "popover",
+          "progress-bar",
+          "radio",
+          "radio-group",
+          "rating",
+          "select",
+          "slider",
+          "switch",
+          "tab",
+          "tab-group",
+          "tab-panel",
+          "textarea"
+        ],
+        "fixtureTags": [
+          "avatar",
+          "badge",
+          "breadcrumb",
+          "breadcrumb-item",
+          "button",
+          "card",
+          "checkbox",
+          "color-picker",
+          "details",
+          "dialog",
+          "drawer",
+          "dropdown",
+          "dropdown-item",
+          "input",
+          "number-input",
+          "option",
+          "popover",
+          "progress-bar",
+          "radio",
+          "radio-group",
+          "rating",
+          "select",
+          "slider",
+          "switch",
+          "tab",
+          "tab-group",
+          "tab-panel",
+          "textarea"
+        ],
+        "allFixtureTagsDirectlyImported": true
+      }
+    },
+    {
+      "name": "Native page title/light appearance",
+      "passed": true
+    },
+    {
+      "name": "CSR leaves child tab/panel activation to native library",
+      "passed": true
+    },
+    {
+      "name": "Functional qualification scrolls and verifies first panel content",
+      "passed": true
+    },
+    {
+      "name": "Acquisition plan includes all eight performance suites",
+      "passed": true,
+      "details": {
+        "plannedSamplesBySuite": {
+          "load": 120,
+          "startup": 60,
+          "interactions": 60,
+          "lighthouse": 15,
+          "memory": 3,
+          "diagnostic": 3,
+          "bfcache": 15,
+          "overhead": 30
+        },
+        "plannedTotal": 306
+      }
+    },
+    {
+      "name": "Memory plan preserves 0/10/50 checkpoints",
+      "passed": true
+    },
+    {
+      "name": "Native/custom date census split configured",
+      "passed": true
+    }
+  ],
+  "manualReview": {
+    "nativeCoverage": "Native Card, controls, Rating, ColorPicker, tabs, dialogs/drawer, breadcrumbs and popovers use the free shipped Web Awesome implementation. Application layout/content remains shared. No React renderer is added because supported wrappers use the same custom elements.",
+    "limitations": "Native browser date picker and free select are explicitly distinguished from richer custom date and searchable Pro Combobox capabilities. Stock dialog accessible-name gap, radio activation behavior, native offscreen tab activation and full-page screenshot behavior are disclosed; no vendor internals are patched.",
+    "measurement": "Loading, startup, settled interactions, repeated Lighthouse, memory, diagnostic traces/coverage, BFCache and observer overhead remain separate. Additional connected-DOM/date/ownership diagnostics use dedicated sessions. Desktop is unthrottled; narrow primary runs are desktop Chromium with configured CPU/network throttling, not physical-phone evidence. CSR only; no SSR/hydration or production field metrics claimed.",
+    "statistics": "Missing metrics remain unavailable, failures are retained, memory is one exploratory session per implementation. Historical eight-system rows remain descriptive and unpaired; contemporaneous frozen En Reve/Fluent WC controls support the new paired-block contrasts. Milliseconds, KiB and MiB conversions match historical definitions.",
+    "prePublicationSteps": [
+      "Finish source/build functional qualification and freeze receipts before acquisition.",
+      "Generate diagnostics-summary.json after the diagnostic acquisition, before report/archive.",
+      "Validate all acquired sample identities, counts, coverage, artifact/source hashes and reported tables after collection.",
+      "Retain the original references and integrate only the dedicated supplemental report section."
+    ]
+  },
+  "inputs": {
+    "artifacts/web-awesome/preserved-reference-receipt.json": "acac2e6ba9c0eb1e09a13cc3ef5bd16021e2e55b5a225d224bd4cde31e727b80",
+    "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/manifest.json": "ac3edf2d74ef0efabbd5b10ee70d83333d8ee65ea5e425d55890f47f759826cf",
+    "showcases/performance/.cache/inventory.json": "b852a9ca2e6d6b857e10e9fd8b6df429e52bfaa22b9e61de38eed948700fa6a8",
+    "showcases/web-awesome/src/main.js": "46942cee643f2440daec4b8aedd93ab83cfc237c06a60d6267f49cae577a6987",
+    "showcases/web-awesome/src/ui.js": "447c86d29f839b2206a77c9f8011eba2e152bdffca194b0db14f78bdda693d81",
+    "showcases/web-awesome/src/style.css": "1082ce06058970cbffc901dcdfc79c69bf21f74623464a680728238fb094ff15",
+    "showcases/web-awesome/README.md": "26bbf63fa08bbbffb01d948a0b528337a91c83675ca120fc57fd7029c8d8edfe",
+    "showcases/web-awesome/package.json": "42a43d8408313fba401c51a308a398b780178c44cd5d781078863805b5baec6c",
+    "showcases/web-awesome/package-lock.json": "22ed89679d56105b8a5124ed27b982c843a608ef3b881c903aa33cd6b9116e28",
+    "showcases/web-awesome/vite.config.js": "a220af1aa272eb175c021c96704dc8dfdac12d317b51ba2bf8c35fcf7b6f75d5",
+    "showcases/tools/smoke.mjs": "9a13916272df102c22b010b4f1f2d33444e65e20392a3d32ed490f85464bd5db",
+    "showcases/performance/registry/systems.json": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+    "showcases/performance/experiments/run-web-awesome.mjs": "f613d6f4e0526ef3604deed9b22d8d500c26a6352355c0735df4164ae14aaa86",
+    "showcases/performance/experiments/report-web-awesome.mjs": "dcce49269e4fb489c3ab654b9241c41df01fa49e4828eb66723aaa69723e8674",
+    "showcases/performance/experiments/web-awesome-metric-groups.mjs": "e235aacfce01b3c5d37ad8992c790a7cc308f6b117dc9682ebe7e1a967bebfc7",
+    "showcases/performance/experiments/pass2-metrics.mjs": "a1bdaa57f280998f4e4f454c3b7771a063294e8b6c703b831c86d5f2d0e90339",
+    "showcases/performance/experiments/archive-web-awesome.mjs": "1384e5344e3ae96860d76230b7470c99936671d3c9815f62aabac7264dfc2543",
+    "showcases/performance/reports/web-awesome/config.json": "a6efa4c66e6779e33d9ac64cbb6e29af1e11b8451a89ab512b0a73c8d955d9c5"
+  },
+  "observedFrozenInventorySystems": [
+    "radix-react",
+    "fluent-react",
+    "spectrum-react",
+    "astryx-react",
+    "shadcn-react",
+    "fluent-web-components",
+    "spectrum-web-components",
+    "en-reve",
+    "web-awesome"
+  ]
+}

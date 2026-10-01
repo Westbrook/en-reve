@@ -1,0 +1,14 @@
+✔ retains the complete initial timeout and accepts only the same isolated Firefox case (2.043833ms)
+✔ retains compatibility with the original documented budget correction (0.162917ms)
+✔ rejects assertion failures, missing coverage, wrong case, stale builds and flaky reruns (1.58925ms)
+✔ numeric measurements retain signs, thousands and missing values (0.661333ms)
+✔ CSV preserves negative numeric gaps and escapes formulas, commas and quotes (0.1295ms)
+✔ En Reve main refresh replaces target rows only, keeps archived cohorts, and is idempotent (7.943375ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70.853291

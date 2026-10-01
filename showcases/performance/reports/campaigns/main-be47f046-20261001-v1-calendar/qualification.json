@@ -1,0 +1,1235 @@
+{
+  "builds": [
+    {
+      "id": "main-be47f046-20261001-v1-calendar-eager",
+      "fingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6"
+    },
+    {
+      "id": "main-be47f046-20261001-v1-calendar-deferred",
+      "fingerprint": "dbc45425cd7a6e3524c8367584121a129516579346b3fde7d851282776df3bda"
+    },
+    {
+      "id": "main-be47f046-20261001-v1-calendar-split",
+      "fingerprint": "ef86738813661bf1edb8c77e30cf747aff0f11b9bd7c405244ad79dcbe744ec1"
+    }
+  ],
+  "startedAt": "2026-10-01T16:42:40.742Z",
+  "checks": [
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-eager",
+      "engine": "chromium",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 146.2000002861023,
+          "focus": 156.2000002861023,
+          "frame": 168.30000019073486,
+          "preparation": null,
+          "inputToFocus": 10,
+          "inputToFrame": 22.09999990463257,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 192.5,
+          "focus": 202.30000019073486,
+          "frame": 218.90000009536743,
+          "preparation": null,
+          "inputToFocus": 9.800000190734863,
+          "inputToFrame": 26.40000009536743,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": []
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-eager",
+      "engine": "firefox",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 600,
+          "focus": 614,
+          "frame": 615,
+          "preparation": null,
+          "inputToFocus": 14,
+          "inputToFrame": 15,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 674,
+          "focus": 685,
+          "frame": 687,
+          "preparation": null,
+          "inputToFocus": 11,
+          "inputToFrame": 13,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4682,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4682,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4682,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4682,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": []
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-eager",
+      "engine": "webkit",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 283,
+          "focus": 307,
+          "frame": 316,
+          "preparation": null,
+          "inputToFocus": 24,
+          "inputToFrame": 33,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 352,
+          "focus": 363,
+          "frame": 379,
+          "preparation": null,
+          "inputToFocus": 11,
+          "inputToFrame": 27,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4685,
+            "elements": 1598
+          },
+          "date": {
+            "nodes": 631,
+            "elements": 184
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": []
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-deferred",
+      "engine": "chromium",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 172,
+          "focus": 186.10000038146973,
+          "frame": 199.60000038146973,
+          "preparation": null,
+          "inputToFocus": 14.100000381469727,
+          "inputToFrame": 27.600000381469727,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 219.5,
+          "focus": 233.10000038146973,
+          "frame": 249.80000019073486,
+          "preparation": null,
+          "inputToFocus": 13.600000381469727,
+          "inputToFrame": 30.300000190734863,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4190,
+            "elements": 1460
+          },
+          "date": {
+            "nodes": 136,
+            "elements": 46
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": []
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-deferred",
+      "engine": "firefox",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 308,
+          "focus": 321,
+          "frame": 323,
+          "preparation": null,
+          "inputToFocus": 13,
+          "inputToFrame": 15,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 367,
+          "focus": 375,
+          "frame": 376,
+          "preparation": null,
+          "inputToFocus": 8,
+          "inputToFrame": 9,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4187,
+            "elements": 1460
+          },
+          "date": {
+            "nodes": 136,
+            "elements": 46
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4684,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4684,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4684,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": []
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-deferred",
+      "engine": "webkit",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 188,
+          "focus": 213,
+          "frame": 222,
+          "preparation": null,
+          "inputToFocus": 25,
+          "inputToFrame": 34,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 256,
+          "focus": 266,
+          "frame": 277,
+          "preparation": null,
+          "inputToFocus": 10,
+          "inputToFrame": 21,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4190,
+            "elements": 1460
+          },
+          "date": {
+            "nodes": 136,
+            "elements": 46
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": []
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-split",
+      "engine": "chromium",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 140.90000009536743,
+          "focus": 174.80000019073486,
+          "frame": 191.5,
+          "preparation": null,
+          "inputToFocus": 33.90000009536743,
+          "inputToFrame": 50.59999990463257,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 216.09999990463257,
+          "focus": 224.90000009536743,
+          "frame": 241.59999990463257,
+          "preparation": null,
+          "inputToFocus": 8.800000190734863,
+          "inputToFrame": 25.5,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4190,
+            "elements": 1460
+          },
+          "date": {
+            "nodes": 136,
+            "elements": 46
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": [
+        "https://127.0.0.1:4617/assets/calendar-BkKesFi7.js"
+      ]
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-split",
+      "engine": "firefox",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 355,
+          "focus": 375,
+          "frame": 382,
+          "preparation": null,
+          "inputToFocus": 20,
+          "inputToFrame": 27,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 442,
+          "focus": 460,
+          "frame": 463,
+          "preparation": null,
+          "inputToFocus": 18,
+          "inputToFrame": 21,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4187,
+            "elements": 1460
+          },
+          "date": {
+            "nodes": 136,
+            "elements": 46
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4684,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4684,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4684,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4051,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": [
+        "https://127.0.0.1:4617/assets/calendar-BkKesFi7.js"
+      ]
+    },
+    {
+      "variant": "main-be47f046-20261001-v1-calendar-split",
+      "engine": "webkit",
+      "kind": "calendar-journey",
+      "passed": true,
+      "data": {
+        "preparation": "none",
+        "prepare": null,
+        "first": {
+          "name": "first",
+          "input": 192,
+          "focus": 223,
+          "frame": 231,
+          "preparation": null,
+          "inputToFocus": 31,
+          "inputToFrame": 39,
+          "prepareToFocus": null
+        },
+        "repeat": {
+          "name": "repeat",
+          "input": 265,
+          "focus": 276,
+          "frame": 289,
+          "preparation": null,
+          "inputToFocus": 11,
+          "inputToFrame": 24,
+          "prepareToFocus": null
+        },
+        "before": {
+          "total": {
+            "nodes": 4190,
+            "elements": 1460
+          },
+          "date": {
+            "nodes": 136,
+            "elements": 46
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "opened": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "selected": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "closed": {
+          "total": {
+            "nodes": 4687,
+            "elements": 1599
+          },
+          "date": {
+            "nodes": 633,
+            "elements": 185
+          },
+          "withoutDate": {
+            "nodes": 4054,
+            "elements": 1414
+          }
+        },
+        "afterCycles": null,
+        "cycles": 0,
+        "nativeEdit": true,
+        "keyboardSelection": true,
+        "projectSubmission": true
+      },
+      "requests": [
+        "https://127.0.0.1:4617/assets/calendar-BkKesFi7.js"
+      ]
+    }
+  ],
+  "functional": [
+    {
+      "at": "2026-10-01T16:42:40.749Z",
+      "name": "main-be47f046-20261001-v1-calendar-qualification-main-be47f046-20261001-v1-calendar-eager",
+      "engine": "chromium",
+      "suites": [
+        {
+          "suite": "smoke",
+          "exitCode": 0,
+          "results": [
+            {
+              "name": "en-reve",
+              "checks": [
+                {
+                  "name": "sixteen cards; no docs/theme controls",
+                  "pass": true
+                },
+                {
+                  "name": "canvas changes artwork",
+                  "pass": true
+                },
+                {
+                  "name": "create dialog",
+                  "pass": true
+                },
+                {
+                  "name": "preview dialog",
+                  "pass": true
+                },
+                {
+                  "name": "commands dialog",
+                  "pass": true
+                },
+                {
+                  "name": "native action menu",
+                  "pass": true
+                },
+                {
+                  "name": "brief tabs",
+                  "pass": true
+                },
+                {
+                  "name": "checklist enables approval",
+                  "pass": true
+                },
+                {
+                  "name": "project creation",
+                  "pass": true
+                },
+                {
+                  "name": "output slider updates art",
+                  "pass": true
+                },
+                {
+                  "name": "export overlay",
+                  "pass": true
+                },
+                {
+                  "name": "review submission",
+                  "pass": true
+                },
+                {
+                  "name": "notification save",
+                  "pass": true
+                },
+                {
+                  "name": "chat response",
+                  "pass": true
+                },
+                {
+                  "name": "empty collection and reset",
+                  "pass": true
+                },
+                {
+                  "name": "reset preserves another card",
+                  "pass": true
+                },
+                {
+                  "name": "390px reflow",
+                  "pass": true
+                },
+                {
+                  "name": "progress return only when flagged",
+                  "pass": true
+                }
+              ],
+              "errors": [],
+              "browser": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "suite": "secondary",
+          "exitCode": 0,
+          "results": [
+            {
+              "name": "en-reve",
+              "checks": [
+                {
+                  "name": "activity period updates data",
+                  "pass": true
+                },
+                {
+                  "name": "teammate invitation",
+                  "pass": true
+                },
+                {
+                  "name": "study popover",
+                  "pass": true
+                },
+                {
+                  "name": "tablet two columns",
+                  "pass": true
+                }
+              ],
+              "errors": [],
+              "browser": "153.0.8010.12"
+            }
+          ]
+        }
+      ],
+      "fingerprints": {
+        "en-reve": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c"
+      },
+      "variantFingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6",
+      "passed": true
+    },
+    {
+      "at": "2026-10-01T16:42:50.716Z",
+      "name": "main-be47f046-20261001-v1-calendar-qualification-main-be47f046-20261001-v1-calendar-deferred",
+      "engine": "chromium",
+      "suites": [
+        {
+          "suite": "smoke",
+          "exitCode": 0,
+          "results": [
+            {
+              "name": "en-reve",
+              "checks": [
+                {
+                  "name": "sixteen cards; no docs/theme controls",
+                  "pass": true
+                },
+                {
+                  "name": "canvas changes artwork",
+                  "pass": true
+                },
+                {
+                  "name": "create dialog",
+                  "pass": true
+                },
+                {
+                  "name": "preview dialog",
+                  "pass": true
+                },
+                {
+                  "name": "commands dialog",
+                  "pass": true
+                },
+                {
+                  "name": "native action menu",
+                  "pass": true
+                },
+                {
+                  "name": "brief tabs",
+                  "pass": true
+                },
+                {
+                  "name": "checklist enables approval",
+                  "pass": true
+                },
+                {
+                  "name": "project creation",
+                  "pass": true
+                },
+                {
+                  "name": "output slider updates art",
+                  "pass": true
+                },
+                {
+                  "name": "export overlay",
+                  "pass": true
+                },
+                {
+                  "name": "review submission",
+                  "pass": true
+                },
+                {
+                  "name": "notification save",
+                  "pass": true
+                },
+                {
+                  "name": "chat response",
+                  "pass": true
+                },
+                {
+                  "name": "empty collection and reset",
+                  "pass": true
+                },
+                {
+                  "name": "reset preserves another card",
+                  "pass": true
+                },
+                {
+                  "name": "390px reflow",
+                  "pass": true
+                },
+                {
+                  "name": "progress return only when flagged",
+                  "pass": true
+                }
+              ],
+              "errors": [],
+              "browser": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "suite": "secondary",
+          "exitCode": 0,
+          "results": [
+            {
+              "name": "en-reve",
+              "checks": [
+                {
+                  "name": "activity period updates data",
+                  "pass": true
+                },
+                {
+                  "name": "teammate invitation",
+                  "pass": true
+                },
+                {
+                  "name": "study popover",
+                  "pass": true
+                },
+                {
+                  "name": "tablet two columns",
+                  "pass": true
+                }
+              ],
+              "errors": [],
+              "browser": "153.0.8010.12"
+            }
+          ]
+        }
+      ],
+      "fingerprints": {
+        "en-reve": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c"
+      },
+      "variantFingerprint": "dbc45425cd7a6e3524c8367584121a129516579346b3fde7d851282776df3bda",
+      "passed": true
+    },
+    {
+      "at": "2026-10-01T16:42:59.045Z",
+      "name": "main-be47f046-20261001-v1-calendar-qualification-main-be47f046-20261001-v1-calendar-split",
+      "engine": "chromium",
+      "suites": [
+        {
+          "suite": "smoke",
+          "exitCode": 0,
+          "results": [
+            {
+              "name": "en-reve",
+              "checks": [
+                {
+                  "name": "sixteen cards; no docs/theme controls",
+                  "pass": true
+                },
+                {
+                  "name": "canvas changes artwork",
+                  "pass": true
+                },
+                {
+                  "name": "create dialog",
+                  "pass": true
+                },
+                {
+                  "name": "preview dialog",
+                  "pass": true
+                },
+                {
+                  "name": "commands dialog",
+                  "pass": true
+                },
+                {
+                  "name": "native action menu",
+                  "pass": true
+                },
+                {
+                  "name": "brief tabs",
+                  "pass": true
+                },
+                {
+                  "name": "checklist enables approval",
+                  "pass": true
+                },
+                {
+                  "name": "project creation",
+                  "pass": true
+                },
+                {
+                  "name": "output slider updates art",
+                  "pass": true
+                },
+                {
+                  "name": "export overlay",
+                  "pass": true
+                },
+                {
+                  "name": "review submission",
+                  "pass": true
+                },
+                {
+                  "name": "notification save",
+                  "pass": true
+                },
+                {
+                  "name": "chat response",
+                  "pass": true
+                },
+                {
+                  "name": "empty collection and reset",
+                  "pass": true
+                },
+                {
+                  "name": "reset preserves another card",
+                  "pass": true
+                },
+                {
+                  "name": "390px reflow",
+                  "pass": true
+                },
+                {
+                  "name": "progress return only when flagged",
+                  "pass": true
+                }
+              ],
+              "errors": [],
+              "browser": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "suite": "secondary",
+          "exitCode": 0,
+          "results": [
+            {
+              "name": "en-reve",
+              "checks": [
+                {
+                  "name": "activity period updates data",
+                  "pass": true
+                },
+                {
+                  "name": "teammate invitation",
+                  "pass": true
+                },
+                {
+                  "name": "study popover",
+                  "pass": true
+                },
+                {
+                  "name": "tablet two columns",
+                  "pass": true
+                }
+              ],
+              "errors": [],
+              "browser": "153.0.8010.12"
+            }
+          ]
+        }
+      ],
+      "fingerprints": {
+        "en-reve": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c"
+      },
+      "variantFingerprint": "ef86738813661bf1edb8c77e30cf747aff0f11b9bd7c405244ad79dcbe744ec1",
+      "passed": true
+    }
+  ],
+  "finishedAt": "2026-10-01T16:43:05.206Z",
+  "passed": true
+}

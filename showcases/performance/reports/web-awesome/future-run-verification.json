@@ -1,0 +1,105 @@
+{
+  "schema": 1,
+  "at": "2026-09-21T19:14:55.153Z",
+  "passed": true,
+  "scope": "Post-acquisition maintenance only: future native-panel preparation and inactive CI dispatch. Immutable measured harness snapshots remain authoritative for existing samples.",
+  "changes": [
+    "Explicit original-plus-additive receipt catalog; complete selected-ID and frozen hash preflight before snapshot writes; conflicting evidence rejected.",
+    "Prepared entries and selected qualification records retain receipt path/hash provenance; no historical receipts are rewritten.",
+    "CI command path resolution no longer shadows the Promise completion callback; child failures propagate.",
+    "Full lane dynamically discovers all nine native systems and runs startup and observer overhead as separate observational suites.",
+    "Fixed sentinel panel, current En Reve load/interaction baseline gates and explicit promotion requirements are unchanged.",
+    "Inactive self-hosted template uses a job-level 480-minute allowance; documentation identifies runtime as estimated and no scheduling was enabled."
+  ],
+  "verification": {
+    "command": "node --test tests/additive-panel.test.mjs tests/verification-receipts.test.mjs tests/ci.test.mjs tests/core.test.mjs",
+    "workingDirectory": "showcases/performance",
+    "tests": 26,
+    "passed": 26,
+    "failed": 0,
+    "subprocesses": "CI spawn tests use injected EventEmitter stubs; no child process, browser, build or campaign is launched by these tests.",
+    "syntaxChecks": [
+      "src/prepare.mjs",
+      "src/verification-receipts.mjs",
+      "ci/execute.mjs",
+      "ci/lane-plan.mjs",
+      "ci/run-lane.mjs"
+    ],
+    "registeredSystems": 9,
+    "originalReceiptSystems": 8,
+    "additiveReceiptSystems": 1
+  },
+  "preservation": {
+    "comparedBeforeAndAfterFiles": 93,
+    "changedFiles": [],
+    "protectedScope": "Original receipt, additive Web Awesome receipt, current inventory, and every frozen snapshot asset/metadata file.",
+    "beforeAndAfterManifestSha256": "f6614ac315ceffeb3d408c4171545f3c4bb49b3aa625027002deb3fcd318989a",
+    "criticalFiles": {
+      "showcases/verification.json": "91a0348ddc4033fc02cce47c916d793755b4801ae7c3786d523603d74bc6a051",
+      "showcases/verification-web-awesome.json": "83978789ac259a9b31aee3a680e23eefe18bd403402b65b8c408146311979489",
+      "showcases/performance/.cache/inventory.json": "0e556fb959fa15a3a38b278b3f2e625ccf6d52ca31217654705fe9011ad6d25a"
+    },
+    "prepareOrFreezeExecuted": false,
+    "buildExecuted": false,
+    "browserExecuted": false,
+    "campaignExecuted": false,
+    "measuredRunOrHarnessEvidenceEdited": false
+  },
+  "ci": {
+    "active": false,
+    "workflowDirectoryExists": false,
+    "jobTimeoutMinutes": 480,
+    "baselinePromotionExecuted": false,
+    "limitsReference": "https://docs.github.com/en/actions/reference/limits"
+  },
+  "files": [
+    {
+      "path": "showcases/performance/registry/verification-receipts.json",
+      "sha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc"
+    },
+    {
+      "path": "showcases/performance/src/verification-receipts.mjs",
+      "sha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463"
+    },
+    {
+      "path": "showcases/performance/src/prepare.mjs",
+      "sha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd"
+    },
+    {
+      "path": "showcases/performance/ci/execute.mjs",
+      "sha256": "ffd526bd70c1b8ccfc97e220e97f41a6b1a8a8405324fc952e9fbcccb2f546e6"
+    },
+    {
+      "path": "showcases/performance/ci/lane-plan.mjs",
+      "sha256": "040668820548bb9ae55f4dc053e4f59ab80d055c947ee4aa98faf36cac0c8bf6"
+    },
+    {
+      "path": "showcases/performance/ci/run-lane.mjs",
+      "sha256": "05f9557104d0ad906ee03609fa1aa1e4e8b731c9e30ee0064ec4d22a5860deb6"
+    },
+    {
+      "path": "showcases/performance/ci/performance.yml",
+      "sha256": "46b339b43a139b8c68ee9e048080ab2d000a0ff19ac28a241ffacdea21b11e99"
+    },
+    {
+      "path": "showcases/performance/tests/verification-receipts.test.mjs",
+      "sha256": "f1fdd32860743540849f9184c5653ddbc39008e17798513659bbd8ecdc00eb9c"
+    },
+    {
+      "path": "showcases/performance/tests/ci.test.mjs",
+      "sha256": "5e347230cd845076f277922d887def7b079473b82867ce3a2e5019ac445ef405"
+    },
+    {
+      "path": "showcases/performance/tests/additive-panel.test.mjs",
+      "sha256": "642a271cd2976e1975bbe1cb9f372932013649493e8fbf4ea23b09f0c6abb70a"
+    },
+    {
+      "path": "showcases/performance/README.md",
+      "sha256": "296669cabf45978a4684a965b3d0d3cb8325b262ebd37d135d5a3b6be37d53e3"
+    },
+    {
+      "path": "showcases/performance/ADDING_SYSTEMS.md",
+      "sha256": "2c76230431908ce559c72ddb3758f8aa7d440ef13db98a8b7777331278fc50d6"
+    }
+  ]
+}

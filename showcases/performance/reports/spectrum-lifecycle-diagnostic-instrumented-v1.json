@@ -1,0 +1,175 @@
+{
+  "diagnosticOnly": true,
+  "instrumented": true,
+  "at": "2026-09-20T18:30:14.192Z",
+  "error": "expect(locator).toHaveAttribute(expected) failed\n\nLocator:  locator('#showcase-asset').locator('[data-layout]').first()\nExpected: \"landscape\"\nReceived: \"portrait\"\nTimeout:  5000ms\n\nCall log:\n  - Expect \"toHaveAttribute\" locator('#showcase-asset').locator('[data-layout]').first() with timeout 5000ms\n  - waiting for locator('#showcase-asset').locator('[data-layout]').first()\n    14 × locator resolved to <div role=\"img\" class=\"art\" data-layout=\"portrait\" aria-label=\"portrait composition with overlapping shapes\">…</div>\n       - unexpected value \"portrait\"\n",
+  "events": [
+    {
+      "kind": "capture",
+      "at": 2424.5999999046326,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2425.300000190735,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2565.300000190735,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "bubble",
+      "at": 2565.4000000953674,
+      "action": "portrait",
+      "label": "Portrait",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "landscape"
+    },
+    {
+      "kind": "capture",
+      "at": 2671.5999999046326,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2671.699999809265,
+      "action": "insert",
+      "label": "Add a sample asset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2746.300000190735,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2746.300000190735,
+      "action": "reset:library",
+      "label": "Reset",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2835.5,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2835.5,
+      "action": "create",
+      "label": "Create →",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 2915.300000190735,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "bubble",
+      "at": 2915.300000190735,
+      "action": "close:create",
+      "label": "Close",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "capture",
+      "at": 3230.300000190735,
+      "action": "landscape",
+      "label": "Landscape",
+      "disabled": false,
+      "trusted": true,
+      "prevented": false,
+      "layoutAfter": "portrait"
+    },
+    {
+      "kind": "preventDefault",
+      "at": 3230.300000190735,
+      "stack": "Error\n    at Event.<computed> [as preventDefault] (<anonymous>:15:22)\n    at HTMLDocument.S (https://127.0.0.1:4616/assets/focus-trap.esm-GrKRp3fm.js:2:7701)"
+    },
+    {
+      "kind": "stopImmediatePropagation",
+      "at": 3230.300000190735,
+      "stack": "Error\n    at Event.<computed> [as stopImmediatePropagation] (<anonymous>:15:22)\n    at HTMLDocument.S (https://127.0.0.1:4616/assets/focus-trap.esm-GrKRp3fm.js:2:7720)"
+    }
+  ],
+  "overlays": [
+    {
+      "id": "create-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "preview-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "commands-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "approve-dialog",
+      "open": false,
+      "state": "closed"
+    },
+    {
+      "id": "export-dialog",
+      "open": false,
+      "state": "closed"
+    }
+  ]
+}

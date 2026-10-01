@@ -1,5 +1,7 @@
 # Native showcase performance: results and engineering backlog
 
+**Latest measured source:** En Reve main be47f046, local main `be47f046395bac902e3bbb938a3ece3629e4aab7`, acquired 2026-10-01. The new rows are additive: previous En Reve and peer observations retain their dates. Frozen controls and the new candidate ran as separate sequential cohorts, so differences are descriptive, not paired causal estimates. [Latest campaign details](#latest-main-refresh) include coverage and source provenance. Earlier statements using “current” refer to their dated acquisitions.
+
 New: [calendar delivery variants](#calendar-delivery-variants) compare the remeasured eager reference, deferred construction and calendar code splitting, with dated first-use and DOM evidence.
 
 **Reading measurement dates:** “Run ID” (previously “Acquisition”) identifies one recorded benchmark run, so its raw evidence can be traced. “Date (UTC)” is when its samples were measured—not when this report was rebuilt. A date range means sampling crossed UTC days; a dash means no timestamp could be recovered. Older peer rows retain their original dates.
@@ -111,6 +113,10 @@ FCP: first contentful paint. LCP: largest contentful paint. Card/frame and last-
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 646.0 | 646.0 | 663.0 | 0.000000 | 0.000000 | 0.000000 | 16.8 | 640.8 | — |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 640.0 | 640.0 | 673.0 | 0.000000 | 0.000000 | 0.000000 | 16.2 | 636.4 | — |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 642.0 | 642.0 | 667.0 | 0.000000 | 0.000000 | 0.000000 | 17.5 | 636.3 | — |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 536.0 | 536.0 | 563.0 | 0.000000 | 0.000000 | 0.000000 | 16.8 | 531.7 | — |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 672.0 | 672.0 | 685.0 | 0.000000 | 0.000000 | 0.000000 | 15.8 | 667.1 | — |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 628.0 | 628.0 | 639.0 | 0.000000 | 0.000000 | 0.000000 | 16.8 | 626.2 | — |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 648.0 | 648.0 | 651.0 | 0.000000 | 0.000000 | 0.000000 | 14.9 | 643.5 | — |
 
 ### mobile warm loading
 
@@ -138,6 +144,10 @@ FCP: first contentful paint. LCP: largest contentful paint. Card/frame and last-
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 302.0 | 302.0 | 313.0 | 0.000000 | 0.000000 | 0.000000 | 1.5 | 308.3 | — |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 298.0 | 298.0 | 300.0 | 0.000000 | 0.000000 | 0.000000 | 1.8 | 307.2 | — |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 292.0 | 292.0 | 303.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 301.5 | — |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 220.0 | 220.0 | 220.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 225.9 | — |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 306.0 | 306.0 | 323.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 315.8 | — |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 260.0 | 260.0 | 264.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 266.8 | — |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 304.0 | 304.0 | 304.0 | 0.000000 | 0.000000 | 0.000000 | 2.7 | 314.2 | — |
 
 ### desktop cold loading
 
@@ -165,6 +175,10 @@ FCP: first contentful paint. LCP: largest contentful paint. Card/frame and last-
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 100.0 | 100.0 | 104.0 | 0.000000 | 0.000000 | 0.000000 | 15.6 | 89.0 | — |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 102.0 | 102.0 | 107.0 | 0.000000 | 0.000000 | 0.000000 | 16.5 | 88.7 | — |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 96.0 | 96.0 | 99.0 | 0.000000 | 0.000000 | 0.000000 | 15.6 | 85.0 | — |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 86.0 | 86.0 | 88.0 | 0.000075 | 0.000075 | 0.000075 | 15.3 | 76.6 | — |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 104.0 | 104.0 | 111.0 | 0.000000 | 0.000000 | 0.000000 | 14.8 | 92.5 | — |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 102.0 | 102.0 | 115.0 | 0.000000 | 0.000000 | 0.000000 | 15.2 | 88.4 | — |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 98.0 | 98.0 | 103.0 | 0.000000 | 0.000000 | 0.000000 | 14.1 | 86.5 | — |
 
 ### desktop warm loading
 
@@ -192,6 +206,10 @@ FCP: first contentful paint. LCP: largest contentful paint. Card/frame and last-
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 44.0 | 48.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 43.5 | — |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 44.0 | 47.0 | 0.000000 | 0.000000 | 0.000000 | 1.0 | 42.6 | — |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 44.0 | 44.0 | 0.000000 | 0.000000 | 0.000000 | 1.0 | 42.0 | — |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 28.0 | 28.0 | 31.0 | 0.000075 | 0.000075 | 0.000075 | 0.8 | 25.9 | — |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 48.0 | 48.0 | 48.0 | 0.000000 | 0.000000 | 0.000000 | 1.0 | 44.1 | — |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 36.0 | 36.0 | 36.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 32.3 | — |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 44.0 | 44.0 | 47.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 42.8 | — |
 
 ### mobile cold LCP attribution
 
@@ -214,6 +232,10 @@ LCP attribution from web-vitals. A text LCP can have zero image-resource phases;
 | Fluent Web Components | Historical pass2-load-matrix-v1 | 2026-09-20 | 10 | 0 | 15.5 | 0.0 | 0.0 | 496.3 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-load-v1 | 2026-09-22 | 10 | 0 | 14.7 | 0.0 | 0.0 | 760.8 |
 | Web Awesome | web-awesome-load-v1 | 2026-09-21 | 10 | 0 | 15.8 | 0.0 | 0.0 | 587.9 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 16.8 | 0.0 | 0.0 | 518.4 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 15.8 | 0.0 | 0.0 | 652.1 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 16.8 | 0.0 | 0.0 | 604.6 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 14.9 | 0.0 | 0.0 | 633.6 |
 
 ### desktop cold LCP attribution
 
@@ -236,6 +258,10 @@ LCP attribution from web-vitals. A text LCP can have zero image-resource phases;
 | Fluent Web Components | Historical pass2-load-matrix-v1 | 2026-09-20 | 10 | 0 | 14.9 | 0.0 | 0.0 | 62.6 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-load-v1 | 2026-09-22 | 10 | 0 | 15.0 | 0.0 | 0.0 | 96.4 |
 | Web Awesome | web-awesome-load-v1 | 2026-09-21 | 10 | 0 | 15.5 | 0.0 | 0.0 | 79.7 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 15.3 | 0.0 | 0.0 | 69.4 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 14.8 | 0.0 | 0.0 | 88.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 15.2 | 0.0 | 0.0 | 80.7 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 14.1 | 0.0 | 0.0 | 83.5 |
 
 ## Startup usability
 
@@ -267,6 +293,10 @@ Navigation-relative timestamps include automation overhead; click-to-result/fram
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 614.0 | 632.4 | 642.0 | 646.4 | 18.5 | 0.5 | 9.8 | 47.5 | 2.8 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 600.8 | 620.0 | 630.8 | 637.4 | 19.1 | 0.7 | 11.2 | 46.6 | 4.1 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 593.4 | 612.3 | 623.2 | 628.3 | 19.2 | 0.6 | 10.3 | 46.5 | 3.4 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-startup | 2026-10-01 | 10 | 0 | 459.4 | 514.6 | 522.0 | 527.8 | 54.5 | 0.9 | 8.1 | 39.2 | 5.0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-startup | 2026-10-01 | 10 | 0 | 622.5 | 643.2 | 653.7 | 661.2 | 19.5 | 1.0 | 10.4 | 43.0 | 3.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-startup | 2026-10-01 | 10 | 0 | 584.8 | 607.2 | 615.0 | 620.6 | 22.7 | 1.9 | 8.1 | 36.3 | 3.3 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-startup | 2026-10-01 | 10 | 0 | 621.5 | 640.3 | 650.4 | 656.0 | 18.9 | 0.8 | 10.2 | 41.3 | 3.0 |
 
 ### desktop startup click
 
@@ -294,6 +324,10 @@ Navigation-relative timestamps include automation overhead; click-to-result/fram
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 86.1 | 91.5 | 93.7 | 94.3 | 5.5 | 0.1 | 2.2 | 38.0 | 0.8 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 82.7 | 88.1 | 90.5 | 92.8 | 5.5 | 0.1 | 2.3 | 31.0 | 1.0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 82.6 | 88.4 | 90.5 | 92.0 | 5.8 | 0.1 | 2.2 | 30.7 | 0.7 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-startup | 2026-10-01 | 10 | 0 | 60.3 | 72.8 | 73.8 | 76.6 | 12.3 | 0.1 | 1.1 | 33.6 | — |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-startup | 2026-10-01 | 10 | 0 | 88.4 | 93.5 | 95.7 | 98.1 | 5.3 | 0.1 | 2.3 | 32.9 | 0.7 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-startup | 2026-10-01 | 10 | 0 | 78.4 | 85.3 | 88.1 | 91.6 | 7.5 | 0.3 | 1.8 | 27.5 | — |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-startup | 2026-10-01 | 10 | 0 | 85.7 | 91.2 | 93.2 | 95.4 | 5.5 | 0.1 | 2.1 | 31.8 | — |
 
 ## Production files and chunking
 
@@ -320,6 +354,10 @@ Frozen production assets; one deterministic build per implementation. Source map
 | Fluent Web Components | Historical bundles.json | — | 281.2 | 69.3 | 57.1 | 57.1 | 4.2 | 1.2 | 0.0 | 0.364 | 0.173 |
 | Spectrum WC Gen2 + Gen1 | reports/spectrum-gen2/bundles.json | — | 1,291.5 | 236.9 | 185.4 | 171.3 | 117.6 | 14.0 | 0.0 | 1.310 | 0.346 |
 | Web Awesome | reports/web-awesome/bundles.json | — | 469.8 | 110.5 | 86.4 | 86.4 | 53.4 | 4.9 | 0.0 | 0.409 | 0.167 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 281.2 | 69.3 | 57.1 | 57.1 | 4.2 | 1.2 | 0.0 | 0.4 | 0.2 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 439.5 | 108.3 | 87.0 | 87.0 | 43.5 | 5.9 | 0.0 | 0.4 | 0.2 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 469.8 | 110.5 | 86.4 | 86.4 | 53.4 | 4.9 | 0.0 | 0.4 | 0.2 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | 445.0 | 109.9 | 88.2 | 88.2 | 43.5 | 5.9 | 0.0 | 0.4 | 0.2 |
 
 ### Chunk structure
 
@@ -373,6 +411,10 @@ Response categories are measured in each sample. Independently calculated median
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 90.7 | 0.324 | 84.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 93.5 | 0.327 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
 
 ### mobile warm response transfer
 
@@ -400,6 +442,10 @@ Response categories are measured in each sample. Independently calculated median
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.242 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 0.3 | 0.262 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 0.2 | 0.245 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 0.3 | 0.254 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 0.2 | 0.244 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
 
 ### desktop cold response transfer
 
@@ -427,6 +473,10 @@ Response categories are measured in each sample. Independently calculated median
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 90.7 | 0.324 | 84.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 93.5 | 0.327 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
 
 ### desktop warm response transfer
 
@@ -454,6 +504,10 @@ Response categories are measured in each sample. Independently calculated median
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.242 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 0.3 | 0.262 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 0.2 | 0.245 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 0.3 | 0.254 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 0.2 | 0.244 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
 
 ### mobile cumulative interaction transfer
 
@@ -476,6 +530,10 @@ Fresh page plus the complete successful scripted interaction journey. This is a 
 | Fluent Web Components | Historical pass2-interactions-v1 | 2026-09-20 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-interactions-v1 | 2026-09-22 | 0 | 10 | — | — | — | — | — | — |
 | Web Awesome | web-awesome-interactions-v1 | 2026-09-21 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 93.5 | 0.327 | 87.1 | 6.1 | 0.0 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0 |
 
 ### desktop cumulative interaction transfer
 
@@ -498,6 +556,10 @@ Fresh page plus the complete successful scripted interaction journey. This is a 
 | Fluent Web Components | Historical pass2-interactions-v1 | 2026-09-20 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-interactions-v1 | 2026-09-22 | 10 | 0 | 192.2 | 0.516 | 177.6 | 14.1 | 0.0 | 0 |
 | Web Awesome | web-awesome-interactions-v1 | 2026-09-21 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 93.5 | 0.327 | 87.1 | 6.1 | 0.0 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0 |
 
 ## Main-thread work and load blocking
 
@@ -529,6 +591,10 @@ Use traces to test which costs actually lie on the critical path before assignin
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 86.2 | 60.4 | 31.4 | 375.4 | 7 | 11 | 287.0 | 237.0 | 0.0 | 410.8 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 86.7 | 60.9 | 32.7 | 372.0 | 7 | 11 | 281.5 | 231.5 | 0.0 | 404.1 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 85.4 | 63.2 | 33.9 | 372.8 | 7 | 11 | 283.5 | 233.5 | 0.0 | 406.7 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 130.7 | 45.3 | 43.0 | 306.1 | 5 | 10 | 225.5 | 125.5 | 0.0 | 320.6 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 90.6 | 65.0 | 33.6 | 400.0 | 7 | 11 | 309.5 | 259.5 | 0.0 | 431.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 82.8 | 44.8 | 37.3 | 363.8 | 4 | 6 | 262.5 | 212.5 | 0.0 | 382.9 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 87.1 | 58.9 | 32.3 | 377.6 | 7 | 11 | 291.0 | 241.0 | 0.0 | 413.5 |
 
 ### mobile warm main-thread work
 
@@ -556,6 +622,10 @@ Use traces to test which costs actually lie on the critical path before assignin
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 54.0 | 42.8 | 13.7 | 240.1 | 7 | 11 | 163.0 | 113.0 | 0.0 | 166.6 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 55.9 | 44.0 | 14.1 | 238.0 | 7 | 11 | 161.5 | 111.5 | 0.0 | 165.0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 55.6 | 42.6 | 14.0 | 235.4 | 7 | 11 | 160.5 | 110.5 | 0.0 | 164.4 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 59.7 | 18.4 | 9.1 | 161.8 | 5 | 10 | 71.5 | 21.5 | 0.0 | 87.3 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 57.5 | 44.4 | 14.1 | 249.3 | 7 | 11 | 172.0 | 122.0 | 0.0 | 176.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 47.9 | 17.5 | 7.7 | 206.2 | 4 | 6 | 121.5 | 71.5 | 0.0 | 126.2 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 55.8 | 43.1 | 14.6 | 244.2 | 7 | 11 | 168.5 | 118.5 | 0.0 | 172.9 |
 
 ### desktop cold main-thread work
 
@@ -583,6 +653,10 @@ Use traces to test which costs actually lie on the critical path before assignin
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 17.3 | 12.5 | 6.3 | 77.8 | 7 | 11 | 57.5 | 7.5 | 0.0 | 59.5 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 18.2 | 12.8 | 6.4 | 77.9 | 7 | 11 | 56.5 | 6.5 | 0.0 | 58.8 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 17.0 | 12.3 | 6.0 | 74.6 | 7 | 11 | 54.0 | 4.0 | 0.0 | 57.5 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 26.1 | 9.9 | 8.6 | 64.1 | 5 | 10 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 18.3 | 13.3 | 6.3 | 81.7 | 7 | 11 | 61.0 | 11.0 | 0.0 | 63.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 16.8 | 10.9 | 7.5 | 79.5 | 4 | 6 | 55.0 | 5.0 | 0.0 | 57.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 17.4 | 12.4 | 6.2 | 79.7 | 7 | 11 | 57.0 | 7.0 | 0.0 | 59.3 |
 
 ### desktop warm main-thread work
 
@@ -610,6 +684,10 @@ Use traces to test which costs actually lie on the critical path before assignin
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 12.0 | 8.8 | 3.1 | 51.9 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 11.7 | 8.8 | 3.1 | 50.5 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 11.7 | 8.9 | 3.1 | 50.1 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 11.6 | 3.7 | 2.0 | 34.4 | 4 | 9 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 11.9 | 9.1 | 3.1 | 53.4 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 0 | 9.4 | 3.5 | 1.8 | 42.2 | 4 | 6 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 0 | 11.6 | 8.7 | 3.1 | 52.6 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
 
 ### Repeated mobile Lighthouse audits
 
@@ -637,6 +715,10 @@ Five fresh full-Chromium audits per implementation, separate from the headless-s
 | En Reve · Eager reference | calendar-variants-lighthouse-v1 | 2026-09-24 | 5 | 0 | 789.6 | 789.6 | 791.7 | 824.7 | 0.0 | 0.0 | 0.0 | 631.0 | 0.000000 |
 | En Reve · Deferred construction | calendar-variants-lighthouse-v1 | 2026-09-24 | 5 | 0 | 745.8 | 745.8 | 750.4 | 758.5 | 0.0 | 0.0 | 0.0 | 604.0 | 0.000000 |
 | En Reve · Deferred code + construction | calendar-variants-lighthouse-v1 | 2026-09-24 | 5 | 0 | 753.3 | 753.3 | 754.0 | 773.6 | 0.0 | 0.0 | 0.0 | 607.0 | 0.000000 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-lighthouse | 2026-10-01 | 5 | 0 | 609.6 | 609.6 | 681.7 | 8694.8 | 0.0 | 0.0 | 0.0 | 612.0 | 0.000000 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-lighthouse | 2026-10-01 | 5 | 0 | 795.7 | 795.7 | 796.1 | 8518.5 | 0.0 | 0.0 | 0.0 | 639.0 | 0.000000 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-lighthouse | 2026-10-01 | 5 | 0 | 747.6 | 747.6 | 775.3 | 783.9 | 0.0 | 0.0 | 0.0 | 573.0 | 0.000000 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-lighthouse | 2026-10-01 | 5 | 0 | 859.7 | 859.7 | 8708.1 | 8754.7 | 0.0 | 0.0 | 0.0 | 683.0 | 0.000000 |
 
 ## Interaction responsiveness
 
@@ -668,6 +750,10 @@ rAF gaps are scheduling diagnostics; the refresh rate is not normalized into an 
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 56.0 | 56.0 | 3.3 | 0.000000 | 16.8 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 48.0 | 48.0 | 2.9 | 0.000000 | 16.8 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 56.0 | 56.0 | 3.3 | 0.000000 | 16.8 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 64.0 | 64.0 | 2.7 | 0.000000 | 16.8 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 48.0 | 48.0 | 3.4 | 0.000000 | 16.8 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 48.0 | 48.0 | 2.6 | 0.000000 | 16.8 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 56.0 | 62.0 | 3.2 | 0.000000 | 16.8 |
 
 ### desktop interaction summary
 
@@ -695,6 +781,10 @@ rAF gaps are scheduling diagnostics; the refresh rate is not normalized into an 
 | En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 40.0 | 48.0 | 0.7 | 0.000000 | 16.8 |
 | En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 40.0 | 48.0 | 0.7 | 0.000000 | 16.8 |
 | En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 48.0 | 0.7 | 0.000000 | 16.8 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 40.0 | 40.0 | 0.6 | 0.000075 | 16.8 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 40.0 | 46.0 | 0.7 | 0.000000 | 16.8 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 40.0 | 40.0 | 0.6 | 0.000000 | 16.8 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 40.0 | 40.0 | 0.7 | 0.000000 | 16.8 |
 
 ### mobile action details
 
@@ -873,6 +963,10 @@ Checkpoints retained even if a later journey fails. Zero cycles is after page lo
 | Fluent Web Components | Historical pass2-memory-50-v1 | 2026-09-20 | 1 | 0 | 1 | — | 4.24 | 4,138 | 618 | timeout |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-memory-v1 | 2026-09-22 | 1 | 0 | 1 | — | 4.12 | 5,604 | 828 | timeout |
 | Web Awesome | web-awesome-memory-v2 | 2026-09-21 | 1 | 1 | 0 | 4.45 | 3.68 | 5,136 | 747 | ok |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 0 | 1 | — | 4.24 | 4138 | 618 | timeout |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 5.18 | 4.32 | 6376 | 547 | ok |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 4.42 | 3.68 | 5136 | 747 | ok |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-memory | 2026-10-01 | 1 | 1 | 0 | 5.24 | 4.35 | 6397 | 547 | ok |
 
 ### Memory after 10 cycles
 
@@ -895,6 +989,10 @@ Checkpoints retained even if a later journey fails. Zero cycles is after page lo
 | Fluent Web Components | Historical pass2-memory-50-v1 | 2026-09-20 | 1 | 1 | 0 | 3.85 | 4.39 | 4,617 | 692 | ok |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-memory-v1 | 2026-09-22 | 1 | 1 | 0 | 8.12 | 5.71 | 5,055 | 843 | ok |
 | Web Awesome | web-awesome-memory-v2 | 2026-09-21 | 1 | 1 | 0 | 4.74 | 4.58 | 5,223 | 747 | ok |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 3.84 | 4.38 | 4617 | 692 | ok |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 5.65 | 5.21 | 6495 | 547 | ok |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 4.77 | 4.58 | 5223 | 747 | ok |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-memory | 2026-10-01 | 1 | 1 | 0 | 5.67 | 5.27 | 6518 | 547 | ok |
 
 ### Memory after 50 cycles
 
@@ -917,6 +1015,10 @@ Checkpoints retained even if a later journey fails. Zero cycles is after page lo
 | Fluent Web Components | Historical pass2-memory-50-v1 | 2026-09-20 | 1 | 1 | 0 | 4.38 | 4.73 | 7,497 | 1,012 | ok |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-memory-v1 | 2026-09-22 | 1 | 1 | 0 | 8.94 | 5.95 | 5,095 | 843 | ok |
 | Web Awesome | web-awesome-memory-v2 | 2026-09-21 | 1 | 1 | 0 | 4.86 | 4.81 | 5,263 | 747 | ok |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 4.34 | 4.78 | 7497 | 1012 | ok |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 5.82 | 5.56 | 6535 | 547 | ok |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | 1 | 1 | 0 | 4.78 | 4.81 | 5263 | 747 | ok |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-memory | 2026-10-01 | 1 | 1 | 0 | 5.86 | 5.60 | 6558 | 547 | ok |
 
 ### Memory change from 10 to 50 cycles
 
@@ -965,6 +1067,10 @@ One desktop diagnostic journey per implementation from the first pass, not remea
 | Fluent Web Components | Historical diagnostic-desktop-v1 | 2026-09-20 | 2,889 | 1,284 | 169 | 0 | 221 | 32 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-diagnostic-v1 | 2026-09-22 | 4,077 | 1,234 | 196 | 0 | 395 | 46 |
 | Web Awesome | web-awesome-diagnostic-v1 | 2026-09-21 | 4,212 | 1,401 | 197 | 0 | 611 | 36 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-diagnostic | 2026-10-01 | 2889 | 1284 | 169 | 0 | 221 | 32 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-diagnostic | 2026-10-01 | 4668 | 1580 | 167 | 0 | 598 | 34 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-diagnostic | 2026-10-01 | 4212 | 1401 | 197 | 0 | 611 | 36 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-diagnostic | 2026-10-01 | 4686 | 1598 | 167 | 0 | 598 | 34 |
 
 ### Historical exercised code coverage
 
@@ -1048,6 +1154,9 @@ Five first-pass paired on/off blocks for En Reve and Fluent WC. A confidence int
 | En Reve main 6d09b31c | en-reve-main-overhead-v1 | 2026-09-24 | styleMs | 5 | 0.2 | -0.5 | 1.1 |
 
 ## Comparing gaps and choosing remediation
+
+These gap estimates and remediation hypotheses retain their original acquisitions. Consult [latest current-minus-frozen results](#latest-current-minus-frozen-control) and the newly dated shared tables before treating an earlier gap as a current regression.
+
 
 Positive differences below mean En Reve took longer than that peer. Differences are calculated from matched blocks in the **new** cohort only. The 95% intervals are exploratory paired-block bootstrap intervals, with no multiple-comparison correction. These are signals to confirm, not automatic release failures. Feature/layout/font differences remain part of the native comparison.
 
@@ -1214,6 +1323,10 @@ The original eight-system reference acquisition used the frozen default native C
 | Fluent Web Components | Historical reference (30 blocks) | 2026-09-20 | 30 | 57.1 | 57.1 | 1.2 | 504 | 519 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-load-v1 | 2026-09-22 | 10 | 171.3 | 185.4 | 14.0 | 776.0 | 784.0 |
 | Web Awesome | web-awesome-load-v1 | 2026-09-21 | 10 | 86.4 | 86.4 | 4.9 | 604.0 | 611.0 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 57.1 | 57.1 | 1.2 | 536.0 | 563.0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 87.0 | 87.0 | 5.9 | 672.0 | 685.0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-load | 2026-10-01 | 10 | 86.4 | 86.4 | 4.9 | 628.0 | 639.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-load | 2026-10-01 | 10 | 88.2 | 88.2 | 5.9 | 648.0 | 651.0 |
 
 Initial JS means static HTML/preload/import reachability; runtime dynamic loads are recorded separately. All-JS includes every emitted chunk. CSS inside JavaScript remains in the JS totals. shadcn also emits approximately 68.1 KiB of local compressed fonts; Spectrum React requests a native remote Typekit font (approximately 483 KB observed). Remote fonts are not counted as free, nor removed to improve that implementation's result. Spectrum Web Components emits 18 JS files and nine dynamic import edges; its full emitted JS is not all initial transfer.
 
@@ -1242,6 +1355,10 @@ Eight diagnostic desktop journeys completed with timeline/CPU traces, source-map
 | Fluent Web Components | Historical diagnostic-desktop-v1 | 2026-09-20 | 2,889 | 1,284 | 169 | 0 | 221 | 32 |
 | Spectrum WC Gen2 + Gen1 | spectrum-gen2-diagnostic-v1 | 2026-09-22 | 4,077 | 1,234 | 196 | 0 | 395 | 46 |
 | Web Awesome | web-awesome-diagnostic-v1 | 2026-09-21 | 4,212 | 1,401 | 197 | 0 | 611 | 36 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-diagnostic | 2026-10-01 | 2889 | 1284 | 169 | 0 | 221 | 32 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-diagnostic | 2026-10-01 | 4668 | 1580 | 167 | 0 | 598 | 34 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-diagnostic | 2026-10-01 | 4212 | 1401 | 197 | 0 | 611 | 36 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-diagnostic | 2026-10-01 | 4686 | 1598 | 167 | 0 | 598 | 34 |
 
 En Reve already shares stylesheet objects. The adoption count is not evidence of one duplicate stylesheet allocation per component. Browser-wide CDP node counters include other documents/detached objects and are retained separately from this connected-tree census.
 
@@ -4197,6 +4314,10 @@ No production field/RUM evidence, SSR/hydration performance, physical-device val
 <!-- BEGIN CALENDAR VARIANTS -->
 ## Calendar delivery variants
 
+Latest calendar policies use the same **main be47f046** packages as [the current-source campaign](#latest-main-refresh), with independently dated measurements below. The original calendar results remain historical.
+
+[Open the refreshed calendar comparison](#latest-calendar-variants).
+
 This experiment compares **the same main 6d09b31c packages and the same 16-card UI** under three consumer policies. The eager control is the exact previously frozen artifact, measured again alongside both alternatives. Previous results and peer libraries retain their original measurement dates; these variant results do not replace the default implementation.
 
 **Date (UTC)** means sample measurement date. **Run ID** replaces the less familiar “Acquisition” label and identifies the raw evidence. Report rebuild dates do not change measurement dates.
@@ -4482,3 +4603,1136 @@ Recovery qualification found that Chromium retained the deliberately failed dyna
 The existing showcase qualification passes 22 checks per policy. Calendar journeys are separately qualified across Chromium, Firefox and WebKit. Timing is Chromium only; automated focus checks do not replace manual assistive-technology review. See [qualification](../showcases/performance/reports/calendar-variants/qualification.json), [failure/cancellation/retry and touch checks](../showcases/performance/reports/calendar-variants/recovery-qualification.json), [build identities](../showcases/performance/reports/calendar-variants/builds.json), and [raw evidence receipt](../showcases/performance/reports/calendar-variants/evidence.json).
 
 <!-- END CALENDAR VARIANTS -->
+
+
+
+<!-- BEGIN LATEST MAIN -->
+## Latest main refresh
+
+**Latest measured source:** En Reve main be47f046, local main `be47f046395bac902e3bbb938a3ece3629e4aab7`, acquired 2026-10-01. The new rows are additive: previous En Reve and peer observations retain their dates. Frozen controls and the new candidate ran as separate sequential cohorts, so differences are descriptive, not paired causal estimates. [Latest campaign details](#latest-main-refresh) include coverage and source provenance. Earlier statements using “current” refer to their dated acquisitions.
+
+[Reproducible campaign report](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/results.md) · [Configuration](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/campaign.json) · [Stage outcomes](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/state.json) · [Source provenance](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/source.json) · [Structured tables and metric availability](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/tables.json) · [Connected DOM census](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/dom.json)
+
+desktop: 1500 × 1100, CPU 1×, latency 0 ms, download unlimited, upload unlimited. mobile: 390 × 844, CPU 4×, latency 100 ms, download 8.00 Mbps, upload 2.00 Mbps. Timing is exploratory workstation evidence. Memory checkpoint sample counts and API availability are recorded, with no forced GC; missing API readings are not zero. Lighthouse TBT and observer blocking excess use different windows. This refresh measures the existing eager/global/client-rendered showcase; calendar policies are reported separately, with their own measurement dates.
+
+### Latest Chunk structure
+
+Static import reachability from the production entry; actual requested bytes remain in transfer tables.
+
+| Implementation | Run ID | Date (UTC) | JS files | CSS files | Static initial assets | Dynamic import edges |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 1 | 1 | 2 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 1 | 1 | 2 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 1 | 1 | 2 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | 1 | 1 | 2 | 0 |
+
+### Latest Acquisition coverage
+
+Missing and failed samples remain visible. This report can be regenerated from archived raw data without starting a browser.
+
+| Run ID | Date (UTC) | Status | Planned n | Recorded n | Successful n | Failed n |
+| --- | --- | --- | --- | --- | --- | --- |
+| main-be47f046-20261001-v1-load | 2026-10-01 | complete | 120 | 120 | 120 | 0 |
+| main-be47f046-20261001-v1-current-load | 2026-10-01 | complete | 40 | 40 | 40 | 0 |
+| main-be47f046-20261001-v1-startup | 2026-10-01 | complete | 60 | 60 | 60 | 0 |
+| main-be47f046-20261001-v1-current-startup | 2026-10-01 | complete | 20 | 20 | 20 | 0 |
+| main-be47f046-20261001-v1-interactions | 2026-10-01 | complete | 60 | 60 | 60 | 0 |
+| main-be47f046-20261001-v1-current-interactions | 2026-10-01 | complete | 20 | 20 | 20 | 0 |
+| main-be47f046-20261001-v1-diagnostic | 2026-10-01 | complete | 3 | 3 | 3 | 0 |
+| main-be47f046-20261001-v1-current-diagnostic | 2026-10-01 | complete | 1 | 1 | 1 | 0 |
+| main-be47f046-20261001-v1-memory | 2026-10-01 | complete | 3 | 3 | 3 | 0 |
+| main-be47f046-20261001-v1-current-memory | 2026-10-01 | complete | 1 | 1 | 1 | 0 |
+| main-be47f046-20261001-v1-lighthouse | 2026-10-01 | complete | 15 | 15 | 15 | 0 |
+| main-be47f046-20261001-v1-current-lighthouse | 2026-10-01 | complete | 5 | 5 | 5 | 0 |
+| main-be47f046-20261001-v1-bfcache | 2026-10-01 | complete | 15 | 15 | 15 | 0 |
+| main-be47f046-20261001-v1-current-bfcache | 2026-10-01 | complete | 5 | 5 | 5 | 0 |
+| main-be47f046-20261001-v1-overhead | 2026-10-01 | complete | 30 | 30 | 30 | 0 |
+| main-be47f046-20261001-v1-current-overhead | 2026-10-01 | complete | 10 | 10 | 10 | 0 |
+
+### Latest interactions · transfer · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 93.5 | 0.327 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest interactions · canvas-landscape-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.6 | 43.5 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 11.5 | 45.8 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 7.5 | 40.8 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 12.6 | 46.2 |
+
+### Latest interactions · canvas-portrait-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 3.9 | 28.5 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 8.8 | 29.6 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 5.2 | 29.9 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 9.7 | 29.4 |
+
+### Latest interactions · asset-add-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.8 | 29.7 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 10.7 | 28.5 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 5.6 | 29.3 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 11.5 | 29.0 |
+
+### Latest interactions · asset-reset-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.6 | 28.9 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 9.4 | 28.8 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.6 | 29.1 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 9.5 | 29.1 |
+
+### Latest interactions · dialog-open-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 3.8 | 34.3 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 43.0 | 48.5 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 31.0 | 41.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 46.8 | 52.5 |
+
+### Latest interactions · canvas-landscape-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 3.7 | 30.2 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 8.0 | 31.1 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.8 | 30.1 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 8.3 | 30.2 |
+
+### Latest interactions · canvas-portrait-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 3.7 | 29.3 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 8.3 | 29.6 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.6 | 30.4 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 9.2 | 30.0 |
+
+### Latest interactions · asset-add-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.0 | 28.5 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 9.8 | 29.5 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.0 | 29.5 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 10.2 | 29.1 |
+
+### Latest interactions · asset-reset-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.5 | 29.3 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 8.0 | 29.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.0 | 29.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 8.0 | 29.0 |
+
+### Latest interactions · dialog-open-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 3.5 | 51.1 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 20.5 | 32.1 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 30.2 | 36.8 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 21.3 | 28.5 |
+
+### Latest interactions · review-submit · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.9 | 28.1 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 8.1 | 29.8 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.0 | 30.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 8.5 | 30.0 |
+
+### Latest interactions · commands-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 3.7 | 57.5 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 25.3 | 33.6 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 24.8 | 32.4 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 26.5 | 35.6 |
+
+### Latest interactions · transfer · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 58.9 | 0.344 | 57.2 | 1.3 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 93.5 | 0.327 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 91.9 | 0.336 | 86.5 | 5.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest interactions · canvas-landscape-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.2 | 37.0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 2.3 | 37.3 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.6 | 37.5 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 2.4 | 37.3 |
+
+### Latest interactions · canvas-portrait-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.7 | 31.8 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.7 | 31.9 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.0 | 31.6 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.7 | 32.0 |
+
+### Latest interactions · asset-add-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.8 | 31.8 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 2.1 | 31.8 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.2 | 31.7 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 2.1 | 31.7 |
+
+### Latest interactions · asset-reset-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.9 | 32.0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.9 | 31.9 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.5 | 32.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.8 | 31.8 |
+
+### Latest interactions · dialog-open-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.8 | 31.9 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 8.8 | 31.7 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.4 | 32.0 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 9.0 | 31.7 |
+
+### Latest interactions · canvas-landscape-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.7 | 32.2 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.5 | 32.2 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.0 | 31.8 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.6 | 31.5 |
+
+### Latest interactions · canvas-portrait-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.7 | 31.9 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.6 | 32.1 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.9 | 32.3 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.6 | 32.0 |
+
+### Latest interactions · asset-add-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.9 | 31.7 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.7 | 32.0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.1 | 32.1 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.8 | 31.8 |
+
+### Latest interactions · asset-reset-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.8 | 31.5 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.7 | 31.9 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.1 | 32.2 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.6 | 31.5 |
+
+### Latest interactions · dialog-open-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.7 | 32.1 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.1 | 31.9 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 6.0 | 31.9 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 4.2 | 31.7 |
+
+### Latest interactions · review-submit · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.9 | 31.8 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.6 | 32.0 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 1.3 | 32.1 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 1.6 | 32.0 |
+
+### Latest interactions · commands-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 0.7 | 32.1 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 5.2 | 31.9 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-interactions | 2026-10-01 | 10 | 0 | 4.6 | 31.7 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-interactions | 2026-10-01 | 10 | 0 | 5.3 | 31.8 |
+
+### Latest Connected DOM with and without dates
+
+Separate untimed connected-DOM census; open shadow trees, document nodes and whole date field included. Detached templates, closed roots and native date-picker UI excluded. Three desktop snapshots per implementation; eager En Reve opening/closing in the same session. No cross-library semantic equivalence claimed.
+
+| Implementation | Run ID | Date (UTC) | State | Snapshots n | Full nodes | Full elements | Date nodes | Date elements | Without date nodes | Without date elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | initial | 3 | 2887 | 1284 | 28 | 12 | 2859 | 1272 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | initial | 3 | 4667 | 1580 | 628 | 181 | 4039 | 1399 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | opened | 3 | 4667 | 1580 | 628 | 181 | 4039 | 1399 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | closed | 3 | 4667 | 1580 | 628 | 181 | 4039 | 1399 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | initial | 3 | 4210 | 1401 | 28 | 8 | 4182 | 1393 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | initial | 3 | 4685 | 1598 | 631 | 184 | 4054 | 1414 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | opened | 3 | 4685 | 1598 | 631 | 184 | 4054 | 1414 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | closed | 3 | 4685 | 1598 | 631 | 184 | 4054 | 1414 |
+
+### Latest Initial non-date node composition
+
+Connected initial tree with the complete date field excluded. Whitespace is a subset of text nodes. Base parts include SVG and native semantic elements; this is a census, not a conclusion that those elements are removable.
+
+| Implementation | Run ID | Date (UTC) | Snapshots n | Nodes | Elements | Text nodes | Whitespace text nodes | Comments | Open shadow roots | Slots | Base parts |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 3 | 2859 | 1272 | 1418 | 1185 | 0 | 167 | 451 | 0 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 3 | 4039 | 1399 | 1719 | 1440 | 763 | 156 | 391 | 50 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1 | 2026-10-01 | 3 | 4182 | 1393 | 1863 | 1639 | 728 | 196 | 493 | 97 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | 3 | 4054 | 1414 | 1719 | 1440 | 763 | 156 | 396 | 50 |
+
+### Latest Memory and retention
+
+No forced GC. API errors/timeouts are preserved; CDP nodes include retained/detached objects and are not connected-DOM counts. These samples alone do not establish a leak.
+
+| Implementation | Run ID | Date (UTC) | Checkpoint kind | Cycles / openings | API status | API MiB | JS heap MiB | CDP nodes | Listeners |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 0 | ok | 5.18 | 4.32 | 6376 | 547 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 10 | ok | 5.65 | 5.21 | 6495 | 547 |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 50 | ok | 5.82 | 5.56 | 6535 | 547 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 0 | ok | 4.42 | 3.68 | 5136 | 747 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 10 | ok | 4.77 | 4.58 | 5223 | 747 |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 50 | ok | 4.78 | 4.81 | 5263 | 747 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 0 | timeout | — | 4.24 | 4138 | 618 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 10 | ok | 3.84 | 4.38 | 4617 | 692 |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-memory | 2026-10-01 | Journey | 50 | ok | 4.34 | 4.78 | 7497 | 1012 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-memory | 2026-10-01 | Journey | 0 | ok | 5.24 | 4.35 | 6397 | 547 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-memory | 2026-10-01 | Journey | 10 | ok | 5.67 | 5.27 | 6518 | 547 |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-memory | 2026-10-01 | Journey | 50 | ok | 5.86 | 5.60 | 6558 | 547 |
+
+### Latest Current minus frozen control
+
+Candidate median minus frozen-control median (or deterministic bundle size). Positive means more/slower. Separate sequential cohorts, no paired confidence interval or causal attribution; timing drift and harness differences limit comparisons to earlier dates.
+
+| Implementation | Run ID | Date (UTC) | Scenario | Metric | Unit | Frozen control | Current source | Change | Change percent |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | load / loading / mobile / cold | LCP ms | ms | 672.0 | 648.0 | -24.00 | -3.57 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | load / loading / mobile / warm | LCP ms | ms | 306.0 | 304.0 | -2.00 | -0.65 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | startup / startup / mobile / cold | Result from navigation ms | ms | 653.7 | 650.4 | -3.30 | -0.50 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | interactions / interactions / mobile / cold | Scripted INP ms | ms | 48.0 | 56.0 | 8.00 | 16.67 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | Production payload sizes | JS raw KiB | KiB | 439.5 | 445.0 | 5.50 | 1.25 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | Production payload sizes | Initial JS Brotli KiB | KiB | 87.0 | 88.2 | 1.20 | 1.38 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | diagnostic / Connected DOM and styles / desktop / cold | connectedNodes | nodes | 4668 | 4686 | 18.00 | 0.39 |
+| En Reve main be47f046 | main-be47f046-20261001-v1 | 2026-10-01 | diagnostic / Connected DOM and styles / desktop / cold | connectedElements | elements | 1580 | 1598 | 18.00 | 1.14 |
+
+### Latest Back-forward cache observations
+
+Restoration and post-return behavior are diagnostic observations; automation can affect eligibility. Raw evidence retains browser restore reasons.
+
+| Implementation | Run ID | Date (UTC) | Status | Evidence |
+| --- | --- | --- | --- | --- |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1704.2999997138977,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1669.1999998092651,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1695.2999997138977,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1651.7000002861023,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1685.9000000953674,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1660,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1656.5,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1602,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1728.9000000953674,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1736.8000001907349,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1652.3000001907349,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1666.5999999046326,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Fluent · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1658.6999998092651,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve frozen 6d09b31c · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1696.0999999046326,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| Web Awesome · Web Components · 2026-10-01 | main-be47f046-20261001-v1-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1673.3000001907349,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1751.5,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1742.5999999046326,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1708.5,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1704.0999999046326,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+| En Reve main be47f046 | main-be47f046-20261001-v1-current-bfcache | 2026-10-01 | ok | {"sameDocument":true,"pageshow":{"at":1718.4000000953674,"persisted":true},"notRestoredReasons":null,"note":"Direct CDP diagnostic; no Playwright lifecycle waits after restore; not a field hit rate","interactiveAfterReturn":true} |
+
+### Latest main findings and follow-up
+
+The latest eager build has similar primary load/startup timing to the frozen En Reve control, with slightly more JavaScript and DOM. Mobile cold LCP is 648 ms versus 672 ms; startup result from navigation is 650.4 ms versus 653.7 ms. These are ten-sample medians from separate sequential cohorts, not proof of a code-caused improvement. Fresh Fluent WC and Web Awesome mobile cold LCP medians are 536 ms and 628 ms.
+
+- **Delivery priority:** total mobile cold response bytes are 94.7 KiB for current En Reve, 58.9 KiB for Fluent and 91.9 KiB for Web Awesome. Current JS grew by 5,667 raw bytes (+1.26%) and 1,266 Brotli bytes (+1.42%) over the frozen En Reve build. Use the latest calendar-policy results to evaluate the load-versus-first-open tradeoff before changing defaults.
+- **Interaction follow-up:** mobile scripted INP rose from 48 to 56 ms. The largest named mobile frame-opportunity median increase is first dialog opening, 48.5 to 52.5 ms; its warm opening decreases from 32.1 to 28.5 ms. Confirm these small signals in a matched run before attributing them to a particular change.
+- **DOM follow-up:** the dedicated census increased from 4,667 to 4,685 nodes: +3 within the complete date field and +15 outside it. Without dates, current En Reve has 4,054 nodes/1,414 elements, Fluent 2,859/1,272, and Web Awesome 4,182/1,393. The new non-date elements are five each of div/span/slot; whitespace, comments and base-part counts are unchanged. The source diff points to the shared overlay description div/slot/fallback-span structure, consistent with six surfaces and the +18 total. Preserve its description-slot and ARIA-target contract when considering optimizations. Continue the semantic wrapper review, while distinguishing total nodes from elements. The timing diagnostic has a slightly different absolute counting scope and independently shows the same +18 delta.
+- **Lighthouse tail investigation:** two of five current audits have roughly 8.7-second FCP/LCP; frozen En Reve and Fluent each have one similar outlier. Current median Lighthouse LCP is 859.7 ms, p75 8,708.1 ms, max 8,754.7 ms. Raw audits identify element render delay while request durations remain short. Keep these observations; investigate the audit/paint path before treating the difference as library-specific. All recorded Lighthouse TBT values are zero, which does not account for this delay. Do not pool Lighthouse and primary-load cohorts.
+- **Memory limits:** current JS heap checkpoints are 4.35/5.27/5.60 MiB after 0/10/50 cycles, versus frozen 4.32/5.21/5.56 MiB. One session, no forced GC, and one initial Fluent memory-API timeout make this diagnostic evidence, not a leak verdict.
+
+All 408 planned main-campaign samples were retained with zero failed samples; API-level unavailability remains explicit. A reporting-only compatibility repair accepted Lighthouse's recorded start dates despite its historical omission of finish timestamps. [Repair receipt](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1/reporting-recovery/receipt.json) and raw evidence are preserved.
+
+#### Current calendar policy tradeoff
+
+The [latest calendar comparison](#latest-calendar-variants) uses the same package build in its own randomized policy cohort. Mobile cold LCP medians are 676/666/664 ms for eager/deferred/split (n=10 each). First calendar focus is 50.1/68.7/186.3 ms (n=30 each); repeated focus is approximately 20.5 ms for all three. Split code prepared before the click reduces first focus to 71.4 ms; preparation still in flight gives 149.8 ms (n=10 each). Consult the paired-difference intervals below rather than treating these median load differences as established wins.
+
+Deferred and split policies both remove **495 initially connected nodes**, from 4,685 to 4,190. The full date field falls from 631 to 136 nodes; non-date nodes remain 4,054. Once opened, both retain 4,687 nodes even after closing, so this is an initial-construction saving, not sustained removal after use. Split delivery saves about **2.9 KiB of initial Brotli JS**, while adding a roughly 5.0 KiB optional calendar chunk and slightly increasing total emitted compressed JS.
+
+These observations favor testing deferred construction where initial DOM cost matters, while treating split delivery as a consumer policy that should account for likelihood of calendar use and preparation opportunities. They do not support changing the default based only on initial bundle size. Source-map warnings from the calendar transform limit per-source attribution; emitted-byte and browser measurements remain separately recorded.
+
+The calendar Lighthouse cohort also retains paint outliers: median LCP is 797.5 ms eager, 813.1 ms deferred, and 8,409.7 ms split (five audits each). Its primary mobile LCP paired-change intervals include zero: deferred −10.0 ms [−34.0, 52.0], split −12.0 ms [−28.0, 12.0]. First-focus penalties are clearer: deferred +18.6 ms [16.2, 21.3], split +136.2 ms [133.5, 138.6]. These exploratory bootstrap intervals and the audit tail reinforce the need to investigate before changing delivery defaults.
+
+<!-- END LATEST MAIN -->
+
+<!-- BEGIN LATEST CALENDAR -->
+## Latest calendar variants
+
+Eager, deferred construction, and deferred code plus construction are built from the exact archived consumer of `main-be47f046-20261001-v1` (source `be47f046395bac902e3bbb938a3ece3629e4aab7`). The eager artifact is copied byte-for-byte; deferred/split variants use the same lockfile and package tarballs. Policies are randomized within matched profile/cache/replicate blocks. Paired deltas here compare policies within this campaign only. Earlier dates and peer-library acquisitions are not paired with it.
+
+desktop: 1500 × 1100, CPU 1×, latency 0 ms, download unlimited, upload unlimited. mobile: 390 × 844, CPU 4×, latency 100 ms, download 8.00 Mbps, upload 2.00 Mbps. The primary load/startup/journey matrix uses n=10, mobile first calendar use n=30, prepared split paths n=10, mobile Lighthouse n=5, and memory n=1 sessions per policy. A frame opportunity is not a paint guarantee. Missing APIs remain unavailable. Calendar-policy transforms warn that their source maps are incomplete; these tables compare emitted bytes and observed behavior, not per-source map attribution.
+
+[Complete campaign report](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/results.md) · [Configuration](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/campaign.json) · [Stage outcomes](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/state.json) · [Source provenance](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/source.json) · [Structured tables and metric availability](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/tables.json) · [Functional qualification](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/qualification.json) · [Cancellation and recovery](../showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/recovery-qualification.json)
+
+### Latest calendar Production payload sizes
+
+Offline gzip9/Brotli11 sizes. Initial assets follow HTML/static imports; source maps excluded. Date identifies the measurement cohort, not an invented build date.
+
+| Implementation | Run ID | Date (UTC) | JS raw KiB | JS gzip KiB | JS Brotli KiB | Initial JS Brotli KiB | CSS raw KiB | CSS Brotli KiB | Local fonts Brotli KiB | HTML raw KiB | HTML Brotli KiB |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar | 2026-10-01 | 445.0 | 109.9 | 88.2 | 88.2 | 43.5 | 5.9 | 0.0 | 0.4 | 0.2 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar | 2026-10-01 | 445.1 | 109.9 | 88.1 | 88.1 | 43.5 | 5.9 | 0.0 | 0.4 | 0.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar | 2026-10-01 | 447.2 | 111.6 | 90.3 | 85.3 | 43.5 | 5.9 | 0.0 | 0.4 | 0.2 |
+
+### Latest calendar Chunk structure
+
+Static import reachability from the production entry; actual requested bytes remain in transfer tables.
+
+| Implementation | Run ID | Date (UTC) | JS files | CSS files | Static initial assets | Dynamic import edges |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar | 2026-10-01 | 1 | 1 | 2 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar | 2026-10-01 | 1 | 1 | 2 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar | 2026-10-01 | 2 | 1 | 2 | 1 |
+
+### Latest calendar Acquisition coverage
+
+Missing and failed samples remain visible. This report can be regenerated from archived raw data without starting a browser.
+
+| Run ID | Date (UTC) | Status | Planned n | Recorded n | Successful n | Failed n |
+| --- | --- | --- | --- | --- | --- | --- |
+| main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | complete | 383 | 383 | 383 | 0 |
+| main-be47f046-20261001-v1-calendar-lighthouse | 2026-10-01 | complete | 15 | 15 | 15 | 0 |
+
+### Latest calendar desktop cold loading
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 104.0 | 104.0 | 107.0 | 0.000000 | 0.000000 | 0.000000 | 15.5 | 91.3 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 108.0 | 108.0 | 112.0 | 0.000000 | 0.000000 | 0.000000 | 17.5 | 94.4 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 102.0 | 102.0 | 108.0 | 0.000000 | 0.000000 | 0.000000 | 15.8 | 89.3 | — |
+
+### Latest calendar desktop cold LCP attribution
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 15.5 | 0.0 | 0.0 | 89.3 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 17.5 | 0.0 | 0.0 | 89.7 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 15.8 | 0.0 | 0.0 | 84.9 |
+
+### Latest calendar desktop cold response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 91.8 | 0.328 | 85.4 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest calendar desktop cold main-thread work
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 18.1 | 12.9 | 6.6 | 81.6 | 7 | 11 | 60.5 | 10.5 | 0.0 | 62.6 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 18.5 | 13.4 | 6.6 | 82.5 | 7 | 11 | 59.5 | 9.5 | 0.0 | 61.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 18.2 | 12.9 | 6.6 | 79.2 | 7 | 11 | 57.0 | 7.0 | 0.0 | 59.1 |
+
+### Latest calendar desktop warm loading
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 48.0 | 48.0 | 48.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 45.0 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 44.0 | 44.0 | 44.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 42.5 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 44.0 | 44.0 | 47.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 42.6 | — |
+
+### Latest calendar desktop warm LCP attribution
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.8 | 0.0 | 0.0 | 47.2 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.8 | 0.0 | 0.0 | 43.3 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.9 | 0.0 | 0.0 | 43.2 |
+
+### Latest calendar desktop warm response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.2 | 0.244 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.2 | 0.245 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+
+### Latest calendar desktop warm main-thread work
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 12.3 | 9.2 | 3.3 | 53.8 | 6 | 10 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 12.1 | 8.8 | 3.2 | 52.2 | 6 | 10 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 11.8 | 8.9 | 3.3 | 52.1 | 6 | 10 | 0.0 | 0.0 | 0.0 | 0.0 |
+
+### Latest calendar mobile cold loading
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 676.0 | 676.0 | 683.0 | 0.000000 | 0.000000 | 0.000000 | 16.0 | 671.7 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 666.0 | 666.0 | 674.0 | 0.000000 | 0.000000 | 0.000000 | 16.4 | 661.9 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 664.0 | 664.0 | 680.0 | 0.000000 | 0.000000 | 0.000000 | 16.0 | 658.7 | — |
+
+### Latest calendar mobile cold LCP attribution
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 16.0 | 0.0 | 0.0 | 654.2 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 16.4 | 0.0 | 0.0 | 638.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 16.0 | 0.0 | 0.0 | 643.1 |
+
+### Latest calendar mobile cold response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 91.8 | 0.328 | 85.4 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest calendar mobile cold main-thread work
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.4 | 63.8 | 34.8 | 398.6 | 7 | 11 | 310.0 | 260.0 | 0.0 | 433.2 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 89.5 | 61.6 | 34.1 | 381.5 | 7 | 11 | 289.5 | 239.5 | 0.0 | 414.7 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.6 | 62.9 | 34.8 | 390.8 | 7 | 11 | 298.0 | 248.0 | 0.0 | 420.9 |
+
+### Latest calendar mobile warm loading
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 306.0 | 306.0 | 317.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 317.7 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 298.0 | 298.0 | 303.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 307.3 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 298.0 | 298.0 | 300.0 | 0.000000 | 0.000000 | 0.000000 | 0.8 | 306.2 | — |
+
+### Latest calendar mobile warm LCP attribution
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.8 | 0.0 | 0.0 | 305.3 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.8 | 0.0 | 0.0 | 297.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.8 | 0.0 | 0.0 | 296.3 |
+
+### Latest calendar mobile warm response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.2 | 0.244 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.2 | 0.245 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+
+### Latest calendar mobile warm main-thread work
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 57.1 | 44.7 | 15.2 | 249.3 | 7 | 11 | 171.0 | 121.0 | 0.0 | 175.7 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 58.2 | 43.5 | 14.8 | 239.4 | 7 | 11 | 164.5 | 114.5 | 0.0 | 168.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 55.7 | 43.2 | 14.4 | 239.0 | 6 | 10 | 164.0 | 114.0 | 0.0 | 169.3 |
+
+### Latest calendar desktop cold startup usability
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Control observed ms | Click from navigation ms | Result from navigation ms | Result p75 ms | Dispatch overhead ms | Discovery probe ms | Click to result ms | Click to frame ms | First input delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 88.8 | 95.1 | 97.5 | 98.5 | 5.8 | 0.1 | 2.1 | 30.2 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 85.7 | 90.7 | 93.2 | 95.7 | 5.4 | 0.1 | 2.5 | 34.0 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 85.3 | 90.9 | 93.3 | 94.6 | 5.7 | 0.1 | 2.3 | 34.7 | — |
+
+### Latest calendar desktop cold response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 91.8 | 0.328 | 85.4 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest calendar desktop cold interaction summary
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Scripted INP ms | Scripted INP p75 ms | First input delay ms | Journey CLS | Max scroll rAF gap ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 40.0 | 40.0 | 0.8 | 0.000000 | 16.8 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 40.0 | 40.0 | 0.8 | 0.000000 | 16.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 40.0 | 40.0 | 0.8 | 0.000000 | 16.8 |
+
+### Latest calendar desktop cold response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 91.8 | 0.328 | 85.4 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest calendar desktop cold canvas landscape first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.5 | 37.2 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.5 | 37.3 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.4 | 37.1 |
+
+### Latest calendar desktop cold canvas portrait first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.7 | 32.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.8 | 31.7 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.7 | 31.8 |
+
+### Latest calendar desktop cold asset add first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.1 | 32.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.1 | 31.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.1 | 32.0 |
+
+### Latest calendar desktop cold asset reset first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.0 | 31.8 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.9 | 32.0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.0 | 31.8 |
+
+### Latest calendar desktop cold dialog open first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.9 | 31.7 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.0 | 31.7 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.0 | 31.6 |
+
+### Latest calendar desktop cold canvas landscape warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 31.8 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 32.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 32.0 |
+
+### Latest calendar desktop cold canvas portrait warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 32.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.7 | 32.3 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.8 | 32.0 |
+
+### Latest calendar desktop cold asset add warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.9 | 32.1 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.8 | 32.1 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 2.0 | 31.9 |
+
+### Latest calendar desktop cold asset reset warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.7 | 31.8 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.7 | 31.9 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 31.6 |
+
+### Latest calendar desktop cold dialog open warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4.4 | 31.6 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4.3 | 31.6 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4.4 | 31.8 |
+
+### Latest calendar desktop cold review submit
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.7 | 32.2 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 32.1 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 1.6 | 31.9 |
+
+### Latest calendar desktop cold commands first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 5.6 | 31.6 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 5.2 | 31.9 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 5.5 | 32.0 |
+
+### Latest calendar mobile cold startup usability
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Control observed ms | Click from navigation ms | Result from navigation ms | Result p75 ms | Dispatch overhead ms | Discovery probe ms | Click to result ms | Click to frame ms | First input delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 648.4 | 671.6 | 684.4 | 700.4 | 19.5 | 1.0 | 11.0 | 43.0 | 3.3 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 617.3 | 635.5 | 647.0 | 655.5 | 18.8 | 0.8 | 11.1 | 42.3 | 3.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 620.5 | 639.9 | 652.9 | 664.4 | 19.9 | 0.9 | 12.0 | 43.0 | 3.2 |
+
+### Latest calendar mobile cold response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 91.8 | 0.328 | 85.4 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest calendar mobile cold interaction summary
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Scripted INP ms | Scripted INP p75 ms | First input delay ms | Journey CLS | Max scroll rAF gap ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 48.0 | 48.0 | 3.6 | 0.000000 | 16.8 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 52.0 | 56.0 | 3.5 | 0.000000 | 16.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 48.0 | 56.0 | 3.6 | 0.000000 | 16.8 |
+
+### Latest calendar mobile cold response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 91.8 | 0.328 | 85.4 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+### Latest calendar mobile cold canvas landscape first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 12.8 | 45.9 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 12.6 | 44.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 12.5 | 44.0 |
+
+### Latest calendar mobile cold canvas portrait first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.2 | 29.7 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.9 | 29.7 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.7 | 29.4 |
+
+### Latest calendar mobile cold asset add first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 11.1 | 29.3 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 10.5 | 29.4 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 10.1 | 29.5 |
+
+### Latest calendar mobile cold asset reset first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.4 | 28.5 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.5 | 28.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.8 | 28.6 |
+
+### Latest calendar mobile cold dialog open first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 44.1 | 49.5 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 44.6 | 49.7 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 44.0 | 49.5 |
+
+### Latest calendar mobile cold canvas landscape warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.0 | 30.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 7.5 | 30.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 7.7 | 30.1 |
+
+### Latest calendar mobile cold canvas portrait warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.8 | 30.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 7.8 | 30.1 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.4 | 30.2 |
+
+### Latest calendar mobile cold asset add warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.2 | 29.5 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.3 | 29.9 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 9.5 | 29.6 |
+
+### Latest calendar mobile cold asset reset warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.9 | 28.8 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.0 | 28.8 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 7.9 | 29.0 |
+
+### Latest calendar mobile cold dialog open warm
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 22.9 | 31.3 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 20.8 | 31.5 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 21.9 | 29.1 |
+
+### Latest calendar mobile cold review submit
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.5 | 30.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.4 | 29.9 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 8.0 | 29.9 |
+
+### Latest calendar mobile cold commands first
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Result ms | Frame opportunity ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 26.3 | 35.5 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 26.9 | 36.2 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 26.9 | 35.7 |
+
+### Latest calendar desktop cold Calendar focus
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 10.3 | 24.4 | 11.1 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 13.6 | 23.8 | 11.1 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 21.3 | 38.3 | 12.3 | — |
+
+### Latest calendar desktop cold Connected DOM with and without date
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4685 | 1598 | 631 | 184 | 4054 | 1414 | 4685 | 1598 | 631 | 184 | 4054 | 1414 | 4685 | 1598 | 631 | 184 | 4054 | 1414 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4190 | 1460 | 136 | 46 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4190 | 1460 | 136 | 46 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 |
+
+### Latest calendar desktop cold Calendar response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 96.9 | 0.328 | 90.5 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+### Latest calendar mobile cold Calendar focus
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 50.1 | 56.8 | 20.5 | — |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 68.7 | 75.6 | 20.4 | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 186.3 | 193.3 | 20.5 | — |
+
+### Latest calendar mobile cold Connected DOM with and without date
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 4685 | 1598 | 631 | 184 | 4054 | 1414 | 4685 | 1598 | 631 | 184 | 4054 | 1414 | 4685 | 1598 | 631 | 184 | 4054 | 1414 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 4190 | 1460 | 136 | 46 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 4190 | 1460 | 136 | 46 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 |
+
+### Latest calendar mobile cold Calendar response transfer
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 94.7 | 0.326 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 94.7 | 0.327 | 88.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 30 | 0 | 96.9 | 0.328 | 90.5 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+### Latest calendar mobile cold Calendar focus · ready preparation
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference |  | — | 0 | 0 | — | — | — | — |
+| En Reve be47f046 · Deferred construction |  | — | 0 | 0 | — | — | — | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 71.4 | 78.1 | 21.8 | 215.6 |
+
+### Latest calendar mobile cold Connected DOM with and without date · ready preparation
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4190 | 1460 | 136 | 46 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 |
+
+### Latest calendar mobile cold Calendar response transfer · ready preparation
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 96.9 | 0.328 | 90.5 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+### Latest calendar mobile cold Calendar focus · pending preparation
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference |  | — | 0 | 0 | — | — | — | — |
+| En Reve be47f046 · Deferred construction |  | — | 0 | 0 | — | — | — | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 149.8 | 156.4 | 20.8 | 180.0 |
+
+### Latest calendar mobile cold Connected DOM with and without date · pending preparation
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 4190 | 1460 | 136 | 46 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 | 4687 | 1599 | 633 | 185 | 4054 | 1414 |
+
+### Latest calendar mobile cold Calendar response transfer · pending preparation
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 10 | 0 | 96.9 | 0.328 | 90.5 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+### Latest calendar mobile cold Lighthouse audits
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | LCP max ms | TBT ms | TBT p75 ms | TBT max ms | Speed Index ms | CLS |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-lighthouse | 2026-10-01 | 5 | 0 | 797.5 | 797.5 | 848.4 | 8500.0 | 0.0 | 0.0 | 0.0 | 638.0 | 0.000000 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-lighthouse | 2026-10-01 | 5 | 0 | 813.1 | 813.1 | 843.3 | 8549.2 | 0.0 | 0.0 | 0.0 | 654.0 | 0.000000 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-lighthouse | 2026-10-01 | 5 | 0 | 8409.7 | 8409.7 | 8441.0 | 8551.2 | 0.0 | 0.0 | 0.0 | 8411.0 | 0.000000 |
+
+### Latest calendar Memory and retention
+
+No forced GC. API errors/timeouts are preserved; CDP nodes include retained/detached objects and are not connected-DOM counts. These samples alone do not establish a leak.
+
+| Implementation | Run ID | Date (UTC) | Checkpoint kind | Cycles / openings | API status | API MiB | JS heap MiB | CDP nodes | Listeners |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Journey | 0 | ok | 6.13 | 5.52 | 6459 | 561 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Calendar | 0 | ok | 4.97 | 4.21 | 5835 | 415 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Calendar | 10 | ok | 6.21 | 5.52 | 6459 | 561 |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Journey | 0 | ok | 6.02 | 5.39 | 6453 | 560 |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Calendar | 0 | timeout | — | 5.40 | 7200 | 547 |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Calendar | 10 | ok | 6.10 | 5.40 | 6453 | 560 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Journey | 0 | ok | 6.21 | 5.57 | 6459 | 561 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Calendar | 0 | ok | 4.98 | 4.18 | 5835 | 415 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | Calendar | 10 | timeout | — | 5.53 | 6474 | 561 |
+
+### Latest calendar Memory after 0 cycles
+
+Descriptive checkpoint readings; counts and API availability are shown. No forced GC or leak conclusion.
+
+| Implementation | Run ID | Date (UTC) | Checkpoints n | API success n | API unavailable n | API MiB | JS heap MiB | Browser DOM nodes | Event listeners | API status |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Eager reference | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 1 | 1 | 0 | 6.02 | 5.39 | 6453 | 560 | ok |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 1 | 1 | 0 | 6.13 | 5.52 | 6459 | 561 | ok |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | 1 | 1 | 0 | 6.21 | 5.57 | 6459 | 561 | ok |
+
+### Latest calendar Paired change relative to eager
+
+Candidate minus eager; positive means slower. Matched blocks from this campaign only. Exploratory bootstrap intervals, no multiple-comparison correction or automatic baseline promotion.
+
+| Implementation | Run ID | Date (UTC) | Profile | Metric | Paired n | Median change ms | 95% lower ms | 95% upper ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | desktop | LCP | 10 | 4.0 | -6.0 | 12.0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | desktop | LCP | 10 | -2.0 | -12.0 | 6.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | desktop | First focus | 10 | 3.3 | 0.4 | 4.3 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | desktop | First focus | 10 | 11.0 | 8.2 | 12.9 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | mobile | LCP | 10 | -10.0 | -34.0 | 52.0 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | mobile | LCP | 10 | -12.0 | -28.0 | 12.0 |
+| En Reve be47f046 · Deferred construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | mobile | First focus | 30 | 18.6 | 16.2 | 21.3 |
+| En Reve be47f046 · Deferred code + construction | main-be47f046-20261001-v1-calendar-primary | 2026-10-01 | mobile | First focus | 30 | 136.2 | 133.5 | 138.6 |
+
+<!-- END LATEST CALENDAR -->

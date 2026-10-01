@@ -1,0 +1,57 @@
+[
+  {
+    "variant": "lazy-commands",
+    "coldKeyboardCommands": true,
+    "allCardsReveal": true,
+    "errors": []
+  },
+  {
+    "variant": "intent-commands",
+    "coldKeyboardCommands": true,
+    "allCardsReveal": true,
+    "errors": []
+  },
+  {
+    "variant": "content-visibility",
+    "coldKeyboardCommands": true,
+    "allCardsReveal": true,
+    "errors": []
+  },
+  {
+    "variant": "split-vendor-edit",
+    "stableVendorRetrievedFromBrowserCache": true,
+    "memoryOrDiskCacheEvent": true,
+    "responses": [
+      {
+        "requestId": "15A8D5AFFF20AF9B603DEC758CAAC4F4",
+        "url": "https://127.0.0.1:4617/",
+        "diskCache": false,
+        "status": 200
+      },
+      {
+        "requestId": "28941.12",
+        "url": "https://127.0.0.1:4617/assets/vendor-JCQzG2oR.js",
+        "diskCache": false,
+        "status": 200
+      },
+      {
+        "requestId": "28941.13",
+        "url": "https://127.0.0.1:4617/assets/index-DADEvvIk.css",
+        "diskCache": false,
+        "status": 200
+      },
+      {
+        "requestId": "28941.11",
+        "url": "https://127.0.0.1:4617/assets/index-5whDyuy6.js",
+        "diskCache": false,
+        "status": 200
+      },
+      {
+        "requestId": "28941.17",
+        "url": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E",
+        "diskCache": false,
+        "status": 200
+      }
+    ]
+  }
+]

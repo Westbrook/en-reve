@@ -1,0 +1,13 @@
+{
+  "completedAt": "2026-10-01T19:54:54.445Z",
+  "command": "npm --prefix showcases/performance-results test -- --grep \"all columns sort|full report|all source rows|latest acquisition|CSV exports\" --workers=1",
+  "output": "/private/tmp/en-main-performance-reader-main-be47f046-20261001-v1-recheck",
+  "exitCode": 0,
+  "sourceSha256": "1eb635122ec1872ddc2842b12fd1719f806dd5a579a9168c7af8cccbe44ec1a3",
+  "url": "http://127.0.0.1:4188/?progress-report#latest-main-refresh",
+  "priorAttempt": {
+    "output": "/private/tmp/en-main-performance-reader-main-be47f046-20261001-v1",
+    "reason": "New geometry assertion incorrectly included a col sizing element; corrected to visible th/td cells and retained all row/column checks. Timeout scales with the number of dated tables."
+  },
+  "scope": "Filtered three-engine report-browser checks. Separate fixture qualification and measurement evidence; no broad correctness or manual accessibility claim."
+}

@@ -1,0 +1,125 @@
+{
+  "at": "2026-09-24T00:14:25.176Z",
+  "name": "en-reve",
+  "engine": "chromium",
+  "suites": [
+    {
+      "suite": "smoke",
+      "exitCode": 0,
+      "results": [
+        {
+          "name": "en-reve",
+          "checks": [
+            {
+              "name": "sixteen cards; no docs/theme controls",
+              "pass": true
+            },
+            {
+              "name": "canvas changes artwork",
+              "pass": true
+            },
+            {
+              "name": "create dialog",
+              "pass": true
+            },
+            {
+              "name": "preview dialog",
+              "pass": true
+            },
+            {
+              "name": "commands dialog",
+              "pass": true
+            },
+            {
+              "name": "native action menu",
+              "pass": true
+            },
+            {
+              "name": "brief tabs",
+              "pass": true
+            },
+            {
+              "name": "checklist enables approval",
+              "pass": true
+            },
+            {
+              "name": "project creation",
+              "pass": true
+            },
+            {
+              "name": "output slider updates art",
+              "pass": true
+            },
+            {
+              "name": "export overlay",
+              "pass": true
+            },
+            {
+              "name": "review submission",
+              "pass": true
+            },
+            {
+              "name": "notification save",
+              "pass": true
+            },
+            {
+              "name": "chat response",
+              "pass": true
+            },
+            {
+              "name": "empty collection and reset",
+              "pass": true
+            },
+            {
+              "name": "reset preserves another card",
+              "pass": true
+            },
+            {
+              "name": "390px reflow",
+              "pass": true
+            },
+            {
+              "name": "progress return only when flagged",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "153.0.8010.12"
+        }
+      ]
+    },
+    {
+      "suite": "secondary",
+      "exitCode": 0,
+      "results": [
+        {
+          "name": "en-reve",
+          "checks": [
+            {
+              "name": "activity period updates data",
+              "pass": true
+            },
+            {
+              "name": "teammate invitation",
+              "pass": true
+            },
+            {
+              "name": "study popover",
+              "pass": true
+            },
+            {
+              "name": "tablet two columns",
+              "pass": true
+            }
+          ],
+          "errors": [],
+          "browser": "153.0.8010.12"
+        }
+      ]
+    }
+  ],
+  "fingerprints": {
+    "en-reve": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+  },
+  "passed": true
+}

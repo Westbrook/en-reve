@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-01T12:46:41.494Z",
+  "passed": true,
+  "unitTests": {
+    "original": 76,
+    "relocated": 76
+  },
+  "transfer": {
+    "bundle": "/Users/westbrook/.codex/visualizations/2026/09/20/01a0bf90-d70f-7c62-9763-c682dedc7164/performance-portable-20261001-final",
+    "manifestSha256": "86965d1a17bc315a712f916fc5425b8c4817cce66eb075ef0be2a4a98e70c875",
+    "files": 4372,
+    "restoredDirectory": "/private/tmp/en-performance-restored-20261001-final",
+    "privateKeys": 0
+  },
+  "replay": {
+    "source": "September 24 retained acquisitions; no new timings",
+    "primary": 383,
+    "lighthouse": 15,
+    "tables": 64,
+    "allTableValuesAndCoverageIdentical": true,
+    "htmlNumericColumns": 495,
+    "htmlDateTables": 61,
+    "htmlImplementationTables": 63
+  },
+  "historicalFixtureSha256": "2ccff2c14a7e30ba80f68419485044d768af3c7c4bc42013cb70e125cb999172",
+  "limitations": [
+    "Full fresh fixture bootstrap and new browser/timing campaigns not run; existing comprehensive validation owns the machine lease.",
+    "Relocation uses the same host and browser/toolchain family; cross-OS timing equivalence is not claimed.",
+    "No root dependencies added, broad commit, publication, schedule activation or baseline promotion."
+  ]
+}

@@ -1,0 +1,18 @@
+
+added 42 packages in 819ms
+npm warn install-scripts 1 package had install scripts blocked because they are not covered by allowScripts:
+npm warn install-scripts   fsevents@2.3.3 (install: (install scripts present))
+npm warn install-scripts
+npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+main-be47f046-20261001-v1-calendar-eager [ [ 'assets/index-C9eq-f9b.js', 455724, 90314 ] ]
+[plugin calendar-policy] [33m[SOURCEMAP_BROKEN] [0mSourcemap is likely to be incorrect: a plugin (calendar-policy) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+main-be47f046-20261001-v1-calendar-deferred [ [ 'assets/index-DbqS77PV.js', 455752, 90249 ] ]
+[plugin calendar-policy] [33m[SOURCEMAP_BROKEN] [0mSourcemap is likely to be incorrect: a plugin (calendar-policy) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+[plugin calendar-policy] [33m[SOURCEMAP_BROKEN] [0mSourcemap is likely to be incorrect: a plugin (calendar-policy) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help: https://rolldown.rs/guide/troubleshooting#warning-sourcemap-is-likely-to-be-incorrect
+
+main-be47f046-20261001-v1-calendar-split [
+  [ 'assets/calendar-BkKesFi7.js', 20849, 5119 ],
+  [ 'assets/index-viyPot4U.js', 437074, 87337 ]
+]

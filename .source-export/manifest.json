@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "6d792eba74135f12a1e6f026ffbd1357e3391819",
-  "exportedAt": "2026-10-01T17:06:52.623977+00:00",
-  "scope": "Source-only snapshot. Original full history and excluded historical evidence retained locally.",
+  "sourceCommit": "d314733215b89149d538bce3a3f8728c2dcc0822",
+  "exportedAt": "2026-10-01T20:14:37.095497+00:00",
+  "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
       "path": "artifacts/api-01/verification.json",
@@ -80200,6 +80200,150 @@
       "mode": "100644",
       "object": "1d8fe0e45d59e493aa7993e8c119bf901acbc024",
       "bytes": 2105
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/collector.js",
+      "mode": "100644",
+      "object": "bc3abe69b518b3c0a9144f586dddb9919c958383",
+      "bytes": 19693
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/package-lock.json",
+      "mode": "100644",
+      "object": "b166553bba4ec10849717d7f552dab5029e666d9",
+      "bytes": 71182
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/package.json",
+      "mode": "100644",
+      "object": "f162f1ce716e24a182bb692f4d8c39e7a646da37",
+      "bytes": 993
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/profiles/profiles.json",
+      "mode": "100644",
+      "object": "9a82b4bb7830dc7dbbb2c420669484d09f076db9",
+      "bytes": 438
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/registry/systems.json",
+      "mode": "100644",
+      "object": "c53eb72dd9a7d82b94cc3e84aa46ef4d36af8cd7",
+      "bytes": 805
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/scenarios/journey.mjs",
+      "mode": "100644",
+      "object": "7050660a4a683f311e24c9573a5093fff03e3846",
+      "bytes": 5630
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/analysis.mjs",
+      "mode": "100644",
+      "object": "65bd7d69392dbeb0a18dd97130ec08e37cde5669",
+      "bytes": 5099
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/bundles.mjs",
+      "mode": "100644",
+      "object": "546aecdb24452e78c4ee45d0609110428394b42a",
+      "bytes": 4482
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/calibrate.mjs",
+      "mode": "100644",
+      "object": "83261debf3b35571837cc38bce3a5169fd71a022",
+      "bytes": 2501
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/cli.mjs",
+      "mode": "100644",
+      "object": "0143d41c3bc0af6b37adb124790acfde07a44a47",
+      "bytes": 1605
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/collector.js",
+      "mode": "100644",
+      "object": "06dc31c077654431223239272573832ffd91f6f3",
+      "bytes": 6723
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/config.mjs",
+      "mode": "100644",
+      "object": "c2e118a9c3400190fc8f59b111be9a88af6cc434",
+      "bytes": 1406
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/diagnostics.mjs",
+      "mode": "100644",
+      "object": "87c3298decaf98c45fa9867626e8c84ed2586bbe",
+      "bytes": 2225
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/functional.mjs",
+      "mode": "100644",
+      "object": "ddbc0ce94c09484de876a23bcf87d3d8d23f20fa",
+      "bytes": 2595
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/lighthouse.mjs",
+      "mode": "100644",
+      "object": "ae21f084c912b146ffc36ef969bf502febb8d027",
+      "bytes": 4107
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/lock.mjs",
+      "mode": "100644",
+      "object": "0ae5691cef5e562dd1643f3c8f55c9dbaf21d918",
+      "bytes": 984
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/prepare.mjs",
+      "mode": "100644",
+      "object": "075ccb0ffd3a4dd56859302bd0ab90dec0bcbeb3",
+      "bytes": 5428
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/regression.mjs",
+      "mode": "100644",
+      "object": "3eeaa53d18a1fba1a6d5795ace543a52a3440839",
+      "bytes": 6739
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/report.mjs",
+      "mode": "100644",
+      "object": "47f8776d6b09f9e95b37c45c53c81dc8bd392b04",
+      "bytes": 4588
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/runner.mjs",
+      "mode": "100644",
+      "object": "f004f18a95c14615e4f714bfca15b666e939180c",
+      "bytes": 16134
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/harness/src/server.mjs",
+      "mode": "100644",
+      "object": "0a37f50bcd1389da3a92c6fe1bd9f92e7707f34e",
+      "bytes": 5069
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/manifest.json",
+      "mode": "100644",
+      "object": "ccbc47dc66765224ab5b3b1beefd6d875341f310",
+      "bytes": 95988
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/report.md",
+      "mode": "100644",
+      "object": "3625bf6e4ed4ae0158c84405823580f2a91d179c",
+      "bytes": 1470
+    },
+    {
+      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/samples.jsonl",
+      "mode": "100644",
+      "object": "c1431d84ea4b0dd66b53c9d1a02b8fe8347023a7",
+      "bytes": 5734099
     },
     {
       "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/summary.json",
@@ -264054,7 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 2919,
-  "includedBytes": 49527355,
-  "qualification": "Original main qualification applies to unchanged source only; task/archive branches may contain unqualified drafts. Historical evidence-dependent checks require locally retained evidence."
+  "includedFiles": 5301,
+  "includedBytes": 143565835,
+  "qualification": "Unchanged main qualification plus retained acquisition checks: 19 campaign/integration tests, 15 filtered reader checks, and hash-verified 806 observations. Publication does not repeat timings or establish broad correctness/manual acceptance.",
+  "latestUpdate": ".source-export/updates/performance-20261001.json",
+  "countScope": "Delivered blobs excluding this manifest"
 }
