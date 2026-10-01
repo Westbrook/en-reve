@@ -47,7 +47,7 @@ The tested engines are Chromium 153.0.8010.12, Firefox 155.0 and Playwright WebK
 | Replace the label node | Native behavior remains a separate path | **Known failure:** the inner naming reference is lost in all three engines; Chromium AX confirms the loss |
 | Native API availability | Basic routing and nullable-target probes pass | Firefox/WebKit have no native surface in this tested configuration; this is why fallback and native proofs remain separate |
 
-The final focused run records **24 passing cases, three expected failures and six
+The initial upstream-only run records **24 passing cases, three expected failures and six
 capability/protocol skips**. The two pinned-source/import checks and four test-view
 checks pass. The original platform suite was not rerun in this slice.
 
@@ -70,17 +70,80 @@ therefore verify actual IDL reference identity separately, and use CDP for
 Chromium's computed name and mutation/removal behavior. Firefox/WebKit reference
 assertions do not prove their native accessibility output or spoken speech.
 
+## Component-owned FACE experiment
+
+The combined run adds the owned-field cases and records **51 actual passes,
+four expected failures and eight capability/protocol skips**, with no unexpected
+failures. The four failures are the three retained upstream replacement cases
+and the Firefox raw-label-list case below. Three pinned-source/pure-import checks
+and four public-test-view checks pass. The original broad platform suite was not
+rerun; these counts apply only to this Reference Target comparison.
+
+`owned-field.js` subclasses the real text field without changing its editing or
+form adapters. Its isolated controller supplies an outward
+`ariaLabelledByElements` list containing the actual external and internal labels.
+It uses the native Reference Target route where available. The fallback keeps
+author-supplied native names, filters stale label associations, releases owned
+references on disconnection, and reconnects in the new tree. Label activation
+respects disabled fields, interactive label descendants and event cancellation.
+There is no flattened label-text copy, synthetic editing event or new public
+private-node getter.
+
+The comparison covers replacement/removal/retargeting, wrapping and multiple
+labels, the existing label slot, author naming, movement between roots, disabled
+fieldsets, real typing, canceled semantic changes and form reset. A shared
+Node/browser subclass also runs through the real En Reve SSR renderer and Lit
+hydration. The existing native input, live draft, focus and selection survive;
+the draft is accepted at its native editing boundary and reaches FormData.
+Chromium CDP separately checks computed names across label replacement, slot
+changes and SSR hydration. Other-engine relationship checks are not native AX or
+screen-reader acceptance.
+
+Two details are important for production adoption:
+
+- Reflected ARIA references are filtered by eligible tree scope. Comparing a
+  stale full list loses ownership after a label or host disconnects. The
+  experiment compares surviving identities in the input's ancestor roots before
+  clearing only its own references.
+- Firefox 155 can leave a retargeted label in `ElementInternals.labels` after
+  `label.control` changes. The bridge verifies `label.control === host` as well.
+  A separate expected-failure case retains the raw browser discrepancy, so the
+  workaround does not turn it into a native-support claim. Native `fill()` event
+  sequences also differ by engine; reset is checked against the actual sequence,
+  not an assumed one-event implementation.
+
+### SSR serialization finding
+
+The pinned Lit renderer ignores `shadowRootOptions.referenceTarget` when writing
+the declarative template. The fixture's explicit serializer addition emits
+`shadowrootreferencetarget="control"` before parsing, without changing Lit markers.
+Native Chromium naming works before hydration and retains that relationship
+afterwards. Unsupported engines use the existing internal label before hydration;
+the component-owned bridge supplies the external relationship after hydration.
+
+This is a **single-root serializer prototype**, not a production HTML rewrite.
+Production integration must carry each renderer's target through ordinary,
+scoped and inert-template SSR paths, preserve escaping and request isolation,
+and handle conditional semantic nodes. The controller likewise uses one observer
+per fixture field; production needs shared root subscriptions and an explicit
+host-versus-inner naming precedence contract. Same-value author writes to an
+already-empty ARIA attribute are not distinguishable ownership transfers here.
+Checkbox/radio activation, descriptions and all other field families are not
+covered by the text-field result. No library API or production field behavior
+changes in this experiment.
+
 ## Decision and remaining work
 
 Do not install this prototype implicitly in element or pure package imports.
 Do not remove FACE or change submission/reset/validation ownership to make a
 label adapter engage. Keep the existing named-label and native-composition routes.
 
-Native Reference Target is a promising progressive enhancement, but a library
-adoption must define the unsupported-engine route and serialize the same target
-through SSR/hydration. The fixture's explicit root mutation is not that adapter.
-Before adoption, resolve the pinned fallback's replacement bug and FACE policy,
-then qualify external descriptions, nested/closed roots, slotted and conditional
-targets, checkbox activation, real screen readers and the supported device matrix.
-This initial comparison supplies concrete evidence and an executable regression;
-those broader promises remain open in the Progress Report.
+Native Reference Target is a promising progressive enhancement. The owned-field
+experiment now supplies a concrete alternative for a FACE text field and proves
+the need for SSR serialization support. It does not fix or silently replace the
+pinned upstream package. Next, design the shared production naming/activation
+adapter and renderer integration, then qualify the other field families,
+external descriptions, nested/slotted and conditional targets, checkbox
+activation, real screen readers and the supported device matrix. Closed roots
+are outside the current library contract. These broader obligations remain open
+in the Progress Report.

@@ -38,3 +38,7 @@ Local main `a277af17a110df00d582d8162d89bb28d8b7cd30` includes the component-qua
 ## Reference Target investigation
 
 Local main `8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c` retains the pinned-source comparison and explicit adoption gaps in `probes/reference-target/README.md`. Production field semantics remain unchanged.
+
+## Component-owned FACE label investigation
+
+Local main `49e71cfcab7bd1cc4a3f9ecc6c3e70fb79fb0c09` retains the component-owned FACE bridge, SSR proof and explicit adoption gaps in `probes/reference-target/README.md`. Production field semantics remain unchanged.

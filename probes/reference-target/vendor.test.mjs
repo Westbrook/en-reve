@@ -17,3 +17,9 @@ test('importing the requested core and label adapter does not require a DOM', as
   assert.equal(labels({ activation: 'focus', naming: true }).id, 'labels');
   assert.equal(typeof globalThis.document, 'undefined');
 });
+test('component-owned controller import does not install globals or require a DOM', async () => {
+  assert.equal(typeof globalThis.document, 'undefined');
+  const { OwnedLabels } = await import('./owned-labels.js');
+  assert.equal(typeof OwnedLabels, 'function');
+  assert.equal(typeof globalThis.document, 'undefined');
+});

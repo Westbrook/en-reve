@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c",
-  "exportedAt": "2026-10-01T22:19:59.684754+00:00",
+  "sourceCommit": "49e71cfcab7bd1cc4a3f9ecc6c3e70fb79fb0c09",
+  "exportedAt": "2026-10-01T22:39:52.354666+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5355,
-  "includedBytes": 144076879,
-  "qualification": "Reference Target investigation: 24 browser cases pass, three known upstream label-replacement failures and six native/protocol skips remain explicit. Two source/import checks and four public-view checks pass. Native Chromium forwarding is verified; no production polyfill installation or general cross-root/AT support claim.",
-  "latestUpdate": ".source-export/updates/reference-target-probe-20261001.json",
+  "includedFiles": 5361,
+  "includedBytes": 144103817,
+  "qualification": "Component-owned FACE labels and SSR proof: 51 browser cases pass; four known upstream/browser failures and eight capability skips retained. Three source/import checks and four public-view checks pass. Isolated adapter preserves form ownership and hydration; production adapter and broader platform acceptance remain open.",
+  "latestUpdate": ".source-export/updates/reference-target-owned-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

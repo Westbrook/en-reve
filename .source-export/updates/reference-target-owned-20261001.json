@@ -1,0 +1,18 @@
+{
+  "createdAt": "2026-10-01T22:39:52.354666+00:00",
+  "sourceCommit": "49e71cfcab7bd1cc4a3f9ecc6c3e70fb79fb0c09",
+  "previousSourceMain": "8e7fdacfefe6ce58a9d17d23adea4d3925f9ea8c",
+  "taskPaths": [
+    "plans/platform.md",
+    "probes/reference-target/README.md",
+    "probes/reference-target/owned-field.js",
+    "probes/reference-target/owned-fixture.html",
+    "probes/reference-target/owned-labels.js",
+    "probes/reference-target/owned-labels.spec.ts",
+    "probes/reference-target/owned-ssr.mjs",
+    "probes/reference-target/server.mjs",
+    "probes/reference-target/vendor.test.mjs"
+  ],
+  "qualification": "Component-owned FACE labels and SSR proof: 51 browser cases pass; four known upstream/browser failures and eight capability skips retained. Three source/import checks and four public-view checks pass. Isolated adapter preserves form ownership and hydration; production adapter and broader platform acceptance remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

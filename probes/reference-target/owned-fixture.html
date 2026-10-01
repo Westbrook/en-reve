@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Component-owned label experiment</title>
+<style>body { font: 16px system-ui; padding: 1rem } label { display: block } input { font: inherit }</style>
+<label id="external" for="owned">External account <a href="#destination">Help</a></label>
+<form id="form"><probe-owned-field id="owned" name="account" value="server value" label="Internal account" force-label-bridge></probe-owned-field><button type="reset">Reset</button></form>
+<button id="outside">Outside</button><div id="destination">Help destination</div>
+<script type="module">
+  import { ProbeOwnedField } from './owned-field.js';
+  if (new URL(location.href).searchParams.has('native')) document.querySelector('#owned').removeAttribute('force-label-bridge');
+  customElements.define('probe-owned-field', ProbeOwnedField);
+  await document.querySelector('#owned').updateComplete;
+  document.body.dataset.ready = 'true';
+</script>
+</html>
