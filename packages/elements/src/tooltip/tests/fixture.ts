@@ -7,14 +7,15 @@ customElements.define('en-toolbar', EnToolbar);
 customElements.define('en-tooltip', EnTooltip);
 
 const warmupScopes = new Map<string, TooltipWarmupGroup>();
-const warmupProviders = new Map<string, ContextProvider<typeof tooltipWarmupContext>>();
+const warmupProviders = new Map<HTMLElement, ContextProvider<typeof tooltipWarmupContext>>();
 Object.assign(window, { tooltipContextHarness: {
-  provide(selector: string, id: string | null) {
+  provide(target: string | HTMLElement, id: string | null) {
+    const host = typeof target === 'string' ? document.querySelector<HTMLElement>(target)! : target;
     let group = id === null ? undefined : warmupScopes.get(id);
     if (id !== null && !group) warmupScopes.set(id, group = createTooltipWarmupGroup());
-    const provider = warmupProviders.get(selector);
+    const provider = warmupProviders.get(host);
     if (provider) provider.setValue(group);
-    else warmupProviders.set(selector, new ContextProvider(document.querySelector<HTMLElement>(selector)!, {context: tooltipWarmupContext, initialValue: group}));
+    else warmupProviders.set(host, new ContextProvider(host, {context: tooltipWarmupContext, initialValue: group}));
   },
 } });
 

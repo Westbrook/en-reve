@@ -1,10 +1,26 @@
 import '@en-reve/ssr/install.js';
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { html } from 'lit';
 import { renderToString } from '@en-reve/ssr';
 import { registerAll } from '@en-reve/elements/catalog.js';
 registerAll();
+
+test('the public tooltip context factory imports without installing browser globals', () => {
+  // This file installs the explicit SSR environment; verify purity in a fresh process.
+  execFileSync(process.execPath, ['--input-type=module', '-e', `
+    import assert from 'node:assert/strict';
+    const globals = ['window', 'document', 'HTMLElement', 'customElements'];
+    for (const name of globals) assert.equal(globalThis[name], undefined, name);
+    const {createTooltipWarmupGroup, tooltipWarmupContext} = await import('@en-reve/elements/context.js');
+    const first = createTooltipWarmupGroup();
+    const second = createTooltipWarmupGroup();
+    assert.notEqual(first, second);
+    assert.ok(tooltipWarmupContext);
+    for (const name of globals) assert.equal(globalThis[name], undefined, name);
+  `], {stdio: 'pipe'});
+});
 
 test('reorderable authored and data trees have the same first-paint handles and shortcuts', async () => {
   const authored = await renderToString(html`<en-tree reorderable><en-tree-item value="one" label="One"></en-tree-item><en-tree-item value="two" label="Two" disabled></en-tree-item></en-tree>`);

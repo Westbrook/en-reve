@@ -1,6 +1,6 @@
 # Source-only GitHub snapshot
 
-This branch preserves the source tree from `codex/initial-pass-closeout` at `0cb051a81f693201c03fd4a9ac7b7dbdea69398b`.
+This branch preserves the source tree from `codex/initial-pass-closeout` at `88ea11beeaa25ae23910ba6e4c1b78338f531f66`.
 It starts a new GitHub history as requested; the original local repository and
 its complete history remain unchanged.
 
