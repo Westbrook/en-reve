@@ -49,7 +49,7 @@ export async function generateAPIExamples({ workspaceRoot, docsRoot = resolve(wo
 		const definitions = tags.map(tag => {
 			if (['en-color-spaces-demo', 'en-color-wheel-demo'].includes(tag) && example.id === 'color-picker') return '../color-spaces-demo.js';
 			if (tag === 'en-sidebar-drawer-demo' && example.id === 'navigation-sidebar') return '../examples.js';
-			if (tag === 'en-tooltip-position-demo' && example.id === 'tooltip-warmup') return '../examples.js';
+			if (['en-tooltip-position-demo', 'en-tooltip-context-demo'].includes(tag) && example.id === 'tooltip-warmup') return '../examples.js';
 			if (tag === 'en-virtual-collection-demo' && example.id === 'virtual-collection') return '../define-virtual-collection-demo.js';
 			if (tag === 'en-composable-chat-demo' && ['chat-patterns','composable-chat'].includes(example.id)) return '../composable-chat-demo.js';
 			const component = components.get(tag);

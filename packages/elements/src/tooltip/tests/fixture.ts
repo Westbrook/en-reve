@@ -1,9 +1,23 @@
 import { EnTooltip } from '../index.js';
 import { EnToolbar } from '../../toolbar/index.js';
 import { EnButton } from '../../button/index.js';
+import { ContextProvider, tooltipWarmupContext, createTooltipWarmupGroup, type TooltipWarmupGroup } from '../../context.js';
 customElements.define('en-button', EnButton);
 customElements.define('en-toolbar', EnToolbar);
 customElements.define('en-tooltip', EnTooltip);
+
+const warmupScopes = new Map<string, TooltipWarmupGroup>();
+const warmupProviders = new Map<HTMLElement, ContextProvider<typeof tooltipWarmupContext>>();
+Object.assign(window, { tooltipContextHarness: {
+  provide(target: string | HTMLElement, id: string | null) {
+    const host = typeof target === 'string' ? document.querySelector<HTMLElement>(target)! : target;
+    let group = id === null ? undefined : warmupScopes.get(id);
+    if (id !== null && !group) warmupScopes.set(id, group = createTooltipWarmupGroup());
+    const provider = warmupProviders.get(host);
+    if (provider) provider.setValue(group);
+    else warmupProviders.set(host, new ContextProvider(host, {context: tooltipWarmupContext, initialValue: group}));
+  },
+} });
 
 const shadow = document.querySelector('#shadow-fixture')!.attachShadow({ mode: 'open' });
 shadow.innerHTML = `

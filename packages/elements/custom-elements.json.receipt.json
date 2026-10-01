@@ -275,7 +275,7 @@
     "src/command-palette/template.ts": "sha256:01aac3fb0c6ed878434315829c4a002b1bc2fcdd1361374e8ad52b1a7c9e4084",
     "src/command-palette/viewport-controller.ts": "sha256:f0d3d8527b3c24c86c15c481b93825b83e79e31d1ac08d759b06e5bdc1d47cb9",
     "src/context-menu.ts": "sha256:b19d6c4739b53b4c9abc08bb4fdcf6421cc86eafd65ab78d66d232ff217b92c9",
-    "src/context.ts": "sha256:d97d85ff594266f0af232ca512eb01069a9605f638a155155ef8a97d21b36f26",
+    "src/context.ts": "sha256:29fbfc890cea12284aa07516e4911c2a29a90ef3e04be6ed8f35af470891cdc2",
     "src/data-table.ts": "sha256:65f5be5c2a1961b9f26d68605c54e5322d67ff97c24877e989d84fc330ba9e2f",
     "src/data-table/element.ts": "sha256:73976fcb13ded6d2db4cd7e3e62433b798c25633b6454f6874ec543464fdf821",
     "src/data-table/index.ts": "sha256:efed594ab1e74600ece2209a6fe05bd03b87deded86bca954e2319bb2c30bdc1",
@@ -522,7 +522,7 @@
     "src/internal/calendar-adapter.ts": "sha256:50b132b11374eacee64846930663ad85378eed948076a53aaaf9652a5385e36c",
     "src/internal/carousel-context.ts": "sha256:24b451c58ca98a21bdf8089c126244ab67b28cd264fdcdb0b10900b436cd84cc",
     "src/internal/child-upgrades.ts": "sha256:373a5cf63d1f83127b84f03aa0be933ddcb906c639bc2e53072783927c729108",
-    "src/internal/context-consumer.ts": "sha256:f9b1494d62def458485880be9c27eb27a56c64d600fd1d68c3eb49b82e9ec9a2",
+    "src/internal/context-consumer.ts": "sha256:623f1ab14ee1c77d43b677255272889348c4438ff4b8188297373fcab789cdc1",
     "src/internal/context-provider.ts": "sha256:c7f6f4d8bf803ec700f0837fd370cfd437a9cb523c9233663883afc0ee59fb3b",
     "src/internal/create-owned-element.ts": "sha256:cdb7b5b3a59aae2f3f81216fe4f4108caa6bac9f50bf6a314587921989ef51a2",
     "src/internal/date-picker-feature.ts": "sha256:b2e11169c2175390e32785b83a1d42fa734b832b43f7384e487f736bebf4ce05",
@@ -708,12 +708,13 @@
     "src/toolbar/index.ts": "sha256:6e6db429ac78f4f8a9439c18653c5bd0fedf97ee7b3b2e1aeb53599c916a60f9",
     "src/toolbar/template.ts": "sha256:6ecbd15ac0dd03d690e17226eef7dbffd41ac3bc10605716559e667e1b253a1d",
     "src/tooltip.ts": "sha256:ab65104202f6253b8b6c0679a6ee1fd62a9128b90ec3530e6d067be2e4beb69f",
+    "src/tooltip/context.ts": "sha256:54b9968d6975fd7c44eb3bdb7d07ba00f381ea78ee3f05505796680c37ceff1b",
     "src/tooltip/hover-corridor.ts": "sha256:9ec3fdd2c9c65ea5551730e378477638b3a818be466ba91cb44657d893dbdf5e",
     "src/tooltip/index.ts": "sha256:659a112251bbd43cbde3d72190e18eb95aaee513a7bc1e9042d9609dd1607e8e",
     "src/tooltip/position-controller.ts": "sha256:2ef1b2095baf958e48e4c2a1428ba7379e9a2fd8e06d9e2b54501ef95703f308",
     "src/tooltip/template.ts": "sha256:7dc02bdcd020b4cea59010fa98640261cae8e46d4d09978f0f253c9e24eb1513",
-    "src/tooltip/tooltip.ts": "sha256:5596880ec7dd683d08d6d02c6c874666d29a9f130f948e7793e7045f3a26528e",
-    "src/tooltip/warmup-group.ts": "sha256:9f001eb044e9192c8b7e1372b3d003f7f830af8380ef59a14466338426a1bdfb",
+    "src/tooltip/tooltip.ts": "sha256:9257ba458cdb874409713884e0c7b957441c14e885c651ddd3bf2faeddcdd5f9",
+    "src/tooltip/warmup-group.ts": "sha256:02aa2ec462623a53d4011ddb9b52036e18a3737202609fa2488b463482319846",
     "src/transcript.ts": "sha256:c67e90fb2e398b76a873e60119723ce5a8b6720d852a55623b2f14f91516b54e",
     "src/tree-item.ts": "sha256:90d3c1af25902971bad469c2c2aa6fb61cdc9e69b0e66bd07dd2320957735c87",
     "src/tree-item/element.ts": "sha256:57602f0bb8c3f02f6e2725daf5adc85c155db3fcacd83ae5b5823b075d0fa1db",
@@ -732,7 +733,7 @@
     "src/validation-summary/element.ts": "sha256:edcab0fbc154011adf9e37d4cfca2cac8029b83b19dbf5cb8dafde1e2bd79bfc",
     "src/validation-summary/index.ts": "sha256:af7123f5972a6bdb21adf6684c4541dbb7569faad289316ab962ef111637523b"
   },
-  "manifestDigest": "sha256:48a6b9d04d5b3da842158cb71bd9838242dcb88d7829f7f910103bd8b0aae03e",
+  "manifestDigest": "sha256:38761200cb504755b9e00b1cfc31ef79a3bcb0ab7a465f8308ab48038fb7952c",
   "corrections": [
     {
       "module": "src/file-upload/element.ts",
@@ -2397,6 +2398,11 @@
         "kind": "function"
       },
       {
+        "module": "src/tooltip/context.ts",
+        "name": "tooltipWarmupContext",
+        "kind": "variable"
+      },
+      {
         "module": "src/tooltip/hover-corridor.ts",
         "name": "withinBounds",
         "kind": "function"
@@ -2414,6 +2420,11 @@
       {
         "module": "src/tooltip/template.ts",
         "name": "tooltipTemplate",
+        "kind": "function"
+      },
+      {
+        "module": "src/tooltip/warmup-group.ts",
+        "name": "createTooltipWarmupGroup",
         "kind": "function"
       },
       {
@@ -2547,6 +2558,11 @@
         "module": "src/context.ts",
         "name": "CarouselSlideContext",
         "target": "src/internal/carousel-context.ts#CarouselSlideContext"
+      },
+      {
+        "module": "src/context.ts",
+        "name": "TooltipWarmupGroup",
+        "target": "src/tooltip/warmup-group.ts#TooltipWarmupGroup"
       },
       {
         "module": "src/data-table.ts",
@@ -3147,6 +3163,11 @@
         "module": "src/index.ts",
         "name": "CarouselSlideContext",
         "target": "src/internal/carousel-context.ts#CarouselSlideContext"
+      },
+      {
+        "module": "src/index.ts",
+        "name": "TooltipWarmupGroup",
+        "target": "src/tooltip/warmup-group.ts#TooltipWarmupGroup"
       },
       {
         "module": "src/index.ts",
@@ -3752,6 +3773,11 @@
         "module": "src/tooltip.ts",
         "name": "OverlayReason",
         "target": "src/dialog/types.ts#OverlayReason"
+      },
+      {
+        "module": "src/tooltip/context.ts",
+        "name": "TooltipWarmupGroup",
+        "target": "src/tooltip/warmup-group.ts#TooltipWarmupGroup"
       },
       {
         "module": "src/tooltip/index.ts",
@@ -5965,9 +5991,9 @@
     "enrichment": {
       "version": 1,
       "policy": "authored-css-property-customization-only",
-      "inputManifestDigest": "sha256:cadda6a44849130d438fc8160c0004f6894a6275ae0661aa5b735507692f2b9c",
+      "inputManifestDigest": "sha256:9c6bbf74b10ec797b0bb4da3da83e4268cda7bf0c607407f29f9da87cf553ee6",
       "contractsDigest": "sha256:c842c74b29b43012b02c01ea31faa5686562ebfd350d9b3bf59f997571735ca5",
-      "manifestDigest": "sha256:48a6b9d04d5b3da842158cb71bd9838242dcb88d7829f7f910103bd8b0aae03e",
+      "manifestDigest": "sha256:38761200cb504755b9e00b1cfc31ef79a3bcb0ab7a465f8308ab48038fb7952c",
       "changes": [
         {
           "module": "src/accordion-item/accordion-item.ts",

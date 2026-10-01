@@ -1,4 +1,5 @@
 import { ContextProvider, richEditorCommandContext, editorMessagesContext, colorMessagesContext, type RichEditorCommandHost } from '@en-reve/elements/context.js';
+import { createTooltipWarmupGroup, tooltipWarmupContext, type TooltipWarmupGroup } from '@en-reve/elements/context.js';
 import type { EnRichTextEditor } from '@en-reve/elements/rich-text-editor.js';
 import type { EnEditorToolbar } from '@en-reve/elements/editor-toolbar.js';
 declare const host: HTMLElement;
@@ -12,6 +13,13 @@ new ContextProvider(host, {context: editorMessagesContext, initialValue: {comman
 new ContextProvider(host, {context: colorMessagesContext, initialValue: {channels: {red: 'Rouge'}}});
 // @ts-expect-error Context does not accept a non-editor capability.
 provider.setValue({execute: () => true});
+
+const tooltipScope: TooltipWarmupGroup = createTooltipWarmupGroup();
+const tooltipProvider = new ContextProvider(host, {context: tooltipWarmupContext, initialValue: tooltipScope});
+tooltipProvider.setValue(createTooltipWarmupGroup());
+tooltipProvider.setValue(undefined);
+// @ts-expect-error A group ID is not a contextual warmup service.
+tooltipProvider.setValue('editing-tools');
 
 import {colorPickerDefinition} from '@en-reve/elements/definitions/color-picker.js';
 import {menuDefinition} from '@en-reve/elements/definitions/menu.js';

@@ -26,3 +26,7 @@ qualification limits and replay instructions, and [the source mapping](.source-e
 ## Validation efficiency publication — 2026-10-01
 
 Current source maps to local main `0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32`. The user approved stopping remaining confirmation and merging. LTS controls passed; the broad Current run was intentionally stopped before completion. No complete correctness pass is claimed. See `.source-export/updates/validation-efficiency-20261001.json`.
+
+## Tooltip context checkpoint
+
+Local main `b5bb6064c2b4c26a7c62c71796a575c23abb664a` includes the component-qualified tooltip context implementation and generated metadata. Demo review controls and source sample remain pending; see `plans/tooltip-context.md`. This is a source checkpoint, not a completed publication.

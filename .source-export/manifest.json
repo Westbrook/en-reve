@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32",
-  "exportedAt": "2026-10-01T21:23:43.892510+00:00",
+  "sourceCommit": "b5bb6064c2b4c26a7c62c71796a575c23abb664a",
+  "exportedAt": "2026-10-01T21:56:02.040952+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5331,
-  "includedBytes": 143318380,
-  "qualification": "Implementation merged with explicit user approval to stop remaining confirmation. Pinned LTS fast/analysis controls passed; the broad Current run was intentionally interrupted and is incomplete. Distinct integration smoke was not run. Historical evidence-dependent replay requires locally retained evidence. Manual acceptance and performance acquisition remain separate.",
-  "latestUpdate": ".source-export/updates/validation-efficiency-20261001.json",
+  "includedFiles": 5338,
+  "includedBytes": 143953778,
+  "qualification": "User-requested main checkpoint: 309 tooltip browser checks, ten focused WebKit repetitions, metadata freshness, consumer types and SSR/pure imports passed. Context Protocol: 55 passed, two capability skips. Docs build passed; contextual demo reset control and source-sample wiring remain unfinished. Not yet published to demo site; manual acceptance remains separate.",
+  "latestUpdate": ".source-export/updates/tooltip-context-checkpoint-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

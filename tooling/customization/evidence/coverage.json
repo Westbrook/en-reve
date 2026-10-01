@@ -84,7 +84,7 @@
     "packages/elements/src/command-palette/template.ts": "904d53961daf341f41fd8104a9ca208cdd26d042fb6da0d1c5ca871618b41a06",
     "packages/elements/src/command-palette/viewport-controller.ts": "1c1ded167b59391211736524d18d2f3b3fcafc79d8dca6ccd0414ad1a7f4615c",
     "packages/elements/src/context-menu.ts": "eb0d2022bc56b96c17dc1846147a51391961398dacb3b126242de9cfbd193eb8",
-    "packages/elements/src/context.ts": "8a704fb96c51e7268b4f75cd7b7c995289aa3e7b0a795319d900051254446866",
+    "packages/elements/src/context.ts": "a762ae1f7bd610f03402a2a3c998aa9c68574c6f2b12a0918d5431aaaf8663e2",
     "packages/elements/src/data-table.ts": "46a80305747da38d6003d8b72a4a4aeec7d14a2c1a6122b9ef6381f0d7327beb",
     "packages/elements/src/data-table/element.ts": "b200a96ad07b15a138c3aa1e74e7be8dc9ade24d0fde97e59cf81ebdd5396639",
     "packages/elements/src/data-table/index.ts": "4af07e70ff7fc7041a00a6ded4d9a7a8c7f34ddda48870ef231e644e2e1ac97f",
@@ -331,7 +331,7 @@
     "packages/elements/src/internal/calendar-adapter.ts": "07efa3f1da6119605979fce93632dd55c53bc480c1a94c3ed1afa1600d2dcda4",
     "packages/elements/src/internal/carousel-context.ts": "046b63abaf68feea66eee69d20f5234b7a63af8b776d9f7d4ca577bc8eba270d",
     "packages/elements/src/internal/child-upgrades.ts": "ce305302c663624e0cd7dd321c73a2f75476f29514c189a61ecb1ca3a10ef034",
-    "packages/elements/src/internal/context-consumer.ts": "903bdaeffa0014dcf0c4e264ae923ffd10a6aca3a7a56aaa11dde8aab724d730",
+    "packages/elements/src/internal/context-consumer.ts": "875805dcc95401219406ac670be221c04c67a730c8319cc196019635ee4f3757",
     "packages/elements/src/internal/context-provider.ts": "fbac9dd5ce04d2459bdc7b86b0b1f5319973383e7c9414cc716734ed63cbb3fa",
     "packages/elements/src/internal/create-owned-element.ts": "8ec4fee325d376b74b3f08d6ac951b811ca2f74cf237bb748263c2b2a2636dda",
     "packages/elements/src/internal/date-picker-feature.ts": "532b54f85ad9aa4efa4303aa88535d5c88e48f825f78851b66eea99eabb5a483",
@@ -517,12 +517,13 @@
     "packages/elements/src/toolbar/index.ts": "b70631d3e5fb51ddafacb4cdbe1e7faa265c749ab01392d6f7d08c677345c3c4",
     "packages/elements/src/toolbar/template.ts": "52ad70c336b461b6eb8ef767a242fce59563a36aa5515724896afca23176e2e7",
     "packages/elements/src/tooltip.ts": "dc0f4a20b0687d2687044ed5f0f42f2781bdb3ebfa799d08963651c8a28ea3b7",
+    "packages/elements/src/tooltip/context.ts": "782da8a3bd2211d8b53ad504c3219c007605870c9a2d2a6c8204f049757393a7",
     "packages/elements/src/tooltip/hover-corridor.ts": "6721257ece9492b83a0bddc768b4f231a54b3957474d990235110a844b89d4d5",
     "packages/elements/src/tooltip/index.ts": "33bdbec973f923d2978955a2a9d0c7bca897582c3e1fe356f8bb63a2a085f8cc",
     "packages/elements/src/tooltip/position-controller.ts": "a2aaefd9f3d1b1f1e08a8960693a02c047c7534cf25aa41f584526a9db5d73a2",
     "packages/elements/src/tooltip/template.ts": "3c9e45702fcc9e5670881ac57060b91d2902dd6319cb9350eb34dc6951ef1c72",
-    "packages/elements/src/tooltip/tooltip.ts": "451843511f7b4bf2f46768cf1e946a19b3bf4270d56354dd71af60b392e4627f",
-    "packages/elements/src/tooltip/warmup-group.ts": "2e77888690f0dc53c2e5c4795a3998b6196fb5b2747e23661495613d8ad460cf",
+    "packages/elements/src/tooltip/tooltip.ts": "e1106e18bb73c3d5c86142682744a8e787aeb8703bcbafe2738c06bb85b943cf",
+    "packages/elements/src/tooltip/warmup-group.ts": "35565f2cecda8c70f50642c10df222bfc96dc88f7a495791449ca4ef4fc1d257",
     "packages/elements/src/transcript.ts": "bb7946cb17e2f9f8626fcc65671aafa903b8b270b9a0f52bb953b977031384cd",
     "packages/elements/src/tree-item.ts": "0255f0e55f6d0161cdd673269bba62bc08b3c09ef8267b5307654d993cc2e1de",
     "packages/elements/src/tree-item/element.ts": "f41478f52a5c8551133823fcd8703a920f46b5304147ad48a4c5078d08213f7c",
@@ -607,7 +608,7 @@
     "Registry semantic tokens may be graph-only inputs with no direct CSS consumer. Unsupported names and unwired hooks remain visible as reviewed findings."
   ],
   "summary": {
-    "productionFiles": 596,
+    "productionFiles": 597,
     "registryContracts": 719,
     "discoveredNames": 673,
     "sourceReferences": 2284,
@@ -24421,7 +24422,7 @@
         {
           "cssName": "--en-duration-enter",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 38,
+          "line": 40,
           "description": "Optional tooltip fade-in duration; hover timing and focus behavior are unchanged."
         }
       ],
@@ -24759,7 +24760,7 @@
         {
           "cssName": "--en-duration-exit",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 39,
+          "line": 41,
           "description": "Optional tooltip fade-out duration; native dismissal remains immediate."
         }
       ],
@@ -27012,7 +27013,7 @@
         {
           "cssName": "--en-ease-enter",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 40,
+          "line": 42,
           "description": "Tooltip fade-in easing."
         }
       ],
@@ -27349,7 +27350,7 @@
         {
           "cssName": "--en-ease-exit",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 41,
+          "line": 43,
           "description": "Tooltip fade-out easing."
         }
       ],
@@ -56930,7 +56931,7 @@
         {
           "cssName": "--en-overlay-arrow-size",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 31,
+          "line": 33,
           "description": "Pointer projection length; base is twice this size."
         }
       ],
@@ -57122,7 +57123,7 @@
         {
           "cssName": "--en-overlay-background",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 34,
+          "line": 36,
           "description": "Tooltip background."
         }
       ],
@@ -57846,7 +57847,7 @@
         {
           "cssName": "--en-overlay-color",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 35,
+          "line": 37,
           "description": "Tooltip foreground."
         }
       ],
@@ -60204,7 +60205,7 @@
         {
           "cssName": "--en-overlay-padding",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 36,
+          "line": 38,
           "description": "Tooltip padding."
         }
       ],
@@ -60577,7 +60578,7 @@
         {
           "cssName": "--en-overlay-radius",
           "file": "packages/elements/src/tooltip/tooltip.ts",
-          "line": 37,
+          "line": 39,
           "description": "Tooltip corner radius."
         }
       ],

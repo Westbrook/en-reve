@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-01T21:56:02.040952+00:00",
+  "sourceCommit": "b5bb6064c2b4c26a7c62c71796a575c23abb664a",
+  "previousSourceMain": "0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32",
+  "taskPaths": [
+    "apps/docs/scripts/generate-api-examples.mjs",
+    "apps/docs/src/api-reference/tooltip.ts",
+    "apps/docs/src/examples.ts",
+    "apps/docs/tests/followup-reviews.spec.ts",
+    "packages/elements/custom-elements.json",
+    "packages/elements/custom-elements.json.receipt.json",
+    "packages/elements/public-api.json",
+    "packages/elements/public-types.json",
+    "packages/elements/src/context.ts",
+    "packages/elements/src/internal/context-consumer.ts",
+    "packages/elements/src/tooltip/README.md",
+    "packages/elements/src/tooltip/context.ts",
+    "packages/elements/src/tooltip/tests/README.md",
+    "packages/elements/src/tooltip/tests/context.spec.ts",
+    "packages/elements/src/tooltip/tests/fixture.ts",
+    "packages/elements/src/tooltip/tooltip.ts",
+    "packages/elements/src/tooltip/warmup-group.ts",
+    "plans/component-follow-up-backlog.md",
+    "plans/tooltip-context.md",
+    "probes/context-protocol/consumer.types.ts",
+    "probes/context-protocol/ssr.test.mjs",
+    "tooling/customization/evidence/coverage.json",
+    "tooling/customization/evidence/coverage.md"
+  ],
+  "qualification": "User-requested main checkpoint: 309 tooltip browser checks, ten focused WebKit repetitions, metadata freshness, consumer types and SSR/pure imports passed. Context Protocol: 55 passed, two capability skips. Docs build passed; contextual demo reset control and source-sample wiring remain unfinished. Not yet published to demo site; manual acceptance remains separate.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

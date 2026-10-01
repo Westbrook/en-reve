@@ -31561,6 +31561,14 @@
         },
         {
           "kind": "js",
+          "name": "createTooltipWarmupGroup",
+          "declaration": {
+            "name": "createTooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "editorExtensionContext",
           "declaration": {
             "name": "editorExtensionContext",
@@ -31589,6 +31597,22 @@
           "declaration": {
             "name": "RichEditorCommandHost",
             "module": "src/editor/context.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "tooltipWarmupContext",
+          "declaration": {
+            "name": "tooltipWarmupContext",
+            "module": "src/tooltip/context.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TooltipWarmupGroup",
+          "declaration": {
+            "name": "TooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
           }
         }
       ],
@@ -52074,6 +52098,14 @@
         },
         {
           "kind": "js",
+          "name": "createTooltipWarmupGroup",
+          "declaration": {
+            "name": "createTooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "DataTableEventMap",
           "declaration": {
             "name": "DataTableEventMap",
@@ -53328,6 +53360,22 @@
         },
         {
           "kind": "js",
+          "name": "tooltipWarmupContext",
+          "declaration": {
+            "name": "tooltipWarmupContext",
+            "module": "src/tooltip/context.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TooltipWarmupGroup",
+          "declaration": {
+            "name": "TooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
+          }
+        },
+        {
+          "kind": "js",
           "name": "TreeChangeEvent",
           "declaration": {
             "name": "TreeChangeEvent",
@@ -53818,6 +53866,164 @@
               }
             }
           ]
+        },
+        {
+          "kind": "class",
+          "customElement": false,
+          "name": "TargetContext",
+          "description": "Subscribe from an external participant, not from the controller's host.",
+          "members": [
+            {
+              "kind": "field",
+              "name": "ancestry",
+              "privacy": "private",
+              "default": "[]",
+              "type": {
+                "text": "Node[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "callback",
+              "privacy": "private",
+              "type": {
+                "text": "((value: T, unsubscribe?: () => void) => void) | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "changed",
+              "privacy": "private",
+              "static": false,
+              "readonly": false,
+              "type": {
+                "text": "() => void"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "context",
+              "privacy": "private",
+              "static": false,
+              "readonly": false,
+              "type": {
+                "text": "Context<unknown, T>"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "disconnect",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "generation",
+              "privacy": "private",
+              "default": "0",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "observer",
+              "privacy": "private",
+              "type": {
+                "text": "MutationObserver | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "refresh",
+              "privacy": "private",
+              "default": "(): void => { this.setTarget(this.target); }",
+              "type": {
+                "text": "() => void"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "releaseRoot",
+              "privacy": "private",
+              "type": {
+                "text": "(() => void) | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "requests",
+              "privacy": "private",
+              "default": "0",
+              "type": {
+                "text": "number"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "setTarget",
+              "description": "Also validates ancestry synchronously before an interaction can commit.",
+              "privacy": "public",
+              "parameters": [
+                {
+                  "name": "target",
+                  "type": {
+                    "text": "HTMLElement"
+                  },
+                  "optional": true
+                },
+                {
+                  "name": "notify",
+                  "type": {
+                    "text": "boolean"
+                  },
+                  "default": "true"
+                }
+              ],
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "slots",
+              "privacy": "private",
+              "default": "[]",
+              "type": {
+                "text": "HTMLSlotElement[]"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "target",
+              "privacy": "private",
+              "type": {
+                "text": "HTMLElement | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "unsubscribe",
+              "privacy": "private",
+              "type": {
+                "text": "(() => void) | undefined"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "value",
+              "privacy": "public",
+              "type": {
+                "text": "T | undefined"
+              }
+            }
+          ]
         }
       ],
       "exports": [
@@ -53826,6 +54032,14 @@
           "name": "ScopedContext",
           "declaration": {
             "name": "ScopedContext",
+            "module": "src/internal/context-consumer.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TargetContext",
+          "declaration": {
+            "name": "TargetContext",
             "module": "src/internal/context-consumer.ts"
           }
         }
@@ -114907,6 +115121,48 @@
     },
     {
       "kind": "javascript-module",
+      "path": "src/tooltip/context.ts",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "tooltipWarmupContext",
+          "type": {
+            "text": "{ __context__: TooltipWarmupGroup | undefined; }"
+          },
+          "default": "createContext<TooltipWarmupGroup | undefined>('@en-reve/tooltip-warmup/v1')",
+          "description": "Nearest trigger-ancestor scope. Explicit warmup-group IDs always take precedence."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "createTooltipWarmupGroup",
+          "declaration": {
+            "name": "createTooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "tooltipWarmupContext",
+          "declaration": {
+            "name": "tooltipWarmupContext",
+            "module": "src/tooltip/context.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "TooltipWarmupGroup",
+          "declaration": {
+            "name": "TooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
+          }
+        }
+      ],
+      "source": "src/tooltip/context.ts"
+    },
+    {
+      "kind": "javascript-module",
       "path": "src/tooltip/hover-corridor.ts",
       "declarations": [
         {
@@ -116076,6 +116332,15 @@
               }
             },
             {
+              "kind": "field",
+              "name": "#warmupContext",
+              "privacy": "private",
+              "default": "new TargetContext(tooltipWarmupContext, () => { this.syncWarmupGroup(); this.requestUpdate(); })",
+              "type": {
+                "text": "TargetContext<import(\"./warmup-group.js\").TooltipWarmupGroup | undefined>"
+              }
+            },
+            {
               "kind": "method",
               "name": "acceptsTrigger",
               "description": "Specialized surfaces may accept additional encapsulated trigger components.",
@@ -116879,7 +117144,7 @@
               "name": "syncWarmupGroup",
               "description": "Validate synchronously too: mutations can occur before observer delivery or inside en-change.",
               "privacy": "private",
-              "default": "(): void => {\n    const trigger = this.trigger;\n    const root = trigger ? referenceRoot(trigger) : null;\n    const id = typeof this.warmupGroup === 'string' ? this.warmupGroup : '';\n    if (root !== this.#groupRoot || id !== this.#groupId) {\n      this.#groupGeneration++;\n      this.#pendingWarm = null;\n      this.clearTimers();\n      this.#groupReference?.();\n      this.#groupReference = null;\n      this.#groupRoot = root;\n      this.#groupId = id;\n      // Shared ID subscription detects late insertion and replacement without document scans.\n      this.#groupReference = observeIdReference(root, id, () => this.reconcileWarmupGroup());\n    }\n    this.reconcileWarmupGroup();\n  }",
+              "default": "(): void => {\n    const trigger = this.trigger;\n    const root = trigger ? referenceRoot(trigger) : null;\n    const id = typeof this.warmupGroup === 'string' ? this.warmupGroup : '';\n    this.#warmupContext.setTarget(!id && this.eligibleTrigger() ? trigger ?? undefined : undefined);\n    if (root !== this.#groupRoot || id !== this.#groupId) {\n      this.#groupGeneration++;\n      this.#pendingWarm = null;\n      this.clearTimers();\n      this.#groupReference?.();\n      this.#groupReference = null;\n      this.#groupRoot = root;\n      this.#groupId = id;\n      // Shared ID subscription detects late insertion and replacement without document scans.\n      this.#groupReference = observeIdReference(root, id, () => this.reconcileWarmupGroup());\n    }\n    this.reconcileWarmupGroup();\n  }",
               "type": {
                 "text": "() => void"
               }
@@ -116953,7 +117218,7 @@
             {
               "kind": "field",
               "name": "warmupGroup",
-              "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing groups stay independent.",
+              "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing explicit groups stay independent.\nWith no explicit ID, tooltipWarmupContext is requested from the trigger's ancestry.",
               "privacy": "public",
               "default": "\"\"",
               "attribute": "warmup-group",
@@ -117069,7 +117334,7 @@
             },
             {
               "name": "warmup-group",
-              "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing groups stay independent.",
+              "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing explicit groups stay independent.\nWith no explicit ID, tooltipWarmupContext is requested from the trigger's ancestry.",
               "type": {
                 "text": "string"
               },
@@ -117285,6 +117550,17 @@
       "source": "src/tooltip/warmup-group.ts",
       "path": "src/tooltip/warmup-group.ts",
       "declarations": [
+        {
+          "kind": "function",
+          "name": "createTooltipWarmupGroup",
+          "parameters": [],
+          "return": {
+            "type": {
+              "text": "TooltipWarmupGroup"
+            }
+          },
+          "description": "Create an independent scope for contextual tooltip timing and handoff. No DOM or registration work."
+        },
         {
           "kind": "function",
           "name": "tooltipWarmupGroup",
@@ -117518,6 +117794,14 @@
         }
       ],
       "exports": [
+        {
+          "kind": "js",
+          "name": "createTooltipWarmupGroup",
+          "declaration": {
+            "name": "createTooltipWarmupGroup",
+            "module": "src/tooltip/warmup-group.ts"
+          }
+        },
         {
           "kind": "js",
           "name": "tooltipWarmupGroup",

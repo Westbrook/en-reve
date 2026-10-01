@@ -341,6 +341,35 @@ test('tooltip-warmup: isolated demo shares pointer delay only within its authore
 	await expect(exportHelp).toHaveJSProperty('open', false);
 });
 
+test('tooltip-warmup: contextual demo shares timing and reset creates a cold scope', async ({ page }) => {
+	await page.goto('/api-examples/tooltip-warmup.html?progress-report');
+	await expect(page.locator('en-api-example-app')).not.toHaveAttribute('data-ssr');
+	const scene = page.locator('en-tooltip-context-demo');
+	const canvas = scene.getByRole('button', {name: 'Canvas help', exact: true});
+	const layers = scene.getByRole('button', {name: 'Layer help', exact: true});
+	const canvasHelp = scene.locator('en-tooltip[for="context-canvas"]');
+	const layerHelp = scene.locator('en-tooltip[for="context-layers"]');
+	const delay = () => scene.locator('en-tooltip').evaluateAll(nodes => nodes.forEach(node => {
+		(node as HTMLElement & {showDelay: number; hideDelay: number}).showDelay = 1200;
+		(node as HTMLElement & {hideDelay: number}).hideDelay = 5000;
+	}));
+	await delay();
+	await canvas.hover();
+	await expect(canvasHelp).toHaveJSProperty('open', false);
+	await expect(canvasHelp.getByRole('tooltip')).toBeVisible({timeout: 2500});
+	await layers.hover();
+	await expect(layerHelp.getByRole('tooltip')).toBeVisible({timeout: 700});
+	await expect(canvasHelp).toHaveJSProperty('open', false, {timeout: 700});
+	await page.keyboard.press('Escape');
+	await expect(layerHelp).toHaveJSProperty('open', false);
+	await page.getByRole('group', {name: 'Review controls', exact: true}).getByRole('button', {name: 'Reset example', exact: true}).click();
+	await delay();
+	await layers.hover();
+	await expect(layerHelp).toHaveJSProperty('open', false);
+	await expect(layerHelp.getByRole('tooltip')).toBeVisible({timeout: 2500});
+	await expectTooltipDescription(layers, 'Inspect a layer’s properties.');
+});
+
 test('tooltip-warmup: sticker sheet keyboard navigation and reset preserve external trigger descriptions', async ({ page }) => {
 	await page.goto('/?progress-report#specimen-tooltip-warmup');
 	await expect(page.locator('en-sticker-app')).not.toHaveAttribute('data-ssr');

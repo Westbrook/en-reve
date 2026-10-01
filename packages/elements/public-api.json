@@ -31,8 +31,8 @@
     "otherDeepImports": "Importable for staging compatibility; unsupported implementation details. No package export is removed by this policy."
   },
   "generatorDigest": "sha256:653b8ea8844aaf62e27fe630941e20e7ce70fa8c6d6ea8e783dacc04cb29dcaa:sha256:fb7c7a872e975328c4f45a302225cd8ecd5cc63e848347d1277ebbbe2807315f",
-  "manifestDigest": "sha256:48a6b9d04d5b3da842158cb71bd9838242dcb88d7829f7f910103bd8b0aae03e",
-  "typeDigest": "sha256:18cd0bada5b0a9af82c6017f1455a5445af2e9c7e9a8a5908c836e5b8f3efea8",
+  "manifestDigest": "sha256:38761200cb504755b9e00b1cfc31ef79a3bcb0ab7a465f8308ab48038fb7952c",
+  "typeDigest": "sha256:286b045d1dd215688df90b794db782f4ad1f9c71740aa468f2bf8255ca96649c",
   "entrypoints": {
     "@en-reve/elements": {
       "source": "src/index.ts",
@@ -2093,6 +2093,10 @@
     "@en-reve/elements/tooltip.js": {
       "source": "src/tooltip.ts",
       "supported": true
+    },
+    "@en-reve/elements/tooltip/context.js": {
+      "source": "src/tooltip/context.ts",
+      "supported": false
     },
     "@en-reve/elements/tooltip/hover-corridor.js": {
       "source": "src/tooltip/hover-corridor.ts",
@@ -54548,7 +54552,7 @@
         {
           "kind": "field",
           "name": "warmupGroup",
-          "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing groups stay independent.",
+          "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing explicit groups stay independent.\nWith no explicit ID, tooltipWarmupContext is requested from the trigger's ancestry.",
           "privacy": "public",
           "default": "\"\"",
           "attribute": "warmup-group",
@@ -54664,7 +54668,7 @@
         },
         {
           "name": "warmup-group",
-          "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing groups stay independent.",
+          "description": "Optional literal ID of a containing toolbar/group in the external trigger's tree.\nAfter a pointer-opened tooltip is displayed, peers skip show-delay until 500ms\nafter all group pointer activity ends. Displayed focused help suppresses peer hover\nuntil blur or accepted Escape. Fresh hover after focused Escape is pointer-only\nuntil a new focus interaction. Missing/non-containing explicit groups stay independent.\nWith no explicit ID, tooltipWarmupContext is requested from the trigger's ancestry.",
           "type": {
             "text": "string"
           },
@@ -59965,6 +59969,7 @@
       "@en-reve/elements/toolbar/index.js": "src/toolbar/index.ts",
       "@en-reve/elements/toolbar/template.js": "src/toolbar/template.ts",
       "@en-reve/elements/tooltip.js": "src/tooltip.ts",
+      "@en-reve/elements/tooltip/context.js": "src/tooltip/context.ts",
       "@en-reve/elements/tooltip/hover-corridor.js": "src/tooltip/hover-corridor.ts",
       "@en-reve/elements/tooltip/index.js": "src/tooltip/index.ts",
       "@en-reve/elements/tooltip/position-controller.js": "src/tooltip/position-controller.ts",
@@ -60167,10 +60172,13 @@
       "@en-reve/elements/context.js#ContextProvider": "src/internal/context-provider.ts#ContextProvider",
       "@en-reve/elements/context.js#ContextRoot": "external:@lit/context/development/lib/context-root.d.ts#ContextRoot",
       "@en-reve/elements/context.js#createContext": "external:@lit/context/development/lib/create-context.d.ts#createContext",
+      "@en-reve/elements/context.js#createTooltipWarmupGroup": "src/tooltip/warmup-group.ts#createTooltipWarmupGroup",
       "@en-reve/elements/context.js#editorExtensionContext": "src/editor/context.ts#editorExtensionContext",
       "@en-reve/elements/context.js#editorMessagesContext": "src/messages-context.ts#editorMessagesContext",
       "@en-reve/elements/context.js#richEditorCommandContext": "src/editor/context.ts#richEditorCommandContext",
       "@en-reve/elements/context.js#RichEditorCommandHost": "src/editor/context.ts#RichEditorCommandHost",
+      "@en-reve/elements/context.js#tooltipWarmupContext": "src/tooltip/context.ts#tooltipWarmupContext",
+      "@en-reve/elements/context.js#TooltipWarmupGroup": "src/tooltip/warmup-group.ts#TooltipWarmupGroup",
       "@en-reve/elements/data-table.js#DataTableEventMap": "src/data-table/element.ts#DataTableEventMap",
       "@en-reve/elements/data-table.js#DataTablePageChangeEvent": "src/data-table/element.ts#DataTablePageChangeEvent",
       "@en-reve/elements/data-table.js#DataTableSelectionChangeEvent": "src/data-table/element.ts#DataTableSelectionChangeEvent",
@@ -60467,6 +60475,7 @@
       "@en-reve/elements/index.js#createColorValue": "src/color-picker/color-value.ts#createColorValue",
       "@en-reve/elements/index.js#createContext": "external:@lit/context/development/lib/create-context.d.ts#createContext",
       "@en-reve/elements/index.js#createElementScope": "src/element-scope.ts#createElementScope",
+      "@en-reve/elements/index.js#createTooltipWarmupGroup": "src/tooltip/warmup-group.ts#createTooltipWarmupGroup",
       "@en-reve/elements/index.js#DataTableEventMap": "src/data-table/element.ts#DataTableEventMap",
       "@en-reve/elements/index.js#DataTablePageChangeEvent": "src/data-table/element.ts#DataTablePageChangeEvent",
       "@en-reve/elements/index.js#DataTableSelectionChangeEvent": "src/data-table/element.ts#DataTableSelectionChangeEvent",
@@ -60623,6 +60632,8 @@
       "@en-reve/elements/index.js#TokenEditorChangeReason": "src/token-editor/element.ts#TokenEditorChangeReason",
       "@en-reve/elements/index.js#TokenEditorEventMap": "src/token-editor/element.ts#TokenEditorEventMap",
       "@en-reve/elements/index.js#TooltipAxis": "src/tooltip/position-controller.ts#TooltipAxis",
+      "@en-reve/elements/index.js#tooltipWarmupContext": "src/tooltip/context.ts#tooltipWarmupContext",
+      "@en-reve/elements/index.js#TooltipWarmupGroup": "src/tooltip/warmup-group.ts#TooltipWarmupGroup",
       "@en-reve/elements/index.js#TreeChangeEvent": "src/tree/element.ts#TreeChangeEvent",
       "@en-reve/elements/index.js#TreeEventMap": "src/tree/element.ts#TreeEventMap",
       "@en-reve/elements/index.js#TreeLoadStateChangeEvent": "src/tree/element.ts#TreeLoadStateChangeEvent",
@@ -60642,6 +60653,7 @@
       "@en-reve/elements/internal/child-upgrades.js#registryInitialized": "src/internal/child-upgrades.ts#registryInitialized",
       "@en-reve/elements/internal/context-consumer.js#Host": "src/internal/context-consumer.ts#Host",
       "@en-reve/elements/internal/context-consumer.js#ScopedContext": "src/internal/context-consumer.ts#ScopedContext",
+      "@en-reve/elements/internal/context-consumer.js#TargetContext": "src/internal/context-consumer.ts#TargetContext",
       "@en-reve/elements/internal/context-provider.js#ContextProvider": "src/internal/context-provider.ts#ContextProvider",
       "@en-reve/elements/internal/create-owned-element.js#createOwnedElement": "src/internal/create-owned-element.ts#createOwnedElement",
       "@en-reve/elements/internal/date-picker-feature.js#availableDatePickerCalendar": "src/internal/date-picker-feature.ts#availableDatePickerCalendar",
@@ -61085,6 +61097,9 @@
       "@en-reve/elements/tooltip.js#OverlayEventMap": "src/dialog/types.ts#OverlayEventMap",
       "@en-reve/elements/tooltip.js#OverlayReason": "src/dialog/types.ts#OverlayReason",
       "@en-reve/elements/tooltip.js#TooltipAxis": "src/tooltip/position-controller.ts#TooltipAxis",
+      "@en-reve/elements/tooltip/context.js#createTooltipWarmupGroup": "src/tooltip/warmup-group.ts#createTooltipWarmupGroup",
+      "@en-reve/elements/tooltip/context.js#tooltipWarmupContext": "src/tooltip/context.ts#tooltipWarmupContext",
+      "@en-reve/elements/tooltip/context.js#TooltipWarmupGroup": "src/tooltip/warmup-group.ts#TooltipWarmupGroup",
       "@en-reve/elements/tooltip/hover-corridor.js#Bounds": "src/tooltip/hover-corridor.ts#Bounds",
       "@en-reve/elements/tooltip/hover-corridor.js#distanceToBounds": "src/tooltip/hover-corridor.ts#distanceToBounds",
       "@en-reve/elements/tooltip/hover-corridor.js#inHoverCorridor": "src/tooltip/hover-corridor.ts#inHoverCorridor",
@@ -61098,6 +61113,7 @@
       "@en-reve/elements/tooltip/template.js#TooltipView": "src/tooltip/template.ts#TooltipView",
       "@en-reve/elements/tooltip/tooltip.js#EnTooltip": "src/tooltip/tooltip.ts#EnTooltip",
       "@en-reve/elements/tooltip/tooltip.js#TooltipAxis": "src/tooltip/position-controller.ts#TooltipAxis",
+      "@en-reve/elements/tooltip/warmup-group.js#createTooltipWarmupGroup": "src/tooltip/warmup-group.ts#createTooltipWarmupGroup",
       "@en-reve/elements/tooltip/warmup-group.js#tooltipWarmupGroup": "src/tooltip/warmup-group.ts#tooltipWarmupGroup",
       "@en-reve/elements/tooltip/warmup-group.js#TooltipWarmupGroup": "src/tooltip/warmup-group.ts#TooltipWarmupGroup",
       "@en-reve/elements/transcript.js#EnTranscript": "src/transcript.ts#EnTranscript",
@@ -61205,6 +61221,7 @@
       "@en-reve/elements#createColorValue": "src/color-picker/color-value.ts#createColorValue",
       "@en-reve/elements#createContext": "external:@lit/context/development/lib/create-context.d.ts#createContext",
       "@en-reve/elements#createElementScope": "src/element-scope.ts#createElementScope",
+      "@en-reve/elements#createTooltipWarmupGroup": "src/tooltip/warmup-group.ts#createTooltipWarmupGroup",
       "@en-reve/elements#DataTableEventMap": "src/data-table/element.ts#DataTableEventMap",
       "@en-reve/elements#DataTablePageChangeEvent": "src/data-table/element.ts#DataTablePageChangeEvent",
       "@en-reve/elements#DataTableSelectionChangeEvent": "src/data-table/element.ts#DataTableSelectionChangeEvent",
@@ -61361,6 +61378,8 @@
       "@en-reve/elements#TokenEditorChangeReason": "src/token-editor/element.ts#TokenEditorChangeReason",
       "@en-reve/elements#TokenEditorEventMap": "src/token-editor/element.ts#TokenEditorEventMap",
       "@en-reve/elements#TooltipAxis": "src/tooltip/position-controller.ts#TooltipAxis",
+      "@en-reve/elements#tooltipWarmupContext": "src/tooltip/context.ts#tooltipWarmupContext",
+      "@en-reve/elements#TooltipWarmupGroup": "src/tooltip/warmup-group.ts#TooltipWarmupGroup",
       "@en-reve/elements#TreeChangeEvent": "src/tree/element.ts#TreeChangeEvent",
       "@en-reve/elements#TreeEventMap": "src/tree/element.ts#TreeEventMap",
       "@en-reve/elements#TreeLoadStateChangeEvent": "src/tree/element.ts#TreeLoadStateChangeEvent",
@@ -61547,10 +61566,13 @@
       "@en-reve/elements/context.js#ContextProvider": "value",
       "@en-reve/elements/context.js#ContextRoot": "value",
       "@en-reve/elements/context.js#createContext": "value",
+      "@en-reve/elements/context.js#createTooltipWarmupGroup": "value",
       "@en-reve/elements/context.js#editorExtensionContext": "value",
       "@en-reve/elements/context.js#editorMessagesContext": "value",
       "@en-reve/elements/context.js#richEditorCommandContext": "value",
       "@en-reve/elements/context.js#RichEditorCommandHost": "type",
+      "@en-reve/elements/context.js#tooltipWarmupContext": "value",
+      "@en-reve/elements/context.js#TooltipWarmupGroup": "type",
       "@en-reve/elements/data-table.js#DataTableEventMap": "type",
       "@en-reve/elements/data-table.js#DataTablePageChangeEvent": "type",
       "@en-reve/elements/data-table.js#DataTableSelectionChangeEvent": "type",
@@ -61847,6 +61869,7 @@
       "@en-reve/elements/index.js#createColorValue": "value",
       "@en-reve/elements/index.js#createContext": "value",
       "@en-reve/elements/index.js#createElementScope": "value",
+      "@en-reve/elements/index.js#createTooltipWarmupGroup": "value",
       "@en-reve/elements/index.js#DataTableEventMap": "type",
       "@en-reve/elements/index.js#DataTablePageChangeEvent": "type",
       "@en-reve/elements/index.js#DataTableSelectionChangeEvent": "type",
@@ -62003,6 +62026,8 @@
       "@en-reve/elements/index.js#TokenEditorChangeReason": "type",
       "@en-reve/elements/index.js#TokenEditorEventMap": "type",
       "@en-reve/elements/index.js#TooltipAxis": "type",
+      "@en-reve/elements/index.js#tooltipWarmupContext": "value",
+      "@en-reve/elements/index.js#TooltipWarmupGroup": "type",
       "@en-reve/elements/index.js#TreeChangeEvent": "type",
       "@en-reve/elements/index.js#TreeEventMap": "type",
       "@en-reve/elements/index.js#TreeLoadStateChangeEvent": "type",
@@ -62022,6 +62047,7 @@
       "@en-reve/elements/internal/child-upgrades.js#registryInitialized": "value",
       "@en-reve/elements/internal/context-consumer.js#Host": "type",
       "@en-reve/elements/internal/context-consumer.js#ScopedContext": "value",
+      "@en-reve/elements/internal/context-consumer.js#TargetContext": "value",
       "@en-reve/elements/internal/context-provider.js#ContextProvider": "value",
       "@en-reve/elements/internal/create-owned-element.js#createOwnedElement": "value",
       "@en-reve/elements/internal/date-picker-feature.js#availableDatePickerCalendar": "value",
@@ -62465,6 +62491,9 @@
       "@en-reve/elements/tooltip.js#OverlayEventMap": "type",
       "@en-reve/elements/tooltip.js#OverlayReason": "type",
       "@en-reve/elements/tooltip.js#TooltipAxis": "type",
+      "@en-reve/elements/tooltip/context.js#createTooltipWarmupGroup": "value",
+      "@en-reve/elements/tooltip/context.js#tooltipWarmupContext": "value",
+      "@en-reve/elements/tooltip/context.js#TooltipWarmupGroup": "type",
       "@en-reve/elements/tooltip/hover-corridor.js#Bounds": "type",
       "@en-reve/elements/tooltip/hover-corridor.js#distanceToBounds": "value",
       "@en-reve/elements/tooltip/hover-corridor.js#inHoverCorridor": "value",
@@ -62478,6 +62507,7 @@
       "@en-reve/elements/tooltip/template.js#TooltipView": "type",
       "@en-reve/elements/tooltip/tooltip.js#EnTooltip": "value",
       "@en-reve/elements/tooltip/tooltip.js#TooltipAxis": "type",
+      "@en-reve/elements/tooltip/warmup-group.js#createTooltipWarmupGroup": "value",
       "@en-reve/elements/tooltip/warmup-group.js#tooltipWarmupGroup": "value",
       "@en-reve/elements/tooltip/warmup-group.js#TooltipWarmupGroup": "type",
       "@en-reve/elements/transcript.js#EnTranscript": "value",
@@ -62585,6 +62615,7 @@
       "@en-reve/elements#createColorValue": "value",
       "@en-reve/elements#createContext": "value",
       "@en-reve/elements#createElementScope": "value",
+      "@en-reve/elements#createTooltipWarmupGroup": "value",
       "@en-reve/elements#DataTableEventMap": "type",
       "@en-reve/elements#DataTablePageChangeEvent": "type",
       "@en-reve/elements#DataTableSelectionChangeEvent": "type",
@@ -62741,6 +62772,8 @@
       "@en-reve/elements#TokenEditorChangeReason": "type",
       "@en-reve/elements#TokenEditorEventMap": "type",
       "@en-reve/elements#TooltipAxis": "type",
+      "@en-reve/elements#tooltipWarmupContext": "value",
+      "@en-reve/elements#TooltipWarmupGroup": "type",
       "@en-reve/elements#TreeChangeEvent": "type",
       "@en-reve/elements#TreeEventMap": "type",
       "@en-reve/elements#TreeLoadStateChangeEvent": "type",
@@ -66179,6 +66212,16 @@
           "src/internal/context-consumer.ts#Host"
         ]
       },
+      "src/internal/context-consumer.ts#TargetContext": {
+        "name": "TargetContext",
+        "source": "src/internal/context-consumer.ts",
+        "kind": "ClassDeclaration",
+        "declaration": "export declare class TargetContext<T> {\n    value: T | undefined;\n    constructor(context: Context<unknown, T>, changed: () => void);\n    setTarget(target?: HTMLElement, notify?: boolean): void;\n    disconnect(): void;\n}",
+        "references": [
+          "external:@lit/context/development/lib/create-context.d.ts#Context",
+          "external:@typescript/old/lib/lib.dom.d.ts#HTMLElement"
+        ]
+      },
       "src/internal/context-provider.ts#ContextProvider": {
         "name": "ContextProvider",
         "source": "src/internal/context-provider.ts",
@@ -68966,6 +69009,15 @@
         "declaration": "export interface ToolbarView {\n    label: string;\n    orientation: 'horizontal' | 'vertical';\n    nativeNavigation: boolean;\n    onSlotChange: () => void;\n}",
         "references": []
       },
+      "src/tooltip/context.ts#tooltipWarmupContext": {
+        "name": "tooltipWarmupContext",
+        "source": "src/tooltip/context.ts",
+        "kind": "FirstStatement",
+        "declaration": "export declare const tooltipWarmupContext: {\n    __context__: TooltipWarmupGroup | undefined;\n};",
+        "references": [
+          "src/tooltip/warmup-group.ts#TooltipWarmupGroup"
+        ]
+      },
       "src/tooltip/hover-corridor.ts#Bounds": {
         "name": "Bounds",
         "source": "src/tooltip/hover-corridor.ts",
@@ -69065,6 +69117,15 @@
           "src/popover/floating-surface.ts#FloatingSurface",
           "src/popover/floating-surface.ts#OverlayTrigger",
           "src/tooltip/hover-corridor.ts#Point"
+        ]
+      },
+      "src/tooltip/warmup-group.ts#createTooltipWarmupGroup": {
+        "name": "createTooltipWarmupGroup",
+        "source": "src/tooltip/warmup-group.ts",
+        "kind": "FunctionDeclaration",
+        "declaration": "export declare function createTooltipWarmupGroup(): TooltipWarmupGroup;",
+        "references": [
+          "src/tooltip/warmup-group.ts#TooltipWarmupGroup"
         ]
       },
       "src/tooltip/warmup-group.ts#tooltipWarmupGroup": {
