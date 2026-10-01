@@ -5,6 +5,7 @@ import { maintainedFiles, configurationRole } from './workload.mjs';
 import { workloadFamilies } from './families.mjs';
 import { deliveryBrowserOwners, deliveryNodeSources } from './lazy-delivery-closure.mjs';
 
+const earlyCampaignControls=new Set(['showcases/performance/tests/campaigns.test.mjs','showcases/performance/tests/current-campaign-integration.test.mjs']);
 // Concrete current-library prerequisites. Historical cohorts remain separately named.
 const preparations = {
  'consumer-contracts': {file:'probes/consumer-contracts/prepare.mjs',dependencies:['metadata','build:ssr'],environment:{EN_CONSUMER_CONTRACTS_OUT:'$RUN/fixtures/consumer-contracts'}},
@@ -53,8 +54,8 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
    if(file.startsWith('tooling/theme-authoring-pilot/')){inactive.push({file,classification:'optional-historical-external-engine',reason:'Superseded by production CSS authoring; requires an independently supplied audited external source and LightningCSS1.32.0.'});continue;}
    if(file==='tooling/theme-candidates/catalogue.test.mjs')continue; // Compatibility view of the same registered cases.
    if(file.includes('/portability/'))continue; // Browser-owning Node suite runs serially below.
-   const dependencies=file.startsWith('probes/lazy-delivery/')?['build:ssr']:file.startsWith('showcases/performance-results/')?[]:file.startsWith('packages/tokens/')?['build:tokens']:file.startsWith('packages/primitives/')?['build:primitives']:file.startsWith('packages/ssr/')?['build:ssr']:file.startsWith('packages/elements/')?['build:elements']:file.startsWith('tooling/css-authoring/')?['build:styles']:['build'];
-   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies}));
+   const dependencies=earlyCampaignControls.has(file)?[]:file.startsWith('probes/lazy-delivery/')?['build:ssr']:['acquisition-tables','reader-test-receipts','sort-coverage'].some(name=>file===`showcases/performance-results/scripts/${name}.test.mjs`)?['prepare:reader']:file.startsWith('showcases/performance-results/')||file.startsWith('tooling/testing/')||file==='tooling/integration-gates/runner.test.mjs'||file==='probes/registry-diagnostics/adapter.test.mjs'?[]:file.startsWith('packages/tokens/')?['build:tokens']:file.startsWith('packages/primitives/')?['build:primitives']:file.startsWith('packages/ssr/')?['build:ssr']:file.startsWith('packages/elements/')?['build:elements']:file.startsWith('tooling/css-authoring/')?['build:styles']:['build'];
+   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies,...(file==='tooling/css-authoring/compiler.test.mjs'?{nodeIsolation:'exclusive'}:{})}));
   }
   if(file.includes('config.') && source.includes('@playwright/test') && source.includes('defineConfig')) {
    const role=configurationRole(file);
@@ -86,10 +87,26 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  for(const [name,file,args,kind='check'] of direct)checks.push(add({id:`direct:${name}`,kind,command:[node,...(kind==='node-browser'?['--test','--test-reporter=tap']:[]),file,...args],dependencies:name==='packed-registration'?['metadata','build:ssr']:name.startsWith('candidate-')?['prepare:candidates']:['build'],assertionSources:[file]}));
  for(const name of ['view','en-reve-main','spectrum-gen2','calendar-variants'])checks.push(add({id:`direct:reader-${name}`,kind:'reader-browser',command:[node,`showcases/performance-results/scripts/verify-${name}.mjs`],dependencies:['browser:showcases/performance-results/playwright.config.js'],assertionSources:[`showcases/performance-results/scripts/verify-${name}.mjs`]}));
  checks.push(add({id:'styles-check',kind:'types',command:[npm,'run','check','-w','@en-reve/styles'],dependencies:['build:tokens'],assertionSources:['packages/styles/tsconfig.json']}));
- checks.push(add({id:'consumer-types',kind:'types',command:[node,'tooling/test-pipeline/consumer-types.mjs'],dependencies:['build']}));
+ checks.push(add({id:'consumer-types',kind:'types',command:[node,'tooling/test-pipeline/consumer-types.mjs'],dependencies:['build:ssr']}));
  checks.push(add({id:'scoped-consumer-types',kind:'types',command:[node,'node_modules/typescript/bin/tsc','--ignoreConfig','--strict','--noEmit','--target','ES2022','--module','NodeNext','--moduleResolution','NodeNext','--skipLibCheck','probes/scoped-registry/consumer.types.ts'],dependencies:['build:elements'],assertionSources:['probes/scoped-registry/consumer.types.ts']}));
  checks.push(add({id:'breadcrumbs-types',kind:'types',command:[node,'node_modules/typescript/bin/tsc','--ignoreConfig','--strict','--noUnusedLocals','--noUnusedParameters','--noEmit','--target','ES2022','--module','NodeNext','--moduleResolution','NodeNext','--skipLibCheck','probes/breadcrumbs-ssr-adapter/consumer.types.ts'],dependencies:['build:ssr']}));
  checks.push(add({id:'primitives-types',kind:'types',command:[npm,'run','test:types','-w','@en-reve/primitives'],dependencies:['build:primitives']}));
+ checks.push(add({id:'semantic-test-types',kind:'types',command:[node,'tooling/testing/semantic-types.mjs'],dependencies:['build:ssr']}));
+ checks.push(add({id:'semantic-doc-types',kind:'types',command:[node,'tooling/testing/semantic-types.mjs','--scope=docs'],dependencies:['build:docs-sources']}));
+ // Reviewed synthetic analysis/report controls: authored fixtures only, no acquisition.
+ const analysisControls=[
+  'probes/lazy-delivery-performance/analyze.test.py',
+  'probes/lazy-delivery-performance/report.test.py',
+  'probes/lazy-delivery-reports/editor-scenario.test.py',
+  'probes/lazy-delivery-color/full-analyze.test.py',
+  'probes/lazy-delivery-families/analyze-performance.test.py',
+  'probes/lazy-delivery-families/analyze_command_policies.test.py',
+  'probes/lazy-delivery-families/analyze_additional_families.test.py',
+ ];
+ graph.pathways['analysis-controls']=analysisControls.map(file=>{
+  if(!files.includes(file))throw Error('Missing reviewed synthetic analysis owner: '+file);
+  const id=add({id:`python:${file}`,kind:'python',command:['python3',file],dependencies:[],environment:{PYTHONDONTWRITEBYTECODE:'1'},assertionSources:[file],scope:'Synthetic parser, statistical and evidence-integrity controls; no browser/timing/retention acquisition'});checks.push(id);return id;
+ });
  checks.push(add({id:'python-budgets',kind:'python',command:['python3','probes/date-picker-performance/budget-check.test.py'],dependencies:[]}));
  // Other execution tiers are mapped in the complete execution manifest. They
  // remain outside this correctness selection because their fixtures, acquisition
@@ -154,7 +171,11 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
   'browser:packages/elements/src/commands/tests/playwright.config.ts',
   'direct:cem','direct:types','direct:lazy','direct:delivery-inventory','customization',
  ])];
- graph.tasks=[...tasks.values()];graph.pathways.correctness=[...new Set([...Object.entries(graph.pathways).filter(([name])=>name!=='delivery-closeout').flatMap(([,ids])=>ids),...units,...browser,...checks])];
+ graph.pathways['browser-cohort']=['browser:packages/primitives/tests/navigation/playwright.config.ts','browser:packages/elements/src/navigation/tests/playwright.config.ts','browser:packages/elements/src/combobox/tests/playwright.config.ts'];
+ tasks.get('browser:packages/elements/src/navigation/tests/playwright.config.ts').dependencies.push('build:ssr');
+ graph.pathways['semantic-types']=['semantic-test-types','semantic-doc-types'];
+ graph.pathways.fast=['node:showcases/performance/tests/current-campaign-integration.test.mjs','build:ssr','semantic-test-types','consumer-types','primitives-types','breadcrumbs-types','node:tooling/integration-gates/runner.test.mjs',...units.filter(id=>id.startsWith('node:tooling/testing/'))];
+ graph.tasks=[...tasks.values()].map(task=>({...task,...(task.kind==='types'&&task.id!=='styles-check'?{resources:{slots:1,exclusive:false,locks:['typecheck:'+task.id],reason:'Read-only consumer/test compiler with separate project state; one process'}}:{})}));graph.pathways.correctness=[...new Set([...Object.entries(graph.pathways).filter(([name])=>name!=='delivery-closeout').flatMap(([,ids])=>ids),...units,...browser,...checks])];
  graph.inactive=inactive;graph.unresolved=unresolved;graph.completeness='Current-library correctness graph; separately mapped specialized, historical and manual obligations are inventoried by execution-manifest.mjs';
  return graph;
 }

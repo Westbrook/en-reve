@@ -86,3 +86,5 @@ test('incomplete, malformed and dead inherited owners remain retained and never 
   assert.equal(await readFile(join(path, 'owner.json'), 'utf8'), bytes);
  });
 });
+
+test('bounded queue waits for the verified owner and never removes its lease',async()=>{await fixture(async path=>{let enter,release;const ready=new Promise(r=>enter=r),hold=new Promise(r=>release=r);const first=withMachineOwner(async()=>{enter();await hold;},{path,environment:{}});await ready;const next=withMachineOwner(async owner=>{assert.equal(owner.borrowed,false);assert(owner.queueMs>=0);},{path,environment:{},waitMs:1500});setTimeout(release,30);await first;await next;});});

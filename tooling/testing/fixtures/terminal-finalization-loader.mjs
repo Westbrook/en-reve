@@ -18,6 +18,7 @@ const common=data(`
  export const graph={tasks:process.env.EN_FINAL_PHASE==='server-close'?[{id:'showcases/performance-results/control',kind:'barrier',dependencies:[]}]:[],pathways:{correctness:[],api:[],release:[],theme:[]},completeness:'regression-fixture'};
 `);
 const commonImport=`import {checkpoint,trace,identity,graph} from ${JSON.stringify(common)};`;
+const actualServices=new URL('../services.mjs?terminal-real',import.meta.url).href;
 const actualSetup=new URL('../../evidence/setup.mjs?terminal-real',import.meta.url).href;
 const modules=new Map([
  ['pathways.mjs',`${commonImport} export const root=process.env.EN_FINAL_ROOT;export const selectTasks=g=>g.tasks;export const publicGraph=async()=>graph;`],
@@ -44,6 +45,7 @@ const modules=new Map([
  ['browser-plan.mjs',`export const browserReusePlan=()=>[];export const verifyResidualSelection=()=>{throw Error('Unexpected browser selection')};`],
  ['validate-facets.mjs',`export const validateExecutedFacets=()=>{throw Error('Unexpected browser execution')};`],
  ['equivalence.mjs',`export const testListLines=()=>{throw Error('Unexpected test-list generation')};`],
+ ['services.mjs',`import {Services as Actual} from ${JSON.stringify(actualServices)};export class Services extends Actual {async close(){if(process.env.EN_FINAL_PHASE==='server-close')await this.get('reader');return super.close();}}`],
  ['owned-vite.mjs',`${commonImport}
   import {createServer} from 'node:http';
   export async function startOwnedVite(){

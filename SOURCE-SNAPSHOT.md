@@ -23,6 +23,10 @@ and the checksum-verified 2026-10-01 acquisition archive are included deliberate
 See [the publication record](plans/performance-publication-2026-10-01.md) for
 qualification limits and replay instructions, and [the source mapping](.source-export/updates/performance-20261001.json) for exact changed blobs.
 
+## Validation efficiency publication — 2026-10-01
+
+Current source maps to local main `0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32`. The user approved stopping remaining confirmation and merging. LTS controls passed; the broad Current run was intentionally stopped before completion. No complete correctness pass is claimed. See `.source-export/updates/validation-efficiency-20261001.json`.
+
 ## Contextual tooltip draft
 
-This branch includes the contextual tooltip draft from local merge `c26d020c5d8f4c33cb67ca6dd9476e7f3c33b24c`, based on accepted main `d314733215b89149d538bce3a3f8728c2dcc0822`. It is preserved for review, but has not completed qualification or been published to the demo site.
+This branch includes the contextual tooltip draft from local merge `0376b9869065808ecc79470545835d7f9dbc49f8`, based on accepted main `0bc14ea0f82c379c5d8ab3d5bdcd2df399255d32`. It is preserved for review, but has not completed qualification or been published to the demo site.

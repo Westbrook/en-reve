@@ -124,6 +124,13 @@ for(const component of components) test(`${component.tagName} advertised Parts a
    await page.mouse.move(from.x+from.width/2,from.y+from.height/2);await page.mouse.down();await page.mouse.move(to.x+to.width/2,to.y+to.height-2,{steps:8});
    await expect(page.locator('#subject [part=drag-preview]')).toBeVisible();
   }
+  if(state==='range-preview'&&component.tagName==='en-rich-text-editor'){
+   expect(await page.locator('#subject').evaluate(async(host:any)=>{
+    host.value='Alpha beta';await host.updateComplete;
+    return host.decorateRanges([{id:'review',range:{coordinate:'text',from:0,to:5,expectedText:'Alpha',revision:host.revision}}]);
+   })).toBe(true);
+   await expect(page.locator('#subject [part~=range-decoration]')).toHaveText('Alpha');
+  }
   observations[state]=await page.locator('#subject').evaluate(exposedParts);
   if(state==='deferred'&&component.tagName==='en-date-picker'){
    const host=page.locator('#subject'),status=host.locator('[part~=calendar-status]');

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,writeFile,rm,realpath} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -10,7 +10,7 @@ const options={strict:true,noEmit:true,skipLibCheck:true,module:ts.ModuleKind.ES
 const prefix='export type Constructor=new(...args:any[])=>{};export interface Envelope<T>{detail:T};export class Base{};';
 const factory=(extra='')=>`export function M<T extends Constructor>(Parent:T){${extra}return class extends Parent {value!:T;};}export class Leaf extends M(Base){}`;
 async function fixture(code:string,run:(f:any)=>unknown) {
- const root=await mkdtemp(join(tmpdir(),'cem-scoped-probe-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-scoped-probe-')));
  try {
   const path=join(root,'main.ts');await writeFile(path,code);const capture=createCapturedCompilerProgram([path],options),program=capture.program,source=program.getSourceFile(path);
   let callable:any;for(const node of source.statements){if(ts.isFunctionDeclaration(node)&&node.name?.text==='M')callable=node;

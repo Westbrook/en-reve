@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -15,7 +15,7 @@ export function M<T extends Constructor>(Parent:T){return (
 class extends Parent {});}`;
 const files={'factory.ts':factory,'base.ts':'export class Base {value="actual";}','main.ts':`import {M} from './factory.js';import {Base} from './base.js';export class Leaf extends M(Base){}`};
 async function fixture(input:Record<string,string>,run:(f:any)=>unknown,extraOptions:any={}) {
- const root=await mkdtemp(join(tmpdir(),'cem-constructor-imports-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-constructor-imports-')));
  try {
   for(const [name,text]of Object.entries(input)){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}
   const roots=Object.keys(input).filter(name=>/\.[cm]?tsx?$/.test(name)).map(name=>join(root,name));
@@ -166,7 +166,7 @@ test('constructor capture records private-only imported returns and predicates i
 }));
 
 test('constructor capture records public factory-only imported returns in its distinct output directory',async()=>{
- const root=await mkdtemp(join(tmpdir(),'cem-factory-method-imports-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-factory-method-imports-')));
  try {
   const input={
    'types.ts':'export interface Payload {value:string;} export function makePayload():Payload{return {value:"a"};} export function isPayload(value:unknown):value is Payload{return typeof value === "object" && value !== null && "value" in value;}',

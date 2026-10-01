@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,rm,realpath} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -13,7 +13,7 @@ export function M<T extends Constructor>(Parent:T){return (
 /** ${tags} */
 class extends Parent {${body}});}export class Leaf extends M(Base){}`;
 async function fixture(sourceText:string,run:(f:any)=>unknown) {
- const root=await mkdtemp(join(tmpdir(),'cem-factory-admission-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-factory-admission-')));
  try {
   const packageRoot=join(root,'node_modules/@en-reve/primitives');await mkdir(join(packageRoot,'dist/interactions'),{recursive:true});
   for(const name of ['events.js','events.d.ts','package.json']) {

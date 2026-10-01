@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,readFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,readFile,rm,realpath} from 'node:fs/promises';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -8,7 +8,7 @@ import {createCapturedCompilerProgram} from './captured-compiler-program.ts';
 
 const options={noEmit:true,strict:true,skipLibCheck:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,moduleResolution:ts.ModuleResolutionKind.Bundler,types:[]};
 async function fixture(files:Record<string,string>,run:(f:any)=>unknown,change:any={}) {
-  const root=await mkdtemp(join(tmpdir(),'cem-type-probe-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'cem-type-probe-')));
   try {
     for(const [name,text] of Object.entries(files)){const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);}
     const file=join(root,'main.ts'),capture=createCapturedCompilerProgram([file],{...options,...change});

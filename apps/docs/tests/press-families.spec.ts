@@ -30,9 +30,9 @@ async function mount(page:Page,mode:'light'|'dark'='light'){
  pins['component.switch.thumb-pressed-size']={value:22,unit:'px'};pins['component.slider-thumb.pressed-scale']=1.2;pins['component.color-plane-thumb.pressed-scale']=1.2;
  await page.addStyleTag({content:styles+emitThemeCSS(resolveTheme({name:'press-test',mode,pins}))});
  await page.locator('main').evaluate((el,mode)=>el.setAttribute('data-en-appearance',mode),mode);
- await expect(page.locator('#segments [part=option]').first()).toBeVisible();
+ await expect(page.locator('#segments [part~=option]').first()).toBeVisible();
 }
-const targets:Record<string,string>={segmented:'#segments [part=option]',accordion:'#accordion button',tab:'#tab .en-tab',rating:'#rating .en-rating-item','combobox-trigger':'#combo .en-combobox-trigger',navigation:'#navigation','editor-token':'#editor-token',option:'#option',calendar:'#calendar',checkbox:'#checkbox input',radio:'#radio input',switch:'#switch input',select:'#select select','number-step':'#number .en-number-step'};
+const targets:Record<string,string>={segmented:'#segments [part~=option]',accordion:'#accordion button',tab:'#tab .en-tab',rating:'#rating .en-rating-item','combobox-trigger':'#combo .en-combobox-trigger',navigation:'#navigation','editor-token':'#editor-token',option:'#option',calendar:'#calendar',checkbox:'#checkbox input',radio:'#radio input',switch:'#switch input',select:'#select select','number-step':'#number .en-number-step'};
 async function geometry(el:Locator){return el.evaluate(el=>{const r=el.getBoundingClientRect(),s=getComputedStyle(el);return {width:r.width,height:r.height,x:r.x,y:r.y,layoutWidth:(el as HTMLElement).offsetWidth,scale:s.scale,translate:s.translate,bg:s.backgroundColor,shadow:s.boxShadow,outline:s.outlineStyle};});}
 async function release(page:Page){await page.mouse.up();await page.mouse.move(5,5);await page.keyboard.press('Escape');}
 for(const mode of ['light','dark'] as const)test(`${mode}: independent family motion transforms complete surfaces, preserves selection and supports reduced motion`,async({page})=>{
@@ -47,14 +47,14 @@ for(const mode of ['light','dark'] as const)test(`${mode}: independent family mo
   if(['segmented','accordion','tab','rating','combobox-trigger','navigation','editor-token','number-step'].includes(family))await expect.poll(async()=> (await geometry(el)).bg,family).toBe('rgb(18, 52, 86)');
   if(family==='segmented'){
    expect(await el.locator('.en-segmented-label').evaluate(el=>getComputedStyle(el).scale)).toBe('none');
-   expect((await geometry(page.locator('#segments [part=option]').nth(1))).scale).toBe('none');
+   expect((await geometry(page.locator('#segments [part~=option]').nth(1))).scale).toBe('none');
    await expect(el).toHaveAttribute('data-selected','');
   }
   await release(page);
   await page.emulateMedia({reducedMotion:'reduce'});await el.hover();await page.mouse.down();expect((await geometry(el)).scale,family).toBe('none');await release(page);await page.emulateMedia({reducedMotion:'no-preference'});
  }
- const item=page.locator('#items [part=option]').first();await item.hover();await page.mouse.down();expect((await geometry(item)).scale).toBe('0.94');await release(page);
- const disabled=page.locator('#segments [part=option]').nth(2);await disabled.hover();await page.mouse.down();expect((await geometry(disabled)).scale).toBe('none');await release(page);
+ const item=page.locator('#items [part~=option]').first();await item.hover();await page.mouse.down();expect((await geometry(item)).scale).toBe('0.94');await release(page);
+ const disabled=page.locator('#segments [part~=option]').nth(2);await disabled.hover();await page.mouse.down();expect((await geometry(disabled)).scale).toBe('none');await release(page);
  const drag=page.locator('#drag');await drag.hover();await page.mouse.down();expect((await geometry(drag)).scale).toBe('none');await release(page);
 });
 test('switch thumb elongates within a stationary track and plane feedback preserves pointer coordinates',async({page})=>{
@@ -80,7 +80,7 @@ test('disabled surfaces do not animate; scoped overrides and keyboard focus rema
  }
  // A new mount restores enabled controls through their public API.
  await mount(page);await page.locator('#segments').evaluate(el=>(el as HTMLElement).style.setProperty('--en-segmented-pressed-scale','.98'));
- const option=page.locator('#segments [part=option]').first();await option.hover();await page.mouse.down();expect((await geometry(option)).scale).toBe('0.98');await release(page);
+ const option=page.locator('#segments [part~=option]').first();await option.hover();await page.mouse.down();expect((await geometry(option)).scale).toBe('0.98');await release(page);
  const accordion=page.locator('#accordion button');await accordion.hover();await page.mouse.down();expect((await geometry(accordion)).scale).toBe('0.94');await release(page);
  const wasExpanded=await accordion.getAttribute('aria-expanded');await page.keyboard.press('Tab');await accordion.focus();await page.keyboard.down('Space');expect((await geometry(accordion)).outline).not.toBe('none');await page.keyboard.up('Space');await expect(accordion).toHaveAttribute('aria-expanded',wasExpanded==='true'?'false':'true');
  await page.locator('#accordion').evaluate(el=>el.setAttribute('data-press','none'));await accordion.hover();await page.mouse.down();expect((await geometry(accordion)).scale).toBe('none');expect((await geometry(accordion)).bg).toBe('rgb(18, 52, 86)');await release(page);
@@ -88,7 +88,7 @@ test('disabled surfaces do not animate; scoped overrides and keyboard focus rema
 test('forced colors preserve system feedback and visible keyboard focus',async({page},info)=>{
  if(info.project.name==='webkit'){test.skip(true,'WebKit does not emulate forced colors.');return;}
  await mount(page);await page.emulateMedia({forcedColors:'active'});
- const option=page.locator('#segments [part=option]').first();await option.hover();await page.mouse.down();expect((await geometry(option)).bg).not.toBe('rgb(18, 52, 86)');expect((await geometry(option)).shadow).toBe('none');await release(page);
+ const option=page.locator('#segments [part~=option]').first();await option.hover();await page.mouse.down();expect((await geometry(option)).bg).not.toBe('rgb(18, 52, 86)');expect((await geometry(option)).shadow).toBe('none');await release(page);
  await page.keyboard.press('Tab');await page.locator('#segments input').first().focus();expect((await geometry(option)).outline).not.toBe('none');
 });
 for(const theme of ['vellum','signal','kinetic'])for(const appearance of ['light','dark'])test(`${theme} ${appearance}: delivered presets have distinct family feedback`,async({page})=>{
@@ -102,7 +102,7 @@ for(const theme of ['vellum','signal','kinetic'])for(const appearance of ['light
  await expect.poll(async()=> (await geometry(trigger)).translate).toBe(theme==='vellum'?'0px 1px':'0px');
  if(theme==='vellum'||theme==='signal')expect((await geometry(trigger)).shadow).toContain('inset');
  await page.mouse.up();
- const segment=page.locator('en-segmented-control[label="Activity period"] [part=option]').first();await segment.hover();await page.mouse.down();expect((await geometry(segment)).scale).toBe('1');expect((await geometry(segment)).translate).toBe('0px');await page.mouse.up();
+ const segment=page.locator('en-segmented-control[label="Activity period"] [part~=option]').first();await segment.hover();await page.mouse.down();expect((await geometry(segment)).scale).toBe('1');expect((await geometry(segment)).translate).toBe('0px');await page.mouse.up();
 
 });
 test('dragging out of a disclosure trigger cancels activation and releases its pressed transform',async({page})=>{

@@ -10,19 +10,20 @@ export async function publicGraph({workspaceRoot=root}={}) {
   const tasks = new Map();
   const add = (id, command, dependencies = ['build'], extra = {}) => { if (tasks.has(id)) return id; tasks.set(id, { id, command, dependencies, ...extra }); return id; };
   for (const [name, dependencies] of [['tokens', []], ['styles', ['tokens']], ['primitives', []], ['elements', ['styles','primitives']]]) {
-    add(`build:${name}`, [npm, 'run', 'build', '-w', `@en-reve/${name}`], dependencies.map(name => `build:${name}`), {kind:'producer'});
+    add(`build:${name}`, [npm, 'run', 'build', '-w', `@en-reve/${name}`], dependencies.map(name => `build:${name}`), {kind:'producer',priority:15});
   }
-  let prior='build:elements';
+  add('metadata:lazy',[],['build:elements'],{kind:'barrier',scope:'Lazy metadata generated once by the elements build before declaration emit'});
+  let prior='metadata:lazy';
   for(const [name,command] of [
-    ['lazy',[npm,'run','metadata:lazy']],
     ['cem',[node,'tooling/metadata/generate-elements.ts']],
     ['types',[npm,'run','metadata:types']],
     ['api',[npm,'run','metadata:api']],
     ['customization',[npm,'run','customization']],
   ]) prior=add(`metadata:${name}`,command,[prior],{kind:'producer'});
   add('metadata',[],[prior],{kind:'barrier',scope:'Exact ordered stages from the root metadata script'});
-  add('build:ssr', [npm, 'run', 'build', '-w', '@en-reve/ssr'], ['build:elements'], {kind:'producer'});
-  add('build:docs', [npm, 'run', 'build', '-w', '@en-reve/docs'], ['metadata','build:ssr'], {kind:'producer'});
+  add('build:ssr', [npm, 'run', 'build', '-w', '@en-reve/ssr'], ['build:elements'], {kind:'producer',priority:15});
+  add('build:docs-sources', [npm, 'run', 'prepare:docs', '-w', '@en-reve/docs'], ['metadata','build:ssr'], {kind:'producer'});
+  add('build:docs', [npm, 'run', 'build', '--ignore-scripts', '-w', '@en-reve/docs'], ['build:docs-sources'], {kind:'producer',scope:'Explicit docs preparation owns the prebuild lifecycle once; SSR/Vite retain verified input checks'});
   add('build', [], ['build:docs'], {kind:'barrier', scope:'Equivalent ordered stages from the root build script'});
   const unit = (file, dependencies = ['build']) => add(`node:${file}`, [node, '--test', '--test-reporter=tap', file], dependencies, { kind: 'node', assertionSources: [file] });
   const pw = (config, dependencies = ['build']) => add(`browser:${config}`, browser(config), dependencies, { kind: 'browser', config });

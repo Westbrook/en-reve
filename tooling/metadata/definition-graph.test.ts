@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp, mkdir, writeFile, rm} from 'node:fs/promises';
+import {mkdtemp, mkdir, writeFile, rm,realpath} from 'node:fs/promises';
 import {tmpdir} from 'node:os';
 import {join} from 'node:path';
 import {readDefinitionGraph, verifyDefinitionEntries, type SourceDefinition} from './definition-graph.ts';
@@ -21,7 +21,7 @@ test('all catalog and define entries consume canonical component definitions', a
 });
 
 async function fixture(run: (root: string) => Promise<void>) {
-  const root = await mkdtemp(join(tmpdir(), 'en-definition-graph-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'en-definition-graph-')));
   try {
     await mkdir(join(root, 'src/definitions'), {recursive:true});
     await writeFile(join(root, 'src/catalog.ts'), "import {aDefinition} from './definitions/a.js'; export const definitions = [aDefinition] as const;");

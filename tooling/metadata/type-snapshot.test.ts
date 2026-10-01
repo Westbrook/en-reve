@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, readFile, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, readFile, writeFile, rm,realpath } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { execFile } from 'node:child_process';
@@ -14,7 +14,7 @@ import { digestJson } from '../evidence/identity.ts';
 const exec = promisify(execFile);
 const cem = { schemaVersion: '1.0.0', modules: [{ path: 'src/index.ts', exports: [{ kind: 'js', name: 'DateRange', declaration: { name: 'DateRange', module: './barrel.js' } }] }] };
 async function fixture(t: any) {
-  const root = await mkdtemp(join(tmpdir(), 'api-types-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'api-types-')));
   t.after(() => rm(root, { recursive: true, force: true }));
   await mkdir(join(root, 'src/internal'), { recursive: true });
   await writeFile(join(root, 'package.json'), JSON.stringify({ name: '@test/elements', type: 'module', exports: { '.': { types: './dist/index.d.ts', import: './dist/index.js' }, './*.js': { types: './dist/*.d.ts', import: './dist/*.js' }, './internal/hidden.js': null } }));

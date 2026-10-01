@@ -16,7 +16,7 @@ import { deliveryMetadataOutputs } from './delivery-metadata.ts';
 import { deliveryPolicy } from './delivery-policy.ts';
 
 test('the installed WC Toolkit generator extracts actual Lit source without running the custom element', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'en-cem-test-'));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'en-cem-test-')));
   try {
     await symlink(fileURLToPath(new URL('../../node_modules', import.meta.url)), join(directory, 'node_modules'), 'dir');
     const packageFile = JSON.stringify({ name: 'sample-only', private: true });
@@ -55,7 +55,7 @@ test('the installed WC Toolkit generator extracts actual Lit source without runn
 });
 
 test('missing, invalid, escaping and empty sources fail instead of fabricating metadata', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'en-cem-test-'));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'en-cem-test-')));
   try {
     await assert.rejects(() => generateCem({ sourceRoot: directory, sources: [] }));
     await assert.rejects(() => generateCem({ sourceRoot: directory, sources: ['missing.ts'] }));
@@ -156,7 +156,7 @@ test('inferred import types retain source-relative meaning across relocated sour
 });
 
 test('the source adapter preserves Lit state encapsulation and public concrete overrides', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'en-cem-test-'));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'en-cem-test-')));
   try {
     await symlink(fileURLToPath(new URL('../../node_modules', import.meta.url)), join(directory, 'node_modules'), 'dir');
     await writeFile(join(directory, 'base.ts'), `
@@ -201,7 +201,7 @@ test('the source adapter preserves Lit state encapsulation and public concrete o
 });
 
 test('package source selection excludes tests, fixtures, declarations, config and generated outputs', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'en-cem-selection-'));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'en-cem-selection-')));
   try {
     const files = ['src/item/element.ts', 'src/item/template.ts', 'src/catalog.ts', 'src/tests/test.ts', 'src/fixtures/fixture.ts',
       'src/item.test.ts', 'src/item.browser.spec.ts', 'src/item-fixture.ts', 'src/item.config.ts', 'src/item.d.ts', 'dist/item.ts'];
@@ -258,7 +258,7 @@ test('painted controls inherit medium-default size metadata while selection desc
 });
 
 test('retained CEM verification rejects changed sources and mismatched evidence without rewriting', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'en-cem-receipt-'));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'en-cem-receipt-')));
   try {
     await mkdir(join(directory, 'src'));
     const source = "/** @tag en-sample */ export class Sample extends HTMLElement {}";
@@ -311,7 +311,7 @@ test('retained CEM verification rejects changed sources and mismatched evidence 
 });
 
 test('source-authored internal event visibility preserves public event types', async () => {
-  const directory = await mkdtemp(join(tmpdir(), 'en-event-metadata-'));
+  const directory = await realpath(await mkdtemp(join(tmpdir(), 'en-event-metadata-')));
   try {
     await symlink(fileURLToPath(new URL('../../node_modules', import.meta.url)), join(directory, 'node_modules'), 'dir');
     await writeFile(join(directory, 'package.json'), JSON.stringify({name:'event-metadata',private:true}));
@@ -360,7 +360,7 @@ test('API-06 metadata retains slots and publishes canonical surfaces and shared 
 
 
 for (const mutation of ['declaration-body', 'new-resolution'] as const) test(`retained CEM rejects imported ${mutation} changes with unchanged selected sources`, async () => {
-  const root = await mkdtemp(join(tmpdir(), 'en-cem-import-freshness-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'en-cem-import-freshness-')));
   try {
     await mkdir(join(root, 'src'));
     const dependency = join(root, 'node_modules', 'sample-modes');
@@ -378,7 +378,7 @@ for (const mutation of ['declaration-body', 'new-resolution'] as const) test(`re
     // Keep dependency package version, selected sources and all retained bytes.
     // A new .ts wins a previously failed lookup ahead of the existing .d.ts.
     await writeFile(join(dependency, mutation === 'declaration-body' ? 'mode.d.ts' : 'mode.ts'), "export type Mode = 'small' | 'large' | 'auto';");
-    await assert.rejects(() => verifyGeneratedElements(root), /imported declarations or resolution changed/);
+    await assert.rejects(() => verifyGeneratedElements(root), /(?:imported declarations or resolution|customization enrichment receipt) changed/);
     assert.equal(await readFile(output, 'utf8'), bytes);
     assert.equal(await readFile(receiptFile, 'utf8'), receiptBytes);
   } finally {await rm(root, {recursive:true,force:true});}

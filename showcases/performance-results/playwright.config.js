@@ -6,7 +6,8 @@ export default defineConfig({
   testDir: "./tests",
   testMatch: "**/*.spec.js",
   fullyParallel: false,
-  workers: 3,
+  // Exhaustive sorting saturated three workers; two preserve original case deadlines.
+  workers: 2,
   reporter: [
     ["list"],
     ["json", { outputFile: "artifacts/browser-tests.json" }],

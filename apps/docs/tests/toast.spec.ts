@@ -106,6 +106,8 @@ test('hidden toast pauses its remaining timeout and fixed placement stays in mob
 });
 
 test('inspired toast paint survives light/dark switching with readable controls and bounded status variants',async({page})=>{
+ // Ten complete themed renders plus final focus/screenshot work; individual assertions keep their normal deadlines.
+ test.setTimeout(60_000);
  await page.setViewportSize({width:390,height:844});await load(page);
  await demo(page).getByRole('combobox',{name:'Visible toast limit',exact:true}).selectOption('0');
  await demo(page).getByRole('button',{name:'Show status variants',exact:true}).click();

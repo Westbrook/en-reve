@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, rm,realpath } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { typeDependencyIdentity, revalidateTypeDependencyIdentity, captureTypeDependencyQueries } from './type-dependencies.ts';
@@ -8,7 +8,7 @@ import { generateTypeSnapshot } from './type-snapshot.ts';
 import { digestJson } from '../evidence/identity.ts';
 
 test('compiler identity follows external configuration/imports and newly resolved missing files', async t => {
-  const root = await mkdtemp(join(tmpdir(), 'type-closure-'));
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'type-closure-')));
   t.after(() => rm(root, { recursive: true, force: true }));
   const pkg = join(root, 'package');
   await mkdir(join(pkg, 'src'), { recursive: true });
@@ -37,7 +37,7 @@ test('compiler identity follows external configuration/imports and newly resolve
 
 
 test('actual snapshot capture covers declaration emit and second-program reads without changing canonical bytes', async t => {
-  const root=await mkdtemp(join(tmpdir(),'snapshot-capture-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'snapshot-capture-')));
   t.after(()=>rm(root,{recursive:true,force:true}));
   const pkg=join(root,'package');await mkdir(join(pkg,'src'),{recursive:true});
   await writeFile(join(pkg,'package.json'),JSON.stringify({name:'captured-fixture',type:'module',exports:{'.':{types:'./dist/index.d.ts'}}}));

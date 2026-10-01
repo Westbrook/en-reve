@@ -84,8 +84,12 @@ test('ordinary keyboard fragments preserve native focus, next Tab and history', 
   await expect(page.getByRole('button', { name: 'primary action 2' })).toBeFocused();
   await page.goBack();
   await expect(page).toHaveURL(/#primary-one$/);
+  // Settle native history scrolling before the next navigation or fresh gesture.
+  // The separate late-follow case deliberately tests user interruption.
+  await settledScroll(page);
   await page.goForward();
   await expect(page).toHaveURL(/#primary-two$/);
+  await settledScroll(page);
   expect(await page.evaluate(() => (window as any).navigationFixture.marker)).toBe(marker);
   // Reactivating the same href remains a native action, with no extra history entry promised.
   await takeOverScroll(page);

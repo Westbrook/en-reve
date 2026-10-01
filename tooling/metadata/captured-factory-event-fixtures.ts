@@ -1,4 +1,4 @@
-import {mkdtemp,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,writeFile,rm,realpath} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -14,7 +14,7 @@ const factory=(type:string,body:string,local='')=>`${prefix}export function M<T 
 class extends Parent {${body}});}export class Leaf extends M(Base){}`;
 const options={strict:true,noEmit:true,skipLibCheck:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,moduleResolution:ts.ModuleResolutionKind.Bundler,types:[],lib:['lib.es2022.d.ts','lib.dom.d.ts']};
 async function fixture(code:string,run:(f:any)=>unknown) {
- const root=await mkdtemp(join(tmpdir(),'cem-factory-event-'));
+ const root=await realpath(await mkdtemp(join(tmpdir(),'cem-factory-event-')));
  try {
   const path=join(root,'main.ts'),helperPath=join(root,'helpers.ts');await writeFile(path,code);await writeFile(helperPath,helpers);
   const capture=createCapturedCompilerProgram([path,helperPath],options),program=capture.program,source=program.getSourceFile(path),helperSource=program.getSourceFile(helperPath);

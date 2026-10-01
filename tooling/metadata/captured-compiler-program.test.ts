@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp,mkdir,writeFile,rm} from 'node:fs/promises';
+import {mkdtemp,mkdir,writeFile,rm,realpath} from 'node:fs/promises';
 import {writeFileSync} from 'node:fs';
 import {join,dirname} from 'node:path';
 import {tmpdir} from 'node:os';
@@ -9,7 +9,7 @@ import {createCapturedCompilerProgram,capturedCompilerProgram} from './captured-
 
 const options={noEmit:true,strict:true,skipLibCheck:true,target:ts.ScriptTarget.ES2022,module:ts.ModuleKind.ESNext,moduleResolution:ts.ModuleResolutionKind.Bundler,types:[]};
 async function fixture(files:Record<string,string>,run:(f:any)=>unknown) {
-  const root=await mkdtemp(join(tmpdir(),'cem-captured-host-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'cem-captured-host-')));
   try {
     const write=async(name:string,text:string)=>{const path=join(root,name);await mkdir(dirname(path),{recursive:true});await writeFile(path,text);};
     for(const [name,text] of Object.entries(files))await write(name,text);

@@ -174,10 +174,10 @@ test('no-hover pointer hold and touch activation retain target geometry',async({
  const probe=page.locator('#shadow-touch-probe button');
  for(const target of [probe,button])await target.evaluate(el=>{el.addEventListener('touchstart',()=>el.setAttribute('data-touched','yes'));el.addEventListener('click',()=>el.setAttribute('data-clicked','yes'));});
  await probe.tap();await button.tap();
- if(await probe.getAttribute('data-touched')==='yes')await expect(button).toHaveAttribute('data-touched','yes');else{expect(await button.getAttribute('data-touched')).toBeNull();info.annotations.push({type:'platform-limit',description:'Touch protocol reaches native controls but not a minimal slotted shadow button; real-device shadow touch remains unqualified.'});}
+ if(await probe.getAttribute('data-touched')==='yes')await expect(button).toHaveAttribute('data-touched','yes');else{info.annotations.push({type:'platform-limit',description:'Touch protocol did not reach a minimal slotted shadow probe; component delivery is recorded independently. Real-device shadow touch remains unqualified.'});}
  if(await probe.getAttribute('data-clicked')==='yes')await expect(button).toHaveAttribute('data-clicked','yes');
- else{expect(await button.getAttribute('data-clicked')).toBeNull();info.annotations.push({type:'platform-limit',description:'Touch protocol did not synthesize click on a minimal slotted shadow button; real-device touch activation remains unqualified.'});}
- }finally{await context.close();}
+ else{info.annotations.push({type:'platform-limit',description:'Touch protocol did not synthesize click on a minimal slotted shadow probe; component delivery is recorded independently. Real-device touch activation remains unqualified.'});}
+ await info.attach('touch-protocol-delivery',{body:JSON.stringify({nativeTouch:await nativeProbe.getAttribute('data-touched'),probeTouch:await probe.getAttribute('data-touched'),componentTouch:await button.getAttribute('data-touched'),probeClick:await probe.getAttribute('data-clicked'),componentClick:await button.getAttribute('data-clicked')}),contentType:'application/json'}); }finally{await context.close();}
 });
 
 

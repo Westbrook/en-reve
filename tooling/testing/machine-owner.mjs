@@ -1,6 +1,8 @@
 import { mkdir, readFile, writeFile, unlink, rmdir } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { tmpdir } from 'node:os';
+import { setTimeout as delay } from 'node:timers/promises';
+import { throwIfInterrupted } from './interruption.mjs';
 import { randomUUID } from 'node:crypto';
 
 const ownerVariable = 'EN_TEST_MACHINE_OWNER';
@@ -29,7 +31,9 @@ function assertAlive(owner, path) {
 
 /** Cooperates with the integration harness's machine directory lease. Never steals a lease. */
 export async function withMachineOwner(work, { environment = process.env,
-  path = machineOwnerPath(environment), invocation = process.argv } = {}) {
+  path = machineOwnerPath(environment), invocation = process.argv, waitMs=0 } = {}) {
+  if(!Number.isSafeInteger(waitMs)||waitMs<0)throw new Error('Invalid machine queue timeout');
+  const queued=performance.now();
   path = resolve(path);
   const inherited = [
     [ownerVariable, pathVariable],
@@ -47,11 +51,16 @@ export async function withMachineOwner(work, { environment = process.env,
     return work({ borrowed: true, owner: actual, path });
   }
 
-  try { await mkdir(path); }
-  catch (error) {
-    if (error.code !== 'EEXIST') throw error;
-    const owner = await readOwner(path);
-    throw new Error(`Another execution owns machine resources (PID ${owner.pid}); serialize work and retain ${path}`);
+  while(true){
+    throwIfInterrupted();
+    try {await mkdir(path);break;}
+    catch(error){
+      if(error.code!=='EEXIST')throw error;
+      const owner=await readOwner(path);
+      if(performance.now()-queued>=waitMs)throw new Error(`Another execution owns machine resources (PID ${owner.pid}); serialize work and retain ${path}`);
+      assertAlive(owner,path); // Waiting never authorizes recovery or stealing.
+      await delay(Math.min(250,Math.max(1,waitMs-(performance.now()-queued))));
+    }
   }
   const owner = { id: randomUUID(), pid: process.pid, startedAt: new Date().toISOString(), invocation };
   try { await writeFile(join(path, 'owner.json'), JSON.stringify(owner) + '\n', { flag: 'wx' }); }
@@ -65,7 +74,7 @@ export async function withMachineOwner(work, { environment = process.env,
   try {
     environment[ownerVariable] = JSON.stringify(owner);
     environment[pathVariable] = path;
-    return await work({ borrowed: false, owner, path });
+    return await work({ borrowed: false, owner, path, queueMs:performance.now()-queued });
   } catch (error) { failure = error; throw error; }
   finally {
     for (const [key, value] of Object.entries(previous)) {

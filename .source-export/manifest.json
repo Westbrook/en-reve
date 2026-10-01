@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "codex/initial-pass-closeout",
-  "sourceCommit": "c26d020c5d8f4c33cb67ca6dd9476e7f3c33b24c",
-  "exportedAt": "2026-10-01T20:56:31.444621+00:00",
+  "sourceCommit": "0376b9869065808ecc79470545835d7f9dbc49f8",
+  "exportedAt": "2026-10-01T21:40:24.309756+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5304,
-  "includedBytes": 143592734,
-  "qualification": "Accepted main plus unqualified contextual tooltip draft. Four package builds passed; previous tooltip run had 308 passes and one WebKit failure. Full qualification and site publication remain pending.",
-  "latestUpdate": ".source-export/updates/performance-20261001.json",
+  "includedFiles": 5337,
+  "includedBytes": 143932723,
+  "qualification": "Accepted main plus unqualified contextual tooltip draft. Four package builds passed; previous tooltip run had 308 passes and one WebKit failure, reproduced in all ten focused repetitions. Full qualification and site publication remain pending.",
+  "latestUpdate": ".source-export/updates/validation-efficiency-20261001.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

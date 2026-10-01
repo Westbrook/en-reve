@@ -1,7 +1,7 @@
 import {test} from 'node:test';import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,writeFile,readFile,rm,symlink,stat} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
+import {mkdtemp,mkdir,writeFile,readFile,rm,symlink,stat,realpath} from 'node:fs/promises';import {tmpdir} from 'node:os';import {join} from 'node:path';
 import {configuration,claimOutput,ownedRun} from './config.mjs';import {acquireResources} from './locks.mjs';import {qualify} from './qualify.mjs';import {startServer} from './server.mjs';
-const fixture=async work=>{const dir=await mkdtemp(join(tmpdir(),'diagnostic-adapter-test-'));try{return await work(dir);}finally{await rm(dir,{recursive:true,force:true});}};
+const fixture=async work=>{const dir=await realpath(await mkdtemp(join(tmpdir(),'diagnostic-adapter-test-')));try{return await work(dir);}finally{await rm(dir,{recursive:true,force:true});}};
 const envFor=dir=>({...process.env,EN_DIAGNOSTICS_OUT:join(dir,'out'),EN_DIAGNOSTICS_BROWSER_LOCK:join(dir,'browser.lock'),EN_DIAGNOSTICS_MACHINE_LOCK:join(dir,'machine.lock')});
 const identity=async()=>({commit:'a'.repeat(40),tree:'b'.repeat(40),fingerprint:'test',trackedDirty:''});
 test('configuration requires explicit output and a valid engine/port selection',()=>{

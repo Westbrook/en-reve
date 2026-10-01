@@ -12,7 +12,7 @@
     "test:probes": "node tooling/testing/invoke.mjs public --view='root#test:probes' --",
     "test:breadcrumbs-ssr": "node tooling/testing/invoke.mjs public --view='root#test:breadcrumbs-ssr' --",
     "test:breadcrumbs-ssr:browser": "node tooling/testing/invoke.mjs public --view='root#test:breadcrumbs-ssr:browser' --",
-    "build": "npm run build -w @en-reve/tokens && npm run build -w @en-reve/styles && npm run build -w @en-reve/primitives && npm run build -w @en-reve/elements && npm run metadata && npm run build -w @en-reve/ssr && npm run build -w @en-reve/docs",
+    "build": "npm run build -w @en-reve/tokens && npm run build -w @en-reve/styles && npm run build -w @en-reve/primitives && npm run build -w @en-reve/elements && npm run metadata:after-build && npm run build -w @en-reve/ssr && npm run build -w @en-reve/docs",
     "dev:docs": "npm run dev -w @en-reve/docs",
     "test:tokens": "node tooling/testing/invoke.mjs public --view='root#test:tokens' --",
     "test:properties:browser": "node tooling/testing/invoke.mjs public --view='root#test:properties:browser' --",
@@ -44,7 +44,12 @@
     "test:inventory": "node tooling/testing/execution-manifest.mjs",
     "check:smoke": "node tooling/integration-gates/run.mjs --mode smoke",
     "check:integration": "node tooling/integration-gates/run.mjs --mode integration",
-    "test:integration-gates": "node --test tooling/integration-gates/runner.test.mjs"
+    "test:integration-gates": "node --test tooling/integration-gates/runner.test.mjs",
+    "test:fast": "node tooling/testing/invoke.mjs comprehensive --pathways=fast",
+    "test:types": "node tooling/testing/invoke.mjs comprehensive --pathways=semantic-types",
+    "metadata:after-build": "node tooling/metadata/generate-elements.ts && npm run metadata:types && npm run metadata:api && npm run customization",
+    "test:campaign-plan": "node tooling/testing/campaign-plan.mjs",
+    "test:cost": "node tooling/testing/cost-report.mjs"
   },
   "dependencies": {
     "lit": "3.3.3",

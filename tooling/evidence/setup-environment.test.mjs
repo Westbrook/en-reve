@@ -75,3 +75,5 @@ test('distinct live owners reuse preparation while children retain ownership and
   await rm(root, { recursive:true, force:true });
  }
 });
+
+test('queue telemetry and admission policy cannot invalidate immutable setup or reach its producer',()=>{const base={PATH:'/bin',LANG:'en_US.UTF-8'};const first=setupEnvironment({...base,EN_TEST_MACHINE_QUEUE_MS:'1.25',EN_TEST_MACHINE_WAIT_MS:'60000'}),later=setupEnvironment({...base,EN_TEST_MACHINE_QUEUE_MS:'987.5',EN_TEST_MACHINE_WAIT_MS:'0'});assert.deepEqual(first,later);assert(!Object.hasOwn(first,'EN_TEST_MACHINE_QUEUE_MS'));assert(!Object.hasOwn(first,'EN_TEST_MACHINE_WAIT_MS'));assert.deepEqual(setupEnvironmentInputs(first),setupEnvironmentInputs(later));assert.notDeepEqual(setupEnvironmentInputs(first),setupEnvironmentInputs(setupEnvironment({...base,LANG:'fr_FR.UTF-8'})));});

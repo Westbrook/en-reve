@@ -12,7 +12,7 @@ tooling/test-pipeline/with-toolchain.sh npm run build
 tooling/test-pipeline/with-toolchain.sh node node_modules/@playwright/test/cli.js install chromium firefox webkit
 ```
 
-Each isolated owning installation must also run `npm ci`: `probes/framework-consumption`, its six `environments/*`, `showcases/performance`, `showcases/tools`, `showcases/performance-results`, and each active showcase. Framework React 18/19, Vue 2/3 and Svelte 4/5 remain independent subjects. Do not regenerate historical baseline/vendor installations. The external authoring pilot is historical and needs its exact external engine; its production-authoring mode uses the root runtime.
+On initial setup or when its lockfile/runtime changes, each isolated owning installation must also run `npm ci`: `probes/framework-consumption`, its six `environments/*`, `showcases/performance`, `showcases/tools`, `showcases/performance-results`, and each active showcase. Framework React 18/19, Vue 2/3 and Svelte 4/5 remain independent subjects. Do not regenerate historical baseline/vendor installations. The external authoring pilot is historical and needs its exact external engine; its production-authoring mode uses the root runtime.
 
 The performance fixtures generate local TLS certificates with an OpenSSL CLI.
 Provision the private OpenSSL 4.0.2 CLI with
@@ -31,11 +31,11 @@ tooling/test-pipeline/with-toolchain.sh python3 tooling/test-pipeline/record.py 
   --out artifacts/my-new-command -- tooling/test-pipeline/with-toolchain.sh npm run test:extended:node
 ```
 
-Keep capture serial and use a unique run ID. No result from a previous toolchain is a new baseline.
+Keep timed capture isolated and serial, and use a unique run ID. Correctness uses the shared dependency scheduler and a global budget of three; do not start independent outer gates against the same lease. No result from a previous toolchain is a new baseline.
 
 For nested API/release gates set `EN_TEST_PIPELINE_OUTPUT=<fresh-directory>` to route every Playwright configuration to a distinct hashed subdirectory. Configurations retain their usual paths when unset. For a theme gate, use `EN_THEME_TEST_OUTPUT_DIR=<fresh-directory>` and leave `EN_TEST_PIPELINE_OUTPUT` unset because the theme orchestrator consumes its named stage receipts. Discovery must always pass `--list --reporter=list`; otherwise even a listing can overwrite execution receipts.
 
-Additional coverage omitted by the ordinary gates:
+Additional standalone selections (already included where applicable in `test:union`; do not repeat them after an applicable passing union):
 
 ```sh
 npm run test:extended:node
@@ -105,3 +105,38 @@ the adapter's historical and executed SHA256 hashes, the candidate subject
 overlay, the archived lock and the host toolchain lock. Frozen component sources,
 locks and old observations are not rewritten; newly collected samples belong to
 a separate current-toolchain campaign.
+
+## Validation cadence and ownership
+
+Use `npm run test:fast` during edits to get package compiler, consumer, test/config/tooling TypeScript and orchestration failures before docs or browser work. Production compiler outputs double as semantic evidence; the union references the identical successful styles emitting compiler instead of repeating no-emit checking. Standalone `styles-check` retains its own check. Elements owns lazy generation before emit; root build uses `metadata:after-build` for the remaining metadata stages. Use `npm run metadata` when independently regenerating all metadata.
+
+`npm run test:types` selects both semantic phases: core test/config/tooling files immediately after package declarations, then docs test/config files after generated docs sources, before docs bundling. `test:fast` selects only the core phase. The docs phase includes the actual built element declarations so custom-element globals do not depend on unrelated test imports. `npm run check:types` continues to check API snapshot freshness. The semantic gate uses pinned TypeScript 7, strict checking, and exact reviewed pre-existing diagnostics in the core/docs files `tooling/testing/semantic-types-*-baseline.json`. New diagnostics fail, duplicate counts cannot hide new failures, and resolved diagnostics require removing obsolete baseline entries. The baseline is technical debt, not a clean-types claim. It does not blanket-ignore an erroneous file. Intentional fixture programs and independent showcase installations have separate owners; JavaScript without declared types is still runtime checked. Do not refresh the baseline to make a new regression pass.
+
+```sh
+EN_EXECUTION_OUTPUT=/absolute/new-fast-run npm run test:fast
+npm run test:plan -- --pathways=registry,hydration
+EN_EXECUTION_OUTPUT=/absolute/new-final-run npm run test:union -- --pathways=registry,hydration
+npm run test:cost -- /absolute/new-final-run/execution.json
+```
+
+The final command selects only those pathways; it is subset evidence. A sweeping cross-package change still needs the full `test:union` or its required exact-candidate integration acceptance selection. Public standalone gates preserve their existing caller prerequisites and forwarding behavior. Do not compose release/theme/API calls as independent runs when a union selects their obligations once.
+
+The shared scheduler admits ready types and pure checks before unrelated producers, groups Node sources by prerequisite boundary, and caps total work at three slots. No-emit consumer checks can share slots; unresolved resource contracts remain exclusive. Browser configurations retain their lower limits and full facets. A final integration selection expands the same canonical package/metadata/docs producers, maps assertion owners, and references identical passing Node sources within that invocation. Exact commit, source stability, child receipts, and explicit skips remain acceptance requirements. There is no cross-run completed-result cache or changed-only acceptance.
+
+Services start at the first consumer and close after the last selected work. Docs consumers share the runner-owned ephemeral origin; pages/contexts remain isolated. An arbitrary already-running server is not an acceptable substitute. Keep valid installations during edit loops; retain actual clean-install/tarball acceptance when installation, packaging or the runtime is the change. Do not introduce setup caches whose verification costs more than rebuilding.
+
+The outer public/union runner waits up to 60 seconds for a live machine owner, recording queue time. `EN_TEST_MACHINE_WAIT_MS=0` requests immediate contention failure. A dead, mismatched or unreadable owner still requires explicit recovery; waiting never steals it. Cancellation and terminal receipts retain owner cleanup. Integration also retains its canonical browser lease.
+
+For changes to delivery analyzers or report provenance, `test:union -- --pathways=analysis-controls` runs the seven reviewed synthetic Python suites without package builds, browsers, timing samples or retention acquisition. These controls are also included in broad correctness. `test:inventory` records separately invoked delivery studies with their exact protocols and required inputs; retired preparation remains historical and unknown entry points remain unresolved.
+
+## Prospective campaign admission
+
+`npm run test:campaign-plan -- policy.json` validates and expands a prospective fixed-budget design. It requires a decision, functional qualification reference, source binding, comparison family, precision, analyzer, cold-session policy, explicit cells and maximum job count. Every cell lists arms/configurations/modes, timing samples, retention runs and cycles. Counts must fit the declared maximum. The output is a plan, never acquisition permission. Bind its policy digest and passing source-matched functional evidence to the future campaign receipt. Existing historical campaign definitions, sample counts and archives are unchanged; adaptive stopping requires a separately reviewed analyzer, not another round until a comparison passes.
+
+Inventory includes npm pre/post lifecycles, canonical obligations, root rules, workflow presence and configured hooks. Extracted recipes are never executed. Cost reports separate queue, identity, command and owned-service timing and retain unmeasured phases explicitly. Command sums are not elapsed savings; child maximum RSS is not aggregate peak memory. A before/after claim requires equivalent source, coverage, environment and alternating cold/warm observations.
+
+Default broad Node cohorts stop on a native failing event and retain the interrupted coverage as incomplete; `--continue-independent` keeps diagnostic collection enabled. Timing-sensitive CSS watcher regression runs in an exclusive cohort at its existing deadline.
+
+Default union and integration CLI browser runs use native Playwright `--max-failures=1`, including the union discovery policy. Expected negative cases do not consume the failure budget; an unexpected case stops admission within that configuration, and partial coverage remains failed. Union `--continue-independent` preserves the owning configuration policy for deliberate full diagnostics. Standalone public gates retain their original policy. First-failure timing records native Node detection when monitored, and command completion otherwise; browser command timing is not a per-assertion notification timestamp.
+
+Scoped-registry browser runs selected through the broad or integration runner reserve a dynamic loopback port. Discovery and execution retain the same endpoint; the reservation closes immediately before the strict-port server starts. Explicit `EN_SCOPE_PORT` overrides remain authoritative and occupied ports fail without adopting or stopping another owner. Standalone fixture defaults remain unchanged.

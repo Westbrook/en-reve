@@ -22,8 +22,25 @@ const calibrationExperiments=new Set([
  'calibrate-web-awesome-dialog.mjs',
 ]);
 
+// Exact newly accepted study entry points. Unknown new programs remain unresolved.
+const deliveryStudies=new Map([
+ ['probes/lazy-delivery-color/prepare-inputs.mjs','probes/lazy-delivery-color/inputs-protocol.md'],
+ ['probes/lazy-delivery-editor/analyze.mjs','plans/lazy-delivery/editor.md'],
+ ['probes/lazy-delivery-families/report-performance.py','probes/lazy-delivery-families/performance-protocol.md'],
+ ...['analyze.py','app/report.mjs','campaign.mjs','prepare.mjs','report.py','verify-report.mjs'].map(name=>['probes/lazy-delivery-performance/'+name,'probes/lazy-delivery-performance/README.md']),
+ ['probes/lazy-delivery-reports/report-wave.py','probes/lazy-delivery-reports/README.md'],
+]);
+const performanceCampaigns=new Set([
+ 'showcases/performance/campaign.mjs',
+ 'showcases/performance/campaigns/report.mjs',
+ 'showcases/performance/experiments/integrate-current-campaign.mjs',
+ 'showcases/performance/experiments/integrate-calendar-campaign.mjs',
+]);
 /** Classify a command's subject before constructing any invocation. Historical recipes are never current-library prerequisites. */
 export function activationFor(path) {
+ if(performanceCampaigns.has(path))return {tier:'performance-campaign',execution:'Explicit documented command and arguments; planning, acquisition, report integration and transfer remain separate operations',fixture:'Selected recipe and fresh campaign ID for acquisition; exact retained campaign/raw identities for reporting; fresh destinations for transfer',protocol:'showcases/performance/CAMPAIGNS.md',requiredInputs:['Exact command-specific configuration, IDs, source and evidence identities','Owning isolated installation and leases for setup/acquisition','Functional qualification, explicit budget and stopping rule before new measurements'],currentLibrary:false};
+ if(path==='probes/lazy-delivery-families/prepare-performance.mjs')return {tier:'historical-reproduction',execution:'Fresh preparation is explicitly retired and throws; preserve its parser/control tests and original sealed inputs',fixture:'Original rejected family cohorts; no fresh acquisition',protocol:'probes/lazy-delivery-families/performance-protocol.md',currentLibrary:false};
+ if(deliveryStudies.has(path))return {tier:'lazy-delivery-study',execution:'Separate explicit protocol invocation; never an ordinary correctness prerequisite',fixture:'Exact sealed reference/candidate or analyzer-bound raw receipts; fresh disjoint output; retain original matrix, failure and stopping rules',protocol:deliveryStudies.get(path),requiredInputs:['Exact protocol-specific source/prepared/raw identities','Fresh output and applicable ownership leases','Functional qualification before new timing or retention'],currentLibrary:false};
  if(path.startsWith('probes/performance-review/'))return {tier:'docs-diagnostics',execution:'Built docs origin; fresh diagnostic output; three original samples and real observation windows',fixture:'Current docs distribution; diagnostic observations rather than a product budget',currentLibrary:true};
  if(path==='tooling/theme-candidates/verify-focus.mjs')return {tier:'assertion-helper',execution:'Imported by tooling/theme-candidates/verify.mjs; executing this module alone registers no tests',currentLibrary:true};
  if(/^showcases\/performance\/experiments\/run-dom-(?:review|ownership)\.mjs$/.test(path))return {tier:'native-diagnostics',execution:'Fresh explicit run ID or output; qualified native snapshots; serial browser ownership',fixture:'Three desktop repetitions plus narrow and date sessions for census; separate initial ownership census',currentLibrary:false};

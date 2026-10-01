@@ -5,7 +5,7 @@ import { comprehensiveGraph } from './comprehensive.mjs';
 import { selectTasks } from './pathways.mjs';
 import { selectAffected } from '../evidence/graph.ts';
 import { maintainedFiles, workloadManifest } from './workload.mjs';
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 const workspaceRoot=process.env.EN_GRAPH_FIXTURE_ROOT??new URL('../../',import.meta.url).pathname;
@@ -91,4 +91,34 @@ test('Integration wrapper is explicitly inventoried while packed consumers retai
  const union=selectTasks(graph,['correctness']);const prepare=union.find(task=>task.id==='prepare:consumer-contracts'),browser=union.find(task=>task.id==='browser:probes/consumer-contracts/playwright.config.ts');
  assert(prepare&&browser);assert.deepEqual(prepare.dependencies,['metadata','build:ssr']);assert(browser.dependencies.includes(prepare.id));assert.equal(prepare.environment.EN_CONSUMER_CONTRACTS_OUT,'$RUN/fixtures/consumer-contracts');assert.equal(browser.environment.EN_CONSUMER_CONTRACTS_OUT,prepare.environment.EN_CONSUMER_CONTRACTS_OUT);assert(union.indexOf(prepare)<union.indexOf(browser));
  const inventory=await workloadManifest(),entry=inventory.configs.find(item=>item.path==='tooling/integration-gates/playwright.config.ts');assert.equal(entry.role.kind,'orchestration-wrapper');assert.equal(entry.discovery,null);assert(inventory.configs.find(item=>item.path==='probes/consumer-contracts/playwright.config.ts').discovery.includes('--list'));
+});
+
+// These readers import generated tables during module evaluation, before test callbacks.
+test('reader table assertions wait for the owned build while pure sorting stays early',async()=>{const graph=await comprehensiveGraph({workspaceRoot});for(const name of ['acquisition-tables','reader-test-receipts','sort-coverage'])assert.deepEqual(graph.tasks.find(task=>task.id===`node:showcases/performance-results/scripts/${name}.test.mjs`).dependencies,['prepare:reader']);assert.deepEqual(graph.tasks.find(task=>task.id==='node:showcases/performance-results/tests/table-data.test.mjs').dependencies,[]);});
+
+test('the real CSS watcher control owns an exclusive Node cohort without relaxing its deadline',async()=>{const graph=await comprehensiveGraph({workspaceRoot});assert.equal(graph.tasks.find(task=>task.id==='node:tooling/css-authoring/compiler.test.mjs').nodeIsolation,'exclusive');});
+
+test('semantic docs types follow source preparation before bundling and core types stay independent',async()=>{const graph=await comprehensiveGraph({workspaceRoot});const task=id=>graph.tasks.find(task=>task.id===id);assert.deepEqual(task('semantic-doc-types').dependencies,['build:docs-sources']);assert.deepEqual(task('build:docs').dependencies,['build:docs-sources']);assert(task('build:docs').command.includes('--ignore-scripts'));assert(!selectTasks(graph,['fast']).some(task=>task.id==='build:docs-sources'));});
+
+test('synthetic delivery analysis owners run without builds or acquisition',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['analysis-controls']);
+ assert.equal(selected.length,7);assert(selected.every(task=>task.kind==='python'&&task.dependencies.length===0&&task.command[1].endsWith('.test.py')&&task.environment.PYTHONDONTWRITEBYTECODE==='1'));
+ const ids=new Set(selectTasks(graph,['correctness']).map(task=>task.id));for(const task of selected)assert(ids.has(task.id));
+});
+
+// Newly discovered configurations must join the owned evidence protocol before
+// the expensive browser phase, rather than pass assertions and lose their receipt.
+test('every maintained browser owner opts into isolated pipeline reports',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot});
+ for(const task of graph.tasks.filter(task=>task.kind==='browser')) {
+  const source=await readFile(join(workspaceRoot,task.config),'utf8');
+  assert.match(source,/pipelineOutput\(import\.meta\.url\)/,`${task.config} must retain caller-owned artifacts and native JSON/facet reports`);
+ }
+});
+
+test('accepted synthetic campaign controls precede builds without adding lab installs to fast',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),fast=new Set(selectTasks(graph,['fast']).map(task=>task.id));
+ for(const file of ['campaigns.test.mjs','current-campaign-integration.test.mjs'])assert.deepEqual(graph.tasks.find(task=>task.id==='node:showcases/performance/tests/'+file).dependencies,[]);
+ assert(fast.has('node:showcases/performance/tests/current-campaign-integration.test.mjs'));
+ assert(!fast.has('node:showcases/performance/tests/campaigns.test.mjs'),'Lighthouse-dependent synthetic controls retain isolated lab setup in correctness');
 });

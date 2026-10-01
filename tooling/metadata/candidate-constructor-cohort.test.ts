@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import {mkdtemp, mkdir, writeFile, rm} from 'node:fs/promises';
+import {mkdtemp, mkdir, writeFile, rm,realpath} from 'node:fs/promises';
 import {join, dirname, relative} from 'node:path';
 import {tmpdir} from 'node:os';
 import {ts} from './compiler-api.mjs';
@@ -8,7 +8,7 @@ import {constructorCohort} from './candidate-constructor-cohort.ts';
 import {rejectCallableHeritage} from './candidate-heritage.ts';
 
 async function fixture(files: Record<string,string>, run: (value: any) => unknown) {
-  const root=await mkdtemp(join(tmpdir(),'cem-constructor-cohort-'));
+  const root=await realpath(await mkdtemp(join(tmpdir(),'cem-constructor-cohort-')));
   try {
     for(const [file,text] of Object.entries(files)) {
       await mkdir(dirname(join(root,file)),{recursive:true});await writeFile(join(root,file),text);

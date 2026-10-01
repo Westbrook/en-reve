@@ -4,7 +4,7 @@ import { delimiter } from 'node:path';
 // Remove them from the actual isolated producer environment as well as its key;
 // merely deleting them from a cache key would permit unsound reuse.
 export const testHarnessVariables=Object.freeze([
- 'TEST_WORKER_INDEX','TEST_PARALLEL_INDEX',
+ 'TEST_WORKER_INDEX','TEST_PARALLEL_INDEX','EN_TEST_MACHINE_QUEUE_MS','EN_TEST_MACHINE_WAIT_MS',
  'EN_EXECUTION_OUTPUT','EN_TEST_PIPELINE_OUTPUT','EN_TEST_PIPELINE_CONFIG_OUTPUTS','EN_EXECUTION_OWN_SERVERS',
  'EN_THEME_TEST_OUTPUT_DIR','EN_RELEASE_TEST_OUTPUT_DIR','EN_READER_TEST_RECEIPT','EN_FRAMEWORK_INSTALL_RECEIPT',
  'EN_DOCS_ORIGIN','EN_WORKFLOW_BASE_URL','EN_REVE_PREVIEW_URL','EN_READER_ORIGIN','EN_PATTERN_GALLERY_URL','TOKEN_DOCS_URL',

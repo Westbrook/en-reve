@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "kind": "read-only-test-process-audit",
+  "observedAt": "2026-09-30T22:46:28.115702+00:00",
+  "limits": [
+    "No tests, build, leases or campaigns executed for this audit.",
+    "Integration receipt is a live snapshot, not terminal acceptance.",
+    "Sample elapsed times include browser launch and assertions; outside intervals are not attributed to a single cause."
+  ],
+  "apiConfirmation": {
+    "sourceCommit": "44cc3adb430fffb5c98eb276c568b8db6f36004f",
+    "timingFormula": "5 arms * 5 configurations * 2 requested modes * 100 blocks",
+    "timingObservations": 5000,
+    "retentionFormula": "5 arms * 2 requested modes * 5 contexts",
+    "retentionContexts": 50,
+    "cyclesPerContext": 100,
+    "jobs": 5050,
+    "summary": {
+      "status": "complete",
+      "qualification": false,
+      "succeeded": 5050,
+      "terminal": 5050,
+      "planned": 5050,
+      "finishedAt": "2026-09-30T21:23:56.570Z"
+    },
+    "commandWallSeconds": 5384.612595,
+    "preparedPath": "/private/tmp/lazy-delivery-stage-b-c4-qualification-20260930-01/stage-b-prepared",
+    "startedAt": "2026-09-30T19:54:12.009774+00:00",
+    "completedAt": "2026-09-30T21:23:56.629834+00:00",
+    "statusCounts": {
+      "started": 5050,
+      "ok": 5050
+    },
+    "sampleStartedToOkSeconds": 4923.237,
+    "outsideSampleStartedToOkSeconds": 461.3755949999995,
+    "outsideSampleStartedToOkPercent": 8.5684083461904,
+    "perKindEngineProfileSeconds": [
+      {
+        "kind": "timing",
+        "browser": "chromium",
+        "profile": "desktop",
+        "n": 1000,
+        "total": 303.79
+      },
+      {
+        "kind": "timing",
+        "browser": "firefox",
+        "profile": "desktop",
+        "n": 1000,
+        "total": 1425.832
+      },
+      {
+        "kind": "timing",
+        "browser": "chromium",
+        "profile": "constrained",
+        "n": 1000,
+        "total": 1210.345
+      },
+      {
+        "kind": "timing",
+        "browser": "chromium",
+        "profile": "constrained-mobile",
+        "n": 1000,
+        "total": 1295.567
+      },
+      {
+        "kind": "timing",
+        "browser": "webkit",
+        "profile": "desktop",
+        "n": 1000,
+        "total": 609.124
+      },
+      {
+        "kind": "retention",
+        "browser": "chromium",
+        "profile": "desktop",
+        "n": 50,
+        "total": 78.57900000000001
+      }
+    ],
+    "uncertainChecks": [
+      {
+        "id": "candidate/api-selective-versus-reference/api-selective:firefox:desktop:keyboard:scoped:global:shellReadyMs",
+        "value": 4.0,
+        "maximum": 8,
+        "minimum": null,
+        "interval": [
+          -3.5,
+          11.5
+        ],
+        "n": 100,
+        "status": "uncertain"
+      },
+      {
+        "id": "candidate/api-profile-versus-reference/api-selective:firefox:desktop:keyboard:scoped:global:shellReadyMs",
+        "value": 5.0,
+        "maximum": 8,
+        "minimum": null,
+        "interval": [
+          -2.0124999999999957,
+          11.0
+        ],
+        "n": 100,
+        "status": "uncertain"
+      }
+    ]
+  },
+  "preparedCommands": {
+    "count": 47,
+    "totalWallSeconds": 70.24107475399997,
+    "installsWallSeconds": 6.250488708999997,
+    "metadataCemTypeApiWallSeconds": 37.282762749000014
+  },
+  "integrationSnapshot": {
+    "startedAt": "2026-09-30T21:45:48.372Z",
+    "stages": 75,
+    "statusCounts": {
+      "passed": 67,
+      "running": 1,
+      "pending": 7
+    },
+    "completedStageWallSeconds": 2360.017,
+    "cheapGateExamples": [
+      {
+        "id": "theme-unit",
+        "status": "passed",
+        "dependencies": [
+          "build"
+        ],
+        "elapsedSeconds": 94.074,
+        "startDelaySeconds": 495.31
+      },
+      {
+        "id": "lazy-unit",
+        "status": "passed",
+        "dependencies": [
+          "build"
+        ],
+        "elapsedSeconds": 0.148,
+        "startDelaySeconds": 1303.888
+      },
+      {
+        "id": "registry-types",
+        "status": "passed",
+        "dependencies": [
+          "build"
+        ],
+        "elapsedSeconds": 0.489,
+        "startDelaySeconds": 2344.357
+      },
+      {
+        "id": "diagnostics-unit",
+        "status": "pending",
+        "dependencies": [],
+        "elapsedSeconds": null,
+        "startDelaySeconds": null
+      },
+      {
+        "id": "date-fixtures-unit",
+        "status": "pending",
+        "dependencies": [],
+        "elapsedSeconds": null,
+        "startDelaySeconds": null
+      }
+    ]
+  },
+  "inputBindings": {
+    "/private/tmp/lazy-delivery-stage-b-c4-api-confirmation-20260930-01/campaign/manifest.json": {
+      "sha256": "fbb9b1957d5ccb085e3cbdac96ec01eff0ff65b3a056f8674c3db8e3ea8365f5",
+      "bytes": 5734657
+    },
+    "/private/tmp/lazy-delivery-stage-b-c4-api-confirmation-20260930-01/campaign/summary.json": {
+      "sha256": "ece47beffbf978dc39049c42fae5c763a882c003510deac42b43bbab9930a0fe",
+      "bytes": 157
+    },
+    "/private/tmp/lazy-delivery-stage-b-c4-api-confirmation-20260930-01/receipts/campaign/receipt.json": {
+      "sha256": "fba6b7fe45a1a64b806d96573cd392974beb9e40abf3f20be46f0be07afccec6",
+      "bytes": 1525
+    },
+    "/private/tmp/lazy-delivery-stage-b-c4-api-confirmation-20260930-01/campaign/analysis.json": {
+      "sha256": "cee17307281226b160082dfa92ac54a2ebbadf91ee6c9692cfdfa44ea7cb572c",
+      "bytes": 1279383
+    },
+    "/private/tmp/lazy-delivery-c4-final-integration-20260930-01/integration75/receipt.json": {
+      "sha256": "ac5a9e79790241d82f55f38432befc7e71d53043f0615fe10d1fc50f276e680a",
+      "bytes": 7333731
+    },
+    "/private/tmp/lazy-delivery-stage-b-c4-qualification-20260930-01/stage-b-prepared/commands.json": {
+      "sha256": "e323a518df0b6a419cd2e778e214a8e2110c6e26ba12025f12579f07ce42272b",
+      "bytes": 27510
+    },
+    "/private/tmp/lazy-delivery-stage-b-c4-full-20260930-01/receipts/campaign/receipt.json": {
+      "sha256": "9e8b7259328be910e980ab9ad3fef274457108da78cd10a7e7191fd39baf9747",
+      "bytes": 1316
+    }
+  },
+  "fullStageB": {
+    "timingFormula": "21 arms * 5 configurations * 2 requested modes * 30 blocks",
+    "timingObservations": 6300,
+    "retentionContexts": 210,
+    "jobs": 6510,
+    "commandWallSeconds": 9367.811871,
+    "startedAt": "2026-09-30T17:02:36.929315+00:00",
+    "completedAt": "2026-09-30T19:38:45.066781+00:00",
+    "input": "/private/tmp/lazy-delivery-stage-b-c4-full-20260930-01/receipts/campaign/receipt.json"
+  }
+}

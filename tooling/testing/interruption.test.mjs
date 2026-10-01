@@ -40,5 +40,17 @@ test('measurement retains signal authority and terminal cancellation outcomes',a
  const child=spawn(process.env.EN_TEST_PYTHON??'python3',[fileURLToPath(new URL('./measure-regression.py',import.meta.url))],{stdio:'pipe'});
  let log='';child.stdout.on('data',chunk=>log+=chunk);child.stderr.on('data',chunk=>log+=chunk);
  const result=await new Promise((yes,no)=>{child.once('error',no);child.once('close',(code,signal)=>yes({code,signal}));});
- assert.equal(result.code,0,log);assert.match(log,/Ran 9 tests/);
+ assert.equal(result.code,0,log);assert.match(log,/Ran 11 tests/);
+});
+
+test('native Node failure stops a real cohort and releases its long-running worker',async()=>{
+ const directory=await mkdtemp(resolve(tmpdir(),'en-native-failure-control-')),output=resolve(directory,'measurement'),events=resolve(directory,'events.jsonl'),marker=resolve(directory,'worker.json');
+ const failing=resolve(directory,'a.test.mjs'),slow=resolve(directory,'b.test.mjs');
+ await writeFile(failing,`import test from 'node:test';import {existsSync} from 'node:fs';test('seeded failure',async()=>{const until=Date.now()+10000;while(!existsSync(${JSON.stringify(marker)})&&Date.now()<until)await new Promise(r=>setTimeout(r,10));throw Error('native-negative-marker');});`);
+ await writeFile(slow,`import test from 'node:test';import {writeFileSync} from 'node:fs';test('long independent case',async()=>{writeFileSync(${JSON.stringify(marker)},JSON.stringify({pid:process.pid}));await new Promise(r=>setTimeout(r,30000));});`);
+ const env={...process.env};delete env.NODE_TEST_CONTEXT;
+ const child=spawn(process.env.EN_TEST_PYTHON??'python3',[fileURLToPath(new URL('./measure.py',import.meta.url)),'--out',output,'--label','native-negative','--node-fail-fast-events',events,'--',process.execPath,'--test','--test-concurrency=2',`--test-reporter=${fileURLToPath(new URL('./node-facet-reporter.mjs',import.meta.url))}`,`--test-reporter-destination=${events}`,failing,slow],{env,stdio:'pipe'});
+ let log='';child.stdout.on('data',chunk=>log+=chunk);child.stderr.on('data',chunk=>log+=chunk);const closed=new Promise((yes,no)=>{child.once('error',no);child.once('close',yes);});
+ try{assert.equal(await closed,1,log);const receipt=JSON.parse(await readFile(resolve(output,'receipt.json'),'utf8'));assert.equal(receipt.failurePhase,'native-node-failure');assert(receipt.firstFailureSeconds<15);assert(receipt.wallSeconds<25);const {pid}=JSON.parse(await readFile(marker,'utf8'));let alive=true;const until=performance.now()+10000;while(performance.now()<until){try{process.kill(pid,0);}catch(error){if(error.code!=='ESRCH')throw error;alive=false;break;}await delay(20);}assert(!alive,'Native worker survived fail-fast cleanup');}
+ finally{if(child.exitCode===null&&child.signalCode===null){child.kill('SIGTERM');await closed;}await rm(directory,{recursive:true,force:true});}
 });
