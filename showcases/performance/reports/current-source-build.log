@@ -1,0 +1,49 @@
+
+> @en-reve/tokens@0.1.0 build
+> tsc -p tsconfig.json && node scripts/generate.mjs
+
+
+> @en-reve/styles@0.1.0 build
+> node scripts/author-css.mjs && tsc -p tsconfig.json && node scripts/export-css.mjs
+
+
+> @en-reve/primitives@0.1.0 build
+> tsc -b
+
+
+> @en-reve/elements@0.1.0 build
+> tsc -b
+
+src/catalog.ts(193,33): error TS2345: Argument of type 'readonly [{ readonly tagName: "en-questionnaire"; readonly elementClass: typeof EnQuestionnaire; }, { readonly tagName: "en-query-builder"; readonly elementClass: typeof EnQueryBuilder; }, ... 89 more ..., { ...; }]' is not assignable to parameter of type 'readonly ElementDefinition[]'.
+  Type '{ readonly tagName: "en-questionnaire"; readonly elementClass: typeof EnQuestionnaire; } | { readonly tagName: "en-query-builder"; readonly elementClass: typeof EnQueryBuilder; } | ... 89 more ... | { ...; }' is not assignable to type 'ElementDefinition'.
+    Type '{ readonly tagName: 'en-query-builder'; readonly elementClass: typeof EnQueryBuilder; }' is not assignable to type 'ElementDefinition'.
+      The types returned by 'new elementClass(...)' are incompatible between these types.
+        Type 'EnQueryBuilder' is not assignable to type 'HTMLElement'.
+          Property 'remove' is private in type 'EnQueryBuilder' but not in type 'HTMLElement'.
+src/define/query-builder.ts(3,36): error TS2345: Argument of type '{ readonly tagName: 'en-query-builder'; readonly elementClass: typeof EnQueryBuilder; }' is not assignable to parameter of type 'ElementDefinition'.
+  The types returned by 'new elementClass(...)' are incompatible between these types.
+    Type 'EnQueryBuilder' is not assignable to type 'HTMLElement'.
+      Property 'remove' is private in type 'EnQueryBuilder' but not in type 'HTMLElement'.
+src/definitions/query-builder.ts(3,70): error TS2322: Type 'typeof EnQueryBuilder' is not assignable to type 'CustomElementConstructor'.
+  Type 'EnQueryBuilder' is not assignable to type 'HTMLElement'.
+    Property 'remove' is private in type 'EnQueryBuilder' but not in type 'HTMLElement'.
+src/query-builder.ts(26,10): error TS2416: Property 'remove' in type 'EnQueryBuilder' is not assignable to the same property in base type 'EnElement<{}>'.
+  Type '(id: string) => void' is not assignable to type '() => void'.
+    Target signature provides too few arguments. Expected 1 or more, but got 0.
+npm error Lifecycle script `build` failed with error:
+npm error code 2
+npm error path /Users/westbrook/Documents/repos/design-system/packages/elements
+npm error workspace @en-reve/elements@0.1.0
+npm error location /Users/westbrook/Documents/repos/design-system/packages/elements
+npm error command failed
+npm error command sh -c tsc -b
+file:///Users/westbrook/Documents/repos/design-system/showcases/performance/experiments/build-current.mjs:24
+        : reject(new Error(`${command} ${args.join(" ")} exited ${code}`)),
+                 ^
+
+Error: npm run build -w @en-reve/elements exited 2
+    at ChildProcess.<anonymous> (file:///Users/westbrook/Documents/repos/design-system/showcases/performance/experiments/build-current.mjs:24:18)
+    at ChildProcess.emit (node:events:509:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:295:12)
+
+Node.js v24.16.0

@@ -1,0 +1,23 @@
+{
+  at: '2026-09-24T01:35:23.926Z',
+  passed: true,
+  primarySamples: 383,
+  lighthouseSamples: 15,
+  calendarMobileSamplesPerPolicy: 30,
+  qualifiedCalendarJourneys: 9,
+  recoveryChecks: 12,
+  checks: [
+    'Job identity and success counts',
+    'Date chunk absent from unused loads/startup/standard journeys',
+    'Date chunk fetched in calendar journeys',
+    'DOM with/without additivity',
+    'Keyboard selection and project creation',
+    'Complete readable-date tables',
+    'Separate Lighthouse evidence'
+  ],
+  memory: [
+    { variant: 'calendar-split', checkpoints: [Array] },
+    { variant: 'calendar-deferred', checkpoints: [Array] },
+    { variant: 'calendar-eager', checkpoints: [Array] }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "showcase-en-reve",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4517 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4517 --strictPort"
+  },
+  "dependencies": {
+    "@en-reve/tokens": "file:vendor/en-reve-tokens-0.1.0.tgz",
+    "@en-reve/styles": "file:vendor/en-reve-styles-0.1.0.tgz",
+    "@en-reve/primitives": "file:vendor/en-reve-primitives-0.1.0.tgz",
+    "@en-reve/elements": "file:vendor/en-reve-elements-0.1.0.tgz",
+    "lit": "3.3.3",
+    "signal-polyfill": "0.2.2"
+  },
+  "devDependencies": {
+    "vite": "8.2.2",
+    "typescript": "7.0.2"
+  }
+}

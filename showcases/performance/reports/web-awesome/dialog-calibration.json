@@ -1,0 +1,97 @@
+{
+  "at": "2026-09-21T18:18:28.143Z",
+  "browser": "153.0.8010.12",
+  "scope": "Synthetic collector correctness control; no timing comparison",
+  "collectorSha256": "ce5e0323242091f86807c0499a76afe96959916c80952493e6431084c1f01612",
+  "scriptSha256": "a4e6bcd9965a9dca684370a7b4427220854af62b18564419a709f158989c4038",
+  "results": [
+    {
+      "tag": "wa-dialog",
+      "status": "passed",
+      "before": {
+        "hostOpen": true,
+        "nativeOpen": false,
+        "action": {
+          "name": "native-dialog-gate",
+          "spec": {
+            "dialogName": "Calibration dialog"
+          },
+          "armedAt": 22.199999809265137,
+          "inputSequenceStart": 66.40000009536743,
+          "eventStart": 66.40000009536743,
+          "captureTime": 67.7999997138977,
+          "inputTarget": "button",
+          "inputPath": [
+            "button",
+            "body",
+            "html"
+          ]
+        }
+      },
+      "nativeOpenedAt": 76.5,
+      "after": {
+        "name": "native-dialog-gate",
+        "spec": {
+          "dialogName": "Calibration dialog"
+        },
+        "armedAt": 22.199999809265137,
+        "inputSequenceStart": 66.40000009536743,
+        "eventStart": 66.40000009536743,
+        "captureTime": 67.7999997138977,
+        "inputTarget": "button",
+        "inputPath": [
+          "button",
+          "body",
+          "html"
+        ],
+        "semanticReady": 76.59999990463257,
+        "frameOpportunity": 104.7999997138977,
+        "completed": true
+      }
+    },
+    {
+      "tag": "wa-drawer",
+      "status": "passed",
+      "before": {
+        "hostOpen": true,
+        "nativeOpen": false,
+        "action": {
+          "name": "native-dialog-gate",
+          "spec": {
+            "dialogName": "Calibration dialog"
+          },
+          "armedAt": 12.599999904632568,
+          "inputSequenceStart": 46.59999990463257,
+          "eventStart": 46.59999990463257,
+          "captureTime": 47.09999990463257,
+          "inputTarget": "button",
+          "inputPath": [
+            "button",
+            "body",
+            "html"
+          ]
+        }
+      },
+      "nativeOpenedAt": 50.30000019073486,
+      "after": {
+        "name": "native-dialog-gate",
+        "spec": {
+          "dialogName": "Calibration dialog"
+        },
+        "armedAt": 12.599999904632568,
+        "inputSequenceStart": 46.59999990463257,
+        "eventStart": 46.59999990463257,
+        "captureTime": 47.09999990463257,
+        "inputTarget": "button",
+        "inputPath": [
+          "button",
+          "body",
+          "html"
+        ],
+        "semanticReady": 50.40000009536743,
+        "frameOpportunity": 83.5,
+        "completed": true
+      }
+    }
+  ]
+}

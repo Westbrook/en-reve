@@ -1,0 +1,1439 @@
+{
+  "schema": 1,
+  "preparedAt": "2026-09-22T12:13:59.865Z",
+  "qualification": {
+    "status": "passed",
+    "at": "2026-09-22T12:14:01.635Z",
+    "receipt": "reports/functional-spectrum-web-components.json",
+    "checksPassed": 22,
+    "pendingSystems": [],
+    "selectedSystems": [
+      "spectrum-web-components"
+    ],
+    "note": "Selected-system receipt; previous panel qualification retained in qualificationHistory and unmodified frozen entries."
+  },
+  "systems": [
+    {
+      "id": "radix-react",
+      "port": 4610,
+      "family": "Radix",
+      "technology": "React",
+      "cohort": "native",
+      "fingerprint": "223c01c16189feb9ae396cc762ded72a0c4bdc8c5fa536b80012f648d4f79586",
+      "sourceSha256": "b1ad21d7f5d0354dcc0a7bf0b00d39204ade1826828fd5e50039f55cc82a637a",
+      "sourceHashes": {
+        "radix-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "radix-react/index.html": "736ae41907989999e50c32bc33b5c45be5e80933b0dcdae497525d76cafa38b4",
+        "radix-react/package-lock.json": "fa2f782adbdfc84ffda43b4617b3ed9ec342e834ec0b58726f7f3cd391ccb1e3",
+        "radix-react/package.json": "da4c490340c1df90583d227da30585a634429a31ccb3a79272ea5cbb57a033b4",
+        "radix-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "radix-react/src/ui.jsx": "52878577da90c9a870bbf605fd820ea33f1ec9b3c0ec58d1cf89c928241a0e42",
+        "radix-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-radix-react",
+        "dependencies": {
+          "@radix-ui/themes": "3.3.0",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "fa2f782adbdfc84ffda43b4617b3ed9ec342e834ec0b58726f7f3cd391ccb1e3",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-C-Yx8hkh.js",
+          "sha256": "f1a93076076c664860bc3ca548b0fad3ee6195b67b8db5691cdb07947f6fc6a1",
+          "raw": 416242,
+          "gzip": 123497,
+          "brotli": 105404,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-C-Yx8hkh.js.map",
+          "sha256": "586bec5bcb4ec6266aabb043e79d17b0cc3e25d3558dd52559e0adc047d6d953",
+          "raw": 2602519,
+          "gzip": 437721,
+          "brotli": 335435,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-DOSlwvYy.css",
+          "sha256": "610f29857979271ecdc7e40479c845d5b7be44bf21205476d23a57031e013675",
+          "raw": 686871,
+          "gzip": 81713,
+          "brotli": 50139,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "6cc62be49dedf4ced5607688c7a9498cc0725b8a32249b31ea80ca0daf2a5e13",
+          "raw": 613,
+          "gzip": 360,
+          "brotli": 303,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "06b899ad15b557db99e8428e8d4db02c1c8a77c78aee468b1fba5dbf33b88b25",
+          "raw": 363,
+          "gzip": 265,
+          "brotli": 163,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "fluent-react",
+      "port": 4611,
+      "family": "Fluent",
+      "technology": "React",
+      "cohort": "native",
+      "fingerprint": "940ae94a6fa1d5787380ca5078f9e5bb99edf49ea421c7921e2dd4b67721fd03",
+      "sourceSha256": "a87ac6e1de5da44cb437faba355a4c1e767a8adf4d9249b0fdef3edc6131ae98",
+      "sourceHashes": {
+        "fluent-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "fluent-react/index.html": "8e67eed89472abef95652b5176bb366e186eee5eb45d5f7a2ae7c0a977722080",
+        "fluent-react/package-lock.json": "90f13d3552a7dbc15db761a28f7b8abc14c3d2f03cbbe29d66da369cb0ed04d0",
+        "fluent-react/package.json": "931674f3bbe7d6f0a41175bca171c448184bec94f804985170c5d6141a3ee251",
+        "fluent-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "fluent-react/src/ui.jsx": "516407b41a17b1936f53f82ede2bfa889710f80e3f4c8dfd613c8d07df009144",
+        "fluent-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-fluent-react",
+        "dependencies": {
+          "@fluentui/react-components": "9.74.7",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "90f13d3552a7dbc15db761a28f7b8abc14c3d2f03cbbe29d66da369cb0ed04d0",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-DewZRYh7.css",
+          "sha256": "20905df8e118ffc0c088adb80fa3ccf3ee41cee7031fe5ce0dc9fc4f97d5ee0d",
+          "raw": 3395,
+          "gzip": 1194,
+          "brotli": 977,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/index-iOgXJCQZ.js",
+          "sha256": "62ee377e9f680ee405192d859307e9dba176afdf88f27670d287f70bdddbcdc3",
+          "raw": 818140,
+          "gzip": 223490,
+          "brotli": 174853,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-iOgXJCQZ.js.map",
+          "sha256": "8e2c577f775c3bd7adf0809a018979195edd2ea1282189b4cb35e980f1fa16c0",
+          "raw": 6352779,
+          "gzip": 1202779,
+          "brotli": 867695,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "c211fbf4dbc439f75ac5696d74b13906ec8f0d2454b4898c2f6270c8066a27d1",
+          "raw": 625,
+          "gzip": 366,
+          "brotli": 307,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "63a979f27bc5b59c93a980d2324b3aff3a4818ccf0eee821f638763708b8ccf4",
+          "raw": 364,
+          "gzip": 270,
+          "brotli": 164,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "spectrum-react",
+      "port": 4612,
+      "family": "Spectrum",
+      "technology": "React",
+      "cohort": "native",
+      "fingerprint": "a1d4688e35fe42ef5c7289c7f46bb0e2e3687e5fe763381ede029456729a2d6e",
+      "sourceSha256": "e7b33ddaaefa77debae02736553eab909cdfe3ecdddfc3bd09129cd67d8c4e9d",
+      "sourceHashes": {
+        "spectrum-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-react/index.html": "e2c45a6df4ddcf39c94286bb5d5175bfdf9fa8c3d8547b167c18d59ea0e85ebf",
+        "spectrum-react/package-lock.json": "3869ad314c9b7bc78db184d7d118b4188d8a5b3fe0321aed753f362dac83ea61",
+        "spectrum-react/package.json": "9a34f0ce2ddf0105d9b61f43046845b26cc12a54c43c9d676f47a204e125f35a",
+        "spectrum-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "spectrum-react/src/ui.jsx": "ce9b3ea10db724b4571967e338e15c58934f7e27db7ffc1571861caf6ea75763",
+        "spectrum-react/vite.config.js": "9132b1d81643acb0ddc421ce22aa574ff4df8c55274e94e5266b8cb19ceb7223",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-spectrum-react",
+        "dependencies": {
+          "@parcel/macros": "2.16.4",
+          "@react-spectrum/s2": "1.7.1",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0",
+          "@vitejs/plugin-react": "6.1.1",
+          "lightningcss": "1.33.0",
+          "typescript": "7.0.2",
+          "unplugin-parcel-macros": "0.2.0",
+          "vite": "8.2.2"
+        },
+        "lockfileSha256": "3869ad314c9b7bc78db184d7d118b4188d8a5b3fe0321aed753f362dac83ea61",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-CmMecXP4.js",
+          "sha256": "3103bc5c135f2dff521c87304ab28448ebba2c1f73df8375514d57160362cd09",
+          "raw": 1004355,
+          "gzip": 285500,
+          "brotli": 221494,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-CmMecXP4.js.map",
+          "sha256": "72c4ef691221692b1c9312a3fb887481c094ce244e06ab3ea3c7e40a2015b956",
+          "raw": 4758417,
+          "gzip": 882308,
+          "brotli": 625380,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/style-CJkFymtk.css",
+          "sha256": "2ee44e23c3817905b3e742b9e56dec0b91d270339ff7d13f53b328bf4f3a18af",
+          "raw": 66746,
+          "gzip": 13454,
+          "brotli": 11522,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "12e22ef64e15a29698200ddfc69ab802b27c46b9509ec4ef8d568280c391274e",
+          "raw": 719,
+          "gzip": 400,
+          "brotli": 347,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "e6584d671f14e7de24bea8decb881fb60e6fafaff3fd56d9ff942ccd5d6a7a3e",
+          "raw": 366,
+          "gzip": 274,
+          "brotli": 169,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "astryx-react",
+      "port": 4613,
+      "family": "Astryx",
+      "technology": "React",
+      "cohort": "native",
+      "fingerprint": "8ae620b883792c8cb0c8730c1f31f6b9c8c3d6535370a1a9165bd623fbd039a7",
+      "sourceSha256": "4b4f59137fe4fde16b39bf3e41aa8571fed9261d462221e64246058b11e55ddc",
+      "sourceHashes": {
+        "astryx-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "astryx-react/index.html": "87d797f9765418351e72ca57f1faa4b67cb9ca1f64b51c66bc14a1dbdb112fd8",
+        "astryx-react/package-lock.json": "eadba0edb838523603d5a68a968b269f8eee5ed1c59d0617c6a24ecb0c109e68",
+        "astryx-react/package.json": "36b74b7c5b399e86676091c8b06cd601c9834ed1f0e82803238a79bbdd8e7271",
+        "astryx-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "astryx-react/src/ui.jsx": "e8711e9458d6bf64af2c5851ce96dcd14a03d99b9b97ace6b1d56fe56cec50c0",
+        "astryx-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-astryx-react",
+        "dependencies": {
+          "@astryxdesign/core": "0.6.2",
+          "@astryxdesign/theme-neutral": "0.6.2",
+          "@stylexjs/stylex": "0.19.1",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "eadba0edb838523603d5a68a968b269f8eee5ed1c59d0617c6a24ecb0c109e68",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/ProgressBarMarkTooltip-Dc5ShBeo.js",
+          "sha256": "5ab53ad44b1ac2d98925093f3e968d64858d285b88b55e32074bc7b878872b3d",
+          "raw": 250,
+          "gzip": 219,
+          "brotli": 167,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./index-BBSG2wCJ.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/ProgressBarMarkTooltip-Dc5ShBeo.js.map",
+          "sha256": "25363baa356ba19b9bfd469542499beb4633582aee2eda4f3ead1d2b614caec4",
+          "raw": 1642,
+          "gzip": 882,
+          "brotli": 720,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-B1-DuT3_.css",
+          "sha256": "c19a040d0747ccdaa4cff31b92abe4bd84fddd0fb8a2ca5a391e2b89c94eb551",
+          "raw": 196349,
+          "gzip": 33193,
+          "brotli": 27165,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/index-BBSG2wCJ.js",
+          "sha256": "5bad0a778f949a0d5ab30438c36e81c32df4e0e406f9e50f8f4b2f75c792278d",
+          "raw": 739307,
+          "gzip": 216390,
+          "brotli": 178220,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./ProgressBarMarkTooltip-Dc5ShBeo.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/index-BBSG2wCJ.js.map",
+          "sha256": "e0fcd9fa7a0c610b887971a99c213a20321fa1f54369851a59dd09cdc8b02a10",
+          "raw": 3022311,
+          "gzip": 708276,
+          "brotli": 546591,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "5bae64f7682ba05efc2de9c2bec16c601417a3a96cb730ae7f3996a8b12266f7",
+          "raw": 694,
+          "gzip": 388,
+          "brotli": 322,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "4bbdd7a52306827d1f9c4cae82419eb0188052ce829454e4a53e9df6b07fcf0c",
+          "raw": 364,
+          "gzip": 269,
+          "brotli": 167,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "shadcn-react",
+      "port": 4614,
+      "family": "shadcn/ui",
+      "technology": "React",
+      "cohort": "native",
+      "fingerprint": "c3b18c1eaf38dde8ff5059b18fafbc3fd1b1add64d941b9f2af1a2a91dfe678f",
+      "sourceSha256": "1446c4e890a5ff86c99590104a4dc9f21bf78d49b75b5fd3fcd3f36cff8872f6",
+      "sourceHashes": {
+        "shadcn-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "shadcn-react/index.html": "08d448d88e24c4209cf27dc2d28741e9dd04fe1d2211b05b3a9443e4af0a8a9b",
+        "shadcn-react/licenses/shadcn-ui-MIT.txt": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+        "shadcn-react/package-lock.json": "e8c5259688dc78a17875457d227df843646017492f8cab36293731d0cf72e8d7",
+        "shadcn-react/package.json": "f8fe9a6aede7bf388b208c15253e45ef730cae85fffce721ffdeae91d0197ac8",
+        "shadcn-react/public/fonts/Geist-OFL.txt": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+        "shadcn-react/public/fonts/Geist-Variable.woff2": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",
+        "shadcn-react/registry-provenance.json": "83a67c17c90df50016ea534e33297c82ce338638368c849f3d5489e73dfc28c3",
+        "shadcn-react/src/components/ui/accordion.tsx": "ff30d314735c42e3625a0a018c5466ed231ebe7f8567f4e686a0517c30d1ec94",
+        "shadcn-react/src/components/ui/avatar.tsx": "1f947c95a656b024ca34bdd4f3d8a61dd9206071884ce8e6f08e1d6e198fa4d2",
+        "shadcn-react/src/components/ui/badge.tsx": "904484c9f48020b63f4a6bcbd400bc7545b12cbc14b278223576d727b3b17407",
+        "shadcn-react/src/components/ui/breadcrumb.tsx": "9aaeb0cc3bdb0c2784f59c7b958170c124140afb36286379af2e1a0032609069",
+        "shadcn-react/src/components/ui/button.tsx": "ec7af8ad606ab0601875e6af73136410eb1dabb1c7c3f2a3f99012d2268189f0",
+        "shadcn-react/src/components/ui/card.tsx": "7d5e0c74e0645f179aad6ff04793b1d9c2ae865e2fc191371e7f218b51ae4bac",
+        "shadcn-react/src/components/ui/checkbox.tsx": "5f5ae8010b1709a831f38a23893ae087c2deffdb5767f598a990509994f18776",
+        "shadcn-react/src/components/ui/combobox.tsx": "7dceec86ba8b3f5c2ae017e5346f0b74fe36fb0622ed38508f593f05fa411990",
+        "shadcn-react/src/components/ui/dialog.tsx": "df0804a9d5cac1b73f29ec138b5051190f87dda0e7f96928a5689ac9beb9835d",
+        "shadcn-react/src/components/ui/dropdown-menu.tsx": "d7f14dfbe2ecc651683e0d104eaad1e2d2b2528aa369c1b8f1990d4341e17eca",
+        "shadcn-react/src/components/ui/input-group.tsx": "385d7d665bac2ce5c263eba2eb0dda117d6cb1b74383c88465d5e0be74adb302",
+        "shadcn-react/src/components/ui/input.tsx": "cd33378f4038513cf97a58406837adb48b00fe2b79f7ee0ad3a7da4b44f09c6d",
+        "shadcn-react/src/components/ui/label.tsx": "ac36c09749a827b198fa6e995a917c9749cb8819bfb75a89ff1fac5c3121093d",
+        "shadcn-react/src/components/ui/popover.tsx": "2778e3617f408f471f4ceb2193104ab801d68b563fc8198689155ba177a9cdab",
+        "shadcn-react/src/components/ui/progress.tsx": "ea5c9b874af1bfe1a89157afe073c5af33ea04b82a7f0553db6eb9f8253cf06a",
+        "shadcn-react/src/components/ui/radio-group.tsx": "1b143e2e18e6d3202bc6f1b2dad8b9bd712bbffe0660af81c8a61ea887cb0b2e",
+        "shadcn-react/src/components/ui/select.tsx": "07480aa52c81e13ab8fb7b62366498d1dc6c3af3e5f9172bf3b130e33b665735",
+        "shadcn-react/src/components/ui/sheet.tsx": "b6da7b49e4f18316c7823803948913e818ccfe0cbcecd712c0e6a0295ac62e16",
+        "shadcn-react/src/components/ui/slider.tsx": "c7eea4ac655a7b865e81e273d5a02bdaa97881c55a5c5912d14efebc6990e59f",
+        "shadcn-react/src/components/ui/switch.tsx": "7eebd68f1009f4352dce25df92b0c626946e497d9c4175f79ec01dc92ce28663",
+        "shadcn-react/src/components/ui/tabs.tsx": "d05cceaaa82502c8f6bb4b14f8c8baed307992c6a11c0ac57336485076e43adb",
+        "shadcn-react/src/components/ui/textarea.tsx": "b2a12a6d7b76bb8cf7c31c1630bbfbdccc351a11d2dc17c90243adf54222169e",
+        "shadcn-react/src/lib/utils.ts": "c4afe23db29651dec75ca5a3098a8bafe35f78cd45d4773d1db1c8001e640623",
+        "shadcn-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "shadcn-react/src/style.css": "721a95624773563dee7db84a0973f8344753550e938d575f52a32bd2429bc9fd",
+        "shadcn-react/src/ui.jsx": "14ec41a7aaadc14ec1d1b905a1546a38710d96610a29a98e462ea6bed831482b",
+        "shadcn-react/vite.config.js": "ac61123535e8decacfb846acf59485d72938f8b5ebd07dfa39bf83e1574c0525",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-shadcn-react",
+        "dependencies": {
+          "@base-ui/react": "1.8.0",
+          "class-variance-authority": "0.7.1",
+          "clsx": "2.1.1",
+          "tailwind-merge": "3.7.0",
+          "lucide-react": "1.47.0",
+          "tailwindcss": "4.3.3",
+          "@tailwindcss/vite": "4.3.3",
+          "tw-animate-css": "1.4.0",
+          "shadcn": "4.21.0",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "e8c5259688dc78a17875457d227df843646017492f8cab36293731d0cf72e8d7",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-9zXTxq3o.js",
+          "sha256": "286f55a23aac3006e182f0c0450072df55fe8e77c8682b905b753a69a0d39a52",
+          "raw": 539071,
+          "gzip": 168840,
+          "brotli": 141977,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-9zXTxq3o.js.map",
+          "sha256": "cca36d45b78b3ace46565c9d730a8a970ee1984fb6ff6fc93df242ec7ede8e02",
+          "raw": 2598925,
+          "gzip": 551790,
+          "brotli": 428614,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-CiupPIgs.css",
+          "sha256": "3a6bc597b340765a07a9e697c4eb08934a49f61ef31c2fc9f517e1584907dea1",
+          "raw": 78846,
+          "gzip": 12892,
+          "brotli": 11069,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "29b60a5080bf9ea64254dcb9991e5e896a1ab9bc5b4fee54d6035bc899366ec8",
+          "raw": 852,
+          "gzip": 449,
+          "brotli": 379,
+          "diagnostic": true
+        },
+        {
+          "path": "fonts/Geist-OFL.txt",
+          "sha256": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+          "raw": 4383,
+          "gzip": 1966,
+          "brotli": 1411,
+          "diagnostic": false
+        },
+        {
+          "path": "fonts/Geist-Variable.woff2",
+          "sha256": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",
+          "raw": 69760,
+          "gzip": 69740,
+          "brotli": 69765,
+          "diagnostic": false
+        },
+        {
+          "path": "index.html",
+          "sha256": "d5f3e59b87f60ef0542550985f04121313205527bba2dce0387b3a611b82a92e",
+          "raw": 364,
+          "gzip": 269,
+          "brotli": 168,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "fluent-web-components",
+      "port": 4615,
+      "family": "Fluent",
+      "technology": "Web Components",
+      "cohort": "native",
+      "fingerprint": "46b61dac3922571774265d590a5ac56b5c2355ed489ffef9610e127a1f5428b0",
+      "sourceSha256": "4f2cf4d8ab466e3d70548581c6cddc083b3f58525ca21fcf5966e96d13c222fa",
+      "sourceHashes": {
+        "fluent-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "fluent-web-components/index.html": "770af2226f145efedd60c7fdadaa49cb0aafaa8fea33b1f8c12bae85b2574302",
+        "fluent-web-components/package-lock.json": "f493501714f115b4495cf85c5ab8802c403ca281f4590d8ef48df8d3e08df79c",
+        "fluent-web-components/package.json": "fad901973eb53ff642715eda59b56cb52d2f41bd9d923de35bfc9b41cdb906ff",
+        "fluent-web-components/src/main.js": "65d128c2f256997a4f2c8792c4af14fdeb7da0aadecd116c2d62d609d33aaac4",
+        "fluent-web-components/src/style.css": "a91e1378d00772336d612d4b7a68d1fde98b199d14f6f2355229633645ef7e76",
+        "fluent-web-components/src/ui.js": "d3a13790c46516d951f34983b2419387af319a965a7909d5cca10e7d1d5280ec",
+        "fluent-web-components/vite.config.js": "cb705b1fa4574ccec7667684414a52f608ff80e61dd5885d6f922908d7812cd5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-fluent-web-components",
+        "dependencies": {
+          "@fluentui/web-components": "3.1.3",
+          "@fluentui/tokens": "1.0.0-alpha.24"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "f493501714f115b4495cf85c5ab8802c403ca281f4590d8ef48df8d3e08df79c",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-7X1QEckn.css",
+          "sha256": "ec89e27f3be2ab053b06747b64a8808752ac7127160f08f048e02e50fe900576",
+          "raw": 4300,
+          "gzip": 1456,
+          "brotli": 1206,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/index-DHbL8u7_.js",
+          "sha256": "94488b365414c47d3fd114a17a90c9f20f33cd8c1f720b1aa9f4f3dec5722a18",
+          "raw": 287981,
+          "gzip": 70953,
+          "brotli": 58475,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-DHbL8u7_.js.map",
+          "sha256": "8a1aabf6b25e7b9073fed887617a8f0c2cc64b0d13da29466effa228608f1d7b",
+          "raw": 1115492,
+          "gzip": 213438,
+          "brotli": 165510,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "0f1bdeb13eff20c01ac491715167c877e138adbb923ce6c971239fdf79a9a95f",
+          "raw": 522,
+          "gzip": 337,
+          "brotli": 280,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "e7f911b0dbd4b39dc86db03033351f5e1a500bc15d52599634406c24d49a5ce7",
+          "raw": 373,
+          "gzip": 277,
+          "brotli": 177,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "spectrum-web-components",
+      "port": 4616,
+      "family": "Spectrum",
+      "technology": "Web Components",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "verification-spectrum-gen2.json",
+        "sha256": "4f0d4bc63a346faba78c03a4af579a38f3e4162dbb5c1876389a98966002ea43",
+        "verifiedAt": "2026-09-22T12:13:22.247Z"
+      },
+      "fingerprint": "bf62dc00ccb1afac9f4f3803af44a1d06c9475ddb01d6da9efd949d9aa5d4fa4",
+      "sourceSha256": "74427b4d5b1a35d3d2d0c74e0091b0b97b767addc89439b821b90acf823f49ce",
+      "sourceHashes": {
+        "spectrum-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-web-components/index.html": "bc5782b3b1052630466e1952557f035eefe3ecfdbf79669b2d593ca477f8654e",
+        "spectrum-web-components/package-lock.json": "00503fdc63606bb225c1bc87a882de5b608e27d358a03ed3e77795894f5505b2",
+        "spectrum-web-components/package.json": "15a4d5be88b4eb86c9cea5321b3f2200caefcfaf5b1e8b43f668068894786610",
+        "spectrum-web-components/README.md": "d713e92c84f1162f9d6eba214f6592e61879162865e7744a745ef54b2267a494",
+        "spectrum-web-components/src/main.js": "ec2dced3ff38d966124ace13ef6a2cfe47ac655ba5cdb549382f4034ec9ba2a0",
+        "spectrum-web-components/src/style.css": "b58fc72d734f84f8d851ad7bbd6e6b612af9422fef5a00432673cefc8085a657",
+        "spectrum-web-components/src/ui.js": "eff3444972a72518ef3c6beaf9eb58427ac9dbdc5aa396177b402dea35597763",
+        "spectrum-web-components/vite.config.js": "fabcbea3a3ea88d5887ede1995814bb5a54f620fc97d62d899f6b45d4f2e7244",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Original functional receipt",
+      "build": {
+        "project": "showcase-spectrum-web-components",
+        "dependencies": {
+          "@adobe/spectrum-wc": "2.0.0-beta.3",
+          "@spectrum-web-components/checkbox": "1.12.2",
+          "@spectrum-web-components/color-field": "1.12.2",
+          "@spectrum-web-components/combobox": "1.12.2",
+          "@spectrum-web-components/dialog": "1.12.2",
+          "@spectrum-web-components/field-label": "1.12.2",
+          "@spectrum-web-components/menu": "1.12.2",
+          "@spectrum-web-components/number-field": "1.12.2",
+          "@spectrum-web-components/overlay": "1.12.2",
+          "@spectrum-web-components/picker": "1.12.2",
+          "@spectrum-web-components/popover": "1.12.2",
+          "@spectrum-web-components/radio": "1.12.2",
+          "@spectrum-web-components/slider": "1.12.2",
+          "@spectrum-web-components/switch": "1.12.2",
+          "@spectrum-web-components/textfield": "1.12.2",
+          "@spectrum-web-components/theme": "1.12.2"
+        },
+        "devDependencies": {
+          "esbuild": "0.28.2",
+          "typescript": "7.0.2",
+          "vite": "8.2.2"
+        },
+        "lockfileSha256": "00503fdc63606bb225c1bc87a882de5b608e27d358a03ed3e77795894f5505b2",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/Base-C029uGPE.js",
+          "sha256": "470c435781780f9c9dc55a8aa69b48a0af13f58d7ddf1402ea8559a69b2c8aec",
+          "raw": 16486,
+          "gzip": 6341,
+          "brotli": 5726,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/Base-C029uGPE.js.map",
+          "sha256": "cf1e79a9f3180dbc3acbd1a60c3178bbf17905fe89215f7273a15c11374bbfe8",
+          "raw": 39352,
+          "gzip": 10966,
+          "brotli": 9769,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/LanguageResolution-DfbByoSu.js",
+          "sha256": "e742b8f7d084106e4bf835aa98718b64c4d4f04bae6056f70a5b80d3848c5d0d",
+          "raw": 2159,
+          "gzip": 1068,
+          "brotli": 930,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/LanguageResolution-DfbByoSu.js.map",
+          "sha256": "666e1f78e01c77133c11315a495060f954fbc2cad1a709752d346aab9d078acd",
+          "raw": 5119,
+          "gzip": 1850,
+          "brotli": 1643,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/Overlay-CxVeWGv5.js",
+          "sha256": "981ac2c5cb256ad71e491b4a6c935deb713a260ecb8c75424895a497333f0984",
+          "raw": 58654,
+          "gzip": 18096,
+          "brotli": 16181,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./rolldown-runtime-hePW80VL.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./if-defined-C3tNhnpJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./platform-BZDoCuRt.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./preload-helper-Czpn1I53.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./focusable-selectors-CbRTteoW.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./first-focusable-in-HCIc6lth.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-C-QHQ0iw.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./index-C-QHQ0iw.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./focus-trap.esm-GrKRp3fm.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/Overlay-CxVeWGv5.js.map",
+          "sha256": "0e03b0fcf8540c652ff8822b1d1524afb8d9fd1a06b105b9fd4a63ba2a1ba9fc",
+          "raw": 191238,
+          "gzip": 46025,
+          "brotli": 38692,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/define-element-BlONwTYC.js",
+          "sha256": "eb8518b0f2c27fada891f9de32970d3130cff3d2bc319dea90570ee34d0bcd25",
+          "raw": 123,
+          "gzip": 131,
+          "brotli": 109,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/define-element-BlONwTYC.js.map",
+          "sha256": "ef0bf816e1f7981ae543bf33f4a003bf6739b8e4a5fbb855950f1f59bf153d1d",
+          "raw": 408,
+          "gzip": 286,
+          "brotli": 246,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/first-focusable-in-HCIc6lth.js",
+          "sha256": "ac753b7149f0c4a22d5082b6c637648f9ec202710480489f88c08b451b666f54",
+          "raw": 198,
+          "gzip": 179,
+          "brotli": 138,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./focusable-selectors-CbRTteoW.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/first-focusable-in-HCIc6lth.js.map",
+          "sha256": "d4e1bb0b5490eddff23737f5c9b54fcca7ccac52d40ce15728e581fe38666860",
+          "raw": 581,
+          "gzip": 376,
+          "brotli": 339,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/focus-trap.esm-GrKRp3fm.js",
+          "sha256": "24260c354bbbbb401dc157a37f93ee9961b4c2adb7e5594810a8e65cc863dd3c",
+          "raw": 16692,
+          "gzip": 5658,
+          "brotli": 5044,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/focus-trap.esm-GrKRp3fm.js.map",
+          "sha256": "f0b1039fb0142191d3fb37827e354a5ed2e965d7d10c2260d69cce81c2d25ef4",
+          "raw": 93128,
+          "gzip": 25548,
+          "brotli": 22173,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/focus-visible-D6fgymCV.js",
+          "sha256": "b8630cc1dd7b4c153a00f8cf39a7cf78cd0c1ab9b1082561d9cb6bb52f7d2a62",
+          "raw": 3138,
+          "gzip": 1076,
+          "brotli": 906,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./rolldown-runtime-hePW80VL.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/focus-visible-D6fgymCV.js.map",
+          "sha256": "546b965798bdd9ffc1fd8789224d072af905d97cbff225475bebcbd48a6b602c",
+          "raw": 14695,
+          "gzip": 4453,
+          "brotli": 3699,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/focusable-selectors-CbRTteoW.js",
+          "sha256": "1e81176f2810691a8b5c4a51da1faa8737c1135800cd7e5f7ff3ba15f64dbaf4",
+          "raw": 536,
+          "gzip": 268,
+          "brotli": 213,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/focusable-selectors-CbRTteoW.js.map",
+          "sha256": "16c277b5ea0ac50ec0e5bdc520ab25fb0be4979f0928119defbb601769955d5c",
+          "raw": 1017,
+          "gzip": 514,
+          "brotli": 446,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/if-defined-C3tNhnpJ.js",
+          "sha256": "b9108421d2351562f08689114af8a545a043eac1d1ce3afbd75cbaa170b7602a",
+          "raw": 111,
+          "gzip": 128,
+          "brotli": 115,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/if-defined-C3tNhnpJ.js.map",
+          "sha256": "fc4a2b761b01e1e12db734d4181a3d95e5ed1b9a48da0271df84acad9b8cfaca",
+          "raw": 433,
+          "gzip": 319,
+          "brotli": 270,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-C-QHQ0iw.js",
+          "sha256": "6ea38dcb8fa7b80f52c0b8d7e4c58edb55cffcec7dfebbaa2f98d43f582beb57",
+          "raw": 1172798,
+          "gzip": 197581,
+          "brotli": 149996,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./rolldown-runtime-hePW80VL.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./Overlay-CxVeWGv5.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./LanguageResolution-DfbByoSu.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./if-defined-C3tNhnpJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./platform-BZDoCuRt.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./preload-helper-Czpn1I53.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./focus-visible-D6fgymCV.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-tooltip-BtiMV8tj.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-tray-CaP6Ufey.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-tray-CaP6Ufey.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-color-handle-B55znA3s.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/index-C-QHQ0iw.js.map",
+          "sha256": "12e4eebf7cda4d99c6beb1ac7141ebd725ebc6e4f1a779a139a0f2ab5585c819",
+          "raw": 1843356,
+          "gzip": 330369,
+          "brotli": 256621,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-DcTSzvzD.css",
+          "sha256": "dbc3b0821a8b4ff6665b4bab114fa1ad9362934de15432dc759462994268c7bd",
+          "raw": 120414,
+          "gzip": 17955,
+          "brotli": 14315,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/platform-BZDoCuRt.js",
+          "sha256": "d77e473ba4d7a14b80ebae6ee0fc4bfbf125494cb151d20ea3ad449660ac9e12",
+          "raw": 1348,
+          "gzip": 710,
+          "brotli": 606,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/platform-BZDoCuRt.js.map",
+          "sha256": "9804269a328b38461a78f92d5e86f55865c0891a40a39aa111d684fcc32b1e5e",
+          "raw": 4059,
+          "gzip": 1438,
+          "brotli": 1248,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/preload-helper-Czpn1I53.js",
+          "sha256": "aba87f2a53e45ecdc9113fc30387d16e449d1676428cf5f82dd624c1df97d152",
+          "raw": 1196,
+          "gzip": 675,
+          "brotli": 558,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/query-Df4-SAIv.js",
+          "sha256": "711201f990f269cde9e54095f81a441fd43433c5c7c5b3849032ee95e2e96d9a",
+          "raw": 536,
+          "gzip": 354,
+          "brotli": 320,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/query-Df4-SAIv.js.map",
+          "sha256": "f3df8d1ef54c6f04a09019fab91ca4b9ff4d4c03acf6c4f7cd132f1e02f00469",
+          "raw": 1759,
+          "gzip": 796,
+          "brotli": 706,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/rolldown-runtime-hePW80VL.js",
+          "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+          "raw": 716,
+          "gzip": 428,
+          "brotli": 381,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/sp-color-handle-B55znA3s.js",
+          "sha256": "04e05a497498b0c9b49b507c187909a17a62fa9b5b2d89e0567c6b0c852e13e6",
+          "raw": 12506,
+          "gzip": 2682,
+          "brotli": 2291,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/sp-color-handle-B55znA3s.js.map",
+          "sha256": "d591b56ce38727eb687b20ec42c9a4b90fb28a8767ee4224e4f950849e06a47f",
+          "raw": 17225,
+          "gzip": 3622,
+          "brotli": 3100,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/sp-tooltip-BtiMV8tj.js",
+          "sha256": "f954de28ff391028c7e86a67c2e290c471497fef2b2242a99f7f2c9c06e630af",
+          "raw": 22743,
+          "gzip": 4153,
+          "brotli": 3650,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./if-defined-C3tNhnpJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./preload-helper-Czpn1I53.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./focusable-selectors-CbRTteoW.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-C-QHQ0iw.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-C-QHQ0iw.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/sp-tooltip-BtiMV8tj.js.map",
+          "sha256": "5aac0b30638396810125cf4260a84392b579fafa756c4797d181bae149ababbb",
+          "raw": 26711,
+          "gzip": 5026,
+          "brotli": 4462,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/sp-tray-CaP6Ufey.js",
+          "sha256": "b3af044a8d4d09feaf120145a76b1fe67ff9f0477e66cb06c3fa4038338fbd4f",
+          "raw": 12390,
+          "gzip": 2916,
+          "brotli": 2564,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./first-focusable-in-HCIc6lth.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-C-QHQ0iw.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/sp-tray-CaP6Ufey.js.map",
+          "sha256": "39f369b561ba055fdc082a2efa210195e3a08ade89fdcd00d65a299781ef1520",
+          "raw": 17826,
+          "gzip": 4134,
+          "brotli": 3645,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/state-CRZlQpoJ.js",
+          "sha256": "252f3857c3098e6b9165b1c8805f6fee97fc8a59eac8188cbc4469f04151f524",
+          "raw": 145,
+          "gzip": 154,
+          "brotli": 127,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/state-CRZlQpoJ.js.map",
+          "sha256": "27b4fbc0bc129e384e72480c7e6603eceba014159e0443e71c733e194064e621",
+          "raw": 529,
+          "gzip": 374,
+          "brotli": 303,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "76ffae610ddd72c133a8a3725402df33a21640e72aa78176dc2d0014677de1ad",
+          "raw": 1264,
+          "gzip": 433,
+          "brotli": 361,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "79a80c62e21bea2e5c5200dd4535798ebdeec68e34380711846524d339602e7c",
+          "raw": 1341,
+          "gzip": 496,
+          "brotli": 354,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "en-reve",
+      "port": 4617,
+      "family": "En Reve",
+      "technology": "Web Components",
+      "cohort": "native",
+      "fingerprint": "ab6e473521da65174a73e31d19160bcd7f9c46abf2553d462a0b3506a27233a9",
+      "sourceSha256": "ca70f41ed4b01c3164cda40059ce765ded838ba61ae38b91aedb1be89dab0184",
+      "sourceHashes": {
+        "en-reve/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "en-reve/index.html": "7382c087e80812ef2097bfb940209c7586cf26d5298f9ec80c1fe38879a4f57d",
+        "en-reve/package-lock.json": "28a5a5695c5ab1f689d5d8cfaafe3457d5731aa3e0596d1c668e78fb829679fc",
+        "en-reve/package.json": "53b31be830df923ec0d15ba2c0c289a061e81c0e0e21600928ee2a80d1577028",
+        "en-reve/snapshot.json": "c3fbd4c000923175f3374a4a11bb20d85918b3e6fab5a0c5db2de35f4a976e1d",
+        "en-reve/src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+        "en-reve/src/base.css": "572a50f9bd509cf1ca11dcd525be0800e5321cc94aa58e79fa26367f34efb7c0",
+        "en-reve/src/change-consumption.ts": "e1bc1b6b9d72fa561f6043721f8165c2cf78ace78720ecce3a07bc01d661c8be",
+        "en-reve/src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+        "en-reve/src/model.ts": "db63e21d6055808f15e9e9ea942d321871f6150b2f9b6b16c4e442e02ef79f65",
+        "en-reve/src/styles.css": "9e4ba3f86fe9662f74ee88b67a326f292652e0c5a0ecce8fc9fe5ae5d9fc14ff",
+        "en-reve/src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+        "en-reve/src/theme.css": "b3271186d7e800872f25c5d5b785abd5eb3f6705e686dba0c5cd5fb82703c14c",
+        "en-reve/src/token-copy.ts": "ae7e2ee7882d81b89e2d9427bb3f18f01e886660fcbf62d141f714dd114dc720",
+        "en-reve/vendor/en-reve-elements-0.1.0.tgz": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+        "en-reve/vendor/en-reve-primitives-0.1.0.tgz": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+        "en-reve/vendor/en-reve-styles-0.1.0.tgz": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+        "en-reve/vendor/en-reve-tokens-0.1.0.tgz": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+        "en-reve/vite.config.js": "cd5bace161a6a47b3c7550399cf656d2fe7ba972d5bcf67442ac8e50d29479a3",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "build": {
+        "project": "showcase-en-reve",
+        "dependencies": {
+          "@en-reve/tokens": "file:vendor/en-reve-tokens-0.1.0.tgz",
+          "@en-reve/styles": "file:vendor/en-reve-styles-0.1.0.tgz",
+          "@en-reve/primitives": "file:vendor/en-reve-primitives-0.1.0.tgz",
+          "@en-reve/elements": "file:vendor/en-reve-elements-0.1.0.tgz",
+          "lit": "3.3.3",
+          "signal-polyfill": "0.2.2"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "28a5a5695c5ab1f689d5d8cfaafe3457d5731aa3e0596d1c668e78fb829679fc",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-CSoEuTYL.js",
+          "sha256": "038ca6003cce6fc311dfd6db84a853ad7ded7135281ab3b1c1b29b3dbd07b5fd",
+          "raw": 414455,
+          "gzip": 102519,
+          "brotli": 82291,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-CSoEuTYL.js.map",
+          "sha256": "402e698cdc38f4656469175f966e6d5656d4083a9da29367d9bc27686d556051",
+          "raw": 1117466,
+          "gzip": 251259,
+          "brotli": 190397,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-DADEvvIk.css",
+          "sha256": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432",
+          "raw": 40755,
+          "gzip": 6547,
+          "brotli": 5735,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+          "raw": 741,
+          "gzip": 384,
+          "brotli": 330,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "8f98eaa7342e07081e627e12b6ce537e2d5062e407ae5b57a87a9f18945af8e7",
+          "raw": 359,
+          "gzip": 266,
+          "brotli": 159,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "web-awesome",
+      "port": 4618,
+      "family": "Web Awesome",
+      "technology": "Web Components",
+      "cohort": "native",
+      "fingerprint": "aab9e1c57ad13cf25672dd75ab2bdddcefc1e65180b018f5655b3d77576c3778",
+      "sourceSha256": "6506efbdf150c47f26b8486d75b7f58a63c6f1b0d6cc0d98e7eb0dd2bdd24a26",
+      "sourceHashes": {
+        "web-awesome/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "web-awesome/index.html": "a587b3f098e2b993dd611e382c786e02f48be99c3b65c01de04f9055e7b26553",
+        "web-awesome/package-lock.json": "22ed89679d56105b8a5124ed27b982c843a608ef3b881c903aa33cd6b9116e28",
+        "web-awesome/package.json": "42a43d8408313fba401c51a308a398b780178c44cd5d781078863805b5baec6c",
+        "web-awesome/README.md": "26bbf63fa08bbbffb01d948a0b528337a91c83675ca120fc57fd7029c8d8edfe",
+        "web-awesome/src/main.js": "46942cee643f2440daec4b8aedd93ab83cfc237c06a60d6267f49cae577a6987",
+        "web-awesome/src/style.css": "1082ce06058970cbffc901dcdfc79c69bf21f74623464a680728238fb094ff15",
+        "web-awesome/src/ui.js": "447c86d29f839b2206a77c9f8011eba2e152bdffca194b0db14f78bdda693d81",
+        "web-awesome/vite.config.js": "a220af1aa272eb175c021c96704dc8dfdac12d317b51ba2bf8c35fcf7b6f75d5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Original functional receipt",
+      "build": {
+        "project": "showcase-web-awesome",
+        "dependencies": {
+          "@awesome.me/webawesome": "3.13.0"
+        },
+        "devDependencies": {
+          "vite": "8.2.2",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "22ed89679d56105b8a5124ed27b982c843a608ef3b881c903aa33cd6b9116e28",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-BG3Zw-nj.js",
+          "sha256": "cfbb769a0ca258a312711011f6f7a97980b7a4e1515dbbbb252fa9b340dd8c68",
+          "raw": 481057,
+          "gzip": 113108,
+          "brotli": 88429,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-BG3Zw-nj.js.map",
+          "sha256": "2ee9c765465022fd6726cea35a08267ba86e2347b347ee169d97b4d414c1f92c",
+          "raw": 1087827,
+          "gzip": 224797,
+          "brotli": 171090,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-D7icV0LY.css",
+          "sha256": "c84822efd68d8d4ac65c0e31e3aede38acd7f6ae5d340b258b1a99d371311e8a",
+          "raw": 54664,
+          "gzip": 8136,
+          "brotli": 5064,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "8d175c9e4be63483ac9a8b2ffa0c86229ecbec60f010b030c72b34e163659d0b",
+          "raw": 469,
+          "gzip": 314,
+          "brotli": 262,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "5e6c34e3187bad9a437cfb11787e781c17264a41653af0defe03173b1023a621",
+          "raw": 419,
+          "gzip": 286,
+          "brotli": 171,
+          "diagnostic": false
+        }
+      ]
+    }
+  ],
+  "requiresFunctionalQualification": false,
+  "pendingSystems": [],
+  "qualificationHistory": [
+    {
+      "status": "passed",
+      "at": "2026-09-20T17:42:56.053Z",
+      "receipt": "reports/functional-native.json",
+      "checksPassed": 176
+    },
+    {
+      "status": "passed",
+      "at": "2026-09-21T17:45:38.634Z",
+      "receipt": "reports/functional-web-awesome.json",
+      "checksPassed": 22,
+      "pendingSystems": [],
+      "selectedSystems": [
+        "web-awesome"
+      ],
+      "note": "Selected-system receipt; previous panel qualification retained in qualificationHistory and unmodified frozen entries."
+    },
+    {
+      "status": "passed",
+      "at": "2026-09-21T17:50:35.600Z",
+      "receipt": "reports/functional-web-awesome.json",
+      "checksPassed": 23,
+      "pendingSystems": [],
+      "selectedSystems": [
+        "web-awesome"
+      ],
+      "note": "Selected-system receipt; previous panel qualification retained in qualificationHistory and unmodified frozen entries."
+    },
+    {
+      "status": "passed",
+      "at": "2026-09-21T18:16:42.964Z",
+      "receipt": "reports/functional-web-awesome.json",
+      "checksPassed": 23,
+      "pendingSystems": [],
+      "selectedSystems": [
+        "web-awesome"
+      ],
+      "note": "Selected-system receipt; previous panel qualification retained in qualificationHistory and unmodified frozen entries."
+    }
+  ],
+  "systemQualifications": {
+    "web-awesome": {
+      "status": "passed",
+      "at": "2026-09-21T18:16:42.964Z",
+      "receipt": "reports/functional-web-awesome.json",
+      "checksPassed": 23,
+      "fingerprint": "aab9e1c57ad13cf25672dd75ab2bdddcefc1e65180b018f5655b3d77576c3778"
+    },
+    "spectrum-web-components": {
+      "status": "passed",
+      "at": "2026-09-22T12:14:01.635Z",
+      "receipt": "reports/functional-spectrum-web-components.json",
+      "checksPassed": 22,
+      "fingerprint": "bf62dc00ccb1afac9f4f3803af44a1d06c9475ddb01d6da9efd949d9aa5d4fa4"
+    }
+  }
+}

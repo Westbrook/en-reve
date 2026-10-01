@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-01T16:35:55.550Z",
+  "reason": "Historical Lighthouse sample schema has startedAt but no finishedAt. Accept its recorded acquisition date while keeping strict non-Lighthouse validation. No raw samples changed.",
+  "previousStatus": "failed",
+  "previousError": "Error: Missing sample date\n    at verifyRun (file:///Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/showcases/performance/campaigns/report.mjs:13:512)\n    at campaignReport (file:///Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/showcases/performance/campaigns/report.mjs:29:16)\n    at async runCampaign (file:///Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/showcases/performance/campaigns/run.mjs:42:57)\n    at async file:///Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/showcases/performance/campaign.mjs:17:86\n    at async withExecutionOwner (file:///Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/tooling/testing/execution-owner.mjs:25:10)\n    at async file:///Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/showcases/performance/campaign.mjs:17:8",
+  "recordedSamples": 408,
+  "reportModuleSha256": "d77811377ec6eae9e40bb3580f24eefc2e835dbd5551b17ea2ce616e7b4cc99c"
+}

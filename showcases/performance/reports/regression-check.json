@@ -1,0 +1,912 @@
+{
+  "checkedAt": "2026-09-20T18:33:29.272Z",
+  "baseline": "exploratory-mobile-cold-2026-09-20",
+  "sizes": [
+    {
+      "system": "radix-react",
+      "encoding": "raw",
+      "current": 1103113,
+      "reference": 1103113,
+      "delta": 0,
+      "budget": 22062.260000000002,
+      "status": "pass"
+    },
+    {
+      "system": "radix-react",
+      "encoding": "gzip",
+      "current": 205210,
+      "reference": 205210,
+      "delta": 0,
+      "budget": 4104.2,
+      "status": "pass"
+    },
+    {
+      "system": "radix-react",
+      "encoding": "brotli",
+      "current": 155543,
+      "reference": 155543,
+      "delta": 0,
+      "budget": 3110.86,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "encoding": "raw",
+      "current": 821535,
+      "reference": 821535,
+      "delta": 0,
+      "budget": 16430.7,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "encoding": "gzip",
+      "current": 224684,
+      "reference": 224684,
+      "delta": 0,
+      "budget": 4493.68,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "encoding": "brotli",
+      "current": 175830,
+      "reference": 175830,
+      "delta": 0,
+      "budget": 3516.6,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "encoding": "raw",
+      "current": 1071101,
+      "reference": 1071101,
+      "delta": 0,
+      "budget": 21422.02,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "encoding": "gzip",
+      "current": 298954,
+      "reference": 298954,
+      "delta": 0,
+      "budget": 5979.08,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "encoding": "brotli",
+      "current": 233016,
+      "reference": 233016,
+      "delta": 0,
+      "budget": 4660.32,
+      "status": "pass"
+    },
+    {
+      "system": "astryx-react",
+      "encoding": "raw",
+      "current": 935906,
+      "reference": 935906,
+      "delta": 0,
+      "budget": 18718.12,
+      "status": "pass"
+    },
+    {
+      "system": "astryx-react",
+      "encoding": "gzip",
+      "current": 249802,
+      "reference": 249802,
+      "delta": 0,
+      "budget": 4996.04,
+      "status": "pass"
+    },
+    {
+      "system": "astryx-react",
+      "encoding": "brotli",
+      "current": 205552,
+      "reference": 205552,
+      "delta": 0,
+      "budget": 4111.04,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "encoding": "raw",
+      "current": 617917,
+      "reference": 617917,
+      "delta": 0,
+      "budget": 12358.34,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "encoding": "gzip",
+      "current": 181732,
+      "reference": 181732,
+      "delta": 0,
+      "budget": 3634.64,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "encoding": "brotli",
+      "current": 153046,
+      "reference": 153046,
+      "delta": 0,
+      "budget": 3060.92,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "encoding": "raw",
+      "current": 292281,
+      "reference": 292281,
+      "delta": 0,
+      "budget": 5845.62,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "encoding": "gzip",
+      "current": 72409,
+      "reference": 72409,
+      "delta": 0,
+      "budget": 1448.18,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "encoding": "brotli",
+      "current": 59681,
+      "reference": 59681,
+      "delta": 0,
+      "budget": 1193.6200000000001,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "encoding": "raw",
+      "current": 1280527,
+      "reference": 1280527,
+      "delta": 0,
+      "budget": 25610.54,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "encoding": "gzip",
+      "current": 224376,
+      "reference": 224376,
+      "delta": 0,
+      "budget": 4487.52,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "encoding": "brotli",
+      "current": 175701,
+      "reference": 175701,
+      "delta": 0,
+      "budget": 3514.02,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "encoding": "raw",
+      "current": 455210,
+      "reference": 455210,
+      "delta": 0,
+      "budget": 9104.2,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "encoding": "gzip",
+      "current": 109066,
+      "reference": 109066,
+      "delta": 0,
+      "budget": 2181.32,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "encoding": "brotli",
+      "current": 88026,
+      "reference": 88026,
+      "delta": 0,
+      "budget": 1760.52,
+      "status": "pass"
+    }
+  ],
+  "timing": [
+    {
+      "system": "astryx-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -14,
+        12.049999999999727
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 77,
+      "status": "pass"
+    },
+    {
+      "system": "astryx-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -14,
+        12.049999999999727
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 77,
+      "status": "pass"
+    },
+    {
+      "system": "astryx-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -13.651250332593918,
+        13.049999713897705
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 77.97500000000001,
+      "status": "pass"
+    },
+    {
+      "system": "astryx-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "astryx-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6,
+        6
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 70.2,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6,
+        6
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 70.2,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6.002500218153,
+        6.549999713897705
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 71.52000000476838,
+      "status": "pass"
+    },
+    {
+      "system": "shadcn-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "shadcn-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "radix-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6,
+        6
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 65.60000000000001,
+      "status": "pass"
+    },
+    {
+      "system": "radix-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6,
+        6
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 65.60000000000001,
+      "status": "pass"
+    },
+    {
+      "system": "radix-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6.700000047683716,
+        6.800000190734863
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 65.79000000953674,
+      "status": "pass"
+    },
+    {
+      "system": "radix-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "radix-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6,
+        8
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 74,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6,
+        8
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 74,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -6.703750050067901,
+        7.199999809265137
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 73.97500000000001,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "spectrum-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -8,
+        10
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 50.400000000000006,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -8,
+        10
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 50.400000000000006,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -7.051249730587005,
+        6.999999761581421
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 50.075,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "fluent-web-components",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -8,
+        8
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 60.400000000000006,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -8,
+        8
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 60.400000000000006,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -7.3499999105930325,
+        7.75
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 59.85,
+      "status": "pass"
+    },
+    {
+      "system": "en-reve",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "en-reve",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -18,
+        18
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 138,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -20,
+        22
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 95.60000000000001,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -18.451249819993972,
+        19.461250054836214
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 97.08500001430512,
+      "status": "pass"
+    },
+    {
+      "system": "spectrum-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "spectrum-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "lcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -10,
+        10
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 68.4,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "fcp",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -10,
+        10
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 68.4,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cardsFrameOpportunity",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        -8.599999678134918,
+        8.901250088214868
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 70.11500000953674,
+      "status": "pass"
+    },
+    {
+      "system": "fluent-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "scriptedINP",
+      "n": [
+        0,
+        0
+      ],
+      "difference": null,
+      "ci95": null,
+      "limit": 16,
+      "status": "unavailable"
+    },
+    {
+      "system": "fluent-react",
+      "profile": "mobile",
+      "cache": "cold",
+      "metric": "cls",
+      "n": [
+        30,
+        30
+      ],
+      "difference": 0,
+      "ci95": [
+        0,
+        0
+      ],
+      "method": "Independent-session percentile bootstrap; historical runs are not paired by arbitrary block numbers",
+      "limit": 0.01,
+      "status": "pass"
+    }
+  ]
+}

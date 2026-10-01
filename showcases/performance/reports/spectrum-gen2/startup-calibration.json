@@ -1,0 +1,44 @@
+{
+  "at": "2026-09-22T12:15:28.403Z",
+  "cases": [
+    {
+      "activeAtClick": true,
+      "clicks": 1,
+      "result": {
+        "frames": 1,
+        "probeDurationMs": 0.19999980926513672,
+        "found": true,
+        "visibleObserved": 56.39999961853027,
+        "point": {
+          "x": 48.6171875,
+          "y": 18.5
+        },
+        "tag": "button",
+        "initialPoint": {
+          "x": 48.6171875,
+          "y": 18.5
+        },
+        "dispatchGeometryAt": 58.19999980926514,
+        "geometryChanged": false,
+        "targetHit": true,
+        "inputAt": 59.299999713897705,
+        "resultAt": 120.59999990463257,
+        "frameAt": 142.89999961853027,
+        "dispatchLag": 2.9000000953674316,
+        "semanticMs": 61.30000019073486,
+        "frameMs": 83.59999990463257,
+        "status": "ok",
+        "interpretation": "Animation-frame-observed geometry, fresh dispatch coordinates and one verified-target trusted click. Navigation timestamps include exposed dispatch overhead. No claim of minimal readiness, field first-input time or compositor presentation."
+      },
+      "passed": true
+    },
+    {
+      "activeAtClick": false,
+      "clicks": 1,
+      "error": "page.waitForFunction: Timeout 3000ms exceeded.",
+      "passed": true
+    }
+  ],
+  "status": "passed",
+  "note": "Native one-click probe verifies known 60ms work and rejects a click lost before a delayed handler is attached; no retry converts the failure to success."
+}

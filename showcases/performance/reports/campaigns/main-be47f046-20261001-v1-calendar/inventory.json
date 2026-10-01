@@ -1,0 +1,1515 @@
+{
+  "schema": 1,
+  "preparedAt": "2026-09-25T19:45:36.956Z",
+  "requiresFunctionalQualification": false,
+  "qualification": {
+    "status": "passed",
+    "at": "2026-10-01T15:59:19.711Z",
+    "receipt": "reports/functional-main-be47f046-20261001-v1-qualification-en-reve-fluent-web-components-web-awesome.json",
+    "checksPassed": 67,
+    "pendingSystems": [],
+    "selectedSystems": [
+      "fluent-web-components",
+      "en-reve",
+      "web-awesome"
+    ],
+    "note": "Selected-system receipt; previous panel qualification retained in qualificationHistory and unmodified frozen entries."
+  },
+  "systems": [
+    {
+      "id": "radix-react",
+      "port": 4610,
+      "family": "Radix",
+      "technology": "React",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "c1096232c94b6064544acfab9605e6f76254c76550527980e117851c697ab673",
+      "sourceSha256": "2fb90546eb9a0befb682c5c5c5a3bcad431fdc28434a5c2aad6a7308512d94b9",
+      "sourceHashes": {
+        "radix-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "radix-react/index.html": "736ae41907989999e50c32bc33b5c45be5e80933b0dcdae497525d76cafa38b4",
+        "radix-react/package-lock.json": "74a3dcaba3509d7f0d08708f9b6e4fbc17160fec94a16f524c908e5507425b00",
+        "radix-react/package.json": "c922e338a2ed5eb6b39bd733be04b95fe1ebfeff5c9b61e5c21a0ab4a88e1ef9",
+        "radix-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "radix-react/src/ui.jsx": "52878577da90c9a870bbf605fd820ea33f1ec9b3c0ec58d1cf89c928241a0e42",
+        "radix-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-radix-react",
+        "dependencies": {
+          "@radix-ui/themes": "3.3.0",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "74a3dcaba3509d7f0d08708f9b6e4fbc17160fec94a16f524c908e5507425b00",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-C-Yx8hkh.js",
+          "sha256": "f1a93076076c664860bc3ca548b0fad3ee6195b67b8db5691cdb07947f6fc6a1",
+          "raw": 416242,
+          "gzip": 123497,
+          "brotli": 105404,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-C-Yx8hkh.js.map",
+          "sha256": "507859b8cd9b7e5f7d9a1ead16a57e02371538c8995ff440f256043c929676e4",
+          "raw": 2733958,
+          "gzip": 509165,
+          "brotli": 395391,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-DOSlwvYy.css",
+          "sha256": "610f29857979271ecdc7e40479c845d5b7be44bf21205476d23a57031e013675",
+          "raw": 686871,
+          "gzip": 81713,
+          "brotli": 50139,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "aa27013b916079fcfb09b66aa36b00ab2ebd51466051b89daa6cb9e074bfa2c7",
+          "raw": 613,
+          "gzip": 359,
+          "brotli": 304,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "06b899ad15b557db99e8428e8d4db02c1c8a77c78aee468b1fba5dbf33b88b25",
+          "raw": 363,
+          "gzip": 265,
+          "brotli": 163,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "fluent-react",
+      "port": 4611,
+      "family": "Fluent",
+      "technology": "React",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "5db1d5cd55ebb34d6dc8111f7b1b04c0ea2bbd0c510432cf12692e806d920500",
+      "sourceSha256": "9133cee4de1dd0edc5958dda5b1f8f8ee7891ac9f689ec769d8366fd80197e25",
+      "sourceHashes": {
+        "fluent-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "fluent-react/index.html": "8e67eed89472abef95652b5176bb366e186eee5eb45d5f7a2ae7c0a977722080",
+        "fluent-react/package-lock.json": "ede58915e2329b5b423a93f1b99924e5a80463765ead3ac8761108127bd71b61",
+        "fluent-react/package.json": "0bce2541fc3a1506d098718fad64705af3cb618edda0227430cd5f7a748a244b",
+        "fluent-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "fluent-react/src/ui.jsx": "516407b41a17b1936f53f82ede2bfa889710f80e3f4c8dfd613c8d07df009144",
+        "fluent-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-fluent-react",
+        "dependencies": {
+          "@fluentui/react-components": "9.74.7",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "ede58915e2329b5b423a93f1b99924e5a80463765ead3ac8761108127bd71b61",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-DewZRYh7.css",
+          "sha256": "20905df8e118ffc0c088adb80fa3ccf3ee41cee7031fe5ce0dc9fc4f97d5ee0d",
+          "raw": 3395,
+          "gzip": 1194,
+          "brotli": 977,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/index-iOgXJCQZ.js",
+          "sha256": "62ee377e9f680ee405192d859307e9dba176afdf88f27670d287f70bdddbcdc3",
+          "raw": 818140,
+          "gzip": 223490,
+          "brotli": 174853,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-iOgXJCQZ.js.map",
+          "sha256": "9e4ee468ca670c748c8300bf88d1956def0d921e3de89c3263563c089add4464",
+          "raw": 6521658,
+          "gzip": 1289513,
+          "brotli": 944245,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "ff62e57f902cac59207e3da45b1248e4afc991d940b13b73903b055a7fd2530b",
+          "raw": 625,
+          "gzip": 367,
+          "brotli": 311,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "63a979f27bc5b59c93a980d2324b3aff3a4818ccf0eee821f638763708b8ccf4",
+          "raw": 364,
+          "gzip": 270,
+          "brotli": 164,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "spectrum-react",
+      "port": 4612,
+      "family": "Spectrum",
+      "technology": "React",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "53bb6bf1423f49c48ad0a72f1bd5183ed9c23605a9127ad8032646b698553dbd",
+      "sourceSha256": "bb75afe816662e9382de6c46e033295a58a5d854a6eac10baf7c21718127c322",
+      "sourceHashes": {
+        "spectrum-react/.DS_Store": "fe4ed3e53052ba489e024660b31f41ea368882ce3a79d33bb2d6dee319a9ddc4",
+        "spectrum-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-react/index.html": "e2c45a6df4ddcf39c94286bb5d5175bfdf9fa8c3d8547b167c18d59ea0e85ebf",
+        "spectrum-react/package-lock.json": "139c1afb06d0b47e5038d3861dea9f5cec15746f57d383b2d393f5b4eb325484",
+        "spectrum-react/package.json": "8d3713de12a4d762b87cf289fd31903045056a666035e7b29259a01a34067e32",
+        "spectrum-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "spectrum-react/src/ui.jsx": "ce9b3ea10db724b4571967e338e15c58934f7e27db7ffc1571861caf6ea75763",
+        "spectrum-react/vite.config.js": "9132b1d81643acb0ddc421ce22aa574ff4df8c55274e94e5266b8cb19ceb7223",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-spectrum-react",
+        "dependencies": {
+          "@parcel/macros": "2.16.4",
+          "@react-spectrum/s2": "1.7.1",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0",
+          "@vitejs/plugin-react": "6.1.1",
+          "lightningcss": "1.33.0",
+          "typescript": "7.0.2",
+          "unplugin-parcel-macros": "0.2.0",
+          "vite": "8.3.1"
+        },
+        "lockfileSha256": "139c1afb06d0b47e5038d3861dea9f5cec15746f57d383b2d393f5b4eb325484",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-CmMecXP4.js",
+          "sha256": "3103bc5c135f2dff521c87304ab28448ebba2c1f73df8375514d57160362cd09",
+          "raw": 1004355,
+          "gzip": 285500,
+          "brotli": 221494,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-CmMecXP4.js.map",
+          "sha256": "1112c6fe4aa0e15efa305cebc96b17bf5fd95f777da3cbe969b1e49dd609f0d0",
+          "raw": 5006475,
+          "gzip": 1011700,
+          "brotli": 723184,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/style-CJkFymtk.css",
+          "sha256": "2ee44e23c3817905b3e742b9e56dec0b91d270339ff7d13f53b328bf4f3a18af",
+          "raw": 66746,
+          "gzip": 13454,
+          "brotli": 11522,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "f57937811d15a079271e21b174b755bde35ee657d4b4e3dadddc3bf28e39e51b",
+          "raw": 719,
+          "gzip": 399,
+          "brotli": 350,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "e6584d671f14e7de24bea8decb881fb60e6fafaff3fd56d9ff942ccd5d6a7a3e",
+          "raw": 366,
+          "gzip": 274,
+          "brotli": 169,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "astryx-react",
+      "port": 4613,
+      "family": "Astryx",
+      "technology": "React",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "08ae094c3c300faddb45c7f755f383b099d064a1d44e365d859b813c2f35dd78",
+      "sourceSha256": "cebde1eba67bd53f2245b5fa63e4077bd1b807c7b9ffb37e8d2c30d5bbf31040",
+      "sourceHashes": {
+        "astryx-react/.DS_Store": "47b0fc6b111cb3c8dfdefb658c0f301006a70f7061ab2c564ba276da1421f365",
+        "astryx-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "astryx-react/index.html": "87d797f9765418351e72ca57f1faa4b67cb9ca1f64b51c66bc14a1dbdb112fd8",
+        "astryx-react/package-lock.json": "df53bc5a4a5c48b274acf53604b47fb0965fa95a8d852bab1ffeec72a29eac34",
+        "astryx-react/package.json": "f0b89cac4cec5403c901fdbf6a186e7c2a7533247ccc60288d58e3934bb39bf8",
+        "astryx-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "astryx-react/src/ui.jsx": "e8711e9458d6bf64af2c5851ce96dcd14a03d99b9b97ace6b1d56fe56cec50c0",
+        "astryx-react/vite.config.js": "7d2a6077de6155f3f8033a57d2398e22ea66444f88331fee6e10840d9d64de97",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-astryx-react",
+        "dependencies": {
+          "@astryxdesign/core": "0.6.2",
+          "@astryxdesign/theme-neutral": "0.6.2",
+          "@stylexjs/stylex": "0.19.1",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "df53bc5a4a5c48b274acf53604b47fb0965fa95a8d852bab1ffeec72a29eac34",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/ProgressBarMarkTooltip-b77GnWNK.js",
+          "sha256": "41f94a3322c77ffc739bc89fbd4711c6bacf08908f7942e30aaf9498cb50eb24",
+          "raw": 250,
+          "gzip": 220,
+          "brotli": 169,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./index-2VjvVawR.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/ProgressBarMarkTooltip-b77GnWNK.js.map",
+          "sha256": "0eebaf9e507f584bd895be1cf114ce232b24d26720434c042722e4fc7ca034fc",
+          "raw": 1722,
+          "gzip": 911,
+          "brotli": 744,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-2VjvVawR.js",
+          "sha256": "e7a93755912dc3b53f540d1e9598f1e59f03c4fce854c24b5511948a72583bd0",
+          "raw": 739329,
+          "gzip": 216393,
+          "brotli": 178052,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./ProgressBarMarkTooltip-b77GnWNK.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/index-2VjvVawR.js.map",
+          "sha256": "a2a310ee6d498c3d04e703c4310a121c8859fa7afab6309115bebf73490b21a7",
+          "raw": 3198602,
+          "gzip": 796103,
+          "brotli": 621634,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-B1-DuT3_.css",
+          "sha256": "c19a040d0747ccdaa4cff31b92abe4bd84fddd0fb8a2ca5a391e2b89c94eb551",
+          "raw": 196349,
+          "gzip": 33193,
+          "brotli": 27165,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "c0e852d703b6fba996a89f71b115ae6099ba1526d0354c00cb13d7fa085a7f41",
+          "raw": 694,
+          "gzip": 388,
+          "brotli": 322,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "ae907849f8d8c5b6487185a0fe82df4a528064aab9b91be37897725f26a5767e",
+          "raw": 364,
+          "gzip": 269,
+          "brotli": 173,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "shadcn-react",
+      "port": 4614,
+      "family": "shadcn/ui",
+      "technology": "React",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "ab9f6cf8b33716cb45a371517000261920a7f74d7867048fd32515ae0685ac03",
+      "sourceSha256": "e9dc88554c4eb93a5be2249af058928a58f8a28269c2e412dcd508d9b34ecf77",
+      "sourceHashes": {
+        "shadcn-react/.DS_Store": "bd665c338fc3d96662713e4cfcb2920d4884a4333efd21bc5d7bb5ee53761e31",
+        "shadcn-react/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "shadcn-react/index.html": "08d448d88e24c4209cf27dc2d28741e9dd04fe1d2211b05b3a9443e4af0a8a9b",
+        "shadcn-react/licenses/shadcn-ui-MIT.txt": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f",
+        "shadcn-react/package-lock.json": "2c7a8bde5a0a7b1adba53785c22d9e25aefa67da4fbf8fd8ff96ec843574fe28",
+        "shadcn-react/package.json": "781588728754da696c790ee9960540dba1f537a2bc8b905cc6bc4eb58dd58bc7",
+        "shadcn-react/public/fonts/Geist-OFL.txt": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+        "shadcn-react/public/fonts/Geist-Variable.woff2": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",
+        "shadcn-react/registry-provenance.json": "83a67c17c90df50016ea534e33297c82ce338638368c849f3d5489e73dfc28c3",
+        "shadcn-react/src/components/ui/accordion.tsx": "ff30d314735c42e3625a0a018c5466ed231ebe7f8567f4e686a0517c30d1ec94",
+        "shadcn-react/src/components/ui/avatar.tsx": "1f947c95a656b024ca34bdd4f3d8a61dd9206071884ce8e6f08e1d6e198fa4d2",
+        "shadcn-react/src/components/ui/badge.tsx": "904484c9f48020b63f4a6bcbd400bc7545b12cbc14b278223576d727b3b17407",
+        "shadcn-react/src/components/ui/breadcrumb.tsx": "9aaeb0cc3bdb0c2784f59c7b958170c124140afb36286379af2e1a0032609069",
+        "shadcn-react/src/components/ui/button.tsx": "ec7af8ad606ab0601875e6af73136410eb1dabb1c7c3f2a3f99012d2268189f0",
+        "shadcn-react/src/components/ui/card.tsx": "7d5e0c74e0645f179aad6ff04793b1d9c2ae865e2fc191371e7f218b51ae4bac",
+        "shadcn-react/src/components/ui/checkbox.tsx": "5f5ae8010b1709a831f38a23893ae087c2deffdb5767f598a990509994f18776",
+        "shadcn-react/src/components/ui/combobox.tsx": "7dceec86ba8b3f5c2ae017e5346f0b74fe36fb0622ed38508f593f05fa411990",
+        "shadcn-react/src/components/ui/dialog.tsx": "df0804a9d5cac1b73f29ec138b5051190f87dda0e7f96928a5689ac9beb9835d",
+        "shadcn-react/src/components/ui/dropdown-menu.tsx": "d7f14dfbe2ecc651683e0d104eaad1e2d2b2528aa369c1b8f1990d4341e17eca",
+        "shadcn-react/src/components/ui/input-group.tsx": "385d7d665bac2ce5c263eba2eb0dda117d6cb1b74383c88465d5e0be74adb302",
+        "shadcn-react/src/components/ui/input.tsx": "cd33378f4038513cf97a58406837adb48b00fe2b79f7ee0ad3a7da4b44f09c6d",
+        "shadcn-react/src/components/ui/label.tsx": "ac36c09749a827b198fa6e995a917c9749cb8819bfb75a89ff1fac5c3121093d",
+        "shadcn-react/src/components/ui/popover.tsx": "2778e3617f408f471f4ceb2193104ab801d68b563fc8198689155ba177a9cdab",
+        "shadcn-react/src/components/ui/progress.tsx": "ea5c9b874af1bfe1a89157afe073c5af33ea04b82a7f0553db6eb9f8253cf06a",
+        "shadcn-react/src/components/ui/radio-group.tsx": "1b143e2e18e6d3202bc6f1b2dad8b9bd712bbffe0660af81c8a61ea887cb0b2e",
+        "shadcn-react/src/components/ui/select.tsx": "07480aa52c81e13ab8fb7b62366498d1dc6c3af3e5f9172bf3b130e33b665735",
+        "shadcn-react/src/components/ui/sheet.tsx": "b6da7b49e4f18316c7823803948913e818ccfe0cbcecd712c0e6a0295ac62e16",
+        "shadcn-react/src/components/ui/slider.tsx": "c7eea4ac655a7b865e81e273d5a02bdaa97881c55a5c5912d14efebc6990e59f",
+        "shadcn-react/src/components/ui/switch.tsx": "7eebd68f1009f4352dce25df92b0c626946e497d9c4175f79ec01dc92ce28663",
+        "shadcn-react/src/components/ui/tabs.tsx": "d05cceaaa82502c8f6bb4b14f8c8baed307992c6a11c0ac57336485076e43adb",
+        "shadcn-react/src/components/ui/textarea.tsx": "b2a12a6d7b76bb8cf7c31c1630bbfbdccc351a11d2dc17c90243adf54222169e",
+        "shadcn-react/src/lib/utils.ts": "c4afe23db29651dec75ca5a3098a8bafe35f78cd45d4773d1db1c8001e640623",
+        "shadcn-react/src/main.jsx": "f33950b1866181d8ba192efc714ea093d91cf61c66cb4370560b87ea028b0e0e",
+        "shadcn-react/src/style.css": "721a95624773563dee7db84a0973f8344753550e938d575f52a32bd2429bc9fd",
+        "shadcn-react/src/ui.jsx": "14ec41a7aaadc14ec1d1b905a1546a38710d96610a29a98e462ea6bed831482b",
+        "shadcn-react/vite.config.js": "ac61123535e8decacfb846acf59485d72938f8b5ebd07dfa39bf83e1574c0525",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-shadcn-react",
+        "dependencies": {
+          "@base-ui/react": "1.8.0",
+          "class-variance-authority": "0.7.1",
+          "clsx": "2.1.1",
+          "tailwind-merge": "3.7.0",
+          "lucide-react": "1.47.0",
+          "tailwindcss": "4.3.3",
+          "@tailwindcss/vite": "4.3.3",
+          "tw-animate-css": "1.4.0",
+          "shadcn": "4.21.0",
+          "react": "19.2.4",
+          "react-dom": "19.2.4"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2",
+          "@vitejs/plugin-react": "6.1.1",
+          "@types/react": "19.3.0",
+          "@types/react-dom": "19.3.0"
+        },
+        "lockfileSha256": "2c7a8bde5a0a7b1adba53785c22d9e25aefa67da4fbf8fd8ff96ec843574fe28",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-9zXTxq3o.js",
+          "sha256": "286f55a23aac3006e182f0c0450072df55fe8e77c8682b905b753a69a0d39a52",
+          "raw": 539071,
+          "gzip": 168840,
+          "brotli": 141977,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-9zXTxq3o.js.map",
+          "sha256": "f3c485b1369d983662ead5ae2c84a56c1be1f7df2a684ca44a7b66b78c9724e8",
+          "raw": 2781670,
+          "gzip": 649173,
+          "brotli": 512462,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-CiupPIgs.css",
+          "sha256": "3a6bc597b340765a07a9e697c4eb08934a49f61ef31c2fc9f517e1584907dea1",
+          "raw": 78846,
+          "gzip": 12892,
+          "brotli": 11069,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "2c467e4db981c3b1dbcb9492d20233af988f5b31f9e5ae2203b7109a64eee5e6",
+          "raw": 852,
+          "gzip": 448,
+          "brotli": 393,
+          "diagnostic": true
+        },
+        {
+          "path": "fonts/Geist-OFL.txt",
+          "sha256": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+          "raw": 4383,
+          "gzip": 1966,
+          "brotli": 1411,
+          "diagnostic": false
+        },
+        {
+          "path": "fonts/Geist-Variable.woff2",
+          "sha256": "2ffebe993e969069a9789d15164b7715d42491b5835516c5e3b935d5f81b05f1",
+          "raw": 69760,
+          "gzip": 69740,
+          "brotli": 69765,
+          "diagnostic": false
+        },
+        {
+          "path": "index.html",
+          "sha256": "d5f3e59b87f60ef0542550985f04121313205527bba2dce0387b3a611b82a92e",
+          "raw": 364,
+          "gzip": 269,
+          "brotli": 168,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "fluent-web-components",
+      "port": 4615,
+      "family": "Fluent",
+      "technology": "Web Components",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "7236c0854897d7e62f89a9398cbf0ec909ab7278f88a029433acc51d4af0a486",
+      "sourceSha256": "255519aecf918b10b85e1505489b53341c36a8f4ac20549dcc64662cc973d76c",
+      "sourceHashes": {
+        "fluent-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "fluent-web-components/index.html": "770af2226f145efedd60c7fdadaa49cb0aafaa8fea33b1f8c12bae85b2574302",
+        "fluent-web-components/package-lock.json": "83d260d80d323b8544bd1f2333bbaa5a4e7d4dc3f2f79e50eb6082a269ac283d",
+        "fluent-web-components/package.json": "249b509c73d0fc0343215c9d43a2823810487b86b334862193ea23b8d5889620",
+        "fluent-web-components/src/main.js": "65d128c2f256997a4f2c8792c4af14fdeb7da0aadecd116c2d62d609d33aaac4",
+        "fluent-web-components/src/style.css": "a91e1378d00772336d612d4b7a68d1fde98b199d14f6f2355229633645ef7e76",
+        "fluent-web-components/src/ui.js": "d3a13790c46516d951f34983b2419387af319a965a7909d5cca10e7d1d5280ec",
+        "fluent-web-components/vite.config.js": "cb705b1fa4574ccec7667684414a52f608ff80e61dd5885d6f922908d7812cd5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-fluent-web-components",
+        "dependencies": {
+          "@fluentui/web-components": "3.1.3",
+          "@fluentui/tokens": "1.0.0-alpha.24"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "83d260d80d323b8544bd1f2333bbaa5a4e7d4dc3f2f79e50eb6082a269ac283d",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-7X1QEckn.css",
+          "sha256": "ec89e27f3be2ab053b06747b64a8808752ac7127160f08f048e02e50fe900576",
+          "raw": 4300,
+          "gzip": 1456,
+          "brotli": 1206,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/index-DHbL8u7_.js",
+          "sha256": "94488b365414c47d3fd114a17a90c9f20f33cd8c1f720b1aa9f4f3dec5722a18",
+          "raw": 287981,
+          "gzip": 70953,
+          "brotli": 58475,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-DHbL8u7_.js.map",
+          "sha256": "80ac59e10fd5d248a1d7b73b3022cb182f06e6a5fd2e8c4826ec7146742c87fd",
+          "raw": 1152429,
+          "gzip": 232071,
+          "brotli": 180847,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "47b82486fc5f1615e80d9f2632f0525459eaf5c1d90f4dfeb1ed5091f1e99d84",
+          "raw": 522,
+          "gzip": 337,
+          "brotli": 279,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "e7f911b0dbd4b39dc86db03033351f5e1a500bc15d52599634406c24d49a5ce7",
+          "raw": 373,
+          "gzip": 277,
+          "brotli": 177,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "spectrum-web-components",
+      "port": 4616,
+      "family": "Spectrum",
+      "technology": "Web Components",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "ffb108ad135cc6c4886971781bba7575ce1f1b978257d6f5fcc8ffaa43d47512",
+      "sourceSha256": "034edf3a8d327e13c2359f0ba8b293e59527f19213852fd31394a2f5d1079a4b",
+      "sourceHashes": {
+        "spectrum-web-components/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "spectrum-web-components/index.html": "bc5782b3b1052630466e1952557f035eefe3ecfdbf79669b2d593ca477f8654e",
+        "spectrum-web-components/package-lock.json": "c72b08689415b528aa739414d9609d13d3ff74dc6ac22e11036d3054a388ed95",
+        "spectrum-web-components/package.json": "95a41cdf0f7c7c1a1ac6c4a77ff3471827b12232bb2b47604bf0f50bf539d741",
+        "spectrum-web-components/README.md": "d713e92c84f1162f9d6eba214f6592e61879162865e7744a745ef54b2267a494",
+        "spectrum-web-components/src/main.js": "ec2dced3ff38d966124ace13ef6a2cfe47ac655ba5cdb549382f4034ec9ba2a0",
+        "spectrum-web-components/src/style.css": "b58fc72d734f84f8d851ad7bbd6e6b612af9422fef5a00432673cefc8085a657",
+        "spectrum-web-components/src/ui.js": "eff3444972a72518ef3c6beaf9eb58427ac9dbdc5aa396177b402dea35597763",
+        "spectrum-web-components/vite.config.js": "fabcbea3a3ea88d5887ede1995814bb5a54f620fc97d62d899f6b45d4f2e7244",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-spectrum-web-components",
+        "dependencies": {
+          "@adobe/spectrum-wc": "2.0.0-beta.3",
+          "@spectrum-web-components/checkbox": "1.12.2",
+          "@spectrum-web-components/color-field": "1.12.2",
+          "@spectrum-web-components/combobox": "1.12.2",
+          "@spectrum-web-components/dialog": "1.12.2",
+          "@spectrum-web-components/field-label": "1.12.2",
+          "@spectrum-web-components/menu": "1.12.2",
+          "@spectrum-web-components/number-field": "1.12.2",
+          "@spectrum-web-components/overlay": "1.12.2",
+          "@spectrum-web-components/picker": "1.12.2",
+          "@spectrum-web-components/popover": "1.12.2",
+          "@spectrum-web-components/radio": "1.12.2",
+          "@spectrum-web-components/slider": "1.12.2",
+          "@spectrum-web-components/switch": "1.12.2",
+          "@spectrum-web-components/textfield": "1.12.2",
+          "@spectrum-web-components/theme": "1.12.2"
+        },
+        "devDependencies": {
+          "esbuild": "0.28.2",
+          "typescript": "7.0.2",
+          "vite": "8.3.1"
+        },
+        "lockfileSha256": "c72b08689415b528aa739414d9609d13d3ff74dc6ac22e11036d3054a388ed95",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/Base-C029uGPE.js",
+          "sha256": "470c435781780f9c9dc55a8aa69b48a0af13f58d7ddf1402ea8559a69b2c8aec",
+          "raw": 16486,
+          "gzip": 6341,
+          "brotli": 5726,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/Base-C029uGPE.js.map",
+          "sha256": "d08b43d36670dd792c0cf8f2db0aad83ebb1f9986623430e69b26f6a0bc1ea41",
+          "raw": 41276,
+          "gzip": 12525,
+          "brotli": 11259,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/LanguageResolution-DfbByoSu.js",
+          "sha256": "e742b8f7d084106e4bf835aa98718b64c4d4f04bae6056f70a5b80d3848c5d0d",
+          "raw": 2159,
+          "gzip": 1068,
+          "brotli": 930,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/LanguageResolution-DfbByoSu.js.map",
+          "sha256": "ecc10a4f91906612269efbf35d8092edce2c7e9416db2e187720f19dc14b2585",
+          "raw": 5367,
+          "gzip": 2025,
+          "brotli": 1793,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/Overlay-CgIQGE_h.js",
+          "sha256": "d26f2959a61668f2dc7bcb6170bf3ce0208f4f44664c4af0396be01543105642",
+          "raw": 58654,
+          "gzip": 18097,
+          "brotli": 16184,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./rolldown-runtime-hePW80VL.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./if-defined-C3tNhnpJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./platform-BZDoCuRt.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./preload-helper-BZ1Pz5am.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./focusable-selectors-CbRTteoW.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./first-focusable-in-HCIc6lth.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-DGS46vHT.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./index-DGS46vHT.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./focus-trap.esm-GrKRp3fm.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/Overlay-CgIQGE_h.js.map",
+          "sha256": "5629ae5520a5e367fd94b9622d7bf59025571ab40a860f2534af7008f00ac0c6",
+          "raw": 200633,
+          "gzip": 51290,
+          "brotli": 43419,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/define-element-BlONwTYC.js",
+          "sha256": "eb8518b0f2c27fada891f9de32970d3130cff3d2bc319dea90570ee34d0bcd25",
+          "raw": 123,
+          "gzip": 131,
+          "brotli": 109,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/define-element-BlONwTYC.js.map",
+          "sha256": "7921c092630151d1ff7b491918c964e1d5d6159f06b3cd7fd2959ee7a0c353e3",
+          "raw": 429,
+          "gzip": 292,
+          "brotli": 252,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/first-focusable-in-HCIc6lth.js",
+          "sha256": "ac753b7149f0c4a22d5082b6c637648f9ec202710480489f88c08b451b666f54",
+          "raw": 198,
+          "gzip": 179,
+          "brotli": 138,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./focusable-selectors-CbRTteoW.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/first-focusable-in-HCIc6lth.js.map",
+          "sha256": "3c1bd4c5dfe1a7b08a75e7a55a27f769092a57daaa68ec14f268bf0a5f939988",
+          "raw": 663,
+          "gzip": 397,
+          "brotli": 360,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/focus-trap.esm-GrKRp3fm.js",
+          "sha256": "24260c354bbbbb401dc157a37f93ee9961b4c2adb7e5594810a8e65cc863dd3c",
+          "raw": 16692,
+          "gzip": 5658,
+          "brotli": 5044,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/focus-trap.esm-GrKRp3fm.js.map",
+          "sha256": "ee00f0dec664c941486329ba1ceffba59b079a4e28650ae51ed3786a5b09eaee",
+          "raw": 97997,
+          "gzip": 27939,
+          "brotli": 24264,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/focus-visible-D6fgymCV.js",
+          "sha256": "b8630cc1dd7b4c153a00f8cf39a7cf78cd0c1ab9b1082561d9cb6bb52f7d2a62",
+          "raw": 3138,
+          "gzip": 1076,
+          "brotli": 906,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./rolldown-runtime-hePW80VL.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/focus-visible-D6fgymCV.js.map",
+          "sha256": "cc271476dddd66050fb261bea9066190d859d8244fb8734dceedfbf81cec30e4",
+          "raw": 15299,
+          "gzip": 4685,
+          "brotli": 3896,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/focusable-selectors-CbRTteoW.js",
+          "sha256": "1e81176f2810691a8b5c4a51da1faa8737c1135800cd7e5f7ff3ba15f64dbaf4",
+          "raw": 536,
+          "gzip": 268,
+          "brotli": 213,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/focusable-selectors-CbRTteoW.js.map",
+          "sha256": "f46f14b506cfa6a1c2995e30afffecc733b209d9031dc65a4e7041c84ccb12ec",
+          "raw": 1076,
+          "gzip": 534,
+          "brotli": 461,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/if-defined-C3tNhnpJ.js",
+          "sha256": "b9108421d2351562f08689114af8a545a043eac1d1ce3afbd75cbaa170b7602a",
+          "raw": 111,
+          "gzip": 128,
+          "brotli": 115,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/if-defined-C3tNhnpJ.js.map",
+          "sha256": "1d502e11b8bbea6aba847f5700bc5347b3f67a5b9f4e104c68e65188b8c6a4d8",
+          "raw": 443,
+          "gzip": 327,
+          "brotli": 274,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-DGS46vHT.js",
+          "sha256": "a7c86ad1ff2a1ff64ad2f8c6f36beaed4fdc81651135c070db9b43d2de15c718",
+          "raw": 1172798,
+          "gzip": 197585,
+          "brotli": 150177,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./rolldown-runtime-hePW80VL.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./Overlay-CgIQGE_h.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./LanguageResolution-DfbByoSu.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./if-defined-C3tNhnpJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./platform-BZDoCuRt.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./preload-helper-BZ1Pz5am.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./focus-visible-D6fgymCV.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-tooltip-B2cNw-4t.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-tray-DljHJy8v.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-tray-DljHJy8v.js",
+              "dynamic": true
+            },
+            {
+              "specifier": "./sp-color-handle-B55znA3s.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/index-DGS46vHT.js.map",
+          "sha256": "e7249079e4dc25e5cb70ff75dd8bd424f836110597ce512b2312a637e2afcb46",
+          "raw": 1873057,
+          "gzip": 349960,
+          "brotli": 273784,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-DcTSzvzD.css",
+          "sha256": "dbc3b0821a8b4ff6665b4bab114fa1ad9362934de15432dc759462994268c7bd",
+          "raw": 120414,
+          "gzip": 17955,
+          "brotli": 14315,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/platform-BZDoCuRt.js",
+          "sha256": "d77e473ba4d7a14b80ebae6ee0fc4bfbf125494cb151d20ea3ad449660ac9e12",
+          "raw": 1348,
+          "gzip": 710,
+          "brotli": 606,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/platform-BZDoCuRt.js.map",
+          "sha256": "9a5693d0200774154884ab3852e940e00852de2217c0538a87c59fcc2433fa19",
+          "raw": 4305,
+          "gzip": 1588,
+          "brotli": 1402,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/preload-helper-BZ1Pz5am.js",
+          "sha256": "8820987e6a8afb54d776f21e305917e1ecf83cef678b4db38c2e5a405d04a8bf",
+          "raw": 1218,
+          "gzip": 688,
+          "brotli": 575,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/query-Df4-SAIv.js",
+          "sha256": "711201f990f269cde9e54095f81a441fd43433c5c7c5b3849032ee95e2e96d9a",
+          "raw": 536,
+          "gzip": 354,
+          "brotli": 320,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/query-Df4-SAIv.js.map",
+          "sha256": "11573403c65576065f474caa31327949a486e604abc6b63d3f9286b3f3663cb2",
+          "raw": 1819,
+          "gzip": 842,
+          "brotli": 744,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/rolldown-runtime-hePW80VL.js",
+          "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+          "raw": 716,
+          "gzip": 428,
+          "brotli": 381,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/sp-color-handle-B55znA3s.js",
+          "sha256": "04e05a497498b0c9b49b507c187909a17a62fa9b5b2d89e0567c6b0c852e13e6",
+          "raw": 12506,
+          "gzip": 2682,
+          "brotli": 2291,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/sp-color-handle-B55znA3s.js.map",
+          "sha256": "1214ba03f920d691f3c9a60d4d727269c65cfcca5d3b7bc24864f14deef38c5c",
+          "raw": 17455,
+          "gzip": 3795,
+          "brotli": 3240,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/sp-tooltip-B2cNw-4t.js",
+          "sha256": "2cb573be023acffafaf293a2b782ee082e488a010d82bae8486449e78d6e1832",
+          "raw": 22743,
+          "gzip": 4153,
+          "brotli": 3642,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./if-defined-C3tNhnpJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./preload-helper-BZ1Pz5am.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./focusable-selectors-CbRTteoW.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-DGS46vHT.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-DGS46vHT.js",
+              "dynamic": true
+            }
+          ]
+        },
+        {
+          "path": "assets/sp-tooltip-B2cNw-4t.js.map",
+          "sha256": "92940798c2b2188dd9f647cc9212abc0e81eac6bc9318e1710b476ce70bd69f9",
+          "raw": 26874,
+          "gzip": 5141,
+          "brotli": 4563,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/sp-tray-DljHJy8v.js",
+          "sha256": "58bd6a16c36cdc94aed06554707fd8d96be51cb0d682ba50f2988f18e95fc8b4",
+          "raw": 12390,
+          "gzip": 2919,
+          "brotli": 2562,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./state-CRZlQpoJ.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./query-Df4-SAIv.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./define-element-BlONwTYC.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./first-focusable-in-HCIc6lth.js",
+              "dynamic": false
+            },
+            {
+              "specifier": "./index-DGS46vHT.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/sp-tray-DljHJy8v.js.map",
+          "sha256": "d59f372504ded62988d3475007b55aa983866b00ad7735883fef02bbcba778f5",
+          "raw": 18101,
+          "gzip": 4342,
+          "brotli": 3825,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/state-CRZlQpoJ.js",
+          "sha256": "252f3857c3098e6b9165b1c8805f6fee97fc8a59eac8188cbc4469f04151f524",
+          "raw": 145,
+          "gzip": 154,
+          "brotli": 127,
+          "diagnostic": false,
+          "imports": [
+            {
+              "specifier": "./Base-C029uGPE.js",
+              "dynamic": false
+            }
+          ]
+        },
+        {
+          "path": "assets/state-CRZlQpoJ.js.map",
+          "sha256": "7e0912539c30e6d76895b5ab6ad4543dddf345943335859d49912a84b2444401",
+          "raw": 539,
+          "gzip": 379,
+          "brotli": 316,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "1ae15ea1679720e75ce0ec4e1da8f38d50df6523202b7b50ddc90917dbba3588",
+          "raw": 1264,
+          "gzip": 437,
+          "brotli": 372,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "e5761dc5fc924962b1fce0c719d0e8d43a017369cebdcdb0918cf79fb412a255",
+          "raw": 1341,
+          "gzip": 496,
+          "brotli": 356,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "en-reve",
+      "port": 4617,
+      "family": "En Reve",
+      "technology": "Web Components",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c",
+      "sourceSha256": "40b19a0c9305753046e355aaec4ec70cab417556c9210d61a02bfb92f01faf69",
+      "sourceHashes": {
+        "en-reve/.DS_Store": "e289f40c1f0da6f36a08c65de29421087a052cb429e5b40cc26c4d292219f3b5",
+        "en-reve/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "en-reve/.performance/containment.css": "b30aa0f791e8c07f7d6da41e9792425154c7dcf519b04de3f0b7c033adb7a5de",
+        "en-reve/.performance/content-visibility.js": "e29f455f7b06cbc0c7f79d01fb7fff3bf2a75231973025fbbc8ccc3832e9f7b3",
+        "en-reve/.performance/family-button.js": "0a033ce0845da4698bd93b1f04fbc95993a5c6b779eace34174fcd00da85b162",
+        "en-reve/.performance/family-date.js": "088fd0303ff5c3a504a984c44321a2e1e6f2ada085dcfc1417765ac1d4bd5748",
+        "en-reve/.performance/family-forms.js": "67ad103a2fe174bf6fbe96c3c654737deb791f364f275df26478337fabb47b22",
+        "en-reve/.performance/family-overlays.js": "4d1ea23782cab9e6e7b09e71cedf58f89c2845ffe8ff79032449a9c805debd82",
+        "en-reve/.performance/family-shell.js": "3f77ebd3bdc80202e19c63bdee3c88ec670c78b4b52911118c1afd9d289ed56e",
+        "en-reve/.performance/intent-commands.js": "615ac8d1926061bd1a318de52c5348914e282a6cc7cfdcf569e77c6a23557fc4",
+        "en-reve/.performance/lazy-commands.js": "ffddaa289fe7df1345d2315a4f7bca9903bbace664b5cb65f598e20c40d505b1",
+        "en-reve/.performance/split-vendor-edit.js": "9c9afcbd20728bb36525fcaeea2f1cae15339364a561bc9fbb17ed5a4f7005e2",
+        "en-reve/.performance/split-vendor.js": "be564590dfe6fe9eb9a862adab4bca230c06f0480ddd952e6b60f858c9baeaf6",
+        "en-reve/index.html": "7382c087e80812ef2097bfb940209c7586cf26d5298f9ec80c1fe38879a4f57d",
+        "en-reve/package-lock.json": "a494e4ed762774e3afb83f03185bee293f40edfec098bd741d0e600241fabaaa",
+        "en-reve/package.json": "73e3552443c759c8c0d2023bc29bb20ff2f50796a4aaa37c8c39f2cf686c837a",
+        "en-reve/snapshot.json": "5b2cf3b48ed4ec307d3a3aa0b163058f483e14570c8e5be94a1e436c01d5ece8",
+        "en-reve/src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+        "en-reve/src/base.css": "572a50f9bd509cf1ca11dcd525be0800e5321cc94aa58e79fa26367f34efb7c0",
+        "en-reve/src/change-consumption.ts": "e1bc1b6b9d72fa561f6043721f8165c2cf78ace78720ecce3a07bc01d661c8be",
+        "en-reve/src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+        "en-reve/src/model.ts": "db63e21d6055808f15e9e9ea942d321871f6150b2f9b6b16c4e442e02ef79f65",
+        "en-reve/src/styles.css": "9e4ba3f86fe9662f74ee88b67a326f292652e0c5a0ecce8fc9fe5ae5d9fc14ff",
+        "en-reve/src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+        "en-reve/src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+        "en-reve/src/token-copy.ts": "ae7e2ee7882d81b89e2d9427bb3f18f01e886660fcbf62d141f714dd114dc720",
+        "en-reve/vendor/en-reve-elements-0.1.0-main-1fd12d7737b1.tgz": "1fd12d7737b1880fe160eb61d7f95021140247d92e45fae6dbdcb1388985b3aa",
+        "en-reve/vendor/en-reve-elements-0.1.0.tgz": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+        "en-reve/vendor/en-reve-primitives-0.1.0-main-3c07d968d025.tgz": "3c07d968d02516aed51844276b88137964e55b4d0ed621d336293f2d2ba0656d",
+        "en-reve/vendor/en-reve-primitives-0.1.0.tgz": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+        "en-reve/vendor/en-reve-styles-0.1.0-main-e9dd7ff5eb76.tgz": "e9dd7ff5eb76279e246ee74813e8e9febaad8bd1f776c0800fcf95c9dd204f2d",
+        "en-reve/vendor/en-reve-styles-0.1.0.tgz": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+        "en-reve/vendor/en-reve-tokens-0.1.0-main-41c2f927c730.tgz": "41c2f927c7301eb4331e6398a8b89b1d1e642d868fe46b5f03125a9daef6e140",
+        "en-reve/vendor/en-reve-tokens-0.1.0.tgz": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+        "en-reve/vite.config.js": "cd5bace161a6a47b3c7550399cf656d2fe7ba972d5bcf67442ac8e50d29479a3",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-en-reve",
+        "dependencies": {
+          "@en-reve/tokens": "file:vendor/en-reve-tokens-0.1.0-main-41c2f927c730.tgz",
+          "@en-reve/styles": "file:vendor/en-reve-styles-0.1.0-main-e9dd7ff5eb76.tgz",
+          "@en-reve/primitives": "file:vendor/en-reve-primitives-0.1.0-main-3c07d968d025.tgz",
+          "@en-reve/elements": "file:vendor/en-reve-elements-0.1.0-main-1fd12d7737b1.tgz",
+          "lit": "3.3.3",
+          "signal-polyfill": "0.2.2"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "a494e4ed762774e3afb83f03185bee293f40edfec098bd741d0e600241fabaaa",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-CDV5OawH.css",
+          "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+          "raw": 44562,
+          "gzip": 6986,
+          "brotli": 6077,
+          "diagnostic": false
+        },
+        {
+          "path": "assets/index-MqONCzvs.js",
+          "sha256": "8cdd02ed889c5fb528b57882e8b246b5d091528fb730308229d09d338cbeeb1c",
+          "raw": 450057,
+          "gzip": 110882,
+          "brotli": 89048,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-MqONCzvs.js.map",
+          "sha256": "fd46c10b7300a265b6a2a4226699d20c8e3c3cacfcf95638da2cce8226f8ba2e",
+          "raw": 1243183,
+          "gzip": 293719,
+          "brotli": 225463,
+          "diagnostic": true
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "2ec5883fa57f74ad510184b66a5a51e02b02d17b4795c0deb4910698b0359a48",
+          "raw": 813,
+          "gzip": 425,
+          "brotli": 365,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "66073aeb2ce9cd7a2b010be4ee02bb9055e6e72df8fe3d47cfa68d53e6272203",
+          "raw": 359,
+          "gzip": 267,
+          "brotli": 162,
+          "diagnostic": false
+        }
+      ]
+    },
+    {
+      "id": "web-awesome",
+      "port": 4618,
+      "family": "Web Awesome",
+      "technology": "Web Components",
+      "cohort": "native",
+      "verificationReceipt": {
+        "path": "/Users/westbrook/Documents/repos/design-system/artifacts/test-runtime-2026-09-25/specialized-collector-registry-repair-v1/showcase-receipt.json",
+        "sha256": "628fd68f27a6af7f85fcfba82d1fac6fc57c52bc0fcfd0781bd42b9e0efebb89",
+        "verifiedAt": "2026-09-25T19:45:06.303Z"
+      },
+      "fingerprint": "5694cb62336733951bcb793f18aac9b9fc884324ef953bb44369acfdca4fd97e",
+      "sourceSha256": "7884d2465e4352bbd54401c1646b988d2a150ec8827b1b7270c266b84bb930ca",
+      "sourceHashes": {
+        "web-awesome/.npmrc": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+        "web-awesome/index.html": "a587b3f098e2b993dd611e382c786e02f48be99c3b65c01de04f9055e7b26553",
+        "web-awesome/package-lock.json": "c3e7952bcf3b9c95793ffb40986135e836f52695e246e8c10216036f0a63ae73",
+        "web-awesome/package.json": "5075102dd3c4032344c9356a2d5b78b0de47516bcc99e892017b288df4cb81f3",
+        "web-awesome/README.md": "26bbf63fa08bbbffb01d948a0b528337a91c83675ca120fc57fd7029c8d8edfe",
+        "web-awesome/src/main.js": "46942cee643f2440daec4b8aedd93ab83cfc237c06a60d6267f49cae577a6987",
+        "web-awesome/src/style.css": "1082ce06058970cbffc901dcdfc79c69bf21f74623464a680728238fb094ff15",
+        "web-awesome/src/ui.js": "447c86d29f839b2206a77c9f8011eba2e152bdffca194b0db14f78bdda693d81",
+        "web-awesome/vite.config.js": "a220af1aa272eb175c021c96704dc8dfdac12d317b51ba2bf8c35fcf7b6f75d5",
+        "shared/layout.css": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+        "shared/progress.js": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+        "shared/Showcase.jsx": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+        "shared/web-showcase.js": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+        "tools/isolation-plugin.mjs": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200"
+      },
+      "sourceHashScope": "Previously qualified source paths; all emitted artifacts independently hashed, including newly introduced modules.",
+      "build": {
+        "project": "showcase-web-awesome",
+        "dependencies": {
+          "@awesome.me/webawesome": "3.13.0"
+        },
+        "devDependencies": {
+          "vite": "8.3.1",
+          "typescript": "7.0.2"
+        },
+        "lockfileSha256": "c3e7952bcf3b9c95793ffb40986135e836f52695e246e8c10216036f0a63ae73",
+        "mode": "production",
+        "rendering": "client",
+        "theme": "single default light appearance",
+        "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+      },
+      "assets": [
+        {
+          "path": "assets/index-BG3Zw-nj.js",
+          "sha256": "cfbb769a0ca258a312711011f6f7a97980b7a4e1515dbbbb252fa9b340dd8c68",
+          "raw": 481057,
+          "gzip": 113108,
+          "brotli": 88429,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-BG3Zw-nj.js.map",
+          "sha256": "d45cd10cbbc2a7e98bd954f88a0b86790484daed1123637c52ec6617dbe91138",
+          "raw": 1120270,
+          "gzip": 243054,
+          "brotli": 187507,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-D7icV0LY.css",
+          "sha256": "c84822efd68d8d4ac65c0e31e3aede38acd7f6ae5d340b258b1a99d371311e8a",
+          "raw": 54664,
+          "gzip": 8136,
+          "brotli": 5064,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "210e5edbbf81847ecb2fee8bb8cbce02ac82506ccb72d94da5feb06a9ac879a1",
+          "raw": 469,
+          "gzip": 315,
+          "brotli": 259,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "5e6c34e3187bad9a437cfb11787e781c17264a41653af0defe03173b1023a621",
+          "raw": 419,
+          "gzip": 286,
+          "brotli": 171,
+          "diagnostic": false
+        }
+      ]
+    }
+  ],
+  "pendingSystems": [],
+  "systemQualifications": {
+    "radix-react": {
+      "status": "passed",
+      "at": "2026-09-26T01:55:21.946Z",
+      "receipt": "reports/functional-runtime-admission-native-functional-v1-native.json",
+      "checksPassed": 199,
+      "fingerprint": "c1096232c94b6064544acfab9605e6f76254c76550527980e117851c697ab673"
+    },
+    "fluent-react": {
+      "status": "passed",
+      "at": "2026-09-26T01:55:21.946Z",
+      "receipt": "reports/functional-runtime-admission-native-functional-v1-native.json",
+      "checksPassed": 199,
+      "fingerprint": "5db1d5cd55ebb34d6dc8111f7b1b04c0ea2bbd0c510432cf12692e806d920500"
+    },
+    "spectrum-react": {
+      "status": "passed",
+      "at": "2026-09-26T01:55:21.946Z",
+      "receipt": "reports/functional-runtime-admission-native-functional-v1-native.json",
+      "checksPassed": 199,
+      "fingerprint": "53bb6bf1423f49c48ad0a72f1bd5183ed9c23605a9127ad8032646b698553dbd"
+    },
+    "astryx-react": {
+      "status": "passed",
+      "at": "2026-09-26T01:55:21.946Z",
+      "receipt": "reports/functional-runtime-admission-native-functional-v1-native.json",
+      "checksPassed": 199,
+      "fingerprint": "08ae094c3c300faddb45c7f755f383b099d064a1d44e365d859b813c2f35dd78"
+    },
+    "shadcn-react": {
+      "status": "passed",
+      "at": "2026-09-26T01:55:21.946Z",
+      "receipt": "reports/functional-runtime-admission-native-functional-v1-native.json",
+      "checksPassed": 199,
+      "fingerprint": "ab9f6cf8b33716cb45a371517000261920a7f74d7867048fd32515ae0685ac03"
+    },
+    "fluent-web-components": {
+      "status": "passed",
+      "at": "2026-10-01T15:59:19.711Z",
+      "receipt": "reports/functional-main-be47f046-20261001-v1-qualification-en-reve-fluent-web-components-web-awesome.json",
+      "checksPassed": 67,
+      "fingerprint": "7236c0854897d7e62f89a9398cbf0ec909ab7278f88a029433acc51d4af0a486"
+    },
+    "spectrum-web-components": {
+      "status": "passed",
+      "at": "2026-09-26T01:55:21.946Z",
+      "receipt": "reports/functional-runtime-admission-native-functional-v1-native.json",
+      "checksPassed": 199,
+      "fingerprint": "ffb108ad135cc6c4886971781bba7575ce1f1b978257d6f5fcc8ffaa43d47512"
+    },
+    "en-reve": {
+      "status": "passed",
+      "at": "2026-10-01T15:59:19.711Z",
+      "receipt": "reports/functional-main-be47f046-20261001-v1-qualification-en-reve-fluent-web-components-web-awesome.json",
+      "checksPassed": 67,
+      "fingerprint": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c"
+    },
+    "web-awesome": {
+      "status": "passed",
+      "at": "2026-10-01T15:59:19.711Z",
+      "receipt": "reports/functional-main-be47f046-20261001-v1-qualification-en-reve-fluent-web-components-web-awesome.json",
+      "checksPassed": 67,
+      "fingerprint": "5694cb62336733951bcb793f18aac9b9fc884324ef953bb44369acfdca4fd97e"
+    }
+  }
+}

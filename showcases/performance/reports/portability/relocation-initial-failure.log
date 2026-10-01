@@ -1,0 +1,107 @@
+npm notice run en-reve-performance-lab@0.1.0 test
+npm notice run node --test tests/*.test.mjs
+✔ selected panels keep registered order and reject unknown selectors (1.141708ms)
+✔ first snapshot archive retains its canonical historical path and metadata (31.87375ms)
+✔ repeated fingerprint archives preserve both the existing archive and the new snapshot (14.006583ms)
+✔ a retained metadata-only archive cannot be overwritten by preparation (15.685208ms)
+✔ challenger addition preserves frozen entries and prior qualification while requiring its own checks (0.386416ms)
+✔ adding a challenger never clears another pending qualification (0.096417ms)
+✔ selected candidate refresh preserves unselected frozen controls and their ordering (0.362375ms)
+✔ additions and selected refresh retain receipt provenance without changing unselected evidence (0.172542ms)
+✔ recipes provide explicit separate suites, qualification, seeded IDs and complete calendar stages (1.999583ms)
+✔ invalid selection, accidental options, unsafe identifiers, unsupported calendar matrix fail before work (1.619584ms)
+✔ run evidence refuses duplicate, mismatched and dateless samples; reports incomplete evidence honestly (0.20025ms)
+✔ source export includes isolated locks/vendor and new scripts, excludes secrets/runtime/output (0.227208ms)
+✔ verified transfer round trip relocates binary bytes and modes, refuses overwrite and corruption (16.6055ms)
+✔ run refuses existing campaign before mutating it (2.892042ms)
+✔ stage failure records immutable context and stops before acquisition without retrying (18.611125ms)
+✔ restore rejects traversal even with a recomputed manifest checksum before creating destination (5.312375ms)
+✔ CI resolves the script path and waits for the child exit without launching a process (0.741083ms)
+✔ CI propagates child failures and launch errors (0.857ms)
+✔ full CI discovers the registry for all eight distinct suites, including startup and observer overhead (0.14125ms)
+✔ qualification and fixed sentinel dispatch retain their prior scope (0.08575ms)
+✔ distribution omits unsupported high percentiles and missing values (1.072625ms)
+✔ paired bootstrap retains pairing and known constant shift (6.870583ms)
+✔ historical comparisons resample independently and preserve known constant effects (6.406541ms)
+✔ CLS session windows exclude recent input and split at one-second gaps (0.177208ms)
+✔ compression negotiates supported nonzero preference (0.212833ms)
+✔ randomization is repeatable and does not mutate its source (0.087667ms)
+✔ absent Event Timing is null, not a zero-duration interaction (0.347583ms)
+✔ an action cannot borrow the next action’s slower Event Timing entry (0.139541ms)
+✔ budgets expose growth, missing systems and challenger additions (0.170792ms)
+✔ pinned lexer distinguishes real static and dynamic import edges (1.372916ms)
+✔ coverage ranges are unioned without counting overlap twice (0.2365ms)
+✔ V8 coverage excludes unexecuted nested ranges inside an executed script (0.351916ms)
+✔ whole-page delivery includes HTML and fonts but excludes lifecycle collection/navigation (0.770667ms)
+✔ incomplete response never looks like a zero byte download (0.133916ms)
+✔ embedded SVG and blob payloads are not downloaded twice or treated as incomplete network responses (0.614708ms)
+✔ only local-scheme responses cannot establish a zero-byte HTTP delivery (0.139125ms)
+✔ cache zero is preserved; pre-navigation network snapshot wins; HTML included once in resource timing (0.12375ms)
+✔ En Reve main refresh replaces target rows only, keeps archived cohorts, and is idempotent (9.799833ms)
+✔ dated current reports remain refreshable without duplicate identity columns (5.976625ms)
+✔ calibration rejects an occupied explicit receipt before acquiring browser resources (3.614959ms)
+✔ functional qualification rejects path traversal run ids before creating artifacts (0.412917ms)
+✔ acknowledges delayed correct payload, ignores wrong-document/incomplete/old payloads and duplicates (23.21975ms)
+✔ bounded missing delivery, duplicate expectations and navigation cancellation release ownership (11.156917ms)
+✔ expectation owns an immutable snapshot and completed cancellation cannot remove a later waiter (0.259ms)
+✔ native work owns its private machine, checkout and browser resources and cleans up on failure (8.814959ms)
+✔ native work borrows exact integration machine and browser leases without deleting them (4.631333ms)
+✔ native work rejects tampered inherited browser ownership without executing or removing producer leases (4.486458ms)
+node:fs:620
+    return binding.readFileUtf8(path, stringToFlags(options.flag));
+                   ^
+
+Error: ENOENT: no such file or directory, open '/private/tmp/en-performance-restored-20261001-v1/artifacts/web-awesome/historical-results-before-expansion.md'
+    at readFileSync (node:fs:620:20)
+    at read (file:///private/tmp/en-performance-restored-20261001-v1/showcases/performance/tests/main-integration.test.mjs:5:15)
+    at file:///private/tmp/en-performance-restored-20261001-v1/showcases/performance/tests/main-integration.test.mjs:6:11
+    at ModuleJob.run (node:internal/modules/esm/module_job:569:25)
+    at async node:internal/modules/esm/loader:650:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:105:5) {
+  errno: -2,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: '/private/tmp/en-performance-restored-20261001-v1/artifacts/web-awesome/historical-results-before-expansion.md'
+}
+
+Node.js v26.10.0
+✖ tests/main-integration.test.mjs (1611.387958ms)
+✔ blocking excess clips the blocking portion across the FCP boundary (0.409625ms)
+✔ reference requires full schedule, unique blocks and 30 successful samples per timing cell (1.660792ms)
+✔ missing timing evidence cannot pass through sample counts alone (0.177ms)
+✔ retention requires repeated complete checkpoints and successful GC memory measurements (1.2475ms)
+✔ frozen integrity check detects modified content and extra files (8.752208ms)
+✔ benchmark matrix has repeatable paired blocks without invented global topologies (1.276291ms)
+✔ invalid matrices fail before browser work or ambiguous fixture ownership (0.465291ms)
+✔ unsupported and failed runs never become fast successful measurements (0.385541ms)
+✔ implicit historical fixed wait and explicit fixed wait are the same protocol (0.889209ms)
+✔ identical harness bytes cannot make fixed wait and acknowledgement comparable (0.167041ms)
+✔ one mixed or missing acknowledgement sample prevents timing comparison (0.082292ms)
+✔ unknown lifecycle protocols fail closed even when both manifests agree (0.133125ms)
+✔ existing harness, host, profile and suite separation remains required (0.165166ms)
+✔ failed samples remain failures for the original completeness check, not accepted timing observations (0.163583ms)
+✔ Spectrum refresh replaces target rows only, keeps archived cohorts, and is idempotent (12.842833ms)
+✔ standalone variant qualification keeps its default path and legacy engine omission (6.05325ms)
+✔ explicit qualification selects the owned receipt and leaves a stale default unchanged (2.606625ms)
+✔ missing, malformed, failed, wrong-variant and wrong-engine owned receipts cannot fall back (4.804125ms)
+✔ functional receipt option requires a variant before creating a run (0.932291ms)
+✔ every specialized current measurement binds its own Chromium producer receipt (1.074709ms)
+✔ receipt composition preserves inputs and associates selected projects with their original evidence (0.9425ms)
+✔ receipt preflight reports every missing selected system and rejects ambiguous evidence (0.840458ms)
+✔ selected composition counts and dates only the selected evidence (0.097708ms)
+✔ receipt overrides stay explicit and reject empty, duplicated or ambiguous path arguments (0.151792ms)
+✔ default catalog covers all nine registered systems while historical receipt remains eight (1.325125ms)
+ℹ tests 73
+ℹ suites 0
+ℹ pass 72
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3370.787459
+
+✖ failing tests:
+
+test at tests/main-integration.test.mjs:1:1
+✖ tests/main-integration.test.mjs (1611.387958ms)
+  'test failed'

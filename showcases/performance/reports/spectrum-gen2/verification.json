@@ -1,0 +1,143 @@
+{
+  "verifiedAt": "2026-09-22T12:46:18.783528+00:00",
+  "scope": "Spectrum WC Gen2 + Gen1 performance refresh; no application behavior changed in this measurement pass",
+  "implementation": "@adobe/spectrum-wc 2.0.0-beta.3 plus retained Gen1 1.12.2 controls",
+  "measuredFingerprint": "bf62dc00ccb1afac9f4f3803af44a1d06c9475ddb01d6da9efd949d9aa5d4fa4",
+  "priorFingerprint": "0d349ad33f30b745a0a83418f1a0d5518abe3e935b7117be6aa769ce4019b5ec",
+  "campaigns": {
+    "load": {
+      "id": "spectrum-gen2-load-v1",
+      "expected": 120,
+      "observed": 120,
+      "successful": 120,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "b53478f2b326f350beed95510eec765995bccd064c9c4932de51e30e96e9ef09"
+    },
+    "startup": {
+      "id": "spectrum-gen2-startup-v1",
+      "expected": 60,
+      "observed": 60,
+      "successful": 60,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "c8c9d57fdabaff6dccd084bcf45cf5764900a2c1f516bc095aa71528f4be4e90"
+    },
+    "interactions": {
+      "id": "spectrum-gen2-interactions-v1",
+      "expected": 60,
+      "observed": 60,
+      "successful": 50,
+      "failed": 10,
+      "completed": true,
+      "rawHash": "5acddb0c07d1c042af01cfb04fd14e083c1c3c2af8e6f0757e8ebff41904ab9e"
+    },
+    "lighthouse": {
+      "id": "spectrum-gen2-lighthouse-v1",
+      "expected": 15,
+      "observed": 15,
+      "successful": 15,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "c9d9ca5bbc95fe4e682e87c593ff837bf7e5f9abd1bf586d8691618734c6be00"
+    },
+    "memory": {
+      "id": "spectrum-gen2-memory-v1",
+      "expected": 3,
+      "observed": 3,
+      "successful": 3,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "c4260ccab96b7c274c7a0e382c6d57b3571d7b2270ff56cf02baef6bfc22761c"
+    },
+    "diagnostic": {
+      "id": "spectrum-gen2-diagnostic-v1",
+      "expected": 3,
+      "observed": 3,
+      "successful": 3,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "ac4d729ea0baacc749df8c1262845c80faf7b7765f0e6b280e7de0b754eab1e9"
+    },
+    "bfcache": {
+      "id": "spectrum-gen2-bfcache-v1",
+      "expected": 15,
+      "observed": 15,
+      "successful": 15,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "5cf1481f679583326f39b1e733b3bd16ca5e54014868dfe29cb8dd1290a6e913"
+    },
+    "overhead": {
+      "id": "spectrum-gen2-overhead-v1",
+      "expected": 30,
+      "observed": 30,
+      "successful": 30,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "43a4d94663108eb0ddefee2d21cece73bb6c0d352473d19fd27cb3383d786c50"
+    }
+  },
+  "primarySamples": 306,
+  "successfulSamples": 296,
+  "failedSamples": 10,
+  "failureScope": "All ten Spectrum mobile settled journeys fail at repeated Landscape after dialog close; focus trap remains active in separate diagnostics with and without the timing collector. Failed journeys excluded from successful distributions, not retried.",
+  "memoryLimitations": "Initial API memory timeout for Spectrum and En Reve; 10/50-cycle readings succeed. One session per implementation.",
+  "dom": "30 successful / 0 failed snapshots",
+  "ownershipSnapshots": 3,
+  "sourceHash": "58ac2dab4c4bf39c95f3f8db510885944b77b03e24af8843301da7def53207d1",
+  "buildHash": "df1d8b4d2d5f382d220c7fa11c71d5dbdad3baabd9bd0c3b58de063a20a88588",
+  "tableDataSha256": "9b6ce4739184eb8cd490ca3a823a6760258d760187050046e8f84a3663794a4f",
+  "mainTablesRefreshed": 34,
+  "reader": {
+    "passed": true,
+    "browsers": [
+      {
+        "engine": "chromium",
+        "version": "153.0.8010.12",
+        "checkedTables": 86,
+        "sortedColumns": 125,
+        "passed": true
+      },
+      {
+        "engine": "firefox",
+        "version": "155.0",
+        "checkedTables": 86,
+        "sortedColumns": 125,
+        "passed": true
+      },
+      {
+        "engine": "webkit",
+        "version": "26.6",
+        "checkedTables": 86,
+        "sortedColumns": 125,
+        "passed": true
+      }
+    ],
+    "scope": "Exact rendered values for all refreshed/new Spectrum tables; every numeric loading column and one numeric column per other table sorted both ways; missing values and sticky columns checked. Prior exhaustive reader verification remains historical.",
+    "receipt": "reader/verification.json",
+    "priorAttempt": "reader/server-unavailable-attempt/verification.json"
+  },
+  "unitTests": {
+    "integration": 1,
+    "reader": 5,
+    "passed": true
+  },
+  "preservation": {
+    "at": "2026-09-22T12:42:09.845Z",
+    "peerFixturesUnchanged": 8,
+    "peerAssetsChecked": 44,
+    "archivedGen1AssetsChecked": 37,
+    "historicalAcquisitionFilesChecked": 423,
+    "currentAcquisitionInputsChecked": 45,
+    "previousFingerprint": "0d349ad33f30b745a0a83418f1a0d5518abe3e935b7117be6aa769ce4019b5ec",
+    "currentFingerprint": "bf62dc00ccb1afac9f4f3803af44a1d06c9475ddb01d6da9efd949d9aa5d4fa4",
+    "successfulSamples": 296,
+    "failedSamples": 10,
+    "passed": true
+  },
+  "evidenceReceipt": "evidence/receipt.json",
+  "url": "http://127.0.0.1:4188/?progress-report#loading-and-visual-stability",
+  "passed": true,
+  "interpretation": "Acquisition/report qualification passed with retained application-journey failures; not an all-functional-pass claim or baseline promotion."
+}

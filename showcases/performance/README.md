@@ -4,6 +4,8 @@ An isolated, pinned Node project for the nine production showcases. It measures 
 
 Read [the protocol](../../plans/native-showcase-performance-plan.md), [bundle evidence](reports/bundles.md), and [the implementation results](../../plans/native-showcase-performance-results.md). The `runs/` directory contains the original samples, including failed qualification attempts. It is deliberately ignored by Git; retain run directories in an artifact store when using CI.
 
+For new acquisitions or continuation in another task, start with the [portable campaign workflow](CAMPAIGNS.md): `node showcases/performance/campaign.mjs plan --config showcases/performance/campaigns/native.json --id <fresh-id>`. It covers setup, configuration, acquisition, grouped reporting and verified source/evidence transfer. Historical scripts below remain reproduction references.
+
 ## Scoped registry preparation
 
 The separate [registry workflow lane](REGISTRY.md) uses the real settings, sign-in and chat workflows for scaling, upgrade containment, lifecycle retention, activation milestones and SSR/hydration checks. Run it with `node showcases/performance/src/cli.mjs registry`; its current-source fixture and summary are independent of the frozen external showcase panel.
@@ -202,7 +204,7 @@ The report config retains exact cohort IDs and evidence paths. New paired contra
 
 Web Awesome retains native date input, Card, Rating, ColorPicker and offscreen tab behavior; free select does not reproduce a searchable Pro Combobox. Initial tab content is mounted and qualified by actual scrolling. Native dialog/drawer accessible-name limitations are recorded in [fixture qualification notes](../web-awesome/README.md); passing the measurement adapter is not accessibility certification. Structural coverage comprises 30 connected-DOM snapshots and three ownership snapshots, including complete date-field exclusions and En Reve's custom-date lifecycle.
 
-Delivery totals are replayed from retained raw observations using HTTP(S) responses only. The original aggregate counted nine embedded Web Awesome SVG fetches (4,683 bytes already carried in JS) as wire transfer, plus a zero-byte data image. Successful-load-sample medians for corrected Web Awesome delivery are 94,111 cold bytes and 260 warm bytes, compared with captured aggregate medians of 98,794 and 4,943. Raw samples and historical rows remain unchanged. [Machine-readable tables](reports/web-awesome/tables.json) preserve the correction ledger and exact analysis-source hashes; local-scheme response counts are diagnostics, not additional network bytes.
+Delivery totals are replayed from retained raw observations using HTTP(S) responses only. The original aggregate counted nine embedded Web Awesome SVG fetches (4,683 bytes already carried in JS) as wire transfer, plus a zero-byte data image. Corrected Web Awesome totals are 94,111 cold bytes and 260 warm bytes, compared with the captured aggregates of 98,794 and 4,943. Raw samples and historical rows remain unchanged. [Machine-readable tables](reports/web-awesome/tables.json) preserve the correction ledger and exact analysis-source hashes; local-scheme response counts are diagnostics, not additional network bytes.
 
 ## Spectrum WC Gen2 performance refresh
 
@@ -210,4 +212,4 @@ The selected Spectrum fixture now uses `@adobe/spectrum-wc` 2.0.0-beta.3 plus Ge
 
 ## En Reve main refresh
 
-The September 23 main refresh is documented in [reports/en-reve-main/README.md](reports/en-reve-main/README.md). Its explicit standalone qualification receipt is `../verification-en-reve-main.json`; default historical receipt catalogs remain immutable. That September 23 acquisition used tracked-clean local main `6d09b31c`, packed into content-addressed tarballs. Only En Reve is replaced in the current inventory; all eight peer artifacts remain preserved. Use the new acquisition IDs and integrate this refresh after historical generators.
+The September 23 main refresh is documented in [reports/en-reve-main/README.md](reports/en-reve-main/README.md). Its explicit standalone qualification receipt is `../verification-en-reve-main.json`; default historical receipt catalogs remain immutable. The current source is local main `6d09b31c`, packed from tracked-clean source with content-addressed tarballs. Only En Reve is replaced in the current inventory; all eight peer artifacts remain preserved. Use the new acquisition IDs and integrate this refresh after historical generators.

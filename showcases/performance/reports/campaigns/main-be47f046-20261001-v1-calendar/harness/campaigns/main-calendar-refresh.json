@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "kind": "calendar",
+  "systems": [
+    "en-reve"
+  ],
+  "profiles": [
+    "desktop",
+    "mobile"
+  ],
+  "caches": [
+    "cold",
+    "warm"
+  ],
+  "seed": 20261001,
+  "suites": [
+    "load",
+    "startup",
+    "interactions",
+    "memory",
+    "lighthouse"
+  ],
+  "samples": 10,
+  "calendarSamples": 30,
+  "preparedSamples": 10,
+  "lighthouseSamples": 5,
+  "memorySamples": 1,
+  "referenceCampaign": "main-be47f046-20261001-v1"
+}

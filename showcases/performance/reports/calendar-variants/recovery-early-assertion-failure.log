@@ -1,0 +1,36 @@
+LIGHTHOUSE 00001 calendar-eager ok
+LIGHTHOUSE 00002 calendar-split ok
+LIGHTHOUSE 00003 calendar-deferred ok
+LIGHTHOUSE 00004 calendar-deferred ok
+LIGHTHOUSE 00005 calendar-eager ok
+LIGHTHOUSE 00006 calendar-split ok
+LIGHTHOUSE 00007 calendar-deferred ok
+LIGHTHOUSE 00008 calendar-split ok
+LIGHTHOUSE 00009 calendar-eager ok
+LIGHTHOUSE 00010 calendar-deferred ok
+LIGHTHOUSE 00011 calendar-split ok
+LIGHTHOUSE 00012 calendar-eager ok
+LIGHTHOUSE 00013 calendar-split ok
+LIGHTHOUSE 00014 calendar-deferred ok
+LIGHTHOUSE 00015 calendar-eager ok
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(!/loading/i.test(errorText))
+
+    at work (file:///Users/westbrook/Documents/repos/design-system/showcases/performance/experiments/calendar-followup.mjs:26:459)
+    at async file:///Users/westbrook/Documents/repos/design-system/showcases/performance/experiments/calendar-followup.mjs:33:81
+    at async exclusiveBrowserWork (file:///Users/westbrook/Documents/repos/design-system/showcases/performance/src/lock.mjs:35:12)
+    at async file:///Users/westbrook/Documents/repos/design-system/showcases/performance/experiments/calendar-followup.mjs:33:31 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.16.0

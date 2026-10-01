@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background: var(--en-color-canvas);
+  color: var(--en-color-text);
+  font: var(--en-font-body-weight)
+    var(--en-font-body-size)/var(--en-font-body-line-height)
+    var(--en-font-body-family);
+}
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+a {
+  color: var(--en-color-action-text);
+}
+en-showcase-app {
+  display: block;
+}
+.progress-return {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  background: var(--en-color-action);
+  color: var(--en-color-on-action);
+  padding: 10px 16px;
+  border-radius: 24px;
+  z-index: 9999;
+}

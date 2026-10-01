@@ -16,9 +16,7 @@ for (const definition of tables) {
   const table = document.createElement("en-data-table");
   table.id = definition.original ? "results-table" : definition.id + "-native";
   table.label = definition.title;
-  table.caption = definition.original
-    ? "First reference comparison · historical 30-sample reference and later 10-sample Web Awesome acquisition"
-    : definition.title;
+  table.caption = definition.caption || definition.title;
   table.mode = "all";
   table.sticky = "header";
   const widths = definition.headers.map((label, index) =>

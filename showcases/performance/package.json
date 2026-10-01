@@ -16,7 +16,8 @@
     "serve": "node src/server.mjs",
     "check": "node src/cli.mjs check",
     "registry": "node src/cli.mjs registry",
-    "test:registry:browser": "node tests/registry-browser.mjs"
+    "test:registry:browser": "node tests/registry-browser.mjs",
+    "campaign": "node campaign.mjs"
   },
   "devDependencies": {
     "@jridgewell/trace-mapping": "0.3.31",

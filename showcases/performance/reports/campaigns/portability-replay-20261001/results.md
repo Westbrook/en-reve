@@ -1,0 +1,1721 @@
+# Performance campaign portability-replay-20261001
+
+Campaign status: **historical-replay**. Dates are UTC measurement dates. Rebuilding this report does not change them.
+
+This is exploratory laboratory evidence, not field Core Web Vitals, a physical mobile device, manual accessibility acceptance, or a promoted regression baseline. First-input delay is a scripted legacy diagnostic; scripted INP describes only these journeys. Lighthouse TBT stays separate from observed long-task blocking excess.
+
+Profiles and requested throttling: {"desktop":{"viewport":{"width":1500,"height":1100},"deviceScaleFactor":1,"cpuRate":1,"latency":0,"download":-1,"upload":-1,"description":"Desktop loopback; no simulated throttling"},"mobile":{"viewport":{"width":390,"height":844},"deviceScaleFactor":1,"cpuRate":4,"latency":100,"download":1000000,"upload":250000,"description":"Mobile viewport, 4x CPU slowdown, 100ms RTT, 8Mbps down/2Mbps up; emulation, not physical hardware"}}
+
+[Campaign configuration](campaign.json) · [Stage outcomes](state.json) · [Metric availability and tables](tables.json)
+
+## First reference comparison
+
+All emitted/minified uncompressed JS and compressed artifact sizes; source maps excluded. These are build sizes, not actual response bytes or decoded runtime memory.
+
+| Implementation | Build fingerprint | All JS KiB | All JS gzip KiB | All JS Brotli KiB | HTML KiB | CSS Brotli KiB | JS chunks | Dynamic imports |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | 35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd | 439.5 | 108.3 | 86.9 | 0.4 | 5.9 | 1 | 0 |
+| En Reve · Deferred construction | 3bf301f0d46d92b2c1eb86075f841950ea84d589b530f88d4e32e7e301e1db70 | 439.5 | 108.3 | 86.9 | 0.4 | 5.9 | 1 | 0 |
+| En Reve · Deferred code + construction | 89eae8a80cda7b88606038740359bdeab687a1ef9497c39ca68f29e4b008c8ba | 441.7 | 110.0 | 89.1 | 0.4 | 5.9 | 2 | 1 |
+
+## Acquisition coverage
+
+Missing and failed samples remain visible. This report can be regenerated from archived raw data without starting a browser.
+
+| Run ID | Date (UTC) | Status | Planned n | Recorded n | Successful n | Failed n |
+| --- | --- | --- | --- | --- | --- | --- |
+| calendar-variants-v1 | 2026-09-24 | complete | 383 | 383 | 383 | 0 |
+| calendar-variants-lighthouse-v1 | 2026-09-24 | complete | 15 | 15 | 15 | 0 |
+
+## load · loading · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 100.0 | 100.0 | 104.0 | 0.000000 | 0.000000 | 0.000000 | 15.6 | 89.0 | — |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 102.0 | 102.0 | 107.0 | 0.000000 | 0.000000 | 0.000000 | 16.5 | 88.7 | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 96.0 | 96.0 | 99.0 | 0.000000 | 0.000000 | 0.000000 | 15.6 | 85.0 | — |
+
+## load · lcp · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 15.6 | 0.0 | 0.0 | 85.3 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 16.5 | 0.0 | 0.0 | 85.2 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 15.6 | 0.0 | 0.0 | 80.8 |
+
+## load · transfer · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 90.7 | 0.324 | 84.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+## load · thread · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 17.3 | 12.5 | 6.3 | 77.8 | 7 | 11 | 57.5 | 7.5 | 0.0 | 59.5 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 18.2 | 12.8 | 6.4 | 77.9 | 7 | 11 | 56.5 | 6.5 | 0.0 | 58.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 17.0 | 12.3 | 6.0 | 74.6 | 7 | 11 | 54.0 | 4.0 | 0.0 | 57.5 |
+
+## load · loading · desktop · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 44.0 | 48.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 43.5 | — |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 44.0 | 47.0 | 0.000000 | 0.000000 | 0.000000 | 1.0 | 42.6 | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 44.0 | 44.0 | 0.000000 | 0.000000 | 0.000000 | 1.0 | 42.0 | — |
+
+## load · lcp · desktop · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.9 | 0.0 | 0.0 | 43.2 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.0 | 0.0 | 0.0 | 43.2 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.0 | 0.0 | 0.0 | 43.0 |
+
+## load · transfer · desktop · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.242 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+
+## load · thread · desktop · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 12.0 | 8.8 | 3.1 | 51.9 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 11.7 | 8.8 | 3.1 | 50.5 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 11.7 | 8.9 | 3.1 | 50.1 | 6 | 11 | 0.0 | 0.0 | 0.0 | 0.0 |
+
+## load · loading · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 646.0 | 646.0 | 663.0 | 0.000000 | 0.000000 | 0.000000 | 16.8 | 640.8 | — |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 640.0 | 640.0 | 673.0 | 0.000000 | 0.000000 | 0.000000 | 16.2 | 636.4 | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 642.0 | 642.0 | 667.0 | 0.000000 | 0.000000 | 0.000000 | 17.5 | 636.3 | — |
+
+## load · lcp · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 16.8 | 0.0 | 0.0 | 629.9 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 16.2 | 0.0 | 0.0 | 622.9 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 17.5 | 0.0 | 0.0 | 624.5 |
+
+## load · transfer · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 90.7 | 0.324 | 84.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+## load · thread · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 86.2 | 60.4 | 31.4 | 375.4 | 7 | 11 | 287.0 | 237.0 | 0.0 | 410.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 86.7 | 60.9 | 32.7 | 372.0 | 7 | 11 | 281.5 | 231.5 | 0.0 | 404.1 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 85.4 | 63.2 | 33.9 | 372.8 | 7 | 11 | 283.5 | 233.5 | 0.0 | 406.7 |
+
+## load · loading · mobile · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | CLS | CLS p75 | CLS max | TTFB ms | Cards frame opportunity ms | Last webfont response ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 302.0 | 302.0 | 313.0 | 0.000000 | 0.000000 | 0.000000 | 1.5 | 308.3 | — |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 298.0 | 298.0 | 300.0 | 0.000000 | 0.000000 | 0.000000 | 1.8 | 307.2 | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 292.0 | 292.0 | 303.0 | 0.000000 | 0.000000 | 0.000000 | 0.9 | 301.5 | — |
+
+## load · lcp · mobile · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | TTFB portion ms | Resource delay ms | Resource duration ms | Element render delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.5 | 0.0 | 0.0 | 299.7 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.8 | 0.0 | 0.0 | 295.9 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.9 | 0.0 | 0.0 | 291.0 |
+
+## load · transfer · mobile · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.246 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 0.2 | 0.242 | 0.0 | 0.0 | 0.0 | 0.0 | 3 | 2 | 0 |
+
+## load · thread · mobile · warm · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Script ms | Style ms | Layout ms | Task ms | Layout passes | Style recalcs | Long tasks ms | Pre-FCP blocking excess ms | Post-FCP blocking excess ms | Long animation frames ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 54.0 | 42.8 | 13.7 | 240.1 | 7 | 11 | 163.0 | 113.0 | 0.0 | 166.6 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 55.9 | 44.0 | 14.1 | 238.0 | 7 | 11 | 161.5 | 111.5 | 0.0 | 165.0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 55.6 | 42.6 | 14.0 | 235.4 | 7 | 11 | 160.5 | 110.5 | 0.0 | 164.4 |
+
+## startup · startup · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Control observed ms | Click from navigation ms | Result from navigation ms | Result p75 ms | Dispatch overhead ms | Discovery probe ms | Click to result ms | Click to frame ms | First input delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 86.1 | 91.5 | 93.7 | 94.3 | 5.5 | 0.1 | 2.2 | 38.0 | 0.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 82.7 | 88.1 | 90.5 | 92.8 | 5.5 | 0.1 | 2.3 | 31.0 | 1.0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 82.6 | 88.4 | 90.5 | 92.0 | 5.8 | 0.1 | 2.2 | 30.7 | 0.7 |
+
+## startup · transfer · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 90.7 | 0.324 | 84.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+## interactions · interactions · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Scripted INP ms | Scripted INP p75 ms | First input delay ms | Journey CLS | Max scroll rAF gap ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 40.0 | 48.0 | 0.7 | 0.000000 | 16.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 40.0 | 48.0 | 0.7 | 0.000000 | 16.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 48.0 | 0.7 | 0.000000 | 16.8 |
+
+## interactions · canvas-landscape-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.3 | 40.0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.3 | 41.0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.2 | 41.8 |
+
+## interactions · canvas-portrait-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.8 | 31.7 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.7 | 31.7 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.7 | 31.8 |
+
+## interactions · asset-add-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.1 | 31.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.1 | 31.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.1 | 31.9 |
+
+## interactions · asset-reset-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 2.0 | 31.7 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.8 | 31.7 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.8 | 31.8 |
+
+## interactions · dialog-open-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.9 | 31.4 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.8 | 31.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.7 | 31.8 |
+
+## interactions · canvas-landscape-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.5 | 31.7 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.5 | 31.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.5 | 31.6 |
+
+## interactions · canvas-portrait-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.7 | 31.9 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.7 | 32.1 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.7 | 32.0 |
+
+## interactions · asset-add-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.9 | 32.0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.8 | 31.9 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.9 | 31.5 |
+
+## interactions · asset-reset-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.6 | 31.4 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.5 | 31.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.6 | 31.7 |
+
+## interactions · dialog-open-warm · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4.1 | 31.7 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 3.9 | 31.6 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4.1 | 31.4 |
+
+## interactions · review-submit · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.6 | 32.3 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.5 | 31.7 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 1.7 | 31.8 |
+
+## interactions · commands-first · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 5.0 | 32.0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 5.0 | 31.9 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 5.1 | 32.1 |
+
+## startup · startup · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Control observed ms | Click from navigation ms | Result from navigation ms | Result p75 ms | Dispatch overhead ms | Discovery probe ms | Click to result ms | Click to frame ms | First input delay ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 614.0 | 632.4 | 642.0 | 646.4 | 18.5 | 0.5 | 9.8 | 47.5 | 2.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 600.8 | 620.0 | 630.8 | 637.4 | 19.1 | 0.7 | 11.2 | 46.6 | 4.1 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 593.4 | 612.3 | 623.2 | 628.3 | 19.2 | 0.6 | 10.3 | 46.5 | 3.4 |
+
+## startup · transfer · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 90.7 | 0.324 | 84.3 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+
+## interactions · interactions · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Scripted INP ms | Scripted INP p75 ms | First input delay ms | Journey CLS | Max scroll rAF gap ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 56.0 | 56.0 | 3.3 | 0.000000 | 16.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 48.0 | 48.0 | 2.9 | 0.000000 | 16.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 56.0 | 56.0 | 3.3 | 0.000000 | 16.8 |
+
+## interactions · canvas-landscape-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 12.1 | 50.5 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 11.4 | 47.9 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 11.4 | 51.8 |
+
+## interactions · canvas-portrait-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.9 | 29.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.2 | 29.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.0 | 29.6 |
+
+## interactions · asset-add-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 10.9 | 29.1 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 10.3 | 29.0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 10.3 | 29.1 |
+
+## interactions · asset-reset-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.6 | 28.4 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.6 | 28.5 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.8 | 29.0 |
+
+## interactions · dialog-open-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 42.5 | 47.6 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 41.4 | 46.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 44.0 | 49.0 |
+
+## interactions · canvas-landscape-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.5 | 30.1 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.4 | 30.3 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.4 | 30.3 |
+
+## interactions · canvas-portrait-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.8 | 30.1 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.3 | 30.1 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.4 | 30.1 |
+
+## interactions · asset-add-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 9.0 | 29.5 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.6 | 29.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 9.0 | 29.8 |
+
+## interactions · asset-reset-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.4 | 29.3 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.8 | 28.9 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 8.0 | 28.9 |
+
+## interactions · dialog-open-warm · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 19.5 | 30.9 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 20.4 | 29.3 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 19.9 | 30.9 |
+
+## interactions · review-submit · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.9 | 30.1 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.6 | 29.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 7.8 | 30.2 |
+
+## interactions · commands-first · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | semanticMs ms | frameOpportunityMs ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 24.6 | 32.8 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 25.3 | 33.8 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 25.3 | 33.5 |
+
+## calendar · Calendar focus · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 9.8 | 21.2 | 13.0 | — |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 13.6 | 22.6 | 12.8 | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 23.3 | 40.0 | 12.9 | — |
+
+## calendar · Connected DOM with and without date · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4667 | 1580 | 628 | 181 | 4039 | 1399 | 4667 | 1580 | 628 | 181 | 4039 | 1399 | 4667 | 1580 | 628 | 181 | 4039 | 1399 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4172 | 1442 | 133 | 43 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4172 | 1442 | 133 | 43 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 |
+
+## calendar · Calendar response transfer · desktop · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 95.8 | 0.324 | 89.4 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+## calendar · Calendar focus · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 46.4 | 53.3 | 19.0 | — |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 63.9 | 70.1 | 18.6 | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 179.7 | 186.0 | 19.2 | — |
+
+## calendar · Connected DOM with and without date · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 4667 | 1580 | 628 | 181 | 4039 | 1399 | 4667 | 1580 | 628 | 181 | 4039 | 1399 | 4667 | 1580 | 628 | 181 | 4039 | 1399 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 4172 | 1442 | 133 | 43 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 4172 | 1442 | 133 | 43 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 |
+
+## calendar · Calendar response transfer · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 93.5 | 0.328 | 87.1 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 93.4 | 0.328 | 87.0 | 6.1 | 0.0 | 0.0 | 3 | 0 | 0 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 30 | 0 | 95.8 | 0.324 | 89.4 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+## calendar · Calendar focus · mobile · cold · ready · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference |  | — | 0 | 0 | — | — | — | — |
+| En Reve · Deferred construction |  | — | 0 | 0 | — | — | — | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 64.5 | 71.1 | 18.5 | 203.9 |
+
+## calendar · Connected DOM with and without date · mobile · cold · ready · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4172 | 1442 | 133 | 43 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 |
+
+## calendar · Calendar response transfer · mobile · cold · ready · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 95.8 | 0.324 | 89.4 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+## calendar · Calendar focus · mobile · cold · pending · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | First focus ms | First frame opportunity ms | Repeated focus ms | Preparation to focus ms |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference |  | — | 0 | 0 | — | — | — | — |
+| En Reve · Deferred construction |  | — | 0 | 0 | — | — | — | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 149.2 | 155.2 | 18.3 | 175.0 |
+
+## calendar · Connected DOM with and without date · mobile · cold · pending · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | before total nodes | before total elements | before date nodes | before date elements | before withoutDate nodes | before withoutDate elements | opened total nodes | opened total elements | opened date nodes | opened date elements | opened withoutDate nodes | opened withoutDate elements | closed total nodes | closed total elements | closed date nodes | closed date elements | closed withoutDate nodes | closed withoutDate elements |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 4172 | 1442 | 133 | 43 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 | 4669 | 1581 | 630 | 182 | 4039 | 1399 |
+
+## calendar · Calendar response transfer · mobile · cold · pending · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | Total response KiB | HTML KiB | JS KiB | CSS KiB | Fonts KiB | Other KiB | HTTP responses | Cache reuse entries | Incomplete responses |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred construction |  | — | 0 | 0 | — | — | — | — | — | — | — | — | — |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | 10 | 0 | 95.8 | 0.324 | 89.4 | 6.1 | 0.0 | 0.0 | 4 | 0 | 0 |
+
+## lighthouse · lighthouse · mobile · cold · none · instrumented
+
+Successful-sample medians unless labeled otherwise. “—” means unavailable, never zero. See metric availability for per-measurement denominators.
+
+| Implementation | Run ID | Date (UTC) | Successful n | Failed n | FCP ms | LCP ms | LCP p75 ms | LCP max ms | TBT ms | TBT p75 ms | TBT max ms | Speed Index ms | CLS |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Eager reference | calendar-variants-lighthouse-v1 | 2026-09-24 | 5 | 0 | 789.6 | 789.6 | 791.7 | 824.7 | 0.0 | 0.0 | 0.0 | 631.0 | 0.000000 |
+| En Reve · Deferred construction | calendar-variants-lighthouse-v1 | 2026-09-24 | 5 | 0 | 745.8 | 745.8 | 750.4 | 758.5 | 0.0 | 0.0 | 0.0 | 604.0 | 0.000000 |
+| En Reve · Deferred code + construction | calendar-variants-lighthouse-v1 | 2026-09-24 | 5 | 0 | 753.3 | 753.3 | 754.0 | 773.6 | 0.0 | 0.0 | 0.0 | 607.0 | 0.000000 |
+
+## Memory and retention
+
+No forced GC. API errors/timeouts are preserved; CDP nodes include retained/detached objects and are not connected-DOM counts. These samples alone do not establish a leak.
+
+| Implementation | Run ID | Date (UTC) | Checkpoint kind | Cycles / openings | API status | API MiB | JS heap MiB | CDP nodes | Listeners |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | Journey | 0 | ok | 6.21 | 5.54 | 6437 | 561 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | Calendar | 0 | ok | 4.87 | 4.14 | 5814 | 415 |
+| En Reve · Deferred code + construction | calendar-variants-v1 | 2026-09-24 | Calendar | 10 | timeout | — | 6.90 | 6454 | 577 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | Journey | 0 | ok | 6.14 | 5.48 | 6437 | 561 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | Calendar | 0 | ok | 5.02 | 4.17 | 5814 | 415 |
+| En Reve · Deferred construction | calendar-variants-v1 | 2026-09-24 | Calendar | 10 | timeout | — | 5.78 | 6452 | 575 |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | Journey | 0 | ok | 5.96 | 5.36 | 6431 | 560 |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | Calendar | 0 | ok | 5.21 | 4.32 | 6376 | 547 |
+| En Reve · Eager reference | calendar-variants-v1 | 2026-09-24 | Calendar | 10 | timeout | — | 5.68 | 6446 | 574 |
+
+## Paired change relative to eager
+
+Candidate minus eager; positive means slower. Matched blocks from this campaign only. Exploratory bootstrap intervals, no multiple-comparison correction or automatic baseline promotion.
+
+| Implementation | Profile | Metric | Paired n | Median change ms | 95% lower ms | 95% upper ms |
+| --- | --- | --- | --- | --- | --- | --- |
+| En Reve · Deferred construction | desktop | LCP | 10 | 2.0 | -8.0 | 8.0 |
+| En Reve · Deferred code + construction | desktop | LCP | 10 | -4.0 | -10.0 | -2.0 |
+| En Reve · Deferred construction | desktop | First focus | 10 | 3.8 | 0.2 | 4.6 |
+| En Reve · Deferred code + construction | desktop | First focus | 10 | 13.5 | 7.4 | 14.4 |
+| En Reve · Deferred construction | mobile | LCP | 10 | -6.0 | -20.0 | 6.0 |
+| En Reve · Deferred code + construction | mobile | LCP | 10 | -4.0 | -28.0 | 18.0 |
+| En Reve · Deferred construction | mobile | First focus | 30 | 17.5 | 15.9 | 18.9 |
+| En Reve · Deferred code + construction | mobile | First focus | 30 | 133.3 | 132.0 | 133.8 |
+
+## Metric availability
+
+A successful sample may still have an unsupported or unavailable browser metric. Denominators are shown for every metric.
+
+| Implementation | Table | Metric | Available n | Successful n |
+| --- | --- | --- | --- | --- |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | CLS | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · cold · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · cold · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · cold · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · cold · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · cold · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · cold · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · cold · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · cold · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · cold · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · cold · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · cold · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · cold · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · cold · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · cold · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · cold · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · cold · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · cold · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · cold · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | CLS | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · desktop · warm · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · desktop · warm · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · desktop · warm · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · warm · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · warm · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · warm · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · desktop · warm · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · warm · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · warm · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · warm · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · desktop · warm · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · warm · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · warm · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · warm · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · desktop · warm · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | load · transfer · desktop · warm · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · desktop · warm · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · desktop · warm · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · desktop · warm · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · desktop · warm · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · desktop · warm · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | CLS | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · cold · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · cold · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · cold · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · cold · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · cold · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · cold · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · cold · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · cold · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · cold · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · cold · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · cold · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · cold · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · cold · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · cold · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · cold · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · cold · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · cold · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · cold · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | CLS | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Eager reference | load · loading · mobile · warm · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred construction | load · loading · mobile · warm · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | FCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | LCP ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | LCP p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | CLS | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | CLS p75 | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | CLS max | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | TTFB ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | Cards frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · loading · mobile · warm · none · instrumented | Last webfont response ms | 0 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · warm · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · warm · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · warm · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Eager reference | load · lcp · mobile · warm · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · warm · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · warm · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · warm · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred construction | load · lcp · mobile · warm · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · warm · none · instrumented | TTFB portion ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · warm · none · instrumented | Resource delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · warm · none · instrumented | Resource duration ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · lcp · mobile · warm · none · instrumented | Element render delay ms | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | load · transfer · mobile · warm · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | load · transfer · mobile · warm · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | load · transfer · mobile · warm · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Eager reference | load · thread · mobile · warm · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred construction | load · thread · mobile · warm · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Script ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Style ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Layout ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Task ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Layout passes | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Style recalcs | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Long tasks ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Pre-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Post-FCP blocking excess ms | 10 | 10 |
+| En Reve · Deferred code + construction | load · thread · mobile · warm · none · instrumented | Long animation frames ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Control observed ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Click from navigation ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Result from navigation ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Result p75 ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Dispatch overhead ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Discovery probe ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Click to result ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | Click to frame ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · desktop · cold · none · instrumented | First input delay ms | 3 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Control observed ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Click from navigation ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Result from navigation ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Result p75 ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Dispatch overhead ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Discovery probe ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Click to result ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | Click to frame ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · desktop · cold · none · instrumented | First input delay ms | 4 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Control observed ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Click from navigation ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Result from navigation ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Result p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Dispatch overhead ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Discovery probe ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Click to result ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | Click to frame ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · desktop · cold · none · instrumented | First input delay ms | 7 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · desktop · cold · none · instrumented | Scripted INP ms | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · desktop · cold · none · instrumented | Scripted INP p75 ms | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · desktop · cold · none · instrumented | First input delay ms | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · desktop · cold · none · instrumented | Journey CLS | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · desktop · cold · none · instrumented | Max scroll rAF gap ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · desktop · cold · none · instrumented | Scripted INP ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · desktop · cold · none · instrumented | Scripted INP p75 ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · desktop · cold · none · instrumented | First input delay ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · desktop · cold · none · instrumented | Journey CLS | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · desktop · cold · none · instrumented | Max scroll rAF gap ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · desktop · cold · none · instrumented | Scripted INP ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · desktop · cold · none · instrumented | Scripted INP p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · desktop · cold · none · instrumented | First input delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · desktop · cold · none · instrumented | Journey CLS | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · desktop · cold · none · instrumented | Max scroll rAF gap ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-warm · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-warm · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · review-submit · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · review-submit · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · review-submit · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · review-submit · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · review-submit · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · review-submit · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · commands-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · commands-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · commands-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · commands-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · commands-first · desktop · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · commands-first · desktop · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Control observed ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Click from navigation ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Result from navigation ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Result p75 ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Dispatch overhead ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Discovery probe ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Click to result ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | Click to frame ms | 10 | 10 |
+| En Reve · Eager reference | startup · startup · mobile · cold · none · instrumented | First input delay ms | 2 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Control observed ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Click from navigation ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Result from navigation ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Result p75 ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Dispatch overhead ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Discovery probe ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Click to result ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | Click to frame ms | 10 | 10 |
+| En Reve · Deferred construction | startup · startup · mobile · cold · none · instrumented | First input delay ms | 6 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Control observed ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Click from navigation ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Result from navigation ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Result p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Dispatch overhead ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Discovery probe ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Click to result ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | Click to frame ms | 10 | 10 |
+| En Reve · Deferred code + construction | startup · startup · mobile · cold · none · instrumented | First input delay ms | 6 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | startup · transfer · mobile · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | startup · transfer · mobile · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | startup · transfer · mobile · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · mobile · cold · none · instrumented | Scripted INP ms | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · mobile · cold · none · instrumented | Scripted INP p75 ms | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · mobile · cold · none · instrumented | First input delay ms | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · mobile · cold · none · instrumented | Journey CLS | 10 | 10 |
+| En Reve · Eager reference | interactions · interactions · mobile · cold · none · instrumented | Max scroll rAF gap ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · mobile · cold · none · instrumented | Scripted INP ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · mobile · cold · none · instrumented | Scripted INP p75 ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · mobile · cold · none · instrumented | First input delay ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · mobile · cold · none · instrumented | Journey CLS | 10 | 10 |
+| En Reve · Deferred construction | interactions · interactions · mobile · cold · none · instrumented | Max scroll rAF gap ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · mobile · cold · none · instrumented | Scripted INP ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · mobile · cold · none · instrumented | Scripted INP p75 ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · mobile · cold · none · instrumented | First input delay ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · mobile · cold · none · instrumented | Journey CLS | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · interactions · mobile · cold · none · instrumented | Max scroll rAF gap ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-landscape-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-landscape-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-landscape-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · canvas-portrait-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · canvas-portrait-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · canvas-portrait-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-add-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-add-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-add-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · asset-reset-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · asset-reset-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · asset-reset-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · dialog-open-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · dialog-open-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-warm · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · dialog-open-warm · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · review-submit · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · review-submit · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · review-submit · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · review-submit · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · review-submit · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · review-submit · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · commands-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Eager reference | interactions · commands-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · commands-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred construction | interactions · commands-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · commands-first · mobile · cold · none · instrumented | semanticMs ms | 10 | 10 |
+| En Reve · Deferred code + construction | interactions · commands-first · mobile · cold · none · instrumented | frameOpportunityMs ms | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar focus · desktop · cold · none · instrumented | First focus ms | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar focus · desktop · cold · none · instrumented | First frame opportunity ms | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar focus · desktop · cold · none · instrumented | Repeated focus ms | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar focus · desktop · cold · none · instrumented | Preparation to focus ms | 0 | 10 |
+| En Reve · Deferred construction | calendar · Calendar focus · desktop · cold · none · instrumented | First focus ms | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar focus · desktop · cold · none · instrumented | First frame opportunity ms | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar focus · desktop · cold · none · instrumented | Repeated focus ms | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar focus · desktop · cold · none · instrumented | Preparation to focus ms | 0 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · desktop · cold · none · instrumented | First focus ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · desktop · cold · none · instrumented | First frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · desktop · cold · none · instrumented | Repeated focus ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · desktop · cold · none · instrumented | Preparation to focus ms | 0 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before total nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before total elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before date nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before date elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before withoutDate nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before withoutDate elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened total nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened total elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened date nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened date elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened withoutDate nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened withoutDate elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed total nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed total elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed date nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed date elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed withoutDate nodes | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed withoutDate elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before total nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before total elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before date nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before date elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before withoutDate nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before withoutDate elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened total nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened total elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened date nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened date elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened withoutDate nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened withoutDate elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed total nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed total elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed date nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed date elements | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed withoutDate nodes | 10 | 10 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | before withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | opened withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · desktop · cold · none · instrumented | closed withoutDate elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · desktop · cold · none · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · none · instrumented | First focus ms | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · none · instrumented | First frame opportunity ms | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · none · instrumented | Repeated focus ms | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · none · instrumented | Preparation to focus ms | 0 | 30 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · none · instrumented | First focus ms | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · none · instrumented | First frame opportunity ms | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · none · instrumented | Repeated focus ms | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · none · instrumented | Preparation to focus ms | 0 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · none · instrumented | First focus ms | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · none · instrumented | First frame opportunity ms | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · none · instrumented | Repeated focus ms | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · none · instrumented | Preparation to focus ms | 0 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before total nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before total elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before date nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before date elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before withoutDate nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before withoutDate elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened total nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened total elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened date nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened date elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened withoutDate nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened withoutDate elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed total nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed total elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed date nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed date elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed withoutDate nodes | 30 | 30 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed withoutDate elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before total nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before total elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before date nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before date elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before withoutDate nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before withoutDate elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened total nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened total elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened date nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened date elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened withoutDate nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened withoutDate elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed total nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed total elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed date nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed date elements | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed withoutDate nodes | 30 | 30 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed withoutDate elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before total nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before total elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before date nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before date elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before withoutDate nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | before withoutDate elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened total nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened total elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened date nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened date elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened withoutDate nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | opened withoutDate elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed total nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed total elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed date nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed date elements | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed withoutDate nodes | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · none · instrumented | closed withoutDate elements | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | Total response KiB | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | HTML KiB | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | JS KiB | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | CSS KiB | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | Fonts KiB | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | Other KiB | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | HTTP responses | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | Cache reuse entries | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · none · instrumented | Incomplete responses | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Total response KiB | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | HTML KiB | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | JS KiB | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | CSS KiB | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Fonts KiB | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Other KiB | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | HTTP responses | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Cache reuse entries | 30 | 30 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Incomplete responses | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Total response KiB | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | HTML KiB | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | JS KiB | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | CSS KiB | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Fonts KiB | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Other KiB | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | HTTP responses | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Cache reuse entries | 30 | 30 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · none · instrumented | Incomplete responses | 30 | 30 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · ready · instrumented | First focus ms | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · ready · instrumented | First frame opportunity ms | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · ready · instrumented | Repeated focus ms | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · ready · instrumented | Preparation to focus ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · ready · instrumented | First focus ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · ready · instrumented | First frame opportunity ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · ready · instrumented | Repeated focus ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · ready · instrumented | Preparation to focus ms | 0 | 0 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · ready · instrumented | First focus ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · ready · instrumented | First frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · ready · instrumented | Repeated focus ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · ready · instrumented | Preparation to focus ms | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before total nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before total elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before date nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before date elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before withoutDate nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before withoutDate elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened total nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened total elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened date nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened date elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened withoutDate nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened withoutDate elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed total nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed total elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed date nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed date elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed withoutDate nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed withoutDate elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before total nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before total elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before date nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before date elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before withoutDate nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before withoutDate elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened total nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened total elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened date nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened date elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened withoutDate nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened withoutDate elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed total nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed total elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed date nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed date elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed withoutDate nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed withoutDate elements | 0 | 0 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | before withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | opened withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · ready · instrumented | closed withoutDate elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Total response KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | HTML KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | JS KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | CSS KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Fonts KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Other KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | HTTP responses | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Cache reuse entries | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Incomplete responses | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Total response KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | HTML KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | JS KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | CSS KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Fonts KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Other KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | HTTP responses | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Cache reuse entries | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Incomplete responses | 0 | 0 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · ready · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · pending · instrumented | First focus ms | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · pending · instrumented | First frame opportunity ms | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · pending · instrumented | Repeated focus ms | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar focus · mobile · cold · pending · instrumented | Preparation to focus ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · pending · instrumented | First focus ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · pending · instrumented | First frame opportunity ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · pending · instrumented | Repeated focus ms | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar focus · mobile · cold · pending · instrumented | Preparation to focus ms | 0 | 0 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · pending · instrumented | First focus ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · pending · instrumented | First frame opportunity ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · pending · instrumented | Repeated focus ms | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar focus · mobile · cold · pending · instrumented | Preparation to focus ms | 10 | 10 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before total nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before total elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before date nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before date elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before withoutDate nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before withoutDate elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened total nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened total elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened date nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened date elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened withoutDate nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened withoutDate elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed total nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed total elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed date nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed date elements | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed withoutDate nodes | 0 | 0 |
+| En Reve · Eager reference | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed withoutDate elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before total nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before total elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before date nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before date elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before withoutDate nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before withoutDate elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened total nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened total elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened date nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened date elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened withoutDate nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened withoutDate elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed total nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed total elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed date nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed date elements | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed withoutDate nodes | 0 | 0 |
+| En Reve · Deferred construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed withoutDate elements | 0 | 0 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | before withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | opened withoutDate elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed total nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed total elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed date nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed date elements | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed withoutDate nodes | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Connected DOM with and without date · mobile · cold · pending · instrumented | closed withoutDate elements | 10 | 10 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Total response KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | HTML KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | JS KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | CSS KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Fonts KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Other KiB | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | HTTP responses | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Cache reuse entries | 0 | 0 |
+| En Reve · Eager reference | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Incomplete responses | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Total response KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | HTML KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | JS KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | CSS KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Fonts KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Other KiB | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | HTTP responses | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Cache reuse entries | 0 | 0 |
+| En Reve · Deferred construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Incomplete responses | 0 | 0 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Total response KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | HTML KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | JS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | CSS KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Fonts KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Other KiB | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | HTTP responses | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Cache reuse entries | 10 | 10 |
+| En Reve · Deferred code + construction | calendar · Calendar response transfer · mobile · cold · pending · instrumented | Incomplete responses | 10 | 10 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | FCP ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP p75 ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP max ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT p75 ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT max ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | Speed Index ms | 5 | 5 |
+| En Reve · Eager reference | lighthouse · lighthouse · mobile · cold · none · instrumented | CLS | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | FCP ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP p75 ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP max ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT p75 ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT max ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | Speed Index ms | 5 | 5 |
+| En Reve · Deferred construction | lighthouse · lighthouse · mobile · cold · none · instrumented | CLS | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | FCP ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP p75 ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | LCP max ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT p75 ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | TBT max ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | Speed Index ms | 5 | 5 |
+| En Reve · Deferred code + construction | lighthouse · lighthouse · mobile · cold · none · instrumented | CLS | 5 | 5 |

@@ -1,0 +1,81 @@
+{
+  "createdAt": "2026-10-01T15:59:17.899Z",
+  "variants": [
+    {
+      "id": "main-be47f046-20261001-v1-current",
+      "description": "Current root library packages in a separate clean consuming project, using the unchanged native showcase source.",
+      "cohort": "current-library-native",
+      "packages": [
+        {
+          "name": "@en-reve/tokens",
+          "filename": "en-reve-tokens-0.1.0-1f20e6424174.tgz",
+          "sha256": "1f20e6424174a906fe9514760dc7c4053de327097a671409182e7125ea7cea73"
+        },
+        {
+          "name": "@en-reve/styles",
+          "filename": "en-reve-styles-0.1.0-054969354aa7.tgz",
+          "sha256": "054969354aa713bcff9345eaef0f49df573db8f255ad6f3c9243b36fcb81569d"
+        },
+        {
+          "name": "@en-reve/primitives",
+          "filename": "en-reve-primitives-0.1.0-f07fa569a399.tgz",
+          "sha256": "f07fa569a399a99c3f189d34bbe72b8c15fdd3ef92f8cf35f547be8ade2ad244"
+        },
+        {
+          "name": "@en-reve/elements",
+          "filename": "en-reve-elements-0.1.0-6d88fd58ebab.tgz",
+          "sha256": "6d88fd58ebabed6347bd463defb880e236b9291b5187b11fcde9f54d3b5091d7"
+        }
+      ],
+      "lockfileSha256": "a244c3d9fda33ede9c4b3a482f0c9e7b46641634c21ed1b329dcd0d4c7e3c2e3",
+      "assets": [
+        {
+          "path": "assets/index-C9eq-f9b.js",
+          "sha256": "436ce6797775d4a356cfffa1f6e64cdbb9be4b5fbaec773a97d3d08b2c271525",
+          "raw": 455724,
+          "gzip": 112566,
+          "brotli": 90314,
+          "diagnostic": false,
+          "imports": []
+        },
+        {
+          "path": "assets/index-C9eq-f9b.js.map",
+          "sha256": "09f469f854d9558967ec2296a5ebd046b70c0b5fea014a18edb5432fd8337c61",
+          "raw": 1265320,
+          "gzip": 299697,
+          "brotli": 230319,
+          "diagnostic": true
+        },
+        {
+          "path": "assets/index-CDV5OawH.css",
+          "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+          "raw": 44562,
+          "gzip": 6986,
+          "brotli": 6077,
+          "diagnostic": false
+        },
+        {
+          "path": "build-metadata.json",
+          "sha256": "233e1bc167a9f9e9f6fb95e84f20b29f014ed67b30967c56e3b4406eae935ac8",
+          "raw": 793,
+          "gzip": 421,
+          "brotli": 362,
+          "diagnostic": true
+        },
+        {
+          "path": "index.html",
+          "sha256": "805677810b4c63eb6b0cade9f9f359731996b200ae0d53df8f7dcfb47e81cc10",
+          "raw": 359,
+          "gzip": 265,
+          "brotli": 159,
+          "diagnostic": false
+        }
+      ],
+      "fingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6",
+      "qualification": "Requires functional --variant current-en-reve before measurement",
+      "label": "Current source",
+      "policy": "current-source"
+    }
+  ],
+  "note": "Current root packages built and packed separately; frozen reference preserved"
+}

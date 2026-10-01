@@ -1,0 +1,45 @@
+BUILD tokens
+
+> @en-reve/tokens@0.1.0 build
+> tsc -p tsconfig.json && node scripts/generate.mjs
+
+
+BUILD styles
+
+> @en-reve/styles@0.1.0 build
+> node scripts/author-css.mjs && tsc -p tsconfig.json && node scripts/export-css.mjs
+
+
+BUILD primitives
+
+> @en-reve/primitives@0.1.0 build
+> tsc -b
+
+
+BUILD elements
+
+> @en-reve/elements@0.1.0 build
+> node ../../tooling/metadata/lazy-manifest.ts && tsc -b
+
+Lazy manifest: 96 canonical definitions.
+
+
+changed 4 packages in 2s
+
+
+> showcase-en-reve@0.0.0 build
+> vite build
+
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 348 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.35 kB │ gzip:   0.26 kB
+dist/build-metadata.json          0.81 kB │ gzip:   0.42 kB
+dist/assets/index-CDV5OawH.css   44.56 kB │ gzip:   7.03 kB
+dist/assets/index-C0meNs_7.js   450.03 kB │ gzip: 111.76 kB │ map: 1,209.53 kB
+
+✓ built in 282ms
+
+BUILT MAIN 6d09b31cf43523ac8c75352208ab9697b62e2673

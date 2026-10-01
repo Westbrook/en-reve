@@ -1,0 +1,182 @@
+[
+  {
+    "file": "experiments/verify-delivery.mjs",
+    "args": [],
+    "code": 1,
+    "at": "2026-09-20T18:11:19.825Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "overhead",
+      "--systems",
+      "en-reve,fluent-web-components",
+      "--profiles",
+      "mobile",
+      "--samples",
+      "5",
+      "--id",
+      "observer-overhead-v1"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:12:06.695Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "interactions",
+      "--profiles",
+      "mobile",
+      "--samples",
+      "5",
+      "--id",
+      "interaction-pilot-v3"
+    ],
+    "code": 1,
+    "at": "2026-09-20T18:16:46.588Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "interactions",
+      "--systems",
+      "en-reve",
+      "--variant",
+      "split-vendor",
+      "--profiles",
+      "mobile",
+      "--samples",
+      "3",
+      "--id",
+      "experiment-split-vendor-interaction-v1"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:17:04.455Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "interactions",
+      "--systems",
+      "en-reve",
+      "--variant",
+      "lazy-commands",
+      "--profiles",
+      "mobile",
+      "--samples",
+      "3",
+      "--id",
+      "experiment-lazy-commands-interaction-v1"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:17:21.167Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "interactions",
+      "--systems",
+      "en-reve",
+      "--variant",
+      "intent-commands",
+      "--profiles",
+      "mobile",
+      "--samples",
+      "3",
+      "--id",
+      "experiment-intent-commands-interaction-v1"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:17:38.009Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "interactions",
+      "--systems",
+      "en-reve",
+      "--variant",
+      "content-visibility",
+      "--profiles",
+      "mobile",
+      "--samples",
+      "3",
+      "--id",
+      "experiment-content-visibility-interaction-v1"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:17:54.953Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "memory",
+      "--profiles",
+      "desktop",
+      "--samples",
+      "1",
+      "--checkpoints",
+      "0,10",
+      "--id",
+      "memory-full-panel-v3"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:23:15.970Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "run",
+      "--suite",
+      "bfcache",
+      "--profiles",
+      "desktop",
+      "--samples",
+      "1",
+      "--id",
+      "bfcache-pilot-v1"
+    ],
+    "code": 1,
+    "at": "2026-09-20T18:27:36.729Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "functional",
+      "--engine",
+      "firefox"
+    ],
+    "code": 0,
+    "at": "2026-09-20T18:28:14.432Z"
+  },
+  {
+    "file": "src/cli.mjs",
+    "args": [
+      "functional",
+      "--engine",
+      "webkit"
+    ],
+    "code": 1,
+    "at": "2026-09-20T18:28:58.356Z"
+  },
+  {
+    "file": "experiments/summarize-evidence.mjs",
+    "args": [],
+    "code": 0,
+    "at": "2026-09-20T18:28:58.426Z"
+  }
+]

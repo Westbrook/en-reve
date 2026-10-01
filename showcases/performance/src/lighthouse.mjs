@@ -1,3 +1,4 @@
+import { variantQualification } from './variant-qualification.mjs';
 import lighthouse from "lighthouse";
 import { launch } from "chrome-launcher";
 import { chromium } from "@playwright/test";
@@ -15,6 +16,15 @@ import {
 } from "./config.mjs";
 import { startServers } from "./server.mjs";
 import { labIdentity } from "./runner.mjs";
+export async function resolveLighthouseVariant(options, systems, labRoot = root) {
+  if (!options.variant) return null;
+  if (systems.length !== 1 || systems[0].id !== 'en-reve') throw new Error('Lighthouse variants require --systems en-reve');
+  const variants = JSON.parse(await readFile(resolve(labRoot, 'reports/en-reve-experiments.json')));
+  const variant = variants.find(v => v.id === options.variant);
+  if (!variant) throw new Error('Unknown Lighthouse variant');
+  const qualification = await variantQualification({root:labRoot, variant, functionalReceipt:options['functional-receipt']});
+  return {variant, variantQualification:qualification.receipt, variantQualificationSource:qualification.source};
+}
 export async function runLighthouse(options) {
   const id =
     options.id ||
@@ -27,10 +37,6 @@ export async function runLighthouse(options) {
     : registry;
   const count = Number(options.samples || 5),
     selected = (options.profiles || "desktop,mobile").split(",");
-  if (options.variant)
-    throw new Error(
-      "Lighthouse currently supports the native panel only; variants use the primary runner.",
-    );
   if (options.caches && options.caches !== "cold")
     throw new Error("Lighthouse uses fresh cold-browser audits.");
   if (!Number.isInteger(count) || count < 1)
@@ -42,18 +48,18 @@ export async function runLighthouse(options) {
     throw new Error("Unknown or empty system selection");
   if (selected.some((name) => !profiles[name]))
     throw new Error("Unknown profile");
+  const selectedVariant = await resolveLighthouseVariant(options, systems);
   const inventory = JSON.parse(
     await readFile(resolve(root, ".cache/inventory.json")),
   );
   if (inventory.requiresFunctionalQualification)
     throw new Error("Qualify candidate artifacts before Lighthouse");
   for (const system of systems)
-    for (const asset of inventory.systems.find((s) => s.id === system.id)
-      .assets) {
+    for (const asset of (selectedVariant?.variant || inventory.systems.find((s) => s.id === system.id)).assets) {
       if (
         sha(
           await readFile(
-            resolve(root, ".cache/snapshots", system.id, asset.path),
+            resolve(root, selectedVariant ? ".cache/variants" : ".cache/snapshots", selectedVariant?.variant.id || system.id, asset.path),
           ),
         ) !== asset.sha256
       )
@@ -69,6 +75,7 @@ export async function runLighthouse(options) {
       systems.flatMap((s) =>
         selected.map((profile) => ({
           system: s.id,
+          ...(selectedVariant ? {variant:selectedVariant.variant.id} : {}),
           profile,
           cache: "cold",
           block,
@@ -87,6 +94,7 @@ export async function runLighthouse(options) {
       createdAt: new Date().toISOString(),
       harnessSha256: await labIdentity(),
       inventory,
+      ...selectedVariant,
       profiles,
       host: {
         cpu: os.cpus()[0]?.model,
@@ -104,7 +112,7 @@ export async function runLighthouse(options) {
     });
   for (const file of ["package.json", "package-lock.json"])
     await cp(resolve(root, file), resolve(directory, "harness", file));
-  const stop = await startServers({ systems });
+  const stop = await startServers({ systems, variant:options.variant });
   try {
     for (const job of jobs) {
       let chrome;

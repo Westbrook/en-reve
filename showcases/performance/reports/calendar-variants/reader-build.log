@@ -1,0 +1,37 @@
+
+> en-reve-performance-results@0.1.0 build
+> node scripts/render.mjs && vite build
+
+[
+  {
+    page: 'native-showcase-performance-results.md',
+    updatedTables: 142
+  },
+  {
+    page: 'native-showcase-en-reve-main-results.md',
+    updatedTables: 22
+  },
+  { page: 'native-showcase-web-awesome-results.md', updatedTables: 44 },
+  {
+    page: 'native-showcase-spectrum-gen2-results.md',
+    updatedTables: 25
+  },
+  { page: 'native-showcase-dom-review.md', updatedTables: 3 }
+]
+Rendered full report, 24 sections, 281 sortable tables.
+vite v8.2.2 building client environment for production...
+transforming...
+✓ 112 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/build-metadata.json          0.82 kB │ gzip:   0.41 kB
+dist/index.html                 948.16 kB │ gzip: 117.73 kB
+dist/assets/index-DgifiLot.css   74.39 kB │ gzip:   9.06 kB
+dist/assets/index-C02docMw.js   759.19 kB │ gzip: 112.17 kB
+
+✓ built in 283ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

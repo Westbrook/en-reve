@@ -1,0 +1,222 @@
+{
+  "total": {
+    "nodes": 20,
+    "elements": 13,
+    "text": 3,
+    "whitespaceText": 0,
+    "comments": 1,
+    "shadowRoots": 1,
+    "other": 2,
+    "customElements": 1,
+    "slots": 1,
+    "svgElements": 0,
+    "baseParts": 1,
+    "maxDepth": 7
+  },
+  "date": {
+    "nodes": 3,
+    "elements": 2,
+    "text": 1,
+    "whitespaceText": 0,
+    "comments": 0,
+    "shadowRoots": 0,
+    "other": 0,
+    "customElements": 0,
+    "slots": 0,
+    "svgElements": 0,
+    "baseParts": 0,
+    "maxDepth": 6
+  },
+  "withoutDate": {
+    "nodes": 17,
+    "elements": 11,
+    "text": 2,
+    "whitespaceText": 0,
+    "comments": 1,
+    "shadowRoots": 1,
+    "other": 2,
+    "customElements": 1,
+    "slots": 1,
+    "svgElements": 0,
+    "baseParts": 1,
+    "maxDepth": 7
+  },
+  "byCard": {
+    "outside-cards": {
+      "nodes": 5,
+      "elements": 3,
+      "text": 0,
+      "whitespaceText": 0,
+      "comments": 0,
+      "shadowRoots": 0,
+      "other": 2,
+      "customElements": 0,
+      "slots": 0,
+      "svgElements": 0,
+      "baseParts": 0,
+      "maxDepth": 2
+    },
+    "showcase-project": {
+      "nodes": 15,
+      "elements": 10,
+      "text": 3,
+      "whitespaceText": 0,
+      "comments": 1,
+      "shadowRoots": 1,
+      "other": 0,
+      "customElements": 1,
+      "slots": 1,
+      "svgElements": 0,
+      "baseParts": 1,
+      "maxDepth": 7
+    }
+  },
+  "byCardWithoutDate": {
+    "outside-cards": {
+      "nodes": 5,
+      "elements": 3,
+      "text": 0,
+      "whitespaceText": 0,
+      "comments": 0,
+      "shadowRoots": 0,
+      "other": 2,
+      "customElements": 0,
+      "slots": 0,
+      "svgElements": 0,
+      "baseParts": 0,
+      "maxDepth": 2
+    },
+    "showcase-project": {
+      "nodes": 12,
+      "elements": 8,
+      "text": 2,
+      "whitespaceText": 0,
+      "comments": 1,
+      "shadowRoots": 1,
+      "other": 0,
+      "customElements": 1,
+      "slots": 1,
+      "svgElements": 0,
+      "baseParts": 1,
+      "maxDepth": 7
+    }
+  },
+  "byOwner": {
+    "document/app": {
+      "all": {
+        "nodes": 14,
+        "elements": 9,
+        "text": 2,
+        "whitespaceText": 0,
+        "comments": 1,
+        "shadowRoots": 0,
+        "other": 2,
+        "customElements": 0,
+        "slots": 0,
+        "svgElements": 0,
+        "baseParts": 0,
+        "maxDepth": 6
+      },
+      "withoutDate": {
+        "nodes": 11,
+        "elements": 7,
+        "text": 1,
+        "whitespaceText": 0,
+        "comments": 1,
+        "shadowRoots": 0,
+        "other": 2,
+        "customElements": 0,
+        "slots": 0,
+        "svgElements": 0,
+        "baseParts": 0,
+        "maxDepth": 6
+      }
+    },
+    "x-control": {
+      "all": {
+        "nodes": 6,
+        "elements": 4,
+        "text": 1,
+        "whitespaceText": 0,
+        "comments": 0,
+        "shadowRoots": 1,
+        "other": 0,
+        "customElements": 1,
+        "slots": 1,
+        "svgElements": 0,
+        "baseParts": 1,
+        "maxDepth": 7
+      },
+      "withoutDate": {
+        "nodes": 6,
+        "elements": 4,
+        "text": 1,
+        "whitespaceText": 0,
+        "comments": 0,
+        "shadowRoots": 1,
+        "other": 0,
+        "customElements": 1,
+        "slots": 1,
+        "svgElements": 0,
+        "baseParts": 1,
+        "maxDepth": 7
+      }
+    }
+  },
+  "baseOwners": {
+    "x-control / div": {
+      "owner": "x-control",
+      "tag": "div",
+      "count": 1,
+      "withoutDate": 1,
+      "roles": [],
+      "displays": [
+        "block"
+      ]
+    }
+  },
+  "baseInstances": [
+    {
+      "owner": "x-control",
+      "tag": "div",
+      "card": "showcase-project",
+      "inDate": false,
+      "role": null,
+      "tabindex": null,
+      "id": null,
+      "parts": "base",
+      "children": 1,
+      "display": "block",
+      "position": "static",
+      "overflow": "visible",
+      "hostDisplay": "inline"
+    }
+  ],
+  "elementsByTag": {
+    "html": 1,
+    "head": 1,
+    "body": 1,
+    "section": 1,
+    "div": 3,
+    "label": 1,
+    "input": 1,
+    "x-control": 1,
+    "slot": 1,
+    "span": 1,
+    "template": 1
+  },
+  "commentKinds": {
+    "other-comment": 1
+  },
+  "dateBoundaries": [
+    {
+      "tag": "label",
+      "id": "",
+      "role": null,
+      "label": null,
+      "parentTag": "div"
+    }
+  ],
+  "dateInputValue": "",
+  "cardCount": 1
+}

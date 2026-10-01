@@ -1,0 +1,139 @@
+{
+  "schema": 1,
+  "note": "Identical gzip9/Brotli11 offline sizes. Initial JS/CSS follows static HTML/import graph; fonts are listed separately because their actual use is browser-dependent. Remote fonts require network evidence. Source-map attribution estimates generated characters, not compressed marginal bytes; modules in multiple chunks require inspection before calling them duplicates.",
+  "systems": [
+    {
+      "id": "fluent-web-components",
+      "fingerprint": "7236c0854897d7e62f89a9398cbf0ec909ab7278f88a029433acc51d4af0a486",
+      "totals": {
+        "css": {
+          "files": 1,
+          "raw": 4300,
+          "gzip": 1456,
+          "brotli": 1206,
+          "initialBrotli": 1206
+        },
+        "js": {
+          "files": 1,
+          "raw": 287981,
+          "gzip": 70953,
+          "brotli": 58475,
+          "initialBrotli": 58475
+        },
+        "other": {
+          "files": 1,
+          "raw": 373,
+          "gzip": 277,
+          "brotli": 177,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-DHbL8u7_.js",
+        "assets/index-7X1QEckn.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "@fluentui/web-components": 109731,
+        "@microsoft/fast-element": 45860,
+        "@fluentui/tokens": 21655,
+        "application/fixture": 18525,
+        "@microsoft/focusgroup-polyfill": 4715,
+        "tslib": 325
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "en-reve",
+      "fingerprint": "683d823d13a31fd518145109c1629bd1654a0fc879160329fb8caf07246a756c",
+      "totals": {
+        "css": {
+          "files": 1,
+          "raw": 44562,
+          "gzip": 6986,
+          "brotli": 6077,
+          "initialBrotli": 6077
+        },
+        "js": {
+          "files": 1,
+          "raw": 450057,
+          "gzip": 110882,
+          "brotli": 89048,
+          "initialBrotli": 89048
+        },
+        "other": {
+          "files": 1,
+          "raw": 359,
+          "gzip": 267,
+          "brotli": 162,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-MqONCzvs.js",
+        "assets/index-CDV5OawH.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "@en-reve/elements": 191955,
+        "@en-reve/styles": 57118,
+        "@en-reve/primitives": 29813,
+        "@en-reve/tokens": 14849,
+        "application/fixture": 11063,
+        "lit-html": 10899,
+        "signal-polyfill": 8212,
+        "@lit/reactive-element": 7193,
+        "lit-element": 744,
+        "signal-utils": 423
+      },
+      "sourceModulesInMultipleChunks": []
+    },
+    {
+      "id": "web-awesome",
+      "fingerprint": "5694cb62336733951bcb793f18aac9b9fc884324ef953bb44369acfdca4fd97e",
+      "totals": {
+        "js": {
+          "files": 1,
+          "raw": 481057,
+          "gzip": 113108,
+          "brotli": 88429,
+          "initialBrotli": 88429
+        },
+        "css": {
+          "files": 1,
+          "raw": 54664,
+          "gzip": 8136,
+          "brotli": 5064,
+          "initialBrotli": 5064
+        },
+        "other": {
+          "files": 1,
+          "raw": 419,
+          "gzip": 286,
+          "brotli": 171,
+          "initialBrotli": 0
+        }
+      },
+      "initialStaticFiles": [
+        "assets/index-BG3Zw-nj.js",
+        "assets/index-D7icV0LY.css"
+      ],
+      "dynamicImportEdges": [],
+      "approximateGeneratedCharactersByPackage": {
+        "@awesome.me/webawesome": 227045,
+        "application/fixture": 17779,
+        "@ctrl/tinycolor": 13255,
+        "lit-html": 10923,
+        "@lit/reactive-element": 8684,
+        "@floating-ui/dom": 7108,
+        "@floating-ui/core": 6517,
+        "@floating-ui/utils": 3726,
+        "@shoelace-style/localize": 2024,
+        "lit-element": 745,
+        "composed-offset-position": 445,
+        "nanoid": 173
+      },
+      "sourceModulesInMultipleChunks": []
+    }
+  ]
+}

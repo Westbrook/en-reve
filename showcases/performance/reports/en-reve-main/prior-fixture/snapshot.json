@@ -1,0 +1,23 @@
+{
+  "capturedAt": "2026-09-20T16:35:52.234283+00:00",
+  "sourceCommit": "2333b1af0e7c906dcb03d8db8da137a544e0e7f8",
+  "authority": "Packed tarball bytes; repository commit alone does not identify uncommitted workspace/build state.",
+  "rendering": "client; original documentation SSR is deliberately outside this fixture",
+  "files": {
+    "vendor/en-reve-tokens-0.1.0.tgz": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+    "vendor/en-reve-primitives-0.1.0.tgz": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+    "vendor/en-reve-styles-0.1.0.tgz": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+    "vendor/en-reve-elements-0.1.0.tgz": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d"
+  },
+  "showcaseSourceFiles": {
+    "apps/docs/src/showcase/main.ts": "4a389d4f4ad65a7601d95bae9f1827a8f1ebc5e1eba2083b5605587d6c0b3e49",
+    "apps/docs/src/showcase/styles.css": "d35f14e22cf8006e226918e3eb2dd4e2a16b204853f6dfebe04bb74bc1de7605",
+    "apps/docs/src/showcase/template.ts": "44b7948fd408564eb8a2286c7fc620359c0d8b0c66c440e2e72fcb3176907e3d",
+    "apps/docs/src/showcase/app.ts": "9a9c23589d88116edacd100c5cc0b93b1d3b5c2df21c8d1d36d65b897714b25b",
+    "apps/docs/src/showcase/model.ts": "be51265cff3bce85058547db119c635695dca7d1b6337261206fedf730e95a73",
+    "apps/docs/src/showcase/README.md": "485ea007096368ac7b3c16830f51287f2ced88b33dafc75eb817a15ae0ba80ee",
+    "apps/docs/src/showcase/presets.ts": "2310dd72e9db0221f8d66e9e361bcf3b017e9e808017a676938bdf3600fd12e3"
+  },
+  "defaultThemeCSS": "3d811c1edcfdf41fdf6f0336299956118def9fc68968f54e9d93890c20364e44",
+  "libraryBuildState": "Existing local built packages; no root build, version change, or dependency changes made for these showcases."
+}
