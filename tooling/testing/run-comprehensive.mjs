@@ -141,7 +141,7 @@ try {
   }
   if(task.kind==='barrier'){
    const dependencies=task.dependencies.map(id=>receipt.outcomes[id]);
-   receipt.outcomes[task.id]=dependencies.every(outcome=>outcome?.status==='passed')?{status:'passed',evidence:[...new Set(dependencies.flatMap(outcome=>outcome.evidence??[]))],originatingRun:output}:{status:'not-run',reason:'A producer was not executed in this lane.'};return {status:'passed',admissionOnly:true};
+   receipt.outcomes[task.id]=dependencies.every(outcome=>outcome?.status==='passed')?{status:'passed',evidence:[...new Set(dependencies.flatMap(outcome=>outcome.evidence??[]))],originatingRun:output}:{status:'not-run',reason:'A producer was not executed in this lane.',nextAction:'Run the required producers without --skip-build to qualify this barrier.'};return {status:'passed',admissionOnly:true};
   }
   // Identical emitting compiler and flags already proved this semantic obligation.
   if(task.id==='styles-check'&&receipt.outcomes['build:styles']?.status==='passed'){
@@ -150,7 +150,7 @@ try {
   const result=await attempt(()=>execute(task,fulfilled),fulfilled,task.id);
   return {status:result?'passed':'failed'};
  },{continueIndependent:args.includes('--continue-independent')});
- for(const task of scheduled)if(receipt.schedule.outcomes[task.id]?.status==='not-run')for(const id of task.fulfilled??[task.id])receipt.outcomes[id]={status:'not-run',reason:receipt.schedule.outcomes[task.id].reason};
+ for(const task of scheduled)if(receipt.schedule.outcomes[task.id]?.status==='not-run')for(const id of task.fulfilled??[task.id])receipt.outcomes[id]={status:'not-run',reason:receipt.schedule.outcomes[task.id].reason,nextAction:'Resolve the failed or interrupted preparation prerequisites, then rerun this task.'};
  if(receipt.schedule.firstFailureMs!==null)receipt.firstFailureMs=Math.min(receipt.firstFailureMs??Infinity,receipt.scheduleStartedMs+receipt.schedule.firstFailureMs);
  const preparationFailed=Object.values(receipt.schedule.outcomes).some(outcome=>outcome.status==='failed');
  if(preparationFailed&&!args.includes('--continue-independent'))throw new Error('Preparation or early assertion failed; expensive descendants were not started');
@@ -256,7 +256,7 @@ try {
   return {status:['passed','reused'].includes(receipt.outcomes[task.id]?.status)?'passed':'failed'};
  },{continueIndependent:args.includes('--continue-independent')});
  if(receipt.browserSchedule.firstFailureMs!==null)receipt.firstFailureMs??=receipt.browserScheduleStartedMs+receipt.browserSchedule.firstFailureMs;
- for(const task of browserStages)if(receipt.browserSchedule.outcomes[task.id]?.status==='not-run')receipt.outcomes[task.id]={status:'not-run',reason:receipt.browserSchedule.outcomes[task.id].reason};
+ for(const task of browserStages)if(receipt.browserSchedule.outcomes[task.id]?.status==='not-run')receipt.outcomes[task.id]={status:'not-run',reason:receipt.browserSchedule.outcomes[task.id].reason,nextAction:'Resolve the failed or interrupted browser prerequisites, then rerun this task.'};
  if(!args.includes('--continue-independent')&&Object.values(receipt.browserSchedule.outcomes).some(outcome=>outcome.status==='failed'))throw new Error('Browser assertion failed; retain original command and facet receipts');
  // Direct reader certification follows the complete selected reader receipt, never a partial rerun.
  for(const task of selected.filter(task=>task.id!=='check-api'&&!['producer','barrier','node','browser','check','types','python','release-attestation'].includes(task.kind))){

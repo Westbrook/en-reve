@@ -167,3 +167,22 @@ after window selection/sizing. No Safari component case is qualified. Original
 timeouts/diagnostics remain in the new receipt; visible-window retesting is the
 next step. There is no screen-reader, physical-device, previous-product or full
 workflow acceptance implied by these outcomes. `browser-current` remains partial.
+
+## Actual Chrome/Edge production journeys — October 2
+
+[Production workflow qualification](../apps/docs/tests/verification-products-20261002.json)
+adds52 passes on the same installed Chrome/Edge versions: SSO, settings, chat and
+project selection, including early SSR editing, native submission, recovery,
+cancel/repeated actions, external updates, accessibility scans and page history.
+The optional product manifest is shared with the framework suite; default engine
+coverage is unchanged. Two pre-existing Chromium-only viewport cases stay skipped.
+Full app distributions and source/build inventories matched before and after.
+
+A further Safari attempt brought the application forward before its owned
+WebDriver session. The document still reported hidden and never reached the
+animation-frame readiness marker. No Safari component case passed; desktop
+lock/sleep state has been requested from the user. No assertion was bypassed.
+
+Mozilla's official archive index resolves the preceding Firefox line to156.0.1.
+An isolated acquisition remains next work; no previous-product qualification is
+inferred from archive availability. Physical-device inventory is still pending.

@@ -49,7 +49,7 @@ test('support evidence references resolve and immutable receipts retain their ex
     assert(!item.path.startsWith('/') && !item.path.split('/').includes('..'));
     const source = await read(item.path);
     assert(item.scope.trim());
-    if (['automated-engine','automated-product-and-engine','automated-native-product'].includes(item.kind)) {
+    if (['automated-engine','automated-product-and-engine','automated-native-product','automated-product-workflows'].includes(item.kind)) {
       assert.match(item.sha256, /^[a-f0-9]{64}$/);
       assert.equal(createHash('sha256').update(source).digest('hex'), item.sha256, item.id);
     } else {
@@ -196,4 +196,23 @@ test('native product receipt preserves input scope and unresolved Safari attempt
  assert.equal(receipt.safariAttempts.at(-1).case.diagnostic.visibility,'hidden');
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
  assert.match(receipt.artifactPolicy,/no new installation/);
+});
+
+test('actual product workflows retain exact sources, distribution identity and explicit skips', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='workflow-products-20261002');
+ const receipt=await json(evidence.path);
+ assert.equal(receipt.status,'passed');
+ assert.equal(receipt.stats.expected,52);
+ assert.equal(receipt.stats.skipped,2);
+ for(const key of ['unexpected','flaky'])assert.equal(receipt.stats[key],0);
+ assert.equal(receipt.workers,1);assert.equal(receipt.retries,0);
+ assert.equal(receipt.products.length,2);
+ for(const product of receipt.products){assert.equal(product.passed,26);assert.equal(product.skipped,1);assert(product.distributionInventoryEntries>100);assert.match(product.distributionInventorySHA256,/^[a-f0-9]{64}$/);}
+ assert.equal(receipt.runtimeDistributionUnchangedAfterRun,true);
+ assert.equal(receipt.sourceAndInputsUnchangedAfterRun,true);
+ assert(receipt.distInventoryEntries>1000);
+ for(const [path,digest] of Object.entries(receipt.sourceHashes))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(receipt.cases.length,54);
+ assert(receipt.cases.filter(c=>c.status==='skipped').every(c=>c.titlePath.at(-1).startsWith('narrow portrait')));
+ assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
 });

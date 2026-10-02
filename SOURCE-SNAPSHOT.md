@@ -78,3 +78,7 @@ Local main `fc9da899dc897996fcbd3e3a6c7679ad34bac15c` qualifies public package t
 ## Native Firefox product consumer qualification
 
 Local main `9357f4e5500dac36ca90f5ae521a428978f166e8` qualifies three native-input contracts across ten retained packed consumers on actual Firefox157. Safari visibility remains unresolved. See `probes/native-browser-products/verification-20261002.json` and its README for exact source, outcomes and limits.
+
+## Chrome and Edge production workflow qualification
+
+Local main `0b935772368c40a611dc2ea15478db28d89b0e1d` qualifies SSO, settings, chat and project selection on installed Chrome/Edge.52 cases pass; two existing viewport cases remain skipped. See `apps/docs/tests/verification-products-20261002.json` and its README for exact source, outcomes and limits.

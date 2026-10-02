@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "9357f4e5500dac36ca90f5ae521a428978f166e8",
-  "exportedAt": "2026-10-02T03:37:37.499010+00:00",
+  "sourceCommit": "0b935772368c40a611dc2ea15478db28d89b0e1d",
+  "exportedAt": "2026-10-02T03:52:05.230879+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5407,
-  "includedBytes": 144432580,
-  "qualification": "Actual Firefox157 consumer native-input subset qualified:30 cases on10 retained hash-verified packed consumers.102 tooling checks pass. Safari27 automation-page visibility remains unresolved; original failures retained. No broader product or physical/manual acceptance.",
-  "latestUpdate": ".source-export/updates/native-products-20261002.json",
+  "includedFiles": 5409,
+  "includedBytes": 144466061,
+  "qualification": "Installed Chrome/Edge production workflows qualified:52 passes,2 retained profile skips.103 tooling checks and existing-baseline core/docs type checks pass. Missing skipped-task explanations fixed without changing skipped-build status. Safari visibility and physical/manual scope remain open.",
+  "latestUpdate": ".source-export/updates/workflow-products-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

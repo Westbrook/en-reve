@@ -1,5 +1,6 @@
 import { pipelineOutput } from '../../../tooling/test-pipeline/config-output.mjs';
 import { defineConfig } from '@playwright/test';
+import { browserProductProjects } from '../../../tooling/testing/browser-products.mjs';
 import { fileURLToPath } from 'node:url';
 import { resolve } from 'node:path';
 
@@ -25,6 +26,7 @@ export default defineConfig({
     { name: 'chromium', use: { browserName: 'chromium' } },
     { name: 'firefox', use: { browserName: 'firefox' } },
     { name: 'webkit', use: { browserName: 'webkit' } },
+    ...browserProductProjects(),
   ],
   webServer: externalURL ? undefined : {
     command: 'node apps/docs/tests/static-server.mjs',

@@ -1,0 +1,1018 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceBase": "9357f4e5500dac36ca90f5ae521a428978f166e8",
+  "sourceHashes": {
+    "apps/docs/tests/playwright.config.ts": "c68fa7f41a4f0104e8e5ec10f7a7e6ebf625d6f1b048df98790a37bf1bc73ae3",
+    "apps/docs/tests/workflows.spec.ts": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+    "apps/docs/tests/selection.spec.ts": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+    "apps/docs/tests/static-server.mjs": "916345698ff9823d4b89989fbf9f8b9d13cb16ddb748a2d8c69ab46c5a0d61ea",
+    "tooling/testing/browser-products.mjs": "9eb3663c9a9a7a64a3ee29d5be3cb60b3accdac12a731ba5b88930c65b56d5fb",
+    "tooling/testing/runtime-identity.mjs": "fd79b9d52fd381ff4bf19e81d00c947fd26976a049b96146c361cc634ff2ca03",
+    "tooling/testing/run-public-view.mjs": "b3f5870a4a86271c719492785e2ddf694d0cec355ec464b98e6daff82c78631d"
+  },
+  "output": "/private/tmp/en-product-workflows-20261002-01/docs-execution",
+  "command": [
+    "npm",
+    "run",
+    "test:workflows",
+    "-w",
+    "@en-reve/docs",
+    "--",
+    "workflows.spec.ts",
+    "selection.spec.ts",
+    "--project=product-chrome",
+    "--project=product-edge"
+  ],
+  "startedAt": "2026-10-02T03:43:07.184Z",
+  "finishedAt": "2026-10-02T03:44:32.093Z",
+  "stats": {
+    "startTime": "2026-10-02T03:43:14.195Z",
+    "duration": 72776.465,
+    "expected": 52,
+    "skipped": 2,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "workers": 1,
+  "retries": 0,
+  "products": [
+    {
+      "product": "Google Chrome",
+      "version": "154.0.8037.95",
+      "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "distributionPath": "/Applications/Google Chrome.app",
+      "headless": true,
+      "profile": "Playwright-owned temporary profile; no user profile or remote connection",
+      "project": "product-chrome",
+      "reportedVersions": [
+        "154.0.8037.95"
+      ],
+      "passed": 26,
+      "skipped": 1,
+      "distributionInventoryEntries": 1938,
+      "distributionInventorySHA256": "96ae6430b49d54d09a3597bc117d76e4e7ef6fbf6756b6903e699bf8d03796c6"
+    },
+    {
+      "product": "Microsoft Edge",
+      "version": "154.0.4258.48",
+      "executablePath": "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+      "distributionPath": "/Applications/Microsoft Edge.app",
+      "headless": true,
+      "profile": "Playwright-owned temporary profile; no user profile or remote connection",
+      "project": "product-edge",
+      "reportedVersions": [
+        "154.0.4258.48"
+      ],
+      "passed": 26,
+      "skipped": 1,
+      "distributionInventoryEntries": 2680,
+      "distributionInventorySHA256": "5fd59e00e4eb8d000f6a61068e80d1615c97cf6c37e75032a0400389f8aa2928"
+    }
+  ],
+  "runtimeDigest": "sha256:b5fbe78c932d49413b9333576d60791eca5cc928604511d55c15b2fce70f8bf4",
+  "runtimeDistributionUnchangedAfterRun": true,
+  "sourceAndInputsUnchangedAfterRun": true,
+  "buildEvidence": "Caller-supplied qualified production dist, exact input inventory checked before/after; no rebuild claimed.",
+  "distInventoryEntries": 1196,
+  "distInventorySHA256": "a1381cbebdc50b1e23fcd5cc0cf95c5252d9cd90b46746e350dfa992fabc3c69",
+  "cases": [
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "selection.spec.ts",
+        "Selection SSR keeps the native input, early query and selection range through hydration without accepting the query"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "selection.spec.ts",
+        "Selection submits an explicitly chosen ID, rejects unavailable or unfinished queries, and resets the form receipt"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "selection.spec.ts",
+        "Selection supports keyboard scrolling and real project selection in narrow RTL layouts with scoped accessibility checks"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "selection.spec.ts",
+        "all six workflow documents remain separately addressable and native navigation preserves preview and unrelated query values"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSR account drafts retain native identity and become the exact hydrated submission"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSR chat draft keeps native identity, focus and selection and submits the exact early message"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSO validates native form data, follows an error link, and retains corrected values when going Back"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSO completes a keyboard-submitted provider choice with the captured account"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSO rejected attempt recovers through Retry without losing the chosen provider"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSO Cancel invalidates a held response while retaining the account and actionable focus"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "SSO Reset protects a new account from an older held completion"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "settings save a captured snapshot while later edits remain local and unsaved"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "settings failed save retains local work and Retry succeeds once"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "incoming settings keep an unfinished native entry and focus until the user chooses Keep"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "Use updated opacity explicitly replaces its draft while preserving unrelated choices"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "settings reject invalid drafts, restore saved opacity, and cancel a held save on Reset"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "chat renders message text safely and requires a valid newly reviewed preview before applying"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "chat Retry sends the failed snapshot once and preserves a newer focused composer draft"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "chat revalidates a held Apply against collaborator changes and preserves later editing focus"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "chat rejects unsupported capability, action, target and value at the authored action boundary"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "chat blocks a held Apply when permission or its image target disappears and requires a refreshed preview"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "chat guards repeated pending sends and Cancel or Reset invalidates queued replies without erasing later drafts"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "reconnecting each isolated page disposes pending work and creates fresh native editors with working handlers"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "each direct workflow page exposes labelled controls and passes scoped accessibility checks before and after interaction"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "each direct and legacy document owns one isolated SSR workflow without JavaScript"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "native page navigation, history and legacy links preserve preview context"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-chrome",
+        "workflows.spec.ts",
+        "narrow portrait and landscape RTL workflow pages remain usable without horizontal page overflow"
+      ],
+      "status": "skipped",
+      "expectedStatus": "skipped",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.8037.95"
+        },
+        {
+          "type": "skip",
+          "description": "This focused layout check is intentionally one engine; behavior cases run in all three.",
+          "location": {
+            "file": "/private/tmp/en-reve-initial-pass-closeout/apps/docs/tests/workflows.spec.ts",
+            "line": 828,
+            "column": 8
+          }
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "selection.spec.ts",
+        "Selection SSR keeps the native input, early query and selection range through hydration without accepting the query"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "selection.spec.ts",
+        "Selection submits an explicitly chosen ID, rejects unavailable or unfinished queries, and resets the form receipt"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "selection.spec.ts",
+        "Selection supports keyboard scrolling and real project selection in narrow RTL layouts with scoped accessibility checks"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "selection.spec.ts",
+        "all six workflow documents remain separately addressable and native navigation preserves preview and unrelated query values"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSR account drafts retain native identity and become the exact hydrated submission"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSR chat draft keeps native identity, focus and selection and submits the exact early message"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSO validates native form data, follows an error link, and retains corrected values when going Back"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSO completes a keyboard-submitted provider choice with the captured account"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSO rejected attempt recovers through Retry without losing the chosen provider"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSO Cancel invalidates a held response while retaining the account and actionable focus"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "SSO Reset protects a new account from an older held completion"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "settings save a captured snapshot while later edits remain local and unsaved"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "settings failed save retains local work and Retry succeeds once"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "incoming settings keep an unfinished native entry and focus until the user chooses Keep"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "Use updated opacity explicitly replaces its draft while preserving unrelated choices"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "settings reject invalid drafts, restore saved opacity, and cancel a held save on Reset"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "chat renders message text safely and requires a valid newly reviewed preview before applying"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "chat Retry sends the failed snapshot once and preserves a newer focused composer draft"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "chat revalidates a held Apply against collaborator changes and preserves later editing focus"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "chat rejects unsupported capability, action, target and value at the authored action boundary"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "chat blocks a held Apply when permission or its image target disappears and requires a refreshed preview"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "chat guards repeated pending sends and Cancel or Reset invalidates queued replies without erasing later drafts"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "reconnecting each isolated page disposes pending work and creates fresh native editors with working handlers"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "each direct workflow page exposes labelled controls and passes scoped accessibility checks before and after interaction"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "each direct and legacy document owns one isolated SSR workflow without JavaScript"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "native page navigation, history and legacy links preserve preview context"
+      ],
+      "status": "passed",
+      "expectedStatus": "passed",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        }
+      ]
+    },
+    {
+      "titlePath": [
+        "",
+        "product-edge",
+        "workflows.spec.ts",
+        "narrow portrait and landscape RTL workflow pages remain usable without horizontal page overflow"
+      ],
+      "status": "skipped",
+      "expectedStatus": "skipped",
+      "retry": 0,
+      "annotations": [
+        {
+          "type": "browser-version",
+          "description": "154.0.4258.48"
+        },
+        {
+          "type": "skip",
+          "description": "This focused layout check is intentionally one engine; behavior cases run in all three.",
+          "location": {
+            "file": "/private/tmp/en-reve-initial-pass-closeout/apps/docs/tests/workflows.spec.ts",
+            "line": 828,
+            "column": 8
+          }
+        }
+      ]
+    }
+  ],
+  "scope": "Actual headless Chrome/Edge on macOS26.6.1 arm64; existing SSO/settings/chat/project-selection production journeys, native FormData/input, early SSR drafts, recovery/cancellation/conflicts, accessibility scans and native navigation. Two existing Chromium-only viewport cases remain skipped. No speech/IME, physical devices, other products/OSes or preceding releases inferred."
+}

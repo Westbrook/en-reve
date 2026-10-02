@@ -134,3 +134,31 @@ a narrow viewport. The existing single-theme suite remains a compatibility gate.
 Run either through this directory's Playwright config, using an existing built
 docs server through `EN_WORKFLOW_BASE_URL` when appropriate. Source recipes and
 exact-build paired candidate generation live in `tooling/theme-candidates`.
+
+## Installed browser products
+
+This docs configuration now accepts the same optional `EN_BROWSER_PRODUCTS`
+manifest as the packed framework suite. The default remains the three pinned
+engines. See [product selection and identity](../../../probes/framework-consumption/README.md#opt-in-installed-chromeedge-qualification)
+for the explicit installation paths, full distribution identity and temporary
+profile contract. No global installation, user profile or browser update occurs.
+With an existing qualified production build:
+
+```sh
+EN_BROWSER_PRODUCTS=/absolute/products.json \
+EN_EXECUTION_OUTPUT=/absolute/new/workflow-product-run \
+  tooling/test-pipeline/with-toolchain.sh npm run test:workflows -w @en-reve/docs -- \
+  workflows.spec.ts selection.spec.ts --project=product-chrome --project=product-edge
+```
+
+The [October2 product receipt](verification-products-20261002.json) records52
+passes,26 per installed Chrome154.0.8037.95 and Edge154.0.4258.48 in headless mode
+on macOS26.6.1 arm64. Two existing Chromium-only viewport cases remain skipped.
+The unchanged journeys cover SSO, settings, chat and project selection: native
+FormData and keyboard/pointer interaction, early SSR drafts and control identity,
+validation/retry/cancel, repeated actions, incoming state, disposal, accessibility
+scans, direct entries and native navigation/history. Their console checks remain
+strict. Full product distributions and production source/build inventories stayed
+unchanged across the run. This reuses qualified `dist/`; it is not a fresh build.
+Actual speech/IME, physical devices, other products/OSes and previous versions
+remain separate support conditions.

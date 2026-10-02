@@ -303,6 +303,13 @@
       "path": "probes/native-browser-products/verification-20261002.json",
       "sha256": "518e88ad71352d202c590c42959927ff063983253af98556e420e607d87ac819",
       "scope": "30 native-input cases on actual Firefox157.0 across10 retained hash-verified packed consumers. Safari27 session available but hidden-page readiness timed out; no Safari component qualification. Not full Playwright scenario parity, fresh installs or manual acceptance."
+    },
+    {
+      "id": "workflow-products-20261002",
+      "kind": "automated-product-workflows",
+      "path": "apps/docs/tests/verification-products-20261002.json",
+      "sha256": "81a056a2f928f297d11843eea80424cec41f56eb6bc0bde40c47006fd833597d",
+      "scope": "52 production workflow passes across installed Chrome154.0.8037.95 and Edge154.0.4258.48; two existing narrow-profile skips. SSO/settings/chat/project selection; full app distributions and production input inventory unchanged. No physical/manual acceptance."
     }
   ],
   "conditions": [
@@ -346,10 +353,11 @@
       "delivery": "product",
       "evidence": [
         "framework-release-lines-20261002",
-        "native-products-20261002"
+        "native-products-20261002",
+        "workflow-products-20261002"
       ],
-      "gap": "Installed Chrome154.0.8037.95 and Edge154.0.4258.48 pass the headless packed consumer suite; actual Firefox157.0 passes three native-input scenarios per cohort. Safari27 automation session exists but hidden-page readiness remains unresolved. Edge latest patch, other OS/workflows, preceding products and manual checks remain unqualified.",
-      "nextAction": "Resolve Safari visible automation-window readiness, then extend actual-product/reference-workflow and exact preceding-version coverage. Preserve the bounded Firefox native-input and Chrome/Edge receipts."
+      "gap": "Chrome154.0.8037.95 and Edge154.0.4258.48 pass packed consumers and52 production workflow cases; actual Firefox157.0 passes three native-input scenarios per cohort. Safari27 remains hidden even after foreground activation; no Safari component qualification. Other OSes, current patch gaps, native Firefox workflow breadth and manual checks remain open.",
+      "nextAction": "Revisit Safari with an awake/unlocked visible desktop; acquire isolated preceding Firefox156.0.1, and extend actual-product workflow/OS coverage without replacing physical/manual review."
     },
     {
       "id": "browser-previous",
@@ -486,12 +494,13 @@
       "currentLine": "157",
       "previousLine": "156",
       "currentReferenceVersion": "157.0",
-      "previousReferenceVersion": "156.0",
+      "previousReferenceVersion": "156.0.1",
       "sources": [
         "https://www.firefox.com/en-US/firefox/157.0/releasenotes/",
-        "https://www.firefox.com/en-US/firefox/156.0/releasenotes/"
+        "https://www.firefox.com/en-US/firefox/156.0/releasenotes/",
+        "https://archive.mozilla.org/pub/firefox/releases/"
       ],
-      "note": "Release notes identify initial major releases, not guaranteed latest patch; re-resolve at acquisition."
+      "note": "October2 official archive index lists156.0 and156.0.1; highest stable previous-line patch is156.0.1. Acquisition and actual-product tests not yet run."
     },
     {
       "product": "Safari",
@@ -543,6 +552,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T03:34:37.062867+00:00",
+  "updatedAt": "2026-10-02T03:48:05.942249+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }
