@@ -202,3 +202,7 @@ GitHub-only HTML snapshots include the requested https://westbrook.github.io/en-
 ## Packed calendar consumers
 
 Local main `49e642d8f15a27922f75cf09237a5658ce65af82` qualifies three calendar helper/style entries through120 native date/range cases. See `probes/calendar-recipes/README.md` for scope and browser limits.
+
+## Packed tree consumers
+
+Local main `add3b12b53effdb4581b3a79d2407e9ddf1b4505` qualifies four tree helper/style entries through120 native interaction cases. See `probes/tree-recipes/README.md` for scope and browser limits.

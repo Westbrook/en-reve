@@ -172,3 +172,7 @@ native choice ownership, semantic composition and accessible chart data.
 The [native calendar consumer contract](docs/calendar-consumers.md) covers packed
 calendar helpers, application-owned date/range interaction, paired stylesheet
 formats, native fractional-step differences and qualification limits.
+
+The [native tree consumer contract](docs/tree-consumers.md) covers immutable keyed
+hierarchies, application-owned selection/focus, pure move proposals, abortable
+child loading and both native tree style deliveries.

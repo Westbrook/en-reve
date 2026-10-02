@@ -431,3 +431,13 @@ focus and timezone behavior are exercised from packed public imports. Native
 fractional-step differences and a WebKit CSS capability limit remain explicit.
 62/110 entries are qualified for named scenarios;48 and platform/manual/owner
 scope remain open. The historical CSS-authoring rerun stays retired, never passed.
+
+### Native tree consumers — 2026-10-02
+
+[Tree recipes](../probes/tree-recipes/README.md) add four public helper/style
+entries with120 three-engine/dual-style cases and38 Node checks. Native hierarchy,
+selection/focus, form data, move proposals and async load ownership are verified
+from packed public imports.66/110 entries now have bounded receipts;44 remain.
+This finite composition does not qualify owning-element virtualization, physical
+touch, native AT, other OSs, retail Safari, full SSR/hydration or separate-owner
+acceptance. Historical external CSS-authoring rerun remains retired, never passed.

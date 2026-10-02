@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-10-02T13:58:41.982009+00:00",
+  "sourceCommit": "add3b12b53effdb4581b3a79d2407e9ddf1b4505",
+  "previousSourceMain": "49e642d8f15a27922f75cf09237a5658ce65af82",
+  "taskPaths": [
+    "packages/primitives/README.md",
+    "packages/primitives/docs/tree-consumers.md",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/calendar-recipes/qualification-sources/49e642d8/browser-ports.mjs.txt",
+    "probes/calendar-recipes/qualification-sources/49e642d8/comprehensive.mjs.txt",
+    "probes/calendar-recipes/qualification-sources/49e642d8/comprehensive.test.mjs.txt",
+    "probes/calendar-recipes/qualification-sources/49e642d8/inventory.json.txt",
+    "probes/calendar-recipes/qualification-sources/49e642d8/inventory.test.mjs.txt",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "probes/tree-recipes/README.md",
+    "probes/tree-recipes/playwright.config.ts",
+    "probes/tree-recipes/prepare.mjs",
+    "probes/tree-recipes/recipes.html",
+    "probes/tree-recipes/recipes.spec.ts",
+    "probes/tree-recipes/recipes.ts",
+    "probes/tree-recipes/server.mjs",
+    "probes/tree-recipes/verification-20261002.json",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Four public tree helper/style entries have independent native selection, move and async loading qualification:120 browser cases,38 Node checks and129 integrity checks pass. Platform modifier evidence is bounded to macOS. Inventory66/110;44 entries and platform/manual/owner work remain. Product build unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

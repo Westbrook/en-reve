@@ -1,0 +1,1137 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T13:56:15.943264+00:00",
+  "sourceBase": "49e642d8f15a27922f75cf09237a5658ce65af82",
+  "status": "passed",
+  "scope": "Four public tree helper/style entries in an application-owned native tree.",
+  "sourceInputs": {
+    "probes/tree-recipes/recipes.ts": "9fccfa30dfad0b48fd1005fbf1436d7ed46392741084f21bdca88d2fe2d30ef7",
+    "probes/tree-recipes/recipes.html": "f8da4d6cf8eeef5107c3244edb9bfd97c1e178ecd2014d6c690bdbc4ffb0792d",
+    "probes/tree-recipes/recipes.spec.ts": "f0b6b6132f7ec9ca008d05900e8e4180f4ae6aeb2f736530986e86db74869729",
+    "probes/tree-recipes/playwright.config.ts": "3212397b51000e41867970b5d9ab1331072138496a91e19a3c4fe1c6ef080aff",
+    "probes/tree-recipes/prepare.mjs": "4f3b19041187a546b99d82fb704625817bda1ffba7dfceba91be71f943a319b1",
+    "probes/tree-recipes/server.mjs": "3df1a361b56bd5a26bba1a62eb186975abc393644c03fe0739c940b04abe4186",
+    "packages/primitives/src/interactions/tree.ts": "149c2137aec0e3276baf91cf01a5923f60b7cb8f4650003bd06f2ce200780ae6",
+    "packages/primitives/src/interactions/tree-operations.ts": "d4b6a393d702f880729a87a9ea12cc6709988e339af64ba536bc566ee7f6ce57",
+    "packages/styles/src/tree.ts": "57ba2c3259b3fc62bd071380b0045f8bd8fdcfa6879fca7d53b8204e01435122",
+    "packages/primitives/docs/tree-consumers.md": "eabdad96f93997b52abce06554a98fc252698681dddd07ea34bd7b557c385470",
+    "probes/tree-recipes/README.md": "84dfb3eed158bd509717028cf4c63b5c9b85652e608cea56448fe9108e17e9a7",
+    "tooling/testing/comprehensive.mjs": "102714f3517208585b1e121e08f5ec253a8f1257717bdd3f3a38888e97e8c1b4",
+    "tooling/testing/comprehensive.test.mjs": "70c45eaff860be29b66ddd729f48d0898c08ae366508aa6e4fda59e9447e7935",
+    "tooling/testing/browser-ports.mjs": "1b15fc6bf2d05be47ec717976b6ab1905d6994893fff56945752225131f17b58",
+    "probes/reusable-layers/inventory.json": "f7c7844d55c66e5fee65a834a3c15733b69dfc0d7093c54e3c6bc65671df6c7d",
+    "probes/reusable-layers/inventory.test.mjs": "cb9bc483904e1b97f1e50c208f7c71302a57e724889ad754eb3693aafe9d654c",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "run": "/private/tmp/en-tree-recipes-20261002-02",
+  "executionSHA256": "8c783b41f412df38280dfb8bf4aa6abc275ac869483366a2a7b8f2bdee0bd81b",
+  "reportSHA256": "4713f88823159dcc30aa3c57fb9595459d279052ae3f194c5cfa12926901ef75",
+  "stats": {
+    "startTime": "2026-10-02T13:54:14.920Z",
+    "duration": 26889.895,
+    "expected": 120,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "native tree exposes hierarchy, ordered set metadata and one keyboard entry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 105,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "click replaces, platform modifier toggles single keys and Shift ranges shrink exactly",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 292,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "keyboard focus moves independently, Space toggles and select-all excludes disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 94,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "disabled rows remain discoverable but cannot select, expand or move",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 81,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "collapse retains descendant selection and recovers descendant focus to its branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "RTL swaps branch navigation while Home and End retain preorder",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 93,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "selection survives collapse in native form data and sibling instances stay independent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 97,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "invalid replacement is atomic and canonical keys win over legacy aliases",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 78,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "move proposals preserve source order and selected ancestors subsume descendants",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 101,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "cycles, lazy destinations and no-op moves do not mutate the hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 88,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "application veto rejects a valid proposal without changing selection or hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 86,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "keyboard reordering moves one sibling and restores focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 90,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "native desktop drag drops inside a loaded branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 180,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "loading presents a child placeholder with one separate status announcement",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 96,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "failure offers retry and a later successful response populates the branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 123,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "collapsed or replaced requests are aborted and late completion cannot overwrite current data",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 162,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "invalid lazy data rolls back to the existing hierarchy and permits retry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 86,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "empty loaded branches retain their branch identity without repeat requests",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 92,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "local style pins affect only one consumer without changing row geometry on selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 119,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "narrow and forced-color layouts keep content and keyboard focus discoverable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 118,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "native tree exposes hierarchy, ordered set metadata and one keyboard entry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 770,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "click replaces, platform modifier toggles single keys and Shift ranges shrink exactly",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 421,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "keyboard focus moves independently, Space toggles and select-all excludes disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 215,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "disabled rows remain discoverable but cannot select, expand or move",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 167,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "collapse retains descendant selection and recovers descendant focus to its branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 193,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "RTL swaps branch navigation while Home and End retain preorder",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 187,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "selection survives collapse in native form data and sibling instances stay independent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 195,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "invalid replacement is atomic and canonical keys win over legacy aliases",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 171,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "move proposals preserve source order and selected ancestors subsume descendants",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "cycles, lazy destinations and no-op moves do not mutate the hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 437,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "application veto rejects a valid proposal without changing selection or hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 170,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "keyboard reordering moves one sibling and restores focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 231,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "native desktop drag drops inside a loaded branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 238,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "loading presents a child placeholder with one separate status announcement",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 192,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "failure offers retry and a later successful response populates the branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 197,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "collapsed or replaced requests are aborted and late completion cannot overwrite current data",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 241,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "invalid lazy data rolls back to the existing hierarchy and permits retry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 174,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "empty loaded branches retain their branch identity without repeat requests",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 198,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "local style pins affect only one consumer without changing row geometry on selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 200,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "narrow and forced-color layouts keep content and keyboard focus discoverable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 522,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "native tree exposes hierarchy, ordered set metadata and one keyboard entry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 341,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "click replaces, platform modifier toggles single keys and Shift ranges shrink exactly",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 425,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "keyboard focus moves independently, Space toggles and select-all excludes disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "disabled rows remain discoverable but cannot select, expand or move",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 184,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "collapse retains descendant selection and recovers descendant focus to its branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 222,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "RTL swaps branch navigation while Home and End retain preorder",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 203,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "selection survives collapse in native form data and sibling instances stay independent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "invalid replacement is atomic and canonical keys win over legacy aliases",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 184,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "move proposals preserve source order and selected ancestors subsume descendants",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "cycles, lazy destinations and no-op moves do not mutate the hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "application veto rejects a valid proposal without changing selection or hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 185,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "keyboard reordering moves one sibling and restores focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 183,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "native desktop drag drops inside a loaded branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 261,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "loading presents a child placeholder with one separate status announcement",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 194,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "failure offers retry and a later successful response populates the branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 228,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "collapsed or replaced requests are aborted and late completion cannot overwrite current data",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 241,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "invalid lazy data rolls back to the existing hierarchy and permits retry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 189,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "empty loaded branches retain their branch identity without repeat requests",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 192,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "local style pins affect only one consumer without changing row geometry on selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "narrow and forced-color layouts keep content and keyboard focus discoverable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 230,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "native tree exposes hierarchy, ordered set metadata and one keyboard entry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 88,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "click replaces, platform modifier toggles single keys and Shift ranges shrink exactly",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 298,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "keyboard focus moves independently, Space toggles and select-all excludes disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 105,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "disabled rows remain discoverable but cannot select, expand or move",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 98,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "collapse retains descendant selection and recovers descendant focus to its branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 135,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "RTL swaps branch navigation while Home and End retain preorder",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 103,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "selection survives collapse in native form data and sibling instances stay independent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 117,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "invalid replacement is atomic and canonical keys win over legacy aliases",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 77,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "move proposals preserve source order and selected ancestors subsume descendants",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 82,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "cycles, lazy destinations and no-op moves do not mutate the hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 77,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "application veto rejects a valid proposal without changing selection or hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 90,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "keyboard reordering moves one sibling and restores focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 86,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "native desktop drag drops inside a loaded branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 178,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "loading presents a child placeholder with one separate status announcement",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 83,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "failure offers retry and a later successful response populates the branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 111,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "collapsed or replaced requests are aborted and late completion cannot overwrite current data",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 155,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "invalid lazy data rolls back to the existing hierarchy and permits retry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 81,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "empty loaded branches retain their branch identity without repeat requests",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 89,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "local style pins affect only one consumer without changing row geometry on selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 114,
+      "annotations": []
+    },
+    {
+      "project": "chromium",
+      "title": "narrow and forced-color layouts keep content and keyboard focus discoverable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 117,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "native tree exposes hierarchy, ordered set metadata and one keyboard entry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 193,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "click replaces, platform modifier toggles single keys and Shift ranges shrink exactly",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 390,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "keyboard focus moves independently, Space toggles and select-all excludes disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "disabled rows remain discoverable but cannot select, expand or move",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 189,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "collapse retains descendant selection and recovers descendant focus to its branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "RTL swaps branch navigation while Home and End retain preorder",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "selection survives collapse in native form data and sibling instances stay independent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 254,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "invalid replacement is atomic and canonical keys win over legacy aliases",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 213,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "move proposals preserve source order and selected ancestors subsume descendants",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 265,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "cycles, lazy destinations and no-op moves do not mutate the hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 833,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "application veto rejects a valid proposal without changing selection or hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 292,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "keyboard reordering moves one sibling and restores focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "native desktop drag drops inside a loaded branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 305,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "loading presents a child placeholder with one separate status announcement",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 220,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "failure offers retry and a later successful response populates the branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "collapsed or replaced requests are aborted and late completion cannot overwrite current data",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 237,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "invalid lazy data rolls back to the existing hierarchy and permits retry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 200,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "empty loaded branches retain their branch identity without repeat requests",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 197,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "local style pins affect only one consumer without changing row geometry on selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 229,
+      "annotations": []
+    },
+    {
+      "project": "firefox",
+      "title": "narrow and forced-color layouts keep content and keyboard focus discoverable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 485,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "native tree exposes hierarchy, ordered set metadata and one keyboard entry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "click replaces, platform modifier toggles single keys and Shift ranges shrink exactly",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 465,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "keyboard focus moves independently, Space toggles and select-all excludes disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "disabled rows remain discoverable but cannot select, expand or move",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 189,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "collapse retains descendant selection and recovers descendant focus to its branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 241,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "RTL swaps branch navigation while Home and End retain preorder",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 231,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "selection survives collapse in native form data and sibling instances stay independent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "invalid replacement is atomic and canonical keys win over legacy aliases",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 188,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "move proposals preserve source order and selected ancestors subsume descendants",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 181,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "cycles, lazy destinations and no-op moves do not mutate the hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 180,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "application veto rejects a valid proposal without changing selection or hierarchy",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 194,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "keyboard reordering moves one sibling and restores focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 186,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "native desktop drag drops inside a loaded branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 274,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "loading presents a child placeholder with one separate status announcement",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "failure offers retry and a later successful response populates the branch",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "collapsed or replaced requests are aborted and late completion cannot overwrite current data",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 243,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "invalid lazy data rolls back to the existing hierarchy and permits retry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 187,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "empty loaded branches retain their branch identity without repeat requests",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 188,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "local style pins affect only one consumer without changing row geometry on selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 225,
+      "annotations": []
+    },
+    {
+      "project": "webkit",
+      "title": "narrow and forced-color layouts keep content and keyboard focus discoverable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 227,
+      "annotations": []
+    }
+  ],
+  "nodeControls": {
+    "passed": 38
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-RomzZjZchcICUHSDYIPN14lezrRYyxOQmvASGd0is8oIDMAJv1r7+ablaftKZnxEwSlUQlGbx8Xd8OkDM8wmOA==",
+        "shasum": "d799e14a0c4563da196e379083bead28bc123394",
+        "setup": {
+          "key": "45a5fe0fba50a6d956ada1cdb8c702e03e4b79fc13fe6720e8bd8009c9eade79",
+          "reused": false,
+          "originatingProducer": "2026-10-02T13:54:10.697Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "45a5fe0fba50a6d956ada1cdb8c702e03e4b79fc13fe6720e8bd8009c9eade79",
+          "reused": false,
+          "originatingProducer": "2026-10-02T13:54:10.697Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "45a5fe0fba50a6d956ada1cdb8c702e03e4b79fc13fe6720e8bd8009c9eade79",
+          "reused": false,
+          "originatingProducer": "2026-10-02T13:54:10.697Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/interactions/tree.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/tree-operations.d.ts",
+        "node_modules/@en-reve/styles/dist/tree.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/foundations.d.ts",
+        "node_modules/@en-reve/styles/dist/buttons.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/lit-html/directives/repeat.js",
+      "node_modules/lit/directives/repeat.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/tree.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/tree-operations.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/tree.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/node_modules/@en-reve/styles/dist/buttons.js",
+      "../en-tree-recipes-20261002-02/fixtures/tree-recipes/consumer/recipes.ts"
+    ],
+    "assets": {
+      "recipes.js": "7d4b5922b5a8ec8e623e6569b8589a680218c73134449be2c0b30bacf77230df",
+      "tree.css": "d593882eab2f15edcf25a80c53012561f1287995176a9df1109fe440b16d05c4"
+    },
+    "portableCSS": {
+      "@en-reve/styles/foundations.css": "b61646e33ed957e513aa290ac5328af54ecb145243c1768c7978a1f50d433879",
+      "@en-reve/styles/buttons.css": "729d5b1dfb69dbfccb2d693e58fa1d7c02a8d362796879de91245224941febc0",
+      "@en-reve/styles/tree.css": "3acb1d5ab3512203aa350e3b0e7ece53784b0839bd1da8023005f3bd86b3b121"
+    },
+    "sourceInputs": {
+      "probes/tree-recipes/recipes.ts": "9fccfa30dfad0b48fd1005fbf1436d7ed46392741084f21bdca88d2fe2d30ef7",
+      "probes/tree-recipes/recipes.html": "f8da4d6cf8eeef5107c3244edb9bfd97c1e178ecd2014d6c690bdbc4ffb0792d"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Native semantic and computed-style scenarios only; manual AT, native clipboard transport, SSR/hydration and full theme visual acceptance remain separate."
+    ]
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "49e642d8f15a27922f75cf09237a5658ce65af82",
+    "sourceDigest": "sha256:0d2860d3375fda2ec8bc400f096020eddb8b4d8f1980d5129a5e053abb060fd6",
+    "files": 22819
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/tree-recipes-20261002",
+  "earlierAttempts": [
+    {
+      "run": "/private/tmp/en-tree-recipes-20261002-01",
+      "status": "failed",
+      "boundary": "118 passed,2 Chromium failures: macOS Control-click invokes context menu, not selection click. Corrected to platform modifier; other-OS pointer behavior remains unverified."
+    }
+  ],
+  "limitations": [
+    "Four entries have named-scenario qualification, not every function input or owning-element behavior.",
+    "Keyboard, selection, focus, form data, drag gesture, move acceptance and asynchronous loading remain consumer-owned.",
+    "The finite composition does not qualify owning-element virtualization, physical touch/IME, native AT speech, retail Safari/other OS/device conditions, full SSR/hydration or separate-owner acceptance.",
+    "Platform modifier clicks use Command on this macOS run. Native Control-click Windows behavior is not established.",
+    "The other44 of110 public inventory entries remain pending. Historical external CSS-authoring rerun is retired, never passed."
+  ],
+  "integrityControls": {
+    "passed": 129,
+    "run": "/private/tmp/en-tree-tooling-20261002-01",
+    "executionSHA256": "83449006524236f8b72fb3b85e4564a90db233dd2dfec5cc38f0180e7766e5dd"
+  }
+}

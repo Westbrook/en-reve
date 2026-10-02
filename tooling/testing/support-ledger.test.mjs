@@ -634,10 +634,21 @@ test('presentation receipt binds native patterns, both style forms and choice SS
  assert.match(r.limitations.join(' '),/full hydration/);assert.match(r.limitations.join(' '),/other51/);
 });
 
+test('tree consumer receipt binds native interactions, async ownership and both style deliveries',async()=>{
+ const r=await json('probes/tree-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,38);assert.equal(r.stats.expected,120);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,40);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['@en-reve/styles/buttons.css','@en-reve/styles/foundations.css','@en-reve/styles/tree.css']);
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/tree-recipes/verification-20261002.json');assert.equal(rows.length,4);assert.equal(rows.filter(row=>row.delivery==='css').length,1);
+ assert.match(r.limitations.join(' '),/other44/);assert.match(r.limitations.join(' '),/Control-click Windows/);assert.match(r.limitations.join(' '),/virtualization/);
+});
+
 test('calendar consumer receipt binds date semantics, native observations and both style deliveries',async()=>{
  const r=await json('probes/calendar-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,39);assert.equal(r.stats.expected,120);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/calendar-recipes/qualification-sources/49e642d8/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,40);
  assert.equal(r.nativeFractionalStepObservations.length,6);for(const entry of r.nativeFractionalStepObservations){assert.deepEqual(entry.rows.map(r=>r.helper),[false,true,false]);assert(entry.rows.every(r=>typeof r.native==='boolean'));}
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));

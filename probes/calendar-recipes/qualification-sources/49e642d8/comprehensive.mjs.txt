@@ -8,7 +8,6 @@ import { deliveryBrowserOwners, deliveryNodeSources } from './lazy-delivery-clos
 const earlyCampaignControls=new Set(['showcases/performance/tests/campaigns.test.mjs','showcases/performance/tests/current-campaign-integration.test.mjs']);
 // Concrete current-library prerequisites. Historical cohorts remain separately named.
 const preparations = {
- 'tree-recipes': {file:'probes/tree-recipes/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_TREE_RECIPES_OUT:'$RUN/fixtures/tree-recipes'}},
  'calendar-recipes': {file:'probes/calendar-recipes/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_CALENDAR_RECIPES_OUT:'$RUN/fixtures/calendar-recipes'}},
  'collection-recipes': {file:'probes/collection-recipes/prepare.mjs',dependencies:['build:ssr'],environment:{EN_COLLECTION_RECIPES_OUT:'$RUN/fixtures/collection-recipes'}},
  'native-recipes': {file:'probes/native-recipes/prepare.mjs',dependencies:['build:elements'],environment:{EN_NATIVE_RECIPES_OUT:'$RUN/fixtures/native-recipes'}},
@@ -128,7 +127,6 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  graph.pathways['collection-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/collection-recipes/playwright.config.ts','semantic-test-types'];
  graph.pathways['native-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/native-recipes/playwright.config.ts','browser:packages/primitives/tests/content/playwright.config.ts','browser:packages/primitives/tests/navigation/playwright.config.ts','semantic-test-types'];
  graph.pathways['projection-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/projection-recipes/playwright.config.ts','semantic-test-types'];
- graph.pathways['tree-recipes']=['node:packages/primitives/tests/tree-data.test.mjs','node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/tree-recipes/playwright.config.ts','semantic-test-types'];
  graph.pathways['calendar-recipes']=['node:packages/primitives/tests/calendar.test.mjs','node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/calendar-recipes/playwright.config.ts','semantic-test-types'];
  graph.pathways['presentation-recipes']=['node:packages/primitives/tests/component-patterns.test.mjs','node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/presentation-recipes/playwright.config.ts','semantic-test-types'];
  graph.pathways['state-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/state-recipes/playwright.config.ts','semantic-test-types'];

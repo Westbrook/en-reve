@@ -227,3 +227,15 @@ receipts;48 remain, plus all platform/manual/owner scope. The native fractional
 step observation and unsupported WebKit forced-color property are retained limits,
 not waived helper assertions. No library runtime changed; the existing qualified
 production build is reused only because its source/output hashes remain identical.
+
+## Native tree consumer checkpoint
+
+[Tree recipes](../probes/tree-recipes/README.md) qualify four further entries in
+a finite application-owned native tree.120 browser cases and38 Node checks pass
+across three engines and two style deliveries. Exact range selection, keyboard
+focus, native desktop dragging, ordered move proposals, invalid moves, atomic
+hierarchy replacement, loading/retry and stale-result guards are exercised.
+The initial Control-click failures in macOS Chromium are retained; the corrected
+journey uses the platform modifier, not a claim of Windows pointer validation.
+66/110 entries have named-scenario receipts;44 and platform/manual/owner scope
+remain. Product runtime unchanged; exact qualified build remains reusable.

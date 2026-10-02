@@ -57,3 +57,8 @@ both calendar style deliveries.120 cases and39 Node checks cover application-own
 date/range interactions.62/110 entries have named-scenario qualification;48 remain.
 Native fractional steps and the tested WebKit forced-color property limit are
 explicitly separated from the helper and border-semantic assertions.
+
+The [tree recipes](../tree-recipes/README.md) add four public entries with120
+three-engine/dual-style cases and38 Node checks. Selection, movement and async
+loading remain application-owned.66/110 entries have named-scenario receipts;
+44 plus platform/manual/owner obligations remain open.

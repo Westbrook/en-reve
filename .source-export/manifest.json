@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "49e642d8f15a27922f75cf09237a5658ce65af82",
-  "exportedAt": "2026-10-02T13:36:59.141971+00:00",
+  "sourceCommit": "add3b12b53effdb4581b3a79d2407e9ddf1b4505",
+  "exportedAt": "2026-10-02T13:58:41.982009+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5591,
-  "includedBytes": 151942131,
-  "qualification": "Three public calendar helper/style entries have independent native date/range qualification:120 browser cases,39 Node checks and128 integrity checks pass. Native fractional-step observations and WebKit CSS capability limits stay explicit. Inventory62/110;48 entries and platform/manual/owner work remain. Product build unchanged.",
-  "latestUpdate": ".source-export/updates/calendar-recipes-20261002.json",
+  "includedFiles": 5606,
+  "includedBytes": 152116448,
+  "qualification": "Four public tree helper/style entries have independent native selection, move and async loading qualification:120 browser cases,38 Node checks and129 integrity checks pass. Platform modifier evidence is bounded to macOS. Inventory66/110;44 entries and platform/manual/owner work remain. Product build unchanged.",
+  "latestUpdate": ".source-export/updates/tree-recipes-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

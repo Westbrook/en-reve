@@ -215,10 +215,3 @@ test('calendar recipe pathway retains isolated preparation, declarations and bro
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/calendar-recipes/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:calendar-recipes').environment.EN_CALENDAR_RECIPES_OUT,'$RUN/fixtures/calendar-recipes');
 });
-
-test('tree recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['tree-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:tree-recipes','browser:probes/tree-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/tree-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:tree-recipes').environment.EN_TREE_RECIPES_OUT,'$RUN/fixtures/tree-recipes');
-});
