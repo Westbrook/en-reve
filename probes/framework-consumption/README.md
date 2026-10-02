@@ -107,3 +107,56 @@ retained separately; the final full run supersedes no historical receipt.
 This focused suite does not establish all components, every framework patch, physical-device or screen-reader acceptance, all SSR loading orders, or the full current-minus-one browser policy. Failures must remain visible rather than being reclassified as framework support.
 
 See the [support ledger](../../plans/support-coverage.md) for the separate current/preceding actual-product and physical/manual obligations.
+
+## Opt-in installed Chrome/Edge qualification
+
+Ordinary runs keep the three pinned engines. To add explicitly chosen Chromium-based
+**product installations**, set `EN_BROWSER_PRODUCTS` to an absolute JSON manifest:
+
+```json
+{
+  "schemaVersion": 1,
+  "products": [{
+    "name": "product-chrome",
+    "product": "Google Chrome",
+    "version": "154.0.8037.95",
+    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "distributionPath": "/Applications/Google Chrome.app",
+    "headless": true
+  }]
+}
+```
+
+The paths and version above are an acquisition example, not portable defaults.
+Read the installed app's version from its platform metadata before each run;
+choose the full application distribution directory, including runtime libraries.
+The executable must resolve inside that directory. Keep machine-specific manifests
+with the run evidence rather than committing them as shared configuration.
+
+```sh
+EN_BROWSER_PRODUCTS=/absolute/products.json \
+EN_EXECUTION_OUTPUT=/absolute/fresh/product-run \
+  tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework
+```
+
+The normal owned execution hashes complete distributions before and after the run,
+including library files and symlink targets. Any change invalidates qualification.
+Each case records the app identity, browser-reported protocol version and user
+agent separately. The user agent may hide patch versions; it is not an exact app
+identity. Profiles/contexts belong to Playwright and are temporary. No user profile,
+remote connection, global browser installation, update or downgrade is performed.
+The same six assertions per consumer run unchanged; only product identity reporting
+is added. An explicit data favicon keeps strict console checks meaningful in the
+full Chrome product, which requests a favicon unlike the bundled headless shell.
+
+The [product receipt](verification-products-20261002.json) records **210 passes**:
+42 each in installed Chrome154.0.8037.95 and Edge154.0.4258.48 (headless, macOS26.6.1
+arm64), plus42 each in the original pinned engines. Seven fresh tarball installations
+and public-type compilations passed. Full distribution hashes remained unchanged.
+The earlier126-pass receipt is preserved with its original source hashes.
+
+This qualifies these consumer contracts on those exact installations. Edge's
+installed patch predates the latest official October1 patch. It does not establish
+full current/preceding release, headed UI, physical-device, actual Firefox/Safari,
+speech or IME coverage. [Playwright's browser guidance](https://playwright.dev/docs/browsers)
+explains the distinction between branded products and its patched engines.

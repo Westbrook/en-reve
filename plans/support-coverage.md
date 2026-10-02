@@ -108,3 +108,29 @@ coverage; never transfer a result solely because a version number matches.
 current cohort manifests/locks, pin drift and honest incomplete-state accounting.
 It runs in the maintained tooling/correctness graph. These checks validate the
 ledger's consistency; they do not perform its pending browser or manual checks.
+
+## Installed Chrome/Edge acquisition — October 2
+
+The original inventory table above remains its historical observation. Chrome had
+updated from154.0.8037.93 to154.0.8037.95 before this acquisition. The separate
+[product receipt](../probes/framework-consumption/verification-products-20261002.json)
+records42 packed-consumer cases each on installed Chrome154.0.8037.95 and
+Edge154.0.4258.48, plus126 cases on the three pinned engines: **210 passed**, zero
+failed/skipped/flaky. All seven fresh package installations/type checks passed.
+Both products used isolated headless profiles on macOS26.6.1 (25G76), arm64.
+Complete app-distribution hashes, including libraries, matched before and after.
+
+`browser-current` is now **partial**. Other products, OSes/workflows, headed UI,
+previous releases and physical/manual acceptance remain open. Edge's installed
+patch is older than the official154.0.4258.53 October1 release; this result does not
+claim that newer patch. Chrome's [official154 notes](https://developer.chrome.com/release-notes/154)
+identify September22 stable, resolving the current major-line candidate that was
+unknown in the earlier inventory. Exact latest/preceding patch targets still need
+resolution at acquisition. Existing patched Firefox/WebKit results remain separate
+from actual Firefox/Safari products.
+
+The product run supersedes the earlier packed fixture as the current-source
+qualification without altering its immutable126-pass receipt. The final run also
+retains the original strict console check: an explicit fixture data favicon fixes
+Chrome's observed favicon404. Early harness attempts remain in local evidence;
+partial passes are not pooled into the final210-pass result.

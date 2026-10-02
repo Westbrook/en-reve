@@ -4,6 +4,7 @@ import { dirname, basename, resolve } from 'node:path';
 import { readdir, readFile } from 'node:fs/promises';
 import { release } from 'node:os';
 import { contentInventory, inventoryDigest } from '../evidence/setup.mjs';
+import { browserProductPaths } from './browser-products.mjs';
 
 /** Hash actual local browser distributions once per run, including WebKit libraries and Chromium's headless shell. */
 export async function executionRuntimeIdentity(root, configurations) {
@@ -24,6 +25,14 @@ export async function executionRuntimeIdentity(root, configurations) {
    const use=project.use??{};
    if(use.connectOptions)throw new Error('Remote browser binary identity requires an explicit external attestation: '+config);
    if(use.channel)throw new Error('Installed system browser channels require an explicit executable identity: '+config);
+   const product=project.metadata?.browserProduct;
+   if(product) {
+    const paths=browserProductPaths(product);
+    if(use.browserName!=='chromium'||use.launchOptions?.executablePath!==paths.executablePath||use.headless!==product.headless)
+     throw new Error('Browser product attestation does not match resolved launch options: '+config);
+    installations.set(paths.distributionPath,true);
+    continue;
+   }
    if(use.launchOptions?.executablePath)externalExecutables.add(resolve(root,use.launchOptions.executablePath));
    const browser=runner[use.browserName??'chromium'];
    if(!browser)throw new Error('Unknown browser engine: '+config);

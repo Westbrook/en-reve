@@ -134,7 +134,7 @@ try{
   }
   receipt.workers=Math.max(receipt.workers,budget);
   receipt.selections??={};receipt.selections[task.id]=resolved;
-  const runtimeKey=inventoryDigest({runner:createRequire(resolve(root,task.config)).resolve('@playwright/test/package.json'),projects:resolved.projects.map(project=>({browserName:project.use?.browserName??'chromium',channel:project.use?.channel??null,launchOptions:project.use?.launchOptions??null,connectOptions:project.use?.connectOptions??null}))});
+  const runtimeKey=inventoryDigest({runner:createRequire(resolve(root,task.config)).resolve('@playwright/test/package.json'),projects:resolved.projects.map(project=>({browserName:project.use?.browserName??'chromium',channel:project.use?.channel??null,launchOptions:project.use?.launchOptions??null,connectOptions:project.use?.connectOptions??null,browserProduct:project.metadata?.browserProduct??null}))});
   if(!runtimeBindings.has(runtimeKey)){
    try{runtimeBindings.set(runtimeKey,{config:task.config,discovery:resolved,identity:await executionRuntimeIdentity(root,[{config:task.config,discovery:resolved}])});}
    catch(error){receipt.runtimeIdentityGaps??=[];receipt.runtimeIdentityGaps.push({id:task.id,error:String(error.message)});}

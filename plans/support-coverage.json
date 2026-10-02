@@ -124,7 +124,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-packed-20261002"
+      "packedReceipt": "framework-products-20261002"
     },
     {
       "id": "react18",
@@ -141,7 +141,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-packed-20261002"
+      "packedReceipt": "framework-products-20261002"
     },
     {
       "id": "vue3",
@@ -158,7 +158,7 @@
       "sameVersionsAsHistoricalReceipt": false,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-packed-20261002"
+      "packedReceipt": "framework-products-20261002"
     },
     {
       "id": "vue2",
@@ -175,7 +175,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "historical-eol-compatibility",
       "packedQualification": "passed",
-      "packedReceipt": "framework-packed-20261002"
+      "packedReceipt": "framework-products-20261002"
     },
     {
       "id": "svelte5",
@@ -190,7 +190,7 @@
       "sameVersionsAsHistoricalReceipt": false,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-packed-20261002"
+      "packedReceipt": "framework-products-20261002"
     },
     {
       "id": "svelte4",
@@ -205,7 +205,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-packed-20261002"
+      "packedReceipt": "framework-products-20261002"
     }
   ],
   "evidence": [
@@ -250,6 +250,13 @@
       "path": "probes/framework-consumption/verification-packed-20261002.json",
       "sha256": "74bff50199dee785c22938b9b9257ea312193c0fc757a7114f64b002051bf233",
       "scope": "126 actual browser passes across seven fresh independent tarball consumers and three pinned engines; seven public type checks; object/string/boolean, authored descriptions, transactions, reference interactions and remount/disposal. Rolling actual-product and manual scope remains separate."
+    },
+    {
+      "id": "framework-products-20261002",
+      "kind": "automated-product-and-engine",
+      "path": "probes/framework-consumption/verification-products-20261002.json",
+      "sha256": "1f80da54bf9e5d90b1b294fdde2674669e1a2c493ef783bff64430ace831eacb",
+      "scope": "210 passes:42 per installed Chrome154.0.8037.95 and Edge154.0.4258.48 headless product plus pinned Chromium/Firefox/WebKit. Seven independent packed consumers/types. Exact full distributions unchanged; not complete product/manual coverage."
     }
   ],
   "conditions": [
@@ -270,7 +277,7 @@
       "status": "qualified",
       "delivery": "automated-engine",
       "evidence": [
-        "framework-packed-20261002"
+        "framework-products-20261002"
       ],
       "gap": "",
       "nextAction": "Requalify when package APIs or cohort pins change; rolling release-line policy remains tracked separately."
@@ -289,11 +296,13 @@
     {
       "id": "browser-current",
       "requirement": "Actual current stable browser products",
-      "status": "not-run",
+      "status": "partial",
       "delivery": "product",
-      "evidence": [],
-      "gap": "Installed Chrome154/Edge154/Firefox157/Safari27 are inventory only. Pinned Chromium153/Firefox155/WebKit26.6 do not certify these products.",
-      "nextAction": "Resolve exact supported products/platforms; isolate profiles and record actual distribution identity before targeted current-product acquisition. Do not drive retail Firefox/Safari through Playwright patched engines."
+      "evidence": [
+        "framework-products-20261002"
+      ],
+      "gap": "Installed macOS Chrome154.0.8037.95 and Edge154.0.4258.48 pass the packed consumer subset in headless mode. Edge latest patch, other OS/workflows, actual Firefox/Safari, headed and manual checks remain unqualified.",
+      "nextAction": "Extend product/workflow coverage with explicitly identified distributions; obtain actual Firefox/Safari and exact current/preceding targets. Do not equate the patched engine or this consumer subset with full product acceptance."
     },
     {
       "id": "browser-previous",
@@ -465,14 +474,15 @@
     {
       "product": "Google Chrome",
       "resolvedAt": "2026-10-02",
-      "currentLine": null,
-      "previousLine": null,
+      "currentLine": "154",
+      "previousLine": "153",
       "currentReferenceVersion": null,
       "previousReferenceVersion": null,
       "sources": [
-        "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop.html"
+        "https://developer.chrome.com/release-notes/154",
+        "https://chromereleases.googleblog.com/2026/09/"
       ],
-      "note": "Retrieved September1page describes152 and is insufficient to resolve October2stable. Installed154 is inventory, not a latest-release assertion."
+      "note": "Official Chrome154 release notes date stable to September22. Prior major153 is the preceding-line candidate; exact latest/preceding patches not resolved. Installed154.0.8037.95 qualified only for the new scoped consumer run. Index fetch was rate-limited; no latest-patch claim."
     },
     {
       "product": "Frameworks",
@@ -486,5 +496,5 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T02:41:58.865188+00:00"
+  "updatedAt": "2026-10-02T03:01:56.125181+00:00"
 }

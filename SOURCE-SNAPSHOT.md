@@ -66,3 +66,7 @@ Local main `fb201d1c9be7e7559c76ed77563e1e00fb565268` adds the exact support inv
 ## Independent packed framework consumers
 
 Local main `53a1502115f968c7671d127543707a8e5d98b277` qualifies public package tarballs in HTML, React18/19, Vue2/3 and Svelte4/5. See `probes/framework-consumption/verification-packed-20261002.json` and its README for exact source, outcomes and limits.
+
+## Installed browser product qualification
+
+Local main `4a229e227d3501c1206a47a1ccd6deafb55e8352` qualifies public package tarballs across all seven consumers on installed Chrome/Edge and three pinned engines. See `probes/framework-consumption/verification-products-20261002.json` and its README for exact source, outcomes and limits.

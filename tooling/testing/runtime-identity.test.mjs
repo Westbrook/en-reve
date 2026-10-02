@@ -1,12 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, rm, realpath } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { resolve } from 'node:path';
 import { executionRuntimeIdentity } from './runtime-identity.mjs';
+import { browserProductProjects } from './browser-products.mjs';
 
 test('runtime identity follows two isolated test owners without loading either test singleton', async () => {
- const root=await mkdtemp(resolve(tmpdir(),'en-runtime-owners-'));
+ const root=await realpath(await mkdtemp(resolve(tmpdir(),'en-runtime-owners-')));
  const put=async(path,value)=>{await mkdir(resolve(path,'..'),{recursive:true});await writeFile(path,value);};
  const configurations=[];
  try {
@@ -39,6 +40,25 @@ test('runtime identity follows two isolated test owners without loading either t
   await put(resolve(root,'browsers/webkit-202/browser'),'changed isolated browser');
   const changed=await executionRuntimeIdentity(root,configurations);
   assert.notEqual(changed.digest,initial.digest,'isolated browser mutations must invalidate identity');
+  const distribution=resolve(root,'Installed Product.app');
+  const executable=resolve(distribution,'Contents/MacOS/browser');
+  const library=resolve(distribution,'Contents/Frameworks/runtime.dylib');
+  await put(executable,'product executable'); await put(library,'product runtime');
+  const manifest=resolve(root,'products.json');
+  const product={name:'product-example',product:'Example Browser',version:'154.0.1.2',
+   executablePath:executable,distributionPath:distribution,headless:true};
+  const configure=async(products)=>{await put(manifest,JSON.stringify({schemaVersion:1,products}));return browserProductProjects(manifest);};
+  const projects=await configure([product]);
+  const external=[{...configurations[0],discovery:{projects}}];
+  const beforeProduct=await executionRuntimeIdentity(root,external);
+  assert(beforeProduct.files['Installed Product.app/Contents/Frameworks/runtime.dylib']);
+  assert(!Object.keys(beforeProduct.files).some(path=>path.startsWith('browsers/')),'Product identity must not stand in for a cached engine');
+  await put(library,'updated product runtime');
+  assert.notEqual((await executionRuntimeIdentity(root,external)).digest,beforeProduct.digest,'Runtime library update must invalidate the product identity');
+  await assert.rejects(executionRuntimeIdentity(root,[{...external[0],discovery:{projects:[{...projects[0],use:{...projects[0].use,headless:false}}]}}]),/does not match/);
+  for(const invalid of [[product,product],[{...product,headless:undefined}],[{...product,distributionPath:executable}],[{...product,executablePath:resolve(root,'browsers/chromium-101/browser')}],[]])
+   await assert.rejects(configure(invalid));
+  assert.deepEqual(browserProductProjects(''),[],'Ordinary runs do not add product projects');
   for(const [use,message] of [[{connectOptions:{wsEndpoint:'ws://example.invalid'}},/Remote browser/],[{channel:'chrome'},/system browser/],[{browserName:'unknown'},/Unknown browser/]])
    await assert.rejects(executionRuntimeIdentity(root,[{...configurations[0],discovery:{projects:[{use}]}}]),message);
  } finally {await rm(root,{recursive:true,force:true});}

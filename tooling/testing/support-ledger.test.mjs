@@ -48,7 +48,7 @@ test('support evidence references resolve and immutable receipts retain their ex
     assert(!item.path.startsWith('/') && !item.path.split('/').includes('..'));
     const source = await read(item.path);
     assert(item.scope.trim());
-    if (item.kind === 'automated-engine') {
+    if (['automated-engine','automated-product-and-engine'].includes(item.kind)) {
       assert.match(item.sha256, /^[a-f0-9]{64}$/);
       assert.equal(createHash('sha256').update(source).digest('hex'), item.sha256, item.id);
     } else {
@@ -98,12 +98,15 @@ test('cohort pins and locks stay separate from historical fixture results', asyn
 });
 
 test('packed framework receipt remains bound to its fixture and cohort source inputs', async () => {
-  const evidence = ledger.evidence.find(e => e.id === 'framework-packed-20261002');
+  const current = ledger.conditions.find(c => c.id === 'packed-frameworks').evidence[0];
+  const evidence = ledger.evidence.find(e => e.id === current);
   const receipt = await json(evidence.path);
   for (const [path, digest] of Object.entries(receipt.sources)) {
     assert.equal(createHash('sha256').update(await read('probes/framework-consumption/'+path)).digest('hex'), digest,
       `Requalify the packed fixture after changing ${path}`);
   }
+  for (const [path, digest] of Object.entries(receipt.toolingSources ?? {}))
+    assert.equal(createHash('sha256').update(await read(path)).digest('hex'), digest, path);
   assert.equal(Object.keys(receipt.consumers).length, 7);
   assert.equal(receipt.packages.length, 5);
   for (const consumer of Object.values(receipt.consumers)) {
@@ -111,6 +114,26 @@ test('packed framework receipt remains bound to its fixture and cohort source in
     assert.match(consumer.lockSHA256, /^[a-f0-9]{64}$/);
     assert.equal(Object.keys(consumer.installedLibraryPackages).length, 5);
   }
+});
+
+test('product qualification retains exact distributions and bounded acceptance', async () => {
+  const evidence = ledger.evidence.find(e => e.kind === 'automated-product-and-engine');
+  const receipt = await json(evidence.path);
+  assert.equal(receipt.status, 'passed');
+  assert.equal(receipt.stats.expected, 210);
+  for (const key of ['unexpected','flaky','skipped']) assert.equal(receipt.stats[key], 0);
+  assert.equal(receipt.runtimeDistributionUnchangedAfterRun, true);
+  assert.equal(receipt.products.length, 2);
+  for (const product of receipt.products) {
+    assert.equal(product.passed, 42);
+    assert.equal(product.headless, true);
+    assert.equal(product.protocolVersion, receipt.browsers[product.project]);
+    assert(product.version && product.bundleBuild && product.platformVersionSource);
+    assert(product.distributionInventoryEntries > 100);
+    assert.match(product.distributionInventorySHA256, /^[a-f0-9]{64}$/);
+  }
+  assert.equal(ledger.conditions.find(c => c.id === 'browser-current').status, 'partial');
+  assert.equal(ledger.conditions.find(c => c.id === 'browser-previous').status, 'not-run');
 });
 
 test('engine manifest and configured Playwright version agree with the support inventory', async () => {

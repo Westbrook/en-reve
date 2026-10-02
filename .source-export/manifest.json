@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "53a1502115f968c7671d127543707a8e5d98b277",
-  "exportedAt": "2026-10-02T02:44:43.768964+00:00",
+  "sourceCommit": "4a229e227d3501c1206a47a1ccd6deafb55e8352",
+  "exportedAt": "2026-10-02T03:04:21.930427+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5390,
-  "includedBytes": 144304752,
-  "qualification": "Seven fresh independent tarball consumers qualified across three pinned engines:126 browser passes,7 public type compilations,12 graph checks and99 tooling checks. Object/string/boolean bindings, slots, transactions and lifecycle remount/native-listener disposal covered. Historical receipts unchanged; actual retail releases and physical/manual coverage remain open.",
-  "latestUpdate": ".source-export/updates/packed-framework-20261002.json",
+  "includedFiles": 5393,
+  "includedBytes": 144335139,
+  "qualification": "210 passes across seven independent packed consumers and five browser subjects: installed Chrome154.0.8037.95, Edge154.0.4258.48 and three pinned engines. Seven public type checks and100 tooling checks passed. Full product distributions unchanged; broader current/preceding product and physical/manual scope remains open.",
+  "latestUpdate": ".source-export/updates/product-framework-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

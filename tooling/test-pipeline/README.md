@@ -140,3 +140,16 @@ Default broad Node cohorts stop on a native failing event and retain the interru
 Default union and integration CLI browser runs use native Playwright `--max-failures=1`, including the union discovery policy. Expected negative cases do not consume the failure budget; an unexpected case stops admission within that configuration, and partial coverage remains failed. Union `--continue-independent` preserves the owning configuration policy for deliberate full diagnostics. Standalone public gates retain their original policy. First-failure timing records native Node detection when monitored, and command completion otherwise; browser command timing is not a per-assertion notification timestamp.
 
 Scoped-registry browser runs selected through the broad or integration runner reserve a dynamic loopback port. Discovery and execution retain the same endpoint; the reservation closes immediately before the strict-port server starts. Explicit `EN_SCOPE_PORT` overrides remain authoritative and occupied ports fail without adopting or stopping another owner. Standalone fixture defaults remain unchanged.
+
+### Installed browser product runs
+
+The framework pathway accepts an opt-in `EN_BROWSER_PRODUCTS` manifest; see the
+[fixture contract](../../probes/framework-consumption/README.md#opt-in-installed-chromeedge-qualification).
+Explicit Chromium-product projects retain the default pinned-engine matrix and
+use isolated temporary profiles. Their resolved project metadata declares the
+entire application distribution; runtime identity hashes that directory, including
+supporting libraries, before and after execution. Metadata must match the actual
+executable and headless launch options. Arbitrary channels/remote connections still
+require separate identity handling and cannot masquerade as a pinned engine.
+Record the platform app version, protocol version and reduced UA separately.
+These are actual headless product results, not manual or physical-device acceptance.

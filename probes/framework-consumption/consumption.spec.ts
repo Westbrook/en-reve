@@ -1,5 +1,18 @@
 import { expect, test } from '@playwright/test';
 const consumers = ['html','react19','react18','vue3','vue2','svelte5','svelte4'];
+test.beforeEach(async ({browser,page}, testInfo) => {
+ const version=browser.version();
+ testInfo.annotations.push({type:'browser-version',description:version});
+ const product=testInfo.project.metadata.browserProduct;
+ if(product) {
+  const userAgent=await page.evaluate(()=>navigator.userAgent);
+  // Protocol and app patch versions may differ; the UA can reduce patches to 0.
+  // Full distribution hashes bind the independently observed app identity.
+  expect(version.split('.')[0], 'Product and protocol major lines disagree').toBe(product.version.split('.')[0]);
+  testInfo.annotations.push({type:'user-agent',description:userAgent});
+  testInfo.annotations.push({type:'browser-product',description:JSON.stringify(product)});
+ }
+});
 for (const consumer of consumers) {
  test.describe(consumer, () => {
   test('object and string properties render through framework bindings with authored description slots', async ({page}) => {
@@ -43,8 +56,7 @@ for (const consumer of consumers) {
    expect(await page.evaluate(()=>(window as any).fixture.clientEvents)).toEqual(['export']);
    expect(await page.evaluate(()=>document.querySelector('#client-tree')!==(window as any).detachedTree)).toBe(true);
   });
-  test('SSR shell and native controls retain identity through both hydration owners', async ({page,browser}) => {
-   test.info().annotations.push({type:'browser-version',description:browser.version()});
+  test('SSR shell and native controls retain identity through both hydration owners', async ({page}) => {
    const errors:string[]=[];
    page.on('pageerror',error=>errors.push(error.message));
    page.on('console',message=>{if(message.type()==='error') errors.push(message.text());});

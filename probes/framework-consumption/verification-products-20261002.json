@@ -1,0 +1,319 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-02T03:01:56.125181+00:00",
+  "sourceCommitAtStart": "53a1502115f968c7671d127543707a8e5d98b277",
+  "status": "passed",
+  "command": "EN_BROWSER_PRODUCTS=/absolute/products.json tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework",
+  "stats": {
+    "startTime": "2026-10-02T03:00:00.835Z",
+    "duration": 34148.669,
+    "expected": 210,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browsers": {
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "webkit": "26.6",
+    "product-chrome": "154.0.8037.95",
+    "product-edge": "154.0.4258.48"
+  },
+  "products": [
+    {
+      "product": "Google Chrome",
+      "version": "154.0.8037.95",
+      "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "distributionPath": "/Applications/Google Chrome.app",
+      "headless": true,
+      "profile": "Playwright-owned temporary profile; no user profile or remote connection",
+      "project": "product-chrome",
+      "protocolVersion": "154.0.8037.95",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+      "platformVersionSource": "Contents/Info.plist CFBundleShortVersionString",
+      "bundleBuild": "8037.95",
+      "distributionInventoryEntries": 1938,
+      "distributionInventorySHA256": "54d9cfc24f0c19576c1aaa33b22cc2a046a91c748ad34525cfa6da6c0c51daed",
+      "passed": 42,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "product": "Microsoft Edge",
+      "version": "154.0.4258.48",
+      "executablePath": "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+      "distributionPath": "/Applications/Microsoft Edge.app",
+      "headless": true,
+      "profile": "Playwright-owned temporary profile; no user profile or remote connection",
+      "project": "product-edge",
+      "protocolVersion": "154.0.4258.48",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+      "platformVersionSource": "Contents/Info.plist CFBundleShortVersionString",
+      "bundleBuild": "154.0.4258.48",
+      "distributionInventoryEntries": 2680,
+      "distributionInventorySHA256": "7369e5c83cb0ae4273b7d6430dddd4dcb6e97aaf4260ccdd1ce6be3a89e2e446",
+      "passed": 42,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "host": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "os": "macOS",
+    "version": "26.6.1",
+    "build": "25G76"
+  },
+  "rawResultSHA256": "6aaf5ab5f2c3affb4fae55ea984c7baefcd922967d54094a1fd3acfc554e2e11",
+  "preparationSHA256": "2e3d1bacc8dadc023eaa3c5083ca8f80f079be05b5a9ff75f2a8711888cc5e75",
+  "executionReceiptSHA256": "b7e011e3a47e8a65223816686b48d58996532041c9dcb54baa2a6fe373acee32",
+  "runtimeDigest": "sha256:b5fbe78c932d49413b9333576d60791eca5cc928604511d55c15b2fce70f8bf4",
+  "runtimeDistributionUnchangedAfterRun": true,
+  "sources": {
+    "build.mjs": "da3271dc0727a1469083a87737c9f3f33cb7ef67fbd48f9499c8ba20419c1f62",
+    "install.mjs": "22c2a4371e017487629ced09fe7aa34267c909aca8628e0ea39dfa679a2d8e99",
+    "fixture.mjs": "65626ca3bcebc8b6a8907300728d47e09962737a6dc394e907df1d16330c94d5",
+    "island-client.mjs": "39002613e693422cfee46c9d36f994a9a790b93eaadd90e2ac974cece054f790",
+    "server.mjs": "fc9b13c289107628bfbaf1c2ddef094101dd978dce13160512513c7b0c34976e",
+    "playwright.config.ts": "2f20d6419589f40831d22b97ef15f7b8ec13b583ba513442f00dd0da4f5a1003",
+    "consumption.spec.ts": "45436b90a124fdf48747306e5f9cade793976e3985956768167b003f08c40e50",
+    "public.types.ts": "77246fa63a79572d5bb3bda6eb1cabd62e563989de527ab3ea6cf1dabb942ca4",
+    "adapters/html.mjs": "effd886b9694e99091afcf788d8259ca3d2dd75d3027525485aea7fc7f40910b",
+    "adapters/react.mjs": "0e013224a7bc80bed1715b6d8a3f595a9df2525e4a4e3d5504e14b411f44b0e9",
+    "adapters/vue.mjs": "39c23d12bf622fa2abc86eea84710f85b784362ca9921a2a16e067204d7fa3a3",
+    "adapters/svelte.mjs": "4738b4822f786ce89b9e6dc4a7e0988fb76ce7f1cc6ef8037ed1a548e71652bb",
+    "environments/react18/package.json": "804ec8c4f0c28eac228d9feccc9df7cb814084643c9123b59a4d35dd47727d08",
+    "environments/react18/package-lock.json": "954741ca15333b68b203df978986f7bdeaea405d4f7608792e737d0f33b55472",
+    "environments/react19/package.json": "3db5086cb6daa71b9e13426a75e7c6809c2b687926ebccc878bc0e338fc26505",
+    "environments/react19/package-lock.json": "b78429552b6313b23cf2f354655d9aad02af5b34ba16c2b25b60ac14fdc31fb5",
+    "environments/vue2/package.json": "e5df75f9a61615e8a46a06e6a59bb847d5452ad7f303947095858c0d93f63872",
+    "environments/vue2/package-lock.json": "c56c52b0aac987dd17dffda7338bb1f23609bd44d62db6e412f0ae99d1e8062c",
+    "environments/vue3/package.json": "0a372eb87ed8e21477bcf2f6d2a72f94136ac775716fb0d9c555684974325e0f",
+    "environments/vue3/package-lock.json": "6e6d228dd687f7cbc736fc97ef13919705885301e2abd0ed3c6432b9848dbf8a",
+    "environments/svelte4/package.json": "8e606b2fabf276b6e5a4b9f13d4d3eef96e95db71280aa0263d10a9943b423a8",
+    "environments/svelte4/package-lock.json": "ff0069782ca10d9562f8d5d9ea5a480c19064e81361c2d95dc31c1914fbd487c",
+    "environments/svelte5/package.json": "a6240a0ff3894c8bdc225d1eea34b2851e34994d97a7783d24439b1bdd142093",
+    "environments/svelte5/package-lock.json": "5fd173c54bdd0aab3f6ab3546e6f36036f18df46af87df5c5d60147e763baf5c"
+  },
+  "toolingSources": {
+    "tooling/testing/browser-products.mjs": "9eb3663c9a9a7a64a3ee29d5be3cb60b3accdac12a731ba5b88930c65b56d5fb",
+    "tooling/testing/runtime-identity.mjs": "fd79b9d52fd381ff4bf19e81d00c947fd26976a049b96146c361cc634ff2ca03",
+    "tooling/testing/runtime-identity.test.mjs": "f8ffa44bb57f01c88289ed0020bdd49921835c17a9779cef44e6bce3ae0b7417",
+    "tooling/testing/run-public-view.mjs": "b3f5870a4a86271c719492785e2ddf694d0cec355ec464b98e6daff82c78631d"
+  },
+  "consumers": {
+    "html": {
+      "versions": {
+        "lit": "3.3.3"
+      },
+      "lock": "html/package-lock.json",
+      "lockSHA256": "5685aaa085cce1300d2b7137964bde231c34c5077a50f2bb42e60bbc98c54fed",
+      "types": "passed",
+      "assets": {
+        "html.html": "989918fd98d9a80ee90541e40c3d1ad54c331cb3b326b12da8552ba30e8842a1",
+        "html.js": "e46f8a243155608e49bad9c3e0dc338f95b3758de0fe29a17c58ff6297e23f86",
+        "html-island.js": "0923b6b3d3e125e3736edf50b5ea76cdba7b51bb5f91375b2acf7472008c0587"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "7ab0bc32cce283ac04d308055c5e3cd6e8faf7e825dc89121a3abd95039bf82d"
+    },
+    "react19": {
+      "versions": {
+        "react": "19.3.0",
+        "react-dom": "19.3.0"
+      },
+      "lock": "react19/package-lock.json",
+      "lockSHA256": "f1fa5102b1bb64870cbeb0a41521f459ec5941fc2de70ad8445e6b3b43bfb295",
+      "types": "passed",
+      "assets": {
+        "react19.html": "68e7ce05875261e4876ec029eed4505173c97932a46ed832f7156266061662b0",
+        "react19.js": "f650ffeb047cee022e1690737ee965e91bf0966be9f91457e05e3b1fac7ce62b",
+        "react19-island.js": "efde2056c5e569c4e128c930d10754e40bbf988c327ef46d532c7989fac11bb9"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "297e272b65ef782af8aff2d234741bfc13cafab905ff5ab2b93600c663c6ecde"
+    },
+    "react18": {
+      "versions": {
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+      },
+      "lock": "react18/package-lock.json",
+      "lockSHA256": "61a74975069abba1aadc02189ed0d2e5fd3bb90744da3ddc1f18da51c776b259",
+      "types": "passed",
+      "assets": {
+        "react18.html": "dae495e27a90b47625ee3cd6a68fc66408f2f5ae83cfdf68ea1392f2bfdb8153",
+        "react18.js": "3afbab287492a929fa669b174f2bdb798c0420658b13a6c905609e47c62c1956",
+        "react18-island.js": "fce0e987b89454305f383a8f3b20b054adf5d2af515215ac0503bf33e95b2924"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "f14f8beda6120cebbc261c1fd50f5c13ce0877485fc71f4b14cb83cdecc66b40"
+    },
+    "vue3": {
+      "versions": {
+        "vue": "3.5.43",
+        "@vue/server-renderer": "3.5.43"
+      },
+      "lock": "vue3/package-lock.json",
+      "lockSHA256": "67bdbf28ae0488c915db0968b95e134f501663e24ee7b266014fa57007ad5ee7",
+      "types": "passed",
+      "assets": {
+        "vue3.html": "d87388d6d12fb3deb15f7724592f5e4e2e387a2d82fcfb7d1213ad562a51ebf1",
+        "vue3.js": "18d2d91d31bc6fd100a71360f09e4647ee772f4ceba4c71a94af88d71b2b1f73",
+        "vue3-island.js": "311072d5c37a21dd4a80bdc933479ede8dc88258e394303a9451d7c1682ceaea"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "abf344ae757e2e4ae5383163e92b9ef623ccfbb203107341a1c0219a5f1979d9"
+    },
+    "vue2": {
+      "versions": {
+        "vue": "2.7.16",
+        "vue-server-renderer": "2.7.16"
+      },
+      "lock": "vue2/package-lock.json",
+      "lockSHA256": "054f3fdc4695f455d62cbc1b8239abc439913294e12e1f2bd198c65903ed554b",
+      "types": "passed",
+      "assets": {
+        "vue2.html": "29f083990b2ada176ac86519271d738c14c29a384829bb5e532bdd0d633b9749",
+        "vue2.js": "0d32ca86c4d3d37a940db4e458511822472a28c1b86daf207474b10fc3aa7562",
+        "vue2-island.js": "144491e6056114b81bcd742b36f23cde47a0a42e524d9802e5668abece81a88b"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "f9aa806ee2178bbd4b1a3e4fc0b9feb31297ee6509a6f5383aa913868f26f00c"
+    },
+    "svelte5": {
+      "versions": {
+        "svelte": "5.57.1"
+      },
+      "lock": "svelte5/package-lock.json",
+      "lockSHA256": "57341011b7ec3fa10f88c4cac9d35149437396c88aca4a2050db785e83a928fd",
+      "types": "passed",
+      "assets": {
+        "svelte5.html": "eab70c26198f1ef5d8d914494d1ecd840544a5997705a2bf74bc91d4b9c5ec55",
+        "svelte5.js": "ac93650d5dd507c2576c3810ada79cc1c23940936799c7a87bffd4ea870c2f2e",
+        "svelte5-island.js": "e5297c788b217fa5c39bd13ef61bce555556ec55971691e94f1389b6f04e1386"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "bdb4d43278ffcd5173e296d3629e67d40cd91a7e725ff4dae4091ddccb07e62a"
+    },
+    "svelte4": {
+      "versions": {
+        "svelte": "4.2.20"
+      },
+      "lock": "svelte4/package-lock.json",
+      "lockSHA256": "15122ffa95a216414986f67b7912dc27ca1366fa314781bd9508224fb64ddcda",
+      "types": "passed",
+      "assets": {
+        "svelte4.html": "ec08f8a0a972f19ee2148990e68f295e5684b17fe9f684619a32bd78b49cc9a4",
+        "svelte4.js": "fab5d4781101198986f077d2dd17ebea5e5fdda0dfe403188a0cb577146e01bc",
+        "svelte4-island.js": "b5bee17f385a79ae9531ef8b0695ff5233490019d8a61703bc7730ce5d40dbc7"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "574f499528664203cb38244b8837cee693d93670969cae4502fab819944ba348"
+    }
+  },
+  "packages": [
+    {
+      "name": "@en-reve/elements",
+      "version": "0.1.0",
+      "filename": "en-reve-elements-0.1.0.tgz",
+      "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+      "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+    },
+    {
+      "name": "@en-reve/primitives",
+      "version": "0.1.0",
+      "filename": "en-reve-primitives-0.1.0.tgz",
+      "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+      "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+    },
+    {
+      "name": "@en-reve/styles",
+      "version": "0.1.0",
+      "filename": "en-reve-styles-0.1.0.tgz",
+      "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+      "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+    },
+    {
+      "name": "@en-reve/tokens",
+      "version": "0.1.0",
+      "filename": "en-reve-tokens-0.1.0.tgz",
+      "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+      "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+    },
+    {
+      "name": "@en-reve/ssr",
+      "version": "0.1.0",
+      "filename": "en-reve-ssr-0.1.0.tgz",
+      "integrity": "sha512-bZY1o3hMgtNpbmUNeLpOLwXuo7hGDRAvaabm9iDFWtv17dFZ1DMFVVhf0M3Ru/iABFGIeJlN+BThdURklKmYpA==",
+      "shasum": "486b2b4105e404cc0ba3715ae8a2e25a071519b3"
+    }
+  ],
+  "scopes": [
+    "Seven independent installations of actual npm archives; retained per-consumer locks use portable relative archive references",
+    "Public tarball declaration compilation in each consumer, including invalid object/boolean type controls",
+    "Framework-owned object/string/boolean properties and authored description slots",
+    "Synchronous cancelable tentative changes, rollback and authoritative property writes",
+    "Real pointer and keyboard reference interactions, remounting and explicit native listener disposal",
+    "Parsed native SSR controls retain identity through library and framework hydration owners",
+    "42 complete cases per isolated installed Chrome/Edge headless product, alongside three pinned engines; full app distribution identity before/after"
+  ],
+  "limitations": [
+    "Focused consumer contracts, not full current-minus-one product/workflow/OS coverage.",
+    "Installed Edge154.0.4258.48 is older than official October1patch154.0.4258.53; not latest patch qualification.",
+    "No actual Safari/Firefox product, previous stable product, headed/manual, physical-device, speech or IME acceptance.",
+    "App versions are independently read from platform metadata. Browser protocol version and reduced UA are recorded separately; UA does not prove exact patch.",
+    "Vue2 is EOL historical compatibility; Svelte5 uses shared legacy syntax, not runes",
+    "Opaque library SSR island, not Next/Nuxt/SvelteKit or framework-generated custom-element DSD",
+    "Bundled delivery; native import-map qualification is separate",
+    "Framework/public-library consumption fixture, not all components or every application interaction"
+  ],
+  "previousAttempts": [
+    "01: macOS realpath assertion failed in identity unit test before browsers; canonical test path corrected.",
+    "02:128 passed,1 failed,2 interrupted,79 not run. Chrome favicon404; fixture declares data favicon, strict console assertion retained.",
+    "03:126 passed,1 failed,2 interrupted,81 not run. UA full-patch assumption invalid under UA reduction; corrected identity accounting.",
+    "04: full210 passed,0 failures/skips/flaky cases; seven fresh preparations/public type checks; complete distribution identities unchanged."
+  ]
+}

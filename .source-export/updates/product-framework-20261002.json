@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-10-02T03:04:21.930427+00:00",
+  "sourceCommit": "4a229e227d3501c1206a47a1ccd6deafb55e8352",
+  "previousSourceMain": "53a1502115f968c7671d127543707a8e5d98b277",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/framework-consumption/README.md",
+    "probes/framework-consumption/build.mjs",
+    "probes/framework-consumption/consumption.spec.ts",
+    "probes/framework-consumption/playwright.config.ts",
+    "probes/framework-consumption/verification-products-20261002.json",
+    "tooling/test-pipeline/README.md",
+    "tooling/testing/browser-products.mjs",
+    "tooling/testing/run-public-view.mjs",
+    "tooling/testing/runtime-identity.mjs",
+    "tooling/testing/runtime-identity.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "210 passes across seven independent packed consumers and five browser subjects: installed Chrome154.0.8037.95, Edge154.0.4258.48 and three pinned engines. Seven public type checks and100 tooling checks passed. Full product distributions unchanged; broader current/preceding product and physical/manual scope remains open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}
