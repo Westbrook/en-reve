@@ -110,3 +110,7 @@ Local main `d85cdee616e2f012379857783ba62a8297fb42b6` qualifies20 selected produ
 ## Firefox first paint and hydration qualification
 
 Local main `366469ad70261235f60cac863f3330cf34c2f581` qualifies170 first-paint, consumer and workflow cases across two Firefox releases. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Firefox accessibility and narrow-layout qualification
+
+Local main `9d57602ce0e688202f3e7374050339c585b4ba7d` qualifies44 workflow cases and16 scoped axe scans across two Firefox releases; incomplete contrast findings remain open. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

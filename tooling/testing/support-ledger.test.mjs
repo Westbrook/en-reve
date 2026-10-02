@@ -338,7 +338,7 @@ test('extracted native Firefox transport requalifies the unchanged six-scenario 
 
 test('expanded Firefox workflow evidence covers recovery, disposal, RTL and document navigation',async()=>{
  const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-recovery-20261002').path);
- for(const [path,digest] of Object.entries(receipt.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':(path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
  assert.equal(receipt.previousReceiptSHA256,createHash('sha256').update(await read(receipt.previousReceipt)).digest('hex'));
  const previous=await json(receipt.previousReceipt);
  for(const path of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(receipt.inputs[path],previous.inputs[path]);
@@ -355,7 +355,7 @@ test('expanded Firefox workflow evidence covers recovery, disposal, RTL and docu
 
 test('Firefox first paint binds current sources and isolated no-JS/hydration evidence',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-first-paint-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
  assert.deepEqual(r.stats,{passed:170,failed:0,planned:170});assert.equal(r.attempts.length,4);
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
@@ -373,4 +373,21 @@ test('Firefox changed transport requalifies all consumer and workflow cases',asy
   for(const cohort of cohorts){const cases=consumer.cases.filter(c=>c.cohort===cohort.id);assert.equal(cases.length,6);assert(cases.every(c=>c.status==='passed'));}
   const run=r.runs.workflows[label];assert.equal(run.status,'passed');assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:20,failed:0,planned:20});assert(run.cases.every(c=>c.status==='passed'));assert.equal(run.cases.find(c=>c.id==='chat-retry').draftEstablishedBeforeReply,true);
  }
+});
+
+
+test('native Firefox accessibility coverage retains exact axe scope and separate manual limits',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-accessibility-20261002').path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.axe.sources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
+ assert.deepEqual(r.stats,{passed:44,failed:0,planned:44});assert.deepEqual(r.axe.tags,['wcag2a','wcag2aa','wcag21aa','wcag22aa']);
+ const previous=await json(r.previousReceipt);for(const path of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs','probes/native-browser-products/first-paint.mjs'])assert.equal(r.inputs[path],previous.inputs[path]);
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=r.runs[label];assert.equal(run.status,'passed');assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:22,failed:0,planned:22});assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
+  const scans=run.cases.flatMap(c=>c.accessibilityScans??[]);assert.equal(scans.length,8);for(const scan of scans){assert.deepEqual(scan.violations,[]);assert.equal(scan.version,r.axe.version);assert.match(scan.sha256,/^[a-f0-9]{64}$/);assert(scan.passes>0);}
+  assert.equal(run.cases.find(c=>c.id==='workflow-accessibility').statusOwners.length,3);assert.equal(run.cases.find(c=>c.id==='workflow-accessibility').nativeMenuTriggerVerified,true);const relationships=run.cases.find(c=>c.id==='selection-rtl').popupRelationships;assert.equal(relationships.length,2);assert(relationships.every(r=>r.browserComputedListboxName==='Project'&&r.controls.every(c=>c.sameRoot&&c.visible&&c.expanded==='true')));
+  const viewports=run.cases.find(c=>c.id==='workflow-narrow-rtl').viewports;assert.equal(viewports.length,6);assert(viewports.every(v=>v.direction==='rtl'&&v.scrollWidth<=v.width+1));
+ }
+ assert(r.remaining.some(x=>/speech/.test(x)));assert(r.remaining.some(x=>/history/.test(x)));assert(r.remaining.some(x=>/physical/.test(x)));
 });

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "366469ad70261235f60cac863f3330cf34c2f581",
-  "exportedAt": "2026-10-02T05:51:03.125648+00:00",
+  "sourceCommit": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+  "exportedAt": "2026-10-02T06:04:31.075114+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5428,
-  "includedBytes": 146055951,
-  "qualification": "Actual Firefox156.0.1/157.0:10 first-paint/hydration,120 consumer and40 workflow cases pass.112 tooling checks pass. Four acquisition attempts retained including aborted cleanup. Full original accessibility/history and OS/device/manual obligations remain.",
-  "latestUpdate": ".source-export/updates/firefox-first-paint-20261002.json",
+  "includedFiles": 5430,
+  "includedBytes": 146596930,
+  "qualification": "Actual Firefox156.0.1/157.0:44 workflows pass including16 scoped axe scans, status ownership and narrow RTL editing.113 tooling checks pass. Native menu/listbox checks supplement incomplete ARIA findings; contrast/full AX/speech/manual scope remains explicit. Unchanged transport retains prior120-consumer/10-first-paint evidence.",
+  "latestUpdate": ".source-export/updates/firefox-accessibility-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

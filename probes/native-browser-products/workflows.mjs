@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {spawn,execFileSync} from 'node:child_process';
 import {mkdir,readFile,writeFile,realpath,stat} from 'node:fs/promises';
 import {resolve,join,extname} from 'node:path';
+import {createRequire} from 'node:module';
 import {createServer} from 'node:http';
 import {setTimeout as delay} from 'node:timers/promises';
 import {withMachineOwner} from '../../tooling/testing/machine-owner.mjs';
@@ -10,15 +11,16 @@ import {withExecutionOwner} from '../../tooling/testing/execution-owner.mjs';
 import {contentInventory,inventoryDigest} from '../../tooling/evidence/setup.mjs';
 import {firefox} from './firefox.mjs';
 const root=resolve(import.meta.dirname,'../..'), output=process.env.EN_EXECUTION_OUTPUT;
+const require=createRequire(import.meta.url),axePath=require.resolve('axe-core/axe.min.js'),axeSource=await readFile(axePath,'utf8');
 assert(process.platform==='darwin');assert(output?.startsWith('/'),'Absolute fresh EN_EXECUTION_OUTPUT required');await mkdir(output);
 const bundle=await realpath(process.env.EN_FIREFOX_APP??'/Applications/Firefox.app');assert(bundle.endsWith('.app'));
 const metadata=path=>JSON.parse(execFileSync('plutil',['-convert','json','-o','-',join(path,'Contents/Info.plist')],{encoding:'utf8'}));
-const receipt={schemaVersion:1,status:'running',sourceBase:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),startedAt:new Date().toISOString(),cases:[],host:{version:execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim(),build:execFileSync('sw_vers',['-buildVersion'],{encoding:'utf8'}).trim(),arch:process.arch},scope:'Native input on existing qualified production assets. Selected functional workflows, not complete Playwright parity, hydration interception, no-JS, axe, all layout/history variants, speech/IME or physical-device qualification.'};
+const receipt={schemaVersion:1,status:'running',sourceBase:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),startedAt:new Date().toISOString(),cases:[],host:{version:execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim(),build:execFileSync('sw_vers',['-buildVersion'],{encoding:'utf8'}).trim(),arch:process.arch},scope:'Native input on existing qualified production assets. Selected functional workflows, not complete Playwright parity, hydration interception, no-JS, full AX/computed descriptions, all history variants, speech/IME or physical-device qualification.'};
 const save=()=>writeFile(join(output,'result.json'),JSON.stringify(receipt,null,2)+'\n');
 const children=[];
 function child(file,args,name){const p=spawn(file,args,{stdio:['ignore','pipe','pipe']});let log='',error;p.stdout.on('data',x=>log+=x);p.stderr.on('data',x=>log+=x);p.once('error',e=>error=e);const closed=new Promise(r=>p.once('close',(code,signal)=>r({code,signal})));const item={p,closed,name,log:()=>log,error:()=>error};children.push(item);return item;}
 async function stop(item){if(item.p.exitCode===null&&item.p.signalCode===null)item.p.kill('SIGTERM');await Promise.race([item.closed,delay(5000).then(()=>{if(item.p.exitCode===null&&item.p.signalCode===null)item.p.kill('SIGKILL');})]);await item.closed;await writeFile(join(output,item.name+'.log'),item.log());}
-async function until(fn,label){let last;for(let i=0;i<100;i++){try{if(await fn())return;}catch(e){last=e;}await delay(100);}throw Error('Timed out: '+label,{cause:last});}
+async function until(fn,label){let last;const deadline=Date.now()+10000;while(Date.now()<deadline){try{if(await fn())return;}catch(e){last=e;if(/BiDi timed out|BiDi connection closed/.test(e.message))throw e;}await delay(100);}throw Error('Timed out: '+label,{cause:last});}
 // Transport's endpoint acquisition needs the returned value.
 async function ready(fn,label){let value;await until(async()=>Boolean(value=await fn()),label);return value;}
 async function identity(paths){const files=await contentInventory(root,paths,undefined,true,{includeModes:true});return {files,digest:inventoryDigest(files)};}
@@ -54,6 +56,20 @@ async function chooseProject(label){
  const input=await fill('combobox','Project',label);await checkNode(input,'e=>e.getAttribute("aria-expanded")','true');
  const option=await named('option',label),id=await browser.call(option,'e=>e.id');assert(id);
  await key('\uE015');await checkNode(input,'e=>e.getAttribute("aria-activedescendant")',id);await key('\uE007');await checkNode(input,'e=>e.value',label);await checkNode(input,'e=>e.getAttribute("aria-expanded")','false');
+}
+// Same scope and tags as the original Playwright AxeBuilder checks. Full results
+// retain incomplete findings separately; a zero-violation scan is not manual acceptance.
+async function scan(label){
+ const result=await browser.evaluate(`(async()=>{${axeSource};return await window.axe.run({include:[${JSON.stringify('#'+scene)},'.theme-controls']},{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});})()`);
+ const file=join(output,receipt.cases.at(-1).id,`axe-${label}.json`);await writeFile(file,JSON.stringify(result,null,2)+'\n');
+ (receipt.cases.at(-1).accessibilityScans??=[]).push({label,version:result.testEngine.version,file,violations:result.violations.map(r=>r.id),incomplete:result.incomplete.map(r=>r.id),passes:result.passes.length,inapplicable:result.inapplicable.length});assert.deepEqual(result.violations,[]);
+}
+async function statusOwners(){
+ const owners={sso:[['.sso-status',1,true],['output[data-sso-attempts]',1,false]],settings:[['[data-outline-details]',1,true],['#settings-command-status',1,true],['[data-settings-status]',1,true],['en-toast-region [part~="announcements"]',1,true],['en-command-palette [part~="status"]',1,false]],chat:[['[data-testid="chat-status"]',1,true],['.older-status',1,false],['en-activity-feed [part~="announcement"]',2,false],['en-composable-chat-demo [role="status"]',1,false]]}[scene];
+ const result=await browser.evaluate(`(()=>{const root=document.querySelector('#${scene}');function all(root,selector){const roots=[root];for(let i=0;i<roots.length;i++)for(const e of [roots[i],...roots[i].querySelectorAll('*')])if(e.shadowRoot)roots.push(e.shadowRoot);return [...new Set(roots.flatMap(r=>[...r.querySelectorAll(selector)]))];}const owners=${JSON.stringify(owners)};return {total:all(root,'[role="status"], output').length,owners:owners.map(([selector])=>{const split=selector.indexOf(' '),nodes=split<0?all(root,selector):all(root,selector.slice(0,split)).flatMap(host=>all(host,selector.slice(split+1)));return {selector,nodes:nodes.map(e=>({role:e.getAttribute('role')??(e.localName==='output'?'status':null),visible:e.checkVisibility()}))};})};})()`);
+ assert.equal(result.total,owners.reduce((sum,o)=>sum+o[1],0));for(let i=0;i<owners.length;i++){assert.equal(result.owners[i].nodes.length,owners[i][1]);for(const node of result.owners[i].nodes)assert.deepEqual(node,{role:'status',visible:owners[i][2]});}
+ if(scene==='settings'){await text('#settings-command-status','');await check(q('#settings-command-status')+'.getAttribute("aria-atomic")','true');}
+ (receipt.cases.at(-1).statusOwners??=[]).push({scene,source:'Authored/implicit DOM roles and native checkVisibility; not full platform AX',...result});
 }
 const cases=[
  ['sso-success','SSO keyboard provider choice submits captured account',async()=>{await open('sso');await ssoFixture();await account();await focus(await named('radio','Studio identity'));await key('\uE015');await checkNode(await named('radio','Partner identity'),'e=>e.checked',true);await press('Continue');await heading('Example sign-in complete');await text('[data-sso-attempts]','1');assert((await browser.evaluate(q('*')+'.parentElement.textContent')).includes('alex@example.test'));}],
@@ -128,7 +144,7 @@ const cases=[
    await browser.setViewport(viewport);await open('selection','?direction=rtl&density=spacious');await check('document.documentElement.dir','rtl');const scroll=await named('region','Campaign brief and project assignment');const before=await browser.call(scroll,'e=>({position:e.scrollTop,range:e.scrollHeight-e.clientHeight})');assert(before.range>0);await focus(scroll);await key('\uE00F');await until(async()=>await browser.call(scroll,'e=>e.scrollTop')>before.position,'Native PageDown scroll');await checkNode(scroll,'e=>{const s=getComputedStyle(e);return s.outlineStyle!=="none"&&parseFloat(s.outlineWidth)>0}',true);
    const input=await fill('combobox','Project','Lumen');await named('option','Lumen · Accessibility guide');await key('\uE015');await checkNode(input,'e=>Boolean(e.getAttribute("aria-activedescendant"))',true);
    const geometry=await browser.evaluate(`(()=>{const popup=${q('en-combobox')}.shadowRoot.querySelector('[part~="popup"]'),input=${q('en-combobox')}.shadowRoot.querySelector('input'),p=popup.getBoundingClientRect(),i=input.getBoundingClientRect();return {left:p.left,right:p.right,top:p.top,bottom:p.bottom,inputTop:i.top,inputBottom:i.bottom,width:document.documentElement.clientWidth,height:innerHeight,overflow:document.documentElement.scrollWidth>document.documentElement.clientWidth+1};})()`);
-   assert(!geometry.overflow);assert(geometry.left>=-1&&geometry.right<=geometry.width+1);assert(geometry.top>=-1&&geometry.bottom<=geometry.height+1);assert(geometry.bottom<=geometry.inputTop+1||geometry.top>=geometry.inputBottom-1);await checkNode(input,'e=>e.getRootNode().activeElement===e',true);await key('\uE00C');await checkNode(input,'e=>e.value','Studio North · Autumn campaign');await chooseProject('Lumen · Accessibility guide');await press('Assign brief');await text('[data-selection-submission]','Submission 1: Lumen · Accessibility guide · project=project-31');
+   assert(!geometry.overflow);assert(geometry.left>=-1&&geometry.right<=geometry.width+1);assert(geometry.top>=-1&&geometry.bottom<=geometry.height+1);assert(geometry.bottom<=geometry.inputTop+1||geometry.top>=geometry.inputBottom-1);await checkNode(input,'e=>e.getRootNode().activeElement===e',true);const controls=await browser.evaluate(`(()=>{const root=${q('en-combobox')}.shadowRoot;return [...root.querySelectorAll('input[aria-controls],button[aria-controls]')].map(e=>{const id=e.getAttribute('aria-controls'),target=e.getRootNode().getElementById(id);return {id,sameRoot:target?.getRootNode()===e.getRootNode(),role:target?.getAttribute('role'),visible:target?.checkVisibility(),expanded:e.getAttribute('aria-expanded')};});})()`);assert.equal(controls.length,2);for(const c of controls)assert.deepEqual(c,{id:'listbox',sameRoot:true,role:'listbox',visible:true,expanded:'true'});assert.equal((await browser.locateAcrossRoots('listbox','Project',q('en-combobox'))).length,1);(receipt.cases.at(-1).popupRelationships??=[]).push({width:viewport.width,controls,browserComputedListboxName:'Project'});await scan('selection-rtl-'+viewport.width);await key('\uE00C');await checkNode(input,'e=>e.value','Studio North · Autumn campaign');await chooseProject('Lumen · Accessibility guide');await press('Assign brief');await text('[data-selection-submission]','Submission 1: Lumen · Accessibility guide · project=project-31');
   }
  }],
  ['workflow-navigation','All six native workflow links preserve preview context and create separate documents',async()=>{
@@ -138,10 +154,35 @@ const cases=[
   }
  }],
 
+ ['workflow-accessibility','Original scoped accessibility scans and status owners before/after interaction',async()=>{
+  for(const id of ['sso','settings','chat']){
+   await open(id);await statusOwners();await scan(id+'-initial');
+   if(id==='sso'){await press('Continue');await check(q('[data-sso-validation]')+'===document.activeElement',true);}
+   else if(id==='settings'){const editor=await fill('spinbutton','Layer opacity Exact value','101');await press('Save settings');await checkNode(editor,'e=>e.getRootNode().activeElement===e',true);}
+   else{await chatFixture();await adjustment();await press('Preview adjustment');}
+   await scan(id+'-interaction');
+   if(id==='settings'){
+    const button=await named('button','More settings actions');await checkNode(button,'e=>({tag:e.localName,popup:e.getAttribute("aria-haspopup"),expanded:e.getAttribute("aria-expanded")})',{tag:'button',popup:'menu',expanded:'false'});await focus(button);await key('\uE007');await checkNode(button,'e=>e.getAttribute("aria-expanded")','true');await named('menu','Settings actions');await key('\uE00C');await checkNode(button,'e=>({expanded:e.getAttribute("aria-expanded"),focused:e.getRootNode().activeElement===e})',{expanded:'false',focused:true});receipt.cases.at(-1).nativeMenuTriggerVerified=true;
+   }
+  }
+ }],
+ ['workflow-narrow-rtl','Portrait and landscape RTL workflows preserve native editing without page overflow',async()=>{
+  for(const viewport of [{width:390,height:844},{width:844,height:390}]){
+   await browser.setViewport(viewport);
+   for(const id of ['sso','settings','chat']){
+    await open(id,'?direction=rtl');await check('document.documentElement.dir','rtl');await check('document.documentElement.scrollWidth<=innerWidth+1',true);
+    if(id==='sso')await fill('textbox','Workspace','Narrow studio');
+    else if(id==='settings'){await opacity('66');await text('[data-settings-current]','66% opacity · PNG · Portrait · Background included');}
+    else await fill('textbox','Message','Review this on a small screen');
+    const geometry=await browser.evaluate('({width:innerWidth,height:innerHeight,scrollWidth:document.documentElement.scrollWidth,direction:document.documentElement.dir})');assert.equal(geometry.width,viewport.width);assert.equal(geometry.height,viewport.height);assert(geometry.scrollWidth<=geometry.width+1);(receipt.cases.at(-1).viewports??=[]).push({scene:id,...geometry});
+   }
+  }
+ }],
+
 ];
 let base;
 try{await withMachineOwner(()=>withExecutionOwner(root,async()=>{
- const inputs=['dist','probes/native-browser-products/workflows.mjs','probes/native-browser-products/firefox.mjs','apps/docs/tests/workflows.spec.ts','apps/docs/tests/selection.spec.ts'];
+ const inputs=[axePath,require.resolve('axe-core/package.json'),'package-lock.json','dist','probes/native-browser-products/workflows.mjs','probes/native-browser-products/firefox.mjs','apps/docs/tests/workflows.spec.ts','apps/docs/tests/selection.spec.ts'];
  const before=await identity([bundle,...inputs]);await writeFile(join(output,'identity-before.json'),JSON.stringify(before,null,2)+'\n');receipt.identityBefore=before.digest;
  const app=metadata(bundle);receipt.product={name:'Firefox',version:app.CFBundleShortVersionString,build:app.CFBundleVersion,bundle};
  server=createServer(async(req,res)=>{try{let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);if(path==='/')path='/index.html';if(!extname(path))path+='.html';const file=resolve(root,'dist','.'+path);assert(file.startsWith(join(root,'dist')+'/'));const real=await realpath(file);assert(real.startsWith(join(root,'dist')+'/'));assert((await stat(real)).isFile());const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.woff2':'font/woff2','.png':'image/png','.jpg':'image/jpeg'}[extname(file)]??'application/octet-stream';res.setHeader('Content-Type',mime);res.end(await readFile(real));}catch{res.writeHead(404).end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));base='http://127.0.0.1:'+server.address().port;

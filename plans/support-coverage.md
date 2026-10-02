@@ -29,7 +29,7 @@ It is an evidence index, not a new browser-support promise or a completed test r
 | --- | --- | --- | --- |
 | Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
-| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |20 selected functional journeys each |Remaining workflow/hydration/layout assertions, descriptions/full AX, other OS/manual coverage |
+| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |22 selected journeys each;8 scoped axe scans each;no-JS/early-draft hydration |Remaining history/legacy-query assertions, descriptions/full AX, other OS/manual coverage |
 | Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
 
 These are scoped receipts, not complete support claims. See the dated acquisitions
@@ -353,3 +353,31 @@ The changed shared transport is freshly requalified against all120 consumer and4
 workflow cases. Earlier receipts retain historical source hashes. Remaining history,
 computed descriptions/full AX, original OS/device and manual AT/IME requirements
 remain open; these cases do not establish complete original Playwright parity.
+
+## Native Firefox accessibility and narrow layouts
+
+The [accessibility receipt](../probes/native-browser-products/verification-firefox-accessibility-20261002.json)
+records44 passes:22 workflow journeys on each actual Firefox release. Eight scoped
+axe4.13.0 scans per release use the original WCAG2A/AA,2.1AA and2.2AA tags and
+scene/theme-controls inclusion: SSO/settings/chat before and after validation or
+preview, plus the open project popup in portrait/landscape RTL. All have zero
+violations; full local scan results retain incomplete findings separately. Native
+checks additionally verify the settings trigger forwards popup/expanded state to
+its actual button, opens the named menu, and restores focus on Escape. Project
+input/trigger ID references resolve to the same visible listbox in their shadow
+root, whose browser-computed name is also checked. These targeted checks explain
+the ARIA review items without claiming full native AX or speech acceptance. Axe
+cannot determine some backgrounds under slotted labels or scrolled/clipped text;
+those contrast findings remain explicitly unverified.
+
+Status-region checks cover authored or implicit DOM roles, exact owner counts,
+native `checkVisibility()` and the empty atomic settings announcement. They do
+not claim a full platform accessibility tree or screen-reader output. Both narrow
+orientations also preserve native account, numeric and chat editing without page
+horizontal overflow. This supplements the original Chromium-only narrow test;
+physical phone/tablet coverage remains separate.
+
+The shared transport and consumer/first-paint runners are unchanged. Their prior
+120-consumer/10-first-paint qualification is retained by hash, not reported as a
+fresh run. Original history/legacy-query assertions, computed descriptions/full
+AX, other OSes and physical/manual AT/IME requirements remain outstanding.
