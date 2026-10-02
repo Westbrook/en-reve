@@ -1,11 +1,11 @@
 import { LitElement, html } from 'lit';
-import { createDraftModel } from '../../dist/state/draft.js';
-import { createValueModel } from '../../dist/state/value.js';
-import { SignalController } from '../../dist/interactions/signal-controller.js';
-import { EditingController } from '../../dist/interactions/editing-controller.js';
-import { FormController } from '../../dist/interactions/form-controller.js';
-import { RovingFocusController } from '../../dist/interactions/roving-focus.js';
-import { dispatchChange } from '../../dist/interactions/events.js';
+import { createDraftModel } from '@en-reve/primitives/state/draft.js';
+import { createValueModel } from '@en-reve/primitives/state/value.js';
+import { SignalController } from '@en-reve/primitives/interactions/signal-controller.js';
+import { EditingController } from '@en-reve/primitives/interactions/editing-controller.js';
+import { FormController } from '@en-reve/primitives/interactions/form-controller.js';
+import { RovingFocusController } from '@en-reve/primitives/interactions/roving-focus.js';
+import { dispatchChange } from '@en-reve/primitives/interactions/events.js';
 
 class EditingFixture extends LitElement {
   model = createDraftModel('saved');

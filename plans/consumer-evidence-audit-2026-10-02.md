@@ -84,3 +84,7 @@ audit. This document does not claim it complete or substitute case counts for
 assertion equivalence. Safari's visible desktop condition, other OS/device and
 manual assistive-technology/input coverage, and separate-owner review gates
 remain in [the support ledger](support-coverage.md).
+
+### Reusable-layer batch added after the audit
+
+The [packed reusable-layer fixture](../probes/reusable-layers/README.md) now runs the maintained core editing/form/focus composition from public package imports, plus a native-control/template/style recipe. All 48 browser cases pass. The source-observation table above describes the audit base; the core fixture no longer uses relative dist imports. The [exhaustive inventory](../probes/reusable-layers/inventory.json) records 12 primitive and three JavaScript style entries with bounded scenario qualification. Remaining entries, portable CSS and generated-example consumers stay open.

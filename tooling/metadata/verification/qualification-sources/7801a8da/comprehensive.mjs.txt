@@ -8,7 +8,6 @@ import { deliveryBrowserOwners, deliveryNodeSources } from './lazy-delivery-clos
 const earlyCampaignControls=new Set(['showcases/performance/tests/campaigns.test.mjs','showcases/performance/tests/current-campaign-integration.test.mjs']);
 // Concrete current-library prerequisites. Historical cohorts remain separately named.
 const preparations = {
- 'reusable-layers': {file:'probes/reusable-layers/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_REUSABLE_LAYERS_OUT:'$RUN/fixtures/reusable-layers'}},
  'consumer-contracts': {file:'probes/consumer-contracts/prepare.mjs',dependencies:['metadata','build:ssr'],environment:{EN_CONSUMER_CONTRACTS_OUT:'$RUN/fixtures/consumer-contracts'}},
  'scoped-registry': {file:'probes/scoped-registry/prepare-packed.mjs',environment:{EN_SCOPED_REGISTRY_OUT:'$RUN/fixtures/scoped-registry'}},
  'lazy-registry': {file:'probes/lazy-registry/prepare.mjs',environment:{EN_LAZY_OUT:'$RUN/fixtures/lazy-registry'}},
@@ -57,7 +56,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
    if(file==='tooling/theme-candidates/catalogue.test.mjs')continue; // Compatibility view of the same registered cases.
    if(file.includes('/portability/'))continue; // Browser-owning Node suite runs serially below.
    const dependencies=earlyCampaignControls.has(file)?[]:file.startsWith('probes/lazy-delivery/')?['build:ssr']:['acquisition-tables','reader-test-receipts','sort-coverage'].some(name=>file===`showcases/performance-results/scripts/${name}.test.mjs`)?['prepare:reader']:file.startsWith('showcases/performance-results/')||file.startsWith('tooling/testing/')||file==='tooling/integration-gates/runner.test.mjs'||file==='probes/registry-diagnostics/adapter.test.mjs'?[]:file.startsWith('packages/tokens/')?['build:tokens']:file.startsWith('packages/primitives/')?['build:primitives']:file.startsWith('packages/ssr/')?['build:ssr']:file.startsWith('packages/elements/')?['build:elements']:file.startsWith('tooling/css-authoring/')?['build:styles']:['build'];
-   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies:file==='probes/reusable-layers/inventory.test.mjs'?[]:file==='tooling/metadata/consumer-source.test.mjs'?['metadata']:dependencies,...(file==='tooling/css-authoring/compiler.test.mjs'?{nodeIsolation:'exclusive'}:{})}));
+   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies:file==='tooling/metadata/consumer-source.test.mjs'?['metadata']:dependencies,...(file==='tooling/css-authoring/compiler.test.mjs'?{nodeIsolation:'exclusive'}:{})}));
   }
   if(file.includes('config.') && source.includes('@playwright/test') && source.includes('defineConfig')) {
    const role=configurationRole(file);
@@ -117,7 +116,6 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  graph.families=workloadFamilies;
  graph.pathways.framework=browser.filter(id=>id.includes('probes/framework-consumption/'));
  graph.pathways.registry=units.filter(id=>/node:probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('consumer-types',browser.filter(id=>/probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('direct:packed-registration'));
- graph.pathways['reusable-layers']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/reusable-layers/playwright.config.ts','semantic-test-types'];
  graph.pathways['consumer-delivery']=['node:tooling/testing/comprehensive.test.mjs','direct:packed-registration','browser:probes/consumer-contracts/playwright.config.ts','semantic-test-types'];
  graph.pathways['metadata-consumer']=['node:tooling/testing/comprehensive.test.mjs','node:tooling/metadata/consumer-source.test.mjs','direct:metadata-consumer'];
  graph.pathways.hydration=browser.filter(id=>id.includes('probes/scoped-hydration/'));

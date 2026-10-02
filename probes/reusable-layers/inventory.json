@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "boundary": "Every exported primitive module and style entry is tracked. Pending does not mean unsupported. Named compositions cover only their documented scenarios; portable CSS and owning-element tests do not inherit those results.",
+  "entries": [
+    {
+      "entry": "@en-reve/primitives/interactions/anchor-navigation.js",
+      "source": "packages/primitives/src/interactions/anchor-navigation.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/breadcrumbs-projection.js",
+      "source": "packages/primitives/src/interactions/breadcrumbs-projection.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/calendar.js",
+      "source": "packages/primitives/src/interactions/calendar.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/chat-editor.js",
+      "source": "packages/primitives/src/interactions/chat-editor.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/editing-controller.js",
+      "source": "packages/primitives/src/interactions/editing-controller.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/editor-clipboard.js",
+      "source": "packages/primitives/src/interactions/editor-clipboard.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/editor-extensions.js",
+      "source": "packages/primitives/src/interactions/editor-extensions.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/events.js",
+      "source": "packages/primitives/src/interactions/events.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/file-selection.js",
+      "source": "packages/primitives/src/interactions/file-selection.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/form-children.js",
+      "source": "packages/primitives/src/interactions/form-children.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/form-controller.js",
+      "source": "packages/primitives/src/interactions/form-controller.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/optional-slot-presence.js",
+      "source": "packages/primitives/src/interactions/optional-slot-presence.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/registration.js",
+      "source": "packages/primitives/src/interactions/registration.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/roving-focus.js",
+      "source": "packages/primitives/src/interactions/roving-focus.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/scroll-into-view.js",
+      "source": "packages/primitives/src/interactions/scroll-into-view.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/selection-children.js",
+      "source": "packages/primitives/src/interactions/selection-children.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/signal-controller.js",
+      "source": "packages/primitives/src/interactions/signal-controller.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/static-styles.js",
+      "source": "packages/primitives/src/interactions/static-styles.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/table.js",
+      "source": "packages/primitives/src/interactions/table.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/toast-stack.js",
+      "source": "packages/primitives/src/interactions/toast-stack.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/tree-operations.js",
+      "source": "packages/primitives/src/interactions/tree-operations.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/tree.js",
+      "source": "packages/primitives/src/interactions/tree.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/interactions/virtual-collection.js",
+      "source": "packages/primitives/src/interactions/virtual-collection.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/collection.js",
+      "source": "packages/primitives/src/state/collection.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/disclosure.js",
+      "source": "packages/primitives/src/state/disclosure.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/state/draft.js",
+      "source": "packages/primitives/src/state/draft.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/state/interval.js",
+      "source": "packages/primitives/src/state/interval.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/overflow.js",
+      "source": "packages/primitives/src/state/overflow.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/query.js",
+      "source": "packages/primitives/src/state/query.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/selection.js",
+      "source": "packages/primitives/src/state/selection.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/state/table.js",
+      "source": "packages/primitives/src/state/table.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/token-document.js",
+      "source": "packages/primitives/src/state/token-document.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/state/value.js",
+      "source": "packages/primitives/src/state/value.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "core",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/state/virtual-collection.js",
+      "source": "packages/primitives/src/state/virtual-collection.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/breadcrumbs.js",
+      "source": "packages/primitives/src/templates/breadcrumbs.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/chart.js",
+      "source": "packages/primitives/src/templates/chart.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/content.js",
+      "source": "packages/primitives/src/templates/content.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/description.js",
+      "source": "packages/primitives/src/templates/description.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/templates/disclosure.js",
+      "source": "packages/primitives/src/templates/disclosure.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/templates/field.js",
+      "source": "packages/primitives/src/templates/field.ts",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/primitives/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/primitives/templates/navigation.js",
+      "source": "packages/primitives/src/templates/navigation.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/patterns.js",
+      "source": "packages/primitives/src/templates/patterns.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/slotted-navigation.js",
+      "source": "packages/primitives/src/templates/slotted-navigation.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/table.js",
+      "source": "packages/primitives/src/templates/table.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/primitives/templates/virtual-collection.js",
+      "source": "packages/primitives/src/templates/virtual-collection.ts",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/patterns.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/patterns.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/carousel.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/carousel.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/collaboration.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/collaboration.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/index.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/form-navigation.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/form-navigation.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/color-wheel.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/color-wheel.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/color-slider.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/color-slider.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/color-picker.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/color-picker.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/calendar.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/calendar.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/foundations.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/styles/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/styles/typography.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/styles/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/styles/buttons.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/buttons.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/links.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/links.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/radio.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/radio.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/controls.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "qualified-scenarios",
+      "composition": "recipes",
+      "contract": "packages/styles/README.md",
+      "receipt": "probes/reusable-layers/verification-20261002.json"
+    },
+    {
+      "entry": "@en-reve/styles/combobox.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/commands.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/selection.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/surfaces.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/overlays.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/feedback.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/activity.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/navigation.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/content.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/recipes.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/metadata.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/foundations.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/typography.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/controls.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/combobox.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/commands.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/selection.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/surfaces.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/overlays.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/feedback.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/activity.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/navigation.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/content.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/recipes.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/table.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/table.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/pagination.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/pagination.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/tree.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/tree.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/file-upload.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/file-upload.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/toast.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/toast.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/rich-text-editor.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/token-editor.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/chat.js",
+      "source": "packages/styles/package.json",
+      "delivery": "module",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    },
+    {
+      "entry": "@en-reve/styles/chat.css",
+      "source": "packages/styles/package.json",
+      "delivery": "css",
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
+    }
+  ]
+}

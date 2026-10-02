@@ -1,0 +1,457 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "at": "2026-10-02T08:15:43.826267+00:00",
+  "sourceBase": "7801a8daa781a78de74c69fa5f50b4b907cbb70b",
+  "pathway": "reusable-layers",
+  "command": "EN_EXECUTION_OUTPUT=<fresh> tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=reusable-layers",
+  "output": "/private/tmp/en-reusable-layers-20261002-03",
+  "stats": {
+    "startTime": "2026-10-02T08:13:42.038Z",
+    "duration": 14682.078,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium-core",
+      "title": "ordinary typing accepts input; consumer-canceled typing keeps a draft until an explicit same-value rejection",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "unrelated renders preserve native selection and a repeated mount does not duplicate requests",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "composition event sequencing preserves a native draft until a deferred authoritative write can reconcile",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "request cancellation reaches an application listener across two shadow boundaries",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "disconnect during composition keeps the draft without leaving the reconnected editor stuck composing",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "rejecting a completed composition does not suppress a later independent edit with the same text",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "roving focus skips disabled items, respects RTL and leaves native editing arrow keys alone",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "form helper submits once, mirrors native validity, honors disabled fieldsets and resets accepted data",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "an en-input author write (saved) is retained without a stale en-change",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "a composition-end en-input author write (saved) does not replay composed text",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "an en-input author write (NORMALIZED) is retained without a stale en-change",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-core",
+      "title": "a composition-end en-input author write (NORMALIZED) does not replay composed text",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "ordinary typing accepts input; consumer-canceled typing keeps a draft until an explicit same-value rejection",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "unrelated renders preserve native selection and a repeated mount does not duplicate requests",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "composition event sequencing preserves a native draft until a deferred authoritative write can reconcile",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "request cancellation reaches an application listener across two shadow boundaries",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "disconnect during composition keeps the draft without leaving the reconnected editor stuck composing",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "rejecting a completed composition does not suppress a later independent edit with the same text",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "roving focus skips disabled items, respects RTL and leaves native editing arrow keys alone",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "form helper submits once, mirrors native validity, honors disabled fieldsets and resets accepted data",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "an en-input author write (saved) is retained without a stale en-change",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "a composition-end en-input author write (saved) does not replay composed text",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "an en-input author write (NORMALIZED) is retained without a stale en-change",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-core",
+      "title": "a composition-end en-input author write (NORMALIZED) does not replay composed text",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "ordinary typing accepts input; consumer-canceled typing keeps a draft until an explicit same-value rejection",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "unrelated renders preserve native selection and a repeated mount does not duplicate requests",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "composition event sequencing preserves a native draft until a deferred authoritative write can reconcile",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "request cancellation reaches an application listener across two shadow boundaries",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "disconnect during composition keeps the draft without leaving the reconnected editor stuck composing",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "rejecting a completed composition does not suppress a later independent edit with the same text",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "roving focus skips disabled items, respects RTL and leaves native editing arrow keys alone",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "form helper submits once, mirrors native validity, honors disabled fieldsets and resets accepted data",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "an en-input author write (saved) is retained without a stale en-change",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "a composition-end en-input author write (saved) does not replay composed text",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "an en-input author write (NORMALIZED) is retained without a stale en-change",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-core",
+      "title": "a composition-end en-input author write (NORMALIZED) does not replay composed text",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-recipes",
+      "title": "field and description templates preserve the native editor through slot changes",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-recipes",
+      "title": "disclosure model and pure template retain hidden content and native drafts",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-recipes",
+      "title": "selection updates and reset preserve unrelated native editing and remain instance-local",
+      "status": "passed"
+    },
+    {
+      "project": "chromium-recipes",
+      "title": "public Lit style families honor scoped overrides and readable narrow RTL layout",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-recipes",
+      "title": "field and description templates preserve the native editor through slot changes",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-recipes",
+      "title": "disclosure model and pure template retain hidden content and native drafts",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-recipes",
+      "title": "selection updates and reset preserve unrelated native editing and remain instance-local",
+      "status": "passed"
+    },
+    {
+      "project": "firefox-recipes",
+      "title": "public Lit style families honor scoped overrides and readable narrow RTL layout",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-recipes",
+      "title": "field and description templates preserve the native editor through slot changes",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-recipes",
+      "title": "disclosure model and pure template retain hidden content and native drafts",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-recipes",
+      "title": "selection updates and reset preserve unrelated native editing and remain instance-local",
+      "status": "passed"
+    },
+    {
+      "project": "webkit-recipes",
+      "title": "public Lit style families honor scoped overrides and readable narrow RTL layout",
+      "status": "passed"
+    }
+  ],
+  "nodeControls": {
+    "tests": 17,
+    "failed": 0,
+    "passed": 17,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "topLevel": 17,
+    "suites": 0
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+        "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110",
+        "setup": {
+          "key": "f5ccc5b4493bdbb95fb72857bea6e04381fc25d735879353ff1f58a35f4066ca",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:13:38.028Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "f5ccc5b4493bdbb95fb72857bea6e04381fc25d735879353ff1f58a35f4066ca",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:13:38.028Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "f5ccc5b4493bdbb95fb72857bea6e04381fc25d735879353ff1f58a35f4066ca",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:13:38.028Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/state/draft.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/value.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/signal-controller.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/editing-controller.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/form-controller.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/roving-focus.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/disclosure.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/selection.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/field.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/description.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/disclosure.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/foundations.d.ts",
+        "node_modules/@en-reve/styles/dist/controls.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/signal-polyfill/dist/index.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/state/draft.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/state/value.js",
+      "node_modules/signal-utils/dist/subtle/reaction.ts.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/interactions/signal-controller.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/interactions/editing-controller.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/interactions/form-controller.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/interactions/roving-focus.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/core.ts",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/state/disclosure.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/state/selection.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/templates/field.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/templates/description.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/primitives/dist/templates/disclosure.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/node_modules/@en-reve/styles/dist/controls.js",
+      "../en-reusable-layers-20261002-03/fixtures/reusable-layers/consumer/recipes.ts"
+    ],
+    "assets": {
+      "core.js": "03e029baf03d68114ee4f01aac085d9a34fe90d3d8bc5f12163d9827021ca756",
+      "recipes.js": "6131a50ad66dbc4180ee13eb8a86857481c04d3a940608391f87087dc2ac1ea3",
+      "chunk-COYZIXBL.js": "771946034778e234bad4801240e376489daa1dc0808764e18e452003723ef79e"
+    },
+    "sourceInputs": {
+      "packages/primitives/tests/browser/fixture.ts": "b40f80a02efd0ddbfc52fd6c2d750ca1f5e4dfd66520ebffb396c94ff59cc3d1",
+      "packages/primitives/tests/browser/index.html": "747668ba31b3ba6f37d53db49c35ed5f7c50cebe3e7a963f667599de3af2e91a",
+      "probes/reusable-layers/recipes.ts": "0495cdba1a5db4e4c444cb95ebcf50493a47a6934162096f8d2b0100323209fa",
+      "probes/reusable-layers/recipes.html": "b42792cad7ba24964afc5642e4c4e19dcaf9b07de20bdfb7fc8010284c0bec30"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Synthetic composition tests do not qualify physical IME. Plain CSS exports, SSR and other modules remain separate."
+    ]
+  },
+  "sourceInputs": {
+    "packages/primitives/tests/browser/fixture.ts": "b40f80a02efd0ddbfc52fd6c2d750ca1f5e4dfd66520ebffb396c94ff59cc3d1",
+    "packages/primitives/tests/browser/index.html": "747668ba31b3ba6f37d53db49c35ed5f7c50cebe3e7a963f667599de3af2e91a",
+    "packages/primitives/tests/browser/primitives.spec.ts": "ce3f39adf090abd9ce1db2070cecba7fe3173dd04d22c4ab4fae628dc5586d9f",
+    "probes/reusable-layers/prepare.mjs": "01dd5846233f45aa117f0e312f24b1eee9abbcdd8a589eff06aa8c4dfa90ffc0",
+    "probes/reusable-layers/server.mjs": "3161626e841e360c99d35f3bc165a782a227f4fc49fe16d91c01fd71eb0da46a",
+    "probes/reusable-layers/playwright.config.ts": "b96b21fc81dba299f6930a373536412a05bc08e48b1b0930dae6b3e64504b7a5",
+    "probes/reusable-layers/recipes.ts": "0495cdba1a5db4e4c444cb95ebcf50493a47a6934162096f8d2b0100323209fa",
+    "probes/reusable-layers/recipes.html": "b42792cad7ba24964afc5642e4c4e19dcaf9b07de20bdfb7fc8010284c0bec30",
+    "probes/reusable-layers/recipes.spec.ts": "057dd8fcc00fed90af609f6ae080287ec80d8a2ae9390dba6ca218f692c36a13",
+    "tooling/testing/comprehensive.mjs": "dc6b19480dd21390b021f8bcd94d4b8cad6af7f9c74c4b67a779599f97278292",
+    "tooling/testing/comprehensive.test.mjs": "d43cca4a6058b304b7c88ed7d520fa1e9d501c23216f307bbfff0ce251204846",
+    "tooling/testing/browser-ports.mjs": "3b7ff1583661d7af39e538f82b65c8f87b1701b4f728b113fb5861dd214befb9",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "attempts": [
+    {
+      "output": "/private/tmp/en-reusable-layers-20261002-01",
+      "result": "failed",
+      "reason": "Fixture selection key inferred only draft; application explicitly supplies string key type."
+    },
+    {
+      "output": "/private/tmp/en-reusable-layers-20261002-02",
+      "result": "failed",
+      "reason": "45 passed; WebKit pointer-click does not imply native button focus. Disclosure keyboard focus assertion now uses explicit focus and Enter."
+    }
+  ],
+  "limitations": [
+    "12 primitive modules and 3 JavaScript style families only, limited to named alternate-composition scenarios. Other entries and portable CSS remain pending.",
+    "No delivered elements package in the bundles. Semantic typechecking has its usual separate element/SSR build prerequisites.",
+    "Synthetic composition does not qualify physical IME; no manual AT, physical-device or retail-browser result.",
+    "Generated examples remain a separate open integration requirement."
+  ],
+  "existingOwnerAndIntegrity": {
+    "output": "/private/tmp/en-reusable-layers-tooling-20261002-02",
+    "status": "passed",
+    "browser": {
+      "startTime": "2026-10-02T08:18:48.762Z",
+      "duration": 8169.646999999999,
+      "expected": 36,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "node": {
+      "tests": 121,
+      "failed": 0,
+      "passed": 121,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "topLevel": 121,
+      "suites": 0
+    },
+    "executionSHA256": "598e919b272d91b38e988c80dd1c4415c65e68426b69837a986c868b22bc86c4",
+    "sourceInputs": {
+      "tooling/testing/support-ledger.test.mjs": "b851afda4086488b1d2fd6d8b484a87a4947a858ada7b981b7bd6749e0b76964",
+      "probes/reusable-layers/inventory.json": "98086f5ad35b90538a76c7e1e29865271e804009b3f13b4b497162c5560035d9",
+      "probes/reusable-layers/inventory.test.mjs": "1c35f8c6736ffc4d4146a1429734673d5b5458939e6153a3ed7f372afe9dde63"
+    },
+    "priorAttempt": {
+      "output": "/private/tmp/en-reusable-layers-tooling-20261002-01",
+      "status": "invalidated",
+      "reason": "All assertions passed; first Vite startup created packages/primitives/node_modules and changed execution identity. Fresh run passed after setup stabilized."
+    }
+  }
+}

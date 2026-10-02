@@ -483,7 +483,11 @@ test('packed delivery qualification binds native module graphs and real SSR fail
 test('metadata discovery qualification binds generated packed source, types and real interactions',async()=>{
  const evidence=ledger.evidence.find(e=>e.id==='metadata-consumer-20261002'),r=await json(evidence.path);
  assert.equal(createHash('sha256').update(await read(evidence.path)).digest('hex'),evidence.sha256);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)) {
+  const retained=['tooling/testing/comprehensive.mjs','tooling/testing/comprehensive.test.mjs'].includes(path)
+   ?'tooling/metadata/verification/qualification-sources/7801a8da/'+path.split('/').at(-1)+'.txt':path;
+  assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);
+ }
  assert.equal(r.status,'passed');assert.equal(r.consumer.status,'passed');assert.equal(r.consumer.types.status,'passed');
  assert.deepEqual(r.stats,{browserPassed:9,generationControlsPassed:11,pathwayControlsPassed:14,unexpected:0});
  for(const [name,bytes] of Object.entries(r.generatedSource))assert.equal(createHash('sha256').update(bytes).digest('hex'),r.consumer.generated[name==='source'?'sourceSHA256':'htmlSHA256']);
@@ -518,4 +522,21 @@ test('native Firefox document evidence detects response failures and requalifies
   for(const document of documents.documents){assert(document.isolated&&document.visible&&document.unhydrated);assert.equal(document.response.status,200);assert.equal(document.response.redirectCount,0);assert.equal(document.response.requestedPath,document.path);assert.equal(document.response.finalPath,document.path);assert(document.response.navigation&&document.response.request);assert.deepEqual(document.headerLink,{name:'Workflows',href:'/workflows'});if(['sso','settings','chat'].includes(document.id)){assert.match(document.resetName,/^Reset /);assert.match(document.templateSource,/ template source$/);}}
   assert(run.cases.filter(c=>c.id.endsWith('-hydration')).every(c=>c.hydratedNamesAndIdentityVerified));
  }
+});
+
+test('packed reusable-layer receipt preserves alternate-composition bounds and unresolved exports',async()=>{
+ const r=await json('probes/reusable-layers/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.stats.expected,48);assert.equal(r.stats.unexpected,0);assert.equal(r.stats.skipped,0);
+ assert.equal(r.nodeControls.passed,17);assert.equal(r.packed.types.status,'passed');
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])for(const [composition,count] of [['core',12],['recipes',4]]){
+  const cases=r.cases.filter(c=>c.project===engine+'-'+composition);assert.equal(cases.length,count);assert(cases.every(c=>c.status==='passed'));
+ }
+ assert.deepEqual(r.packed.packages.map(p=>p.name).sort(),['@en-reve/primitives','@en-reve/styles','@en-reve/tokens']);
+ assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(r.packed.inputs.every(path=>!path.includes('/@en-reve/elements/')&&!/\/packages\/[^/]+\/src\//.test(path)));
+ const qualified=inventory.entries.filter(e=>e.qualification==='qualified-scenarios');assert.equal(qualified.length,15);
+ assert.equal(qualified.filter(e=>e.entry.startsWith('@en-reve/primitives/')).length,12);
+ assert(inventory.entries.filter(e=>e.delivery==='css').every(e=>e.qualification==='pending'));
+ assert.match(r.limitations.join(' '),/Generated examples remain/);
 });

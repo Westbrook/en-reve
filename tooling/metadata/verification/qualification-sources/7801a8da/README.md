@@ -1,0 +1,1 @@
+These exact pipeline sources are retained from local main 7801a8daa781a78de74c69fa5f50b4b907cbb70b for the immutable consumer-20261002.json metadata qualification. Later pathways are additive; the historical receipt does not claim to have executed them. Other source identities in that receipt continue to bind their original current files.

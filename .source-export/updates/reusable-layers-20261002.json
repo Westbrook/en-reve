@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-02T08:20:41.147929+00:00",
+  "sourceCommit": "9d2138dc9b32f386fce49e4fc4105cd3666678e6",
+  "previousSourceMain": "7801a8daa781a78de74c69fa5f50b4b907cbb70b",
+  "taskPaths": [
+    "packages/primitives/tests/browser/fixture.ts",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "probes/reusable-layers/playwright.config.ts",
+    "probes/reusable-layers/prepare.mjs",
+    "probes/reusable-layers/recipes.html",
+    "probes/reusable-layers/recipes.spec.ts",
+    "probes/reusable-layers/recipes.ts",
+    "probes/reusable-layers/server.mjs",
+    "probes/reusable-layers/verification-20261002.json",
+    "tooling/metadata/verification/qualification-sources/7801a8da/README.md",
+    "tooling/metadata/verification/qualification-sources/7801a8da/comprehensive.mjs.txt",
+    "tooling/metadata/verification/qualification-sources/7801a8da/comprehensive.test.mjs.txt",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Packed reusable-layer batch qualified:48 isolated browser cases,17 pathway/inventory controls,36 existing-owner cases and121 integrity checks passed. Remaining entries, generated examples and platform/manual scope preserved.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

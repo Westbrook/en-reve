@@ -152,13 +152,3 @@ test('metadata consumer owns fresh public artifacts and negative generation cont
  assert(!ids.has('build:docs'));
  assert.equal(graph.tasks.find(task=>task.id==='direct:metadata-consumer').command.at(-1),'tooling/metadata/verify-consumer.mjs');
 });
-
-
-test('reusable layers qualify alternate packed compositions without loading elements or docs',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['reusable-layers']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:reusable-layers','browser:probes/reusable-layers/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/reusable-layers/playwright.config.ts']);
- const prepare=selected.find(task=>task.id==='prepare:reusable-layers');
- assert.equal(prepare.environment.EN_REUSABLE_LAYERS_OUT,'$RUN/fixtures/reusable-layers');
- assert(!ids.has('build:docs'));
-});

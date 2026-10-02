@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "7801a8daa781a78de74c69fa5f50b4b907cbb70b",
-  "exportedAt": "2026-10-02T07:56:18.086299+00:00",
+  "sourceCommit": "9d2138dc9b32f386fce49e4fc4105cd3666678e6",
+  "exportedAt": "2026-10-02T08:20:41.147929+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5451,
-  "includedBytes": 150004104,
-  "qualification": "Metadata-driven packed consumer qualified:9 browser cases,11 generation controls,14 pathway controls and120 tooling checks passed. Remaining reusable-layer/generated-example and platform/manual scope preserved.",
-  "latestUpdate": ".source-export/updates/metadata-consumer-20261002.json",
+  "includedFiles": 5465,
+  "includedBytes": 150114574,
+  "qualification": "Packed reusable-layer batch qualified:48 isolated browser cases,17 pathway/inventory controls,36 existing-owner cases and121 integrity checks passed. Remaining entries, generated examples and platform/manual scope preserved.",
+  "latestUpdate": ".source-export/updates/reusable-layers-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

@@ -142,3 +142,7 @@ Local main `15ea0cb00c082b9f0adfa1b5c1306a6557a3072f` maps packed native ESM, fr
 ## Metadata-driven packed consumer
 
 Local main `7801a8daa781a78de74c69fa5f50b4b907cbb70b` qualifies CEM discovery, API retrieval, generated public consumer source, strict declarations and9 real browser cases.11 generation controls,14 pathway controls and120 tooling checks passed. See `tooling/metadata/README.md` and `tooling/metadata/verification/consumer-20261002.json`. Remaining layer/example and platform/manual requirements stay open.
+
+## Packed reusable layers
+
+Local main `9d2138dc9b32f386fce49e4fc4105cd3666678e6` qualifies 48 isolated packed-layer browser cases,17 pathway/inventory controls,36 existing-owner cases and121 integrity checks. See `probes/reusable-layers/README.md`. Remaining layer/example and platform/manual requirements stay open.
