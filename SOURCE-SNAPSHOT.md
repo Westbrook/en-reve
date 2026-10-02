@@ -58,3 +58,7 @@ Local main `771f0e1f1c6a24e7103f5984c84d847ccb9abe2e` keeps documented native de
 ## Nested and conditional Reference Target comparison
 
 Local main `dcb52a27dd5d0007218a006ad9c7121e7f978222` completes the planned isolated description/error and active-descendant comparison, preserving the native error-routing gap and unsupported fallback relations. Production descriptions and option relationships keep their documented semantic owner. See `probes/reference-target/README.md` for evidence and limits.
+
+## Versioned support coverage ledger
+
+Local main `fb201d1c9be7e7559c76ed77563e1e00fb565268` adds the exact support inventory, bounded historical evidence, remaining qualification conditions and tooling consistency checks. See `plans/support-coverage.md`; support qualification remains incomplete.

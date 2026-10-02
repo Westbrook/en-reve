@@ -176,6 +176,12 @@ Compare equivalent native-module and optionally optimized application delivery u
 
 Accepted coverage is broader than a single automated Cartesian product. Maintain a versioned support ledger mapping each promised condition to scenario evidence, engine versus actual product, exact versions, physical versus emulated device, and gaps. Proposed representative profiles must be labeled as proposals until selected and measured.
 
+The [October 2 support ledger](support-coverage.md) now records this mapping and
+the [machine-readable conditions](support-coverage.json). Qualification remains
+incomplete: packed framework cohorts, actual current/preceding browser products,
+and broader physical/manual checks remain distinct outstanding work. Historical
+framework pins and current manifests differ; original receipts are not rewritten.
+
 | Coverage obligation | Repeatable automation | Actual-environment evidence |
 | --- | --- | --- |
 | Android and iOS phones, portrait/landscape | Touch-oriented narrow/wide layouts, orientation transitions, viewport/scale settings | Named physical Android/iOS devices; browser, virtual keyboard, text editing, touch, zoom and AT behavior. |

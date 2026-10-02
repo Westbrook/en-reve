@@ -1,0 +1,476 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-10-02",
+  "sourceCommit": "dcb52a27dd5d0007218a006ad9c7121e7f978222",
+  "qualification": "incomplete",
+  "policy": {
+    "browserLines": "Current and immediately preceding stable product major on a named OS. Exact patches must be resolved at acquisition; installed versions are inventory, not test results. Beta/Canary/Technology Preview and bundled engines are separate subjects.",
+    "frameworkLines": "Retain existing React18/19, Vue2/3 and Svelte4/5 compatibility cohorts. Resolve the rolling supported-line policy before calling this current-minus-one coverage; Vue2 is EOL historical compatibility, not a maintained preceding release.",
+    "evidence": "A passed historical subset retains its original date, inputs and limits. No new run, source-equivalence transfer, physical-device or screen-reader acceptance is inferred from this inventory.",
+    "refresh": "Refresh this ledger when package pins or qualification receipts change and before release. Recheck official product versions at acquisition; do not silently upgrade runtime pins or rewrite historical receipts."
+  },
+  "host": {
+    "os": "macOS",
+    "version": "26.6.1",
+    "build": "25G76",
+    "architecture": "arm64",
+    "method": "sw_vers and uname -m; browser app Info.plist read without launching apps"
+  },
+  "enginePins": {
+    "playwright": "1.63.0",
+    "engines": [
+      {
+        "name": "chromium",
+        "revision": "1243",
+        "browserVersion": "153.0.8010.12"
+      },
+      {
+        "name": "chromium-headless-shell",
+        "revision": "1243",
+        "browserVersion": "153.0.8010.12"
+      },
+      {
+        "name": "firefox",
+        "revision": "1543",
+        "browserVersion": "155.0"
+      },
+      {
+        "name": "webkit",
+        "revision": "2359",
+        "browserVersion": "26.6"
+      }
+    ]
+  },
+  "installedProducts": [
+    {
+      "name": "Google Chrome",
+      "version": "154.0.8037.93",
+      "build": "8037.93",
+      "observation": "installed-only",
+      "qualification": "not-run"
+    },
+    {
+      "name": "Google Chrome Canary",
+      "version": "157.0.8082.0",
+      "build": "8082.0",
+      "observation": "installed-only",
+      "qualification": "not-run"
+    },
+    {
+      "name": "Firefox",
+      "version": "157.0",
+      "build": "15726.9.24",
+      "observation": "installed-only",
+      "qualification": "not-run"
+    },
+    {
+      "name": "Safari",
+      "version": "27.0",
+      "build": "21625.1.29.18.28",
+      "observation": "installed-only",
+      "qualification": "not-run"
+    },
+    {
+      "name": "Safari Technology Preview",
+      "version": "27.0",
+      "build": "21626.1.6.19.1",
+      "observation": "installed-only",
+      "qualification": "not-run"
+    },
+    {
+      "name": "Microsoft Edge",
+      "version": "154.0.4258.48",
+      "build": "154.0.4258.48",
+      "observation": "installed-only",
+      "qualification": "not-run"
+    }
+  ],
+  "cachedChromium": [
+    {
+      "revision": "1223",
+      "version": "148.0.7778.96",
+      "product": "Google Chrome for Testing",
+      "observation": "cached bundle Info.plist only",
+      "qualifiedAsPreviousProduct": false
+    },
+    {
+      "revision": "1234",
+      "version": "151.0.7922.34",
+      "product": "Google Chrome for Testing",
+      "observation": "cached bundle Info.plist only",
+      "qualifiedAsPreviousProduct": false
+    },
+    {
+      "revision": "1243",
+      "version": "153.0.8010.12",
+      "product": "Google Chrome for Testing",
+      "observation": "cached bundle Info.plist only",
+      "qualifiedAsPreviousProduct": false
+    }
+  ],
+  "frameworkCohorts": [
+    {
+      "id": "react19",
+      "manifest": "probes/framework-consumption/environments/react19/package.json",
+      "pinnedDependencies": {
+        "react": "19.3.0",
+        "react-dom": "19.3.0"
+      },
+      "historicalReceipt": "framework-20260913",
+      "historicalDependencies": {
+        "react": "19.3.0",
+        "react-dom": "19.3.0"
+      },
+      "sameVersionsAsHistoricalReceipt": true,
+      "classification": "maintained-compatibility-fixture",
+      "packedQualification": "not-run"
+    },
+    {
+      "id": "react18",
+      "manifest": "probes/framework-consumption/environments/react18/package.json",
+      "pinnedDependencies": {
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+      },
+      "historicalReceipt": "framework-20260913",
+      "historicalDependencies": {
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+      },
+      "sameVersionsAsHistoricalReceipt": true,
+      "classification": "maintained-compatibility-fixture",
+      "packedQualification": "not-run"
+    },
+    {
+      "id": "vue3",
+      "manifest": "probes/framework-consumption/environments/vue3/package.json",
+      "pinnedDependencies": {
+        "vue": "3.5.43",
+        "@vue/server-renderer": "3.5.43"
+      },
+      "historicalReceipt": "framework-20260913",
+      "historicalDependencies": {
+        "vue": "3.5.42",
+        "@vue/server-renderer": "3.5.42"
+      },
+      "sameVersionsAsHistoricalReceipt": false,
+      "classification": "maintained-compatibility-fixture",
+      "packedQualification": "not-run"
+    },
+    {
+      "id": "vue2",
+      "manifest": "probes/framework-consumption/environments/vue2/package.json",
+      "pinnedDependencies": {
+        "vue": "2.7.16",
+        "vue-server-renderer": "2.7.16"
+      },
+      "historicalReceipt": "framework-20260913",
+      "historicalDependencies": {
+        "vue": "2.7.16",
+        "vue-server-renderer": "2.7.16"
+      },
+      "sameVersionsAsHistoricalReceipt": true,
+      "classification": "historical-eol-compatibility",
+      "packedQualification": "not-run"
+    },
+    {
+      "id": "svelte5",
+      "manifest": "probes/framework-consumption/environments/svelte5/package.json",
+      "pinnedDependencies": {
+        "svelte": "5.57.1"
+      },
+      "historicalReceipt": "framework-20260913",
+      "historicalDependencies": {
+        "svelte": "5.57.0"
+      },
+      "sameVersionsAsHistoricalReceipt": false,
+      "classification": "maintained-compatibility-fixture",
+      "packedQualification": "not-run"
+    },
+    {
+      "id": "svelte4",
+      "manifest": "probes/framework-consumption/environments/svelte4/package.json",
+      "pinnedDependencies": {
+        "svelte": "4.2.20"
+      },
+      "historicalReceipt": "framework-20260913",
+      "historicalDependencies": {
+        "svelte": "4.2.20"
+      },
+      "sameVersionsAsHistoricalReceipt": true,
+      "classification": "maintained-compatibility-fixture",
+      "packedQualification": "not-run"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "framework-20260913",
+      "kind": "automated-engine",
+      "path": "probes/framework-consumption/verification.json",
+      "sha256": "1278d7db8d353c54e0109e3992352e80296f44ac01df9d60dccc9043d160e8cf",
+      "scope": "84 historical browser executions: workspace distributions, boolean/events/slotted select and opaque library SSR island; no packed framework/type/object/unmount qualification."
+    },
+    {
+      "id": "reference-20261002",
+      "kind": "automated-engine",
+      "path": "probes/reference-target/verification-20261002.json",
+      "sha256": "1e759c052d6997bddb3a7b3cd4588ed2583dd19b27a39f52f652b21d53710712",
+      "scope": "114 actual reference passes,5 expected failures,22 skips; explicit native/fallback semantics; Chromium AX is not speech."
+    },
+    {
+      "id": "phase5-manual",
+      "kind": "source-summary",
+      "path": "plans/scoped-registry-phase-5.md",
+      "sourceCommit": "dcb52a27dd5d0007218a006ad9c7121e7f978222",
+      "scope": "Final manual-review boundary only: real IME Chrome/Firefox/Safari, global-delivery, scoped autofill/history and focused passing retest. Earlier failures retained. Exact versions/IME/model incomplete in summary; not all-device acceptance."
+    },
+    {
+      "id": "phase6-manual",
+      "kind": "source-summary",
+      "path": "plans/scoped-registry-phase-6-results.md",
+      "sourceCommit": "dcb52a27dd5d0007218a006ad9c7121e7f978222",
+      "scope": "Targeted date-specific VoiceOver, native editing and failure/retry accepted; no physical mobile/date-specific IME claim."
+    },
+    {
+      "id": "packed-ssr",
+      "kind": "source-summary",
+      "path": "plans/scoped-followup-integration-gates.md",
+      "sourceCommit": "dcb52a27dd5d0007218a006ad9c7121e7f978222",
+      "scope": "Current-library closeout c69ee671 selected16stages,176browserpasses/13skips. Packed public types/request isolation/scoped/global consumers; not packed React/Vue/Svelte. Earlier failed integration receipts preserved."
+    }
+  ],
+  "conditions": [
+    {
+      "id": "packed-html",
+      "requirement": "Plain HTML selective public imports and packed declarations",
+      "status": "partial",
+      "delivery": "automated-engine",
+      "evidence": [
+        "packed-ssr"
+      ],
+      "gap": "Existing selective/SSR subsets do not certify the entire catalog or all reference workflows.",
+      "nextAction": "Extend existing packed consumer, retain native import-map and registration closure assertions."
+    },
+    {
+      "id": "packed-frameworks",
+      "requirement": "React/Vue/Svelte independent packed consumers",
+      "status": "partial",
+      "delivery": "automated-engine",
+      "evidence": [
+        "framework-20260913"
+      ],
+      "gap": "Current maintained Vue/Svelte pins differ from historical receipt; existing builder uses workspace library packages. Object/string props, lifecycle remount and tarball public types are not established for each cohort.",
+      "nextAction": "Use isolated installations of freshly packed packages in the maintained framework fixture; add object/string/property/event/remount/type cases; rerun all six cohorts and HTML on pinned engines."
+    },
+    {
+      "id": "packed-ssr",
+      "requirement": "Request-isolated SSR and delayed/failed hydration",
+      "status": "partial",
+      "delivery": "automated-engine",
+      "evidence": [
+        "packed-ssr"
+      ],
+      "gap": "Scope is selected consumers/delivery paths; not every framework server stack.",
+      "nextAction": "Reuse exact public packed SSR scenarios where applicable and record source/artifact identity; qualify new framework fixtures separately."
+    },
+    {
+      "id": "browser-current",
+      "requirement": "Actual current stable browser products",
+      "status": "not-run",
+      "delivery": "product",
+      "evidence": [],
+      "gap": "Installed Chrome154/Edge154/Firefox157/Safari27 are inventory only. Pinned Chromium153/Firefox155/WebKit26.6 do not certify these products.",
+      "nextAction": "Resolve exact supported products/platforms; isolate profiles and record actual distribution identity before targeted current-product acquisition. Do not drive retail Firefox/Safari through Playwright patched engines."
+    },
+    {
+      "id": "browser-previous",
+      "requirement": "Actual preceding stable browser products",
+      "status": "not-run",
+      "delivery": "product",
+      "evidence": [],
+      "gap": "Cached Chrome-for-Testing148/151/153 are not proof of preceding retail product coverage; prior Firefox/Safari products unavailable in this inventory.",
+      "nextAction": "Acquire isolated product/OS versions or manual/VM receipts for the resolved previous lines. Recheck exact versions at acquisition."
+    },
+    {
+      "id": "framework-release-lines",
+      "requirement": "Rolling current/preceding framework support",
+      "status": "partial",
+      "delivery": "automated-engine",
+      "evidence": [
+        "framework-20260913"
+      ],
+      "gap": "Historical major compatibility cohorts are not a resolved rolling-release matrix; Vue2 is EOL.",
+      "nextAction": "Declare supported release-line meaning per framework, retain legacy cohorts separately, then pin and qualify exact current/preceding versions."
+    },
+    {
+      "id": "phone-android",
+      "requirement": "Android phone portrait and landscape",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No named physical model/OS/browser/input/orientation receipt mapped here. Emulated Chromium touch does not close this.",
+      "nextAction": "Select named device; execute reference workflows with touch, keyboard where applicable, zoom and TalkBack; retain versions and both orientations."
+    },
+    {
+      "id": "phone-ios",
+      "requirement": "iPhone portrait and landscape",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No versioned physical iPhone receipt for the full support scenario set. Earlier broad user impressions are not a complete device ledger.",
+      "nextAction": "Select named iPhone/iOS/Safari; review native pickers, keyboard, safe areas, zoom and VoiceOver in both orientations."
+    },
+    {
+      "id": "tablet-android",
+      "requirement": "Android tablet portrait and landscape",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No named tablet receipt; emulated viewport is a distinct subject.",
+      "nextAction": "Record actual tablet/OS/browser/input and orientation checks."
+    },
+    {
+      "id": "tablet-ios",
+      "requirement": "iPad portrait and landscape",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No named iPad receipt; desktop WebKit is not iPadOS Safari.",
+      "nextAction": "Record actual iPad/iPadOS/Safari touch/keyboard, picker and VoiceOver checks."
+    },
+    {
+      "id": "laptop-small",
+      "requirement": "Small laptop layout and input",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No selected physical display configuration with complete workflow receipt; automated viewport checks remain separate.",
+      "nextAction": "Record display/scale/browser/zoom/input and reference interactions on a named small laptop."
+    },
+    {
+      "id": "laptop-large",
+      "requirement": "Large laptop layout and input",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No selected physical large-laptop display/input receipt.",
+      "nextAction": "Record display/scale/browser/zoom/input and reference interactions."
+    },
+    {
+      "id": "desktop-displays",
+      "requirement": "Desktop and multi-monitor transitions",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "No actual move/resize across display scaling configurations receipt.",
+      "nextAction": "Review popup/drag/resize/focus while moving between named displays; record OS/browser and scale changes."
+    },
+    {
+      "id": "connectivity",
+      "requirement": "Observed constrained real connectivity",
+      "status": "not-run",
+      "delivery": "physical",
+      "evidence": [],
+      "gap": "Network emulation and synthetic delay/failure tests do not establish actual throughput/latency conditions.",
+      "nextAction": "Capture observed connection metrics during reference workflows; retain emulation as separate reproducible evidence."
+    },
+    {
+      "id": "assistive-technology",
+      "requirement": "Actual screen reader operation and speech",
+      "status": "partial",
+      "delivery": "manual",
+      "evidence": [
+        "phase5-manual",
+        "phase6-manual"
+      ],
+      "gap": "Only scoped historical workflows accepted. Virtualized reading issues and broader component/device/AT pairings remain outstanding; AX snapshots are not human speech review.",
+      "nextAction": "Preserve accepted scope; run remaining composite and physical-device checklists with named products/versions and actual speech observations."
+    },
+    {
+      "id": "input-methods",
+      "requirement": "Real IME, autofill, history and native OS controls",
+      "status": "partial",
+      "delivery": "manual",
+      "evidence": [
+        "phase5-manual",
+        "phase6-manual"
+      ],
+      "gap": "Phase5 real IME/history/autofill accepted within its fixture; date-specific/mobile and broader combinations remain.",
+      "nextAction": "Complete date input and broader physical platform checks without reopening accepted Phase5 results or treating synthetic composition as real IME."
+    },
+    {
+      "id": "cross-root-semantics",
+      "requirement": "Native/fallback cross-root names and relationships",
+      "status": "partial",
+      "delivery": "automated-engine",
+      "evidence": [
+        "reference-20261002"
+      ],
+      "gap": "Native error AX routing and fallback error/active-descendant routing unsupported in qualified cases; manual AT separate.",
+      "nextAction": "Keep documented local semantic composition; revisit on browser/fallback capability change, not by declaring unsupported paths passed."
+    }
+  ],
+  "releaseObservations": [
+    {
+      "product": "Firefox",
+      "resolvedAt": "2026-10-02",
+      "currentLine": "157",
+      "previousLine": "156",
+      "currentReferenceVersion": "157.0",
+      "previousReferenceVersion": "156.0",
+      "sources": [
+        "https://www.firefox.com/en-US/firefox/157.0/releasenotes/",
+        "https://www.firefox.com/en-US/firefox/156.0/releasenotes/"
+      ],
+      "note": "Release notes identify initial major releases, not guaranteed latest patch; re-resolve at acquisition."
+    },
+    {
+      "product": "Safari",
+      "resolvedAt": "2026-10-02",
+      "currentLine": "27",
+      "previousLine": "26",
+      "currentReferenceVersion": "27.0",
+      "previousReferenceVersion": "26.6",
+      "sources": [
+        "https://webkit.org/blog/18325/webkit-features-for-safari-27-0/",
+        "https://developer.apple.com/documentation/safari-release-notes"
+      ],
+      "note": "Actual target builds depend on supported OS; neither installed Safari nor pinned WebKit implies complete product coverage."
+    },
+    {
+      "product": "Microsoft Edge",
+      "resolvedAt": "2026-10-02",
+      "currentLine": "154",
+      "previousLine": "153",
+      "currentReferenceVersion": "154.0.4258.53",
+      "previousReferenceVersion": null,
+      "sources": [
+        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
+      ],
+      "note": "Installed154.0.4258.48 predates October1patch. Exact previous patch not resolved; extended stable152 is a different channel."
+    },
+    {
+      "product": "Google Chrome",
+      "resolvedAt": "2026-10-02",
+      "currentLine": null,
+      "previousLine": null,
+      "currentReferenceVersion": null,
+      "previousReferenceVersion": null,
+      "sources": [
+        "https://chromereleases.googleblog.com/2026/09/stable-channel-update-for-desktop.html"
+      ],
+      "note": "Retrieved September1page describes152 and is insufficient to resolve October2stable. Installed154 is inventory, not a latest-release assertion."
+    },
+    {
+      "product": "Frameworks",
+      "resolvedAt": "2026-10-02",
+      "sources": [
+        "https://react.dev/versions",
+        "https://github.com/vuejs/core/blob/main/CHANGELOG.md",
+        "https://github.com/sveltejs/svelte/releases",
+        "https://v2.vuejs.org/eol/"
+      ],
+      "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
+    }
+  ]
+}
