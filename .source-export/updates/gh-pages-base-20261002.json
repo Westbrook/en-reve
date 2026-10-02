@@ -1,0 +1,12 @@
+{
+  "createdAt": "2026-10-02T13:15:42.082099+00:00",
+  "sourceCommit": "52c66b4bd4d93a8c71c3146dd973732a72c9df69",
+  "previousSourceMain": "71d0534abc33589ee198f1af1ad7c29200a9ea44",
+  "taskPaths": [
+    "AGENTS.md",
+    "tooling/publishing/README.md",
+    "tooling/publishing/publish-github-build.py"
+  ],
+  "qualification": "GitHub-only publication adds the requested base URL to all80 HTML heads. Isolated Git and HTML transformation controls pass, including idempotence, original artifact preservation and distinct provenance digests. Product build unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

@@ -21,9 +21,17 @@ the existing docs verification format (`status`, `inputs`, `generatedModules`,
 for publishing-tool/docs-only changes when these checks still pass; changed
 application output needs a new qualified build and receipt.
 
-The branch contains the exact build at its root, `.nojekyll`, and
+The publisher verifies the exact qualified build first, then adds
+`<base href="https://westbrook.github.io/en-reve/">` as the first item in each
+HTML document’s `<head>`. This GitHub-only transformation leaves the qualified
+local output and private Sites build untouched. It is idempotent for the same
+base and rejects missing/ambiguous heads or conflicting base tags.
+
+The branch contains that derived build at its root, `.nojekyll`, and
 `.en-reve-build.json` linking the local/GitHub source commits, receipt and build
-manifest. Its first commit is parentless, avoiding source/evidence history;
+manifest. Provenance records both `qualifiedBuildManifestSHA256` (original) and
+`buildManifestSHA256` (published), the base URL and affected HTML count.
+Its first commit is parentless, avoiding source/evidence history;
 subsequent snapshots retain `gh-pages` history through ordinary fast-forward
 pushes. An identical publication does not create a duplicate commit. The script
 uses a temporary index and refs, leaving developer checkouts and indexes alone.

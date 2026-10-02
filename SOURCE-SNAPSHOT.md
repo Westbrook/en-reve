@@ -194,3 +194,7 @@ Local main `8c3fe212837d1277091e95accaed0f800c0bd94a` qualifies five public stat
 ## Packed presentation consumers
 
 Local main `71d0534abc33589ee198f1af1ad7c29200a9ea44` qualifies fourteen public presentation entries in application-owned native compositions. See `probes/presentation-recipes/README.md` for114 packed browser cases and32 gallery regressions, exact scope and remaining obligations.
+
+## GitHub build base URL
+
+GitHub-only HTML snapshots include the requested https://westbrook.github.io/en-reve/ base. Qualified private Site output is unchanged.

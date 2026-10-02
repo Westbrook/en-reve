@@ -2,6 +2,7 @@
 """Publish a qualified static build on a separate, fast-forward-only gh-pages history."""
 import argparse
 import hashlib
+from html.parser import HTMLParser
 import json
 import os
 from pathlib import Path
@@ -16,6 +17,46 @@ def git(repo, *args, data=None, env=None):
 
 def sha256(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+
+BASE_URL = 'https://westbrook.github.io/en-reve/'
+
+
+def github_html(content):
+    """Add the GitHub-only base before any relative resources, preserving source bytes."""
+    source = content.decode('utf-8')
+
+    class HeadParser(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=False)
+            self.head_ends = []
+            self.bases = []
+            self.in_head = False
+
+        def handle_starttag(self, tag, attrs):
+            if tag == 'head':
+                line, column = self.getpos()
+                offset = sum(len(row) + 1 for row in source.split('\n')[:line - 1]) + column
+                self.head_ends.append(offset + len(self.get_starttag_text()))
+                self.in_head = True
+            elif tag == 'base':
+                self.bases.append((self.in_head, attrs))
+
+        def handle_endtag(self, tag):
+            if tag == 'head':
+                self.in_head = False
+
+    parser = HeadParser()
+    parser.feed(source)
+    if len(parser.head_ends) != 1:
+        raise ValueError('Published HTML needs exactly one explicit head.')
+    if parser.bases:
+        if parser.bases == [(True, [('href', BASE_URL)])]:
+            return content
+        raise ValueError('Conflicting existing base tag in published HTML.')
+    offset = parser.head_ends[0]
+    return (source[:offset] + f'<base href="{BASE_URL}">' + source[offset:]).encode('utf-8')
 
 
 def publish(args):
@@ -72,7 +113,8 @@ def publish(args):
             if git(repository, 'rev-parse', ref + '/build').decode().strip() != parent:
                 raise ValueError('Remote gh-pages changed during preparation; retry.')
         info = {'schemaVersion': 1, 'sourceCommit': source_commit, 'githubSourceCommit': main,
-                'buildFiles': len(files), 'buildManifestSHA256': digest,
+                'buildFiles': len(files), 'qualifiedBuildManifestSHA256': digest,
+                'baseURL': BASE_URL,
                 'qualificationReceiptSHA256': sha256(args.receipt)}
         with tempfile.TemporaryDirectory(prefix='en-github-build-') as directory:
             env = dict(os.environ, GIT_INDEX_FILE=str(Path(directory) / 'index'))
@@ -83,13 +125,21 @@ def publish(args):
                 blob = git(repository, 'hash-object', '-w', '--stdin', data=content).decode().strip()
                 entries.append(f'100644 {blob}\t{name}\0'.encode())
 
+            published_files = {}
+            html_files = 0
             for name in files:
                 content = (build / name).read_bytes()
                 if hashlib.sha256(content).hexdigest() != files[name]:
                     raise ValueError(f'Build changed during snapshot: {name}')
+                if Path(name).suffix.lower() in {'.html', '.htm'}:
+                    content = github_html(content)
+                    html_files += 1
+                published_files[name] = hashlib.sha256(content).hexdigest()
                 add(name, content)
             if '.nojekyll' not in files:
                 add('.nojekyll', b'')
+            info['htmlFilesWithBase'] = html_files
+            info['buildManifestSHA256'] = hashlib.sha256(json.dumps(published_files, sort_keys=True).encode()).hexdigest()
             add('.en-reve-build.json', (json.dumps(info, indent=2) + '\n').encode())
             git(repository, 'update-index', '-z', '--index-info', data=b''.join(entries), env=env)
             tree = git(repository, 'write-tree', env=env).decode().strip()
