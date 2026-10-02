@@ -28,7 +28,6 @@ const direct = [
  ['portable','packages/tokens/test/portability/portability.test.mjs',[], 'node-browser'],
  ['paired-css','packages/tokens/test/paired-browser/verify.mjs',[],'custom-browser'],
  ['packed-registration','tooling/registration/verify-packed.mjs',[],'custom-browser'],
- ['metadata-consumer','tooling/metadata/verify-consumer.mjs',[],'custom-browser'],
  ['sticker-sheet','tooling/sticker-sheet/verify.mjs',[],'built-browser'],
  ['highlighting-production','tooling/highlighting/verify.mjs',[],'built-browser'],
  ['highlighting-development','tooling/highlighting/verify.mjs',[],'development-browser'],
@@ -56,7 +55,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
    if(file==='tooling/theme-candidates/catalogue.test.mjs')continue; // Compatibility view of the same registered cases.
    if(file.includes('/portability/'))continue; // Browser-owning Node suite runs serially below.
    const dependencies=earlyCampaignControls.has(file)?[]:file.startsWith('probes/lazy-delivery/')?['build:ssr']:['acquisition-tables','reader-test-receipts','sort-coverage'].some(name=>file===`showcases/performance-results/scripts/${name}.test.mjs`)?['prepare:reader']:file.startsWith('showcases/performance-results/')||file.startsWith('tooling/testing/')||file==='tooling/integration-gates/runner.test.mjs'||file==='probes/registry-diagnostics/adapter.test.mjs'?[]:file.startsWith('packages/tokens/')?['build:tokens']:file.startsWith('packages/primitives/')?['build:primitives']:file.startsWith('packages/ssr/')?['build:ssr']:file.startsWith('packages/elements/')?['build:elements']:file.startsWith('tooling/css-authoring/')?['build:styles']:['build'];
-   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies:file==='tooling/metadata/consumer-source.test.mjs'?['metadata']:dependencies,...(file==='tooling/css-authoring/compiler.test.mjs'?{nodeIsolation:'exclusive'}:{})}));
+   units.push(add({id:`node:${file}`,kind:'node',command:[node,'--test','--test-reporter=tap',file],assertionSources:[file],dependencies,...(file==='tooling/css-authoring/compiler.test.mjs'?{nodeIsolation:'exclusive'}:{})}));
   }
   if(file.includes('config.') && source.includes('@playwright/test') && source.includes('defineConfig')) {
    const role=configurationRole(file);
@@ -85,7 +84,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  add({id:'prepare:framework',kind:'producer',command:[node,'probes/framework-consumption/build.mjs'],dependencies:['install:framework','build:ssr'],environment:{EN_FRAMEWORK_OUT:'$RUN/fixtures/framework'}});
  add({id:'prepare:reader',kind:'producer',command:[npm,'run','build','--prefix','showcases/performance-results'],dependencies:[]});
  add({id:'prepare:candidates',kind:'producer',command:[node,'tooling/testing/prepare-candidates.mjs','$RUN/fixtures/candidates'],dependencies:['build']});
- for(const [name,file,args,kind='check'] of direct)checks.push(add({id:`direct:${name}`,kind,command:[node,...(kind==='node-browser'?['--test','--test-reporter=tap']:[]),file,...args],dependencies:name==='metadata-consumer'?['metadata']:name==='packed-registration'?['metadata','build:ssr']:name.startsWith('candidate-')?['prepare:candidates']:['build'],assertionSources:[file]}));
+ for(const [name,file,args,kind='check'] of direct)checks.push(add({id:`direct:${name}`,kind,command:[node,...(kind==='node-browser'?['--test','--test-reporter=tap']:[]),file,...args],dependencies:name==='packed-registration'?['metadata','build:ssr']:name.startsWith('candidate-')?['prepare:candidates']:['build'],assertionSources:[file]}));
  for(const name of ['view','en-reve-main','spectrum-gen2','calendar-variants'])checks.push(add({id:`direct:reader-${name}`,kind:'reader-browser',command:[node,`showcases/performance-results/scripts/verify-${name}.mjs`],dependencies:['browser:showcases/performance-results/playwright.config.js'],assertionSources:[`showcases/performance-results/scripts/verify-${name}.mjs`]}));
  checks.push(add({id:'styles-check',kind:'types',command:[npm,'run','check','-w','@en-reve/styles'],dependencies:['build:tokens'],assertionSources:['packages/styles/tsconfig.json']}));
  checks.push(add({id:'consumer-types',kind:'types',command:[node,'tooling/test-pipeline/consumer-types.mjs'],dependencies:['build:ssr']}));
@@ -117,7 +116,6 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  graph.pathways.framework=browser.filter(id=>id.includes('probes/framework-consumption/'));
  graph.pathways.registry=units.filter(id=>/node:probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('consumer-types',browser.filter(id=>/probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('direct:packed-registration'));
  graph.pathways['consumer-delivery']=['node:tooling/testing/comprehensive.test.mjs','direct:packed-registration','browser:probes/consumer-contracts/playwright.config.ts','semantic-test-types'];
- graph.pathways['metadata-consumer']=['node:tooling/testing/comprehensive.test.mjs','node:tooling/metadata/consumer-source.test.mjs','direct:metadata-consumer'];
  graph.pathways.hydration=browser.filter(id=>id.includes('probes/scoped-hydration/'));
  graph.pathways.reader=[...units,...browser].filter(id=>id.includes('showcases/performance-results/')).concat(checks.filter(id=>id.startsWith('direct:reader-')));
  for(const name of ['tokens','primitives','ssr'])graph.pathways[name]=units.filter(id=>new RegExp(`^node:packages/${name}/${name==='tokens'?'test':'tests'}/[^/]+\\.test\\.mjs$`).test(id));

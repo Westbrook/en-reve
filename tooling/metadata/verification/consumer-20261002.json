@@ -1,0 +1,466 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "verifiedAt": "2026-10-02T07:53:01.432293+00:00",
+  "sourceBase": "15ea0cb00c082b9f0adfa1b5c1306a6557a3072f",
+  "sourceInputs": {
+    "tooling/metadata/consumer-source.mjs": "06462207b7841e690863751f0b337eda2b6e1855ee676817eaf9ad00a8ce9265",
+    "tooling/metadata/consumer-source.test.mjs": "b2eaeb79b06b2c544969771436d9dc1593e1669cefe2e65058d51b289d8bcd23",
+    "tooling/metadata/verify-consumer.mjs": "ba9f8f98faad95761f83506f1c2935f330893a90171c8d30c01c471aee3648f6",
+    "tooling/testing/comprehensive.mjs": "52af4e7b7cd676812f5c706012b373def3842157eccbf9e53f7d9d60b5fb59f5",
+    "tooling/testing/comprehensive.test.mjs": "e2fd82202a5fba920ff0bc96c9171bef2a65a93584a3cf3fee919697ef6df7a9",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "command": "EN_EXECUTION_OUTPUT=/private/tmp/en-metadata-consumer-20261002-02 tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=metadata-consumer",
+  "output": "/private/tmp/en-metadata-consumer-20261002-02",
+  "stats": {
+    "browserPassed": 9,
+    "generationControlsPassed": 11,
+    "pathwayControlsPassed": 14,
+    "unexpected": 0
+  },
+  "consumer": {
+    "schemaVersion": 1,
+    "status": "passed",
+    "startedAt": "2026-10-02T07:47:15.858Z",
+    "node": "v26.10.0",
+    "packages": [
+      {
+        "name": "@en-reve/elements",
+        "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+        "shasum": "9afb616f25903183b536db82c11032145bf40d46",
+        "sha256": "f9a66e41cfb4b44a6b5aad1a78d9a93576bbc106fb9fd2c09ef6ce26853650c5"
+      },
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+        "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110",
+        "sha256": "f07fa569a399a99c3f189d34bbe72b8c15fdd3ef92f8cf35f547be8ade2ad244"
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "sha256": "054969354aa713bcff9345eaef0f49df573db8f255ad6f3c9243b36fcb81569d"
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "sha256": "1f20e6424174a906fe9514760dc7c4053de327097a671409182e7125ea7cea73"
+      }
+    ],
+    "cases": [
+      {
+        "engine": "chromium",
+        "version": "153.0.8010.12",
+        "scenario": "discovered-contract",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": []
+        }
+      },
+      {
+        "engine": "chromium",
+        "version": "153.0.8010.12",
+        "scenario": "transaction-and-form",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": [
+            {
+              "previous": true,
+              "proposed": false,
+              "checked": false,
+              "data": null,
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            },
+            {
+              "previous": false,
+              "proposed": true,
+              "checked": true,
+              "data": "accepted",
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            },
+            {
+              "previous": false,
+              "proposed": true,
+              "checked": true,
+              "data": "accepted",
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            }
+          ]
+        }
+      },
+      {
+        "engine": "chromium",
+        "version": "153.0.8010.12",
+        "scenario": "silent-authority-and-reset",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": []
+        }
+      },
+      {
+        "engine": "firefox",
+        "version": "155.0",
+        "scenario": "discovered-contract",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": []
+        }
+      },
+      {
+        "engine": "firefox",
+        "version": "155.0",
+        "scenario": "transaction-and-form",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": [
+            {
+              "previous": true,
+              "proposed": false,
+              "checked": false,
+              "data": null,
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            },
+            {
+              "previous": false,
+              "proposed": true,
+              "checked": true,
+              "data": "accepted",
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            },
+            {
+              "previous": false,
+              "proposed": true,
+              "checked": true,
+              "data": "accepted",
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            }
+          ]
+        }
+      },
+      {
+        "engine": "firefox",
+        "version": "155.0",
+        "scenario": "silent-authority-and-reset",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": []
+        }
+      },
+      {
+        "engine": "webkit",
+        "version": "26.6",
+        "scenario": "discovered-contract",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": []
+        }
+      },
+      {
+        "engine": "webkit",
+        "version": "26.6",
+        "scenario": "transaction-and-form",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": [
+            {
+              "previous": true,
+              "proposed": false,
+              "checked": false,
+              "data": null,
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            },
+            {
+              "previous": false,
+              "proposed": true,
+              "checked": true,
+              "data": "accepted",
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            },
+            {
+              "previous": false,
+              "proposed": true,
+              "checked": true,
+              "data": "accepted",
+              "bubbles": true,
+              "composed": true,
+              "cancelable": true
+            }
+          ]
+        }
+      },
+      {
+        "engine": "webkit",
+        "version": "26.6",
+        "scenario": "silent-authority-and-reset",
+        "status": "passed",
+        "errors": [],
+        "final": {
+          "checked": true,
+          "defaultChecked": true,
+          "disabled": false,
+          "data": "accepted",
+          "observations": []
+        }
+      }
+    ],
+    "scope": "One CEM-discovered checkbox consumer generated from packed public artifacts. Not full-library, full schema, retail-browser or manual accessibility qualification.",
+    "metadata": {
+      "manifest": {
+        "file": "custom-elements.json",
+        "sha256": "1daa94a9ddf259bd827a8b55d129bfbd11fae14d8252f49b316c5cd5e8648271"
+      },
+      "graph": {
+        "file": "public-api.json",
+        "sha256": "bd32a410eb396c9f405ae448e4ab1657a2ea65839b3559c09af035c9e09f59fa"
+      },
+      "types": {
+        "file": "public-types.json",
+        "sha256": "cfbfb08a63f082d7d49b0b8836544430f01dc3ad4430ab3027815c938973c676"
+      }
+    },
+    "discovery": {
+      "query": "writable checked:boolean, name:string, en-change and label slot",
+      "results": [
+        {
+          "tagName": "en-checkbox",
+          "className": "EnCheckbox",
+          "description": "A form-associated checkbox. Application writes are silent; canceling en-change restores the native control without moving focus."
+        },
+        {
+          "tagName": "en-radio",
+          "className": "EnRadio",
+          "description": "A native radio option. Place related options in en-radio-group for cross-shadow selection and arrow-key navigation."
+        },
+        {
+          "tagName": "en-switch",
+          "className": "EnSwitch",
+          "description": "An immediate on/off setting, backed by a native checkbox with switch semantics."
+        }
+      ],
+      "selected": {
+        "tagName": "en-checkbox",
+        "className": "EnCheckbox",
+        "classImport": "@en-reve/elements/checkbox.js",
+        "definitionImport": "@en-reve/elements/define/checkbox.js",
+        "dependencies": [],
+        "event": {
+          "name": "en-change",
+          "description": "Tentative, cancelable change; the property and form data expose the proposed state during dispatch.",
+          "type": "import('@en-reve/primitives/interactions/events.js').ChangeEvent<boolean>",
+          "detail": "import(\"@en-reve/primitives/interactions/events.js\").ChangeDetail<boolean, string>",
+          "behavior": {
+            "bubbles": true,
+            "composed": true,
+            "cancelable": true,
+            "phase": "tentative-change",
+            "authority": "Author writes and accepted nested proposals supersede rollback."
+          }
+        },
+        "checkedAttribute": {
+          "name": "checked",
+          "description": "Reset default, reflected synchronously to the checked attribute. Pristine controls follow default changes.",
+          "type": {
+            "text": "boolean"
+          },
+          "fieldName": "defaultChecked",
+          "inheritedFrom": {
+            "name": "ChoiceBase",
+            "module": "src/checkbox/choice-base.ts"
+          }
+        },
+        "slots": [
+          {
+            "name": "",
+            "description": "The visible label. Use plain text or phrasing content."
+          },
+          {
+            "name": "description",
+            "description": "Supporting text; falls back to the description attribute/property."
+          },
+          {
+            "name": "label",
+            "description": "Preferred visible label; falls back to the default slot and then the label attribute."
+          }
+        ],
+        "part": {
+          "name": "control",
+          "description": "The native checkbox."
+        }
+      }
+    },
+    "generated": {
+      "sourceSHA256": "0607f294cf308ba69bf0da7bb67a1ce227195be2b2d29ecb731c08116071b126",
+      "htmlSHA256": "69f141524fd0a53330a05aa60b8207b3452c7cdd7f3eeede50476f7a37c2c047"
+    },
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/elements/dist/forms-private/default-state.d.ts",
+        "node_modules/@en-reve/elements/dist/internal/en-element.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/signal-controller.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/form-controller.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/value.d.ts",
+        "node_modules/@en-reve/elements/dist/checkbox/choice-base.d.ts",
+        "node_modules/@en-reve/elements/dist/checkbox/index.d.ts",
+        "node_modules/@en-reve/elements/dist/checkbox.d.ts",
+        "node_modules/@en-reve/elements/dist/define/checkbox.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts"
+      ],
+      "negativeDiagnostics": [
+        "TS2322",
+        "TS2339"
+      ],
+      "negativeExitCode": 1
+    },
+    "production": {
+      "minified": true,
+      "format": "esm",
+      "inputCount": 57,
+      "inputs": [
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/interactions/registration.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/forms-private/validation-feedback.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/internal/id-reference.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/forms-private/field-labels.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/forms-private/default-state.js",
+        "node_modules/@lit/reactive-element/css-tag.js",
+        "node_modules/@lit/reactive-element/reactive-element.js",
+        "node_modules/lit-html/lit-html.js",
+        "node_modules/lit-element/lit-element.js",
+        "node_modules/lit-html/is-server.js",
+        "node_modules/lit/index.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/internal/element-registry.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/internal/child-upgrades.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/element-scope.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/internal/en-element.js",
+        "node_modules/signal-polyfill/dist/index.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/state/value.js",
+        "node_modules/signal-utils/dist/subtle/reaction.ts.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/interactions/signal-controller.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/interactions/form-controller.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/typography.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/controls.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/styles/dist/selection.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/primitives/dist/templates/description.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/checkbox/template.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/checkbox/choice-base.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/checkbox/index.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/checkbox.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/definitions/checkbox.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/node_modules/@en-reve/elements/dist/define/checkbox.js",
+        "../en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/consumer/consumer.ts"
+      ],
+      "jsSHA256": "9b2664840f666d3a339efb393e1fc553e67cba9a0a9ea62e6f0ff456e03af1dd"
+    },
+    "finishedAt": "2026-10-02T07:47:24.869Z"
+  },
+  "generatedSource": {
+    "source": "// Generated from the packed CEM and its identity-matched public graph.\nimport type {EnCheckbox} from \"@en-reve/elements/checkbox.js\";\nimport \"@en-reve/elements/define/checkbox.js\";\ntype Change = import('@en-reve/primitives/interactions/events.js').ChangeEvent<boolean>;\nconst form = document.querySelector<HTMLFormElement>('form')!;\nconst field: EnCheckbox = document.createElement(\"en-checkbox\");\nfield.setAttribute(\"checked\", '');\nfield.name = 'choice'; field.value = 'accepted'; field.label = 'Fallback label';\nconst label = document.createElement('span'); label.slot = \"label\"; label.textContent = 'Include project'; field.append(label);\nconst description = document.createElement('span'); description.slot = \"description\"; description.textContent = 'Shared with the project team'; field.append(description);\nform.prepend(field);\nconst observations: Array<{previous:boolean;proposed:boolean;checked:boolean;data:FormDataEntryValue|null;bubbles:boolean;composed:boolean;cancelable:boolean}> = [];\nlet rejectNext = false;\nform.addEventListener(\"en-change\", raw => {\n  const event = raw as Change;\n  observations.push({previous:event.detail.previous, proposed:event.detail.proposed, checked:field.checked, data:new FormData(form).get('choice'), bubbles:event.bubbles, composed:event.composed, cancelable:event.cancelable});\n  if (rejectNext) { rejectNext = false; event.preventDefault(); }\n});\ndocument.querySelector('#reject')!.addEventListener('click', () => {rejectNext = true; field.focus();});\ndocument.querySelector('#write')!.addEventListener('click', () => {field.checked = false;});\ndocument.querySelector('#disable')!.addEventListener('click', () => {field.disabled = !field.disabled;});\nform.addEventListener('submit', event => {event.preventDefault(); document.querySelector('output')!.textContent = String(new FormData(form).get('choice'));});\ndeclare global {interface Window {consumer: {snapshot:()=>{checked:boolean;defaultChecked:boolean;disabled:boolean;data:FormDataEntryValue|null;observations:typeof observations}};}}\nwindow.consumer = {snapshot:()=>({checked:field.checked,defaultChecked:field.defaultChecked,disabled:field.disabled,data:new FormData(form).get('choice'),observations:[...observations]})};\ndocument.documentElement.dataset.ready = 'true';\n",
+    "html": "<!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Discovered API consumer</title><style>body{font:16px system-ui;margin:2rem}button{margin:.5rem}en-checkbox::part(control){outline:3px solid rgb(101, 31, 121)}</style><body><h1>Discovered API consumer</h1><form><button type=\"submit\">Submit choice</button><button type=\"reset\">Reset choice</button></form><button id=\"write\">Write unchecked</button><button id=\"reject\">Reject next change</button><button id=\"disable\">Toggle disabled</button><output aria-label=\"Submitted choice\"></output><script type=\"module\" src=\"./consumer.js\"></script></body></html>"
+  },
+  "rawReceipts": {
+    "/private/tmp/en-metadata-consumer-20261002-02/execution.json": "4f592b9f2051de6716606be1bbb4526421b73489749103931e2fa8c164a44c55",
+    "/private/tmp/en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/receipt.json": "a847ce66e79aeb885b31a37728fef321ffa6c26b8f426a53c4077432f43e26a7",
+    "/private/tmp/en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/metafile.json": "6fd943be07f470e32d403aac3afb4cc076f55f110a44dc91ca2ae92f8025c23c",
+    "/private/tmp/en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/type-files.txt": "8e741783e0cc47ec5888344372f0170b7492eda5d58115a0a3b34f9f763ad3b4",
+    "/private/tmp/en-metadata-consumer-20261002-02/evidence/direct_metadata-consumer/metadata-consumer/negative-types.txt": "b2c4732ece8ac067a8246b74c29c1c7b156b83e114c21f3326c9ecc92b50c2d8"
+  },
+  "priorAttempts": [
+    {
+      "output": "/private/tmp/en-metadata-consumer-20261002-01",
+      "status": "failed",
+      "reason": "Probe assumed compiler diagnostics exit2; pinned TypeScript7 returns1. Corrected to allow diagnostic exits1/2 while requiring exactly TS2322 and TS2339. No product change."
+    }
+  ],
+  "limitations": [
+    "Selected checkbox consumer, not every element or every generated example.",
+    "Reusable-layer alternate compositions and standalone generated examples remain separate unfinished original requirements.",
+    "Pinned engines only; retail products, other OSes, physical devices and manual assistive technology remain separate.",
+    "Historical external CSS-authoring rerun remains retired, not passed."
+  ]
+}

@@ -93,6 +93,14 @@ physical/manual coverage.
 
 ## Remaining work, in order
 
+The [metadata-to-consumer qualification](../tooling/metadata/verification/consumer-20261002.json)
+adds a distinct `packed-api-discovery` condition: nine browser cases passed across
+the pinned engines, with 11 generation controls and 14 pathway controls. It closes
+the original §7.5c discovery/retrieval/generated-consumer chain for a selected
+checkbox. It does not close the remaining reusable-layer or standalone generated
+example qualifications described in the [consumer audit](consumer-evidence-audit-2026-10-02.md),
+or any of the platform/manual conditions below.
+
 1. **Actual release products:** resolve current/preceding versions on named OSes,
    then acquire isolated automated or manual receipts. Record binary identity,
    profile, scenario, result and date. Missing access is an open condition.

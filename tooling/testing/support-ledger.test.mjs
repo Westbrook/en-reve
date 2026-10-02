@@ -451,7 +451,13 @@ test('Firefox interaction evidence binds pending states, focus and exact isolati
 
 test('packed delivery qualification binds native module graphs and real SSR failure coverage', async () => {
  const evidence=ledger.evidence.find(e=>e.id==='packed-delivery-20261002'),receipt=await json(evidence.path);
- for(const [path,digest] of Object.entries(receipt.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ // This receipt predates the additive metadata-consumer pathway. Keep the
+ // actual qualified orchestration sources, not a claim that it ran newer code.
+ for(const [path,digest] of Object.entries(receipt.sourceInputs)) {
+  const historical = ['tooling/testing/comprehensive.mjs','tooling/testing/comprehensive.test.mjs'].includes(path)
+   ? 'probes/consumer-contracts/qualification-sources/20261002/'+path.split('/').at(-1)+'.txt' : path;
+  assert.equal(createHash('sha256').update(await read(historical)).digest('hex'),digest,path);
+ }
  assert.equal(receipt.status,'passed');assert.deepEqual(receipt.stats,{nativeESMPassed:21,consumerPassed:53,consumerSkipped:1,unexpected:0,flaky:0,pathwayContractPassed:13});
  for(const id of ['packed-html','packed-ssr']){const c=ledger.conditions.find(c=>c.id===id);assert.equal(c.status,'qualified');assert.equal(c.evidence[0],evidence.id);assert.match(c.qualificationBoundary,/selected packed SSR/);}
  const native=receipt.nativeESM;
@@ -472,6 +478,27 @@ test('packed delivery qualification binds native module graphs and real SSR fail
  const requests=receipt.consumer.ssr.requestIsolation;assert.equal(requests.callerRegistryUntouched,true);assert.equal(requests.distinctHTML,true);assert.equal(new Set(requests.htmlSHA256).size,2);
  assert.equal(receipt.consumer.cases.length,54);const skips=receipt.consumer.cases.filter(c=>c.status==='skipped');assert.equal(skips.length,1);assert.equal(skips[0].project,'firefox');assert.match(skips[0].name,/native only/);
  assert.match(receipt.limitations.join(' '),/ElementInternals/);
+});
+
+test('metadata discovery qualification binds generated packed source, types and real interactions',async()=>{
+ const evidence=ledger.evidence.find(e=>e.id==='metadata-consumer-20261002'),r=await json(evidence.path);
+ assert.equal(createHash('sha256').update(await read(evidence.path)).digest('hex'),evidence.sha256);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(r.status,'passed');assert.equal(r.consumer.status,'passed');assert.equal(r.consumer.types.status,'passed');
+ assert.deepEqual(r.stats,{browserPassed:9,generationControlsPassed:11,pathwayControlsPassed:14,unexpected:0});
+ for(const [name,bytes] of Object.entries(r.generatedSource))assert.equal(createHash('sha256').update(bytes).digest('hex'),r.consumer.generated[name==='source'?'sourceSHA256':'htmlSHA256']);
+ assert.equal(r.consumer.discovery.selected.tagName,'en-checkbox');assert.deepEqual(r.consumer.discovery.results.map(x=>x.tagName),['en-checkbox','en-radio','en-switch']);
+ assert.deepEqual(r.consumer.types.negativeDiagnostics,['TS2322','TS2339']);
+ assert(r.consumer.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert.equal(r.consumer.cases.length,9);
+ for(const engine of ['chromium','firefox','webkit']) {
+  const rows=r.consumer.cases.filter(c=>c.engine===engine);assert.equal(rows.length,3);assert(rows.every(c=>c.status==='passed'&&c.errors.length===0));
+  const transaction=rows.find(c=>c.scenario==='transaction-and-form');assert.equal(transaction.final.checked,true);assert.equal(transaction.final.data,'accepted');assert.equal(transaction.final.observations.length,3);
+  assert.deepEqual(transaction.final.observations[1],{previous:false,proposed:true,checked:true,data:'accepted',bubbles:true,composed:true,cancelable:true});
+  assert.deepEqual(rows.find(c=>c.scenario==='silent-authority-and-reset').final.observations,[]);
+ }
+ const condition=ledger.conditions.find(c=>c.id==='packed-api-discovery');assert.equal(condition.status,'qualified');assert(condition.evidence.includes(evidence.id));assert.match(condition.qualificationBoundary,/selected checkbox/);
+ assert.match(r.limitations.join(' '),/generated examples/);
 });
 
 

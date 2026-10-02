@@ -415,6 +415,13 @@
       "path": "probes/native-browser-products/verification-firefox-documents-20261002.json",
       "sha256": "a5a20dce3642759502de85bb67316b4c3e82b09cf86e16aa728f2b063ef67a23",
       "scope": "Both actual Firefox releases:12 first-paint/network-control cases,46 selected production workflows and120 packed consumer cases after the shared transport change. Same original production assets and packed consumers, no fresh build/install/types claim."
+    },
+    {
+      "id": "metadata-consumer-20261002",
+      "kind": "automated-engine",
+      "path": "tooling/metadata/verification/consumer-20261002.json",
+      "sha256": "572021621e30ddde375160c69d0978ba156f6e88cccdc2b69720efde2282a618",
+      "scope": "Original verification \u00a77.5c: packed CEM discovery/retrieval, generated typed consumer and9 real browser interactions;11 generation controls and14 pathway controls passed."
     }
   ],
   "conditions": [
@@ -621,6 +628,18 @@
       ],
       "gap": "Native error AX routing and fallback error/active-descendant routing unsupported in qualified cases; manual AT separate.",
       "nextAction": "Keep documented local semantic composition; revisit on browser/fallback capability change, not by declaring unsupported paths passed."
+    },
+    {
+      "id": "packed-api-discovery",
+      "requirement": "Machine-readable API discovery, retrieval and execution of a generated packed consumer",
+      "status": "qualified",
+      "delivery": "automated-engine",
+      "evidence": [
+        "metadata-consumer-20261002"
+      ],
+      "gap": "",
+      "nextAction": "Rerun metadata-consumer after relevant metadata/public API/generator changes. Qualify reusable-layer and standalone generated-example requirements separately.",
+      "qualificationBoundary": "Original verification \u00a77.5c selected checkbox consumer through packed CEM and complementary graph/types. Not all components, all generated examples, retail products or manual acceptance."
     }
   ],
   "releaseObservations": [
@@ -701,6 +720,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T07:18:43.904183+00:00",
+  "updatedAt": "2026-10-02T07:53:01.432293+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

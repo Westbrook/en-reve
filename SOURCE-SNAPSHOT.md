@@ -138,3 +138,7 @@ Local main `dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d` qualifies178 fresh native 
 ## Consumer evidence audit
 
 Local main `15ea0cb00c082b9f0adfa1b5c1306a6557a3072f` maps packed native ESM, framework and SSR evidence separately from remaining reusable-layer, generated-example and machine-discovery requirements. See `plans/consumer-evidence-audit-2026-10-02.md`. No new browser qualification or completion claim.
+
+## Metadata-driven packed consumer
+
+Local main `7801a8daa781a78de74c69fa5f50b4b907cbb70b` qualifies CEM discovery, API retrieval, generated public consumer source, strict declarations and9 real browser cases.11 generation controls,14 pathway controls and120 tooling checks passed. See `tooling/metadata/README.md` and `tooling/metadata/verification/consumer-20261002.json`. Remaining layer/example and platform/manual requirements stay open.

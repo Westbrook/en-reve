@@ -1,5 +1,42 @@
 # Source-backed CEM generation
 
+## Metadata-to-consumer qualification
+
+The maintained `metadata-consumer` pathway verifies the chosen machine-readable
+access path without introducing a CLI or MCP product. After the pinned workspace
+setup (including `npm ci --prefix showcases/performance` for its locked esbuild):
+
+```sh
+tooling/test-pipeline/with-toolchain.sh npm run test:plan -- --pathways=metadata-consumer
+EN_EXECUTION_OUTPUT=/absolute/new-run tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=metadata-consumer
+```
+
+The pathway performs the normal freshness checks and package/metadata producers,
+then packs elements, primitives, styles and tokens. It queries the packed CEM
+for writable checked/name properties, `en-change` and a label slot; retrieves
+the selected checkbox's public graph and type snapshot; verifies their identities;
+and generates a small TypeScript consumer using the described selective imports,
+attribute/default mapping, slots, Part and event type. This is a bounded recipe,
+not a promise to generate an application from every arbitrary CEM.
+
+The generated consumer compiles against the unpacked public declarations.
+Deliberately incorrect assignments must fail with the exact expected diagnostics.
+The minified browser build rejects workspace sources and broad catalog imports;
+actual Chromium, Firefox and WebKit checks exercise accessible naming/description,
+Part customization, pointer/keyboard changes, tentative FormData, synchronous
+cancellation, silent author writes, native reset and disabled omission.
+
+Evidence under `evidence/direct_metadata-consumer/metadata-consumer/` retains
+discovery results, retrieved API, generated source, type resolution, tarball
+identities, compiler diagnostics, bundle inputs and individual browser outcomes.
+The [October 2 receipt](verification/consumer-20261002.json) records nine browser
+passes, 11 generation controls and 14 pathway controls. It does not qualify
+every generated example, every reusable layer, retail browser products or
+manual assistive technology. The original failed compiler-exit assumption is
+retained separately from the successful run.
+
+## Generation commands
+
 ```sh
 node tooling/metadata/generate.ts --help
 node tooling/metadata/generate.ts packages/elements custom-elements.json src/button/element.ts

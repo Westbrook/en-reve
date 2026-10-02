@@ -143,12 +143,3 @@ test('focused packed delivery owns builds, preparation and semantic types withou
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/consumer-contracts/playwright.config.ts']);
  assert(!ids.has('build:docs'));
 });
-
-test('metadata consumer owns fresh public artifacts and negative generation controls without docs browsers',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['metadata-consumer']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['metadata','build:elements','node:tooling/metadata/consumer-source.test.mjs','direct:metadata-consumer'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='custom-browser').map(task=>task.id),['direct:metadata-consumer']);
- assert(!selected.some(task=>task.kind==='browser'));
- assert(!ids.has('build:docs'));
- assert.equal(graph.tasks.find(task=>task.id==='direct:metadata-consumer').command.at(-1),'tooling/metadata/verify-consumer.mjs');
-});

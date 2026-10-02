@@ -56,6 +56,18 @@ relabeling it or forcing docs-only scenario controls into the public package.
 
 ## Next bounded implementation
 
+### Qualification added after the audit
+
+The [metadata-consumer receipt](../tooling/metadata/verification/consumer-20261002.json)
+now qualifies item 1 below: nine real browser cases across three pinned engines,
+11 negative/discovery controls and 14 pathway controls passed. The fixture
+discovers candidate APIs from the packed CEM, retrieves the selected checkbox's
+matching graph/types, generates and strictly compiles the consumer, and exercises
+its actual contract. [Reproduction and exact boundary](../tooling/metadata/README.md#metadata-to-consumer-qualification).
+The table above preserves the original source audit; its §7.5c gap is resolved
+within the agreed small-consumer scope by this later receipt. Items 2 and 3 remain
+unfinished; no broader support or manual acceptance is inferred.
+
 1. Add the §7.5c fixture using the existing CEM/manifests. Record discovery,
    selected declaration/definition, generated source, tarball identities, public
    declaration compilation and actual browser interaction. Fail if the described

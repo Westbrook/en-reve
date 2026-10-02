@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "15ea0cb00c082b9f0adfa1b5c1306a6557a3072f",
-  "exportedAt": "2026-10-02T07:35:00.845148+00:00",
+  "sourceCommit": "7801a8daa781a78de74c69fa5f50b4b907cbb70b",
+  "exportedAt": "2026-10-02T07:56:18.086299+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5443,
-  "includedBytes": 149911834,
-  "qualification": "Source/evidence audit of original verification section7. Thirty-one local links/fragments checked; no new browser run or support promotion. Historical external CSS-authoring rerun remains retired.",
-  "latestUpdate": ".source-export/updates/consumer-audit-20261002.json",
+  "includedFiles": 5451,
+  "includedBytes": 150004104,
+  "qualification": "Metadata-driven packed consumer qualified:9 browser cases,11 generation controls,14 pathway controls and120 tooling checks passed. Remaining reusable-layer/generated-example and platform/manual scope preserved.",
+  "latestUpdate": ".source-export/updates/metadata-consumer-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

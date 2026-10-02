@@ -1,0 +1,24 @@
+{
+  "createdAt": "2026-10-02T07:56:18.086299+00:00",
+  "sourceCommit": "7801a8daa781a78de74c69fa5f50b4b907cbb70b",
+  "previousSourceMain": "15ea0cb00c082b9f0adfa1b5c1306a6557a3072f",
+  "taskPaths": [
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "plans/verification.md",
+    "probes/consumer-contracts/qualification-sources/20261002/README.md",
+    "probes/consumer-contracts/qualification-sources/20261002/comprehensive.mjs.txt",
+    "probes/consumer-contracts/qualification-sources/20261002/comprehensive.test.mjs.txt",
+    "tooling/metadata/README.md",
+    "tooling/metadata/consumer-source.mjs",
+    "tooling/metadata/consumer-source.test.mjs",
+    "tooling/metadata/verification/consumer-20261002.json",
+    "tooling/metadata/verify-consumer.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Metadata-driven packed consumer qualified:9 browser cases,11 generation controls,14 pathway controls and120 tooling checks passed. Remaining reusable-layer/generated-example and platform/manual scope preserved.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}
