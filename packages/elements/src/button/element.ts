@@ -4,6 +4,7 @@ import { buttonStyles } from '@en-reve/styles/buttons.js';
 import { activityStyles } from '@en-reve/styles/activity.js';
 import { buttonTemplate } from './template.js';
 import { registerFocusParticipant } from '../internal/focus-participant.js';
+import { HostDescriptions } from '../internal/host-descriptions.js';
 
 /**
  * An action button with native keyboard and disabled behavior.
@@ -86,6 +87,7 @@ export class EnButton<Events extends { [K in keyof Events]: Event } = {}> extend
   private declare invalidSemantics: string | null;
   private declare descriptionIds: string | null;
   private tabStop = 0;
+  private readonly descriptions = new HostDescriptions(this, () => this.renderRoot?.querySelector('button') ?? null);
 
   constructor() {
     super();
@@ -111,12 +113,6 @@ export class EnButton<Events extends { [K in keyof Events]: Event } = {}> extend
       if (control) control.tabIndex = value;
       this.requestUpdate();
     });
-  }
-
-  override connectedCallback(): void {
-    super.connectedCallback();
-    // Re-resolve descriptions when the host is reconnected into a different tree.
-    this.requestUpdate();
   }
 
   /** Moves focus to the native control. */
@@ -157,13 +153,6 @@ export class EnButton<Events extends { [K in keyof Events]: Event } = {}> extend
       } else if (control.getAttribute(attribute) !== value) {
         control.setAttribute(attribute, value);
       }
-    }
-    if (!('ariaDescribedByElements' in control)) return;
-    const references = this.ariaDescribedByElements;
-    const previous = control.ariaDescribedByElements;
-    if (previous?.length !== references?.length || previous?.some((element, index) => element !== references?.[index])) {
-      // ID strings cannot identify light-DOM descriptions from this shadow root.
-      control.ariaDescribedByElements = references;
     }
   }
 }

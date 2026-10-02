@@ -222,7 +222,7 @@
     "src/breadcrumbs/element.ts": "sha256:e02d4dc37394f5189ee0d729a21cd8ba5a6b1c879692a1be2f97651f1eb1f42f",
     "src/breadcrumbs/index.ts": "sha256:817e850bad6dbb8a8d1e7fbc7039c7578de9b93fef686fd4fc195d5182452af4",
     "src/button.ts": "sha256:fdd9b9d0dbe0ee664f3ef30c08a28c264ddc60bd0602b37eb56007e48117acf2",
-    "src/button/element.ts": "sha256:fefc729187f4e68d38aba046a7102830315249e3954720671bcd727bce68dcc3",
+    "src/button/element.ts": "sha256:88faf6f183d22cd155cff959b2ab74c5cfc05c692a29a754a08c3b9622142d78",
     "src/button/index.ts": "sha256:b162f1b8b437e952da1f109f5f6fe00b7bea4accf24531b8c2ceee5c0684a8e1",
     "src/button/template.ts": "sha256:39c95208a5461bc7a5aef7769351df101fb988f9badcb8cd3036d3af1190990f",
     "src/calendar.ts": "sha256:73b0eb051d74d573a0ba900c16407f24f59fc565d705c0a3f79e355824fd030e",
@@ -537,6 +537,7 @@
     "src/internal/element-registry.ts": "sha256:5583bb87f6b1e612a081b9cb4ea123a9d1f2c7cdcd8ece8e3fbaa1419b9e9438",
     "src/internal/en-element.ts": "sha256:a98e372ea5787bea9e3a35432639c586a62227609746cea1a328cbf753ff1538",
     "src/internal/focus-participant.ts": "sha256:87b166c3d5c96127b335e1902951eba627973706812ead115a45c9a5832b32c0",
+    "src/internal/host-descriptions.ts": "sha256:cdaf923f0a78e79bf3fd3754d38e6b737fad5945504086e32a0448c86f64abb3",
     "src/internal/id-reference.ts": "sha256:bab3072382e1cd4407ddb409c5478925b453b3fc56017e60a86ecd3652e52175",
     "src/internal/interaction-availability.ts": "sha256:a4a1d77e63263ab89c4585f3a4596bc939947afa0f7b2e9e0a7ae0edde62a6ca",
     "src/internal/menu-owner.ts": "sha256:bd8b8a3caa16dfa089a577fd8968817fce7fb47d2786e42bb4042982142b3846",
@@ -734,7 +735,7 @@
     "src/validation-summary/element.ts": "sha256:edcab0fbc154011adf9e37d4cfca2cac8029b83b19dbf5cb8dafde1e2bd79bfc",
     "src/validation-summary/index.ts": "sha256:af7123f5972a6bdb21adf6684c4541dbb7569faad289316ab962ef111637523b"
   },
-  "manifestDigest": "sha256:09e5b3fadf53dcf29a5ddbed15f882ddb5580711b8aeff910673f7a885970f8c",
+  "manifestDigest": "sha256:6ba19ff673c439966e0056e0f1ea5d72afae47595efed4c6a967663d6a4d8bcb",
   "corrections": [
     {
       "module": "src/file-upload/element.ts",
@@ -5992,9 +5993,9 @@
     "enrichment": {
       "version": 1,
       "policy": "authored-css-property-customization-only",
-      "inputManifestDigest": "sha256:1cb4cb197326d8865eedff4a23d962c7aacdb6f08de2b9eaadba701445c46d27",
+      "inputManifestDigest": "sha256:ed53348b98fd63d7e93c9a8a9c08fa12f7d99c489d6cc1bf540c26e8bed0d460",
       "contractsDigest": "sha256:c842c74b29b43012b02c01ea31faa5686562ebfd350d9b3bf59f997571735ca5",
-      "manifestDigest": "sha256:09e5b3fadf53dcf29a5ddbed15f882ddb5580711b8aeff910673f7a885970f8c",
+      "manifestDigest": "sha256:6ba19ff673c439966e0056e0f1ea5d72afae47595efed4c6a967663d6a4d8bcb",
       "changes": [
         {
           "module": "src/accordion-item/accordion-item.ts",

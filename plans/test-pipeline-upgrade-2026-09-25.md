@@ -1,5 +1,17 @@
 ## Current closeout — September 28, 2026
 
+## Current scope disposition — October 2, 2026
+
+The compiler and private-Python follow-up is qualified and integrated; consult
+[the closeout](test-pipeline-closeout-2026-09-28.md) and the independent report
+for the later main/GitHub/publication receipts. On October 2 the user explicitly
+requested: “Retire the historical rerun from scope.” This removes only the
+unavailable frozen external CSS-authoring pilot rerun from remaining work.
+No replacement input, successful historical rerun or retroactive provenance is
+claimed. Dated checkpoints below retain their original state, including older
+blocked, uncommitted and unpublished observations. Broader manual/device
+acceptance remains separate.
+
 The CEM and literal compiler repairs, accepted generated outputs, validation evidence and documentation are on local `main` at `52a82e3a0f37d1bbe7bc63077eea13f7020e2e0e` (tree `f8db5b50a0782da82ea1c1f63cfe53b33be60f01`). The previous unresolved compiler-port and callable/event-integration status below is historical. This addendum is documentation only and does not relabel old source identities or failed attempts.
 
 The [final CEM evidence](../artifacts/test-pipeline-upgrade-2026-09-25/cem-final-qualification-20260928/README.md) preserves accepted 640-case Current/LTS qualification and a separate 32-case direct-capture run, three watchdog controls, original/effective V8/V9 source providers and the explicitly accepted 38-byte whitespace-only transfer. The [current-library closeout](../artifacts/scoped-followup-integration-gates/current-library-validation-20260928/README.md) records the actual seed, seven-output semantic review, two-clean-path/two-pass reproduction (20 commands, 28 matching hashes) at `20b1017f930593d4aac77f65a49105920c0dbecd`, and fresh selected02 at `c69ee6716672db6f6cb49735117079b840271b1c`. All 16 selected required stages passed. Browser outcomes retain 176 passes and 13 explicit capability/diagnostic skips, with no unexpected/flaky cases. This selected lane is not a new run of every maintained configuration. The consumer fixture-only adapter at c69ee leaves all 63 qualified source and seven generated hashes unchanged; reproduction was transferred on that exact basis, not claimed rerun.

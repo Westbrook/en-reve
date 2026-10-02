@@ -368,6 +368,7 @@
     "@en-reve/elements/internal/element-registry.js": "src/internal/element-registry.ts",
     "@en-reve/elements/internal/en-element.js": "src/internal/en-element.ts",
     "@en-reve/elements/internal/focus-participant.js": "src/internal/focus-participant.ts",
+    "@en-reve/elements/internal/host-descriptions.js": "src/internal/host-descriptions.ts",
     "@en-reve/elements/internal/id-reference.js": "src/internal/id-reference.ts",
     "@en-reve/elements/internal/interaction-availability.js": "src/internal/interaction-availability.ts",
     "@en-reve/elements/internal/menu-owner.js": "src/internal/menu-owner.ts",
@@ -1271,6 +1272,7 @@
     "@en-reve/elements/internal/focus-participant.js#claimFocusParticipant": "src/internal/focus-participant.ts#claimFocusParticipant",
     "@en-reve/elements/internal/focus-participant.js#registerFocusParticipant": "src/internal/focus-participant.ts#registerFocusParticipant",
     "@en-reve/elements/internal/focus-participant.js#TabStopLease": "src/internal/focus-participant.ts#TabStopLease",
+    "@en-reve/elements/internal/host-descriptions.js#HostDescriptions": "src/internal/host-descriptions.ts#HostDescriptions",
     "@en-reve/elements/internal/id-reference.js#observeIdReference": "src/internal/id-reference.ts#observeIdReference",
     "@en-reve/elements/internal/id-reference.js#referenceRoot": "src/internal/id-reference.ts#referenceRoot",
     "@en-reve/elements/internal/id-reference.js#ReferenceRoot": "src/internal/id-reference.ts#ReferenceRoot",
@@ -2669,6 +2671,7 @@
     "@en-reve/elements/internal/focus-participant.js#claimFocusParticipant": "value",
     "@en-reve/elements/internal/focus-participant.js#registerFocusParticipant": "value",
     "@en-reve/elements/internal/focus-participant.js#TabStopLease": "type",
+    "@en-reve/elements/internal/host-descriptions.js#HostDescriptions": "value",
     "@en-reve/elements/internal/id-reference.js#observeIdReference": "value",
     "@en-reve/elements/internal/id-reference.js#referenceRoot": "value",
     "@en-reve/elements/internal/id-reference.js#ReferenceRoot": "type",
@@ -3725,7 +3728,7 @@
       "name": "EnButton",
       "source": "src/button/element.ts",
       "kind": "ClassDeclaration",
-      "declaration": "export declare class EnButton<Events extends {\n    [K in keyof Events]: Event;\n} = {}> extends EnElement<Events> {\n    static properties: {\n        variant: {\n            reflect: boolean;\n        };\n        disabled: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        loading: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        iconOnly: {\n            type: BooleanConstructor;\n            attribute: string;\n            reflect: boolean;\n        };\n        popupRole: {\n            attribute: string;\n        };\n        pressedSemantics: {\n            attribute: string;\n        };\n        popupExpanded: {\n            attribute: string;\n        };\n        disabledSemantics: {\n            attribute: string;\n        };\n        invalidSemantics: {\n            attribute: string;\n        };\n        descriptionIds: {\n            attribute: string;\n            hasChanged: () => boolean;\n        };\n    };\n    static styles: import(\"lit\").CSSResult[];\n    variant: 'primary' | 'secondary' | 'ghost' | 'danger';\n    disabled: boolean;\n    loading: boolean;\n    iconOnly: boolean;\n    constructor();\n    connectedCallback(): void;\n    focus(options?: FocusOptions): void;\n    protected get buttonPressed(): string | null;\n    protected render(): import(\"lit-html\").TemplateResult<1>;\n    protected updated(): void;\n}",
+      "declaration": "export declare class EnButton<Events extends {\n    [K in keyof Events]: Event;\n} = {}> extends EnElement<Events> {\n    static properties: {\n        variant: {\n            reflect: boolean;\n        };\n        disabled: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        loading: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        iconOnly: {\n            type: BooleanConstructor;\n            attribute: string;\n            reflect: boolean;\n        };\n        popupRole: {\n            attribute: string;\n        };\n        pressedSemantics: {\n            attribute: string;\n        };\n        popupExpanded: {\n            attribute: string;\n        };\n        disabledSemantics: {\n            attribute: string;\n        };\n        invalidSemantics: {\n            attribute: string;\n        };\n        descriptionIds: {\n            attribute: string;\n            hasChanged: () => boolean;\n        };\n    };\n    static styles: import(\"lit\").CSSResult[];\n    variant: 'primary' | 'secondary' | 'ghost' | 'danger';\n    disabled: boolean;\n    loading: boolean;\n    iconOnly: boolean;\n    constructor();\n    focus(options?: FocusOptions): void;\n    protected get buttonPressed(): string | null;\n    protected render(): import(\"lit-html\").TemplateResult<1>;\n    protected updated(): void;\n}",
       "references": [
         "external:@lit/reactive-element/development/css-tag.d.ts#CSSResult",
         "external:@typescript/old/lib/lib.dom.d.ts#Event",
@@ -7258,6 +7261,17 @@
       "kind": "InterfaceDeclaration",
       "declaration": "export interface TabStopLease {\n    set(value: 0 | -1): void;\n    release(): void;\n}",
       "references": []
+    },
+    "src/internal/host-descriptions.ts#HostDescriptions": {
+      "name": "HostDescriptions",
+      "source": "src/internal/host-descriptions.ts",
+      "kind": "ClassDeclaration",
+      "declaration": "export declare class HostDescriptions implements ReactiveController {\n    constructor(host: HTMLElement & ReactiveControllerHost, getControl: () => HTMLElement | null);\n    hostConnected(): void;\n    hostUpdated(): void;\n    hostDisconnected(): void;\n}",
+      "references": [
+        "external:@lit/reactive-element/development/reactive-controller.d.ts#ReactiveController",
+        "external:@lit/reactive-element/development/reactive-controller.d.ts#ReactiveControllerHost",
+        "external:@typescript/old/lib/lib.dom.d.ts#HTMLElement"
+      ]
     },
     "src/internal/id-reference.ts#observeIdReference": {
       "name": "observeIdReference",

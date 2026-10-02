@@ -1,0 +1,21 @@
+{
+  "createdAt": "2026-10-02T01:51:51.338131+00:00",
+  "sourceCommit": "771f0e1f1c6a24e7103f5984c84d847ccb9abe2e",
+  "previousSourceMain": "c98507742d685c186dffd271f1bf054cfe900067",
+  "taskPaths": [
+    "packages/elements/custom-elements.json",
+    "packages/elements/custom-elements.json.receipt.json",
+    "packages/elements/public-api.json",
+    "packages/elements/public-types.json",
+    "packages/elements/src/button/README.md",
+    "packages/elements/src/button/content.browser.spec.ts",
+    "packages/elements/src/button/element.ts",
+    "packages/elements/src/internal/host-descriptions.ts",
+    "plans/platform.md",
+    "plans/test-pipeline-upgrade-2026-09-25.md",
+    "tooling/customization/evidence/coverage.json",
+    "tooling/customization/evidence/coverage.md"
+  ],
+  "qualification": "Button host descriptions follow late insertion, replacement, ID changes and root movement with stable native identity. Three-engine baseline reproduced the gap; corrected and existing button, tooltip and SSR checks qualify the fix. Metadata and production assets rebuilt. Historical external CSS pilot rerun retired by explicit user decision; frozen evidence preserved. Broader platform/AT coverage remains open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

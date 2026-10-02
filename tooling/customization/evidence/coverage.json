@@ -31,7 +31,7 @@
     "packages/elements/src/breadcrumbs/element.ts": "7d4d165ab32a32c941cdf33787d9f16566358ddca31b7a5c0b65a941a6f0261c",
     "packages/elements/src/breadcrumbs/index.ts": "6b7158fd411b1f069b46bcb24f11aee0475a1c210cabad916e9d7eb072be8260",
     "packages/elements/src/button.ts": "f9f2a5a0501b223785884a219f34e29e470b709abf1137c35cbbd076af16c690",
-    "packages/elements/src/button/element.ts": "550268471d84c1a72482151917ccaecd0201335e764fafe800cf1a3fb85f7058",
+    "packages/elements/src/button/element.ts": "eb9652106a35ee7699ed26c7c48f844a61d33093a258a2e63e4c94efdfe0a8a4",
     "packages/elements/src/button/index.ts": "c962894608762e4339464cce5fbda130d13efb00f53ab346977dc02b35935b57",
     "packages/elements/src/button/template.ts": "0c24f11193299cdcd094777cdaabebfd3d25ce91315a8b88a800e25207d9773d",
     "packages/elements/src/calendar.ts": "d8f1814ae4545d5dcbf5e35ca193ee7fad001ddd06fde650415d025d4b1be86d",
@@ -346,6 +346,7 @@
     "packages/elements/src/internal/element-registry.ts": "e1e2cc1cc63bbccab2a76643be532e27bd95804e173fa31e8f1922b6b91372bc",
     "packages/elements/src/internal/en-element.ts": "e4540eb778c0d089a3f322f95ac535a1d75c1ac9f0f3e246aa1c40e9e9b56af1",
     "packages/elements/src/internal/focus-participant.ts": "b82471309ac8634b316e9a71a2341dec07c54f9dc8ff9a2198d8e2eea24e2528",
+    "packages/elements/src/internal/host-descriptions.ts": "adac8ac103925970d5310604ed34afba8ec3634302cfbe811de9018811e3898c",
     "packages/elements/src/internal/id-reference.ts": "2cec37e60e12435d5acfdfcf16d13ff8382088d7826bc884bf1bc780f219a9ea",
     "packages/elements/src/internal/interaction-availability.ts": "8811082518c4dad31189b2cc2e09b6c27418a6c0f0bf1dd9afce09537a362d1f",
     "packages/elements/src/internal/menu-owner.ts": "539294ce126b3141a77c17aab3b71bf94586bc7424641c0e9437d177ff3e2cf5",
@@ -609,7 +610,7 @@
     "Registry semantic tokens may be graph-only inputs with no direct CSS consumer. Unsupported names and unwired hooks remain visible as reviewed findings."
   ],
   "summary": {
-    "productionFiles": 598,
+    "productionFiles": 599,
     "registryContracts": 719,
     "discoveredNames": 673,
     "sourceReferences": 2284,
@@ -6612,7 +6613,7 @@
         {
           "cssName": "--en-button-background",
           "file": "packages/elements/src/button/element.ts",
-          "line": 29,
+          "line": 30,
           "description": "Action surface fill."
         },
         {
@@ -6810,7 +6811,7 @@
         {
           "cssName": "--en-button-border-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 37,
+          "line": 38,
           "description": "Action border color."
         },
         {
@@ -6991,7 +6992,7 @@
         {
           "cssName": "--en-button-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 30,
+          "line": 31,
           "description": "Action label color."
         },
         {
@@ -7146,7 +7147,7 @@
         {
           "cssName": "--en-button-focus-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 21,
+          "line": 22,
           "description": "Immediate primary focus contour color."
         }
       ],
@@ -7295,7 +7296,7 @@
         {
           "cssName": "--en-button-focus-halo-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 24,
+          "line": 25,
           "description": "Supplemental focus halo color; alpha is supported."
         }
       ],
@@ -7437,7 +7438,7 @@
         {
           "cssName": "--en-button-focus-halo-width",
           "file": "packages/elements/src/button/element.ts",
-          "line": 23,
+          "line": 24,
           "description": "Supplemental outer focus halo width."
         }
       ],
@@ -7579,7 +7580,7 @@
         {
           "cssName": "--en-button-focus-offset",
           "file": "packages/elements/src/button/element.ts",
-          "line": 22,
+          "line": 23,
           "description": "Signed primary focus contour offset."
         }
       ],
@@ -7721,7 +7722,7 @@
         {
           "cssName": "--en-button-focus-width",
           "file": "packages/elements/src/button/element.ts",
-          "line": 20,
+          "line": 21,
           "description": "Immediate primary focus contour width."
         }
       ],
@@ -7860,7 +7861,7 @@
         {
           "cssName": "--en-button-hover-background",
           "file": "packages/elements/src/button/element.ts",
-          "line": 33,
+          "line": 34,
           "description": "Enabled hover background refinement; precedes broad button paint across variants."
         }
       ],
@@ -7981,7 +7982,7 @@
         {
           "cssName": "--en-button-hover-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 34,
+          "line": 35,
           "description": "Enabled hover color refinement; precedes broad button paint across variants."
         }
       ],
@@ -8097,7 +8098,7 @@
         {
           "cssName": "--en-button-inline-padding",
           "file": "packages/elements/src/button/element.ts",
-          "line": 41,
+          "line": 42,
           "description": "Text-button inline padding; takes precedence over shared control-inline-padding. Icon buttons retain their own geometry."
         }
       ],
@@ -8211,7 +8212,7 @@
         {
           "cssName": "--en-button-popup-pressed-offset",
           "file": "packages/elements/src/button/element.ts",
-          "line": 15,
+          "line": 16,
           "description": "Held popup-trigger translation; inherits ordinary button motion unless refined."
         }
       ],
@@ -8325,7 +8326,7 @@
         {
           "cssName": "--en-button-popup-pressed-scale",
           "file": "packages/elements/src/button/element.ts",
-          "line": 14,
+          "line": 15,
           "description": "Held popup-trigger scale; inherits ordinary button motion unless refined."
         }
       ],
@@ -8439,7 +8440,7 @@
         {
           "cssName": "--en-button-press-duration",
           "file": "packages/elements/src/button/element.ts",
-          "line": 12,
+          "line": 13,
           "description": "Optional theme presentation; see the customization registry for state, fallback and reachability."
         }
       ],
@@ -8592,7 +8593,7 @@
         {
           "cssName": "--en-button-pressed-background",
           "file": "packages/elements/src/button/element.ts",
-          "line": 35,
+          "line": 36,
           "description": "Enabled pressed background refinement; precedes broad button paint across variants."
         }
       ],
@@ -8721,7 +8722,7 @@
         {
           "cssName": "--en-button-pressed-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 36,
+          "line": 37,
           "description": "Enabled pressed color refinement; precedes broad button paint across variants."
         }
       ],
@@ -8852,7 +8853,7 @@
         {
           "cssName": "--en-button-pressed-offset",
           "file": "packages/elements/src/button/element.ts",
-          "line": 13,
+          "line": 14,
           "description": "Optional theme presentation; see the customization registry for state, fallback and reachability."
         }
       ],
@@ -8983,7 +8984,7 @@
         {
           "cssName": "--en-button-pressed-scale",
           "file": "packages/elements/src/button/element.ts",
-          "line": 16,
+          "line": 17,
           "description": "Optional theme presentation; see the customization registry for state, fallback and reachability."
         }
       ],
@@ -9097,7 +9098,7 @@
         {
           "cssName": "--en-button-pressed-shadow",
           "file": "packages/elements/src/button/element.ts",
-          "line": 17,
+          "line": 18,
           "description": "Optional theme presentation; see the customization registry for state, fallback and reachability."
         }
       ],
@@ -9238,7 +9239,7 @@
         {
           "cssName": "--en-button-radius",
           "file": "packages/elements/src/button/element.ts",
-          "line": 38,
+          "line": 39,
           "description": "Action corner radius; falls back to shared control-radius."
         },
         {
@@ -9402,7 +9403,7 @@
         {
           "cssName": "--en-button-release-duration",
           "file": "packages/elements/src/button/element.ts",
-          "line": 18,
+          "line": 19,
           "description": "Optional theme presentation; see the customization registry for state, fallback and reachability."
         }
       ],
@@ -9522,7 +9523,7 @@
         {
           "cssName": "--en-button-rest-background",
           "file": "packages/elements/src/button/element.ts",
-          "line": 31,
+          "line": 32,
           "description": "Enabled rest background refinement; precedes broad button paint across variants."
         }
       ],
@@ -9643,7 +9644,7 @@
         {
           "cssName": "--en-button-rest-color",
           "file": "packages/elements/src/button/element.ts",
-          "line": 32,
+          "line": 33,
           "description": "Enabled rest color refinement; precedes broad button paint across variants."
         }
       ],
@@ -9765,7 +9766,7 @@
         {
           "cssName": "--en-button-shadow",
           "file": "packages/elements/src/button/element.ts",
-          "line": 19,
+          "line": 20,
           "description": "Optional theme presentation; see the customization registry for state, fallback and reachability."
         }
       ],
@@ -22120,7 +22121,7 @@
         {
           "cssName": "--en-control-inline-padding",
           "file": "packages/elements/src/button/element.ts",
-          "line": 42,
+          "line": 43,
           "description": "Shared horizontal control padding."
         },
         {
@@ -22355,7 +22356,7 @@
         {
           "cssName": "--en-control-min-size",
           "file": "packages/elements/src/button/element.ts",
-          "line": 40,
+          "line": 41,
           "description": "Minimum control block size; also the inline floor in icon-only mode."
         },
         {
@@ -22835,7 +22836,7 @@
         {
           "cssName": "--en-control-radius",
           "file": "packages/elements/src/button/element.ts",
-          "line": 39,
+          "line": 40,
           "description": "Shared corner radius when button-radius is unset."
         },
         {
@@ -25158,7 +25159,7 @@
         {
           "cssName": "--en-duration-focus-enter",
           "file": "packages/elements/src/button/element.ts",
-          "line": 25,
+          "line": 26,
           "description": "Supplemental halo and field-accent entry duration."
         },
         {
@@ -25778,7 +25779,7 @@
         {
           "cssName": "--en-duration-focus-exit",
           "file": "packages/elements/src/button/element.ts",
-          "line": 26,
+          "line": 27,
           "description": "Supplemental halo and field-accent exit duration."
         },
         {
@@ -27658,7 +27659,7 @@
         {
           "cssName": "--en-ease-focus-enter",
           "file": "packages/elements/src/button/element.ts",
-          "line": 27,
+          "line": 28,
           "description": "Supplemental focus entry timing function."
         },
         {
@@ -28277,7 +28278,7 @@
         {
           "cssName": "--en-ease-focus-exit",
           "file": "packages/elements/src/button/element.ts",
-          "line": 28,
+          "line": 29,
           "description": "Supplemental focus exit timing function."
         },
         {

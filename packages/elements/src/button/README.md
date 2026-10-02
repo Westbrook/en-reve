@@ -26,6 +26,17 @@ Setting `loading` hides decorative prefix/suffix content and shows the existing 
 
 `focus()`, native `click`, disabled/loading behavior, popup attributes and description forwarding are unchanged. Toggling `iconOnly` does not replace the native button or label. Public Parts remain `control`, `label` and `indicator`; `--en-button-radius`, action colors/border and `--en-control-min-size` remain available. A consumer explicitly overriding geometry through Parts owns the resulting shape.
 
+## External descriptions
+
+Set `aria-describedby` on the host to reference description IDs in its own
+document or shadow tree. After hydration, the native button receives the actual
+description elements. Late insertion, removal, replacement and ID changes update
+the relationship without replacing the button or moving focus. Moving the host
+to another tree resolves IDs there; disconnecting releases subscriptions and
+native references. Duplicate IDs follow the browser's first-match resolution.
+This uses the shared per-tree ID observer; no global polyfill is installed.
+It does not promise cross-root ID-string resolution or pre-hydration forwarding.
+
 ## Menu triggers
 
 Use a decorative official icon in `suffix` for text buttons that open menus:

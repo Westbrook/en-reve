@@ -5276,6 +5276,16 @@
             },
             {
               "kind": "field",
+              "name": "descriptions",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new HostDescriptions(this, () => this.renderRoot?.querySelector('button') ?? null)",
+              "type": {
+                "text": "HostDescriptions"
+              }
+            },
+            {
+              "kind": "field",
               "name": "disabled",
               "description": "Prevents activation using native button semantics.",
               "privacy": "public",
@@ -55583,6 +55593,147 @@
         }
       ],
       "source": "src/internal/focus-participant.ts"
+    },
+    {
+      "kind": "javascript-module",
+      "source": "src/internal/host-descriptions.ts",
+      "path": "src/internal/host-descriptions.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "customElement": false,
+          "name": "HostDescriptions",
+          "description": "Keeps a host's documented description relationship on its native semantic owner.",
+          "members": [
+            {
+              "kind": "method",
+              "name": "clearControl",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "control",
+              "privacy": "private",
+              "default": "null",
+              "type": {
+                "text": "HTMLElement | null"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "forward",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "getControl",
+              "privacy": "private",
+              "static": false,
+              "readonly": true,
+              "type": {
+                "text": "() => HTMLElement | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "host",
+              "privacy": "private",
+              "static": false,
+              "readonly": true,
+              "type": {
+                "text": "HTMLElement & ReactiveControllerHost"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostConnected",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostDisconnected",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "hostUpdated",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "ids",
+              "privacy": "private",
+              "default": "''",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "root",
+              "privacy": "private",
+              "default": "null",
+              "type": {
+                "text": "ReferenceRoot | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "subscriptions",
+              "privacy": "private",
+              "default": "[]",
+              "type": {
+                "text": "(() => void)[]"
+              }
+            },
+            {
+              "kind": "method",
+              "name": "unsubscribe",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HostDescriptions",
+          "declaration": {
+            "name": "HostDescriptions",
+            "module": "src/internal/host-descriptions.ts"
+          }
+        }
+      ]
     },
     {
       "kind": "javascript-module",
@@ -110358,6 +110509,20 @@
               },
               "type": {
                 "text": "string | null"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "descriptions",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new HostDescriptions(this, () => this.renderRoot?.querySelector('button') ?? null)",
+              "inheritedFrom": {
+                "name": "EnButton",
+                "module": "src/button/element.ts"
+              },
+              "type": {
+                "text": "HostDescriptions"
               }
             },
             {

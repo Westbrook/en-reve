@@ -50,3 +50,7 @@ Local main `138829bc35cc4c361637cf47b0cb07d4d58bab19` integrates external labels
 ## External checkbox, radio and switch labels
 
 Local main `c98507742d685c186dffd271f1bf054cfe900067` extends the shared external-label bridge to native checkbox, radio and switch activation, preserving cancelable transactions and grouped-radio ownership. Qualification and remaining relationship/device/AT limits are retained in `probes/reference-target/README.md`.
+
+## Dynamic button descriptions and platform scope reconciliation
+
+Local main `771f0e1f1c6a24e7103f5984c84d847ccb9abe2e` keeps documented native descriptions synchronized with their host-tree targets. Platform plan status now points to delivered scoped and framework evidence, and records the explicitly retired historical CSS pilot rerun. Remaining real AT/device and broader relationship scope stays open.

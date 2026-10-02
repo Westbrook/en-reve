@@ -378,3 +378,31 @@ test.describe('trusted touch on the rendered button label', () => {
     });
   });
 });
+
+test('host descriptions follow late insertion, replacement and movement without rerendering the button', async ({page,browserName}) => {
+  await page.evaluate(async()=>{
+    const host=document.createElement('en-button') as any;host.id='dynamic-description-button';host.textContent='Dynamic help';
+    host.setAttribute('aria-describedby','dynamic-help');document.body.append(host);await host.updateComplete;
+    (window as any).descriptionControl=host.shadowRoot.querySelector('button');
+  });
+  const host=page.locator('#dynamic-description-button'),control=host.locator('button');await control.focus();
+  const session=browserName==='chromium'?await page.context().newCDPSession(page):null;
+  const check=async(text:string)=>{
+    await expect.poll(()=>control.evaluate(node=>Array.from(node.ariaDescribedByElements??[],node=>node.textContent))).toEqual(text?[text]:[]);
+    expect(await control.evaluate(node=>node===(window as any).descriptionControl)).toBe(true);
+    if(session) await expect.poll(async()=>{const {nodes}=await session.send('Accessibility.getFullAXTree');return nodes.find(node=>!node.ignored&&node.role?.value==='button'&&node.name?.value==='Dynamic help')?.description?.value??'';}).toBe(text);
+  };
+  await check('');
+  await page.evaluate(()=>{const help=document.createElement('p');help.id='dynamic-help';help.textContent='Inserted after rendering';document.body.append(help);});
+  await check('Inserted after rendering');await expect(control).toBeFocused();
+  await page.locator('#dynamic-help').evaluate(node=>{node.outerHTML='<p id="dynamic-help">Replacement description</p>';});
+  await check('Replacement description');await expect(control).toBeFocused();
+  await page.locator('#dynamic-help').evaluate(node=>node.id='different-help');await check('');
+  await page.evaluate(()=>{const container=document.createElement('div');container.id='description-scope';document.body.append(container);const root=container.attachShadow({mode:'open'});root.innerHTML='<p id="dynamic-help">Scoped description</p>';root.append(document.getElementById('dynamic-description-button')!);});
+  await check('Scoped description');
+  await host.evaluate(host=>{(window as any).detachedDescriptionHost=host;host.remove();});
+  expect(await page.evaluate(()=>((window as any).descriptionControl.ariaDescribedByElements??[]).length)).toBe(0);
+  await page.evaluate(()=>document.body.append((window as any).detachedDescriptionHost));await check('');
+  await host.evaluate(host=>host.setAttribute('aria-describedby','different-help'));await check('Replacement description');
+  await session?.detach();
+});

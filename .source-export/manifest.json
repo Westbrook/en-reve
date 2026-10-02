@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "c98507742d685c186dffd271f1bf054cfe900067",
-  "exportedAt": "2026-10-02T01:32:06.180223+00:00",
+  "sourceCommit": "771f0e1f1c6a24e7103f5984c84d847ccb9abe2e",
+  "exportedAt": "2026-10-02T01:51:51.338131+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5374,
-  "includedBytes": 144175780,
-  "qualification": "Production checkbox, radio and switch external-label activation shares native transactions, group ownership, references and SSR. Native and fallback reference suite: 95 actual passes, four retained expected failures and twelve skips. Choice suite: 61 pass/two skip. Full SSR and production-example receipts retained separately. Wrapper naming avoids duplicate internal text; real AT/device and broader relationship scope remain open.",
-  "latestUpdate": ".source-export/updates/reference-target-choices-20261001.json",
+  "includedFiles": 5376,
+  "includedBytes": 144192612,
+  "qualification": "Button host descriptions follow late insertion, replacement, ID changes and root movement with stable native identity. Three-engine baseline reproduced the gap; corrected and existing button, tooltip and SSR checks qualify the fix. Metadata and production assets rebuilt. Historical external CSS pilot rerun retired by explicit user decision; frozen evidence preserved. Broader platform/AT coverage remains open.",
+  "latestUpdate": ".source-export/updates/description-lifecycle-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
