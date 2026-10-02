@@ -4,14 +4,14 @@ This isolated fixture suite tests the public custom-element contract from plain 
 
 ## Pinned compatibility matrix
 
-The matrix was resolved on 12 September 2026. Each environment owns its package manifest and lockfile; installing these fixtures does not change the design-system workspace dependencies.
+The maintained source pins below were audited on 2 October 2026. Each environment owns its package manifest and seed lockfile. Each acquisition creates a separate installation from actual package tarballs and retains its resolved lock; it never links library workspace sources.
 
 | Consumer | Installed version | Scope |
 | --- | --- | --- |
 | Plain HTML | Native DOM with Lit 3.3.3 hydration | Framework-free baseline |
-| React | 19.3.0 and 18.3.1 | Current and preceding major |
-| Vue | 3.5.42 and 2.7.16 | Current major plus historical compatibility probe |
-| Svelte | 5.57.0 and 4.2.20 | Current and preceding major; shared legacy component syntax |
+| React | 19.3.0 and 18.3.1 | Maintained major compatibility cohorts |
+| Vue | 3.5.43 and 2.7.16 | Current major plus historical compatibility probe |
+| Svelte | 5.57.1 and 4.2.20 | Maintained major compatibility cohorts; shared legacy component syntax |
 
 Vue 2 reached end of life on 31 December 2023. Its fixture is compatibility evidence, not an endorsement of an unsupported runtime or a claim of upstream security maintenance. The rolling framework policy remains broader than these particular patch versions. [Vue EOL announcement](https://v2.vuejs.org/eol/), [React versions](https://react.dev/versions), [Svelte migration guide](https://svelte.dev/docs/svelte/v5-migration-guide).
 
@@ -23,6 +23,22 @@ Each framework creates an `en-checkbox` itself after mount, supplies its slotted
 - Vue 3 uses an explicit `.checked` DOM-property binding and `onEn-change`; Vue 2 uses `domProps.checked` and its `on` event map. A template-based Vue app should also configure `isCustomElement` for `en-*`. [Vue web-component guidance](https://vuejs.org/guide/extras/web-components.html).
 - Svelte uses an action to write the property and `on:en-change` for the native event. The shared source intentionally uses syntax supported by both 4 and 5; it is not a Svelte 5 runes showcase.
 - HTML uses the same DOM properties and native events directly.
+
+Each consumer additionally binds structured `en-tree.items`, string `en-text-field.value`
+and `label`, and an authored `description` slot. Authoritative property updates are
+silent; a real tree activation is observed once through the framework's native
+event handler. Removing/recreating the controls retains framework-owned boolean
+and string/data state. A deliberately retained detached tree node must not change
+the live owner's state after teardown.
+
+That last condition needs explicit native listener ownership. React uses an effect
+cleanup; the HTML baseline removes its listener; Vue synchronizes a tree ref in
+its update hook and disposes the prior listener on replacement/unmount; Svelte
+uses an action with `destroy`. The initial new test showed Vue3 and Svelte5's
+ordinary event bindings could still handle synthetic events on the detached node
+held by the test. The explicit bridges address this lifetime case without changing
+library components or introducing framework wrapper packages. The checkbox keeps
+the original native framework binding coverage.
 
 No `controlled` flag, `en-request-change`, or mirrored event is introduced. Inside the handler the provisional value is already visible. Cancel synchronously to reject it. A synchronous public property write is authoritative even when the event is canceled. Async approval should cancel first and write the eventual accepted property later.
 
@@ -36,20 +52,58 @@ This is an explicit ownership adapter. It does **not** show arbitrary JSX, Vue t
 
 ## Running the fixture suite
 
-From the repository root, after building the library packages:
+Use the pinned toolchain and normal machine/checkout ownership through the
+supported framework pathway, choosing a fresh, non-existing output directory:
 
 ```sh
-node probes/framework-consumption/install.mjs
-node probes/framework-consumption/build.mjs
-PLAYWRIGHT_BROWSERS_PATH=/path/to/installed/browsers npx playwright test --config probes/framework-consumption/playwright.config.ts
+EN_EXECUTION_OUTPUT=/absolute/fresh/output \
+  tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework
 ```
 
-The fixture installation uses pinned independent lockfiles, native ESM imports and a small isolated esbuild step. No stylesheet is imported as a JavaScript side effect. Framework JavaScript and the library bootstrap are bundled for these probes; packed npm artifacts, native import-map delivery and type-checking consumer projects are not established by this suite.
+The pathway installs the pinned fixture builder, builds the required
+library packages, and supplies one `EN_FRAMEWORK_OUT` to preparation and browsers.
+Preparation packs elements/primitives/styles/tokens/SSR using the shared immutable
+package producer. For each of seven consumers it seeds the cohort lock, adds the
+actual tarballs and exact compiler, resolves offline, and runs a clean offline
+`npm ci --workspaces=false`. The resulting lock, npm archive integrity, actual
+bundle inputs and output hashes are retained. An empty npm cache must first be
+populated through the repository's documented setup; no silent online fallback is
+used in acquisition.
 
-For manual use, run `node probes/framework-consumption/server.mjs` and open `http://127.0.0.1:4467/react19.html` (replace `react19` with any matrix key). Add `?defer` to inspect server-rendered controls before calling `window.hydrateFixture()` in developer tools.
+Every consumer compiles `public.types.ts` against its installed declarations,
+including rejected string-as-object/boolean assignments. All bundled input paths
+must remain inside that consumer installation; library packages may not be
+workspace symlinks. Framework JS and the per-consumer library bootstrap are
+bundled. This is not the separate native import-map qualification.
+
+The library-rendered SSR island is created using the HTML consumer's packed
+public ESM exports and explicit server setup. Each framework then renders its own
+shell and hydrates with its independently installed copy of the same packages.
+This remains an opaque-island integration, not framework-generated custom-element
+DSD or Next/Nuxt/SvelteKit support.
+
+`$EN_FRAMEWORK_OUT/preparation.json` binds packages, type checks, exact versions,
+locks and assets; `site/` contains the served fixture. Preparation refuses to
+overwrite a prior output. For manual inspection, serve a retained preparation with
+`EN_FRAMEWORK_OUT=/absolute/retained/output node probes/framework-consumption/server.mjs`
+and open `http://127.0.0.1:4467/react19.html` (any cohort key works). `?defer` leaves
+native server controls available until `window.hydrateFixture()` is called.
+Playwright owns its server and never reuses an arbitrary existing one.
 
 ## Verification surface
 
-Browser tests exercise server-rendered controls before hydration, preserved DOM identity, accepted/canceled/superseded real user changes, framework-owned boolean changes in both directions, and dynamically added/removed `en-select-option` children without replacing the native select. Seven consumers run against Chromium, Firefox and WebKit. The completed pass has **84 passing checks, with no failures, skips or flaky cases**: four user/SSR contracts × seven consumers × three engines. Exact versions and source/build hashes are recorded in `verification.json`; full results are written to `results/playwright.json`. Tested engines: Chromium 153.0.8010.12, Firefox 155.0, and WebKit 26.6.
+Browser tests exercise server-rendered controls before hydration, preserved DOM identity, accepted/canceled/superseded real user changes, framework-owned boolean changes in both directions, and dynamically added/removed `en-select-option` children without replacing the native select. Seven consumers run against Chromium, Firefox and WebKit. The historical September13 pass remains unchanged in `verification.json`:
+84 checks over workspace distributions, including the older Vue3.5.42 and
+Svelte5.57.0 pins. It is not relabeled as packed or current-source qualification.
+
+The October2 packed pass is recorded separately in
+[`verification-packed-20261002.json`](verification-packed-20261002.json): **126
+passes, zero failures/skips/flaky cases**, comprising six contracts × seven
+consumers × three engines. All seven public-type compilations and independent
+installs passed. Tested engines are Chromium153.0.8010.12, Firefox155.0 and
+WebKit26.6. Initial preparation failures and the Vue/Svelte lifetime failures are
+retained separately; the final full run supersedes no historical receipt.
 
 This focused suite does not establish all components, every framework patch, physical-device or screen-reader acceptance, all SSR loading orders, or the full current-minus-one browser policy. Failures must remain visible rather than being reclassified as framework support.
+
+See the [support ledger](../../plans/support-coverage.md) for the separate current/preceding actual-product and physical/manual obligations.

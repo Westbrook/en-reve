@@ -1,7 +1,8 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
-const root = new URL('./build/',import.meta.url);
+import { pathToFileURL } from 'node:url';
+import { resolve } from 'node:path';
+const root = pathToFileURL(resolve(process.env.EN_FRAMEWORK_OUT ?? new URL('./build/',import.meta.url).pathname,'site')+'/');
 createServer(async (req,res) => {
  try {
   const pathname = new URL(req.url,'http://localhost').pathname;

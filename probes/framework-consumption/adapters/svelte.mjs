@@ -14,6 +14,11 @@ export async function render({ environment, islandHtml }) {
  export let islandHtml = '';
  let ready = false;
  let checked = false;
+ let revised = false;
+ let selected = '';
+ function properties(node, values) { Object.assign(node, values); return {update(next) {Object.assign(node, next);}}; }
+ function treeEvents(node) { node.addEventListener('en-change', selectItem); return {destroy() {node.removeEventListener('en-change', selectItem);}}; }
+ function selectItem(event) { selected = event.detail.proposed.selectedKey; window.fixture.clientEvents.push(selected); }
  onMount(() => { ready = true; });
  function checkedProperty(node, value) { node.checked = value; return { update(value) { node.checked = value; } }; }
  function change(event) {
@@ -33,7 +38,12 @@ export async function render({ environment, islandHtml }) {
  </div>
  <div id="component-island">{@html islandHtml}</div>
  <section aria-label="Framework-owned client control">
+  <button id="client-update" on:click={() => revised = true}>Update properties</button>
+  <button id="client-mount" on:click={() => ready = !ready}>Mount or unmount controls</button>
+  <output id="client-tree-state">{selected}</output>
   {#if ready}
+   <en-text-field id="client-field" use:properties={{label: 'Project title', value: revised ? 'Revised brief' : 'Initial brief'}}><span slot="description">Framework supplied description</span></en-text-field>
+   <en-tree id="client-tree" use:properties={{items: [{key: revised ? 'export' : 'project', label: revised ? 'Export artwork' : 'Project artwork'}]}} use:treeEvents></en-tree>
    <en-checkbox id="client-checkbox" use:checkedProperty={checked} on:en-change={change}>Framework owned choice</en-checkbox>
    <button id="client-toggle" on:click={() => checked = !checked}>Toggle from framework</button>
    <output id="client-state">{String(checked)}</output>

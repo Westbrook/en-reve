@@ -1,0 +1,263 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-02T02:41:58.865188+00:00",
+  "sourceCommitAtStart": "fb201d1c9be7e7559c76ed77563e1e00fb565268",
+  "status": "passed",
+  "command": "tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework",
+  "stats": {
+    "startTime": "2026-10-02T02:40:43.382Z",
+    "duration": 22632.347,
+    "expected": 126,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browsers": {
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "webkit": "26.6"
+  },
+  "consumers": {
+    "html": {
+      "versions": {
+        "lit": "3.3.3"
+      },
+      "lock": "html/package-lock.json",
+      "lockSHA256": "5685aaa085cce1300d2b7137964bde231c34c5077a50f2bb42e60bbc98c54fed",
+      "types": "passed",
+      "assets": {
+        "html.html": "742cd2616957a1981c13566e2b3fc51e49bac124d3a3ae714a63ddd5ca9c1d1e",
+        "html.js": "6f83afe3291756fb9b56d53aa1acfa15a347b46972b2b81265f34a66d337bf6f",
+        "html-island.js": "6a77e57b97d2b05cd40b7233b9a112c82ea60e795218cac9d636238599535aec"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "7ab0bc32cce283ac04d308055c5e3cd6e8faf7e825dc89121a3abd95039bf82d"
+    },
+    "react19": {
+      "versions": {
+        "react": "19.3.0",
+        "react-dom": "19.3.0"
+      },
+      "lock": "react19/package-lock.json",
+      "lockSHA256": "f1fa5102b1bb64870cbeb0a41521f459ec5941fc2de70ad8445e6b3b43bfb295",
+      "types": "passed",
+      "assets": {
+        "react19.html": "ece8ea83afb4f7201b2cb13fccf542a1efc27c76307cf8bfbedcfdf607070900",
+        "react19.js": "1c17a1f5fb56675fcbf3dfd02acd2bf075fd754665b9e651520d6ba88afbf8ef",
+        "react19-island.js": "d9945936b228565163849873a0ef1ac035d632b23f772391cf9e0203d0d57866"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "297e272b65ef782af8aff2d234741bfc13cafab905ff5ab2b93600c663c6ecde"
+    },
+    "react18": {
+      "versions": {
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+      },
+      "lock": "react18/package-lock.json",
+      "lockSHA256": "61a74975069abba1aadc02189ed0d2e5fd3bb90744da3ddc1f18da51c776b259",
+      "types": "passed",
+      "assets": {
+        "react18.html": "554f6108e940ef66b23f8220671d95cbf1e7a1031e47c47a8087fcab18b185d0",
+        "react18.js": "76b2d5d06b5c6dcca4fa063134aa79311990278464e10b236023c60c46670476",
+        "react18-island.js": "98a09ed0700ff8adcc0f0acad165c12754601b7e48e4e3c4b6dfc917016f323e"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "f14f8beda6120cebbc261c1fd50f5c13ce0877485fc71f4b14cb83cdecc66b40"
+    },
+    "vue3": {
+      "versions": {
+        "vue": "3.5.43",
+        "@vue/server-renderer": "3.5.43"
+      },
+      "lock": "vue3/package-lock.json",
+      "lockSHA256": "67bdbf28ae0488c915db0968b95e134f501663e24ee7b266014fa57007ad5ee7",
+      "types": "passed",
+      "assets": {
+        "vue3.html": "0b140e2f3ad2c84f5a95cba998f553fdd5588b161d8f61e0ff250390288be712",
+        "vue3.js": "95e713e9d88504112127e6243d4d36de74a6310f92991ec021fb689c2dc7317b",
+        "vue3-island.js": "4c40685513df1d2fcd712a8d62f1f88e47b334e15ed149dc497545e1cedb7db2"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "abf344ae757e2e4ae5383163e92b9ef623ccfbb203107341a1c0219a5f1979d9"
+    },
+    "vue2": {
+      "versions": {
+        "vue": "2.7.16",
+        "vue-server-renderer": "2.7.16"
+      },
+      "lock": "vue2/package-lock.json",
+      "lockSHA256": "054f3fdc4695f455d62cbc1b8239abc439913294e12e1f2bd198c65903ed554b",
+      "types": "passed",
+      "assets": {
+        "vue2.html": "03fc9a1a0aa361239e8c74728c58e46c73fb4bc4fe59b6a5905613ae77830c11",
+        "vue2.js": "50e9154a3b27b784849284aaacd7fd213874c6002f21e8f63d0f226368ad8770",
+        "vue2-island.js": "16defcee2aff719c1019dc1d5baf7e073c8241eddafdf3e841f1273662993764"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "f9aa806ee2178bbd4b1a3e4fc0b9feb31297ee6509a6f5383aa913868f26f00c"
+    },
+    "svelte5": {
+      "versions": {
+        "svelte": "5.57.1"
+      },
+      "lock": "svelte5/package-lock.json",
+      "lockSHA256": "57341011b7ec3fa10f88c4cac9d35149437396c88aca4a2050db785e83a928fd",
+      "types": "passed",
+      "assets": {
+        "svelte5.html": "dc801d972a305dae815ee77cd248e45c42f8496a4be89898a2839dbc2580aa38",
+        "svelte5.js": "aa0747d1e5a12a56f534a4e0f8759993cd0452990c9f036896748212fa100526",
+        "svelte5-island.js": "f0c6a67fa2ebf1d4f5f4b4b1ced137d09850f13566f032e15946a4bc8c52b917"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "bdb4d43278ffcd5173e296d3629e67d40cd91a7e725ff4dae4091ddccb07e62a"
+    },
+    "svelte4": {
+      "versions": {
+        "svelte": "4.2.20"
+      },
+      "lock": "svelte4/package-lock.json",
+      "lockSHA256": "15122ffa95a216414986f67b7912dc27ca1366fa314781bd9508224fb64ddcda",
+      "types": "passed",
+      "assets": {
+        "svelte4.html": "6a160c7d71b62353c8f93348add2cbfd9aaaae74d6aaa192225872dd2dee4605",
+        "svelte4.js": "3299c053230168b8262611978962cd9cd51b546c4af731b0db8bf4fcbbc3ece8",
+        "svelte4-island.js": "f2c7e29c877853fc3892631f0f7f28a0d83a89173bd5ca5412f520f30fc8de6f"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "574f499528664203cb38244b8837cee693d93670969cae4502fab819944ba348"
+    }
+  },
+  "packages": [
+    {
+      "name": "@en-reve/elements",
+      "version": "0.1.0",
+      "filename": "en-reve-elements-0.1.0.tgz",
+      "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+      "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+    },
+    {
+      "name": "@en-reve/primitives",
+      "version": "0.1.0",
+      "filename": "en-reve-primitives-0.1.0.tgz",
+      "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+      "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+    },
+    {
+      "name": "@en-reve/styles",
+      "version": "0.1.0",
+      "filename": "en-reve-styles-0.1.0.tgz",
+      "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+      "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+    },
+    {
+      "name": "@en-reve/tokens",
+      "version": "0.1.0",
+      "filename": "en-reve-tokens-0.1.0.tgz",
+      "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+      "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+    },
+    {
+      "name": "@en-reve/ssr",
+      "version": "0.1.0",
+      "filename": "en-reve-ssr-0.1.0.tgz",
+      "integrity": "sha512-bZY1o3hMgtNpbmUNeLpOLwXuo7hGDRAvaabm9iDFWtv17dFZ1DMFVVhf0M3Ru/iABFGIeJlN+BThdURklKmYpA==",
+      "shasum": "486b2b4105e404cc0ba3715ae8a2e25a071519b3"
+    }
+  ],
+  "sources": {
+    "build.mjs": "fbf99c831e67aadef4e148ea6eca79ed7e0ac74eaf92dd4697f2e0e51de74c3c",
+    "install.mjs": "22c2a4371e017487629ced09fe7aa34267c909aca8628e0ea39dfa679a2d8e99",
+    "fixture.mjs": "65626ca3bcebc8b6a8907300728d47e09962737a6dc394e907df1d16330c94d5",
+    "island-client.mjs": "39002613e693422cfee46c9d36f994a9a790b93eaadd90e2ac974cece054f790",
+    "server.mjs": "fc9b13c289107628bfbaf1c2ddef094101dd978dce13160512513c7b0c34976e",
+    "playwright.config.ts": "1915d13cfcc5bc9a207e16d5dd6ff5099b8d324f69984a9fc2c7b0c49aceee83",
+    "consumption.spec.ts": "72987261a68742e3f9027863b9198120587370449f4dcda1ed79bfd1d4e1422d",
+    "public.types.ts": "77246fa63a79572d5bb3bda6eb1cabd62e563989de527ab3ea6cf1dabb942ca4",
+    "adapters/html.mjs": "effd886b9694e99091afcf788d8259ca3d2dd75d3027525485aea7fc7f40910b",
+    "adapters/react.mjs": "0e013224a7bc80bed1715b6d8a3f595a9df2525e4a4e3d5504e14b411f44b0e9",
+    "adapters/vue.mjs": "39c23d12bf622fa2abc86eea84710f85b784362ca9921a2a16e067204d7fa3a3",
+    "adapters/svelte.mjs": "4738b4822f786ce89b9e6dc4a7e0988fb76ce7f1cc6ef8037ed1a548e71652bb",
+    "environments/react18/package.json": "804ec8c4f0c28eac228d9feccc9df7cb814084643c9123b59a4d35dd47727d08",
+    "environments/react18/package-lock.json": "954741ca15333b68b203df978986f7bdeaea405d4f7608792e737d0f33b55472",
+    "environments/react19/package.json": "3db5086cb6daa71b9e13426a75e7c6809c2b687926ebccc878bc0e338fc26505",
+    "environments/react19/package-lock.json": "b78429552b6313b23cf2f354655d9aad02af5b34ba16c2b25b60ac14fdc31fb5",
+    "environments/vue2/package.json": "e5df75f9a61615e8a46a06e6a59bb847d5452ad7f303947095858c0d93f63872",
+    "environments/vue2/package-lock.json": "c56c52b0aac987dd17dffda7338bb1f23609bd44d62db6e412f0ae99d1e8062c",
+    "environments/vue3/package.json": "0a372eb87ed8e21477bcf2f6d2a72f94136ac775716fb0d9c555684974325e0f",
+    "environments/vue3/package-lock.json": "6e6d228dd687f7cbc736fc97ef13919705885301e2abd0ed3c6432b9848dbf8a",
+    "environments/svelte4/package.json": "8e606b2fabf276b6e5a4b9f13d4d3eef96e95db71280aa0263d10a9943b423a8",
+    "environments/svelte4/package-lock.json": "ff0069782ca10d9562f8d5d9ea5a480c19064e81361c2d95dc31c1914fbd487c",
+    "environments/svelte5/package.json": "a6240a0ff3894c8bdc225d1eea34b2851e34994d97a7783d24439b1bdd142093",
+    "environments/svelte5/package-lock.json": "5fd173c54bdd0aab3f6ab3546e6f36036f18df46af87df5c5d60147e763baf5c"
+  },
+  "rawResultSHA256": "cba10fd02cf6d90e6a2ddf43e0f9b612c419ed8878e53d9515ad6f3e47233181",
+  "preparationSHA256": "800e7bdf081c94d2545113cd7fb884d558b02fc603992c94952d777010eceee3",
+  "graphTests": {
+    "passed": 12,
+    "failed": 0,
+    "note": "Separate initial run; graph source unchanged afterward."
+  },
+  "scopes": [
+    "Seven independent installations of actual npm archives; retained per-consumer locks use portable relative archive references",
+    "Public tarball declaration compilation in each consumer, including invalid object/boolean type controls",
+    "Framework-owned object/string/boolean properties and authored description slots",
+    "Synchronous cancelable tentative changes, rollback and authoritative property writes",
+    "Real pointer and keyboard reference interactions, remounting and explicit native listener disposal",
+    "Parsed native SSR controls retain identity through library and framework hydration owners"
+  ],
+  "limitations": [
+    "Pinned desktop engines only; not retail-browser current-minus-one, physical device or actual speech/IME acceptance",
+    "Vue2 is EOL historical compatibility; Svelte5 uses shared legacy syntax, not runes",
+    "Opaque library SSR island, not Next/Nuxt/SvelteKit or framework-generated custom-element DSD",
+    "Bundled delivery; native import-map qualification is separate",
+    "Framework/public-library consumption fixture, not all components or every application interaction"
+  ],
+  "previousAttempts": [
+    "01 parent-directory preparation failure;02 TypeScript CLI export resolution failure;03 CommonJS resolution of ESM-only exports; no browser qualification in these attempts",
+    "04 Vue3 retained detached tree handler failure after19passes;05 Svelte5 equivalent failure after31passes. Tests retained, explicit listener lifetime fixed in adapters",
+    "06 full126pass initial qualification;07 full126pass after eliminating redundant source-cohort installs;08 final full126pass after making retained lockfile tarball references relative"
+  ]
+}

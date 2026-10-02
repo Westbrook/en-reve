@@ -81,9 +81,36 @@ test('cohort pins and locks stay separate from historical fixture results', asyn
     assert.deepEqual(cohort.historicalDependencies, result.consumers[cohort.id]);
     assert.equal(cohort.sameVersionsAsHistoricalReceipt,
       JSON.stringify(cohort.pinnedDependencies) === JSON.stringify(cohort.historicalDependencies));
-    assert.equal(cohort.packedQualification, 'not-run', 'A new packed receipt is required before promotion');
+    if (cohort.packedQualification === 'passed') {
+      const packedEvidence = ledger.evidence.find(e => e.id === cohort.packedReceipt);
+      assert(packedEvidence, `Missing packed receipt for ${cohort.id}`);
+      const packed = await json(packedEvidence.path);
+      assert.equal(packed.status, 'passed');
+      assert.equal(packed.stats.unexpected, 0);
+      assert.equal(packed.stats.flaky, 0);
+      assert.equal(packed.stats.skipped, 0);
+      assert(packed.stats.expected > 0);
+      assert.equal(packed.consumers[cohort.id].types, 'passed');
+      assert.deepEqual(packed.consumers[cohort.id].versions, cohort.pinnedDependencies);
+    } else assert.equal(cohort.packedQualification, 'not-run');
   }
   assert.equal(ledger.frameworkCohorts.find(c => c.id === 'vue2').classification, 'historical-eol-compatibility');
+});
+
+test('packed framework receipt remains bound to its fixture and cohort source inputs', async () => {
+  const evidence = ledger.evidence.find(e => e.id === 'framework-packed-20261002');
+  const receipt = await json(evidence.path);
+  for (const [path, digest] of Object.entries(receipt.sources)) {
+    assert.equal(createHash('sha256').update(await read('probes/framework-consumption/'+path)).digest('hex'), digest,
+      `Requalify the packed fixture after changing ${path}`);
+  }
+  assert.equal(Object.keys(receipt.consumers).length, 7);
+  assert.equal(receipt.packages.length, 5);
+  for (const consumer of Object.values(receipt.consumers)) {
+    assert.equal(consumer.types, 'passed');
+    assert.match(consumer.lockSHA256, /^[a-f0-9]{64}$/);
+    assert.equal(Object.keys(consumer.installedLibraryPackages).length, 5);
+  }
 });
 
 test('engine manifest and configured Playwright version agree with the support inventory', async () => {

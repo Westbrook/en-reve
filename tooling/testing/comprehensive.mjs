@@ -67,7 +67,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
     const prepareId=`prepare:${name}`;
     add({id:prepareId,kind:'producer',command:[node,preparation.file],dependencies:preparation.dependencies??['build:ssr',...(['scoped-registry','lazy-registry','activation-registry'].includes(name)?['prepare:packages']:[]),...(preparation.requires??[]).map(name=>`prepare:${name}`)],environment:preparation.environment});dependencies.push(prepareId);Object.assign(environment,preparation.environment);
    }
-   if(file.startsWith('probes/framework-consumption/'))dependencies.splice(0,dependencies.length,'prepare:framework');
+   if(file.startsWith('probes/framework-consumption/')){dependencies.splice(0,dependencies.length,'prepare:framework');environment.EN_FRAMEWORK_OUT='$RUN/fixtures/framework';}
    if(Object.keys(preparations).some(name=>file.startsWith(`probes/${name}/`)))dependencies.splice(0,1);
    if(file.startsWith('showcases/performance-results/'))dependencies.splice(0,dependencies.length,'prepare:reader');
    if(file==='probes/component-patterns/playwright.config.ts')Object.assign(environment,{EN_PATTERN_GALLERY_URL:'$DOCS_ORIGIN'});
@@ -81,7 +81,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  add({id:'prepare:ssr-minification',kind:'producer',command:[node,'packages/ssr/tests/minification/build.mjs','--source-only'],dependencies:['build:ssr'],scope:'Bind deterministic generated source before consumer identities; each owned SSR server acquires one fresh registry-isolated fixture shared by all engines.'});
  add({id:'prepare:packages',kind:'producer',command:[node,'tooling/evidence/prepare-packages.mjs','$RUN/packages'],dependencies:['metadata','build:ssr']});
  add({id:'install:framework',kind:'producer',command:[node,'probes/framework-consumption/install.mjs'],dependencies:[],environment:{EN_FRAMEWORK_INSTALL_RECEIPT:'$RUN/framework-install.json'}});
- add({id:'prepare:framework',kind:'producer',command:[node,'probes/framework-consumption/build.mjs'],dependencies:['install:framework','build:ssr']});
+ add({id:'prepare:framework',kind:'producer',command:[node,'probes/framework-consumption/build.mjs'],dependencies:['install:framework','build:ssr'],environment:{EN_FRAMEWORK_OUT:'$RUN/fixtures/framework'}});
  add({id:'prepare:reader',kind:'producer',command:[npm,'run','build','--prefix','showcases/performance-results'],dependencies:[]});
  add({id:'prepare:candidates',kind:'producer',command:[node,'tooling/testing/prepare-candidates.mjs','$RUN/fixtures/candidates'],dependencies:['build']});
  for(const [name,file,args,kind='check'] of direct)checks.push(add({id:`direct:${name}`,kind,command:[node,...(kind==='node-browser'?['--test','--test-reporter=tap']:[]),file,...args],dependencies:name==='packed-registration'?['metadata','build:ssr']:name.startsWith('candidate-')?['prepare:candidates']:['build'],assertionSources:[file]}));

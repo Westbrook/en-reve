@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-02T02:44:43.768964+00:00",
+  "sourceCommit": "53a1502115f968c7671d127543707a8e5d98b277",
+  "previousSourceMain": "fb201d1c9be7e7559c76ed77563e1e00fb565268",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "plans/verification.md",
+    "probes/framework-consumption/README.md",
+    "probes/framework-consumption/adapters/html.mjs",
+    "probes/framework-consumption/adapters/react.mjs",
+    "probes/framework-consumption/adapters/svelte.mjs",
+    "probes/framework-consumption/adapters/vue.mjs",
+    "probes/framework-consumption/build.mjs",
+    "probes/framework-consumption/consumption.spec.ts",
+    "probes/framework-consumption/install.mjs",
+    "probes/framework-consumption/island-client.mjs",
+    "probes/framework-consumption/playwright.config.ts",
+    "probes/framework-consumption/public.types.ts",
+    "probes/framework-consumption/server.mjs",
+    "probes/framework-consumption/verification-packed-20261002.json",
+    "tooling/test-pipeline/README.md",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Seven fresh independent tarball consumers qualified across three pinned engines:126 browser passes,7 public type compilations,12 graph checks and99 tooling checks. Object/string/boolean bindings, slots, transactions and lifecycle remount/native-listener disposal covered. Historical receipts unchanged; actual retail releases and physical/manual coverage remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

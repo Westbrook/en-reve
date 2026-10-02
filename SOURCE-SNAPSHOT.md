@@ -62,3 +62,7 @@ Local main `dcb52a27dd5d0007218a006ad9c7121e7f978222` completes the planned isol
 ## Versioned support coverage ledger
 
 Local main `fb201d1c9be7e7559c76ed77563e1e00fb565268` adds the exact support inventory, bounded historical evidence, remaining qualification conditions and tooling consistency checks. See `plans/support-coverage.md`; support qualification remains incomplete.
+
+## Independent packed framework consumers
+
+Local main `53a1502115f968c7671d127543707a8e5d98b277` qualifies public package tarballs in HTML, React18/19, Vue2/3 and Svelte4/5. See `probes/framework-consumption/verification-packed-20261002.json` and its README for exact source, outcomes and limits.

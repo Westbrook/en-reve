@@ -123,7 +123,8 @@
       },
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
-      "packedQualification": "not-run"
+      "packedQualification": "passed",
+      "packedReceipt": "framework-packed-20261002"
     },
     {
       "id": "react18",
@@ -139,7 +140,8 @@
       },
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
-      "packedQualification": "not-run"
+      "packedQualification": "passed",
+      "packedReceipt": "framework-packed-20261002"
     },
     {
       "id": "vue3",
@@ -155,7 +157,8 @@
       },
       "sameVersionsAsHistoricalReceipt": false,
       "classification": "maintained-compatibility-fixture",
-      "packedQualification": "not-run"
+      "packedQualification": "passed",
+      "packedReceipt": "framework-packed-20261002"
     },
     {
       "id": "vue2",
@@ -171,7 +174,8 @@
       },
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "historical-eol-compatibility",
-      "packedQualification": "not-run"
+      "packedQualification": "passed",
+      "packedReceipt": "framework-packed-20261002"
     },
     {
       "id": "svelte5",
@@ -185,7 +189,8 @@
       },
       "sameVersionsAsHistoricalReceipt": false,
       "classification": "maintained-compatibility-fixture",
-      "packedQualification": "not-run"
+      "packedQualification": "passed",
+      "packedReceipt": "framework-packed-20261002"
     },
     {
       "id": "svelte4",
@@ -199,7 +204,8 @@
       },
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
-      "packedQualification": "not-run"
+      "packedQualification": "passed",
+      "packedReceipt": "framework-packed-20261002"
     }
   ],
   "evidence": [
@@ -237,6 +243,13 @@
       "path": "plans/scoped-followup-integration-gates.md",
       "sourceCommit": "dcb52a27dd5d0007218a006ad9c7121e7f978222",
       "scope": "Current-library closeout c69ee671 selected16stages,176browserpasses/13skips. Packed public types/request isolation/scoped/global consumers; not packed React/Vue/Svelte. Earlier failed integration receipts preserved."
+    },
+    {
+      "id": "framework-packed-20261002",
+      "kind": "automated-engine",
+      "path": "probes/framework-consumption/verification-packed-20261002.json",
+      "sha256": "74bff50199dee785c22938b9b9257ea312193c0fc757a7114f64b002051bf233",
+      "scope": "126 actual browser passes across seven fresh independent tarball consumers and three pinned engines; seven public type checks; object/string/boolean, authored descriptions, transactions, reference interactions and remount/disposal. Rolling actual-product and manual scope remains separate."
     }
   ],
   "conditions": [
@@ -254,13 +267,13 @@
     {
       "id": "packed-frameworks",
       "requirement": "React/Vue/Svelte independent packed consumers",
-      "status": "partial",
+      "status": "qualified",
       "delivery": "automated-engine",
       "evidence": [
-        "framework-20260913"
+        "framework-packed-20261002"
       ],
-      "gap": "Current maintained Vue/Svelte pins differ from historical receipt; existing builder uses workspace library packages. Object/string props, lifecycle remount and tarball public types are not established for each cohort.",
-      "nextAction": "Use isolated installations of freshly packed packages in the maintained framework fixture; add object/string/property/event/remount/type cases; rerun all six cohorts and HTML on pinned engines."
+      "gap": "",
+      "nextAction": "Requalify when package APIs or cohort pins change; rolling release-line policy remains tracked separately."
     },
     {
       "id": "packed-ssr",
@@ -472,5 +485,6 @@
       ],
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
-  ]
+  ],
+  "updatedAt": "2026-10-02T02:41:58.865188+00:00"
 }

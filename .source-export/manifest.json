@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "fb201d1c9be7e7559c76ed77563e1e00fb565268",
-  "exportedAt": "2026-10-02T02:22:41.243862+00:00",
+  "sourceCommit": "53a1502115f968c7671d127543707a8e5d98b277",
+  "exportedAt": "2026-10-02T02:44:43.768964+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5387,
-  "includedBytes": 144268585,
-  "qualification": "Versioned support ledger distinguishes pinned engines, installed products, historical/current framework versions and accepted scoped manual reviews. Physical/product/manual and packed-framework gaps remain explicit. Public tooling gate passed98 tests; no new product or device acquisition is claimed.",
-  "latestUpdate": ".source-export/updates/support-ledger-20261002.json",
+  "includedFiles": 5390,
+  "includedBytes": 144304752,
+  "qualification": "Seven fresh independent tarball consumers qualified across three pinned engines:126 browser passes,7 public type compilations,12 graph checks and99 tooling checks. Object/string/boolean bindings, slots, transactions and lifecycle remount/native-listener disposal covered. Historical receipts unchanged; actual retail releases and physical/manual coverage remain open.",
+  "latestUpdate": ".source-export/updates/packed-framework-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

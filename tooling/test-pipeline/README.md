@@ -12,7 +12,7 @@ tooling/test-pipeline/with-toolchain.sh npm run build
 tooling/test-pipeline/with-toolchain.sh node node_modules/@playwright/test/cli.js install chromium firefox webkit
 ```
 
-On initial setup or when its lockfile/runtime changes, each isolated owning installation must also run `npm ci`: `probes/framework-consumption`, its six `environments/*`, `showcases/performance`, `showcases/tools`, `showcases/performance-results`, and each active showcase. Framework React 18/19, Vue 2/3 and Svelte 4/5 remain independent subjects. Do not regenerate historical baseline/vendor installations. The external authoring pilot is historical and needs its exact external engine; its production-authoring mode uses the root runtime.
+On initial setup or when its lockfile/runtime changes, each isolated owning installation must also run `npm ci`: `probes/framework-consumption` (the builder), `showcases/performance`, `showcases/tools`, `showcases/performance-results`, and each active showcase. Framework React 18/19, Vue 2/3 and Svelte 4/5 remain independent subjects. Their `environments/*` manifests/locks seed fresh tarball installations owned by the framework preparation stage; do not install redundant source-tree cohort copies. Do not regenerate historical baseline/vendor installations. The external authoring pilot is historical and needs its exact external engine; its production-authoring mode uses the root runtime.
 
 The performance fixtures generate local TLS certificates with an OpenSSL CLI.
 Provision the private OpenSSL 4.0.2 CLI with

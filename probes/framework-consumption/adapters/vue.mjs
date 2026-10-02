@@ -7,9 +7,15 @@ function componentSource(major, server = false) {
   const button = (id, action, label) => `h('button', ${vue2 ? `{ attrs: { id: '${id}', type: 'button' }, on: { click: ${action} } }` : `{ id: '${id}', type: 'button', onClick: ${action} }`}, '${label}')`;
   return `
 const component = {
-  data() { return { checked: false, mountedClient: false }; },
+  data() { return { checked: false, mountedClient: false, revised: false, selected: '' }; },
   mounted() { this.mountedClient = true; },
+  updated() { this.syncTree(); },
+  beforeUnmount() { this.disposeTree(); },
+  beforeDestroy() { this.disposeTree(); },
   methods: {
+    disposeTree() { if (this._treeListenerTarget) this._treeListenerTarget.removeEventListener('en-change', this.selectedItem); this._treeListenerTarget = null; },
+    syncTree() { const tree = this.$refs.tree; if (tree === this._treeListenerTarget) return; this.disposeTree(); this._treeListenerTarget = tree; if (tree) tree.addEventListener('en-change', this.selectedItem); },
+    selectedItem(event) { this.selected = event.detail.proposed.selectedKey; window.fixture.clientEvents.push(this.selected); },
     changed(event) {
       const mode = window.fixture.getMode();
       if (mode === 'reject') { event.preventDefault(); return; }
@@ -36,7 +42,12 @@ const component = {
         h('h2', null, 'Framework owned choice'),
         this.mountedClient ? h('en-checkbox', ${vue2 ? "{ attrs: { id: 'client-checkbox' }, domProps: { checked: this.checked }, on: { 'en-change': this.changed } }" : "{ id: 'client-checkbox', '.checked': this.checked, 'onEn-change': this.changed }"}, 'Framework owned choice') : null,
         ${button('client-toggle', '() => { this.checked = !this.checked; }', 'Toggle framework choice')},
-        h('output', ${attrs("id: 'client-state'")}, this.checked ? 'checked' : 'unchecked')
+        h('output', ${attrs("id: 'client-state'")}, this.checked ? 'checked' : 'unchecked'),
+        ${button('client-update', '() => { this.revised = true; }', 'Update properties')},
+        ${button('client-mount', '() => { this.mountedClient = !this.mountedClient; }', 'Mount or unmount controls')},
+        this.mountedClient ? h('en-text-field', ${vue2 ? "{ attrs: { id: 'client-field' }, domProps: { label: 'Project title', value: this.revised ? 'Revised brief' : 'Initial brief' } }" : "{ id: 'client-field', '.label': 'Project title', '.value': this.revised ? 'Revised brief' : 'Initial brief' }"}, [h('span', ${attrs("slot: 'description'")}, 'Framework supplied description')]) : null,
+        this.mountedClient ? h('en-tree', ${vue2 ? "{ ref: 'tree', attrs: { id: 'client-tree' }, domProps: { items: [{key: this.revised ? 'export' : 'project', label: this.revised ? 'Export artwork' : 'Project artwork'}] } }" : "{ ref: 'tree', id: 'client-tree', '.items': [{key: this.revised ? 'export' : 'project', label: this.revised ? 'Export artwork' : 'Project artwork'}] }"}) : null,
+        h('output', ${attrs("id: 'client-tree-state'")}, this.selected)
       ])
     ]);
   }

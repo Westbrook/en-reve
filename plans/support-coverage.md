@@ -1,6 +1,8 @@
 # Support coverage ledger
 
-Snapshot: **2026-10-02**, audited against `dcb52a27`. Full support qualification
+Inventory snapshot: **2026-10-02**, audited against `dcb52a27`; packed framework
+qualification added against the `fb201d1c` base plus the receipt's exact source hashes.
+Full support qualification
 remains **incomplete**. The versioned [ledger](support-coverage.json) maps the
 requirements in [verification §§7–8](verification.md#7-developer-and-delivery-integration)
 to exact inventories, scoped receipts, outstanding conditions and next actions.
@@ -52,12 +54,12 @@ Nothing here changes users' installed browsers or this repository's pinned engin
 
 | Cohort | Current source pin | September13 receipt | Remaining packed coverage |
 | --- | --- | --- | --- |
-| React19 | 19.3.0 | 19.3.0 | Required |
-| React18 | 18.3.1 | 18.3.1 | Required |
-| Vue3 | 3.5.43 | 3.5.42 | Required; versions differ |
-| Vue2 | 2.7.16 | 2.7.16 | Historical compatibility only |
-| Svelte5 | 5.57.1 | 5.57.0 | Required; versions differ |
-| Svelte4 | 4.2.20 | 4.2.20 | Required |
+| React19 | 19.3.0 | 19.3.0 | October2 packed pass |
+| React18 | 18.3.1 | 18.3.1 | October2 packed pass |
+| Vue3 | 3.5.43 | 3.5.42 | October2 packed pass on3.5.43 |
+| Vue2 | 2.7.16 | 2.7.16 | October2 packed pass; EOL compatibility only |
+| Svelte5 | 5.57.1 | 5.57.0 | October2 packed pass on5.57.1 |
+| Svelte4 | 4.2.20 | 4.2.20 | October2 packed pass |
 
 The original84-pass [framework receipt](../probes/framework-consumption/verification.json)
 is preserved unchanged. It covers workspace distributions, boolean/event bindings,
@@ -69,15 +71,22 @@ substituted into that receipt. [Vue2 is EOL](https://v2.vuejs.org/eol/); keep it
 legacy compatibility and resolve the intended rolling supported-line policy
 before calling these cohorts current-minus-one support.
 
+The separate [packed receipt](../probes/framework-consumption/verification-packed-20261002.json)
+now closes the structural consumption gap:126 browser passes across seven fresh
+tarball installations and three engines, plus seven independent public declaration
+compilations. It includes object/string/boolean bindings, slots, transactions,
+reference interactions and unmount/remount with explicit listener disposal. The
+old receipt remains unchanged; neither result establishes retail-product or
+physical/manual coverage.
+
 ## Remaining work, in order
 
-1. **Packed frameworks:** extend the existing fixture to consume freshly packed
-   packages in independent installations; add the object/string, lifecycle and
-   public-type cases required by the plan. Run all maintained cohorts and HTML
-   across the pinned engines. Preserve the old receipt as historical evidence.
-2. **Actual release products:** resolve current/preceding versions on named OSes,
+1. **Actual release products:** resolve current/preceding versions on named OSes,
    then acquire isolated automated or manual receipts. Record binary identity,
    profile, scenario, result and date. Missing access is an open condition.
+2. **Rolling framework lines:** resolve supported-line meaning per framework;
+   extend the fixed compatibility cohorts if required. Legacy Vue2 acceptance
+   is not a claim of upstream maintenance.
 3. **Physical and manual matrix:** named Android/iOS phones/tablets in both
    orientations; small/large laptops; desktop display transitions; real observed
    connectivity; remaining speech, native-picker and IME workflows. Existing

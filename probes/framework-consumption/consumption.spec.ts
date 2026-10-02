@@ -2,6 +2,47 @@ import { expect, test } from '@playwright/test';
 const consumers = ['html','react19','react18','vue3','vue2','svelte5','svelte4'];
 for (const consumer of consumers) {
  test.describe(consumer, () => {
+  test('object and string properties render through framework bindings with authored description slots', async ({page}) => {
+   const errors:string[]=[]; page.on('pageerror',error=>errors.push(error.message));
+   await page.goto(`/${consumer}.html`);
+   const tree = page.locator('#client-tree'), field = page.locator('#client-field');
+   const input = field.getByRole('textbox',{name:'Project title',exact:true});
+   await expect(input).toHaveValue('Initial brief');
+   await expect(input).toHaveAccessibleDescription('Framework supplied description');
+   await expect(tree.getByRole('treeitem',{name:'Project artwork',exact:true})).toBeVisible();
+   await page.locator('#client-update').click();
+   await expect(input).toHaveValue('Revised brief');
+   await expect(tree.getByRole('treeitem',{name:'Project artwork',exact:true})).toHaveCount(0);
+   await expect(tree.getByRole('treeitem',{name:'Export artwork',exact:true})).toBeVisible();
+   expect(await page.evaluate(()=>(window as any).fixture.clientEvents)).toEqual([]);
+   await tree.getByRole('treeitem',{name:'Export artwork',exact:true}).click();
+   await expect(page.locator('#client-tree-state')).toHaveText('export');
+   expect(await tree.evaluate((el:any)=>({items:el.items.map((item:any)=>({key:item.key,label:item.label})),selected:el.selectedKey,attribute:el.getAttribute('items')}))).toEqual({items:[{key:'export',label:'Export artwork'}],selected:'export',attribute:null});
+   // Real native editing still works after the authoritative framework update.
+   await input.fill('Locally edited'); await expect(input).toHaveValue('Locally edited');
+   expect(errors).toEqual([]);
+  });
+  test('framework unmount/remount retains owner state and cleans up detached native event listeners', async ({page}) => {
+   await page.goto(`/${consumer}.html`);
+   await expect(page.locator('#client-tree')).toBeVisible();
+   await page.locator('#client-toggle').click();
+   await expect(page.locator('#client-checkbox').getByRole('checkbox')).toBeChecked();
+   await page.locator('#client-update').click();
+   await page.evaluate(()=>(window as any).detachedTree=document.querySelector('#client-tree'));
+   await page.locator('#client-mount').click();
+   for (const id of ['client-checkbox','client-field','client-tree']) await expect(page.locator('#'+id)).toHaveCount(0);
+   // This synthetic event tests framework listener disposal, not a user interaction.
+   await page.evaluate(()=>(window as any).detachedTree.dispatchEvent(new CustomEvent('en-change',{detail:{proposed:{selectedKey:'stale'}}})));
+   expect(await page.evaluate(()=>(window as any).fixture.clientEvents)).toEqual([]);
+   await page.locator('#client-mount').click();
+   await expect(page.locator('#client-checkbox').getByRole('checkbox')).toBeChecked();
+   await expect(page.locator('#client-field').getByRole('textbox')).toHaveValue('Revised brief');
+   const item=page.locator('#client-tree').getByRole('treeitem',{name:'Export artwork',exact:true});
+   await item.focus(); await page.keyboard.press('Enter');
+   await expect(page.locator('#client-tree-state')).toHaveText('export');
+   expect(await page.evaluate(()=>(window as any).fixture.clientEvents)).toEqual(['export']);
+   expect(await page.evaluate(()=>document.querySelector('#client-tree')!==(window as any).detachedTree)).toBe(true);
+  });
   test('SSR shell and native controls retain identity through both hydration owners', async ({page,browser}) => {
    test.info().annotations.push({type:'browser-version',description:browser.version()});
    const errors:string[]=[];

@@ -178,8 +178,10 @@ Accepted coverage is broader than a single automated Cartesian product. Maintain
 
 The [October 2 support ledger](support-coverage.md) now records this mapping and
 the [machine-readable conditions](support-coverage.json). Qualification remains
-incomplete: packed framework cohorts, actual current/preceding browser products,
-and broader physical/manual checks remain distinct outstanding work. Historical
+incomplete: actual current/preceding browser products, rolling framework-line
+policy and broader physical/manual checks remain distinct outstanding work.
+The October2 packed framework pass closes the fixed-cohort structural-consumption
+gap with126 browser passes and seven independent type compilations. Historical
 framework pins and current manifests differ; original receipts are not rewritten.
 
 | Coverage obligation | Repeatable automation | Actual-environment evidence |

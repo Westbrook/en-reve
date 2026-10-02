@@ -9,6 +9,10 @@ function App({ islandHtml }) {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => { setMounted(true); }, []);
   const checkbox = React.useRef(null);
+  const tree = React.useRef(null), field = React.useRef(null);
+  const [revised, setRevised] = React.useState(false), [selected, setSelected] = React.useState('');
+  React.useEffect(() => { if (!tree.current) return; const element = tree.current; const change = event => { window.fixture.clientEvents.push(event.detail.proposed.selectedKey); setSelected(event.detail.proposed.selectedKey); }; element.addEventListener('en-change', change); return () => element.removeEventListener('en-change', change); }, [mounted]);
+  React.useEffect(() => { if (!tree.current) return; tree.current.items = [{key: revised ? 'export' : 'project', label: revised ? 'Export artwork' : 'Project artwork'}]; field.current.label = 'Project title'; field.current.value = revised ? 'Revised brief' : 'Initial brief'; }, [mounted, revised]);
   React.useEffect(() => {
     const element = checkbox.current;
     if (!element) return;
@@ -41,7 +45,12 @@ function App({ islandHtml }) {
       React.createElement('h2', null, 'Framework owned choice'),
       mounted ? React.createElement('en-checkbox', { id: 'client-checkbox', ref: checkbox }, 'Framework owned choice') : null,
       React.createElement('button', { id: 'client-toggle', type: 'button', onClick: () => setChecked(value => !value) }, 'Toggle framework choice'),
-      React.createElement('output', { id: 'client-state' }, checked ? 'checked' : 'unchecked')));
+      React.createElement('output', { id: 'client-state' }, checked ? 'checked' : 'unchecked'),
+      React.createElement('button', {id: 'client-update', type: 'button', onClick: () => setRevised(true)}, 'Update properties'),
+      React.createElement('button', {id: 'client-mount', type: 'button', onClick: () => setMounted(value => !value)}, 'Mount or unmount controls'),
+      mounted ? React.createElement('en-text-field', {id: 'client-field', ref: field}, React.createElement('span', {slot: 'description'}, 'Framework supplied description')) : null,
+      mounted ? React.createElement('en-tree', {id: 'client-tree', ref: tree}) : null,
+      React.createElement('output', {id: 'client-tree-state'}, selected)));
 }
 `;
 

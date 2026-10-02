@@ -122,3 +122,16 @@ test('accepted synthetic campaign controls precede builds without adding lab ins
  assert(fast.has('node:showcases/performance/tests/current-campaign-integration.test.mjs'));
  assert(!fast.has('node:showcases/performance/tests/campaigns.test.mjs'),'Lighthouse-dependent synthetic controls retain isolated lab setup in correctness');
 });
+
+
+test('framework preparation and browsers share one fresh packed consumer output', async () => {
+ const graph=await comprehensiveGraph({workspaceRoot});
+ const tasks=selectTasks(graph,['framework']);
+ const prepare=tasks.find(t=>t.id==='prepare:framework');
+ const browser=tasks.find(t=>t.id==='browser:probes/framework-consumption/playwright.config.ts');
+ assert(prepare && browser);
+ assert.equal(prepare.environment.EN_FRAMEWORK_OUT,'$RUN/fixtures/framework');
+ assert.equal(browser.environment.EN_FRAMEWORK_OUT,prepare.environment.EN_FRAMEWORK_OUT);
+ assert(browser.dependencies.includes(prepare.id));
+ assert(tasks.indexOf(prepare)<tasks.indexOf(browser));
+});
