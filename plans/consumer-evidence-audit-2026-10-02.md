@@ -92,3 +92,7 @@ The [packed reusable-layer fixture](../probes/reusable-layers/README.md) now run
 ### Native content/navigation qualification
 
 The [native-recipes batch](../probes/native-recipes/README.md) now qualifies maintained content/navigation recipes from isolated tarballs, using both Lit and portable CSS delivery.78 packed browser cases,39 original-owner cases and18 pathway/inventory controls pass. Content no longer imports source templates or source skeleton definitions; shared document shells keep both owners aligned. The source-observation table remains the historical audit baseline. Other inventory entries and independently generated examples remain open.
+
+### Table and virtual-collection qualification
+
+The [collection-recipes batch](../probes/collection-recipes/README.md) exercises the maintained table/list and document-scroll applications against isolated tarballs. Its 81-case matrix retains native SSR/hydration, transactional selection, keyed identity, measured anchoring, paging, native Tab continuity, reveal alignment and observer cleanup. Document scrolling runs at desktop and phone widths. Seven additional public entries receive bounded scenario qualification; portable table CSS, independently generated examples and manual/retail/physical coverage remain open. The known VoiceOver reading-cursor issue is unchanged.

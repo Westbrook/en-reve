@@ -1,0 +1,10 @@
+import '@en-reve/ssr/install.js';
+import {writeFile} from 'node:fs/promises';
+import {join} from 'node:path';
+const {html}=await import('lit');
+const {renderToString}=await import('@en-reve/ssr');
+const {resolveTheme,emitThemeCSS}=await import('@en-reve/tokens');
+await import('./table.js');
+const body=await renderToString(html`<en-virtual-collection-demo></en-virtual-collection-demo>`);
+const theme=emitThemeCSS(resolveTheme({mode:'light'}),{target:'root'});
+await writeFile(join(process.argv[2],'table.html'),`<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Packed table composition</title><style>${theme}body{margin:0;padding:1rem;font:1rem system-ui;background:var(--en-color-surface);color:var(--en-color-text)}main{max-width:70rem;margin:auto;min-width:0}</style></head><body><main><h1>Packed table composition</h1>${body}</main><script type="module" src="/assets/table.js"></script></body></html>`);

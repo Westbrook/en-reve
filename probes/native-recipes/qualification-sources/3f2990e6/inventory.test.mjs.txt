@@ -20,16 +20,3 @@ test('compositions use only public imports and inventory links each exercised en
   for(const entry of imports){const row=inventory.entries.find(row=>row.entry===entry);assert(row,entry);assert(row.composition===id || entry==='@en-reve/primitives/interactions/signal-controller.js',entry);}
  }
 });
-
-
-test('maintained collection recipes resolve qualified public entries with explicit shared dependencies',async()=>{
- const seen=new Set();
- for(const path of ['apps/docs/src/virtual-collection-demo.ts','apps/docs/src/document-scroll-demo.ts']){
-  const source=await read(path);assert(!/from ['"][^'"]*(?:\/src\/|\/dist\/)/.test(source));
-  for(const [,entry] of source.matchAll(/from ['"](@en-reve\/[^'"]+)['"]/g)){
-   const row=inventory.entries.find(row=>row.entry===entry);assert(row,entry);assert.equal(row.qualification,'qualified-scenarios',entry);seen.add(entry);
-  }
- }
- const qualified=inventory.entries.filter(row=>row.composition==='collections');assert.equal(qualified.length,7);
- for(const row of qualified)assert(seen.has(row.entry),row.entry);
-});

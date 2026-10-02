@@ -1,5 +1,5 @@
 import { expect, test, type Locator, type Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { AxeBuilder } from '@axe-core/playwright';
 
 const path = '/api-examples/virtual-collection.html?progress-report';
 const demo = (page: Page) => page.locator('en-virtual-collection-demo');
@@ -19,7 +19,8 @@ test.afterEach(async ({ page }) => { expect(failures.get(page)).toEqual([]); });
 
 async function open(page: Page) {
 	await page.goto(path);
-	await expect(page.locator('en-api-example-app')).not.toHaveAttribute('data-ssr');
+	await page.waitForFunction(() => Boolean(customElements.get('en-virtual-collection-demo')));
+	await demo(page).evaluate((node: HTMLElement & { updateComplete?: Promise<boolean> }) => node.updateComplete);
 	await expect(demo(page)).toBeVisible();
 	await expect.poll(() => rows(page).count()).toBeGreaterThan(0);
 }
@@ -73,6 +74,18 @@ async function expectBounded(page: Page) {
 	expect(await region.evaluate(node => node.scrollHeight)).toBeGreaterThan(100_000);
 }
 
+// Acceptance is synchronous; row measurement and native scrolling settle later.
+async function settledCollection(page: Page) {
+	await expect.poll(() => demo(page).evaluate(async (node: any) => {
+		const samples: string[] = [];
+		for (let index = 0; index < 12; index++) {
+			await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
+			samples.push(JSON.stringify({ scrollTop: node.viewport.scrollTop, revision: node.model.revision.get() }));
+		}
+		return samples.slice(-6).every(sample => sample === samples.at(-1));
+	})).toBe(true);
+}
+
 test('server delivery exposes useful native rows and valid table structure without JavaScript', async ({ browser, baseURL }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	const page = await context.newPage();
@@ -87,7 +100,7 @@ test('server delivery exposes useful native rows and valid table structure witho
 		await expect(row(page, 1).locator('en-checkbox [part=label-text]')).toBeHidden();
 		await expect(row(page, 1).locator('en-checkbox input[type="checkbox"]')).toHaveCount(1);
 		await expect(table).toHaveAttribute('aria-rowcount', '10001');
-		expect(await table.evaluate(node => ({
+		expect(await table.evaluate((node: HTMLTableElement) => ({
 			bodies: node.tBodies.length,
 			validRows: [...node.tBodies[0]!.children].every(child => child.localName === 'tr'),
 			validCells: [...node.tBodies[0]!.rows].every(tr => [...tr.children].every(cell => ['td', 'th'].includes(cell.localName))),
@@ -110,7 +123,8 @@ test('hydration retains the server table and keyed first row before windowing', 
 		await expect(choice(page, 1)).toBeVisible();
 		const saved = await row(page, 1).evaluateHandle(node => ({ row: node, table: node.closest('table'), checkbox: node.querySelector('en-checkbox'), input: node.querySelector('en-checkbox')?.shadowRoot?.querySelector('input') }));
 		release();
-		await expect(page.locator('en-api-example-app')).not.toHaveAttribute('data-ssr');
+		await page.waitForFunction(() => Boolean(customElements.get('en-virtual-collection-demo')));
+		await demo(page).evaluate((node: HTMLElement & { updateComplete?: Promise<boolean> }) => node.updateComplete);
 		await expect.poll(() => row(page, 1).evaluate((node, previous) => node === previous.row && node.closest('table') === previous.table && node.querySelector('en-checkbox') === previous.checkbox && node.querySelector('en-checkbox')?.shadowRoot?.querySelector('input') === previous.input, saved)).toBe(true);
 		await expectBounded(page);
 		await saved.dispose();
@@ -197,14 +211,7 @@ test('density changes remeasure variable-height table rows without losing the vi
 	// scrollToKey returns acceptance, not completion. Measure a settled view:
 	// native movement and the following variable-height reconciliation are
 	// separate from the presentation-change behavior under test.
-	await expect.poll(() => demo(page).evaluate(async (node: any) => {
-		const samples: string[] = [];
-		for (let index = 0; index < 12; index++) {
-			await new Promise<void>(resolve => requestAnimationFrame(() => resolve()));
-			samples.push(JSON.stringify({ scrollTop: node.viewport.scrollTop, revision: node.model.revision.get() }));
-		}
-		return samples.slice(-6).every(sample => sample === samples.at(-1));
-	})).toBe(true);
+	await settledCollection(page);
 	const before = await firstVisible(page); expect(before).not.toBeNull();
 	const target = demo(page).locator(`[data-en-virtual-key="${before!.key}"]`);
 	const initialHeight = (await target.boundingBox())!.height;
@@ -311,8 +318,12 @@ test('checkbox toggles and backward window traversal preserve row identity and l
 	await open(page);
 	const region = await viewport(page);
 	await region.evaluate(node => { node.scrollTop = 3600; });
-	await expect(row(page, 45)).toBeAttached();
-	const control = choice(page, 45); await control.focus();
+	await expect.poll(async () => Number((await firstVisible(page))?.key.slice(6))).toBeGreaterThan(20);
+	// Native scroll establishes the window; its exact key depends on the
+	// consumer's width and theme, not a fixed pixel-to-row assumption.
+	const number = Number((await firstVisible(page))!.key.slice(6)) + 1;
+	await expect(row(page, number)).toBeAttached();
+	const control = choice(page, number); await control.focus();
 	// Let scrolling and measured row sizes settle before isolating checkbox updates.
 	// scrollToKey intentionally retains temporary reveal pins, so use native scrolling here.
 	await region.evaluate(node => new Promise<void>((resolve, reject) => {
@@ -326,7 +337,7 @@ test('checkbox toggles and backward window traversal preserve row identity and l
 		};
 		requestAnimationFrame(check);
 	}));
-	const saved = await row(page, 45).evaluateHandle(node => ({ row: node, input: node.querySelector('en-checkbox')?.shadowRoot?.querySelector('input') }));
+	const saved = await row(page, number).evaluateHandle(node => ({ row: node, input: node.querySelector('en-checkbox')?.shadowRoot?.querySelector('input') }));
 	const audit = await demo(page).evaluateHandle(node => {
 		const body = node.shadowRoot!.querySelector('tbody')!;
 		const table = body.closest('table')!;
@@ -363,7 +374,7 @@ test('checkbox toggles and backward window traversal preserve row identity and l
 				await region.evaluate((node, delta) => { node.scrollTop += delta; }, direction * 150);
 				await expect.poll(async () => (await firstVisible(page))?.key).not.toBe(previous?.key);
 				await expect(control).toBeFocused();
-				expect(await row(page, 45).evaluate((node, original) => node === original.row && node.querySelector('en-checkbox')?.shadowRoot?.querySelector('input') === original.input, saved)).toBe(true);
+				expect(await row(page, number).evaluate((node, original) => node === original.row && node.querySelector('en-checkbox')?.shadowRoot?.querySelector('input') === original.input, saved)).toBe(true);
 			}
 		}
 		const result = await audit.evaluate(value => ({ snapshots: value.snapshots, focusEvents: value.focusEvents }));
@@ -500,6 +511,7 @@ for (const view of ['table', 'list'] as const) {
 			await expect(original).toBeFocused(); await expect(original).toBeChecked();
 			expect(await original.evaluate((node, previous) => node === previous, saved)).toBe(true);
 		}
+		await settledCollection(page);
 		const before = await region.evaluate(node => node.scrollTop);
 		expect(await demo(page).evaluate((node: any) => node.controller.scrollToKey('asset-07000', { block: 'nearest', container: 'nearest' }))).toBe(true);
 		// Let the controller process the accepted request before reading the result.

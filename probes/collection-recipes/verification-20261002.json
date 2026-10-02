@@ -1,0 +1,1697 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "at": "2026-10-02T09:13:12.649793+00:00",
+  "sourceBase": "3f2990e6efaad50fd268366c34aed1e62736bb35",
+  "pathway": "collection-recipes",
+  "command": "EN_EXECUTION_OUTPUT=<fresh> tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=collection-recipes,primitives,semantic-types",
+  "output": "/private/tmp/en-collection-recipes-20261002-06",
+  "report": {
+    "status": "passed",
+    "passed": 81,
+    "workers": 1,
+    "cases": [
+      {
+        "project": "chromium-table",
+        "title": "server delivery exposes useful native rows and valid table structure without JavaScript",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "hydration retains the server table and keyed first row before windowing",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "table windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "list windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "sort and prepend preserve keyed selection and the visible scroll anchor",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "focused row stays mounted while the ordinary window moves, then releases on blur",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "density changes remeasure variable-height table rows without losing the viewport anchor",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "paginated reading exposes the complete page with native keyboard selection and page navigation",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "narrow RTL keeps the virtual table inside its scroll region and list content readable",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "near-bottom resizing keeps the final records reachable and mounted rows settle while idle",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "removing a selected record updates total count and leaves the surrounding collection usable",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "checkbox toggles and backward window traversal preserve row identity and logical order",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "an application reorder preserves the exact focused control for its stable record key",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "table native Tab continues beside a retained offscreen focused record",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          },
+          {
+            "type": "native-keyboard-navigation",
+            "description": "Tab / Shift+Tab"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "table public scrollToKey aligns records without changing focus or selection",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "list native Tab continues beside a retained offscreen focused record",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          },
+          {
+            "type": "native-keyboard-navigation",
+            "description": "Tab / Shift+Tab"
+          }
+        ]
+      },
+      {
+        "project": "chromium-table",
+        "title": "list public scrollToKey aligns records without changing focus or selection",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      {
+        "project": "chromium-document-1280",
+        "title": "document geometry preserves active anchor for preceding layout and changing row heights",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-1280",
+        "title": "offscreen collection does not capture document scroll; entry and exit reset anchors",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-1280",
+        "title": "smooth reveal honors sticky insets and wheel interruption",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-1280",
+        "title": "focused row survives scrolling; removal recovers focus and teardown restores styles",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-1280",
+        "title": "element scrollports retain bounded rendering, reveal and height anchoring",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-390",
+        "title": "document geometry preserves active anchor for preceding layout and changing row heights",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-390",
+        "title": "offscreen collection does not capture document scroll; entry and exit reset anchors",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-390",
+        "title": "smooth reveal honors sticky insets and wheel interruption",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-390",
+        "title": "focused row survives scrolling; removal recovers focus and teardown restores styles",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "chromium-document-390",
+        "title": "element scrollports retain bounded rendering, reveal and height anchoring",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-table",
+        "title": "server delivery exposes useful native rows and valid table structure without JavaScript",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "hydration retains the server table and keyed first row before windowing",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "table windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "list windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "sort and prepend preserve keyed selection and the visible scroll anchor",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "focused row stays mounted while the ordinary window moves, then releases on blur",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "density changes remeasure variable-height table rows without losing the viewport anchor",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "paginated reading exposes the complete page with native keyboard selection and page navigation",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "narrow RTL keeps the virtual table inside its scroll region and list content readable",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "near-bottom resizing keeps the final records reachable and mounted rows settle while idle",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "removing a selected record updates total count and leaves the surrounding collection usable",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "checkbox toggles and backward window traversal preserve row identity and logical order",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "an application reorder preserves the exact focused control for its stable record key",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "table native Tab continues beside a retained offscreen focused record",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          },
+          {
+            "type": "native-keyboard-navigation",
+            "description": "Tab / Shift+Tab"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "table public scrollToKey aligns records without changing focus or selection",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "list native Tab continues beside a retained offscreen focused record",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          },
+          {
+            "type": "native-keyboard-navigation",
+            "description": "Tab / Shift+Tab"
+          }
+        ]
+      },
+      {
+        "project": "firefox-table",
+        "title": "list public scrollToKey aligns records without changing focus or selection",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      {
+        "project": "firefox-document-1280",
+        "title": "document geometry preserves active anchor for preceding layout and changing row heights",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-1280",
+        "title": "offscreen collection does not capture document scroll; entry and exit reset anchors",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-1280",
+        "title": "smooth reveal honors sticky insets and wheel interruption",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-1280",
+        "title": "focused row survives scrolling; removal recovers focus and teardown restores styles",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-1280",
+        "title": "element scrollports retain bounded rendering, reveal and height anchoring",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-390",
+        "title": "document geometry preserves active anchor for preceding layout and changing row heights",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-390",
+        "title": "offscreen collection does not capture document scroll; entry and exit reset anchors",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-390",
+        "title": "smooth reveal honors sticky insets and wheel interruption",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-390",
+        "title": "focused row survives scrolling; removal recovers focus and teardown restores styles",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "firefox-document-390",
+        "title": "element scrollports retain bounded rendering, reveal and height anchoring",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-table",
+        "title": "server delivery exposes useful native rows and valid table structure without JavaScript",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "hydration retains the server table and keyed first row before windowing",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "table windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "list windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "sort and prepend preserve keyed selection and the visible scroll anchor",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "focused row stays mounted while the ordinary window moves, then releases on blur",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "density changes remeasure variable-height table rows without losing the viewport anchor",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "paginated reading exposes the complete page with native keyboard selection and page navigation",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "narrow RTL keeps the virtual table inside its scroll region and list content readable",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "near-bottom resizing keeps the final records reachable and mounted rows settle while idle",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "removing a selected record updates total count and leaves the surrounding collection usable",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "checkbox toggles and backward window traversal preserve row identity and logical order",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "an application reorder preserves the exact focused control for its stable record key",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "table native Tab continues beside a retained offscreen focused record",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          },
+          {
+            "type": "native-keyboard-navigation",
+            "description": "Alt+Tab / Shift+Alt+Tab"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "table public scrollToKey aligns records without changing focus or selection",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "list native Tab continues beside a retained offscreen focused record",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          },
+          {
+            "type": "native-keyboard-navigation",
+            "description": "Alt+Tab / Shift+Alt+Tab"
+          }
+        ]
+      },
+      {
+        "project": "webkit-table",
+        "title": "list public scrollToKey aligns records without changing focus or selection",
+        "status": "passed",
+        "retry": 0,
+        "annotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      },
+      {
+        "project": "webkit-document-1280",
+        "title": "document geometry preserves active anchor for preceding layout and changing row heights",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-1280",
+        "title": "offscreen collection does not capture document scroll; entry and exit reset anchors",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-1280",
+        "title": "smooth reveal honors sticky insets and wheel interruption",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-1280",
+        "title": "focused row survives scrolling; removal recovers focus and teardown restores styles",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-1280",
+        "title": "element scrollports retain bounded rendering, reveal and height anchoring",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-390",
+        "title": "document geometry preserves active anchor for preceding layout and changing row heights",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-390",
+        "title": "offscreen collection does not capture document scroll; entry and exit reset anchors",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-390",
+        "title": "smooth reveal honors sticky insets and wheel interruption",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-390",
+        "title": "focused row survives scrolling; removal recovers focus and teardown restores styles",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      },
+      {
+        "project": "webkit-document-390",
+        "title": "element scrollports retain bounded rendering, reveal and height anchoring",
+        "status": "passed",
+        "retry": 0,
+        "annotations": []
+      }
+    ],
+    "sourceHashes": {
+      "../../apps/docs/tests/virtual-collection.spec.ts": "3ed9933d6aa61975d6639b0af2b1ebfd148b37fe23736e24b2d7cfc4ed2fa786",
+      "../document-scroll/scroll.spec.ts": "22439408826431f27b62f7c4dd527cf4de86937d870e423b1c3aa6ba574fdfd4"
+    },
+    "reportSHA256": "be023ce0298df29c6d4fb4e443606ebd813c73f89746474e1de144aaa02362d8"
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+        "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110",
+        "setup": {
+          "key": "f90dc76565bf77cf204477a1a988cc42c6b7319c9c536dcad3dddcb7361cdc61",
+          "reused": false,
+          "originatingProducer": "2026-10-02T09:10:26.275Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "f90dc76565bf77cf204477a1a988cc42c6b7319c9c536dcad3dddcb7361cdc61",
+          "reused": false,
+          "originatingProducer": "2026-10-02T09:10:26.275Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "f90dc76565bf77cf204477a1a988cc42c6b7319c9c536dcad3dddcb7361cdc61",
+          "reused": false,
+          "originatingProducer": "2026-10-02T09:10:26.275Z"
+        }
+      },
+      {
+        "name": "@en-reve/elements",
+        "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+        "shasum": "9afb616f25903183b536db82c11032145bf40d46",
+        "setup": {
+          "key": "f90dc76565bf77cf204477a1a988cc42c6b7319c9c536dcad3dddcb7361cdc61",
+          "reused": false,
+          "originatingProducer": "2026-10-02T09:10:26.275Z"
+        }
+      },
+      {
+        "name": "@en-reve/ssr",
+        "integrity": "sha512-bZY1o3hMgtNpbmUNeLpOLwXuo7hGDRAvaabm9iDFWtv17dFZ1DMFVVhf0M3Ru/iABFGIeJlN+BThdURklKmYpA==",
+        "shasum": "486b2b4105e404cc0ba3715ae8a2e25a071519b3",
+        "setup": {
+          "key": "f90dc76565bf77cf204477a1a988cc42c6b7319c9c536dcad3dddcb7361cdc61",
+          "reused": false,
+          "originatingProducer": "2026-10-02T09:10:26.275Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/state/virtual-collection.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/scroll-into-view.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/virtual-collection.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/virtual-collection.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/collection.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/table.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/table.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/table.d.ts",
+        "node_modules/@en-reve/styles/dist/table.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/typography.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/selection.d.ts",
+        "node_modules/@en-reve/elements/dist/define/table.d.ts",
+        "node_modules/@en-reve/elements/dist/define/button.d.ts",
+        "node_modules/@en-reve/elements/dist/define/icon.d.ts",
+        "node_modules/@en-reve/elements/dist/define/checkbox.d.ts",
+        "node_modules/@en-reve/elements/dist/define/select.d.ts",
+        "node_modules/@en-reve/elements/dist/define/text-field.d.ts",
+        "node_modules/@en-reve/elements/dist/define/pagination.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-html/private-ssr-support.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/@lit-labs/ssr-client/lib/hydrate-lit-html.js",
+      "node_modules/@lit-labs/ssr-client/lit-element-hydrate-support.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/registration.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/dom-kind.js",
+      "node_modules/signal-polyfill/dist/index.js",
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/element-registry.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/child-upgrades.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/element-scope.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/en-element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table/template.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/buttons.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/activity.js",
+      "node_modules/lit-html/directives/if-defined.js",
+      "node_modules/lit/directives/if-defined.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button/template.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/focus-participant.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/id-reference.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/host-descriptions.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/button.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/button.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/feedback.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon/template.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/icon.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/icon.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/validation-feedback.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/field-labels.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/default-state.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/value.js",
+      "node_modules/signal-utils/dist/subtle/reaction.ts.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/signal-controller.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/form-controller.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/controls.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/selection.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/description.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox/template.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox/choice-base.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/checkbox.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/checkbox.js",
+      "node_modules/lit-html/static.js",
+      "node_modules/lit/static-html.js",
+      "node_modules/lit-html/directives/repeat.js",
+      "node_modules/lit/directives/repeat.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/selection-children.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/draft.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/form-field.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/selection-item.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select-option/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select-option/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select-option.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/select-option.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/select.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/select.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/editing-controller.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/editable-field.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/text-field/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/text-field/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/text-field.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/text-field.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/text-field.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/pagination.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/state.js",
+      "node_modules/lit-html/directives/style-map.js",
+      "node_modules/lit/directives/style-map.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/template.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/element.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/index.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/pagination.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/pagination.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/collection.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/virtual-collection.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/scroll-into-view.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/virtual-collection.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/virtual-collection.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/table.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/selection.js",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/virtual-collection-demo.ts",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/table.ts",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/entry.ts",
+      "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/document-scroll-demo.ts"
+    ],
+    "entryInputs": {
+      "table": [
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/entry.ts",
+        "node_modules/lit-html/private-ssr-support.js",
+        "node_modules/@lit-labs/ssr-client/lib/hydrate-lit-html.js",
+        "node_modules/@lit-labs/ssr-client/lit-element-hydrate-support.js",
+        "node_modules/lit-html/lit-html.js",
+        "node_modules/lit-html/directive.js",
+        "node_modules/lit-html/directive-helpers.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/registration.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/dom-kind.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/element-registry.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/element-scope.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/en-element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table/template.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/buttons.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/activity.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button/template.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/focus-participant.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/id-reference.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/host-descriptions.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/button.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/button.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/button.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/feedback.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon/template.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/icon.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/icon.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/icon.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/validation-feedback.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/field-labels.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/default-state.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/value.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/signal-controller.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/form-controller.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/controls.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/selection.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/description.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox/template.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox/choice-base.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/checkbox.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/checkbox.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/checkbox.js",
+        "node_modules/lit-html/static.js",
+        "node_modules/lit/static-html.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/selection-children.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/draft.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/form-field.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/internal/selection-item.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select-option/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select-option/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/select-option.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/select-option.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/select.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/select.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/editing-controller.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/forms-private/editable-field.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/text-field/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/text-field/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/text-field.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/text-field.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/text-field.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/styles/dist/pagination.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/state.js",
+        "node_modules/lit-html/directives/style-map.js",
+        "node_modules/lit/directives/style-map.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/template.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/element.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/pagination.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/pagination.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/elements/dist/define/pagination.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/table.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/selection.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/virtual-collection-demo.ts",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/table.ts",
+        "node_modules/@lit/reactive-element/css-tag.js",
+        "node_modules/@lit/reactive-element/reactive-element.js",
+        "node_modules/lit-element/lit-element.js",
+        "node_modules/lit/index.js",
+        "node_modules/lit-html/is-server.js",
+        "node_modules/signal-polyfill/dist/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/collection.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/virtual-collection.js",
+        "node_modules/signal-utils/dist/subtle/reaction.ts.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/scroll-into-view.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/virtual-collection.js",
+        "node_modules/lit-html/directives/repeat.js",
+        "node_modules/lit/directives/repeat.js",
+        "node_modules/lit-html/directives/if-defined.js",
+        "node_modules/lit/directives/if-defined.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/virtual-collection.js"
+      ],
+      "document": [
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/document-scroll-demo.ts",
+        "node_modules/@lit/reactive-element/css-tag.js",
+        "node_modules/@lit/reactive-element/reactive-element.js",
+        "node_modules/lit-element/lit-element.js",
+        "node_modules/lit/index.js",
+        "node_modules/lit-html/is-server.js",
+        "node_modules/signal-polyfill/dist/index.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/collection.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/state/virtual-collection.js",
+        "node_modules/signal-utils/dist/subtle/reaction.ts.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/scroll-into-view.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/virtual-collection.js",
+        "node_modules/lit-html/directives/repeat.js",
+        "node_modules/lit/directives/repeat.js",
+        "node_modules/lit-html/directives/if-defined.js",
+        "node_modules/lit/directives/if-defined.js",
+        "../en-collection-recipes-20261002-06/fixtures/collection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/virtual-collection.js",
+        "node_modules/lit-html/lit-html.js",
+        "node_modules/lit-html/directive.js",
+        "node_modules/lit-html/directive-helpers.js"
+      ]
+    },
+    "definitions": [
+      "button.js",
+      "checkbox.js",
+      "icon.js",
+      "pagination.js",
+      "select.js",
+      "table.js",
+      "text-field.js"
+    ],
+    "assets": {
+      "chunk-SDMOWZGN.js": "b855ecf240579486ac9eb5948458769b951d0b88e232232e747e6bd1728384b9",
+      "chunk-Y54TVFS4.js": "389a14d67b0e7d9017e682cb06fe431f8a90f217dd9d3ee00593a6d8a7656ae9",
+      "document.js": "3b6ec1953f337d82ae5d69b950f39376652b99b5194c2dd71688708f528c3d21",
+      "lit-element-hydrate-support-KTE6CZ26.js": "63ddfb8e279370631f6b40e32b9876a4b63efcef1d5ee4053e31b7b72ea47bb7",
+      "table-GC53QQWK.js": "f19f1d1da78f251374a07e8f01da2f9fc7e4fc4f3abf8219a1f01750aefac41c",
+      "table.js": "867b0a2747551a42c12b3549093aeff42a9aef706b0ffb946f2c2093b525f13e"
+    },
+    "pages": {
+      "table.html": "e73d5edbf79db0735047667a1a6d34db19b7c00168d300fba0d8574509735f03",
+      "document.html": "15ae437eeac9d28bf99b2977ba7560713004d7d4ae1af1465bc867e28b799461"
+    },
+    "sourceInputs": {
+      "apps/docs/src/document-scroll-demo.ts": "c508f7bcb5228807f1b199fd69f0897f52d36fbe3ecb122ec8bf9f0980db2ce8",
+      "apps/docs/src/virtual-collection-demo.ts": "9c33e76a034e811b526952d2d44888948533cdbc21a7da74c6bb94b734ba796d",
+      "probes/collection-recipes/table.ts": "d558a1ab7442e76e392e47d2490381600e8019c4f34ce0d4ab01affa741296f4",
+      "probes/collection-recipes/entry.ts": "31b42fce022e1f5fe3da7350009936becee76b1396064e0531e5b2eb9e479059",
+      "probes/collection-recipes/render-pages.mjs": "f9b8885ccda6b0e22450f43b3b47b9dbcb26357d5b2098da10f573e4323df81a",
+      "apps/docs/document-scroll.html": "288b31db718fba1ed5cbcba8ac6d96174414cd504c4fa6785920c2d82788445d"
+    },
+    "limits": [
+      "Existing authored table/list and document-scroll recipes consumed from package tarballs.",
+      "No manual AT, physical-device, retail-browser or universal SSR qualification."
+    ]
+  },
+  "sourceInputs": {
+    "apps/docs/src/document-scroll-demo.ts": "c508f7bcb5228807f1b199fd69f0897f52d36fbe3ecb122ec8bf9f0980db2ce8",
+    "apps/docs/src/virtual-collection-demo.ts": "9c33e76a034e811b526952d2d44888948533cdbc21a7da74c6bb94b734ba796d",
+    "apps/docs/document-scroll.html": "288b31db718fba1ed5cbcba8ac6d96174414cd504c4fa6785920c2d82788445d",
+    "apps/docs/tests/virtual-collection.spec.ts": "3ed9933d6aa61975d6639b0af2b1ebfd148b37fe23736e24b2d7cfc4ed2fa786",
+    "probes/document-scroll/scroll.spec.ts": "22439408826431f27b62f7c4dd527cf4de86937d870e423b1c3aa6ba574fdfd4",
+    "tooling/testing/comprehensive.mjs": "e7c6e0a2fc0055989c151269cf367d225d3f3fe7395aeb3d2db84440e1de2b7e",
+    "tooling/testing/comprehensive.test.mjs": "4466516c7acfc10cc316cb49ff93faf960ade0527339d3c52d39dca88bfb24ca",
+    "tooling/testing/browser-ports.mjs": "a70eee93715c137ef175515e2d0ad0218a69ec06f5501229495e46beb3c61882",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32",
+    "probes/collection-recipes/table.ts": "d558a1ab7442e76e392e47d2490381600e8019c4f34ce0d4ab01affa741296f4",
+    "probes/collection-recipes/entry.ts": "31b42fce022e1f5fe3da7350009936becee76b1396064e0531e5b2eb9e479059",
+    "probes/collection-recipes/render-pages.mjs": "f9b8885ccda6b0e22450f43b3b47b9dbcb26357d5b2098da10f573e4323df81a",
+    "probes/collection-recipes/server.mjs": "0699b8c35e6c3d2f1b581eb8fc11820e51ada3d0ca9cd8950c8fd957cb8e0507",
+    "probes/collection-recipes/playwright.config.ts": "ab5ca318064027db78ba6671c547bd585db3b50029e534a16d5006b00782d620",
+    "probes/collection-recipes/prepare.mjs": "d18e25da3b2d163a2ee4fd4709d57867432d7569867d65462f9f03961e9345c5",
+    "probes/reusable-layers/inventory.json": "fd4daf54ddbc7d149046a10d65ceb9e4bc87418accc4ccf6d58bbf24882a7707",
+    "probes/reusable-layers/inventory.test.mjs": "6486b0af66904064d2034a0d96252e2be7d7eec234fda8d9b8a5dd8904c6616e",
+    "tooling/testing/semantic-types-docs-baseline.json": "7751582a8577d05b26ec975e788433e6c0920ba320c3a7611b78d8126907ad9b"
+  },
+  "nodeReports": [
+    {
+      "sources": [
+        "tooling/testing/comprehensive.test.mjs",
+        "probes/reusable-layers/inventory.test.mjs"
+      ],
+      "counts": {
+        "tests": 20,
+        "failed": 0,
+        "passed": 20,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 20,
+        "suites": 0
+      },
+      "reportSHA256": "c389395267efa1037878f8ea167ef802637b7ad93a96f1526875831e7ddca957"
+    },
+    {
+      "sources": [
+        "packages/primitives/tests/calendar.test.mjs",
+        "packages/primitives/tests/chat-editor.test.mjs",
+        "packages/primitives/tests/collection-contract.test.mjs",
+        "packages/primitives/tests/component-patterns.test.mjs",
+        "packages/primitives/tests/editor-clipboard.test.mjs",
+        "packages/primitives/tests/editor-extensions.test.mjs",
+        "packages/primitives/tests/lifecycle.test.mjs",
+        "packages/primitives/tests/models.test.mjs",
+        "packages/primitives/tests/registration.test.mjs",
+        "packages/primitives/tests/table.test.mjs",
+        "packages/primitives/tests/tree-data.test.mjs",
+        "packages/primitives/tests/virtual-collection.test.mjs",
+        "packages/primitives/tests/virtual-rendering.test.mjs"
+      ],
+      "counts": {
+        "tests": 83,
+        "failed": 0,
+        "passed": 83,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 83,
+        "suites": 0
+      },
+      "reportSHA256": "5ab559be72bbff69057d620901d0659dd7bc1d4ace1d2745a102af112388a60a"
+    },
+    {
+      "sources": [
+        "packages/primitives/tests/events.test.mjs"
+      ],
+      "counts": {
+        "tests": 29,
+        "failed": 0,
+        "passed": 29,
+        "cancelled": 0,
+        "skipped": 0,
+        "todo": 0,
+        "topLevel": 29,
+        "suites": 0
+      },
+      "reportSHA256": "31a159412b597355b2b2adb0fe95b9d63680ac1407cd4a3fe3cb115eda08d62f"
+    }
+  ],
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946,
+    "fullInventoryEvidence": "/private/tmp/en-collection-recipes-20261002-06/execution.json#runtime"
+  },
+  "executionSHA256": "503d6281b372572c4d0b4f55a5e3beefdb6254eb18fe94c7f82477bf9e2a96c6",
+  "priorRuns": [
+    {
+      "output": "/private/tmp/en-collection-recipes-20261002-01",
+      "status": "environment-blocked",
+      "reason": "Sandbox denied local server port reservation; no browser cases ran."
+    },
+    {
+      "output": "/private/tmp/en-collection-recipes-20261002-02",
+      "status": "failed",
+      "reason": "11 passes before a fixed 3600px-to-row45 assumption failed in the alternate shell."
+    },
+    {
+      "output": "/private/tmp/en-collection-recipes-20261002-03",
+      "status": "failed",
+      "reason": "43 passes before Firefox nearest no-op sampled unsettled prior reveal. The fixture theme also needed explicit root scope; final fixture fixes both."
+    },
+    {
+      "output": "/private/tmp/en-collection-recipes-20261002-04",
+      "status": "passed",
+      "reason": "81 packed browser cases passed before existing test typing diagnostics were resolved."
+    },
+    {
+      "output": "/private/tmp/en-collection-recipes-20261002-05",
+      "status": "failed",
+      "reason": "Pre-browser docs semantic check reported relocated existing diagnostics; fixed named Axe import and HTMLTableElement type, removing exactly six resolved baseline diagnostics."
+    }
+  ],
+  "limitations": [
+    "Seven entries qualified for named scenarios only; portable table CSS and remaining entries stay open.",
+    "Generated examples remain pending; these are maintained authored applications.",
+    "Known VoiceOver reading-cursor issue remains open. No native AT, physical-device, retail-browser, universal SSR or performance claim."
+  ],
+  "additionalChecks": {
+    "pathwayInventoryPassed": 20,
+    "primitivePassed": 112,
+    "semanticCore": "passed",
+    "semanticDocs": "passed; 57 preexisting diagnostics remain tracked, six in the exercised spec resolved",
+    "productionDocsBuild": "passed"
+  },
+  "originalOwner": {
+    "output": "/private/tmp/en-collection-owner-20261002-01",
+    "status": "passed",
+    "passed": 51,
+    "command": "EN_EXECUTION_OUTPUT=<fresh> tooling/test-pipeline/with-toolchain.sh npm run test:workflows -w @en-reve/docs -- virtual-collection.spec.ts",
+    "sourceHashes": {
+      "virtual-collection.spec.ts": "3ed9933d6aa61975d6639b0af2b1ebfd148b37fe23736e24b2d7cfc4ed2fa786"
+    },
+    "cases": [
+      {
+        "project": "chromium",
+        "title": "server delivery exposes useful native rows and valid table structure without JavaScript",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "hydration retains the server table and keyed first row before windowing",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "table windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "list windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "sort and prepend preserve keyed selection and the visible scroll anchor",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "focused row stays mounted while the ordinary window moves, then releases on blur",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "density changes remeasure variable-height table rows without losing the viewport anchor",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "paginated reading exposes the complete page with native keyboard selection and page navigation",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "narrow RTL keeps the virtual table inside its scroll region and list content readable",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "near-bottom resizing keeps the final records reachable and mounted rows settle while idle",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "removing a selected record updates total count and leaves the surrounding collection usable",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "checkbox toggles and backward window traversal preserve row identity and logical order",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "an application reorder preserves the exact focused control for its stable record key",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "table native Tab continues beside a retained offscreen focused record",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "table public scrollToKey aligns records without changing focus or selection",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "list native Tab continues beside a retained offscreen focused record",
+        "status": "passed"
+      },
+      {
+        "project": "chromium",
+        "title": "list public scrollToKey aligns records without changing focus or selection",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "server delivery exposes useful native rows and valid table structure without JavaScript",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "hydration retains the server table and keyed first row before windowing",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "table windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "list windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "sort and prepend preserve keyed selection and the visible scroll anchor",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "focused row stays mounted while the ordinary window moves, then releases on blur",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "density changes remeasure variable-height table rows without losing the viewport anchor",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "paginated reading exposes the complete page with native keyboard selection and page navigation",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "narrow RTL keeps the virtual table inside its scroll region and list content readable",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "near-bottom resizing keeps the final records reachable and mounted rows settle while idle",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "removing a selected record updates total count and leaves the surrounding collection usable",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "checkbox toggles and backward window traversal preserve row identity and logical order",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "an application reorder preserves the exact focused control for its stable record key",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "table native Tab continues beside a retained offscreen focused record",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "table public scrollToKey aligns records without changing focus or selection",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "list native Tab continues beside a retained offscreen focused record",
+        "status": "passed"
+      },
+      {
+        "project": "firefox",
+        "title": "list public scrollToKey aligns records without changing focus or selection",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "server delivery exposes useful native rows and valid table structure without JavaScript",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "hydration retains the server table and keyed first row before windowing",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "table windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "list windows ten thousand records and restores keyed selection after distant scrolling",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "sort and prepend preserve keyed selection and the visible scroll anchor",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "focused row stays mounted while the ordinary window moves, then releases on blur",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "density changes remeasure variable-height table rows without losing the viewport anchor",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "paginated reading exposes the complete page with native keyboard selection and page navigation",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "narrow RTL keeps the virtual table inside its scroll region and list content readable",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "near-bottom resizing keeps the final records reachable and mounted rows settle while idle",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "removing a selected record updates total count and leaves the surrounding collection usable",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "checkbox toggles and backward window traversal preserve row identity and logical order",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "an application reorder preserves the exact focused control for its stable record key",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "table native Tab continues beside a retained offscreen focused record",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "table public scrollToKey aligns records without changing focus or selection",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "list native Tab continues beside a retained offscreen focused record",
+        "status": "passed"
+      },
+      {
+        "project": "webkit",
+        "title": "list public scrollToKey aligns records without changing focus or selection",
+        "status": "passed"
+      }
+    ],
+    "reportSHA256": "347bdc6fdb348740b9823591bfe0148099fce4b1c3d3e38cf1f01ff469e849ec",
+    "executionSHA256": "27b52c52efb385e9ae1344a27e84382dd171f42d35c391a380f8ce6d449cad17"
+  },
+  "integrity": {
+    "output": "/private/tmp/en-collection-integrity-20261002-01",
+    "status": "passed",
+    "passed": 123,
+    "sources": [
+      "tooling/testing/support-ledger.test.mjs",
+      "tooling/releases/releases.test.ts",
+      "tooling/releases/source-identity.test.mjs",
+      "tooling/evidence/evidence.test.ts",
+      "tooling/metadata/metadata.test.ts",
+      "tooling/metadata/definition-graph.test.ts",
+      "tooling/metadata/delivery-inventory-validation.test.ts",
+      "tooling/metadata/type-snapshot.test.ts",
+      "tooling/customization/customization.test.mjs",
+      "tooling/metadata/public-contract.test.ts",
+      "tooling/browser/popup-measurement.test.ts"
+    ],
+    "reportSHA256": "bc3f8f7413503cd0e929abdbef942639ef57707c9776708bffd5d98d05f7d0af",
+    "executionSHA256": "cf9702e41b9a140435b882cb471265fbcb9a74759eadcc3093bf9831ec165b4f"
+  }
+}

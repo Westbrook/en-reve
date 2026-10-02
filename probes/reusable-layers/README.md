@@ -29,3 +29,5 @@ Contracts remain in the [primitives guide](../../packages/primitives/README.md) 
 No component runtime was changed. Physical IME, native AT speech, retail/physical browser coverage, SSR for these new recipes, portable CSS counterparts, remaining entries, and independently generated example consumers are not inferred from this result. Owning-element and unit suites remain complementary.
 
 The next [native-recipes batch](../native-recipes/README.md) separately qualifies content/navigation and selected portable CSS exports. The inventory links each entry to its own bounded receipt; the first batch above remains unchanged.
+
+The [collection-recipes batch](../collection-recipes/README.md) adds maintained table/list and document-scroll consumers from tarballs. Seven additional entries receive named scenario qualification; portable table CSS and independently generated examples remain open.

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "3f2990e6efaad50fd268366c34aed1e62736bb35",
-  "exportedAt": "2026-10-02T08:40:34.315632+00:00",
+  "sourceCommit": "2ced899c675ef6ca06ed9333f45b7b20be14263b",
+  "exportedAt": "2026-10-02T09:16:36.356370+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5478,
-  "includedBytes": 150230910,
-  "qualification": "Native content/navigation recipes qualified:78 packed browser cases,39 original-owner cases and18 pathway/inventory controls passed. 112 owning primitive and122 integrity checks pass; remaining entries, generated examples and platform/manual scope preserved.",
-  "latestUpdate": ".source-export/updates/native-recipes-20261002.json",
+  "includedFiles": 5493,
+  "includedBytes": 150407671,
+  "qualification": "Packed table/list and document-scroll public compositions qualified:81 browser cases plus original-owner, type and integrity checks. Seven more public entries have bounded scenario evidence; remaining layers/examples and platform/manual obligations stay open.",
+  "latestUpdate": ".source-export/updates/collection-recipes-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

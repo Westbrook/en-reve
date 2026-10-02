@@ -150,3 +150,7 @@ Local main `9d2138dc9b32f386fce49e4fc4105cd3666678e6` qualifies 48 isolated pack
 ## Packed native content/navigation recipes
 
 Local main `3f2990e6efaad50fd268366c34aed1e62736bb35` qualifies 78 packed browser cases across Lit and portable CSS,39 original-owner cases and18 pathway/inventory controls. 112 owning primitive and122 integrity checks pass. See `probes/native-recipes/README.md`. Remaining layer/example and platform/manual requirements stay open.
+
+## Packed table and virtual collection recipes
+
+Local main `2ced899c675ef6ca06ed9333f45b7b20be14263b` qualifies maintained table/list and document-scroll applications through isolated public tarballs. See `probes/collection-recipes/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.

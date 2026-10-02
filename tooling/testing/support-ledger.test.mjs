@@ -548,7 +548,10 @@ test('packed reusable-layer receipt preserves alternate-composition bounds and u
 test('native recipe qualification binds both style deliveries, real SSR and original fixture owners',async()=>{
  const r=await json('probes/native-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,18);assert.equal(r.packed.types.status,'passed');
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){
+  const archived=["tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "tooling/testing/browser-ports.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/native-recipes/qualification-sources/3f2990e6/'+path.split('/').at(-1)+'.txt':path;
+  assert.equal(createHash('sha256').update(await read(archived)).digest('hex'),digest,path);
+ }
  for(const [name,count] of [['packed',78],['content-owner',18],['navigation-owner',21]]){
   const report=r.reports[name];assert.equal(report.stats.expected,count);assert.equal(report.stats.unexpected,0);assert.equal(report.stats.skipped,0);assert(report.cases.every(c=>c.status==='passed'));
  }
@@ -560,4 +563,24 @@ test('native recipe qualification binds both style deliveries, real SSR and orig
  assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['@en-reve/styles/content.css','@en-reve/styles/foundations.css','@en-reve/styles/navigation.css']);
  const qualified=inventory.entries.filter(e=>e.receipt==='probes/native-recipes/verification-20261002.json');assert.equal(qualified.length,8);assert.equal(qualified.filter(e=>e.delivery==='css').length,3);
  assert.match(r.limitations.join(' '),/generated examples remain pending/);
+});
+
+test('packed collection qualification binds maintained assertions, native SSR and bounded public-layer scope',async()=>{
+ const r=await json('probes/collection-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.report.passed,81);assert.equal(r.report.workers,1);assert.equal(r.packed.types.status,'passed');
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert(r.report.cases.every(c=>c.status==='passed'&&c.retry===0));
+ assert.equal(r.originalOwner.status,'passed');assert.equal(r.originalOwner.passed,51);assert(r.originalOwner.cases.every(c=>c.status==='passed'));
+ assert.equal(Object.values(r.originalOwner.sourceHashes)[0],r.sourceInputs['apps/docs/tests/virtual-collection.spec.ts']);
+ for(const engine of ['chromium','firefox','webkit']){
+  assert.equal(r.report.cases.filter(c=>c.project===`${engine}-table`).length,17);
+  for(const width of [1280,390])assert.equal(r.report.cases.filter(c=>c.project===`${engine}-document-${width}`).length,5);
+ }
+ assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.entryInputs.document.some(path=>path.includes('/@en-reve/elements/')));
+ assert.deepEqual(r.packed.definitions,['button.js','checkbox.js','icon.js','pagination.js','select.js','table.js','text-field.js']);
+ assert.deepEqual(Object.keys(r.packed.pages).sort(),['document.html','table.html']);
+ const qualified=inventory.entries.filter(e=>e.receipt==='probes/collection-recipes/verification-20261002.json');assert.equal(qualified.length,7);
+ assert(qualified.every(e=>e.delivery==='module'));
+ assert.match(r.limitations.join(' '),/Generated examples remain pending/);assert.match(r.limitations.join(' '),/VoiceOver reading-cursor issue remains open/);
 });

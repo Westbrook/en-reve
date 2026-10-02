@@ -171,11 +171,3 @@ test('native recipes qualify packed content/navigation with explicit skeleton an
  assert.equal(selected.find(task=>task.id==='prepare:native-recipes').environment.EN_NATIVE_RECIPES_OUT,'$RUN/fixtures/native-recipes');
  assert(!ids.has('build:docs'));
 });
-
-
-test('packed collection pathway binds SSR packages, fresh consumer preparation and maintained browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['collection-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:ssr','prepare:collection-recipes','browser:probes/collection-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/collection-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:collection-recipes').environment.EN_COLLECTION_RECIPES_OUT,'$RUN/fixtures/collection-recipes');
-});
