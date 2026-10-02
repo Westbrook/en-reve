@@ -312,7 +312,7 @@ test('historical expanded native Firefox coverage retains all consumer cohorts',
 
 test('historical native Firefox workflow receipt retains its qualified runner and unchanged shared inputs', async () => {
  const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-workflows-20261002').path);
- for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(path==='probes/native-browser-products/workflows.mjs'?'e621c97b1c11774535a8e8a89362bb33a5967247ffbd28800712965c05c6e909':createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(path==='probes/native-browser-products/workflows.mjs'?'e621c97b1c11774535a8e8a89362bb33a5967247ffbd28800712965c05c6e909':(path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
  assert.equal(receipt.acquisitionReceiptSHA256,createHash('sha256').update(await read(receipt.acquisitionReceipt)).digest('hex'));
  assert.deepEqual(receipt.stats,{passed:22,failed:0,planned:22});
  const expected=['sso-success','sso-retry','sso-cancel','sso-reset','settings-snapshot','settings-retry','settings-incoming','chat-safe-preview','chat-stale','chat-cancel','selection-assignment'];
@@ -338,7 +338,7 @@ test('extracted native Firefox transport requalifies the unchanged six-scenario 
 
 test('expanded Firefox workflow evidence covers recovery, disposal, RTL and document navigation',async()=>{
  const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-recovery-20261002').path);
- for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
  assert.equal(receipt.previousReceiptSHA256,createHash('sha256').update(await read(receipt.previousReceipt)).digest('hex'));
  const previous=await json(receipt.previousReceipt);
  for(const path of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(receipt.inputs[path],previous.inputs[path]);
@@ -350,4 +350,27 @@ test('expanded Firefox workflow evidence covers recovery, disposal, RTL and docu
   assert.deepEqual(run.stats,{passed:20,failed:0,planned:20});assert.equal(run.cases.find(c=>c.id==='chat-retry').draftEstablishedBeforeReply,true);assert.deepEqual(run.cases.map(c=>c.id),[...previous.runs[label].cases.map(c=>c.id),...added]);assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
  }
  for(const scope of [/Hydration/,/No-JavaScript/,/descriptions/,/Playwright/,/physical devices/])assert(receipt.remaining.some(item=>scope.test(item)));
+});
+
+
+test('Firefox first paint binds current sources and isolated no-JS/hydration evidence',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-first-paint-20261002').path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
+ assert.deepEqual(r.stats,{passed:170,failed:0,planned:170});assert.equal(r.attempts.length,4);
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=r.runs['first-paint'][label];assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:5,failed:0,planned:5});
+  assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
+  const nojs=run.cases[0];assert.equal(nojs.javaScriptEnabled,false);assert.deepEqual(nojs.scriptCanary,{inline:null,external:null});assert.equal(nojs.documents.length,12);assert(nojs.documents.every(d=>d.isolated&&d.unhydrated));assert.equal(new Set(nojs.documents.map(d=>d.path)).size,12);
+  for(const c of run.cases.slice(1)){assert.equal(c.javaScriptEnabled,true);assert.deepEqual(c.scriptCanary,{inline:'ran',external:'ran'});assert(c.heldModulePaths.length>0);assert(c.earlyTargets.length>0);assert.equal(c.hydratedNamesAndIdentityVerified,true);}
+ }
+});
+
+test('Firefox changed transport requalifies all consumer and workflow cases',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-first-paint-20261002').path);
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const consumer=r.runs.consumers[label];assert.equal(consumer.status,'passed');assert.deepEqual(consumer.stats,{passed:60,failed:0,planned:60});assert.equal(consumer.products[0].version,version);assert.equal(consumer.products[0].unchanged,true);
+  for(const cohort of cohorts){const cases=consumer.cases.filter(c=>c.cohort===cohort.id);assert.equal(cases.length,6);assert(cases.every(c=>c.status==='passed'));}
+  const run=r.runs.workflows[label];assert.equal(run.status,'passed');assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:20,failed:0,planned:20});assert(run.cases.every(c=>c.status==='passed'));assert.equal(run.cases.find(c=>c.id==='chat-retry').draftEstablishedBeforeReply,true);
+ }
 });

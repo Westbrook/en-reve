@@ -106,3 +106,7 @@ Local main `516d03caa86aeb830fc37b4d953c526e0ac421d6` qualifies11 selected produ
 ## Expanded Firefox recovery and navigation qualification
 
 Local main `d85cdee616e2f012379857783ba62a8297fb42b6` qualifies20 selected production workflows per Firefox release; the unchanged transport retains prior consumer evidence. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Firefox first paint and hydration qualification
+
+Local main `366469ad70261235f60cac863f3330cf34c2f581` qualifies170 first-paint, consumer and workflow cases across two Firefox releases. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

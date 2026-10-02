@@ -366,6 +366,13 @@
       "path": "probes/native-browser-products/verification-firefox-recovery-20261002.json",
       "sha256": "f6117d5e4604574b37fefd4303032091405ec4e8b769a24e6903c768248f0273",
       "scope": "Twenty selected production workflow journeys on each actual Firefox157.0 and156.0.1, macOS26.6.1 arm64. Native keyboard/pointer interaction, exact accessible name/role targets, fresh isolated profile per case. Adds invalid drafts/geometry, retries, untrusted action validation, late permission/target checks, disposal/reconnection, disabled selection options, RTL popup/scroll behavior and native six-document navigation. Full app and source/asset inventories unchanged. Existing qualified production build reused; no new build/install/type claim."
+    },
+    {
+      "id": "firefox-first-paint-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-first-paint-20261002.json",
+      "sha256": "97d6e73e29ab897e9c65d9b9a92544cf8c8b6130f35341784f30face3d474d2f",
+      "scope": "Actual Firefox156.0.1/157.0 on macOS:10 first-paint/hydration,120 consumer and40 workflow cases. Existing production assets and packed consumer fixtures reused; no new build/install/types claim."
     }
   ],
   "conditions": [
@@ -418,10 +425,11 @@
         "chrome-stable-workflows-20261002",
         "firefox-expanded-20261002",
         "firefox-workflows-20261002",
-        "firefox-recovery-20261002"
+        "firefox-recovery-20261002",
+        "firefox-first-paint-20261002"
       ],
-      "gap": "Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes60 consumer and20 selected workflow checks; remaining Firefox workflow branches/AX/layout/hydration checks stay open. Safari27 remains hidden; broader OS/manual scope remains.",
-      "nextAction": "Qualify Firefox hydration/no-JS and remaining accessibility/history assertions. Resolve Safari visibility after desktop-state clarification; retain OS/device/manual obligations."
+      "gap": "Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes60 consumer and20 selected workflow checks; remaining Firefox workflow branches/AX/layout/hydration checks stay open. Safari27 remains hidden; broader OS/manual scope remains. Native Firefox now also qualifies12 no-JS documents and4 early-draft hydration journeys per release;170-case shared-transport requalification passed.",
+      "nextAction": "Qualify remaining native Firefox history/accessibility assertions and retain original other-browser/OS/device/manual obligations."
     },
     {
       "id": "browser-previous",
@@ -434,10 +442,11 @@
         "edge-workflow-lines-20261002",
         "firefox-expanded-20261002",
         "firefox-workflows-20261002",
-        "firefox-recovery-20261002"
+        "firefox-recovery-20261002",
+        "firefox-first-paint-20261002"
       ],
-      "gap": "Firefox156.0.1 passes60 consumer and20 selected workflow checks. Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and remaining native Firefox workflow assertions remain unqualified.",
-      "nextAction": "Qualify preceding Firefox hydration/no-JS and remaining accessibility/history assertions. Obtain isolated previous retail Chrome or an explicit testing-distribution decision; Safari26 needs a compatible OS. Preserve physical/manual obligations."
+      "gap": "Firefox156.0.1 passes60 consumer and20 selected workflow checks. Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and remaining native Firefox workflow assertions remain unqualified. Native Firefox now also qualifies12 no-JS documents and4 early-draft hydration journeys per release;170-case shared-transport requalification passed.",
+      "nextAction": "Qualify remaining native Firefox history/accessibility assertions and retain original other-browser/OS/device/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -636,6 +645,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T05:25:34.225406+00:00",
+  "updatedAt": "2026-10-02T05:48:11.715907+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-02T05:51:03.125648+00:00",
+  "sourceCommit": "366469ad70261235f60cac863f3330cf34c2f581",
+  "previousSourceMain": "d85cdee616e2f012379857783ba62a8297fb42b6",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/firefox.mjs",
+    "probes/native-browser-products/first-paint.mjs",
+    "probes/native-browser-products/verification-firefox-first-paint-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox156.0.1/157.0:10 first-paint/hydration,120 consumer and40 workflow cases pass.112 tooling checks pass. Four acquisition attempts retained including aborted cleanup. Full original accessibility/history and OS/device/manual obligations remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

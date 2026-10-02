@@ -181,3 +181,32 @@ selection after delivery. An intermediate strengthened run failed that timing
 precondition on current Firefox because locating and typing a longer draft used
 up the600ms fixture delay; it is retained in the receipt. The final test changes
 neither the fixture delay nor the product behavior.
+
+## Firefox first paint and hydration
+
+The [first-paint receipt](verification-firefox-first-paint-20261002.json) records
+170 passes across actual Firefox156.0.1 and157.0: five first-paint/hydration cases,
+60 consumer cases and20 workflow cases per release. Browser and source/asset
+inventories remain unchanged. Existing production and consumer builds are reused.
+
+Run `first-paint.mjs` with the same `EN_EXECUTION_OUTPUT` and `EN_FIREFOX_APP`
+configuration as the workflow runner. Each case uses a fresh isolated profile.
+The no-JavaScript case disables page scripting only in that profile, checks inline
+and external script canaries, and verifies all six direct and legacy SSR routes
+(12 documents). Four hydration cases hold module responses, type into the original
+native account/chat/project/numeric inputs, then release unchanged modules and
+assert draft, node identity, focus and selection retention. Invalid numeric and
+unaccepted project drafts do not silently change accepted form data.
+
+Firefox accessibility locators stall while module responses are held. The harness
+therefore uses known native DOM targets for early input and requires browser-computed
+name/role lookup to return the same node after hydration. The separate no-JS case
+also checks computed names. This is not computed accessibility evidence during
+module loading, full AX or spoken-output evidence. Typing is native; selection-range
+setup is explicit DOM configuration. Failed/aborted acquisition attempts remain
+recorded with their scope and exact cleanup receipts; none are relabeled passes.
+
+The changed shared transport is freshly requalified against all120 consumer and40
+workflow cases. Earlier receipts retain historical source hashes. Remaining history,
+computed descriptions/full AX, original OS/device and manual AT/IME requirements
+remain open; these cases do not establish complete original Playwright parity.
