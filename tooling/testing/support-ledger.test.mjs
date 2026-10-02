@@ -355,7 +355,7 @@ test('expanded Firefox workflow evidence covers recovery, disposal, RTL and docu
 
 test('Firefox first paint binds current sources and isolated no-JS/hydration evidence',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-first-paint-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':(path==='probes/native-browser-products/firefox.mjs'?'dc5a2b5dc86b328b50d6c64e0e213a450d89240c112f362f397e539a9a989c7d':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
  assert.deepEqual(r.stats,{passed:170,failed:0,planned:170});assert.equal(r.attempts.length,4);
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
@@ -378,7 +378,7 @@ test('Firefox changed transport requalifies all consumer and workflow cases',asy
 
 test('native Firefox accessibility coverage retains exact axe scope and separate manual limits',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-accessibility-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'dc5a2b5dc86b328b50d6c64e0e213a450d89240c112f362f397e539a9a989c7d':path==='probes/native-browser-products/workflows.mjs'?'c99c59ca0dadbb8773d5d6f8c875b4b220223386259dd46ce60fc2e7b3a7c8ee':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
  for(const [path,digest] of Object.entries(r.axe.sources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
  assert.deepEqual(r.stats,{passed:44,failed:0,planned:44});assert.deepEqual(r.axe.tags,['wcag2a','wcag2aa','wcag21aa','wcag22aa']);
@@ -390,4 +390,25 @@ test('native Firefox accessibility coverage retains exact axe scope and separate
   const viewports=run.cases.find(c=>c.id==='workflow-narrow-rtl').viewports;assert.equal(viewports.length,6);assert(viewports.every(v=>v.direction==='rtl'&&v.scrollWidth<=v.width+1));
  }
  assert(r.remaining.some(x=>/speech/.test(x)));assert(r.remaining.some(x=>/history/.test(x)));assert(r.remaining.some(x=>/physical/.test(x)));
+});
+
+
+test('Firefox history receipt binds native traversal and all preview-context branches',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-history-20261002').path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.equal(r.historyProtocol,'browsingContext.traverseHistory');assert.deepEqual(r.stats,{passed:176,failed:0,planned:176});
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=r.runs.workflows[label];assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:23,failed:0,planned:23});assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
+  const h=run.cases.find(c=>c.id==='workflow-history');assert.equal(h.protocol,r.historyProtocol);assert(h.freshLinkResetsFixture&&h.unknownQueryNormalized);assert.deepEqual(h.historyCheckpoints.map(c=>c.label),['fresh-settings','reset-keeps-code-and-context','fresh-chat','history-back','history-forward','fresh-sign-in','legacy-settings','legacy-chat']);
+  for(const c of h.historyCheckpoints){const u=new URL(c.url);assert(u.searchParams.has('progress-report'));assert.equal(u.searchParams.get('theme'),'dark');assert.equal(u.searchParams.get('direction'),'rtl');assert.equal(u.pathname,c.path);}
+ }
+});
+
+test('Firefox history transport freshly requalifies first-paint and all consumer cohorts',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-history-20261002').path);
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const fp=r.runs['first-paint'][label];assert.equal(fp.product.version,version);assert.equal(fp.identityBefore,fp.identityAfter);assert.deepEqual(fp.stats,{passed:5,failed:0,planned:5});assert(fp.cases.every(c=>c.status==='passed'));assert.equal(fp.cases[0].documents.length,12);assert(fp.cases.slice(1).every(c=>c.hydratedNamesAndIdentityVerified));
+  const consumer=r.runs.consumers[label];assert.deepEqual(consumer.stats,{passed:60,failed:0,planned:60});assert.equal(consumer.products[0].version,version);assert.equal(consumer.products[0].unchanged,true);for(const cohort of cohorts){const cases=consumer.cases.filter(c=>c.cohort===cohort.id);assert.equal(cases.length,6);assert(cases.every(c=>c.status==='passed'));}
+ }
+ assert(r.remaining.some(x=>/description/.test(x)));assert(r.remaining.some(x=>/physical/.test(x)));assert(r.remaining.some(x=>/contrast/.test(x)));
 });

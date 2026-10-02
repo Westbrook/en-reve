@@ -29,7 +29,7 @@ It is an evidence index, not a new browser-support promise or a completed test r
 | --- | --- | --- | --- |
 | Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
-| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |22 selected journeys each;8 scoped axe scans each;no-JS/early-draft hydration |Remaining history/legacy-query assertions, descriptions/full AX, other OS/manual coverage |
+| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |23 selected journeys each including history;8 scoped axe scans each;no-JS/early-draft hydration |Remaining exact assertions, descriptions/full AX, other OS/manual coverage |
 | Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
 
 These are scoped receipts, not complete support claims. See the dated acquisitions
@@ -381,3 +381,27 @@ The shared transport and consumer/first-paint runners are unchanged. Their prior
 120-consumer/10-first-paint qualification is retained by hash, not reported as a
 fresh run. Original history/legacy-query assertions, computed descriptions/full
 AX, other OSes and physical/manual AT/IME requirements remain outstanding.
+
+## Native Firefox history and legacy navigation
+
+The [history receipt](../probes/native-browser-products/verification-firefox-history-20261002.json) records176 fresh
+passes after adding the standard BiDi `browsingContext.traverseHistory` command:
+46 workflow,10 first-paint/hydration and120 consumer cases across Firefox156.0.1
+and157.0. The history journey follows the original Playwright contract: native
+appearance/density/direction controls; query-preserving native links; unchanged
+source disclosure through workflow reset; Back/Forward with destination readiness;
+fresh-link fixture reset; legacy hash redirects; and unknown query normalization.
+Eight context checkpoints per release retain exact observed URLs.
+
+History restoration may use BFCache; no fresh-state assertion is imposed on Back
+or Forward. Only a fresh native link must recreate the local fixture. The protocol
+command queues real browser session-history traversal; it does not replace DOM
+or simulate routing. The runner waits for the destination URL and hydrated scene.
+[Protocol contract](https://developer.mozilla.org/en-US/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/traverseHistory).
+
+The changed shared transport is requalified across all three native runners.
+Existing assets and packed fixtures are hash-verified and reused. Repetitive
+native-select traces remain in full local receipts; source summaries bind those
+receipts by hash. Prior scans' incomplete contrast findings and remaining exact
+assertion parity (including all authored-child readiness, descriptions/errors),
+full native AX/speech and original OS/device/manual requirements remain open.

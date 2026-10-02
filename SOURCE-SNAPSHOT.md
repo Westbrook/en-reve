@@ -114,3 +114,7 @@ Local main `366469ad70261235f60cac863f3330cf34c2f581` qualifies170 first-paint, 
 ## Firefox accessibility and narrow-layout qualification
 
 Local main `9d57602ce0e688202f3e7374050339c585b4ba7d` qualifies44 workflow cases and16 scoped axe scans across two Firefox releases; incomplete contrast findings remain open. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Firefox history and legacy-navigation qualification
+
+Local main `892bc63abc2358589697c5a0befcbfb660633a4d` qualifies176 fresh workflow/first-paint/consumer cases across two Firefox releases, including native history and legacy-query normalization. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

@@ -21,6 +21,7 @@ export async function firefox({bundle,output,metadata,child,until,stop,javaScrip
  const {context}=await send('browsingContext.create',{type:'tab'});
  return {capabilities:session.capabilities,headless:true,
   navigate:(url,wait='complete')=>send('browsingContext.navigate',{context,url,wait}),
+  traverseHistory:delta=>send('browsingContext.traverseHistory',{context,delta}),
   evaluate:async expression=>{const result=await send('script.evaluate',{expression:javaScriptEnabled?`(async()=>JSON.stringify(await (${expression})))()`:`JSON.stringify((${expression}))`,target:{context},awaitPromise:javaScriptEnabled});if(result.type!=='success')throw Error(JSON.stringify(result));return result.result.value===undefined?undefined:JSON.parse(result.result.value);},
   locateAccessible:async(role,name,startExpression)=>{
    // BiDi locators traverse the supplied DOM root, not every shadow tree.

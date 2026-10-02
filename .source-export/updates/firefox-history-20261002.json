@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-02T06:15:02.184126+00:00",
+  "sourceCommit": "892bc63abc2358589697c5a0befcbfb660633a4d",
+  "previousSourceMain": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/firefox.mjs",
+    "probes/native-browser-products/verification-firefox-history-20261002.json",
+    "probes/native-browser-products/workflows.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox156.0.1/157.0:176 fresh cases pass (46 workflow,10 first-paint,120 consumer), including native Back/Forward, legacy redirects, query normalization and fresh-link state.115 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

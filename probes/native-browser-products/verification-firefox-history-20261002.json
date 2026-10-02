@@ -1,0 +1,3134 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "verifiedAt": "2026-10-02T06:14:09.978336+00:00",
+  "sourceBaseCommit": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+  "inputs": {
+    "probes/native-browser-products/workflows.mjs": "7a089e8e368c0dc6ef300150e5c9635ba5788ab7079db874cbea8247ce3eaff8",
+    "probes/native-browser-products/firefox.mjs": "164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917",
+    "probes/native-browser-products/run.mjs": "cc2ee22981b5a243c5fc7349f286d81aec796a04ca4c1ac670f621fe4b600d8f",
+    "apps/docs/tests/workflows.spec.ts": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+    "apps/docs/tests/selection.spec.ts": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+    "probes/native-browser-products/first-paint.mjs": "570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a"
+  },
+  "previousReceipt": "probes/native-browser-products/verification-firefox-accessibility-20261002.json",
+  "previousReceiptSHA256": "a3038dd85417e045f22a6c5ffa7cf585a974f1160eb60ad48440b21370152cfa",
+  "stats": {
+    "passed": 176,
+    "failed": 0,
+    "planned": 176
+  },
+  "runs": {
+    "workflows": {
+      "preceding": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "sourceBase": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+        "startedAt": "2026-10-02T06:08:55.452Z",
+        "cases": [
+          {
+            "id": "sso-success",
+            "title": "SSO keyboard provider choice submits captured account",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 73407,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/sso-success/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-retry",
+            "title": "SSO rejected request retries once and retains provider",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 73702,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/sso-retry/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-cancel",
+            "title": "SSO cancellation ignores stale response and retains later draft",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 75215,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/sso-cancel/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-reset",
+            "title": "SSO reset isolates old and new pending requests",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 76264,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/sso-reset/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-snapshot",
+            "title": "Settings captured save preserves later local edits and cancellation",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 76361,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/settings-snapshot/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-retry",
+            "title": "Settings failed save retains local value and Retry succeeds",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 77637,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/settings-retry/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-incoming",
+            "title": "Incoming settings preserve unfinished editor identity and explicit Keep/Use choices",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 77737,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/settings-incoming/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-safe-preview",
+            "title": "Chat text stays inert and only a reviewed valid preview applies",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 78747,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/chat-safe-preview/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-stale",
+            "title": "Held chat apply revalidates collaborator revision",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 81579,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/chat-stale/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-cancel",
+            "title": "Pending chat sends deduplicate and cancel/reset preserve appropriate drafts",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 81921,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/chat-cancel/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "selection-assignment",
+            "title": "Selection accepts explicit keys and rejects unresolved text",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 83812,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/selection-assignment/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-validation",
+            "title": "SSO native validity, error-link focus, stable field geometry and Back recovery",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 84053,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/sso-validation/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-invalid-reset",
+            "title": "Settings invalid drafts cannot save; restoring and resetting cancel pending work",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 84317,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/settings-invalid-reset/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-retry",
+            "title": "Chat retries captured messages and failed application while retaining a newer focused draft",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 85694,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/chat-retry/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "draftEstablishedBeforeReply": true
+          },
+          {
+            "id": "chat-invalid-proposals",
+            "title": "Chat rejects unsupported capability, action, target and value without mutation",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 86748,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/chat-invalid-proposals/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-permission-target",
+            "title": "Held chat application revalidates permission and target existence before recovery",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 87388,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/chat-permission-target/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "workflow-reconnect",
+            "title": "Reconnected workflows dispose pending work and install fresh functioning editors",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 88090,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-reconnect/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "selection-options-reset",
+            "title": "Selection scrolls to explicit options, rejects disabled options and resets unfinished queries",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 88777,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/selection-options-reset/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "selection-rtl",
+            "title": "Selection native scrolling, popup bounds and assignment in portrait and landscape RTL",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 88866,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/selection-rtl/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "popupRelationships": [
+              {
+                "width": 390,
+                "controls": [
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  },
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  }
+                ],
+                "browserComputedListboxName": "Project"
+              },
+              {
+                "width": 844,
+                "controls": [
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  },
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  }
+                ],
+                "browserComputedListboxName": "Project"
+              }
+            ],
+            "accessibilityScans": [
+              {
+                "label": "selection-rtl-390",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/selection-rtl/axe-selection-rtl-390.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-valid-attr-value",
+                  "color-contrast"
+                ],
+                "passes": 26,
+                "inapplicable": 36,
+                "sha256": "a53df00db58e1d1e09372485f15262da57781079b7727bad90904c776cb1f56d"
+              },
+              {
+                "label": "selection-rtl-844",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/selection-rtl/axe-selection-rtl-844.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-valid-attr-value",
+                  "color-contrast"
+                ],
+                "passes": 26,
+                "inapplicable": 36,
+                "sha256": "618a4a32a82a1efa945b00dd71f18976ae8ad45db6501c41fb8e3d299b9a3483"
+              }
+            ]
+          },
+          {
+            "id": "workflow-navigation",
+            "title": "All six native workflow links preserve preview context and create separate documents",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 89544,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-navigation/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "workflow-accessibility",
+            "title": "Original scoped accessibility scans and status owners before/after interaction",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 89636,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "statusOwners": [
+              {
+                "scene": "sso",
+                "source": "Authored/implicit DOM roles and native checkVisibility; not full platform AX",
+                "total": 2,
+                "owners": [
+                  {
+                    "selector": ".sso-status",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "output[data-sso-attempts]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "scene": "settings",
+                "source": "Authored/implicit DOM roles and native checkVisibility; not full platform AX",
+                "total": 5,
+                "owners": [
+                  {
+                    "selector": "[data-outline-details]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "#settings-command-status",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "[data-settings-status]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-toast-region [part~=\"announcements\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-command-palette [part~=\"status\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "scene": "chat",
+                "source": "Authored/implicit DOM roles and native checkVisibility; not full platform AX",
+                "total": 5,
+                "owners": [
+                  {
+                    "selector": "[data-testid=\"chat-status\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": ".older-status",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-activity-feed [part~=\"announcement\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      },
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-composable-chat-demo [role=\"status\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "accessibilityScans": [
+              {
+                "label": "sso-initial",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/axe-sso-initial.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 20,
+                "inapplicable": 42,
+                "sha256": "bb797b55d5b04cd6913ad03ee04885f55af3fb9eac1a503415c21b5b0a7c6e6f"
+              },
+              {
+                "label": "sso-interaction",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/axe-sso-interaction.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 21,
+                "inapplicable": 41,
+                "sha256": "4d4463ed469611329d06f4f5036df513f65de0e5899bb25ac6c371ef82007277"
+              },
+              {
+                "label": "settings-initial",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/axe-settings-initial.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-allowed-attr",
+                  "color-contrast"
+                ],
+                "passes": 23,
+                "inapplicable": 39,
+                "sha256": "995b11444611be6908cbf1ef0964ae60a6bfb9ada887cdd56c2982bb7bccc64e"
+              },
+              {
+                "label": "settings-interaction",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/axe-settings-interaction.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-allowed-attr",
+                  "color-contrast"
+                ],
+                "passes": 24,
+                "inapplicable": 38,
+                "sha256": "c0e1d89556d101ea375cd6ad27e8cd2f73bfb40ed3dc1a3d78760700780c5429"
+              },
+              {
+                "label": "chat-initial",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/axe-chat-initial.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 20,
+                "inapplicable": 42,
+                "sha256": "97bcfae1b45a6901640c779b3799c23ba8425fa1f131de18ede26e3d3cdaeb0b"
+              },
+              {
+                "label": "chat-interaction",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-accessibility/axe-chat-interaction.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 21,
+                "inapplicable": 41,
+                "sha256": "8c44d71bd764067fb245a76d8256c8720b30ba0505752e0589a32b6996d2b460"
+              }
+            ],
+            "nativeMenuTriggerVerified": true
+          },
+          {
+            "id": "workflow-narrow-rtl",
+            "title": "Portrait and landscape RTL workflows preserve native editing without page overflow",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 89722,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-narrow-rtl/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "viewports": [
+              {
+                "scene": "sso",
+                "width": 390,
+                "height": 844,
+                "scrollWidth": 375,
+                "direction": "rtl"
+              },
+              {
+                "scene": "settings",
+                "width": 390,
+                "height": 844,
+                "scrollWidth": 375,
+                "direction": "rtl"
+              },
+              {
+                "scene": "chat",
+                "width": 390,
+                "height": 844,
+                "scrollWidth": 375,
+                "direction": "rtl"
+              },
+              {
+                "scene": "sso",
+                "width": 844,
+                "height": 390,
+                "scrollWidth": 829,
+                "direction": "rtl"
+              },
+              {
+                "scene": "settings",
+                "width": 844,
+                "height": 390,
+                "scrollWidth": 829,
+                "direction": "rtl"
+              },
+              {
+                "scene": "chat",
+                "width": 844,
+                "height": 390,
+                "scrollWidth": 829,
+                "direction": "rtl"
+              }
+            ]
+          },
+          {
+            "id": "workflow-history",
+            "title": "Native history, legacy links and normalized query context preserve document contracts",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 89948,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/preceding/workflow-history/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "historyCheckpoints": [
+              {
+                "label": "fresh-settings",
+                "url": "http://127.0.0.1:62509/workflows/settings?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "reset-keeps-code-and-context",
+                "url": "http://127.0.0.1:62509/workflows/settings?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "fresh-chat",
+                "url": "http://127.0.0.1:62509/workflows/chat?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/chat"
+              },
+              {
+                "label": "history-back",
+                "url": "http://127.0.0.1:62509/workflows/settings?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "history-forward",
+                "url": "http://127.0.0.1:62509/workflows/chat?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/chat"
+              },
+              {
+                "label": "fresh-sign-in",
+                "url": "http://127.0.0.1:62509/workflows?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows"
+              },
+              {
+                "label": "legacy-settings",
+                "url": "http://127.0.0.1:62509/workflows/settings?progress-report&review=legacy&theme=dark&density=spacious&direction=rtl#settings",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "legacy-chat",
+                "url": "http://127.0.0.1:62509/workflows/chat?progress-report&review=legacy&theme=dark&density=spacious&direction=rtl#chat",
+                "path": "/workflows/chat"
+              }
+            ],
+            "freshLinkResetsFixture": true,
+            "unknownQueryNormalized": true,
+            "protocol": "browsingContext.traverseHistory"
+          }
+        ],
+        "host": {
+          "version": "26.6.1",
+          "build": "25G76",
+          "arch": "arm64"
+        },
+        "scope": "Native input on existing qualified production assets. Selected functional workflows, not complete Playwright parity, hydration interception, no-JS, full AX/computed descriptions, remaining exact assertion parity, speech/IME or physical-device qualification.",
+        "identityBefore": "sha256:fb018384b816ca116250634db2b7e7256b557e71522df698ef440127ae3128bf",
+        "product": {
+          "name": "Firefox",
+          "version": "156.0.1",
+          "build": "15626.9.21",
+          "bundle": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app"
+        },
+        "identityAfter": "sha256:fb018384b816ca116250634db2b7e7256b557e71522df698ef440127ae3128bf",
+        "completedAt": "2026-10-02T06:10:33.069Z",
+        "stats": {
+          "passed": 23,
+          "failed": 0,
+          "planned": 23
+        },
+        "rawResultSHA256": "4de3eb8695efd522c6df68bc720faff9197d28a4fff2917fd22f012da1da0031"
+      },
+      "current": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "sourceBase": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+        "startedAt": "2026-10-02T06:10:38.428Z",
+        "cases": [
+          {
+            "id": "sso-success",
+            "title": "SSO keyboard provider choice submits captured account",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 90888,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/sso-success/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-retry",
+            "title": "SSO rejected request retries once and retains provider",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 91064,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/sso-retry/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-cancel",
+            "title": "SSO cancellation ignores stale response and retains later draft",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 91236,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/sso-cancel/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-reset",
+            "title": "SSO reset isolates old and new pending requests",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 91488,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/sso-reset/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-snapshot",
+            "title": "Settings captured save preserves later local edits and cancellation",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 91696,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/settings-snapshot/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-retry",
+            "title": "Settings failed save retains local value and Retry succeeds",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 91923,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/settings-retry/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-incoming",
+            "title": "Incoming settings preserve unfinished editor identity and explicit Keep/Use choices",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 92215,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/settings-incoming/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-safe-preview",
+            "title": "Chat text stays inert and only a reviewed valid preview applies",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 92379,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/chat-safe-preview/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-stale",
+            "title": "Held chat apply revalidates collaborator revision",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 93051,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/chat-stale/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-cancel",
+            "title": "Pending chat sends deduplicate and cancel/reset preserve appropriate drafts",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 93143,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/chat-cancel/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "selection-assignment",
+            "title": "Selection accepts explicit keys and rejects unresolved text",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 93257,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/selection-assignment/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "sso-validation",
+            "title": "SSO native validity, error-link focus, stable field geometry and Back recovery",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 93857,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/sso-validation/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "settings-invalid-reset",
+            "title": "Settings invalid drafts cannot save; restoring and resetting cancel pending work",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 94030,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/settings-invalid-reset/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-retry",
+            "title": "Chat retries captured messages and failed application while retaining a newer focused draft",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 94119,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/chat-retry/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "draftEstablishedBeforeReply": true
+          },
+          {
+            "id": "chat-invalid-proposals",
+            "title": "Chat rejects unsupported capability, action, target and value without mutation",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 94290,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/chat-invalid-proposals/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "chat-permission-target",
+            "title": "Held chat application revalidates permission and target existence before recovery",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 94774,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/chat-permission-target/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "workflow-reconnect",
+            "title": "Reconnected workflows dispose pending work and install fresh functioning editors",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 95601,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-reconnect/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "selection-options-reset",
+            "title": "Selection scrolls to explicit options, rejects disabled options and resets unfinished queries",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 96090,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/selection-options-reset/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "selection-rtl",
+            "title": "Selection native scrolling, popup bounds and assignment in portrait and landscape RTL",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 96213,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/selection-rtl/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "popupRelationships": [
+              {
+                "width": 390,
+                "controls": [
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  },
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  }
+                ],
+                "browserComputedListboxName": "Project"
+              },
+              {
+                "width": 844,
+                "controls": [
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  },
+                  {
+                    "id": "listbox",
+                    "sameRoot": true,
+                    "role": "listbox",
+                    "visible": true,
+                    "expanded": "true"
+                  }
+                ],
+                "browserComputedListboxName": "Project"
+              }
+            ],
+            "accessibilityScans": [
+              {
+                "label": "selection-rtl-390",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/selection-rtl/axe-selection-rtl-390.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-valid-attr-value",
+                  "color-contrast"
+                ],
+                "passes": 26,
+                "inapplicable": 36,
+                "sha256": "ab91ed6f7fb29f2bca5ac51bb186f904516988521be5f4e1209e99295d725c96"
+              },
+              {
+                "label": "selection-rtl-844",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/selection-rtl/axe-selection-rtl-844.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-valid-attr-value",
+                  "color-contrast"
+                ],
+                "passes": 26,
+                "inapplicable": 36,
+                "sha256": "7605f6218973d2b70c32ea04384a0f6f6248867fae7e046f6bd6d50c7e8e37f1"
+              }
+            ]
+          },
+          {
+            "id": "workflow-navigation",
+            "title": "All six native workflow links preserve preview context and create separate documents",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 96306,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-navigation/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            }
+          },
+          {
+            "id": "workflow-accessibility",
+            "title": "Original scoped accessibility scans and status owners before/after interaction",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 96441,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "statusOwners": [
+              {
+                "scene": "sso",
+                "source": "Authored/implicit DOM roles and native checkVisibility; not full platform AX",
+                "total": 2,
+                "owners": [
+                  {
+                    "selector": ".sso-status",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "output[data-sso-attempts]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "scene": "settings",
+                "source": "Authored/implicit DOM roles and native checkVisibility; not full platform AX",
+                "total": 5,
+                "owners": [
+                  {
+                    "selector": "[data-outline-details]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "#settings-command-status",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "[data-settings-status]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-toast-region [part~=\"announcements\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-command-palette [part~=\"status\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "scene": "chat",
+                "source": "Authored/implicit DOM roles and native checkVisibility; not full platform AX",
+                "total": 5,
+                "owners": [
+                  {
+                    "selector": "[data-testid=\"chat-status\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": true
+                      }
+                    ]
+                  },
+                  {
+                    "selector": ".older-status",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-activity-feed [part~=\"announcement\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      },
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  },
+                  {
+                    "selector": "en-composable-chat-demo [role=\"status\"]",
+                    "nodes": [
+                      {
+                        "role": "status",
+                        "visible": false
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "accessibilityScans": [
+              {
+                "label": "sso-initial",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/axe-sso-initial.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 20,
+                "inapplicable": 42,
+                "sha256": "2b61e5f5107793c40688fc8651bcce3f7d836bb75013f82255baf12d0059bc6e"
+              },
+              {
+                "label": "sso-interaction",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/axe-sso-interaction.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 21,
+                "inapplicable": 41,
+                "sha256": "9b2f0b9a06fec743e92e1733c615a7c542aa574ab9734202053afae2e410e27e"
+              },
+              {
+                "label": "settings-initial",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/axe-settings-initial.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-allowed-attr",
+                  "color-contrast"
+                ],
+                "passes": 23,
+                "inapplicable": 39,
+                "sha256": "da47919001ecc77ef24031cf712c024f9167349499df6a52bce71a86789cbd97"
+              },
+              {
+                "label": "settings-interaction",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/axe-settings-interaction.json",
+                "violations": [],
+                "incomplete": [
+                  "aria-allowed-attr",
+                  "color-contrast"
+                ],
+                "passes": 24,
+                "inapplicable": 38,
+                "sha256": "48efbaab8e9e34ad04adf6fcc4a6771cd33333a2a4f8f75555db72dea10d489a"
+              },
+              {
+                "label": "chat-initial",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/axe-chat-initial.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 20,
+                "inapplicable": 42,
+                "sha256": "eee13cb08387f8660eaeb69bc78aec368e5a27295bc78d83477969b361764abb"
+              },
+              {
+                "label": "chat-interaction",
+                "version": "4.13.0",
+                "file": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-accessibility/axe-chat-interaction.json",
+                "violations": [],
+                "incomplete": [
+                  "color-contrast"
+                ],
+                "passes": 21,
+                "inapplicable": 41,
+                "sha256": "5c36813ffd4c1b3c41014399e080183a9b995eb67fbd86c1cb0e71edb871ac69"
+              }
+            ],
+            "nativeMenuTriggerVerified": true
+          },
+          {
+            "id": "workflow-narrow-rtl",
+            "title": "Portrait and landscape RTL workflows preserve native editing without page overflow",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 97077,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-narrow-rtl/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "viewports": [
+              {
+                "scene": "sso",
+                "width": 390,
+                "height": 844,
+                "scrollWidth": 375,
+                "direction": "rtl"
+              },
+              {
+                "scene": "settings",
+                "width": 390,
+                "height": 844,
+                "scrollWidth": 375,
+                "direction": "rtl"
+              },
+              {
+                "scene": "chat",
+                "width": 390,
+                "height": 844,
+                "scrollWidth": 375,
+                "direction": "rtl"
+              },
+              {
+                "scene": "sso",
+                "width": 844,
+                "height": 390,
+                "scrollWidth": 829,
+                "direction": "rtl"
+              },
+              {
+                "scene": "settings",
+                "width": 844,
+                "height": 390,
+                "scrollWidth": 829,
+                "direction": "rtl"
+              },
+              {
+                "scene": "chat",
+                "width": 844,
+                "height": 390,
+                "scrollWidth": 829,
+                "direction": "rtl"
+              }
+            ]
+          },
+          {
+            "id": "workflow-history",
+            "title": "Native history, legacy links and normalized query context preserve document contracts",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 97261,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/workflows/current/workflow-history/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "historyCheckpoints": [
+              {
+                "label": "fresh-settings",
+                "url": "http://127.0.0.1:63541/workflows/settings?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "reset-keeps-code-and-context",
+                "url": "http://127.0.0.1:63541/workflows/settings?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "fresh-chat",
+                "url": "http://127.0.0.1:63541/workflows/chat?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/chat"
+              },
+              {
+                "label": "history-back",
+                "url": "http://127.0.0.1:63541/workflows/settings?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "history-forward",
+                "url": "http://127.0.0.1:63541/workflows/chat?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows/chat"
+              },
+              {
+                "label": "fresh-sign-in",
+                "url": "http://127.0.0.1:63541/workflows?progress-report=&review=workflow-pages&theme=dark&density=compact&direction=rtl",
+                "path": "/workflows"
+              },
+              {
+                "label": "legacy-settings",
+                "url": "http://127.0.0.1:63541/workflows/settings?progress-report&review=legacy&theme=dark&density=spacious&direction=rtl#settings",
+                "path": "/workflows/settings"
+              },
+              {
+                "label": "legacy-chat",
+                "url": "http://127.0.0.1:63541/workflows/chat?progress-report&review=legacy&theme=dark&density=spacious&direction=rtl#chat",
+                "path": "/workflows/chat"
+              }
+            ],
+            "freshLinkResetsFixture": true,
+            "unknownQueryNormalized": true,
+            "protocol": "browsingContext.traverseHistory"
+          }
+        ],
+        "host": {
+          "version": "26.6.1",
+          "build": "25G76",
+          "arch": "arm64"
+        },
+        "scope": "Native input on existing qualified production assets. Selected functional workflows, not complete Playwright parity, hydration interception, no-JS, full AX/computed descriptions, remaining exact assertion parity, speech/IME or physical-device qualification.",
+        "identityBefore": "sha256:cdbed7b686118b029d684e5793ec5cbff50ca8518c34e9e0310b6b93741662d4",
+        "product": {
+          "name": "Firefox",
+          "version": "157.0",
+          "build": "15726.9.24",
+          "bundle": "/Applications/Firefox.app"
+        },
+        "identityAfter": "sha256:cdbed7b686118b029d684e5793ec5cbff50ca8518c34e9e0310b6b93741662d4",
+        "completedAt": "2026-10-02T06:12:13.132Z",
+        "stats": {
+          "passed": 23,
+          "failed": 0,
+          "planned": 23
+        },
+        "rawResultSHA256": "df5f5d8ab7660ad71c0fbb759053de4711e78d0d706115e7e28941bf84e2d8eb"
+      }
+    },
+    "first-paint": {
+      "preceding": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "sourceBase": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+        "startedAt": "2026-10-02T06:12:18.501Z",
+        "cases": [
+          {
+            "id": "no-js-documents",
+            "title": "All six direct/legacy SSR documents remain isolated with scripting disabled",
+            "javaScriptEnabled": false,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 97447,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/preceding/no-js-documents/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": null,
+              "external": null
+            },
+            "documents": [
+              {
+                "id": "sso",
+                "path": "/workflows",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "sso",
+                "path": "/workflows.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "settings",
+                "path": "/workflows/settings",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "settings",
+                "path": "/workflows/settings.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "chat",
+                "path": "/workflows/chat",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "chat",
+                "path": "/workflows/chat.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "selection",
+                "path": "/workflows/selection",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "selection",
+                "path": "/workflows/selection.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "multi-step",
+                "path": "/workflows/multi-step",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "multi-step",
+                "path": "/workflows/multi-step.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "assets",
+                "path": "/workflows/assets",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "assets",
+                "path": "/workflows/assets.html",
+                "isolated": true,
+                "unhydrated": true
+              }
+            ]
+          },
+          {
+            "id": "sso-hydration",
+            "title": "Early account drafts preserve native identity, focus and selection and submit exact values",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 97606,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/preceding/sso-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "assert hydrated account",
+            "earlyTargets": [
+              {
+                "role": "textbox",
+                "name": "Work email",
+                "sharedId": "2993e80c-30ee-408a-853e-9f1bc231f655"
+              },
+              {
+                "role": "textbox",
+                "name": "Workspace",
+                "sharedId": "250ad655-49b7-4e75-b51d-82ec32c25219"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflows-BaKNTud2.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/preload-helper-CvlGnBhC.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          },
+          {
+            "id": "chat-hydration",
+            "title": "Early chat draft preserves native identity and selection and sends its exact text",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 97748,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/preceding/chat-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "early controls ready",
+            "earlyTargets": [
+              {
+                "role": "textbox",
+                "name": "Message",
+                "sharedId": "d714730c-274b-4100-adf1-7a10aeed610f"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflowChat-C8lEVGMq.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/lit-B8wTlSYy.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          },
+          {
+            "id": "selection-hydration",
+            "title": "Early project query preserves editing without accepting a new project",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 97959,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/preceding/selection-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "early controls ready",
+            "earlyTargets": [
+              {
+                "role": "combobox",
+                "name": "Project",
+                "sharedId": "72415baa-f5bb-45b1-8583-62da3c0ec7d4"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflowSelection-p3Ne22Nm.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/lit-B8wTlSYy.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          },
+          {
+            "id": "settings-hydration",
+            "title": "Early invalid numeric draft survives enhancement without changing accepted form data",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 98117,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/preceding/settings-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "early controls ready",
+            "earlyTargets": [
+              {
+                "role": "spinbutton",
+                "name": "Layer opacity Exact value",
+                "sharedId": "bd538f38-9eb7-4bda-80c9-32d76a6409ce"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflowSettings-A-imDQJD.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/lit-B8wTlSYy.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          }
+        ],
+        "host": {
+          "version": "26.6.1",
+          "build": "25G76",
+          "arch": "arm64"
+        },
+        "scope": "Actual Firefox headless production first-paint/hydration journeys. Existing qualified build reused, no new build/install/types. DOM identity, native editing and computed accessible name/role targets; not computed descriptions/full AX, speech, IME or physical-device acceptance.",
+        "identityBefore": "sha256:b0726b4d7af61e2b820d5a8b732d17cdbbf4a977c9d635bdacf0a52c30b7029a",
+        "product": {
+          "name": "Firefox",
+          "version": "156.0.1",
+          "build": "15626.9.21",
+          "bundle": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app"
+        },
+        "identityAfter": "sha256:b0726b4d7af61e2b820d5a8b732d17cdbbf4a977c9d635bdacf0a52c30b7029a",
+        "completedAt": "2026-10-02T06:12:32.998Z",
+        "stats": {
+          "passed": 5,
+          "failed": 0,
+          "planned": 5
+        },
+        "rawResultSHA256": "8c6b71eaf2a8a126aadcff9620d9a8c8a33cb3fde03196fed14733b332f82c35"
+      },
+      "current": {
+        "schemaVersion": 1,
+        "status": "passed",
+        "sourceBase": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+        "startedAt": "2026-10-02T06:12:38.083Z",
+        "cases": [
+          {
+            "id": "no-js-documents",
+            "title": "All six direct/legacy SSR documents remain isolated with scripting disabled",
+            "javaScriptEnabled": false,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 99016,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/current/no-js-documents/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": null,
+              "external": null
+            },
+            "documents": [
+              {
+                "id": "sso",
+                "path": "/workflows",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "sso",
+                "path": "/workflows.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "settings",
+                "path": "/workflows/settings",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "settings",
+                "path": "/workflows/settings.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "chat",
+                "path": "/workflows/chat",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "chat",
+                "path": "/workflows/chat.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "selection",
+                "path": "/workflows/selection",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "selection",
+                "path": "/workflows/selection.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "multi-step",
+                "path": "/workflows/multi-step",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "multi-step",
+                "path": "/workflows/multi-step.html",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "assets",
+                "path": "/workflows/assets",
+                "isolated": true,
+                "unhydrated": true
+              },
+              {
+                "id": "assets",
+                "path": "/workflows/assets.html",
+                "isolated": true,
+                "unhydrated": true
+              }
+            ]
+          },
+          {
+            "id": "sso-hydration",
+            "title": "Early account drafts preserve native identity, focus and selection and submit exact values",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 99456,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/current/sso-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "assert hydrated account",
+            "earlyTargets": [
+              {
+                "role": "textbox",
+                "name": "Work email",
+                "sharedId": "69e5d7ff-81d4-4af1-9db3-bc9351b28dad"
+              },
+              {
+                "role": "textbox",
+                "name": "Workspace",
+                "sharedId": "2eab336a-13b0-4e03-aaae-654a61d6e5b3"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflows-BaKNTud2.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/preload-helper-CvlGnBhC.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          },
+          {
+            "id": "chat-hydration",
+            "title": "Early chat draft preserves native identity and selection and sends its exact text",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 99579,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/current/chat-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "early controls ready",
+            "earlyTargets": [
+              {
+                "role": "textbox",
+                "name": "Message",
+                "sharedId": "88b5d8aa-071b-40ee-991e-b5f5b93807d5"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflowChat-C8lEVGMq.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/lit-B8wTlSYy.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          },
+          {
+            "id": "selection-hydration",
+            "title": "Early project query preserves editing without accepting a new project",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 99806,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/current/selection-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "early controls ready",
+            "earlyTargets": [
+              {
+                "role": "combobox",
+                "name": "Project",
+                "sharedId": "090cd98f-35e6-461e-8d35-23939d7bcfca"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflowSelection-p3Ne22Nm.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/lit-B8wTlSYy.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          },
+          {
+            "id": "settings-hydration",
+            "title": "Early invalid numeric draft survives enhancement without changing accepted form data",
+            "javaScriptEnabled": true,
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 99891,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/first-paint/current/settings-hydration/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "scriptCanary": {
+              "inline": "ran",
+              "external": "ran"
+            },
+            "phase": "early controls ready",
+            "earlyTargets": [
+              {
+                "role": "spinbutton",
+                "name": "Layer opacity Exact value",
+                "sharedId": "c521f86d-8879-4252-837a-d67d82921198"
+              }
+            ],
+            "heldModulePaths": [
+              "/assets/workflowSettings-A-imDQJD.js",
+              "/assets/rolldown-runtime-B0lUwjiP.js",
+              "/assets/modulepreload-polyfill-lLXDlF_5.js",
+              "/assets/site-OUbUKn_c.js",
+              "/assets/workflows-ChO3V3xT.js",
+              "/assets/lit-B8wTlSYy.js"
+            ],
+            "hydratedNamesAndIdentityVerified": true
+          }
+        ],
+        "host": {
+          "version": "26.6.1",
+          "build": "25G76",
+          "arch": "arm64"
+        },
+        "scope": "Actual Firefox headless production first-paint/hydration journeys. Existing qualified build reused, no new build/install/types. DOM identity, native editing and computed accessible name/role targets; not computed descriptions/full AX, speech, IME or physical-device acceptance.",
+        "identityBefore": "sha256:685bd2d74453f2575241b41073777e7a6531a19a4c77222c7c0fadd0c5bef229",
+        "product": {
+          "name": "Firefox",
+          "version": "157.0",
+          "build": "15726.9.24",
+          "bundle": "/Applications/Firefox.app"
+        },
+        "identityAfter": "sha256:685bd2d74453f2575241b41073777e7a6531a19a4c77222c7c0fadd0c5bef229",
+        "completedAt": "2026-10-02T06:12:52.657Z",
+        "stats": {
+          "passed": 5,
+          "failed": 0,
+          "planned": 5
+        },
+        "rawResultSHA256": "6f3955b68b03258ce6455c9f7b0f542a9e0d57c388ca5f4d0adf7280af56fb8c"
+      }
+    },
+    "consumers": {
+      "preceding": {
+        "schemaVersion": 1,
+        "startedAt": "2026-10-02T06:12:57.778Z",
+        "sourceCommit": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+        "node": "v26.10.0",
+        "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+        "products": [
+          {
+            "name": "Firefox",
+            "version": "156.0.1",
+            "build": "15626.9.21",
+            "bundle": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app",
+            "identityDigest": "sha256:6125ed48e435bd8e06cba1856a1f880826c15173d783af0a0af4d652096eb532",
+            "identityPolicy": "Full selected Firefox application distribution.",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "156.0.1",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+              "moz:buildID": "20260921121718",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 916,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/consumers/preceding/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "headless": true,
+            "accessibilityQueryScope": "Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.",
+            "unchanged": true
+          }
+        ],
+        "cases": [
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          }
+        ],
+        "status": "passed",
+        "selectedProducts": "firefox",
+        "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+        "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+        "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+        "host": {
+          "version": "26.6.1",
+          "build": "25G76",
+          "arch": "arm64"
+        },
+        "completedAt": "2026-10-02T06:13:07.687Z",
+        "stats": {
+          "passed": 60,
+          "failed": 0,
+          "planned": 60
+        },
+        "rawResultSHA256": "127001de147e4257b68ccfb57e4324be3863a0770d944e31d7d1abff0a1a4a45"
+      },
+      "current": {
+        "schemaVersion": 1,
+        "startedAt": "2026-10-02T06:13:12.772Z",
+        "sourceCommit": "9d57602ce0e688202f3e7374050339c585b4ba7d",
+        "node": "v26.10.0",
+        "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+        "products": [
+          {
+            "name": "Firefox",
+            "version": "157.0",
+            "build": "15726.9.24",
+            "bundle": "/Applications/Firefox.app",
+            "identityDigest": "sha256:7f1df7542d9f2501056d90d91f5ff2a1e156e72081b3a4282d8624e7867da393",
+            "identityPolicy": "Full selected Firefox application distribution.",
+            "status": "passed",
+            "capabilities": {
+              "acceptInsecureCerts": false,
+              "browserName": "firefox",
+              "browserVersion": "157.0",
+              "platformName": "mac",
+              "setWindowRect": true,
+              "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+              "moz:buildID": "20260924084938",
+              "moz:headless": true,
+              "moz:platformVersion": "25.6.0",
+              "moz:processID": 1732,
+              "moz:profile": "/private/tmp/en-firefox-history-20261002-01/consumers/current/firefox-profile",
+              "moz:shutdownTimeout": 60000
+            },
+            "headless": true,
+            "accessibilityQueryScope": "Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.",
+            "unchanged": true
+          }
+        ],
+        "cases": [
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "html",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react19",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react192",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "react18",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue3",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue34",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "vue2",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte5",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte556",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "SSR node identity and native checkbox",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Framework property updates, native editing and listener disposal",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Authored choices update while native select and keyboard editing persist",
+            "status": "passed"
+          },
+          {
+            "product": "Firefox",
+            "cohort": "svelte4",
+            "scenario": "Tree property updates and pointer selection reach framework state",
+            "status": "passed"
+          }
+        ],
+        "status": "passed",
+        "selectedProducts": "firefox",
+        "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+        "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+        "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+        "host": {
+          "version": "26.6.1",
+          "build": "25G76",
+          "arch": "arm64"
+        },
+        "completedAt": "2026-10-02T06:13:22.801Z",
+        "stats": {
+          "passed": 60,
+          "failed": 0,
+          "planned": 60
+        },
+        "rawResultSHA256": "cfe0844d1a382e31b43be89e9a9c6ca12d8ebb34be2d69f65a5b8751c9247af6"
+      }
+    }
+  },
+  "scope": "Both actual Firefox releases:46 selected production workflows including native history/legacy links,10 first-paint/hydration and120 consumer cases after shared transport change. Same original production assets and packed consumers, no fresh build/install/types claim.",
+  "remaining": [
+    "Remaining exact original assertions, including all authored-child readiness and computed description/error semantics",
+    "Incomplete contrast review, full native AX and spoken output",
+    "Other product/OS/device, physical IME and manual acceptance"
+  ],
+  "historyProtocol": "browsingContext.traverseHistory",
+  "protocolDocumentation": "https://developer.mozilla.org/en-US/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/traverseHistory",
+  "axe": {
+    "version": "4.13.0",
+    "sources": {
+      "node_modules/axe-core/axe.min.js": "c24f097bd2f451d4f933e8bc7d8d539f8672a2ebcb5cc9f9f3eec8ca9470a0c1",
+      "node_modules/axe-core/package.json": "d208b100bbee8f00e469bf8093fad40b5e3bdb0565fb4c1d89b6c9a289a06847",
+      "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106"
+    },
+    "documentation": "https://github.com/dequelabs/axe-core/blob/develop/doc/API.md",
+    "scope": [
+      "#sso or #settings or #chat or #selection",
+      ".theme-controls"
+    ],
+    "tags": [
+      "wcag2a",
+      "wcag2aa",
+      "wcag21aa",
+      "wcag22aa"
+    ]
+  }
+}
