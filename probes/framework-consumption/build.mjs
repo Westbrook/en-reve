@@ -5,6 +5,7 @@ import {join, resolve, relative, sep, dirname} from 'node:path';
 import {createHash} from 'node:crypto';
 import {build} from './node_modules/esbuild/lib/main.js';
 import {preparedPackages} from '../../tooling/evidence/packed-setup.mjs';
+import {cohorts} from './cohorts.mjs';
 const root = import.meta.dirname;
 const repository = resolve(root, '../..');
 const output = resolve(process.env.EN_FRAMEWORK_OUT ?? join(root, 'build'));
@@ -13,15 +14,13 @@ await mkdir(output, {recursive:false}); // Never overwrite a retained consumer/l
 const site = join(output, 'site'), archives = join(output, 'packages');
 await mkdir(site); await mkdir(archives);
 const packages = await preparedPackages(['elements','primitives','styles','tokens','ssr'], archives);
-const targets = ['html','react19','react18','vue3','vue2','svelte5','svelte4'];
 const rootPackage = JSON.parse(await readFile(join(repository,'package.json'),'utf8'));
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 const run = (command,args,cwd) => execFileSync(command,args,{cwd,stdio:'inherit'});
 const versions = {}, consumers = {};
 let islandHtml;
-for (const name of targets) {
+for (const {id:name,family} of cohorts) {
  const environment = join(output,name); await mkdir(environment);
- const family = name.replace(/\d/g,'');
  const sourceManifest = name === 'html' ? {dependencies:{}} : JSON.parse(await readFile(join(root,'environments',name,'package.json'),'utf8'));
  if (name !== 'html') await copyFile(join(root,'environments',name,'package-lock.json'),join(environment,'package-lock.json'));
  const dependencies = {...sourceManifest.dependencies, lit:'3.3.3', '@lit-labs/ssr-client':'1.1.8',

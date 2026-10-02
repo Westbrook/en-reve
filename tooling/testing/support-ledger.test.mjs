@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {cohorts} from '../../probes/framework-consumption/cohorts.mjs';
 
 const root = new URL('../../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
@@ -76,11 +77,13 @@ test('cohort pins and locks stay separate from historical fixture results', asyn
     for (const [name, version] of Object.entries(cohort.pinnedDependencies)) {
       assert.equal(lock.packages[`node_modules/${name}`].version, version, `${cohort.id}/${name}`);
     }
-    const receipt = ledger.evidence.find(e => e.id === cohort.historicalReceipt);
-    const result = await json(receipt.path);
-    assert.deepEqual(cohort.historicalDependencies, result.consumers[cohort.id]);
-    assert.equal(cohort.sameVersionsAsHistoricalReceipt,
-      JSON.stringify(cohort.pinnedDependencies) === JSON.stringify(cohort.historicalDependencies));
+    if (cohort.historicalReceipt) {
+      const receipt = ledger.evidence.find(e => e.id === cohort.historicalReceipt);
+      const result = await json(receipt.path);
+      assert.deepEqual(cohort.historicalDependencies, result.consumers[cohort.id]);
+      assert.equal(cohort.sameVersionsAsHistoricalReceipt,
+        JSON.stringify(cohort.pinnedDependencies) === JSON.stringify(cohort.historicalDependencies));
+    } else assert.equal(cohort.classification, 'preceding-minor');
     if (cohort.packedQualification === 'passed') {
       const packedEvidence = ledger.evidence.find(e => e.id === cohort.packedReceipt);
       assert(packedEvidence, `Missing packed receipt for ${cohort.id}`);
@@ -107,7 +110,7 @@ test('packed framework receipt remains bound to its fixture and cohort source in
   }
   for (const [path, digest] of Object.entries(receipt.toolingSources ?? {}))
     assert.equal(createHash('sha256').update(await read(path)).digest('hex'), digest, path);
-  assert.equal(Object.keys(receipt.consumers).length, 7);
+  assert.deepEqual(Object.keys(receipt.consumers).sort(), cohorts.map(c => c.id).sort());
   assert.equal(receipt.packages.length, 5);
   for (const consumer of Object.values(receipt.consumers)) {
     assert.equal(consumer.types, 'passed');
@@ -117,15 +120,15 @@ test('packed framework receipt remains bound to its fixture and cohort source in
 });
 
 test('product qualification retains exact distributions and bounded acceptance', async () => {
-  const evidence = ledger.evidence.find(e => e.kind === 'automated-product-and-engine');
+ for (const evidence of ledger.evidence.filter(e => e.kind === 'automated-product-and-engine')) {
   const receipt = await json(evidence.path);
   assert.equal(receipt.status, 'passed');
-  assert.equal(receipt.stats.expected, 210);
+  assert.equal(receipt.stats.expected, Object.keys(receipt.consumers).length * 6 * 5);
   for (const key of ['unexpected','flaky','skipped']) assert.equal(receipt.stats[key], 0);
   assert.equal(receipt.runtimeDistributionUnchangedAfterRun, true);
   assert.equal(receipt.products.length, 2);
   for (const product of receipt.products) {
-    assert.equal(product.passed, 42);
+    assert.equal(product.passed, Object.keys(receipt.consumers).length * 6);
     assert.equal(product.headless, true);
     assert.equal(product.protocolVersion, receipt.browsers[product.project]);
     assert(product.version && product.bundleBuild && product.platformVersionSource);
@@ -134,6 +137,35 @@ test('product qualification retains exact distributions and bounded acceptance',
   }
   assert.equal(ledger.conditions.find(c => c.id === 'browser-current').status, 'partial');
   assert.equal(ledger.conditions.find(c => c.id === 'browser-previous').status, 'not-run');
+ }
+});
+
+test('rolling framework lines qualify current and preceding minors while retaining major compatibility', async () => {
+  const policy = await json(ledger.frameworkReleasePolicy);
+  assert.match(policy.resolvedAt, /^\d{4}-\d{2}-\d{2}T/);
+  assert.equal(policy.families.length, 3);
+  const condition = ledger.conditions.find(c => c.id === 'framework-release-lines');
+  assert.equal(condition.status, 'qualified');
+  const evidence = ledger.evidence.find(e => e.id === condition.evidence[0]);
+  const receipt = await json(evidence.path);
+  assert.deepEqual(receipt.releaseLines, policy);
+  for (const family of policy.families) {
+    const current = family.current.line.split('.').map(Number);
+    const previous = family.previous.line.split('.').map(Number);
+    assert.equal(previous[0], current[0]);
+    assert.equal(previous[1], current[1] - 1);
+    for (const [role, line] of [['current-minor',family.current],['preceding-minor',family.previous]]) {
+      const cohort = cohorts.find(c => c.id === line.cohort);
+      assert.equal(cohort.family, family.family);
+      assert.equal(cohort.classification, role);
+      assert.equal(receipt.consumers[line.cohort].versions[family.family], line.version);
+      assert(line.version.startsWith(line.line+'.'));
+      assert(!line.version.includes('-'), 'Prereleases are separate subjects');
+      assert.equal(receipt.consumers[line.cohort].types, 'passed');
+    }
+    for (const id of family.retained) assert(receipt.consumers[id], 'Do not drop previous-major coverage');
+  }
+  assert.equal(cohorts.find(c => c.id === 'vue2').classification, 'historical-eol-compatibility');
 });
 
 test('engine manifest and configured Playwright version agree with the support inventory', async () => {

@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-const consumers = ['html','react19','react18','vue3','vue2','svelte5','svelte4'];
+import {cohorts} from './cohorts.mjs';
 test.beforeEach(async ({browser,page}, testInfo) => {
  const version=browser.version();
  testInfo.annotations.push({type:'browser-version',description:version});
@@ -13,7 +13,7 @@ test.beforeEach(async ({browser,page}, testInfo) => {
   testInfo.annotations.push({type:'browser-product',description:JSON.stringify(product)});
  }
 });
-for (const consumer of consumers) {
+for (const {id:consumer} of cohorts) {
  test.describe(consumer, () => {
   test('object and string properties render through framework bindings with authored description slots', async ({page}) => {
    const errors:string[]=[]; page.on('pageerror',error=>errors.push(error.message));

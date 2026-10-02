@@ -70,3 +70,7 @@ Local main `53a1502115f968c7671d127543707a8e5d98b277` qualifies public package t
 ## Installed browser product qualification
 
 Local main `4a229e227d3501c1206a47a1ccd6deafb55e8352` qualifies public package tarballs across all seven consumers on installed Chrome/Edge and three pinned engines. See `probes/framework-consumption/verification-products-20261002.json` and its README for exact source, outcomes and limits.
+
+## Current and preceding framework release lines
+
+Local main `fc9da899dc897996fcbd3e3a6c7679ad34bac15c` qualifies public package tarballs across all ten consumers on installed Chrome/Edge and three pinned engines. See `probes/framework-consumption/verification-release-lines-20261002.json` and its README for exact source, outcomes and limits.

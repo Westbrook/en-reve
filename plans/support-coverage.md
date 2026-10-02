@@ -84,9 +84,8 @@ physical/manual coverage.
 1. **Actual release products:** resolve current/preceding versions on named OSes,
    then acquire isolated automated or manual receipts. Record binary identity,
    profile, scenario, result and date. Missing access is an open condition.
-2. **Rolling framework lines:** resolve supported-line meaning per framework;
-   extend the fixed compatibility cohorts if required. Legacy Vue2 acceptance
-   is not a claim of upstream maintenance.
+2. **Rolling framework lines:** qualified for the October2 window below. Refresh
+   exact pins when the support window changes; retain previous-major/EOL cohorts.
 3. **Physical and manual matrix:** named Android/iOS phones/tablets in both
    orientations; small/large laptops; desktop display transitions; real observed
    connectivity; remaining speech, native-picker and IME workflows. Existing
@@ -134,3 +133,21 @@ qualification without altering its immutable126-pass receipt. The final run also
 retains the original strict console check: an explicit fixture data favicon fixes
 Chrome's observed favicon404. Early harness attempts remain in local evidence;
 partial passes are not pooled into the final210-pass result.
+
+
+## Framework release-line qualification — October 2
+
+The [resolved policy](../probes/framework-consumption/release-lines.json) uses current
+and immediately preceding stable minors within the current major, while retaining
+all previous-major compatibility subjects. Exact pairs are React19.3.0/19.2.8,
+Vue3.5.43/3.4.38 and Svelte5.57.1/5.56.10. React18.3.1, Vue2.7.16 and Svelte4.2.20
+remain in the matrix; Vue2 is historical EOL compatibility, not maintained support.
+
+The [new immutable receipt](../probes/framework-consumption/verification-release-lines-20261002.json)
+records300 browser passes and10 independent packed declaration compilations.
+It includes all six contracts per cohort, three pinned engines and installed
+Chrome/Edge with unchanged distribution identities. The React19.2 adapter needed
+a stable opaque HTML prop to preserve hydrated host nodes; the original failing
+run is retained, and the unchanged identity assertion passes in the final full run.
+`framework-release-lines` is now **qualified** for these exact pins and contracts.
+This closes a framework condition, not the broader product/device/manual matrix.

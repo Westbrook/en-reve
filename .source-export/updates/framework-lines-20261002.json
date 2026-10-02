@@ -1,0 +1,27 @@
+{
+  "createdAt": "2026-10-02T03:17:27.215456+00:00",
+  "sourceCommit": "fc9da899dc897996fcbd3e3a6c7679ad34bac15c",
+  "previousSourceMain": "4a229e227d3501c1206a47a1ccd6deafb55e8352",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "plans/verification.md",
+    "probes/framework-consumption/README.md",
+    "probes/framework-consumption/adapters/react.mjs",
+    "probes/framework-consumption/build.mjs",
+    "probes/framework-consumption/cohorts.mjs",
+    "probes/framework-consumption/consumption.spec.ts",
+    "probes/framework-consumption/environments/react192/package-lock.json",
+    "probes/framework-consumption/environments/react192/package.json",
+    "probes/framework-consumption/environments/svelte556/package-lock.json",
+    "probes/framework-consumption/environments/svelte556/package.json",
+    "probes/framework-consumption/environments/vue34/package-lock.json",
+    "probes/framework-consumption/environments/vue34/package.json",
+    "probes/framework-consumption/release-lines.json",
+    "probes/framework-consumption/verification-release-lines-20261002.json",
+    "tooling/test-pipeline/README.md",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Current and preceding stable minor lines for React/Vue/Svelte plus retained major/EOL cohorts qualified:300 browser passes,10 independent packed public type compilations and101 tooling checks. React19.2 opaque HTML prop stabilized to preserve hydrated nodes. Broader browser-product/physical/manual scope remains open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

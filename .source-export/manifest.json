@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "4a229e227d3501c1206a47a1ccd6deafb55e8352",
-  "exportedAt": "2026-10-02T03:04:21.930427+00:00",
+  "sourceCommit": "fc9da899dc897996fcbd3e3a6c7679ad34bac15c",
+  "exportedAt": "2026-10-02T03:17:27.215456+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5393,
-  "includedBytes": 144335139,
-  "qualification": "210 passes across seven independent packed consumers and five browser subjects: installed Chrome154.0.8037.95, Edge154.0.4258.48 and three pinned engines. Seven public type checks and100 tooling checks passed. Full product distributions unchanged; broader current/preceding product and physical/manual scope remains open.",
-  "latestUpdate": ".source-export/updates/product-framework-20261002.json",
+  "includedFiles": 5403,
+  "includedBytes": 144390845,
+  "qualification": "Current and preceding stable minor lines for React/Vue/Svelte plus retained major/EOL cohorts qualified:300 browser passes,10 independent packed public type compilations and101 tooling checks. React19.2 opaque HTML prop stabilized to preserve hydrated nodes. Broader browser-product/physical/manual scope remains open.",
+  "latestUpdate": ".source-export/updates/framework-lines-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

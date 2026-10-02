@@ -5,7 +5,7 @@
   "qualification": "incomplete",
   "policy": {
     "browserLines": "Current and immediately preceding stable product major on a named OS. Exact patches must be resolved at acquisition; installed versions are inventory, not test results. Beta/Canary/Technology Preview and bundled engines are separate subjects.",
-    "frameworkLines": "Retain existing React18/19, Vue2/3 and Svelte4/5 compatibility cohorts. Resolve the rolling supported-line policy before calling this current-minus-one coverage; Vue2 is EOL historical compatibility, not a maintained preceding release.",
+    "frameworkLines": "At each support-window acquisition, select the latest stable minor and the immediately preceding stable minor within the current stable major; pin the highest stable patch published in each selected line. Retain existing previous-major compatibility cohorts separately. This is a library compatibility window, not an assertion that upstream maintains every previous line. Prereleases are excluded. Re-resolve on support-window changes, never relabel historical results.",
     "evidence": "A passed historical subset retains its original date, inputs and limits. No new run, source-equivalence transfer, physical-device or screen-reader acceptance is inferred from this inventory.",
     "refresh": "Refresh this ledger when package pins or qualification receipts change and before release. Recheck official product versions at acquisition; do not silently upgrade runtime pins or rewrite historical receipts."
   },
@@ -124,7 +124,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-products-20261002"
+      "packedReceipt": "framework-release-lines-20261002"
     },
     {
       "id": "react18",
@@ -141,7 +141,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-products-20261002"
+      "packedReceipt": "framework-release-lines-20261002"
     },
     {
       "id": "vue3",
@@ -158,7 +158,7 @@
       "sameVersionsAsHistoricalReceipt": false,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-products-20261002"
+      "packedReceipt": "framework-release-lines-20261002"
     },
     {
       "id": "vue2",
@@ -175,7 +175,7 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "historical-eol-compatibility",
       "packedQualification": "passed",
-      "packedReceipt": "framework-products-20261002"
+      "packedReceipt": "framework-release-lines-20261002"
     },
     {
       "id": "svelte5",
@@ -190,7 +190,7 @@
       "sameVersionsAsHistoricalReceipt": false,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-products-20261002"
+      "packedReceipt": "framework-release-lines-20261002"
     },
     {
       "id": "svelte4",
@@ -205,7 +205,39 @@
       "sameVersionsAsHistoricalReceipt": true,
       "classification": "maintained-compatibility-fixture",
       "packedQualification": "passed",
-      "packedReceipt": "framework-products-20261002"
+      "packedReceipt": "framework-release-lines-20261002"
+    },
+    {
+      "id": "react192",
+      "manifest": "probes/framework-consumption/environments/react192/package.json",
+      "pinnedDependencies": {
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+      },
+      "classification": "preceding-minor",
+      "packedQualification": "passed",
+      "packedReceipt": "framework-release-lines-20261002"
+    },
+    {
+      "id": "vue34",
+      "manifest": "probes/framework-consumption/environments/vue34/package.json",
+      "pinnedDependencies": {
+        "vue": "3.4.38",
+        "@vue/server-renderer": "3.4.38"
+      },
+      "classification": "preceding-minor",
+      "packedQualification": "passed",
+      "packedReceipt": "framework-release-lines-20261002"
+    },
+    {
+      "id": "svelte556",
+      "manifest": "probes/framework-consumption/environments/svelte556/package.json",
+      "pinnedDependencies": {
+        "svelte": "5.56.10"
+      },
+      "classification": "preceding-minor",
+      "packedQualification": "passed",
+      "packedReceipt": "framework-release-lines-20261002"
     }
   ],
   "evidence": [
@@ -257,6 +289,13 @@
       "path": "probes/framework-consumption/verification-products-20261002.json",
       "sha256": "1f80da54bf9e5d90b1b294fdde2674669e1a2c493ef783bff64430ace831eacb",
       "scope": "210 passes:42 per installed Chrome154.0.8037.95 and Edge154.0.4258.48 headless product plus pinned Chromium/Firefox/WebKit. Seven independent packed consumers/types. Exact full distributions unchanged; not complete product/manual coverage."
+    },
+    {
+      "id": "framework-release-lines-20261002",
+      "kind": "automated-product-and-engine",
+      "path": "probes/framework-consumption/verification-release-lines-20261002.json",
+      "sha256": "db16ba76490991cbc46d036140278d9568e664aacf4b02f154a1cb493f163b96",
+      "scope": "300 passes across10 independent packed consumers, three pinned engines and installed Chrome/Edge. Current/preceding stable minor lines plus retained major/EOL cohorts;10 public type checks. React19.2 opaque-island prop identity fixed. No broader product/manual acceptance."
     }
   ],
   "conditions": [
@@ -277,10 +316,10 @@
       "status": "qualified",
       "delivery": "automated-engine",
       "evidence": [
-        "framework-products-20261002"
+        "framework-release-lines-20261002"
       ],
       "gap": "",
-      "nextAction": "Requalify when package APIs or cohort pins change; rolling release-line policy remains tracked separately."
+      "nextAction": "Re-resolve exact stable minor/patch lines at the next support-window change; retain preceding-major/EOL cohorts separately and acquire fresh packed receipts."
     },
     {
       "id": "packed-ssr",
@@ -299,7 +338,7 @@
       "status": "partial",
       "delivery": "product",
       "evidence": [
-        "framework-products-20261002"
+        "framework-release-lines-20261002"
       ],
       "gap": "Installed macOS Chrome154.0.8037.95 and Edge154.0.4258.48 pass the packed consumer subset in headless mode. Edge latest patch, other OS/workflows, actual Firefox/Safari, headed and manual checks remain unqualified.",
       "nextAction": "Extend product/workflow coverage with explicitly identified distributions; obtain actual Firefox/Safari and exact current/preceding targets. Do not equate the patched engine or this consumer subset with full product acceptance."
@@ -316,13 +355,13 @@
     {
       "id": "framework-release-lines",
       "requirement": "Rolling current/preceding framework support",
-      "status": "partial",
+      "status": "qualified",
       "delivery": "automated-engine",
       "evidence": [
-        "framework-20260913"
+        "framework-release-lines-20261002"
       ],
-      "gap": "Historical major compatibility cohorts are not a resolved rolling-release matrix; Vue2 is EOL.",
-      "nextAction": "Declare supported release-line meaning per framework, retain legacy cohorts separately, then pin and qualify exact current/preceding versions."
+      "gap": "",
+      "nextAction": "Re-resolve exact stable minor/patch lines at the next support-window change; retain preceding-major/EOL cohorts separately and acquire fresh packed receipts."
     },
     {
       "id": "phone-android",
@@ -496,5 +535,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T03:01:56.125181+00:00"
+  "updatedAt": "2026-10-02T03:16:21.597438+00:00",
+  "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

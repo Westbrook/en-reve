@@ -9,11 +9,11 @@ The maintained source pins below were audited on 2 October 2026. Each environmen
 | Consumer | Installed version | Scope |
 | --- | --- | --- |
 | Plain HTML | Native DOM with Lit 3.3.3 hydration | Framework-free baseline |
-| React | 19.3.0 and 18.3.1 | Maintained major compatibility cohorts |
-| Vue | 3.5.43 and 2.7.16 | Current major plus historical compatibility probe |
-| Svelte | 5.57.1 and 4.2.20 | Maintained major compatibility cohorts; shared legacy component syntax |
+| React | 19.3.0, 19.2.8 and 18.3.1 | Current/preceding minor plus retained previous major |
+| Vue | 3.5.43, 3.4.38 and 2.7.16 | Current/preceding minor plus EOL historical compatibility |
+| Svelte | 5.57.1, 5.56.10 and 4.2.20 | Current/preceding minor plus retained previous major; shared legacy syntax |
 
-Vue 2 reached end of life on 31 December 2023. Its fixture is compatibility evidence, not an endorsement of an unsupported runtime or a claim of upstream security maintenance. The rolling framework policy remains broader than these particular patch versions. [Vue EOL announcement](https://v2.vuejs.org/eol/), [React versions](https://react.dev/versions), [Svelte migration guide](https://svelte.dev/docs/svelte/v5-migration-guide).
+Vue 2 reached end of life on 31 December 2023. Its fixture is compatibility evidence, not an endorsement of an unsupported runtime or a claim of upstream security maintenance. The rolling selection is defined in `release-lines.json`; these are dated qualification pins, not automatic upgrades. [Vue EOL announcement](https://v2.vuejs.org/eol/), [React versions](https://react.dev/versions), [Svelte migration guide](https://svelte.dev/docs/svelte/v5-migration-guide).
 
 ## Ordinary client consumption
 
@@ -63,7 +63,7 @@ EN_EXECUTION_OUTPUT=/absolute/fresh/output \
 The pathway installs the pinned fixture builder, builds the required
 library packages, and supplies one `EN_FRAMEWORK_OUT` to preparation and browsers.
 Preparation packs elements/primitives/styles/tokens/SSR using the shared immutable
-package producer. For each of seven consumers it seeds the cohort lock, adds the
+package producer. For each declared cohort (currently ten consumers) it seeds the cohort lock, adds the
 actual tarballs and exact compiler, resolves offline, and runs a clean offline
 `npm ci --workspaces=false`. The resulting lock, npm archive integrity, actual
 bundle inputs and output hashes are retained. An empty npm cache must first be
@@ -92,7 +92,7 @@ Playwright owns its server and never reuses an arbitrary existing one.
 
 ## Verification surface
 
-Browser tests exercise server-rendered controls before hydration, preserved DOM identity, accepted/canceled/superseded real user changes, framework-owned boolean changes in both directions, and dynamically added/removed `en-select-option` children without replacing the native select. Seven consumers run against Chromium, Firefox and WebKit. The historical September13 pass remains unchanged in `verification.json`:
+Browser tests exercise server-rendered controls before hydration, preserved DOM identity, accepted/canceled/superseded real user changes, framework-owned boolean changes in both directions, and dynamically added/removed `en-select-option` children without replacing the native select. The declared cohorts run against Chromium, Firefox and WebKit. The historical September13 pass remains unchanged in `verification.json`:
 84 checks over workspace distributions, including the older Vue3.5.42 and
 Svelte5.57.0 pins. It is not relabeled as packed or current-source qualification.
 
@@ -160,3 +160,35 @@ installed patch predates the latest official October1 patch. It does not establi
 full current/preceding release, headed UI, physical-device, actual Firefox/Safari,
 speech or IME coverage. [Playwright's browser guidance](https://playwright.dev/docs/browsers)
 explains the distinction between branded products and its patched engines.
+
+
+## Rolling framework release lines
+
+`release-lines.json` resolves the compatibility window on October2: the current
+stable minor and immediately preceding stable minor in the current major, each at
+its latest published stable patch. Existing previous-major/EOL cohorts remain
+additional subjects. This preserves major compatibility while adding the recent
+release boundary; previous-line compatibility is not a claim of upstream maintenance.
+Re-resolve the registry pins when the support window changes and retain old receipts.
+
+Preparation and browser discovery share `cohorts.mjs`; manifests and locks own the
+exact dependencies. The added cohorts are React19.2.8, Vue3.4.38 and Svelte5.56.10.
+The npm registry listed React19.2.8 while the retrieved React versions page still
+listed19.2.7; both React and ReactDOM are pinned to the published19.2.8 patch.
+Vue3.6 prereleases are excluded; Vue2 remains explicitly EOL compatibility.
+
+The [release-line receipt](verification-release-lines-20261002.json) records
+**300 passes**: six contracts × ten consumers × five browser subjects, plus ten
+independent packed public-type compilations. The three pinned engines and actual
+installed Chrome/Edge distributions are the same exact subjects as the preceding
+product checkpoint. This closes the framework release-line condition for this
+dated compatibility window; broader browser and physical/manual scope remains open.
+
+The initial React19.2.8 run exposed replacement of hydrated island hosts on the
+first framework state render. Its ReactDOM implementation reapplies `innerHTML`
+when a new `dangerouslySetInnerHTML` prop object is supplied, even if the string is
+equal. The React adapter now memoizes that object by its trusted HTML string.
+Framework renders therefore leave library-owned nodes intact. The same node-identity
+assertion passed afterward in every cohort/browser; no assertion was relaxed and
+no library component wrapper was introduced. Preserve the opaque island ownership
+boundary and stable prop identity in equivalent consumer integrations.

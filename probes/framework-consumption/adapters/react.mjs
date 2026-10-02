@@ -5,6 +5,9 @@ import { join } from 'node:path';
 // consumer deliberately exercises property and event interoperability instead.
 const appSource = `
 function App({ islandHtml }) {
+  // React19.2 reapplies innerHTML when this prop object changes, even if its
+  // string is equal. The library-owned hydrated island must remain untouched.
+  const islandContent = React.useMemo(() => ({ __html: islandHtml }), [islandHtml]);
   const [checked, setChecked] = React.useState(false);
   const [mounted, setMounted] = React.useState(false);
   React.useEffect(() => { setMounted(true); }, []);
@@ -40,7 +43,7 @@ function App({ islandHtml }) {
       React.createElement('button', { id: 'add-option', type: 'button', onClick: () => window.fixture.addOption() }, 'Add option'),
       React.createElement('button', { id: 'remove-option', type: 'button', onClick: () => window.fixture.removeOption() }, 'Remove option')),
     React.createElement('output', { id: 'framework-state' }, 'React shell'),
-    React.createElement('div', { id: 'component-island', dangerouslySetInnerHTML: { __html: islandHtml } }),
+    React.createElement('div', { id: 'component-island', dangerouslySetInnerHTML: islandContent }),
     React.createElement('section', { id: 'client-consumer' },
       React.createElement('h2', null, 'Framework owned choice'),
       mounted ? React.createElement('en-checkbox', { id: 'client-checkbox', ref: checkbox }, 'Framework owned choice') : null,

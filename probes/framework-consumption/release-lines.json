@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "resolvedAt": "2026-10-02T03:10:24.295155+00:00",
+  "policy": "At each support-window acquisition, select the latest stable minor and the immediately preceding stable minor within the current stable major; pin the highest stable patch published in each selected line. Retain existing previous-major compatibility cohorts separately. This is a library compatibility window, not an assertion that upstream maintains every previous line. Prereleases are excluded. Re-resolve on support-window changes, never relabel historical results.",
+  "families": [
+    {
+      "family": "react",
+      "current": {
+        "cohort": "react19",
+        "line": "19.3",
+        "version": "19.3.0"
+      },
+      "previous": {
+        "cohort": "react192",
+        "line": "19.2",
+        "version": "19.2.8"
+      },
+      "retained": [
+        "react18"
+      ],
+      "sources": [
+        "https://react.dev/versions",
+        "https://registry.npmjs.org/react",
+        "https://registry.npmjs.org/react-dom"
+      ],
+      "note": "npm publishes19.2.8 while the retrieved React versions page lists19.2.7. Exact registry patch and matching react-dom are used."
+    },
+    {
+      "family": "vue",
+      "current": {
+        "cohort": "vue3",
+        "line": "3.5",
+        "version": "3.5.43"
+      },
+      "previous": {
+        "cohort": "vue34",
+        "line": "3.4",
+        "version": "3.4.38"
+      },
+      "retained": [
+        "vue2"
+      ],
+      "sources": [
+        "https://github.com/vuejs/core/blob/main/CHANGELOG.md",
+        "https://registry.npmjs.org/vue",
+        "https://registry.npmjs.org/@vue%2fserver-renderer",
+        "https://v2.vuejs.org/eol/"
+      ],
+      "note": "Vue2.7.16 remains EOL historical compatibility; it is not the rolling preceding line. Vue3.6 prereleases excluded."
+    },
+    {
+      "family": "svelte",
+      "current": {
+        "cohort": "svelte5",
+        "line": "5.57",
+        "version": "5.57.1"
+      },
+      "previous": {
+        "cohort": "svelte556",
+        "line": "5.56",
+        "version": "5.56.10"
+      },
+      "retained": [
+        "svelte4"
+      ],
+      "sources": [
+        "https://github.com/sveltejs/svelte/releases",
+        "https://registry.npmjs.org/svelte"
+      ],
+      "note": "Both Svelte5 minors use the same compiled legacy syntax adapter, with explicit property/event bridges. Runes-specific APIs are outside this shared custom-element contract."
+    }
+  ]
+}
