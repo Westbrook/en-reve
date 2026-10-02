@@ -168,3 +168,7 @@ Description composition also serves editors and aggregate controls. Preserve nat
 Native presentation templates and their paired portable/Lit styles have a
 [consumer contract](docs/presentation-consumers.md), including explicit versus
 native choice ownership, semantic composition and accessible chart data.
+
+The [native calendar consumer contract](docs/calendar-consumers.md) covers packed
+calendar helpers, application-owned date/range interaction, paired stylesheet
+formats, native fractional-step differences and qualification limits.

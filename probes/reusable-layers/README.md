@@ -51,3 +51,9 @@ The [presentation recipes](../presentation-recipes/README.md) add fourteen entri
 covering native patterns/charts and matching Lit/portable styles.114 packed cases,
 32 owning gallery cases and native SSR choice checks expose and fix live checked
 state reconciliation. Named-scenario coverage is59/110;51 entries remain pending.
+
+The [calendar recipes](../calendar-recipes/README.md) add the pure date helper and
+both calendar style deliveries.120 cases and39 Node checks cover application-owned
+date/range interactions.62/110 entries have named-scenario qualification;48 remain.
+Native fractional steps and the tested WebKit forced-color property limit are
+explicitly separated from the helper and border-semantic assertions.

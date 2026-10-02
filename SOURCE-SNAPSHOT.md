@@ -198,3 +198,7 @@ Local main `71d0534abc33589ee198f1af1ad7c29200a9ea44` qualifies fourteen public 
 ## GitHub build base URL
 
 GitHub-only HTML snapshots include the requested https://westbrook.github.io/en-reve/ base. Qualified private Site output is unchanged.
+
+## Packed calendar consumers
+
+Local main `49e642d8f15a27922f75cf09237a5658ce65af82` qualifies three calendar helper/style entries through120 native date/range cases. See `probes/calendar-recipes/README.md` for scope and browser limits.

@@ -24,10 +24,9 @@
       "entry": "@en-reve/primitives/interactions/calendar.js",
       "source": "packages/primitives/src/interactions/calendar.ts",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "calendar",
-      "contract": "packages/primitives/docs/calendar-consumers.md",
-      "receipt": "probes/calendar-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/primitives/interactions/chat-editor.js",
@@ -533,19 +532,17 @@
       "entry": "@en-reve/styles/calendar.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "calendar",
-      "contract": "packages/primitives/docs/calendar-consumers.md",
-      "receipt": "probes/calendar-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/calendar.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "calendar",
-      "contract": "packages/primitives/docs/calendar-consumers.md",
-      "receipt": "probes/calendar-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/foundations.js",

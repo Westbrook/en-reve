@@ -421,3 +421,13 @@ native checked properties without replacing nodes; omitted state remains native.
 SSR true/false/omitted snapshots pass for checkboxes/radios. Public-entry progress
 is59/110;51 remaining entries and the separate platform/manual/owner gates remain
 open. The retired historical external CSS-authoring rerun remains retired, not passed.
+
+### Native calendar consumers — 2026-10-02
+
+[Calendar recipes](../probes/calendar-recipes/README.md) add three entries with120
+three-engine/dual-style cases and39 Node checks. Native grid/date/range interaction,
+FormData, bounds, step semantics, connected band geometry, localization, keyboard
+focus and timezone behavior are exercised from packed public imports. Native
+fractional-step differences and a WebKit CSS capability limit remain explicit.
+62/110 entries are qualified for named scenarios;48 and platform/manual/owner
+scope remain open. The historical CSS-authoring rerun stays retired, never passed.

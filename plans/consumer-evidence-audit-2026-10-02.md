@@ -217,3 +217,13 @@ while omission preserves native selection. SSR retains correct boolean markup.
 59/110 public entries have named-scenario receipts;51 remain, alongside all
 platform/manual/owner obligations. Earlier run01/runtime and run02/SSR failures
 remain evidence. Neither bounded journeys nor these counts imply full completion.
+
+## Native calendar consumer checkpoint
+
+The [calendar recipes](../probes/calendar-recipes/README.md) qualify three further
+entries through a packed application-owned date/range grid in both style forms.
+120 browser cases and39 Node checks pass.62/110 entries have named-scenario
+receipts;48 remain, plus all platform/manual/owner scope. The native fractional
+step observation and unsupported WebKit forced-color property are retained limits,
+not waived helper assertions. No library runtime changed; the existing qualified
+production build is reused only because its source/output hashes remain identical.

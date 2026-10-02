@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-10-02T13:36:59.141971+00:00",
+  "sourceCommit": "49e642d8f15a27922f75cf09237a5658ce65af82",
+  "previousSourceMain": "52c66b4bd4d93a8c71c3146dd973732a72c9df69",
+  "taskPaths": [
+    "packages/primitives/README.md",
+    "packages/primitives/docs/calendar-consumers.md",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/calendar-recipes/README.md",
+    "probes/calendar-recipes/playwright.config.ts",
+    "probes/calendar-recipes/prepare.mjs",
+    "probes/calendar-recipes/recipes.html",
+    "probes/calendar-recipes/recipes.spec.ts",
+    "probes/calendar-recipes/recipes.ts",
+    "probes/calendar-recipes/server.mjs",
+    "probes/calendar-recipes/verification-20261002.json",
+    "probes/presentation-recipes/qualification-sources/52c66b4b/browser-ports.mjs.txt",
+    "probes/presentation-recipes/qualification-sources/52c66b4b/comprehensive.mjs.txt",
+    "probes/presentation-recipes/qualification-sources/52c66b4b/comprehensive.test.mjs.txt",
+    "probes/presentation-recipes/qualification-sources/52c66b4b/inventory.json.txt",
+    "probes/presentation-recipes/qualification-sources/52c66b4b/inventory.test.mjs.txt",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Three public calendar helper/style entries have independent native date/range qualification:120 browser cases,39 Node checks and128 integrity checks pass. Native fractional-step observations and WebKit CSS capability limits stay explicit. Inventory62/110;48 entries and platform/manual/owner work remain. Product build unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}
