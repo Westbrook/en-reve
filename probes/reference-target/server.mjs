@@ -1,7 +1,7 @@
 import { createServer } from 'vite';
 import { execFileSync } from 'node:child_process';
-const ownedSsr = execFileSync(process.execPath, ['probes/reference-target/owned-ssr.mjs'], { encoding: 'utf8' });
-const islandPages = JSON.parse(execFileSync(process.execPath, ['probes/reference-target/island-ssr.mjs'], { encoding: 'utf8' }));
+const ownedSsr = execFileSync(process.execPath, ['probes/reference-target/owned-ssr.mjs'], { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 });
+const islandPages = JSON.parse(execFileSync(process.execPath, ['probes/reference-target/island-ssr.mjs'], { encoding: 'utf8', maxBuffer: 8 * 1024 * 1024 }));
 const server = await createServer({ configFile: false, root: process.cwd(),
   optimizeDeps: { noDiscovery: true, include: [] },
   server: { host: '127.0.0.1', port: 47853, strictPort: true },

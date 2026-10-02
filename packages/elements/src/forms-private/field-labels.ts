@@ -5,6 +5,12 @@ import { referenceRoot, type ReferenceRoot } from '../internal/id-reference.js';
 export type Field = HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement;
 /** @internal Lifecycle and FACE label surface consumed by FieldLabels. */
 export type Host = HTMLElement & ReactiveControllerHost & { readonly labels?: NodeList };
+/** @internal Library-owned naming and native activation policy. */
+export interface FieldLabelOptions {
+  activation?: 'focus' | 'click';
+  /** Initial library-authored IDREFs, restored when an external label goes away. */
+  labelledBy?: string;
+}
 type Listener = () => void;
 const roots = new WeakMap<ReferenceRoot, { listeners: Set<Listener>; observer: MutationObserver }>();
 
@@ -42,7 +48,7 @@ export class FieldLabels implements ReactiveController {
   private binding?: { input: Field; labels: Element[] };
   private listeners = new Map<HTMLLabelElement, EventListener>();
   private timers = new Map<number, Window>();
-  constructor(private host: Host, private control: () => Field | null) { host.addController(this); }
+  constructor(private host: Host, private control: () => Field | null, private options: FieldLabelOptions = {}) { host.addController(this); }
 
   hostConnected(): void {
     this.connected = true;
@@ -73,7 +79,8 @@ export class FieldLabels implements ReactiveController {
   private release(): void {
     if (this.owns()) {
       this.binding!.input.ariaLabelledByElements = null;
-      this.binding!.input.removeAttribute('aria-labelledby');
+      if (this.options.labelledBy) this.binding!.input.setAttribute('aria-labelledby', this.options.labelledBy);
+      else this.binding!.input.removeAttribute('aria-labelledby');
     }
     this.binding = undefined;
   }
@@ -83,9 +90,12 @@ export class FieldLabels implements ReactiveController {
     const input = this.control();
     // Firefox may retain a retargeted label in ElementInternals.labels even
     // after label.control changed. Only current associations may name/activate.
-    const associated = Array.from(this.host.labels ?? []).filter((node): node is HTMLLabelElement =>
+    const hostLabels = Array.from(this.host.labels ?? []).filter((node): node is HTMLLabelElement =>
       node.nodeType === 1 && (node as HTMLLabelElement).control === this.host);
     const nativeLabels = Array.from(input?.labels ?? []);
+    // Native forwarding may transfer a label out of ElementInternals.labels.
+    // Keep actual outer-tree native labels as well as FACE-owned associations.
+    const associated = [...new Set([...hostLabels, ...nativeLabels.filter(label => label.getRootNode() !== input?.getRootNode())])];
     // A property surface may come from a partial implementation or a polyfill.
     // Trust native routing only when these actual labels reach the native field.
     const native = (this.host.shadowRoot as (ShadowRoot & { referenceTarget?: string | null }) | null)?.referenceTarget === input?.id &&
@@ -97,27 +107,38 @@ export class FieldLabels implements ReactiveController {
     for (const label of external) if (!this.listeners.has(label)) {
       const listener: EventListener = event => {
         const path = event.composedPath();
+        // A wrapping label may also receive the browser's activation click on
+        // its FACE host. Only the original label interaction owns forwarding.
+        if (path.includes(this.host)) return;
         if (path.slice(0, path.indexOf(label)).some(node => node instanceof this.host.ownerDocument.defaultView!.Element &&
           node.matches('a[href],button,input,select,textarea,summary,[contenteditable]:not([contenteditable="false"])'))) return;
         const view = this.host.ownerDocument.defaultView;
         const original = this.control();
         if (!view) return;
         // A task observes ancestor cancellation after the full native dispatch.
-        // It never fabricates click/input/change events or invokes an OS picker.
+        // Choices call native click() so their existing change transaction owns
+        // toggling/group selection. Text fields only focus; no OS picker is opened.
         const id = view.setTimeout(() => {
           this.timers.delete(id);
           if (!event.defaultPrevented && this.connected && this.host.isConnected &&
-              label.control === this.host && original === this.control() && !original?.disabled) original?.focus();
+              label.control === this.host && original === this.control() && original && !original.disabled) {
+            original.focus();
+            if (this.options.activation === 'click') original.click();
+          }
         });
         this.timers.set(id, view);
       };
       this.listeners.set(label, listener); label.addEventListener('click', listener);
     }
     if (this.binding && (this.binding.input !== input || !this.owns())) this.release();
-    if (native || !input || !external.length || input.hasAttribute('aria-label')) { this.release(); return; }
-    if (!this.binding && input.hasAttribute('aria-labelledby')) return;
+    const naming = this.options.labelledBy ? associated : external;
+    if (!input || !naming.length || input.hasAttribute('aria-label')) { this.release(); return; }
+    if (!this.binding && input.hasAttribute('aria-labelledby') && input.getAttribute('aria-labelledby') !== this.options.labelledBy) return;
     if (!('ariaLabelledByElements' in input)) return;
-    const labels = [...new Set<Element>([...external, ...Array.from(input.labels ?? [])])];
+    const internal = this.options.labelledBy
+      ? this.options.labelledBy.split(/\s+/).map(id => (input.getRootNode() as Document | ShadowRoot).getElementById(id)).filter((node): node is HTMLElement => node !== null)
+      : Array.from(input.labels ?? []);
+    const labels = [...new Set<Element>([...naming, ...internal])];
     const previous = input.ariaLabelledByElements ?? [];
     if (labels.length !== previous.length || labels.some((label, i) => label !== previous[i])) input.ariaLabelledByElements = labels;
     this.binding = { input, labels };

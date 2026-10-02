@@ -23,5 +23,11 @@ for (const delivery of ['shadow','global','template']) test(`production field re
   await input.fill('Accepted island');
   expect(await page.locator('#island-form').evaluate(form => new FormData(form as HTMLFormElement).get('account'))).toBe('Accepted island');
   const notes = page.locator('#notes textarea');await page.locator('#notes-label').click();await expect(notes).toBeFocused();
+  for(const [id,label] of [['choice','choice'],['switch','switch'],['radio','radio']]) {
+    const choice=page.locator(`#island-${id} input`);
+    await expect.poll(()=>choice.evaluate((node:HTMLInputElement)=>Array.from(node.ariaLabelledByElements??[],label=>label.textContent?.trim()))).toEqual([`Island ${label}`,`Internal ${label}`]);
+    await page.locator(`#${id}-label`).click();await expect(choice).toBeChecked();await expect(choice).toBeFocused();
+    expect(await page.locator('#island-form').evaluate((form,id)=>new FormData(form as HTMLFormElement).get(id),id)).toBe('yes');
+  }
   expect(errors).toEqual([]);
 });

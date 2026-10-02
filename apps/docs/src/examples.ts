@@ -682,6 +682,11 @@ export function checkboxesSwitchesExample() {
 				<span slot="description">Show changes <em>as you work</em>.</span>
 			</en-switch>
 			<en-switch>Reduce canvas detail</en-switch>
+			<div id="external-choice-example">
+				<label class="en-label" for="example-include-drafts">Asset review</label>
+				<en-checkbox id="example-include-drafts" label="Include draft assets" name="include-drafts" value="yes"
+					description="Click Asset review to activate this checkbox through its external label."></en-checkbox>
+			</div>
 		</div>
 	`;
 }

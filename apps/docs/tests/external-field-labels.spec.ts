@@ -14,3 +14,15 @@ test('published field example connects its external label without changing nativ
     await session.detach();
   }
 });
+
+
+test('published external choice label activates exactly one cancelable transaction', async ({page}) => {
+  await page.goto('/api-examples/checkboxes-switches.html?progress-report');
+  const host=page.locator('#example-include-drafts'),input=host.locator('input');
+  await expect(input).not.toBeChecked();
+  await host.evaluate(host=>{(window as any).choiceChanges=[];host.addEventListener('en-change',event=>(window as any).choiceChanges.push((event as CustomEvent).detail));});
+  await page.locator('label[for="example-include-drafts"]').click();await expect(input).toBeChecked();await expect(input).toBeFocused();
+  expect(await page.evaluate(()=>(window as any).choiceChanges)).toEqual([{previous:false,proposed:true,reason:'toggle'}]);
+  await host.evaluate(host=>host.addEventListener('en-change',event=>event.preventDefault(),{once:true}));
+  await page.locator('label[for="example-include-drafts"]').click();await expect(input).toBeChecked();
+});

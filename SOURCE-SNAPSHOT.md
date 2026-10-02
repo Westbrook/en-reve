@@ -46,3 +46,7 @@ Local main `49e71cfcab7bd1cc4a3f9ecc6c3e70fb79fb0c09` retains the component-owne
 ## Production external field labels and Reference Target SSR
 
 Local main `138829bc35cc4c361637cf47b0cb07d4d58bab19` integrates external labels for the nine common fields, shared subscriptions and per-renderer SSR serialization. Qualification and remaining relationship/device/AT limits are retained in `probes/reference-target/README.md`.
+
+## External checkbox, radio and switch labels
+
+Local main `c98507742d685c186dffd271f1bf054cfe900067` extends the shared external-label bridge to native checkbox, radio and switch activation, preserving cancelable transactions and grouped-radio ownership. Qualification and remaining relationship/device/AT limits are retained in `probes/reference-target/README.md`.

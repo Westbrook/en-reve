@@ -13362,6 +13362,16 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.nativeControl, { activation: 'click', labelledBy: 'label-text' })",
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -14176,6 +14186,20 @@
               },
               "type": {
                 "text": "ValidationFeedback"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.nativeControl, { activation: 'click', labelledBy: 'label-text' })",
+              "inheritedFrom": {
+                "name": "ChoiceBase",
+                "module": "src/checkbox/choice-base.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {
@@ -48760,6 +48784,17 @@
               }
             },
             {
+              "kind": "field",
+              "name": "options",
+              "privacy": "private",
+              "static": false,
+              "readonly": false,
+              "default": "{}",
+              "type": {
+                "text": "FieldLabelOptions"
+              }
+            },
+            {
               "kind": "method",
               "name": "owns",
               "privacy": "private",
@@ -79068,6 +79103,20 @@
               }
             },
             {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.nativeControl, { activation: 'click', labelledBy: 'label-text' })",
+              "inheritedFrom": {
+                "name": "ChoiceBase",
+                "module": "src/checkbox/choice-base.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
+              }
+            },
+            {
               "kind": "method",
               "name": "focus",
               "privacy": "public",
@@ -99455,6 +99504,20 @@
               },
               "type": {
                 "text": "ValidationFeedback"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "fieldLabels",
+              "privacy": "private",
+              "readonly": true,
+              "default": "new FieldLabels(this, () => this.nativeControl, { activation: 'click', labelledBy: 'label-text' })",
+              "inheritedFrom": {
+                "name": "ChoiceBase",
+                "module": "src/checkbox/choice-base.ts"
+              },
+              "type": {
+                "text": "FieldLabels"
               }
             },
             {

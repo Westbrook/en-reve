@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>External choice labels</title>
+<form id="choices">
+  <fieldset id="fieldset">
+    <label id="label-checkbox" for="checkbox">External checkbox <a id="label-link" href="#help">Help</a></label>
+    <en-checkbox id="checkbox" name="checkbox" value="yes" label="Internal checkbox"></en-checkbox>
+    <label id="label-switch" for="switch">External switch</label>
+    <en-switch id="switch" name="switch" value="yes" label="Internal switch"></en-switch>
+    <label id="label-radio" for="radio">External radio</label>
+    <en-radio id="radio" name="radio" value="yes" label="Internal radio"></en-radio>
+    <label id="label-second" for="second">External second</label>
+    <en-radio-group id="group" name="format" label="Format" value="first">
+      <en-radio id="first" value="first" label="First" checked></en-radio>
+      <en-radio id="second" value="second" label="Second"></en-radio>
+    </en-radio-group>
+  </fieldset>
+  <button type="reset" id="reset">Reset</button>
+</form><button id="outside">Outside</button>
+<script type="module">
+  import {registerAll} from '@en-reve/elements/catalog.js';
+  import {EnCheckbox} from '@en-reve/elements/checkbox.js';
+  import {EnSwitch} from '@en-reve/elements/switch.js';
+  import {EnRadio} from '@en-reve/elements/radio.js';
+  if (new URL(location.href).searchParams.has('fallback')) for (const ctor of [EnCheckbox,EnSwitch,EnRadio]) ctor.shadowRootOptions={...ctor.shadowRootOptions,referenceTarget:null};
+  registerAll();
+  await Promise.all([...document.querySelectorAll('en-checkbox,en-switch,en-radio,en-radio-group')].map(host=>host.updateComplete));
+  window.changes=[];
+  document.querySelector('form').addEventListener('en-change',event=>window.changes.push({id:event.target.id,...event.detail,form:[...new FormData(event.target.form)]}));
+  document.body.dataset.ready='true';
+</script></html>

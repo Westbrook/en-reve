@@ -1,4 +1,5 @@
 import { applicationValidation, ValidationFeedback } from '../forms-private/validation-feedback.js';
+import { FieldLabels } from '../forms-private/field-labels.js';
 import { DefaultState } from '../forms-private/default-state.js';
 import type { PropertyValues } from 'lit';
 import { EnElement } from '../internal/en-element.js';
@@ -23,6 +24,9 @@ export abstract class ChoiceBase extends EnElement {
   };
   static override styles = [foundationStyles, blockHostStyles, controlStyles, formStyles, selectionStyles];
   static formAssociated = true;
+  /** @internal Reference routing and SSR share the owned native choice target. */
+  static override shadowRootOptions = { ...EnElement.shadowRootOptions, referenceTarget: 'control' };
+  private readonly fieldLabels = new FieldLabels(this, () => this.nativeControl, { activation: 'click', labelledBy: 'label-text' });
   protected readonly checkedDefaults = new DefaultState<boolean>(this, 'checked',
     attribute => attribute !== null, value => value ? '' : null, value => { this.checked = value; });
 

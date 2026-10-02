@@ -1,0 +1,28 @@
+{
+  "createdAt": "2026-10-02T01:32:06.180223+00:00",
+  "sourceCommit": "c98507742d685c186dffd271f1bf054cfe900067",
+  "previousSourceMain": "138829bc35cc4c361637cf47b0cb07d4d58bab19",
+  "taskPaths": [
+    "apps/docs/src/examples.ts",
+    "apps/docs/tests/external-field-labels.spec.ts",
+    "packages/elements/custom-elements.json",
+    "packages/elements/custom-elements.json.receipt.json",
+    "packages/elements/public-api.json",
+    "packages/elements/public-types.json",
+    "packages/elements/src/checkbox/README.md",
+    "packages/elements/src/checkbox/choice-base.ts",
+    "packages/elements/src/checkbox/template.ts",
+    "packages/elements/src/forms-private/README.md",
+    "packages/elements/src/forms-private/field-labels.ts",
+    "plans/platform.md",
+    "probes/reference-target/README.md",
+    "probes/reference-target/choices-fixture.html",
+    "probes/reference-target/choices.spec.ts",
+    "probes/reference-target/island-fields.mjs",
+    "probes/reference-target/island-fields.spec.ts",
+    "probes/reference-target/server.mjs",
+    "tooling/customization/evidence/coverage.json"
+  ],
+  "qualification": "Production checkbox, radio and switch external-label activation shares native transactions, group ownership, references and SSR. Native and fallback reference suite: 95 actual passes, four retained expected failures and twelve skips. Choice suite: 61 pass/two skip. Full SSR and production-example receipts retained separately. Wrapper naming avoids duplicate internal text; real AT/device and broader relationship scope remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

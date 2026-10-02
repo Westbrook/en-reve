@@ -1000,6 +1000,7 @@
     "@en-reve/elements/forms-private/default-state.js#DefaultState": "src/forms-private/default-state.ts#DefaultState",
     "@en-reve/elements/forms-private/editable-field.js#EditableFieldElement": "src/forms-private/editable-field.ts#EditableFieldElement",
     "@en-reve/elements/forms-private/field-labels.js#Field": "src/forms-private/field-labels.ts#Field",
+    "@en-reve/elements/forms-private/field-labels.js#FieldLabelOptions": "src/forms-private/field-labels.ts#FieldLabelOptions",
     "@en-reve/elements/forms-private/field-labels.js#FieldLabels": "src/forms-private/field-labels.ts#FieldLabels",
     "@en-reve/elements/forms-private/field-labels.js#Host": "src/forms-private/field-labels.ts#Host",
     "@en-reve/elements/forms-private/form-field.js#FormFieldElement": "src/forms-private/form-field.ts#FormFieldElement",
@@ -2397,6 +2398,7 @@
     "@en-reve/elements/forms-private/default-state.js#DefaultState": "value",
     "@en-reve/elements/forms-private/editable-field.js#EditableFieldElement": "value",
     "@en-reve/elements/forms-private/field-labels.js#Field": "type",
+    "@en-reve/elements/forms-private/field-labels.js#FieldLabelOptions": "type",
     "@en-reve/elements/forms-private/field-labels.js#FieldLabels": "value",
     "@en-reve/elements/forms-private/field-labels.js#Host": "type",
     "@en-reve/elements/forms-private/form-field.js#FormFieldElement": "value",
@@ -4004,7 +4006,7 @@
       "name": "ChoiceBase",
       "source": "src/checkbox/choice-base.ts",
       "kind": "ClassDeclaration",
-      "declaration": "export declare abstract class ChoiceBase extends EnElement {\n    static properties: {\n        error: {\n            noAccessor: boolean;\n        };\n        validationText: {\n            attribute: string;\n        };\n        checked: {\n            type: BooleanConstructor;\n            noAccessor: boolean;\n            attribute: boolean;\n        };\n        defaultChecked: {\n            type: BooleanConstructor;\n            attribute: string;\n            noAccessor: boolean;\n        };\n        disabled: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        required: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        name: {\n            reflect: boolean;\n        };\n        value: {};\n        label: {};\n        description: {};\n    };\n    static styles: import(\"lit\").CSSResult[];\n    static formAssociated: boolean;\n    protected readonly checkedDefaults: DefaultState<boolean>;\n    get error(): string;\n    set error(value: string);\n    protected get visibleError(): string;\n    get defaultChecked(): boolean;\n    set defaultChecked(value: boolean);\n    attributeChangedCallback(name: string, old: string | null, value: string | null): void;\n    protected readonly checkedModel: import(\"@en-reve/primitives/state/value.js\").ValueModel<boolean>;\n    protected readonly signalController: SignalController<import(\"@en-reve/primitives/state/value.js\").ValueSnapshot<boolean>>;\n    protected authorRevision: number;\n    protected formDisabled: boolean;\n    protected readonly internals: ElementInternals | undefined;\n    protected readonly formController: FormController | undefined;\n    validationText: string;\n    disabled: boolean;\n    required: boolean;\n    name: string;\n    value: string;\n    label: string;\n    description: string;\n    constructor();\n    get checked(): boolean;\n    set checked(value: boolean);\n    protected setChecked(value: boolean): void;\n    protected abstract get kind(): 'checkbox' | 'switch' | 'radio';\n    protected get mixed(): boolean;\n    protected get effectiveDisabled(): boolean;\n    protected get controlTabIndex(): number;\n    protected get nativeControl(): HTMLInputElement | null;\n    protected get formValue(): string | null;\n    focus(options?: FocusOptions): void;\n    get form(): HTMLFormElement | null;\n    get labels(): NodeList | undefined;\n    get willValidate(): boolean;\n    get validity(): ValidityState | undefined;\n    get validationMessage(): string;\n    checkValidity(): boolean;\n    reportValidity(): boolean;\n    formDisabledCallback(disabled: boolean): void;\n    formResetCallback(): void;\n    formStateRestoreCallback(state: string | File | FormData, mode?: 'restore' | 'autocomplete'): void;\n    protected formValidation(): FormValidation;\n    protected syncForm(): void;\n    protected syncControl(): void;\n    protected handleChange(_event: Event): void;\n    protected didCommit(): void;\n    protected updated(_changes: PropertyValues): void;\n    protected render(): import(\"lit-html\").TemplateResult<1>;\n}",
+      "declaration": "export declare abstract class ChoiceBase extends EnElement {\n    static properties: {\n        error: {\n            noAccessor: boolean;\n        };\n        validationText: {\n            attribute: string;\n        };\n        checked: {\n            type: BooleanConstructor;\n            noAccessor: boolean;\n            attribute: boolean;\n        };\n        defaultChecked: {\n            type: BooleanConstructor;\n            attribute: string;\n            noAccessor: boolean;\n        };\n        disabled: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        required: {\n            type: BooleanConstructor;\n            reflect: boolean;\n        };\n        name: {\n            reflect: boolean;\n        };\n        value: {};\n        label: {};\n        description: {};\n    };\n    static styles: import(\"lit\").CSSResult[];\n    static formAssociated: boolean;\n    static shadowRootOptions: {\n        referenceTarget: string;\n        clonable?: boolean;\n        customElementRegistry?: CustomElementRegistry | null;\n        delegatesFocus?: boolean;\n        mode: ShadowRootMode;\n        serializable?: boolean;\n        slotAssignment?: SlotAssignmentMode;\n    };\n    protected readonly checkedDefaults: DefaultState<boolean>;\n    get error(): string;\n    set error(value: string);\n    protected get visibleError(): string;\n    get defaultChecked(): boolean;\n    set defaultChecked(value: boolean);\n    attributeChangedCallback(name: string, old: string | null, value: string | null): void;\n    protected readonly checkedModel: import(\"@en-reve/primitives/state/value.js\").ValueModel<boolean>;\n    protected readonly signalController: SignalController<import(\"@en-reve/primitives/state/value.js\").ValueSnapshot<boolean>>;\n    protected authorRevision: number;\n    protected formDisabled: boolean;\n    protected readonly internals: ElementInternals | undefined;\n    protected readonly formController: FormController | undefined;\n    validationText: string;\n    disabled: boolean;\n    required: boolean;\n    name: string;\n    value: string;\n    label: string;\n    description: string;\n    constructor();\n    get checked(): boolean;\n    set checked(value: boolean);\n    protected setChecked(value: boolean): void;\n    protected abstract get kind(): 'checkbox' | 'switch' | 'radio';\n    protected get mixed(): boolean;\n    protected get effectiveDisabled(): boolean;\n    protected get controlTabIndex(): number;\n    protected get nativeControl(): HTMLInputElement | null;\n    protected get formValue(): string | null;\n    focus(options?: FocusOptions): void;\n    get form(): HTMLFormElement | null;\n    get labels(): NodeList | undefined;\n    get willValidate(): boolean;\n    get validity(): ValidityState | undefined;\n    get validationMessage(): string;\n    checkValidity(): boolean;\n    reportValidity(): boolean;\n    formDisabledCallback(disabled: boolean): void;\n    formResetCallback(): void;\n    formStateRestoreCallback(state: string | File | FormData, mode?: 'restore' | 'autocomplete'): void;\n    protected formValidation(): FormValidation;\n    protected syncForm(): void;\n    protected syncControl(): void;\n    protected handleChange(_event: Event): void;\n    protected didCommit(): void;\n    protected updated(_changes: PropertyValues): void;\n    protected render(): import(\"lit-html\").TemplateResult<1>;\n}",
       "references": [
         "external:../primitives/dist/interactions/form-controller.d.ts#FormController",
         "external:../primitives/dist/interactions/form-controller.d.ts#FormValidation",
@@ -4013,6 +4015,7 @@
         "external:../primitives/dist/state/value.d.ts#ValueSnapshot",
         "external:@lit/reactive-element/development/css-tag.d.ts#CSSResult",
         "external:@lit/reactive-element/development/reactive-element.d.ts#PropertyValues",
+        "external:@typescript/old/lib/lib.dom.d.ts#CustomElementRegistry",
         "external:@typescript/old/lib/lib.dom.d.ts#ElementInternals",
         "external:@typescript/old/lib/lib.dom.d.ts#Event",
         "external:@typescript/old/lib/lib.dom.d.ts#File",
@@ -4021,6 +4024,8 @@
         "external:@typescript/old/lib/lib.dom.d.ts#HTMLFormElement",
         "external:@typescript/old/lib/lib.dom.d.ts#HTMLInputElement",
         "external:@typescript/old/lib/lib.dom.d.ts#NodeList",
+        "external:@typescript/old/lib/lib.dom.d.ts#ShadowRootMode",
+        "external:@typescript/old/lib/lib.dom.d.ts#SlotAssignmentMode",
         "external:@typescript/old/lib/lib.dom.d.ts#ValidityState",
         "external:@typescript/old/lib/lib.es5.d.ts#BooleanConstructor",
         "external:lit-html/development/lit-html.d.ts#TemplateResult",
@@ -6564,14 +6569,22 @@
         "external:@typescript/old/lib/lib.dom.d.ts#HTMLTextAreaElement"
       ]
     },
+    "src/forms-private/field-labels.ts#FieldLabelOptions": {
+      "name": "FieldLabelOptions",
+      "source": "src/forms-private/field-labels.ts",
+      "kind": "InterfaceDeclaration",
+      "declaration": "export interface FieldLabelOptions {\n    activation?: 'focus' | 'click';\n    labelledBy?: string;\n}",
+      "references": []
+    },
     "src/forms-private/field-labels.ts#FieldLabels": {
       "name": "FieldLabels",
       "source": "src/forms-private/field-labels.ts",
       "kind": "ClassDeclaration",
-      "declaration": "export declare class FieldLabels implements ReactiveController {\n    constructor(host: Host, control: () => Field | null);\n    hostConnected(): void;\n    hostUpdated(): void;\n    hostDisconnected(): void;\n}",
+      "declaration": "export declare class FieldLabels implements ReactiveController {\n    constructor(host: Host, control: () => Field | null, options?: FieldLabelOptions);\n    hostConnected(): void;\n    hostUpdated(): void;\n    hostDisconnected(): void;\n}",
       "references": [
         "external:@lit/reactive-element/development/reactive-controller.d.ts#ReactiveController",
         "src/forms-private/field-labels.ts#Field",
+        "src/forms-private/field-labels.ts#FieldLabelOptions",
         "src/forms-private/field-labels.ts#Host"
       ]
     },

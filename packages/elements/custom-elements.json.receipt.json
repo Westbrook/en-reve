@@ -242,9 +242,9 @@
     "src/chat-message/element.ts": "sha256:6554266296e2e735ac4d69bf30e84eb83e72d21d2ed3a48ef921dc1d7602876f",
     "src/checkbox-group.ts": "sha256:5e91fc730b5b37f11aaa9b3bbba953bc0ad1c385fb0c9dd29a97a3526c711a96",
     "src/checkbox.ts": "sha256:bfc96893a314f42ba4fac9a87497464059cd340071284b2798a179cc7b41db4a",
-    "src/checkbox/choice-base.ts": "sha256:0fe36be40c8c7958b7e451f4057fc38a5646026a36eb947f4f0e3b466fa0ac1a",
+    "src/checkbox/choice-base.ts": "sha256:911a7563eba0c45edbc8256a2fdb4ee4099c548880c4398dade0f4963661d688",
     "src/checkbox/index.ts": "sha256:f5394d1771d2c510ca773e3a6df81c9bdbd9e41223a16786f119619ee3f63eb3",
-    "src/checkbox/template.ts": "sha256:22777a84d91536603a6dc424a72c7cbafa5a31ddb777bce7ef6c7934e1a0a1d1",
+    "src/checkbox/template.ts": "sha256:d548df0cde902b72dc8e88bf85c14b141de17c016f8899d5e621a1c472c1472f",
     "src/choice-option.ts": "sha256:fbfe15b3e18c3aeb05e059f5fb603325efe3c961f49d5606c7baef2af690e690",
     "src/color-field.ts": "sha256:18915526614dbfbe7107a51ff1efc92d7bab490ceda39a190a471ee0e6ea720c",
     "src/color-field/element.ts": "sha256:b5c9b0ad6a564fb11a8c35c6009c8c98a5942d2aac8699c2321916abe96ea2b9",
@@ -511,7 +511,7 @@
     "src/file-upload/template.ts": "sha256:aaac2253873b5862524b3b9c164b3f7bdf5cf1707413a576fe85683da373eef4",
     "src/forms-private/default-state.ts": "sha256:ff0c37f69a2f39fa2b5f054c019f7d4735f7ab4fe15fe6ed37662d199361e6f3",
     "src/forms-private/editable-field.ts": "sha256:cabc230c62f13800323b5e2e999023169acf01036950534cc2466d91695b23c6",
-    "src/forms-private/field-labels.ts": "sha256:3950e7f85663aa81e57222441e9f65ca10afef0745f6a59f47766eaa7267160c",
+    "src/forms-private/field-labels.ts": "sha256:16a8bfb59a5e5db0fba769447e73eeb07578379570b39b9c3b4501edf6b4b5dd",
     "src/forms-private/form-field.ts": "sha256:49f47a2fb2b279a4f6c28999f48557c28ad94574326c2c3d9e668f6898ee3f3a",
     "src/forms-private/validation-feedback.ts": "sha256:1f53138c8c7bb9d2279d98bacc5b927740020028c8d7dd9ae5451aeb5a54d1b6",
     "src/hover-card.ts": "sha256:fef0cddcb7f556c30d42108e50727176298453f15a2166106bf473c0f5d09689",
@@ -734,7 +734,7 @@
     "src/validation-summary/element.ts": "sha256:edcab0fbc154011adf9e37d4cfca2cac8029b83b19dbf5cb8dafde1e2bd79bfc",
     "src/validation-summary/index.ts": "sha256:af7123f5972a6bdb21adf6684c4541dbb7569faad289316ab962ef111637523b"
   },
-  "manifestDigest": "sha256:6bf637c3f08b934da5e06fccd6d9fa096d02ce99a251c6c7ec6212e04405751c",
+  "manifestDigest": "sha256:09e5b3fadf53dcf29a5ddbed15f882ddb5580711b8aeff910673f7a885970f8c",
   "corrections": [
     {
       "module": "src/file-upload/element.ts",
@@ -5992,9 +5992,9 @@
     "enrichment": {
       "version": 1,
       "policy": "authored-css-property-customization-only",
-      "inputManifestDigest": "sha256:4de00dc7b51e5f00ecb0b075580f34f87adc5742195051c346ce30da02a29720",
+      "inputManifestDigest": "sha256:1cb4cb197326d8865eedff4a23d962c7aacdb6f08de2b9eaadba701445c46d27",
       "contractsDigest": "sha256:c842c74b29b43012b02c01ea31faa5686562ebfd350d9b3bf59f997571735ca5",
-      "manifestDigest": "sha256:6bf637c3f08b934da5e06fccd6d9fa096d02ce99a251c6c7ec6212e04405751c",
+      "manifestDigest": "sha256:09e5b3fadf53dcf29a5ddbed15f882ddb5580711b8aeff910673f7a885970f8c",
       "changes": [
         {
           "module": "src/accordion-item/accordion-item.ts",

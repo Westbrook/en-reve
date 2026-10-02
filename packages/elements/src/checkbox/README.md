@@ -13,6 +13,28 @@ Keep inline text, formatting, and links together inside one element with `slot="
 </en-checkbox>
 ```
 
+## External labels
+
+An external `<label for="choice-id">` or wrapping label can also name and activate
+`en-checkbox`, `en-switch` or `en-radio`. The shared controller retains real label
+elements, includes the internal `label-text` reference, and restores the internal
+reference when an external label is removed. Compact `::part(label-text)` styling
+continues to work. Native Reference Target handles activation when the actual
+native relationship is present; otherwise the controller focuses and calls the
+native input's `click()` once after the original label dispatch completes.
+
+The existing synchronous `en-change` transaction still owns toggling, rollback and
+FormData. Grouped radios route only through their owning group. Disabled fields,
+interactive label descendants and canceled label clicks do not activate. Wrapping
+labels ignore the browser's secondary host click, avoiding double toggles. Native
+input names supplied by a specialized owner take precedence over bridge naming.
+
+SSR preserves the private native target. Retain an internal label for first-paint
+naming: choice inputs explicitly reference their internal label text, and the
+shared controller adds external names after hydration. Unsupported engines also
+need hydration for external activation. This is progressive labeling support,
+not general host ARIA forwarding or a screen-reader/device acceptance claim.
+
 Native slot fallback appears only when a slot has no assigned nodes. For checkbox, switch, radio, slider and rating, whitespace-only children still fill the legacy default label slot and can hide the `label` attribute fallback. When using only the attribute, keep the opening and closing tags adjacent. For multiline markup, prefer an explicit `<span slot="label">Visible label</span>`; this avoids whitespace masking the label. Radio-group and segmented-control have dedicated named label slots, so whitespace in their default content does not mask their attribute label.
 
 ```html

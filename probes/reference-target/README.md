@@ -143,6 +143,31 @@ transforms, concurrent renders, escaping and null targets. Browser journeys cove
 ordinary, scoped and inert-template delivery in all three installed engines,
 including draft/node/selection preservation, external focus and FormData.
 
+### Native choice activation
+
+Checkbox, switch and radio now share the production label controller. Native
+forwarding reads actual outer labels from both the native input and FACE host;
+the fallback focuses and activates the existing native input exactly once.
+Grouped radio selection, synchronous cancellation, authoritative writes, disabled
+fields, interactive label descendants and reset keep their existing ownership.
+Wrapping-label activation ignores the browser's secondary click on the host.
+
+Choice inputs retain their explicit internal name reference. The referenced
+`label-text` is hidden from separate accessibility-tree navigation so wrapping
+labels do not count its text twice. Chromium CDP checks the computed names for
+both explicit and wrapping external labels; other-engine tests verify reference
+identity, native input names and interaction. Actual screen-reader speech remains
+manual acceptance. Ordinary, scoped and inert-template SSR include all three
+choice families alongside the common-field cases.
+
+The final choice integration run records **95 actual reference-browser passes,
+four retained expected failures and twelve capability/protocol skips**. The
+existing choice suite passes **61 cases with two skips**; all **88 SSR Node tests**,
+**234 full SSR browser cases** and **six built-site example cases** pass. Metadata,
+type/API/customization freshness and the production docs build also pass. Earlier
+native-name and wrapping-duplication failures are retained in the local evidence,
+with the passing correction run separately identified.
+
 ## Decision and remaining work
 
 Keep FACE submission/reset/validation ownership and the documented internal-label
@@ -150,7 +175,7 @@ and light-DOM native-composition routes. The production bridge does not install 
 silently patch the frozen upstream package. Its three label-replacement failures
 and Firefox's raw stale FACE label list remain visible expected failures.
 
-Checkbox/radio/switch activation, general host ARIA and external descriptions,
+General host ARIA and external descriptions,
 conditional semantic targets, real screen readers and the supported device matrix
 remain separate qualification work. Closed roots are outside the current library
 contract. These broader obligations remain open in the Progress Report.
