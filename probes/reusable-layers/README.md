@@ -46,3 +46,8 @@ style deliveries.72 three-engine cases bring named-scenario coverage to40/110;
 The [packed state recipes](../state-recipes/README.md) add query, interval,
 collection-key, overflow and explicit registration entries with48 three-engine
 cases. Named-scenario coverage is45/110;65 entries and platform/manual scope remain.
+
+The [presentation recipes](../presentation-recipes/README.md) add fourteen entries
+covering native patterns/charts and matching Lit/portable styles.114 packed cases,
+32 owning gallery cases and native SSR choice checks expose and fix live checked
+state reconciliation. Named-scenario coverage is59/110;51 entries remain pending.

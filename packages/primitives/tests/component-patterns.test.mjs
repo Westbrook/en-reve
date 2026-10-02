@@ -20,3 +20,16 @@ test('intervals stay on a step grid with a realizable gap and stable endpoint or
 test('overflow reserves only required disclosure width and handles an empty strip',()=>{assert.equal(visibleActionCount([80,80,80],260,100,10),3);assert.equal(visibleActionCount([80,80,80],250,100,10),1);assert.equal(visibleActionCount([80],20,100,10),0);assert.equal(visibleActionCount([],0,100),0);});
 test('query copies detach clauses; validators reject unsupported fields and numeric values',()=>{const query={match:'all',clauses:[{id:'a',field:'effort',operator:'greater-than',value:'4'}]};const fields=[{value:'effort',label:'Effort',type:'number'}];assert.equal(validateQuery(query,fields),'');const copy=copyQuery(query);copy.clauses[0].value='no';assert.equal(query.clauses[0].value,'4');assert.match(validateQuery(copy,fields),/number/);assert.match(validateQuery({...query,clauses:[...query.clauses,...query.clauses]},fields),/unique/);});
 test('chart domains include zero and ignore nonfinite samples',()=>{const model=chartModel([{key:'a',label:'A',value:-5},{key:'b',label:'B',value:12},{key:'c',label:'C',value:NaN}]);assert.equal(model.min,-5);assert.equal(model.max,12);assert.equal(model.data.length,2);assert.equal(chartModel([]).max,1);});
+
+// Native input property serialization must retain the same initial snapshot as CSR.
+test('choice card SSR serializes explicit checked state and leaves omission native',async()=>{
+ const {render}=await import('@lit-labs/ssr');
+ const {choiceCardTemplate}=await import('../dist/templates/patterns.js');
+ const {parse}=await import('parse5');
+ for(const type of ['checkbox','radio'])for(const checked of [true,false,undefined]){
+  const document=parse([...render(choiceCardTemplate({type,name:'choice',value:'yes',label:'Choose',checked}))].join(''));
+  const find=node=>node.tagName==='input'?node:(node.childNodes??[]).map(find).find(Boolean);
+  const input=find(document);
+  assert.equal(input.attrs.some(attr=>attr.name==='checked'),checked===true);
+ }
+});

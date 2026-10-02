@@ -164,3 +164,7 @@ TableModel also accepts legacy `windowed`; its existing default remains windowed
 Mode spellings are retained on reads/reflection for compatibility.
 
 Description composition also serves editors and aggregate controls. Preserve native slot assignment rather than deciding fallback from extracted text. Selection-child normalization records whether description content is assigned, so empty/hidden assignments suppress the attribute fallback in both browser and SSR projection.
+
+Native presentation templates and their paired portable/Lit styles have a
+[consumer contract](docs/presentation-consumers.md), including explicit versus
+native choice ownership, semantic composition and accessible chart data.

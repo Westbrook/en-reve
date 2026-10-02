@@ -411,3 +411,13 @@ resize focus recovery are verified in application-owned consumers. Inventory is
 45/110 with65 entries pending. Application evaluation/measurement/focus policy is
 not attributed to the pure helpers. Physical/manual, SSR/scoped-registry and
 remaining platform/owner requirements stay open.
+
+### Native presentation consumers — 2026-10-02
+
+See [presentation recipes](../probes/presentation-recipes/README.md) for the exact
+14-entry scope,114 three-engine/dual-style cases,32 owning gallery regressions,
+33 Node checks and fresh docs build. Explicit choice state now reconciles dirty
+native checked properties without replacing nodes; omitted state remains native.
+SSR true/false/omitted snapshots pass for checkboxes/radios. Public-entry progress
+is59/110;51 remaining entries and the separate platform/manual/owner gates remain
+open. The retired historical external CSS-authoring rerun remains retired, not passed.

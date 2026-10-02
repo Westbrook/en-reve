@@ -1,4 +1,5 @@
-import { html, nothing, type TemplateResult } from 'lit';
+import { html, nothing, noChange, isServer, type TemplateResult } from 'lit';
+import { live } from 'lit/directives/live.js';
 /** Native measured quantity; thresholds retain HTML meter semantics. */
 export function meterTemplate(options: {
     label: string;
@@ -11,7 +12,8 @@ export function meterTemplate(options: {
 }): TemplateResult {
     return html `<label class="en-meter-label">${options.label}<meter class="en-meter" value=${options.value} min=${options.min ?? 0} max=${options.max ?? 100} low=${options.low ?? nothing} high=${options.high ?? nothing} optimum=${options.optimum ?? nothing}>${options.value}</meter></label>`;
 }
-/** A named native choice tile; action links belong outside this label. */
+/** A named native choice tile; action links belong outside this label.
+ * An explicit checked value owns live selection; omission leaves it native. */
 export function choiceCardTemplate(options: {
     type: 'checkbox' | 'radio';
     name: string;
@@ -22,7 +24,8 @@ export function choiceCardTemplate(options: {
     disabled?: boolean;
     onChange?: (event: Event) => void;
 }): TemplateResult {
-    return html `<label class="en-choice-card"><input class=${options.type === 'radio' ? 'en-radio' : 'en-checkbox'} type=${options.type} name=${options.name} value=${options.value} ?checked=${options.checked} ?disabled=${options.disabled} @change=${options.onChange}><span>${options.label}${options.description ? html `<small>${options.description}</small>` : nothing}</span></label>`;
+    return html `<label class="en-choice-card"><input class=${options.type === 'radio' ? 'en-radio' : 'en-checkbox'} type=${options.type} name=${options.name} value=${options.value} ?checked=${options.checked}
+    .checked=${isServer || options.checked === undefined ? noChange : live(options.checked)} ?disabled=${options.disabled} @change=${options.onChange}><span>${options.label}${options.description ? html `<small>${options.description}</small>` : nothing}</span></label>`;
 }
 /** Joined actions retain individual native button semantics and focus targets. */
 export function buttonGroupTemplate(label: string, actions: TemplateResult, options: { joined?: boolean; orientation?: 'horizontal' | 'vertical' } = {}): TemplateResult { return html `<div class="en-button-group" data-joined=${String(options.joined ?? true)} data-orientation=${options.orientation ?? 'horizontal'} role="group" aria-label=${label}>${actions}</div>`; }

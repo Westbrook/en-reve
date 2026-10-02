@@ -205,3 +205,15 @@ preserve its exact earlier registry/inventory inputs. Pure helpers do not inheri
 the application's evaluator, measurement or focus policy; the contract separates
 them. Global-registry browser evidence does not replace scoped SSR/framework or
 platform/manual acceptance.
+
+## Presentation recipe checkpoint
+
+The [packed presentation recipes](../probes/presentation-recipes/README.md) qualify
+14 further entries in native pattern/chart compositions and both stylesheet forms.
+114 cases pass across Chromium, Firefox and WebKit;32 original gallery cases and
+33 Node checks pass with a fresh production docs build. A real choice-card defect
+was fixed: explicit checked state now reconciles the native property after edits,
+while omission preserves native selection. SSR retains correct boolean markup.
+59/110 public entries have named-scenario receipts;51 remain, alongside all
+platform/manual/owner obligations. Earlier run01/runtime and run02/SSR failures
+remain evidence. Neither bounded journeys nor these counts imply full completion.

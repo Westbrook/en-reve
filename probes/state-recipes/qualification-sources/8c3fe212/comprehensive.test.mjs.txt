@@ -201,10 +201,3 @@ test('state recipe pathway retains isolated preparation, declarations and browse
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/state-recipes/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:state-recipes').environment.EN_STATE_RECIPES_OUT,'$RUN/fixtures/state-recipes');
 });
-
-test('presentation recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['presentation-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:presentation-recipes','browser:probes/presentation-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/presentation-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:presentation-recipes').environment.EN_PRESENTATION_RECIPES_OUT,'$RUN/fixtures/presentation-recipes');
-});
