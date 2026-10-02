@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "892bc63abc2358589697c5a0befcbfb660633a4d",
-  "exportedAt": "2026-10-02T06:15:02.184126+00:00",
+  "sourceCommit": "edef0ec0c13f78c627bee0056e7f9acadf8dfde6",
+  "exportedAt": "2026-10-02T06:29:40.453310+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5432,
-  "includedBytes": 146737072,
-  "qualification": "Actual Firefox156.0.1/157.0:176 fresh cases pass (46 workflow,10 first-paint,120 consumer), including native Back/Forward, legacy redirects, query normalization and fresh-link state.115 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
-  "latestUpdate": ".source-export/updates/firefox-history-20261002.json",
+  "includedFiles": 5435,
+  "includedBytes": 147660628,
+  "qualification": "Actual Firefox156.0.1/157.0:56 fresh cases pass (46 workflow,10 first-paint), including all authored-child readiness and DOM validation references/focus.120 unchanged-transport consumer cases explicitly reused.116 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
+  "latestUpdate": ".source-export/updates/firefox-readiness-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

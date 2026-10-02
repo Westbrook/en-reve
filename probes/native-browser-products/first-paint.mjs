@@ -9,6 +9,7 @@ import {withMachineOwner} from '../../tooling/testing/machine-owner.mjs';
 import {withExecutionOwner} from '../../tooling/testing/execution-owner.mjs';
 import {contentInventory,inventoryDigest} from '../../tooling/evidence/setup.mjs';
 import {firefox} from './firefox.mjs';
+import {workflowReadiness} from './workflow-readiness.mjs';
 const root=resolve(import.meta.dirname,'../..'),output=process.env.EN_EXECUTION_OUTPUT;
 assert.equal(process.platform,'darwin');assert(output?.startsWith('/'));await mkdir(output);
 const bundle=await realpath(process.env.EN_FIREFOX_APP??'/Applications/Firefox.app');
@@ -38,7 +39,15 @@ async function press(name){await focus(await named('button',name));await key('\u
 async function fill(role,name,value){const node=await named(role,name);await focus(node);await browser.actions([{type:'key',id:'keyboard',actions:[{type:'keyDown',value:'\uE03D'},{type:'keyDown',value:'a'},{type:'keyUp',value:'a'},{type:'keyUp',value:'\uE03D'},{type:'keyDown',value:'\uE003'},{type:'keyUp',value:'\uE003'},...[...value].flatMap(value=>[{type:'keyDown',value},{type:'keyUp',value}])]}]);await checkNode(node,'e=>e.value',value);return node;}
 const routes=[['sso','Sign-in','/workflows'],['settings','Settings','/workflows/settings'],['chat','Chat','/workflows/chat'],['selection','Selection','/workflows/selection'],['multi-step','Project brief','/workflows/multi-step'],['assets','Assets','/workflows/assets']];
 async function isolated(id){scene=id;await check("document.querySelectorAll('.workflow-section').length",1);await check(`Boolean(document.querySelector('#${id}.workflow-section'))`,true);await check("document.querySelectorAll('en-navigation.section-nav > a').length",6);await check("document.querySelectorAll('en-navigation.section-nav [aria-current=page]').length",1);await check("document.querySelectorAll('.workflow-tools').length",1);await check("document.querySelectorAll('.code-disclosure').length",1);}
-async function hydrated(){await check('Boolean(document.querySelector("en-workflows-app")?.hasUpdated&&!document.querySelector("en-workflows-app").hasAttribute("data-ssr"))',true);}
+async function authoredReady() {
+ let snapshot;
+ try { await until(async()=>{snapshot=await browser.evaluate(`(${workflowReadiness.toString()})()`);return snapshot.ready;},'All authored workflow children ready'); }
+ catch(error){receipt.cases.at(-1).readinessFailure=snapshot;throw error;}
+ assert.equal(snapshot.dormantCount,scene==='settings'?1:0);
+ if(scene==='settings')await check('(()=>{const p=document.querySelector("#settings-command-palette");return [...p.querySelectorAll("dialog,[role=dialog]"),...(p.shadowRoot?.querySelectorAll("dialog,[role=dialog]")??[])].some(e=>e.checkVisibility());})()',false);
+ (receipt.cases.at(-1).readinessCheckpoints??=[]).push({scene,...snapshot});
+}
+async function hydrated(){await authoredReady();}
 async function phase(label){receipt.cases.at(-1).phase=label;console.log('PHASE '+label);await save();}
 async function early(id){scene=id;let release;const promise=new Promise(r=>release=r);gate={promise,release,requests:[]};const path=routes.find(r=>r[0]===id)[2];await phase('navigate without load wait');await browser.navigate(base+path,'none');await phase('inspect SSR while modules held');await check('Boolean(document.querySelector("en-workflows-app")?.hasAttribute("data-ssr"))',true);await phase('SSR found; inspect isolated scene');await isolated(id);await phase('wait for held module request');await until(()=>gate.requests.length>0,'Module requests held');await check('Boolean(customElements.get("en-workflows-app"))',false);await phase('early controls ready');}
 async function enhance(){const current=gate;assert(current.requests.length>0);receipt.cases.at(-1).heldModulePaths=[...new Set(current.requests)];gate=null;current.release();await hydrated();for(const target of receipt.cases.at(-1).earlyTargets??[]){const node=await named(target.role,target.name);assert.equal(node.sharedId,target.sharedId,'Hydrated accessible target must be the original native node');}receipt.cases.at(-1).hydratedNamesAndIdentityVerified=true;}
@@ -73,7 +82,7 @@ const cases=[
  }],
 ];
 try{await withMachineOwner(()=>withExecutionOwner(root,async()=>{
- const inputs=['dist','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs','apps/docs/tests/workflows.spec.ts','apps/docs/tests/selection.spec.ts'];
+ const inputs=['dist','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs','probes/native-browser-products/workflow-readiness.mjs','apps/docs/tests/workflows.spec.ts','apps/docs/tests/selection.spec.ts'];
  const before=await identity([bundle,...inputs]);await writeFile(join(output,'identity-before.json'),JSON.stringify(before,null,2)+'\n');receipt.identityBefore=before.digest;const app=metadata(bundle);receipt.product={name:'Firefox',version:app.CFBundleShortVersionString,build:app.CFBundleVersion,bundle};
  server=createServer(async(req,res)=>{try{
   let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);

@@ -118,3 +118,7 @@ Local main `9d57602ce0e688202f3e7374050339c585b4ba7d` qualifies44 workflow cases
 ## Firefox history and legacy-navigation qualification
 
 Local main `892bc63abc2358589697c5a0befcbfb660633a4d` qualifies176 fresh workflow/first-paint/consumer cases across two Firefox releases, including native history and legacy-query normalization. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Firefox readiness and validation relationships qualification
+
+Local main `edef0ec0c13f78c627bee0056e7f9acadf8dfde6` qualifies56 fresh workflow/first-paint cases across two Firefox releases, including eager child readiness and native validation/focus relationships. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

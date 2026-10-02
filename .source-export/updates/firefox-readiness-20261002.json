@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-10-02T06:29:40.453310+00:00",
+  "sourceCommit": "edef0ec0c13f78c627bee0056e7f9acadf8dfde6",
+  "previousSourceMain": "892bc63abc2358589697c5a0befcbfb660633a4d",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/first-paint.mjs",
+    "probes/native-browser-products/verification-firefox-readiness-20261002.json",
+    "probes/native-browser-products/workflow-readiness.mjs",
+    "probes/native-browser-products/workflows.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox156.0.1/157.0:56 fresh cases pass (46 workflow,10 first-paint), including all authored-child readiness and DOM validation references/focus.120 unchanged-transport consumer cases explicitly reused.116 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

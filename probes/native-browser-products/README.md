@@ -262,3 +262,27 @@ native-select traces remain in full local receipts; source summaries bind those
 receipts by hash. Prior scans' incomplete contrast findings and remaining exact
 assertion parity (including all authored-child readiness, descriptions/errors),
 full native AX/speech and original OS/device/manual requirements remain open.
+
+## Native Firefox readiness and validation relationships
+
+The [readiness receipt](verification-firefox-readiness-20261002.json) records56
+fresh passes across actual Firefox156.0.1 and157.0:46 workflow and10 first-paint
+cases. Both runners share the original authored-child readiness contract. Each
+custom child must have the correct registration/instance and finish its first
+update; only the exact dormant settings command palette remains unregistered.
+This is checked after fresh navigation, reconnect, history restoration and module
+release. The disabled-script and held-module states deliberately do not require
+hydration. Full per-child diagnostics remain in each readiness checkpoint.
+
+SSO now checks1px/2px/1px valid/invalid/corrected borders without geometry changes,
+error-link focus, invalid email/pattern states and same-root description/error
+references. The valid field retains only its guidance reference. The slider's
+visible validation error must be the actual node referenced by its editor.
+These checks establish DOM relationships and native editing/focus behavior;
+they do not establish native computed accessible descriptions or spoken output.
+
+The shared browser transport and consumer runner are unchanged by hash, so the
+prior120 consumer passes are reused explicitly rather than counted as fresh.
+Existing production assets are unchanged. Remaining settings/chat focus and
+pending-state branches, native AX, incomplete visual contrast findings and
+original OS/device/manual requirements stay open.

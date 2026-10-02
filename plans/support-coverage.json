@@ -387,6 +387,13 @@
       "path": "probes/native-browser-products/verification-firefox-history-20261002.json",
       "sha256": "f19a2cd4d4ee65deb14d0c582e08cb26a2227c025f1059c08ce71800437999fc",
       "scope": "Both actual Firefox releases:46 selected production workflows including native history/legacy links,10 first-paint/hydration and120 consumer cases after shared transport change. Same original production assets and packed consumers, no fresh build/install/types claim."
+    },
+    {
+      "id": "firefox-readiness-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-readiness-20261002.json",
+      "sha256": "1f5e189de6d47cb53d6195b7f399b739cd397d8a76a083f77863a3f127398ccf",
+      "scope": "46 selected workflow and10 first-paint/hydration cases on actual Firefox156.0.1/157.0. Adds original authored-child readiness and DOM description/error references, native focus and validation geometry. Existing qualified build reused; no fresh build/install/types claim."
     }
   ],
   "conditions": [
@@ -442,10 +449,11 @@
         "firefox-recovery-20261002",
         "firefox-first-paint-20261002",
         "firefox-accessibility-20261002",
-        "firefox-history-20261002"
+        "firefox-history-20261002",
+        "firefox-readiness-20261002"
       ],
       "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact assertion parity, other OS/device/manual scope remain. Chrome154.0.8037.98 and Edge154.0.4258.53 qualify60 consumer and26 production checks each. Safari27 remains hidden pending visible-desktop clarification.",
-      "nextAction": "Audit remaining native Firefox authored-child readiness and description/error/focus assertions; preserve other-product/OS/device/manual obligations."
+      "nextAction": "Qualify remaining exact native Firefox settings/chat focus and pending-state branches; preserve native computed-description/AX and original platform/manual obligations."
     },
     {
       "id": "browser-previous",
@@ -461,10 +469,11 @@
         "firefox-recovery-20261002",
         "firefox-first-paint-20261002",
         "firefox-accessibility-20261002",
-        "firefox-history-20261002"
+        "firefox-history-20261002",
+        "firefox-readiness-20261002"
       ],
       "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact assertion parity, other OS/device/manual scope remain. Edge153.0.4234.48 qualifies60 consumer and26 production checks. Preceding retail Chrome/Safari remain unqualified.",
-      "nextAction": "Audit remaining native Firefox authored-child readiness and description/error/focus assertions; preserve other-product/OS/device/manual obligations."
+      "nextAction": "Qualify remaining exact native Firefox settings/chat focus and pending-state branches; preserve native computed-description/AX and original platform/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -663,6 +672,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T06:14:09.978336+00:00",
+  "updatedAt": "2026-10-02T06:28:48.112940+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }
