@@ -81,3 +81,10 @@ tabs, surfaces, editable selection, commands and responsive modals work in both
 deliveries. Palette styles follow generic overlay styles. Coverage is 88/110;
 22 entries and platform/manual/owner obligations remain. Library runtime and the
 qualified production build are unchanged.
+
+The [editor/collaboration batch](../editor-collaboration-recipes/README.md) adds ten
+entries with 168 browser and 40 Node cases. Native draft/structured preview,
+providers, bookmarks, clipboard conversion, composer snapshots and collaboration
+surfaces have bounded evidence. Editor styling is JS-only; chat/collaboration also
+run portable CSS. Coverage is 98/110, with 12 plus platform/manual/owner scope open.
+Synthetic payload and composition guards do not establish OS clipboard or IME.

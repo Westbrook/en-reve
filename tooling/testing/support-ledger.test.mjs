@@ -691,7 +691,7 @@ test('collection stylesheet receipt binds native layouts, both deliveries and ta
 test('choice and overlay receipt binds native semantics and both stylesheet deliveries',async()=>{
  const r=await json('probes/choice-overlay-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,38);assert.equal(r.stats.expected,180);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=['tooling/testing/browser-ports.mjs', 'tooling/testing/comprehensive.mjs', 'tooling/testing/comprehensive.test.mjs', 'probes/reusable-layers/inventory.json', 'probes/reusable-layers/inventory.test.mjs'].includes(path)?'probes/choice-overlay-recipes/qualification-sources/f179e868/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,60);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
@@ -700,4 +700,19 @@ test('choice and overlay receipt binds native semantics and both stylesheet deli
  const rows=inventory.entries.filter(row=>row.receipt==='probes/choice-overlay-recipes/verification-20261002.json');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,5);
  const build=await json(r.buildReuse.receipt);assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.distManifestSHA256,r.buildReuse.distManifestSHA256);
  assert.match(r.limitations.join(' '),/22 remain/);assert.match(r.limitations.join(' '),/Option\+Tab/);assert.match(r.limitations.join(' '),/No owning-element runtime changed/);
+});
+
+
+test('editor collaboration receipt binds alternate native editing and explicit clipboard limits',async()=>{
+ const r=await json('probes/editor-collaboration-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,40);assert.equal(r.stats.expected,168);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,56);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
+ assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['foundations','buttons','controls','chat','collaboration'].sort().map(name=>'@en-reve/styles/'+name+'.css'));
+ assert.deepEqual(r.portableParity,r.packed.portableCSS);
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/editor-collaboration-recipes/verification-20261002.json');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,2);
+ const build=await json(r.buildReuse.receipt);assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.distManifestSHA256,r.buildReuse.distManifestSHA256);
+ assert.match(r.limitations.join(' '),/12 remain/);assert.match(r.limitations.join(' '),/OS clipboard transport/);assert.match(r.limitations.join(' '),/not an inline rich-token backend/);assert.match(r.limitations.join(' '),/No owning-element runtime changed/);
 });

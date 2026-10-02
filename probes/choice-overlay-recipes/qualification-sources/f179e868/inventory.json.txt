@@ -33,10 +33,9 @@
       "entry": "@en-reve/primitives/interactions/chat-editor.js",
       "source": "packages/primitives/src/interactions/chat-editor.ts",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/primitives/interactions/editing-controller.js",
@@ -51,19 +50,17 @@
       "entry": "@en-reve/primitives/interactions/editor-clipboard.js",
       "source": "packages/primitives/src/interactions/editor-clipboard.ts",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/primitives/interactions/editor-extensions.js",
       "source": "packages/primitives/src/interactions/editor-extensions.ts",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/primitives/interactions/events.js",
@@ -282,10 +279,9 @@
       "entry": "@en-reve/primitives/state/token-document.js",
       "source": "packages/primitives/src/state/token-document.ts",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/primitives/state/value.js",
@@ -444,19 +440,17 @@
       "entry": "@en-reve/styles/collaboration.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/collaboration.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles",
@@ -948,37 +942,33 @@
       "entry": "@en-reve/styles/rich-text-editor.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/token-editor.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/chat.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/chat.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "editor-collaboration",
-      "contract": "packages/styles/docs/editor-collaboration-consumers.md",
-      "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     }
   ]
 }

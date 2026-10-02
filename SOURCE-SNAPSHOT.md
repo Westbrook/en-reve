@@ -218,3 +218,7 @@ Local main `8455c55b569265491cbf5dddf009757ca552befe` qualifies five collection 
 ## Packed native choice and overlay styles
 
 Local main `f179e86869c77c53c088a7ceeff2a0fecd6e3f94` qualifies ten additional choice, command and overlay style entries. See `probes/choice-overlay-recipes/README.md` for scope and browser limits.
+
+## Packed editor and collaboration consumers
+
+Local main `2730982c2bb91979efee065c0ca82ca20764bad8` qualifies ten additional editor and collaboration entries. See `probes/editor-collaboration-recipes/README.md` for scope and browser limits.

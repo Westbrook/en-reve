@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-10-02T15:59:45.570388+00:00",
+  "sourceCommit": "2730982c2bb91979efee065c0ca82ca20764bad8",
+  "previousSourceMain": "f179e86869c77c53c088a7ceeff2a0fecd6e3f94",
+  "taskPaths": [
+    "packages/styles/README.md",
+    "packages/styles/docs/editor-collaboration-consumers.md",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/choice-overlay-recipes/qualification-sources/f179e868/browser-ports.mjs.txt",
+    "probes/choice-overlay-recipes/qualification-sources/f179e868/comprehensive.mjs.txt",
+    "probes/choice-overlay-recipes/qualification-sources/f179e868/comprehensive.test.mjs.txt",
+    "probes/choice-overlay-recipes/qualification-sources/f179e868/inventory.json.txt",
+    "probes/choice-overlay-recipes/qualification-sources/f179e868/inventory.test.mjs.txt",
+    "probes/editor-collaboration-recipes/README.md",
+    "probes/editor-collaboration-recipes/playwright.config.ts",
+    "probes/editor-collaboration-recipes/prepare.mjs",
+    "probes/editor-collaboration-recipes/recipes.html",
+    "probes/editor-collaboration-recipes/recipes.spec.ts",
+    "probes/editor-collaboration-recipes/recipes.ts",
+    "probes/editor-collaboration-recipes/server.mjs",
+    "probes/editor-collaboration-recipes/verification-20261002.json",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Ten additional editor/collaboration entries pass168 browser cases,40 Node and133 integrity checks. Native draft/token preview, provider/bookmark/clipboard helpers, explicit composer adapters and collaboration styles have bounded evidence. Inventory98/110;12 entries and platform/manual/owner scope remain. Qualified app inputs and all1184 build assets are unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

@@ -1,0 +1,1414 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T15:57:59.234997+00:00",
+  "sourceBase": "f179e86869c77c53c088a7ceeff2a0fecd6e3f94",
+  "status": "passed",
+  "scope": "Application-owned native draft/token preview, editor helpers, clipboard conversion, explicit composer adapter and collaboration styles in three engines.",
+  "sourceInputs": {
+    "probes/editor-collaboration-recipes/recipes.ts": "5aada74444077ee48abca95a417c3a627f94f161e6a2319a0538560890ef92de",
+    "probes/editor-collaboration-recipes/recipes.html": "4e8aa9eeaf89d87bd1d3edb4e38b94bfadb07e07c4a2efda9943136944cdf46e",
+    "probes/editor-collaboration-recipes/recipes.spec.ts": "964678c002c5226a605ceb160d43ba7086077197150406ba642ca7ec413dc19d",
+    "probes/editor-collaboration-recipes/playwright.config.ts": "ff17b85074160993eb35193d0f29d6ecf4311af5e110cb6253946d8756290be1",
+    "probes/editor-collaboration-recipes/prepare.mjs": "6408c9a0532366c78bffcb24b2a88a464f472a9440816f22ce912847d5248ab1",
+    "probes/editor-collaboration-recipes/server.mjs": "612b2085b0b3c9621681b8f1a40c8676ed6507c633258c9479c88c38561bacc0",
+    "probes/editor-collaboration-recipes/README.md": "1c33fb3ef4b920f3e510f47843ca295d391abcf5b79df690bbbac62968b17ce1",
+    "packages/styles/src/token-editor.ts": "b52f9deb0bc557e0af3c9e4f450e0d4f8621f91dd3e7b6cdcc752f757ef40301",
+    "packages/styles/src/rich-text-editor.ts": "6e9b815c76298fdce8133977410dcbd86e096db788dfb17695555117283f96b1",
+    "packages/styles/src/chat.ts": "aa7615d22d58abd6e392dfe0b036421d0f45eb5dec0e3799860162f682437c88",
+    "packages/styles/src/collaboration.ts": "6504410b41c48389008968cbe69ef6035ce0d8e2636098108c9d90c31656f32c",
+    "packages/styles/docs/editor-collaboration-consumers.md": "c4bd1316ef76e7359f37d6c29a54b69f3dc357a33d454daf148b1b9ca03ac0ae",
+    "tooling/testing/comprehensive.mjs": "64645c76ca30218974a37a8fbcf5d3114076cbb339c2ced8dbf837a1fc8d43b3",
+    "tooling/testing/comprehensive.test.mjs": "88028bdcf836ee38895802122414cabf9fbe3898c448a1062bbba10264282751",
+    "tooling/testing/browser-ports.mjs": "2ea5916a76bbd9aa0ab9d2c413cb967bc2caa6f98ada63c9e9968da598268d11",
+    "probes/reusable-layers/inventory.json": "4b8a2af14fe0ce274afd2360842ab6c3cdd33950200a92890423def0b7a3cef5",
+    "probes/reusable-layers/inventory.test.mjs": "5208801fc71ffa78e51c13aed930ec4a08bb0eccd784a60ae23e85f7d8fa2843",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32",
+    "packages/primitives/src/state/token-document.ts": "56dab9d180ca7b9ec3d6dd3c3e27d61b4781b66d6be6dcfb6e8dd668257648ee",
+    "packages/primitives/src/interactions/chat-editor.ts": "22cbc431620c285875347d14bd583febe74adb46db62810d37efbfc8286df8fe",
+    "packages/primitives/src/interactions/editor-extensions.ts": "cdddf35efe479c7172245c92c01c90556e8395ff66421cb291dc9fdd9d22bf1f",
+    "packages/primitives/src/interactions/editor-clipboard.ts": "3a8214510908e96a86c0a26ade9e1852f3a6bff89c95646a6f55169a3f5aa139"
+  },
+  "run": "/private/tmp/en-editor-collaboration-recipes-20261002-06",
+  "executionSHA256": "18556ae938fbce434b2cf521b208e919d458674b44247f2ce2c443a821febb19",
+  "reportSHA256": "9194f3d8fa2a61d114581f5e0387e1afe22108fedaad24ed0eeb68218dbc4568",
+  "stats": {
+    "startTime": "2026-10-02T15:56:21.151Z",
+    "duration": 35012.494999999995,
+    "expected": 168,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "native typing maintains accepted value and stable textarea identity",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 897
+    },
+    {
+      "project": "chromium",
+      "title": "reference keyboard choice preserves prefix and inserts structured occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 369
+    },
+    {
+      "project": "chromium",
+      "title": "known multiword slash commands match while paths stay literal",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 356
+    },
+    {
+      "project": "chromium",
+      "title": "dismissal keeps trigger text and cancels pending provider operation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 331
+    },
+    {
+      "project": "chromium",
+      "title": "late query results cannot replace newer candidates",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 101
+    },
+    {
+      "project": "chromium",
+      "title": "provider rejection is contained and preserves draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 93
+    },
+    {
+      "project": "chromium",
+      "title": "stale bookmark cannot replace an authoritative newer document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 90
+    },
+    {
+      "project": "chromium",
+      "title": "token deletion is atomic and undo restores original occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 160
+    },
+    {
+      "project": "chromium",
+      "title": "preview token activates the corresponding native selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 142
+    },
+    {
+      "project": "chromium",
+      "title": "veto observes staged state and restores document and native draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 95
+    },
+    {
+      "project": "chromium",
+      "title": "authoritative reset supersedes a canceled edit and invalidates undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 93
+    },
+    {
+      "project": "chromium",
+      "title": "synthetic composition guard defers acceptance until compositionend",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 93
+    },
+    {
+      "project": "chromium",
+      "title": "copy writes plain fallback and structured data without changing draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 88
+    },
+    {
+      "project": "chromium",
+      "title": "structured paste allocates independent IDs and preserves detached payload",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 96
+    },
+    {
+      "project": "chromium",
+      "title": "unknown token types degrade to readable text and HTML never executes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 82
+    },
+    {
+      "project": "chromium",
+      "title": "malformed structured data falls back to literal plain text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 84
+    },
+    {
+      "project": "chromium",
+      "title": "cut cancellation leaves draft and successful cut supports undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 127
+    },
+    {
+      "project": "chromium",
+      "title": "composer captures an immutable detached snapshot and retains editor focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 137
+    },
+    {
+      "project": "chromium",
+      "title": "composer refuses composition and respects canceled send",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 140
+    },
+    {
+      "project": "chromium",
+      "title": "adapter teardown removes only its own registration and reconnect restores access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 105
+    },
+    {
+      "project": "chromium",
+      "title": "registration disposers cannot remove a newer adapter or extension",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 67
+    },
+    {
+      "project": "chromium",
+      "title": "editor token and field custom properties remain scoped with long drafts",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 79
+    },
+    {
+      "project": "chromium",
+      "title": "native rich notes retain formatted DOM while typing and use heading geometry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 120
+    },
+    {
+      "project": "chromium",
+      "title": "presence uses a real profile link and textual status alongside paint",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 76
+    },
+    {
+      "project": "chromium",
+      "title": "activity loading keeps existing entries and completion inserts older history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 124
+    },
+    {
+      "project": "chromium",
+      "title": "chat and collaboration theme pins do not leak to sibling scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 78
+    },
+    {
+      "project": "chromium",
+      "title": "presence and composer reflow within narrow RTL enlarged text scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 107
+    },
+    {
+      "project": "chromium",
+      "title": "forced colors retains token and collaboration boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 78
+    },
+    {
+      "project": "firefox",
+      "title": "native typing maintains accepted value and stable textarea identity",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 808
+    },
+    {
+      "project": "firefox",
+      "title": "reference keyboard choice preserves prefix and inserts structured occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 296
+    },
+    {
+      "project": "firefox",
+      "title": "known multiword slash commands match while paths stay literal",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 240
+    },
+    {
+      "project": "firefox",
+      "title": "dismissal keeps trigger text and cancels pending provider operation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 242
+    },
+    {
+      "project": "firefox",
+      "title": "late query results cannot replace newer candidates",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 189
+    },
+    {
+      "project": "firefox",
+      "title": "provider rejection is contained and preserves draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 181
+    },
+    {
+      "project": "firefox",
+      "title": "stale bookmark cannot replace an authoritative newer document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 196
+    },
+    {
+      "project": "firefox",
+      "title": "token deletion is atomic and undo restores original occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 260
+    },
+    {
+      "project": "firefox",
+      "title": "preview token activates the corresponding native selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 221
+    },
+    {
+      "project": "firefox",
+      "title": "veto observes staged state and restores document and native draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 447
+    },
+    {
+      "project": "firefox",
+      "title": "authoritative reset supersedes a canceled edit and invalidates undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 201
+    },
+    {
+      "project": "firefox",
+      "title": "synthetic composition guard defers acceptance until compositionend",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 172
+    },
+    {
+      "project": "firefox",
+      "title": "copy writes plain fallback and structured data without changing draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 174
+    },
+    {
+      "project": "firefox",
+      "title": "structured paste allocates independent IDs and preserves detached payload",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 178
+    },
+    {
+      "project": "firefox",
+      "title": "unknown token types degrade to readable text and HTML never executes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 166
+    },
+    {
+      "project": "firefox",
+      "title": "malformed structured data falls back to literal plain text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 174
+    },
+    {
+      "project": "firefox",
+      "title": "cut cancellation leaves draft and successful cut supports undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 211
+    },
+    {
+      "project": "firefox",
+      "title": "composer captures an immutable detached snapshot and retains editor focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 201
+    },
+    {
+      "project": "firefox",
+      "title": "composer refuses composition and respects canceled send",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 234
+    },
+    {
+      "project": "firefox",
+      "title": "adapter teardown removes only its own registration and reconnect restores access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 487
+    },
+    {
+      "project": "firefox",
+      "title": "registration disposers cannot remove a newer adapter or extension",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 158
+    },
+    {
+      "project": "firefox",
+      "title": "editor token and field custom properties remain scoped with long drafts",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 185
+    },
+    {
+      "project": "firefox",
+      "title": "native rich notes retain formatted DOM while typing and use heading geometry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 203
+    },
+    {
+      "project": "firefox",
+      "title": "presence uses a real profile link and textual status alongside paint",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 179
+    },
+    {
+      "project": "firefox",
+      "title": "activity loading keeps existing entries and completion inserts older history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 210
+    },
+    {
+      "project": "firefox",
+      "title": "chat and collaboration theme pins do not leak to sibling scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 170
+    },
+    {
+      "project": "firefox",
+      "title": "presence and composer reflow within narrow RTL enlarged text scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 205
+    },
+    {
+      "project": "firefox",
+      "title": "forced colors retains token and collaboration boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 164
+    },
+    {
+      "project": "webkit",
+      "title": "native typing maintains accepted value and stable textarea identity",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 367
+    },
+    {
+      "project": "webkit",
+      "title": "reference keyboard choice preserves prefix and inserts structured occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 220
+    },
+    {
+      "project": "webkit",
+      "title": "known multiword slash commands match while paths stay literal",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 196
+    },
+    {
+      "project": "webkit",
+      "title": "dismissal keeps trigger text and cancels pending provider operation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "webkit",
+      "title": "late query results cannot replace newer candidates",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208
+    },
+    {
+      "project": "webkit",
+      "title": "provider rejection is contained and preserves draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 188
+    },
+    {
+      "project": "webkit",
+      "title": "stale bookmark cannot replace an authoritative newer document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 203
+    },
+    {
+      "project": "webkit",
+      "title": "token deletion is atomic and undo restores original occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 269
+    },
+    {
+      "project": "webkit",
+      "title": "preview token activates the corresponding native selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 226
+    },
+    {
+      "project": "webkit",
+      "title": "veto observes staged state and restores document and native draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "webkit",
+      "title": "authoritative reset supersedes a canceled edit and invalidates undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "webkit",
+      "title": "synthetic composition guard defers acceptance until compositionend",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 183
+    },
+    {
+      "project": "webkit",
+      "title": "copy writes plain fallback and structured data without changing draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 183
+    },
+    {
+      "project": "webkit",
+      "title": "structured paste allocates independent IDs and preserves detached payload",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219
+    },
+    {
+      "project": "webkit",
+      "title": "unknown token types degrade to readable text and HTML never executes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 184
+    },
+    {
+      "project": "webkit",
+      "title": "malformed structured data falls back to literal plain text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 174
+    },
+    {
+      "project": "webkit",
+      "title": "cut cancellation leaves draft and successful cut supports undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 230
+    },
+    {
+      "project": "webkit",
+      "title": "composer captures an immutable detached snapshot and retains editor focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 212
+    },
+    {
+      "project": "webkit",
+      "title": "composer refuses composition and respects canceled send",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244
+    },
+    {
+      "project": "webkit",
+      "title": "adapter teardown removes only its own registration and reconnect restores access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219
+    },
+    {
+      "project": "webkit",
+      "title": "registration disposers cannot remove a newer adapter or extension",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 166
+    },
+    {
+      "project": "webkit",
+      "title": "editor token and field custom properties remain scoped with long drafts",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 188
+    },
+    {
+      "project": "webkit",
+      "title": "native rich notes retain formatted DOM while typing and use heading geometry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "webkit",
+      "title": "presence uses a real profile link and textual status alongside paint",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 186
+    },
+    {
+      "project": "webkit",
+      "title": "activity loading keeps existing entries and completion inserts older history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "webkit",
+      "title": "chat and collaboration theme pins do not leak to sibling scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "presence and composer reflow within narrow RTL enlarged text scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "webkit",
+      "title": "forced colors retains token and collaboration boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 185
+    },
+    {
+      "project": "chromium",
+      "title": "native typing maintains accepted value and stable textarea identity",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 93
+    },
+    {
+      "project": "chromium",
+      "title": "reference keyboard choice preserves prefix and inserts structured occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 92
+    },
+    {
+      "project": "chromium",
+      "title": "known multiword slash commands match while paths stay literal",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 85
+    },
+    {
+      "project": "chromium",
+      "title": "dismissal keeps trigger text and cancels pending provider operation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 92
+    },
+    {
+      "project": "chromium",
+      "title": "late query results cannot replace newer candidates",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 95
+    },
+    {
+      "project": "chromium",
+      "title": "provider rejection is contained and preserves draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 88
+    },
+    {
+      "project": "chromium",
+      "title": "stale bookmark cannot replace an authoritative newer document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 84
+    },
+    {
+      "project": "chromium",
+      "title": "token deletion is atomic and undo restores original occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 156
+    },
+    {
+      "project": "chromium",
+      "title": "preview token activates the corresponding native selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 117
+    },
+    {
+      "project": "chromium",
+      "title": "veto observes staged state and restores document and native draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 88
+    },
+    {
+      "project": "chromium",
+      "title": "authoritative reset supersedes a canceled edit and invalidates undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 87
+    },
+    {
+      "project": "chromium",
+      "title": "synthetic composition guard defers acceptance until compositionend",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 97
+    },
+    {
+      "project": "chromium",
+      "title": "copy writes plain fallback and structured data without changing draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 87
+    },
+    {
+      "project": "chromium",
+      "title": "structured paste allocates independent IDs and preserves detached payload",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 103
+    },
+    {
+      "project": "chromium",
+      "title": "unknown token types degrade to readable text and HTML never executes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 98
+    },
+    {
+      "project": "chromium",
+      "title": "malformed structured data falls back to literal plain text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 96
+    },
+    {
+      "project": "chromium",
+      "title": "cut cancellation leaves draft and successful cut supports undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 148
+    },
+    {
+      "project": "chromium",
+      "title": "composer captures an immutable detached snapshot and retains editor focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 141
+    },
+    {
+      "project": "chromium",
+      "title": "composer refuses composition and respects canceled send",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 160
+    },
+    {
+      "project": "chromium",
+      "title": "adapter teardown removes only its own registration and reconnect restores access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 126
+    },
+    {
+      "project": "chromium",
+      "title": "registration disposers cannot remove a newer adapter or extension",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 69
+    },
+    {
+      "project": "chromium",
+      "title": "editor token and field custom properties remain scoped with long drafts",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 88
+    },
+    {
+      "project": "chromium",
+      "title": "native rich notes retain formatted DOM while typing and use heading geometry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 145
+    },
+    {
+      "project": "chromium",
+      "title": "presence uses a real profile link and textual status alongside paint",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 81
+    },
+    {
+      "project": "chromium",
+      "title": "activity loading keeps existing entries and completion inserts older history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 125
+    },
+    {
+      "project": "chromium",
+      "title": "chat and collaboration theme pins do not leak to sibling scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 80
+    },
+    {
+      "project": "chromium",
+      "title": "presence and composer reflow within narrow RTL enlarged text scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 107
+    },
+    {
+      "project": "chromium",
+      "title": "forced colors retains token and collaboration boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 80
+    },
+    {
+      "project": "firefox",
+      "title": "native typing maintains accepted value and stable textarea identity",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "firefox",
+      "title": "reference keyboard choice preserves prefix and inserts structured occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 532
+    },
+    {
+      "project": "firefox",
+      "title": "known multiword slash commands match while paths stay literal",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208
+    },
+    {
+      "project": "firefox",
+      "title": "dismissal keeps trigger text and cancels pending provider operation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208
+    },
+    {
+      "project": "firefox",
+      "title": "late query results cannot replace newer candidates",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 226
+    },
+    {
+      "project": "firefox",
+      "title": "provider rejection is contained and preserves draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 347
+    },
+    {
+      "project": "firefox",
+      "title": "stale bookmark cannot replace an authoritative newer document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223
+    },
+    {
+      "project": "firefox",
+      "title": "token deletion is atomic and undo restores original occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 302
+    },
+    {
+      "project": "firefox",
+      "title": "preview token activates the corresponding native selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223
+    },
+    {
+      "project": "firefox",
+      "title": "veto observes staged state and restores document and native draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 193
+    },
+    {
+      "project": "firefox",
+      "title": "authoritative reset supersedes a canceled edit and invalidates undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "firefox",
+      "title": "synthetic composition guard defers acceptance until compositionend",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 489
+    },
+    {
+      "project": "firefox",
+      "title": "copy writes plain fallback and structured data without changing draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 183
+    },
+    {
+      "project": "firefox",
+      "title": "structured paste allocates independent IDs and preserves detached payload",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 180
+    },
+    {
+      "project": "firefox",
+      "title": "unknown token types degrade to readable text and HTML never executes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 166
+    },
+    {
+      "project": "firefox",
+      "title": "malformed structured data falls back to literal plain text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 164
+    },
+    {
+      "project": "firefox",
+      "title": "cut cancellation leaves draft and successful cut supports undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "firefox",
+      "title": "composer captures an immutable detached snapshot and retains editor focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 209
+    },
+    {
+      "project": "firefox",
+      "title": "composer refuses composition and respects canceled send",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 230
+    },
+    {
+      "project": "firefox",
+      "title": "adapter teardown removes only its own registration and reconnect restores access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 207
+    },
+    {
+      "project": "firefox",
+      "title": "registration disposers cannot remove a newer adapter or extension",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 159
+    },
+    {
+      "project": "firefox",
+      "title": "editor token and field custom properties remain scoped with long drafts",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 484
+    },
+    {
+      "project": "firefox",
+      "title": "native rich notes retain formatted DOM while typing and use heading geometry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 235
+    },
+    {
+      "project": "firefox",
+      "title": "presence uses a real profile link and textual status alongside paint",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 179
+    },
+    {
+      "project": "firefox",
+      "title": "activity loading keeps existing entries and completion inserts older history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 221
+    },
+    {
+      "project": "firefox",
+      "title": "chat and collaboration theme pins do not leak to sibling scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 173
+    },
+    {
+      "project": "firefox",
+      "title": "presence and composer reflow within narrow RTL enlarged text scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 211
+    },
+    {
+      "project": "firefox",
+      "title": "forced colors retains token and collaboration boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 170
+    },
+    {
+      "project": "webkit",
+      "title": "native typing maintains accepted value and stable textarea identity",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "webkit",
+      "title": "reference keyboard choice preserves prefix and inserts structured occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219
+    },
+    {
+      "project": "webkit",
+      "title": "known multiword slash commands match while paths stay literal",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "webkit",
+      "title": "dismissal keeps trigger text and cancels pending provider operation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "late query results cannot replace newer candidates",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 192
+    },
+    {
+      "project": "webkit",
+      "title": "provider rejection is contained and preserves draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 189
+    },
+    {
+      "project": "webkit",
+      "title": "stale bookmark cannot replace an authoritative newer document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 186
+    },
+    {
+      "project": "webkit",
+      "title": "token deletion is atomic and undo restores original occurrence",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 260
+    },
+    {
+      "project": "webkit",
+      "title": "preview token activates the corresponding native selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232
+    },
+    {
+      "project": "webkit",
+      "title": "veto observes staged state and restores document and native draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "webkit",
+      "title": "authoritative reset supersedes a canceled edit and invalidates undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 192
+    },
+    {
+      "project": "webkit",
+      "title": "synthetic composition guard defers acceptance until compositionend",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "copy writes plain fallback and structured data without changing draft",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "structured paste allocates independent IDs and preserves detached payload",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 197
+    },
+    {
+      "project": "webkit",
+      "title": "unknown token types degrade to readable text and HTML never executes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 201
+    },
+    {
+      "project": "webkit",
+      "title": "malformed structured data falls back to literal plain text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 180
+    },
+    {
+      "project": "webkit",
+      "title": "cut cancellation leaves draft and successful cut supports undo",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 229
+    },
+    {
+      "project": "webkit",
+      "title": "composer captures an immutable detached snapshot and retains editor focus",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 231
+    },
+    {
+      "project": "webkit",
+      "title": "composer refuses composition and respects canceled send",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 269
+    },
+    {
+      "project": "webkit",
+      "title": "adapter teardown removes only its own registration and reconnect restores access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "webkit",
+      "title": "registration disposers cannot remove a newer adapter or extension",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 174
+    },
+    {
+      "project": "webkit",
+      "title": "editor token and field custom properties remain scoped with long drafts",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "native rich notes retain formatted DOM while typing and use heading geometry",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 229
+    },
+    {
+      "project": "webkit",
+      "title": "presence uses a real profile link and textual status alongside paint",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "webkit",
+      "title": "activity loading keeps existing entries and completion inserts older history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232
+    },
+    {
+      "project": "webkit",
+      "title": "chat and collaboration theme pins do not leak to sibling scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "webkit",
+      "title": "presence and composer reflow within narrow RTL enlarged text scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 216
+    },
+    {
+      "project": "webkit",
+      "title": "forced colors retains token and collaboration boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 184
+    }
+  ],
+  "nodeControls": {
+    "passed": 40
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-duv/LllxAlxB5vkZrQYSDttu0+e3VC/Zf+lB35DDveTBqkAWCeRQTdgzkvAH2OScMfaMocMQvhQpueUsKKv7WA==",
+        "shasum": "a9c1f81e7d5a0d127c95154336d3217e09761aef",
+        "setup": {
+          "key": "385e1ab50c3a63ebd5a52f01e609b23eb282c7cd253aadc423edbeb04a35c778",
+          "reused": false,
+          "originatingProducer": "2026-10-02T15:56:17.363Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-uuaQJ0GobhiWc/g82aseYJGhUXcyNchcfqWnLYcZmEtQhC55G2hTWkdFk2J8wwowG+pwQK7/YUOw8MiKwQypSQ==",
+        "shasum": "3532e48bc09b1abc9cef7960abab091b547ad5f5",
+        "setup": {
+          "key": "385e1ab50c3a63ebd5a52f01e609b23eb282c7cd253aadc423edbeb04a35c778",
+          "reused": false,
+          "originatingProducer": "2026-10-02T15:56:17.363Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "385e1ab50c3a63ebd5a52f01e609b23eb282c7cd253aadc423edbeb04a35c778",
+          "reused": false,
+          "originatingProducer": "2026-10-02T15:56:17.363Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/interactions/chat-editor.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/token-document.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/editor-extensions.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/editor-clipboard.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/foundations.d.ts",
+        "node_modules/@en-reve/styles/dist/buttons.d.ts",
+        "node_modules/@en-reve/styles/dist/controls.d.ts",
+        "node_modules/@en-reve/styles/dist/token-editor.d.ts",
+        "node_modules/@en-reve/styles/dist/rich-text-editor.d.ts",
+        "node_modules/@en-reve/styles/dist/chat.d.ts",
+        "node_modules/@en-reve/styles/dist/collaboration.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/lit-html/directives/if-defined.js",
+      "node_modules/lit/directives/if-defined.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/chat-editor.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/primitives/dist/state/token-document.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/editor-extensions.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/editor-clipboard.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/buttons.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/controls.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/token-editor.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/rich-text-editor.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/chat.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/node_modules/@en-reve/styles/dist/collaboration.js",
+      "../en-editor-collaboration-recipes-20261002-06/fixtures/editor-collaboration-recipes/consumer/recipes.ts"
+    ],
+    "assets": {
+      "recipes.js": "a485117b5e99f86454fb2b52fe19edf7ad2dc3cd0ce64892277e772d2389bdf4",
+      "chat.css": "377aa40d2996aae984cb179ccc6f2e53d2e11b595fadaa72d6986b0bff293655",
+      "collaboration.css": "7166e5df899bbdbd92ff195f22c3dafaf785290fbd7d1077a1845ff6b76063b0"
+    },
+    "portableCSS": {
+      "@en-reve/styles/foundations.css": "b61646e33ed957e513aa290ac5328af54ecb145243c1768c7978a1f50d433879",
+      "@en-reve/styles/buttons.css": "729d5b1dfb69dbfccb2d693e58fa1d7c02a8d362796879de91245224941febc0",
+      "@en-reve/styles/controls.css": "e4f6a0f04e11efc0f7088d8e75b4e726f66704e5c5f6aad2042a5dac09facc94",
+      "@en-reve/styles/chat.css": "e56557b4be5650486c0c66eff24a4922daf2787d8dc3ca9fbe04e62b7a2b1da7",
+      "@en-reve/styles/collaboration.css": "70ba448702e693fbd93850db169271953f4670ddeb447f3d1ea8119939727f65"
+    },
+    "sourceInputs": {
+      "probes/editor-collaboration-recipes/recipes.ts": "5aada74444077ee48abca95a417c3a627f94f161e6a2319a0538560890ef92de",
+      "probes/editor-collaboration-recipes/recipes.html": "4e8aa9eeaf89d87bd1d3edb4e38b94bfadb07e07c4a2efda9943136944cdf46e"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Native semantic and computed-style scenarios only; manual AT, native clipboard transport, SSR/hydration and full theme visual acceptance remain separate."
+    ]
+  },
+  "portableParity": {
+    "@en-reve/styles/foundations.css": "b61646e33ed957e513aa290ac5328af54ecb145243c1768c7978a1f50d433879",
+    "@en-reve/styles/buttons.css": "729d5b1dfb69dbfccb2d693e58fa1d7c02a8d362796879de91245224941febc0",
+    "@en-reve/styles/controls.css": "e4f6a0f04e11efc0f7088d8e75b4e726f66704e5c5f6aad2042a5dac09facc94",
+    "@en-reve/styles/chat.css": "e56557b4be5650486c0c66eff24a4922daf2787d8dc3ca9fbe04e62b7a2b1da7",
+    "@en-reve/styles/collaboration.css": "70ba448702e693fbd93850db169271953f4670ddeb447f3d1ea8119939727f65"
+  },
+  "fixtureAssets": {
+    "index.html": "4e8aa9eeaf89d87bd1d3edb4e38b94bfadb07e07c4a2efda9943136944cdf46e",
+    "collaboration.css": "7166e5df899bbdbd92ff195f22c3dafaf785290fbd7d1077a1845ff6b76063b0",
+    "chat.css": "377aa40d2996aae984cb179ccc6f2e53d2e11b595fadaa72d6986b0bff293655",
+    "recipes.js": "a485117b5e99f86454fb2b52fe19edf7ad2dc3cd0ce64892277e772d2389bdf4"
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "f179e86869c77c53c088a7ceeff2a0fecd6e3f94",
+    "sourceDigest": "sha256:6b5b53265cdb260979b579630dc0db0730115bf537ce7c833446c8f769f2cd8d",
+    "files": 22879
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/editor-collaboration-recipes-20261002",
+  "earlierAttempts": [
+    {
+      "run": "/private/tmp/en-editor-collaboration-recipes-20261002-01",
+      "status": "failed",
+      "boundary": "Strict test compilation required native textarea type annotations; browsers did not run."
+    },
+    {
+      "run": "/private/tmp/en-editor-collaboration-recipes-20261002-02",
+      "status": "failed",
+      "boundary": "Application registration callback accessed its popup before the render root existed; guarded constructor-time access."
+    },
+    {
+      "run": "/private/tmp/en-editor-collaboration-recipes-20261002-03",
+      "status": "failed",
+      "boundary": "68 passed,1 failed,99 not run: Firefox synthetic ClipboardEvent exposes a different clipboardData channel; copy assertion read the constructor input."
+    },
+    {
+      "run": "/private/tmp/en-editor-collaboration-recipes-20261002-04",
+      "status": "failed",
+      "boundary": "69 passed,1 failed,98 not run: paste payload likewise needed population on the actual event channel."
+    },
+    {
+      "run": "/private/tmp/en-editor-collaboration-recipes-20261002-05",
+      "status": "passed",
+      "boundary": "168 browser and39 Node cases passed before final inventory binding."
+    }
+  ],
+  "buildReuse": {
+    "receipt": "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+    "inputsAndGeneratedModules": "all unchanged",
+    "distFiles": 1184,
+    "distManifestSHA256": "78863d22c778f65e3a9e82c252f9a77f42a4e94508e855e9b7d5f06040279d86",
+    "reason": "This batch changes packed qualification fixtures and source documentation, not the docs application or library runtime."
+  },
+  "limitations": [
+    "Ten additional entries have bounded consumer qualification;98/110 entries qualified and12 remain pending.",
+    "The native textarea plus token preview is an alternate composition, not an inline rich-token backend. Native rich notes exercise styling and retained formatted DOM, not rich persistence or formatted-paste sanitization.",
+    "Chat and collaboration run in JS and portable CSS; token/rich editor styles are JS-only. No owning-element runtime changed.",
+    "Synthetic ClipboardEvent payloads use the event clipboardData channel, which Firefox constructs independently of the supplied DataTransfer. These tests do not establish OS clipboard transport. Synthetic composition guards do not establish physical IME.",
+    "Manual AT, physical touch, retail products, full SSR/hydration, caret collision controls, large-history virtualization and separate-owner obligations remain. Historical external CSS-authoring rerun is retired, never passed."
+  ]
+}

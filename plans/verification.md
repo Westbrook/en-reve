@@ -497,3 +497,25 @@ bounded scenario coverage; manual AT, retail/physical browser coverage, full
 SSR/hydration and separate-owner obligations remain. Next are the remaining
 editor, color, collaboration and helper compositions. Historical external
 CSS-authoring rerun remains retired, never passed.
+
+
+## Editor and collaboration consumer qualification — 2026-10-02
+
+The [packed editor/collaboration consumers](../probes/editor-collaboration-recipes/README.md)
+qualify ten additional public entries. A native draft with structured token preview
+uses EditorDocument, explicit composer registration, revision-bound bookmarks,
+cancelable provider tasks and versioned clipboard conversion. Native rich notes
+and chat/presence/activity surfaces use isolated matching styles. Chat and
+collaboration run in both stylesheet deliveries; editor styles are JS-only.
+
+All 168 browser cases (28 scenarios × two compositions × three engines) and 40
+Node controls pass with no skipped or retried cases. Firefox synthetic clipboard
+payloads use the event's own clipboardData channel, not the constructor input.
+Earlier failures and their corrections are retained in the receipt. This is not
+OS clipboard transport, physical IME or a substitute for a rich-editor backend.
+No library runtime changed; the qualified production app/build remain identical.
+
+The public-entry inventory is 98/110 qualified, with 12 pending. Remaining entries
+cover color styles, optional-slot/static-style/scroll helpers and style barrels/
+metadata. Manual AT, physical/retail platforms, full SSR/hydration and separate-owner
+obligations remain open. Historical external CSS-authoring rerun remains retired.

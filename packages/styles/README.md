@@ -351,3 +351,9 @@ matching native choice/tab/disclosure/card, combobox, command and dialog/drawer
 compositions. Adopt generic overlay styles before command-palette styles in both
 deliveries. Native semantics, transactions, placement, dismissal and focus remain
 explicit application responsibilities; these are not APIs into element internals.
+
+The [editor and collaboration consumer guide](docs/editor-collaboration-consumers.md)
+shows a native draft with structured-token preview, explicit composer snapshots,
+native rich notes and presence/activity surfaces. Editor style fragments are
+JS-only; chat and collaboration also have portable CSS. Matching templates and
+all editing, clipboard, provider, submission and paging policies remain explicit.
