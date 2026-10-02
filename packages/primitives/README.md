@@ -180,3 +180,10 @@ child loading and both native tree style deliveries.
 The [native notification consumer contract](docs/notification-consumers.md) separates
 pure admission from application ordering, focus, timers and announcements, and
 covers toast/feedback/loading styles in both delivery forms.
+
+
+The [advanced helper consumers](docs/helper-consumers.md) document optional-slot
+SSR baseline recovery, post-hydration static-sheet ownership and standalone
+scrolling. Internal renderer markers remain internal. Nearest scrolling maps
+logical axes in vertical/sideways writing modes and delegates offset clamping
+to the browser; apps own scheduling and canceling stale stop corrections.

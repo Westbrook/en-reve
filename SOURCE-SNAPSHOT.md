@@ -226,3 +226,7 @@ Local main `2730982c2bb91979efee065c0ca82ca20764bad8` qualifies ten additional e
 ## Packed native color consumers
 
 Local main `e4606d2e13d7bd54c9410604bf12eb17cdb50971` qualifies ten color/style-discovery entries. See `probes/color-recipes/README.md` for scope and browser limits.
+
+## Packed helper consumers
+
+Local main `e29ffc7c0c006d96f186d9ab9faa753bccab92b8` qualifies three SSR/scroll helper entries. See `probes/helper-recipes/README.md` for scope and browser limits.

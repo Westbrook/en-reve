@@ -721,7 +721,7 @@ test('editor collaboration receipt binds alternate native editing and explicit c
 test('color receipt binds independent portable plane, native controls and style discovery',async()=>{
  const r=await json('probes/color-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,41);assert.equal(r.stats.expected,144);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/color-recipes/qualification-sources/e4606d2e/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,48);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
@@ -731,4 +731,19 @@ test('color receipt binds independent portable plane, native controls and style 
  const build=await json('apps/docs/tests/verification-color-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
  for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
  assert.match(r.limitations.join(' '),/3 interaction helpers/);assert.match(r.limitations.join(' '),/Manual AT/);assert.match(r.limitations.join(' '),/color-plane.css/);
+});
+
+test('helper receipt binds advanced SSR protocols, logical scrolling and existing owners',async()=>{
+ const r=await json('probes/helper-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,43);assert.equal(r.stats.expected,111);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,37);
+ assert.equal(r.ownerRegression.stats.expected,153);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.ownerRegression.stats[k],0);
+ assert.equal(r.packed.types.status,'passed');assert.equal(r.packed.types.packedDeclarations.length,3);assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/primitives/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/helper-recipes/verification-20261002.json');assert.equal(rows.length,3);
+ assert(inventory.entries.every(row=>row.qualification==='qualified-scenarios'));
+ const build=await json('apps/docs/tests/verification-helper-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.match(r.limitations.join(' '),/internal renderer\/controller/);assert.match(r.limitations.join(' '),/Manual AT/);assert.match(r.limitations.join(' '),/not full-goal completion/);
 });

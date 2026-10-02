@@ -119,11 +119,3 @@ test('color compositions bind independent portable plane and style discovery ent
  const generator=await read('packages/styles/scripts/export-css.mjs');assert.match(generator,/'color-picker': \['colorPickerStyles'\]/);assert.match(generator,/'color-plane': \['colorPlaneStyles'\]/);
  const prep=await read('probes/color-recipes/prepare.mjs');assert(prep.includes("['color-picker','color-plane','color-slider','color-wheel']"));assert(!prep.includes("name==='color-plane'?"));
 });
-
-
-test('advanced lifecycle and scroll consumers bind the remaining helper exports',async()=>{
- const rows=inventory.entries.filter(row=>row.composition==='helpers');assert.equal(rows.length,3);
- const source=(await read('probes/helper-recipes/components.ts'))+(await read('probes/helper-recipes/client.ts'));assert(!source.includes('/src/')&&!source.includes('/dist/')&&!source.includes('@en-reve/elements'));
- for(const row of rows){assert(source.includes(row.entry));assert.equal(row.receipt,'probes/helper-recipes/verification-20261002.json');}
- assert.match(await read('packages/primitives/docs/helper-consumers.md'),/internal renderer/);
-});

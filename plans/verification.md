@@ -544,3 +544,23 @@ Historical external CSS-authoring rerun remains retired, never passed.
 Final combined integrity and color pathway passes176 Node checks and144 browser
 cases with no skips or retries. Historical exporter bytes are retained separately
 from the new export generator; prior receipts are not relabeled as new results.
+
+
+## Helper consumers and logical scrolling — 2026-10-02
+
+The [packed helper consumers](../probes/helper-recipes/README.md) qualify the three
+remaining interaction entries: optional slot recovery, static stylesheet adoption
+and scrolling. An application-owned Lit renderer exercises actual SSR/hydration;
+the recovery and stylesheet marker protocols remain internal integration details.
+111 three-engine cases and43 Node controls pass. The expanded comparison exposed
+a real vertical-writing fallback error: logical axes, negative scroll coordinates,
+sticky insets and smooth cancellation now agree with the tested native behavior.
+
+A fresh production build and153 existing virtual-list, tree and activity browser
+cases pass. Failed attempts are retained. All111 inventory entries now have bounded
+named-scenario receipts; this closes the inventory pass, not the entire goal.
+Native Firefox comparison, retail/physical platforms, manual AT, complete
+SSR/hydration and separate-owner obligations remain distinct unfinished scope.
+Historical external CSS-authoring rerun remains retired, never passed.
+
+Final integrity/helper qualification passes179 Node checks and111 browser cases.

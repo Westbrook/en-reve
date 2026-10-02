@@ -124,6 +124,22 @@ function scrollTarget(target: HTMLElement, options: ScrollToOptions): void {
   else target.scrollTo(options);
 }
 
+/** Physical start sides of the scrolling box's logical axes. */
+function scrollAxes(style: CSSStyleDeclaration): {vertical: boolean; right: boolean; bottom: boolean} {
+  const mode = style.writingMode;
+  const vertical = mode !== 'horizontal-tb';
+  const rtl = style.direction === 'rtl';
+  return {
+    vertical,
+    right: vertical ? mode.endsWith('-rl') : rtl,
+    bottom: vertical && (mode === 'sideways-lr' ? !rtl : rtl),
+  };
+}
+
+function physicalAlignment(value: ScrollLogicalPosition, reverse: boolean): ScrollLogicalPosition {
+  return reverse && value === 'start' ? 'end' : reverse && value === 'end' ? 'start' : value;
+}
+
 function cancelNativeScroll(target: HTMLElement, position: {left: number; top: number}): void {
   const document = target.ownerDocument;
   const root = target === document.scrollingElement;
@@ -131,19 +147,16 @@ function cancelNativeScroll(target: HTMLElement, position: {left: number; top: n
   const width = root ? document.documentElement.clientWidth : target.clientWidth;
   const verticalRange = Math.max(0, target.scrollHeight - height);
   const horizontalRange = Math.max(0, target.scrollWidth - width);
-  // Firefox can treat instant scrolling to the current position as a no-op,
-  // leaving a smooth animation running. A distinct target then immediate
-  // restoration cancels it without exposing the temporary position at paint.
+  // Firefox can treat instant scrolling to the current position as a no-op.
+  // Nudge toward the origin (or toward the overflow at zero), then restore in
+  // the same task. Native scrolling clamps the resulting physical coordinate.
+  const style = document.defaultView?.getComputedStyle(target);
+  const axes = style ? scrollAxes(style) : {right: false, bottom: false};
   if (verticalRange > 0) {
-    const top = position.top < verticalRange
-      ? Math.min(verticalRange, position.top + 1) : Math.max(0, position.top - 1);
+    const top = position.top !== 0 ? position.top - Math.sign(position.top) : axes.bottom ? -1 : 1;
     scrollTarget(target, {...position, top, behavior: 'instant'});
   } else if (horizontalRange > 0) {
-    const rtl = document.defaultView?.getComputedStyle(target).direction === 'rtl';
-    const min = rtl ? -horizontalRange : 0;
-    const max = rtl ? 0 : horizontalRange;
-    const left = position.left < max
-      ? Math.min(max, position.left + 1) : Math.max(min, position.left - 1);
+    const left = position.left !== 0 ? position.left - Math.sign(position.left) : axes.right ? -1 : 1;
     scrollTarget(target, {...position, left, behavior: 'instant'});
   }
   scrollTarget(target, {...position, behavior: 'instant'});
@@ -168,33 +181,38 @@ function scrollNearest(
   const itemStyle = view.getComputedStyle(element);
   const item = element.getBoundingClientRect();
   const explicit = fallback?.viewport === target ? fallback : undefined;
-  const paddingTop = Math.max(length(style.scrollPaddingTop, height, document), explicit?.blockStart ?? 0);
-  const paddingBottom = Math.max(length(style.scrollPaddingBottom, height, document), explicit?.blockEnd ?? 0);
-  const paddingLeft = length(style.scrollPaddingLeft, width, document);
-  const paddingRight = length(style.scrollPaddingRight, width, document);
-  const blockDelta = alignmentDelta(
+  const axes = scrollAxes(style);
+  let paddingTop = length(style.scrollPaddingTop, height, document);
+  let paddingBottom = length(style.scrollPaddingBottom, height, document);
+  let paddingLeft = length(style.scrollPaddingLeft, width, document);
+  let paddingRight = length(style.scrollPaddingRight, width, document);
+  if (axes.vertical) {
+    paddingLeft = Math.max(paddingLeft, (axes.right ? explicit?.blockEnd : explicit?.blockStart) ?? 0);
+    paddingRight = Math.max(paddingRight, (axes.right ? explicit?.blockStart : explicit?.blockEnd) ?? 0);
+  } else {
+    paddingTop = Math.max(paddingTop, explicit?.blockStart ?? 0);
+    paddingBottom = Math.max(paddingBottom, explicit?.blockEnd ?? 0);
+  }
+  const topDelta = alignmentDelta(
     item.top - length(itemStyle.scrollMarginTop, height, document),
     item.bottom + length(itemStyle.scrollMarginBottom, height, document),
     top + paddingTop,
     top + height - paddingBottom,
-    options.block,
+    physicalAlignment(axes.vertical ? options.inline : options.block, axes.bottom),
   );
-  const rtl = style.direction === 'rtl';
-  const inline = rtl && options.inline === 'start' ? 'end'
-    : rtl && options.inline === 'end' ? 'start' : options.inline;
-  const inlineDelta = alignmentDelta(
+  const leftDelta = alignmentDelta(
     item.left - length(itemStyle.scrollMarginLeft, width, document),
     item.right + length(itemStyle.scrollMarginRight, width, document),
     left + paddingLeft,
     left + width - paddingRight,
-    inline,
+    physicalAlignment(axes.vertical ? options.block : options.inline, axes.right),
   );
   const position = scrollPosition(target);
-  const horizontalRange = Math.max(0, target.scrollWidth - width);
-  const verticalRange = Math.max(0, target.scrollHeight - height);
   scrollTarget(target, {
-    left: Math.max(rtl ? -horizontalRange : 0, Math.min(rtl ? 0 : horizontalRange, position.left + inlineDelta)),
-    top: Math.max(0, Math.min(verticalRange, position.top + blockDelta)),
+    // The UA owns range clamping, including negative offsets in vertical/RTL
+    // writing modes; assuming positive top or direction-only left is incorrect.
+    left: position.left + leftDelta,
+    top: position.top + topDelta,
     // Passing auto through preserves CSS scroll-behavior; smooth uses the UA's
     // real animation rather than a controller-created sequence of instant jumps.
     behavior: options.behavior,
@@ -219,15 +237,15 @@ export function beginScrollIntoView(
       && (fallback.blockStart > 0 || fallback.blockEnd > 0)) {
       const style = viewport.style;
       const computed = view.getComputedStyle(viewport);
-      const properties = ['scroll-padding-top', 'scroll-padding-bottom'] as const;
+      const properties = ['scroll-padding-block-start', 'scroll-padding-block-end'] as const;
       const original = properties.map(property => ({
         property,
         value: style.getPropertyValue(property),
         priority: style.getPropertyPriority(property),
       }));
       const padding = [
-        `max(${computed.scrollPaddingTop === 'auto' ? '0px' : computed.scrollPaddingTop}, ${Math.max(0, fallback.blockStart)}px)`,
-        `max(${computed.scrollPaddingBottom === 'auto' ? '0px' : computed.scrollPaddingBottom}, ${Math.max(0, fallback.blockEnd)}px)`,
+        `max(${computed.scrollPaddingBlockStart === 'auto' ? '0px' : computed.scrollPaddingBlockStart}, ${Math.max(0, fallback.blockStart)}px)`,
+        `max(${computed.scrollPaddingBlockEnd === 'auto' ? '0px' : computed.scrollPaddingBlockEnd}, ${Math.max(0, fallback.blockEnd)}px)`,
       ];
       try {
         // Native scrollIntoView computes its destination synchronously, including

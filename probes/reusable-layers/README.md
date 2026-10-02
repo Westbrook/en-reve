@@ -94,3 +94,9 @@ The [color consumers](../color-recipes/README.md) qualify the remaining nine sty
 entries and the new independent portable plane export: 144 browser cases pass
 across two deliveries and three engines. Coverage is 108/111 entries; three
 interaction helpers and the separate platform/manual/owner obligations remain.
+
+The [helper consumers](../helper-recipes/README.md) qualify the final three entries
+with111 browser cases and43 Node checks.153 existing owner cases also pass after
+a logical scroll-axis correction. All111 inventory entries have bounded scenario
+receipts. This completes the inventory pass; retail/physical/manual acceptance,
+complete SSR/hydration and separate-owner obligations still require their own work.

@@ -1,0 +1,2029 @@
+{
+  "run": "/private/tmp/en-helper-recipes-20261002-04",
+  "executionSHA256": "74511ae596f2cda1f13ef8471f421218e73f83ef48ee473c69d8959571fd5e29",
+  "reportSHA256": "408b2a66e824e62e0a5fbe159fb5294bc085b2a81dd86cdc41684529bd7975e9",
+  "stats": {
+    "startTime": "2026-10-02T16:49:32.925Z",
+    "duration": 23458.753,
+    "expected": 111,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "server response paints named inputs and optional headers with JavaScript disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1139
+    },
+    {
+      "project": "chromium",
+      "title": "hydration retains edited input, selection, focus and original nodes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 385
+    },
+    {
+      "project": "chromium",
+      "title": "static sheets share identity across SSR instances and a new client instance",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 342
+    },
+    {
+      "project": "chromium",
+      "title": "consumer template sheet preserves DOM cascade instead of adopting",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 84
+    },
+    {
+      "project": "chromium",
+      "title": "consumer adopted sheet keeps final cascade ownership",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 91
+    },
+    {
+      "project": "chromium",
+      "title": "cross-document adoption restores static fallback paint without replacing content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 84
+    },
+    {
+      "project": "chromium",
+      "title": "unknown static marker keeps its working server stylesheet",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 98
+    },
+    {
+      "project": "chromium",
+      "title": "style media ownership prevents adoption",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 109
+    },
+    {
+      "project": "chromium",
+      "title": "slot changes after hydration reconcile header visibility without replacing the input",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 99
+    },
+    {
+      "project": "chromium",
+      "title": "changed assignment before hydration preserves server baseline then reconciles",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 91
+    },
+    {
+      "project": "chromium",
+      "title": "optional-slot recovery returns a frozen exact baseline and absence stays absent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 48
+    },
+    {
+      "project": "chromium",
+      "title": "optional-slot recovery rejects malformed or mismatched metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 54
+    },
+    {
+      "project": "chromium",
+      "title": "normalization supplies native defaults and rejects each invalid option",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 56
+    },
+    {
+      "project": "firefox",
+      "title": "server response paints named inputs and optional headers with JavaScript disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 802
+    },
+    {
+      "project": "firefox",
+      "title": "hydration retains edited input, selection, focus and original nodes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 348
+    },
+    {
+      "project": "firefox",
+      "title": "static sheets share identity across SSR instances and a new client instance",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 197
+    },
+    {
+      "project": "firefox",
+      "title": "consumer template sheet preserves DOM cascade instead of adopting",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 213
+    },
+    {
+      "project": "firefox",
+      "title": "consumer adopted sheet keeps final cascade ownership",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 170
+    },
+    {
+      "project": "firefox",
+      "title": "cross-document adoption restores static fallback paint without replacing content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 159
+    },
+    {
+      "project": "firefox",
+      "title": "unknown static marker keeps its working server stylesheet",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 187
+    },
+    {
+      "project": "firefox",
+      "title": "style media ownership prevents adoption",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 197
+    },
+    {
+      "project": "firefox",
+      "title": "slot changes after hydration reconcile header visibility without replacing the input",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 488
+    },
+    {
+      "project": "firefox",
+      "title": "changed assignment before hydration preserves server baseline then reconciles",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 169
+    },
+    {
+      "project": "firefox",
+      "title": "optional-slot recovery returns a frozen exact baseline and absence stays absent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 117
+    },
+    {
+      "project": "firefox",
+      "title": "optional-slot recovery rejects malformed or mismatched metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 128
+    },
+    {
+      "project": "firefox",
+      "title": "normalization supplies native defaults and rejects each invalid option",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 127
+    },
+    {
+      "project": "webkit",
+      "title": "server response paints named inputs and optional headers with JavaScript disabled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 580
+    },
+    {
+      "project": "webkit",
+      "title": "hydration retains edited input, selection, focus and original nodes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 203
+    },
+    {
+      "project": "webkit",
+      "title": "static sheets share identity across SSR instances and a new client instance",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 175
+    },
+    {
+      "project": "webkit",
+      "title": "consumer template sheet preserves DOM cascade instead of adopting",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 177
+    },
+    {
+      "project": "webkit",
+      "title": "consumer adopted sheet keeps final cascade ownership",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "webkit",
+      "title": "cross-document adoption restores static fallback paint without replacing content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 179
+    },
+    {
+      "project": "webkit",
+      "title": "unknown static marker keeps its working server stylesheet",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 168
+    },
+    {
+      "project": "webkit",
+      "title": "style media ownership prevents adoption",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 168
+    },
+    {
+      "project": "webkit",
+      "title": "slot changes after hydration reconcile header visibility without replacing the input",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "changed assignment before hydration preserves server baseline then reconciles",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 185
+    },
+    {
+      "project": "webkit",
+      "title": "optional-slot recovery returns a frozen exact baseline and absence stays absent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 129
+    },
+    {
+      "project": "webkit",
+      "title": "optional-slot recovery rejects malformed or mismatched metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 137
+    },
+    {
+      "project": "webkit",
+      "title": "normalization supplies native defaults and rejects each invalid option",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133
+    },
+    {
+      "project": "chromium",
+      "title": "nearest scroll only changes the inner port and returns owned event targets",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 53
+    },
+    {
+      "project": "chromium",
+      "title": "all containers include the outer scrollport and document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 68
+    },
+    {
+      "project": "chromium",
+      "title": "center aligns item center with the nearest viewport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 49
+    },
+    {
+      "project": "chromium",
+      "title": "explicit sticky inset applies and author padding priority is restored",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 48
+    },
+    {
+      "project": "chromium",
+      "title": "RTL inline start aligns the item against the leading edge",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 53
+    },
+    {
+      "project": "chromium",
+      "title": "slotted target traverses its composed parents to the inner scrollport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 49
+    },
+    {
+      "project": "chromium",
+      "title": "nearest does not move an already-visible target a second time",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 47
+    },
+    {
+      "project": "chromium",
+      "title": "logical alignment matches native scrolling in vertical writing modes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 74
+    },
+    {
+      "project": "chromium",
+      "title": "vertical sticky insets match native logical padding and restore author CSS",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 48
+    },
+    {
+      "project": "chromium",
+      "title": "negative vertical scroll cancellation retains its captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 355
+    },
+    {
+      "project": "chromium",
+      "title": "stopping native smooth scroll retains the captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 357
+    },
+    {
+      "project": "chromium",
+      "title": "superseding stop correction cannot overwrite a new destination",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 103
+    },
+    {
+      "project": "firefox",
+      "title": "nearest scroll only changes the inner port and returns owned event targets",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 123
+    },
+    {
+      "project": "firefox",
+      "title": "all containers include the outer scrollport and document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 137
+    },
+    {
+      "project": "firefox",
+      "title": "center aligns item center with the nearest viewport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 125
+    },
+    {
+      "project": "firefox",
+      "title": "explicit sticky inset applies and author padding priority is restored",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 125
+    },
+    {
+      "project": "firefox",
+      "title": "RTL inline start aligns the item against the leading edge",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 146
+    },
+    {
+      "project": "firefox",
+      "title": "slotted target traverses its composed parents to the inner scrollport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 421
+    },
+    {
+      "project": "firefox",
+      "title": "nearest does not move an already-visible target a second time",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 131
+    },
+    {
+      "project": "firefox",
+      "title": "logical alignment matches native scrolling in vertical writing modes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 147
+    },
+    {
+      "project": "firefox",
+      "title": "vertical sticky insets match native logical padding and restore author CSS",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 119
+    },
+    {
+      "project": "firefox",
+      "title": "negative vertical scroll cancellation retains its captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 324
+    },
+    {
+      "project": "firefox",
+      "title": "stopping native smooth scroll retains the captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 332
+    },
+    {
+      "project": "firefox",
+      "title": "superseding stop correction cannot overwrite a new destination",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 155
+    },
+    {
+      "project": "webkit",
+      "title": "nearest scroll only changes the inner port and returns owned event targets",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 140
+    },
+    {
+      "project": "webkit",
+      "title": "all containers include the outer scrollport and document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 145
+    },
+    {
+      "project": "webkit",
+      "title": "center aligns item center with the nearest viewport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 130
+    },
+    {
+      "project": "webkit",
+      "title": "explicit sticky inset applies and author padding priority is restored",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 134
+    },
+    {
+      "project": "webkit",
+      "title": "RTL inline start aligns the item against the leading edge",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133
+    },
+    {
+      "project": "webkit",
+      "title": "slotted target traverses its composed parents to the inner scrollport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 131
+    },
+    {
+      "project": "webkit",
+      "title": "nearest does not move an already-visible target a second time",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133
+    },
+    {
+      "project": "webkit",
+      "title": "logical alignment matches native scrolling in vertical writing modes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 168
+    },
+    {
+      "project": "webkit",
+      "title": "vertical sticky insets match native logical padding and restore author CSS",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 131
+    },
+    {
+      "project": "webkit",
+      "title": "negative vertical scroll cancellation retains its captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 438
+    },
+    {
+      "project": "webkit",
+      "title": "stopping native smooth scroll retains the captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 427
+    },
+    {
+      "project": "webkit",
+      "title": "superseding stop correction cannot overwrite a new destination",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 189
+    },
+    {
+      "project": "chromium",
+      "title": "nearest scroll only changes the inner port and returns owned event targets",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 55
+    },
+    {
+      "project": "chromium",
+      "title": "all containers include the outer scrollport and document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 78
+    },
+    {
+      "project": "chromium",
+      "title": "center aligns item center with the nearest viewport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 55
+    },
+    {
+      "project": "chromium",
+      "title": "explicit sticky inset applies and author padding priority is restored",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 53
+    },
+    {
+      "project": "chromium",
+      "title": "RTL inline start aligns the item against the leading edge",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 54
+    },
+    {
+      "project": "chromium",
+      "title": "slotted target traverses its composed parents to the inner scrollport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 55
+    },
+    {
+      "project": "chromium",
+      "title": "nearest does not move an already-visible target a second time",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 52
+    },
+    {
+      "project": "chromium",
+      "title": "logical alignment matches native scrolling in vertical writing modes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 74
+    },
+    {
+      "project": "chromium",
+      "title": "vertical sticky insets match native logical padding and restore author CSS",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 52
+    },
+    {
+      "project": "chromium",
+      "title": "negative vertical scroll cancellation retains its captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 346
+    },
+    {
+      "project": "chromium",
+      "title": "stopping native smooth scroll retains the captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 370
+    },
+    {
+      "project": "chromium",
+      "title": "superseding stop correction cannot overwrite a new destination",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 119
+    },
+    {
+      "project": "firefox",
+      "title": "nearest scroll only changes the inner port and returns owned event targets",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 132
+    },
+    {
+      "project": "firefox",
+      "title": "all containers include the outer scrollport and document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 152
+    },
+    {
+      "project": "firefox",
+      "title": "center aligns item center with the nearest viewport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 155
+    },
+    {
+      "project": "firefox",
+      "title": "explicit sticky inset applies and author padding priority is restored",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 497
+    },
+    {
+      "project": "firefox",
+      "title": "RTL inline start aligns the item against the leading edge",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 137
+    },
+    {
+      "project": "firefox",
+      "title": "slotted target traverses its composed parents to the inner scrollport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 127
+    },
+    {
+      "project": "firefox",
+      "title": "nearest does not move an already-visible target a second time",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 131
+    },
+    {
+      "project": "firefox",
+      "title": "logical alignment matches native scrolling in vertical writing modes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 161
+    },
+    {
+      "project": "firefox",
+      "title": "vertical sticky insets match native logical padding and restore author CSS",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133
+    },
+    {
+      "project": "firefox",
+      "title": "negative vertical scroll cancellation retains its captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 351
+    },
+    {
+      "project": "firefox",
+      "title": "stopping native smooth scroll retains the captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 344
+    },
+    {
+      "project": "firefox",
+      "title": "superseding stop correction cannot overwrite a new destination",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 504
+    },
+    {
+      "project": "webkit",
+      "title": "nearest scroll only changes the inner port and returns owned event targets",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 139
+    },
+    {
+      "project": "webkit",
+      "title": "all containers include the outer scrollport and document",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 164
+    },
+    {
+      "project": "webkit",
+      "title": "center aligns item center with the nearest viewport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 138
+    },
+    {
+      "project": "webkit",
+      "title": "explicit sticky inset applies and author padding priority is restored",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 137
+    },
+    {
+      "project": "webkit",
+      "title": "RTL inline start aligns the item against the leading edge",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 138
+    },
+    {
+      "project": "webkit",
+      "title": "slotted target traverses its composed parents to the inner scrollport",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 145
+    },
+    {
+      "project": "webkit",
+      "title": "nearest does not move an already-visible target a second time",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 147
+    },
+    {
+      "project": "webkit",
+      "title": "logical alignment matches native scrolling in vertical writing modes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 207
+    },
+    {
+      "project": "webkit",
+      "title": "vertical sticky insets match native logical padding and restore author CSS",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 145
+    },
+    {
+      "project": "webkit",
+      "title": "negative vertical scroll cancellation retains its captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 448
+    },
+    {
+      "project": "webkit",
+      "title": "stopping native smooth scroll retains the captured position",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 438
+    },
+    {
+      "project": "webkit",
+      "title": "superseding stop correction cannot overwrite a new destination",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 212
+    }
+  ],
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T16:59:21.485164+00:00",
+  "sourceBase": "e4606d2e13d7bd54c9410604bf12eb17cdb50971",
+  "status": "passed",
+  "scope": "Advanced application-owned Lit SSR helpers and standalone scrolling, with logical-axis fallback correction.",
+  "sourceInputs": {
+    "probes/helper-recipes/components.ts": "ce0a834101c8423949ec3dca2f57d23454f5ca2195cc77be6587b2b26603b14a",
+    "probes/helper-recipes/client.ts": "cd44159d5b88bce6ca35d6653220fbbc3155dfe41d0bedde6310c24f22ae39f5",
+    "probes/helper-recipes/render.mjs": "e702d9938ce90f136a8672fc7e70d9abdb3eb8959934a93101ebc1e580dc4641",
+    "probes/helper-recipes/recipes.spec.ts": "642d5577d692799ebc0a4c71980dc4871e43a582bd3648e43b53ec2279717d68",
+    "probes/helper-recipes/playwright.config.ts": "4bca84f0f3018620362189a0392a536cd39bcc21cd8410f2bf3f04f46db82d94",
+    "probes/helper-recipes/prepare.mjs": "2e933754dc033f78a51916690cfe4117725a5081914e698f7f18b8ee9b1fc575",
+    "probes/helper-recipes/server.mjs": "798c1cf4c71bc8610a2d1658e0200ee3aa59f03a8e781a5f9e9474204c76ea33",
+    "probes/helper-recipes/README.md": "07753837e8654ac3a76e134eef50eefe6ee3c6c90e0a161077c350aef4db0b10",
+    "packages/primitives/src/interactions/scroll-into-view.ts": "6331e60b0b1b593bc118dc4a687adb442576f024d00de11948436ac64a40f534",
+    "packages/primitives/src/interactions/static-styles.ts": "9009da94a42c5ab3528830a58d8d2f9cfbd233bc3c43721cac5c24108083604a",
+    "packages/primitives/src/interactions/optional-slot-presence.ts": "2c07bacb87ac219ecc01ffd5026d7608701d11d48638a5858dbd752b5d53b81d",
+    "packages/primitives/docs/helper-consumers.md": "d9a770643088374ec2b3360f5c131de7a398f004f26eb3dd887231ba669b64fb",
+    "tooling/testing/comprehensive.mjs": "67e00e212765a9cefe6945df5f66e27fe1240dee445e763f7518cee1ee16d5d0",
+    "tooling/testing/comprehensive.test.mjs": "29a81a149ffa65186475e6fb4be361fc98f9944c9c61d212dabc03a177f53033",
+    "tooling/testing/browser-ports.mjs": "a8a5cdf062809e564efec7a4564355e0de08972abbd36049ca70ae4499b4c8f1",
+    "probes/reusable-layers/inventory.json": "4c2afea28ff801b3fea22940812b243ea1a1cabb6990bcb4fba9ad2bfc2957af",
+    "probes/reusable-layers/inventory.test.mjs": "e69248c1752c35b03d46bcaed33b07a3731023efb026229d2492254cd7ad2466",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "apps/docs/tests/scroll-helper.config.ts": "9e01608ce9002aa1739af8d45b3ef11db997f6aed841b7e2c3b4aebc5fc8332e"
+  },
+  "nodeControls": {
+    "passed": 43
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-f0jV7DvL3dXz2u5lyrZUP3qwluump8+OA8heqD0Chl7W+erZyHB9GM6LlytwbpQInWbZ/54nOYhqmuTHxtk0+A==",
+        "shasum": "46bf7aaac1e98b22f92d95bcd4f0ffa959cbbdcb",
+        "setup": {
+          "key": "6b2aeef0cca8f270b0561f0bac72694acc54096aa78ee5d7d1fe87d885176239",
+          "reused": false,
+          "originatingProducer": "2026-10-02T16:49:28.911Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/interactions/static-styles.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/optional-slot-presence.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/scroll-into-view.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-html/private-ssr-support.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/@lit-labs/ssr-client/lib/hydrate-lit-html.js",
+      "node_modules/@lit-labs/ssr-client/lit-element-hydrate-support.js",
+      "node_modules/@lit-labs/ssr-client/index.js",
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "../en-helper-recipes-20261002-04/fixtures/helper-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+      "../en-helper-recipes-20261002-04/fixtures/helper-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/optional-slot-presence.js",
+      "../en-helper-recipes-20261002-04/fixtures/helper-recipes/consumer/components.ts",
+      "../en-helper-recipes-20261002-04/fixtures/helper-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/scroll-into-view.js",
+      "../en-helper-recipes-20261002-04/fixtures/helper-recipes/consumer/client.ts"
+    ],
+    "assets": {
+      "client.js": "c75fcee275d96e4e450d17041b918562279a5b073982e133cb744150ce7fef2c"
+    },
+    "sourceInputs": {
+      "probes/helper-recipes/components.ts": "ce0a834101c8423949ec3dca2f57d23454f5ca2195cc77be6587b2b26603b14a",
+      "probes/helper-recipes/client.ts": "cd44159d5b88bce6ca35d6653220fbbc3155dfe41d0bedde6310c24f22ae39f5",
+      "probes/helper-recipes/render.mjs": "e702d9938ce90f136a8672fc7e70d9abdb3eb8959934a93101ebc1e580dc4641"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Named application-owned Lit SSR/hydration and scrolling scenarios only; full library SSR, manual AT and physical devices remain separate."
+    ]
+  },
+  "fixtureAssets": {
+    "client.js": "c75fcee275d96e4e450d17041b918562279a5b073982e133cb744150ce7fef2c",
+    "index.html": "84469a81217b8b700d82eac43144078847380ac4aab73768cf75759dfa54636e"
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "e4606d2e13d7bd54c9410604bf12eb17cdb50971",
+    "sourceDigest": "sha256:87e5811d33126b36e12ad476a0b20ee09d40cf4552143720cd814e220264580f",
+    "files": 22903
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/helper-recipes-20261002",
+  "ownerRegression": {
+    "run": "/private/tmp/en-helper-owners-20261002-01",
+    "executionSHA256": "cb2fb681001f0972e097ec954f83e8f059f89f1cc6d1e4c670ca8b937a531568",
+    "reportSHA256": "c12d1b8ce31cf7bab7f634020c2b04e01906b3bda1053245c4098415eb339681",
+    "stats": {
+      "startTime": "2026-10-02T16:54:21.262Z",
+      "duration": 182586.236,
+      "expected": 153,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "project": "chromium",
+        "title": "virtual history is bounded, keyed and a regular list with current group context",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1143
+      },
+      {
+        "project": "chromium",
+        "title": "buffering and explicit prepend preserve a visible key, its DOM identity and reading offset",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 541
+      },
+      {
+        "project": "chromium",
+        "title": "focused entries and their sequential neighbors stay mounted when the window scrolls away",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 575
+      },
+      {
+        "project": "chromium",
+        "title": "paged reading mounts every page entry with stable order and does not window during scroll",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 373
+      },
+      {
+        "project": "chromium",
+        "title": "cancelable requests, aborted stale results, retry and keyed append preserve loaded records",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 640
+      },
+      {
+        "project": "chromium",
+        "title": "cancellation and authoritative same-value writes win over interaction proposals",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 254
+      },
+      {
+        "project": "chromium",
+        "title": "external replacement aborts pending requests and invalid duplicate keys fail atomically",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 214
+      },
+      {
+        "project": "chromium",
+        "title": "focused removal and mode/page transitions recover focus within the history",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 422
+      },
+      {
+        "project": "chromium",
+        "title": "data empty mode preserves the authored API when items is removed",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 220
+      },
+      {
+        "project": "chromium",
+        "title": "mobile RTL and themed data history remains bounded with meaningful accessible names",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 7802
+      },
+      {
+        "project": "chromium",
+        "title": "settling while Cancel is focused recovers focus to the exhausted viewport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 240
+      },
+      {
+        "project": "chromium",
+        "title": "an instant tail reveal stays visible after generated overscan rows render",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 716
+      },
+      {
+        "project": "chromium",
+        "title": "an external instant scroll keeps ownership while a generated-row reveal settles",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 712
+      },
+      {
+        "project": "firefox",
+        "title": "virtual history is bounded, keyed and a regular list with current group context",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1222
+      },
+      {
+        "project": "firefox",
+        "title": "buffering and explicit prepend preserve a visible key, its DOM identity and reading offset",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 494
+      },
+      {
+        "project": "firefox",
+        "title": "focused entries and their sequential neighbors stay mounted when the window scrolls away",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 457
+      },
+      {
+        "project": "firefox",
+        "title": "paged reading mounts every page entry with stable order and does not window during scroll",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 629
+      },
+      {
+        "project": "firefox",
+        "title": "cancelable requests, aborted stale results, retry and keyed append preserve loaded records",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 671
+      },
+      {
+        "project": "firefox",
+        "title": "cancellation and authoritative same-value writes win over interaction proposals",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 399
+      },
+      {
+        "project": "firefox",
+        "title": "external replacement aborts pending requests and invalid duplicate keys fail atomically",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 438
+      },
+      {
+        "project": "firefox",
+        "title": "focused removal and mode/page transitions recover focus within the history",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 610
+      },
+      {
+        "project": "firefox",
+        "title": "data empty mode preserves the authored API when items is removed",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 402
+      },
+      {
+        "project": "firefox",
+        "title": "mobile RTL and themed data history remains bounded with meaningful accessible names",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 12616
+      },
+      {
+        "project": "firefox",
+        "title": "settling while Cancel is focused recovers focus to the exhausted viewport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 391
+      },
+      {
+        "project": "firefox",
+        "title": "an instant tail reveal stays visible after generated overscan rows render",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 693
+      },
+      {
+        "project": "firefox",
+        "title": "an external instant scroll keeps ownership while a generated-row reveal settles",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 653
+      },
+      {
+        "project": "webkit",
+        "title": "virtual history is bounded, keyed and a regular list with current group context",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 789
+      },
+      {
+        "project": "webkit",
+        "title": "buffering and explicit prepend preserve a visible key, its DOM identity and reading offset",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 925
+      },
+      {
+        "project": "webkit",
+        "title": "focused entries and their sequential neighbors stay mounted when the window scrolls away",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 536
+      },
+      {
+        "project": "webkit",
+        "title": "paged reading mounts every page entry with stable order and does not window during scroll",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 533
+      },
+      {
+        "project": "webkit",
+        "title": "cancelable requests, aborted stale results, retry and keyed append preserve loaded records",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 691
+      },
+      {
+        "project": "webkit",
+        "title": "cancellation and authoritative same-value writes win over interaction proposals",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 381
+      },
+      {
+        "project": "webkit",
+        "title": "external replacement aborts pending requests and invalid duplicate keys fail atomically",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 335
+      },
+      {
+        "project": "webkit",
+        "title": "focused removal and mode/page transitions recover focus within the history",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 479
+      },
+      {
+        "project": "webkit",
+        "title": "data empty mode preserves the authored API when items is removed",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 347
+      },
+      {
+        "project": "webkit",
+        "title": "mobile RTL and themed data history remains bounded with meaningful accessible names",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 14798
+      },
+      {
+        "project": "webkit",
+        "title": "settling while Cancel is focused recovers focus to the exhausted viewport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 382
+      },
+      {
+        "project": "webkit",
+        "title": "an instant tail reveal stays visible after generated overscan rows render",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 871
+      },
+      {
+        "project": "webkit",
+        "title": "an external instant scroll keeps ownership while a generated-row reveal settles",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 872
+      },
+      {
+        "project": "chromium",
+        "title": "virtual viewport follows host sizing and keeps an unsized token fallback",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 322
+      },
+      {
+        "project": "chromium",
+        "title": "virtual viewport fits a flex allocation and resizes with its container",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 301
+      },
+      {
+        "project": "chromium",
+        "title": "virtual viewport fits a grid allocation and resizes with its container",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 291
+      },
+      {
+        "project": "chromium",
+        "title": "default, manually scrolled and scrollToKey windows retain logical hierarchy and semantic order",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 401
+      },
+      {
+        "project": "chromium",
+        "title": "offscreen keyboard navigation and typeahead use the full expanded model",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 377
+      },
+      {
+        "project": "chromium",
+        "title": "focused rows retain identity after scrolling away and Tab leaves the single composite stop",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 541
+      },
+      {
+        "project": "chromium",
+        "title": "cancelable selection and equal authoritative writes preserve ownership; disabled rows stay nonselectable",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 252
+      },
+      {
+        "project": "chromium",
+        "title": "collapse of an ancestor recovers focus and rejects scrolling to a hidden descendant",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 253
+      },
+      {
+        "project": "chromium",
+        "title": "replacement data retains stable identities, recovers removed focus and leaves outside focus alone",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 267
+      },
+      {
+        "project": "chromium",
+        "title": "RTL branch navigation and phone-width scrolling retain usable geometry",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 301
+      },
+      {
+        "project": "chromium",
+        "title": "full-render mode supports the same keys and switching virtualization preserves selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 343
+      },
+      {
+        "project": "chromium",
+        "title": "data demo delivers bounded SSR rows and hydrates existing row identities",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 339
+      },
+      {
+        "project": "chromium",
+        "title": "live demo toggles full rendering and inserts/removes data while keeping selected keys",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 689
+      },
+      {
+        "project": "chromium",
+        "title": "live demo reports collapsed scroll targets and reveals keyed items after expanding",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 397
+      },
+      {
+        "project": "chromium",
+        "title": "live demo keeps selection and nested hierarchy across inspired themes and narrow RTL",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 7682
+      },
+      {
+        "project": "chromium",
+        "title": "replacing items during selection invalidates the removed proposal (uncanceled)",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 494
+      },
+      {
+        "project": "chromium",
+        "title": "replacing items during selection invalidates the removed proposal (canceled)",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 484
+      },
+      {
+        "project": "chromium",
+        "title": "an explicit equal value write still owns selection after replacement data invalidates the proposed key",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 478
+      },
+      {
+        "project": "chromium",
+        "title": "switching data to authored slots and back releases the old data focus window",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 525
+      },
+      {
+        "project": "chromium",
+        "title": "virtual multiple selection ranges include unmounted rows, survive collapse and expose stable selected semantics",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 498
+      },
+      {
+        "project": "chromium",
+        "title": "authored multiple demo retains selected semantics and node identity through hydration",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 361
+      },
+      {
+        "project": "chromium",
+        "title": "Shift-click ranges span unmounted rows and shrink after scrolling back",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 376
+      },
+      {
+        "project": "chromium",
+        "title": "virtual viewport fits a flex allocation during a synchronous shrink and reveal request",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 295
+      },
+      {
+        "project": "chromium",
+        "title": "virtual viewport fits a grid allocation during a synchronous shrink and reveal request",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 291
+      },
+      {
+        "project": "firefox",
+        "title": "virtual viewport follows host sizing and keeps an unsized token fallback",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 509
+      },
+      {
+        "project": "firefox",
+        "title": "virtual viewport fits a flex allocation and resizes with its container",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 408
+      },
+      {
+        "project": "firefox",
+        "title": "virtual viewport fits a grid allocation and resizes with its container",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 390
+      },
+      {
+        "project": "firefox",
+        "title": "default, manually scrolled and scrollToKey windows retain logical hierarchy and semantic order",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 434
+      },
+      {
+        "project": "firefox",
+        "title": "offscreen keyboard navigation and typeahead use the full expanded model",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 603
+      },
+      {
+        "project": "firefox",
+        "title": "focused rows retain identity after scrolling away and Tab leaves the single composite stop",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 572
+      },
+      {
+        "project": "firefox",
+        "title": "cancelable selection and equal authoritative writes preserve ownership; disabled rows stay nonselectable",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 668
+      },
+      {
+        "project": "firefox",
+        "title": "collapse of an ancestor recovers focus and rejects scrolling to a hidden descendant",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 345
+      },
+      {
+        "project": "firefox",
+        "title": "replacement data retains stable identities, recovers removed focus and leaves outside focus alone",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 368
+      },
+      {
+        "project": "firefox",
+        "title": "RTL branch navigation and phone-width scrolling retain usable geometry",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 384
+      },
+      {
+        "project": "firefox",
+        "title": "full-render mode supports the same keys and switching virtualization preserves selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 541
+      },
+      {
+        "project": "firefox",
+        "title": "data demo delivers bounded SSR rows and hydrates existing row identities",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 451
+      },
+      {
+        "project": "firefox",
+        "title": "live demo toggles full rendering and inserts/removes data while keeping selected keys",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 933
+      },
+      {
+        "project": "firefox",
+        "title": "live demo reports collapsed scroll targets and reveals keyed items after expanding",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 474
+      },
+      {
+        "project": "firefox",
+        "title": "live demo keeps selection and nested hierarchy across inspired themes and narrow RTL",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 10371
+      },
+      {
+        "project": "firefox",
+        "title": "replacing items during selection invalidates the removed proposal (uncanceled)",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 329
+      },
+      {
+        "project": "firefox",
+        "title": "replacing items during selection invalidates the removed proposal (canceled)",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 548
+      },
+      {
+        "project": "firefox",
+        "title": "an explicit equal value write still owns selection after replacement data invalidates the proposed key",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 332
+      },
+      {
+        "project": "firefox",
+        "title": "switching data to authored slots and back releases the old data focus window",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 379
+      },
+      {
+        "project": "firefox",
+        "title": "virtual multiple selection ranges include unmounted rows, survive collapse and expose stable selected semantics",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 358
+      },
+      {
+        "project": "firefox",
+        "title": "authored multiple demo retains selected semantics and node identity through hydration",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 421
+      },
+      {
+        "project": "firefox",
+        "title": "Shift-click ranges span unmounted rows and shrink after scrolling back",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 392
+      },
+      {
+        "project": "firefox",
+        "title": "virtual viewport fits a flex allocation during a synchronous shrink and reveal request",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 384
+      },
+      {
+        "project": "firefox",
+        "title": "virtual viewport fits a grid allocation during a synchronous shrink and reveal request",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 438
+      },
+      {
+        "project": "webkit",
+        "title": "virtual viewport follows host sizing and keeps an unsized token fallback",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 568
+      },
+      {
+        "project": "webkit",
+        "title": "virtual viewport fits a flex allocation and resizes with its container",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 453
+      },
+      {
+        "project": "webkit",
+        "title": "virtual viewport fits a grid allocation and resizes with its container",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 446
+      },
+      {
+        "project": "webkit",
+        "title": "default, manually scrolled and scrollToKey windows retain logical hierarchy and semantic order",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 563
+      },
+      {
+        "project": "webkit",
+        "title": "offscreen keyboard navigation and typeahead use the full expanded model",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 569
+      },
+      {
+        "project": "webkit",
+        "title": "focused rows retain identity after scrolling away and Tab leaves the single composite stop",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 713
+      },
+      {
+        "project": "webkit",
+        "title": "cancelable selection and equal authoritative writes preserve ownership; disabled rows stay nonselectable",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 379
+      },
+      {
+        "project": "webkit",
+        "title": "collapse of an ancestor recovers focus and rejects scrolling to a hidden descendant",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 392
+      },
+      {
+        "project": "webkit",
+        "title": "replacement data retains stable identities, recovers removed focus and leaves outside focus alone",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 399
+      },
+      {
+        "project": "webkit",
+        "title": "RTL branch navigation and phone-width scrolling retain usable geometry",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 405
+      },
+      {
+        "project": "webkit",
+        "title": "full-render mode supports the same keys and switching virtualization preserves selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 487
+      },
+      {
+        "project": "webkit",
+        "title": "data demo delivers bounded SSR rows and hydrates existing row identities",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 447
+      },
+      {
+        "project": "webkit",
+        "title": "live demo toggles full rendering and inserts/removes data while keeping selected keys",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 848
+      },
+      {
+        "project": "webkit",
+        "title": "live demo reports collapsed scroll targets and reveals keyed items after expanding",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 572
+      },
+      {
+        "project": "webkit",
+        "title": "live demo keeps selection and nested hierarchy across inspired themes and narrow RTL",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 14513
+      },
+      {
+        "project": "webkit",
+        "title": "replacing items during selection invalidates the removed proposal (uncanceled)",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 406
+      },
+      {
+        "project": "webkit",
+        "title": "replacing items during selection invalidates the removed proposal (canceled)",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 355
+      },
+      {
+        "project": "webkit",
+        "title": "an explicit equal value write still owns selection after replacement data invalidates the proposed key",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 362
+      },
+      {
+        "project": "webkit",
+        "title": "switching data to authored slots and back releases the old data focus window",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 394
+      },
+      {
+        "project": "webkit",
+        "title": "virtual multiple selection ranges include unmounted rows, survive collapse and expose stable selected semantics",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 375
+      },
+      {
+        "project": "webkit",
+        "title": "authored multiple demo retains selected semantics and node identity through hydration",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 433
+      },
+      {
+        "project": "webkit",
+        "title": "Shift-click ranges span unmounted rows and shrink after scrolling back",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 481
+      },
+      {
+        "project": "webkit",
+        "title": "virtual viewport fits a flex allocation during a synchronous shrink and reveal request",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 424
+      },
+      {
+        "project": "webkit",
+        "title": "virtual viewport fits a grid allocation during a synchronous shrink and reveal request",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 397
+      },
+      {
+        "project": "chromium",
+        "title": "nearest confines scrolling to the collection while platform-default all reveals outer ancestors",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 468
+      },
+      {
+        "project": "chromium",
+        "title": "inline alignment follows logical ltr edges inside a horizontal scrollport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 688
+      },
+      {
+        "project": "chromium",
+        "title": "inline alignment follows logical rtl edges inside a horizontal scrollport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 680
+      },
+      {
+        "project": "chromium",
+        "title": "smooth produces intermediate scroll positions and retains focused selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 2781
+      },
+      {
+        "project": "chromium",
+        "title": "auto produces intermediate scroll positions and retains focused selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 2774
+      },
+      {
+        "project": "chromium",
+        "title": "instant bypasses CSS smooth behavior without a sequence of intermediate positions",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 591
+      },
+      {
+        "project": "chromium",
+        "title": "keyboard interruption stops an animated reveal and a newer request supersedes it",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1464
+      },
+      {
+        "project": "chromium",
+        "title": "the collapsed scrollToKey demo follows the collection and retains editable options",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 909
+      },
+      {
+        "project": "chromium",
+        "title": "presentation invalidation queued with a reveal preserves its prepared destination",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 425
+      },
+      {
+        "project": "chromium",
+        "title": "a later programmatic scroll owns the viewport while an accepted reveal is preparing",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 709
+      },
+      {
+        "project": "firefox",
+        "title": "nearest confines scrolling to the collection while platform-default all reveals outer ancestors",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 469
+      },
+      {
+        "project": "firefox",
+        "title": "inline alignment follows logical ltr edges inside a horizontal scrollport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 663
+      },
+      {
+        "project": "firefox",
+        "title": "inline alignment follows logical rtl edges inside a horizontal scrollport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1037
+      },
+      {
+        "project": "firefox",
+        "title": "smooth produces intermediate scroll positions and retains focused selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1608
+      },
+      {
+        "project": "firefox",
+        "title": "auto produces intermediate scroll positions and retains focused selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1587
+      },
+      {
+        "project": "firefox",
+        "title": "instant bypasses CSS smooth behavior without a sequence of intermediate positions",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 628
+      },
+      {
+        "project": "firefox",
+        "title": "keyboard interruption stops an animated reveal and a newer request supersedes it",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1321
+      },
+      {
+        "project": "firefox",
+        "title": "the collapsed scrollToKey demo follows the collection and retains editable options",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 988
+      },
+      {
+        "project": "firefox",
+        "title": "presentation invalidation queued with a reveal preserves its prepared destination",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 383
+      },
+      {
+        "project": "firefox",
+        "title": "a later programmatic scroll owns the viewport while an accepted reveal is preparing",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 591
+      },
+      {
+        "project": "webkit",
+        "title": "nearest confines scrolling to the collection while platform-default all reveals outer ancestors",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 584
+      },
+      {
+        "project": "webkit",
+        "title": "inline alignment follows logical ltr edges inside a horizontal scrollport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 725
+      },
+      {
+        "project": "webkit",
+        "title": "inline alignment follows logical rtl edges inside a horizontal scrollport",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 733
+      },
+      {
+        "project": "webkit",
+        "title": "smooth produces intermediate scroll positions and retains focused selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 960
+      },
+      {
+        "project": "webkit",
+        "title": "auto produces intermediate scroll positions and retains focused selection",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 943
+      },
+      {
+        "project": "webkit",
+        "title": "instant bypasses CSS smooth behavior without a sequence of intermediate positions",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 692
+      },
+      {
+        "project": "webkit",
+        "title": "keyboard interruption stops an animated reveal and a newer request supersedes it",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1538
+      },
+      {
+        "project": "webkit",
+        "title": "the collapsed scrollToKey demo follows the collection and retains editable options",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1024
+      },
+      {
+        "project": "webkit",
+        "title": "presentation invalidation queued with a reveal preserves its prepared destination",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 538
+      },
+      {
+        "project": "webkit",
+        "title": "a later programmatic scroll owns the viewport while an accepted reveal is preparing",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 820
+      },
+      {
+        "project": "chromium",
+        "title": "distant native smooth list at 1440px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 3727
+      },
+      {
+        "project": "chromium",
+        "title": "distant native smooth table at 1440px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 3748
+      },
+      {
+        "project": "chromium",
+        "title": "distant native smooth list at 390px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 3744
+      },
+      {
+        "project": "chromium",
+        "title": "distant native smooth table at 390px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 3745
+      },
+      {
+        "project": "firefox",
+        "title": "distant native smooth list at 1440px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 2768
+      },
+      {
+        "project": "firefox",
+        "title": "distant native smooth table at 1440px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 2749
+      },
+      {
+        "project": "firefox",
+        "title": "distant native smooth list at 390px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 2955
+      },
+      {
+        "project": "firefox",
+        "title": "distant native smooth table at 390px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 2768
+      },
+      {
+        "project": "webkit",
+        "title": "distant native smooth list at 1440px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1234
+      },
+      {
+        "project": "webkit",
+        "title": "distant native smooth table at 1440px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1252
+      },
+      {
+        "project": "webkit",
+        "title": "distant native smooth list at 390px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1271
+      },
+      {
+        "project": "webkit",
+        "title": "distant native smooth table at 390px reveal keeps the visible window rendered",
+        "status": "passed",
+        "retry": 0,
+        "durationMs": 1272
+      }
+    ]
+  },
+  "earlierAttempts": [
+    {
+      "run": "/private/tmp/en-helper-recipes-20261002-01",
+      "status": "failed",
+      "boundary": "Copied Node fixture environment assertion corrected; no browser ran."
+    },
+    {
+      "run": "/private/tmp/en-helper-recipes-20261002-02",
+      "status": "passed",
+      "boundary": "Initial93 cases; vertical/native comparison subsequently expanded."
+    },
+    {
+      "run": "/private/tmp/en-helper-recipes-20261002-03",
+      "status": "failed",
+      "boundary": "30 passed,1 failed,68 not run. Forced fallback vertical-rl start expected native[-165,660],got[0,705]. Corrected logical axes, native clamping, logical insets and negative smooth cancellation."
+    }
+  ],
+  "metadataFreshnessBeforeChange": {
+    "command": "tooling/test-pipeline/with-toolchain.sh node tooling/metadata/generate-elements.ts --check",
+    "status": "passed",
+    "manifestDigest": "sha256:6ba19ff673c439966e0056e0f1ea5d72afae47595efed4c6a967663d6a4d8bcb"
+  },
+  "limitations": [
+    "All111 public entries now have bounded named-scenario qualification. Inventory coverage is not full-goal completion.",
+    "The two SSR helper protocols remain internal renderer/controller coordination; their metadata is not a supported application-authored attribute API.",
+    "Native alignment comparison covers named vertical/sideways and RTL scrollports, not arbitrary transforms, zoom or all document modes.",
+    "Manual AT, physical touch, retail browsers, complete SSR/hydration and separate-owner obligations remain. Historical external CSS-authoring rerun stays retired, never passed.",
+    "Inventory, docs and owner pathway were finalized after the helper browser run; final integrity qualification validates the finalized source bindings."
+  ],
+  "finalQualification": {
+    "run": "/private/tmp/en-helper-final-20261002-02",
+    "status": "passed",
+    "nodeChecksPassed": 179,
+    "executionSHA256": "1ade0bc4b130dc533ee29457c3ac721d7b37a7fe6975c6ddab089b071e739b4c",
+    "reportSHA256": "f5f3c8926d866ba7a3a9357dbabda67c4d293b748f9872eeda6d59c97dd3ccc9",
+    "stats": {
+      "startTime": "2026-10-02T17:02:14.441Z",
+      "duration": 25336.132999999998,
+      "expected": 111,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "earlierAttempt": {
+      "run": "/private/tmp/en-helper-final-20261002-01",
+      "status": "failed",
+      "reason": "New ledger assertion used status instead of the existing inventory qualification field;178 passed,1 failed. Corrected field lookup."
+    }
+  }
+}

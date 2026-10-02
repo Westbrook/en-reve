@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "e4606d2e13d7bd54c9410604bf12eb17cdb50971",
-  "exportedAt": "2026-10-02T16:32:50.938354+00:00",
+  "sourceCommit": "e29ffc7c0c006d96f186d9ab9faa753bccab92b8",
+  "exportedAt": "2026-10-02T17:03:59.399875+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5687,
-  "includedBytes": 153329756,
-  "qualification": "Ten color/style-discovery entries have144 passing browser cases across two deliveries and three engines. Portable plane CSS is independent of picker CSS. Fresh production build passes. Inventory108/111;3 helper entries and platform/manual/owner scope remain.",
-  "latestUpdate": ".source-export/updates/color-recipes-20261002.json",
+  "includedFiles": 5705,
+  "includedBytes": 153593585,
+  "qualification": "Three helper entries have111 passing browser cases and153 existing owner cases across three engines. Logical scroll axes, insets and negative smooth cancellation corrected. Fresh production build passes. Inventory111/111 has bounded qualification; platform/manual/owner scope remains.",
+  "latestUpdate": ".source-export/updates/helper-recipes-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

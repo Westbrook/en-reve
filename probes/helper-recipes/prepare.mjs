@@ -1,0 +1,26 @@
+import assert from 'node:assert/strict';
+import {preparedPackages} from '../../tooling/evidence/packed-setup.mjs';
+import {execFileSync} from 'node:child_process';
+import {mkdir,readFile,writeFile,readdir,symlink,cp,realpath} from 'node:fs/promises';
+import {resolve,join,relative,sep,dirname} from 'node:path';
+import {createHash} from 'node:crypto';
+import {build} from '../../showcases/performance/node_modules/esbuild/lib/main.js';
+const root=resolve(import.meta.dirname,'../..'),out=resolve(process.env.EN_HELPER_RECIPES_OUT??'artifacts/helper-recipes');
+await mkdir(dirname(out),{recursive:true});await mkdir(out,{recursive:false});const stage=join(out,'consumer'),site=join(out,'site'),archives=join(out,'packages');
+for(const path of [join(stage,'node_modules'),site,archives])await mkdir(path,{recursive:true});
+const packages=await preparedPackages(['primitives'],archives);
+for(const archive of packages){const dest=join(stage,'node_modules',archive.name);await mkdir(dest,{recursive:true});execFileSync('tar',['-xzf',join(archives,archive.filename),'-C',dest,'--strip-components=1']);}
+for(const name of await readdir(join(root,'node_modules')))if(name!=='@en-reve'&&!name.startsWith('.'))await symlink(join(root,'node_modules',name),join(stage,'node_modules',name));
+await writeFile(join(stage,'package.json'),'{"type":"module"}\n');
+for(const file of ['components.ts','client.ts','render.mjs'])await cp(join(import.meta.dirname,file),join(stage,file));
+const files=execFileSync(process.execPath,[join(root,'node_modules/typescript/bin/tsc'),'--ignoreConfig','--strict','--noEmit','--skipLibCheck','--module','NodeNext','--moduleResolution','NodeNext','--target','ES2022','--listFiles','components.ts','client.ts'],{cwd:stage,encoding:'utf8'});
+await writeFile(join(out,'type-files.txt'),files);const ownTypes=files.trim().split('\n').filter(file=>file.includes('/@en-reve/'));assert(ownTypes.length>0);
+for(const path of ownTypes)assert((await realpath(path)).startsWith(join(stage,'node_modules/@en-reve')+sep));
+const result=await build({entryPoints:{client:join(stage,'client.ts')},outdir:site,bundle:true,splitting:true,format:'esm',platform:'browser',target:'es2022',minify:true,metafile:true});
+const inputs=Object.keys(result.metafile.inputs);assert(!inputs.some(path=>/\/packages\/[^/]+\/src\//.test(path)||path.includes('/@en-reve/elements/')));
+for(const path of inputs.filter(path=>path.includes('/@en-reve/')))assert((await realpath(resolve(root,path))).startsWith(join(stage,'node_modules/@en-reve')+sep));
+await build({entryPoints:[join(stage,'components.ts')],outfile:join(stage,'components-server.mjs'),bundle:true,packages:'external',format:'esm',platform:'node',target:'es2022'});
+execFileSync(process.execPath,[join(stage,'render.mjs'),join(site,'index.html')],{cwd:stage});
+const hash=bytes=>createHash('sha256').update(bytes).digest('hex');const assets={};for(const [path] of Object.entries(result.metafile.outputs))assets[relative(site,resolve(root,path))]=hash(await readFile(resolve(root,path)));
+await writeFile(join(out,'metafile.json'),JSON.stringify(result.metafile,null,2)+'\n');await writeFile(join(out,'packed.json'),JSON.stringify({schemaVersion:1,packages:packages.map(({name,integrity,shasum,setup})=>({name,integrity,shasum,setup})),types:{status:'passed',packedDeclarations:ownTypes.map(path=>relative(stage,path))},inputs,assets,sourceInputs:Object.fromEntries(await Promise.all(['probes/helper-recipes/components.ts','probes/helper-recipes/client.ts','probes/helper-recipes/render.mjs'].map(async path=>[path,hash(await readFile(join(root,path)))]))),limits:['Alternate compositions of named entries only. No elements package or workspace source aliases.','Named application-owned Lit SSR/hydration and scrolling scenarios only; full library SSR, manual AT and physical devices remain separate.']},null,2)+'\n');
+console.log(JSON.stringify({out,types:'passed',inputs:inputs.length}));

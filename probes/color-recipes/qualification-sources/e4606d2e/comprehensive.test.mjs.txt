@@ -257,10 +257,3 @@ test('color recipe pathway retains isolated preparation, declarations and browse
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/color-recipes/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:color-recipes').environment.EN_COLOR_RECIPES_OUT,'$RUN/fixtures/color-recipes');
 });
-
-test('helper recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['helper-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:helper-recipes','browser:probes/helper-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/helper-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:helper-recipes').environment.EN_HELPER_RECIPES_OUT,'$RUN/fixtures/helper-recipes');
-});
