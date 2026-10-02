@@ -27,7 +27,7 @@ It is an evidence index, not a new browser-support promise or a completed test r
 
 | Product on macOS26.6.1 arm64 | Consumer checks | Production workflow checks | Remaining scope |
 | --- | --- | --- | --- |
-| Chrome154.0.8037.95 |60 passes |26 passes,1 existing skip |Newer154.0.8037.98 and preceding retail line; other OS/manual coverage |
+| Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
 | Firefox157.0 and156.0.1 |30 native-input passes each |Not yet qualified |Broader native workflows, other OS/manual coverage |
 | Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
@@ -224,3 +224,23 @@ as a versioned automation distribution and [managed rollback](https://support.go
 as an administrator operation. No retail archive was acquired, no updater policy
 was changed, and a cached testing build is not relabeled as retail coverage.
 Safari and the pending physical/manual questions remain open.
+
+## Isolated current Chrome stable acquisition
+
+The [framework receipt](../probes/framework-consumption/verification-chrome-stable-20261002.json)
+records 240 passes: 60 on isolated Chrome 154.0.8037.98 and 180 on the three
+pinned engines. Ten fresh packed installations and declaration compilations
+passed. The [workflow receipt](../apps/docs/tests/verification-chrome-stable-20261002.json)
+adds 26 passes with one existing Chromium-only viewport skip. Full app
+inventories and production workflow inputs stayed unchanged across execution.
+
+The official stable DMG was mounted read-only and copied to a temporary test
+location. Google code-signature verification passed. Its SHA256 records local
+archive identity; no published checksum comparison is claimed. Installed
+browsers, user profiles, updater policies and security settings were unchanged.
+The earlier 154.0.8037.95 receipts remain historical exact-version evidence.
+
+VersionHistory identifies 153.0.8010.53 as the preceding broad stable reference
+(100% and pinnable), whereas 153.0.8010.55 was a 0.5% control rollout. Prior retail
+Chrome still requires an isolated compatible distribution/environment. Safari,
+other OSes, physical devices and remaining actual speech/IME coverage stay open.

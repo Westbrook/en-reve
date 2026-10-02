@@ -123,10 +123,13 @@ test('product qualification retains exact distributions and bounded acceptance',
  for (const evidence of ledger.evidence.filter(e => e.kind === 'automated-product-and-engine')) {
   const receipt = await json(evidence.path);
   assert.equal(receipt.status, 'passed');
-  assert.equal(receipt.stats.expected, Object.keys(receipt.consumers).length * 6 * 5);
+  assert.equal(receipt.stats.expected, Object.keys(receipt.consumers).length * 6 * (3 + receipt.products.length));
   for (const key of ['unexpected','flaky','skipped']) assert.equal(receipt.stats[key], 0);
   assert.equal(receipt.runtimeDistributionUnchangedAfterRun, true);
-  assert.equal(receipt.products.length, 2);
+  assert(receipt.products.length > 0);
+  assert.deepEqual(Object.keys(receipt.browsers).filter(name => !name.startsWith('product-')).sort(), ['chromium','firefox','webkit']);
+  assert.equal(new Set(receipt.products.map(p => p.project)).size, receipt.products.length);
+  assert.deepEqual(receipt.products.map(p => p.project).sort(), Object.keys(receipt.browsers).filter(name => name.startsWith('product-')).sort());
   for (const product of receipt.products) {
     assert.equal(product.passed, Object.keys(receipt.consumers).length * 6);
     assert.equal(product.headless, true);
@@ -202,17 +205,18 @@ test('actual product workflows retain exact sources, distribution identity and e
  for(const evidence of ledger.evidence.filter(e=>e.kind==='automated-product-workflows')) {
  const receipt=await json(evidence.path);
  assert.equal(receipt.status,'passed');
- assert.equal(receipt.stats.expected,52);
- assert.equal(receipt.stats.skipped,2);
+ assert.equal(receipt.stats.expected,26 * receipt.products.length);
+ assert.equal(receipt.stats.skipped,receipt.products.length);
  for(const key of ['unexpected','flaky'])assert.equal(receipt.stats[key],0);
  assert.equal(receipt.workers,1);assert.equal(receipt.retries,0);
- assert.equal(receipt.products.length,2);
+ assert(receipt.products.length > 0);
+ assert.equal(new Set(receipt.products.map(p=>p.project)).size,receipt.products.length);
  for(const product of receipt.products){assert.equal(product.passed,26);assert.equal(product.skipped,1);assert(product.distributionInventoryEntries>100);assert.match(product.distributionInventorySHA256,/^[a-f0-9]{64}$/);}
  assert.equal(receipt.runtimeDistributionUnchangedAfterRun,true);
  assert.equal(receipt.sourceAndInputsUnchangedAfterRun,true);
  assert(receipt.distInventoryEntries>1000);
  for(const [path,digest] of Object.entries(receipt.sourceHashes))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
- assert.equal(receipt.cases.length,54);
+ assert.equal(receipt.cases.length,27 * receipt.products.length);
  assert(receipt.cases.filter(c=>c.status==='skipped').every(c=>c.titlePath.at(-1).startsWith('narrow portrait')));
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
  }
@@ -258,4 +262,29 @@ test('isolated Edge provenance covers exact current and preceding distributions'
  const workflow=await json('apps/docs/tests/verification-edge-lines-20261002.json');
  assert.equal(workflow.acquisitionReceiptSHA256,evidence.sha256);
  assert.equal(ledger.conditions.find(c=>c.id==='browser-previous').status,'partial');
+});
+
+
+test('isolated Chrome stable receipt preserves signed retail provenance and exact source identity', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='chrome-stable-framework-20261002');
+ const receipt=await json(evidence.path);
+ assert.equal(receipt.products.length,1);
+ const product=receipt.products[0];
+ assert.equal(product.product,'Google Chrome');
+ assert.equal(product.version,'154.0.8037.98');
+ assert.equal(receipt.acquisition.version,product.version);
+ assert.equal(receipt.acquisition.distributionPath,product.distributionPath);
+ assert.equal(new URL(receipt.acquisition.archiveURL).hostname,'dl.google.com');
+ assert.equal(receipt.acquisition.publishedChecksum,null);
+ assert.match(receipt.acquisition.archiveSHA256,/^[a-f0-9]{64}$/);
+ assert(receipt.acquisition.archiveBytes>100000000);
+ const checks=receipt.acquisition.signatureChecks;
+ assert(checks.every(c=>c.exitCode===0));
+ assert(checks.some(c=>c.command.includes('--verify')&&c.command.includes('--deep')&&c.command.includes('--strict')));
+ assert(checks.some(c=>c.stderr.includes('TeamIdentifier=EQHXZ8M8AV')));
+ for(const [path,digest] of Object.entries(receipt.sources))assert.equal(createHash('sha256').update(await read('probes/framework-consumption/'+path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.toolingSources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ const workflow=await json('apps/docs/tests/verification-chrome-stable-20261002.json');
+ assert.equal(workflow.acquisitionReceiptSHA256,evidence.sha256);
+ assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
 });

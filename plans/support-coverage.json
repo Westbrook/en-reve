@@ -331,6 +331,20 @@
       "path": "apps/docs/tests/verification-edge-lines-20261002.json",
       "sha256": "7d61cfbf4627f869f0473ae1790442f37626da859148a62f87084187b94ce40a",
       "scope": "52 production workflow passes across isolated current/preceding Edge;2 retained Chromium-only profile skips. Qualified production build reused with before/after input identity; no physical/manual acceptance."
+    },
+    {
+      "id": "chrome-stable-framework-20261002",
+      "kind": "automated-product-and-engine",
+      "path": "probes/framework-consumption/verification-chrome-stable-20261002.json",
+      "sha256": "c17953ea17deb2a316553281b017a900a0eb788d1c1f564cff679a3351a505b0",
+      "scope": "240 fresh packed-consumer passes:60 on isolated retail Chrome154.0.8037.98 and180 on pinned engines;10 fresh declaration compilations. Official download and Google code signature verified; archive SHA256 is local identity, not publisher checksum comparison."
+    },
+    {
+      "id": "chrome-stable-workflows-20261002",
+      "kind": "automated-product-workflows",
+      "path": "apps/docs/tests/verification-chrome-stable-20261002.json",
+      "sha256": "64c149d4de902d793c8d3d4a52d25612b2b4eef07f8e1198a22391b9f303332c",
+      "scope": "26 production workflow passes on isolated Chrome154.0.8037.98;1 existing Chromium-only profile skip. Qualified production build reused; exact app/input inventories unchanged. No physical/manual acceptance."
     }
   ],
   "conditions": [
@@ -378,10 +392,12 @@
         "workflow-products-20261002",
         "firefox-lines-20261002",
         "edge-framework-lines-20261002",
-        "edge-workflow-lines-20261002"
+        "edge-workflow-lines-20261002",
+        "chrome-stable-framework-20261002",
+        "chrome-stable-workflows-20261002"
       ],
-      "gap": "Chrome154.0.8037.95 passes consumer and production workflows; newer154.0.8037.98 is now listed at100% in the official Mac ARM64 stable release group and unqualified. Isolated Edge154.0.4258.53 passes60 consumer and26 workflow checks. Firefox157 passes30 native-input checks. Safari27 remains hidden; broader OS/native workflow/manual scope remains.",
-      "nextAction": "Resolve Safari visibility after desktop-state clarification. Qualify newer Chrome patch and broader actual Firefox workflows; retain actual OS/device/manual gaps."
+      "gap": "Isolated Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes30 native-input checks. Safari27 remains hidden; broader OS/native workflow/manual scope remains.",
+      "nextAction": "Resolve Safari visibility after desktop-state clarification. Qualify broader actual Firefox workflows; retain actual OS/device/manual gaps."
     },
     {
       "id": "browser-previous",
@@ -571,9 +587,10 @@
         "https://versionhistory.googleapis.com/v1/chrome/platforms/mac_arm64/channels/stable/versions?filter=version%3E%3D153,version%3C155&order_by=version%20desc",
         "https://www.chromium.org/getting-involved/download-chromium/",
         "https://support.google.com/chrome/a/answer/7591084?hl=en",
-        "https://versionhistory.googleapis.com/v1/chrome/platforms/mac_arm64/channels/stable/versions/all/releases?filter=version%3E%3D153,version%3C154&order_by=version%20desc"
+        "https://versionhistory.googleapis.com/v1/chrome/platforms/mac_arm64/channels/stable/versions/all/releases?filter=version%3E%3D153,version%3C154&order_by=version%20desc",
+        "https://dl.google.com/chrome/mac/universal/stable/GGRO/googlechrome.dmg"
       ],
-      "note": "Official Mac ARM64 VersionHistory lists154.0.8037.98 at100% in fractionGroup194 fromOctober2. Installed154.0.8037.95 was qualified earlier. Highest listed153.0.8010.55 was only a0.5% control rollout, endedSeptember30; the latest preceding153 patch observed at100% and pinnable was153.0.8010.53, selected as the preceding broad-release reference.155 early Stable is a separate small rollout datedSeptember30. General154 and preceding153 coverage remain the current ledger window pending exact distribution acquisition; no retail archive found. Google documents Chrome-for-Testing as its versioned automation flavor and managed rollback as a separate admin operation. No host rollback or updater changes performed.",
+      "note": "Official Mac ARM64 VersionHistory records154.0.8037.98 at100% and pinnable in fractionGroup194. Official retail stable DMG copied in isolation, Google app signature verified,60 consumer and26 production workflow cases passed. Local DMG hash is identity, not a published checksum match. Previous broad representative153.0.8010.53 was pinnable100%; higher153.0.8010.55 was only a0.5% control rollout. No prior retail archive acquired, no updater/rollback changes. Chrome-for-Testing remains a distinct distribution; earlier154.0.8037.95 evidence is preserved.",
       "sourceSnapshots": {
         "en-chrome-versions-20261002.json": "fb31d9854964b34241db9ecdbb6b7162b1f0c53e7e2bd80cb37637e32551e445",
         "en-chrome-153-all-releases-20261002.json": "42bcb02d83c9ba89494a523971956cbfce3e2ea37146a54cdf937ba7441017ea",
@@ -592,6 +609,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T04:18:32.849975+00:00",
+  "updatedAt": "2026-10-02T04:32:55.031013+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

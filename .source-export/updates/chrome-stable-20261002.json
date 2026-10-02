@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-02T04:34:40.993789+00:00",
+  "sourceCommit": "ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5",
+  "previousSourceMain": "a2edb022a380992c342d1a2ebae14c189bb97f77",
+  "taskPaths": [
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/verification-chrome-stable-20261002.json",
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/framework-consumption/README.md",
+    "probes/framework-consumption/verification-chrome-stable-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Current retail Chrome154.0.8037.98 qualified from an isolated official signed app:240 packed-consumer checks across4 subjects,10 declaration compilations,26 product workflow passes and1 existing skip.106 tooling checks pass. Prior retail Chrome, Safari, other OS/device/manual gaps remain explicit.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

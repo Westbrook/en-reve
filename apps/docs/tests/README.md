@@ -173,3 +173,13 @@ build and fresh Playwright profiles. Full app and input inventories remained
 unchanged. Exact official package/hash/signature provenance is linked in the
 receipt. No manual/physical acceptance, other OS or complete product matrix is
 implied. Existing installed-product receipts remain unchanged.
+
+### Current Chrome stable workflow qualification
+
+[October 2 Chrome receipt](verification-chrome-stable-20261002.json) records 26
+passes and one existing Chromium-only viewport skip on isolated retail Chrome
+154.0.8037.98. It exercises the same production workflow/selection specs with
+the qualified build and fresh profiles. Full app inventories and source/build
+inputs stayed unchanged. The linked consumer receipt records official download
+and Google code-signature provenance. This adds exact-version evidence without
+replacing historical receipts or implying other OS/device/manual acceptance.

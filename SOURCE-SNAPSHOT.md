@@ -90,3 +90,7 @@ Local main `7df6ba1bc6f41b54dff7df5c1f22ce51014d5bbc` qualifies30 native-input c
 ## Current and preceding Edge qualification
 
 Local main `a2edb022a380992c342d1a2ebae14c189bb97f77` qualifies official isolated Edge153.0.4234.48 and154.0.4258.53:60 consumer checks and26 workflow checks per product. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Current Chrome stable qualification
+
+Local main `ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5` qualifies official isolated Chrome154.0.8037.98:60 consumer checks and26 workflow checks. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

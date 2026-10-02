@@ -203,3 +203,13 @@ payloads; no library or test assertions changed. Package provenance, checksum,
 macOS signature verification and full distribution identities are in the receipt.
 No installer scripts ran and installed browsers/profiles were not replaced.
 This retains the prior receipts and leaves other products/OS/manual coverage open.
+
+## Isolated current Chrome stable
+
+[October 2 Chrome receipt](verification-chrome-stable-20261002.json) records 240
+passes: 60 on official retail Chrome 154.0.8037.98 and 180 on the three pinned
+engines, with ten fresh packed installations/declaration compilations. The
+existing `EN_BROWSER_PRODUCTS` manifest selects the isolated signed app and
+fresh profiles. Local archive identity and signature verification are recorded;
+there is no publisher-checksum match claim. Earlier exact-version receipts are
+preserved, and previous retail Chrome, other OSes and manual scope remain open.
