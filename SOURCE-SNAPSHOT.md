@@ -182,3 +182,7 @@ Local main `f186cb6fb3c42d477e5f20c11f279a3bd238cd6a` adds the qualified gh-page
 ## Packed projection consumers
 
 Local main `661aac8552dd939c65e18ae23c40a3ea2b3657f6` qualifies four public navigation/selection projection entries in application-owned native compositions. See `probes/projection-recipes/README.md` for36 browser cases, exact scope and remaining obligations.
+
+## Packed form consumers
+
+Local main `9a84dcebf0dbd1ccd99a468f49ffb6c2ebf74f12` qualifies six public form projection/constraint/style entries in application-owned native compositions. See `probes/form-recipes/README.md` for72 browser cases, exact scope and remaining obligations.

@@ -37,3 +37,8 @@ projection entries with36 native browser cases. The maintained inventory now has
 34/110 entries qualified for named scenarios;76 remain pending. All59 displayed
 copied examples also have their separate consumer receipts in the docs tests.
 Neither count substitutes for the remaining platform/manual/owner obligations.
+
+The [packed form recipes](../form-recipes/README.md) add six entries across authored
+steps/validation projection, file constraints, and both form-navigation/file-upload
+style deliveries.72 three-engine cases bring named-scenario coverage to40/110;
+70 entries and the separately recorded platform/manual obligations remain open.

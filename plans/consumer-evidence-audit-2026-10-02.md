@@ -183,3 +183,14 @@ isolated tarballs and declarations. The application owns native links/radios,
 selection transactions and validation recovery; no delivered elements are imported.
 This brings named public-entry coverage to34/110, leaving76 entries pending.
 SSR, other descriptor modes and the broader platform/manual/owner scope remain.
+
+## Native form composition checkpoint
+
+The [form recipes](../probes/form-recipes/README.md) qualify six further public
+entries with72 cases across both stylesheet deliveries and three engines.
+Rich step/validation projection and actual File/FormData interactions run in
+application-owned consumers using only packed imports.40/110 entries now have
+bounded scenario receipts;70 remain. Original projection receipt inputs are
+retained byte-for-byte before additive pathway/inventory changes. OS file chooser
+UI, physical drag/drop, SSR/hydration and platform/manual/owner acceptance are not
+inferred from this result. No runtime implementation changed.

@@ -1,0 +1,667 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T12:22:39.116400+00:00",
+  "sourceBase": "661aac8552dd939c65e18ae23c40a3ea2b3657f6",
+  "status": "passed",
+  "scope": "Six public entries in application-owned step, validation-link and native File/FormData compositions; Lit and portable CSS.",
+  "sourceInputs": {
+    "probes/form-recipes/recipes.ts": "e64b0d8efc8062b020550ea0ae50d151d4b46d79ae72c13abbaa23ebc7869ea2",
+    "probes/form-recipes/recipes.html": "adb2fe06fe54863af67b3b868b15c7e0af8eff3f54626e638f778e0fbd694d33",
+    "probes/form-recipes/recipes.spec.ts": "4a2fa854b9bfe84f1fe2f6efd3721b992f6b1eafd2a6e12fc97d17de64867e82",
+    "probes/form-recipes/playwright.config.ts": "52ef342849fc290a64c585274ddc6faddabbc877aa58992af0c212d3af711edf",
+    "probes/form-recipes/prepare.mjs": "38a6c41527f7e470a8c8791f76bc18c1819267e98d1ccd43d1766511aa1a97bc",
+    "probes/form-recipes/server.mjs": "b4109d055815681bf6172c43a3fae58ea9a71d79c026720fc97ceafb2a64dc88",
+    "tooling/testing/comprehensive.mjs": "8a060f2254667a5ae7a33e29dc537286f85083e07ab6ed4e640ad2f1c1b46212",
+    "tooling/testing/comprehensive.test.mjs": "9f90b6ab5333e2b6de2c67664d93d079950bbf963dc625518a820426eda615a9",
+    "tooling/testing/browser-ports.mjs": "fec4fb536f73ca3421b49a14171c77d63541c2f2302482f82ffda25c0f2ea050",
+    "probes/reusable-layers/inventory.json": "cc145ca2fcd38e04dad51f7fe95fdad54359fb7b990d191061558caaddeb5550",
+    "probes/reusable-layers/inventory.test.mjs": "316400c53b5f7aaccd8041eb6c098b99c4f29f40831cfd18b9259f51ae7f51c5",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "run": "/private/tmp/en-form-recipes-20261002-05",
+  "executionSHA256": "302120ab989e5f39da4cc7ba42c9501634e0ba05db5926e9630e8758ed6c4ba5",
+  "reportSHA256": "0a0f371b85bb7cf01bc0a1392f1a52691361ba05a265c98cf3e42753d5d92dcb",
+  "stats": {
+    "startTime": "2026-10-02T12:19:46.148Z",
+    "duration": 17071.264,
+    "expected": 72,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "steps project rich labels, native disabled/current semantics and cancelable selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 898
+    },
+    {
+      "project": "chromium",
+      "title": "steps preserve focused controls and label identity across mutations and silent author writes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 356
+    },
+    {
+      "project": "chromium",
+      "title": "steps reject invalid labels and stale transactions, then recover",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 391
+    },
+    {
+      "project": "chromium",
+      "title": "authored steps hide, reorder, disconnect and transfer without retaining foreign slots",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 294
+    },
+    {
+      "project": "chromium",
+      "title": "validation projection preserves native anchor activation, focus, listeners and authored history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 124
+    },
+    {
+      "project": "chromium",
+      "title": "validation projection handles hidden, invalid href and reconnect without cloning anchors",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 111
+    },
+    {
+      "project": "chromium",
+      "title": "native file picker accepts batches and submits actual File bytes with independent reset",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 144
+    },
+    {
+      "project": "chromium",
+      "title": "file constraints reject the whole mixed batch and report every applicable reason",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 94
+    },
+    {
+      "project": "chromium",
+      "title": "native file transactions stage FormData, veto, honor author authority and remove separately",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 112
+    },
+    {
+      "project": "chromium",
+      "title": "disabled file control rejects drop and submission; reset remains authoritative",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 105
+    },
+    {
+      "project": "chromium",
+      "title": "portable and Lit styles honor scoped pins, native focus and drag feedback",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 84
+    },
+    {
+      "project": "chromium",
+      "title": "long names remain readable at enlarged narrow RTL with visible forced-color boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 74
+    },
+    {
+      "project": "firefox",
+      "title": "steps project rich labels, native disabled/current semantics and cancelable selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 773
+    },
+    {
+      "project": "firefox",
+      "title": "steps preserve focused controls and label identity across mutations and silent author writes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208
+    },
+    {
+      "project": "firefox",
+      "title": "steps reject invalid labels and stale transactions, then recover",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 205
+    },
+    {
+      "project": "firefox",
+      "title": "authored steps hide, reorder, disconnect and transfer without retaining foreign slots",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 202
+    },
+    {
+      "project": "firefox",
+      "title": "validation projection preserves native anchor activation, focus, listeners and authored history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223
+    },
+    {
+      "project": "firefox",
+      "title": "validation projection handles hidden, invalid href and reconnect without cloning anchors",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 193
+    },
+    {
+      "project": "firefox",
+      "title": "native file picker accepts batches and submits actual File bytes with independent reset",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 211
+    },
+    {
+      "project": "firefox",
+      "title": "file constraints reject the whole mixed batch and report every applicable reason",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191
+    },
+    {
+      "project": "firefox",
+      "title": "native file transactions stage FormData, veto, honor author authority and remove separately",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 220
+    },
+    {
+      "project": "firefox",
+      "title": "disabled file control rejects drop and submission; reset remains authoritative",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 454
+    },
+    {
+      "project": "firefox",
+      "title": "portable and Lit styles honor scoped pins, native focus and drag feedback",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208
+    },
+    {
+      "project": "firefox",
+      "title": "long names remain readable at enlarged narrow RTL with visible forced-color boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 171
+    },
+    {
+      "project": "webkit",
+      "title": "steps project rich labels, native disabled/current semantics and cancelable selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 353
+    },
+    {
+      "project": "webkit",
+      "title": "steps preserve focused controls and label identity across mutations and silent author writes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "steps reject invalid labels and stale transactions, then recover",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 201
+    },
+    {
+      "project": "webkit",
+      "title": "authored steps hide, reorder, disconnect and transfer without retaining foreign slots",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 178
+    },
+    {
+      "project": "webkit",
+      "title": "validation projection preserves native anchor activation, focus, listeners and authored history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 231
+    },
+    {
+      "project": "webkit",
+      "title": "validation projection handles hidden, invalid href and reconnect without cloning anchors",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 215
+    },
+    {
+      "project": "webkit",
+      "title": "native file picker accepts batches and submits actual File bytes with independent reset",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244
+    },
+    {
+      "project": "webkit",
+      "title": "file constraints reject the whole mixed batch and report every applicable reason",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191
+    },
+    {
+      "project": "webkit",
+      "title": "native file transactions stage FormData, veto, honor author authority and remove separately",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 221
+    },
+    {
+      "project": "webkit",
+      "title": "disabled file control rejects drop and submission; reset remains authoritative",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "webkit",
+      "title": "portable and Lit styles honor scoped pins, native focus and drag feedback",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 196
+    },
+    {
+      "project": "webkit",
+      "title": "long names remain readable at enlarged narrow RTL with visible forced-color boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 181
+    },
+    {
+      "project": "chromium",
+      "title": "steps project rich labels, native disabled/current semantics and cancelable selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 109
+    },
+    {
+      "project": "chromium",
+      "title": "steps preserve focused controls and label identity across mutations and silent author writes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 79
+    },
+    {
+      "project": "chromium",
+      "title": "steps reject invalid labels and stale transactions, then recover",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 123
+    },
+    {
+      "project": "chromium",
+      "title": "authored steps hide, reorder, disconnect and transfer without retaining foreign slots",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 83
+    },
+    {
+      "project": "chromium",
+      "title": "validation projection preserves native anchor activation, focus, listeners and authored history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 124
+    },
+    {
+      "project": "chromium",
+      "title": "validation projection handles hidden, invalid href and reconnect without cloning anchors",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 108
+    },
+    {
+      "project": "chromium",
+      "title": "native file picker accepts batches and submits actual File bytes with independent reset",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 146
+    },
+    {
+      "project": "chromium",
+      "title": "file constraints reject the whole mixed batch and report every applicable reason",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 87
+    },
+    {
+      "project": "chromium",
+      "title": "native file transactions stage FormData, veto, honor author authority and remove separately",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 108
+    },
+    {
+      "project": "chromium",
+      "title": "disabled file control rejects drop and submission; reset remains authoritative",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 108
+    },
+    {
+      "project": "chromium",
+      "title": "portable and Lit styles honor scoped pins, native focus and drag feedback",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 86
+    },
+    {
+      "project": "chromium",
+      "title": "long names remain readable at enlarged narrow RTL with visible forced-color boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 75
+    },
+    {
+      "project": "firefox",
+      "title": "steps project rich labels, native disabled/current semantics and cancelable selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 192
+    },
+    {
+      "project": "firefox",
+      "title": "steps preserve focused controls and label identity across mutations and silent author writes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 183
+    },
+    {
+      "project": "firefox",
+      "title": "steps reject invalid labels and stale transactions, then recover",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 202
+    },
+    {
+      "project": "firefox",
+      "title": "authored steps hide, reorder, disconnect and transfer without retaining foreign slots",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 176
+    },
+    {
+      "project": "firefox",
+      "title": "validation projection preserves native anchor activation, focus, listeners and authored history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 212
+    },
+    {
+      "project": "firefox",
+      "title": "validation projection handles hidden, invalid href and reconnect without cloning anchors",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "firefox",
+      "title": "native file picker accepts batches and submits actual File bytes with independent reset",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "firefox",
+      "title": "file constraints reject the whole mixed batch and report every applicable reason",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 458
+    },
+    {
+      "project": "firefox",
+      "title": "native file transactions stage FormData, veto, honor author authority and remove separately",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "firefox",
+      "title": "disabled file control rejects drop and submission; reset remains authoritative",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191
+    },
+    {
+      "project": "firefox",
+      "title": "portable and Lit styles honor scoped pins, native focus and drag feedback",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "firefox",
+      "title": "long names remain readable at enlarged narrow RTL with visible forced-color boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 172
+    },
+    {
+      "project": "webkit",
+      "title": "steps project rich labels, native disabled/current semantics and cancelable selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 242
+    },
+    {
+      "project": "webkit",
+      "title": "steps preserve focused controls and label identity across mutations and silent author writes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 198
+    },
+    {
+      "project": "webkit",
+      "title": "steps reject invalid labels and stale transactions, then recover",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 231
+    },
+    {
+      "project": "webkit",
+      "title": "authored steps hide, reorder, disconnect and transfer without retaining foreign slots",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "webkit",
+      "title": "validation projection preserves native anchor activation, focus, listeners and authored history",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 236
+    },
+    {
+      "project": "webkit",
+      "title": "validation projection handles hidden, invalid href and reconnect without cloning anchors",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 226
+    },
+    {
+      "project": "webkit",
+      "title": "native file picker accepts batches and submits actual File bytes with independent reset",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232
+    },
+    {
+      "project": "webkit",
+      "title": "file constraints reject the whole mixed batch and report every applicable reason",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 188
+    },
+    {
+      "project": "webkit",
+      "title": "native file transactions stage FormData, veto, honor author authority and remove separately",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "webkit",
+      "title": "disabled file control rejects drop and submission; reset remains authoritative",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "webkit",
+      "title": "portable and Lit styles honor scoped pins, native focus and drag feedback",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 186
+    },
+    {
+      "project": "webkit",
+      "title": "long names remain readable at enlarged narrow RTL with visible forced-color boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 175
+    }
+  ],
+  "nodeControls": {
+    "passed": 24
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-WtkjB/J3oq4Np5uNkrDa+bcunxX/jA8LE33Ryv8t5/iqgzwtLYCVpwerPLK4VG6sTpixUftYpvMRcePb0PTnWg==",
+        "shasum": "0882a714594399ecf1aa00a5978ef6730ce13256",
+        "setup": {
+          "key": "5740ccf66ddd8f1b9550a6a8533304d6187f9740d9275b5f0af1b7327a69d554",
+          "reused": false,
+          "originatingProducer": "2026-10-02T12:19:41.899Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "5740ccf66ddd8f1b9550a6a8533304d6187f9740d9275b5f0af1b7327a69d554",
+          "reused": false,
+          "originatingProducer": "2026-10-02T12:19:41.899Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "5740ccf66ddd8f1b9550a6a8533304d6187f9740d9275b5f0af1b7327a69d554",
+          "reused": false,
+          "originatingProducer": "2026-10-02T12:19:41.899Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/interactions/form-children.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/file-selection.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/styles/dist/form-navigation.d.ts",
+        "node_modules/@en-reve/styles/dist/file-upload.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/lit-html/directives/repeat.js",
+      "node_modules/lit/directives/repeat.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/primitives/dist/state/collection.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/selection-children.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/form-children.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/file-selection.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/form-navigation.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/node_modules/@en-reve/styles/dist/file-upload.js",
+      "../en-form-recipes-20261002-05/fixtures/form-recipes/consumer/recipes.ts"
+    ],
+    "assets": {
+      "recipes.js": "d051e60c6c5f6675752aa2c0b20d7359cdb739e95c077c67c9265c5c31c42b57",
+      "forms.css": "c64282915b81969e3f36ab696b741bde744e73f810f75f87ca1a5107b2cbace8"
+    },
+    "portableCSS": {
+      "@en-reve/styles/form-navigation.css": "36e5fc7ded66e96c0fd6cce5a4790d9b6f5ed65e6d69db38436058d3f5717671",
+      "@en-reve/styles/file-upload.css": "4b40f9d1310cfecdd606fce8028b0d1dfbffe691b5fe327cee1b94ee58c787a5"
+    },
+    "sourceInputs": {
+      "probes/form-recipes/recipes.ts": "e64b0d8efc8062b020550ea0ae50d151d4b46d79ae72c13abbaa23ebc7869ea2",
+      "probes/form-recipes/recipes.html": "adb2fe06fe54863af67b3b868b15c7e0af8eff3f54626e638f778e0fbd694d33"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Native picker transport is Playwright setInputFiles; drop payload delivery is synthetic. OS dialogs, physical drag and drop, SSR and hydration remain separate."
+    ]
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "661aac8552dd939c65e18ae23c40a3ea2b3657f6",
+    "sourceDigest": "sha256:eee83936ea0757d41a4fe7807546a0c2ec96ada2bfd5512664e298919be7a01a",
+    "files": 22757
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/form-recipes-20261002",
+  "earlierAttempt": {
+    "run": "/private/tmp/en-form-recipes-20261002-01",
+    "status": "failed",
+    "boundary": "Run01 sandbox loopback admission; run02 slotted label textContent assertion; run03 fixture text-input overflow in Firefox; run04 WebKit all-control keyboard modifier. Full72-case final run passes. Earlier raw evidence retained."
+  },
+  "limitations": [
+    "Six entries have named scenario qualification, not every export or method.",
+    "Both authored form child kinds and both file/form style deliveries are covered. Other progress disclosure variants and data normalization remain separate.",
+    "SSR and hydration are not implied.",
+    "File chooser selection uses setInputFiles; drop payloads are synthetic. OS chooser UI and physical drag/drop remain unverified.",
+    "Physical IME, native AT speech, retail Safari/OS/device conditions and separate-owner acceptance remain open.",
+    "The other70 of110 public inventory entries remain pending. Historical external CSS-authoring rerun is retired, never passed."
+  ],
+  "integrity": {
+    "status": "passed",
+    "run": "/private/tmp/en-form-tooling-20261002-01",
+    "passed": 125,
+    "executionSHA256": "3a069a28b3813a0f732aa51598e59561dfdcc99bb2b2c4a85b2d70222af2efbc"
+  }
+}

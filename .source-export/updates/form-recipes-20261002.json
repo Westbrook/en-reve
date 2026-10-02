@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-02T12:24:38.853426+00:00",
+  "sourceCommit": "9a84dcebf0dbd1ccd99a468f49ffb6c2ebf74f12",
+  "previousSourceMain": "661aac8552dd939c65e18ae23c40a3ea2b3657f6",
+  "taskPaths": [
+    "packages/primitives/docs/form-consumers.md",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/form-recipes/README.md",
+    "probes/form-recipes/playwright.config.ts",
+    "probes/form-recipes/prepare.mjs",
+    "probes/form-recipes/recipes.html",
+    "probes/form-recipes/recipes.spec.ts",
+    "probes/form-recipes/recipes.ts",
+    "probes/form-recipes/server.mjs",
+    "probes/form-recipes/verification-20261002.json",
+    "probes/projection-recipes/qualification-sources/661aac85/browser-ports.mjs.txt",
+    "probes/projection-recipes/qualification-sources/661aac85/comprehensive.mjs.txt",
+    "probes/projection-recipes/qualification-sources/661aac85/comprehensive.test.mjs.txt",
+    "probes/projection-recipes/qualification-sources/661aac85/inventory.json.txt",
+    "probes/projection-recipes/qualification-sources/661aac85/inventory.test.mjs.txt",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Six public form entries now have independent native consumer compositions:72 browser cases,24 pathway/inventory controls, strict declarations and125 final integrity checks pass. The reusable-layer inventory is40/110;70 entries and broader platform/manual/owner work remain open. Application build unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

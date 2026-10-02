@@ -1,0 +1,7 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Packed form recipes</title>
+<style>body{font-family:system-ui;margin:1rem}main{display:grid;gap:1rem;max-inline-size:50rem}consumer-upload,consumer-errors,consumer-steps{min-inline-size:0}consumer-upload{--en-control-radius:12px}consumer-errors{--en-validation-summary-radius:10px;--en-validation-summary-padding:16px}main>label{min-inline-size:0}main>label>input{display:block;inline-size:100%;box-sizing:border-box}button,input{font:inherit;max-inline-size:100%}</style>
+<main><consumer-steps id="steps"><en-progress-step value="details" status="complete"><strong>Project</strong> details</en-progress-step><en-progress-step value="review">Review brief</en-progress-step><en-progress-step value="locked" disabled>Publish</en-progress-step></consumer-steps>
+<consumer-steps id="other"><en-progress-step value="details">Other details</en-progress-step></consumer-steps>
+<consumer-errors id="errors"><a href="#project-name"><strong>Project name</strong> is required</a><a href="#email">Email is required</a></consumer-errors>
+<label>Project name<input id="project-name" required></label><label>Email<input id="email" type="email" required></label>
+<consumer-upload id="uploads"></consumer-upload><consumer-upload id="backup"></consumer-upload></main><script type="module" src="/recipes.js"></script></html>

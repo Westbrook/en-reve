@@ -393,3 +393,12 @@ The inventory now records34/110 entries with named scenarios;76 remain pending.
 Client named/manual projection does not imply SSR/hydration or other descriptor
 modes. The native Firefox assertion comparison and platform/manual/owner gates
 remain open. The completed59-copy inventory is separate evidence.
+
+The [packed form batch](../probes/form-recipes/README.md) adds six §7.4 entries:
+form-child projection, file constraints, form-navigation and file-upload styles
+in both module and portable CSS delivery.72 cases pass across three pinned
+engines; isolated public declaration compilation also passes. Authored steps,
+native validation links and native File/FormData transactions remain owned by the
+consumer. Inventory coverage is40/110;70 entries remain pending. Synthetic drop
+payloads do not qualify physical drag/drop, OS file choosers or manual AT. Existing
+SSR, native Firefox comparison, platform and owner obligations remain distinct.
