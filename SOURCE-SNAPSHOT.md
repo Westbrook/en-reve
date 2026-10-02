@@ -134,3 +134,7 @@ Local main `a22b13b69b19a08df68119e3e7b65edb7c769295` qualifies21 native ESM cas
 ## Native Firefox document response qualification
 
 Local main `dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d` qualifies178 fresh native Firefox cases and119 tooling checks. Browser-observed HTTP/redirect and no-JS navigation controls added. See `plans/support-coverage.md` and `probes/native-browser-products/verification-firefox-documents-20261002.json`. Physical/manual and other-product scope remain.
+
+## Consumer evidence audit
+
+Local main `15ea0cb00c082b9f0adfa1b5c1306a6557a3072f` maps packed native ESM, framework and SSR evidence separately from remaining reusable-layer, generated-example and machine-discovery requirements. See `plans/consumer-evidence-audit-2026-10-02.md`. No new browser qualification or completion claim.

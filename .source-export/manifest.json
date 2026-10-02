@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d",
-  "exportedAt": "2026-10-02T07:20:32.932503+00:00",
+  "sourceCommit": "15ea0cb00c082b9f0adfa1b5c1306a6557a3072f",
+  "exportedAt": "2026-10-02T07:35:00.845148+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5441,
-  "includedBytes": 149901083,
-  "qualification": "Actual Firefox156.0.1/157.0:178 fresh cases pass across12 first-paint/network,46 workflow and120 packed consumer cases. HTTP status/redirect controls and no-JS document navigation qualified;119 tooling checks pass. Product/OS/device/manual boundaries remain.",
-  "latestUpdate": ".source-export/updates/firefox-documents-20261002.json",
+  "includedFiles": 5443,
+  "includedBytes": 149911834,
+  "qualification": "Source/evidence audit of original verification section7. Thirty-one local links/fragments checked; no new browser run or support promotion. Historical external CSS-authoring rerun remains retired.",
+  "latestUpdate": ".source-export/updates/consumer-audit-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
