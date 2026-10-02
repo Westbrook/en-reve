@@ -49,7 +49,7 @@ test('support evidence references resolve and immutable receipts retain their ex
     assert(!item.path.startsWith('/') && !item.path.split('/').includes('..'));
     const source = await read(item.path);
     assert(item.scope.trim());
-    if (['automated-engine','automated-product-and-engine'].includes(item.kind)) {
+    if (['automated-engine','automated-product-and-engine','automated-native-product'].includes(item.kind)) {
       assert.match(item.sha256, /^[a-f0-9]{64}$/);
       assert.equal(createHash('sha256').update(source).digest('hex'), item.sha256, item.id);
     } else {
@@ -177,4 +177,23 @@ test('engine manifest and configured Playwright version agree with the support i
     assert(actual, pin.name);
     for (const key of ['revision', 'browserVersion']) assert.equal(pin[key], actual[key], pin.name);
   }
+});
+
+test('native product receipt preserves input scope and unresolved Safari attempts', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='native-products-20261002');
+ const receipt=await json(evidence.path);
+ assert.equal(receipt.runnerSHA256,createHash('sha256').update(await read('probes/native-browser-products/run.mjs')).digest('hex'));
+ assert.equal(receipt.status,'passed');
+ assert.deepEqual(receipt.stats,{passed:30,failed:0,planned:30});
+ assert.equal(receipt.selectedProducts,'firefox');
+ assert.equal(receipt.products.length,1);
+ assert.equal(receipt.products[0].name,'Firefox');
+ assert.equal(receipt.products[0].capabilities.browserVersion,receipt.products[0].version);
+ assert.equal(receipt.products[0].unchanged,true);
+ for(const cohort of cohorts)assert.equal(receipt.cases.filter(c=>c.cohort===cohort.id&&c.status==='passed').length,3);
+ assert.equal(receipt.safariAttempts.length,4);
+ for(const attempt of receipt.safariAttempts){assert.equal(attempt.status,'failed');assert.equal(attempt.stats.passed,0);}
+ assert.equal(receipt.safariAttempts.at(-1).case.diagnostic.visibility,'hidden');
+ assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
+ assert.match(receipt.artifactPolicy,/no new installation/);
 });

@@ -151,3 +151,19 @@ a stable opaque HTML prop to preserve hydrated host nodes; the original failing
 run is retained, and the unchanged identity assertion passes in the final full run.
 `framework-release-lines` is now **qualified** for these exact pins and contracts.
 This closes a framework condition, not the broader product/device/manual matrix.
+
+## Actual Firefox and Safari acquisition — October 2
+
+The [native-product probe](../probes/native-browser-products/README.md) adds **30
+passes on installed Firefox157.0** through WebDriver BiDi: three native-input
+scenarios across ten existing packed consumers. It reuses the exact hash-verified
+release-line artifacts and does not claim another package installation/type run.
+The complete Firefox app distribution stayed unchanged. This differs from the
+six-case Playwright consumer suite and from its patched Firefox155 engine.
+
+Safari27 WebDriver session creation works, but its automation document stayed
+hidden and did not settle the fixture's animation-frame readiness marker, even
+after window selection/sizing. No Safari component case is qualified. Original
+timeouts/diagnostics remain in the new receipt; visible-window retesting is the
+next step. There is no screen-reader, physical-device, previous-product or full
+workflow acceptance implied by these outcomes. `browser-current` remains partial.

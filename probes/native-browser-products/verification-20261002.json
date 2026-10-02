@@ -1,0 +1,445 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-10-02T03:33:04.822Z",
+  "sourceCommit": "fc9da899dc897996fcbd3e3a6c7679ad34bac15c",
+  "node": "v26.10.0",
+  "fixture": "/private/tmp/en-framework-lines-20261002-03/framework-execution/fixtures/framework",
+  "products": [
+    {
+      "name": "Firefox",
+      "version": "157.0",
+      "build": "15726.9.24",
+      "bundle": "/Applications/Firefox.app",
+      "identityDigest": "sha256:7f1df7542d9f2501056d90d91f5ff2a1e156e72081b3a4282d8624e7867da393",
+      "identityPolicy": "Full installed Firefox application distribution.",
+      "status": "passed",
+      "capabilities": {
+        "acceptInsecureCerts": false,
+        "browserName": "firefox",
+        "browserVersion": "157.0",
+        "platformName": "mac",
+        "setWindowRect": true,
+        "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+        "moz:buildID": "20260924084938",
+        "moz:headless": true,
+        "moz:platformVersion": "25.6.0",
+        "moz:processID": 35045,
+        "moz:profile": "/private/tmp/en-native-products-20261002-05/firefox-profile",
+        "moz:shutdownTimeout": 60000
+      },
+      "headless": true,
+      "unchanged": true
+    }
+  ],
+  "cases": [
+    {
+      "product": "Firefox",
+      "cohort": "html",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "html",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "html",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react19",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react19",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react19",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react192",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react192",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react192",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react18",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react18",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "react18",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue3",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue3",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue3",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue34",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue34",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue34",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue2",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue2",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "vue2",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte5",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte5",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte5",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte556",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte556",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte556",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte4",
+      "scenario": "SSR node identity and native checkbox",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte4",
+      "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+      "status": "passed"
+    },
+    {
+      "product": "Firefox",
+      "cohort": "svelte4",
+      "scenario": "Framework property updates, native editing and listener disposal",
+      "status": "passed"
+    }
+  ],
+  "status": "passed",
+  "selectedProducts": "firefox",
+  "scope": "Three native-input consumer scenarios per cohort. Not Playwright parity, accessibility-tree/speech, all workflows, previous products or physical-device qualification.",
+  "preparationSHA256": "8e3ca4c450461ac0a962216ce5d12c09a53463d8ab7f5500d3411017b9dd9149",
+  "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+  "host": {
+    "version": "26.6.1",
+    "build": "25G76",
+    "arch": "arm64"
+  },
+  "completedAt": "2026-10-02T03:33:10.360Z",
+  "stats": {
+    "passed": 30,
+    "failed": 0,
+    "planned": 30
+  },
+  "runnerSHA256": "40085e31f4ea1c3605bab2502ceeeb0d8d8dc2a5d1397545c98af32ff3c969ab",
+  "packedReceipt": "probes/framework-consumption/verification-release-lines-20261002.json",
+  "output": "/private/tmp/en-native-products-20261002-05",
+  "safariAttempts": [
+    {
+      "output": "/private/tmp/en-native-products-20261002-01",
+      "startedAt": "2026-10-02T03:29:43.942Z",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "product": {
+        "name": "Safari",
+        "version": "27.0",
+        "build": "21625.1.29.18.28",
+        "bundle": "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+        "identityDigest": "sha256:b4947b8682188ff9acbcffc92f915f0b4d3ec3b66bf299447e743a6a5c647460",
+        "identityPolicy": "Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.",
+        "status": "running",
+        "capabilities": {
+          "safari:platformVersion": "26.6.1",
+          "safari:automaticInspection": false,
+          "webkit:WebRTC": {
+            "DisableICECandidateFiltering": false,
+            "DisableInsecureMediaCapture": false
+          },
+          "webkit:alwaysAllowAutoplay": false,
+          "browserVersion": "27.0",
+          "strictFileInteractability": false,
+          "browserName": "Safari",
+          "safari:useSimulator": false,
+          "safari:automaticProfiling": false,
+          "setWindowRect": true,
+          "acceptInsecureCerts": false,
+          "safari:platformBuildVersion": "25G76",
+          "safari:experimentalWebSocketUrl": false,
+          "platformName": "macOS",
+          "safari:diagnose": false
+        },
+        "headless": false,
+        "unchanged": true
+      },
+      "case": {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "SSR node identity and native checkbox",
+        "status": "failed",
+        "error": "TimeoutError: The operation was aborted due to timeout"
+      }
+    },
+    {
+      "output": "/private/tmp/en-native-products-20261002-02",
+      "startedAt": "2026-10-02T03:30:40.787Z",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "product": {
+        "name": "Safari",
+        "version": "27.0",
+        "build": "21625.1.29.18.28",
+        "bundle": "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+        "identityDigest": "sha256:b4947b8682188ff9acbcffc92f915f0b4d3ec3b66bf299447e743a6a5c647460",
+        "identityPolicy": "Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.",
+        "status": "running",
+        "capabilities": {
+          "safari:platformVersion": "26.6.1",
+          "safari:automaticInspection": false,
+          "webkit:WebRTC": {
+            "DisableICECandidateFiltering": false,
+            "DisableInsecureMediaCapture": false
+          },
+          "webkit:alwaysAllowAutoplay": false,
+          "browserVersion": "27.0",
+          "strictFileInteractability": false,
+          "browserName": "Safari",
+          "safari:useSimulator": false,
+          "safari:automaticProfiling": false,
+          "setWindowRect": true,
+          "acceptInsecureCerts": false,
+          "safari:platformBuildVersion": "25G76",
+          "safari:experimentalWebSocketUrl": false,
+          "platformName": "macOS",
+          "safari:diagnose": false
+        },
+        "headless": false,
+        "unchanged": true
+      },
+      "case": {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "SSR node identity and native checkbox",
+        "status": "failed",
+        "error": "TimeoutError: The operation was aborted due to timeout"
+      }
+    },
+    {
+      "output": "/private/tmp/en-native-products-20261002-03",
+      "startedAt": "2026-10-02T03:31:38.710Z",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "product": {
+        "name": "Safari",
+        "version": "27.0",
+        "build": "21625.1.29.18.28",
+        "bundle": "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+        "identityDigest": "sha256:b4947b8682188ff9acbcffc92f915f0b4d3ec3b66bf299447e743a6a5c647460",
+        "identityPolicy": "Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.",
+        "status": "running",
+        "capabilities": {
+          "safari:platformVersion": "26.6.1",
+          "safari:automaticInspection": false,
+          "webkit:WebRTC": {
+            "DisableICECandidateFiltering": false,
+            "DisableInsecureMediaCapture": false
+          },
+          "webkit:alwaysAllowAutoplay": false,
+          "browserVersion": "27.0",
+          "strictFileInteractability": false,
+          "browserName": "Safari",
+          "safari:useSimulator": false,
+          "safari:automaticProfiling": false,
+          "setWindowRect": true,
+          "acceptInsecureCerts": false,
+          "safari:platformBuildVersion": "25G76",
+          "safari:experimentalWebSocketUrl": false,
+          "platformName": "macOS",
+          "safari:diagnose": false
+        },
+        "headless": false,
+        "unchanged": true
+      },
+      "case": {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "SSR node identity and native checkbox",
+        "status": "failed",
+        "error": "Error: Timed out: document.documentElement.dataset.ready==='true'\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:28:151)\n    at async ready (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:72:36)\n    at async hydrate (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:79:308)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:84:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:137:53\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:118:6",
+        "diagnostic": {
+          "errors": [],
+          "fixture": true,
+          "visibility": "hidden",
+          "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+          "client": true,
+          "ready": null
+        }
+      }
+    },
+    {
+      "output": "/private/tmp/en-native-products-20261002-04",
+      "startedAt": "2026-10-02T03:32:22.727Z",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "product": {
+        "name": "Safari",
+        "version": "27.0",
+        "build": "21625.1.29.18.28",
+        "bundle": "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+        "identityDigest": "sha256:b4947b8682188ff9acbcffc92f915f0b4d3ec3b66bf299447e743a6a5c647460",
+        "identityPolicy": "Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.",
+        "status": "running",
+        "capabilities": {
+          "safari:platformVersion": "26.6.1",
+          "safari:automaticInspection": false,
+          "webkit:WebRTC": {
+            "DisableICECandidateFiltering": false,
+            "DisableInsecureMediaCapture": false
+          },
+          "webkit:alwaysAllowAutoplay": false,
+          "browserVersion": "27.0",
+          "strictFileInteractability": false,
+          "browserName": "Safari",
+          "safari:useSimulator": false,
+          "safari:automaticProfiling": false,
+          "setWindowRect": true,
+          "acceptInsecureCerts": false,
+          "safari:platformBuildVersion": "25G76",
+          "safari:experimentalWebSocketUrl": false,
+          "platformName": "macOS",
+          "safari:diagnose": false
+        },
+        "headless": false,
+        "unchanged": true
+      },
+      "case": {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "SSR node identity and native checkbox",
+        "status": "failed",
+        "error": "Error: Timed out: document.documentElement.dataset.ready==='true'\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:28:151)\n    at async ready (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:72:36)\n    at async hydrate (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:79:308)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:84:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:137:53\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:118:6",
+        "diagnostic": {
+          "errors": [],
+          "fixture": true,
+          "visibility": "hidden",
+          "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+          "client": true,
+          "ready": null
+        }
+      }
+    }
+  ]
+}

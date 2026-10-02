@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-10-02T03:37:37.499010+00:00",
+  "sourceCommit": "9357f4e5500dac36ca90f5ae521a428978f166e8",
+  "previousSourceMain": "fc9da899dc897996fcbd3e3a6c7679ad34bac15c",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/run.mjs",
+    "probes/native-browser-products/verification-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox157 consumer native-input subset qualified:30 cases on10 retained hash-verified packed consumers.102 tooling checks pass. Safari27 automation-page visibility remains unresolved; original failures retained. No broader product or physical/manual acceptance.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

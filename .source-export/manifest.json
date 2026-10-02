@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "fc9da899dc897996fcbd3e3a6c7679ad34bac15c",
-  "exportedAt": "2026-10-02T03:17:27.215456+00:00",
+  "sourceCommit": "9357f4e5500dac36ca90f5ae521a428978f166e8",
+  "exportedAt": "2026-10-02T03:37:37.499010+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5403,
-  "includedBytes": 144390845,
-  "qualification": "Current and preceding stable minor lines for React/Vue/Svelte plus retained major/EOL cohorts qualified:300 browser passes,10 independent packed public type compilations and101 tooling checks. React19.2 opaque HTML prop stabilized to preserve hydrated nodes. Broader browser-product/physical/manual scope remains open.",
-  "latestUpdate": ".source-export/updates/framework-lines-20261002.json",
+  "includedFiles": 5407,
+  "includedBytes": 144432580,
+  "qualification": "Actual Firefox157 consumer native-input subset qualified:30 cases on10 retained hash-verified packed consumers.102 tooling checks pass. Safari27 automation-page visibility remains unresolved; original failures retained. No broader product or physical/manual acceptance.",
+  "latestUpdate": ".source-export/updates/native-products-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

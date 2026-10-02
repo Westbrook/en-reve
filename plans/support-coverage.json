@@ -296,6 +296,13 @@
       "path": "probes/framework-consumption/verification-release-lines-20261002.json",
       "sha256": "db16ba76490991cbc46d036140278d9568e664aacf4b02f154a1cb493f163b96",
       "scope": "300 passes across10 independent packed consumers, three pinned engines and installed Chrome/Edge. Current/preceding stable minor lines plus retained major/EOL cohorts;10 public type checks. React19.2 opaque-island prop identity fixed. No broader product/manual acceptance."
+    },
+    {
+      "id": "native-products-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-20261002.json",
+      "sha256": "518e88ad71352d202c590c42959927ff063983253af98556e420e607d87ac819",
+      "scope": "30 native-input cases on actual Firefox157.0 across10 retained hash-verified packed consumers. Safari27 session available but hidden-page readiness timed out; no Safari component qualification. Not full Playwright scenario parity, fresh installs or manual acceptance."
     }
   ],
   "conditions": [
@@ -338,10 +345,11 @@
       "status": "partial",
       "delivery": "product",
       "evidence": [
-        "framework-release-lines-20261002"
+        "framework-release-lines-20261002",
+        "native-products-20261002"
       ],
-      "gap": "Installed macOS Chrome154.0.8037.95 and Edge154.0.4258.48 pass the packed consumer subset in headless mode. Edge latest patch, other OS/workflows, actual Firefox/Safari, headed and manual checks remain unqualified.",
-      "nextAction": "Extend product/workflow coverage with explicitly identified distributions; obtain actual Firefox/Safari and exact current/preceding targets. Do not equate the patched engine or this consumer subset with full product acceptance."
+      "gap": "Installed Chrome154.0.8037.95 and Edge154.0.4258.48 pass the headless packed consumer suite; actual Firefox157.0 passes three native-input scenarios per cohort. Safari27 automation session exists but hidden-page readiness remains unresolved. Edge latest patch, other OS/workflows, preceding products and manual checks remain unqualified.",
+      "nextAction": "Resolve Safari visible automation-window readiness, then extend actual-product/reference-workflow and exact preceding-version coverage. Preserve the bounded Firefox native-input and Chrome/Edge receipts."
     },
     {
       "id": "browser-previous",
@@ -535,6 +543,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T03:16:21.597438+00:00",
+  "updatedAt": "2026-10-02T03:34:37.062867+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

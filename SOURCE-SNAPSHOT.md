@@ -74,3 +74,7 @@ Local main `4a229e227d3501c1206a47a1ccd6deafb55e8352` qualifies public package t
 ## Current and preceding framework release lines
 
 Local main `fc9da899dc897996fcbd3e3a6c7679ad34bac15c` qualifies public package tarballs across all ten consumers on installed Chrome/Edge and three pinned engines. See `probes/framework-consumption/verification-release-lines-20261002.json` and its README for exact source, outcomes and limits.
+
+## Native Firefox product consumer qualification
+
+Local main `9357f4e5500dac36ca90f5ae521a428978f166e8` qualifies three native-input contracts across ten retained packed consumers on actual Firefox157. Safari visibility remains unresolved. See `probes/native-browser-products/verification-20261002.json` and its README for exact source, outcomes and limits.
