@@ -192,3 +192,14 @@ Framework renders therefore leave library-owned nodes intact. The same node-iden
 assertion passed afterward in every cohort/browser; no assertion was relaxed and
 no library component wrapper was introduced. Preserve the opaque island ownership
 boundary and stable prop identity in equivalent consumer integrations.
+
+## Isolated Edge release lines
+
+[October2 Edge acquisition](verification-edge-lines-20261002.json) passes all300
+consumer checks:60 each on official Stable153.0.4234.48 and154.0.4258.53 plus60
+each on the three pinned engines. Ten fresh packed installations/type checks
+passed. The existing `EN_BROWSER_PRODUCTS` manifest selected both isolated app
+payloads; no library or test assertions changed. Package provenance, checksum,
+macOS signature verification and full distribution identities are in the receipt.
+No installer scripts ran and installed browsers/profiles were not replaced.
+This retains the prior receipts and leaves other products/OS/manual coverage open.

@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-02T04:20:58.726234+00:00",
+  "sourceCommit": "a2edb022a380992c342d1a2ebae14c189bb97f77",
+  "previousSourceMain": "7df6ba1bc6f41b54dff7df5c1f22ce51014d5bbc",
+  "taskPaths": [
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/verification-edge-lines-20261002.json",
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/framework-consumption/README.md",
+    "probes/framework-consumption/verification-edge-lines-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Current Edge154.0.4258.53 and preceding153.0.4234.48 qualified from official isolated package payloads:300 packed-consumer checks across5 subjects,10 declaration compilations,52 product workflow passes and2 existing skips.105 tooling checks pass. Chrome acquisition and Safari/device/manual gaps remain explicit.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

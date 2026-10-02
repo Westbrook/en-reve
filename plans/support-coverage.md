@@ -23,11 +23,23 @@ It is an evidence index, not a new browser-support promise or a completed test r
   These accepted results stay accepted within their original fixture boundaries;
   they do not certify every product version, physical device or input method.
 
-## Inventory is not qualification
+## Latest bounded product evidence
 
-Read-only app inventory on macOS26.6.1 (25G76), arm64 found:
+| Product on macOS26.6.1 arm64 | Consumer checks | Production workflow checks | Remaining scope |
+| --- | --- | --- | --- |
+| Chrome154.0.8037.95 |60 passes |26 passes,1 existing skip |Newer154.0.8037.98 and preceding retail line; other OS/manual coverage |
+| Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
+| Firefox157.0 and156.0.1 |30 native-input passes each |Not yet qualified |Broader native workflows, other OS/manual coverage |
+| Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
 
-| Installed product | Version | New qualification in this audit |
+These are scoped receipts, not complete support claims. See the dated acquisitions
+below; historical counts are not silently transferred to current source.
+
+## Initial inventory, retained as history
+
+Before the acquisitions below, read-only app inventory on macOS26.6.1 (25G76), arm64 found:
+
+| Installed product | Version | Qualification at initial inventory |
 | --- | --- | --- |
 | Chrome | 154.0.8037.93 | Not run |
 | Edge | 154.0.4258.48 | Not run |
@@ -190,3 +202,25 @@ runner. The official archive checksum and macOS signature checks passed, and
 both complete app distributions stayed unchanged. Previous-product coverage is
 partial: preceding Chrome/Edge/Safari, other OSes and broader workflows remain
 open. Physical-device inventory is still pending.
+
+## Isolated current and preceding Edge acquisition
+
+The [framework receipt](../probes/framework-consumption/verification-edge-lines-20261002.json)
+records300 passes:120 on isolated Edge153.0.4234.48 and154.0.4258.53 plus180 on
+the three pinned engines, with ten fresh packed installations/declaration checks.
+The [production receipt](../apps/docs/tests/verification-edge-lines-20261002.json)
+adds52 passes and two existing Chromium-only profile skips across those Edge
+releases. The Microsoft enterprise catalog supplied exact Stable packages; their
+published SHA256, trusted installer signatures and extracted app signatures were
+verified. Only payloads were extracted; no installer scripts ran. User browsers,
+profiles and updater settings were untouched. Full distribution inventories were
+unchanged across each acquisition.
+
+Chrome acquisition remains separate. Google's official VersionHistory now lists
+154.0.8037.98 at100% in its recorded Mac ARM64 stable group. Its highest listed153
+patch,153.0.8010.55, was a0.5% control rollout. The preceding broad-release
+reference is153.0.8010.53, the latest153 patch recorded at100% and pinnable. Google documents [Chrome for Testing](https://www.chromium.org/getting-involved/download-chromium/)
+as a versioned automation distribution and [managed rollback](https://support.google.com/chrome/a/answer/7591084?hl=en)
+as an administrator operation. No retail archive was acquired, no updater policy
+was changed, and a cached testing build is not relabeled as retail coverage.
+Safari and the pending physical/manual questions remain open.

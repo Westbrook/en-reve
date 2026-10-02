@@ -199,7 +199,7 @@ test('native product receipt preserves input scope and unresolved Safari attempt
 });
 
 test('actual product workflows retain exact sources, distribution identity and explicit skips', async () => {
- const evidence=ledger.evidence.find(e=>e.id==='workflow-products-20261002');
+ for(const evidence of ledger.evidence.filter(e=>e.kind==='automated-product-workflows')) {
  const receipt=await json(evidence.path);
  assert.equal(receipt.status,'passed');
  assert.equal(receipt.stats.expected,52);
@@ -215,6 +215,7 @@ test('actual product workflows retain exact sources, distribution identity and e
  assert.equal(receipt.cases.length,54);
  assert(receipt.cases.filter(c=>c.status==='skipped').every(c=>c.titlePath.at(-1).startsWith('narrow portrait')));
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
+ }
 });
 
 
@@ -236,5 +237,25 @@ test('current native runner is qualified against both Firefox release lines', as
   for(const cohort of cohorts)assert.equal(run.cases.filter(c=>c.cohort===cohort.id&&c.status==='passed').length,3);
  }
  assert.equal(receipt.runs.preceding.preparationSHA256,receipt.runs.current.preparationSHA256);
+ assert.equal(ledger.conditions.find(c=>c.id==='browser-previous').status,'partial');
+});
+
+
+test('isolated Edge provenance covers exact current and preceding distributions', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='edge-framework-lines-20261002');
+ const receipt=await json(evidence.path);
+ assert.deepEqual(receipt.products.map(p=>p.version).sort(),['153.0.4234.48','154.0.4258.53']);
+ assert.notEqual(receipt.products[0].distributionInventorySHA256,receipt.products[1].distributionInventorySHA256);
+ assert.equal(receipt.acquisition.products.length,2);
+ for(const product of receipt.acquisition.products) {
+  assert.equal(product.archiveSHA256,product.publishedSHA256);
+  assert.equal(product.channel,'Stable');
+  assert(product.signatureChecks.every(check=>check.exitCode===0));
+  assert(receipt.products.some(p=>p.version===product.version&&p.distributionPath===product.distributionPath));
+ }
+ for(const [path,digest] of Object.entries(receipt.sources))assert.equal(createHash('sha256').update(await read('probes/framework-consumption/'+path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.toolingSources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ const workflow=await json('apps/docs/tests/verification-edge-lines-20261002.json');
+ assert.equal(workflow.acquisitionReceiptSHA256,evidence.sha256);
  assert.equal(ledger.conditions.find(c=>c.id==='browser-previous').status,'partial');
 });

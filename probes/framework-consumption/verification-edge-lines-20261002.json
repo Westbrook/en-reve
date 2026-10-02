@@ -1,0 +1,472 @@
+{
+  "schemaVersion": 1,
+  "verifiedAt": "2026-10-02T04:16:31.831079+00:00",
+  "sourceCommitAtStart": "7df6ba1bc6f41b54dff7df5c1f22ce51014d5bbc",
+  "status": "passed",
+  "command": "EN_BROWSER_PRODUCTS=/absolute/edge-products.json tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework",
+  "stats": {
+    "startTime": "2026-10-02T04:13:32.995Z",
+    "duration": 63499.373,
+    "expected": 300,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browsers": {
+    "chromium": "153.0.8010.12",
+    "firefox": "155.0",
+    "webkit": "26.6",
+    "product-edge-153": "153.0.4234.48",
+    "product-edge-154": "154.0.4258.53"
+  },
+  "products": [
+    {
+      "product": "Microsoft Edge",
+      "version": "153.0.4234.48",
+      "executablePath": "/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+      "distributionPath": "/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app",
+      "headless": true,
+      "profile": "Playwright-owned temporary profile; no user profile or remote connection",
+      "project": "product-edge-153",
+      "protocolVersion": "153.0.4234.48",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 Edg/153.0.0.0",
+      "platformVersionSource": "Contents/Info.plist CFBundleShortVersionString",
+      "bundleBuild": "153.0.4234.48",
+      "distributionInventoryEntries": 1030,
+      "distributionInventorySHA256": "334c847c4aa6a1ae8758bda35419873004a0c940a0b4aaa0b0e6c8cefcb248b2",
+      "passed": 60,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "product": "Microsoft Edge",
+      "version": "154.0.4258.53",
+      "executablePath": "/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+      "distributionPath": "/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app",
+      "headless": true,
+      "profile": "Playwright-owned temporary profile; no user profile or remote connection",
+      "project": "product-edge-154",
+      "protocolVersion": "154.0.4258.53",
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36 Edg/154.0.0.0",
+      "platformVersionSource": "Contents/Info.plist CFBundleShortVersionString",
+      "bundleBuild": "154.0.4258.53",
+      "distributionInventoryEntries": 1030,
+      "distributionInventorySHA256": "788d580f84aabc2b06d4290b5ef134f3c16b24ad80748b7e0719ff0b5122b914",
+      "passed": 60,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "host": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "os": "macOS",
+    "version": "26.6.1",
+    "build": "25G76"
+  },
+  "rawResultSHA256": "fd9cadcde2158641af41dc0ae3693f015a65be1b820b707bab7cace6c9b95ab0",
+  "preparationSHA256": "ba4a9da4bafac362d81b81baab044a45b25accdada9920fe9082936e905e5372",
+  "executionReceiptSHA256": "c2090b70e6515e80dd122fa880992fd07700175538bbd527d75bdf2064d5da9c",
+  "runtimeDigest": "sha256:44da56a999f66145a383512ef90183bdd14f53179be74a0d29d12e96285ee40d",
+  "runtimeDistributionUnchangedAfterRun": true,
+  "sources": {
+    "build.mjs": "e9a86918b6766e184d64ec4c3104e9a51dab680b42039967cfd6b0f7845b3e7f",
+    "install.mjs": "22c2a4371e017487629ced09fe7aa34267c909aca8628e0ea39dfa679a2d8e99",
+    "fixture.mjs": "65626ca3bcebc8b6a8907300728d47e09962737a6dc394e907df1d16330c94d5",
+    "island-client.mjs": "39002613e693422cfee46c9d36f994a9a790b93eaadd90e2ac974cece054f790",
+    "server.mjs": "fc9b13c289107628bfbaf1c2ddef094101dd978dce13160512513c7b0c34976e",
+    "playwright.config.ts": "2f20d6419589f40831d22b97ef15f7b8ec13b583ba513442f00dd0da4f5a1003",
+    "consumption.spec.ts": "cbd46f550e61f5f6e2cf4bea7cf20d7cb889b88157cad17a8d983b4b150120e1",
+    "public.types.ts": "77246fa63a79572d5bb3bda6eb1cabd62e563989de527ab3ea6cf1dabb942ca4",
+    "adapters/html.mjs": "effd886b9694e99091afcf788d8259ca3d2dd75d3027525485aea7fc7f40910b",
+    "adapters/react.mjs": "98057486735edb0f12aac820fea0f1ee1affe2f4f78a9723cf0c71c804974652",
+    "adapters/vue.mjs": "39c23d12bf622fa2abc86eea84710f85b784362ca9921a2a16e067204d7fa3a3",
+    "adapters/svelte.mjs": "4738b4822f786ce89b9e6dc4a7e0988fb76ce7f1cc6ef8037ed1a548e71652bb",
+    "environments/react18/package.json": "804ec8c4f0c28eac228d9feccc9df7cb814084643c9123b59a4d35dd47727d08",
+    "environments/react18/package-lock.json": "954741ca15333b68b203df978986f7bdeaea405d4f7608792e737d0f33b55472",
+    "environments/react19/package.json": "3db5086cb6daa71b9e13426a75e7c6809c2b687926ebccc878bc0e338fc26505",
+    "environments/react19/package-lock.json": "b78429552b6313b23cf2f354655d9aad02af5b34ba16c2b25b60ac14fdc31fb5",
+    "environments/vue2/package.json": "e5df75f9a61615e8a46a06e6a59bb847d5452ad7f303947095858c0d93f63872",
+    "environments/vue2/package-lock.json": "c56c52b0aac987dd17dffda7338bb1f23609bd44d62db6e412f0ae99d1e8062c",
+    "environments/vue3/package.json": "0a372eb87ed8e21477bcf2f6d2a72f94136ac775716fb0d9c555684974325e0f",
+    "environments/vue3/package-lock.json": "6e6d228dd687f7cbc736fc97ef13919705885301e2abd0ed3c6432b9848dbf8a",
+    "environments/svelte4/package.json": "8e606b2fabf276b6e5a4b9f13d4d3eef96e95db71280aa0263d10a9943b423a8",
+    "environments/svelte4/package-lock.json": "ff0069782ca10d9562f8d5d9ea5a480c19064e81361c2d95dc31c1914fbd487c",
+    "environments/svelte5/package.json": "a6240a0ff3894c8bdc225d1eea34b2851e34994d97a7783d24439b1bdd142093",
+    "environments/svelte5/package-lock.json": "5fd173c54bdd0aab3f6ab3546e6f36036f18df46af87df5c5d60147e763baf5c",
+    "cohorts.mjs": "be29b9ffe6b396b9751042feb426ecea44628879f4e83fc2245061bcdd18383a",
+    "release-lines.json": "86d1ea48d1ac74acca92fbf4c3314b9a5dc758f7a0ac0967629f7f1bd9a5bd0e",
+    "environments/react192/package.json": "f190b15176920f6d56514091d2a71f4eb3e529a2c409726ef326d1f5cf4e9efb",
+    "environments/react192/package-lock.json": "bda03420de7020858c04312320b2679219529e35401564c3ebc727c92b975892",
+    "environments/vue34/package.json": "ead9fe6865bcd24c565db58eaa08b2c2693702c4349a1a2751a469c6b6040529",
+    "environments/vue34/package-lock.json": "b16b668c8666a4bc4c682bebbdd1f923cc8c2c85044687a56757323bdc98f75e",
+    "environments/svelte556/package.json": "76b9b2b421557530d06c41dcf50f97eef8389a86a341afc3664a31a6d96ff062",
+    "environments/svelte556/package-lock.json": "7c736ddab36a66a424ba3da5a015561c5a69eb952486c2a8a770d5d886396101"
+  },
+  "toolingSources": {
+    "tooling/testing/browser-products.mjs": "9eb3663c9a9a7a64a3ee29d5be3cb60b3accdac12a731ba5b88930c65b56d5fb",
+    "tooling/testing/runtime-identity.mjs": "fd79b9d52fd381ff4bf19e81d00c947fd26976a049b96146c361cc634ff2ca03",
+    "tooling/testing/runtime-identity.test.mjs": "f8ffa44bb57f01c88289ed0020bdd49921835c17a9779cef44e6bce3ae0b7417",
+    "tooling/testing/run-public-view.mjs": "b3f5870a4a86271c719492785e2ddf694d0cec355ec464b98e6daff82c78631d"
+  },
+  "consumers": {
+    "html": {
+      "versions": {
+        "lit": "3.3.3"
+      },
+      "lock": "html/package-lock.json",
+      "lockSHA256": "5685aaa085cce1300d2b7137964bde231c34c5077a50f2bb42e60bbc98c54fed",
+      "types": "passed",
+      "assets": {
+        "html.html": "989918fd98d9a80ee90541e40c3d1ad54c331cb3b326b12da8552ba30e8842a1",
+        "html.js": "da7d6168dbb6b134475ae78651b2d0e784e7439574755ee57be64bcbe5f1e9b0",
+        "html-island.js": "1788cd3ea9415fcee73c5c8ba90790c04c338fbe7c638d9be26bf20e802d4aa6"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "7ab0bc32cce283ac04d308055c5e3cd6e8faf7e825dc89121a3abd95039bf82d"
+    },
+    "react19": {
+      "versions": {
+        "react": "19.3.0",
+        "react-dom": "19.3.0"
+      },
+      "lock": "react19/package-lock.json",
+      "lockSHA256": "f1fa5102b1bb64870cbeb0a41521f459ec5941fc2de70ad8445e6b3b43bfb295",
+      "types": "passed",
+      "assets": {
+        "react19.html": "68e7ce05875261e4876ec029eed4505173c97932a46ed832f7156266061662b0",
+        "react19.js": "71d8d12423ad7e08323fb0c39630a346d3bd94c6d21e8e9f8454a00c93ee753c",
+        "react19-island.js": "0e878f8af0e9eb4ecd0687895f3543847fd5c1f3e82c7d62d40895ad1e094bbc"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "297e272b65ef782af8aff2d234741bfc13cafab905ff5ab2b93600c663c6ecde"
+    },
+    "react192": {
+      "versions": {
+        "react": "19.2.8",
+        "react-dom": "19.2.8"
+      },
+      "lock": "react192/package-lock.json",
+      "lockSHA256": "0eefdfd8b4021f798bc41da9353274fc98d9663eae2b81ed646c171e22ecce77",
+      "types": "passed",
+      "assets": {
+        "react192.html": "bbd606f2cd2a161586fd38b7cbb8312a7121c90278942809717d985524cd3250",
+        "react192.js": "4dd29b916029744b6476a6950ce9e82b3cd9d2c35cf6c2c02b84b41119c59d66",
+        "react192-island.js": "b498e04fae2b4856b2cd948ed06a5d2c286f8820f0b65fbcccf44046f2846990"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "297e272b65ef782af8aff2d234741bfc13cafab905ff5ab2b93600c663c6ecde"
+    },
+    "react18": {
+      "versions": {
+        "react": "18.3.1",
+        "react-dom": "18.3.1"
+      },
+      "lock": "react18/package-lock.json",
+      "lockSHA256": "61a74975069abba1aadc02189ed0d2e5fd3bb90744da3ddc1f18da51c776b259",
+      "types": "passed",
+      "assets": {
+        "react18.html": "dae495e27a90b47625ee3cd6a68fc66408f2f5ae83cfdf68ea1392f2bfdb8153",
+        "react18.js": "3487ec0d836fee250611b81db29b68db8f8d3145b1af3c4b6d14fe50d441e57f",
+        "react18-island.js": "4ba8dee4f80429cdd0999a791ca563ae1583623e312afbf4244b70fafe7fa289"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "f14f8beda6120cebbc261c1fd50f5c13ce0877485fc71f4b14cb83cdecc66b40"
+    },
+    "vue3": {
+      "versions": {
+        "vue": "3.5.43",
+        "@vue/server-renderer": "3.5.43"
+      },
+      "lock": "vue3/package-lock.json",
+      "lockSHA256": "67bdbf28ae0488c915db0968b95e134f501663e24ee7b266014fa57007ad5ee7",
+      "types": "passed",
+      "assets": {
+        "vue3.html": "d87388d6d12fb3deb15f7724592f5e4e2e387a2d82fcfb7d1213ad562a51ebf1",
+        "vue3.js": "d86a3fcd05b98cd862cef3bb9741d566bac62641f2e154c712e89876b589631f",
+        "vue3-island.js": "00b1d04dba718ad9d9068079e163a9cb7511fc10f8252d7ec0ddbe6c574efabe"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "abf344ae757e2e4ae5383163e92b9ef623ccfbb203107341a1c0219a5f1979d9"
+    },
+    "vue34": {
+      "versions": {
+        "vue": "3.4.38",
+        "@vue/server-renderer": "3.4.38"
+      },
+      "lock": "vue34/package-lock.json",
+      "lockSHA256": "9ad29e8f3c78ef6cab042db78c8dd1d50979b1ecde35b3e0f7798cd164d015fd",
+      "types": "passed",
+      "assets": {
+        "vue34.html": "b6bc5fc0e7c2f4c586f7a0db3764de36db19b74c026cd1bb41b0213052ddb83a",
+        "vue34.js": "d7ab15975ec8ceaa5514098d8ef50620b8f318e2e9cbf267d7547c7de9835b38",
+        "vue34-island.js": "e4a14bcc74549f22d8ff7c277aaaa590924fa722cc89249e78879b75c8aedf56"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "abf344ae757e2e4ae5383163e92b9ef623ccfbb203107341a1c0219a5f1979d9"
+    },
+    "vue2": {
+      "versions": {
+        "vue": "2.7.16",
+        "vue-server-renderer": "2.7.16"
+      },
+      "lock": "vue2/package-lock.json",
+      "lockSHA256": "054f3fdc4695f455d62cbc1b8239abc439913294e12e1f2bd198c65903ed554b",
+      "types": "passed",
+      "assets": {
+        "vue2.html": "29f083990b2ada176ac86519271d738c14c29a384829bb5e532bdd0d633b9749",
+        "vue2.js": "f95cda98d18e82f7d40177f9bd6edef2d411405c77af73a3883d3c17fc08a72a",
+        "vue2-island.js": "c9b2d06f5c4bdff8d408998cbdeee3e2ecb114ef2171784c1d699c4b9d931c4e"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "f9aa806ee2178bbd4b1a3e4fc0b9feb31297ee6509a6f5383aa913868f26f00c"
+    },
+    "svelte5": {
+      "versions": {
+        "svelte": "5.57.1"
+      },
+      "lock": "svelte5/package-lock.json",
+      "lockSHA256": "57341011b7ec3fa10f88c4cac9d35149437396c88aca4a2050db785e83a928fd",
+      "types": "passed",
+      "assets": {
+        "svelte5.html": "eab70c26198f1ef5d8d914494d1ecd840544a5997705a2bf74bc91d4b9c5ec55",
+        "svelte5.js": "f80cd1e09d45de21766bf02013891d10362da8bdc22399bacec49bce140346c1",
+        "svelte5-island.js": "bf45dfcb82f90a88c0eed31e1490c12782886c2b702f9e1f28d2673a88b443dd"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "bdb4d43278ffcd5173e296d3629e67d40cd91a7e725ff4dae4091ddccb07e62a"
+    },
+    "svelte556": {
+      "versions": {
+        "svelte": "5.56.10"
+      },
+      "lock": "svelte556/package-lock.json",
+      "lockSHA256": "1c9f000e174706c00a6a3da96a499342d756f231723f6efc971c43afdc525e60",
+      "types": "passed",
+      "assets": {
+        "svelte556.html": "b2cbf7da29f6fda029656cac9bbfe18a8c10c15b1c9917317b3f47405d604c93",
+        "svelte556.js": "0e32213598f0cf63f6b676935fb75d87c4d0a5dd7a999675e07dfb91d8c9bcfd",
+        "svelte556-island.js": "631734ecdf4eb49d999dc9ee545ada4783ea9a1e2380ab955e4edefacf7726d0"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "631a9b827cc72800a0cffd977ce256546ba54a9f6b345993dc36d98980b4314c"
+    },
+    "svelte4": {
+      "versions": {
+        "svelte": "4.2.20"
+      },
+      "lock": "svelte4/package-lock.json",
+      "lockSHA256": "15122ffa95a216414986f67b7912dc27ca1366fa314781bd9508224fb64ddcda",
+      "types": "passed",
+      "assets": {
+        "svelte4.html": "ec08f8a0a972f19ee2148990e68f295e5684b17fe9f684619a32bd78b49cc9a4",
+        "svelte4.js": "ef3e781d97c557e103adbd9479cb4571153215fce8cf4a4fd93611972b22724e",
+        "svelte4-island.js": "50db1e3d812e5d80af4ebe33ed19782f138c9e8797723d6d713045cb83ddf4fc"
+      },
+      "installedLibraryPackages": {
+        "@en-reve/elements": "0.1.0",
+        "@en-reve/primitives": "0.1.0",
+        "@en-reve/ssr": "0.1.0",
+        "@en-reve/styles": "0.1.0",
+        "@en-reve/tokens": "0.1.0"
+      },
+      "bundleInputsSHA256": "574f499528664203cb38244b8837cee693d93670969cae4502fab819944ba348"
+    }
+  },
+  "packages": [
+    {
+      "name": "@en-reve/elements",
+      "version": "0.1.0",
+      "filename": "en-reve-elements-0.1.0.tgz",
+      "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+      "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+    },
+    {
+      "name": "@en-reve/primitives",
+      "version": "0.1.0",
+      "filename": "en-reve-primitives-0.1.0.tgz",
+      "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+      "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+    },
+    {
+      "name": "@en-reve/styles",
+      "version": "0.1.0",
+      "filename": "en-reve-styles-0.1.0.tgz",
+      "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+      "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+    },
+    {
+      "name": "@en-reve/tokens",
+      "version": "0.1.0",
+      "filename": "en-reve-tokens-0.1.0.tgz",
+      "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+      "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+    },
+    {
+      "name": "@en-reve/ssr",
+      "version": "0.1.0",
+      "filename": "en-reve-ssr-0.1.0.tgz",
+      "integrity": "sha512-bZY1o3hMgtNpbmUNeLpOLwXuo7hGDRAvaabm9iDFWtv17dFZ1DMFVVhf0M3Ru/iABFGIeJlN+BThdURklKmYpA==",
+      "shasum": "486b2b4105e404cc0ba3715ae8a2e25a071519b3"
+    }
+  ],
+  "acquisition": {
+    "catalogURL": "https://edgeupdates.microsoft.com/api/products?view=enterprise",
+    "catalogSHA256": "c94ad452819dce807a7434a1e2ed7ad8fdd765cd53b44aec9d952fd537eb78d3",
+    "acquiredAt": "2026-10-02T04:12:26.656076+00:00",
+    "policy": "Official package payload extraction only; installer scripts never run. No installed browser, updater or user profile changed.",
+    "products": [
+      {
+        "version": "153.0.4234.48",
+        "releaseId": 129935,
+        "channel": "Stable",
+        "architecture": "universal",
+        "publishedTime": "2026-09-18T18:09:00",
+        "archiveURL": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/8aa4efa6-ccfc-45df-9f57-bf678d2faf18/MicrosoftEdge-153.0.4234.48.pkg",
+        "archiveSHA256": "b9302cbc5e0adb22a82568d62a18d34050192d11c4b1344575dc6b5c264b58af",
+        "publishedSHA256": "b9302cbc5e0adb22a82568d62a18d34050192d11c4b1344575dc6b5c264b58af",
+        "archiveBytes": 429993224,
+        "distributionPath": "/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app",
+        "signatureChecks": [
+          {
+            "command": [
+              "pkgutil",
+              "--check-signature",
+              "/private/tmp/en-edge-153.0.4234.48.pkg"
+            ],
+            "exitCode": 0,
+            "stdout": "Package \"en-edge-153.0.4234.48.pkg\":\n   Status: signed by a developer certificate issued by Apple for distribution\n   Notarization: trusted by the Apple notary service\n   Signed with a trusted timestamp on: 2026-09-18 05:44:23 +0000\n   Certificate Chain:\n    1. Developer ID Installer: Microsoft Corporation (UBF8T346G9)\n       Expires: 2027-02-01 22:12:15 +0000\n       SHA256 Fingerprint:\n           64 5D 86 D2 DF 76 9E D7 04 CF B1 FA 1B 38 7F 78 69 DC 87 12 AB 4E \n           0F BC EB BC 29 64 D3 E9 A9 48\n       ------------------------------------------------------------------------\n    2. Developer ID Certification Authority\n       Expires: 2027-02-01 22:12:15 +0000\n       SHA256 Fingerprint:\n           7A FC 9D 01 A6 2F 03 A2 DE 96 37 93 6D 4A FE 68 09 0D 2D E1 8D 03 \n           F2 9C 88 CF B0 B1 BA 63 58 7F\n       ------------------------------------------------------------------------\n    3. Apple Root CA\n       Expires: 2035-02-09 21:40:36 +0000\n       SHA256 Fingerprint:\n           B0 B1 73 0E CB C7 FF 45 05 14 2C 49 F1 29 5E 6E DA 6B CA ED 7E 2C \n           68 C5 BE 91 B5 A1 10 01 F0 24\n\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "codesign",
+              "--verify",
+              "--deep",
+              "--strict",
+              "--verbose=2",
+              "/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app"
+            ],
+            "exitCode": 0,
+            "stdout": "",
+            "stderr": "--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/.\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/mac_addons.so\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/mac_addons.so\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/telclient.so\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/telclient.so\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/oneds.so\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/oneds.so\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/web_app_shortcut_copier\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/web_app_shortcut_copier\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif GPU).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Renderer).app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif GPU).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Renderer).app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif).app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Renderer).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (GPU).app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Renderer).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Alerts).app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (GPU).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Alerts).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper.app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper.app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Alerts).app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Alerts).app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/app_mode_loader\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/app_mode_loader\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/msedge_crashpad_handler\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/msedge_crashpad_handler\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeSpotlightIndexer.app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeSpotlightIndexer.app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/Helpers/launcher\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/Helpers/launcher\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Frameworks/OneAuth.framework/Versions/Current/.\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Frameworks/OneAuth.framework/Versions/Current/.\n--prepared:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/MacOS/updater_oneds.so\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/MacOS/updater_oneds.so\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app\n--validated:/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/.\n/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app: valid on disk\n/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app: satisfies its Designated Requirement\n"
+          },
+          {
+            "command": [
+              "codesign",
+              "-d",
+              "--verbose=4",
+              "/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app"
+            ],
+            "exitCode": 0,
+            "stdout": "",
+            "stderr": "Executable=/private/tmp/en-edge-153.0.4234.48-expanded/MicrosoftEdge-153.0.4234.48.pkg/Payload/Microsoft Edge.app/Contents/MacOS/Microsoft Edge\nIdentifier=com.microsoft.edgemac\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20500 size=769 flags=0x12a00(kill,restrict,library-validation,runtime) hashes=13+7 location=embedded\nVersionPlatform=1\nVersionMin=851968\nVersionSDK=1705216\nHash type=sha256 size=32\nCandidateCDHash sha256=556e8fd763afdc91fec7b7202c2327cf3ed0b166\nCandidateCDHashFull sha256=556e8fd763afdc91fec7b7202c2327cf3ed0b166e55d274127065c8153b1b703\nHash choices=sha256\nCMSDigest=556e8fd763afdc91fec7b7202c2327cf3ed0b166e55d274127065c8153b1b703\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=16384\nExecutable Segment flags=0x1\nPage size=4096\nCDHash=556e8fd763afdc91fec7b7202c2327cf3ed0b166\nSignature size=9013\nAuthority=Developer ID Application: Microsoft Corporation (UBF8T346G9)\nAuthority=Developer ID Certification Authority\nAuthority=Apple Root CA\nTimestamp=Sep 18, 2026 at 12:53:19\u202fAM\nInfo.plist entries=45\nTeamIdentifier=UBF8T346G9\nRuntime Version=26.5.0\nSealed Resources version=2 rules=13 files=94\nInternal requirements count=1 size=184\n"
+          }
+        ]
+      },
+      {
+        "version": "154.0.4258.53",
+        "releaseId": 131008,
+        "channel": "Stable",
+        "architecture": "universal",
+        "publishedTime": "2026-10-01T21:56:00",
+        "archiveURL": "https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/506a80d3-14f0-41f3-8e7a-878d8d823be3/MicrosoftEdge-154.0.4258.53.pkg",
+        "archiveSHA256": "dd720250d60a294cc2c0db9ccf05af732cce90d74a088d3e4293b280ef25cc71",
+        "publishedSHA256": "dd720250d60a294cc2c0db9ccf05af732cce90d74a088d3e4293b280ef25cc71",
+        "archiveBytes": 447890784,
+        "distributionPath": "/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app",
+        "signatureChecks": [
+          {
+            "command": [
+              "pkgutil",
+              "--check-signature",
+              "/private/tmp/en-edge-154.0.4258.53.pkg"
+            ],
+            "exitCode": 0,
+            "stdout": "Package \"en-edge-154.0.4258.53.pkg\":\n   Status: signed by a developer certificate issued by Apple for distribution\n   Notarization: trusted by the Apple notary service\n   Signed with a trusted timestamp on: 2026-10-01 02:00:31 +0000\n   Certificate Chain:\n    1. Developer ID Installer: Microsoft Corporation (UBF8T346G9)\n       Expires: 2027-02-01 22:12:15 +0000\n       SHA256 Fingerprint:\n           64 5D 86 D2 DF 76 9E D7 04 CF B1 FA 1B 38 7F 78 69 DC 87 12 AB 4E \n           0F BC EB BC 29 64 D3 E9 A9 48\n       ------------------------------------------------------------------------\n    2. Developer ID Certification Authority\n       Expires: 2027-02-01 22:12:15 +0000\n       SHA256 Fingerprint:\n           7A FC 9D 01 A6 2F 03 A2 DE 96 37 93 6D 4A FE 68 09 0D 2D E1 8D 03 \n           F2 9C 88 CF B0 B1 BA 63 58 7F\n       ------------------------------------------------------------------------\n    3. Apple Root CA\n       Expires: 2035-02-09 21:40:36 +0000\n       SHA256 Fingerprint:\n           B0 B1 73 0E CB C7 FF 45 05 14 2C 49 F1 29 5E 6E DA 6B CA ED 7E 2C \n           68 C5 BE 91 B5 A1 10 01 F0 24\n\n",
+            "stderr": ""
+          },
+          {
+            "command": [
+              "codesign",
+              "--verify",
+              "--deep",
+              "--strict",
+              "--verbose=2",
+              "/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app"
+            ],
+            "exitCode": 0,
+            "stdout": "",
+            "stderr": "--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/.\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/mac_addons.so\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/mac_addons.so\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/oneds.so\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/oneds.so\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif GPU).app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif GPU).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/web_app_shortcut_copier\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/web_app_shortcut_copier\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Alerts).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (GPU).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Renderer).app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif).app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (GPU).app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Renderer).app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Aperitif Alerts).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Alerts).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Renderer).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper.app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Renderer).app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper.app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/Microsoft Edge Helper (Alerts).app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/app_mode_loader\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/app_mode_loader\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/msedge_crashpad_handler\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/msedge_crashpad_handler\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/telclient.so\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/telclient.so\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeSpotlightIndexer.app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeSpotlightIndexer.app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/Helpers/launcher\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/Helpers/launcher\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Frameworks/OneAuth.framework/Versions/Current/.\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Frameworks/OneAuth.framework/Versions/Current/.\n--prepared:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/MacOS/updater_oneds.so\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app/Contents/MacOS/updater_oneds.so\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/Helpers/EdgeUpdater.app\n--validated:/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/Frameworks/Microsoft Edge Framework.framework/Versions/Current/.\n/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app: valid on disk\n/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app: satisfies its Designated Requirement\n"
+          },
+          {
+            "command": [
+              "codesign",
+              "-d",
+              "--verbose=4",
+              "/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app"
+            ],
+            "exitCode": 0,
+            "stdout": "",
+            "stderr": "Executable=/private/tmp/en-edge-154.0.4258.53-expanded/MicrosoftEdge-154.0.4258.53.pkg/Payload/Microsoft Edge.app/Contents/MacOS/Microsoft Edge\nIdentifier=com.microsoft.edgemac\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20500 size=769 flags=0x12a00(kill,restrict,library-validation,runtime) hashes=13+7 location=embedded\nVersionPlatform=1\nVersionMin=851968\nVersionSDK=1705216\nHash type=sha256 size=32\nCandidateCDHash sha256=dcfac85d428ad0079ac5847db2c20515300f5cc8\nCandidateCDHashFull sha256=dcfac85d428ad0079ac5847db2c20515300f5cc81de872bb0405ba8e715b3fce\nHash choices=sha256\nCMSDigest=dcfac85d428ad0079ac5847db2c20515300f5cc81de872bb0405ba8e715b3fce\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=16384\nExecutable Segment flags=0x1\nPage size=4096\nCDHash=dcfac85d428ad0079ac5847db2c20515300f5cc8\nSignature size=9012\nAuthority=Developer ID Application: Microsoft Corporation (UBF8T346G9)\nAuthority=Developer ID Certification Authority\nAuthority=Apple Root CA\nTimestamp=Sep 30, 2026 at 9:21:51\u202fPM\nInfo.plist entries=45\nTeamIdentifier=UBF8T346G9\nRuntime Version=26.5.0\nSealed Resources version=2 rules=13 files=94\nInternal requirements count=1 size=184\n"
+          }
+        ]
+      }
+    ]
+  },
+  "scope": "Six complete consumer contracts x ten freshly packed/type-checked cohorts x three pinned engines and two isolated Edge Stable releases.120 actual Edge passes;180 engine passes. HeadlessmacOS26.6.1 arm64; full distributions unchanged. No complete product/OS, physical/manual, speech or IME claim."
+}

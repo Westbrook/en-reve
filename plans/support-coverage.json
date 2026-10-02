@@ -317,6 +317,20 @@
       "path": "probes/native-browser-products/verification-firefox-lines-20261002.json",
       "sha256": "969671dbf88b238cc998037ab696832d767caab1e8e3321dd640beca0b075a9d",
       "scope": "Three native-input scenarios across ten hash-verified retained packed consumers, actual current and preceding Firefox on macOS. No complete product/OS matrix, native accessibility, speech, IME, physical device or fresh installation/type claim."
+    },
+    {
+      "id": "edge-framework-lines-20261002",
+      "kind": "automated-product-and-engine",
+      "path": "probes/framework-consumption/verification-edge-lines-20261002.json",
+      "sha256": "cacab93009bc541240a862e1d338a77c4f0f3ba89f9aa794a3a7dfc9f4e708c1",
+      "scope": "300 fresh packed-consumer checks:120 across isolated Edge153.0.4234.48 and154.0.4258.53,180 across pinned engines;10 public declaration compilations. Full distributions unchanged; official package hashes and signatures verified."
+    },
+    {
+      "id": "edge-workflow-lines-20261002",
+      "kind": "automated-product-workflows",
+      "path": "apps/docs/tests/verification-edge-lines-20261002.json",
+      "sha256": "7d61cfbf4627f869f0473ae1790442f37626da859148a62f87084187b94ce40a",
+      "scope": "52 production workflow passes across isolated current/preceding Edge;2 retained Chromium-only profile skips. Qualified production build reused with before/after input identity; no physical/manual acceptance."
     }
   ],
   "conditions": [
@@ -362,10 +376,12 @@
         "framework-release-lines-20261002",
         "native-products-20261002",
         "workflow-products-20261002",
-        "firefox-lines-20261002"
+        "firefox-lines-20261002",
+        "edge-framework-lines-20261002",
+        "edge-workflow-lines-20261002"
       ],
-      "gap": "Chrome154.0.8037.95 and Edge154.0.4258.48 pass packed consumers and52 production workflow cases; actual Firefox157.0 passes three native-input scenarios per cohort. Safari27 remains hidden even after foreground activation; no Safari component qualification. Other OSes, current patch gaps, native Firefox workflow breadth and manual checks remain open.",
-      "nextAction": "Resolve Safari visibility after desktop-state clarification; expand native Firefox workflow and remaining product/OS coverage without replacing physical/manual review."
+      "gap": "Chrome154.0.8037.95 passes consumer and production workflows; newer154.0.8037.98 is now listed at100% in the official Mac ARM64 stable release group and unqualified. Isolated Edge154.0.4258.53 passes60 consumer and26 workflow checks. Firefox157 passes30 native-input checks. Safari27 remains hidden; broader OS/native workflow/manual scope remains.",
+      "nextAction": "Resolve Safari visibility after desktop-state clarification. Qualify newer Chrome patch and broader actual Firefox workflows; retain actual OS/device/manual gaps."
     },
     {
       "id": "browser-previous",
@@ -373,10 +389,12 @@
       "status": "partial",
       "delivery": "product",
       "evidence": [
-        "firefox-lines-20261002"
+        "firefox-lines-20261002",
+        "edge-framework-lines-20261002",
+        "edge-workflow-lines-20261002"
       ],
-      "gap": "Actual isolated Firefox156.0.1 passes30 native-input consumer cases on macOS26.6.1. Preceding Chrome, Edge and Safari, other OSes and broader workflows remain unqualified. Cached Chrome-for-Testing is not retail qualification.",
-      "nextAction": "Acquire supported isolated preceding Chrome/Edge distributions or named external machine/VM receipts; previous Safari requires a compatible OS environment. Preserve physical/manual obligations."
+      "gap": "Isolated Firefox156.0.1 passes30 native-input checks; isolated Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and broader workflows remain unqualified. Chrome-for-Testing is a separately documented testing distribution.",
+      "nextAction": "Resolve an isolated retained/managed Chrome153 or explicit distribution policy; official versioned automation downloads are Chrome-for-Testing, not a retail archive. Safari26 needs a compatible isolated OS environment. Preserve physical/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -531,24 +549,36 @@
       "currentLine": "154",
       "previousLine": "153",
       "currentReferenceVersion": "154.0.4258.53",
-      "previousReferenceVersion": null,
+      "previousReferenceVersion": "153.0.4234.48",
       "sources": [
-        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel"
+        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel",
+        "https://edgeupdates.microsoft.com/api/products?view=enterprise",
+        "https://learn.microsoft.com/en-us/deployedge/microsoft-edge-relnote-archive-stable-channel"
       ],
-      "note": "Installed154.0.4258.48 predates October1patch. Exact previous patch not resolved; extended stable152 is a different channel."
+      "note": "Official enterprise catalog resolves current154.0.4258.53 and preceding153.0.4234.48 MacOS universal Stable packages. Both extracted without installation, package hashes and trusted signatures verified, then60 consumer and26 production workflow checks per product passed. No installed browser changed."
     },
     {
       "product": "Google Chrome",
       "resolvedAt": "2026-10-02",
       "currentLine": "154",
       "previousLine": "153",
-      "currentReferenceVersion": null,
-      "previousReferenceVersion": null,
+      "currentReferenceVersion": "154.0.8037.98",
+      "previousReferenceVersion": "153.0.8010.53",
       "sources": [
         "https://developer.chrome.com/release-notes/154",
-        "https://chromereleases.googleblog.com/2026/09/"
+        "https://chromereleases.googleblog.com/2026/09/",
+        "https://developer.chrome.com/docs/web-platform/versionhistory/guide",
+        "https://versionhistory.googleapis.com/v1/chrome/platforms/mac_arm64/channels/stable/versions?filter=version%3E%3D153,version%3C155&order_by=version%20desc",
+        "https://www.chromium.org/getting-involved/download-chromium/",
+        "https://support.google.com/chrome/a/answer/7591084?hl=en",
+        "https://versionhistory.googleapis.com/v1/chrome/platforms/mac_arm64/channels/stable/versions/all/releases?filter=version%3E%3D153,version%3C154&order_by=version%20desc"
       ],
-      "note": "Official Chrome154 release notes date stable to September22. Prior major153 is the preceding-line candidate; exact latest/preceding patches not resolved. Installed154.0.8037.95 qualified only for the new scoped consumer run. Index fetch was rate-limited; no latest-patch claim."
+      "note": "Official Mac ARM64 VersionHistory lists154.0.8037.98 at100% in fractionGroup194 fromOctober2. Installed154.0.8037.95 was qualified earlier. Highest listed153.0.8010.55 was only a0.5% control rollout, endedSeptember30; the latest preceding153 patch observed at100% and pinnable was153.0.8010.53, selected as the preceding broad-release reference.155 early Stable is a separate small rollout datedSeptember30. General154 and preceding153 coverage remain the current ledger window pending exact distribution acquisition; no retail archive found. Google documents Chrome-for-Testing as its versioned automation flavor and managed rollback as a separate admin operation. No host rollback or updater changes performed.",
+      "sourceSnapshots": {
+        "en-chrome-versions-20261002.json": "fb31d9854964b34241db9ecdbb6b7162b1f0c53e7e2bd80cb37637e32551e445",
+        "en-chrome-153-all-releases-20261002.json": "42bcb02d83c9ba89494a523971956cbfce3e2ea37146a54cdf937ba7441017ea",
+        "en-chrome-154-releases-20261002.json": "1f81b888c47dca2ed1d0bee1c16476b4d697d0bcc634b421f7afab693f96fac0"
+      }
     },
     {
       "product": "Frameworks",
@@ -562,6 +592,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T03:48:05.942249+00:00",
+  "updatedAt": "2026-10-02T04:18:32.849975+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

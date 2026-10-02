@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "7df6ba1bc6f41b54dff7df5c1f22ce51014d5bbc",
-  "exportedAt": "2026-10-02T04:07:05.450326+00:00",
+  "sourceCommit": "a2edb022a380992c342d1a2ebae14c189bb97f77",
+  "exportedAt": "2026-10-02T04:20:58.726234+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5411,
-  "includedBytes": 144496790,
-  "qualification": "Current Firefox157.0 and isolated preceding156.0.1 each pass30 native-input consumer checks. Official archive checksum and macOS code signature verified; distributions unchanged.104 tooling checks pass. Broader products, Safari visibility and physical/manual review remain open.",
-  "latestUpdate": ".source-export/updates/firefox-lines-20261002.json",
+  "includedFiles": 5414,
+  "includedBytes": 144578529,
+  "qualification": "Current Edge154.0.4258.53 and preceding153.0.4234.48 qualified from official isolated package payloads:300 packed-consumer checks across5 subjects,10 declaration compilations,52 product workflow passes and2 existing skips.105 tooling checks pass. Chrome acquisition and Safari/device/manual gaps remain explicit.",
+  "latestUpdate": ".source-export/updates/edge-lines-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

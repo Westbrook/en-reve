@@ -162,3 +162,14 @@ strict. Full product distributions and production source/build inventories staye
 unchanged across the run. This reuses qualified `dist/`; it is not a fresh build.
 Actual speech/IME, physical devices, other products/OSes and previous versions
 remain separate support conditions.
+
+### Isolated Edge current/preceding workflow qualification
+
+[October2 release-line receipt](verification-edge-lines-20261002.json) records26
+passes each on Edge153.0.4234.48 and154.0.4258.53, with one existing Chromium-only
+viewport skip per product. It runs the same `workflows.spec.ts` and
+`selection.spec.ts` through `EN_BROWSER_PRODUCTS`, using the qualified production
+build and fresh Playwright profiles. Full app and input inventories remained
+unchanged. Exact official package/hash/signature provenance is linked in the
+receipt. No manual/physical acceptance, other OS or complete product matrix is
+implied. Existing installed-product receipts remain unchanged.
