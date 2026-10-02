@@ -1,0 +1,758 @@
+{
+  "spectrum-inspired": {
+    "light": {
+      "pins": {
+        "font.ui.family": [
+          "adobe-clean-spectrum-vf",
+          "adobe-clean-variable",
+          "adobe-clean",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        "font.code.family": [
+          "source-code-pro",
+          "Source Code Pro",
+          "Monaco",
+          "monospace"
+        ],
+        "font.ui.line-height": 1.2857142857142858,
+        "font.metadata.line-height": 1.2857142857142858,
+        "font.heading-small.size": {
+          "value": 1.25,
+          "unit": "rem"
+        },
+        "font.heading-small.line-height": 1.2,
+        "font.heading-small.weight": 800,
+        "font.heading-medium.size": {
+          "value": 1.375,
+          "unit": "rem"
+        },
+        "font.heading-medium.line-height": 1.1818181818181819,
+        "font.heading-medium.weight": 800,
+        "font.heading-large.size": {
+          "value": 1.75,
+          "unit": "rem"
+        },
+        "font.heading-large.line-height": 1.1428571428571428,
+        "font.heading-large.weight": 800,
+        "shadow.overlay": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.08
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 12,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.04
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 2,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 6,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.12
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "shadow.dialog": {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "duration.fast": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "duration.regular": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "component.editor-token.border-color": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0
+        },
+        "font.body.family": "{font.ui.family}",
+        "font.data.family": "{font.ui.family}",
+        "font.metadata.family": "{font.ui.family}",
+        "font.heading-small.family": "{font.ui.family}",
+        "font.heading-medium.family": "{font.ui.family}",
+        "font.heading-large.family": "{font.ui.family}"
+      }
+    },
+    "dark": {
+      "pins": {
+        "font.ui.family": [
+          "adobe-clean-spectrum-vf",
+          "adobe-clean-variable",
+          "adobe-clean",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        "font.code.family": [
+          "source-code-pro",
+          "Source Code Pro",
+          "Monaco",
+          "monospace"
+        ],
+        "font.ui.line-height": 1.2857142857142858,
+        "font.metadata.line-height": 1.2857142857142858,
+        "font.heading-small.size": {
+          "value": 1.25,
+          "unit": "rem"
+        },
+        "font.heading-small.line-height": 1.2,
+        "font.heading-small.weight": 800,
+        "font.heading-medium.size": {
+          "value": 1.375,
+          "unit": "rem"
+        },
+        "font.heading-medium.line-height": 1.1818181818181819,
+        "font.heading-medium.weight": 800,
+        "font.heading-large.size": {
+          "value": 1.75,
+          "unit": "rem"
+        },
+        "font.heading-large.line-height": 1.1428571428571428,
+        "font.heading-large.weight": 800,
+        "shadow.overlay": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.24
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 12,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.12
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 2,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 6,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.36
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "shadow.dialog": {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "alpha": 0
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 0,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 0,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "duration.fast": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "duration.regular": {
+          "value": 150,
+          "unit": "ms"
+        },
+        "component.editor-token.border-color": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0
+        },
+        "font.body.family": "{font.ui.family}",
+        "font.data.family": "{font.ui.family}",
+        "font.metadata.family": "{font.ui.family}",
+        "font.heading-small.family": "{font.ui.family}",
+        "font.heading-medium.family": "{font.ui.family}",
+        "font.heading-large.family": "{font.ui.family}"
+      }
+    }
+  },
+  "fluent-inspired": {
+    "light": {
+      "pins": {
+        "font.ui.family": [
+          "Segoe UI",
+          "Segoe UI Web (West European)",
+          "system-ui",
+          "Roboto",
+          "Helvetica Neue",
+          "sans-serif"
+        ],
+        "font.code.family": [
+          "Consolas",
+          "Courier New",
+          "Courier",
+          "monospace"
+        ],
+        "font.metadata.size": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "shadow.overlay": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.12
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.14
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 8,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 16,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "shadow.dialog": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.12
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 8,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.14
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 32,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 64,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "component.toast.shadow": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.12
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.14
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 8,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "component.editor-token.border-color": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0
+        },
+        "font.body.family": "{font.ui.family}",
+        "font.data.family": "{font.ui.family}",
+        "font.metadata.family": "{font.ui.family}",
+        "font.heading-small.family": "{font.ui.family}",
+        "font.heading-medium.family": "{font.ui.family}",
+        "font.heading-large.family": "{font.ui.family}"
+      }
+    },
+    "dark": {
+      "pins": {
+        "font.ui.family": [
+          "Segoe UI",
+          "Segoe UI Web (West European)",
+          "system-ui",
+          "Roboto",
+          "Helvetica Neue",
+          "sans-serif"
+        ],
+        "font.code.family": [
+          "Consolas",
+          "Courier New",
+          "Courier",
+          "monospace"
+        ],
+        "font.metadata.size": {
+          "value": 0.75,
+          "unit": "rem"
+        },
+        "shadow.overlay": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.24
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.28
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 8,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 16,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "shadow.dialog": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.24
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 8,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.28
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 32,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 64,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "component.toast.shadow": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.24
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 0,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 2,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.0,
+                0.0,
+                0.0
+              ],
+              "alpha": 0.28
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 8,
+              "unit": "px"
+            },
+            "spread": {
+              "value": 0,
+              "unit": "px"
+            }
+          }
+        ],
+        "component.editor-token.border-color": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "alpha": 0
+        },
+        "font.body.family": "{font.ui.family}",
+        "font.data.family": "{font.ui.family}",
+        "font.metadata.family": "{font.ui.family}",
+        "font.heading-small.family": "{font.ui.family}",
+        "font.heading-medium.family": "{font.ui.family}",
+        "font.heading-large.family": "{font.ui.family}"
+      }
+    }
+  }
+}

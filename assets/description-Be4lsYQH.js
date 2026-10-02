@@ -1,0 +1,2 @@
+import{c as e,f as t,t as n}from"./lit-B8wTlSYy.js";import{t as r}from"./rolldown-runtime-B0lUwjiP.js";function i(n,r=`description`){return t`<div id="description" part=${r} class="en-description"><slot name="description"><span class="en-description-fallback">${n||e}</span></slot></div>`}function a(){return(a=r((()=>{n()})))()}export{a as n,i as t};
+//# sourceMappingURL=description-Be4lsYQH.js.map

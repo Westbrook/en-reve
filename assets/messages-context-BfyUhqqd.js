@@ -1,0 +1,2 @@
+import{a as e}from"./context-consumer-vLkWz0Lq.js";import{t}from"./rolldown-runtime-B0lUwjiP.js";function n(e,t){if(!e)return t;if(!t)return e;let r={...e};for(let[i,a]of Object.entries(t))a!=null&&(r[i]=typeof a==`object`&&!Array.isArray(a)?n(Reflect.get(e,i),a):a);return r}var r,i;function a(){return(a=t((()=>{r=e(`@en-reve/editor-messages/v1`),i=e(`@en-reve/color-messages/v1`)})))()}export{n as i,r as n,a as r,i as t};
+//# sourceMappingURL=messages-context-BfyUhqqd.js.map

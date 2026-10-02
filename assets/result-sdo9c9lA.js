@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e){return{ok:!0,value:e}}function n(e){return{ok:!1,problem:e}}function r(){return(r=e((()=>{})))()}export{r as n,t as r,n as t};
+//# sourceMappingURL=result-sdo9c9lA.js.map

@@ -1,0 +1,146 @@
+{
+  "checkedAt": "2026-09-20T01:07:11.032Z",
+  "method": "Managed replay over per-mode source baseline, byte-identical draft export/reopen/export, declared text/badge contrast on canvas/surface/raised and toast; browser visual review delegated to root",
+  "branches": [
+    {
+      "id": "astryx-inspired",
+      "mode": "light",
+      "sourceHash": "sha256:dfd9b03df6a3ab9ddbd863566c1e7641423a3cb0144baf67243ab09923c73efd",
+      "editCount": 73,
+      "diagnostics": [],
+      "roundtrip": true,
+      "cssBytes": 29616,
+      "contrast": {
+        "palette.canvas": {
+          "text": 17.142376015084466,
+          "muted": 5.9363674377007545,
+          "dangerBadge": 4.526248182229612,
+          "successBadge": 9.48152173299889,
+          "warningBadge": 7.131907846884691
+        },
+        "palette.surface": {
+          "text": 18.79406061756564,
+          "muted": 6.5083422142949106,
+          "dangerBadge": 4.955837078119095,
+          "successBadge": 10.381418576619321,
+          "warningBadge": 7.808801444888751
+        },
+        "palette.surface-raised": {
+          "text": 18.79406061756564,
+          "muted": 6.5083422142949106,
+          "dangerBadge": 4.955837078119095,
+          "successBadge": 10.381418576619321,
+          "warningBadge": 7.808801444888751
+        },
+        "toast": {
+          "text": 14.437743361074554
+        }
+      }
+    },
+    {
+      "id": "astryx-inspired",
+      "mode": "dark",
+      "sourceHash": "sha256:2e961f47a3cc43701e8339285c136ce2ca1f0c72f9d89e3933b9fa961e695e9d",
+      "editCount": 74,
+      "diagnostics": [],
+      "roundtrip": true,
+      "cssBytes": 29703,
+      "contrast": {
+        "palette.canvas": {
+          "text": 14.511429178095197,
+          "muted": 8.545004069013565,
+          "dangerBadge": 11.064764384904658,
+          "successBadge": 14.544977282641051,
+          "warningBadge": 12.520068737257578
+        },
+        "palette.surface": {
+          "text": 12.641413277037275,
+          "muted": 7.443851778115814,
+          "dangerBadge": 10.392493557615136,
+          "successBadge": 13.66125634918417,
+          "warningBadge": 11.759376807911053
+        },
+        "palette.surface-raised": {
+          "text": 11.184319590870592,
+          "muted": 6.585847282182174,
+          "dangerBadge": 9.873743051855797,
+          "successBadge": 12.979342658195696,
+          "warningBadge": 11.172397116011357
+        },
+        "toast": {
+          "text": 18.79406061756564
+        }
+      }
+    },
+    {
+      "id": "shadcn-inspired",
+      "mode": "light",
+      "sourceHash": "sha256:e12f906039ad73fd9fb573ed47800eee8faa95034d0491e6e5f624967c0ce234",
+      "editCount": 87,
+      "diagnostics": [],
+      "roundtrip": true,
+      "cssBytes": 29330,
+      "contrast": {
+        "palette.canvas": {
+          "text": 19.79814571052481,
+          "muted": 5.32921162976606,
+          "dangerBadge": 4.538795180615213,
+          "successBadge": 5.916168521869376,
+          "warningBadge": 6.2351071685387955
+        },
+        "palette.surface": {
+          "text": 19.79814571052481,
+          "muted": 5.32921162976606,
+          "dangerBadge": 4.538795180615213,
+          "successBadge": 5.916168521869376,
+          "warningBadge": 6.2351071685387955
+        },
+        "palette.surface-raised": {
+          "text": 19.79814571052481,
+          "muted": 5.32921162976606,
+          "dangerBadge": 4.538795180615213,
+          "successBadge": 5.916168521869376,
+          "warningBadge": 6.2351071685387955
+        },
+        "toast": {
+          "text": 19.79814571052481
+        }
+      }
+    },
+    {
+      "id": "shadcn-inspired",
+      "mode": "dark",
+      "sourceHash": "sha256:921d07f91db6cffedc434585ca9bbc75a788f2b965b82cced35adc6edd7e6d38",
+      "editCount": 85,
+      "diagnostics": [],
+      "roundtrip": true,
+      "cssBytes": 29337,
+      "contrast": {
+        "palette.canvas": {
+          "text": 18.96800669384249,
+          "muted": 7.662827876742547,
+          "dangerBadge": 5.239604856835596,
+          "successBadge": 9.397253524743457,
+          "warningBadge": 10.594892951576908
+        },
+        "palette.surface": {
+          "text": 17.176123405576867,
+          "muted": 6.938930345767489,
+          "dangerBadge": 5.239604856835596,
+          "successBadge": 9.397253524743457,
+          "warningBadge": 10.594892951576908
+        },
+        "palette.surface-raised": {
+          "text": 17.176123405576867,
+          "muted": 6.938930345767489,
+          "dangerBadge": 5.239604856835596,
+          "successBadge": 9.397253524743457,
+          "warningBadge": 10.594892951576908
+        },
+        "toast": {
+          "text": 17.176123405576867
+        }
+      }
+    }
+  ]
+}

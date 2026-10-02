@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./dialog-CMeWXN3I.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),n(),t(customElements,r)})))()}a();
+//# sourceMappingURL=dialog-DsrOd9vO.js.map

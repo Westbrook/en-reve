@@ -1,0 +1,31 @@
+{
+  "mode": "build-time",
+  "caseId": "popup-motion",
+  "bytes": 2798519,
+  "minification": {
+    "inputBytes": 3184714,
+    "outputBytes": 2798408,
+    "syntaxBytesSaved": 733,
+    "cssBytesSaved": 385573,
+    "styleBlocks": 63,
+    "cssCacheHits": 63
+  },
+  "customElementTags": [
+    "en-button",
+    "en-checkbox",
+    "en-combobox",
+    "en-command-palette",
+    "en-dialog",
+    "en-drawer",
+    "en-icon",
+    "en-menu",
+    "en-menu-item",
+    "en-popover",
+    "en-select",
+    "en-stack",
+    "en-text-field",
+    "en-textarea",
+    "en-tooltip"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

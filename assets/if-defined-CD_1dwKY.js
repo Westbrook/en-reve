@@ -1,0 +1,2 @@
+import{c as e,p as t}from"./lit-B8wTlSYy.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";var r;function i(){return(i=n((()=>{t(),r=t=>t??e})))()}function a(){return(a=n((()=>{i()})))()}export{i as n,r,a as t};
+//# sourceMappingURL=if-defined-CD_1dwKY.js.map

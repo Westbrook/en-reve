@@ -1,0 +1,2 @@
+import{n as e,t}from"./dist-gZqZ_ZdS.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";function r(e,n={}){let r=n.normalize??(e=>e),i=n.equals??Object.is,a=r(e),o=new t.State(Object.freeze({value:a,revision:0})),s=e=>{let t=r(e),n=o.get();return!i(n.value,t)&&(o.set(Object.freeze({value:t,revision:n.revision+1})),!0)};return{value:new t.Computed(()=>o.get().value),view:new t.Computed(()=>o.get()),set:s,reset:()=>s(a)}}function i(){return(i=n((()=>{e()})))()}export{i as n,r as t};
+//# sourceMappingURL=value-ClbOpY6C.js.map

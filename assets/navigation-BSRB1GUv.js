@@ -1,0 +1,2 @@
+import{f as e,t}from"./lit-B8wTlSYy.js";import{t as n}from"./if-defined-CD_1dwKY.js";import{t as r}from"./rolldown-runtime-B0lUwjiP.js";function i({href:t,label:n}){return e`<a class="en-skip-link" href=${t}>${n}</a>`}function a(){return(a=r((()=>{t(),n()})))()}export{i as n,a as t};
+//# sourceMappingURL=navigation-BSRB1GUv.js.map

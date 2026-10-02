@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e,t,n,r){if(n===0||t<0)return;let i;switch(e){case`ArrowDown`:i=t+1;break;case`ArrowUp`:i=t-1;break;case`ArrowRight`:i=t+(r?-1:1);break;case`ArrowLeft`:i=t+(r?1:-1);break;case`Home`:i=0;break;case`End`:i=n-1;break;default:return}return(i+n)%n}function n(){return(n=e((()=>{})))()}export{t as n,n as t};
+//# sourceMappingURL=navigation-C4pnaFK5.js.map

@@ -1,0 +1,2 @@
+import{n as e,t}from"./button-DaRU3jf8.js";import{n,t as r}from"./icon-DigubW-V.js";import{n as i,t as a}from"./dialog-CIHToWC4.js";import{t as o}from"./rolldown-runtime-B0lUwjiP.js";var s;function c(){return(c=o((()=>{i(),e(),n(),s={tagName:`en-dialog`,elementClass:a,dependencies:[t,r]}})))()}export{c as n,s as t};
+//# sourceMappingURL=dialog-CMeWXN3I.js.map

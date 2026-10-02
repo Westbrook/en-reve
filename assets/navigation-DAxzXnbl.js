@@ -1,0 +1,1 @@
+import{t as e}from"./navigation-CC-2wOwf.js";e();

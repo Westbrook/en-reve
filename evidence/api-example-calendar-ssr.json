@@ -1,0 +1,24 @@
+{
+  "mode": "build-time",
+  "caseId": "calendar",
+  "bytes": 3154377,
+  "minification": {
+    "inputBytes": 3566495,
+    "outputBytes": 3154266,
+    "syntaxBytesSaved": 2664,
+    "cssBytesSaved": 409565,
+    "styleBlocks": 83,
+    "cssCacheHits": 83
+  },
+  "customElementTags": [
+    "en-button",
+    "en-calendar",
+    "en-checkbox",
+    "en-date-picker",
+    "en-dialog",
+    "en-icon",
+    "en-select",
+    "en-time-field"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

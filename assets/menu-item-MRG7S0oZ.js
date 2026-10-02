@@ -1,0 +1,1 @@
+import{t as e}from"./menu-item-D5G3HT9i.js";e();

@@ -1,0 +1,34 @@
+{
+  "mode": "build-time",
+  "page": "chat",
+  "bytes": 2441247,
+  "minification": {
+    "inputBytes": 2733288,
+    "outputBytes": 2441136,
+    "syntaxBytesSaved": 1090,
+    "cssBytesSaved": 291062,
+    "styleBlocks": 118,
+    "cssCacheHits": 112
+  },
+  "customElementTags": [
+    "en-activity-feed",
+    "en-activity-item",
+    "en-avatar",
+    "en-badge",
+    "en-button",
+    "en-card",
+    "en-chat-composer",
+    "en-chat-message",
+    "en-composable-chat-demo",
+    "en-editor-trigger",
+    "en-navigation",
+    "en-presence",
+    "en-presence-group",
+    "en-segmented-control",
+    "en-select",
+    "en-skeleton",
+    "en-textarea",
+    "en-token-editor"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

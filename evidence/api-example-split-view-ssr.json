@@ -1,0 +1,24 @@
+{
+  "mode": "build-time",
+  "caseId": "split-view",
+  "bytes": 1393812,
+  "minification": {
+    "inputBytes": 1595293,
+    "outputBytes": 1393701,
+    "syntaxBytesSaved": 486,
+    "cssBytesSaved": 201106,
+    "styleBlocks": 30,
+    "cssCacheHits": 30
+  },
+  "customElementTags": [
+    "en-button",
+    "en-checkbox",
+    "en-navigation",
+    "en-navigation-group",
+    "en-select",
+    "en-split-view",
+    "en-splitter",
+    "en-text-field"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

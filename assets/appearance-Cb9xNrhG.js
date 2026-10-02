@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e){return e===`auto`||e===`light`||e===`dark`}function n(e,t=`light`){return e===`auto`?t:e}function r(e,t,n){if(n.aborted)return;let r=e.matchMedia(`(prefers-color-scheme: dark)`),i=()=>t(r.matches?`dark`:`light`);r.addEventListener(`change`,i,{signal:n}),i()}var i;function a(){return(a=e((()=>{i=[{value:`auto`,label:`Auto`},{value:`light`,label:`Light`},{value:`dark`,label:`Dark`}]})))()}export{r as a,t as i,n,a as r,i as t};
+//# sourceMappingURL=appearance-Cb9xNrhG.js.map

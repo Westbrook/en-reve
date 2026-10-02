@@ -1,0 +1,26 @@
+{
+  "mode": "build-time",
+  "caseId": "rich-text",
+  "bytes": 1539404,
+  "minification": {
+    "inputBytes": 1740439,
+    "outputBytes": 1539293,
+    "syntaxBytesSaved": 721,
+    "cssBytesSaved": 200425,
+    "styleBlocks": 64,
+    "cssCacheHits": 64
+  },
+  "customElementTags": [
+    "en-button",
+    "en-chat-composer",
+    "en-editor-toolbar",
+    "en-editor-trigger",
+    "en-icon",
+    "en-rich-text-editor",
+    "en-select",
+    "en-select-option",
+    "en-token-editor",
+    "en-toolbar"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

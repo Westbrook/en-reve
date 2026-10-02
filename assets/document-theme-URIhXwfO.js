@@ -1,0 +1,1 @@
+import{n as e,t}from"./document-theme-DpKIFwgn.js";e();export{t as attachDocumentTheme};

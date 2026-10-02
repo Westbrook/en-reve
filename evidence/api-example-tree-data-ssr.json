@@ -1,0 +1,22 @@
+{
+  "mode": "build-time",
+  "caseId": "tree-data",
+  "bytes": 1852265,
+  "minification": {
+    "inputBytes": 2094800,
+    "outputBytes": 1852154,
+    "syntaxBytesSaved": 546,
+    "cssBytesSaved": 242100,
+    "styleBlocks": 33,
+    "cssCacheHits": 33
+  },
+  "customElementTags": [
+    "en-button",
+    "en-select",
+    "en-switch",
+    "en-text-field",
+    "en-tree",
+    "en-tree-item"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

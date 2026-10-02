@@ -1,0 +1,22 @@
+{
+  "mode": "build-time",
+  "caseId": "mixed-toolbar",
+  "bytes": 1003082,
+  "minification": {
+    "inputBytes": 1148282,
+    "outputBytes": 1002971,
+    "syntaxBytesSaved": 296,
+    "cssBytesSaved": 145015,
+    "styleBlocks": 16,
+    "cssCacheHits": 16
+  },
+  "customElementTags": [
+    "en-button",
+    "en-checkbox",
+    "en-select",
+    "en-select-option",
+    "en-text-field",
+    "en-toolbar"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

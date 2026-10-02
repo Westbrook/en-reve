@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./toast-region-C7y9FNDz.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),r(),t(customElements,n)})))()}export{a as t};
+//# sourceMappingURL=toast-region-Dugs7Mhm.js.map

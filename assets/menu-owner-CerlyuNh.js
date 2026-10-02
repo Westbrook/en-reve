@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e,t){return a.set(e,t),()=>{a.get(e)===t&&a.delete(e)}}function n(e){return a.get(e)}function r(e,t){o.set(e,t)}function i(e){return o.get(e)}var a,o;function s(){return(s=e((()=>{a=new WeakMap,o=new WeakMap})))()}export{r as a,t as i,i as n,n as r,s as t};
+//# sourceMappingURL=menu-owner-CerlyuNh.js.map

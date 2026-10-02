@@ -1,0 +1,1 @@
+import{t as e}from"./badge-1ss0Byjo.js";e();

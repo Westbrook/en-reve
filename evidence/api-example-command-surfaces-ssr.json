@@ -1,0 +1,23 @@
+{
+  "mode": "build-time",
+  "caseId": "command-surfaces",
+  "bytes": 734109,
+  "minification": {
+    "inputBytes": 835970,
+    "outputBytes": 733998,
+    "syntaxBytesSaved": 124,
+    "cssBytesSaved": 101848,
+    "styleBlocks": 20,
+    "cssCacheHits": 20
+  },
+  "customElementTags": [
+    "en-button",
+    "en-command-palette",
+    "en-icon",
+    "en-menu",
+    "en-menu-item",
+    "en-stack",
+    "en-toolbar"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

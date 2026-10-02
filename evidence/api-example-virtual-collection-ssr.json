@@ -1,0 +1,23 @@
+{
+  "mode": "build-time",
+  "caseId": "virtual-collection",
+  "bytes": 3815577,
+  "minification": {
+    "inputBytes": 4429851,
+    "outputBytes": 3815466,
+    "syntaxBytesSaved": 977,
+    "cssBytesSaved": 613408,
+    "styleBlocks": 49,
+    "cssCacheHits": 49
+  },
+  "customElementTags": [
+    "en-button",
+    "en-checkbox",
+    "en-icon",
+    "en-select",
+    "en-table",
+    "en-text-field",
+    "en-virtual-collection-demo"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

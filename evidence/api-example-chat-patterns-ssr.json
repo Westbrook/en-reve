@@ -1,0 +1,28 @@
+{
+  "mode": "build-time",
+  "caseId": "chat-patterns",
+  "bytes": 1484069,
+  "minification": {
+    "inputBytes": 1684252,
+    "outputBytes": 1483958,
+    "syntaxBytesSaved": 499,
+    "cssBytesSaved": 199795,
+    "styleBlocks": 36,
+    "cssCacheHits": 35
+  },
+  "customElementTags": [
+    "en-button",
+    "en-chat-composer",
+    "en-chat-message",
+    "en-checkbox",
+    "en-composable-chat-demo",
+    "en-dialog",
+    "en-editor-trigger",
+    "en-file-upload",
+    "en-icon",
+    "en-select",
+    "en-textarea",
+    "en-token-editor"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

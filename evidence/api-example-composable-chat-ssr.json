@@ -1,0 +1,22 @@
+{
+  "mode": "build-time",
+  "caseId": "composable-chat",
+  "bytes": 1066115,
+  "minification": {
+    "inputBytes": 1209206,
+    "outputBytes": 1066004,
+    "syntaxBytesSaved": 383,
+    "cssBytesSaved": 142819,
+    "styleBlocks": 23,
+    "cssCacheHits": 23
+  },
+  "customElementTags": [
+    "en-button",
+    "en-chat-composer",
+    "en-composable-chat-demo",
+    "en-editor-trigger",
+    "en-select",
+    "en-token-editor"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

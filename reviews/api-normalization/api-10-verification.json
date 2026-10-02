@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "status": "verified-with-existing-baseline-failure",
+  "baseCommit": "acd11ab804e715eb653f3b0450c14551160222a2",
+  "checks": {
+    "catalogParts": {
+      "passed": 231,
+      "components": 77,
+      "browsers": [
+        "chromium",
+        "firefox",
+        "webkit"
+      ]
+    },
+    "events": {
+      "passed": 60
+    },
+    "combobox": {
+      "passed": 138
+    },
+    "commands": {
+      "passed": 100,
+      "skipped": 1,
+      "failed": 1,
+      "baselineReproduced": true,
+      "failure": "Chromium native-dialog focus after Tab; same assertion fails on unchanged published baseline.",
+      "baselineCommit": "14490d5c9c2f4e9dd2937c9b87e5e0c744371cd6"
+    },
+    "build": {
+      "status": "passed",
+      "workspace": "isolated current-main publication checkout"
+    },
+    "tooling": {
+      "passed": 64
+    },
+    "docsGenerator": {
+      "passed": 7
+    },
+    "strictToolingTypes": {
+      "status": "passed"
+    },
+    "treeEventAliases": {
+      "passed": 3
+    },
+    "customization": {
+      "failures": 0
+    },
+    "publicGraph": {
+      "components": 77,
+      "exposedEntrypoints": 459,
+      "supportedEntrypoints": 237,
+      "events": 88,
+      "sourceEventContracts": 86
+    }
+  },
+  "limits": [
+    "Finite named-state Parts matrix.",
+    "Generic dispatch adapters retain family tests.",
+    "External dependency bodies require owning-package review.",
+    "Human review remains separate."
+  ],
+  "artifacts": {
+    "packages/elements/custom-elements.json": "sha256:a77029b2075ad44d5838a0ad8842c07283a48b470348f68731885ace11d3ef23",
+    "packages/elements/custom-elements.json.receipt.json": "sha256:55ee6b042ea1cb5ffa0532da9263f8ec57106d6056534b56a633e98aea9a0867",
+    "packages/elements/public-types.json": "sha256:c7fe8b655fee9bb0b631376cbf15cb39c78173e3b8995587c0ee2f5d2cac4ef6",
+    "packages/elements/public-api.json": "sha256:a8f8585c0d9a0dbc957cec00fa7448fd753b68378f20759f84aac42f6215e2ee"
+  }
+}

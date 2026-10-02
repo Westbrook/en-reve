@@ -1,0 +1,2 @@
+import{n as e,t}from"./choice-base-B-n50Amp.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";var r;function i(){return(i=n((()=>{e(),r=class extends t{get kind(){return`switch`}}})))()}var a;function o(){return(o=n((()=>{i(),a={tagName:`en-switch`,elementClass:r}})))()}export{a as n,o as t};
+//# sourceMappingURL=switch-DUCRtAMU.js.map

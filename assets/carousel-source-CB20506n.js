@@ -1,0 +1,119 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";var t;function n(){return(n=e((()=>{t=`import '@en-reve/elements/define/button.js';
+import '@en-reve/elements/define/carousel.js';
+import '@en-reve/elements/define/carousel-slide.js';
+import { html } from 'lit';
+import { AsyncDirective, directive } from 'lit/async-directive.js';
+import type { CarouselItem, EnCarousel } from '@en-reve/elements/carousel.js';
+import { repeat } from 'lit/directives/repeat.js';
+import { guard } from 'lit/directives/guard.js';
+// Separate decorative previews: application-owned slide nodes are never cloned.
+const thumbnail = (background: string, foreground: string) => \`data:image/svg+xml,\${encodeURIComponent(\`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 70"><rect width="160" height="70" fill="\${background}"/><path d="M0 70 50 10 100 70Z M50 70 115 25 160 70Z" fill="\${foreground}"/></svg>\`)}\`;
+class CarouselDemo extends AsyncDirective {
+    private key: unknown;
+    private auto = false;
+    private cards = [1, 2, 3, 4, 5];
+    private nextId = 6;
+    private collection: CarouselItem[] = Array.from({ length: 1000 }, (_, index) => ({ key: \`study-\${index + 1}\`, label: \`Study \${index + 1}\`, thumbnail: thumbnail(index % 2 ? '#375a4c' : '#12263c', index % 2 ? '#dfba4b' : '#678d94') }));
+    private readingList = false;
+    private controls: 'none' | 'auto' | 'always' = 'auto';
+    private navigation: 'none' | 'positions' | 'thumbnails' = 'thumbnails';
+    private boundaries = true;
+    private collectionItem = (item: CarouselItem, index: number) => html\`<article class="project-card"><span class="number" aria-hidden="true">\${String(index + 1).padStart(4, '0')}</span><h4>\${item.label}</h4><p>This study has a stable identity as the collection changes. Only nearby slides are mounted.</p><label>Personal note <input aria-label=\${\`Note for \${item.label}\`} placeholder="Try retaining focus while navigating"></label><a href="/workflows/assets?progress-report">Explore \${item.label}</a></article>\`;
+    private dataCarousel(event: Event) { return (event.currentTarget as HTMLElement).closest('[data-carousel-demo]')?.querySelector<EnCarousel>('#large-carousel'); }
+    private result = 'Choose a slide using the arrows, keyboard or a swipe.';
+    private refresh() {
+        if (this.isConnected)
+            this.setValue(this.render(this.key));
+    }
+    private changed = (event: CustomEvent<{
+        proposed: number;
+        reason: string;
+    }>) => {
+        if (event.target !== event.currentTarget)
+            return;
+        queueMicrotask(() => {
+            if (event.defaultPrevented)
+                return;
+            this.result = \`Leading slide \${event.detail.proposed + 1} · \${event.detail.reason}\`;
+            this.refresh();
+        });
+    };
+    override render(key?: unknown) {
+        this.key = key;
+        return html \`<section data-carousel-demo>
+ <style>
+ [data-carousel-demo]{display:grid;gap:var(--en-space-panel);min-inline-size:0;}
+ [data-carousel-demo] h3,[data-carousel-demo] p,[data-carousel-demo] figure{margin:0;}
+ [data-carousel-demo] .demo-section{display:grid;gap:var(--en-space-3);min-inline-size:0;}
+ [data-carousel-demo] figure{display:grid;gap:var(--en-space-3);padding:var(--en-space-3);}
+ [data-carousel-demo] .cover{inline-size:100%;display:block;aspect-ratio:16/7;border-radius:var(--en-radius-control);}
+ [data-carousel-demo] figcaption{display:grid;gap:var(--en-space-1);}
+ [data-carousel-demo] .demo-actions{display:flex;flex-wrap:wrap;gap:var(--en-space-2);align-items:center;}
+ [data-carousel-demo] .responsive-cards{container-type:inline-size;min-inline-size:0;}
+ [data-carousel-demo] .project-card{display:flex;flex-direction:column;gap:var(--en-space-3);padding:var(--en-space-panel);min-block-size:15rem;box-sizing:border-box;height:100%;}
+ [data-carousel-demo] .project-card a{margin-block-start:auto;align-self:start;}
+ [data-carousel-demo] .project-card .number{font-size:2rem;color:var(--en-color-text-muted);font-variant-numeric:tabular-nums;}
+ @container(min-width:38rem){[data-carousel-demo] #card-carousel{--en-carousel-slides-per-view:2;}}
+ @container(min-width:64rem){[data-carousel-demo] #card-carousel{--en-carousel-slides-per-view:3;}}
+ </style>
+ <div class="demo-section"><h3>Cover studies</h3><p>Authored media, one slide at a time. The thumbnail picker uses separate decorative preview URLs and keeps the original content intact. Focus the scrolling surface and use Left/Right, Home or End; interactive slide content keeps its own keys.</p>
+ <en-carousel controls="auto" id="media-carousel" label="Cover studies" navigation="thumbnails" picker-label="Choose a cover study" .autoplay=\${this.auto} loop interval="5000" @en-change=\${this.changed}>
+ <en-carousel-slide label="Nightfall" thumbnail=\${thumbnail('#12263c', '#678d94')}><figure><svg class="cover" viewBox="0 0 800 350" role="img" aria-label="Deep blue mountain silhouettes beneath a pale moon"><rect width="800" height="350" fill="#12263c"></rect><circle cx="612" cy="96" r="53" fill="#cddbd9"></circle><path d="M0 350 220 80 430 350Z" fill="#3e6472"></path><path d="M210 350 520 150 800 350Z" fill="#678d94"></path></svg><figcaption><strong>Nightfall</strong><span>A quiet cover study with layered silhouettes.</span></figcaption></figure></en-carousel-slide>
+ <en-carousel-slide label="Terracotta" thumbnail=\${thumbnail('#f4e7d3', '#a54834')}><figure><svg class="cover" viewBox="0 0 800 350" role="img" aria-label="Warm terracotta arches against a cream background"><rect width="800" height="350" fill="#f4e7d3"></rect><path d="M130 350V180a180 180 0 0 1 360 0v170" fill="#a54834"></path><path d="M300 350V230a150 150 0 0 1 300 0v120" fill="#d98756"></path></svg><figcaption><strong>Terracotta</strong><span>A warm direction built from repeating arches.</span></figcaption></figure></en-carousel-slide>
+ <en-carousel-slide label="Field notes" thumbnail=\${thumbnail('#e2ebd3', '#375a4c')}><figure><svg class="cover" viewBox="0 0 800 350" role="img" aria-label="Overlapping green circles and a small yellow sun"><rect width="800" height="350" fill="#e2ebd3"></rect><circle cx="180" cy="280" r="220" fill="#375a4c"></circle><circle cx="620" cy="290" r="240" fill="#69875d"></circle><circle cx="455" cy="85" r="40" fill="#dfba4b"></circle></svg><figcaption><strong>Field notes</strong><span>A softer palette for an outdoor collection.</span></figcaption></figure></en-carousel-slide>
+ </en-carousel>
+ <div class="demo-actions"><en-button variant="secondary" @click=\${() => {
+            this.auto = !this.auto;
+            this.refresh();
+        }}>\${this.auto ? 'Remove autoplay' : 'Try optional autoplay'}</en-button></div>
+ <p>Autoplay is off by default. When enabled, the first carousel control starts or stops it. Focus and manual navigation stop rotation until restarted; hover suspends it. Reduced motion prevents rotation.</p>
+ </div>
+ <div class="demo-section"><h3>Project collection</h3><p>One, two or three cards follow the container width. Position buttons select full visible windows; the final range stays full. Links remain native, and added or removed slides update the collection without rebuilding existing cards.</p>
+ <div class="responsive-cards"><en-carousel controls="always" id="card-carousel" label="Project collection" navigation="positions" picker-label="Choose a project window" @en-change=\${this.changed}>
+ \${repeat(this.cards, id => id, id => html \`<en-carousel-slide label=\${\`Project \${id}\`}><article class="project-card"><span class="number" aria-hidden="true">\${String(id).padStart(2, '0')}</span><h4>Project \${id}</h4><p>A collection of cover studies, working notes and shared references.</p><a href="/workflows/assets?progress-report">Explore project \${id}</a></article></en-carousel-slide>\`)}
+ </en-carousel></div>
+ <div class="demo-actions"><en-button variant="secondary" @click=\${() => {
+            this.cards = [...this.cards, this.nextId++];
+            this.refresh();
+        }}>Add card</en-button><en-button variant="secondary" aria-disabled=\${String(!this.cards.length)} @click=\${() => {
+            this.cards = this.cards.slice(0, -1);
+            this.refresh();
+        }}>Remove last card</en-button></div>
+ </div>
+ <section class="demo-section" id="large-carousel-example"><h3>Large keyed collection</h3>
+ <p>Browse 1,000 studies. The numbered thumbnails show one consecutive range: seven on wide layouts, five at medium widths and three on narrow layouts. First and Last jump to the ends; hover or focus a thumbnail for its name and position. The reading-list option presents ten ordinary list entries per page for sequential reading. Both modes use the same keys and navigation state.</p>
+ <div class="demo-actions"><en-button variant="secondary" @click=\${(event: Event) => this.dataCarousel(event)?.goToKey('study-500')}>Go to study 500</en-button><en-button variant="secondary" @click=\${() => { this.readingList = !this.readingList; this.refresh(); }}>\${this.readingList ? 'Use carousel' : 'Use reading list'}</en-button><en-button variant="secondary" @click=\${() => { this.collection = [...this.collection].reverse(); this.refresh(); }}>Reverse collection</en-button><en-button variant="secondary" @click=\${(event: Event) => { const key = this.dataCarousel(event)?.currentKey; this.collection = this.collection.filter(item => item.key !== key); this.refresh(); }}>Remove current study</en-button></div>
+ <details><summary>Navigation options</summary><div class="demo-actions">
+ <label>Controls <select aria-label="Carousel controls" @change=\${(event: Event) => { this.controls = (event.target as HTMLSelectElement).value as typeof this.controls; this.refresh(); }}>\${['none', 'auto', 'always'].map(value => html\`<option value=\${value} ?selected=\${this.controls === value}>\${value}</option>\`)}</select></label>
+ <label>Picker <select aria-label="Carousel navigation" @change=\${(event: Event) => { this.navigation = (event.target as HTMLSelectElement).value as typeof this.navigation; this.refresh(); }}>\${['none', 'positions', 'thumbnails'].map(value => html\`<option value=\${value} ?selected=\${this.navigation === value}>\${value}</option>\`)}</select></label>
+ <label><input type="checkbox" .checked=\${this.boundaries} @change=\${(event: Event) => { this.boundaries = (event.target as HTMLInputElement).checked; this.refresh(); }}> First/Last controls</label>
+ </div><p>Both interfaces default to none in the component. This demo enables both. First/Last only appear inside an enabled controls row.</p></details>
+ <en-carousel controls=\${this.controls} ?boundary-controls=\${this.boundaries} id="large-carousel" picker-range-label="Thumbnails {start}–{end} of {total}" label="Large study collection" navigation=\${this.navigation} .items=\${guard([this.collection], () => this.collection)} .renderItem=\${this.collectionItem} reading-mode=\${this.readingList ? 'list' : 'carousel'} page-size="10" @en-change=\${this.changed}></en-carousel>
+ <p>The collection frame uses <code>--en-carousel-viewport-size</code> (22rem by default); each slide can scroll its own longer content. A focused slide remains mounted until focus leaves, and removing it returns focus to the scrolling surface. Store persistent form edits in application data: unmounted slides are recreated when revisited.</p>
+ <details><summary>Keyed collection source</summary><pre><code>\${\`import { html } from 'lit';
+import '@en-reve/elements/define/carousel.js';
+
+const items = studies.map(study => ({
+  key: study.id, label: study.title, thumbnail: study.previewURL,
+}));
+
+html\\\`<en-carousel label="Studies" controls="auto" boundary-controls navigation="thumbnails"
+  .items=\\\${items}
+  .renderItem=\\\${item => html\\\`<a href=\\\${'/studies/' + item.key}>\\\${item.label}</a>\\\`}
+  reading-mode="carousel" page-size="10">
+</en-carousel>\\\`;
+
+carousel.goToKey('study-500');
+carousel.readingMode = 'list'; // Paginated ordinary list.
+carousel.items = [...items].reverse(); // Retains the leading key when possible.\`}</code></pre></details>
+ </section>
+ <p>\${this.result}</p>
+ <details><summary>Keyboard and review scenarios</summary><ul><li>Tab through controls and visible links. Navigation buttons retain focus.</li><li>On the scrolling surface: Left/Right move one slide, Home/End move to the first/last window. Arrow direction follows RTL.</li><li>In either picker, Left/Right and Home/End move focus; Enter or Space activates. The current window is marked separately from keyboard focus. Narrow pickers scroll horizontally.</li><li>Resize while on the last card; add or remove cards, including every card.</li><li>Swipe or scroll horizontally. Offscreen slide contents stay out of keyboard and screen-reader navigation; a focused slide is retained until focus leaves.</li><li>Try autoplay, then focus, hover, stop and restart. With reduced motion it stays stopped.</li></ul></details>
+ </section>\`;
+    }
+}
+const carousel = directive(CarouselDemo);
+export function carouselExample(key?: unknown) {
+    return html \`\${carousel(key)}\`;
+}`})))()}n();export{t as default};
+//# sourceMappingURL=carousel-source-CB20506n.js.map

@@ -1,0 +1,32 @@
+{
+  "mode": "build-time",
+  "page": "settings-incoming-update",
+  "bytes": 1452828,
+  "minification": {
+    "inputBytes": 1642256,
+    "outputBytes": 1452717,
+    "syntaxBytesSaved": 515,
+    "cssBytesSaved": 189024,
+    "styleBlocks": 50,
+    "cssCacheHits": 50
+  },
+  "customElementTags": [
+    "en-badge",
+    "en-button",
+    "en-checkbox",
+    "en-command-palette",
+    "en-icon",
+    "en-menu",
+    "en-menu-item",
+    "en-navigation",
+    "en-segmented-control",
+    "en-segmented-item",
+    "en-select",
+    "en-select-option",
+    "en-slider",
+    "en-toast-region",
+    "en-toolbar",
+    "en-tooltip"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

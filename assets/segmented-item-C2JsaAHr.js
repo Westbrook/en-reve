@@ -1,0 +1,2 @@
+import{a as e,c as t,f as n,t as r}from"./lit-B8wTlSYy.js";import{n as i,t as a}from"./selection-item-SKxA-HlE.js";import{t as o}from"./rolldown-runtime-B0lUwjiP.js";var s;function c(){return(c=o((()=>{r(),i(),s=class extends a{static styles=e`:host { display: contents; } :host([hidden]) { display: none !important; }`;render(){return n`<slot>${this.label||t}</slot>`}}})))()}var l;function u(){return(u=o((()=>{c(),l={tagName:`en-segmented-item`,elementClass:s}})))()}export{l as n,u as t};
+//# sourceMappingURL=segmented-item-C2JsaAHr.js.map

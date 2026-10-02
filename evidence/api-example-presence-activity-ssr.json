@@ -1,0 +1,24 @@
+{
+  "mode": "build-time",
+  "caseId": "presence-activity",
+  "bytes": 1847367,
+  "minification": {
+    "inputBytes": 2079482,
+    "outputBytes": 1847256,
+    "syntaxBytesSaved": 755,
+    "cssBytesSaved": 231471,
+    "styleBlocks": 84,
+    "cssCacheHits": 84
+  },
+  "customElementTags": [
+    "en-activity-feed",
+    "en-activity-item",
+    "en-avatar",
+    "en-button",
+    "en-presence",
+    "en-presence-group",
+    "en-select",
+    "en-skeleton"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

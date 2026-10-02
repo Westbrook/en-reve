@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e){return!!e&&typeof e==`object`&&typeof e.nodeType==`number`&&typeof e.getRootNode==`function`}function n(e){return t(e)&&e.nodeType===1}function r(e){return n(e)&&e.namespaceURI===`http://www.w3.org/1999/xhtml`}function i(e){return r(e)&&e.localName===`button`}function a(e){return t(e)&&e.nodeType===11&&n(e.host)}function o(){return(o=e((()=>{})))()}export{i as a,a as i,n,r as o,t as r,o as t};
+//# sourceMappingURL=dom-kind-DY7tEogy.js.map

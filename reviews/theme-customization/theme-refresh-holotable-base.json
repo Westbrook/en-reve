@@ -1,0 +1,350 @@
+{
+  "holotable-inspired": {
+    "light": {
+      "pins": {
+        "font.body.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.ui.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.input.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.metadata.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-small.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-medium.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-large.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.label-strong.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-small.size": {
+          "value": 1.1875,
+          "unit": "rem"
+        },
+        "font.heading-small.weight": 500,
+        "font.heading-small.line-height": 1.5,
+        "font.heading-medium.size": {
+          "value": 1.5625,
+          "unit": "rem"
+        },
+        "font.heading-medium.weight": 500,
+        "font.heading-medium.line-height": 1.5,
+        "font.heading-large.size": {
+          "value": 2.625,
+          "unit": "rem"
+        },
+        "font.heading-large.weight": 500,
+        "font.heading-large.line-height": 1.08,
+        "radius.control": {
+          "value": 0.525,
+          "unit": "rem"
+        },
+        "radius.container": {
+          "value": 0.4375,
+          "unit": "rem"
+        },
+        "radius.dialog": {
+          "value": 0.525,
+          "unit": "rem"
+        },
+        "component.button.radius": {
+          "value": 0.3125,
+          "unit": "rem"
+        },
+        "component.option.radius": {
+          "value": 0.4,
+          "unit": "rem"
+        },
+        "shadow.overlay": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.1
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 6,
+              "unit": "px"
+            },
+            "spread": {
+              "value": -1,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.1
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 2,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 4,
+              "unit": "px"
+            },
+            "spread": {
+              "value": -2,
+              "unit": "px"
+            }
+          }
+        ],
+        "component.toast.shadow": {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.1
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 12,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "duration.fast": {
+          "value": 180,
+          "unit": "ms"
+        },
+        "duration.enter": {
+          "value": 150,
+          "unit": "ms"
+        }
+      }
+    },
+    "dark": {
+      "pins": {
+        "font.body.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.ui.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.input.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.metadata.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-small.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-medium.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-large.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.label-strong.family": [
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "font.heading-small.size": {
+          "value": 1.1875,
+          "unit": "rem"
+        },
+        "font.heading-small.weight": 500,
+        "font.heading-small.line-height": 1.5,
+        "font.heading-medium.size": {
+          "value": 1.5625,
+          "unit": "rem"
+        },
+        "font.heading-medium.weight": 500,
+        "font.heading-medium.line-height": 1.5,
+        "font.heading-large.size": {
+          "value": 2.625,
+          "unit": "rem"
+        },
+        "font.heading-large.weight": 500,
+        "font.heading-large.line-height": 1.08,
+        "radius.control": {
+          "value": 0.525,
+          "unit": "rem"
+        },
+        "radius.container": {
+          "value": 0.4375,
+          "unit": "rem"
+        },
+        "radius.dialog": {
+          "value": 0.525,
+          "unit": "rem"
+        },
+        "component.button.radius": {
+          "value": 0.3125,
+          "unit": "rem"
+        },
+        "component.option.radius": {
+          "value": 0.4,
+          "unit": "rem"
+        },
+        "shadow.overlay": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.1
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 4,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 6,
+              "unit": "px"
+            },
+            "spread": {
+              "value": -1,
+              "unit": "px"
+            }
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0,
+                0,
+                0
+              ],
+              "alpha": 0.1
+            },
+            "offsetX": {
+              "value": 0,
+              "unit": "px"
+            },
+            "offsetY": {
+              "value": 2,
+              "unit": "px"
+            },
+            "blur": {
+              "value": 4,
+              "unit": "px"
+            },
+            "spread": {
+              "value": -2,
+              "unit": "px"
+            }
+          }
+        ],
+        "component.toast.shadow": {
+          "color": {
+            "colorSpace": "srgb",
+            "components": [
+              0,
+              0,
+              0
+            ],
+            "alpha": 0.1
+          },
+          "offsetX": {
+            "value": 0,
+            "unit": "px"
+          },
+          "offsetY": {
+            "value": 4,
+            "unit": "px"
+          },
+          "blur": {
+            "value": 12,
+            "unit": "px"
+          },
+          "spread": {
+            "value": 0,
+            "unit": "px"
+          }
+        },
+        "duration.fast": {
+          "value": 180,
+          "unit": "ms"
+        },
+        "duration.enter": {
+          "value": 150,
+          "unit": "ms"
+        }
+      }
+    }
+  }
+}

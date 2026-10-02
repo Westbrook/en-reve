@@ -1,0 +1,23 @@
+{
+  "mode": "build-time",
+  "caseId": "tooltip-warmup",
+  "bytes": 1303852,
+  "minification": {
+    "inputBytes": 1482716,
+    "outputBytes": 1303741,
+    "syntaxBytesSaved": 467,
+    "cssBytesSaved": 178508,
+    "styleBlocks": 32,
+    "cssCacheHits": 32
+  },
+  "customElementTags": [
+    "en-button",
+    "en-select",
+    "en-stack",
+    "en-toolbar",
+    "en-tooltip",
+    "en-tooltip-context-demo",
+    "en-tooltip-position-demo"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

@@ -1,0 +1,23 @@
+{
+  "mode": "build-time",
+  "caseId": "split-view-vertical",
+  "bytes": 732763,
+  "minification": {
+    "inputBytes": 839772,
+    "outputBytes": 732652,
+    "syntaxBytesSaved": 92,
+    "cssBytesSaved": 107028,
+    "styleBlocks": 15,
+    "cssCacheHits": 15
+  },
+  "customElementTags": [
+    "en-badge",
+    "en-button",
+    "en-checkbox",
+    "en-split-view",
+    "en-splitter",
+    "en-stack",
+    "en-textarea"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

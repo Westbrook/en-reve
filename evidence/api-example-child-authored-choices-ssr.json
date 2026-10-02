@@ -1,0 +1,22 @@
+{
+  "mode": "build-time",
+  "caseId": "child-authored-choices",
+  "bytes": 1019958,
+  "minification": {
+    "inputBytes": 1161860,
+    "outputBytes": 1019847,
+    "syntaxBytesSaved": 235,
+    "cssBytesSaved": 141778,
+    "styleBlocks": 20,
+    "cssCacheHits": 20
+  },
+  "customElementTags": [
+    "en-button",
+    "en-segmented-control",
+    "en-segmented-item",
+    "en-select",
+    "en-select-option",
+    "en-text-field"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

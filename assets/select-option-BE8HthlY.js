@@ -1,0 +1,2 @@
+import{c as e,t}from"./lit-B8wTlSYy.js";import{n,t as r}from"./selection-item-SKxA-HlE.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";var a;function o(){return(o=i((()=>{t(),n(),a=class extends r{render(){return e}}})))()}var s;function c(){return(c=i((()=>{o(),s={tagName:`en-select-option`,elementClass:a}})))()}export{s as n,c as t};
+//# sourceMappingURL=select-option-BE8HthlY.js.map

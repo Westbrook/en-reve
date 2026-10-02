@@ -1,0 +1,215 @@
+# Framework consumption and SSR ownership
+
+This isolated fixture suite tests the public custom-element contract from plain HTML, React, Vue and Svelte. It contains two intentionally separate consumption paths: framework-owned client controls, and a library-rendered Declarative Shadow DOM island inside a framework-rendered server shell. It does not require a parallel implementation or a framework-specific element wrapper package.
+
+## Pinned compatibility matrix
+
+The maintained source pins below were audited on 2 October 2026. Each environment owns its package manifest and seed lockfile. Each acquisition creates a separate installation from actual package tarballs and retains its resolved lock; it never links library workspace sources.
+
+| Consumer | Installed version | Scope |
+| --- | --- | --- |
+| Plain HTML | Native DOM with Lit 3.3.3 hydration | Framework-free baseline |
+| React | 19.3.0, 19.2.8 and 18.3.1 | Current/preceding minor plus retained previous major |
+| Vue | 3.5.43, 3.4.38 and 2.7.16 | Current/preceding minor plus EOL historical compatibility |
+| Svelte | 5.57.1, 5.56.10 and 4.2.20 | Current/preceding minor plus retained previous major; shared legacy syntax |
+
+Vue 2 reached end of life on 31 December 2023. Its fixture is compatibility evidence, not an endorsement of an unsupported runtime or a claim of upstream security maintenance. The rolling selection is defined in `release-lines.json`; these are dated qualification pins, not automatic upgrades. [Vue EOL announcement](https://v2.vuejs.org/eol/), [React versions](https://react.dev/versions), [Svelte migration guide](https://svelte.dev/docs/svelte/v5-migration-guide).
+
+## Ordinary client consumption
+
+Each framework creates an `en-checkbox` itself after mount, supplies its slotted label, owns a boolean in framework state, writes the element's `checked` property, and handles the native cancelable `en-change` event. A separate framework button changes that same state. These fixtures exercise actual React hooks, Vue reactive state and render bindings, and compiled Svelte state/actions.
+
+- React uses a ref, a native `addEventListener('en-change', ...)` listener with cleanup, and property synchronization. This explicit bridge works in both tested majors without relying on React 19's newer custom-element handling.
+- Vue 3 uses an explicit `.checked` DOM-property binding and `onEn-change`; Vue 2 uses `domProps.checked` and its `on` event map. A template-based Vue app should also configure `isCustomElement` for `en-*`. [Vue web-component guidance](https://vuejs.org/guide/extras/web-components.html).
+- Svelte uses an action to write the property and `on:en-change` for the native event. The shared source intentionally uses syntax supported by both 4 and 5; it is not a Svelte 5 runes showcase.
+- HTML uses the same DOM properties and native events directly.
+
+Each consumer additionally binds structured `en-tree.items`, string `en-text-field.value`
+and `label`, and an authored `description` slot. Authoritative property updates are
+silent; a real tree activation is observed once through the framework's native
+event handler. Removing/recreating the controls retains framework-owned boolean
+and string/data state. A deliberately retained detached tree node must not change
+the live owner's state after teardown.
+
+That last condition needs explicit native listener ownership. React uses an effect
+cleanup; the HTML baseline removes its listener; Vue synchronizes a tree ref in
+its update hook and disposes the prior listener on replacement/unmount; Svelte
+uses an action with `destroy`. The initial new test showed Vue3 and Svelte5's
+ordinary event bindings could still handle synthetic events on the detached node
+held by the test. The explicit bridges address this lifetime case without changing
+library components or introducing framework wrapper packages. The checkbox keeps
+the original native framework binding coverage.
+
+No `controlled` flag, `en-request-change`, or mirrored event is introduced. Inside the handler the provisional value is already visible. Cancel synchronously to reject it. A synchronous public property write is authoritative even when the event is canceled. Async approval should cancel first and write the eventual accepted property later.
+
+## SSR and hydration boundary
+
+The server installs the library's DOM shim **before dynamically importing element definitions**, then renders the shared checkbox and child-authored select through `@en-reve/ssr`. This produces real native shadow controls in the initial HTML. React/Vue/Svelte separately render the surrounding server shell and treat that trusted generated island as opaque HTML.
+
+In the browser, the library hydrates the island, then the framework hydrates its shell. React, Vue 3 and Svelte receive the current island light DOM after the browser has consumed Declarative Shadow DOM templates. Their opaque HTML value stays stable across subsequent shell updates. Vue 2 needs a narrower adapter: only the server writes `domProps.innerHTML`; the client vnode declares the container attributes without children or `innerHTML`, preventing its hydration create hook from replacing the subtree. In both cases, the library owns the island's light/shadow rendering and dynamic option edits. Tests retain references to both hosts, both native inputs and the checkbox shadow root before hydration and compare identity afterward.
+
+This is an explicit ownership adapter. It does **not** show arbitrary JSX, Vue templates or Svelte templates automatically producing library DSD, nor framework hydration reconciling the library's shadow tree. The adjacent framework-owned checkbox is intentionally client-rendered. Server markup supplied to raw-HTML APIs is trusted output from our renderer; do not pass untrusted user strings to those APIs. Framework routing, server components, streaming, Suspense, Nuxt/Next/SvelteKit integration and framework-owned dynamic children inside a DSD island remain separate work.
+
+## Running the fixture suite
+
+Use the pinned toolchain and normal machine/checkout ownership through the
+supported framework pathway, choosing a fresh, non-existing output directory:
+
+```sh
+EN_EXECUTION_OUTPUT=/absolute/fresh/output \
+  tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework
+```
+
+The pathway installs the pinned fixture builder, builds the required
+library packages, and supplies one `EN_FRAMEWORK_OUT` to preparation and browsers.
+Preparation packs elements/primitives/styles/tokens/SSR using the shared immutable
+package producer. For each declared cohort (currently ten consumers) it seeds the cohort lock, adds the
+actual tarballs and exact compiler, resolves offline, and runs a clean offline
+`npm ci --workspaces=false`. The resulting lock, npm archive integrity, actual
+bundle inputs and output hashes are retained. An empty npm cache must first be
+populated through the repository's documented setup; no silent online fallback is
+used in acquisition.
+
+Every consumer compiles `public.types.ts` against its installed declarations,
+including rejected string-as-object/boolean assignments. All bundled input paths
+must remain inside that consumer installation; library packages may not be
+workspace symlinks. Framework JS and the per-consumer library bootstrap are
+bundled. This is not the separate native import-map qualification.
+
+The library-rendered SSR island is created using the HTML consumer's packed
+public ESM exports and explicit server setup. Each framework then renders its own
+shell and hydrates with its independently installed copy of the same packages.
+This remains an opaque-island integration, not framework-generated custom-element
+DSD or Next/Nuxt/SvelteKit support.
+
+`$EN_FRAMEWORK_OUT/preparation.json` binds packages, type checks, exact versions,
+locks and assets; `site/` contains the served fixture. Preparation refuses to
+overwrite a prior output. For manual inspection, serve a retained preparation with
+`EN_FRAMEWORK_OUT=/absolute/retained/output node probes/framework-consumption/server.mjs`
+and open `http://127.0.0.1:4467/react19.html` (any cohort key works). `?defer` leaves
+native server controls available until `window.hydrateFixture()` is called.
+Playwright owns its server and never reuses an arbitrary existing one.
+
+## Verification surface
+
+Browser tests exercise server-rendered controls before hydration, preserved DOM identity, accepted/canceled/superseded real user changes, framework-owned boolean changes in both directions, and dynamically added/removed `en-select-option` children without replacing the native select. The declared cohorts run against Chromium, Firefox and WebKit. The historical September13 pass remains unchanged in `verification.json`:
+84 checks over workspace distributions, including the older Vue3.5.42 and
+Svelte5.57.0 pins. It is not relabeled as packed or current-source qualification.
+
+The October2 packed pass is recorded separately in
+[`verification-packed-20261002.json`](verification-packed-20261002.json): **126
+passes, zero failures/skips/flaky cases**, comprising six contracts × seven
+consumers × three engines. All seven public-type compilations and independent
+installs passed. Tested engines are Chromium153.0.8010.12, Firefox155.0 and
+WebKit26.6. Initial preparation failures and the Vue/Svelte lifetime failures are
+retained separately; the final full run supersedes no historical receipt.
+
+This focused suite does not establish all components, every framework patch, physical-device or screen-reader acceptance, all SSR loading orders, or the full current-minus-one browser policy. Failures must remain visible rather than being reclassified as framework support.
+
+See the [support ledger](../../plans/support-coverage.md) for the separate current/preceding actual-product and physical/manual obligations.
+
+## Opt-in installed Chrome/Edge qualification
+
+Ordinary runs keep the three pinned engines. To add explicitly chosen Chromium-based
+**product installations**, set `EN_BROWSER_PRODUCTS` to an absolute JSON manifest:
+
+```json
+{
+  "schemaVersion": 1,
+  "products": [{
+    "name": "product-chrome",
+    "product": "Google Chrome",
+    "version": "154.0.8037.95",
+    "executablePath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "distributionPath": "/Applications/Google Chrome.app",
+    "headless": true
+  }]
+}
+```
+
+The paths and version above are an acquisition example, not portable defaults.
+Read the installed app's version from its platform metadata before each run;
+choose the full application distribution directory, including runtime libraries.
+The executable must resolve inside that directory. Keep machine-specific manifests
+with the run evidence rather than committing them as shared configuration.
+
+```sh
+EN_BROWSER_PRODUCTS=/absolute/products.json \
+EN_EXECUTION_OUTPUT=/absolute/fresh/product-run \
+  tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=framework
+```
+
+The normal owned execution hashes complete distributions before and after the run,
+including library files and symlink targets. Any change invalidates qualification.
+Each case records the app identity, browser-reported protocol version and user
+agent separately. The user agent may hide patch versions; it is not an exact app
+identity. Profiles/contexts belong to Playwright and are temporary. No user profile,
+remote connection, global browser installation, update or downgrade is performed.
+The same six assertions per consumer run unchanged; only product identity reporting
+is added. An explicit data favicon keeps strict console checks meaningful in the
+full Chrome product, which requests a favicon unlike the bundled headless shell.
+
+The [product receipt](verification-products-20261002.json) records **210 passes**:
+42 each in installed Chrome154.0.8037.95 and Edge154.0.4258.48 (headless, macOS26.6.1
+arm64), plus42 each in the original pinned engines. Seven fresh tarball installations
+and public-type compilations passed. Full distribution hashes remained unchanged.
+The earlier126-pass receipt is preserved with its original source hashes.
+
+This qualifies these consumer contracts on those exact installations. Edge's
+installed patch predates the latest official October1 patch. It does not establish
+full current/preceding release, headed UI, physical-device, actual Firefox/Safari,
+speech or IME coverage. [Playwright's browser guidance](https://playwright.dev/docs/browsers)
+explains the distinction between branded products and its patched engines.
+
+
+## Rolling framework release lines
+
+`release-lines.json` resolves the compatibility window on October2: the current
+stable minor and immediately preceding stable minor in the current major, each at
+its latest published stable patch. Existing previous-major/EOL cohorts remain
+additional subjects. This preserves major compatibility while adding the recent
+release boundary; previous-line compatibility is not a claim of upstream maintenance.
+Re-resolve the registry pins when the support window changes and retain old receipts.
+
+Preparation and browser discovery share `cohorts.mjs`; manifests and locks own the
+exact dependencies. The added cohorts are React19.2.8, Vue3.4.38 and Svelte5.56.10.
+The npm registry listed React19.2.8 while the retrieved React versions page still
+listed19.2.7; both React and ReactDOM are pinned to the published19.2.8 patch.
+Vue3.6 prereleases are excluded; Vue2 remains explicitly EOL compatibility.
+
+The [release-line receipt](verification-release-lines-20261002.json) records
+**300 passes**: six contracts × ten consumers × five browser subjects, plus ten
+independent packed public-type compilations. The three pinned engines and actual
+installed Chrome/Edge distributions are the same exact subjects as the preceding
+product checkpoint. This closes the framework release-line condition for this
+dated compatibility window; broader browser and physical/manual scope remains open.
+
+The initial React19.2.8 run exposed replacement of hydrated island hosts on the
+first framework state render. Its ReactDOM implementation reapplies `innerHTML`
+when a new `dangerouslySetInnerHTML` prop object is supplied, even if the string is
+equal. The React adapter now memoizes that object by its trusted HTML string.
+Framework renders therefore leave library-owned nodes intact. The same node-identity
+assertion passed afterward in every cohort/browser; no assertion was relaxed and
+no library component wrapper was introduced. Preserve the opaque island ownership
+boundary and stable prop identity in equivalent consumer integrations.
+
+## Isolated Edge release lines
+
+[October2 Edge acquisition](verification-edge-lines-20261002.json) passes all300
+consumer checks:60 each on official Stable153.0.4234.48 and154.0.4258.53 plus60
+each on the three pinned engines. Ten fresh packed installations/type checks
+passed. The existing `EN_BROWSER_PRODUCTS` manifest selected both isolated app
+payloads; no library or test assertions changed. Package provenance, checksum,
+macOS signature verification and full distribution identities are in the receipt.
+No installer scripts ran and installed browsers/profiles were not replaced.
+This retains the prior receipts and leaves other products/OS/manual coverage open.
+
+## Isolated current Chrome stable
+
+[October 2 Chrome receipt](verification-chrome-stable-20261002.json) records 240
+passes: 60 on official retail Chrome 154.0.8037.98 and 180 on the three pinned
+engines, with ten fresh packed installations/declaration compilations. The
+existing `EN_BROWSER_PRODUCTS` manifest selects the isolated signed app and
+fresh profiles. Local archive identity and signature verification are recorded;
+there is no publisher-checksum match claim. Earlier exact-version receipts are
+preserved, and previous retail Chrome, other OSes and manual scope remain open.

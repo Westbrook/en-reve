@@ -1,0 +1,2 @@
+import{a as e,t}from"./lit-B8wTlSYy.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";var r;function i(){return(i=n((()=>{t(),r=e`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`})))()}export{r as n,i as t};
+//# sourceMappingURL=select-chevron-DVM0boTx.js.map

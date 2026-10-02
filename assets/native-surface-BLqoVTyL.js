@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e,t){e.inert===t&&(e.inert=!t)}function n(e){let n=e.currentTarget;e.target===n&&(e.newState===`open`&&t(n,!0),queueMicrotask(()=>{if(!n.isConnected)return;let e=n.localName===`dialog`?n.open:n.matches(`:popover-open`);t(n,e)}))}function r(){return(r=e((()=>{})))()}export{n,t as r,r as t};
+//# sourceMappingURL=native-surface-BLqoVTyL.js.map

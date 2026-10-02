@@ -1,0 +1,2 @@
+import{t as e}from"./rolldown-runtime-B0lUwjiP.js";function t(e){return typeof e==`string`&&e.trim().length>0}function n(e){let t=e.getKey===void 0?e.key:e.getKey;if(typeof t!=`function`)throw TypeError(`Collections require a getKey function (legacy alias: key).`);return t}function r(){return(r=e((()=>{})))()}export{r as n,t as r,n as t};
+//# sourceMappingURL=collection-ChcPoSRq.js.map

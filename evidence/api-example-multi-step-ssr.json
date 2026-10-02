@@ -1,0 +1,28 @@
+{
+  "mode": "build-time",
+  "caseId": "multi-step",
+  "bytes": 1658686,
+  "minification": {
+    "inputBytes": 1895010,
+    "outputBytes": 1658575,
+    "syntaxBytesSaved": 721,
+    "cssBytesSaved": 235714,
+    "styleBlocks": 35,
+    "cssCacheHits": 35
+  },
+  "customElementTags": [
+    "en-alert",
+    "en-button",
+    "en-calendar",
+    "en-checkbox",
+    "en-date-picker",
+    "en-dialog",
+    "en-icon",
+    "en-progress-step",
+    "en-progress-steps",
+    "en-select",
+    "en-text-field",
+    "en-validation-summary"
+  ],
+  "buildFingerprint": "sha256:4ffc98347184b6f2c64ac05db08316edbfcfa7ac3751956542a70e880381bb0d"
+}

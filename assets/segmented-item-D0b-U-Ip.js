@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./segmented-item-C2JsaAHr.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),r(),t(customElements,n)})))()}a();
+//# sourceMappingURL=segmented-item-D0b-U-Ip.js.map
