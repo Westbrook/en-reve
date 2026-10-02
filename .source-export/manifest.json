@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
-  "exportedAt": "2026-10-02T17:37:45.472478+00:00",
+  "sourceCommit": "2b16f52f6f476b78db04b08708e6d09fdf16dc81",
+  "exportedAt": "2026-10-02T18:34:52.024832+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5712,
-  "includedBytes": 155378018,
-  "qualification": "All27 original workflow/selection cases source-compared;180 fresh checks pass across actual Firefox156.0.1/157.0. Error capture and exact outcomes strengthened. Explicit AX, visual, physical/manual and other-platform gaps remain. Qualified production build is reused unchanged.",
-  "latestUpdate": ".source-export/updates/native-assertions-20261002.json",
+  "includedFiles": 5716,
+  "includedBytes": 155590366,
+  "qualification": "Safari diagnosis remains incomplete: four consumer cases passed then a native-select failure. Focus rules and actual input delivery remain distinct.120 Firefox consumer regressions pass. Qualified production build reused unchanged.",
+  "latestUpdate": ".source-export/updates/safari-boundary-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

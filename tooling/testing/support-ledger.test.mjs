@@ -8,7 +8,44 @@ const root = new URL('../../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
 const json = async path => JSON.parse(await read(path));
 const ledger = await json('plans/support-coverage.json');
-const readNativeHistorical = path => read(['probes/native-browser-products/workflows.mjs','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs'].includes(path) ? 'probes/native-browser-products/qualification-sources/e29ffc7c/'+path.split('/').at(-1)+'.txt' : path);
+const readConsumerRunnerHistorical = path => read(path==='probes/native-browser-products/run.mjs' ? 'probes/native-browser-products/qualification-sources/7dd38008/run.mjs.txt' : path);
+const readNativeHistorical = path => readConsumerRunnerHistorical(['probes/native-browser-products/workflows.mjs','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs'].includes(path) ? 'probes/native-browser-products/qualification-sources/e29ffc7c/'+path.split('/').at(-1)+'.txt' : path);
+
+test('Safari diagnosis preserves incomplete qualification and native focus boundaries', async () => {
+  const r = await json('probes/native-browser-products/verification-safari-boundary-20261002.json');
+  assert.equal(r.status, 'incomplete');
+  assert.deepEqual(r.stats, {firefoxPassed:120, safariPassed:4, safariFailed:1, safariPlanned:60});
+  for (const [path, digest] of Object.entries(r.inputs)) {
+    assert.equal(createHash('sha256').update(await read(path)).digest('hex'), digest, path);
+  }
+  assert.equal(r.safari.status, 'failed');
+  assert.equal(r.safari.stats.planned - r.safari.cases.length, 55);
+  assert.equal(r.safari.products[0].version, '27.0');
+  assert.equal(r.safari.products[0].unchanged, true);
+  assert(r.safari.cases.every(c => c.visibleBefore === true));
+  for (const [line, run] of Object.entries(r.firefoxRegressions)) {
+    assert.equal(run.status, 'passed');
+    assert.deepEqual(run.stats, {passed:60, failed:0, planned:60});
+    assert.equal(run.products[0].version, line === 'current' ? '157.0' : '156.0.1');
+    assert.equal(run.products[0].unchanged, true);
+    for (const {id} of cohorts) assert.equal(run.cases.filter(c => c.cohort === id && c.status === 'passed').length, 6);
+  }
+  const comparison = r.diagnosticAttempts.find(a => a.directory.endsWith('select-diagnostic-20261002-02'));
+  for (const kind of ['native', 'component']) {
+    assert.equal(comparison.cases.find(c => c.scenario === `${kind} end-enter`).after.value, 'svg');
+    assert.equal(comparison.cases.find(c => c.scenario === `${kind} typeahead-tab`).after.value, 'pdf');
+  }
+  const beforeSelect = r.diagnosticAttempts.find(a => a.directory.endsWith('qualified-20261002-12'));
+  assert.equal(beforeSelect.cases.length, 2);
+  assert(beforeSelect.clickTraces.some(t => !t.focused && t.events.length === 0));
+  assert(beforeSelect.clickTraces.some(t => t.events.some(e => e.trusted)));
+  assert.match(r.diagnosticPolicy, /not source-bound qualifications/);
+  assert.match(r.focusPolicy, /document.hasFocus\(\) false alone establishes no defect/);
+  assert.match(r.discardedExperiments.join(' '), /retains original End\/Enter/);
+  assert.equal(ledger.conditions.find(c => c.id === 'browser-current').status, 'partial');
+  const build = await json(r.buildReuse.receipt);
+  assert.equal(r.buildReuse.distManifestSHA256, build.productionBuild.distManifestSHA256);
+});
 
 test('support ledger covers every promised environment without equating inventory with acceptance', () => {
   assert.equal(ledger.schemaVersion, 1);
@@ -530,7 +567,7 @@ test('native Firefox source comparison preserves explicit semantic limits and fr
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-assertions-20261002').path);
  const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
  assert.equal(r.status,'passed');assert.deepEqual(r.stats,{passed:180,failed:0,planned:180});
- for(const [path,digest] of Object.entries(r.inputs))assert.equal(hash(await read(path)),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(hash(await readConsumerRunnerHistorical(path)),digest,path);
  assert.equal(hash(await read(r.previousReceipt)),r.previousReceiptSHA256);
  assert.equal(hash(await read(r.assertionMap)),r.assertionMapSHA256);
  const map=await json(r.assertionMap);
@@ -538,7 +575,7 @@ test('native Firefox source comparison preserves explicit semantic limits and fr
  const ts=(await import('@typescript/typescript6')).default;
  const original=[];
  for(const path of ['apps/docs/tests/workflows.spec.ts','apps/docs/tests/selection.spec.ts']){
-  const bytes=await read(path),sf=ts.createSourceFile(path,bytes,ts.ScriptTarget.Latest,true,ts.ScriptKind.TS);
+  const bytes=await readConsumerRunnerHistorical(path),sf=ts.createSourceFile(path,bytes,ts.ScriptTarget.Latest,true,ts.ScriptKind.TS);
   function walk(node){
    if(ts.isCallExpression(node)&&ts.isIdentifier(node.expression)&&node.expression.text==='test'&&ts.isStringLiteral(node.arguments[0]))
     original.push({source:path,title:node.arguments[0].text,sourceSHA256:hash(bytes)});

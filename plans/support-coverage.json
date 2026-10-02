@@ -429,6 +429,13 @@
       "path": "probes/native-browser-products/verification-firefox-assertions-20261002.json",
       "sha256": "e323f294a92e08f72294f2f0cefb5507d5b60220ac43c101fb32811675ed07ca",
       "scope": "Fresh actual Firefox156.0.1/157.0:48 workflow cases (including two log-journal controls),12 first-paint/network cases,120 retained packed-consumer cases.27 original test cases source-compared with explicit limits."
+    },
+    {
+      "id": "safari-boundary-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-safari-boundary-20261002.json",
+      "sha256": "2418fcc5b8df77e4fb76d76225d3d5eae2c6bcf6d683796783939776b51a2866",
+      "scope": "Incomplete Safari27 native input diagnosis:4 consumer passes then a native-select failure;120 fresh Firefox consumer regressions pass. No Safari qualification claim."
     }
   ],
   "conditions": [
@@ -492,10 +499,11 @@
         "firefox-readiness-20261002",
         "firefox-interactions-20261002",
         "firefox-documents-20261002",
-        "firefox-assertions-20261002"
+        "firefox-assertions-20261002",
+        "safari-boundary-20261002"
       ],
-      "gap": "Actual Firefox156.0.1/157.0 now have an explicit source comparison for all27 original workflow/selection cases and180 fresh native checks. Computed descriptions, pre-upgrade computed labels, computed status roles, native visual artifacts and incomplete contrast/manual/physical acceptance remain. Safari27 still lacks a qualified visible-desktop run; other products/OSes remain as recorded.",
-      "nextAction": "Qualify the explicit native semantic/visual and actual-product/OS/device/manual gaps; the original source comparison itself is now recorded, not an unspecified unfinished audit."
+      "gap": "Safari27 now has visible documents and4 HTML consumer passes, but native select End/Enter and intermittent loss of document input prevent qualification.55 final-run scenarios remain unexecuted. Safari workflows/AX, Firefox explicit semantic/visual boundaries, and remaining OS/physical/manual scope stay open.",
+      "nextAction": "Inspect actual input delivery in the isolated Safari automation session before another acquisition; preserve native focus rules and retain the native select comparison and input traces. Continue independent remaining scope without treating Safari as passed."
     },
     {
       "id": "browser-previous",

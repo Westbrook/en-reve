@@ -58,15 +58,13 @@ const firefoxSession=bundle=>firefox({bundle,output,metadata,child,until,stop});
 const el=(id,selector)=>`document.querySelector(${JSON.stringify('#'+id)})${selector?`.shadowRoot.querySelector(${JSON.stringify(selector)})`:''}`;
 async function ready(b,expression){await until(()=>b.evaluate(`Boolean(${expression})`),expression);}
 async function click(b,expression){
- if(b.capabilities.browserName.toLowerCase()==='safari')await b.evaluate(`(()=>{window.nativeClickEvents=[];if(!window.nativeClickObserver){window.nativeClickObserver=true;document.addEventListener('click',event=>nativeClickEvents.push({trusted:event.isTrusted,path:event.composedPath().filter(e=>e instanceof Element).map(e=>({tag:e.localName,id:e.id,type:e.getAttribute('type')}))}),true);}return true;})()`);
  const point=await b.evaluate(`(()=>{const e=${expression};if(!e?.isConnected)throw Error('Missing click target');e.scrollIntoView({block:'center',inline:'center'});const r=e.getBoundingClientRect();if(!r.width||!r.height)throw Error('Invisible click target');return {x:Math.round(r.x+r.width/2),y:Math.round(r.y+r.height/2)};})()`);
  await b.actions([{type:'pointer',id:'mouse',parameters:{pointerType:'mouse'},actions:[{type:'pointerMove',origin:'viewport',...point},{type:'pointerDown',button:0},{type:'pointerUp',button:0}]}]);
- if(b.capabilities.browserName.toLowerCase()==='safari'){const observed=await b.evaluate(`({events:window.nativeClickEvents,focused:document.hasFocus(),scrollY:scrollY,targetChecked:${expression}.checked,rect:${expression}.getBoundingClientRect().toJSON()})`);(receipt.nativeClickTraces??=[]).push({expression,point,...observed});}
 }
 async function key(b,value){await b.actions([{type:'key',id:'keyboard',actions:[{type:'keyDown',value},{type:'keyUp',value}]}]);}
 async function state(b,expression,expected){await until(async()=>{const actual=await b.evaluate(expression);try{assert.deepEqual(actual,expected);return true;}catch{return false;}},'state '+expression);assert.deepEqual(await b.evaluate(expression),expected);}
 async function accessible(b,role,name,count,startExpression){await until(async()=> (await b.locateAccessible(role,name,startExpression)).length===count,`accessible ${role}: ${name} (${count})`);}
-async function hydrate(b){await ready(b,"typeof window.hydrateFixture==='function'");await b.evaluate(`(()=>{window.observedErrors=[];addEventListener('error',e=>observedErrors.push(e.message));addEventListener('unhandledrejection',e=>observedErrors.push(String(e.reason)));window.hydrateFixture().catch(error=>observedErrors.push(String(error)));return true;})()`);await ready(b,`document.documentElement.dataset.ready==='true'`);}
+async function hydrate(b){await b.evaluate(`(()=>{window.observedErrors=[];addEventListener('error',e=>observedErrors.push(e.message));addEventListener('unhandledrejection',e=>observedErrors.push(String(e.reason)));window.hydrateFixture().catch(error=>observedErrors.push(String(error)));return true;})()`);await ready(b,`document.documentElement.dataset.ready==='true'`);}
 const scenarios=[
  ['SSR node identity and native checkbox',async b=>{
   await ready(b,el('island-checkbox','input'));
@@ -170,7 +168,7 @@ try {await withMachineOwner(()=>withExecutionOwner(root,async()=>{
    b=await start(bundle);product.capabilities=b.capabilities;product.headless=b.headless;product.accessibilityQueryScope=b.locateAccessible?'Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.':'No accessibility locator implemented for this protocol.';assert.equal(b.capabilities.browserVersion,product.version);
    for(const {id} of cohorts)for(const [scenario,test] of scenarios){
     const result={product:name,cohort:id,scenario,status:'running'};receipt.cases.push(result);console.log(name+' '+id+' '+scenario);
-    try{await b.navigate(`${url}/${id}.html?defer`);if(name==='Safari'){await ready(b,"document.visibilityState==='visible'");result.visibleBefore=true;}await test(b);assert.deepEqual(await b.evaluate('observedErrors'),[]);result.status='passed';}
+    try{await b.navigate(`${url}/${id}.html?defer`);await test(b);assert.deepEqual(await b.evaluate('observedErrors'),[]);result.status='passed';}
     catch(error){result.status='failed';result.error=String(error.stack??error);try{result.diagnostic=await b.evaluate(`({ready:document.documentElement.dataset.ready,errors:window.observedErrors,fixture:Boolean(window.fixture),client:Boolean(document.querySelector('#client-checkbox')),visibility:document.visibilityState,body:document.body.innerText})`);}catch(diagnostic){result.diagnosticError=String(diagnostic);}if(b.locateAccessible){try{result.accessibilityDiagnostic={textboxes:await b.locateAccessible('textbox'),treeitems:await b.locateAccessible('treeitem')};}catch(e){result.accessibilityDiagnosticError=String(e);}}throw error;}finally{await save();}
    }product.status='passed';
   }finally{

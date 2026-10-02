@@ -1,0 +1,5505 @@
+{
+  "schemaVersion": 1,
+  "status": "incomplete",
+  "sourceBaseCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
+  "verifiedAt": "2026-10-02T18:29:59.566539+00:00",
+  "inputs": {
+    "probes/native-browser-products/run.mjs": "25c3d7eee610f07d6df0d7d99bbbc472ce674d4f0be4ee4224eef602fc239363",
+    "probes/native-browser-products/firefox.mjs": "3055ef406d4071dd4f15db55fa72f756e6745f7d075af0af995473a66ef358b3",
+    "probes/framework-consumption/cohorts.mjs": "be29b9ffe6b396b9751042feb426ecea44628879f4e83fc2245061bcdd18383a"
+  },
+  "stats": {
+    "firefoxPassed": 120,
+    "safariPassed": 4,
+    "safariFailed": 1,
+    "safariPlanned": 60
+  },
+  "safari": {
+    "schemaVersion": 1,
+    "startedAt": "2026-10-02T18:22:43.034Z",
+    "sourceCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
+    "node": "v26.10.0",
+    "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+    "products": [
+      {
+        "name": "Safari",
+        "version": "27.0",
+        "build": "21625.1.29.18.28",
+        "bundle": "/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app",
+        "identityDigest": "sha256:b4947b8682188ff9acbcffc92f915f0b4d3ec3b66bf299447e743a6a5c647460",
+        "identityPolicy": "Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.",
+        "status": "running",
+        "capabilities": {
+          "safari:platformVersion": "26.6.1",
+          "safari:automaticInspection": false,
+          "webkit:WebRTC": {
+            "DisableICECandidateFiltering": false,
+            "DisableInsecureMediaCapture": false
+          },
+          "webkit:alwaysAllowAutoplay": false,
+          "browserVersion": "27.0",
+          "strictFileInteractability": false,
+          "browserName": "Safari",
+          "safari:useSimulator": false,
+          "safari:automaticProfiling": false,
+          "setWindowRect": true,
+          "acceptInsecureCerts": false,
+          "safari:platformBuildVersion": "25G76",
+          "safari:experimentalWebSocketUrl": false,
+          "platformName": "macOS",
+          "safari:diagnose": false
+        },
+        "headless": false,
+        "accessibilityQueryScope": "No accessibility locator implemented for this protocol.",
+        "unchanged": true
+      }
+    ],
+    "cases": [
+      {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "SSR node identity and native checkbox",
+        "status": "passed",
+        "visibleBefore": true
+      },
+      {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+        "status": "passed",
+        "visibleBefore": true
+      },
+      {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "Framework property updates, native editing and listener disposal",
+        "status": "passed",
+        "visibleBefore": true
+      },
+      {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+        "status": "passed",
+        "visibleBefore": true
+      },
+      {
+        "product": "Safari",
+        "cohort": "html",
+        "scenario": "Authored choices update while native select and keyboard editing persist",
+        "status": "failed",
+        "visibleBefore": true,
+        "error": "Error: Timed out: state document.querySelector(\"#island-select\").shadowRoot.querySelector(\"select\").value\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:129:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:173:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:154:6",
+        "diagnostic": {
+          "errors": [],
+          "fixture": true,
+          "visibility": "visible",
+          "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+          "client": true,
+          "ready": "true"
+        }
+      }
+    ],
+    "status": "failed",
+    "selectedProducts": "safari",
+    "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+    "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+    "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+    "host": {
+      "version": "26.6.1",
+      "build": "25G76",
+      "arch": "arm64"
+    },
+    "nativeClickTraces": [
+      {
+        "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 199
+        },
+        "targetChecked": true,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "island-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "component-island",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 208.4375,
+          "y": 190.4375,
+          "width": 18,
+          "left": 32,
+          "top": 190.4375,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 199
+        },
+        "targetChecked": true,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "island-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "component-island",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 208.4375,
+          "y": 190.4375,
+          "width": 18,
+          "left": 32,
+          "top": 190.4375,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#reject-mode\")",
+        "point": {
+          "x": 148,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "reject-mode",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 117.765625,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 61.140625,
+          "left": 117.765625,
+          "top": 95.4375,
+          "right": 178.90625
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 199
+        },
+        "targetChecked": true,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "island-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "component-island",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 208.4375,
+          "y": 190.4375,
+          "width": 18,
+          "left": 32,
+          "top": 190.4375,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#supersede-mode\")",
+        "point": {
+          "x": 239,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "supersede-mode",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 191.09375,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 96.234375,
+          "left": 191.09375,
+          "top": 95.4375,
+          "right": 287.328125
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 199
+        },
+        "targetChecked": false,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "island-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "component-island",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 208.4375,
+          "y": 190.4375,
+          "width": 18,
+          "left": 32,
+          "top": 190.4375,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#accept-mode\")",
+        "point": {
+          "x": 71,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "accept-mode",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 36,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 69.578125,
+          "left": 36,
+          "top": 95.4375,
+          "right": 105.578125
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-toggle\")",
+        "point": {
+          "x": 137,
+          "y": 472
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "client-toggle",
+                "type": "button"
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 36,
+          "height": 38,
+          "bottom": 491.25,
+          "y": 453.25,
+          "width": 202.484375,
+          "left": 36,
+          "top": 453.25,
+          "right": 238.484375
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-update\")",
+        "point": {
+          "x": 112,
+          "y": 552
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "client-update",
+                "type": "button"
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 36,
+          "height": 38,
+          "bottom": 571.25,
+          "y": 533.25,
+          "width": 151.765625,
+          "left": 36,
+          "top": 533.25,
+          "right": 187.765625
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-field\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 432,
+          "y": 643
+        },
+        "targetChecked": false,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "text"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-text-field",
+                "id": "client-field",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "property-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 40,
+          "bottom": 663.25,
+          "y": 623.25,
+          "width": 800,
+          "left": 32,
+          "top": 623.25,
+          "right": 832
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-mount\")",
+        "point": {
+          "x": 308,
+          "y": 552
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "client-mount",
+                "type": "button"
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 199.953125,
+          "height": 38,
+          "bottom": 531.25,
+          "y": 493.25,
+          "width": 216.984375,
+          "left": 199.953125,
+          "top": 493.25,
+          "right": 416.9375
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-mount\")",
+        "point": {
+          "x": 308,
+          "y": 512
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "client-mount",
+                "type": "button"
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 199.953125,
+          "height": 38,
+          "bottom": 571.25,
+          "y": 533.25,
+          "width": 216.984375,
+          "left": 199.953125,
+          "top": 533.25,
+          "right": 416.9375
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-toggle\")",
+        "point": {
+          "x": 137,
+          "y": 472
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "client-toggle",
+                "type": "button"
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 36,
+          "height": 38,
+          "bottom": 491.25,
+          "y": 453.25,
+          "width": 202.484375,
+          "left": 36,
+          "top": 453.25,
+          "right": 238.484375
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 429
+        },
+        "targetChecked": false,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "client-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 438.25,
+          "y": 420.25,
+          "width": 18,
+          "left": 32,
+          "top": 420.25,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-toggle\")",
+        "point": {
+          "x": 137,
+          "y": 472
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "client-toggle",
+                "type": "button"
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 36,
+          "height": 38,
+          "bottom": 491.25,
+          "y": 453.25,
+          "width": 202.484375,
+          "left": 36,
+          "top": 453.25,
+          "right": 238.484375
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#reject-mode\")",
+        "point": {
+          "x": 148,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "reject-mode",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 117.765625,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 61.140625,
+          "left": 117.765625,
+          "top": 95.4375,
+          "right": 178.90625
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 429
+        },
+        "targetChecked": true,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "client-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 438.25,
+          "y": 420.25,
+          "width": 18,
+          "left": 32,
+          "top": 420.25,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#supersede-mode\")",
+        "point": {
+          "x": 239,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "supersede-mode",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 191.09375,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 96.234375,
+          "left": 191.09375,
+          "top": 95.4375,
+          "right": 287.328125
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 429
+        },
+        "targetChecked": true,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "client-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 438.25,
+          "y": 420.25,
+          "width": 18,
+          "left": 32,
+          "top": 420.25,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#accept-mode\")",
+        "point": {
+          "x": 71,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "accept-mode",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 36,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 69.578125,
+          "left": 36,
+          "top": 95.4375,
+          "right": 105.578125
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+        "point": {
+          "x": 41,
+          "y": 429
+        },
+        "targetChecked": false,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "input",
+                "id": "control",
+                "type": "checkbox"
+              },
+              {
+                "tag": "label",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "en-checkbox",
+                "id": "client-checkbox",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "client-consumer",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 32,
+          "height": 18,
+          "bottom": 438.25,
+          "y": 420.25,
+          "width": 18,
+          "left": 32,
+          "top": 420.25,
+          "right": 50
+        }
+      },
+      {
+        "expression": "document.querySelector(\"#add-option\")",
+        "point": {
+          "x": 349,
+          "y": 114
+        },
+        "targetChecked": null,
+        "scrollY": 0,
+        "focused": true,
+        "events": [
+          {
+            "trusted": true,
+            "path": [
+              {
+                "tag": "button",
+                "id": "add-option",
+                "type": "button"
+              },
+              {
+                "tag": "div",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "section",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "main",
+                "id": "framework-root",
+                "type": null
+              },
+              {
+                "tag": "body",
+                "id": "",
+                "type": null
+              },
+              {
+                "tag": "html",
+                "id": "",
+                "type": null
+              }
+            ]
+          }
+        ],
+        "rect": {
+          "x": 299.515625,
+          "height": 38,
+          "bottom": 133.4375,
+          "y": 95.4375,
+          "width": 99.125,
+          "left": 299.515625,
+          "top": 95.4375,
+          "right": 398.640625
+        }
+      }
+    ],
+    "error": "Error: Timed out: state document.querySelector(\"#island-select\").shadowRoot.querySelector(\"select\").value\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:129:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:173:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:154:6",
+    "completedAt": "2026-10-02T18:22:56.447Z",
+    "stats": {
+      "passed": 4,
+      "failed": 1,
+      "planned": 60
+    },
+    "rawResultSHA256": "5da9515a128d502e6e400ba9f0710d8ccb5d58821e7a2fd0692a7702c6b04b57"
+  },
+  "firefoxRegressions": {
+    "preceding": {
+      "schemaVersion": 1,
+      "startedAt": "2026-10-02T18:23:19.946Z",
+      "sourceCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
+      "node": "v26.10.0",
+      "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+      "products": [
+        {
+          "name": "Firefox",
+          "version": "156.0.1",
+          "build": "15626.9.21",
+          "bundle": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app",
+          "identityDigest": "sha256:6125ed48e435bd8e06cba1856a1f880826c15173d783af0a0af4d652096eb532",
+          "identityPolicy": "Full selected Firefox application distribution.",
+          "status": "passed",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "156.0.1",
+            "platformName": "mac",
+            "setWindowRect": true,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+            "moz:buildID": "20260921121718",
+            "moz:headless": true,
+            "moz:platformVersion": "25.6.0",
+            "moz:processID": 40055,
+            "moz:profile": "/private/tmp/en-safari-regression-firefox-preceding-20261002/firefox-profile",
+            "moz:shutdownTimeout": 60000
+          },
+          "headless": true,
+          "accessibilityQueryScope": "Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.",
+          "unchanged": true
+        }
+      ],
+      "cases": [
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "selectedProducts": "firefox",
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+      "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+      "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+      "host": {
+        "version": "26.6.1",
+        "build": "25G76",
+        "arch": "arm64"
+      },
+      "completedAt": "2026-10-02T18:23:33.574Z",
+      "stats": {
+        "passed": 60,
+        "failed": 0,
+        "planned": 60
+      },
+      "rawResultSHA256": "8a79277eca1e5dad26dc8b04c1c26f72d60f9f14f32a8bb5a85ee6c22493b6f7",
+      "directory": "/private/tmp/en-safari-regression-firefox-preceding-20261002"
+    },
+    "current": {
+      "schemaVersion": 1,
+      "startedAt": "2026-10-02T18:25:45.480Z",
+      "sourceCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
+      "node": "v26.10.0",
+      "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+      "products": [
+        {
+          "name": "Firefox",
+          "version": "157.0",
+          "build": "15726.9.24",
+          "bundle": "/Applications/Firefox.app",
+          "identityDigest": "sha256:7f1df7542d9f2501056d90d91f5ff2a1e156e72081b3a4282d8624e7867da393",
+          "identityPolicy": "Full selected Firefox application distribution.",
+          "status": "passed",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "157.0",
+            "platformName": "mac",
+            "setWindowRect": true,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+            "moz:buildID": "20260924084938",
+            "moz:headless": true,
+            "moz:platformVersion": "25.6.0",
+            "moz:processID": 51538,
+            "moz:profile": "/private/tmp/en-safari-regression-firefox-current-20261002/firefox-profile",
+            "moz:shutdownTimeout": 60000
+          },
+          "headless": true,
+          "accessibilityQueryScope": "Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.",
+          "unchanged": true
+        }
+      ],
+      "cases": [
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "selectedProducts": "firefox",
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+      "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+      "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+      "host": {
+        "version": "26.6.1",
+        "build": "25G76",
+        "arch": "arm64"
+      },
+      "completedAt": "2026-10-02T18:25:57.417Z",
+      "stats": {
+        "passed": 60,
+        "failed": 0,
+        "planned": 60
+      },
+      "rawResultSHA256": "025656ec36990edc07ee35ae79f3f6a8020ab060d33c9e77be29e05290298dfd",
+      "directory": "/private/tmp/en-safari-regression-firefox-current-20261002"
+    }
+  },
+  "diagnosticAttempts": [
+    {
+      "directory": "/private/tmp/en-safari-resume-20261002-01",
+      "rawResultSHA256": "54c5f485c4d1303ea869387650747fde86ca5501a02d63732f5a6e0190a100b2",
+      "status": "failed",
+      "stats": {
+        "passed": 4,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-select\").shadowRoot.querySelector(\"select\").value\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:65:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:127:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:171:53\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:152:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "failed",
+          "error": "Error: Timed out: state document.querySelector(\"#island-select\").shadowRoot.querySelector(\"select\").value\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:65:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:127:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:171:53\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:152:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-select-diagnostic-20261002-01",
+      "rawResultSHA256": "570851624cf85c4664dc12aab27a0b3ea0fc27a1b67b844a45a42f65c83db52b",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 8
+      },
+      "error": "Error: {\"value\":{\"error\":\"TypeError: window.hydrateFixture is not a function. (In 'window.hydrateFixture()', 'window.hydrateFixture' is undefined)\",\"ok\":false}}\n    at request (file:///private/tmp/en-safari-select-diagnostic.mjs:44:77)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Object.evaluate (file:///private/tmp/en-safari-select-diagnostic.mjs:51:43)\n    at async hydrate (file:///private/tmp/en-safari-select-diagnostic.mjs:67:27)\n    at async file:///private/tmp/en-safari-select-diagnostic.mjs:71:3\n    at async file:///private/tmp/en-safari-select-diagnostic.mjs:103:53\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-safari-select-diagnostic.mjs:84:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native end-enter",
+          "status": "failed",
+          "error": "Error: {\"value\":{\"error\":\"TypeError: window.hydrateFixture is not a function. (In 'window.hydrateFixture()', 'window.hydrateFixture' is undefined)\",\"ok\":false}}\n    at request (file:///private/tmp/en-safari-select-diagnostic.mjs:44:77)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async Object.evaluate (file:///private/tmp/en-safari-select-diagnostic.mjs:51:43)\n    at async hydrate (file:///private/tmp/en-safari-select-diagnostic.mjs:67:27)\n    at async file:///private/tmp/en-safari-select-diagnostic.mjs:71:3\n    at async file:///private/tmp/en-safari-select-diagnostic.mjs:103:53\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-safari-select-diagnostic.mjs:84:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": false,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls",
+            "client": false,
+            "ready": null
+          }
+        }
+      ],
+      "clickTraces": [],
+      "scope": "Diagnostic only: identical WebDriver key sequences against a plain native select and the component select. Passed means observations collected; not a consumer qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-select-diagnostic-20261002-02",
+      "rawResultSHA256": "fa516718539ff77fe0ee5bdc349978cc5fbf2c794a36dc062f0fd45c2efd8e17",
+      "status": "passed",
+      "stats": {
+        "passed": 8,
+        "failed": 0,
+        "planned": 8
+      },
+      "error": null,
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native end-enter",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            "\ue010",
+            "\ue007"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "svg",
+            "hostValue": "svg",
+            "focused": true
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native typeahead-tab",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            "p",
+            "d",
+            "f",
+            "\ue004"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "pdf",
+            "hostValue": "svg",
+            "focused": false
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native space-arrows-enter",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            " ",
+            "\ue015",
+            "\ue015",
+            "\ue007"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "svg",
+            "hostValue": "svg",
+            "focused": true
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native arrows-tab",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            "\ue015",
+            "\ue015",
+            "\ue004"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "svg",
+            "hostValue": "svg",
+            "focused": false
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component end-enter",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            "\ue010",
+            "\ue007"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "svg",
+            "hostValue": "svg",
+            "focused": true
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component typeahead-tab",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            "p",
+            "d",
+            "f",
+            "\ue004"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "pdf",
+            "hostValue": "pdf",
+            "focused": false
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component space-arrows-enter",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            " ",
+            "\ue015",
+            "\ue015",
+            "\ue007"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "pdf",
+            "hostValue": "pdf",
+            "focused": true
+          }
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component arrows-tab",
+          "status": "passed",
+          "before": {
+            "value": "svg",
+            "focused": true,
+            "visibility": "visible"
+          },
+          "keys": [
+            "\ue015",
+            "\ue015",
+            "\ue004"
+          ],
+          "after": {
+            "visibility": "visible",
+            "value": "svg",
+            "hostValue": "svg",
+            "focused": false
+          }
+        }
+      ],
+      "clickTraces": [],
+      "scope": "Diagnostic only: identical WebDriver key sequences against a plain native select and the component select. Passed means observations collected; not a consumer qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-typeahead-sequence-20261002-01",
+      "rawResultSHA256": "bb2b4c916a7fe119fad3f6b86266d359496c0562c2729fa6a370ab7f2572dbe2",
+      "status": "passed",
+      "stats": {
+        "passed": 6,
+        "failed": 0,
+        "planned": 6
+      },
+      "error": null,
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native none",
+          "status": "passed",
+          "first": "pdf",
+          "removed": "svg",
+          "second": "svg",
+          "reset": "none"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native escape",
+          "status": "passed",
+          "first": "pdf",
+          "removed": "svg",
+          "second": "svg",
+          "reset": "escape"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "native separate-typeahead-session",
+          "status": "passed",
+          "first": "pdf",
+          "removed": "svg",
+          "second": "png",
+          "reset": "separate-typeahead-session"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component none",
+          "status": "passed",
+          "first": "png",
+          "removed": "png",
+          "second": "png",
+          "reset": "none"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component escape",
+          "status": "passed",
+          "first": "png",
+          "removed": "png",
+          "second": "png",
+          "reset": "escape"
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "component separate-typeahead-session",
+          "status": "passed",
+          "first": "png",
+          "removed": "png",
+          "second": "png",
+          "reset": "separate-typeahead-session"
+        }
+      ],
+      "clickTraces": [],
+      "scope": "Diagnostic only: identical WebDriver key sequences against a plain native select and the component select. Passed means observations collected; not a consumer qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-01",
+      "rawResultSHA256": "c1c128c85c1e5a66e47412623146e8c3368458d6bad1a8d2b2685fe3e3ccf937",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 0,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector('#native-select-control').value\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:65:45)\n    at async safariSelectControl (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:81:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:189:51\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:172:6",
+      "cases": [],
+      "clickTraces": [],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-02",
+      "rawResultSHA256": "8654e2a4a35fcb58ce6f2c926472a51f623d3d871453c950ed34507dc665f6ef",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 0,
+        "planned": 60
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n+   'png',\n    'pdf',\n    'png'\n  ]\n\n    at safariSelectControl (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:85:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:192:51\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:175:6",
+      "cases": [],
+      "clickTraces": [],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-03",
+      "rawResultSHA256": "a02a84d85cb38c4d2315a3134946c6a2f4decb8085095bcf95307aeba756b7a5",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:65:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:98:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:196:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:176:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:65:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:98:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:196:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:176:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-04",
+      "rawResultSHA256": "a44e6f2f1aae50b327cabaf0ed72985592d5e3ec0dba5fd0b2b7204f9d1d2d76",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:100:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:198:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:178:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:100:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:198:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:178:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-05",
+      "rawResultSHA256": "f433317ed6fe88005c73e8832e1d92b9c64efe8efe3e69bc51457039b1178e03",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:101:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:199:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:179:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:101:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:199:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:179:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-06",
+      "rawResultSHA256": "0f90418f87e37ac5c0793da74f8c2984cc11f5969622f46cdd48f65f0cd61f02",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:101:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:199:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:179:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:101:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:199:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:179:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-07",
+      "rawResultSHA256": "1401f6dfb6440f96e60a2e6103e70456930d70cb60b3bc66d494ef37f1fe19d6",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 0,
+        "planned": 60
+      },
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\nfalse !== true\n\n    at safariSelectControl (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:91:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:197:51\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+      "cases": [],
+      "clickTraces": [],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-08",
+      "rawResultSHA256": "211458de76e19fcfb6716a24e7fff2e6c6381e7102019ac6632cf19551414fab",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:102:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:200:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:102:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:200:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-09",
+      "rawResultSHA256": "5d53636224ea9a231c01787b4e061a36758f56724a9f2efe9548306ae186890e",
+      "status": "failed",
+      "stats": {
+        "passed": 0,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:102:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:200:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:68:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:102:48\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:200:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-10",
+      "rawResultSHA256": "b8aea10c59fbfd07d8f805d8ed11f69626a67c748ef6f9cf1d1a00d95a816a25",
+      "status": "failed",
+      "stats": {
+        "passed": 2,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: {\"value\":{\"error\":\"click intercepted\",\"message\":\"\",\"stacktrace\":\"\"}}\n    at request (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:44:77)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async click (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:64:20)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:124:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:199:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: {\"value\":{\"error\":\"click intercepted\",\"message\":\"\",\"stacktrace\":\"\"}}\n    at request (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:44:77)\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async click (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:64:20)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:124:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:199:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:180:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#reject-mode\")",
+          "point": {
+            "x": 148,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "reject-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 117.765625,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 61.140625,
+            "left": 117.765625,
+            "top": 95.4375,
+            "right": 178.90625
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#supersede-mode\")",
+          "point": {
+            "x": 239,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "supersede-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 191.09375,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 96.234375,
+            "left": 191.09375,
+            "top": 95.4375,
+            "right": 287.328125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#accept-mode\")",
+          "point": {
+            "x": 71,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "accept-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 69.578125,
+            "left": 36,
+            "top": 95.4375,
+            "right": 105.578125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-toggle\")",
+          "point": {
+            "x": 137,
+            "y": 472
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-toggle",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 491.25,
+            "y": 453.25,
+            "width": 202.484375,
+            "left": 36,
+            "top": 453.25,
+            "right": 238.484375
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-update\")",
+          "point": {
+            "x": 112,
+            "y": 552
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-update",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 571.25,
+            "y": 533.25,
+            "width": 151.765625,
+            "left": 36,
+            "top": 533.25,
+            "right": 187.765625
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-11",
+      "rawResultSHA256": "35624890c1b2cbd23bcc9a40488e10c309aaf8db970bf922c82f7b7b20fbd64f",
+      "status": "failed",
+      "stats": {
+        "passed": 4,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state Array.from(document.querySelector(\"#island-select\").shadowRoot.querySelector(\"select\").options,o=>o.textContent)\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:156:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:198:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:179:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state Array.from(document.querySelector(\"#island-select\").shadowRoot.querySelector(\"select\").options,o=>o.textContent)\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:156:3\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:198:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:179:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#reject-mode\")",
+          "point": {
+            "x": 148,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "reject-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 117.765625,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 61.140625,
+            "left": 117.765625,
+            "top": 95.4375,
+            "right": 178.90625
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#supersede-mode\")",
+          "point": {
+            "x": 239,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "supersede-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 191.09375,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 96.234375,
+            "left": 191.09375,
+            "top": 95.4375,
+            "right": 287.328125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#accept-mode\")",
+          "point": {
+            "x": 71,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "accept-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 69.578125,
+            "left": 36,
+            "top": 95.4375,
+            "right": 105.578125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-toggle\")",
+          "point": {
+            "x": 137,
+            "y": 472
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-toggle",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 491.25,
+            "y": 453.25,
+            "width": 202.484375,
+            "left": 36,
+            "top": 453.25,
+            "right": 238.484375
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-update\")",
+          "point": {
+            "x": 112,
+            "y": 552
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-update",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 571.25,
+            "y": 533.25,
+            "width": 151.765625,
+            "left": 36,
+            "top": 533.25,
+            "right": 187.765625
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-field\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 432,
+            "y": 643
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "text"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-text-field",
+                  "id": "client-field",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "property-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 40,
+            "bottom": 663.25,
+            "y": 623.25,
+            "width": 800,
+            "left": 32,
+            "top": 623.25,
+            "right": 832
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-mount\")",
+          "point": {
+            "x": 308,
+            "y": 552
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-mount",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 199.953125,
+            "height": 38,
+            "bottom": 531.25,
+            "y": 493.25,
+            "width": 216.984375,
+            "left": 199.953125,
+            "top": 493.25,
+            "right": 416.9375
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-mount\")",
+          "point": {
+            "x": 308,
+            "y": 512
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-mount",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 199.953125,
+            "height": 38,
+            "bottom": 571.25,
+            "y": 533.25,
+            "width": 216.984375,
+            "left": 199.953125,
+            "top": 533.25,
+            "right": 416.9375
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-toggle\")",
+          "point": {
+            "x": 137,
+            "y": 472
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-toggle",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 491.25,
+            "y": 453.25,
+            "width": 202.484375,
+            "left": 36,
+            "top": 453.25,
+            "right": 238.484375
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 429
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "client-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 438.25,
+            "y": 420.25,
+            "width": 18,
+            "left": 32,
+            "top": 420.25,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-toggle\")",
+          "point": {
+            "x": 137,
+            "y": 472
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "client-toggle",
+                  "type": "button"
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 491.25,
+            "y": 453.25,
+            "width": 202.484375,
+            "left": 36,
+            "top": 453.25,
+            "right": 238.484375
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#reject-mode\")",
+          "point": {
+            "x": 148,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "reject-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 117.765625,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 61.140625,
+            "left": 117.765625,
+            "top": 95.4375,
+            "right": 178.90625
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 429
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "client-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 438.25,
+            "y": 420.25,
+            "width": 18,
+            "left": 32,
+            "top": 420.25,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#supersede-mode\")",
+          "point": {
+            "x": 239,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "supersede-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 191.09375,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 96.234375,
+            "left": 191.09375,
+            "top": 95.4375,
+            "right": 287.328125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 429
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "client-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 438.25,
+            "y": 420.25,
+            "width": 18,
+            "left": 32,
+            "top": 420.25,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#accept-mode\")",
+          "point": {
+            "x": 71,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "accept-mode",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 36,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 69.578125,
+            "left": 36,
+            "top": 95.4375,
+            "right": 105.578125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#client-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 429
+          },
+          "targetChecked": false,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "client-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "client-consumer",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 438.25,
+            "y": 420.25,
+            "width": 18,
+            "left": 32,
+            "top": 420.25,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#add-option\")",
+          "point": {
+            "x": 349,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "button",
+                  "id": "add-option",
+                  "type": "button"
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 299.515625,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 99.125,
+            "left": 299.515625,
+            "top": 95.4375,
+            "right": 398.640625
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#remove-option\")",
+          "point": {
+            "x": 475,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 410.828125,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 128.140625,
+            "left": 410.828125,
+            "top": 95.4375,
+            "right": 538.96875
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    },
+    {
+      "directory": "/private/tmp/en-safari-qualified-20261002-12",
+      "rawResultSHA256": "c705d6999235aba2763519c2567f844a6b09c57f77d6fefda5a79f6f5c73f1ce",
+      "status": "failed",
+      "stats": {
+        "passed": 1,
+        "failed": 1,
+        "planned": 60
+      },
+      "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:105:63\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:196:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:177:6",
+      "cases": [
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed",
+          "visibleBefore": true
+        },
+        {
+          "product": "Safari",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "failed",
+          "visibleBefore": true,
+          "error": "Error: Timed out: state document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\").checked\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:32:151)\n    at async state (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:67:45)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:105:63\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:196:154\n    at async withExecutionOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/execution-owner.mjs:25:10)\n    at async withMachineOwner (file:///private/tmp/en-reve-initial-pass-closeout/tooling/testing/machine-owner.mjs:77:12)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:177:6",
+          "diagnostic": {
+            "errors": [],
+            "fixture": true,
+            "visibility": "visible",
+            "body": "HTML component consumption\naccept  reject  supersede  Add option  Remove option\nHTML shell\nPreserve proportions\ntrue\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties  Mount or unmount controls\nFramework supplied description",
+            "client": true,
+            "ready": "true"
+          }
+        }
+      ],
+      "clickTraces": [
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": true,
+          "events": [
+            {
+              "trusted": true,
+              "path": [
+                {
+                  "tag": "input",
+                  "id": "control",
+                  "type": "checkbox"
+                },
+                {
+                  "tag": "label",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "en-checkbox",
+                  "id": "island-checkbox",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "div",
+                  "id": "component-island",
+                  "type": null
+                },
+                {
+                  "tag": "section",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "main",
+                  "id": "framework-root",
+                  "type": null
+                },
+                {
+                  "tag": "body",
+                  "id": "",
+                  "type": null
+                },
+                {
+                  "tag": "html",
+                  "id": "",
+                  "type": null
+                }
+              ]
+            }
+          ],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#reject-mode\")",
+          "point": {
+            "x": 148,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 117.765625,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 61.140625,
+            "left": 117.765625,
+            "top": 95.4375,
+            "right": 178.90625
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#supersede-mode\")",
+          "point": {
+            "x": 239,
+            "y": 114
+          },
+          "targetChecked": null,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 191.09375,
+            "height": 38,
+            "bottom": 133.4375,
+            "y": 95.4375,
+            "width": 96.234375,
+            "left": 191.09375,
+            "top": 95.4375,
+            "right": 287.328125
+          }
+        },
+        {
+          "expression": "document.querySelector(\"#island-checkbox\").shadowRoot.querySelector(\"input\")",
+          "point": {
+            "x": 41,
+            "y": 199
+          },
+          "targetChecked": true,
+          "scrollY": 0,
+          "focused": false,
+          "events": [],
+          "rect": {
+            "x": 32,
+            "height": 18,
+            "bottom": 208.4375,
+            "y": 190.4375,
+            "width": 18,
+            "left": 32,
+            "top": 190.4375,
+            "right": 50
+          }
+        }
+      ],
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification."
+    }
+  ],
+  "diagnosticPolicy": "Earlier attempts record observations during dirty-source experiments, not source-bound qualifications. A diagnostic pass only means observations were collected. Only the final runner and Firefox regressions bind the final input hashes; no successful Safari qualification is claimed.",
+  "focusPolicy": "Preserve Safari-specific visible focus rules. Focus-ring styling and :focus-visible, Tab navigation preferences, activeElement, document.hasFocus(), and trusted input delivery are separate observations. document.hasFocus() false alone establishes no defect. No Chrome-style focus ring or changed Safari preference is required.",
+  "retainedChanges": [
+    "Wait for the actual fixture hydration entry point before invoking it; retain its original requestAnimationFrame readiness marker.",
+    "Require Safari document visibility before each scenario.",
+    "Record native click coordinates, target geometry, trusted-event paths and document focus without replacing native interactions."
+  ],
+  "discardedExperiments": [
+    "Label typeahead, pacing, native select positive controls, extra window selection, element-click and script focus were diagnostic experiments; none is silently promoted as a Safari workaround. The final runner retains original End/Enter selection and coordinate pointer actions."
+  ],
+  "findings": [
+    "The unchanged Safari runner and final diagnostic now have visible documents and pass four HTML consumer scenarios, unlike earlier hidden-window runs. No browser configuration was changed; cause of the environment change is unknown.",
+    "End/Enter leaves SVG selected in both a plain native select and the component select. Typeahead can choose PDF; closely spaced searches retain native state and an initial p can first select PNG.",
+    "Click traces after Tab show document.hasFocus false and no native click events, including with a following native text field. Later ordinary checkbox interactions also showed no click delivery and document.hasFocus false before any select action, so Tab is not established as the sole cause. The focus flag is supporting context; missing trusted input is the separate observation.",
+    "Standard owned-window selection, element-click, window.focus and control focus did not establish reliable document input. Element-click also produced a shadow-input interception error.",
+    "Native app inspection returned the normal Start Page after test cleanup and took unexpectedly long; it did not establish the automation window state."
+  ],
+  "remaining": [
+    "Safari consumer qualification remains incomplete:55 planned scenarios were not run in the source-bound final acquisition.",
+    "Inspect the isolated Safari automation session with a paired native control to separate environment input delivery from component behavior and Safari-specific focus rules. Do not retry unchanged headlessly, alter browser security or synthesize clicks to make these assertions pass.",
+    "Safari full reference workflows, native AX/computed semantics, preceding Safari and manual/physical coverage remain unqualified."
+  ],
+  "buildReuse": {
+    "receipt": "apps/docs/tests/verification-helper-recipes-20261002.json",
+    "distManifestSHA256": "13dc432ed4a47d5631a775db179ec40efbf324ee28725f7316ce722c53e7b706",
+    "files": 1184,
+    "policy": "Existing qualified build reused unchanged; no production build, installation or type requalification claim."
+  },
+  "sources": [
+    "https://developer.apple.com/documentation/safari-developer-tools/webdriver"
+  ],
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/safari-boundary-20261002"
+}

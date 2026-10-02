@@ -582,3 +582,20 @@ The final tooling integrity gate passes136 Node checks. Its first run failed a
 new receipt test’s wording match; correcting that matcher leaves the browser
 assertions and acquisition receipts unchanged. Both gate runs remain in report
 evidence.
+
+### Safari input boundary checkpoint
+
+The [Safari diagnosis](../probes/native-browser-products/safari-input-boundary.md)
+records four passing consumer cases, one native-select failure and 55 unexecuted
+cases. A plain native select also retains its value after End/Enter. Separate
+experimental traces show intermittent absence of trusted pointer events, including
+before select interaction. Safari's focus-ring and Tab-navigation rules are not
+required to match other browsers; `document.hasFocus()` alone proves no defect.
+The root cause remains unresolved. Visibility/readiness checks and native click
+diagnostics are retained, with 120 fresh consumer regressions passing across the
+two actual Firefox releases. No component or production asset changed. The support
+ledger remains partial; native Safari and physical/manual obligations stay open.
+
+The evidence-integrity tooling gate passes 137 Node checks. This validates receipt
+consistency, including the explicit incomplete Safari result; it is not additional
+Safari behavioral or manual accessibility evidence.

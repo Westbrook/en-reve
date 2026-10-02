@@ -1,5 +1,9 @@
 # Actual Safari and Firefox product checks
 
+Latest Safari status: [input and focus diagnosis](safari-input-boundary.md).
+Four consumer cases pass; qualification remains incomplete. Safari-specific
+visible focus rules are preserved and assessed separately from native input delivery.
+
 Playwright remains the default test runner. Its patched Firefox and WebKit builds
 are different subjects from installed Firefox and Safari products. This narrow
 macOS probe uses Apple's bundled Safari WebDriver and Firefox's supported direct

@@ -234,3 +234,7 @@ Local main `e29ffc7c0c006d96f186d9ab9faa753bccab92b8` qualifies three SSR/scroll
 ## Native Firefox assertion comparison
 
 Local main `7dd38008b371690f4a2c7431e0a51a31e56d5474` qualifies native Firefox workflow and hydration assertions. See `probes/native-browser-products/assertion-comparison.md` for scope and browser limits.
+
+## Safari input and focus boundary
+
+Local main `2b16f52f6f476b78db04b08708e6d09fdf16dc81` records incomplete Safari diagnosis and120 Firefox regression passes. See `probes/native-browser-products/safari-input-boundary.md` for scope and browser limits.
