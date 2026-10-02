@@ -186,3 +186,7 @@ Local main `661aac8552dd939c65e18ae23c40a3ea2b3657f6` qualifies four public navi
 ## Packed form consumers
 
 Local main `9a84dcebf0dbd1ccd99a468f49ffb6c2ebf74f12` qualifies six public form projection/constraint/style entries in application-owned native compositions. See `probes/form-recipes/README.md` for72 browser cases, exact scope and remaining obligations.
+
+## Packed state consumers
+
+Local main `8c3fe212837d1277091e95accaed0f800c0bd94a` qualifies five public state/registration entries in application-owned native compositions. See `probes/state-recipes/README.md` for48 browser cases, exact scope and remaining obligations.

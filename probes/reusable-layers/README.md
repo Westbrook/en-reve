@@ -42,3 +42,7 @@ The [packed form recipes](../form-recipes/README.md) add six entries across auth
 steps/validation projection, file constraints, and both form-navigation/file-upload
 style deliveries.72 three-engine cases bring named-scenario coverage to40/110;
 70 entries and the separately recorded platform/manual obligations remain open.
+
+The [packed state recipes](../state-recipes/README.md) add query, interval,
+collection-key, overflow and explicit registration entries with48 three-engine
+cases. Named-scenario coverage is45/110;65 entries and platform/manual scope remain.

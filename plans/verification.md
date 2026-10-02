@@ -402,3 +402,12 @@ native validation links and native File/FormData transactions remain owned by th
 consumer. Inventory coverage is40/110;70 entries remain pending. Synthetic drop
 payloads do not qualify physical drag/drop, OS file choosers or manual AT. Existing
 SSR, native Firefox comparison, platform and owner obligations remain distinct.
+
+The [packed state batch](../probes/state-recipes/README.md) adds five §7.4 entries:
+query, interval, collection-key and overflow helpers plus explicit registration.
+48 three-engine cases and isolated public declarations pass. Actual lazy chunks,
+pre-upgrade input retention, cached failures, native query/range interactions and
+resize focus recovery are verified in application-owned consumers. Inventory is
+45/110 with65 entries pending. Application evaluation/measurement/focus policy is
+not attributed to the pure helpers. Physical/manual, SSR/scoped-registry and
+remaining platform/owner requirements stay open.

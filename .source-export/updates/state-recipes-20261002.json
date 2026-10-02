@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-10-02T12:45:00.503741+00:00",
+  "sourceCommit": "8c3fe212837d1277091e95accaed0f800c0bd94a",
+  "previousSourceMain": "9a84dcebf0dbd1ccd99a468f49ffb6c2ebf74f12",
+  "taskPaths": [
+    "packages/primitives/docs/state-consumers.md",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/form-recipes/qualification-sources/9a84dceb/browser-ports.mjs.txt",
+    "probes/form-recipes/qualification-sources/9a84dceb/comprehensive.mjs.txt",
+    "probes/form-recipes/qualification-sources/9a84dceb/comprehensive.test.mjs.txt",
+    "probes/form-recipes/qualification-sources/9a84dceb/inventory.json.txt",
+    "probes/form-recipes/qualification-sources/9a84dceb/inventory.test.mjs.txt",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "probes/state-recipes/README.md",
+    "probes/state-recipes/lazy-panel.ts",
+    "probes/state-recipes/playwright.config.ts",
+    "probes/state-recipes/prepare.mjs",
+    "probes/state-recipes/recipes.html",
+    "probes/state-recipes/recipes.spec.ts",
+    "probes/state-recipes/recipes.ts",
+    "probes/state-recipes/server.mjs",
+    "probes/state-recipes/verification-20261002.json",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Five public state/registration entries now have independent native consumer compositions:48 browser cases,26 pathway/inventory controls, strict declarations and126 final integrity checks pass. The reusable-layer inventory is45/110;65 entries and broader platform/manual/owner work remain open. Application build unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

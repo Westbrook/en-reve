@@ -194,3 +194,14 @@ bounded scenario receipts;70 remain. Original projection receipt inputs are
 retained byte-for-byte before additive pathway/inventory changes. OS file chooser
 UI, physical drag/drop, SSR/hydration and platform/manual/owner acceptance are not
 inferred from this result. No runtime implementation changed.
+
+## State and explicit registration checkpoint
+
+The [state recipes](../probes/state-recipes/README.md) qualify five further public
+entries in native query, interval, responsive-action and lazy-panel compositions.
+48 cases across three engines execute packed imports and actual split chunks.
+45/110 entries now have bounded receipts;65 remain. Form qualification snapshots
+preserve its exact earlier registry/inventory inputs. Pure helpers do not inherit
+the application's evaluator, measurement or focus policy; the contract separates
+them. Global-registry browser evidence does not replace scoped SSR/framework or
+platform/manual acceptance.

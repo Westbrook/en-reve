@@ -52,11 +52,3 @@ test('form compositions bind all six public imports including both portable styl
  for(const row of qualified)assert(seen.includes(row.entry.replace('.css','.js')),row.entry);
  const prep=await read('probes/form-recipes/prepare.mjs');assert(prep.includes("['form-navigation','file-upload']"));
 });
-
-
-test('state consumers exercise five public contracts without owning-element imports',async()=>{
- const source=await read('probes/state-recipes/recipes.ts');assert(!source.includes('/src/')&&!source.includes('/dist/')&&!source.includes('@en-reve/elements'));
- const seen=[...source.matchAll(/from ['"](@en-reve\/[^'"]+)['"]/g)].map(match=>match[1]);
- for(const entry of seen)assert.equal(inventory.entries.find(row=>row.entry===entry)?.qualification,'qualified-scenarios',entry);
- const rows=inventory.entries.filter(row=>row.composition==='state');assert.equal(rows.length,5);for(const row of rows)assert(seen.includes(row.entry),row.entry);
-});

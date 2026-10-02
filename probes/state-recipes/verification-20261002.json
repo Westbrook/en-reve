@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T12:43:05.847013+00:00",
+  "sourceBase": "9a84dcebf0dbd1ccd99a468f49ffb6c2ebf74f12",
+  "status": "passed",
+  "scope": "Five public entries in application-owned native query, interval, measured overflow and lazy definition compositions.",
+  "sourceInputs": {
+    "probes/state-recipes/recipes.ts": "bd86e895ca4c87c138a948d8a53c9238ce55cf8be4d2aceabbe2691dffe8cc95",
+    "probes/state-recipes/lazy-panel.ts": "674f06df0ec7768f5fb19a648c9d951a6a3c6a6e00c7df635657f75ba7f1c493",
+    "probes/state-recipes/recipes.html": "a984e43fae48376c47630ce629f51ee3e0be03856b3a2f2c7e0ed656f7fa2632",
+    "probes/state-recipes/recipes.spec.ts": "e15687e10b4bb7b1c6b39ba5f78a245d3fa088a30584ea58211a65c138b4fb83",
+    "probes/state-recipes/playwright.config.ts": "8bdc8841b17b4270cdec1dc2f1e07048f3134990edb4fa94fc920ea1914fe2c0",
+    "probes/state-recipes/prepare.mjs": "ae0744d8a53ea82b2b0a0a1157484358ca5773ee9dbb1a7b84bda1359d67f1fb",
+    "probes/state-recipes/server.mjs": "ad4fa289e84639ea9f03e1135ae146df64482f3aeae969036f314c2de7fce571",
+    "tooling/testing/comprehensive.mjs": "4d40897f84537cf5574a81f7cce4f63f740e205957a217e5acf7b8d837a0ff50",
+    "tooling/testing/comprehensive.test.mjs": "892e5779bd59b26f5373391bcd6db427033bf6227605a329b598f2bc10236c93",
+    "tooling/testing/browser-ports.mjs": "314a12fc0daf24afdddc05399389062724118f75e60e6cffad7c75e7af232ef8",
+    "probes/reusable-layers/inventory.json": "b844c8412fd74ad93b4686cf1b03b7e2b4857b1b99b1deb5fad642d4f66ca37d",
+    "probes/reusable-layers/inventory.test.mjs": "aeb19402f7753a202f041166fe88c2598ad0665125c0ea3bf33a8f56de0cada1",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "run": "/private/tmp/en-state-recipes-20261002-05",
+  "executionSHA256": "d8db1059b542e70bb5dfc43a75892ecbc3b7c07175266692d07b80741c5e165e",
+  "reportSHA256": "e30090cfeda9965ed88231bc10086f7d9aa8e3d3111db1dab1368873b768a15b",
+  "stats": {
+    "startTime": "2026-10-02T12:40:20.262Z",
+    "duration": 14447.151,
+    "expected": 48,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "query copy and validation drive application-owned all/any filtering from native fields",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 955
+    },
+    {
+      "project": "chromium",
+      "title": "invalid numeric and field/operator drafts keep the last accepted query intact",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 483
+    },
+    {
+      "project": "chromium",
+      "title": "query proposal can be canceled or superseded and exported copies do not alias accepted state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 394
+    },
+    {
+      "project": "chromium",
+      "title": "invalid authoritative query is rejected without changing accepted results",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 140
+    },
+    {
+      "project": "chromium",
+      "title": "opaque canonical collection keys preserve row identity while reorder and labels change",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 78
+    },
+    {
+      "project": "chromium",
+      "title": "legacy key extraction is explicit and invalid component identities cannot replace records",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 72
+    },
+    {
+      "project": "chromium",
+      "title": "interval movement uses native keyboard steps and preserves ordered minimum gap",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 86
+    },
+    {
+      "project": "chromium",
+      "title": "interval normalization, fractional limits and synchronous veto retain coherent native values",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 85
+    },
+    {
+      "project": "chromium",
+      "title": "overflow reserves a measured disclosure and exposes every action once",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 196
+    },
+    {
+      "project": "chromium",
+      "title": "overflow recovers focused action through collapse and expansion using native controls",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 121
+    },
+    {
+      "project": "chromium",
+      "title": "overflow reconnect remeasures narrow RTL without page overflow or stale prefix",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 126
+    },
+    {
+      "project": "chromium",
+      "title": "definition import is lazy; prepare registers nothing and ensure upgrades dependency-first preserving inputs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 196
+    },
+    {
+      "project": "chromium",
+      "title": "concurrent loader requests share imports and idempotent registry work",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 62
+    },
+    {
+      "project": "chromium",
+      "title": "unknown manifest request fails lookup before any import or registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 61
+    },
+    {
+      "project": "chromium",
+      "title": "failed consumer loading stays cached until explicit retry and never partially upgrades",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 182
+    },
+    {
+      "project": "chromium",
+      "title": "native registry conflicts preflight dependencies and remain permanent for the request",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 63
+    },
+    {
+      "project": "firefox",
+      "title": "query copy and validation drive application-owned all/any filtering from native fields",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 1163
+    },
+    {
+      "project": "firefox",
+      "title": "invalid numeric and field/operator drafts keep the last accepted query intact",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 485
+    },
+    {
+      "project": "firefox",
+      "title": "query proposal can be canceled or superseded and exported copies do not alias accepted state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 367
+    },
+    {
+      "project": "firefox",
+      "title": "invalid authoritative query is rejected without changing accepted results",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 238
+    },
+    {
+      "project": "firefox",
+      "title": "opaque canonical collection keys preserve row identity while reorder and labels change",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 230
+    },
+    {
+      "project": "firefox",
+      "title": "legacy key extraction is explicit and invalid component identities cannot replace records",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "firefox",
+      "title": "interval movement uses native keyboard steps and preserves ordered minimum gap",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 253
+    },
+    {
+      "project": "firefox",
+      "title": "interval normalization, fractional limits and synchronous veto retain coherent native values",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "firefox",
+      "title": "overflow reserves a measured disclosure and exposes every action once",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 374
+    },
+    {
+      "project": "firefox",
+      "title": "overflow recovers focused action through collapse and expansion using native controls",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 506
+    },
+    {
+      "project": "firefox",
+      "title": "overflow reconnect remeasures narrow RTL without page overflow or stale prefix",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 212
+    },
+    {
+      "project": "firefox",
+      "title": "definition import is lazy; prepare registers nothing and ensure upgrades dependency-first preserving inputs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 262
+    },
+    {
+      "project": "firefox",
+      "title": "concurrent loader requests share imports and idempotent registry work",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 183
+    },
+    {
+      "project": "firefox",
+      "title": "unknown manifest request fails lookup before any import or registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 180
+    },
+    {
+      "project": "firefox",
+      "title": "failed consumer loading stays cached until explicit retry and never partially upgrades",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 254
+    },
+    {
+      "project": "firefox",
+      "title": "native registry conflicts preflight dependencies and remain permanent for the request",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 152
+    },
+    {
+      "project": "webkit",
+      "title": "query copy and validation drive application-owned all/any filtering from native fields",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 494
+    },
+    {
+      "project": "webkit",
+      "title": "invalid numeric and field/operator drafts keep the last accepted query intact",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 322
+    },
+    {
+      "project": "webkit",
+      "title": "query proposal can be canceled or superseded and exported copies do not alias accepted state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232
+    },
+    {
+      "project": "webkit",
+      "title": "invalid authoritative query is rejected without changing accepted results",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191
+    },
+    {
+      "project": "webkit",
+      "title": "opaque canonical collection keys preserve row identity while reorder and labels change",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 177
+    },
+    {
+      "project": "webkit",
+      "title": "legacy key extraction is explicit and invalid component identities cannot replace records",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 175
+    },
+    {
+      "project": "webkit",
+      "title": "interval movement uses native keyboard steps and preserves ordered minimum gap",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 190
+    },
+    {
+      "project": "webkit",
+      "title": "interval normalization, fractional limits and synchronous veto retain coherent native values",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 184
+    },
+    {
+      "project": "webkit",
+      "title": "overflow reserves a measured disclosure and exposes every action once",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 277
+    },
+    {
+      "project": "webkit",
+      "title": "overflow recovers focused action through collapse and expansion using native controls",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "webkit",
+      "title": "overflow reconnect remeasures narrow RTL without page overflow or stale prefix",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 240
+    },
+    {
+      "project": "webkit",
+      "title": "definition import is lazy; prepare registers nothing and ensure upgrades dependency-first preserving inputs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 243
+    },
+    {
+      "project": "webkit",
+      "title": "concurrent loader requests share imports and idempotent registry work",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 156
+    },
+    {
+      "project": "webkit",
+      "title": "unknown manifest request fails lookup before any import or registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 160
+    },
+    {
+      "project": "webkit",
+      "title": "failed consumer loading stays cached until explicit retry and never partially upgrades",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 250
+    },
+    {
+      "project": "webkit",
+      "title": "native registry conflicts preflight dependencies and remain permanent for the request",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 155
+    }
+  ],
+  "nodeControls": {
+    "passed": 26
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-eL2Px0GfXILB0F0NH/bcSfo2pSOVjE0R17z82IsxkJy4H9amKdvireQIrHmOFa08A1XulORXx7AXrX4bYoXnHg==",
+        "shasum": "254d7fab9ab5caa85c2236419f5d9123412a923a",
+        "setup": {
+          "key": "c083fd048f9a855d96ab059750725bf9789e6b2aa73ebac2d9c8bb5007a13082",
+          "reused": false,
+          "originatingProducer": "2026-10-02T12:40:16.187Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "c083fd048f9a855d96ab059750725bf9789e6b2aa73ebac2d9c8bb5007a13082",
+          "reused": false,
+          "originatingProducer": "2026-10-02T12:40:16.187Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "c083fd048f9a855d96ab059750725bf9789e6b2aa73ebac2d9c8bb5007a13082",
+          "reused": false,
+          "originatingProducer": "2026-10-02T12:40:16.187Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/state/query.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/collection.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/interval.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/overflow.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/registration.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/primitives/dist/state/draft.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/editing-controller.d.ts",
+        "node_modules/@en-reve/styles/dist/controls.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/lit-html/directives/repeat.js",
+      "node_modules/lit/directives/repeat.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/state/query.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/state/collection.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/state/interval.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/state/overflow.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/registration.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "node_modules/signal-polyfill/dist/index.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/state/draft.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/editing-controller.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/node_modules/@en-reve/styles/dist/controls.js",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/lazy-panel.ts",
+      "../en-state-recipes-20261002-05/fixtures/state-recipes/consumer/recipes.ts"
+    ],
+    "assets": {
+      "recipes.js": "0b3c756b71a85e8ce2ed6ee88aeddfd331cb0d5bf1668b64cd96e548ee6a65bf",
+      "lazy-panel-R2RMNEGU.js": "c2667ac0474f94055a34f35a7c952e6edc0c120133d0c70abea7cb71d1c83f4a"
+    },
+    "sourceInputs": {
+      "probes/state-recipes/recipes.ts": "bd86e895ca4c87c138a948d8a53c9238ce55cf8be4d2aceabbe2691dffe8cc95",
+      "probes/state-recipes/recipes.html": "a984e43fae48376c47630ce629f51ee3e0be03856b3a2f2c7e0ed656f7fa2632",
+      "probes/state-recipes/lazy-panel.ts": "674f06df0ec7768f5fb19a648c9d951a6a3c6a6e00c7df635657f75ba7f1c493"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Synthetic composition tests do not qualify physical IME. SSR, portable CSS and other helper modes remain separate."
+    ]
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "9a84dcebf0dbd1ccd99a468f49ffb6c2ebf74f12",
+    "sourceDigest": "sha256:5733691e66079ee07ec513ca0cf22db1a6712c657a0fb96819e5682a4dfb4256",
+    "files": 22772
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/state-recipes-20261002",
+  "earlierAttempt": {
+    "run": "/private/tmp/en-state-recipes-20261002-01",
+    "status": "failed",
+    "boundary": "Run01 native matches method type collision; run02 implicit select label included option text; run03 constrained measurement probes; run04 enlarged fixture input overflow in Firefox. Full48-case final run passes. Earlier raw evidence retained."
+  },
+  "limitations": [
+    "Five entries have named scenario qualification, not every exported function input or method.",
+    "Query evaluation, DOM measurements, responsive focus policy and application draft/reset semantics remain consumer-owned.",
+    "The registry fixture uses native global registration. SSR and hydration are not implied; scoped-registry/framework combinations remain separate.",
+    "Physical IME, native AT speech, physical touch and retail Safari/OS/device conditions and separate-owner acceptance remain open.",
+    "The other65 of110 public inventory entries remain pending. Historical external CSS-authoring rerun is retired, never passed."
+  ],
+  "integrity": {
+    "status": "passed",
+    "run": "/private/tmp/en-state-tooling-20261002-01",
+    "passed": 126,
+    "executionSHA256": "8d8ca3121782e41edc67deaa3019a6ba40af1b29ae550ebc3fc6ca1f445dbc0d"
+  }
+}

@@ -599,11 +599,22 @@ test('packed projection receipt binds four named entries to native alternate com
 test('packed form receipt binds six public entries to native form transactions and both style deliveries',async()=>{
  const r=await json('probes/form-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.stats.expected,72);for(const key of ['unexpected','skipped','flaky'])assert.equal(r.stats[key],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=['tooling/testing/comprehensive.mjs','tooling/testing/comprehensive.test.mjs','tooling/testing/browser-ports.mjs','probes/reusable-layers/inventory.json','probes/reusable-layers/inventory.test.mjs'].includes(path)?'probes/form-recipes/qualification-sources/9a84dceb/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,24);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
  assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['@en-reve/styles/file-upload.css','@en-reve/styles/form-navigation.css']);
  const rows=inventory.entries.filter(row=>row.receipt==='probes/form-recipes/verification-20261002.json');assert.equal(rows.length,6);assert.equal(rows.filter(row=>row.delivery==='css').length,2);
  assert.match(r.limitations.join(' '),/SSR and hydration are not implied/);assert.match(r.limitations.join(' '),/drop payloads are synthetic/);assert.match(r.limitations.join(' '),/other70/);
+});
+
+test('packed state receipt binds native application journeys and real lazy chunks to five public entries',async()=>{
+ const r=await json('probes/state-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.stats.expected,48);for(const key of ['unexpected','skipped','flaky'])assert.equal(r.stats[key],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,16);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));assert(Object.keys(r.packed.assets).some(path=>/^lazy-panel-.*\.js$/.test(path)));
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/state-recipes/verification-20261002.json');assert.equal(rows.length,5);assert(rows.every(row=>row.delivery==='module'));
+ assert.match(r.limitations.join(' '),/SSR and hydration are not implied/);assert.match(r.limitations.join(' '),/consumer-owned/);assert.match(r.limitations.join(' '),/other65/);
 });
