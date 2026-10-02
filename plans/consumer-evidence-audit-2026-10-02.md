@@ -133,3 +133,19 @@ journeys and failed/intermediate/final runs are recorded in the receipt. This
 resolves the complete-copy batch identified above, with bounded behavior evidence;
 42 gallery copies, the remaining public layers, native Firefox assertion
 comparison and platform/manual/separate-owner obligations remain open.
+
+### Gallery form and application qualification
+
+The [gallery consumer receipt](../apps/docs/tests/verification-gallery-consumers-20261002.json)
+adds 21 independently executed gallery copies: form/control examples and the
+gallery delivery of five complete applications. These use the actual copied
+exports with explicit public registrations and packed modules. Fifteen browser
+tests pass across three engines, with 38 copied consumers per engine: 27 gallery
+copies and all eleven complete API copies. All 59 displayed modules compile;
+strict core/docs types and 123 integrity checks pass.
+
+Twenty-one gallery copies remain explicitly pending in the tested inventory.
+This is named journey coverage, not every owning assertion. The reference-target
+IDL/native-AX distinction and manual native-picker boundary remain explicit.
+Remaining public layers, native Firefox assertion comparison and
+platform/manual/separate-owner requirements are unchanged.

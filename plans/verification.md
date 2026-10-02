@@ -354,3 +354,11 @@ tests, strict core/docs types and 123 tooling integrity checks pass. This is
 bounded behavior qualification, not the whole owning test matrix. Forty-two
 gallery copies still need independent runtime journeys; remaining §7.4 entries
 and platform/manual/separate-owner requirements remain open.
+
+The [gallery form/application batch](../apps/docs/tests/README.md#gallery-form-and-application-journeys)
+extends independent runtime coverage to 27 of 48 gallery copies. Together with
+all eleven complete API copies, 38 copied modules execute per pinned engine;
+15 browser tests pass and all 59 displayed modules compile. Strict core/docs
+types and 123 integrity checks pass. Twenty-one gallery IDs remain explicitly
+pending in the tested inventory. Existing public-layer, native Firefox comparison,
+platform/manual and separate-owner requirements remain unfinished.

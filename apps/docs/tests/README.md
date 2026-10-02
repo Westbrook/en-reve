@@ -57,6 +57,35 @@ This completes the named complete-API-copy batch, not §7.5a: **42 of 48 gallery
 copies still need independent runtime journeys**. Compilation, owning docs tests,
 and these bounded journeys must not be presented as all-feature or manual support.
 
+### Gallery form and application journeys
+
+The later [gallery consumer receipt](verification-gallery-consumers-20261002.json)
+adds **21 gallery copies**, bringing independent runtime coverage to **27 of 48**.
+Five tests per pinned engine now pass: the original consumers, complete API
+copies and three gallery groups. Together they execute **38 copied modules per
+engine**; all 59 displayed modules compile. The two scoped-color controls remain
+separate. Strict core/docs types and all 123 tooling integrity checks also pass.
+
+The gallery consumer supplies explicit public element registrations and invokes
+each actual copied export. Its journeys cover button activation/size/link behavior,
+mixed toolbars, checkable nested menus, external and slotted labels, text/search,
+native dates, number stepping, accepted color previews, dynamically authored
+choices and FormData, checkbox/switch/radio transactions, sliders, ratings and
+file transfer failure/retry/reset. Calendar, carousel, multi-step, rich text and
+virtual collection reuse the API journeys on their separately extracted gallery
+copies. They are distinct source-delivery checks, not additional feature matrices.
+
+`copied-gallery-scenarios.ts` explicitly inventories the remaining **21** gallery
+copies. The test checks that covered and pending IDs match the displayed gallery;
+an added copy cannot silently become qualified. The first two failed runs remain
+in the receipt: hidden-radio click targets and ambiguous rating text were test
+mistakes. Corrected tests use visible labels and native keyboard interaction.
+External field labels follow the established reference-target evidence boundary:
+actual IDL references in every engine, with Chromium native AX names checked
+separately. Firefox/WebKit native AX and speech are not inferred from those checks.
+Native color acceptance uses the input value/change boundary; OS picker operation
+remains manual. Owning matrices and other platform/public-layer obligations remain.
+
 ## Production-page workflows
 
 Build the workspace before the browser run. The browser fixture serves only the

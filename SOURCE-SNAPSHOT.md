@@ -162,3 +162,7 @@ Local main `6dec4ea611fd2262c35c3cdf1fe1ed09cae7d133` qualifies59 copied modules
 ## Complete API copy consumer journeys
 
 Local main `a4d85f16d66e3e10394a147c3809e3238bf119d3` qualifies59 copied modules against packed declarations and seventeen native source consumers across three pinned engines, covering all eleven complete API copies. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.
+
+## Gallery consumer journeys
+
+Local main `a7ffdfa251f2d91d97d9626b568a7b48974f9cce` qualifies59 copied modules against packed declarations and38 native source consumers across three pinned engines, covering27 gallery copies and all11 complete API copies. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.

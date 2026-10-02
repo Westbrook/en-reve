@@ -10,6 +10,11 @@ import type { AddressInfo } from 'node:net';
 import { extname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { copiedAPIScenarios } from './copied-api-scenarios.js';
+import { copiedGalleryScenarios, pendingGalleryExamples } from './copied-gallery-scenarios.js';
+
+test.beforeEach(async ({ browser }, info) => {
+ info.annotations.push({ type: 'browser-version', description: browser.version() });
+});
 
 test('displayed examples compile without unused code, retain highlighting, and load encapsulated components and native styles without a bundler', async ({ page }, testInfo) => {
 	test.setTimeout(60_000);
@@ -22,6 +27,15 @@ test('remaining complete API copies execute their application journeys against n
 	const output = await prepareCopiedExamples(page, testInfo);
 	await verifyNativeConsumption(page, output, testInfo, true);
 });
+
+for (let offset = 0; offset < copiedGalleryScenarios.length; offset += 7) {
+ const scenarios = copiedGalleryScenarios.slice(offset, offset + 7);
+ test(`gallery consumer journeys: ${scenarios.map(item => item.id).join(', ')}`, async ({ page }, testInfo) => {
+  test.setTimeout(60_000);
+  const output = await prepareCopiedExamples(page, testInfo);
+  await verifyNativeConsumption(page, output, testInfo, scenarios.map(item => item.id));
+ });
+}
 
 async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<string> {
 	const errors: string[] = [];
@@ -47,6 +61,9 @@ async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<st
 		id: element.getAttribute('data-specimen')!,
 		source: element.querySelector(':scope > .specimen-tools > .code-disclosure > pre > code')!.textContent!,
 	})));
+	const originalGallery = ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces'];
+	expect(samples.map(sample => sample.id).sort()).toEqual([...originalGallery, ...copiedGalleryScenarios.map(item => item.id), ...pendingGalleryExamples].sort());
+	await testInfo.attach('gallery-journey-inventory', { body: JSON.stringify({ qualified: [...originalGallery, ...copiedGalleryScenarios.map(item => item.id)], pending: pendingGalleryExamples }), contentType: 'application/json' });
 	// Check every complete copied API module, not just its gallery snippet.
 	// Comparing the rendered text with the generated source keeps the actual
 	// copy surface and its registration/helper prelude inside this boundary.
@@ -82,7 +99,7 @@ async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<st
 	const archiveIdentity = archives.map(({ name, integrity, shasum, setup }) => ({ name, integrity, shasum, setupKey: setup.key }));
 	const identity = async () => ({ samples, archives: archiveIdentity, runtime: process.version, platform: process.platform, arch: process.arch,
 		environment: inventoryDigest(setupEnvironmentInputs(compilerEnvironment())),
-		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
+		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'apps/docs/tests/copied-gallery-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
 	const inputs = await identity();
 	const prepared = await immutableSetup({ cache: join(repository, 'node_modules/.cache/specimen-consumers'), inputs, verifyInputs: identity,
 		produce: async (output: string) => {
@@ -229,6 +246,7 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 	await writeFile(join(publicRoot, 'bootstrap.js'), `
 		import { html, render } from 'lit';
 		const examples = {
+			...${JSON.stringify(Object.fromEntries(copiedGalleryScenarios.map(({ id, entry, elements }) => [id, { name: entry, elements }])))},
 			...${JSON.stringify(Object.fromEntries(copiedAPIScenarios.map(({ id, entry }) => [id, { name: entry, elements: [] }])))},
 			'native-navigation': { name: 'nativeNavigationExample', elements: ['navigation'] },
 			breadcrumbs: { name: 'breadcrumbsExample', elements: ['breadcrumbs'] },
@@ -286,7 +304,7 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 	`);
 
 }
-async function verifyNativeConsumption(page: Page, output: string, testInfo: TestInfo, remainingAPI = false) {
+async function verifyNativeConsumption(page: Page, output: string, testInfo: TestInfo, remainingAPI: boolean | string[] = false) {
 	const publicRoot = join(output, 'public');
 
 	const server = createServer(async (request, response) => {
@@ -324,7 +342,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 	});
 	const evidence: { id: string; stylesheets: string[]; contract?: string }[] = [];
 	try {
-		const cases = remainingAPI ? copiedAPIScenarios.map(item => item.id)
+		const cases = Array.isArray(remainingAPI) ? remainingAPI : remainingAPI ? copiedAPIScenarios.map(item => item.id)
 			: ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'composable-chat', 'api-tooltip-warmup'];
 		for (const id of cases) await test.step(id, async () => {
 			stylesheets.length = 0;
@@ -335,7 +353,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 			} else {
 				await expect(page.locator('link[href="/styles/navigation.css"]')).toHaveCount(0);
 			}
-			const scenario = copiedAPIScenarios.find(item => item.id === id);
+			const scenario = [...copiedAPIScenarios, ...copiedGalleryScenarios].find(item => item.id === id);
 			if (scenario) {
 				await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'copied-module');
 				await scenario.run(page);

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "a4d85f16d66e3e10394a147c3809e3238bf119d3",
-  "exportedAt": "2026-10-02T10:13:41.455826+00:00",
+  "sourceCommit": "a7ffdfa251f2d91d97d9626b568a7b48974f9cce",
+  "exportedAt": "2026-10-02T10:38:40.539448+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5498,
-  "includedBytes": 150623976,
-  "qualification": "All eleven complete API copies have native consumer journeys; seventeen copied modules execute per engine, with59 compiling. Six browser tests, strict types and123 integrity checks pass. Forty-two gallery runtime journeys and broader public-layer/platform/manual scope remain open.",
-  "latestUpdate": ".source-export/updates/complete-api-consumers-20261002.json",
+  "includedFiles": 5501,
+  "includedBytes": 150763810,
+  "qualification": "Twenty-one additional gallery copies have native consumer journeys;38 copied modules execute per engine including27 gallery copies and11 complete API copies. Fifteen browser tests, strict types and123 integrity checks pass. Twenty-one gallery copies and broader public-layer/platform/manual scope remain open.",
+  "latestUpdate": ".source-export/updates/gallery-consumers-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
