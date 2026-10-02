@@ -4,42 +4,42 @@ A private, exploratory design system for creativity and collaboration tools.
 Lit custom elements share token-driven styles and Signals state/interaction
 primitives. The public prefix is `en-*`; packages use `@en-reve`.
 
-## First review collection
+## Find the right entry point
 
-The interactive sticker sheet demonstrates 37 implemented elements and 280
-resolved token values. Change appearance, density, accent seed, layout rhythm,
-and writing direction; compare page, child-theme, and component scopes. Density
-offers compact, comfortable, and spacious presets. Element size defaults to
-medium without an attribute; small, large, and explicit inherit are available.
-Each specimen includes its actual authored source and interactive specimens can
-be reset independently. Microlighter highlights disclosed code on demand.
-Focusable `en-swatch` color samples copy their exact CSS variable references,
-with keyboard activation, accessible feedback, and selectable reference text.
+- [Handbook](https://en-reve-docs.reve-ai-0869.chatgpt.site/guides.html): using
+  controls, integrating applications, designing themes, agent contracts, and
+  contributor/release workflows. Source: [guides.html](apps/docs/guides.html).
+- [Live examples](https://en-reve-docs.reve-ai-0869.chatgpt.site/api-examples)
+  and [API reference](https://en-reve-docs.reve-ai-0869.chatgpt.site/api-reference):
+  current authored demonstrations and generated public contracts.
+- [Showcase](https://en-reve-docs.reve-ai-0869.chatgpt.site/showcase) and
+  [Theme Review](https://en-reve-docs.reve-ai-0869.chatgpt.site/theme-review):
+  assembled applications and local candidate editing/export/reopen.
+- [Portable agent skills](skills/README.md): component authoring, functional/accessibility testing,
+  documentation, consumption, application building and theme authoring, versioned with the source.
 
-This is an initial review checkpoint. The 72-pattern inventory, four-audience
-documentation, managed token submissions, broader framework/SSR
-integration, and release review surfaces remain in progress. Browser evidence
-does not establish manual assistive-technology or current-minus-one support.
+The documentation's live catalog is authoritative for the current inventory;
+old review counts are historical. The [consumer evidence audit](plans/consumer-evidence-audit-2026-10-02.md)
+records bounded examples and reusable-layer qualification. The
+[support ledger](plans/support-coverage.md) records actual platform coverage and
+remaining gaps. Browser automation does not establish manual assistive-technology,
+physical-device or every current-minus-one browser/OS combination.
 
 ## Reference workflows
 
-Three independent SSR pages provide deterministic review tasks: `workflows.html`
-for sign-in, `workflows/settings.html` for design settings, and
-`workflows/chat.html` for contextual chat. Each page loads and creates only its
-own workflow, with shared preview controls, navigation, template source and reset.
-Fresh page loads start a local scenario while preserving the selected theme,
-density and reading direction in the review URL. Browser Back retains normal
-document-restoration behavior. The pages reuse public
-library components and native semantics; the sticker sheet remains separate.
+Independent SSR pages cover sign-in, settings, chat, project selection, asset
+browsing and the multi-step composition. Each uses public components and explicit
+application-owned state. Source disclosures, reset controls and deterministic
+service scenarios support repeatable review. These examples do not provide real
+authentication, messaging, model services, file-upload transport or collaboration
+backends. See the [workflow contract](apps/docs/src/workflows/shared/README.md)
+and [verification guide](apps/docs/tests/README.md).
 
-The shared request/scheduler core passes eight Node cases. The production-page
-suite covers Chromium, Firefox and WebKit, including independent entry loading,
-pre-hydration editing/submission, recovery and real page navigation. Narrow
-viewport coverage is scoped separately in the runner. See [verification commands and limits](apps/docs/tests/README.md). No real authentication,
-messaging, model service or collaboration backend is included; attachment UI,
-locale review, physical-device/assistive-technology and broader framework
-coverage remain open. See the [experience plan](plans/experience.md) and
-[workflow core contract](apps/docs/src/workflows/shared/README.md).
+The handbook is an initial four-audience documentation pass. Managed submission
+and adoption infrastructure, complete offline candidate review and comprehensive
+old/new version delivery remain separate product work; the local Theme Review
+editor does not supply those services. See the current
+[documentation delivery checkpoint](plans/documentation-skills-2026-10-02.md).
 
 ## Local development
 

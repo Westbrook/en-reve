@@ -4,6 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { readAuthoredSpecimens } from './authored-specimen-sources.mjs';
 import { transform } from 'lightningcss';
+import { prepareGuides } from './prepare-guides.mjs';
 import { generateAPIReference } from './generate-api-reference.mjs';
 import { generateAPIExamples } from './generate-api-examples.mjs';
 import { prepareSettingsScenarios, settingsScenarioPages } from './settings-scenario-pages.mjs';
@@ -153,6 +154,7 @@ export async function prepareDocs() {
       return writeChanged(resolve(publicRoot, asset.href.slice(1)), code);
     }),
   ]);
+  await prepareGuides(resolve(docsRoot, '../..'), publicRoot);
   const apiExamples = await generateAPIExamples({ workspaceRoot: resolve(docsRoot, '../..'), docsRoot });
   return { settingsScenarioPages, apiExamplePages: apiExamples.pages, specimens: Object.keys(sourceCatalog).length, workflows: workflows.length,
     stylesheets: cssInputs.map(asset => asset.href), changedFiles: writes.filter(Boolean).length + apiReference.changedFiles.length + apiExamples.changedFiles.length };

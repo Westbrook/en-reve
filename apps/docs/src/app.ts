@@ -198,6 +198,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
           <a href=${this.progressReportEnabled ? '/theme-review?progress-report' : '/theme-review'}>Theme Review</a>
           <a href=${this.progressReportEnabled ? '/api-reference?progress-report' : '/api-reference'}>API reference</a>
           <a href=${this.progressReportEnabled ? '/api-examples?progress-report' : '/api-examples'}>API examples</a>
+          <a href=${this.progressReportEnabled ? '/guides.html?progress-report' : '/guides.html'}>Handbook</a>
         </nav>
       </header>
       <main id="sheet" tabindex="-1" class="en-navigation-target">

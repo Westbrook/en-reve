@@ -36,3 +36,6 @@ apps/docs/public/public-api.json
 
 # Project-local runtimes (never the app or system installation)
 .toolchains/
+
+# Generated handbook contract identities and portable skill copies
+/apps/docs/public/guides/

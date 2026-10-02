@@ -209,5 +209,6 @@ the bridge, and `bundle.ts` owns the outer build/coverage envelope. `candidate-f
 internals remain private. Full offline review packaging, complete component
 dependency mapping, expected/actual/diff visual evidence, review-cache policy and
 explicit adoption integration remain planned. This local editor does not complete
-the managed admin or four-audience documentation. See the [token plan](../../../../plans/tokens.md)
+the managed admin. The initial four-audience handbook is delivered separately at
+`/guides.html`; it does not change these candidate/adoption boundaries. See the [token plan](../../../../plans/tokens.md)
 and [verification guide](../../tests/README.md).

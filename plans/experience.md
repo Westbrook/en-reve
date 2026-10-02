@@ -1,5 +1,20 @@
 # Documentation, reference experiences, and review plan
 
+Current status (October 2, 2026): public API documentation, live examples and the
+initial four-audience handbook are implemented, with seven skills spanning component authoring, testing, documentation, consumption,
+application building and theming and a digest-linked machine contract index. See the
+[documentation delivery checkpoint](documentation-skills-2026-10-02.md) for exact
+scope and verification. Bounded packed consumers, copied examples and reusable
+layers have separate receipts in the [consumer audit](consumer-evidence-audit-2026-10-02.md).
+Physical/manual acceptance remains open in the [support ledger](support-coverage.md).
+Managed submission/adoption infrastructure, full offline candidate review and
+comprehensive interactive old/new version delivery remain separate unimplemented
+work; no service, authority or transport is selected here.
+
+### Historical implementation checkpoint
+
+The following status is retained as historical context, not the current inventory.
+
 Status: the private SSR sticker sheet and independent component-based report are delivered; five deterministic reference experiences (sign-in, settings, chat, project selection and asset browsing) are implemented on independent SSR Workflows pages. The CEM-driven API reference, live isolated examples and local single/paired Theme Review are delivered with scoped receipts; broader manual QA remains open. Complete four-audience documentation, managed proposal/adoption, old/new version review and broader workflow acceptance remain unfinished. The earlier revision-121 audit and later implementation checkpoints remain distinct. This plan does not select a submission service, approvers or adoption transport. The command family, child-authored selection, live child mutation and shared post-hydration stylesheet adoption are implemented with separate scoped receipts. Current integrated inventory is 46 tags, 36 specimens and 31 isolated API examples. Scoped asset/content, popup motion and SSR action-style decomposition are implemented with focused checks; mobile/API, five-theme and ten themed-asset checks pass; final local review is ready on edd09329014f. Broader list/file/empty/asset coverage remains partial. Earlier counts and receipts retain their historical scope.
 
 ## 1. Intended result and scope

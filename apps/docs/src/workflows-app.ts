@@ -197,6 +197,7 @@ export class WorkflowsApp extends LitElement {
 					<a href=${this.pageHref(workflowPages[0].path)} aria-current=${this.definition.id === 'sso' ? 'page' : nothing}>Workflows</a>
 					<a href=${this.pageHref('/theme-review')}>Theme Review</a>
 					<a href=${this.pageHref('/api-reference')}>API reference</a>
+                    <a href=${this.pageHref('/guides.html')}>Handbook</a>
 				</nav>
 			</header>
 			<main id="workflows" tabindex="-1" class="en-navigation-target">

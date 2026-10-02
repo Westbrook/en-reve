@@ -357,3 +357,21 @@ qualified build reuse are recorded in the receipt. This is headed automation
 with scripted viewports, not physical touch, native browser zoom, display-scale
 transitions, screen-reader output or manual visual acceptance. Safari's native
 focus rules are separately documented in its input-boundary investigation.
+
+## Handbook and portable skills
+
+`guides.spec.ts` exercises the production handbook: internal destination/anchor
+resolution, exact metadata and skill digests, source-to-download parity, static
+reading without JavaScript, narrow layout, keyboard skip navigation and trusted
+report-flag handling. It executes the displayed checkbox recipes against the
+actual registered control, including cancellation/FormData and stale asynchronous
+result protection. It does not establish manual AT/device coverage.
+
+```sh
+EN_EXECUTION_OUTPUT=/absolute/fresh-guides-run tooling/test-pipeline/with-toolchain.sh npm run test:workflows -w @en-reve/docs -- guides.spec.ts
+```
+
+Rebuild documentation before this test when its sources change. The authored
+handbook is `apps/docs/guides.html`; skill sources are under `skills/`, and the
+existing preparation inventory fingerprints them. Do not edit generated copies
+in `public/guides`.

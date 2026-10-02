@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "skills": [
+    {
+      "name": "en-reve-component",
+      "title": "Write library components",
+      "responsibility": "Implementation, reusable layers, definitions and public contracts.",
+      "boundary": "Application integration belongs to en-reve-consume; workflow orchestration to en-reve-app; theme design to en-reve-theme. Use testing/documentation skills only for the corresponding requested work."
+    },
+    {
+      "name": "en-reve-test",
+      "title": "Verify functional behavior",
+      "responsibility": "Functional test authoring, execution and scoped results.",
+      "boundary": "Accessibility semantics, WCAG and AT review belong to en-reve-accessibility; performance campaigns retain their own protocol. Report product defects; use en-reve-component when implementing an authorized fix."
+    },
+    {
+      "name": "en-reve-accessibility",
+      "title": "Verify accessibility",
+      "responsibility": "Semantic ownership, keyboard/focus, accessibility preferences and automated/manual evidence.",
+      "boundary": "General state-machine and transport tests belong to en-reve-test; component implementation and theme fixes retain their own owners. Accessibility findings do not authorize changes to platform settings or acceptance scope."
+    },
+    {
+      "name": "en-reve-document",
+      "title": "Document the library",
+      "responsibility": "User/developer/designer guidance, runnable example presentation, migrations and contract delivery.",
+      "boundary": "Do not redesign public APIs, implement runtime features, certify accessibility or publish a release as a side effect of documenting them. Route an exposed defect to its owning skill."
+    },
+    {
+      "name": "en-reve-consume",
+      "title": "Integrate existing components",
+      "responsibility": "Select and wire existing public component APIs inside an application.",
+      "boundary": "Whole-application routing, service adapters and workflow state belong to en-reve-app. New library components belong to en-reve-component. Theme design belongs to en-reve-theme. Keep a one-control integration a one-control task."
+    },
+    {
+      "name": "en-reve-app",
+      "title": "Build application workflows",
+      "responsibility": "Application-level state, routing, service boundaries, composition and responsive task flow.",
+      "boundary": "Delegate individual component contracts to en-reve-consume and visual theme rules to en-reve-theme. Do not alter library internals or create a new component merely to deliver an app."
+    },
+    {
+      "name": "en-reve-theme",
+      "title": "Author themes and scoped style",
+      "responsibility": "Token relationships, appearance/scoping, group/component properties and candidate theme authoring.",
+      "boundary": "Runtime behavior belongs to en-reve-component, application architecture to en-reve-app, and acceptance testing to the relevant test skill. A theme edit does not authorize adoption or baseline promotion."
+    }
+  ]
+}

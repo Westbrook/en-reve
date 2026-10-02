@@ -24,6 +24,7 @@ export default defineConfig(async () => {
         ...Object.fromEntries(apiExamplePages.map(page => [`api-example-${page.id}`, fileURLToPath(new URL(page.file, import.meta.url))])),
         richCapabilities: fileURLToPath(new URL('./rich-capabilities.html', import.meta.url)),
         documentScroll: fileURLToPath(new URL('./document-scroll.html', import.meta.url)),
+        guides: fileURLToPath(new URL('./guides.html', import.meta.url)),
         apiReference: fileURLToPath(new URL('./api-reference.html', import.meta.url)),
         apiExamples: fileURLToPath(new URL('./api-examples.html', import.meta.url)),
         themeReview: fileURLToPath(new URL('./theme-review.html', import.meta.url)),

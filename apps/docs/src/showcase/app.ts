@@ -198,7 +198,7 @@ export class ShowcaseApp extends LitElement {
 					<nav class="header-context" aria-label="Documentation pages">
 						<a href=${this.href('/')}>Sticker sheet</a><a href=${this.href('/showcase')} aria-current="page">Showcase</a>
 						<a href=${this.href('/conversation.html')}>Conversation</a>
-						<a href=${this.href('/workflows')}>Workflows</a><a href=${this.href('/theme-review')}>Theme Review</a><a href=${this.href('/api-reference')}>API reference</a>
+						<a href=${this.href('/workflows')}>Workflows</a><a href=${this.href('/theme-review')}>Theme Review</a><a href=${this.href('/api-reference')}>API reference</a><a href=${this.href('/guides.html')}>Handbook</a>
 					</nav>
 				</header>
 				<main id="showcase" tabindex="-1">

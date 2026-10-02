@@ -12,10 +12,10 @@ export { stylesheetAssets };
 const root = fileURLToPath(new URL('../../../', import.meta.url));
 const cache = resolve(process.env.EN_DOCS_PREPARATION_CACHE ?? resolve(root, 'node_modules/.cache/docs-preparation'));
 const receiptPath = resolve(cache, 'receipt.json');
-const outputs = ['apps/docs/src/generated', 'apps/docs/public/reviews', 'apps/docs/public/styles',
+const outputs = ['apps/docs/src/generated', 'apps/docs/public/reviews', 'apps/docs/public/guides', 'apps/docs/public/styles',
   'apps/docs/api-examples', 'apps/docs/api-examples.html', 'apps/docs/workflows/settings',
   ...['custom-elements.json', 'custom-elements.json.receipt.json', 'public-api.json', 'public-types.json'].map(name => `apps/docs/public/${name}`)];
-const roots = ['packages', 'apps/docs', 'tooling', 'plans', 'probes/framework-consumption/README.md', 'package.json', 'package-lock.json', 'tsconfig.base.json', 'node_modules'];
+const roots = ['skills', 'packages', 'apps/docs', 'tooling', 'plans', 'probes/framework-consumption/README.md', 'package.json', 'package-lock.json', 'tsconfig.base.json', 'node_modules'];
 const ignored = name => outputs.some(output => name === output || name.startsWith(output + '/')) ||
   /(^|\/)(\.git|\.cache|\.vite|\.vite-temp|artifacts|results|test-results|playwright-report)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo');
 function producerEnvironment() { return setupEnvironment(); }

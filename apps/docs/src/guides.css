@@ -1,0 +1,19 @@
+body { margin: 0; background: var(--en-color-canvas); color: var(--en-color-text); font-family: var(--en-font-body-family, system-ui, sans-serif); line-height: 1.6; }
+header, main, footer { max-inline-size: 74rem; margin-inline: auto; padding: 1.25rem; }
+header { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem 2rem; border-block-end: 1px solid var(--en-color-boundary); }
+nav { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; }
+a { color: var(--en-color-text); text-underline-offset: .2em; overflow-wrap: anywhere; }
+a:focus-visible, pre:focus-visible { outline: 2px solid var(--en-color-action); outline-offset: 4px; border-radius: .25rem; }
+.wordmark { font-size: 1.25rem; font-weight: 700; }
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; max-inline-size: 22ch; }
+h2 { font-size: 1.8rem; line-height: 1.25; } h3 { font-size: 1.2rem; line-height: 1.35; }
+p, li { max-inline-size: 78ch; } .lede { font-size: 1.2rem; } .eyebrow { color: var(--en-color-text-muted); }
+section { scroll-margin-block-start: 1rem; padding-block: 2rem; border-block-end: 1px solid var(--en-color-boundary); }
+.outline { padding-block: 1rem; } .guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 28rem), 1fr)); gap: 1rem 2rem; }
+article { background: var(--en-color-surface); padding: 1rem 1.25rem; border: 1px solid var(--en-color-boundary); border-radius: var(--en-radius-panel, .75rem); }
+pre { max-inline-size: 100%; overflow: auto; padding: 1rem; background: var(--en-color-surface); border: 1px solid var(--en-color-boundary); border-radius: .5rem; line-height: 1.5; }
+code { font-family: ui-monospace, monospace; font-size: .92em; } :not(pre) > code { overflow-wrap: anywhere; }
+.table-scroll { overflow: auto; } table { border-collapse: collapse; min-inline-size: 34rem; } th, td { padding: .75rem; text-align: start; vertical-align: top; border-block-end: 1px solid var(--en-color-boundary); } caption { text-align: start; margin-block-end: .75rem; font-weight: 600; }
+#progress-return:not([hidden]) { position: fixed; inset-inline-end: max(.75rem, env(safe-area-inset-right)); inset-block-end: max(.75rem, env(safe-area-inset-bottom)); padding: .5rem .75rem; background: var(--en-color-surface); border: 1px solid var(--en-color-boundary); border-radius: .5rem; z-index: 10; }
+@media (hover: hover) { a:hover { color: var(--en-color-action); } }
+@media (forced-colors: active) { a:focus-visible, pre:focus-visible { outline-color: Highlight; } }

@@ -242,3 +242,7 @@ Local main `2b16f52f6f476b78db04b08708e6d09fdf16dc81` records incomplete Safari 
 ## Headed Chrome workflow checkpoint
 
 Local main `3485f568df1a1e623ee700b41b5a82cd89d79460` records26 headed Chrome workflow passes and1 existing skip. See `plans/support-coverage.md` for scope and browser limits.
+
+## Documentation and skills checkpoint
+
+Local main `d5c757027acc158d9eb8e53a7a0eb7fd5331f452` delivers the handbook and seven workflow skills. See `plans/documentation-skills-2026-10-02.md` for verification and remaining limits.
