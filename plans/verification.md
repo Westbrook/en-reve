@@ -337,3 +337,11 @@ The first [packed alternate-composition batch](../probes/reusable-layers/README.
 The [native content/navigation batch](../probes/native-recipes/README.md) extends §7.4 with eight more public entries:78 packed cases across both style delivery modes and39 original-owner cases pass. Full entry-by-entry qualification remains open; these receipts do not replace platform/manual evidence.
 
 The [packed collection batch](../probes/collection-recipes/README.md) extends §7.4 with seven table/virtual-collection entries using the existing authored applications and 81 browser scenarios. Thirty of 110 inventoried entries now have named scenario receipts; this does not qualify every operation in those entries. Portable table CSS, independently generated examples, remaining layers and the separate platform/manual matrix remain open.
+
+The [copied-example pass](../apps/docs/tests/README.md#copied-examples-as-packed-consumers)
+extends §7.5a: 48 displayed gallery modules and all 11 complete API copies compile
+against packed declarations. Eight actual source consumers execute in each of
+three pinned engines without the docs runtime; two scoped-color controls are
+separate authored fixtures. A duplicate tooltip-copy prelude was fixed. Remaining
+generated-example behavior coverage, public-layer entries and platform/manual
+requirements are still open; compilation alone does not close those obligations.

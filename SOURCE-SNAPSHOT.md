@@ -154,3 +154,7 @@ Local main `3f2990e6efaad50fd268366c34aed1e62736bb35` qualifies 78 packed browse
 ## Packed table and virtual collection recipes
 
 Local main `2ced899c675ef6ca06ed9333f45b7b20be14263b` qualifies maintained table/list and document-scroll applications through isolated public tarballs. See `probes/collection-recipes/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.
+
+## Copied examples with packed declarations
+
+Local main `6dec4ea611fd2262c35c3cdf1fe1ed09cae7d133` qualifies59 copied modules against packed declarations and eight native consumer examples across three pinned engines. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.

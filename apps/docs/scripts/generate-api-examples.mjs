@@ -58,12 +58,10 @@ export async function generateAPIExamples({ workspaceRoot, docsRoot = resolve(wo
 		});
 		if (['tooltip-warmup', 'virtual-collection', 'tree-data', 'calendar', 'multi-step', 'toast', 'chat-patterns', 'composable-chat', 'presence-activity', 'rich-text', 'carousel'].includes(example.id)) {
 			const imports = definitions.filter(specifier => !specifier.startsWith('../')).map(specifier => `import '${specifier}';`).join('\n');
-			// Include the actual consumer helper so the tooltip recipe can be copied as
-			// a complete module without depending on docs-private imports.
-			const support = example.id === 'tooltip-warmup'
-				? `import { LitElement, css, html } from 'lit';\nimport { ContextProvider, tooltipWarmupContext, createTooltipWarmupGroup } from '@en-reve/elements/context.js';\n\n${await readFile(resolve(docsRoot, 'src/change-consumption.ts'), 'utf8')}\n`
-				: '';
-			const source = imports + '\n' + support + snippets[example.id];
+			// Specimen assembly already includes the imports and private helper closure.
+			// Only add public registrations here; prepending helpers again duplicates
+			// bindings in the actual module copied from the API example page.
+			const source = imports + '\n' + snippets[example.id];
 			await write(resolve(generatedRoot, `${example.id}-source.js`), `// Generated from the live authored example and its verified registration closure.\nexport default ${JSON.stringify(source)};\n`);
 			await write(resolve(generatedRoot, `${example.id}-source.d.ts`), 'declare const source: string;\nexport default source;\n');
 		}

@@ -4,10 +4,10 @@ import { immutableSetup } from '../../../tooling/evidence/immutable-setup.mjs';
 import { contentInventory, inventoryDigest } from '../../../tooling/evidence/setup.mjs';
 import { expect, test, type Page, type TestInfo } from '@playwright/test';
 import { execFileSync } from 'node:child_process';
-import { cp, mkdir, readFile, readdir, symlink, writeFile } from 'node:fs/promises';
+import { cp, mkdir, readFile, readdir, realpath, symlink, writeFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
-import { extname, join, resolve, sep } from 'node:path';
+import { extname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 test('displayed examples compile without unused code, retain highlighting, and load encapsulated components and native styles without a bundler', async ({ page }, testInfo) => {
@@ -35,20 +35,30 @@ test('displayed examples compile without unused code, retain highlighting, and l
 		id: element.getAttribute('data-specimen')!,
 		source: element.querySelector(':scope > .specimen-tools > .code-disclosure > pre > code')!.textContent!,
 	})));
-	// This route supplies the complete eager registration prelude and the
-	// actual application class and helper closure that a reader copies.
-	await page.goto('/api-examples/composable-chat.html?progress-report');
-	const copiedColorSource = page.locator('.api-example-source pre > code');
-	await expect(copiedColorSource).toHaveCount(1);
-	const composable = { id: 'composable-chat', source: (await copiedColorSource.textContent())! };
+	// Check every complete copied API module, not just its gallery snippet.
+	// Comparing the rendered text with the generated source keeps the actual
+	// copy surface and its registration/helper prelude inside this boundary.
+	const generatedRoot = join(repository, 'apps/docs/src/generated');
+	const copiedModules = (await readdir(generatedRoot)).filter(file => file.endsWith('-source.js')).sort();
+	expect(copiedModules.length).toBeGreaterThan(0);
+	for (const file of copiedModules) {
+		const id = file.slice(0, -'-source.js'.length);
+		await page.goto(`/api-examples/${id}.html?progress-report`);
+		const code = page.locator('.api-example-source pre > code');
+		await expect(code).toHaveCount(1);
+		const source = (await code.textContent())!;
+		const generated = await readFile(join(generatedRoot, file), 'utf8');
+		expect(source).toBe(JSON.parse(generated.split('export default ')[1]!.trim().replace(/;$/u, '')));
+		samples.push({ id: id === 'composable-chat' ? id : `api-${id}`, source });
+	}
+	const composable = samples.find(sample => sample.id === 'composable-chat')!;
 	for (const name of ['color-picker', 'swatch', 'tab', 'tab-panel', 'tabs']) {
 		expect(composable.source).toContain(`import '@en-reve/elements/define/${name}.js';`);
 	}
 	expect(composable.source).not.toContain('composableChatColorLoaders');
 	expect(composable.source).not.toContain('composableChatColorOwnership');
 	expect(composable.source).not.toContain('prepareColorControls');
-	samples.push(composable);
-	// Keep the API-only specimen alongside every gallery sample without overwriting either.
+	// Keep copied API modules alongside gallery samples without overwriting either.
 	expect(new Set(samples.map(sample => sample.id)).size).toBe(samples.length);
 	const compilerEnvironment = () => setupEnvironment();
 	const archiveDirectory = testInfo.outputPath('native-package-archives');
@@ -57,12 +67,21 @@ test('displayed examples compile without unused code, retain highlighting, and l
 	const archiveIdentity = archives.map(({ name, integrity, shasum, setup }) => ({ name, integrity, shasum, setupKey: setup.key }));
 	const identity = async () => ({ samples, archives: archiveIdentity, runtime: process.version, platform: process.platform, arch: process.arch,
 		environment: inventoryDigest(setupEnvironmentInputs(compilerEnvironment())),
-		files: await contentInventory(repository, ['packages', 'node_modules', 'dist/styles/typography.css', 'apps/docs/tests/specimen-sources.spec.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
+		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
 	const inputs = await identity();
 	const prepared = await immutableSetup({ cache: join(repository, 'node_modules/.cache/specimen-consumers'), inputs, verifyInputs: identity,
 		produce: async (output: string) => {
 	await mkdir(output, { recursive: true });
-	await symlink(fileURLToPath(new URL('../../../node_modules', import.meta.url)), join(output, 'node_modules'), 'dir');
+	await prepareNativeConsumption(output, archives, archiveDirectory);
+	await mkdir(join(output, 'node_modules/@en-reve'), { recursive: true });
+	for (const name of ['tokens', 'styles', 'primitives', 'elements']) {
+		await symlink(join(output, 'public/packages', name), join(output, 'node_modules/@en-reve', name), 'dir');
+	}
+	// Only third-party dependencies may refer to the locked installation. A
+	// whole-node_modules link silently substitutes workspace declarations.
+	for (const name of await readdir(join(repository, 'node_modules'))) {
+		if (name !== '@en-reve' && !name.startsWith('.')) await symlink(join(repository, 'node_modules', name), join(output, 'node_modules', name), 'dir');
+	}
 	await Promise.all(samples.map(sample => writeFile(join(output, `${sample.id}.ts`), sample.source)));
 	await writeFile(join(output, 'package.json'), JSON.stringify({ type: 'module' }));
 	await writeFile(join(output, 'tsconfig.json'), JSON.stringify({ compilerOptions: {
@@ -72,14 +91,27 @@ test('displayed examples compile without unused code, retain highlighting, and l
 		noUncheckedSideEffectImports: true,
 		verbatimModuleSyntax: true, skipLibCheck: true,
 	}, include: ['*.ts'] }));
-	execFileSync(process.execPath, [fileURLToPath(new URL('../../../node_modules/typescript/bin/tsc', import.meta.url)),
-		'-p', join(output, 'tsconfig.json'), '--pretty', 'false'], { encoding: 'utf8', timeout: 15_000, env: compilerEnvironment() });
-			await prepareNativeConsumption(output, archives, archiveDirectory);
+	let typeFiles: string;
+	try {
+		typeFiles = execFileSync(process.execPath, [fileURLToPath(new URL('../../../node_modules/typescript/bin/tsc', import.meta.url)),
+			'-p', join(output, 'tsconfig.json'), '--pretty', 'false', '--listFiles'], { encoding: 'utf8', timeout: 15_000, env: compilerEnvironment() });
+	} catch (error) {
+		const failure = error as Error & { stdout?: string; stderr?: string };
+		await testInfo.attach('copied-source-compiler-failure', { body: `${failure.stdout ?? ''}\n${failure.stderr ?? ''}`, contentType: 'text/plain' });
+		throw error;
+	}
+	const resolvedFiles = await Promise.all(typeFiles.trim().split('\n').map(file => realpath(file)));
+	expect(resolvedFiles.some(file => file.startsWith(join(repository, 'packages') + sep))).toBe(false);
+	const packedDeclarations = resolvedFiles.filter(file => file.startsWith(join(output, 'public/packages') + sep));
+	expect(packedDeclarations.length).toBeGreaterThan(0);
+	await writeFile(join(output, 'type-resolution.json'), JSON.stringify({ workspaceDeclarations: false,
+		packedDeclarations: packedDeclarations.map(file => relative(output, file)), samples: samples.map(sample => sample.id) }));
 		},
 	});
 	const output = prepared.directory;
 	await testInfo.attach('preparation-identity', { body: JSON.stringify({ key: prepared.key, reused: prepared.reused, originatingProducer: prepared.originatingProducer, extractedSamplesDigest: inventoryDigest(samples), archives }), contentType: 'application/json' });
 	await testInfo.attach('compiled-examples', { body: JSON.stringify({ count: samples.length, ids: samples.map(sample => sample.id) }), contentType: 'application/json' });
+	await testInfo.attach('packed-type-resolution', { body: await readFile(join(output, 'type-resolution.json')), contentType: 'application/json' });
 	expect(errors).toEqual([]);
 	await verifyNativeConsumption(page, output, testInfo);
 });
@@ -153,7 +185,9 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 	}
 	await mkdir(join(publicRoot, 'styles'), { recursive: true });
 	for (const name of ['typography']) {
-		await cp(join(repository, 'dist', 'styles', `${name}.css`), join(publicRoot, 'styles', `${name}.css`));
+		const stylesheet = imports[`@en-reve/styles/${name}.css`];
+		if (!stylesheet) throw new Error(`Missing public stylesheet: ${name}`);
+		await cp(resolve(publicRoot, `.${stylesheet}`), join(publicRoot, 'styles', `${name}.css`));
 	}
 	await writeFile(join(publicRoot, 'index.html'), `<!doctype html><html lang="en"><head>
 		<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -173,6 +207,7 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 			combobox: { name: 'comboboxExample', elements: ['combobox', 'select', 'button'] },
 			'command-surfaces': { name: 'commandSurfacesExample', elements: ['stack', 'button', 'toolbar', 'menu', 'menu-item', 'command-palette'] },
 			'composable-chat': { name: 'composableChatExample', elements: [] },
+			'api-tooltip-warmup': { name: 'tooltipWarmupExample', elements: [] },
 		};
 		const id = new URL(location.href).searchParams.get('sample');
 		const example = examples[id];
@@ -259,7 +294,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 	});
 	const evidence: { id: string; stylesheets: string[] }[] = [];
 	try {
-		for (const id of ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'composable-chat']) {
+		for (const id of ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'composable-chat', 'api-tooltip-warmup']) {
 			stylesheets.length = 0;
 			await page.goto(`${baseURL}/?sample=${id}`);
 			await expect(page.locator('body')).toHaveAttribute('data-ready', id);
@@ -363,6 +398,27 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 				await expect(result).toHaveText('Preview layout: Landscape.');
 				await expect(preview).toHaveAttribute('data-layout', 'landscape');
 				await expect(searchTrigger).toBeFocused();
+			} else if (id === 'api-tooltip-warmup') {
+				const position = page.locator('en-tooltip-position-demo');
+				const help = position.getByRole('button', { name: 'Hover or focus for help', exact: true });
+				await help.focus();
+				await expect(position.getByRole('tooltip')).toBeVisible();
+				await help.press('Escape');
+				await expect(position.getByRole('tooltip')).not.toBeVisible();
+				await expect(help).toBeFocused();
+				// Exercise the inlined acceptance helper as well as registration.
+				await position.getByRole('combobox', { name: 'Inline region', exact: true }).selectOption('start');
+				await expect(position.locator('en-tooltip')).toHaveAttribute('inline', 'start');
+				await expect(position.getByRole('combobox', { name: 'Inline region', exact: true })).toHaveValue('start');
+				const context = page.locator('en-tooltip-context-demo');
+				const canvas = context.getByRole('button', { name: 'Canvas help', exact: true });
+				const layer = context.getByRole('button', { name: 'Layer help', exact: true });
+				await canvas.focus();
+				await expect(context.locator('en-tooltip[for="context-canvas"]').getByRole('tooltip')).toBeVisible();
+				await canvas.press('ArrowRight');
+				await expect(layer).toBeFocused();
+				await expect(context.locator('en-tooltip[for="context-canvas"]').getByRole('tooltip')).not.toBeVisible();
+				await expect(context.locator('en-tooltip[for="context-layers"]').getByRole('tooltip')).toBeVisible();
 			} else if (id === 'composable-chat') {
 				const colorTags = ['en-color-picker', 'en-swatch', 'en-tab', 'en-tab-panel', 'en-tabs'];
 				await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'copied-module');

@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-10-02T09:47:53.309424+00:00",
+  "sourceCommit": "6dec4ea611fd2262c35c3cdf1fe1ed09cae7d133",
+  "previousSourceMain": "2ced899c675ef6ca06ed9333f45b7b20be14263b",
+  "taskPaths": [
+    "apps/docs/scripts/generate-api-examples.mjs",
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/specimen-sources.spec.ts",
+    "apps/docs/tests/verification-generated-examples-20261002.json",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md"
+  ],
+  "qualification": "Copied examples:59 displayed modules compile against packed declarations; eight native source consumers run in three pinned engines. Duplicate tooltip prelude repaired. Remaining example behavior, public-layer and platform/manual obligations stay open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

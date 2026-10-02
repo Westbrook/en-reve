@@ -1,5 +1,35 @@
 # Documentation and reference workflow verification
 
+## Copied examples as packed consumers
+
+After a fresh build, run `npm run test:workflows -w @en-reve/docs -- specimen-sources.spec.ts`
+with a fresh `EN_EXECUTION_OUTPUT` and the pinned toolchain. This test extracts
+the actual displayed gallery source and every complete API example module,
+including its registration prelude. API text must equal its generated module.
+It strictly compiles the copies against declarations extracted from package
+tarballs; resolved workspace declarations fail the check. Third-party dependencies
+come from the locked installation. The native fixture uses published export maps,
+packed JavaScript and packed portable CSS, without a bundler or the docs runtime.
+
+The [October 2 receipt](verification-generated-examples-20261002.json) records
+three passing browser tests, one per pinned engine. Each compiles **59 modules**:
+48 gallery samples and 11 complete API sources. Each executes **eight** native
+source consumers: navigation, breadcrumbs, typography, card, combobox, command
+surfaces, composable chat and tooltip warm-up. Checks cover native links/styles,
+form submission, toolbar/menu/palette interaction, editor color draft recovery,
+and tooltip focus/Escape, logical placement and contextual grouping. Two eager
+scoped color fixtures remain separate authored controls, not copied examples.
+
+This pass fixed duplicate helper/import declarations in the tooltip API copy:
+specimen assembly already supplied them, so the page generator now adds only
+public registrations. All 66 extended Node/generator checks and the fresh docs
+build passed. The receipt distinguishes the earlier failed attempt, the passing
+intermediate run and the final tarball-only stylesheet run. Compilation is not
+runtime qualification: remaining copied examples still require meaningful
+independent behavior coverage. Retail/physical/manual support stays separate.
+
+## Production-page workflows
+
 Build the workspace before the browser run. The browser fixture serves only the
 production `dist/` files; it does not use source aliases or a development server.
 

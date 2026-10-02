@@ -96,3 +96,23 @@ The [native-recipes batch](../probes/native-recipes/README.md) now qualifies mai
 ### Table and virtual-collection qualification
 
 The [collection-recipes batch](../probes/collection-recipes/README.md) exercises the maintained table/list and document-scroll applications against isolated tarballs. Its 81-case matrix retains native SSR/hydration, transactional selection, keyed identity, measured anchoring, paging, native Tab continuity, reveal alignment and observer cleanup. Document scrolling runs at desktop and phone widths. Seven additional public entries receive bounded scenario qualification; portable table CSS, independently generated examples and manual/retail/physical coverage remain open. The known VoiceOver reading-cursor issue is unchanged.
+
+### Copied-source qualification
+
+The [existing specimen consumer](../apps/docs/tests/README.md#copied-examples-as-packed-consumers)
+already supplied useful independent runtime coverage; the original audit did
+not account for that test. Its TypeScript compilation nevertheless resolved the
+workspace installation and it checked only one complete API copy. The new
+[receipt](../apps/docs/tests/verification-generated-examples-20261002.json) records
+all 48 displayed gallery samples and 11 complete API copies compiling against
+packed declarations. Eight native source consumers execute in each of three
+pinned engines, with packed JavaScript/CSS and no docs runtime. The newly added
+tooltip consumer also exposed and fixed a duplicated helper/import prelude in
+the API copy. Two separately authored scoped-color controls remain distinct.
+
+This resolves the compiler boundary and expands §7.5a evidence; it does **not**
+complete independent behavior coverage of all generated/copied examples.
+Prioritize the remaining complete API modules (calendar, carousel, chat,
+multi-step, presence/activity, rich text, toast, tree data and virtual collection),
+reusing their owning interaction assertions where possible. Remaining gallery
+samples, public-layer entries and platform/manual obligations stay open.
