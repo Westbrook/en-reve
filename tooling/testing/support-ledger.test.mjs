@@ -310,9 +310,9 @@ test('historical expanded native Firefox coverage retains all consumer cohorts',
 });
 
 
-test('native Firefox workflow receipt binds both runners, helper and unchanged production inputs', async () => {
+test('historical native Firefox workflow receipt retains its qualified runner and unchanged shared inputs', async () => {
  const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-workflows-20261002').path);
- for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(path==='probes/native-browser-products/workflows.mjs'?'e621c97b1c11774535a8e8a89362bb33a5967247ffbd28800712965c05c6e909':createHash('sha256').update(await read(path)).digest('hex'),digest,path);
  assert.equal(receipt.acquisitionReceiptSHA256,createHash('sha256').update(await read(receipt.acquisitionReceipt)).digest('hex'));
  assert.deepEqual(receipt.stats,{passed:22,failed:0,planned:22});
  const expected=['sso-success','sso-retry','sso-cancel','sso-reset','settings-snapshot','settings-retry','settings-incoming','chat-safe-preview','chat-stale','chat-cancel','selection-assignment'];
@@ -333,4 +333,21 @@ test('extracted native Firefox transport requalifies the unchanged six-scenario 
   assert.deepEqual(run.stats,{passed:60,failed:0,planned:60});assert.equal(run.products[0].version,version);assert.equal(run.products[0].unchanged,true);
   for(const cohort of cohorts){const cases=run.cases.filter(c=>c.cohort===cohort.id);assert.equal(cases.length,6);assert(cases.every(c=>c.status==='passed'));assert.equal(new Set(cases.map(c=>c.scenario)).size,6);}
  }
+});
+
+
+test('expanded Firefox workflow evidence covers recovery, disposal, RTL and document navigation',async()=>{
+ const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-recovery-20261002').path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(receipt.previousReceiptSHA256,createHash('sha256').update(await read(receipt.previousReceipt)).digest('hex'));
+ const previous=await json(receipt.previousReceipt);
+ for(const path of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(receipt.inputs[path],previous.inputs[path]);
+ assert.deepEqual(receipt.stats,{passed:40,failed:0,planned:40});
+ assert.deepEqual(receipt.initialAttempt.preceding.stats,{passed:20,failed:0,planned:20});assert.deepEqual(receipt.initialAttempt.current.stats,{passed:10,failed:1,planned:20});
+ const added=['sso-validation','settings-invalid-reset','chat-retry','chat-invalid-proposals','chat-permission-target','workflow-reconnect','selection-options-reset','selection-rtl','workflow-navigation'];
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=receipt.runs[label];assert.equal(run.status,'passed');assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);
+  assert.deepEqual(run.stats,{passed:20,failed:0,planned:20});assert.equal(run.cases.find(c=>c.id==='chat-retry').draftEstablishedBeforeReply,true);assert.deepEqual(run.cases.map(c=>c.id),[...previous.runs[label].cases.map(c=>c.id),...added]);assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
+ }
+ for(const scope of [/Hydration/,/No-JavaScript/,/descriptions/,/Playwright/,/physical devices/])assert(receipt.remaining.some(item=>scope.test(item)));
 });

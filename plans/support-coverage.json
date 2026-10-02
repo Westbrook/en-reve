@@ -359,6 +359,13 @@
       "path": "probes/native-browser-products/verification-firefox-workflows-20261002.json",
       "sha256": "a219a40983d1d6d889aa9fad38b056f79c20b946c7ea0ba65b1eafb3d853b55d",
       "scope": "Eleven selected production SSO/settings/chat/selection functional journeys on actual Firefox157.0 and156.0.1, macOS26.6.1 arm64, with native keyboard/pointer actions and browser-computed accessible name/role targets. Fresh isolated profile per case. Qualified existing production build reused; source/assets/full app inventories unchanged. Shared native transport requalified across six scenarios and ten retained packed consumers per release. Not full Playwright assertion parity or a new build/install/type acquisition."
+    },
+    {
+      "id": "firefox-recovery-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-recovery-20261002.json",
+      "sha256": "f6117d5e4604574b37fefd4303032091405ec4e8b769a24e6903c768248f0273",
+      "scope": "Twenty selected production workflow journeys on each actual Firefox157.0 and156.0.1, macOS26.6.1 arm64. Native keyboard/pointer interaction, exact accessible name/role targets, fresh isolated profile per case. Adds invalid drafts/geometry, retries, untrusted action validation, late permission/target checks, disposal/reconnection, disabled selection options, RTL popup/scroll behavior and native six-document navigation. Full app and source/asset inventories unchanged. Existing qualified production build reused; no new build/install/type claim."
     }
   ],
   "conditions": [
@@ -410,10 +417,11 @@
         "chrome-stable-framework-20261002",
         "chrome-stable-workflows-20261002",
         "firefox-expanded-20261002",
-        "firefox-workflows-20261002"
+        "firefox-workflows-20261002",
+        "firefox-recovery-20261002"
       ],
-      "gap": "Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes60 consumer and11 selected workflow checks; remaining Firefox workflow branches/AX/layout/hydration checks stay open. Safari27 remains hidden; broader OS/manual scope remains.",
-      "nextAction": "Expand the remaining native Firefox workflow assertions. Resolve Safari visibility after desktop-state clarification; retain OS/device/manual obligations."
+      "gap": "Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes60 consumer and20 selected workflow checks; remaining Firefox workflow branches/AX/layout/hydration checks stay open. Safari27 remains hidden; broader OS/manual scope remains.",
+      "nextAction": "Qualify Firefox hydration/no-JS and remaining accessibility/history assertions. Resolve Safari visibility after desktop-state clarification; retain OS/device/manual obligations."
     },
     {
       "id": "browser-previous",
@@ -425,10 +433,11 @@
         "edge-framework-lines-20261002",
         "edge-workflow-lines-20261002",
         "firefox-expanded-20261002",
-        "firefox-workflows-20261002"
+        "firefox-workflows-20261002",
+        "firefox-recovery-20261002"
       ],
-      "gap": "Firefox156.0.1 passes60 consumer and11 selected workflow checks. Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and remaining native Firefox workflow assertions remain unqualified.",
-      "nextAction": "Expand preceding Firefox workflow coverage. Obtain isolated previous retail Chrome or an explicit testing-distribution decision; Safari26 needs a compatible OS. Preserve physical/manual obligations."
+      "gap": "Firefox156.0.1 passes60 consumer and20 selected workflow checks. Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and remaining native Firefox workflow assertions remain unqualified.",
+      "nextAction": "Qualify preceding Firefox hydration/no-JS and remaining accessibility/history assertions. Obtain isolated previous retail Chrome or an explicit testing-distribution decision; Safari26 needs a compatible OS. Preserve physical/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -562,7 +571,7 @@
         "https://www.firefox.com/en-US/firefox/156.0/releasenotes/",
         "https://archive.mozilla.org/pub/firefox/releases/"
       ],
-      "note": "Official isolated156.0.1 and installed157.0 each pass60 native-input consumer checks and11 selected production workflows. BiDi name/role targeting, native input and exact app/source/asset inventories recorded. Earlier receipts retained. Full workflow parity, descriptions/AX, other OSes and manual scope stay open."
+      "note": "Official isolated156.0.1 and installed157.0 each pass60 native-input consumer checks and20 selected production workflows including recovery, disposal, RTL selection and native navigation. BiDi name/role targeting, native input and exact app/source/asset inventories recorded. Earlier receipts retained. Full workflow parity, descriptions/AX, other OSes and manual scope stay open."
     },
     {
       "product": "Safari",
@@ -627,6 +636,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T05:04:36.178996+00:00",
+  "updatedAt": "2026-10-02T05:25:34.225406+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

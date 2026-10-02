@@ -29,7 +29,7 @@ It is an evidence index, not a new browser-support promise or a completed test r
 | --- | --- | --- | --- |
 | Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
-| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |11 selected functional journeys each |Remaining workflow/hydration/layout assertions, descriptions/full AX, other OS/manual coverage |
+| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |20 selected functional journeys each |Remaining workflow/hydration/layout assertions, descriptions/full AX, other OS/manual coverage |
 | Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
 
 These are scoped receipts, not complete support claims. See the dated acquisitions
@@ -287,3 +287,40 @@ packed consumers were reused; no new build, installation or type claim is made.
 This is not full Playwright assertion parity: interception/pre-hydration drafts,
 no-JS, computed descriptions/full AX, all remaining workflow branches and layout/
 history assertions remain open, along with the original OS/device/manual scope.
+
+## Firefox recovery, disposal and navigation
+
+The [recovery checkpoint](../probes/native-browser-products/verification-firefox-recovery-20261002.json)
+records 40 passes across both actual Firefox release lines. Nine additional
+journeys retain the original eleven and cover invalid native drafts and stable
+field geometry; failed-message/application retry with newer draft preservation;
+unsupported capability/action/target/value rejection; permission or target changes
+during pending application; disposal/reconnection of all three original workflows;
+disabled project options and reset; portrait/landscape RTL keyboard scrolling and
+popup bounds; and native navigation between all six workflow documents with query
+context preserved. Each journey uses its own fresh browser profile.
+
+The first run passed20 preceding-release cases but failed a current-release project
+choice after10 passes. The runner now waits for the exact rendered option and
+asserts its active descendant before Enter, as the original Playwright helper does.
+The failed receipt remains preserved; no component change or assertion removal.
+
+Native typing is batched into one standard input-actions command so typing a newer
+draft fits within the fixture's600ms reply delay. No field value or change event
+is assigned synthetically. Selection-range setup is explicit DOM configuration;
+subsequent identity, focus, selection direction and draft retention are asserted.
+
+The unchanged shared transport retains the prior120-consumer qualification; this
+checkpoint adds workflow evidence only. Exact distribution and source/asset
+inventories match before/after. Full Playwright assertion parity is still not
+claimed: hydration interception/pre-module edits, no-JS, computed descriptions/full
+AX, axe, remaining history/accessibility variants and original OS/device/manual
+requirements remain open. Earlier receipts and failed attempts are unchanged.
+
+The final retry check retains the composer node before Retry and enters a short
+native draft. It explicitly proves that the draft and backward selection exist
+while the reply is still pending, then checks the same node, focus, value and
+selection after delivery. An intermediate strengthened run failed that timing
+precondition on current Firefox because locating and typing a longer draft used
+up the600ms fixture delay; it is retained in the receipt. The final test changes
+neither the fixture delay nor the product behavior.

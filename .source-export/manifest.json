@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "516d03caa86aeb830fc37b4d953c526e0ac421d6",
-  "exportedAt": "2026-10-02T05:06:54.247715+00:00",
+  "sourceCommit": "d85cdee616e2f012379857783ba62a8297fb42b6",
+  "exportedAt": "2026-10-02T05:26:45.576483+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5423,
-  "includedBytes": 144920721,
-  "qualification": "Actual Firefox157.0 and156.0.1 each pass11 selected native-input production workflows and60 consumer checks after shared transport extraction.109 tooling checks pass. Five harness acquisition failures retained. Full workflow assertions, AX descriptions, Safari, prior Chrome and OS/device/manual gaps remain.",
-  "latestUpdate": ".source-export/updates/firefox-workflows-20261002.json",
+  "includedFiles": 5425,
+  "includedBytes": 145445103,
+  "qualification": "Actual Firefox157.0 and156.0.1 each pass20 selected native-input workflows including failure/recovery, disposal, RTL selection and native document navigation.110 tooling checks pass. Shared transport unchanged; prior120-consumer evidence reused by hash. Initial current-release option-readiness failure retained. Full hydration/no-JS/AX and OS/device/manual obligations remain.",
+  "latestUpdate": ".source-export/updates/firefox-recovery-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

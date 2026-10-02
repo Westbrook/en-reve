@@ -102,3 +102,7 @@ Local main `e860e5c216174d0345e55190ff9a3b55745df315` qualifies expanded native 
 ## Selected Firefox production workflow qualification
 
 Local main `516d03caa86aeb830fc37b4d953c526e0ac421d6` qualifies11 selected production workflows and60 native consumer checks per Firefox release. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Expanded Firefox recovery and navigation qualification
+
+Local main `d85cdee616e2f012379857783ba62a8297fb42b6` qualifies20 selected production workflows per Firefox release; the unchanged transport retains prior consumer evidence. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

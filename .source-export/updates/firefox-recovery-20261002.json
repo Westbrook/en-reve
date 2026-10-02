@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-10-02T05:26:45.576483+00:00",
+  "sourceCommit": "d85cdee616e2f012379857783ba62a8297fb42b6",
+  "previousSourceMain": "516d03caa86aeb830fc37b4d953c526e0ac421d6",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/verification-firefox-recovery-20261002.json",
+    "probes/native-browser-products/workflows.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox157.0 and156.0.1 each pass20 selected native-input workflows including failure/recovery, disposal, RTL selection and native document navigation.110 tooling checks pass. Shared transport unchanged; prior120-consumer evidence reused by hash. Initial current-release option-readiness failure retained. Full hydration/no-JS/AX and OS/device/manual obligations remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

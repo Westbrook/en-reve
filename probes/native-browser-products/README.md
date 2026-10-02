@@ -156,3 +156,28 @@ The receipt binds both runners and the shared helper. It preserves the original
 This subset does not claim all of their assertions: remaining branches,
 hydration interception/pre-module edits, no-JS, responsive/history cases,
 computed descriptions/full AX, axe, speech, physical devices and IME remain open.
+
+## Expanded recovery and navigation checkpoint
+
+[Recovery verification](verification-firefox-recovery-20261002.json) expands the
+same workflow command to20 journeys per release (40 total), retaining the original
+11. Added coverage includes invalid drafts and error-link focus without geometry
+shift, settings restore/reset, failed chat snapshot and apply retry, unsupported
+action payloads, late permission/target changes, disconnect/reconnect cleanup,
+disabled project choices/reset, portrait/landscape RTL scrolling/popup bounds and
+native navigation across all six documents with preview/query context preserved.
+
+The shared transport and consumer runner did not change; the prior120-consumer
+qualification is reused by hash, not reported as a fresh run. Each workflow uses a
+fresh profile and native input. Character key actions are batched to preserve the
+existing delayed-response fixture timing. The full original Playwright assertions
+remain authoritative; hydration/no-JS, computed descriptions/full AX, axe and
+remaining history/accessibility/manual/physical requirements remain outstanding.
+
+The final retry check retains the composer node before Retry and enters a short
+native draft. It explicitly proves that the draft and backward selection exist
+while the reply is still pending, then checks the same node, focus, value and
+selection after delivery. An intermediate strengthened run failed that timing
+precondition on current Firefox because locating and typing a longer draft used
+up the600ms fixture delay; it is retained in the receipt. The final test changes
+neither the fixture delay nor the product behavior.
