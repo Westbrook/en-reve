@@ -375,3 +375,12 @@ Rebuild documentation before this test when its sources change. The authored
 handbook is `apps/docs/guides.html`; skill sources are under `skills/`, and the
 existing preparation inventory fingerprints them. Do not edit generated copies
 in `public/guides`.
+
+## Offline candidate review
+
+`offline-review.spec.ts` exports a real pinned candidate, packages the exact build,
+then reopens it in a fresh context that blocks every external request. It checks
+baseline/candidate paint, re-export and runtime errors across the maintained
+engines. This verifies disconnected loopback delivery, not physical connectivity,
+manual acceptance or adoption. Package/server controls live in
+`tooling/offline-review/offline-review.test.mjs`.

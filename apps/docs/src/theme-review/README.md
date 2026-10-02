@@ -192,8 +192,12 @@ interaction, visual-comparison and manual-accessibility results `not-run`.
 Resolver diagnostics do not certify accessibility or visual acceptance. Component
 impact mapping remains incomplete, so the full shipped sheet stays available.
 
-The JSON contains no offline copy of the documentation or saved workflow/browser
-session. Export neither submits nor adopts a change, and the page has no automatic
+The JSON itself contains no offline copy of the documentation or saved workflow/browser
+session. The [offline review packager](../../../../tooling/offline-review/README.md)
+can preserve this JSON and its exact original build in a transferable directory,
+with an integrity verifier and local-only server. It supports the same editor
+and isolated previews without external requests; original token replay remains
+authoritative. Export revised candidates outside that immutable package. Export neither submits nor adopts a change, and the page has no automatic
 local persistence. Official library changes remain library-owned; consumer teams
 review their own customizations.
 
@@ -206,7 +210,7 @@ it does not adopt those drafts as candidate values.
 
 `app.ts` owns the page, `editor.ts` renders managed controls, `preview.ts` supplies
 the bridge, and `bundle.ts` owns the outer build/coverage envelope. `candidate-file-intake.ts` owns only native file intake, drag feedback and asynchronous read lifetime. Component
-internals remain private. Full offline review packaging, complete component
+internals remain private. Offline build/candidate packaging is delivered separately; complete component
 dependency mapping, expected/actual/diff visual evidence, review-cache policy and
 explicit adoption integration remain planned. This local editor does not complete
 the managed admin. The initial four-audience handbook is delivered separately at

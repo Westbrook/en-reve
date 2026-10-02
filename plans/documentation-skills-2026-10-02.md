@@ -41,9 +41,11 @@ The historical external CSS-authoring pilot rerun remains explicitly retired.
 
 The experience/token plans still contain managed submission/adoption, complete
 offline review packages and comprehensive interactive old/new release delivery.
-These require a selected persistence/service/authority model; the current local
-candidate editor and release-draft tooling are foundations, not completion of
-those products. This checkpoint makes those distinctions discoverable rather
+Managed submission/adoption requires a selected persistence/service/authority
+model. Offline review and version comparison can proceed independently; the
+[offline follow-up](../tooling/offline-review/README.md) now supplies portable
+exact-build candidate review. The current release-draft tooling remains a
+foundation for interactive old/new delivery. This checkpoint makes those distinctions discoverable rather
 than manufacturing a backend or marking a preview as adopted.
 
 The first handbook pass connects existing component docs, examples and package

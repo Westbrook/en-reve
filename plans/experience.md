@@ -7,9 +7,10 @@ application building and theming and a digest-linked machine contract index. See
 scope and verification. Bounded packed consumers, copied examples and reusable
 layers have separate receipts in the [consumer audit](consumer-evidence-audit-2026-10-02.md).
 Physical/manual acceptance remains open in the [support ledger](support-coverage.md).
-Managed submission/adoption infrastructure, full offline candidate review and
-comprehensive interactive old/new version delivery remain separate unimplemented
-work; no service, authority or transport is selected here.
+Portable exact-build offline candidate review is implemented in
+[the offline review tooling](../tooling/offline-review/README.md). Managed
+submission/adoption infrastructure and comprehensive interactive old/new version
+delivery remain separate work; no service, authority or adoption transport is selected here.
 
 ### Historical implementation checkpoint
 

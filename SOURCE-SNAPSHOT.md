@@ -246,3 +246,7 @@ Local main `3485f568df1a1e623ee700b41b5a82cd89d79460` records26 headed Chrome wo
 ## Documentation and skills checkpoint
 
 Local main `d5c757027acc158d9eb8e53a7a0eb7fd5331f452` delivers the handbook and seven workflow skills. See `plans/documentation-skills-2026-10-02.md` for verification and remaining limits.
+
+## Offline review checkpoint
+
+Local main `53126ea3db6ae5d7c94e4cd1cfd0840aa9fb6e85` delivers portable offline candidate review. See `plans/offline-review-2026-10-02.md` for verification and remaining limits.
