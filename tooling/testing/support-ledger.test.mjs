@@ -8,6 +8,7 @@ const root = new URL('../../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
 const json = async path => JSON.parse(await read(path));
 const ledger = await json('plans/support-coverage.json');
+const readNativeHistorical = path => read(['probes/native-browser-products/workflows.mjs','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs'].includes(path) ? 'probes/native-browser-products/qualification-sources/e29ffc7c/'+path.split('/').at(-1)+'.txt' : path);
 
 test('support ledger covers every promised environment without equating inventory with acceptance', () => {
   assert.equal(ledger.schemaVersion, 1);
@@ -215,7 +216,7 @@ test('actual product workflows retain exact sources, distribution identity and e
  assert.equal(receipt.runtimeDistributionUnchangedAfterRun,true);
  assert.equal(receipt.sourceAndInputsUnchangedAfterRun,true);
  assert(receipt.distInventoryEntries>1000);
- for(const [path,digest] of Object.entries(receipt.sourceHashes))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.sourceHashes))assert.equal(createHash('sha256').update(await readNativeHistorical(path)).digest('hex'),digest,path);
  assert.equal(receipt.cases.length,27 * receipt.products.length);
  assert(receipt.cases.filter(c=>c.status==='skipped').every(c=>c.titlePath.at(-1).startsWith('narrow portrait')));
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
@@ -258,7 +259,7 @@ test('isolated Edge provenance covers exact current and preceding distributions'
   assert(receipt.products.some(p=>p.version===product.version&&p.distributionPath===product.distributionPath));
  }
  for(const [path,digest] of Object.entries(receipt.sources))assert.equal(createHash('sha256').update(await read('probes/framework-consumption/'+path)).digest('hex'),digest,path);
- for(const [path,digest] of Object.entries(receipt.toolingSources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.toolingSources))assert.equal(createHash('sha256').update(await readNativeHistorical(path)).digest('hex'),digest,path);
  const workflow=await json('apps/docs/tests/verification-edge-lines-20261002.json');
  assert.equal(workflow.acquisitionReceiptSHA256,evidence.sha256);
  assert.equal(ledger.conditions.find(c=>c.id==='browser-previous').status,'partial');
@@ -283,7 +284,7 @@ test('isolated Chrome stable receipt preserves signed retail provenance and exac
  assert(checks.some(c=>c.command.includes('--verify')&&c.command.includes('--deep')&&c.command.includes('--strict')));
  assert(checks.some(c=>c.stderr.includes('TeamIdentifier=EQHXZ8M8AV')));
  for(const [path,digest] of Object.entries(receipt.sources))assert.equal(createHash('sha256').update(await read('probes/framework-consumption/'+path)).digest('hex'),digest,path);
- for(const [path,digest] of Object.entries(receipt.toolingSources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.toolingSources))assert.equal(createHash('sha256').update(await readNativeHistorical(path)).digest('hex'),digest,path);
  const workflow=await json('apps/docs/tests/verification-chrome-stable-20261002.json');
  assert.equal(workflow.acquisitionReceiptSHA256,evidence.sha256);
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
@@ -312,7 +313,7 @@ test('historical expanded native Firefox coverage retains all consumer cohorts',
 
 test('historical native Firefox workflow receipt retains its qualified runner and unchanged shared inputs', async () => {
  const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-workflows-20261002').path);
- for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(path==='probes/native-browser-products/workflows.mjs'?'e621c97b1c11774535a8e8a89362bb33a5967247ffbd28800712965c05c6e909':(path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(path==='probes/native-browser-products/workflows.mjs'?'e621c97b1c11774535a8e8a89362bb33a5967247ffbd28800712965c05c6e909':(path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':createHash('sha256').update(await readNativeHistorical(path)).digest('hex')),digest,path);
  assert.equal(receipt.acquisitionReceiptSHA256,createHash('sha256').update(await read(receipt.acquisitionReceipt)).digest('hex'));
  assert.deepEqual(receipt.stats,{passed:22,failed:0,planned:22});
  const expected=['sso-success','sso-retry','sso-cancel','sso-reset','settings-snapshot','settings-retry','settings-incoming','chat-safe-preview','chat-stale','chat-cancel','selection-assignment'];
@@ -338,7 +339,7 @@ test('extracted native Firefox transport requalifies the unchanged six-scenario 
 
 test('expanded Firefox workflow evidence covers recovery, disposal, RTL and document navigation',async()=>{
  const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-recovery-20261002').path);
- for(const [path,digest] of Object.entries(receipt.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':(path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'b6c377e1bda9955aabd7eb4a8b26efbcc3df0588c4bdb516898296a5b0d42325':(path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':createHash('sha256').update(await readNativeHistorical(path)).digest('hex'))),digest,path);
  assert.equal(receipt.previousReceiptSHA256,createHash('sha256').update(await read(receipt.previousReceipt)).digest('hex'));
  const previous=await json(receipt.previousReceipt);
  for(const path of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(receipt.inputs[path],previous.inputs[path]);
@@ -355,7 +356,7 @@ test('expanded Firefox workflow evidence covers recovery, disposal, RTL and docu
 
 test('Firefox first paint binds current sources and isolated no-JS/hydration evidence',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-first-paint-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':(path==='probes/native-browser-products/firefox.mjs'?'dc5a2b5dc86b328b50d6c64e0e213a450d89240c112f362f397e539a9a989c7d':(path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':createHash('sha256').update(await read(path)).digest('hex')))),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'829bbc75dc02af47bb60ccf493f5902f01847a20a85e9d2031b53adc9a578141':(path==='probes/native-browser-products/firefox.mjs'?'dc5a2b5dc86b328b50d6c64e0e213a450d89240c112f362f397e539a9a989c7d':(path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':createHash('sha256').update(await readNativeHistorical(path)).digest('hex')))),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
  assert.deepEqual(r.stats,{passed:170,failed:0,planned:170});assert.equal(r.attempts.length,4);
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
@@ -378,8 +379,8 @@ test('Firefox changed transport requalifies all consumer and workflow cases',asy
 
 test('native Firefox accessibility coverage retains exact axe scope and separate manual limits',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-accessibility-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'dc5a2b5dc86b328b50d6c64e0e213a450d89240c112f362f397e539a9a989c7d':path==='probes/native-browser-products/workflows.mjs'?'c99c59ca0dadbb8773d5d6f8c875b4b220223386259dd46ce60fc2e7b3a7c8ee':(path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
- for(const [path,digest] of Object.entries(r.axe.sources))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'dc5a2b5dc86b328b50d6c64e0e213a450d89240c112f362f397e539a9a989c7d':path==='probes/native-browser-products/workflows.mjs'?'c99c59ca0dadbb8773d5d6f8c875b4b220223386259dd46ce60fc2e7b3a7c8ee':(path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':createHash('sha256').update(await readNativeHistorical(path)).digest('hex'))),digest,path);
+ for(const [path,digest] of Object.entries(r.axe.sources))assert.equal(createHash('sha256').update(await readNativeHistorical(path)).digest('hex'),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));
  assert.deepEqual(r.stats,{passed:44,failed:0,planned:44});assert.deepEqual(r.axe.tags,['wcag2a','wcag2aa','wcag21aa','wcag22aa']);
  const previous=await json(r.previousReceipt);for(const path of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs','probes/native-browser-products/first-paint.mjs'])assert.equal(r.inputs[path],previous.inputs[path]);
@@ -395,7 +396,7 @@ test('native Firefox accessibility coverage retains exact axe scope and separate
 
 test('Firefox history receipt binds native traversal and all preview-context branches',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-history-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':path==='probes/native-browser-products/workflows.mjs'?'7a089e8e368c0dc6ef300150e5c9635ba5788ab7079db874cbea8247ce3eaff8':(path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':path==='probes/native-browser-products/workflows.mjs'?'7a089e8e368c0dc6ef300150e5c9635ba5788ab7079db874cbea8247ce3eaff8':(path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await readNativeHistorical(path)).digest('hex'))),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.equal(r.historyProtocol,'browsingContext.traverseHistory');assert.deepEqual(r.stats,{passed:176,failed:0,planned:176});
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
   const run=r.runs.workflows[label];assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:23,failed:0,planned:23});assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
@@ -416,7 +417,7 @@ test('Firefox history transport freshly requalifies first-paint and all consumer
 
 test('Firefox readiness receipt binds authored registration and validation relationships',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-readiness-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'0cbe9c0170813492259646d4ca8fd2a1e5bb040819d97591f49ef5bd2e16d1d3':(path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'0cbe9c0170813492259646d4ca8fd2a1e5bb040819d97591f49ef5bd2e16d1d3':(path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await readNativeHistorical(path)).digest('hex'))),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:56,failed:0,planned:56});
  const prior=await json(r.previousReceipt);assert.equal(r.consumerEvidenceReuse.passes,120);for(const p of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(r.inputs[p],prior.inputs[p]);
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
@@ -436,7 +437,7 @@ test('Firefox readiness receipt binds authored registration and validation relat
 
 test('Firefox interaction evidence binds pending states, focus and exact isolation names',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-interactions-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await readNativeHistorical(path)).digest('hex')),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:46,failed:0,planned:46});
  const prior=await json(r.previousReceipt);for(const [p,digest] of Object.entries(r.inputs))if(!p.endsWith('/workflows.mjs'))assert.equal(digest,prior.inputs[p]);assert.equal(r.unchangedEvidenceReuse.firstPaint.passes,10);assert.equal(r.unchangedEvidenceReuse.consumers.passes,120);
  const flags={'settings-snapshot':'cancelFocusAndDirtyStateVerified','settings-incoming':'unrelatedChoicesPreserved','chat-safe-preview':'pendingCardAndInvalidApplyVerified','chat-stale':'draftEstablishedBeforeApply','chat-cancel':'postResetEditingAndCancelFocusVerified'};
@@ -508,7 +509,7 @@ test('metadata discovery qualification binds generated packed source, types and 
 
 test('native Firefox document evidence detects response failures and requalifies shared transport',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-documents-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await readNativeHistorical(path)).digest('hex'),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:178,failed:0,planned:178});assert.equal(r.networkProtocol,'network.responseCompleted');
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
   for(const [lane,count] of [['first-paint',6],['workflows',23],['consumers',60]]){
@@ -522,6 +523,58 @@ test('native Firefox document evidence detects response failures and requalifies
   for(const document of documents.documents){assert(document.isolated&&document.visible&&document.unhydrated);assert.equal(document.response.status,200);assert.equal(document.response.redirectCount,0);assert.equal(document.response.requestedPath,document.path);assert.equal(document.response.finalPath,document.path);assert(document.response.navigation&&document.response.request);assert.deepEqual(document.headerLink,{name:'Workflows',href:'/workflows'});if(['sso','settings','chat'].includes(document.id)){assert.match(document.resetName,/^Reset /);assert.match(document.templateSource,/ template source$/);}}
   assert(run.cases.filter(c=>c.id.endsWith('-hydration')).every(c=>c.hydratedNamesAndIdentityVerified));
  }
+});
+
+
+test('native Firefox source comparison preserves explicit semantic limits and fresh error controls',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-assertions-20261002').path);
+ const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
+ assert.equal(r.status,'passed');assert.deepEqual(r.stats,{passed:180,failed:0,planned:180});
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(hash(await read(path)),digest,path);
+ assert.equal(hash(await read(r.previousReceipt)),r.previousReceiptSHA256);
+ assert.equal(hash(await read(r.assertionMap)),r.assertionMapSHA256);
+ const map=await json(r.assertionMap);
+ assert.deepEqual(map.inputs,Object.fromEntries(Object.entries(r.inputs).filter(([p])=>p!=='probes/native-browser-products/run.mjs')));
+ const ts=(await import('@typescript/typescript6')).default;
+ const original=[];
+ for(const path of ['apps/docs/tests/workflows.spec.ts','apps/docs/tests/selection.spec.ts']){
+  const bytes=await read(path),sf=ts.createSourceFile(path,bytes,ts.ScriptTarget.Latest,true,ts.ScriptKind.TS);
+  function walk(node){
+   if(ts.isCallExpression(node)&&ts.isIdentifier(node.expression)&&node.expression.text==='test'&&ts.isStringLiteral(node.arguments[0]))
+    original.push({source:path,title:node.arguments[0].text,sourceSHA256:hash(bytes)});
+   ts.forEachChild(node,walk);
+  }
+  walk(sf);
+ }
+ assert.equal(original.length,27);
+ assert.deepEqual(map.cases.map(({source,title,sourceSHA256})=>({source,title,sourceSHA256})),original);
+ assert.match(map.scope,/not behavioral proof/);
+ let descriptions=0;
+ for(const entry of map.cases){
+  assert(entry.adaptation&&entry.nativeCases.length);
+  for(const assertion of entry.assertions){
+   if(assertion.expression.includes('toHaveAccessibleDescription')){assert.equal(assertion.comparison,'unverified-computed-description');descriptions++;}
+   if(assertion.expression.includes('toHaveRole'))assert.equal(assertion.comparison,'dom-role-only');
+  }
+  for(const ref of entry.nativeCases){const [lane,id]=ref.split(':');for(const line of ['preceding','current'])assert.equal(r.runs[lane][line].cases.find(c=>c.id===id)?.status,'passed',ref+'/'+line);}
+ }
+ assert.equal(descriptions,3);
+ for(const [line,version] of [['preceding','156.0.1'],['current','157.0']]){
+  for(const [lane,count] of [['workflows',24],['first-paint',6],['consumers',60]]){
+   const run=r.runs[lane][line];assert.equal(run.status,'passed');assert.deepEqual(run.stats,{passed:count,failed:0,planned:count});assert(run.cases.every(c=>c.status==='passed'));assert.match(run.rawResultSHA256,/^[a-f0-9]{64}$/);
+   if(lane==='consumers'){assert.equal(run.products[0].version,version);assert.equal(run.products[0].unchanged,true);}
+   else{assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);}
+  }
+  const workflow=r.runs.workflows[line],control=workflow.cases.find(c=>c.id==='log-journal-controls');
+  assert.equal(control.survivedNavigation,true);assert.equal(control.expectedErrors.length,2);assert.deepEqual(new Set(control.expectedErrors.map(e=>e.type)),new Set(['console','javascript']));assert.deepEqual(control.protocolErrors,control.expectedErrors);
+  for(const c of workflow.cases.filter(c=>c.id!=='log-journal-controls'))assert.deepEqual(c.protocolErrors,[],c.id);
+  for(const c of r.runs['first-paint'][line].cases.filter(c=>c.javaScriptEnabled)){
+   assert.deepEqual(c.protocolErrors,[],c.id);assert.equal(c.hydratedNamesAndIdentityVerified,true);assert.equal(c.earlyNavigationDOM.navigationVisible,true);assert.equal(c.earlyNavigationDOM.currentValue,'page');
+  }
+ }
+ const build=await json(r.buildReuse.receipt);assert.equal(build.productionBuild.distManifestSHA256,r.buildReuse.distManifestSHA256);assert.equal(build.productionBuild.distFiles,r.buildReuse.files);assert.match(r.buildReuse.policy,/no fresh production build/);
+ assert.equal(r.earlierAttempts[0].stats.failed,1);assert.equal(r.supersededAttempts[0].status,'failed');assert.equal(r.supersededAttempts[1].status,'passed-superseded');
+ assert.match(r.remaining.join(' '),/two SSO descriptions and one Selection description/);assert.match(r.remaining.join(' '),/spoken output/);
 });
 
 test('packed reusable-layer receipt preserves alternate-composition bounds and unresolved exports',async()=>{

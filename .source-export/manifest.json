@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "e29ffc7c0c006d96f186d9ab9faa753bccab92b8",
-  "exportedAt": "2026-10-02T17:03:59.399875+00:00",
+  "sourceCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
+  "exportedAt": "2026-10-02T17:37:45.472478+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5705,
-  "includedBytes": 153593585,
-  "qualification": "Three helper entries have111 passing browser cases and153 existing owner cases across three engines. Logical scroll axes, insets and negative smooth cancellation corrected. Fresh production build passes. Inventory111/111 has bounded qualification; platform/manual/owner scope remains.",
-  "latestUpdate": ".source-export/updates/helper-recipes-20261002.json",
+  "includedFiles": 5712,
+  "includedBytes": 155378018,
+  "qualification": "All27 original workflow/selection cases source-compared;180 fresh checks pass across actual Firefox156.0.1/157.0. Error capture and exact outcomes strengthened. Explicit AX, visual, physical/manual and other-platform gaps remain. Qualified production build is reused unchanged.",
+  "latestUpdate": ".source-export/updates/native-assertions-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

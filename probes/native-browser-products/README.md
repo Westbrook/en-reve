@@ -339,3 +339,18 @@ These checks serve unchanged qualified production assets through an owned local
 server; they are not cloud-edge routing or deployment HTTP certification. Native
 full AX/computed descriptions, speech, incomplete contrast findings, remaining
 exact assertion differences and the original product/OS/device/manual scope remain.
+
+## Source comparison of the original workflow contracts
+
+The [assertion comparison](assertion-comparison.md) maps all27 original workflow
+and selection cases and their shared helpers. The [new receipt](verification-firefox-assertions-20261002.json)
+records180 fresh checks on actual Firefox156.0.1/157.0:24 workflow,6 first-paint
+and60 retained packed-consumer cases per release. Exact messages, visibility,
+selection sequencing and native link readiness are strengthened. An opt-in BiDi
+error journal survives document navigation; negative controls verify it records
+console and uncaught errors. Production assets remain unchanged.
+
+The map records adaptations and outstanding computed-description, early-label,
+status-role, visual and physical/manual boundaries. It is not an assertion-count
+proof of equivalence. Failed and superseded acquisitions remain recorded; prior
+receipts retain their original source bytes under `qualification-sources/e29ffc7c`.

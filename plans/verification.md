@@ -559,8 +559,26 @@ sticky insets and smooth cancellation now agree with the tested native behavior.
 A fresh production build and153 existing virtual-list, tree and activity browser
 cases pass. Failed attempts are retained. All111 inventory entries now have bounded
 named-scenario receipts; this closes the inventory pass, not the entire goal.
-Native Firefox comparison, retail/physical platforms, manual AT, complete
-SSR/hydration and separate-owner obligations remain distinct unfinished scope.
+At that checkpoint, native Firefox comparison remained open. Retail/physical
+platforms, manual AT and separate-owner obligations remain unfinished. The
+selected SSR integration is bounded evidence for section7.3; it does not promise
+every framework/server combination.
 Historical external CSS-authoring rerun remains retired, never passed.
 
 Final integrity/helper qualification passes179 Node checks and111 browser cases.
+
+### Native Firefox assertion comparison checkpoint
+
+The [source comparison](../probes/native-browser-products/assertion-comparison.md)
+now maps all27 original workflow/selection tests and shared helpers to the native
+runner. The acquisition passes180 checks across actual Firefox156.0.1/157.0,
+including error-journal negative controls, exact interaction outcomes, early
+hydration and packed consumers. Existing qualified production assets are reused
+by hash. This completes the explicit source-comparison task; it does not close
+the map's computed-description/early-label/status-role, visual, physical/manual
+or remaining product/OS requirements. The support ledger preserves those gaps.
+
+The final tooling integrity gate passes136 Node checks. Its first run failed a
+new receipt test’s wording match; correcting that matcher leaves the browser
+assertions and acquisition receipts unchanged. Both gate runs remain in report
+evidence.

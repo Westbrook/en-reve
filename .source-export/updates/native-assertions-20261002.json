@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-10-02T17:37:45.472478+00:00",
+  "sourceCommit": "7dd38008b371690f4a2c7431e0a51a31e56d5474",
+  "previousSourceMain": "e29ffc7c0c006d96f186d9ab9faa753bccab92b8",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/verification.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/assertion-comparison.md",
+    "probes/native-browser-products/assertion-map-20261002.json",
+    "probes/native-browser-products/firefox.mjs",
+    "probes/native-browser-products/first-paint.mjs",
+    "probes/native-browser-products/qualification-sources/e29ffc7c/firefox.mjs.txt",
+    "probes/native-browser-products/qualification-sources/e29ffc7c/first-paint.mjs.txt",
+    "probes/native-browser-products/qualification-sources/e29ffc7c/workflows.mjs.txt",
+    "probes/native-browser-products/verification-firefox-assertions-20261002.json",
+    "probes/native-browser-products/workflows.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "All27 original workflow/selection cases source-compared;180 fresh checks pass across actual Firefox156.0.1/157.0. Error capture and exact outcomes strengthened. Explicit AX, visual, physical/manual and other-platform gaps remain. Qualified production build is reused unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

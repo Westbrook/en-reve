@@ -1,0 +1,2991 @@
+{
+  "schemaVersion": 1,
+  "sourceBase": "e29ffc7c0c006d96f186d9ab9faa753bccab92b8",
+  "scope": "Manual source comparison of27 original test cases plus their shared helpers; AST-extracted direct expect sites aid review, not behavioral proof or an assertion execution count.",
+  "inputs": {
+    "apps/docs/tests/workflows.spec.ts": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+    "apps/docs/tests/selection.spec.ts": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+    "probes/native-browser-products/workflows.mjs": "80708a21825f1a3ce161a16019f2264a0b62c0d1df2c31b983edfc110a875a0d",
+    "probes/native-browser-products/first-paint.mjs": "7adae5c2945b01c8c4d688f2c430edfc5ef99d0963e410dd5ead442660e170dd",
+    "probes/native-browser-products/firefox.mjs": "3055ef406d4071dd4f15db55fa72f756e6745f7d075af0af995473a66ef358b3",
+    "probes/native-browser-products/workflow-readiness.mjs": "97970dc9fdb064d2b1d7658b03c3e102aaaf1743d2c3463d9d52f1afe1f39558"
+  },
+  "shared": [
+    {
+      "original": "beforeEach/afterEach runtime error collection",
+      "native": "opt-in log.entryAdded journal retained across documents plus early error/rejection preload",
+      "qualification": "negative-control case distinguishes info/console error/uncaught JS and verifies errors survive navigation; no future asynchronous or spoken-output claim"
+    },
+    {
+      "original": "waitForWorkflow/assertIsolated and selection hydrated/assertPage",
+      "native": "workflowReadiness and authoredReady; first-paint isolated/early/no-js checks",
+      "qualification": "authored children eager except exact dormant settings palette; enhanced and no-JS scene/nav/link/current/reset/source checks; held-module navigation/current-link checks observe DOM only because native AX lookup waits for document readiness. Selection readiness deliberately uses registry-aware stronger helper."
+    },
+    {
+      "original": "account/disclosure/fixture/choose/requestAdjustment",
+      "native": "native named controls, pointer/key actions, captured values, exact active descendant and collapsed choice",
+      "qualification": "BiDi native actions replace Playwright fill/selectOption; direct DOM scripting limited to focus/selection, state observation, reconnect and original form requestSubmit."
+    },
+    {
+      "original": "capture/attachments",
+      "native": "JSON identities, axe files and selected geometry; no native screenshots",
+      "qualification": "functional source comparison does not adopt VRT or establish visual review."
+    }
+  ],
+  "cases": [
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSR account drafts retain native identity and become the exact hydrated submission",
+      "line": 104,
+      "assertions": [
+        {
+          "line": 109,
+          "expression": "await expect(page.locator('en-workflows-app')).toHaveAttribute('data-ssr', '');",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 112,
+          "expression": "await expect(workspace).toHaveValue('');",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 113,
+          "expression": "await expect(email).toHaveValue('');",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 115,
+          "expression": "await expect(sso(page).locator('[data-sso-attempts]')).toHaveText('0');",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 123,
+          "expression": "await expect(page.locator('en-workflows-app')).not.toHaveAttribute('data-ssr');",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 125,
+          "expression": "await expect(email).toHaveValue('before@example.test');",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 126,
+          "expression": "expect(await workspace.evaluate(control => ({\n    same: control === (window as any).__workflowInitialWorkspace,\n    focused: (control.getRootNode() as ShadowRoot).activeElement === control,\n    selection: [(control as HTMLInputElement).selectionStart, (control as HTMLInputElement).selectionEnd, (control as HTMLInputElement).selectionDirection],\n  }))).toEqual({ same: true, focused: true, selection: [2, 8, 'backward'] });",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 131,
+          "expression": "expect(await sso(page).locator('form[data-sso-form=\"account\"]').evaluate(form => Object.fromEntries(new FormData(form as HTMLFormElement)))).toEqual({ workspace: 'Before modules studio', email: 'before@example.test' });",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 133,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Choose your sign-in provider', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 134,
+          "expression": "await expect(sso(page).getByText('Before modules studio', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 135,
+          "expression": "await expect(sso(page).getByText('before@example.test', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "first-paint:sso-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "first-paint:sso-hydration"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Modules held at the owned server instead of Playwright request routing. Canonical URL used for early editing; legacy document covered separately. Pre-upgrade input located directly; computed name/role and node identity checked after hydration.",
+      "unverified": [
+        "pre-upgrade-computed-name"
+      ]
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSR chat draft keeps native identity, focus and selection and submits the exact early message",
+      "line": 139,
+      "assertions": [
+        {
+          "line": 144,
+          "expression": "await expect(page.locator('en-workflows-app')).toHaveAttribute('data-ssr', '');",
+          "nativeCases": [
+            "first-paint:chat-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 146,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'You message', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "first-paint:chat-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 152,
+          "expression": "await expect(composer(page)).toHaveValue('A chat draft written before modules load.');",
+          "nativeCases": [
+            "first-paint:chat-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 153,
+          "expression": "await expect(composer(page)).toBeFocused();",
+          "nativeCases": [
+            "first-paint:chat-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 154,
+          "expression": "expect(await composer(page).evaluate((control, previous) => ({ same: control === previous, selection: [(control as HTMLTextAreaElement).selectionStart, (control as HTMLTextAreaElement).selectionEnd, (control as HTMLTextAreaElement).selectionDirection] }), original)).toEqual({ same: true, selection: [2, 9, 'backward'] });",
+          "nativeCases": [
+            "first-paint:chat-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 157,
+          "expression": "await expect(chat(page).locator('en-chat-message').filter({has: page.getByRole('article', { name: 'You message', exact: true })}).locator('p').first()).toHaveText('A chat draft written before modules load.');",
+          "nativeCases": [
+            "first-paint:chat-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "first-paint:chat-hydration"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Server module hold; exact sent user-message paragraph, early no-user-message count, node identity, focus and backward selection. Pre-upgrade input located directly; computed name/role verified after hydration.",
+      "unverified": [
+        "pre-upgrade-computed-name"
+      ]
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSO validates native form data, follows an error link, and retains corrected values when going Back",
+      "line": 160,
+      "assertions": [
+        {
+          "line": 173,
+          "expression": "await expect(workspace).toHaveCSS('border-top-width', '1px');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 175,
+          "expression": "await expect(sso(page).locator('[data-sso-validation]')).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 176,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Check your details', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 178,
+          "expression": "await expect(workspace).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 179,
+          "expression": "await expect(workspace).toHaveCSS('border-top-width', '2px');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 180,
+          "expression": "expect(await fieldGeometry()).toEqual(validGeometry);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 182,
+          "expression": "await expect(workspace).toHaveCSS('border-top-width', '1px');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 183,
+          "expression": "expect(await fieldGeometry()).toEqual(validGeometry);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 187,
+          "expression": "await expect(sso(page).locator('[data-sso-validation]')).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 189,
+          "expression": "await expect(email).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 190,
+          "expression": "expect(await email.evaluate(control => (control as HTMLInputElement).validity.typeMismatch)).toBe(true);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 194,
+          "expression": "await expect(sso(page).locator('[data-sso-validation]')).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 195,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Your account and workspace', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 196,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Choose your sign-in provider', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 197,
+          "expression": "await expect(sso(page).locator('[data-sso-attempts]')).toHaveText('0');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 198,
+          "expression": "await expect(email).toHaveValue('alex@studio');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 199,
+          "expression": "expect(await email.evaluate(control => ({\n    patternMismatch: (control as HTMLInputElement).validity.patternMismatch,\n    typeMismatch: (control as HTMLInputElement).validity.typeMismatch,\n  }))).toEqual({ patternMismatch: true, typeMismatch: false });",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 204,
+          "expression": "expect(guidance.trim().length).toBeGreaterThan(0);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 206,
+          "expression": "await expect(email).toHaveAccessibleDescription(`${guidance.trim()} ${nativeMessage}`);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "unverified-computed-description"
+        },
+        {
+          "line": 208,
+          "expression": "await expect(email).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 209,
+          "expression": "await expect(email).toHaveAttribute('aria-invalid', 'true');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 211,
+          "expression": "await expect(email).toHaveAccessibleDescription(guidance.trim());",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "unverified-computed-description"
+        },
+        {
+          "line": 212,
+          "expression": "await expect(email).not.toHaveAttribute('aria-invalid', 'true');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 213,
+          "expression": "expect(await email.evaluate(control => (control as HTMLInputElement).validity.valid)).toBe(true);",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 215,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Choose your sign-in provider', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 217,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Your account and workspace', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 218,
+          "expression": "await expect(workspace).toHaveValue('Studio North');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 219,
+          "expression": "await expect(email).toHaveValue('alex@example.test');",
+          "nativeCases": [
+            "workflows:sso-validation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:sso-validation"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Stable geometry and native validity/focus match. DOM IDREF text checks do not establish the two original computed accessible-description assertions.",
+      "unverified": [
+        "computed-description"
+      ]
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSO completes a keyboard-submitted provider choice with the captured account",
+      "line": 222,
+      "assertions": [
+        {
+          "line": 230,
+          "expression": "await expect(partner).toBeChecked();",
+          "nativeCases": [
+            "workflows:sso-success"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 232,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Example sign-in complete', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-success"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 233,
+          "expression": "await expect(sso(page).getByText('alex@example.test', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-success"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 234,
+          "expression": "await expect(sso(page).getByText('Partner identity', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-success"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 235,
+          "expression": "await expect(sso(page).locator('[data-sso-attempts]')).toHaveText('1');",
+          "nativeCases": [
+            "workflows:sso-success"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:sso-success"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Native ArrowDown provider selection. Chromium-only screenshot is not repeated as Firefox visual acceptance.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSO rejected attempt recovers through Retry without losing the chosen provider",
+      "line": 239,
+      "assertions": [
+        {
+          "line": 245,
+          "expression": "await expect(sso(page).locator('[role=\"status\"]')).toHaveText('The example provider declined this attempt. Retry or choose the other provider.');",
+          "nativeCases": [
+            "workflows:sso-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 246,
+          "expression": "await expect(sso(page).getByRole('radio', { name: 'Partner identity', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "workflows:sso-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 247,
+          "expression": "await expect(sso(page).getByText('alex@example.test', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 249,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Example sign-in complete', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 250,
+          "expression": "await expect(sso(page).locator('[data-sso-attempts]')).toHaveText('2');",
+          "nativeCases": [
+            "workflows:sso-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:sso-retry"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSO Cancel invalidates a held response while retaining the account and actionable focus",
+      "line": 253,
+      "assertions": [
+        {
+          "line": 258,
+          "expression": "await expect(sso(page).getByRole('button', { name: 'Cancel sign-in', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 261,
+          "expression": "await expect(sso(page).locator('[data-sso-attempts]')).toHaveText('1');",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 263,
+          "expression": "await expect(sso(page).getByRole('button', { name: 'Continue', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 267,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Your account and workspace', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 268,
+          "expression": "await expect(sso(page).getByRole('textbox', { name: 'Workspace', exact: true })).toHaveValue('Later local workspace');",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 269,
+          "expression": "await expect(sso(page).getByRole('textbox', { name: 'Work email', exact: true })).toHaveValue('alex@example.test');",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 270,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Example sign-in complete', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:sso-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:sso-cancel"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "SSO Reset protects a new account from an older held completion",
+      "line": 273,
+      "assertions": [
+        {
+          "line": 279,
+          "expression": "await expect(sso(page).getByRole('textbox', { name: 'Workspace', exact: true })).toHaveValue('');",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 285,
+          "expression": "await expect(sso(page).getByRole('button', { name: 'Cancel sign-in', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 286,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Example sign-in complete', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 288,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Example sign-in complete', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 289,
+          "expression": "await expect(sso(page).getByText('New workspace', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 290,
+          "expression": "await expect(sso(page).getByText('new@example.test', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 291,
+          "expression": "await expect(sso(page).getByText('Partner identity', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:sso-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:sso-reset"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "settings save a captured snapshot while later edits remain local and unsaved",
+      "line": 294,
+      "assertions": [
+        {
+          "line": 298,
+          "expression": "expect(await settings(page).getByRole('form', { name: 'Creative output settings', exact: true }).evaluate(form => Object.fromEntries(new FormData(form as HTMLFormElement)))).toEqual({ opacity: '70', format: 'png', layout: 'portrait', background: 'on' });",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 302,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('70% opacity \u00b7 PNG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 303,
+          "expression": "await expect(settings(page).locator('[data-settings-current]')).toHaveText('70% opacity \u00b7 SVG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 304,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText('Saved revision 2. Newer local changes are still unsaved.');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 307,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('70% opacity \u00b7 SVG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 308,
+          "expression": "await expect(settings(page).locator('[data-settings-dirty]')).toHaveText('Preview matches saved settings');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 313,
+          "expression": "await expect(settings(page).getByRole('button', { name: 'Save settings', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 314,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText('Stopped waiting for this save. Your local settings are unchanged.');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 315,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('70% opacity \u00b7 SVG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 316,
+          "expression": "await expect(settings(page).locator('[data-settings-current]')).toHaveText('72% opacity \u00b7 SVG \u00b7 Portrait \u00b7 Transparent background');",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 317,
+          "expression": "await expect(settings(page).getByRole('button', { name: 'Deliver held response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:settings-snapshot"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:settings-snapshot"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "settings failed save retains local work and Retry succeeds once",
+      "line": 320,
+      "assertions": [
+        {
+          "line": 326,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText('The simulated save failed. Your local settings are intact. Retry save when ready.');",
+          "nativeCases": [
+            "workflows:settings-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 327,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('71');",
+          "nativeCases": [
+            "workflows:settings-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 328,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('64% opacity \u00b7 PNG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 331,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('71% opacity \u00b7 PNG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 332,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText('Saved revision 2.');",
+          "nativeCases": [
+            "workflows:settings-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:settings-retry"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "incoming settings keep an unfinished native entry and focus until the user chooses Keep",
+      "line": 335,
+      "assertions": [
+        {
+          "line": 343,
+          "expression": "await expect(settings(page).getByRole('region', { name: 'Incoming opacity change', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 344,
+          "expression": "await expect(editor).toBeFocused();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 345,
+          "expression": "await expect(editor).toHaveValue('101');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 346,
+          "expression": "expect(await editor.evaluate((node, previous) => node === previous, original)).toBe(true);",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 347,
+          "expression": "await expect(settings(page).locator('[data-settings-current]')).toHaveText('64% opacity \u00b7 SVG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 350,
+          "expression": "await expect(settings(page).getByRole('heading', { name: 'Creative output settings', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 351,
+          "expression": "await expect(settings(page).getByRole('region', { name: 'Incoming opacity change', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 352,
+          "expression": "await expect(editor).toHaveValue('101');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 353,
+          "expression": "await expect(settings(page).getByRole('combobox', { name: 'Output format', exact: true })).toHaveValue('svg');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 356,
+          "expression": "await expect(editor).toHaveValue('64');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:settings-incoming"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Keep and Use paths share one case. Identity/name, focus, visible region, preserved invalid draft, unrelated choices and Escape checked. Chromium-only screenshot remains separate.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "Use updated opacity explicitly replaces its draft while preserving unrelated choices",
+      "line": 359,
+      "assertions": [
+        {
+          "line": 365,
+          "expression": "await expect(settings(page).getByRole('radio', { name: 'Landscape', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 369,
+          "expression": "await expect(settings(page).getByRole('region', { name: 'Incoming opacity change', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 371,
+          "expression": "await expect(settings(page).getByRole('heading', { name: 'Creative output settings', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 372,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('82');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 373,
+          "expression": "await expect(settings(page).locator('[data-settings-current]')).toHaveText('82% opacity \u00b7 SVG \u00b7 Landscape \u00b7 Transparent background');",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 374,
+          "expression": "await expect(settings(page).getByRole('checkbox', { name: 'Include background', exact: true })).not.toBeChecked();",
+          "nativeCases": [
+            "workflows:settings-incoming"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:settings-incoming"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Same outcome assertions follow the Keep path in one native case instead of a new fixture; independent Use setup remains in original Playwright suite.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "settings reject invalid drafts, restore saved opacity, and cancel a held save on Reset",
+      "line": 377,
+      "assertions": [
+        {
+          "line": 385,
+          "expression": "expect(await form.evaluate(form => (form as HTMLFormElement).checkValidity())).toBe(false);",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 386,
+          "expression": "await expect(format).toBeFocused();",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 389,
+          "expression": "await expect(exactOpacity(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 390,
+          "expression": "await expect(exactOpacity(page)).toHaveAttribute('aria-invalid', 'true');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 391,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('101');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 393,
+          "expression": "await expect(error).toBeVisible();",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 395,
+          "expression": "expect(await exactOpacity(page).evaluate((control, error) => (control.getAttribute('aria-describedby') ?? '').split(' ').some(id => (control.getRootNode() as ShadowRoot).getElementById(id) === error), errorNode)).toBe(true);",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 396,
+          "expression": "expect(await form.evaluate(form => new FormData(form as HTMLFormElement).get('opacity'))).toBe('64');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 397,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText(priorStatus ?? '');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 398,
+          "expression": "await expect(settings(page).getByRole('button', { name: 'Deliver held response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 399,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('64% opacity \u00b7 PNG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 401,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('64');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 402,
+          "expression": "await expect(settings(page).getByRole('combobox', { name: 'Output format', exact: true })).toHaveValue('svg');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 405,
+          "expression": "await expect(settings(page).getByRole('button', { name: 'Saving settings\u2026', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 407,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('64');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 408,
+          "expression": "await expect(settings(page).locator('[data-settings-current]')).toHaveText('64% opacity \u00b7 PNG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 409,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText('Settings demo reset to revision 1.');",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 410,
+          "expression": "await expect(settings(page).getByRole('button', { name: 'Deliver held response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:settings-invalid-reset"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:settings-invalid-reset"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "chat renders message text safely and requires a valid newly reviewed preview before applying",
+      "line": 426,
+      "assertions": [
+        {
+          "line": 433,
+          "expression": "await expect(composer(page)).toHaveValue(`${message}\\n`);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 434,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'You message', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 436,
+          "expression": "await expect(chat(page).locator('en-chat-message').filter({has: page.getByRole('article', { name: 'You message', exact: true })}).locator('p').first()).toHaveText(message);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 437,
+          "expression": "await expect(chat(page).getByTestId('chat-transcript').locator('img')).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 438,
+          "expression": "expect(await page.evaluate(() => (window as any).untrustedMessageRan)).toBeUndefined();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 440,
+          "expression": "await expect(chat(page).getByRole('heading', { name: 'Cover image adjustment', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 443,
+          "expression": "await expect(proposedOpacity(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 444,
+          "expression": "await expect(proposedOpacity(page)).toHaveAttribute('aria-invalid', 'true');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 445,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Apply adjustment', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 447,
+          "expression": "await expect(proposedOpacity(page)).toHaveValue('85');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 449,
+          "expression": "await expect(chat(page).getByText('Preview: 85% opacity \u00b7 based on revision 7', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 452,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Apply adjustment', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 454,
+          "expression": "await expect(chat(page).getByText('Preview: 77% opacity \u00b7 based on revision 7', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 458,
+          "expression": "await expect(chat(page).getByTestId('chat-status')).toHaveText('Reply ready. Your pending adjustment is unchanged.');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 459,
+          "expression": "expect(await chat(page).getByTestId('chat-adjustment').evaluate((node, previous) => node === previous, pendingCard)).toBe(true);",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 460,
+          "expression": "await expect(proposedOpacity(page)).toHaveValue('77');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 461,
+          "expression": "await expect(chat(page).getByText('Preview: 77% opacity \u00b7 based on revision 7', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 464,
+          "expression": "await expect(proposedOpacity(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 465,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 469,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 77% opacity \u00b7 revision 8');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 470,
+          "expression": "await expect(chat(page).getByRole('heading', { name: 'Cover image adjustment', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 471,
+          "expression": "await expect(chat(page).getByTestId('chat-status')).toHaveText('Adjustment applied. Cover image opacity is 77%.');",
+          "nativeCases": [
+            "workflows:chat-safe-preview"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:chat-safe-preview"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Exact user paragraph and undefined execution sentinel replace weaker substring/truthiness checks. Chromium-only screenshot remains separate.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "chat Retry sends the failed snapshot once and preserves a newer focused composer draft",
+      "line": 474,
+      "assertions": [
+        {
+          "line": 479,
+          "expression": "await expect(chat(page).getByTestId('chat-status')).toHaveText('Your message could not be sent. Retry the message below; your draft is unchanged.');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 480,
+          "expression": "await expect(composer(page)).toHaveValue('Please strengthen the cover image.');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 486,
+          "expression": "await expect(chat(page).getByTestId('chat-adjustment')).toBeVisible();",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 487,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'You message', exact: true })).toHaveCount(1);",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 488,
+          "expression": "await expect(chat(page).locator('en-chat-message').filter({has: page.getByRole('article', { name: 'You message', exact: true })}).locator('p').first()).toHaveText('Please strengthen the cover image.');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 489,
+          "expression": "await expect(composer(page)).toHaveValue('A newer draft I am still editing');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 490,
+          "expression": "await expect(composer(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 491,
+          "expression": "expect(await composer(page).evaluate((node, previous) => ({ same: node === previous, start: (node as HTMLTextAreaElement).selectionStart, end: (node as HTMLTextAreaElement).selectionEnd, direction: (node as HTMLTextAreaElement).selectionDirection }), original)).toEqual({ same: true, start: 2, end: 9, direction: 'backward' });",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 496,
+          "expression": "await expect(chat(page).getByTestId('chat-status')).toHaveText('The adjustment could not be applied. Your preview is retained; retry when ready.');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 497,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 499,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 85% opacity \u00b7 revision 8');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 500,
+          "expression": "await expect(composer(page)).toHaveValue('A newer draft I am still editing');",
+          "nativeCases": [
+            "workflows:chat-retry"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:chat-retry"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Native keyboard uses shorter Next idea draft and backward selection2..7 to establish editing before the real delayed completion. Original fill uses a longer draft and2..9. Both require exact captured user message, retained unique native node, selection direction and newer focus; not literal timing/input parity.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "chat revalidates a held Apply against collaborator changes and preserves later editing focus",
+      "line": 503,
+      "assertions": [
+        {
+          "line": 508,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'Assistant message', exact: true }).last()).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 513,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Apply adjustment', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 515,
+          "expression": "await expect(chat(page).getByText('1 fixture response(s) pending. Held responses are released in request order.', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 517,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 74% opacity \u00b7 revision 8');",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 519,
+          "expression": "await expect(chat(page).getByTestId('chat-problem')).toHaveText('The image changed after revision 7; it is now revision 8. Refresh the preview before applying your adjustment.');",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 520,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 74% opacity \u00b7 revision 8');",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 522,
+          "expression": "await expect(chat(page).getByText('Preview: 85% opacity \u00b7 based on revision 8', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 526,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 85% opacity \u00b7 revision 9');",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 527,
+          "expression": "await expect(composer(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 528,
+          "expression": "await expect(composer(page)).toHaveValue('Do not take focus from this next idea.');",
+          "nativeCases": [
+            "workflows:chat-stale"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:chat-stale"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Next idea is the shorter native-input draft; checked established before delayed application and retained after. Not literal input parity.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "chat rejects unsupported capability, action, target and value at the authored action boundary",
+      "line": 531,
+      "assertions": [
+        {
+          "line": 541,
+          "expression": "await expect(chat(page).getByTestId('chat-problem')).toHaveText(explanation);",
+          "nativeCases": [
+            "workflows:chat-invalid-proposals"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 542,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Apply adjustment', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-invalid-proposals"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 544,
+          "expression": "await expect(chat(page).getByTestId('chat-problem')).toHaveText(explanation);",
+          "nativeCases": [
+            "workflows:chat-invalid-proposals"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 545,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:chat-invalid-proposals"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:chat-invalid-proposals"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "chat blocks a held Apply when permission or its image target disappears and requires a refreshed preview",
+      "line": 550,
+      "assertions": [
+        {
+          "line": 560,
+          "expression": "await expect(chat(page).getByTestId('chat-problem')).toHaveText(kind === 'permission'\n      ? 'Editing access changed. You can review the proposal, but you cannot apply it now.'\n      : 'The proposed image is unavailable or is not the selected Cover image. Nothing changed.');",
+          "nativeCases": [
+            "workflows:chat-permission-target"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 563,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText(kind === 'permission' ? 'Current: 68% opacity \u00b7 revision 7' : 'Current: 68% opacity \u00b7 revision 8 \u00b7 image unavailable');",
+          "nativeCases": [
+            "workflows:chat-permission-target"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 568,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText(kind === 'permission' ? 'Current: 85% opacity \u00b7 revision 8' : 'Current: 85% opacity \u00b7 revision 10');",
+          "nativeCases": [
+            "workflows:chat-permission-target"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:chat-permission-target"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "chat guards repeated pending sends and Cancel or Reset invalidates queued replies without erasing later drafts",
+      "line": 573,
+      "assertions": [
+        {
+          "line": 578,
+          "expression": "await expect(chat(page).getByTestId('chat-send').getByRole('button', { name: 'Send message', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 580,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'You message', exact: true })).toHaveCount(1);",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 583,
+          "expression": "await expect(composer(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 584,
+          "expression": "await expect(composer(page)).toHaveValue('A later draft to keep');",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 585,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Release pending response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 586,
+          "expression": "await expect(chat(page).getByTestId('chat-adjustment')).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 588,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Release pending response', exact: true })).toBeEnabled();",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 590,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Release pending response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 591,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'You message', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 592,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 593,
+          "expression": "await expect(composer(page)).toHaveValue('Make the cover image a little stronger.\\nKeep the text easy to read.');",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 595,
+          "expression": "await expect(composer(page)).toHaveValue('New work after Reset');",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 596,
+          "expression": "await expect(chat(page).getByTestId('chat-adjustment')).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 601,
+          "expression": "await expect(chat(page).getByRole('heading', { name: 'Cover image adjustment', exact: true })).toBeFocused();",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 602,
+          "expression": "await expect(chat(page).getByTestId('chat-status')).toHaveText('Adjustment canceled. The image is unchanged.');",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 603,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 604,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Apply adjustment', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:chat-cancel"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:chat-cancel"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "reconnecting each isolated page disposes pending work and creates fresh native editors with working handlers",
+      "line": 607,
+      "assertions": [
+        {
+          "line": 615,
+          "expression": "await expect(sso(page).getByRole('textbox', { name: 'Workspace', exact: true })).toHaveValue('');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 616,
+          "expression": "await expect(sso(page).locator('[data-sso-attempts]')).toHaveText('0');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 618,
+          "expression": "await expect(sso(page).getByRole('button', { name: 'Release response 1', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 621,
+          "expression": "await expect(sso(page).getByRole('heading', { name: 'Example sign-in complete', exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 631,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('64');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 632,
+          "expression": "expect(await exactOpacity(page).evaluate((node, previous) => node === previous, previousEditor)).toBe(false);",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 633,
+          "expression": "expect(await exactOpacity(page).evaluate(node => (node as HTMLInputElement).validity.valid)).toBe(true);",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 635,
+          "expression": "await expect(settings(page).getByRole('button', { name: 'Deliver held response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 639,
+          "expression": "await expect(settings(page).locator('[data-settings-saved]')).toHaveText('74% opacity \u00b7 PNG \u00b7 Portrait \u00b7 Background included');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 640,
+          "expression": "await expect(settings(page).locator('[data-settings-status]')).toHaveText('Saved revision 2.');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 649,
+          "expression": "await expect(composer(page)).toHaveValue('Make the cover image a little stronger.\\nKeep the text easy to read.');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 650,
+          "expression": "expect(await composer(page).evaluate((node, previous) => node === previous, previousComposer)).toBe(false);",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 651,
+          "expression": "await expect(chat(page).getByRole('article', { name: 'You message', exact: true })).toHaveCount(0);",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 652,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 654,
+          "expression": "await expect(chat(page).getByRole('button', { name: 'Release pending response', exact: true })).toBeDisabled();",
+          "nativeCases": [
+            "workflows:workflow-reconnect"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:workflow-reconnect"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Native retained node disconnected plus unique newly named replacement establishes new editor; exact saved status and reset current chat value added.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "each direct workflow page exposes labelled controls and passes scoped accessibility checks before and after interaction",
+      "line": 658,
+      "assertions": [
+        {
+          "line": 684,
+          "expression": "await expect(scene.locator('[role=\"status\"], output')).toHaveCount(owners.reduce((total, owner) => total + owner.count, 0));",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 687,
+          "expression": "await expect(nodes).toHaveCount(owner.count);",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 688,
+          "expression": "await expect(nodes.nth(index)).toHaveRole('status');",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "dom-role-only"
+        },
+        {
+          "line": 689,
+          "expression": "expect(await nodes.evaluateAll((elements, visible) => elements.every(element => element.checkVisibility() === visible), owner.visible), `${id}: ${owner.selector} visibility`).toBe(true);",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 692,
+          "expression": "await expect(scene.locator('#settings-command-status')).toBeEmpty();",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 693,
+          "expression": "await expect(scene.locator('#settings-command-status')).toHaveAttribute('aria-atomic', 'true');",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 700,
+          "expression": "await expect(sso(page).locator('[data-sso-validation]')).toBeFocused();",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 704,
+          "expression": "await expect(exactOpacity(page)).toBeFocused();",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 713,
+          "expression": "expect(result.violations).toEqual([]);",
+          "nativeCases": [
+            "workflows:workflow-accessibility"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:workflow-accessibility"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Same six axe state scans/tags and owner counts/visibility. Roles are authored/implicit DOM observations rather than full platform-computed role assertions. Incomplete axe findings remain separate. Chromium-only screenshots are not new Firefox visual acceptance.",
+      "unverified": [
+        "computed-status-roles"
+      ]
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "each direct and legacy document owns one isolated SSR workflow without JavaScript",
+      "line": 718,
+      "assertions": [
+        {
+          "line": 725,
+          "expression": "await expect(serverPage.getByRole('navigation', { name: 'Documentation pages', exact: true }).getByRole('link', { name: 'Workflows', exact: true })).toHaveAttribute('href', workflowPages.sso.path);",
+          "nativeCases": [
+            "first-paint:no-js-documents"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 731,
+          "expression": "expect(response?.ok()).toBe(true);",
+          "nativeCases": [
+            "first-paint:no-js-documents"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 732,
+          "expression": "expect(response?.request().redirectedFrom()).toBeNull();",
+          "nativeCases": [
+            "first-paint:no-js-documents"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 733,
+          "expression": "await expect(serverPage.locator('en-workflows-app')).toHaveAttribute('data-ssr', '');",
+          "nativeCases": [
+            "first-paint:no-js-documents"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 738,
+          "expression": "expect(new URL(href!, serverPage.url()).pathname).toBe(destination.path);",
+          "nativeCases": [
+            "first-paint:no-js-documents"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 740,
+          "expression": "await expect(serverPage.getByRole('navigation', { name: 'Documentation pages', exact: true }).getByRole('link', { name: 'Workflows', exact: true })).toHaveAttribute('href', workflowPages.sso.path);",
+          "nativeCases": [
+            "first-paint:no-js-documents"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "first-paint:no-js-documents"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Browser-observed document statuses and redirects with negative404/302 controls. All six workflows and legacy URLs covered; stricter than primary three only.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "native page navigation, history and legacy links preserve preview context",
+      "line": 746,
+      "assertions": [
+        {
+          "line": 752,
+          "expression": "await expect(page.getByRole('radio', { name: 'Dark', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 761,
+          "expression": "expect(await page.evaluate(() => (window as any).__workflowDocumentMarker)).toBeUndefined();",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 764,
+          "expression": "expect(url.searchParams.has('progress-report')).toBe(true);",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 765,
+          "expression": "expect(url.searchParams.get('review')).toBe('workflow-pages');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 766,
+          "expression": "expect(url.searchParams.get('theme')).toBe('dark');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 767,
+          "expression": "expect(url.searchParams.get('density')).toBe('compact');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 768,
+          "expression": "expect(url.searchParams.get('direction')).toBe('rtl');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 769,
+          "expression": "await expect(page.getByRole('radio', { name: 'Dark', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 770,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Density', exact: true })).toHaveValue('compact');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 771,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Reading direction', exact: true })).toHaveValue('rtl');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 772,
+          "expression": "await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 775,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('64');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 780,
+          "expression": "await expect(source).toBeVisible();",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 782,
+          "expression": "expect(sourceText?.length).toBeGreaterThan(0);",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 784,
+          "expression": "await expect(exactOpacity(page)).toHaveValue('64');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 785,
+          "expression": "await expect(source).toHaveText(sourceText ?? '');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 790,
+          "expression": "await expect(chat(page).getByTestId('chat-current')).toHaveText('Current: 68% opacity \u00b7 revision 7');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 801,
+          "expression": "await expect(sso(page).getByRole('textbox', { name: 'Workspace', exact: true })).toHaveValue('');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 808,
+          "expression": "expect(url.searchParams.has('progress-report')).toBe(true);",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 809,
+          "expression": "expect(url.searchParams.get('review')).toBe('legacy');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 810,
+          "expression": "expect(url.hash).toBe(`#${id}`);",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 811,
+          "expression": "await expect(page.getByRole('radio', { name: 'Dark', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 812,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Density', exact: true })).toHaveValue('spacious');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 813,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Reading direction', exact: true })).toHaveValue('rtl');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 817,
+          "expression": "await expect(page.getByRole('radio', { name: 'Auto', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 818,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Density', exact: true })).toHaveValue('comfortable');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 819,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Reading direction', exact: true })).toHaveValue('ltr');",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 823,
+          "expression": "expect(normalized.searchParams.has('progress-report')).toBe(true);",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 824,
+          "expression": "expect(normalized.searchParams.has(key)).toBe(false);",
+          "nativeCases": [
+            "workflows:workflow-history"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:workflow-history"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Corresponding native input, public state, exact text, focus and visibility outcomes reviewed against the original case. Shared readiness/isolation and runtime journal apply.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/workflows.spec.ts",
+      "sourceSHA256": "0b43ddee45326d74af936104e29f69b5091abcbe493ac552cbfe9633d1a27500",
+      "title": "narrow portrait and landscape RTL workflow pages remain usable without horizontal page overflow",
+      "line": 827,
+      "assertions": [
+        {
+          "line": 834,
+          "expression": "await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 838,
+          "expression": "await expect(direction).toHaveValue('rtl');",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 839,
+          "expression": "await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 840,
+          "expression": "expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1)).toBe(true);",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 844,
+          "expression": "await expect(sso(page).getByRole('textbox', { name: 'Workspace', exact: true })).toHaveValue('Narrow studio');",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 847,
+          "expression": "await expect(settings(page).locator('[data-settings-current]')).toContainText('66% opacity');",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 850,
+          "expression": "await expect(composer(page)).toHaveValue('Review this on a small screen');",
+          "nativeCases": [
+            "workflows:workflow-narrow-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:workflow-narrow-rtl"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Original test intentionally skips Firefox/WebKit. Native Firefox adds two viewport sizes with real UI direction selection and native link navigation; no physical-device or screenshot acceptance.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/selection.spec.ts",
+      "sourceSHA256": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+      "title": "Selection SSR keeps the native input, early query and selection range through hydration without accepting the query",
+      "line": 81,
+      "assertions": [
+        {
+          "line": 88,
+          "expression": "await expect(page.locator('en-workflows-app')).toHaveAttribute('data-ssr', '');",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 91,
+          "expression": "await expect(input).toHaveValue(initialProject);",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 92,
+          "expression": "await expect(input).toHaveAccessibleDescription('Type to filter, then choose a project. Typing alone does not change the assignment.');",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "unverified-computed-description"
+        },
+        {
+          "line": 98,
+          "expression": "await expect(input).toHaveValue('Studio');",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 99,
+          "expression": "await expect(input).toBeFocused();",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 100,
+          "expression": "expect(await input.evaluate((node, before) => ({\n\t\t\tsame: node === before,\n\t\t\tstart: (node as HTMLInputElement).selectionStart,\n\t\t\tend: (node as HTMLInputElement).selectionEnd,\n\t\t\tdirection: (node as HTMLInputElement).selectionDirection,\n\t\t}), original)).toEqual({ same: true, start: 1, end: 4, direction: 'backward' });",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 106,
+          "expression": "await expect(input).toHaveAttribute('aria-expanded', 'false');",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 108,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText('No assignment submitted.');",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 110,
+          "expression": "await expect(input).toHaveValue(initialProject);",
+          "nativeCases": [
+            "first-paint:selection-hydration"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "first-paint:selection-hydration"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Same editing/selection and accepted value/FormData boundary. Original computed accessible-description assertion remains unqualified; pre-upgrade native input targeted directly.",
+      "unverified": [
+        "computed-description",
+        "pre-upgrade-computed-name"
+      ]
+    },
+    {
+      "source": "apps/docs/tests/selection.spec.ts",
+      "sourceSHA256": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+      "title": "Selection submits an explicitly chosen ID, rejects unavailable or unfinished queries, and resets the form receipt",
+      "line": 115,
+      "assertions": [
+        {
+          "line": 121,
+          "expression": "await expect(scene(page).getByRole('option')).toHaveCount(40);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 122,
+          "expression": "await expect(scene(page).getByRole('option', { disabled: true })).toHaveCount(3);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 125,
+          "expression": "await expect(input).toHaveValue(finalProject);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 128,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText(`Submission 1: ${finalProject} \u00b7 project=project-40`);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 129,
+          "expression": "await expect(scene(page).locator('[data-selection-status]')).toHaveText(`Assignment 1 recorded locally for ${finalProject}.`);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 133,
+          "expression": "await expect(unavailable).toBeDisabled();",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 136,
+          "expression": "expect(unavailableBox).not.toBeNull();",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 142,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText(`Submission 1: ${finalProject} \u00b7 project=project-40`);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 144,
+          "expression": "await expect(input).toHaveValue(finalProject);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 147,
+          "expression": "await expect(scene(page).getByText('No matching options.', { exact: true })).toBeVisible();",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 152,
+          "expression": "expect(await form(page).evaluate(element => (element as HTMLFormElement).checkValidity())).toBe(false);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 153,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText(`Submission 1: ${finalProject} \u00b7 project=project-40`);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 155,
+          "expression": "await expect(input).toHaveValue(finalProject);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 156,
+          "expression": "expect(await form(page).evaluate(element => (element as HTMLFormElement).checkValidity())).toBe(true);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 160,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText(`Submission 1: ${finalProject} \u00b7 project=project-40`);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 162,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText('Submission 2: Atlas \u00b7 Website refresh \u00b7 project=project-10');",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 165,
+          "expression": "await expect(input).toHaveValue(initialProject);",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 167,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText('No assignment submitted.');",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 168,
+          "expression": "await expect(input).toHaveAttribute('aria-expanded', 'false');",
+          "nativeCases": [
+            "workflows:selection-options-reset",
+            "workflows:selection-assignment"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:selection-options-reset",
+        "workflows:selection-assignment"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Pointer-selected final option, disabled/unresolved queries, validity restoration, second assignment and reset now stay in one sequential journey; separate keyboard assignment case supplements it.",
+      "unverified": []
+    },
+    {
+      "source": "apps/docs/tests/selection.spec.ts",
+      "sourceSHA256": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+      "title": "Selection supports keyboard scrolling and real project selection in narrow RTL layouts with scoped accessibility checks",
+      "line": 171,
+      "assertions": [
+        {
+          "line": 176,
+          "expression": "await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 177,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Reading direction', exact: true })).toHaveValue('rtl');",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 180,
+          "expression": "expect(beforeScroll.range).toBeGreaterThan(0);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 182,
+          "expression": "await expect(scrollport).toBeFocused();",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 185,
+          "expression": "expect(await scrollport.evaluate(element => {\n\t\t\tconst style = getComputedStyle(element);\n\t\t\treturn style.outlineStyle !== 'none' && parseFloat(style.outlineWidth) > 0;\n\t\t})).toBe(true);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 192,
+          "expression": "await expect(input).toHaveAttribute('aria-expanded', 'true');",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 194,
+          "expression": "await expect(list).toBeVisible();",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 200,
+          "expression": "expect(listBounds).not.toBeNull();",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 201,
+          "expression": "expect(inputBounds).not.toBeNull();",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 203,
+          "expression": "expect(geometry.overflow).toBe(false);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 204,
+          "expression": "expect(listBounds!.x).toBeGreaterThanOrEqual(-1);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 205,
+          "expression": "expect(listBounds!.x + listBounds!.width).toBeLessThanOrEqual(geometry.width + 1);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 206,
+          "expression": "expect(listBounds!.y).toBeGreaterThanOrEqual(-1);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 207,
+          "expression": "expect(listBounds!.y + listBounds!.height).toBeLessThanOrEqual(geometry.height + 1);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 208,
+          "expression": "expect(listBounds!.y + listBounds!.height <= inputBounds!.y + 1 || listBounds!.y >= inputBounds!.y + inputBounds!.height - 1).toBe(true);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 209,
+          "expression": "await expect(input).toBeFocused();",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 213,
+          "expression": "expect(result.violations).toEqual([]);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 216,
+          "expression": "await expect(input).toHaveValue(initialProject);",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 219,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText('Submission 1: Lumen \u00b7 Accessibility guide \u00b7 project=project-31');",
+          "nativeCases": [
+            "workflows:selection-rtl"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "workflows:selection-rtl"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "Native PageDown, visible named popup, expanded/controls relationships, geometry, focus, axe and assignment. Screenshot attachment from original Playwright suite is not regenerated as native visual evidence.",
+      "unverified": [
+        "native-visual-artifact"
+      ]
+    },
+    {
+      "source": "apps/docs/tests/selection.spec.ts",
+      "sourceSHA256": "4d5ec72af0ade19c4c6f65782bf94f33f113978839571ad287979b43b82403ee",
+      "title": "all six workflow documents remain separately addressable and native navigation preserves preview and unrelated query values",
+      "line": 223,
+      "assertions": [
+        {
+          "line": 230,
+          "expression": "expect(response?.ok()).toBe(true);",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 231,
+          "expression": "await expect(serverPage.locator('en-workflows-app')).toHaveAttribute('data-ssr', '');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 236,
+          "expression": "expect(new URL((await link.getAttribute('href'))!, serverPage.url()).pathname).toBe(destination.path);",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 248,
+          "expression": "expect(url.searchParams.has('progress-report')).toBe(true);",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 249,
+          "expression": "expect(url.searchParams.get('review')).toBe('selection-navigation');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 250,
+          "expression": "expect(url.searchParams.get('theme')).toBe('dark');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 251,
+          "expression": "expect(url.searchParams.get('density')).toBe('compact');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 252,
+          "expression": "expect(url.searchParams.get('direction')).toBe('rtl');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 253,
+          "expression": "await expect(page.getByRole('radio', { name: 'Dark', exact: true })).toBeChecked();",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 254,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Density', exact: true })).toHaveValue('compact');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 255,
+          "expression": "await expect(page.getByRole('combobox', { name: 'Reading direction', exact: true })).toHaveValue('rtl');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 256,
+          "expression": "await expect(page.locator('html')).toHaveAttribute('dir', 'rtl');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 267,
+          "expression": "expect(await page.evaluate(() => (window as Window & { selectionDocumentMarker?: boolean }).selectionDocumentMarker)).toBeUndefined();",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 270,
+          "expression": "await expect(project(page)).toHaveValue(initialProject);",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        },
+        {
+          "line": 271,
+          "expression": "await expect(scene(page).locator('[data-selection-submission]')).toHaveText('No assignment submitted.');",
+          "nativeCases": [
+            "first-paint:no-js-documents",
+            "workflows:workflow-navigation"
+          ],
+          "comparison": "corresponding-outcome-reviewed"
+        }
+      ],
+      "nativeCases": [
+        "first-paint:no-js-documents",
+        "workflows:workflow-navigation"
+      ],
+      "review": "source-outcome-comparison",
+      "adaptation": "HTTP/no-JS checks and native six-link navigation are separate cases; initial assignment and final fresh-document reset plus actual theme/density/direction controls now match.",
+      "unverified": []
+    }
+  ],
+  "limitations": [
+    "No full native AX, spoken output, physical IME/device or cross-OS qualification.",
+    "Native source comparison is not equivalence of every protocol action or timing. Explicit input and fixture-grouping adaptations are retained.",
+    "The two SSO descriptions and one Selection description, pre-upgrade computed labels and computed status roles need separate platform evidence. Original Playwright checks remain intact.",
+    "Original screenshot candidates and incomplete contrast findings remain review obligations.",
+    "Fresh native receipt must bind these sources; this map alone records a review, never a browser pass."
+  ]
+}

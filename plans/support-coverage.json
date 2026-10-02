@@ -422,6 +422,13 @@
       "path": "tooling/metadata/verification/consumer-20261002.json",
       "sha256": "572021621e30ddde375160c69d0978ba156f6e88cccdc2b69720efde2282a618",
       "scope": "Original verification \u00a77.5c: packed CEM discovery/retrieval, generated typed consumer and9 real browser interactions;11 generation controls and14 pathway controls passed."
+    },
+    {
+      "id": "firefox-assertions-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-assertions-20261002.json",
+      "sha256": "e323f294a92e08f72294f2f0cefb5507d5b60220ac43c101fb32811675ed07ca",
+      "scope": "Fresh actual Firefox156.0.1/157.0:48 workflow cases (including two log-journal controls),12 first-paint/network cases,120 retained packed-consumer cases.27 original test cases source-compared with explicit limits."
     }
   ],
   "conditions": [
@@ -484,10 +491,11 @@
         "firefox-history-20261002",
         "firefox-readiness-20261002",
         "firefox-interactions-20261002",
-        "firefox-documents-20261002"
+        "firefox-documents-20261002",
+        "firefox-assertions-20261002"
       ],
-      "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents with browser-observed HTTP/redirect/header-link checks and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact protocol/assertion differences, other OS/device/manual scope remain. Chrome154.0.8037.98 and Edge154.0.4258.53 qualify60 consumer and26 production checks each. Safari27 remains hidden pending visible-desktop clarification.",
-      "nextAction": "Audit remaining exact original semantic/description assertions and original reusable-layer/discovery requirements against actual evidence. Preserve other-product/OS/device/manual obligations."
+      "gap": "Actual Firefox156.0.1/157.0 now have an explicit source comparison for all27 original workflow/selection cases and180 fresh native checks. Computed descriptions, pre-upgrade computed labels, computed status roles, native visual artifacts and incomplete contrast/manual/physical acceptance remain. Safari27 still lacks a qualified visible-desktop run; other products/OSes remain as recorded.",
+      "nextAction": "Qualify the explicit native semantic/visual and actual-product/OS/device/manual gaps; the original source comparison itself is now recorded, not an unspecified unfinished audit."
     },
     {
       "id": "browser-previous",
@@ -506,10 +514,11 @@
         "firefox-history-20261002",
         "firefox-readiness-20261002",
         "firefox-interactions-20261002",
-        "firefox-documents-20261002"
+        "firefox-documents-20261002",
+        "firefox-assertions-20261002"
       ],
-      "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents with browser-observed HTTP/redirect/header-link checks and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact protocol/assertion differences, other OS/device/manual scope remain. Edge153.0.4234.48 qualifies60 consumer and26 production checks. Preceding retail Chrome/Safari remain unqualified.",
-      "nextAction": "Audit remaining exact original semantic/description assertions and original reusable-layer/discovery requirements against actual evidence. Preserve other-product/OS/device/manual obligations."
+      "gap": "Actual Firefox156.0.1/157.0 now have an explicit source comparison for all27 original workflow/selection cases and180 fresh native checks. Computed descriptions, pre-upgrade computed labels, computed status roles, native visual artifacts and incomplete contrast/manual/physical acceptance remain. Preceding retail Chrome/Safari remain unqualified; other OSes/manual scope remain.",
+      "nextAction": "Qualify the explicit native semantic/visual and actual-product/OS/device/manual gaps; the original source comparison itself is now recorded, not an unspecified unfinished audit."
     },
     {
       "id": "framework-release-lines",

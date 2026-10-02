@@ -230,3 +230,7 @@ Local main `e4606d2e13d7bd54c9410604bf12eb17cdb50971` qualifies ten color/style-
 ## Packed helper consumers
 
 Local main `e29ffc7c0c006d96f186d9ab9faa753bccab92b8` qualifies three SSR/scroll helper entries. See `probes/helper-recipes/README.md` for scope and browser limits.
+
+## Native Firefox assertion comparison
+
+Local main `7dd38008b371690f4a2c7431e0a51a31e56d5474` qualifies native Firefox workflow and hydration assertions. See `probes/native-browser-products/assertion-comparison.md` for scope and browser limits.
