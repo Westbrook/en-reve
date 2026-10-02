@@ -1,1 +1,0 @@
-import{t as e}from"./skeleton-CwV2ZlTG.js";e();

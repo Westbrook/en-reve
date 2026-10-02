@@ -1,0 +1,1 @@
+import{t as e}from"./skeleton-Cli09uYT.js";e();

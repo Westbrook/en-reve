@@ -1,0 +1,1 @@
+import{t as e}from"./data-table-DadXmbom.js";e();

@@ -1,0 +1,1 @@
+import{t as e}from"./badge-DZDkFlkY.js";e();
