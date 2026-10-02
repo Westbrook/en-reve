@@ -1,5 +1,5 @@
 import { html } from 'lit';
-import { contentCollectionTemplate, emptyStateTemplate, fileCardTemplate, metadataListTemplate, type CollectionLayout } from '../../src/templates/content.js';
+import { contentCollectionTemplate, emptyStateTemplate, fileCardTemplate, metadataListTemplate, type CollectionLayout } from '@en-reve/primitives/templates/content.js';
 
 export const initialState = () => ({ layout: 'list' as CollectionLayout, availability: '', media: false, filtered: false, selected: false, loading: false });
 export function fixtureTemplate(state = initialState(), update: (patch: Partial<ReturnType<typeof initialState>>) => void = () => {}) {

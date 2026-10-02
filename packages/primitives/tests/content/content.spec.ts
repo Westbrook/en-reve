@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript', async ({ browser, baseURL }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	const page = await context.newPage();
-	await page.goto('/fixture');
+	await page.goto('fixture');
 	const list = page.getByRole('list', { name: 'Handoff steps' });
 	await expect(page.locator('ol[aria-label="Handoff steps"]')).toHaveCount(1);
 	await expect(list).toHaveAttribute('start', '5');
@@ -22,7 +22,7 @@ test('native SSR lists preserve ordered numbering, metadata and optional omissio
 });
 
 test('hydration retains server nodes and geometry; updates preserve focus, optional content and key identity', async ({ page }) => {
-	await page.goto('/fixture?defer');
+	await page.goto('fixture?defer');
 	await page.waitForFunction(() => !!(window as any).contentFixture);
 	const before = await page.locator('#assets').boundingBox();
 	await page.evaluate(() => {
@@ -49,7 +49,7 @@ test('hydration retains server nodes and geometry; updates preserve focus, optio
 });
 
 test('native keyboard actions and download remain consumer-owned; no-results recovery restores collection', async ({ page, browserName }) => {
-	await page.goto('/fixture');
+	await page.goto('fixture');
 	await expect(page.locator('body')).toHaveAttribute('data-ready', 'true');
 	await page.getByRole('button', { name: 'Review draft', exact: true }).focus();
 	await page.keyboard.press(browserName === 'webkit' ? 'Alt+Tab' : 'Tab');
@@ -75,7 +75,7 @@ test('native keyboard actions and download remain consumer-owned; no-results rec
 
 test('long localized names, availability and metadata reflow at 320px enlarged RTL without clipping', async ({ page }, info) => {
 	await page.setViewportSize({ width: 320, height: 800 });
-	await page.goto('/fixture');
+	await page.goto('fixture');
 	await expect(page.locator('body')).toHaveAttribute('data-ready', 'true');
 	await page.evaluate(() => {
 		document.documentElement.dir = 'rtl';
@@ -94,7 +94,7 @@ test('long localized names, availability and metadata reflow at 320px enlarged R
 
 
 test('retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry', async ({ page }) => {
-	await page.goto('/fixture?defer&loading');
+	await page.goto('fixture?defer&loading');
 	await page.waitForFunction(() => !!(window as any).contentFixture);
 	const region = page.locator('#retained');
 	await expect(region).toHaveAttribute('aria-busy', 'true');
@@ -122,10 +122,11 @@ test('retained fields have decorative server placeholders and hydrate without ch
 test('server-authored loading is already in place without JavaScript', async ({ browser, baseURL }) => {
 	const context = await browser.newContext({ javaScriptEnabled: false, baseURL });
 	const page = await context.newPage();
-	await page.goto('/fixture?loading');
+	await page.goto('fixture?loading');
 	const region = page.locator('#retained');
 	await expect(region).toHaveAttribute('aria-busy', 'true');
 	await expect(region.getByRole('button')).toHaveCount(0);
+	expect(await region.locator('en-skeleton').count()).toBeGreaterThan(0);
 	for (const skeleton of await region.locator('en-skeleton').all()) {
 		await expect(skeleton).toBeVisible();
 		await expect(skeleton).toHaveAttribute('aria-hidden', 'true');

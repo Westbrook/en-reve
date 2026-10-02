@@ -1,0 +1,1046 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "at": "2026-10-02T08:37:18.158746+00:00",
+  "sourceBase": "9d2138dc9b32f386fce49e4fc4105cd3666678e6",
+  "pathway": "native-recipes",
+  "command": "EN_EXECUTION_OUTPUT=<fresh> tooling/test-pipeline/with-toolchain.sh npm run test:union -- --pathways=native-recipes",
+  "output": "/private/tmp/en-native-recipes-20261002-03",
+  "reports": {
+    "packed": {
+      "stats": {
+        "startTime": "2026-10-02T08:34:02.802Z",
+        "duration": 36261.393000000004,
+        "expected": 78,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "project": "chromium-content-lit",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-lit",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-lit",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-lit",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-lit",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-lit",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-css",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-css",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-css",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-css",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-css",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-content-css",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-lit",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-lit",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-lit",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-lit",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-lit",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-lit",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-css",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-css",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-css",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-css",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-css",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-content-css",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-lit",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-lit",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-lit",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-lit",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-lit",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-lit",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-css",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-css",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-css",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-css",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-css",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-content-css",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-lit",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "chromium-navigation-css",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-lit",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "firefox-navigation-css",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-lit",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "webkit-navigation-css",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        }
+      ],
+      "reportSHA256": "840a1e4b5be9cdb3f6c13c7907271d22b1938c5c752a5c1ffca3ec68f5ad59e0"
+    },
+    "content-owner": {
+      "stats": {
+        "startTime": "2026-10-02T08:34:39.381Z",
+        "duration": 3957.9849999999997,
+        "expected": 18,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "project": "chromium",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "native SSR lists preserve ordered numbering, metadata and optional omissions without JavaScript",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "hydration retains server nodes and geometry; updates preserve focus, optional content and key identity",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "native keyboard actions and download remain consumer-owned; no-results recovery restores collection",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "long localized names, availability and metadata reflow at 320px enlarged RTL without clipping",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "retained fields have decorative server placeholders and hydrate without changing authored nodes or geometry",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "server-authored loading is already in place without JavaScript",
+          "status": "passed"
+        }
+      ],
+      "reportSHA256": "bd97551271a304efb1b7580d991e9b7203111574d7d7833ec943ba5f7c1033d7"
+    },
+    "navigation-owner": {
+      "stats": {
+        "startTime": "2026-10-02T08:34:43.601Z",
+        "duration": 11156.206,
+        "expected": 21,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "project": "chromium",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "chromium",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "firefox",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "SSR native skip and breadcrumb semantics work with JavaScript disabled",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "ordinary keyboard fragments preserve native focus, next Tab and history",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "wrapped RTL navigation measures its actual height and keeps complete focus contours",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "manual wheel and keyboard interaction cannot be undone by refresh or late initial follow",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "new-tab, modified and ancestor-canceled clicks do not hijack the current page",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "nested scrolling follows native ancestors and scoped attachments clean up ownership",
+          "status": "passed"
+        },
+        {
+          "project": "webkit",
+          "title": "a full child theme resets navigation overrides while preserving measured geometry",
+          "status": "passed"
+        }
+      ],
+      "reportSHA256": "53fc086aa59a4b2720f993ff9b2b9b0979b94802e77e321414688bcc2a7cc5c8"
+    }
+  },
+  "nodeControls": {
+    "tests": 18,
+    "failed": 0,
+    "passed": 18,
+    "cancelled": 0,
+    "skipped": 0,
+    "todo": 0,
+    "topLevel": 18,
+    "suites": 0
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+        "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110",
+        "setup": {
+          "key": "8dd608a0ea92eb2f80161a1961f9ecc3819fde3328a9cd84b076bbd479cd4502",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:33:57.784Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "8dd608a0ea92eb2f80161a1961f9ecc3819fde3328a9cd84b076bbd479cd4502",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:33:57.784Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "8dd608a0ea92eb2f80161a1961f9ecc3819fde3328a9cd84b076bbd479cd4502",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:33:57.784Z"
+        }
+      },
+      {
+        "name": "@en-reve/elements",
+        "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+        "shasum": "9afb616f25903183b536db82c11032145bf40d46",
+        "setup": {
+          "key": "8dd608a0ea92eb2f80161a1961f9ecc3819fde3328a9cd84b076bbd479cd4502",
+          "reused": false,
+          "originatingProducer": "2026-10-02T08:33:57.784Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/elements/dist/define/skeleton.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/content.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/anchor-navigation.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/navigation.d.ts",
+        "node_modules/@en-reve/tokens/dist/types.d.ts",
+        "node_modules/@en-reve/tokens/dist/value.d.ts",
+        "node_modules/@en-reve/tokens/dist/graph.d.ts",
+        "node_modules/@en-reve/tokens/dist/theme.d.ts",
+        "node_modules/@en-reve/tokens/dist/color.d.ts",
+        "node_modules/@en-reve/tokens/dist/recipes.d.ts",
+        "node_modules/@en-reve/tokens/dist/css.d.ts",
+        "node_modules/@en-reve/tokens/dist/admin.d.ts",
+        "node_modules/@en-reve/tokens/dist/candidate.d.ts",
+        "node_modules/@en-reve/tokens/dist/review-draft.d.ts",
+        "node_modules/@en-reve/tokens/dist/source.d.ts",
+        "node_modules/@en-reve/tokens/dist/sizing.d.ts",
+        "node_modules/@en-reve/tokens/dist/hash.d.ts",
+        "node_modules/@en-reve/tokens/dist/customization-data.d.ts",
+        "node_modules/@en-reve/tokens/dist/customization.d.ts",
+        "node_modules/@en-reve/tokens/dist/overrides.d.ts",
+        "node_modules/@en-reve/tokens/dist/properties.d.ts",
+        "node_modules/@en-reve/tokens/dist/theme-pair.d.ts",
+        "node_modules/@en-reve/tokens/dist/review-pair.d.ts",
+        "node_modules/@en-reve/tokens/dist/patch.d.ts",
+        "node_modules/@en-reve/tokens/dist/authoring.d.ts",
+        "node_modules/@en-reve/tokens/dist/relationships.d.ts",
+        "node_modules/@en-reve/tokens/dist/index.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/registration.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/internal/element-registry.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/internal/child-upgrades.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/element-scope.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/internal/en-element.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/activity.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/feedback.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton/template.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton/element.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton/index.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/skeleton.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/define/skeleton.js",
+      "node_modules/lit-html/private-ssr-support.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/@lit-labs/ssr-client/lib/hydrate-lit-html.js",
+      "node_modules/@lit-labs/ssr-client/index.js",
+      "node_modules/lit-html/directives/repeat.js",
+      "node_modules/lit/directives/repeat.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/content.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/content/fixture-template.ts",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/content/fixture.ts",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/anchor-navigation.js",
+      "node_modules/lit-html/directives/if-defined.js",
+      "node_modules/lit/directives/if-defined.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/navigation.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/navigation/fixture-template.ts",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/navigation/fixture.ts",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/value.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/derived.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/graph.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/recipe-data.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/color.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/hash.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/source.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/recipes.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/customization-data.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/customization.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/authoring.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/theme.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/overrides.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/scope.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/css.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/admin.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/candidate.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/review-draft.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/properties.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/theme-pair.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/review-pair.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/patch.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/relationships.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/index.js",
+      "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/tokens.ts"
+    ],
+    "entryInputs": {
+      "content": [
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/registration.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/internal/element-registry.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/element-scope.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/static-styles.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/internal/en-element.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/activity.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/styles/dist/feedback.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton/template.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton/element.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton/index.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/skeleton.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/definitions/skeleton.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/elements/dist/define/skeleton.js",
+        "node_modules/lit-html/private-ssr-support.js",
+        "node_modules/lit-html/directive.js",
+        "node_modules/lit-html/directive-helpers.js",
+        "node_modules/@lit-labs/ssr-client/lib/hydrate-lit-html.js",
+        "node_modules/@lit-labs/ssr-client/index.js",
+        "node_modules/lit-html/directives/repeat.js",
+        "node_modules/lit/directives/repeat.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/content.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/content/fixture-template.ts",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/content/fixture.ts",
+        "node_modules/lit-html/lit-html.js",
+        "node_modules/@lit/reactive-element/css-tag.js",
+        "node_modules/@lit/reactive-element/reactive-element.js",
+        "node_modules/lit-element/lit-element.js",
+        "node_modules/lit/index.js",
+        "node_modules/lit-html/is-server.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js"
+      ],
+      "navigation": [
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/anchor-navigation.js",
+        "node_modules/lit-html/directives/if-defined.js",
+        "node_modules/lit/directives/if-defined.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/navigation.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/navigation/fixture-template.ts",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/navigation/fixture.ts",
+        "node_modules/lit-html/lit-html.js",
+        "node_modules/@lit/reactive-element/css-tag.js",
+        "node_modules/@lit/reactive-element/reactive-element.js",
+        "node_modules/lit-element/lit-element.js",
+        "node_modules/lit/index.js",
+        "node_modules/lit-html/is-server.js"
+      ],
+      "tokens": [
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/value.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/derived.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/graph.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/recipe-data.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/color.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/hash.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/source.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/recipes.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/customization-data.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/customization.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/authoring.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/theme.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/index.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/overrides.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/scope.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/css.js",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/tokens.ts",
+        "../en-native-recipes-20261002-03/fixtures/native-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js"
+      ]
+    },
+    "assets": {
+      "chunk-CG6HBVVE.js": "3b6e2ea25b0ad9988a983be38f04a64a54345aa610216ab94c43487094901b95",
+      "chunk-S5H6H7LQ.js": "17a8149326c58c971dc47eb06ec4e8354ba522d268acc58626c62e7a65d921fa",
+      "content.css": "cafd240ca3a7ec4e66e23923666e876aa0dee665c5962fd560751478e6da63b3",
+      "content.js": "18eeb9d270c2fa27987921807c60b902ce37b1c7f0b8f21c03b4c37cd336397d",
+      "navigation.css": "15030c821f4936f62c6a7d334fdf30fb88e3737bc2402bf7476d32a6fea693c6",
+      "navigation.js": "043d6b34ea67e073a10e8bf0c235eec4e241c1a76e222d8d598e6494eabb7349",
+      "tokens.js": "ee7e492c6bec232034e22e93871b15d4240a6bd79c4c0a0a04860c5c80ede7a9"
+    },
+    "portableCSS": {
+      "@en-reve/styles/foundations.css": "b61646e33ed957e513aa290ac5328af54ecb145243c1768c7978a1f50d433879",
+      "@en-reve/styles/content.css": "7b1a94001eb7a471ccb0b6ca989d01ab4f99f0118c00dc644a4ee34e7e62bb8a",
+      "@en-reve/styles/navigation.css": "15030c821f4936f62c6a7d334fdf30fb88e3737bc2402bf7476d32a6fea693c6"
+    },
+    "pages": {
+      "content-lit-false.html": "f7326d7a16982fea9f6512bc55b4c3d56ee0a6256af08713474bccf84f5b2aa9",
+      "content-css-false.html": "f138e814c7dc55cb36d060e5b3581ef5bd04a37c481b9c0651e5a9dff0595033",
+      "content-lit-true.html": "9d3b40a6d1ff50a2b2a32c681a648e348483af15ad904dc2acd921092018582c",
+      "content-css-true.html": "701ecd7e56cc51001877046607ade4fbc1f80b0e4be9cf9de280cef08902e401",
+      "navigation-lit-single-ltr.html": "e7e35755a829ac4a35694d274fa160653e10dc9136c9db60e1fd1d6eeb9a6004",
+      "navigation-lit-single-rtl.html": "436361164be1e82bcd9947197a170154cdd1c323d0725375e9c9dea9785e5f64",
+      "navigation-lit-nested-ltr.html": "c90a533c536bb9af257f31f4b608628294a2457ad54bd72fbc82ea6848ab9d58",
+      "navigation-lit-nested-rtl.html": "b1a9044a7c0068be26c45de76374d16b25f68496f76e75e48f16741a0d70e9b4",
+      "navigation-lit-two-ltr.html": "76ff60139bc109ac5c399b91186963b9e069729253e39fe476ba1cbec5c65feb",
+      "navigation-lit-two-rtl.html": "8efe695c06ec309d1a846ae7fed0a6ece1c5620286974a6871a87f3e48e02c42",
+      "navigation-css-single-ltr.html": "2f111f86f76ae5655bbc07b750d54a26b46a4277f7e16d469418924ace09e54e",
+      "navigation-css-single-rtl.html": "892857896e4dbd18805594fd1dcc9758525da2be620cbfeaade4f8e25128779d",
+      "navigation-css-nested-ltr.html": "48fd79a7a344583be3ae304d14308ae37da401f4e968752c3282a024778ba03d",
+      "navigation-css-nested-rtl.html": "483d1fed6bf762115b92d3e0d37ad998b1040201f3771bf952e792987ec52011",
+      "navigation-css-two-ltr.html": "ec1eaf95b84b34848c1958d1dcef781124bf755b06d5d2e9c5ad4f97df3c3634",
+      "navigation-css-two-rtl.html": "105cee5fba765a386d8e9f0b5501befff2c36d698965ec42dddb02fc9ce7fb44"
+    },
+    "sourceInputs": {
+      "packages/primitives/tests/content/fixture.ts": "2d92cc194bdff7cb7a2f72c784c7e1ebd04da6edda47a63d4007101deb8be448",
+      "packages/primitives/tests/content/fixture-template.ts": "2d9da61cf3677ec5616a61b2427f45e8056511887520420df3751a0a96f1a8fd",
+      "packages/primitives/tests/content/document.mjs": "a90acb90125bc7e8a4e64fb2e00ea7546787b5b9d50a11b34aaaa5f808274be2",
+      "packages/primitives/tests/navigation/fixture.ts": "7e8b6e8aaea22683ae03bf77bae56d5c551d2ab6ba25523fcad1d586c84ed723",
+      "packages/primitives/tests/navigation/fixture-template.ts": "84fd5161c22979b46e509c1703e963f675213863d26822d21c850b1127dde41c",
+      "packages/primitives/tests/navigation/document.mjs": "8daf52df58a24c451043681f8c21569ff049d391c400c3f23b569aa1c2de5b4c",
+      "probes/native-recipes/render-pages.mjs": "9b157d174203c16c92870ba7460530fcd4a22646286d3d32c518cb36cb895a91"
+    },
+    "limits": [
+      "Maintained alternate content/navigation recipes; only skeleton is explicitly registered for authored placeholders.",
+      "No retail/physical browser, manual AT, physical IME or universal framework SSR claim."
+    ]
+  },
+  "sourceInputs": {
+    "packages/primitives/tests/content/fixture-template.ts": "2d9da61cf3677ec5616a61b2427f45e8056511887520420df3751a0a96f1a8fd",
+    "packages/primitives/tests/content/fixture.ts": "2d92cc194bdff7cb7a2f72c784c7e1ebd04da6edda47a63d4007101deb8be448",
+    "packages/primitives/tests/content/document.mjs": "a90acb90125bc7e8a4e64fb2e00ea7546787b5b9d50a11b34aaaa5f808274be2",
+    "packages/primitives/tests/content/content.spec.ts": "dd2e2a63b866e04b8ab4e2265cfcb7a41999d80550987ce1d3c3901a45ee5ccd",
+    "packages/primitives/tests/content/server.mjs": "bc4a34e38e133dfd62e15368bccaf80b1c07667406c4d94f594383635f2c1b40",
+    "packages/primitives/tests/content/playwright.config.ts": "62f70c3708153575b5d1695bd064b53604ef96e9f6083cbba2a36a687e1ab8f4",
+    "packages/primitives/tests/navigation/fixture-template.ts": "84fd5161c22979b46e509c1703e963f675213863d26822d21c850b1127dde41c",
+    "packages/primitives/tests/navigation/fixture.ts": "7e8b6e8aaea22683ae03bf77bae56d5c551d2ab6ba25523fcad1d586c84ed723",
+    "packages/primitives/tests/navigation/document.mjs": "8daf52df58a24c451043681f8c21569ff049d391c400c3f23b569aa1c2de5b4c",
+    "packages/primitives/tests/navigation/navigation.spec.ts": "be74f9cc7a3204670851e218f05323a714c82ee52d154268e36c35b7c0eeaa0e",
+    "packages/primitives/tests/navigation/server.mjs": "0ca2377dda7c0bf1e755b7b0f279380425628dfdd3eec5db3d222cab07873061",
+    "packages/primitives/tests/navigation/playwright.config.ts": "6e9d719e4e78911fd10d7695f54e8566ce431255d15bd815e41211f13a4fb2c6",
+    "probes/native-recipes/prepare.mjs": "a1d3889d5897754484d42ac2d7f30e6a1f243b5c4c7b4d754279fec2d6225813",
+    "probes/native-recipes/render-pages.mjs": "9b157d174203c16c92870ba7460530fcd4a22646286d3d32c518cb36cb895a91",
+    "probes/native-recipes/server.mjs": "a5c2e5de60253e679f6bc8ad81adee3a162aeed8fbecb9fb6fd2e70ad35a4a13",
+    "probes/native-recipes/playwright.config.ts": "143109bf592c674087251d88e4abd13bd1e2eaeda972046cec12d2626a496de8",
+    "tooling/testing/comprehensive.mjs": "913f8af2f28ec7f39cec98645af5c043b939e799ed4d9a28417bf3698f89d87f",
+    "tooling/testing/comprehensive.test.mjs": "46f31445f6e752c311b790f1e11554bd8e3b73228ef20cfac8eba640b89d16a2",
+    "tooling/testing/browser-ports.mjs": "aeafba66b38e9bf6e6bb2f2afe4cf4cc275032de93999bf45c1d8cf4407644a5",
+    "probes/reusable-layers/inventory.json": "96ed9de7472f03f9727d44ee3b3f38e885c1a70f963d970f1e4ba535f9850b4e",
+    "probes/reusable-layers/inventory.test.mjs": "520f13e71d01d983fcf30144fafa8ab0b97acc67fdbf5464c5af006e7d5227a1",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "executionSHA256": "a6713213a36a76612c89f29a17d77077a033d4b8ebab070a497db8eac6749859",
+  "priorRuns": [
+    {
+      "output": "/private/tmp/en-native-recipes-20261002-01",
+      "status": "passed",
+      "packedCases": 57,
+      "scope": "Content Lit/CSS and navigation CSS."
+    },
+    {
+      "output": "/private/tmp/en-native-recipes-20261002-02",
+      "status": "passed",
+      "packedCases": 78,
+      "scope": "Added navigation Lit delivery and explicit nonempty no-JS skeleton assertion."
+    }
+  ],
+  "limitations": [
+    "Eight additional public entries qualified only for documented alternate-composition scenarios. Other entries and generated examples remain pending.",
+    "Document-root native recipes using Lit SSR; not universal framework or Shadow DOM integration.",
+    "No native AT speech, physical-device/IME or retail-browser qualification."
+  ],
+  "owningContractsAndIntegrity": {
+    "output": "/private/tmp/en-native-recipes-tooling-20261002-01",
+    "status": "passed",
+    "nodeReports": [
+      {
+        "sources": [
+          "tooling/testing/support-ledger.test.mjs",
+          "tooling/releases/releases.test.ts",
+          "tooling/releases/source-identity.test.mjs",
+          "tooling/evidence/evidence.test.ts",
+          "tooling/metadata/metadata.test.ts",
+          "tooling/metadata/definition-graph.test.ts",
+          "tooling/metadata/delivery-inventory-validation.test.ts",
+          "tooling/metadata/type-snapshot.test.ts",
+          "tooling/customization/customization.test.mjs",
+          "tooling/metadata/public-contract.test.ts",
+          "tooling/browser/popup-measurement.test.ts"
+        ],
+        "counts": {
+          "tests": 122,
+          "failed": 0,
+          "passed": 122,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 122,
+          "suites": 0
+        },
+        "reportSHA256": "95f94daf41ac45472f578e83a4b0a4dde8bca2418d3e3a6dbfe4581fb9291ac2"
+      },
+      {
+        "sources": [
+          "packages/primitives/tests/calendar.test.mjs",
+          "packages/primitives/tests/chat-editor.test.mjs",
+          "packages/primitives/tests/collection-contract.test.mjs",
+          "packages/primitives/tests/component-patterns.test.mjs",
+          "packages/primitives/tests/editor-clipboard.test.mjs",
+          "packages/primitives/tests/editor-extensions.test.mjs",
+          "packages/primitives/tests/lifecycle.test.mjs",
+          "packages/primitives/tests/models.test.mjs",
+          "packages/primitives/tests/registration.test.mjs",
+          "packages/primitives/tests/table.test.mjs",
+          "packages/primitives/tests/tree-data.test.mjs",
+          "packages/primitives/tests/virtual-collection.test.mjs",
+          "packages/primitives/tests/virtual-rendering.test.mjs"
+        ],
+        "counts": {
+          "tests": 83,
+          "failed": 0,
+          "passed": 83,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 83,
+          "suites": 0
+        },
+        "reportSHA256": "03a75504883f8f6f2965e4657e5365a0a423fec2b48a6ca44bd7d6f830308e63"
+      },
+      {
+        "sources": [
+          "packages/primitives/tests/events.test.mjs"
+        ],
+        "counts": {
+          "tests": 29,
+          "failed": 0,
+          "passed": 29,
+          "cancelled": 0,
+          "skipped": 0,
+          "todo": 0,
+          "topLevel": 29,
+          "suites": 0
+        },
+        "reportSHA256": "72e2fa1f33a541794cb3dccc881422a927251e4cb4f2690de4d2e6954a53cbe8"
+      }
+    ],
+    "integrityPassed": 122,
+    "primitivesPassed": 112,
+    "executionSHA256": "d5449143797e119c5de961658e9db70db46484ef2b376422251653d3cbe13f14",
+    "productionBuild": "Fresh build:docs passed as an owning events-test prerequisite."
+  }
+}

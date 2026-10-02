@@ -162,12 +162,3 @@ test('reusable layers qualify alternate packed compositions without loading elem
  assert.equal(prepare.environment.EN_REUSABLE_LAYERS_OUT,'$RUN/fixtures/reusable-layers');
  assert(!ids.has('build:docs'));
 });
-
-
-test('native recipes qualify packed content/navigation with explicit skeleton and no docs build',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['native-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:elements','prepare:native-recipes','browser:probes/native-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id).sort(),['browser:packages/primitives/tests/content/playwright.config.ts','browser:packages/primitives/tests/navigation/playwright.config.ts','browser:probes/native-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:native-recipes').environment.EN_NATIVE_RECIPES_OUT,'$RUN/fixtures/native-recipes');
- assert(!ids.has('build:docs'));
-});

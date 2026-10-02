@@ -528,15 +528,36 @@ test('packed reusable-layer receipt preserves alternate-composition bounds and u
  const r=await json('probes/reusable-layers/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.stats.expected,48);assert.equal(r.stats.unexpected,0);assert.equal(r.stats.skipped,0);
  assert.equal(r.nodeControls.passed,17);assert.equal(r.packed.types.status,'passed');
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)) {
+  const retained=['tooling/testing/comprehensive.mjs','tooling/testing/comprehensive.test.mjs','tooling/testing/browser-ports.mjs'].includes(path)
+   ?'probes/reusable-layers/qualification-sources/9d2138dc/'+path.split('/').at(-1)+'.txt':path;
+  assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);
+ }
  for(const engine of ['chromium','firefox','webkit'])for(const [composition,count] of [['core',12],['recipes',4]]){
   const cases=r.cases.filter(c=>c.project===engine+'-'+composition);assert.equal(cases.length,count);assert(cases.every(c=>c.status==='passed'));
  }
  assert.deepEqual(r.packed.packages.map(p=>p.name).sort(),['@en-reve/primitives','@en-reve/styles','@en-reve/tokens']);
  assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(r.packed.inputs.every(path=>!path.includes('/@en-reve/elements/')&&!/\/packages\/[^/]+\/src\//.test(path)));
- const qualified=inventory.entries.filter(e=>e.qualification==='qualified-scenarios');assert.equal(qualified.length,15);
+ const qualified=inventory.entries.filter(e=>e.receipt==='probes/reusable-layers/verification-20261002.json');assert.equal(qualified.length,15);
  assert.equal(qualified.filter(e=>e.entry.startsWith('@en-reve/primitives/')).length,12);
- assert(inventory.entries.filter(e=>e.delivery==='css').every(e=>e.qualification==='pending'));
+ assert(qualified.every(e=>e.delivery==='module')); // This first batch did not execute portable CSS.
  assert.match(r.limitations.join(' '),/Generated examples remain/);
+});
+
+test('native recipe qualification binds both style deliveries, real SSR and original fixture owners',async()=>{
+ const r=await json('probes/native-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,18);assert.equal(r.packed.types.status,'passed');
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [name,count] of [['packed',78],['content-owner',18],['navigation-owner',21]]){
+  const report=r.reports[name];assert.equal(report.stats.expected,count);assert.equal(report.stats.unexpected,0);assert.equal(report.stats.skipped,0);assert(report.cases.every(c=>c.status==='passed'));
+ }
+ for(const engine of ['chromium','firefox','webkit'])for(const delivery of ['lit','css'])for(const [family,count] of [['content',6],['navigation',7]])assert.equal(r.reports.packed.cases.filter(c=>c.project===`${engine}-${family}-${delivery}`).length,count);
+ assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.entryInputs.navigation.some(path=>path.includes('/@en-reve/elements/')));
+ assert.deepEqual(r.packed.inputs.filter(path=>path.includes('/elements/dist/define/')).map(path=>path.split('/').at(-1)),['skeleton.js']);
+ assert.equal(Object.keys(r.packed.pages).length,16);
+ assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['@en-reve/styles/content.css','@en-reve/styles/foundations.css','@en-reve/styles/navigation.css']);
+ const qualified=inventory.entries.filter(e=>e.receipt==='probes/native-recipes/verification-20261002.json');assert.equal(qualified.length,8);assert.equal(qualified.filter(e=>e.delivery==='css').length,3);
+ assert.match(r.limitations.join(' '),/generated examples remain pending/);
 });

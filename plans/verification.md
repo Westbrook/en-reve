@@ -333,3 +333,5 @@ For screenshot investigations, distinguish main-thread layout readiness from com
 ### Reusable-layer qualification — 2 October 2026
 
 The first [packed alternate-composition batch](../probes/reusable-layers/README.md) passes 48 cases across three pinned engines. It qualifies named scenarios for 12 primitive modules and three Lit style families, with isolated tarballs and strict declarations. The exhaustive export inventory keeps remaining entries and CSS delivery pending; this is not completion of §7.4 or the platform/manual matrix.
+
+The [native content/navigation batch](../probes/native-recipes/README.md) extends §7.4 with eight more public entries:78 packed cases across both style delivery modes and39 original-owner cases pass. Full entry-by-entry qualification remains open; these receipts do not replace platform/manual evidence.

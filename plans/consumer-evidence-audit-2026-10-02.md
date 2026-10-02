@@ -88,3 +88,7 @@ remain in [the support ledger](support-coverage.md).
 ### Reusable-layer batch added after the audit
 
 The [packed reusable-layer fixture](../probes/reusable-layers/README.md) now runs the maintained core editing/form/focus composition from public package imports, plus a native-control/template/style recipe. All 48 browser cases pass. The source-observation table above describes the audit base; the core fixture no longer uses relative dist imports. The [exhaustive inventory](../probes/reusable-layers/inventory.json) records 12 primitive and three JavaScript style entries with bounded scenario qualification. Remaining entries, portable CSS and generated-example consumers stay open.
+
+### Native content/navigation qualification
+
+The [native-recipes batch](../probes/native-recipes/README.md) now qualifies maintained content/navigation recipes from isolated tarballs, using both Lit and portable CSS delivery.78 packed browser cases,39 original-owner cases and18 pathway/inventory controls pass. Content no longer imports source templates or source skeleton definitions; shared document shells keep both owners aligned. The source-observation table remains the historical audit baseline. Other inventory entries and independently generated examples remain open.

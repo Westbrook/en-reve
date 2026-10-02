@@ -1,6 +1,6 @@
 import { test, expect, type Page } from '@playwright/test';
 
-const fixture = '/fixture';
+const fixture = 'fixture';
 async function ready(page: Page, suffix = '') {
   await page.goto(fixture + suffix);
   await expect(page.locator('body')).toHaveAttribute('data-ready', 'true');

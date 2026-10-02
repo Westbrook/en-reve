@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "9d2138dc9b32f386fce49e4fc4105cd3666678e6",
-  "exportedAt": "2026-10-02T08:20:41.147929+00:00",
+  "sourceCommit": "3f2990e6efaad50fd268366c34aed1e62736bb35",
+  "exportedAt": "2026-10-02T08:40:34.315632+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5465,
-  "includedBytes": 150114574,
-  "qualification": "Packed reusable-layer batch qualified:48 isolated browser cases,17 pathway/inventory controls,36 existing-owner cases and121 integrity checks passed. Remaining entries, generated examples and platform/manual scope preserved.",
-  "latestUpdate": ".source-export/updates/reusable-layers-20261002.json",
+  "includedFiles": 5478,
+  "includedBytes": 150230910,
+  "qualification": "Native content/navigation recipes qualified:78 packed browser cases,39 original-owner cases and18 pathway/inventory controls passed. 112 owning primitive and122 integrity checks pass; remaining entries, generated examples and platform/manual scope preserved.",
+  "latestUpdate": ".source-export/updates/native-recipes-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

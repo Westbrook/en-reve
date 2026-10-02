@@ -146,3 +146,7 @@ Local main `7801a8daa781a78de74c69fa5f50b4b907cbb70b` qualifies CEM discovery, A
 ## Packed reusable layers
 
 Local main `9d2138dc9b32f386fce49e4fc4105cd3666678e6` qualifies 48 isolated packed-layer browser cases,17 pathway/inventory controls,36 existing-owner cases and121 integrity checks. See `probes/reusable-layers/README.md`. Remaining layer/example and platform/manual requirements stay open.
+
+## Packed native content/navigation recipes
+
+Local main `3f2990e6efaad50fd268366c34aed1e62736bb35` qualifies 78 packed browser cases across Lit and portable CSS,39 original-owner cases and18 pathway/inventory controls. 112 owning primitive and122 integrity checks pass. See `probes/native-recipes/README.md`. Remaining layer/example and platform/manual requirements stay open.

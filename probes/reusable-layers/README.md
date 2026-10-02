@@ -27,3 +27,5 @@ Contracts remain in the [primitives guide](../../packages/primitives/README.md) 
 [verification-20261002.json](verification-20261002.json) records 48 passing browser cases (12 core plus 4 recipes per engine), packed archive identities, resolved declarations, minified bundle identities, source hashes and 17 pathway/inventory controls. The initial strict compile caught an overly narrow inferred selection key in the fixture. The next run caught a WebKit pointer-focus assumption; the keyboard-focused disclosure check now explicitly activates with Enter. Both failed attempts remain retained separately.
 
 No component runtime was changed. Physical IME, native AT speech, retail/physical browser coverage, SSR for these new recipes, portable CSS counterparts, remaining entries, and independently generated example consumers are not inferred from this result. Owning-element and unit suites remain complementary.
+
+The next [native-recipes batch](../native-recipes/README.md) separately qualifies content/navigation and selected portable CSS exports. The inventory links each entry to its own bounded receipt; the first batch above remains unchanged.

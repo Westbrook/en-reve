@@ -6,9 +6,10 @@
       "entry": "@en-reve/primitives/interactions/anchor-navigation.js",
       "source": "packages/primitives/src/interactions/anchor-navigation.ts",
       "delivery": "module",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "navigation",
+      "contract": "packages/primitives/docs/navigation.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/primitives/interactions/breadcrumbs-projection.js",
@@ -303,9 +304,10 @@
       "entry": "@en-reve/primitives/templates/content.js",
       "source": "packages/primitives/src/templates/content.ts",
       "delivery": "module",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "content",
+      "contract": "packages/primitives/docs/content.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/primitives/templates/description.js",
@@ -338,9 +340,10 @@
       "entry": "@en-reve/primitives/templates/navigation.js",
       "source": "packages/primitives/src/templates/navigation.ts",
       "delivery": "module",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "navigation",
+      "contract": "packages/primitives/docs/navigation.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/primitives/templates/patterns.js",
@@ -653,17 +656,19 @@
       "entry": "@en-reve/styles/navigation.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "navigation",
+      "contract": "packages/primitives/docs/navigation.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/styles/content.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "content",
+      "contract": "packages/primitives/docs/content.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/styles/recipes.js",
@@ -685,9 +690,10 @@
       "entry": "@en-reve/styles/foundations.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "content",
+      "contract": "packages/primitives/docs/content.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/styles/typography.css",
@@ -765,17 +771,19 @@
       "entry": "@en-reve/styles/navigation.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "navigation",
+      "contract": "packages/primitives/docs/navigation.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/styles/content.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "pending",
-      "composition": null,
-      "contract": null
+      "qualification": "qualified-scenarios",
+      "composition": "content",
+      "contract": "packages/primitives/docs/content.md",
+      "receipt": "probes/native-recipes/verification-20261002.json"
     },
     {
       "entry": "@en-reve/styles/recipes.css",

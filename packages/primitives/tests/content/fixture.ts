@@ -1,5 +1,5 @@
 import { render } from 'lit';
-import '../../../elements/src/define/skeleton.js';
+import '@en-reve/elements/define/skeleton.js';
 import { hydrate } from '@lit-labs/ssr-client';
 import { fixtureTemplate, initialState } from './fixture-template.js';
 let state = { ...initialState(), loading: new URL(location.href).searchParams.has('loading') };

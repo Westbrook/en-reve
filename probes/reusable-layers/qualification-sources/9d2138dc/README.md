@@ -1,0 +1,1 @@
+Exact pipeline sources from local main 9d2138dc9b32f386fce49e4fc4105cd3666678e6 preserve verification-20261002.json as historical qualification. Later native-recipes tasks were not part of that run. Other receipt source identities remain bound to their recorded files.

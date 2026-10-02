@@ -11,10 +11,10 @@ test('inventory names every wildcard primitive and explicit style export without
  assert.equal(new Set(entries).size,entries.length);
  assert(inventory.entries.every(row=>['pending','qualified-scenarios'].includes(row.qualification)));
  for(const row of inventory.entries.filter(row=>row.qualification==='qualified-scenarios'))assert(row.composition&&row.contract&&row.receipt);
- assert(inventory.entries.filter(row=>row.delivery==='css').every(row=>row.qualification==='pending'));
+ for(const row of inventory.entries.filter(row=>row.delivery==='css'&&row.qualification==='qualified-scenarios'))assert.equal(row.receipt,'probes/native-recipes/verification-20261002.json');
 });
 test('compositions use only public imports and inventory links each exercised entry',async()=>{
- for(const [id,path] of [['core','packages/primitives/tests/browser/fixture.ts'],['recipes','probes/reusable-layers/recipes.ts']]){
+ for(const [id,path] of [['core','packages/primitives/tests/browser/fixture.ts'],['recipes','probes/reusable-layers/recipes.ts'],['content','packages/primitives/tests/content/fixture-template.ts'],['navigation','packages/primitives/tests/navigation/fixture-template.ts'],['navigation','packages/primitives/tests/navigation/fixture.ts']]){
   const source=await read(path),imports=[...source.matchAll(/from ['"](@en-reve\/[^'"]+)['"]/g)].map(match=>match[1]);
   assert(imports.length>0);assert(!source.includes('/dist/')&&!source.includes('/src/'));
   for(const entry of imports){const row=inventory.entries.find(row=>row.entry===entry);assert(row,entry);assert(row.composition===id || entry==='@en-reve/primitives/interactions/signal-controller.js',entry);}
