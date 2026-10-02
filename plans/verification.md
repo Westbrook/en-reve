@@ -441,3 +441,14 @@ from packed public imports.66/110 entries now have bounded receipts;44 remain.
 This finite composition does not qualify owning-element virtualization, physical
 touch, native AT, other OSs, retail Safari, full SSR/hydration or separate-owner
 acceptance. Historical external CSS-authoring rerun remains retired, never passed.
+
+### Native notification consumers — 2026-10-02
+
+[Notification recipes](../probes/notification-recipes/README.md) add seven entries
+with138 three-engine/dual-style cases,25 existing swatch passes, two declared
+non-Chromium forced-color skips and40 Node checks. Queue admission, native focus,
+application timers, safe announcements/history, feedback/loading semantics and
+scoped styles are verified from packed imports. Portable feedback swatch geometry
+is now opt-in; original component sizing remains compatible. A fresh SSR/docs
+build passes.73/110 entries have named-scenario receipts;37 and platform/manual/
+owner work remain. The historical authoring rerun stays retired, never passed.

@@ -206,3 +206,7 @@ Local main `49e642d8f15a27922f75cf09237a5658ce65af82` qualifies three calendar h
 ## Packed tree consumers
 
 Local main `add3b12b53effdb4581b3a79d2407e9ddf1b4505` qualifies four tree helper/style entries through120 native interaction cases. See `probes/tree-recipes/README.md` for scope and browser limits.
+
+## Packed notification consumers
+
+Local main `e5ec420ac6b5bd327858aa2e75c29c718ecf1ca2` qualifies seven notification helper/style entries and corrects portable feedback sizing. See `probes/notification-recipes/README.md` for scope and browser limits.

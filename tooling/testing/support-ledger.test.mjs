@@ -634,10 +634,25 @@ test('presentation receipt binds native patterns, both style forms and choice SS
  assert.match(r.limitations.join(' '),/full hydration/);assert.match(r.limitations.join(' '),/other51/);
 });
 
+test('notification consumer receipt binds admission, native lifecycle and scoped feedback sizing',async()=>{
+ const r=await json('probes/notification-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,40);assert.equal(r.stats.expected,138);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,46);
+ assert.equal(r.swatchRegression.stats.expected,25);assert.equal(r.swatchRegression.stats.skipped,2);assert.equal(r.swatchRegression.stats.unexpected,0);
+ assert.deepEqual(r.swatchRegression.cases.filter(c=>c.status==='skipped').map(c=>c.project).sort(),['firefox','webkit']);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['activity','buttons','feedback','foundations','toast'].map(name=>'@en-reve/styles/'+name+'.css'));
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/notification-recipes/verification-20261002.json');assert.equal(rows.length,7);assert.equal(rows.filter(row=>row.delivery==='css').length,3);
+ const build=await json('apps/docs/tests/verification-notification-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.run,r.run);
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.match(r.limitations.join(' '),/other37/);assert.match(r.limitations.join(' '),/two cases/);
+});
+
 test('tree consumer receipt binds native interactions, async ownership and both style deliveries',async()=>{
  const r=await json('probes/tree-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,38);assert.equal(r.stats.expected,120);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/tree-recipes/qualification-sources/add3b12b/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,40);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['@en-reve/styles/buttons.css','@en-reve/styles/foundations.css','@en-reve/styles/tree.css']);

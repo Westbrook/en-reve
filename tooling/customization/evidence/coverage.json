@@ -559,11 +559,11 @@
     "packages/styles/src/css/recipes.css": "41f13688cd0fe227d7481ceae8a9f2a709f165f9d1205ad52b3fda8e4a72f462",
     "packages/styles/src/css/surface.css": "25e8ef02fcccfc959d581caa6c47cdb955b7eabbce205649f38789c8ff7be607",
     "packages/styles/src/css/typography.css": "b8051c13f5c9278c9977c6a5a97d63c17706ff560bbef672230ac9454a89a300",
-    "packages/styles/src/feedback.ts": "1293c87c614b94572def37550d9bebcc121a65f85949481641d6148c967c8948",
+    "packages/styles/src/feedback.ts": "9c94bce4aa22657972ea835b76b26bfa06d3542ab7eab1d003859e82f321f3e5",
     "packages/styles/src/file-upload.ts": "bdaff96f531969e9893b3551ae0ca51f04a7d4651a0b7cda9ed4105c08e2953b",
     "packages/styles/src/form-navigation.ts": "cea686580edaa0a7a8d07fb310e3a4a49d1d14fa57df8f212719d345543a3c62",
     "packages/styles/src/foundations.ts": "391d469c9a97787a5a36cfc49eff5e44f77adca7032ad5eac8e59893de427843",
-    "packages/styles/src/index.ts": "9c2cbd1b733f4aebf6d6c38d731b11a4e869b6d4b2aa62d25b5f4230cadbb94f",
+    "packages/styles/src/index.ts": "a02223724b10ea589cbdf0c9a046d87530fcdc2a362dce8870d09fa5ced7c9c7",
     "packages/styles/src/internal/breadcrumbs.ts": "00ce62ea0e2abfdfd452ab18ce341c7596a8b4aabc4f2c295a7c29039e1e73bc",
     "packages/styles/src/internal/button-rules.ts": "59876830f174855bf45bf22ffdc5292350627d74ed96775f6a5ff3752243e423",
     "packages/styles/src/internal/control-shared.ts": "1f546e56ef7ff6f109b1cf3590bd98adf14480fae7d1c11ba8e5c6ca3fffd4d2",
@@ -613,7 +613,7 @@
     "productionFiles": 599,
     "registryContracts": 719,
     "discoveredNames": 673,
-    "sourceReferences": 2284,
+    "sourceReferences": 2290,
     "authoredAnnotations": 885,
     "cemAssociations": 1097,
     "reviewedFindings": 16,
@@ -73696,6 +73696,22 @@
           "form": "token",
           "expression": "t('--en-size-swatch')",
           "fallback": "defaultCSSValue(\"--en-size-swatch\")"
+        },
+        {
+          "cssName": "--en-size-swatch",
+          "file": "packages/styles/src/feedback.ts",
+          "line": 83,
+          "form": "token",
+          "expression": "t('--en-size-swatch')",
+          "fallback": "defaultCSSValue(\"--en-size-swatch\")"
+        },
+        {
+          "cssName": "--en-size-swatch",
+          "file": "packages/styles/src/feedback.ts",
+          "line": 85,
+          "form": "token",
+          "expression": "t('--en-size-swatch')",
+          "fallback": "defaultCSSValue(\"--en-size-swatch\")"
         }
       ],
       "declarations": [],
@@ -75031,6 +75047,22 @@
           "cssName": "--en-size-target-min",
           "file": "packages/styles/src/feedback.ts",
           "line": 65,
+          "form": "token",
+          "expression": "t('--en-size-target-min')",
+          "fallback": "defaultCSSValue(\"--en-size-target-min\")"
+        },
+        {
+          "cssName": "--en-size-target-min",
+          "file": "packages/styles/src/feedback.ts",
+          "line": 83,
+          "form": "token",
+          "expression": "t('--en-size-target-min')",
+          "fallback": "defaultCSSValue(\"--en-size-target-min\")"
+        },
+        {
+          "cssName": "--en-size-target-min",
+          "file": "packages/styles/src/feedback.ts",
+          "line": 85,
           "form": "token",
           "expression": "t('--en-size-target-min')",
           "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -84244,6 +84276,22 @@
           "line": 64,
           "form": "override",
           "expression": "o('--en-swatch-size',t('--en-size-swatch'))",
+          "fallback": "t('--en-size-swatch')"
+        },
+        {
+          "cssName": "--en-swatch-size",
+          "file": "packages/styles/src/feedback.ts",
+          "line": 83,
+          "form": "override",
+          "expression": "o('--en-swatch-size', t('--en-size-swatch'))",
+          "fallback": "t('--en-size-swatch')"
+        },
+        {
+          "cssName": "--en-swatch-size",
+          "file": "packages/styles/src/feedback.ts",
+          "line": 85,
+          "form": "override",
+          "expression": "o('--en-swatch-size', t('--en-size-swatch'))",
           "fallback": "t('--en-size-swatch')"
         }
       ],

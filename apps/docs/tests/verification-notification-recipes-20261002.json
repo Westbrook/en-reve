@@ -1,0 +1,1581 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T14:27:07.784137+00:00",
+  "sourceBase": "add3b12b53effdb4581b3a79d2407e9ddf1b4505",
+  "status": "passed",
+  "scope": "Fresh production build with portable native swatch geometry and unchanged custom-element host contract.",
+  "inputs": {
+    "apps/docs/scripts/authored-specimen-sources.mjs": "5fbdffab1e99042798c86b8370323a6663e2c049c36ade295686eadf8896880f",
+    "apps/docs/scripts/generate-api-examples.mjs": "8748417bad548e7056474f6b5f16af503304ef29752c4fe9fda5bdeaf02f242e",
+    "apps/docs/scripts/specimen-sources.mjs": "4451d782d66d6f554f65640bfe1503ad58ecb9b5427684835bc94f27f190ae29",
+    "apps/docs/src/api-example/app.ts": "a00a9fe6064f16559606accac877d762c8199968f1304eced616468257248f84",
+    "apps/docs/src/api-example/main.ts": "4df826c88bce5bc032cfb85169156d9ace913961e323d69fbf30b48f53d1ad1e",
+    "apps/docs/src/app.ts": "d165d3accb7ec9da0d470f291f6b127a65ae9b34138c15aabf6c513a7b3eada4",
+    "apps/docs/src/calendar-demo.ts": "9ee8b9f30fb0526e08669a9c495f4306a1dfebf69c7309ae699ff4f60eec1d93",
+    "apps/docs/src/carousel-demo.ts": "b9e95233f29b4dee901810588205ed40832301594773395c902c8319004560b1",
+    "apps/docs/src/change-consumption.ts": "c581b10b764e8a750418eef2c5fe47248bc6102de25bb3963ffefbd86ed8664f",
+    "apps/docs/src/chat-patterns-demo.ts": "6f9ce4b780e130075ecef479f790a08b43f30d865e644441bd009876236dc6f9",
+    "apps/docs/src/color-spaces-demo.ts": "3054f138fafc3c46e57ac71d4b6ad7103077e0fe9e7bf03d27abf8fcd1c7a091",
+    "apps/docs/src/composable-chat-demo.definition.ts": "32931b2c0b9a0f75f06f29deff9d25d4fdd2db97a4707ca91a51cf79feeb9b25",
+    "apps/docs/src/editor-color-extension.ts": "6cec0c4b47fd4bc2e2dc7ad4c40c42258a76d4300f163fb3fcbe463f247af3db",
+    "apps/docs/src/examples.ts": "ef49b8a7280219eb40cf7f79cfbe1d8675f824af84867205b76fd72705b22ef3",
+    "apps/docs/src/file-upload-demo.ts": "3b68b7d0cafb187d04b546408779e0e3148467f7f8d37f527fb923324ee22c5f",
+    "apps/docs/src/inverse-theme.ts": "c0a0cff7e8a82b6ea6007d5baee114ca4cd48466b9a4bdf204be84ca453c8e02",
+    "apps/docs/src/multi-step-demo.ts": "be58213f02d4cd1e428525130cc30e7ee2f34009adb86116203d7e41bee026b1",
+    "apps/docs/src/presence-activity-demo.ts": "de36f67960e2e62c7a36d4c00eca77afa75b853a0a1fe5cb0684716fbbf07608",
+    "apps/docs/src/preview-theme.ts": "fe73f774828e7f734b81f1d33fac8aaca785de292e36d6419df9a00c3c3ce9f2",
+    "apps/docs/src/rich-text-demo.ts": "922b3adbf7f821aad9157e5c2b7e9388b8f5a5c900a016fc154e15ae72600bed",
+    "apps/docs/src/site.css": "f3eea512972301bbdd28f184e6953c4bd7a2b81a56dee53b55f72f26ad706849",
+    "apps/docs/src/toast-demo.ts": "e3d4d3ce6b4505101126b58e439a841f213695f6674bd1cc0e40cbfeb78e040d",
+    "apps/docs/src/token-copy.ts": "8595a5338c1b505c9207ca5649c7baae30a9ade0203c467a2853b332d8f7d106",
+    "apps/docs/src/tree-data-demo.ts": "00e10d98d03d3fb354be7b4ec72a44e0cfa2d40c7dab712aae9f9f95b4e9d5c5",
+    "apps/docs/src/virtual-collection-demo.ts": "9c33e76a034e811b526952d2d44888948533cdbc21a7da74c6bb94b734ba796d",
+    "apps/docs/tests/api-reference-generator.test.mjs": "d7ca4235446cb8af825885d790f322ab0ced09b6ece951eb09eb712c040b13eb",
+    "apps/docs/tests/copied-api-scenarios.ts": "3e3bec6641d37098aa39970f8b9f78dcf79337f97bbde248b591c99cc4c52a2c",
+    "apps/docs/tests/copied-gallery-scenarios.ts": "9f163dab122a0b50ff85478efaddbf1d14a726fdc20be51094e5b9c5d54c887b",
+    "apps/docs/tests/copied-navigation-content-scenarios.ts": "3e493ee176418a80d310f5ad04456e902df997e0520b4aaede132e8ade77d4a4",
+    "apps/docs/tests/copied-presentation-scenarios.ts": "00797a7d3776d1838183535159fc97ea7bd9b85ab0082e8d479bd3ac23e095ae",
+    "apps/docs/tests/specimen-source-assembly.test.mjs": "78f90a007536fdb2ade5969c41430d7bb1645e1cbc281128a9b68930f8f395ec",
+    "apps/docs/tests/specimen-sources.spec.ts": "9fc1d4963a469477ed1554d0543bcaea68ff14486f51886b814fd04f5755191f",
+    "apps/docs/tests/system-appearance.spec.ts": "d3dfb25ad61c8b13215dd34a8e2aaed7d4bb88bb89a0c13eadc3e6846ca287e7",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "packages/primitives/src/templates/patterns.ts": "65580efbdd67443e593eefd70d70071c59d1e422f58731b1abd8ebd8f8bb81e0",
+    "probes/component-patterns/gallery.spec.ts": "625a2a6a1c7c516db32a8b0bb398913748a74c2d91ed30256079dd694a3209ed",
+    "probes/component-patterns/inset-actions.spec.ts": "b7ba78ccfdc4afc204bb35de8a28ff608da5413b9dbd451c3734303bb2388072",
+    "packages/styles/src/feedback.ts": "2e5e6d5c8123dad3ae2290ba2ea6fe75bd6631d491bf0b97b2a6ea49e2080c23",
+    "packages/styles/src/index.ts": "b2bc19b566f94148be877a0af42575626abc4f66d4eddde6cd46a2889daceec2",
+    "packages/styles/scripts/export-css.mjs": "1cd9993931ba4970955db61fca7ce8c0d93402d6cafb9a9ad56fc4e365ab73ae"
+  },
+  "generatedModules": {
+    "apps/docs/src/generated/calendar-source.js": "c7d197f8f92a231b1a4042d3e0e8548a0a29e7e3792bfc01e576287bad42bde1",
+    "apps/docs/src/generated/carousel-source.js": "c7d03c22fdb0304b1100da344aa752e0e86e8e178c06b3fe1ad3b827c165a80a",
+    "apps/docs/src/generated/chat-patterns-source.js": "28cdddabf935596e930d694e76e84a7cd0ad84fa860d073c66ccaf73c8bbdf3c",
+    "apps/docs/src/generated/composable-chat-source.js": "0c0748ba5e7298ba32d6cb95454ae966b182b4ae2a9082261f40c0860d68d195",
+    "apps/docs/src/generated/multi-step-source.js": "4ab34bd6fda64f244210ed507b80d69af5126cb1b14fe9b5e9e582bf19a48c8c",
+    "apps/docs/src/generated/presence-activity-source.js": "483d9aa72e8d34cd7a8e627407d35238dfe9804811ef590feca9a0aff9675112",
+    "apps/docs/src/generated/rich-text-source.js": "80145fc01c92236f6eb0b415245b8be40a147e2280e4965a62033c644967ddc4",
+    "apps/docs/src/generated/toast-source.js": "8a44e5fba27495d156d33eb6e7b31eaf15b918a5311108c24652d13f873fee4e",
+    "apps/docs/src/generated/tooltip-warmup-source.js": "07491d856fc05e4f8aa6db7c469a1bffb914b785b5501265d5e27bf06c256e95",
+    "apps/docs/src/generated/tree-data-source.js": "e46fc5c529d25e444c1780f249f12eb9c11414469c0ecf0155603ccfe52f4816",
+    "apps/docs/src/generated/virtual-collection-source.js": "95fb35024af26e7bd975cd1a7d6dc630b24bb3a3f4b9fb9e09f0f5f06dec08a3"
+  },
+  "productionBuild": {
+    "run": "/private/tmp/en-notification-recipes-20261002-03",
+    "executionSHA256": "65b23d057a43937b81144f4e77d2beffc95a8da5c0e32763e3253c119227af6d",
+    "nodePasses": 40,
+    "strictTypes": "passed",
+    "SSRBuild": "passed",
+    "distFiles": 1184,
+    "distManifestSHA256": "ac7789fd4ba7d9e244f5d079987b4a7e3ab62df048edf720773051d2ce894ed8"
+  },
+  "reports": [
+    {
+      "path": "/private/tmp/en-notification-recipes-20261002-03/evidence/8f001ebd68b4/playwright.json",
+      "sha256": "b8c0f8145bb1860428d955e85005d8427603c1e2f184c70c8c15f3e730235c10",
+      "stats": {
+        "startTime": "2026-10-02T14:23:45.052Z",
+        "duration": 10761.466,
+        "expected": 25,
+        "skipped": 2,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "project": "chromium",
+          "title": "pointer, Enter and Space emit one neutral action with a stable authored name and native control",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 1002,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "canceling the semantic action cancels the original click without stopping consumer observation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 382,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "authored hidden label slots override and recover to the full label fallback",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 353,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "only explicit disabled blocks activation; missing or invalid paint still exposes an enabled action",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 336,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "literal color updates clear invalid paint, while any nonempty token retains precedence",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 107,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "color scopes stay live while medium defaults, explicit inheritance and size overrides remain independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 123,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "the default square sample stretches only when the consumer sets its host width",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 84,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "Chromium forced colors preserve the sample while its boundary and keyboard focus adapt",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 113,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "chromium",
+          "title": "the fixture has no applicable automated WCAG A/AA findings before and after a consumer update",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 427,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "153.0.8010.12"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "pointer, Enter and Space emit one neutral action with a stable authored name and native control",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 798,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "canceling the semantic action cancels the original click without stopping consumer observation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 225,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "authored hidden label slots override and recover to the full label fallback",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 204,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "only explicit disabled blocks activation; missing or invalid paint still exposes an enabled action",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 275,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "literal color updates clear invalid paint, while any nonempty token retains precedence",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 220,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "color scopes stay live while medium defaults, explicit inheritance and size overrides remain independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 232,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "the default square sample stretches only when the consumer sets its host width",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 178,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "Chromium forced colors preserve the sample while its boundary and keyboard focus adapt",
+          "status": "skipped",
+          "retry": 0,
+          "durationMs": 175,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            },
+            {
+              "type": "skip",
+              "description": "This focused forced-colors rendering check is intentionally Chromium-only.",
+              "location": {
+                "file": "/private/tmp/en-reve-initial-pass-closeout/packages/elements/src/swatch/tests/swatch.spec.ts",
+                "line": 241,
+                "column": 8
+              }
+            }
+          ]
+        },
+        {
+          "project": "firefox",
+          "title": "the fixture has no applicable automated WCAG A/AA findings before and after a consumer update",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 748,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "155.0"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "pointer, Enter and Space emit one neutral action with a stable authored name and native control",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 460,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "canceling the semantic action cancels the original click without stopping consumer observation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 219,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "authored hidden label slots override and recover to the full label fallback",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 197,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "only explicit disabled blocks activation; missing or invalid paint still exposes an enabled action",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 277,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "literal color updates clear invalid paint, while any nonempty token retains precedence",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 217,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "color scopes stay live while medium defaults, explicit inheritance and size overrides remain independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 234,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "the default square sample stretches only when the consumer sets its host width",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 181,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "Chromium forced colors preserve the sample while its boundary and keyboard focus adapt",
+          "status": "skipped",
+          "retry": 0,
+          "durationMs": 178,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            },
+            {
+              "type": "skip",
+              "description": "This focused forced-colors rendering check is intentionally Chromium-only.",
+              "location": {
+                "file": "/private/tmp/en-reve-initial-pass-closeout/packages/elements/src/swatch/tests/swatch.spec.ts",
+                "line": 241,
+                "column": 8
+              }
+            }
+          ]
+        },
+        {
+          "project": "webkit",
+          "title": "the fixture has no applicable automated WCAG A/AA findings before and after a consumer update",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 644,
+          "annotations": [
+            {
+              "type": "browser-version",
+              "description": "26.6"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/private/tmp/en-notification-recipes-20261002-03/evidence/82e21625095f/playwright.json",
+      "sha256": "87e9a2e4c7824bee88598964d8f24bed562f4f429fcd4ccbb322234403c36cf7",
+      "stats": {
+        "startTime": "2026-10-02T14:23:08.881Z",
+        "duration": 35735.831000000006,
+        "expected": 138,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "project": "chromium",
+          "title": "maximum admits three complete messages, with queued controls absent from the accessibility tree",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 1009,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "dismissal promotes the next arrival without changing the other messages",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 420,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "an interrupt becomes the first DOM message and a displaced message remains queued",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 389,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "focused messages stay admitted during an interrupt and release the slot after focus leaves",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 193,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "dynamic bounds update admission and zero makes the queue unbounded",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 93,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "dismissal is cancelable without removing the message or its action focus",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 89,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "Escape dismisses the focused message and recovers focus to the next control or launcher",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 84,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "queued controls do not enter native Tab order",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 82,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "admission announces once while non-live history remains readable and safely escaped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 149,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "notification instances keep admission and history independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 114,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "timed messages have a five second minimum and queued time does not consume their budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 140,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "reading duration grows with content and actions stay persistent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 107,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "focus and hover pause a budget, and leaving resumes its remaining duration",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 139,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "interruption resets a displaced timer when that message becomes featured again",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 138,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "disconnect clears owned timers and reconnect starts a fresh visible budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 81,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "icon, message and dismissal align on the first row while actions occupy the second",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 77,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "variant and radius pins remain local to their notification scope",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 75,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "fixed logical placement supports all corners and centers including RTL on a narrow viewport",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 107,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "reduced motion removes toast and standalone spinner animations",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 71,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "feedback controls use native progress semantics and loading alternatives omit decorative skeletons",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 123,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "alert dismissal is local and native loading geometry uses scoped size pins",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 95,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "forced colors retain notification borders and native progress discoverability",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 78,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "native feedback swatches size their own wrapper without constraining the surrounding shadow host",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 106,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "maximum admits three complete messages, with queued controls absent from the accessibility tree",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 874,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "dismissal promotes the next arrival without changing the other messages",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 282,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "an interrupt becomes the first DOM message and a displaced message remains queued",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 203,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "focused messages stay admitted during an interrupt and release the slot after focus leaves",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 212,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "dynamic bounds update admission and zero makes the queue unbounded",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 285,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "dismissal is cancelable without removing the message or its action focus",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 207,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "Escape dismisses the focused message and recovers focus to the next control or launcher",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 219,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "queued controls do not enter native Tab order",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 214,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "admission announces once while non-live history remains readable and safely escaped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 295,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "notification instances keep admission and history independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 505,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "timed messages have a five second minimum and queued time does not consume their budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 232,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "reading duration grows with content and actions stay persistent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 211,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "focus and hover pause a budget, and leaving resumes its remaining duration",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 229,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "interruption resets a displaced timer when that message becomes featured again",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 366,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "disconnect clears owned timers and reconnect starts a fresh visible budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 736,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "icon, message and dismissal align on the first row while actions occupy the second",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 284,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "variant and radius pins remain local to their notification scope",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 274,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "fixed logical placement supports all corners and centers including RTL on a narrow viewport",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 481,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "reduced motion removes toast and standalone spinner animations",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 277,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "feedback controls use native progress semantics and loading alternatives omit decorative skeletons",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 737,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "alert dismissal is local and native loading geometry uses scoped size pins",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 278,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "forced colors retain notification borders and native progress discoverability",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 236,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "native feedback swatches size their own wrapper without constraining the surrounding shadow host",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 291,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "maximum admits three complete messages, with queued controls absent from the accessibility tree",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 688,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "dismissal promotes the next arrival without changing the other messages",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 310,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "an interrupt becomes the first DOM message and a displaced message remains queued",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 251,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "focused messages stay admitted during an interrupt and release the slot after focus leaves",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 220,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "dynamic bounds update admission and zero makes the queue unbounded",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 215,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "dismissal is cancelable without removing the message or its action focus",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 216,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "Escape dismisses the focused message and recovers focus to the next control or launcher",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 209,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "queued controls do not enter native Tab order",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 202,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "admission announces once while non-live history remains readable and safely escaped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 283,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "notification instances keep admission and history independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 234,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "timed messages have a five second minimum and queued time does not consume their budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 242,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "reading duration grows with content and actions stay persistent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 229,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "focus and hover pause a budget, and leaving resumes its remaining duration",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 279,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "interruption resets a displaced timer when that message becomes featured again",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 246,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "disconnect clears owned timers and reconnect starts a fresh visible budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 200,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "icon, message and dismissal align on the first row while actions occupy the second",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 193,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "variant and radius pins remain local to their notification scope",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 190,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "fixed logical placement supports all corners and centers including RTL on a narrow viewport",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 259,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "reduced motion removes toast and standalone spinner animations",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 195,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "feedback controls use native progress semantics and loading alternatives omit decorative skeletons",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 248,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "alert dismissal is local and native loading geometry uses scoped size pins",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 204,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "forced colors retain notification borders and native progress discoverability",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 196,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "native feedback swatches size their own wrapper without constraining the surrounding shadow host",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 207,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "maximum admits three complete messages, with queued controls absent from the accessibility tree",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 238,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "dismissal promotes the next arrival without changing the other messages",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 158,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "an interrupt becomes the first DOM message and a displaced message remains queued",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 124,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "focused messages stay admitted during an interrupt and release the slot after focus leaves",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 89,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "dynamic bounds update admission and zero makes the queue unbounded",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 91,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "dismissal is cancelable without removing the message or its action focus",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 87,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "Escape dismisses the focused message and recovers focus to the next control or launcher",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 86,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "queued controls do not enter native Tab order",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 81,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "admission announces once while non-live history remains readable and safely escaped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 143,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "notification instances keep admission and history independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 110,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "timed messages have a five second minimum and queued time does not consume their budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 143,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "reading duration grows with content and actions stay persistent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 125,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "focus and hover pause a budget, and leaving resumes its remaining duration",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 157,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "interruption resets a displaced timer when that message becomes featured again",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 142,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "disconnect clears owned timers and reconnect starts a fresh visible budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 87,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "icon, message and dismissal align on the first row while actions occupy the second",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 78,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "variant and radius pins remain local to their notification scope",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 77,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "fixed logical placement supports all corners and centers including RTL on a narrow viewport",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 108,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "reduced motion removes toast and standalone spinner animations",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 74,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "feedback controls use native progress semantics and loading alternatives omit decorative skeletons",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 125,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "alert dismissal is local and native loading geometry uses scoped size pins",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 98,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "forced colors retain notification borders and native progress discoverability",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 79,
+          "annotations": []
+        },
+        {
+          "project": "chromium",
+          "title": "native feedback swatches size their own wrapper without constraining the surrounding shadow host",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 107,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "maximum admits three complete messages, with queued controls absent from the accessibility tree",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 522,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "dismissal promotes the next arrival without changing the other messages",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 329,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "an interrupt becomes the first DOM message and a displaced message remains queued",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 349,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "focused messages stay admitted during an interrupt and release the slot after focus leaves",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 263,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "dynamic bounds update admission and zero makes the queue unbounded",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 268,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "dismissal is cancelable without removing the message or its action focus",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 324,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "Escape dismisses the focused message and recovers focus to the next control or launcher",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 708,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "queued controls do not enter native Tab order",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 267,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "admission announces once while non-live history remains readable and safely escaped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 310,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "notification instances keep admission and history independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 274,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "timed messages have a five second minimum and queued time does not consume their budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 342,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "reading duration grows with content and actions stay persistent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 267,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "focus and hover pause a budget, and leaving resumes its remaining duration",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 287,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "interruption resets a displaced timer when that message becomes featured again",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 279,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "disconnect clears owned timers and reconnect starts a fresh visible budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 237,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "icon, message and dismissal align on the first row while actions occupy the second",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 237,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "variant and radius pins remain local to their notification scope",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 617,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "fixed logical placement supports all corners and centers including RTL on a narrow viewport",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 343,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "reduced motion removes toast and standalone spinner animations",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 209,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "feedback controls use native progress semantics and loading alternatives omit decorative skeletons",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 281,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "alert dismissal is local and native loading geometry uses scoped size pins",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 271,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "forced colors retain notification borders and native progress discoverability",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 227,
+          "annotations": []
+        },
+        {
+          "project": "firefox",
+          "title": "native feedback swatches size their own wrapper without constraining the surrounding shadow host",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 254,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "maximum admits three complete messages, with queued controls absent from the accessibility tree",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 343,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "dismissal promotes the next arrival without changing the other messages",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 276,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "an interrupt becomes the first DOM message and a displaced message remains queued",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 243,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "focused messages stay admitted during an interrupt and release the slot after focus leaves",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 203,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "dynamic bounds update admission and zero makes the queue unbounded",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 220,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "dismissal is cancelable without removing the message or its action focus",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 208,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "Escape dismisses the focused message and recovers focus to the next control or launcher",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 224,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "queued controls do not enter native Tab order",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 210,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "admission announces once while non-live history remains readable and safely escaped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 281,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "notification instances keep admission and history independent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 230,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "timed messages have a five second minimum and queued time does not consume their budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 275,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "reading duration grows with content and actions stay persistent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 242,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "focus and hover pause a budget, and leaving resumes its remaining duration",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 276,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "interruption resets a displaced timer when that message becomes featured again",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 263,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "disconnect clears owned timers and reconnect starts a fresh visible budget",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 219,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "icon, message and dismissal align on the first row while actions occupy the second",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 202,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "variant and radius pins remain local to their notification scope",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 198,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "fixed logical placement supports all corners and centers including RTL on a narrow viewport",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 265,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "reduced motion removes toast and standalone spinner animations",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 179,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "feedback controls use native progress semantics and loading alternatives omit decorative skeletons",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 234,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "alert dismissal is local and native loading geometry uses scoped size pins",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 197,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "forced colors retain notification borders and native progress discoverability",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 184,
+          "annotations": []
+        },
+        {
+          "project": "webkit",
+          "title": "native feedback swatches size their own wrapper without constraining the surrounding shadow host",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 206,
+          "annotations": []
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Seven entries have named-scenario qualification, not every export or owning-element feature.",
+    "Admission priority does not own DOM order, timeouts, announcements, focus, swipe gestures or persistence; the example supplies those policies where exercised.",
+    "The existing swatch suite intentionally skips its detailed forced-color sample assertion in Firefox/WebKit;25 passes do not include those two cases.",
+    "Physical touch/IME, native AT speech, retail browsers, other OS/device conditions, full SSR/hydration and separate-owner acceptance remain open.",
+    "The other37 of110 public inventory entries remain pending. Historical external CSS-authoring rerun is retired, never passed."
+  ]
+}

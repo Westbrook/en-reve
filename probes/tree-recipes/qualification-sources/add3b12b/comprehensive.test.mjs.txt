@@ -222,10 +222,3 @@ test('tree recipe pathway retains isolated preparation, declarations and browser
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/tree-recipes/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:tree-recipes').environment.EN_TREE_RECIPES_OUT,'$RUN/fixtures/tree-recipes');
 });
-
-test('notification recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['notification-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:notification-recipes','browser:probes/notification-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/notification-recipes/playwright.config.ts','browser:packages/elements/src/swatch/tests/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:notification-recipes').environment.EN_NOTIFICATION_RECIPES_OUT,'$RUN/fixtures/notification-recipes');
-});

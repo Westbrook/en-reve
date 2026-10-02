@@ -239,3 +239,15 @@ The initial Control-click failures in macOS Chromium are retained; the corrected
 journey uses the platform modifier, not a claim of Windows pointer validation.
 66/110 entries have named-scenario receipts;44 and platform/manual/owner scope
 remain. Product runtime unchanged; exact qualified build remains reusable.
+
+## Native notification consumer checkpoint
+
+[Notification recipes](../probes/notification-recipes/README.md) qualify seven more
+public helper/style entries:138 browser cases and40 Node checks pass. Existing
+swatch coverage passes25 cases with two declared non-Chromium forced-color skips.
+Portable feedback now uses opt-in native swatch sizing instead of resizing every
+shadow host; existing JS swatch styling stays compatible. Queue/focus/timer and
+announcement ownership are documented separately. A fresh production build and
+explicit metadata refresh include the change.73/110 public entries now have
+bounded receipts;37 plus platform/manual/owner scope remain. Earlier fixture
+failures and the preparation metadata-stability stop remain retained evidence.

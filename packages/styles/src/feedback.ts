@@ -56,12 +56,12 @@ export const mediaStyles = sizedStyles(css`
 `);
 
 
-/** A neutral color-sample control; its surrounding presentation belongs to the consumer. */
-export const swatchStyles = sizedStyles(css`
-  :host { inline-size: max(${o('--en-swatch-size', t('--en-size-swatch'))}, ${controlTargetSize(false, t('--en-size-target-min'))}); min-inline-size: ${controlTargetSize(false, t('--en-size-target-min'))}; }
+/** Native opt-in swatch recipe without custom-element host sizing. */
+export const swatchNativeStyles = sizedStyles(css`
+  .en-swatch { display: inline-block; vertical-align: middle; inline-size: max(${o('--en-swatch-size', t('--en-size-swatch'))}, ${controlTargetSize(false, t('--en-size-target-min'))}); min-inline-size: ${controlTargetSize(false, t('--en-size-target-min'))}; }
   .en-swatch__sample { position: relative; display: block; appearance: none; inline-size: 100%; block-size: max(${o('--en-swatch-size', t('--en-size-swatch'))}, ${controlTargetSize(false, t('--en-size-target-min'))}); min-inline-size: ${controlTargetSize(false, t('--en-size-target-min'))}; padding: 0; margin: 0; overflow: hidden; border: ${t('--en-border-width')} solid ${t('--en-color-boundary')}; border-radius: ${t('--en-radius-control')}; background: transparent; color: inherit; cursor: pointer; }
   @media (any-pointer: coarse) {
-    :host { inline-size:max(${o('--en-swatch-size',t('--en-size-swatch'))},${controlTargetSize(true, t('--en-size-target-min'))}); min-inline-size:${controlTargetSize(true, t('--en-size-target-min'))}; }
+    .en-swatch { display: inline-block; vertical-align: middle; inline-size:max(${o('--en-swatch-size',t('--en-size-swatch'))},${controlTargetSize(true, t('--en-size-target-min'))}); min-inline-size:${controlTargetSize(true, t('--en-size-target-min'))}; }
     .en-swatch__sample { min-inline-size:${controlTargetSize(true, t('--en-size-target-min'))}; min-block-size:${controlTargetSize(true, t('--en-size-target-min'))}; }
   }
   @media (hover: hover) { .en-swatch__sample:not(:disabled):hover { border-color: ${t('--en-color-action')}; } }
@@ -76,3 +76,12 @@ export const swatchStyles = sizedStyles(css`
     .en-swatch__color { forced-color-adjust: none; }
   }
 `);
+
+/** Existing custom-element swatch delivery, including its host sizing contract. */
+export const swatchStyles = css`
+  ${swatchNativeStyles}
+  :host { inline-size: max(${o('--en-swatch-size', t('--en-size-swatch'))}, ${controlTargetSize(false, t('--en-size-target-min'))}); min-inline-size: ${controlTargetSize(false, t('--en-size-target-min'))}; }
+  @media (any-pointer: coarse) {
+    :host { inline-size: max(${o('--en-swatch-size', t('--en-size-swatch'))}, ${controlTargetSize(true, t('--en-size-target-min'))}); min-inline-size: ${controlTargetSize(true, t('--en-size-target-min'))}; }
+  }
+`;

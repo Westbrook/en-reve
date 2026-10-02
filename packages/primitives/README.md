@@ -176,3 +176,7 @@ formats, native fractional-step differences and qualification limits.
 The [native tree consumer contract](docs/tree-consumers.md) covers immutable keyed
 hierarchies, application-owned selection/focus, pure move proposals, abortable
 child loading and both native tree style deliveries.
+
+The [native notification consumer contract](docs/notification-consumers.md) separates
+pure admission from application ordering, focus, timers and announcements, and
+covers toast/feedback/loading styles in both delivery forms.

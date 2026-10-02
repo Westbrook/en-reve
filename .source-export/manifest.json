@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "add3b12b53effdb4581b3a79d2407e9ddf1b4505",
-  "exportedAt": "2026-10-02T13:58:41.982009+00:00",
+  "sourceCommit": "e5ec420ac6b5bd327858aa2e75c29c718ecf1ca2",
+  "exportedAt": "2026-10-02T14:30:02.442172+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5606,
-  "includedBytes": 152116448,
-  "qualification": "Four public tree helper/style entries have independent native selection, move and async loading qualification:120 browser cases,38 Node checks and129 integrity checks pass. Platform modifier evidence is bounded to macOS. Inventory66/110;44 entries and platform/manual/owner work remain. Product build unchanged.",
-  "latestUpdate": ".source-export/updates/tree-recipes-20261002.json",
+  "includedFiles": 5623,
+  "includedBytes": 152373693,
+  "qualification": "Seven notification admission and toast/feedback/activity style entries pass138 browser cases,25 existing swatch cases with two declared forced-color skips,40 Node and130 integrity checks. Portable feedback swatch sizing is opt-in; existing JS host sizing stays compatible. Inventory73/110;37 entries and platform/manual/owner work remain. Fresh production build passed.",
+  "latestUpdate": ".source-export/updates/notification-recipes-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

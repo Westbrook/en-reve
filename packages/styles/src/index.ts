@@ -5,7 +5,7 @@ export { comboboxStyles } from './combobox.js';
 export { selectionStyles } from './selection.js';
 export { surfaceStyles, layoutStyles } from './surfaces.js';
 export { overlayStyles, overlayResponsiveQuery } from './overlays.js';
-export { feedbackStyles, mediaStyles, activityStyles, swatchStyles } from './feedback.js';
+export { feedbackStyles, mediaStyles, activityStyles, swatchStyles, swatchNativeStyles } from './feedback.js';
 export { recipeStyles } from './recipes.js';
 export { navigationStyles, navigationHostStyles, breadcrumbHostStyles } from './navigation.js';
 export { styleFamilies, styleOverrideNames, styleStateProperties, type StyleOverrideName } from './metadata.js';

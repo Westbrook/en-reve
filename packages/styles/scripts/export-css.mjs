@@ -22,7 +22,7 @@ const families = {
   selection: ['selectionStyles'],
   surfaces: ['surfaceStyles', 'layoutStyles'],
   overlays: ['overlayStyles'],
-  feedback: ['feedbackStyles', 'mediaStyles', 'swatchStyles'],
+  feedback: ['feedbackStyles', 'mediaStyles', 'swatchNativeStyles'],
   activity: ['activityStyles'],
   recipes: ['recipeStyles'],
   content: ['contentStyles'],

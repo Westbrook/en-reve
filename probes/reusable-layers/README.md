@@ -62,3 +62,9 @@ The [tree recipes](../tree-recipes/README.md) add four public entries with120
 three-engine/dual-style cases and38 Node checks. Selection, movement and async
 loading remain application-owned.66/110 entries have named-scenario receipts;
 44 plus platform/manual/owner obligations remain open.
+
+The [notification recipes](../notification-recipes/README.md) add seven entries
+covering admission and both toast/feedback/loading style forms.138 native cases,
+25 original swatch cases (two declared forced-color skips) and40 Node checks pass.
+Portable feedback no longer gives unrelated shadow hosts swatch width.73/110
+public entries have named-scenario receipts;37 and platform/manual scope remain.
