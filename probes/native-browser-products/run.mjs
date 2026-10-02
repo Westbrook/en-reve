@@ -15,10 +15,12 @@ const root=resolve(import.meta.dirname,'../..');
 const output=process.env.EN_EXECUTION_OUTPUT, fixture=process.env.EN_FRAMEWORK_OUT;
 assert(process.platform==='darwin','This product acquisition targets macOS');
 assert(output?.startsWith('/') && fixture?.startsWith('/'),'Absolute EN_EXECUTION_OUTPUT and retained EN_FRAMEWORK_OUT are required');
+const firefoxApp=process.env.EN_FIREFOX_APP??'/Applications/Firefox.app';
+assert(firefoxApp.startsWith('/')&&firefoxApp.endsWith('.app'),'EN_FIREFOX_APP must be an absolute app bundle path');
 const selected=process.argv[2]??'both';assert(['both','safari','firefox'].includes(selected),'Use both, safari or firefox');
 await mkdir(output); // A new run never overwrites evidence.
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
-const receipt={schemaVersion:1,startedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),node:process.version,fixture,products:[],cases:[],status:'running',selectedProducts:selected,scope:'Three native-input consumer scenarios per cohort. Not Playwright parity, accessibility-tree/speech, all workflows, previous products or physical-device qualification.'};
+const receipt={schemaVersion:1,startedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),node:process.version,fixture,products:[],cases:[],status:'running',selectedProducts:selected,scope:'Three native-input consumer scenarios per cohort. Not Playwright parity, accessibility-tree/speech, all workflows, a complete current/previous product matrix or physical-device qualification.'};
 const save=()=>writeFile(join(output,'result.json'),JSON.stringify(receipt,null,2)+'\n');
 const children=[];
 function child(file,args,name){
@@ -50,9 +52,12 @@ async function safari(){
   close:async()=>{await request(prefix,undefined,'DELETE');await stop(driver);},
  };
 }
-async function firefox(){
+async function firefox(bundle){
+ assert.equal(metadata(bundle).CFBundleIdentifier,'org.mozilla.firefox','Expected an official Firefox application');
+ const executable=await realpath(join(bundle,'Contents/MacOS/firefox'));
+ assert(executable.startsWith(bundle+'/'),'Firefox executable must stay inside its distribution');
  const profile=join(output,'firefox-profile');await mkdir(profile);
- const browser=child('/Applications/Firefox.app/Contents/MacOS/firefox',['--headless','--no-remote','--profile',profile,'--remote-debugging-port','0'],'firefox');
+ const browser=child(executable,['--headless','--no-remote','--profile',profile,'--remote-debugging-port','0'],'firefox');
  const endpoint=await until(()=>browser.log().match(/WebDriver BiDi listening on (ws:\/\/127\.0\.0\.1:\d+)/)?.[1],'Firefox BiDi');
  const ws=new WebSocket(endpoint+'/session');await new Promise((res,rej)=>{ws.addEventListener('open',res,{once:true});ws.addEventListener('error',rej,{once:true});});
  let id=0;const pending=new Map();
@@ -126,13 +131,13 @@ try {await withMachineOwner(()=>withExecutionOwner(root,async()=>{
  receipt.host={version:execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim(),build:execFileSync('sw_vers',['-buildVersion'],{encoding:'utf8'}).trim(),arch:process.arch};
  server=await portServer(async(req,res)=>{try{const name=new URL(req.url,'http://127.0.0.1').pathname;if(!/^\/[a-z0-9-]+\.(html|js|json)$/.test(name)){res.writeHead(404).end();return;}res.setHeader('Content-Type',name.endsWith('.js')?'text/javascript':name.endsWith('.json')?'application/json':'text/html');res.end(await readFile(join(fixture,'site',name.slice(1))));}catch{res.writeHead(404).end();}});
  const url='http://127.0.0.1:'+server.address().port;
- for(const [name,start,path] of [['Safari',safari,'/Applications/Safari.app'],['Firefox',firefox,'/Applications/Firefox.app']].filter(([name])=>selected==='both'||name.toLowerCase()===selected)){
+ for(const [name,start,path] of [['Safari',safari,'/Applications/Safari.app'],['Firefox',firefox,firefoxApp]].filter(([name])=>selected==='both'||name.toLowerCase()===selected)){
   const bundle=await realpath(path),plist=metadata(bundle),paths=[bundle];if(name==='Safari')paths.push(await realpath('/usr/bin/safaridriver'));
   const before=await identity(paths);await writeFile(join(output,name+'-identity-before.json'),JSON.stringify(before,null,2)+'\n');
-  const product={name,version:plist.CFBundleShortVersionString,build:plist.CFBundleVersion,bundle,identityDigest:before.digest,identityPolicy:name==='Safari'?'Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.':'Full installed Firefox application distribution.',status:'running'};receipt.products.push(product);await save();
+  const product={name,version:plist.CFBundleShortVersionString,build:plist.CFBundleVersion,bundle,identityDigest:before.digest,identityPolicy:name==='Safari'?'Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.':'Full selected Firefox application distribution.',status:'running'};receipt.products.push(product);await save();
   let b;
   try{
-   b=await start();product.capabilities=b.capabilities;product.headless=b.headless;assert.equal(b.capabilities.browserVersion,product.version);
+   b=await start(bundle);product.capabilities=b.capabilities;product.headless=b.headless;assert.equal(b.capabilities.browserVersion,product.version);
    for(const {id} of cohorts)for(const [scenario,test] of scenarios){
     const result={product:name,cohort:id,scenario,status:'running'};receipt.cases.push(result);console.log(name+' '+id+' '+scenario);
     try{await b.navigate(`${url}/${id}.html?defer`);await test(b);assert.deepEqual(await b.evaluate('observedErrors'),[]);result.status='passed';}

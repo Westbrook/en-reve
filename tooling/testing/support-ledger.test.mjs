@@ -136,7 +136,7 @@ test('product qualification retains exact distributions and bounded acceptance',
     assert.match(product.distributionInventorySHA256, /^[a-f0-9]{64}$/);
   }
   assert.equal(ledger.conditions.find(c => c.id === 'browser-current').status, 'partial');
-  assert.equal(ledger.conditions.find(c => c.id === 'browser-previous').status, 'not-run');
+  assert.equal(ledger.conditions.find(c => c.id === 'browser-previous').status, 'partial');
  }
 });
 
@@ -182,7 +182,7 @@ test('engine manifest and configured Playwright version agree with the support i
 test('native product receipt preserves input scope and unresolved Safari attempts', async () => {
  const evidence=ledger.evidence.find(e=>e.id==='native-products-20261002');
  const receipt=await json(evidence.path);
- assert.equal(receipt.runnerSHA256,createHash('sha256').update(await read('probes/native-browser-products/run.mjs')).digest('hex'));
+ assert.match(receipt.runnerSHA256,/^[a-f0-9]{64}$/); // Historical runner identity remains immutable.
  assert.equal(receipt.status,'passed');
  assert.deepEqual(receipt.stats,{passed:30,failed:0,planned:30});
  assert.equal(receipt.selectedProducts,'firefox');
@@ -215,4 +215,26 @@ test('actual product workflows retain exact sources, distribution identity and e
  assert.equal(receipt.cases.length,54);
  assert(receipt.cases.filter(c=>c.status==='skipped').every(c=>c.titlePath.at(-1).startsWith('narrow portrait')));
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
+});
+
+
+test('current native runner is qualified against both Firefox release lines', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='firefox-lines-20261002');
+ const receipt=await json(evidence.path);
+ assert.equal(receipt.runnerSHA256,createHash('sha256').update(await read('probes/native-browser-products/run.mjs')).digest('hex'));
+ assert.equal(receipt.status,'passed');
+ assert.deepEqual(receipt.stats,{passed:60,failed:0,planned:60});
+ assert.equal(receipt.acquisition.checksumMatched,true);
+ assert.equal(receipt.acquisition.archiveSHA512,receipt.acquisition.publishedSHA512);
+ assert(receipt.acquisition.signatureVerification.every(command=>command.exitCode===0));
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]) {
+  const run=receipt.runs[label];assert.equal(run.status,'passed');
+  assert.deepEqual(run.stats,{passed:30,failed:0,planned:30});
+  assert.equal(run.products.length,1);const product=run.products[0];
+  assert.equal(product.version,version);assert.equal(product.capabilities.browserVersion,version);
+  assert.equal(product.unchanged,true);assert.equal(product.headless,true);
+  for(const cohort of cohorts)assert.equal(run.cases.filter(c=>c.cohort===cohort.id&&c.status==='passed').length,3);
+ }
+ assert.equal(receipt.runs.preceding.preparationSHA256,receipt.runs.current.preparationSHA256);
+ assert.equal(ledger.conditions.find(c=>c.id==='browser-previous').status,'partial');
 });

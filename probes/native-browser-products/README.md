@@ -28,7 +28,13 @@ compilation**. It uses the shared cohort list, including the preceding minor and
 retained previous-major/EOL subjects. Framework/version provenance comes from the
 retained preparation, not the current date alone.
 
-Firefox launches the installed `/Applications/Firefox.app` headlessly, with
+Firefox defaults to the installed `/Applications/Firefox.app`. Set
+`EN_FIREFOX_APP=/absolute/isolated/Firefox.app` to qualify another distribution
+without changing the installed browser. The runner checks its bundle identifier,
+resolves the executable inside that bundle, and compares reported/browser app
+versions. Acquire official archives and verify their checksums and code signatures
+before running them; this runner does not download or install browsers.
+Firefox launches headlessly, with
 `--no-remote`, an exclusive fresh profile in the output directory, and a loopback
 BiDi endpoint. Safari uses `/usr/bin/safaridriver` and its separate automation
 window; it has no headless mode here. Sessions, driver processes and server belong
@@ -77,3 +83,21 @@ framework. This distinction stays explicit in the receipt.
 Sources: [Apple Safari WebDriver setup](https://developer.apple.com/documentation/safari-developer-tools/macos-enabling-webdriver),
 [Mozilla direct BiDi connection](https://developer.mozilla.org/en-US/docs/Web/WebDriver/How_to/Create_BiDi_connection),
 [standard input actions](https://developer.mozilla.org/en-US/docs/Web/WebDriver/Reference/BiDi/Modules/input/performActions).
+
+## Current and preceding Firefox
+
+[October2 release-line verification](verification-firefox-lines-20261002.json)
+records **60 passes**:30 each on Firefox157.0 and isolated156.0.1, using the same
+three scenarios and ten packed consumers. Both full app inventories stayed
+unchanged. The preceding distribution came from Mozilla's official mac/en-US
+archive, matched its published SHA512 and passed macOS deep/strict code-signature
+verification. The initial sandbox signature check failed to resolve authority;
+verification with normal macOS trust access passed for the mounted source and
+isolated copy. No signing, quarantine or browser security setting was changed.
+The mounted image was detached; download, fresh test profiles and raw evidence
+remain local. The installed Firefox was not downgraded.
+
+The earlier157-only receipt remains historical at its original runner hash.
+This newer receipt binds the distribution-selection runner to both tested lines.
+Safari's unresolved visibility diagnostics remain separate; this subset does not
+qualify preceding Chrome/Edge/Safari, other OSes or physical/manual acceptance.

@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-10-02T04:07:05.450326+00:00",
+  "sourceCommit": "7df6ba1bc6f41b54dff7df5c1f22ce51014d5bbc",
+  "previousSourceMain": "0b935772368c40a611dc2ea15478db28d89b0e1d",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/run.mjs",
+    "probes/native-browser-products/verification-firefox-lines-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Current Firefox157.0 and isolated preceding156.0.1 each pass30 native-input consumer checks. Official archive checksum and macOS code signature verified; distributions unchanged.104 tooling checks pass. Broader products, Safari visibility and physical/manual review remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

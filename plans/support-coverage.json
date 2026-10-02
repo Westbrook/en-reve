@@ -310,6 +310,13 @@
       "path": "apps/docs/tests/verification-products-20261002.json",
       "sha256": "81a056a2f928f297d11843eea80424cec41f56eb6bc0bde40c47006fd833597d",
       "scope": "52 production workflow passes across installed Chrome154.0.8037.95 and Edge154.0.4258.48; two existing narrow-profile skips. SSO/settings/chat/project selection; full app distributions and production input inventory unchanged. No physical/manual acceptance."
+    },
+    {
+      "id": "firefox-lines-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-lines-20261002.json",
+      "sha256": "969671dbf88b238cc998037ab696832d767caab1e8e3321dd640beca0b075a9d",
+      "scope": "Three native-input scenarios across ten hash-verified retained packed consumers, actual current and preceding Firefox on macOS. No complete product/OS matrix, native accessibility, speech, IME, physical device or fresh installation/type claim."
     }
   ],
   "conditions": [
@@ -354,19 +361,22 @@
       "evidence": [
         "framework-release-lines-20261002",
         "native-products-20261002",
-        "workflow-products-20261002"
+        "workflow-products-20261002",
+        "firefox-lines-20261002"
       ],
       "gap": "Chrome154.0.8037.95 and Edge154.0.4258.48 pass packed consumers and52 production workflow cases; actual Firefox157.0 passes three native-input scenarios per cohort. Safari27 remains hidden even after foreground activation; no Safari component qualification. Other OSes, current patch gaps, native Firefox workflow breadth and manual checks remain open.",
-      "nextAction": "Revisit Safari with an awake/unlocked visible desktop; acquire isolated preceding Firefox156.0.1, and extend actual-product workflow/OS coverage without replacing physical/manual review."
+      "nextAction": "Resolve Safari visibility after desktop-state clarification; expand native Firefox workflow and remaining product/OS coverage without replacing physical/manual review."
     },
     {
       "id": "browser-previous",
       "requirement": "Actual preceding stable browser products",
-      "status": "not-run",
+      "status": "partial",
       "delivery": "product",
-      "evidence": [],
-      "gap": "Cached Chrome-for-Testing148/151/153 are not proof of preceding retail product coverage; prior Firefox/Safari products unavailable in this inventory.",
-      "nextAction": "Acquire isolated product/OS versions or manual/VM receipts for the resolved previous lines. Recheck exact versions at acquisition."
+      "evidence": [
+        "firefox-lines-20261002"
+      ],
+      "gap": "Actual isolated Firefox156.0.1 passes30 native-input consumer cases on macOS26.6.1. Preceding Chrome, Edge and Safari, other OSes and broader workflows remain unqualified. Cached Chrome-for-Testing is not retail qualification.",
+      "nextAction": "Acquire supported isolated preceding Chrome/Edge distributions or named external machine/VM receipts; previous Safari requires a compatible OS environment. Preserve physical/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -500,7 +510,7 @@
         "https://www.firefox.com/en-US/firefox/156.0/releasenotes/",
         "https://archive.mozilla.org/pub/firefox/releases/"
       ],
-      "note": "October2 official archive index lists156.0 and156.0.1; highest stable previous-line patch is156.0.1. Acquisition and actual-product tests not yet run."
+      "note": "Official Mozilla156.0.1 mac/en-US archive acquired in isolation; published SHA512 and macOS codesign verification pass. Actual156.0.1 and157.0 each pass30 native-input consumer cases. Full distribution bytes unchanged; broader coverage remains open."
     },
     {
       "product": "Safari",

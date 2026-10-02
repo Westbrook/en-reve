@@ -82,3 +82,7 @@ Local main `9357f4e5500dac36ca90f5ae521a428978f166e8` qualifies three native-inp
 ## Chrome and Edge production workflow qualification
 
 Local main `0b935772368c40a611dc2ea15478db28d89b0e1d` qualifies SSO, settings, chat and project selection on installed Chrome/Edge.52 cases pass; two existing viewport cases remain skipped. See `apps/docs/tests/verification-products-20261002.json` and its README for exact source, outcomes and limits.
+
+## Current and preceding Firefox qualification
+
+Local main `7df6ba1bc6f41b54dff7df5c1f22ce51014d5bbc` qualifies30 native-input checks each on Firefox157.0 and isolated156.0.1. See `probes/native-browser-products/verification-firefox-lines-20261002.json` for exact acquisition, source, results and limits.

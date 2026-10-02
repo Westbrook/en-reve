@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "sourceBaseCommit": "0b935772368c40a611dc2ea15478db28d89b0e1d",
+  "runnerSHA256": "f04831d2e475a990b27c130481f5c84ce9afa7f324be7b388d93eac2a52d6f49",
+  "runnerOverlay": "Explicit EN_FIREFOX_APP distribution selection, resolved executable containment and Firefox bundle identifier validation; scenario assertions unchanged.",
+  "acquisition": {
+    "acquiredAt": "2026-10-02T04:03:03.010689+00:00",
+    "archiveURL": "https://archive.mozilla.org/pub/firefox/releases/156.0.1/mac/en-US/Firefox%20156.0.1.dmg",
+    "checksumsURL": "https://archive.mozilla.org/pub/firefox/releases/156.0.1/SHA512SUMS",
+    "archiveBytes": 160451034,
+    "archiveSHA512": "5aeba2dc2e95e8f042df27e3424463e7cc550ad1a6382d96382563c7aeed3a39945904665659c6079225bbf559bca566c5bfcaab2aa8a5f7edcae9a4df1cde2b",
+    "publishedSHA512": "5aeba2dc2e95e8f042df27e3424463e7cc550ad1a6382d96382563c7aeed3a39945904665659c6079225bbf559bca566c5bfcaab2aa8a5f7edcae9a4df1cde2b",
+    "checksumsSHA256": "59e1549b9cd82e139328514b13c618716f9f88396469c3332620501397a6d49b",
+    "checksumMatched": true,
+    "distribution": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app",
+    "signatureVerification": [
+      {
+        "command": [
+          "codesign",
+          "--verify",
+          "--deep",
+          "--strict",
+          "--verbose=2",
+          "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app"
+        ],
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libEGL.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libEGL.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/plugin-container.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/pingsender\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/pingsender\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/plugin-container.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/gpu-helper.app\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/gpu-helper.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/liblgpllibs.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/liblgpllibs.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/updater.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libsoftokn3.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libsoftokn3.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/crashhelper\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/crashhelper\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozavutil.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozavutil.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/updater.app/Contents/Frameworks/UpdateSettings.framework\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/updater.app/Contents/Frameworks/UpdateSettings.framework\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/updater.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozglue.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozglue.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/nmhproxy\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/nmhproxy\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libfreebl3.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libfreebl3.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozinference.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozinference.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozavcodec.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libmozavcodec.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libGLESv2.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/crashreporter.app\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libGLESv2.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/crashreporter.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/media-plugin-helper.app\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/media-plugin-helper.app\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/Frameworks/ChannelPrefs.framework\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/Frameworks/ChannelPrefs.framework\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libnss3.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libnss3.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libgkcodecs.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libgkcodecs.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libonnxruntime.dylib\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/libonnxruntime.dylib\n--prepared:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/XUL\n--validated:/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/XUL\n/private/tmp/en-firefox-156-0-1-isolated/Firefox.app: valid on disk\n/private/tmp/en-firefox-156-0-1-isolated/Firefox.app: satisfies its Designated Requirement\n"
+      },
+      {
+        "command": [
+          "codesign",
+          "-d",
+          "--verbose=4",
+          "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app"
+        ],
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "Executable=/private/tmp/en-firefox-156-0-1-isolated/Firefox.app/Contents/MacOS/firefox\nIdentifier=org.mozilla.firefox\nFormat=app bundle with Mach-O universal (x86_64 arm64)\nCodeDirectory v=20500 size=927 flags=0x10000(runtime) hashes=18+7 location=embedded\nVersionPlatform=1\nVersionMin=720896\nVersionSDK=1705216\nHash type=sha256 size=32\nCandidateCDHash sha256=f52a9f7f34d93175e9393d3e0e33b00a47332d40\nCandidateCDHashFull sha256=f52a9f7f34d93175e9393d3e0e33b00a47332d40b839cecb7cab5653b55c2921\nHash choices=sha256\nCMSDigest=f52a9f7f34d93175e9393d3e0e33b00a47332d40b839cecb7cab5653b55c2921\nCMSDigestType=2\nExecutable Segment base=0\nExecutable Segment limit=32768\nExecutable Segment flags=0x1\nPage size=4096\nCDHash=f52a9f7f34d93175e9393d3e0e33b00a47332d40\nSignature size=8988\nAuthority=Developer ID Application: Mozilla Corporation (43AQ936H96)\nAuthority=Developer ID Certification Authority\nAuthority=Apple Root CA\nTimestamp=Sep 21, 2026 at 10:53:56\u202fAM\nNotarization Ticket=stapled\nInfo.plist entries=37\nTeamIdentifier=43AQ936H96\nRuntime Version=26.5.0\nSealed Resources version=2 rules=13 files=73\nInternal requirements count=1 size=180\n"
+      }
+    ],
+    "signatureScope": "macOS codesign verification outside the sandbox passed. Initial sandbox verification lacked authority resolution and failed; no signature, quarantine or security setting was changed. Read-only mounted source also passed before owned image was unmounted. Published checksum obtained over official HTTPS; detached checksum-file signature not verified.",
+    "installedBrowserPolicy": "Copied to isolated temporary directory; no global installation or normal profile used."
+  },
+  "runs": {
+    "preceding": {
+      "schemaVersion": 1,
+      "startedAt": "2026-10-02T04:02:05.769Z",
+      "sourceCommit": "0b935772368c40a611dc2ea15478db28d89b0e1d",
+      "node": "v26.10.0",
+      "fixture": "/private/tmp/en-framework-lines-20261002-03/framework-execution/fixtures/framework",
+      "products": [
+        {
+          "name": "Firefox",
+          "version": "156.0.1",
+          "build": "15626.9.21",
+          "bundle": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app",
+          "identityDigest": "sha256:6125ed48e435bd8e06cba1856a1f880826c15173d783af0a0af4d652096eb532",
+          "identityPolicy": "Full selected Firefox application distribution.",
+          "status": "passed",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "156.0.1",
+            "platformName": "mac",
+            "setWindowRect": true,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+            "moz:buildID": "20260921121718",
+            "moz:headless": true,
+            "moz:platformVersion": "25.6.0",
+            "moz:processID": 56990,
+            "moz:profile": "/private/tmp/en-firefox-lines-20261002-01/preceding/firefox-profile",
+            "moz:shutdownTimeout": 60000
+          },
+          "headless": true,
+          "unchanged": true,
+          "distributionInventoryBeforeSHA256": "9e984e1b3c7f2a7400201c094cd141642911a0706645b079a3854abcd1aebabe",
+          "distributionInventoryAfterSHA256": "9e984e1b3c7f2a7400201c094cd141642911a0706645b079a3854abcd1aebabe"
+        }
+      ],
+      "cases": [
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "selectedProducts": "firefox",
+      "scope": "Three native-input consumer scenarios per cohort. Not Playwright parity, accessibility-tree/speech, all workflows, a complete current/previous product matrix or physical-device qualification.",
+      "preparationSHA256": "8e3ca4c450461ac0a962216ce5d12c09a53463d8ab7f5500d3411017b9dd9149",
+      "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+      "host": {
+        "version": "26.6.1",
+        "build": "25G76",
+        "arch": "arm64"
+      },
+      "completedAt": "2026-10-02T04:02:14.491Z",
+      "stats": {
+        "passed": 30,
+        "failed": 0,
+        "planned": 30
+      },
+      "rawResultSHA256": "d80c6da8858939e6ba4cb2a90608f0387e7eade90fe0bdf6a5aa892a2a0a0dc0"
+    },
+    "current": {
+      "schemaVersion": 1,
+      "startedAt": "2026-10-02T04:02:19.578Z",
+      "sourceCommit": "0b935772368c40a611dc2ea15478db28d89b0e1d",
+      "node": "v26.10.0",
+      "fixture": "/private/tmp/en-framework-lines-20261002-03/framework-execution/fixtures/framework",
+      "products": [
+        {
+          "name": "Firefox",
+          "version": "157.0",
+          "build": "15726.9.24",
+          "bundle": "/Applications/Firefox.app",
+          "identityDigest": "sha256:7f1df7542d9f2501056d90d91f5ff2a1e156e72081b3a4282d8624e7867da393",
+          "identityPolicy": "Full selected Firefox application distribution.",
+          "status": "passed",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "157.0",
+            "platformName": "mac",
+            "setWindowRect": true,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+            "moz:buildID": "20260924084938",
+            "moz:headless": true,
+            "moz:platformVersion": "25.6.0",
+            "moz:processID": 58261,
+            "moz:profile": "/private/tmp/en-firefox-lines-20261002-01/current/firefox-profile",
+            "moz:shutdownTimeout": 60000
+          },
+          "headless": true,
+          "unchanged": true,
+          "distributionInventoryBeforeSHA256": "a496f647090d0b848f4e3db646795a90677380e20ab83cfc0713add36b40040f",
+          "distributionInventoryAfterSHA256": "a496f647090d0b848f4e3db646795a90677380e20ab83cfc0713add36b40040f"
+        }
+      ],
+      "cases": [
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "selectedProducts": "firefox",
+      "scope": "Three native-input consumer scenarios per cohort. Not Playwright parity, accessibility-tree/speech, all workflows, a complete current/previous product matrix or physical-device qualification.",
+      "preparationSHA256": "8e3ca4c450461ac0a962216ce5d12c09a53463d8ab7f5500d3411017b9dd9149",
+      "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+      "host": {
+        "version": "26.6.1",
+        "build": "25G76",
+        "arch": "arm64"
+      },
+      "completedAt": "2026-10-02T04:02:25.303Z",
+      "stats": {
+        "passed": 30,
+        "failed": 0,
+        "planned": 30
+      },
+      "rawResultSHA256": "14ddca49aec90566ac974325c50768e3adbb4770a8bb0fde2c752029ef80fcd0"
+    }
+  },
+  "stats": {
+    "passed": 60,
+    "failed": 0,
+    "planned": 60
+  },
+  "scope": "Three native-input scenarios across ten hash-verified retained packed consumers, actual current and preceding Firefox on macOS. No complete product/OS matrix, native accessibility, speech, IME, physical device or fresh installation/type claim."
+}

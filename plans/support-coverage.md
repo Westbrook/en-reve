@@ -184,5 +184,9 @@ animation-frame readiness marker. No Safari component case passed; desktop
 lock/sleep state has been requested from the user. No assertion was bypassed.
 
 Mozilla's official archive index resolves the preceding Firefox line to156.0.1.
-An isolated acquisition remains next work; no previous-product qualification is
-inferred from archive availability. Physical-device inventory is still pending.
+The [isolated Firefox receipt](../probes/native-browser-products/verification-firefox-lines-20261002.json)
+now records30 native-input passes on156.0.1 and30 on installed157.0 using the same
+runner. The official archive checksum and macOS signature checks passed, and
+both complete app distributions stayed unchanged. Previous-product coverage is
+partial: preceding Chrome/Edge/Safari, other OSes and broader workflows remain
+open. Physical-device inventory is still pending.
