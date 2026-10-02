@@ -371,3 +371,16 @@ browser cases include twelve original appearance regressions; three additional
 density/identity cases pass. Fresh SSR build,
 strict types,123 integrity and66 extended Node checks pass. Twelve gallery copies,
 remaining §7.4 entries and the platform/manual/separate-owner requirements remain.
+
+The [final displayed-gallery batch](../apps/docs/tests/README.md#remaining-gallery-navigation-and-content-copies)
+completes the bounded copied-source inventory in §7.5a:48 gallery copies and11
+complete API copies compile against packed declarations and execute native
+consumer journeys in all three pinned engines.24 source tests pass; a fresh SSR
+build, strict types and189 Node checks pass. Missing example-owned row layout and
+hidden sorting-label styles are corrected. All actual stylesheet requests resolve
+through public packed exports, without the docs runtime or stylesheet.
+
+This closes the12 pending copies from the preceding checkpoint. It does not
+replace owning matrices or close the80 remaining reusable public-layer entries,
+native Firefox assertion comparison, physical/manual/Safari conditions or
+separate-owner gates. Historical external CSS-authoring rerun remains retired.

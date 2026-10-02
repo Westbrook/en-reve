@@ -1464,6 +1464,7 @@ export function dialogDrawerExample() {
 		(event.currentTarget as HTMLElement).closest<Overlay>('en-dialog')?.hide();
 	};
 	return html`
+		<style>@layer en.docs { .specimen-row { display:flex;align-items:center;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap; } }</style>
 		<div class="overlay-example">
 			<div class="specimen-row">
 				<en-button
@@ -1499,6 +1500,7 @@ export function dialogDrawerExample() {
 // example-start:popover-tooltip
 export function popoverTooltipExample() {
 	return html`
+		<style>@layer en.docs { .specimen-row { display:flex;align-items:center;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap; } }</style>
 		<div>
 			<div class="specimen-row">
 				<en-button id="view-options-trigger" variant="secondary">
@@ -2009,6 +2011,7 @@ export function contentRecipesExample() {
 		});
 	};
 	return html`
+		<style>@layer en.docs { .specimen-row { display:flex;align-items:center;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap; } }</style>
 		<link rel="stylesheet" href="/styles/content.css">
 		<link rel="stylesheet" href="/styles/radio.css">
 		<en-stack class="content-recipes-example" gap="medium">
@@ -2105,6 +2108,7 @@ class AssetTableDemo extends AsyncDirective {
 
 	render() {
 		return html`
+			<style>@layer en.docs { .authored-table-example .visually-hidden { position:absolute;inline-size:1px;block-size:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0; } }</style>
 			<link rel="stylesheet" href="/styles/table.css">
 			<link rel="stylesheet" href="/styles/radio.css">
 			<div class="authored-table-example">

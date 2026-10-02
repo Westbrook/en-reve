@@ -160,3 +160,16 @@ responsive layout, theme isolation, keyboard focus and overlay draft recovery.
 The final33 browser cases cover47 copied consumers per engine plus the existing
 appearance matrix; three additional density/identity regressions pass;59 copies compile. Twelve gallery copies still need independent
 runtime journeys. The original public-layer/platform/manual scope stays open.
+
+### Displayed-copy inventory exhausted
+
+The [remaining navigation/content batch](../apps/docs/tests/README.md#remaining-gallery-navigation-and-content-copies)
+qualifies the final twelve displayed gallery copies. All48 gallery and11complete
+API sources now compile and execute named journeys against native packed modules
+in three pinned engines. All24 source tests, fresh SSR build, strict types and189
+Node checks pass. Actual copies now own their action-row and hidden sorting-label
+styles; the fixture resolves declared table/content/radio CSS from public packs.
+
+This resolves the pending displayed-copy IDs recorded above, not every owning
+assertion. The80 remaining §7.4 inventory entries, native Firefox assertion-level
+comparison, platform/manual/Safari and separate-owner obligations remain open.

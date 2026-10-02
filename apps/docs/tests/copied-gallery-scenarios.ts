@@ -1,4 +1,5 @@
 import { expect, type Page } from '@playwright/test';
+import { navigationContentGalleryScenarios } from './copied-navigation-content-scenarios.js';
 import { presentationGalleryScenarios } from './copied-presentation-scenarios.js';
 import { copiedAPIScenarios } from './copied-api-scenarios.js';
 
@@ -242,5 +243,7 @@ for (const [id, elements] of Object.entries({
 
 copiedGalleryScenarios.push(...presentationGalleryScenarios);
 
-// Explicitly unqualified gallery copies; compilation is not runtime evidence.
-export const pendingGalleryExamples = ['tree-view', 'pagination', 'tabs', 'accordion', 'split-view', 'split-view-vertical', 'content-recipes', 'authored-table', 'messages', 'dialog-drawer', 'popover-tooltip', 'tooltip-warmup'];
+copiedGalleryScenarios.push(...navigationContentGalleryScenarios);
+
+// Keep inventory exhaustive; compilation alone never qualifies new examples.
+export const pendingGalleryExamples: string[] = [];

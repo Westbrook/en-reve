@@ -303,3 +303,36 @@ the qualified build and fresh profiles. Full app inventories and source/build
 inputs stayed unchanged. The linked consumer receipt records official download
 and Google code-signature provenance. This adds exact-version evidence without
 replacing historical receipts or implying other OS/device/manual acceptance.
+
+### Remaining gallery navigation and content copies
+
+The [navigation/content receipt](verification-gallery-navigation-20261002.json)
+closes the pending displayed-copy inventory: **all 48 gallery modules and all
+11 complete API modules** now have named native packed-consumer journeys in
+Chromium, Firefox and WebKit. Eight source tests per engine execute 59 actual
+copies; all 24 browser cases pass. All 59 copies also compile against packed
+public declarations. The fresh SSR build, strict core/docs types, 123 integrity
+checks and 66 extended Node checks pass.
+
+The final twelve journeys cover authored tree focus/selection and child removal,
+accepted/canceled and unknown-total pagination, tabs with retained field state,
+multiple accordions, nested and vertical splits, native content loading/recovery,
+keyed table sorting, alert dismissal, dialog/drawer drafts and focus recovery,
+popover options, and context-provider tooltip handoff. They exercise the copied
+application's actual handlers. The tooltip journey is shared with the separately
+extracted complete API copy, preserving both registration paths.
+
+Three examples now carry their own action-row layout, and the authored table
+carries its hidden sorting-label rule. Native table/content/radio CSS is resolved
+from the packed public exports at the copied sample's declared URLs, never
+injected into samples that do not request it. The fixture still omits the docs
+stylesheet/runtime. Tests check those stylesheet requests, computed layout,
+unchanged loading boxes, and keyed native-control identity while sorting.
+
+This completes the **displayed copied-source inventory** in §7.5a, not every
+owning behavior matrix or the broader verification plan. The two eager scoped
+color controls remain separately authored fixtures. Other public-layer entries,
+native Firefox assertion comparison, retail Safari/other platform conditions,
+manual AT/IME and separate-owner review remain open. No manual acceptance is
+inferred from Playwright results; the historical external authoring rerun remains
+retired by the user, never passed.

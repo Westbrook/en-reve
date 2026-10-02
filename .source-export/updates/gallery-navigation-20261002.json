@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-10-02T11:35:59.594955+00:00",
+  "sourceCommit": "d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8",
+  "previousSourceMain": "7604e82f729db3fc4d227fd393b7371ae6432566",
+  "taskPaths": [
+    "apps/docs/src/examples.ts",
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/copied-gallery-scenarios.ts",
+    "apps/docs/tests/copied-navigation-content-scenarios.ts",
+    "apps/docs/tests/specimen-sources.spec.ts",
+    "apps/docs/tests/verification-gallery-navigation-20261002.json",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md"
+  ],
+  "qualification": "The final twelve gallery copies have native consumer journeys: all48 gallery copies and11 complete API copies compile and execute in three engines.24 browser cases, fresh SSR build, strict types and189 Node checks pass. Broader public-layer/platform/manual/owner requirements remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

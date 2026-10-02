@@ -9,6 +9,7 @@ import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import { extname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { runTooltipWarmup } from './copied-navigation-content-scenarios.js';
 import { copiedAPIScenarios } from './copied-api-scenarios.js';
 import { copiedGalleryScenarios, pendingGalleryExamples } from './copied-gallery-scenarios.js';
 
@@ -99,7 +100,7 @@ async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<st
 	const archiveIdentity = archives.map(({ name, integrity, shasum, setup }) => ({ name, integrity, shasum, setupKey: setup.key }));
 	const identity = async () => ({ samples, archives: archiveIdentity, runtime: process.version, platform: process.platform, arch: process.arch,
 		environment: inventoryDigest(setupEnvironmentInputs(compilerEnvironment())),
-		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'apps/docs/tests/copied-gallery-scenarios.ts', 'apps/docs/tests/copied-presentation-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
+		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'apps/docs/tests/copied-gallery-scenarios.ts', 'apps/docs/tests/copied-presentation-scenarios.ts', 'apps/docs/tests/copied-navigation-content-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
 	const inputs = await identity();
 	const prepared = await immutableSetup({ cache: join(repository, 'node_modules/.cache/specimen-consumers'), inputs, verifyInputs: identity,
 		produce: async (output: string) => {
@@ -230,7 +231,7 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 	}
 	await writeFile(join(output, 'native-dependencies.json'), JSON.stringify({ packages: manifests, imports }));
 	await mkdir(join(publicRoot, 'styles'), { recursive: true });
-	for (const name of ['typography']) {
+	for (const name of ['typography', 'table', 'radio', 'content']) {
 		const stylesheet = imports[`@en-reve/styles/${name}.css`];
 		if (!stylesheet) throw new Error(`Missing public stylesheet: ${name}`);
 		await cp(resolve(publicRoot, `.${stylesheet}`), join(publicRoot, 'styles', `${name}.css`));
@@ -454,26 +455,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 				await expect(preview).toHaveAttribute('data-layout', 'landscape');
 				await expect(searchTrigger).toBeFocused();
 			} else if (id === 'api-tooltip-warmup') {
-				const position = page.locator('en-tooltip-position-demo');
-				const help = position.getByRole('button', { name: 'Hover or focus for help', exact: true });
-				await help.focus();
-				await expect(position.getByRole('tooltip')).toBeVisible();
-				await help.press('Escape');
-				await expect(position.getByRole('tooltip')).not.toBeVisible();
-				await expect(help).toBeFocused();
-				// Exercise the inlined acceptance helper as well as registration.
-				await position.getByRole('combobox', { name: 'Inline region', exact: true }).selectOption('start');
-				await expect(position.locator('en-tooltip')).toHaveAttribute('inline', 'start');
-				await expect(position.getByRole('combobox', { name: 'Inline region', exact: true })).toHaveValue('start');
-				const context = page.locator('en-tooltip-context-demo');
-				const canvas = context.getByRole('button', { name: 'Canvas help', exact: true });
-				const layer = context.getByRole('button', { name: 'Layer help', exact: true });
-				await canvas.focus();
-				await expect(context.locator('en-tooltip[for="context-canvas"]').getByRole('tooltip')).toBeVisible();
-				await canvas.press('ArrowRight');
-				await expect(layer).toBeFocused();
-				await expect(context.locator('en-tooltip[for="context-canvas"]').getByRole('tooltip')).not.toBeVisible();
-				await expect(context.locator('en-tooltip[for="context-layers"]').getByRole('tooltip')).toBeVisible();
+				await runTooltipWarmup(page);
 			} else if (id === 'composable-chat') {
 				const colorTags = ['en-color-picker', 'en-swatch', 'en-tab', 'en-tab-panel', 'en-tabs'];
 				await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'copied-module');
@@ -533,6 +515,10 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 				expect(await page.locator('en-card').evaluate(element => !!element.shadowRoot)).toBe(true);
 			}
 			if (id === 'native-navigation' || id === 'breadcrumbs') expect(stylesheets).not.toContain('/styles/navigation.css');
+			if (id === 'content-recipes' || id === 'authored-table') {
+				expect(stylesheets).toContain('/styles/radio.css');
+				expect(stylesheets).toContain(`/styles/${id === 'content-recipes' ? 'content' : 'table'}.css`);
+			}
 			evidence.push({ id, stylesheets: [...stylesheets], ...(scenario ? { contract: scenario.contract } : {}) });
 		});
 		// Independently consume pure packed definitions in an eager automatic scope.

@@ -170,3 +170,7 @@ Local main `a7ffdfa251f2d91d97d9626b568a7b48974f9cce` qualifies59 copied modules
 ## Standalone gallery presentation
 
 Local main `7604e82f729db3fc4d227fd393b7371ae6432566` qualifies59 copied modules against packed declarations and47 native source consumers across three pinned engines, covering36 gallery copies and all11 complete API copies. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.
+
+## Standalone gallery navigation and content
+
+Local main `d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8` completes the displayed-copy inventory:59 modules compile against packed declarations and execute native consumer journeys across three pinned engines. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer and manual/platform/owner obligations stay open.
