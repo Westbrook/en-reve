@@ -98,3 +98,7 @@ Local main `ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5` qualifies official isolate
 ## Expanded Firefox consumer qualification
 
 Local main `e860e5c216174d0345e55190ff9a3b55745df315` qualifies expanded native Firefox157.0 and156.0.1 consumer checks:60 per release with browser-computed field/tree names and roles. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Selected Firefox production workflow qualification
+
+Local main `516d03caa86aeb830fc37b4d953c526e0ac421d6` qualifies11 selected production workflows and60 native consumer checks per Firefox release. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

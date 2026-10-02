@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-10-02T05:06:54.247715+00:00",
+  "sourceCommit": "516d03caa86aeb830fc37b4d953c526e0ac421d6",
+  "previousSourceMain": "e860e5c216174d0345e55190ff9a3b55745df315",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/firefox.mjs",
+    "probes/native-browser-products/run.mjs",
+    "probes/native-browser-products/verification-firefox-workflows-20261002.json",
+    "probes/native-browser-products/workflows.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox157.0 and156.0.1 each pass11 selected native-input production workflows and60 consumer checks after shared transport extraction.109 tooling checks pass. Five harness acquisition failures retained. Full workflow assertions, AX descriptions, Safari, prior Chrome and OS/device/manual gaps remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

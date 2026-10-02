@@ -116,7 +116,7 @@ qualify preceding Chrome/Edge/Safari, other OSes or physical/manual acceptance.
 
 [Expanded October 2 receipt](verification-firefox-expanded-20261002.json) records
 60 passes per release, 120 total, using the six scenarios above. Both distribution
-inventories are unchanged. The source receipt binds the current runner; older
+inventories are unchanged. That historical receipt binds its runner before transport extraction; older
 three-scenario receipts retain their original hashes and counts.
 
 The first two runs failed the new accessibility query because it started at the
@@ -125,3 +125,34 @@ tree items. [BiDi `startNodes`](https://developer.mozilla.org/en-US/docs/Web/Web
 now supplies the exact component shadow root; the same names/roles then pass on
 both releases. No component naming change or assertion removal was needed.
 The failed receipts remain local and summarized in the new source receipt.
+
+## Production workflow subset
+
+Run the selected production journeys against the already qualified `dist` build:
+
+```sh
+EN_EXECUTION_OUTPUT=/absolute/new/firefox-workflow-run \
+EN_FIREFOX_APP=/absolute/isolated/Firefox.app \
+  tooling/test-pipeline/with-toolchain.sh node probes/native-browser-products/workflows.mjs
+```
+
+The runner takes the normal machine/checkout leases, starts its own loopback
+server and fresh Firefox profile per case, and checks full browser, workflow
+source and production asset identities before/after. It never changes an installed
+browser or user profile. Native key/pointer actions edit and activate controls;
+DOM calls inspect values, form data, identity and validity. The shared transport's
+accessible locator explicitly traverses each shadow root, including a supplied
+root host's own shadow tree. Native option-label typeahead plus Tab commits select
+choices; exact values are asserted. Native popup arrow behavior remains a separate
+manual check, consistent with the existing [native-select parity findings](../../packages/elements/src/forms-private/README.md).
+
+[Workflow verification](verification-firefox-workflows-20261002.json) records
+11 selected SSO/settings/chat/selection journeys per release (22 total), plus
+120 consumer passes after extracting the shared transport. Five failed acquisition
+attempts remain summarized in the receipt with their original diagnostics.
+The receipt binds both runners and the shared helper. It preserves the original
+[Playwright workflow](../../apps/docs/tests/workflows.spec.ts) and
+[selection](../../apps/docs/tests/selection.spec.ts) suites as the full contracts.
+This subset does not claim all of their assertions: remaining branches,
+hydration interception/pre-module edits, no-JS, responsive/history cases,
+computed descriptions/full AX, axe, speech, physical devices and IME remain open.

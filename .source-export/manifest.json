@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "e860e5c216174d0345e55190ff9a3b55745df315",
-  "exportedAt": "2026-10-02T04:44:21.042043+00:00",
+  "sourceCommit": "516d03caa86aeb830fc37b4d953c526e0ac421d6",
+  "exportedAt": "2026-10-02T05:06:54.247715+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5419,
-  "includedBytes": 144671610,
-  "qualification": "Expanded native Firefox157.0 and156.0.1 consumer coverage:120 passes across six scenarios and ten retained packed cohorts per release. Browser-computed field/tree names and roles verified using explicit shadow-root BiDi start nodes.107 tooling checks pass; prior failed locator attempts preserved. Production workflows, Safari, prior Chrome and OS/device/manual gaps remain.",
-  "latestUpdate": ".source-export/updates/firefox-expanded-20261002.json",
+  "includedFiles": 5423,
+  "includedBytes": 144920721,
+  "qualification": "Actual Firefox157.0 and156.0.1 each pass11 selected native-input production workflows and60 consumer checks after shared transport extraction.109 tooling checks pass. Five harness acquisition failures retained. Full workflow assertions, AX descriptions, Safari, prior Chrome and OS/device/manual gaps remain.",
+  "latestUpdate": ".source-export/updates/firefox-workflows-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

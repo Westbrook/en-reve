@@ -29,7 +29,7 @@ It is an evidence index, not a new browser-support promise or a completed test r
 | --- | --- | --- | --- |
 | Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
-| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |Not yet qualified |Production workflows, descriptions/full AX, other OS/manual coverage |
+| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |11 selected functional journeys each |Remaining workflow/hydration/layout assertions, descriptions/full AX, other OS/manual coverage |
 | Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
 
 These are scoped receipts, not complete support claims. See the dated acquisitions
@@ -263,3 +263,27 @@ accessibility trees/speech are not claimed. Both full app distributions were
 unchanged. Existing packed artifacts were hash-verified and reused; there was no
 fresh installation/type compilation. Production workflows, Safari and the original
 OS/physical/manual obligations remain outstanding.
+
+## Selected production workflows in actual Firefox
+
+The [native workflow receipt](../probes/native-browser-products/verification-firefox-workflows-20261002.json)
+adds 22 passes: eleven selected functional journeys on each Firefox release.
+SSO covers success, rejected retry, cancellation and stale-response isolation.
+Settings covers captured saves versus later edits, failed-save retry and incoming
+Keep/Use decisions while preserving draft identity. Chat covers inert text,
+review/preview/apply, stale revisions, deduplicated sends and cancel/reset behavior.
+Selection covers explicit project keys, FormData and unresolved-query rejection.
+
+The runner uses real key/pointer actions and browser-computed name/role queries;
+DOM reads inspect state and identity. Native select typeahead with Tab avoids the
+already documented headless Firefox popup-arrow limitation, also seen on plain
+native selects. Four failed select attempts and one scoped-shadow-root query
+failure remain retained, rather than counted as product failures or passes.
+
+A fresh browser profile is used for each journey. The shared transport extraction
+also passed all 120 existing native consumer cases again. Full distributions and
+workflow source/assets were unchanged. Existing qualified production assets and
+packed consumers were reused; no new build, installation or type claim is made.
+This is not full Playwright assertion parity: interception/pre-hydration drafts,
+no-JS, computed descriptions/full AX, all remaining workflow branches and layout/
+history assertions remain open, along with the original OS/device/manual scope.

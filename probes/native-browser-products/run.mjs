@@ -9,6 +9,7 @@ import {setTimeout as delay} from 'node:timers/promises';
 import {withMachineOwner} from '../../tooling/testing/machine-owner.mjs';
 import {withExecutionOwner} from '../../tooling/testing/execution-owner.mjs';
 import {contentInventory, inventoryDigest} from '../../tooling/evidence/setup.mjs';
+import {firefox} from './firefox.mjs';
 import {cohorts} from '../framework-consumption/cohorts.mjs';
 
 const root=resolve(import.meta.dirname,'../..');
@@ -52,37 +53,7 @@ async function safari(){
   close:async()=>{await request(prefix,undefined,'DELETE');await stop(driver);},
  };
 }
-async function firefox(bundle){
- assert.equal(metadata(bundle).CFBundleIdentifier,'org.mozilla.firefox','Expected an official Firefox application');
- const executable=await realpath(join(bundle,'Contents/MacOS/firefox'));
- assert(executable.startsWith(bundle+'/'),'Firefox executable must stay inside its distribution');
- const profile=join(output,'firefox-profile');await mkdir(profile);
- const browser=child(executable,['--headless','--no-remote','--profile',profile,'--remote-debugging-port','0'],'firefox');
- const endpoint=await until(()=>browser.log().match(/WebDriver BiDi listening on (ws:\/\/127\.0\.0\.1:\d+)/)?.[1],'Firefox BiDi');
- const ws=new WebSocket(endpoint+'/session');await new Promise((res,rej)=>{ws.addEventListener('open',res,{once:true});ws.addEventListener('error',rej,{once:true});});
- let id=0;const pending=new Map();
- ws.addEventListener('message',({data})=>{const message=JSON.parse(data);const item=pending.get(message.id);if(item){pending.delete(message.id);clearTimeout(item.timer);message.type==='error'?item.reject(Error(JSON.stringify(message))):item.resolve(message.result);}});
- ws.addEventListener('close',()=>{for(const item of pending.values()){clearTimeout(item.timer);item.reject(Error('BiDi connection closed'));}pending.clear();});
- function send(method,params={}){return new Promise((resolve,reject)=>{const key=++id;const timer=setTimeout(()=>{pending.delete(key);reject(Error('BiDi timed out: '+method));},20000);pending.set(key,{resolve,reject,timer});ws.send(JSON.stringify({id:key,method,params}));});}
- const session=await send('session.new',{capabilities:{alwaysMatch:{browserName:'firefox'}}});
- const {context}=await send('browsingContext.create',{type:'tab'});
- return {capabilities:session.capabilities,headless:true,
-  navigate:url=>send('browsingContext.navigate',{context,url,wait:'complete'}),
-  evaluate:async expression=>{const result=await send('script.evaluate',{expression:`(async()=>JSON.stringify(await (${expression})))()`,target:{context},awaitPromise:true});if(result.type!=='success')throw Error(JSON.stringify(result));return result.result.value===undefined?undefined:JSON.parse(result.result.value);},
-  locateAccessible:async(role,name,startExpression)=>{
-   // BiDi locators traverse the supplied DOM root, not every shadow tree.
-   const params={context,locator:{type:'accessibility',value:{role,name}}};
-   if(startExpression){
-    const node=await send('script.evaluate',{expression:startExpression,target:{context},awaitPromise:false,serializationOptions:{maxDomDepth:0}});
-    assert.equal(node.type,'success');assert(node.result.sharedId,'Expected a remote start node');
-    params.startNodes=[{sharedId:node.result.sharedId}];
-   }
-   return (await send('browsingContext.locateNodes',params)).nodes;
-  },
-  actions:actions=>send('input.performActions',{context,actions}),
-  close:async()=>{try{await send('session.end');}finally{ws.close();await stop(browser);}},
- };
-}
+const firefoxSession=bundle=>firefox({bundle,output,metadata,child,until,stop});
 
 const el=(id,selector)=>`document.querySelector(${JSON.stringify('#'+id)})${selector?`.shadowRoot.querySelector(${JSON.stringify(selector)})`:''}`;
 async function ready(b,expression){await until(()=>b.evaluate(`Boolean(${expression})`),expression);}
@@ -188,7 +159,7 @@ try {await withMachineOwner(()=>withExecutionOwner(root,async()=>{
  receipt.host={version:execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim(),build:execFileSync('sw_vers',['-buildVersion'],{encoding:'utf8'}).trim(),arch:process.arch};
  server=await portServer(async(req,res)=>{try{const name=new URL(req.url,'http://127.0.0.1').pathname;if(!/^\/[a-z0-9-]+\.(html|js|json)$/.test(name)){res.writeHead(404).end();return;}res.setHeader('Content-Type',name.endsWith('.js')?'text/javascript':name.endsWith('.json')?'application/json':'text/html');res.end(await readFile(join(fixture,'site',name.slice(1))));}catch{res.writeHead(404).end();}});
  const url='http://127.0.0.1:'+server.address().port;
- for(const [name,start,path] of [['Safari',safari,'/Applications/Safari.app'],['Firefox',firefox,firefoxApp]].filter(([name])=>selected==='both'||name.toLowerCase()===selected)){
+ for(const [name,start,path] of [['Safari',safari,'/Applications/Safari.app'],['Firefox',firefoxSession,firefoxApp]].filter(([name])=>selected==='both'||name.toLowerCase()===selected)){
   const bundle=await realpath(path),plist=metadata(bundle),paths=[bundle];if(name==='Safari')paths.push(await realpath('/usr/bin/safaridriver'));
   const before=await identity(paths);await writeFile(join(output,name+'-identity-before.json'),JSON.stringify(before,null,2)+'\n');
   const product={name,version:plist.CFBundleShortVersionString,build:plist.CFBundleVersion,bundle,identityDigest:before.digest,identityPolicy:name==='Safari'?'Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.':'Full selected Firefox application distribution.',status:'running'};receipt.products.push(product);await save();

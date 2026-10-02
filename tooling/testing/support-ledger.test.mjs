@@ -290,10 +290,10 @@ test('isolated Chrome stable receipt preserves signed retail provenance and exac
 });
 
 
-test('expanded native Firefox coverage binds the current runner and all consumer cohorts', async () => {
+test('historical expanded native Firefox coverage retains all consumer cohorts', async () => {
  const evidence=ledger.evidence.find(e=>e.id==='firefox-expanded-20261002');
  const receipt=await json(evidence.path);
- assert.equal(receipt.runnerSHA256,createHash('sha256').update(await read('probes/native-browser-products/run.mjs')).digest('hex'));
+ assert.equal(receipt.runnerSHA256,'a1d4f6b90b597e4411d4ed65695f5f53c9e8c36f41189c9a3692bd899b25b6f9');
  assert.equal(receipt.acquisitionReceiptSHA256,createHash('sha256').update(await read(receipt.acquisitionReceipt)).digest('hex'));
  assert.deepEqual(receipt.stats,{passed:120,failed:0,planned:120});
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]) {
@@ -307,4 +307,30 @@ test('expanded native Firefox coverage binds the current runner and all consumer
  assert.equal(receipt.runs.preceding.preparationSHA256,receipt.runs.current.preparationSHA256);
  assert.equal(receipt.initialAttempts.length,2);
  for(const attempt of receipt.initialAttempts){assert.deepEqual(attempt.stats,{passed:2,failed:1,planned:60});assert.equal(attempt.failedCase.status,'failed');}
+});
+
+
+test('native Firefox workflow receipt binds both runners, helper and unchanged production inputs', async () => {
+ const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-workflows-20261002').path);
+ for(const [path,digest] of Object.entries(receipt.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(receipt.acquisitionReceiptSHA256,createHash('sha256').update(await read(receipt.acquisitionReceipt)).digest('hex'));
+ assert.deepEqual(receipt.stats,{passed:22,failed:0,planned:22});
+ const expected=['sso-success','sso-retry','sso-cancel','sso-reset','settings-snapshot','settings-retry','settings-incoming','chat-safe-preview','chat-stale','chat-cancel','selection-assignment'];
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=receipt.runs[label];assert.equal(run.status,'passed');assert.equal(run.product.version,version);
+  assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:11,failed:0,planned:11});
+  assert.deepEqual(run.cases.map(c=>c.id),expected);assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
+ }
+ assert.equal(receipt.initialAttempts.length,5);assert(receipt.initialAttempts.every(a=>a.stats.failed===1&&a.failedCase.status==='failed'));
+ for(const scope of [/Hydration/,/No-JavaScript/,/descriptions/,/workflow/,/physical devices/])assert(receipt.remaining.some(item=>scope.test(item)));assert.match(receipt.nativeSelectPolicy,/typeahead/);
+});
+
+test('extracted native Firefox transport requalifies the unchanged six-scenario consumer contract',async()=>{
+ const receipt=await json(ledger.evidence.find(e=>e.id==='firefox-workflows-20261002').path);
+ assert.deepEqual(receipt.consumerStats,{passed:120,failed:0,planned:120});
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=receipt.consumerTransportRequalification[label];assert.equal(run.status,'passed');
+  assert.deepEqual(run.stats,{passed:60,failed:0,planned:60});assert.equal(run.products[0].version,version);assert.equal(run.products[0].unchanged,true);
+  for(const cohort of cohorts){const cases=run.cases.filter(c=>c.cohort===cohort.id);assert.equal(cases.length,6);assert(cases.every(c=>c.status==='passed'));assert.equal(new Set(cases.map(c=>c.scenario)).size,6);}
+ }
 });
