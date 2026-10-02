@@ -1,0 +1,1 @@
+import{t as e}from"./data-table-Cp2_W9K9.js";e();

@@ -1,0 +1,2 @@
+import{n as e,t}from"./virtual-collection-demo-SCEaCTY-.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";function r(){return(r=n((()=>{e(),customElements.get(`en-virtual-collection-demo`)||customElements.define(`en-virtual-collection-demo`,t)})))()}r();
+//# sourceMappingURL=define-virtual-collection-demo-DNw3a8UV.js.map
