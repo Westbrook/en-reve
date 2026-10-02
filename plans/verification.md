@@ -519,3 +519,28 @@ The public-entry inventory is 98/110 qualified, with 12 pending. Remaining entri
 cover color styles, optional-slot/static-style/scroll helpers and style barrels/
 metadata. Manual AT, physical/retail platforms, full SSR/hydration and separate-owner
 obligations remain open. Historical external CSS-authoring rerun remains retired.
+
+
+## Color style and discovery consumers — 2026-10-02
+
+The [packed color consumers](../probes/color-recipes/README.md) qualify ten public
+entries: the nine remaining style exports and a new independent color-plane.css.
+The original portable picker concatenated plane selectors and incorrectly adopted
+its two-column container layout. Picker and plane CSS now mirror their independent
+JavaScript fragments. Portable plane users explicitly import color-plane.css.
+
+144 browser cases pass in two deliveries across three engines, with41 initial
+Node controls and a fresh1184-asset production build. Native input, validation,
+alpha/checkerboard paint, pointer capture/cancel/clamping, keyboard, RTL, disabled
+state, scoped customization, metadata and responsive geometry have bounded proof.
+Earlier failures remain in the receipt, including fixture fixes and a one-degree
+WebKit pointer cardinal tolerance. Exact keyboard and cancellation remain tested.
+
+The inventory is108/111 qualified; optional-slot-presence, static-styles and
+scroll-into-view helpers remain. Manual AT, physical/retail platforms, complete
+SSR/hydration and separate-owner obligations are still distinct unfinished scope.
+Historical external CSS-authoring rerun remains retired, never passed.
+
+Final combined integrity and color pathway passes176 Node checks and144 browser
+cases with no skips or retries. Historical exporter bytes are retained separately
+from the new export generator; prior receipts are not relabeled as new results.

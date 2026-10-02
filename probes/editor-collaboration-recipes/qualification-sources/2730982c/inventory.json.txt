@@ -462,19 +462,17 @@
       "entry": "@en-reve/styles",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/index.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/form-navigation.js",
@@ -498,55 +496,49 @@
       "entry": "@en-reve/styles/color-wheel.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/color-wheel.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/color-slider.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/color-slider.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/color-picker.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/color-picker.css",
       "source": "packages/styles/package.json",
       "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/calendar.css",
@@ -741,10 +733,9 @@
       "entry": "@en-reve/styles/metadata.js",
       "source": "packages/styles/package.json",
       "delivery": "module",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
+      "qualification": "pending",
+      "composition": null,
+      "contract": null
     },
     {
       "entry": "@en-reve/styles/foundations.css",
@@ -988,15 +979,6 @@
       "composition": "editor-collaboration",
       "contract": "packages/styles/docs/editor-collaboration-consumers.md",
       "receipt": "probes/editor-collaboration-recipes/verification-20261002.json"
-    },
-    {
-      "entry": "@en-reve/styles/color-plane.css",
-      "source": "packages/styles/src/color-picker.ts",
-      "delivery": "css",
-      "qualification": "qualified-scenarios",
-      "composition": "colors",
-      "contract": "packages/styles/docs/color-consumers.md",
-      "receipt": "probes/color-recipes/verification-20261002.json"
     }
   ]
 }

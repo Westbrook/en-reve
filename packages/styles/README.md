@@ -357,3 +357,10 @@ shows a native draft with structured-token preview, explicit composer snapshots,
 native rich notes and presence/activity surfaces. Editor style fragments are
 JS-only; chat and collaboration also have portable CSS. Matching templates and
 all editing, clipboard, provider, submission and paging policies remain explicit.
+
+
+The [color consumer guide](docs/color-consumers.md) defines independently scoped
+channel, wheel, plane and picker templates. Portable plane styling now lives in
+`color-plane.css`; `color-picker.css` no longer combines conflicting plane rules.
+The JavaScript `colorPlaneStyles` export remains in `color-picker.js`. The guide
+also covers shared barrel identity and metadata-driven scoped customization.

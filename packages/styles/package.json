@@ -182,7 +182,8 @@
       "default": "./dist/chat.js"
     },
     "./chat.css": "./dist/chat.css",
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./color-plane.css": "./dist/color-plane.css"
   },
   "scripts": {
     "build": "node scripts/author-css.mjs && node ../../node_modules/typescript/bin/tsc -p tsconfig.json && node scripts/export-css.mjs",

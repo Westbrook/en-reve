@@ -11,7 +11,7 @@ test('inventory names every wildcard primitive and explicit style export without
  assert.equal(new Set(entries).size,entries.length);
  assert(inventory.entries.every(row=>['pending','qualified-scenarios'].includes(row.qualification)));
  for(const row of inventory.entries.filter(row=>row.qualification==='qualified-scenarios'))assert(row.composition&&row.contract&&row.receipt);
- for(const row of inventory.entries.filter(row=>row.delivery==='css'&&row.qualification==='qualified-scenarios'))assert(['probes/native-recipes/verification-20261002.json','probes/form-recipes/verification-20261002.json','probes/presentation-recipes/verification-20261002.json','probes/calendar-recipes/verification-20261002.json','probes/tree-recipes/verification-20261002.json','probes/notification-recipes/verification-20261002.json','probes/collection-style-recipes/verification-20261002.json','probes/choice-overlay-recipes/verification-20261002.json','probes/editor-collaboration-recipes/verification-20261002.json','probes/color-recipes/verification-20261002.json'].includes(row.receipt));
+ for(const row of inventory.entries.filter(row=>row.delivery==='css'&&row.qualification==='qualified-scenarios'))assert(['probes/native-recipes/verification-20261002.json','probes/form-recipes/verification-20261002.json','probes/presentation-recipes/verification-20261002.json','probes/calendar-recipes/verification-20261002.json','probes/tree-recipes/verification-20261002.json','probes/notification-recipes/verification-20261002.json','probes/collection-style-recipes/verification-20261002.json','probes/choice-overlay-recipes/verification-20261002.json','probes/editor-collaboration-recipes/verification-20261002.json'].includes(row.receipt));
 });
 test('compositions use only public imports and inventory links each exercised entry',async()=>{
  for(const [id,path] of [['core','packages/primitives/tests/browser/fixture.ts'],['recipes','probes/reusable-layers/recipes.ts'],['content','packages/primitives/tests/content/fixture-template.ts'],['navigation','packages/primitives/tests/navigation/fixture-template.ts'],['navigation','packages/primitives/tests/navigation/fixture.ts']]){
@@ -109,13 +109,4 @@ test('editor collaboration consumer binds ten public entries without owning elem
  for(const entry of seen)assert.equal(inventory.entries.find(row=>row.entry===entry)?.qualification,'qualified-scenarios',entry);
  const rows=inventory.entries.filter(row=>row.composition==='editor-collaboration');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,2);
  for(const row of rows)assert(seen.includes(row.entry.replace('.css','.js')),row.entry);
-});
-
-
-test('color compositions bind independent portable plane and style discovery entries',async()=>{
- const source=await read('probes/color-recipes/recipes.ts');assert(!source.includes('/src/')&&!source.includes('/dist/')&&!source.includes('@en-reve/elements'));
- const rows=inventory.entries.filter(row=>row.composition==='colors');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,4);
- for(const row of rows)assert.equal(row.receipt,'probes/color-recipes/verification-20261002.json');
- const generator=await read('packages/styles/scripts/export-css.mjs');assert.match(generator,/'color-picker': \['colorPickerStyles'\]/);assert.match(generator,/'color-plane': \['colorPlaneStyles'\]/);
- const prep=await read('probes/color-recipes/prepare.mjs');assert(prep.includes("['color-picker','color-plane','color-slider','color-wheel']"));assert(!prep.includes("name==='color-plane'?"));
 });

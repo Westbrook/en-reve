@@ -88,3 +88,9 @@ providers, bookmarks, clipboard conversion, composer snapshots and collaboration
 surfaces have bounded evidence. Editor styling is JS-only; chat/collaboration also
 run portable CSS. Coverage is 98/110, with 12 plus platform/manual/owner scope open.
 Synthetic payload and composition guards do not establish OS clipboard or IME.
+
+
+The [color consumers](../color-recipes/README.md) qualify the remaining nine style
+entries and the new independent portable plane export: 144 browser cases pass
+across two deliveries and three engines. Coverage is 108/111 entries; three
+interaction helpers and the separate platform/manual/owner obligations remain.

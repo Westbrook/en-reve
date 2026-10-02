@@ -222,3 +222,7 @@ Local main `f179e86869c77c53c088a7ceeff2a0fecd6e3f94` qualifies ten additional c
 ## Packed editor and collaboration consumers
 
 Local main `2730982c2bb91979efee065c0ca82ca20764bad8` qualifies ten additional editor and collaboration entries. See `probes/editor-collaboration-recipes/README.md` for scope and browser limits.
+
+## Packed native color consumers
+
+Local main `e4606d2e13d7bd54c9410604bf12eb17cdb50971` qualifies ten color/style-discovery entries. See `probes/color-recipes/README.md` for scope and browser limits.

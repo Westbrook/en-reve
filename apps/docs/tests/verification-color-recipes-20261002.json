@@ -1,0 +1,1114 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T16:28:13.592132+00:00",
+  "sourceBase": "2730982c2bb91979efee065c0ca82ca20764bad8",
+  "status": "passed",
+  "scope": "Fresh production build and independent portable color-plane export.",
+  "inputs": {
+    "apps/docs/scripts/authored-specimen-sources.mjs": "5fbdffab1e99042798c86b8370323a6663e2c049c36ade295686eadf8896880f",
+    "apps/docs/scripts/generate-api-examples.mjs": "8748417bad548e7056474f6b5f16af503304ef29752c4fe9fda5bdeaf02f242e",
+    "apps/docs/scripts/specimen-sources.mjs": "4451d782d66d6f554f65640bfe1503ad58ecb9b5427684835bc94f27f190ae29",
+    "apps/docs/src/api-example/app.ts": "a00a9fe6064f16559606accac877d762c8199968f1304eced616468257248f84",
+    "apps/docs/src/api-example/main.ts": "4df826c88bce5bc032cfb85169156d9ace913961e323d69fbf30b48f53d1ad1e",
+    "apps/docs/src/app.ts": "d165d3accb7ec9da0d470f291f6b127a65ae9b34138c15aabf6c513a7b3eada4",
+    "apps/docs/src/calendar-demo.ts": "9ee8b9f30fb0526e08669a9c495f4306a1dfebf69c7309ae699ff4f60eec1d93",
+    "apps/docs/src/carousel-demo.ts": "b9e95233f29b4dee901810588205ed40832301594773395c902c8319004560b1",
+    "apps/docs/src/change-consumption.ts": "c581b10b764e8a750418eef2c5fe47248bc6102de25bb3963ffefbd86ed8664f",
+    "apps/docs/src/chat-patterns-demo.ts": "6f9ce4b780e130075ecef479f790a08b43f30d865e644441bd009876236dc6f9",
+    "apps/docs/src/color-spaces-demo.ts": "3054f138fafc3c46e57ac71d4b6ad7103077e0fe9e7bf03d27abf8fcd1c7a091",
+    "apps/docs/src/composable-chat-demo.definition.ts": "32931b2c0b9a0f75f06f29deff9d25d4fdd2db97a4707ca91a51cf79feeb9b25",
+    "apps/docs/src/editor-color-extension.ts": "6cec0c4b47fd4bc2e2dc7ad4c40c42258a76d4300f163fb3fcbe463f247af3db",
+    "apps/docs/src/examples.ts": "ef49b8a7280219eb40cf7f79cfbe1d8675f824af84867205b76fd72705b22ef3",
+    "apps/docs/src/file-upload-demo.ts": "3b68b7d0cafb187d04b546408779e0e3148467f7f8d37f527fb923324ee22c5f",
+    "apps/docs/src/inverse-theme.ts": "c0a0cff7e8a82b6ea6007d5baee114ca4cd48466b9a4bdf204be84ca453c8e02",
+    "apps/docs/src/multi-step-demo.ts": "be58213f02d4cd1e428525130cc30e7ee2f34009adb86116203d7e41bee026b1",
+    "apps/docs/src/presence-activity-demo.ts": "de36f67960e2e62c7a36d4c00eca77afa75b853a0a1fe5cb0684716fbbf07608",
+    "apps/docs/src/preview-theme.ts": "fe73f774828e7f734b81f1d33fac8aaca785de292e36d6419df9a00c3c3ce9f2",
+    "apps/docs/src/rich-text-demo.ts": "922b3adbf7f821aad9157e5c2b7e9388b8f5a5c900a016fc154e15ae72600bed",
+    "apps/docs/src/site.css": "f3eea512972301bbdd28f184e6953c4bd7a2b81a56dee53b55f72f26ad706849",
+    "apps/docs/src/toast-demo.ts": "e3d4d3ce6b4505101126b58e439a841f213695f6674bd1cc0e40cbfeb78e040d",
+    "apps/docs/src/token-copy.ts": "8595a5338c1b505c9207ca5649c7baae30a9ade0203c467a2853b332d8f7d106",
+    "apps/docs/src/tree-data-demo.ts": "00e10d98d03d3fb354be7b4ec72a44e0cfa2d40c7dab712aae9f9f95b4e9d5c5",
+    "apps/docs/src/virtual-collection-demo.ts": "9c33e76a034e811b526952d2d44888948533cdbc21a7da74c6bb94b734ba796d",
+    "apps/docs/tests/api-reference-generator.test.mjs": "d7ca4235446cb8af825885d790f322ab0ced09b6ece951eb09eb712c040b13eb",
+    "apps/docs/tests/copied-api-scenarios.ts": "3e3bec6641d37098aa39970f8b9f78dcf79337f97bbde248b591c99cc4c52a2c",
+    "apps/docs/tests/copied-gallery-scenarios.ts": "9f163dab122a0b50ff85478efaddbf1d14a726fdc20be51094e5b9c5d54c887b",
+    "apps/docs/tests/copied-navigation-content-scenarios.ts": "3e493ee176418a80d310f5ad04456e902df997e0520b4aaede132e8ade77d4a4",
+    "apps/docs/tests/copied-presentation-scenarios.ts": "00797a7d3776d1838183535159fc97ea7bd9b85ab0082e8d479bd3ac23e095ae",
+    "apps/docs/tests/specimen-source-assembly.test.mjs": "78f90a007536fdb2ade5969c41430d7bb1645e1cbc281128a9b68930f8f395ec",
+    "apps/docs/tests/specimen-sources.spec.ts": "9fc1d4963a469477ed1554d0543bcaea68ff14486f51886b814fd04f5755191f",
+    "apps/docs/tests/system-appearance.spec.ts": "d3dfb25ad61c8b13215dd34a8e2aaed7d4bb88bb89a0c13eadc3e6846ca287e7",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "packages/primitives/src/templates/patterns.ts": "65580efbdd67443e593eefd70d70071c59d1e422f58731b1abd8ebd8f8bb81e0",
+    "probes/component-patterns/gallery.spec.ts": "625a2a6a1c7c516db32a8b0bb398913748a74c2d91ed30256079dd694a3209ed",
+    "probes/component-patterns/inset-actions.spec.ts": "b7ba78ccfdc4afc204bb35de8a28ff608da5413b9dbd451c3734303bb2388072",
+    "packages/styles/src/feedback.ts": "2e5e6d5c8123dad3ae2290ba2ea6fe75bd6631d491bf0b97b2a6ea49e2080c23",
+    "packages/styles/src/index.ts": "b2bc19b566f94148be877a0af42575626abc4f66d4eddde6cd46a2889daceec2",
+    "packages/styles/scripts/export-css.mjs": "3cd9231c13e2ebefba50708e566d4d1afb3190c1642f50bab065a41bf92d0929",
+    "packages/styles/src/table.ts": "34bee52cc998baf9fdacbfc1eb8f82cedcab760fc58fee9bc64b66697467fd7d",
+    "packages/styles/package.json": "c9f9c0c7ac494809dd825db8c6782d55ded892fbf32ec0fdd6bc86ca07fcbc27",
+    "packages/styles/src/color-picker.ts": "43141dc9179bd589b70d8ea9b740b719ccf47e5c57bf3607f8114799b14ec091",
+    "packages/styles/src/color-slider.ts": "6a3202141531871f5a7fdd9e163dc8df7efa0439759ab20d8928f506e9710988",
+    "packages/styles/src/color-wheel.ts": "35e3e885df71017d7ae7ab97dfa20926545bf6b8e776fe5ef3cc324e13a94d8a"
+  },
+  "generatedModules": {
+    "apps/docs/src/generated/calendar-source.js": "c7d197f8f92a231b1a4042d3e0e8548a0a29e7e3792bfc01e576287bad42bde1",
+    "apps/docs/src/generated/carousel-source.js": "c7d03c22fdb0304b1100da344aa752e0e86e8e178c06b3fe1ad3b827c165a80a",
+    "apps/docs/src/generated/chat-patterns-source.js": "28cdddabf935596e930d694e76e84a7cd0ad84fa860d073c66ccaf73c8bbdf3c",
+    "apps/docs/src/generated/composable-chat-source.js": "0c0748ba5e7298ba32d6cb95454ae966b182b4ae2a9082261f40c0860d68d195",
+    "apps/docs/src/generated/multi-step-source.js": "4ab34bd6fda64f244210ed507b80d69af5126cb1b14fe9b5e9e582bf19a48c8c",
+    "apps/docs/src/generated/presence-activity-source.js": "483d9aa72e8d34cd7a8e627407d35238dfe9804811ef590feca9a0aff9675112",
+    "apps/docs/src/generated/rich-text-source.js": "80145fc01c92236f6eb0b415245b8be40a147e2280e4965a62033c644967ddc4",
+    "apps/docs/src/generated/toast-source.js": "8a44e5fba27495d156d33eb6e7b31eaf15b918a5311108c24652d13f873fee4e",
+    "apps/docs/src/generated/tooltip-warmup-source.js": "07491d856fc05e4f8aa6db7c469a1bffb914b785b5501265d5e27bf06c256e95",
+    "apps/docs/src/generated/tree-data-source.js": "e46fc5c529d25e444c1780f249f12eb9c11414469c0ecf0155603ccfe52f4816",
+    "apps/docs/src/generated/virtual-collection-source.js": "95fb35024af26e7bd975cd1a7d6dc630b24bb3a3f4b9fb9e09f0f5f06dec08a3"
+  },
+  "productionBuild": {
+    "run": "/private/tmp/en-color-build-20261002-01",
+    "command": [
+      "tooling/test-pipeline/with-toolchain.sh",
+      "npm",
+      "run",
+      "build"
+    ],
+    "receiptSHA256": "58c7f685d5004929e635ddd56c3a558b5bbee5095f4f7db6fc8694db754186d5",
+    "commandLogSHA256": "32c210c4f4f0851c1a707cd407bfbf5c9ffe78467d47ea12e451247cb44b6b52",
+    "nodePasses": 41,
+    "strictTypes": "passed",
+    "SSRBuild": "passed",
+    "distFiles": 1184,
+    "distManifestSHA256": "ce9bc0181fa0626d274d348cec0ac49c7b92a60495b2397118efb57b2a635a64"
+  },
+  "reports": [
+    {
+      "path": "/private/tmp/en-color-recipes-20261002-06/evidence/2bf29e3df725/playwright.json",
+      "sha256": "9cf8ab4f5e83456656c16a195d0ef0b5465a52f47ee4c28491665ff1850483cb",
+      "stats": {
+        "startTime": "2026-10-02T16:24:05.997Z",
+        "duration": 33556.117,
+        "expected": 144,
+        "skipped": 0,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "cases": [
+        {
+          "project": "chromium",
+          "title": "wide picker keeps its one-column composition independently of the plane",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 848
+        },
+        {
+          "project": "chromium",
+          "title": "wide plane uses available width and switches to two columns",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 364
+        },
+        {
+          "project": "chromium",
+          "title": "narrow plane stacks without changing the picker",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 358
+        },
+        {
+          "project": "chromium",
+          "title": "valid hex draft updates alpha preview and serialized output",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 354
+        },
+        {
+          "project": "chromium",
+          "title": "invalid draft stays editable while last valid color is preserved",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 102
+        },
+        {
+          "project": "chromium",
+          "title": "native alpha keyboard updates output including transparent and opaque endpoints",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 106
+        },
+        {
+          "project": "chromium",
+          "title": "native alpha pointer changes the preview and checkerboard remains behind it",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 147
+        },
+        {
+          "project": "chromium",
+          "title": "switching output format retains picker geometry and color",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 92
+        },
+        {
+          "project": "chromium",
+          "title": "disabled native channel retains value and semantics",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 97
+        },
+        {
+          "project": "chromium",
+          "title": "plane named keyboard controls update the visible thumb",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 126
+        },
+        {
+          "project": "chromium",
+          "title": "plane pointer sets two coordinates with an accessible equivalent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 137
+        },
+        {
+          "project": "chromium",
+          "title": "plane captures and clamps a drag beyond its edges",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 174
+        },
+        {
+          "project": "chromium",
+          "title": "plane canceled pointer interaction restores its draft",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 162
+        },
+        {
+          "project": "chromium",
+          "title": "plane disabled state prevents pointer and keyboard mutation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 139
+        },
+        {
+          "project": "chromium",
+          "title": "RTL plane maps leading edge and thumb to the same position",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 143
+        },
+        {
+          "project": "chromium",
+          "title": "wheel keyboard wraps, supports larger steps and exposes its value",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 118
+        },
+        {
+          "project": "chromium",
+          "title": "wheel pointer selects cardinal hue while RTL preserves hue orientation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 193
+        },
+        {
+          "project": "chromium",
+          "title": "wheel pointer cancellation restores starting hue",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 164
+        },
+        {
+          "project": "chromium",
+          "title": "disabled wheel is removed from sequential focus and rejects pointer changes",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 138
+        },
+        {
+          "project": "chromium",
+          "title": "scoped wheel and picker geometry hooks leave the other picker unchanged",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 105
+        },
+        {
+          "project": "chromium",
+          "title": "metadata-selected public input customization stays scoped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 152
+        },
+        {
+          "project": "chromium",
+          "title": "barrels share fragment identity and metadata without registering elements",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 83
+        },
+        {
+          "project": "chromium",
+          "title": "narrow viewport with enlarged text retains inputs without page overflow",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 97
+        },
+        {
+          "project": "chromium",
+          "title": "reduced motion removes plane thumb transitions",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 82
+        },
+        {
+          "project": "firefox",
+          "title": "wide picker keeps its one-column composition independently of the plane",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 950
+        },
+        {
+          "project": "firefox",
+          "title": "wide plane uses available width and switches to two columns",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 238
+        },
+        {
+          "project": "firefox",
+          "title": "narrow plane stacks without changing the picker",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 217
+        },
+        {
+          "project": "firefox",
+          "title": "valid hex draft updates alpha preview and serialized output",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 235
+        },
+        {
+          "project": "firefox",
+          "title": "invalid draft stays editable while last valid color is preserved",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 242
+        },
+        {
+          "project": "firefox",
+          "title": "native alpha keyboard updates output including transparent and opaque endpoints",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 256
+        },
+        {
+          "project": "firefox",
+          "title": "native alpha pointer changes the preview and checkerboard remains behind it",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 237
+        },
+        {
+          "project": "firefox",
+          "title": "switching output format retains picker geometry and color",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 204
+        },
+        {
+          "project": "firefox",
+          "title": "disabled native channel retains value and semantics",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 223
+        },
+        {
+          "project": "firefox",
+          "title": "plane named keyboard controls update the visible thumb",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 541
+        },
+        {
+          "project": "firefox",
+          "title": "plane pointer sets two coordinates with an accessible equivalent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 220
+        },
+        {
+          "project": "firefox",
+          "title": "plane captures and clamps a drag beyond its edges",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 211
+        },
+        {
+          "project": "firefox",
+          "title": "plane canceled pointer interaction restores its draft",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 202
+        },
+        {
+          "project": "firefox",
+          "title": "plane disabled state prevents pointer and keyboard mutation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 206
+        },
+        {
+          "project": "firefox",
+          "title": "RTL plane maps leading edge and thumb to the same position",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 216
+        },
+        {
+          "project": "firefox",
+          "title": "wheel keyboard wraps, supports larger steps and exposes its value",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 229
+        },
+        {
+          "project": "firefox",
+          "title": "wheel pointer selects cardinal hue while RTL preserves hue orientation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 250
+        },
+        {
+          "project": "firefox",
+          "title": "wheel pointer cancellation restores starting hue",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 208
+        },
+        {
+          "project": "firefox",
+          "title": "disabled wheel is removed from sequential focus and rejects pointer changes",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 220
+        },
+        {
+          "project": "firefox",
+          "title": "scoped wheel and picker geometry hooks leave the other picker unchanged",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 524
+        },
+        {
+          "project": "firefox",
+          "title": "metadata-selected public input customization stays scoped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 231
+        },
+        {
+          "project": "firefox",
+          "title": "barrels share fragment identity and metadata without registering elements",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 163
+        },
+        {
+          "project": "firefox",
+          "title": "narrow viewport with enlarged text retains inputs without page overflow",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 200
+        },
+        {
+          "project": "firefox",
+          "title": "reduced motion removes plane thumb transitions",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 161
+        },
+        {
+          "project": "webkit",
+          "title": "wide picker keeps its one-column composition independently of the plane",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 442
+        },
+        {
+          "project": "webkit",
+          "title": "wide plane uses available width and switches to two columns",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 202
+        },
+        {
+          "project": "webkit",
+          "title": "narrow plane stacks without changing the picker",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 194
+        },
+        {
+          "project": "webkit",
+          "title": "valid hex draft updates alpha preview and serialized output",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 189
+        },
+        {
+          "project": "webkit",
+          "title": "invalid draft stays editable while last valid color is preserved",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 223
+        },
+        {
+          "project": "webkit",
+          "title": "native alpha keyboard updates output including transparent and opaque endpoints",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 197
+        },
+        {
+          "project": "webkit",
+          "title": "native alpha pointer changes the preview and checkerboard remains behind it",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 226
+        },
+        {
+          "project": "webkit",
+          "title": "switching output format retains picker geometry and color",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 189
+        },
+        {
+          "project": "webkit",
+          "title": "disabled native channel retains value and semantics",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 193
+        },
+        {
+          "project": "webkit",
+          "title": "plane named keyboard controls update the visible thumb",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 205
+        },
+        {
+          "project": "webkit",
+          "title": "plane pointer sets two coordinates with an accessible equivalent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 229
+        },
+        {
+          "project": "webkit",
+          "title": "plane captures and clamps a drag beyond its edges",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 233
+        },
+        {
+          "project": "webkit",
+          "title": "plane canceled pointer interaction restores its draft",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 239
+        },
+        {
+          "project": "webkit",
+          "title": "plane disabled state prevents pointer and keyboard mutation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 229
+        },
+        {
+          "project": "webkit",
+          "title": "RTL plane maps leading edge and thumb to the same position",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 246
+        },
+        {
+          "project": "webkit",
+          "title": "wheel keyboard wraps, supports larger steps and exposes its value",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 220
+        },
+        {
+          "project": "webkit",
+          "title": "wheel pointer selects cardinal hue while RTL preserves hue orientation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 269
+        },
+        {
+          "project": "webkit",
+          "title": "wheel pointer cancellation restores starting hue",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 216
+        },
+        {
+          "project": "webkit",
+          "title": "disabled wheel is removed from sequential focus and rejects pointer changes",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 225
+        },
+        {
+          "project": "webkit",
+          "title": "scoped wheel and picker geometry hooks leave the other picker unchanged",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 189
+        },
+        {
+          "project": "webkit",
+          "title": "metadata-selected public input customization stays scoped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 228
+        },
+        {
+          "project": "webkit",
+          "title": "barrels share fragment identity and metadata without registering elements",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 182
+        },
+        {
+          "project": "webkit",
+          "title": "narrow viewport with enlarged text retains inputs without page overflow",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 197
+        },
+        {
+          "project": "webkit",
+          "title": "reduced motion removes plane thumb transitions",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 182
+        },
+        {
+          "project": "chromium",
+          "title": "wide picker keeps its one-column composition independently of the plane",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 93
+        },
+        {
+          "project": "chromium",
+          "title": "wide plane uses available width and switches to two columns",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 98
+        },
+        {
+          "project": "chromium",
+          "title": "narrow plane stacks without changing the picker",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 103
+        },
+        {
+          "project": "chromium",
+          "title": "valid hex draft updates alpha preview and serialized output",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 94
+        },
+        {
+          "project": "chromium",
+          "title": "invalid draft stays editable while last valid color is preserved",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 115
+        },
+        {
+          "project": "chromium",
+          "title": "native alpha keyboard updates output including transparent and opaque endpoints",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 124
+        },
+        {
+          "project": "chromium",
+          "title": "native alpha pointer changes the preview and checkerboard remains behind it",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 126
+        },
+        {
+          "project": "chromium",
+          "title": "switching output format retains picker geometry and color",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 106
+        },
+        {
+          "project": "chromium",
+          "title": "disabled native channel retains value and semantics",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 100
+        },
+        {
+          "project": "chromium",
+          "title": "plane named keyboard controls update the visible thumb",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 112
+        },
+        {
+          "project": "chromium",
+          "title": "plane pointer sets two coordinates with an accessible equivalent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 120
+        },
+        {
+          "project": "chromium",
+          "title": "plane captures and clamps a drag beyond its edges",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 173
+        },
+        {
+          "project": "chromium",
+          "title": "plane canceled pointer interaction restores its draft",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 139
+        },
+        {
+          "project": "chromium",
+          "title": "plane disabled state prevents pointer and keyboard mutation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 132
+        },
+        {
+          "project": "chromium",
+          "title": "RTL plane maps leading edge and thumb to the same position",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 138
+        },
+        {
+          "project": "chromium",
+          "title": "wheel keyboard wraps, supports larger steps and exposes its value",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 110
+        },
+        {
+          "project": "chromium",
+          "title": "wheel pointer selects cardinal hue while RTL preserves hue orientation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 151
+        },
+        {
+          "project": "chromium",
+          "title": "wheel pointer cancellation restores starting hue",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 165
+        },
+        {
+          "project": "chromium",
+          "title": "disabled wheel is removed from sequential focus and rejects pointer changes",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 143
+        },
+        {
+          "project": "chromium",
+          "title": "scoped wheel and picker geometry hooks leave the other picker unchanged",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 105
+        },
+        {
+          "project": "chromium",
+          "title": "metadata-selected public input customization stays scoped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 164
+        },
+        {
+          "project": "chromium",
+          "title": "barrels share fragment identity and metadata without registering elements",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 82
+        },
+        {
+          "project": "chromium",
+          "title": "narrow viewport with enlarged text retains inputs without page overflow",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 104
+        },
+        {
+          "project": "chromium",
+          "title": "reduced motion removes plane thumb transitions",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 96
+        },
+        {
+          "project": "firefox",
+          "title": "wide picker keeps its one-column composition independently of the plane",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 179
+        },
+        {
+          "project": "firefox",
+          "title": "wide plane uses available width and switches to two columns",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 193
+        },
+        {
+          "project": "firefox",
+          "title": "narrow plane stacks without changing the picker",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 244
+        },
+        {
+          "project": "firefox",
+          "title": "valid hex draft updates alpha preview and serialized output",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 217
+        },
+        {
+          "project": "firefox",
+          "title": "invalid draft stays editable while last valid color is preserved",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 241
+        },
+        {
+          "project": "firefox",
+          "title": "native alpha keyboard updates output including transparent and opaque endpoints",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 745
+        },
+        {
+          "project": "firefox",
+          "title": "native alpha pointer changes the preview and checkerboard remains behind it",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 415
+        },
+        {
+          "project": "firefox",
+          "title": "switching output format retains picker geometry and color",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 221
+        },
+        {
+          "project": "firefox",
+          "title": "disabled native channel retains value and semantics",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 199
+        },
+        {
+          "project": "firefox",
+          "title": "plane named keyboard controls update the visible thumb",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 196
+        },
+        {
+          "project": "firefox",
+          "title": "plane pointer sets two coordinates with an accessible equivalent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 206
+        },
+        {
+          "project": "firefox",
+          "title": "plane captures and clamps a drag beyond its edges",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 210
+        },
+        {
+          "project": "firefox",
+          "title": "plane canceled pointer interaction restores its draft",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 222
+        },
+        {
+          "project": "firefox",
+          "title": "plane disabled state prevents pointer and keyboard mutation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 211
+        },
+        {
+          "project": "firefox",
+          "title": "RTL plane maps leading edge and thumb to the same position",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 226
+        },
+        {
+          "project": "firefox",
+          "title": "wheel keyboard wraps, supports larger steps and exposes its value",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 527
+        },
+        {
+          "project": "firefox",
+          "title": "wheel pointer selects cardinal hue while RTL preserves hue orientation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 245
+        },
+        {
+          "project": "firefox",
+          "title": "wheel pointer cancellation restores starting hue",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 210
+        },
+        {
+          "project": "firefox",
+          "title": "disabled wheel is removed from sequential focus and rejects pointer changes",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 211
+        },
+        {
+          "project": "firefox",
+          "title": "scoped wheel and picker geometry hooks leave the other picker unchanged",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 201
+        },
+        {
+          "project": "firefox",
+          "title": "metadata-selected public input customization stays scoped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 225
+        },
+        {
+          "project": "firefox",
+          "title": "barrels share fragment identity and metadata without registering elements",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 179
+        },
+        {
+          "project": "firefox",
+          "title": "narrow viewport with enlarged text retains inputs without page overflow",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 216
+        },
+        {
+          "project": "firefox",
+          "title": "reduced motion removes plane thumb transitions",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 189
+        },
+        {
+          "project": "webkit",
+          "title": "wide picker keeps its one-column composition independently of the plane",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 202
+        },
+        {
+          "project": "webkit",
+          "title": "wide plane uses available width and switches to two columns",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 205
+        },
+        {
+          "project": "webkit",
+          "title": "narrow plane stacks without changing the picker",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 203
+        },
+        {
+          "project": "webkit",
+          "title": "valid hex draft updates alpha preview and serialized output",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 195
+        },
+        {
+          "project": "webkit",
+          "title": "invalid draft stays editable while last valid color is preserved",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 230
+        },
+        {
+          "project": "webkit",
+          "title": "native alpha keyboard updates output including transparent and opaque endpoints",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 235
+        },
+        {
+          "project": "webkit",
+          "title": "native alpha pointer changes the preview and checkerboard remains behind it",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 255
+        },
+        {
+          "project": "webkit",
+          "title": "switching output format retains picker geometry and color",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 209
+        },
+        {
+          "project": "webkit",
+          "title": "disabled native channel retains value and semantics",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 198
+        },
+        {
+          "project": "webkit",
+          "title": "plane named keyboard controls update the visible thumb",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 211
+        },
+        {
+          "project": "webkit",
+          "title": "plane pointer sets two coordinates with an accessible equivalent",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 225
+        },
+        {
+          "project": "webkit",
+          "title": "plane captures and clamps a drag beyond its edges",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 235
+        },
+        {
+          "project": "webkit",
+          "title": "plane canceled pointer interaction restores its draft",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 229
+        },
+        {
+          "project": "webkit",
+          "title": "plane disabled state prevents pointer and keyboard mutation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 237
+        },
+        {
+          "project": "webkit",
+          "title": "RTL plane maps leading edge and thumb to the same position",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 255
+        },
+        {
+          "project": "webkit",
+          "title": "wheel keyboard wraps, supports larger steps and exposes its value",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 215
+        },
+        {
+          "project": "webkit",
+          "title": "wheel pointer selects cardinal hue while RTL preserves hue orientation",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 271
+        },
+        {
+          "project": "webkit",
+          "title": "wheel pointer cancellation restores starting hue",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 236
+        },
+        {
+          "project": "webkit",
+          "title": "disabled wheel is removed from sequential focus and rejects pointer changes",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 239
+        },
+        {
+          "project": "webkit",
+          "title": "scoped wheel and picker geometry hooks leave the other picker unchanged",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 206
+        },
+        {
+          "project": "webkit",
+          "title": "metadata-selected public input customization stays scoped",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 243
+        },
+        {
+          "project": "webkit",
+          "title": "barrels share fragment identity and metadata without registering elements",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 190
+        },
+        {
+          "project": "webkit",
+          "title": "narrow viewport with enlarged text retains inputs without page overflow",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 219
+        },
+        {
+          "project": "webkit",
+          "title": "reduced motion removes plane thumb transitions",
+          "status": "passed",
+          "retry": 0,
+          "durationMs": 197
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Ten entries have bounded color/style-discovery consumer qualification;108/111 entries qualified and3 interaction helpers remain pending.",
+    "Portable picker CSS now excludes conflicting plane rules. Existing portable plane consumers must explicitly adopt color-plane.css; JS fragments and owning-element runtime remain unchanged.",
+    "Native six-digit hex/alpha/output-format sample, not the complete color picker or Display-P3 parsing/conversion. Pointer cardinal assertions allow one degree; exact keyboard and cancellation assertions remain.",
+    "Inventory and its new binding assertion were finalized after the browser run; final integrity qualification validates those source-only changes.",
+    "Manual AT, physical touch, calibrated color rendering, retail browsers, full SSR/hydration and separate-owner obligations remain. Historical external CSS-authoring rerun stays retired, never passed."
+  ]
+}

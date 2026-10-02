@@ -630,14 +630,14 @@ test('presentation receipt binds native patterns, both style forms and choice SS
  assert.equal(Object.keys(r.packed.portableCSS).length,8);
  const rows=inventory.entries.filter(row=>row.receipt==='probes/presentation-recipes/verification-20261002.json');assert.equal(rows.length,14);assert.equal(rows.filter(row=>row.delivery==='css').length,7);
  const build=await json('apps/docs/tests/verification-presentation-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.run,r.run);
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  assert.match(r.limitations.join(' '),/full hydration/);assert.match(r.limitations.join(' '),/other51/);
 });
 
 test('notification consumer receipt binds admission, native lifecycle and scoped feedback sizing',async()=>{
  const r=await json('probes/notification-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,40);assert.equal(r.stats.expected,138);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs", "packages/styles/README.md"].includes(path)?'probes/notification-recipes/qualification-sources/e5ec420a/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs", "packages/styles/README.md"].includes(path)?'probes/notification-recipes/qualification-sources/e5ec420a/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,46);
  assert.equal(r.swatchRegression.stats.expected,25);assert.equal(r.swatchRegression.stats.skipped,2);assert.equal(r.swatchRegression.stats.unexpected,0);
  assert.deepEqual(r.swatchRegression.cases.filter(c=>c.status==='skipped').map(c=>c.project).sort(),['firefox','webkit']);
@@ -645,7 +645,7 @@ test('notification consumer receipt binds admission, native lifecycle and scoped
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['activity','buttons','feedback','foundations','toast'].map(name=>'@en-reve/styles/'+name+'.css'));
  const rows=inventory.entries.filter(row=>row.receipt==='probes/notification-recipes/verification-20261002.json');assert.equal(rows.length,7);assert.equal(rows.filter(row=>row.delivery==='css').length,3);
  const build=await json('apps/docs/tests/verification-notification-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.run,r.run);
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  assert.match(r.limitations.join(' '),/other37/);assert.match(r.limitations.join(' '),/two cases/);
 });
 
@@ -683,7 +683,7 @@ test('collection stylesheet receipt binds native layouts, both deliveries and ta
  assert.deepEqual(r.postBuildPortableParity,r.packed.portableCSS);
  const rows=inventory.entries.filter(row=>row.receipt==='probes/collection-style-recipes/verification-20261002.json');assert.equal(rows.length,5);assert.equal(rows.filter(row=>row.delivery==='css').length,3);
  const build=await json('apps/docs/tests/verification-collection-style-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  assert.match(r.limitations.join(' '),/32 remain/);assert.match(r.limitations.join(' '),/Option\+Tab/);assert.match(r.limitations.join(' '),/native scrollport/);
 });
 
@@ -706,7 +706,7 @@ test('choice and overlay receipt binds native semantics and both stylesheet deli
 test('editor collaboration receipt binds alternate native editing and explicit clipboard limits',async()=>{
  const r=await json('probes/editor-collaboration-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,40);assert.equal(r.stats.expected,168);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=['tooling/testing/browser-ports.mjs', 'tooling/testing/comprehensive.mjs', 'tooling/testing/comprehensive.test.mjs', 'probes/reusable-layers/inventory.json', 'probes/reusable-layers/inventory.test.mjs'].includes(path)?'probes/editor-collaboration-recipes/qualification-sources/2730982c/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,56);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
@@ -715,4 +715,20 @@ test('editor collaboration receipt binds alternate native editing and explicit c
  const rows=inventory.entries.filter(row=>row.receipt==='probes/editor-collaboration-recipes/verification-20261002.json');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,2);
  const build=await json(r.buildReuse.receipt);assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.distManifestSHA256,r.buildReuse.distManifestSHA256);
  assert.match(r.limitations.join(' '),/12 remain/);assert.match(r.limitations.join(' '),/OS clipboard transport/);assert.match(r.limitations.join(' '),/not an inline rich-token backend/);assert.match(r.limitations.join(' '),/No owning-element runtime changed/);
+});
+
+
+test('color receipt binds independent portable plane, native controls and style discovery',async()=>{
+ const r=await json('probes/color-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,41);assert.equal(r.stats.expected,144);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,48);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
+ assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['foundations','buttons','controls','color-picker','color-plane','color-slider','color-wheel'].sort().map(name=>'@en-reve/styles/'+name+'.css'));
+ assert.deepEqual(r.portableParity,r.packed.portableCSS);
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/color-recipes/verification-20261002.json');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,4);
+ const build=await json('apps/docs/tests/verification-color-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.match(r.limitations.join(' '),/3 interaction helpers/);assert.match(r.limitations.join(' '),/Manual AT/);assert.match(r.limitations.join(' '),/color-plane.css/);
 });
