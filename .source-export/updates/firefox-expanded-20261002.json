@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-10-02T04:44:21.042043+00:00",
+  "sourceCommit": "e860e5c216174d0345e55190ff9a3b55745df315",
+  "previousSourceMain": "ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/run.mjs",
+    "probes/native-browser-products/verification-firefox-expanded-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Expanded native Firefox157.0 and156.0.1 consumer coverage:120 passes across six scenarios and ten retained packed cohorts per release. Browser-computed field/tree names and roles verified using explicit shadow-root BiDi start nodes.107 tooling checks pass; prior failed locator attempts preserved. Production workflows, Safari, prior Chrome and OS/device/manual gaps remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

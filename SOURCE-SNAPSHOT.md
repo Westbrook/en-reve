@@ -94,3 +94,7 @@ Local main `a2edb022a380992c342d1a2ebae14c189bb97f77` qualifies official isolate
 ## Current Chrome stable qualification
 
 Local main `ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5` qualifies official isolated Chrome154.0.8037.98:60 consumer checks and26 workflow checks. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Expanded Firefox consumer qualification
+
+Local main `e860e5c216174d0345e55190ff9a3b55745df315` qualifies expanded native Firefox157.0 and156.0.1 consumer checks:60 per release with browser-computed field/tree names and roles. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

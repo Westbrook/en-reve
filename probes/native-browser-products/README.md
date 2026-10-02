@@ -43,7 +43,7 @@ The runner never enables Safari automation or changes normal profiles.
 
 ## Exact coverage
 
-Three scenarios run for each of ten consumers:
+Six scenarios now run for each of ten consumers:
 
 1. Parsed server-rendered checkbox/select hosts, shadow root and native control
    identity survive both hydration owners; native pointer activation works.
@@ -52,14 +52,24 @@ Three scenarios run for each of ten consumers:
    are checked.
 3. Framework object/string updates stay properties and remain silent; actual
    keyboard input edits the native field. Unmount/remount preserves framework
-   state and removes the detached tree listener. The disposal-only event is
-   deliberately synthetic, as in the corresponding Playwright case.
+   state (including checked state), removes the detached tree listener, and accepts
+   Enter on the remounted tree. The disposal-only event is deliberately synthetic.
+4. The adjacent framework-owned checkbox reflects authoritative updates, native
+   pointer/Space actions and accepted/canceled/superseding interactions.
+5. Adding/removing authored select options retains the native select node. Native
+   End/Enter keyboard input changes both native and element values.
+6. Tree object updates remain silent; pointer activation updates framework state.
+   Firefox also checks computed textbox/tree names and roles through BiDi queries
+   started inside the corresponding shadow root.
 
 DOM scripting reads state, retains identity references, sets focus and selects
 input text. Pointer and key actions use the standard remote input protocols;
 there is no scripted `.click()` or synthetic keyboard event. These are a bounded
-subset, **not parity with the six-case Playwright suite**, native accessibility
-snapshots, spoken output, IME, physical devices or full reference workflows.
+suite. The six-case grouping differs from Playwright: this runner checks DOM
+description text but not its computed accessible description. Firefox computed
+names/roles do not establish a complete accessibility snapshot, spoken output,
+IME, physical-device coverage or full reference workflows. Safari has no such
+locator implementation here and is still unqualified.
 
 ## October 2 result
 
@@ -101,3 +111,17 @@ The earlier157-only receipt remains historical at its original runner hash.
 This newer receipt binds the distribution-selection runner to both tested lines.
 Safari's unresolved visibility diagnostics remain separate; this subset does not
 qualify preceding Chrome/Edge/Safari, other OSes or physical/manual acceptance.
+
+## Expanded Firefox consumer checkpoint
+
+[Expanded October 2 receipt](verification-firefox-expanded-20261002.json) records
+60 passes per release, 120 total, using the six scenarios above. Both distribution
+inventories are unchanged. The source receipt binds the current runner; older
+three-scenario receipts retain their original hashes and counts.
+
+The first two runs failed the new accessibility query because it started at the
+document boundary. A role-only diagnostic also found no shadow-tree textboxes or
+tree items. [BiDi `startNodes`](https://developer.mozilla.org/en-US/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/locateNodes)
+now supplies the exact component shadow root; the same names/roles then pass on
+both releases. No component naming change or assertion removal was needed.
+The failed receipts remain local and summarized in the new source receipt.

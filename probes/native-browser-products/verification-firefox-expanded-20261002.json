@@ -1,0 +1,910 @@
+{
+  "schemaVersion": 1,
+  "status": "passed",
+  "verifiedAt": "2026-10-02T04:42:55.261576+00:00",
+  "sourceBaseCommit": "ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5",
+  "runnerSHA256": "a1d4f6b90b597e4411d4ed65695f5f53c9e8c36f41189c9a3692bd899b25b6f9",
+  "runnerOverlay": "Six native-input scenarios, explicit shadow-root BiDi name/role queries, retained state after remount, real keyboard select changes and pointer/keyboard tree activation.",
+  "acquisitionReceipt": "probes/native-browser-products/verification-firefox-lines-20261002.json",
+  "acquisitionReceiptSHA256": "969671dbf88b238cc998037ab696832d767caab1e8e3321dd640beca0b075a9d",
+  "runs": {
+    "preceding": {
+      "schemaVersion": 1,
+      "startedAt": "2026-10-02T04:40:48.212Z",
+      "sourceCommit": "ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5",
+      "node": "v26.10.0",
+      "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+      "products": [
+        {
+          "name": "Firefox",
+          "version": "156.0.1",
+          "build": "15626.9.21",
+          "bundle": "/private/tmp/en-firefox-156-0-1-isolated/Firefox.app",
+          "identityDigest": "sha256:6125ed48e435bd8e06cba1856a1f880826c15173d783af0a0af4d652096eb532",
+          "identityPolicy": "Full selected Firefox application distribution.",
+          "status": "passed",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "156.0.1",
+            "platformName": "mac",
+            "setWindowRect": true,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:156.0) Gecko/20100101 Firefox/156.0",
+            "moz:buildID": "20260921121718",
+            "moz:headless": true,
+            "moz:platformVersion": "25.6.0",
+            "moz:processID": 88971,
+            "moz:profile": "/private/tmp/en-firefox-expanded-20261002-03/preceding/firefox-profile",
+            "moz:shutdownTimeout": 60000
+          },
+          "headless": true,
+          "accessibilityQueryScope": "Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.",
+          "unchanged": true,
+          "distributionInventoryBeforeSHA256": "9e984e1b3c7f2a7400201c094cd141642911a0706645b079a3854abcd1aebabe",
+          "distributionInventoryAfterSHA256": "9e984e1b3c7f2a7400201c094cd141642911a0706645b079a3854abcd1aebabe"
+        }
+      ],
+      "cases": [
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "selectedProducts": "firefox",
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+      "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+      "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+      "host": {
+        "version": "26.6.1",
+        "build": "25G76",
+        "arch": "arm64"
+      },
+      "completedAt": "2026-10-02T04:40:58.269Z",
+      "stats": {
+        "passed": 60,
+        "failed": 0,
+        "planned": 60
+      },
+      "rawResultSHA256": "d177dc4c5ab48cbdf31919a16701774fc47901a363ae74c9a449cb08dffb3d0d"
+    },
+    "current": {
+      "schemaVersion": 1,
+      "startedAt": "2026-10-02T04:41:03.360Z",
+      "sourceCommit": "ed12dc7d0cc0f60f535607b4fa849a2b1e87d0d5",
+      "node": "v26.10.0",
+      "fixture": "/private/tmp/en-chrome-stable-20261002-01/framework-execution/fixtures/framework",
+      "products": [
+        {
+          "name": "Firefox",
+          "version": "157.0",
+          "build": "15726.9.24",
+          "bundle": "/Applications/Firefox.app",
+          "identityDigest": "sha256:7f1df7542d9f2501056d90d91f5ff2a1e156e72081b3a4282d8624e7867da393",
+          "identityPolicy": "Full selected Firefox application distribution.",
+          "status": "passed",
+          "capabilities": {
+            "acceptInsecureCerts": false,
+            "browserName": "firefox",
+            "browserVersion": "157.0",
+            "platformName": "mac",
+            "setWindowRect": true,
+            "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:157.0) Gecko/20100101 Firefox/157.0",
+            "moz:buildID": "20260924084938",
+            "moz:headless": true,
+            "moz:platformVersion": "25.6.0",
+            "moz:processID": 90124,
+            "moz:profile": "/private/tmp/en-firefox-expanded-20261002-03/current/firefox-profile",
+            "moz:shutdownTimeout": 60000
+          },
+          "headless": true,
+          "accessibilityQueryScope": "Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.",
+          "unchanged": true,
+          "distributionInventoryBeforeSHA256": "a496f647090d0b848f4e3db646795a90677380e20ab83cfc0713add36b40040f",
+          "distributionInventoryAfterSHA256": "a496f647090d0b848f4e3db646795a90677380e20ab83cfc0713add36b40040f"
+        }
+      ],
+      "cases": [
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "html",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react19",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react192",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "react18",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue3",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue34",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "vue2",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte5",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte556",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "SSR node identity and native checkbox",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Cancelable accept, reject, supersede and keyboard activation",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework property updates, native editing and listener disposal",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Framework-owned checkbox state, cancellation and keyboard input",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Authored choices update while native select and keyboard editing persist",
+          "status": "passed"
+        },
+        {
+          "product": "Firefox",
+          "cohort": "svelte4",
+          "scenario": "Tree property updates and pointer selection reach framework state",
+          "status": "passed"
+        }
+      ],
+      "status": "passed",
+      "selectedProducts": "firefox",
+      "scope": "Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.",
+      "preparationSHA256": "ae583fc01bffd2e8acffe221c8279bd547ab90ed795e2ed3e8a2100f4a34e40b",
+      "artifactPolicy": "Reuse exact hash-verified packed assets from retained acquisition; no new installation/type compilation claimed.",
+      "host": {
+        "version": "26.6.1",
+        "build": "25G76",
+        "arch": "arm64"
+      },
+      "completedAt": "2026-10-02T04:41:13.476Z",
+      "stats": {
+        "passed": 60,
+        "failed": 0,
+        "planned": 60
+      },
+      "rawResultSHA256": "8446f4366ef4852b6c931ea76e113d25b1f74e29980e5229f0a2b7b03ed8e86a"
+    }
+  },
+  "stats": {
+    "passed": 120,
+    "failed": 0,
+    "planned": 120
+  },
+  "scope": "Six native-input scenarios across ten hash-verified retained packed consumers on current157.0 and preceding156.0.1 Firefox, macOS26.6.1 arm64. Browser-computed field/tree names and roles via BiDi accessibility locator. DOM slotted-description presence checked; computed accessible descriptions, full AX trees, speech, physical devices, IME and production reference workflows remain separate. No fresh installation/type-compilation claim.",
+  "protocolSources": [
+    "https://developer.mozilla.org/en-US/docs/Web/WebDriver/Reference/BiDi/Modules/browsingContext/locateNodes",
+    "https://bugzilla.mozilla.org/show_bug.cgi?id=1885577"
+  ],
+  "initialAttempts": [
+    {
+      "attempt": 1,
+      "stats": {
+        "passed": 2,
+        "failed": 1,
+        "planned": 60
+      },
+      "resultSHA256": "166ba5badba57add99143f22a2ba4374a5a46b999b9b2592c68879f6b9b9ca68",
+      "failedCase": {
+        "product": "Firefox",
+        "cohort": "html",
+        "scenario": "Framework property updates, native editing and listener disposal",
+        "status": "failed",
+        "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n\n    at file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:108:32\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:190:53\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:171:6",
+        "diagnostic": {
+          "ready": "true",
+          "errors": [],
+          "fixture": true,
+          "client": true,
+          "visibility": "visible",
+          "body": "HTML component consumption\naccept reject supersede Add option Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties Mount or unmount controls\nFramework supplied description"
+        }
+      },
+      "disposition": "Initial whole-document accessibility locator did not cross shadow roots. Explicit component shadow-root start nodes resolve the query; original failed attempt remains failed."
+    },
+    {
+      "attempt": 2,
+      "stats": {
+        "passed": 2,
+        "failed": 1,
+        "planned": 60
+      },
+      "resultSHA256": "44ffba51d0d5584f2f9ffe55c5973ea0bfa3e8cc09a1d8fe5e62be65ccd8ac54",
+      "failedCase": {
+        "product": "Firefox",
+        "cohort": "html",
+        "scenario": "Framework property updates, native editing and listener disposal",
+        "status": "failed",
+        "error": "Error: Timed out: accessible textbox: Project title (1)\n    at until (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:31:151)\n    at async accessible (file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:86:46)\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:109:25\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:191:53\n    at async file:///private/tmp/en-reve-initial-pass-closeout/probes/native-browser-products/run.mjs:172:6",
+        "diagnostic": {
+          "ready": "true",
+          "errors": [],
+          "fixture": true,
+          "client": true,
+          "visibility": "visible",
+          "body": "HTML component consumption\naccept reject supersede Add option Remove option\nHTML shell\nPreserve proportions\nfalse\nFramework owned choice\nFramework owned choice\nToggle framework choice\nunchecked\nUpdate properties Mount or unmount controls\nFramework supplied description"
+        },
+        "accessibilityDiagnostic": {
+          "textboxes": [],
+          "treeitems": []
+        }
+      },
+      "disposition": "Initial whole-document accessibility locator did not cross shadow roots. Explicit component shadow-root start nodes resolve the query; original failed attempt remains failed."
+    }
+  ]
+}

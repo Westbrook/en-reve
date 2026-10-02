@@ -223,10 +223,10 @@ test('actual product workflows retain exact sources, distribution identity and e
 });
 
 
-test('current native runner is qualified against both Firefox release lines', async () => {
+test('historical three-scenario runner retains both Firefox release lines', async () => {
  const evidence=ledger.evidence.find(e=>e.id==='firefox-lines-20261002');
  const receipt=await json(evidence.path);
- assert.equal(receipt.runnerSHA256,createHash('sha256').update(await read('probes/native-browser-products/run.mjs')).digest('hex'));
+ assert.equal(receipt.runnerSHA256,'f04831d2e475a990b27c130481f5c84ce9afa7f324be7b388d93eac2a52d6f49');
  assert.equal(receipt.status,'passed');
  assert.deepEqual(receipt.stats,{passed:60,failed:0,planned:60});
  assert.equal(receipt.acquisition.checksumMatched,true);
@@ -287,4 +287,24 @@ test('isolated Chrome stable receipt preserves signed retail provenance and exac
  const workflow=await json('apps/docs/tests/verification-chrome-stable-20261002.json');
  assert.equal(workflow.acquisitionReceiptSHA256,evidence.sha256);
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
+});
+
+
+test('expanded native Firefox coverage binds the current runner and all consumer cohorts', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='firefox-expanded-20261002');
+ const receipt=await json(evidence.path);
+ assert.equal(receipt.runnerSHA256,createHash('sha256').update(await read('probes/native-browser-products/run.mjs')).digest('hex'));
+ assert.equal(receipt.acquisitionReceiptSHA256,createHash('sha256').update(await read(receipt.acquisitionReceipt)).digest('hex'));
+ assert.deepEqual(receipt.stats,{passed:120,failed:0,planned:120});
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]) {
+  const run=receipt.runs[label];assert.equal(run.status,'passed');
+  assert.deepEqual(run.stats,{passed:60,failed:0,planned:60});
+  const product=run.products[0];assert.equal(run.products.length,1);
+  assert.equal(product.version,version);assert.equal(product.capabilities.browserVersion,version);
+  assert.equal(product.unchanged,true);assert.match(product.accessibilityQueryScope,/BiDi/);
+  for(const cohort of cohorts){const cases=run.cases.filter(c=>c.cohort===cohort.id);assert.equal(cases.length,6);assert(cases.every(c=>c.status==='passed'));assert.equal(new Set(cases.map(c=>c.scenario)).size,6);}
+ }
+ assert.equal(receipt.runs.preceding.preparationSHA256,receipt.runs.current.preparationSHA256);
+ assert.equal(receipt.initialAttempts.length,2);
+ for(const attempt of receipt.initialAttempts){assert.deepEqual(attempt.stats,{passed:2,failed:1,planned:60});assert.equal(attempt.failedCase.status,'failed');}
 });

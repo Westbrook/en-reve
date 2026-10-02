@@ -345,6 +345,13 @@
       "path": "apps/docs/tests/verification-chrome-stable-20261002.json",
       "sha256": "64c149d4de902d793c8d3d4a52d25612b2b4eef07f8e1198a22391b9f303332c",
       "scope": "26 production workflow passes on isolated Chrome154.0.8037.98;1 existing Chromium-only profile skip. Qualified production build reused; exact app/input inventories unchanged. No physical/manual acceptance."
+    },
+    {
+      "id": "firefox-expanded-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-expanded-20261002.json",
+      "sha256": "62ffb74a6f63c05b26e6b1689c686d13448119cee9648189affaafb87926733d",
+      "scope": "Six native-input scenarios across ten hash-verified retained packed consumers on current157.0 and preceding156.0.1 Firefox, macOS26.6.1 arm64. Browser-computed field/tree names and roles via BiDi accessibility locator. DOM slotted-description presence checked; computed accessible descriptions, full AX trees, speech, physical devices, IME and production reference workflows remain separate. No fresh installation/type-compilation claim."
     }
   ],
   "conditions": [
@@ -394,10 +401,11 @@
         "edge-framework-lines-20261002",
         "edge-workflow-lines-20261002",
         "chrome-stable-framework-20261002",
-        "chrome-stable-workflows-20261002"
+        "chrome-stable-workflows-20261002",
+        "firefox-expanded-20261002"
       ],
-      "gap": "Isolated Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes30 native-input checks. Safari27 remains hidden; broader OS/native workflow/manual scope remains.",
-      "nextAction": "Resolve Safari visibility after desktop-state clarification. Qualify broader actual Firefox workflows; retain actual OS/device/manual gaps."
+      "gap": "Chrome154.0.8037.98 and Edge154.0.4258.53 each pass60 consumer and26 production workflow checks. Firefox157 passes60 expanded native-input checks including browser name/role queries; full production workflows remain. Safari27 remains hidden; broader OS/manual scope remains.",
+      "nextAction": "Qualify actual Firefox production workflows. Resolve Safari visibility after desktop-state clarification; retain OS/device/manual obligations."
     },
     {
       "id": "browser-previous",
@@ -407,10 +415,11 @@
       "evidence": [
         "firefox-lines-20261002",
         "edge-framework-lines-20261002",
-        "edge-workflow-lines-20261002"
+        "edge-workflow-lines-20261002",
+        "firefox-expanded-20261002"
       ],
-      "gap": "Isolated Firefox156.0.1 passes30 native-input checks; isolated Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and broader workflows remain unqualified. Chrome-for-Testing is a separately documented testing distribution.",
-      "nextAction": "Resolve an isolated retained/managed Chrome153 or explicit distribution policy; official versioned automation downloads are Chrome-for-Testing, not a retail archive. Safari26 needs a compatible isolated OS environment. Preserve physical/manual obligations."
+      "gap": "Firefox156.0.1 passes60 expanded native-input checks including browser name/role queries. Edge153.0.4234.48 passes60 consumer and26 workflow checks. Previous retail Chrome/Safari, other OSes and actual Firefox production workflows remain unqualified.",
+      "nextAction": "Qualify preceding Firefox production workflows. Obtain an isolated retained/managed Chrome153 distribution or explicit testing-distribution decision; Safari26 needs a compatible OS. Preserve physical/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -544,7 +553,7 @@
         "https://www.firefox.com/en-US/firefox/156.0/releasenotes/",
         "https://archive.mozilla.org/pub/firefox/releases/"
       ],
-      "note": "Official Mozilla156.0.1 mac/en-US archive acquired in isolation; published SHA512 and macOS codesign verification pass. Actual156.0.1 and157.0 each pass30 native-input consumer cases. Full distribution bytes unchanged; broader coverage remains open."
+      "note": "Official isolated156.0.1 and installed157.0 now each pass60 native-input consumer checks with BiDi names/roles inside shadow roots. Earlier30-case receipts remain immutable. Full distributions unchanged. Previous archive checksum/signature provenance retained; production workflows, other OSes and manual scope remain open."
     },
     {
       "product": "Safari",
@@ -609,6 +618,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T04:32:55.031013+00:00",
+  "updatedAt": "2026-10-02T04:42:55.261576+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

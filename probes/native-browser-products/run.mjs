@@ -20,7 +20,7 @@ assert(firefoxApp.startsWith('/')&&firefoxApp.endsWith('.app'),'EN_FIREFOX_APP m
 const selected=process.argv[2]??'both';assert(['both','safari','firefox'].includes(selected),'Use both, safari or firefox');
 await mkdir(output); // A new run never overwrites evidence.
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
-const receipt={schemaVersion:1,startedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),node:process.version,fixture,products:[],cases:[],status:'running',selectedProducts:selected,scope:'Three native-input consumer scenarios per cohort. Not Playwright parity, accessibility-tree/speech, all workflows, a complete current/previous product matrix or physical-device qualification.'};
+const receipt={schemaVersion:1,startedAt:new Date().toISOString(),sourceCommit:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),node:process.version,fixture,products:[],cases:[],status:'running',selectedProducts:selected,scope:'Six native-input consumer scenarios per cohort, plus Firefox BiDi accessible-name/role queries. Not full Playwright accessible-description parity, whole accessibility-tree/speech, all workflows, a complete product/OS matrix or physical-device qualification.'};
 const save=()=>writeFile(join(output,'result.json'),JSON.stringify(receipt,null,2)+'\n');
 const children=[];
 function child(file,args,name){
@@ -69,6 +69,16 @@ async function firefox(bundle){
  return {capabilities:session.capabilities,headless:true,
   navigate:url=>send('browsingContext.navigate',{context,url,wait:'complete'}),
   evaluate:async expression=>{const result=await send('script.evaluate',{expression:`(async()=>JSON.stringify(await (${expression})))()`,target:{context},awaitPromise:true});if(result.type!=='success')throw Error(JSON.stringify(result));return result.result.value===undefined?undefined:JSON.parse(result.result.value);},
+  locateAccessible:async(role,name,startExpression)=>{
+   // BiDi locators traverse the supplied DOM root, not every shadow tree.
+   const params={context,locator:{type:'accessibility',value:{role,name}}};
+   if(startExpression){
+    const node=await send('script.evaluate',{expression:startExpression,target:{context},awaitPromise:false,serializationOptions:{maxDomDepth:0}});
+    assert.equal(node.type,'success');assert(node.result.sharedId,'Expected a remote start node');
+    params.startNodes=[{sharedId:node.result.sharedId}];
+   }
+   return (await send('browsingContext.locateNodes',params)).nodes;
+  },
   actions:actions=>send('input.performActions',{context,actions}),
   close:async()=>{try{await send('session.end');}finally{ws.close();await stop(browser);}},
  };
@@ -82,6 +92,7 @@ async function click(b,expression){
 }
 async function key(b,value){await b.actions([{type:'key',id:'keyboard',actions:[{type:'keyDown',value},{type:'keyUp',value}]}]);}
 async function state(b,expression,expected){await until(async()=>{const actual=await b.evaluate(expression);try{assert.deepEqual(actual,expected);return true;}catch{return false;}},'state '+expression);assert.deepEqual(await b.evaluate(expression),expected);}
+async function accessible(b,role,name,count,startExpression){await until(async()=> (await b.locateAccessible(role,name,startExpression)).length===count,`accessible ${role}: ${name} (${count})`);}
 async function hydrate(b){await b.evaluate(`(()=>{window.observedErrors=[];addEventListener('error',e=>observedErrors.push(e.message));addEventListener('unhandledrejection',e=>observedErrors.push(String(e.reason)));window.hydrateFixture().catch(error=>observedErrors.push(String(error)));return true;})()`);await ready(b,`document.documentElement.dataset.ready==='true'`);}
 const scenarios=[
  ['SSR node identity and native checkbox',async b=>{
@@ -104,6 +115,9 @@ const scenarios=[
  }],
  ['Framework property updates, native editing and listener disposal',async b=>{
   await hydrate(b);const input=el('client-field','input');await state(b,input+'.value','Initial brief');
+  if(b.locateAccessible)await accessible(b,'textbox','Project title',1,el('client-field')+'.shadowRoot');
+  await state(b,el('client-field')+`.querySelector('[slot=description]').textContent`,'Framework supplied description');
+  await click(b,el('client-toggle'));await state(b,el('client-checkbox','input')+'.checked',true);
   await click(b,el('client-update'));await state(b,input+'.value','Revised brief');
   assert.deepEqual(await b.evaluate(el('client-tree')+'.items.map(x=>({key:x.key,label:x.label}))'),[{key:'export',label:'Export artwork'}]);
   assert.equal(await b.evaluate(el('client-tree')+`.getAttribute('items')`),null);
@@ -116,8 +130,51 @@ const scenarios=[
   await b.evaluate(`detachedTree.dispatchEvent(new CustomEvent('en-change',{detail:{proposed:{selectedKey:'stale'}}}))`);
   assert.deepEqual(await b.evaluate('fixture.clientEvents'),[]);
   await click(b,el('client-mount'));await state(b,input+'.value','Revised brief');
+  await state(b,el('client-checkbox','input')+'.checked',true);
+  const item=el('client-tree','[role=treeitem]');await b.evaluate(`(${item}.focus(),true)`);await key(b,'\uE007');
+  await state(b,el('client-tree-state')+'.textContent','export');
+  assert.deepEqual(await b.evaluate('fixture.clientEvents'),['export']);
   assert.equal(await b.evaluate(el('client-tree')+'!==detachedTree'),true);
  }],
+
+ ['Framework-owned checkbox state, cancellation and keyboard input',async b=>{
+  await hydrate(b);const checkbox=el('client-checkbox','input');await state(b,checkbox+'.checked',false);
+  await click(b,el('client-toggle'));await state(b,checkbox+'.checked',true);
+  await click(b,checkbox);await state(b,checkbox+'.checked',false);
+  await click(b,el('client-toggle'));await state(b,checkbox+'.checked',true);
+  await click(b,el('reject-mode'));await click(b,checkbox);await state(b,checkbox+'.checked',true);
+  await click(b,el('supersede-mode'));await click(b,checkbox);await state(b,checkbox+'.checked',true);
+  await click(b,el('accept-mode'));await click(b,checkbox);await state(b,checkbox+'.checked',false);
+  await b.evaluate(`(${checkbox}.focus(),true)`);await key(b,' ');await state(b,checkbox+'.checked',true);
+ }],
+ ['Authored choices update while native select and keyboard editing persist',async b=>{
+  await hydrate(b);const select=el('island-select','select');
+  await b.evaluate(`(window.nativeSelect=${select},true)`);
+  await click(b,el('add-option'));
+  await state(b,`Array.from(${select}.options,o=>o.textContent)`,['SVG','PNG','PDF']);
+  await b.evaluate(`(${select}.focus(),true)`);await key(b,'\uE010');await key(b,'\uE007');
+  await state(b,select+'.value','pdf');await state(b,el('island-select')+'.value','pdf');
+  await click(b,el('remove-option'));
+  await state(b,`Array.from(${select}.options,o=>o.textContent)`,['SVG','PNG']);
+  await b.evaluate(`(${select}.focus(),true)`);await key(b,'\uE010');await key(b,'\uE007');
+  await state(b,select+'.value','png');await state(b,el('island-select')+'.value','png');
+  assert.equal(await b.evaluate(`nativeSelect===${select}`),true);
+ }],
+ ['Tree property updates and pointer selection reach framework state',async b=>{
+  await hydrate(b);const tree=el('client-tree'),item=el('client-tree','[role=treeitem]');
+  await state(b,item+'.textContent.trim()','Project artwork');
+  if(b.locateAccessible)await accessible(b,'treeitem','Project artwork',1,tree+'.shadowRoot');
+  await click(b,el('client-update'));await state(b,item+'.textContent.trim()','Export artwork');
+  assert.deepEqual(await b.evaluate('fixture.clientEvents'),[]);
+  if(b.locateAccessible){
+   await accessible(b,'treeitem','Project artwork',0,tree+'.shadowRoot');
+   await accessible(b,'treeitem','Export artwork',1,tree+'.shadowRoot');
+  }
+  await click(b,item);await state(b,el('client-tree-state')+'.textContent','export');
+  assert.deepEqual(await b.evaluate(`({items:${tree}.items.map(x=>({key:x.key,label:x.label})),selected:${tree}.selectedKey,attribute:${tree}.getAttribute('items')})`),{items:[{key:'export',label:'Export artwork'}],selected:'export',attribute:null});
+  assert.deepEqual(await b.evaluate('fixture.clientEvents'),['export']);
+ }],
+
 ];
 
 let server;
@@ -137,11 +194,11 @@ try {await withMachineOwner(()=>withExecutionOwner(root,async()=>{
   const product={name,version:plist.CFBundleShortVersionString,build:plist.CFBundleVersion,bundle,identityDigest:before.digest,identityPolicy:name==='Safari'?'Safari app and safaridriver bytes plus exact macOS build; OS WebKit system frameworks are not fully hashed.':'Full selected Firefox application distribution.',status:'running'};receipt.products.push(product);await save();
   let b;
   try{
-   b=await start(bundle);product.capabilities=b.capabilities;product.headless=b.headless;assert.equal(b.capabilities.browserVersion,product.version);
+   b=await start(bundle);product.capabilities=b.capabilities;product.headless=b.headless;product.accessibilityQueryScope=b.locateAccessible?'Browser-computed names/roles through BiDi accessibility locator; no description or whole-tree claim.':'No accessibility locator implemented for this protocol.';assert.equal(b.capabilities.browserVersion,product.version);
    for(const {id} of cohorts)for(const [scenario,test] of scenarios){
     const result={product:name,cohort:id,scenario,status:'running'};receipt.cases.push(result);console.log(name+' '+id+' '+scenario);
     try{await b.navigate(`${url}/${id}.html?defer`);await test(b);assert.deepEqual(await b.evaluate('observedErrors'),[]);result.status='passed';}
-    catch(error){result.status='failed';result.error=String(error.stack??error);try{result.diagnostic=await b.evaluate(`({ready:document.documentElement.dataset.ready,errors:window.observedErrors,fixture:Boolean(window.fixture),client:Boolean(document.querySelector('#client-checkbox')),visibility:document.visibilityState,body:document.body.innerText})`);}catch(diagnostic){result.diagnosticError=String(diagnostic);}throw error;}finally{await save();}
+    catch(error){result.status='failed';result.error=String(error.stack??error);try{result.diagnostic=await b.evaluate(`({ready:document.documentElement.dataset.ready,errors:window.observedErrors,fixture:Boolean(window.fixture),client:Boolean(document.querySelector('#client-checkbox')),visibility:document.visibilityState,body:document.body.innerText})`);}catch(diagnostic){result.diagnosticError=String(diagnostic);}if(b.locateAccessible){try{result.accessibilityDiagnostic={textboxes:await b.locateAccessible('textbox'),treeitems:await b.locateAccessible('treeitem')};}catch(e){result.accessibilityDiagnosticError=String(e);}}throw error;}finally{await save();}
    }product.status='passed';
   }finally{
    await b?.close();const after=await identity(paths);await writeFile(join(output,name+'-identity-after.json'),JSON.stringify(after,null,2)+'\n');product.unchanged=before.digest===after.digest;assert(product.unchanged,'Product distribution changed during acquisition');await save();

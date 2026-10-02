@@ -29,7 +29,7 @@ It is an evidence index, not a new browser-support promise or a completed test r
 | --- | --- | --- | --- |
 | Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
-| Firefox157.0 and156.0.1 |30 native-input passes each |Not yet qualified |Broader native workflows, other OS/manual coverage |
+| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |Not yet qualified |Production workflows, descriptions/full AX, other OS/manual coverage |
 | Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
 
 These are scoped receipts, not complete support claims. See the dated acquisitions
@@ -244,3 +244,22 @@ VersionHistory identifies 153.0.8010.53 as the preceding broad stable reference
 (100% and pinnable), whereas 153.0.8010.55 was a 0.5% control rollout. Prior retail
 Chrome still requires an isolated compatible distribution/environment. Safari,
 other OSes, physical devices and remaining actual speech/IME coverage stay open.
+
+## Expanded native Firefox consumers
+
+The [expanded receipt](../probes/native-browser-products/verification-firefox-expanded-20261002.json)
+records 120 passes: six native-input scenarios across ten retained packed consumers
+on each Firefox release (157.0 and 156.0.1). It adds framework-owned checkbox
+cancellation/state, authored select-choice updates with real keyboard input,
+pointer/keyboard tree activation and retained state after remount. Firefox's BiDi
+accessibility locator checks browser-computed field/tree names and roles using
+explicit component shadow-root start nodes.
+
+Two initial attempts queried from the document and found no shadow-tree matches;
+they remain failed harness attempts. The qualified runner uses the protocol's
+explicit start-node API; component code and assertions were not relaxed. The
+slotted description's DOM text is checked, but computed descriptions and full
+accessibility trees/speech are not claimed. Both full app distributions were
+unchanged. Existing packed artifacts were hash-verified and reused; there was no
+fresh installation/type compilation. Production workflows, Safari and the original
+OS/physical/manual obligations remain outstanding.
