@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "edef0ec0c13f78c627bee0056e7f9acadf8dfde6",
-  "exportedAt": "2026-10-02T06:29:40.453310+00:00",
+  "sourceCommit": "db8d826c013633251f30e8ba846d3152a654ca20",
+  "exportedAt": "2026-10-02T06:44:59.169076+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5435,
-  "includedBytes": 147660628,
-  "qualification": "Actual Firefox156.0.1/157.0:56 fresh cases pass (46 workflow,10 first-paint), including all authored-child readiness and DOM validation references/focus.120 unchanged-transport consumer cases explicitly reused.116 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
-  "latestUpdate": ".source-export/updates/firefox-readiness-20261002.json",
+  "includedFiles": 5437,
+  "includedBytes": 148493736,
+  "qualification": "Actual Firefox156.0.1/157.0:46 fresh workflow cases pass, including settings/chat pending state, focus protection, document isolation and SSO/selection values.10 first-paint and120 consumer cases explicitly reused by unchanged source hashes.117 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
+  "latestUpdate": ".source-export/updates/firefox-interactions-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

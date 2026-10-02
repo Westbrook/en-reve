@@ -394,6 +394,13 @@
       "path": "probes/native-browser-products/verification-firefox-readiness-20261002.json",
       "sha256": "1f5e189de6d47cb53d6195b7f399b739cd397d8a76a083f77863a3f127398ccf",
       "scope": "46 selected workflow and10 first-paint/hydration cases on actual Firefox156.0.1/157.0. Adds original authored-child readiness and DOM description/error references, native focus and validation geometry. Existing qualified build reused; no fresh build/install/types claim."
+    },
+    {
+      "id": "firefox-interactions-20261002",
+      "kind": "automated-native-product",
+      "path": "probes/native-browser-products/verification-firefox-interactions-20261002.json",
+      "sha256": "2537eb94082fe7d1de566a48f8937811e09d75424d7a87e4cd974cdcdc66c3f7",
+      "scope": "46 selected workflow cases across actual Firefox156.0.1/157.0, extended to original settings/chat interaction branches, SSO/selection value invariants and primary workflow isolation labels. Existing production assets reused; not full native accessibility or exact Playwright implementation equivalence."
     }
   ],
   "conditions": [
@@ -450,10 +457,11 @@
         "firefox-first-paint-20261002",
         "firefox-accessibility-20261002",
         "firefox-history-20261002",
-        "firefox-readiness-20261002"
+        "firefox-readiness-20261002",
+        "firefox-interactions-20261002"
       ],
-      "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact assertion parity, other OS/device/manual scope remain. Chrome154.0.8037.98 and Edge154.0.4258.53 qualify60 consumer and26 production checks each. Safari27 remains hidden pending visible-desktop clarification.",
-      "nextAction": "Qualify remaining exact native Firefox settings/chat focus and pending-state branches; preserve native computed-description/AX and original platform/manual obligations."
+      "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact protocol/assertion differences, other OS/device/manual scope remain. Chrome154.0.8037.98 and Edge154.0.4258.53 qualify60 consumer and26 production checks each. Safari27 remains hidden pending visible-desktop clarification.",
+      "nextAction": "Reconcile original support requirements with scoped receipts, including packed HTML/SSR breadth and remaining no-JS HTTP/documentation-navigation checks; preserve product/OS/device/manual obligations."
     },
     {
       "id": "browser-previous",
@@ -470,10 +478,11 @@
         "firefox-first-paint-20261002",
         "firefox-accessibility-20261002",
         "firefox-history-20261002",
-        "firefox-readiness-20261002"
+        "firefox-readiness-20261002",
+        "firefox-interactions-20261002"
       ],
-      "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact assertion parity, other OS/device/manual scope remain. Edge153.0.4234.48 qualifies60 consumer and26 production checks. Preceding retail Chrome/Safari remain unqualified.",
-      "nextAction": "Qualify remaining exact native Firefox settings/chat focus and pending-state branches; preserve native computed-description/AX and original platform/manual obligations."
+      "gap": "Firefox157.0 and156.0.1 each qualify60 consumer cases,23 selected workflows including native history/legacy-query normalization with scoped axe/status-owner/narrow RTL checks,12 no-JS documents and4 early-draft hydration journeys. Native full AX/computed descriptions, remaining exact protocol/assertion differences, other OS/device/manual scope remain. Edge153.0.4234.48 qualifies60 consumer and26 production checks. Preceding retail Chrome/Safari remain unqualified.",
+      "nextAction": "Reconcile original support requirements with scoped receipts, including packed HTML/SSR breadth and remaining no-JS HTTP/documentation-navigation checks; preserve product/OS/device/manual obligations."
     },
     {
       "id": "framework-release-lines",
@@ -672,6 +681,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T06:28:48.112940+00:00",
+  "updatedAt": "2026-10-02T06:43:42.730285+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }

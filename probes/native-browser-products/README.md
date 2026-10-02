@@ -286,3 +286,30 @@ prior120 consumer passes are reused explicitly rather than counted as fresh.
 Existing production assets are unchanged. Remaining settings/chat focus and
 pending-state branches, native AX, incomplete visual contrast findings and
 original OS/device/manual requirements stay open.
+
+## Native Firefox pending-state and focus qualification
+
+The [interaction receipt](verification-firefox-interactions-20261002.json) records
+46 fresh workflow passes on Firefox156.0.1 and157.0. Settings save/cancel checks
+now cover the saved/dirty status and returned button focus. Explicit incoming
+opacity acceptance preserves SVG, landscape and transparent-background choices.
+Chat verifies pending-card identity across another reply, rejection of invalid
+Apply, source/adjustment focus, deduplicated held requests, a newer native draft
+established before delayed Apply completes, and working controls after Reset.
+The short native draft avoids remote typing latency consuming the600ms fixture
+delay; its before-completion value/revision is asserted rather than assumed.
+
+Primary workflow navigation name/current link, reset-button name and isolated
+source disclosure are checked after navigation/history/reconnect. SSO captured
+values and selection accepted IDs, disabled choices and form validity have
+additional explicit assertions. These are behavioral checks against unchanged
+production assets. They do not claim full native AX, speech or literal parity
+with every Playwright assertion. The original no-JS HTTP/redirect/header-link
+checks, screenshots and computed descriptions retain their separate boundaries.
+
+Two failed harness attempts are retained: raw versus whitespace-normalized text,
+and a caption scoped to the wrong card. Both were corrected to the original
+Playwright contract without changing production code or weakening the pending
+card identity check. The unchanged transport/first-paint/consumer evidence is
+reused by hash:10 first-paint and120 consumer passes are not fresh run counts.
+Packed HTML/SSR breadth and original product/OS/device/manual obligations remain.

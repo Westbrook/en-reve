@@ -122,3 +122,7 @@ Local main `892bc63abc2358589697c5a0befcbfb660633a4d` qualifies176 fresh workflo
 ## Firefox readiness and validation relationships qualification
 
 Local main `edef0ec0c13f78c627bee0056e7f9acadf8dfde6` qualifies56 fresh workflow/first-paint cases across two Firefox releases, including eager child readiness and native validation/focus relationships. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Firefox pending-state and focus interactions qualification
+
+Local main `db8d826c013633251f30e8ba846d3152a654ca20` qualifies46 fresh workflow cases across two Firefox releases, including pending-card identity, delayed focus protection, cancellation and document isolation. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.

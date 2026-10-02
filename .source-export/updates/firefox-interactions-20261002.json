@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-10-02T06:44:59.169076+00:00",
+  "sourceCommit": "db8d826c013633251f30e8ba846d3152a654ca20",
+  "previousSourceMain": "edef0ec0c13f78c627bee0056e7f9acadf8dfde6",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/verification-firefox-interactions-20261002.json",
+    "probes/native-browser-products/workflows.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox156.0.1/157.0:46 fresh workflow cases pass, including settings/chat pending state, focus protection, document isolation and SSO/selection values.10 first-paint and120 consumer cases explicitly reused by unchanged source hashes.117 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

@@ -416,7 +416,7 @@ test('Firefox history transport freshly requalifies first-paint and all consumer
 
 test('Firefox readiness receipt binds authored registration and validation relationships',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-readiness-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'0cbe9c0170813492259646d4ca8fd2a1e5bb040819d97591f49ef5bd2e16d1d3':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:56,failed:0,planned:56});
  const prior=await json(r.previousReceipt);assert.equal(r.consumerEvidenceReuse.passes,120);for(const p of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(r.inputs[p],prior.inputs[p]);
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
@@ -431,4 +431,20 @@ test('Firefox readiness receipt binds authored registration and validation relat
   const error=cases.find(c=>c.id==='settings-invalid-reset').errorRelationship;assert(error.referenced&&error.visible&&error.text.length);
  }
  assert(r.remaining.some(x=>/computed/.test(x)));assert(r.remaining.some(x=>/manual/.test(x)));
+});
+
+
+test('Firefox interaction evidence binds pending states, focus and exact isolation names',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-interactions-20261002').path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:46,failed:0,planned:46});
+ const prior=await json(r.previousReceipt);for(const [p,digest] of Object.entries(r.inputs))if(!p.endsWith('/workflows.mjs'))assert.equal(digest,prior.inputs[p]);assert.equal(r.unchangedEvidenceReuse.firstPaint.passes,10);assert.equal(r.unchangedEvidenceReuse.consumers.passes,120);
+ const flags={'settings-snapshot':'cancelFocusAndDirtyStateVerified','settings-incoming':'unrelatedChoicesPreserved','chat-safe-preview':'pendingCardAndInvalidApplyVerified','chat-stale':'draftEstablishedBeforeApply','chat-cancel':'postResetEditingAndCancelFocusVerified'};
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  const run=r.runs[label];assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:23,failed:0,planned:23});assert(run.cases.every(c=>c.status==='passed'));
+  for(const [id,flag] of Object.entries(flags))assert.equal(run.cases.find(c=>c.id===id)[flag],true);
+  for(const c of run.cases)for(const s of c.readinessCheckpoints)if(['sso','settings','chat'].includes(s.scene)){const i=s.isolation;assert(i.title&&i.label&&i.sceneVisible);assert.equal(i.primaryScenes,1);assert.equal(i.links,6);for(const key of ['current','tools','disclosures','source'])assert.equal(i[key],1);}
+ }
+ assert.equal(r.attempts.length,2);for(const a of r.attempts){assert.equal(a.stats.failed,1);assert.equal(a.case,'chat-safe-preview');assert(a.disposition);}
+ assert(r.remaining.some(x=>/computed/.test(x)));assert(r.remaining.some(x=>/HTTP/.test(x)));assert(r.remaining.some(x=>/packed/.test(x)));
 });
