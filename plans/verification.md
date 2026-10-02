@@ -384,3 +384,12 @@ This closes the12 pending copies from the preceding checkpoint. It does not
 replace owning matrices or close the80 remaining reusable public-layer entries,
 native Firefox assertion comparison, physical/manual/Safari conditions or
 separate-owner gates. Historical external CSS-authoring rerun remains retired.
+
+The [packed projection batch](../probes/projection-recipes/README.md) qualifies
+four further §7.4 entries in application-owned breadcrumb, default-slot navigation
+and rich-label native-radio compositions.36 browser cases pass across three pinned
+engines, with isolated public declarations and no delivered-element dependency.
+The inventory now records34/110 entries with named scenarios;76 remain pending.
+Client named/manual projection does not imply SSR/hydration or other descriptor
+modes. The native Firefox assertion comparison and platform/manual/owner gates
+remain open. The completed59-copy inventory is separate evidence.

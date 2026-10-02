@@ -568,7 +568,7 @@ test('native recipe qualification binds both style deliveries, real SSR and orig
 test('packed collection qualification binds maintained assertions, native SSR and bounded public-layer scope',async()=>{
  const r=await json('probes/collection-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.report.passed,81);assert.equal(r.report.workers,1);assert.equal(r.packed.types.status,'passed');
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "tooling/testing/browser-ports.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/collection-recipes/qualification-sources/f186cb6f/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  assert(r.report.cases.every(c=>c.status==='passed'&&c.retry===0));
  assert.equal(r.originalOwner.status,'passed');assert.equal(r.originalOwner.passed,51);assert(r.originalOwner.cases.every(c=>c.status==='passed'));
  assert.equal(Object.values(r.originalOwner.sourceHashes)[0],r.sourceInputs['apps/docs/tests/virtual-collection.spec.ts']);
@@ -583,4 +583,15 @@ test('packed collection qualification binds maintained assertions, native SSR an
  const qualified=inventory.entries.filter(e=>e.receipt==='probes/collection-recipes/verification-20261002.json');assert.equal(qualified.length,7);
  assert(qualified.every(e=>e.delivery==='module'));
  assert.match(r.limitations.join(' '),/Generated examples remain pending/);assert.match(r.limitations.join(' '),/VoiceOver reading-cursor issue remains open/);
+});
+
+test('packed projection receipt binds four named entries to native alternate compositions',async()=>{
+ const r=await json('probes/projection-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.stats.expected,36);assert.equal(r.stats.unexpected,0);assert.equal(r.stats.skipped,0);assert.equal(r.stats.flaky,0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,12);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
+ const qualified=inventory.entries.filter(row=>row.receipt==='probes/projection-recipes/verification-20261002.json');assert.equal(qualified.length,4);assert(qualified.every(row=>row.delivery==='module'));
+ assert.match(r.limitations.join(' '),/SSR and hydration are not implied/);assert.match(r.limitations.join(' '),/other76/);
 });

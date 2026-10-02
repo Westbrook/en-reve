@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-02T12:01:42.510895+00:00",
+  "sourceCommit": "661aac8552dd939c65e18ae23c40a3ea2b3657f6",
+  "previousSourceMain": "f186cb6fb3c42d477e5f20c11f279a3bd238cd6a",
+  "taskPaths": [
+    "packages/primitives/docs/projection-consumers.md",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md",
+    "probes/collection-recipes/qualification-sources/f186cb6f/browser-ports.mjs.txt",
+    "probes/collection-recipes/qualification-sources/f186cb6f/comprehensive.mjs.txt",
+    "probes/collection-recipes/qualification-sources/f186cb6f/comprehensive.test.mjs.txt",
+    "probes/collection-recipes/qualification-sources/f186cb6f/inventory.json.txt",
+    "probes/collection-recipes/qualification-sources/f186cb6f/inventory.test.mjs.txt",
+    "probes/projection-recipes/README.md",
+    "probes/projection-recipes/playwright.config.ts",
+    "probes/projection-recipes/prepare.mjs",
+    "probes/projection-recipes/recipes.html",
+    "probes/projection-recipes/recipes.spec.ts",
+    "probes/projection-recipes/recipes.ts",
+    "probes/projection-recipes/server.mjs",
+    "probes/projection-recipes/verification-20261002.json",
+    "probes/reusable-layers/README.md",
+    "probes/reusable-layers/inventory.json",
+    "probes/reusable-layers/inventory.test.mjs",
+    "tooling/testing/browser-ports.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Four public projection entries now have independent native consumer compositions:36 browser cases,22 pathway/inventory controls, strict declarations and124 final integrity checks pass. The reusable-layer inventory is34/110;76 entries and broader platform/manual/owner work remain open. Application build unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

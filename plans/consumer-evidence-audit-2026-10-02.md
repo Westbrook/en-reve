@@ -173,3 +173,13 @@ styles; the fixture resolves declared table/content/radio CSS from public packs.
 This resolves the pending displayed-copy IDs recorded above, not every owning
 assertion. The80 remaining §7.4 inventory entries, native Firefox assertion-level
 comparison, platform/manual/Safari and separate-owner obligations remain open.
+
+### Application-owned projection qualification
+
+The [projection recipes](../probes/projection-recipes/README.md) independently
+consume the breadcrumb controller/canonical template, default-slot navigation and
+segmented selection-child controller.36 cases pass in three engines against
+isolated tarballs and declarations. The application owns native links/radios,
+selection transactions and validation recovery; no delivered elements are imported.
+This brings named public-entry coverage to34/110, leaving76 entries pending.
+SSR, other descriptor modes and the broader platform/manual/owner scope remain.

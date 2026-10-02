@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T11:59:13.994235+00:00",
+  "sourceBase": "f186cb6fb3c42d477e5f20c11f279a3bd238cd6a",
+  "status": "passed",
+  "scope": "Four public projection entries in application-owned breadcrumb/navigation/native-radio compositions.",
+  "sourceInputs": {
+    "probes/projection-recipes/recipes.ts": "bdadc9eca24f66abdf0a390f23992c93102bbbc138c50766514ac27cf32bbb28",
+    "probes/projection-recipes/recipes.html": "2e1fb1fa6f27518854ffe20d748b299a3e3dff98f716bb870b5a4fac875ef374",
+    "probes/projection-recipes/recipes.spec.ts": "92eeb6bafba1977e3a7f3f8c22231c72a54fe6ae9c3dc8440b6a32258571dcd1",
+    "probes/projection-recipes/playwright.config.ts": "7ba1b144ab37a8de20ce72d6c26871e9d3866be1eb31c81d50b0e79ff08c6678",
+    "probes/projection-recipes/prepare.mjs": "fdcb2d42260df56902f42997a81e60557d3ac379a2515e57ac47ab3be0f5ebf8",
+    "probes/projection-recipes/server.mjs": "201e91a49f56bbca151b9f9b082f7ba96a67db473d73ff41efcdb1bc6507b3e9",
+    "tooling/testing/comprehensive.mjs": "749eeabaa774bd374302c4e2bf9797cd9d6278a124b8c598154845fa8e087fbe",
+    "tooling/testing/comprehensive.test.mjs": "cf0e4f0b2195cad3c27be28be34a486c5311fff9898eb30a9077025b924bd802",
+    "tooling/testing/browser-ports.mjs": "e7b61f65a844c7d9e0f83171f0786431af97c2b8c28858d87f1580d4d885b7e4",
+    "probes/reusable-layers/inventory.json": "9ecdb93ff1a1a682488d5f1734653aa50a884a105f4b04e0ff17aa586cfdbfbf",
+    "probes/reusable-layers/inventory.test.mjs": "1af930941f2de4bbf59ad35d57eafc4dc3a9f8d69b3d131f471179ef344771dd",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "run": "/private/tmp/en-projection-recipes-20261002-02",
+  "executionSHA256": "007566174b232c970717bd1f385601342c6ae0ab8442d421308d70789aa17ece",
+  "reportSHA256": "c6c5fada54a5bd486f5cfe302b4ef96ccf4e786ac39c1b3726a9de71befdb259",
+  "stats": {
+    "startTime": "2026-10-02T11:55:42.445Z",
+    "duration": 11403.746000000001,
+    "expected": 36,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "manual breadcrumb projection retains native links, listeners and explicit semantics",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 862
+    },
+    {
+      "project": "chromium",
+      "title": "manual visibility, authored insertion and reorder keep projection identity and separators",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 345
+    },
+    {
+      "project": "chromium",
+      "title": "manual diagnostics recover and disconnect releases only owned slot metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 347
+    },
+    {
+      "project": "chromium",
+      "title": "named breadcrumb projection retains native links, listeners and explicit semantics",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 375
+    },
+    {
+      "project": "chromium",
+      "title": "named visibility, authored insertion and reorder keep projection identity and separators",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 100
+    },
+    {
+      "project": "chromium",
+      "title": "named diagnostics recover and disconnect releases only owned slot metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 82
+    },
+    {
+      "project": "chromium",
+      "title": "slotted navigation keeps native keyboard/history and current location author-owned",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 128
+    },
+    {
+      "project": "chromium",
+      "title": "selection descriptors drive native radio names, disabled state and synchronous veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133
+    },
+    {
+      "project": "chromium",
+      "title": "native radio and label nodes survive authored edits and authoritative writes stay silent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 129
+    },
+    {
+      "project": "chromium",
+      "title": "invalid choice labels fail visibly and recover without fighting authored attributes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 85
+    },
+    {
+      "project": "chromium",
+      "title": "choice disconnect/reconnect reconciles children and transfers projection ownership",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 136
+    },
+    {
+      "project": "chromium",
+      "title": "narrow enlarged RTL projection keeps readable labels and native source order",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 75
+    },
+    {
+      "project": "firefox",
+      "title": "manual breadcrumb projection retains native links, listeners and explicit semantics",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 819
+    },
+    {
+      "project": "firefox",
+      "title": "manual visibility, authored insertion and reorder keep projection identity and separators",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 205
+    },
+    {
+      "project": "firefox",
+      "title": "manual diagnostics recover and disconnect releases only owned slot metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 191
+    },
+    {
+      "project": "firefox",
+      "title": "named breadcrumb projection retains native links, listeners and explicit semantics",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "firefox",
+      "title": "named visibility, authored insertion and reorder keep projection identity and separators",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 194
+    },
+    {
+      "project": "firefox",
+      "title": "named diagnostics recover and disconnect releases only owned slot metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 188
+    },
+    {
+      "project": "firefox",
+      "title": "slotted navigation keeps native keyboard/history and current location author-owned",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 238
+    },
+    {
+      "project": "firefox",
+      "title": "selection descriptors drive native radio names, disabled state and synchronous veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 228
+    },
+    {
+      "project": "firefox",
+      "title": "native radio and label nodes survive authored edits and authoritative writes stay silent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 248
+    },
+    {
+      "project": "firefox",
+      "title": "invalid choice labels fail visibly and recover without fighting authored attributes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 470
+    },
+    {
+      "project": "firefox",
+      "title": "choice disconnect/reconnect reconciles children and transfers projection ownership",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 211
+    },
+    {
+      "project": "firefox",
+      "title": "narrow enlarged RTL projection keeps readable labels and native source order",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 171
+    },
+    {
+      "project": "webkit",
+      "title": "manual breadcrumb projection retains native links, listeners and explicit semantics",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 421
+    },
+    {
+      "project": "webkit",
+      "title": "manual visibility, authored insertion and reorder keep projection identity and separators",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 235
+    },
+    {
+      "project": "webkit",
+      "title": "manual diagnostics recover and disconnect releases only owned slot metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 208
+    },
+    {
+      "project": "webkit",
+      "title": "named breadcrumb projection retains native links, listeners and explicit semantics",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 203
+    },
+    {
+      "project": "webkit",
+      "title": "named visibility, authored insertion and reorder keep projection identity and separators",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 210
+    },
+    {
+      "project": "webkit",
+      "title": "named diagnostics recover and disconnect releases only owned slot metadata",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 195
+    },
+    {
+      "project": "webkit",
+      "title": "slotted navigation keeps native keyboard/history and current location author-owned",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 273
+    },
+    {
+      "project": "webkit",
+      "title": "selection descriptors drive native radio names, disabled state and synchronous veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 291
+    },
+    {
+      "project": "webkit",
+      "title": "native radio and label nodes survive authored edits and authoritative writes stay silent",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 271
+    },
+    {
+      "project": "webkit",
+      "title": "invalid choice labels fail visibly and recover without fighting authored attributes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 220
+    },
+    {
+      "project": "webkit",
+      "title": "choice disconnect/reconnect reconciles children and transfers projection ownership",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 259
+    },
+    {
+      "project": "webkit",
+      "title": "narrow enlarged RTL projection keeps readable labels and native source order",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 200
+    }
+  ],
+  "nodeControls": {
+    "passed": 22
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+        "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110",
+        "setup": {
+          "key": "447fa60331a0854755d03251e15e43aab46d26037a32cf1fb9b9e5b3b16b9f79",
+          "reused": false,
+          "originatingProducer": "2026-10-02T11:55:38.341Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+        "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b",
+        "setup": {
+          "key": "447fa60331a0854755d03251e15e43aab46d26037a32cf1fb9b9e5b3b16b9f79",
+          "reused": false,
+          "originatingProducer": "2026-10-02T11:55:38.341Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "447fa60331a0854755d03251e15e43aab46d26037a32cf1fb9b9e5b3b16b9f79",
+          "reused": false,
+          "originatingProducer": "2026-10-02T11:55:38.341Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/interactions/breadcrumbs-projection.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/breadcrumbs.d.ts",
+        "node_modules/@en-reve/primitives/dist/templates/slotted-navigation.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/selection-children.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/foundations.d.ts",
+        "node_modules/@en-reve/styles/dist/navigation.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/lit-html/directive.js",
+      "node_modules/lit-html/directive-helpers.js",
+      "node_modules/lit-html/directives/repeat.js",
+      "node_modules/lit/directives/repeat.js",
+      "node_modules/lit-html/directives/live.js",
+      "node_modules/lit/directives/live.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/breadcrumbs-projection.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/breadcrumbs.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/primitives/dist/templates/slotted-navigation.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/selection-children.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/internal/breadcrumbs.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/node_modules/@en-reve/styles/dist/navigation.js",
+      "../en-projection-recipes-20261002-02/fixtures/projection-recipes/consumer/recipes.ts"
+    ],
+    "assets": {
+      "recipes.js": "e97d7871ffcc9dbaf971bdec8eb69d1a02786e6055513157a7b891e520868f1d"
+    },
+    "sourceInputs": {
+      "probes/projection-recipes/recipes.ts": "bdadc9eca24f66abdf0a390f23992c93102bbbc138c50766514ac27cf32bbb28",
+      "probes/projection-recipes/recipes.html": "2e1fb1fa6f27518854ffe20d748b299a3e3dff98f716bb870b5a4fac875ef374"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Synthetic composition tests do not qualify physical IME. SSR, portable CSS and other helper modes remain separate."
+    ]
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "f186cb6fb3c42d477e5f20c11f279a3bd238cd6a",
+    "sourceDigest": "sha256:4e4bac5d7b3592d94b83ea935e772baa9daf1641d4e62d99eb46097d1603fb63",
+    "files": 22743
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/projection-recipes-20261002",
+  "earlierAttempt": {
+    "run": "/private/tmp/en-projection-recipes-20261002-01",
+    "status": "failed",
+    "boundary": "9 cases passed before the first diagnostic locator matched both the fieldset error and native output status. Corrected fieldset scoping; full36-case rerun passed."
+  },
+  "limitations": [
+    "Four entries have named scenario qualification, not every export or method.",
+    "Segmented descriptor mode drives native radios; other selection-child kinds and native form-associated adapters remain separate.",
+    "Named/manual roots are client compositions; SSR and hydration are not implied.",
+    "Physical IME, native AT speech, retail Safari/OS/device conditions and separate-owner acceptance remain open.",
+    "The other76 of110 public inventory entries remain pending. Historical external CSS-authoring rerun is retired, never passed."
+  ],
+  "integrity": {
+    "run": "/private/tmp/en-projection-tooling-20261002-01",
+    "status": "passed",
+    "passed": 124,
+    "executionSHA256": "3bd60b330e66ccb569d7fa6a413b984935420e980f228c2f74f549a8d184d5d5"
+  }
+}

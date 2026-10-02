@@ -1,0 +1,12 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Packed projection recipes</title>
+<style>body{font-family:system-ui;margin:1rem}main{min-inline-size:0}consumer-output-options{display:block;max-inline-size:32rem}section{margin-block:2rem}</style>
+<main>
+ <consumer-path id="manual" label="Manual project path"><a href="#projects" data-count-link><strong>Projects</strong></a><a href="#studio">Studio</a><span aria-current="page"><em>Cover</em></span></consumer-path>
+ <consumer-named-path id="named" label="Named project path"><a href="#projects" data-count-link><strong>Projects</strong></a><a href="#studio">Studio</a><span aria-current="page"><em>Cover</em></span></consumer-named-path>
+ <consumer-navigation><a href="#projects">Projects</a><a href="#studio" aria-current="location">Studio</a><a href="#review">Review</a></consumer-navigation>
+ <consumer-output-options id="options"><en-segmented-item value="draft"><strong>Draft</strong> version</en-segmented-item><en-segmented-item value="final">Final version</en-segmented-item><en-segmented-item value="locked" disabled>Locked version</en-segmented-item></consumer-output-options>
+ <consumer-output-options id="other"><en-segmented-item value="draft">Other draft</en-segmented-item><en-segmented-item value="final">Other final</en-segmented-item></consumer-output-options>
+ <section id="projects" tabindex="-1"><h1>Projects</h1><button>Project action</button></section>
+ <section id="studio" tabindex="-1"><h2>Studio</h2><button>Studio action</button></section>
+ <section id="review" tabindex="-1"><h2>Review</h2></section>
+</main><script type="module" src="/recipes.js"></script></html>

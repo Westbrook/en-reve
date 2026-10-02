@@ -33,12 +33,3 @@ test('maintained collection recipes resolve qualified public entries with explic
  const qualified=inventory.entries.filter(row=>row.composition==='collections');assert.equal(qualified.length,7);
  for(const row of qualified)assert(seen.has(row.entry),row.entry);
 });
-
-
-test('projection consumer uses public modules with explicit shared style and transaction dependencies',async()=>{
- const source=await read('probes/projection-recipes/recipes.ts');assert(!source.includes('/src/')&&!source.includes('/dist/')&&!source.includes('@en-reve/elements'));
- const seen=[...source.matchAll(/from ['"](@en-reve\/[^'"]+)['"]/g)].map(match=>match[1]);
- for(const entry of seen){const row=inventory.entries.find(row=>row.entry===entry);assert(row,entry);assert.equal(row.qualification,'qualified-scenarios',entry);}
- const qualified=inventory.entries.filter(row=>row.composition==='projection');assert.equal(qualified.length,4);
- for(const row of qualified)assert(seen.includes(row.entry),row.entry);
-});

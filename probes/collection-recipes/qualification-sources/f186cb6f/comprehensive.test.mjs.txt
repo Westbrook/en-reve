@@ -179,11 +179,3 @@ test('packed collection pathway binds SSR packages, fresh consumer preparation a
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/collection-recipes/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:collection-recipes').environment.EN_COLLECTION_RECIPES_OUT,'$RUN/fixtures/collection-recipes');
 });
-
-
-test('projection recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['projection-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:projection-recipes','browser:probes/projection-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/projection-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:projection-recipes').environment.EN_PROJECTION_RECIPES_OUT,'$RUN/fixtures/projection-recipes');
-});

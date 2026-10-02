@@ -178,3 +178,7 @@ Local main `d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8` completes the displayed-co
 ## GitHub build snapshots
 
 Local main `f186cb6fb3c42d477e5f20c11f279a3bd238cd6a` adds the qualified gh-pages snapshot publisher and standing publication instructions. See `tooling/publishing/README.md`. Build assets stay on their own branch and never import the original source/evidence history.
+
+## Packed projection consumers
+
+Local main `661aac8552dd939c65e18ae23c40a3ea2b3657f6` qualifies four public navigation/selection projection entries in application-owned native compositions. See `probes/projection-recipes/README.md` for36 browser cases, exact scope and remaining obligations.

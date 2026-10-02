@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "f186cb6fb3c42d477e5f20c11f279a3bd238cd6a",
-  "exportedAt": "2026-10-02T11:46:34.610386+00:00",
+  "sourceCommit": "661aac8552dd939c65e18ae23c40a3ea2b3657f6",
+  "exportedAt": "2026-10-02T12:01:42.510895+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5511,
-  "includedBytes": 151163635,
-  "qualification": "Qualified static builds now publish on a separate gh-pages history after source publication. Isolated Git controls passed for initial history, repeated no-op, fast-forward update, build/source rejection and checkout preservation. Existing qualified site build remains unchanged.",
-  "latestUpdate": ".source-export/updates/gh-pages-publishing-20261002.json",
+  "includedFiles": 5526,
+  "includedBytes": 151289696,
+  "qualification": "Four public projection entries now have independent native consumer compositions:36 browser cases,22 pathway/inventory controls, strict declarations and124 final integrity checks pass. The reusable-layer inventory is34/110;76 entries and broader platform/manual/owner work remain open. Application build unchanged.",
+  "latestUpdate": ".source-export/updates/projection-recipes-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
