@@ -1,5 +1,31 @@
 # Consumer evidence audit — 2 October 2026
 
+## Current continuation checkpoint
+
+The original audit and intermediate batches below remain historical. Their
+implementation queue has now completed its bounded first pass:
+
+- §7.4: all 111 supported inventory entries have named alternate-composition
+  receipts in [the reusable-layer inventory](../probes/reusable-layers/inventory.json).
+  See the final [helper qualification](../probes/helper-recipes/verification-20261002.json).
+- §7.5a: all 48 displayed gallery copies and 11 complete API modules have
+  independent packed-consumer journeys and declaration compilation evidence,
+  as indexed by the later checkpoints below.
+- §7.5c: the selected metadata discovery-to-consumer chain is qualified by the
+  [small-consumer receipt](../tooling/metadata/verification/consumer-20261002.json).
+- The [native Firefox source comparison](../probes/native-browser-products/assertion-comparison.md)
+  is complete. Its explicitly listed semantic, visual and manual boundaries
+  remain unqualified; the comparison itself is no longer an open audit.
+
+These outcomes close those named inventory and comparison tasks, not every
+possible operation or the overall objective. §7.3 remains the originally selected
+SSR integration, not an invented requirement for every framework/server pairing.
+Current outstanding product, OS, physical-device, connectivity, speech and IME
+conditions are in the [support ledger](support-coverage.json). Date-input manual
+coverage and composite-accessibility acceptance retain their existing owners.
+
+## Original source audit
+
 Source reviewed: `dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d`.
 This is a source/evidence audit, **not a new test run**. It resolves the remaining
 developer-integration requirements in [verification §7](verification.md#7-developer-and-delivery-integration).

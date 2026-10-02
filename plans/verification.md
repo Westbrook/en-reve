@@ -599,3 +599,21 @@ ledger remains partial; native Safari and physical/manual obligations stay open.
 The evidence-integrity tooling gate passes 137 Node checks. This validates receipt
 consistency, including the explicit incomplete Safari result; it is not additional
 Safari behavioral or manual accessibility evidence.
+
+### Headed Chrome and current-queue reconciliation
+
+The [headed product receipt](../apps/docs/tests/verification-chrome-headed-20261002.json)
+records 26 original workflow cases passing and one existing narrow-layout skip
+on isolated Chrome154.0.8037.98, macOS26.6.1, arm64. The connected built-in Retina
+display is inventoried separately. Scripted viewport automation does not establish
+native browser zoom, display scaling, multi-monitor behavior or manual acceptance.
+The entire browser distribution, source and qualified build stayed unchanged.
+
+The support and consumer-audit summaries now point to the later completed
+111-entry reusable-layer pass, 59 copied examples and original Firefox source
+comparison. Their old intermediate queue descriptions remain dated history.
+Actual semantic/visual, Safari/preceding-product, physical-device/connectivity,
+manual AT/IME and separate-owner obligations remain open.
+
+The receipt-integrity tooling gate passes 138 Node checks. No runtime or visual
+change was made for this evidence and status reconciliation.

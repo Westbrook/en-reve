@@ -336,3 +336,24 @@ native Firefox assertion comparison, retail Safari/other platform conditions,
 manual AT/IME and separate-owner review remain open. No manual acceptance is
 inferred from Playwright results; the historical external authoring rerun remains
 retired by the user, never passed.
+## Headed product workflow checkpoint
+
+The [October 2 headed Chrome receipt](verification-chrome-headed-20261002.json)
+records 26 original workflow/selection cases passing, with one existing
+Chromium-project-only layout skip. It uses the same supported product manifest
+as the headless acquisition, with `headless: false` and a distinct project name.
+Run it through the normal public entry point with a fresh output directory:
+
+```sh
+EN_BROWSER_PRODUCTS=/absolute/headed-products.json \
+EN_EXECUTION_OUTPUT=/absolute/new-headed-run \
+  tooling/test-pipeline/with-toolchain.sh npm run test:workflows -w @en-reve/docs -- \
+  workflows.spec.ts selection.spec.ts --project=product-chrome-headed
+```
+
+Use an explicitly identified isolated retail app, never a personal profile.
+The manifest, exact command, all selected cases, source/runtime identities and
+qualified build reuse are recorded in the receipt. This is headed automation
+with scripted viewports, not physical touch, native browser zoom, display-scale
+transitions, screen-reader output or manual visual acceptance. Safari's native
+focus rules are separately documented in its input-boundary investigation.

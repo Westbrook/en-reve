@@ -27,13 +27,24 @@ It is an evidence index, not a new browser-support promise or a completed test r
 
 | Product on macOS26.6.1 arm64 | Consumer checks | Production workflow checks | Remaining scope |
 | --- | --- | --- | --- |
-| Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip |Preceding retail line; other OS/manual coverage |
+| Chrome154.0.8037.98 |60 passes |26 passes,1 existing skip in both headless and a separate headed acquisition |Preceding retail line; native window/zoom, other OS/manual coverage |
 | Edge154.0.4258.53 and153.0.4234.48 |60 passes each |26 passes and1 existing skip each |Other OSes, physical/manual coverage |
-| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |23 selected journeys each including history;8 scoped axe scans each;no-JS/early-draft hydration |Remaining exact assertions, descriptions/full AX, other OS/manual coverage |
-| Safari27.0 |No qualified component case |Not yet qualified |Hidden automation document; awaiting visible desktop clarification |
+| Firefox157.0 and156.0.1 |60 native-input passes each, computed names/roles |24 selected workflow cases and6 first-paint cases each; original27 tests source-compared |Explicit computed semantics/visual boundaries, other OS/manual coverage |
+| Safari27.0 |4 passing HTML cases before a select failure;55 unexecuted |Not yet qualified |Native input delivery unresolved; visible focus rules assessed separately |
 
 These are scoped receipts, not complete support claims. See the dated acquisitions
 below; historical counts are not silently transferred to current source.
+
+The latest [Firefox comparison](../probes/native-browser-products/assertion-comparison.md)
+and [Safari diagnosis](../probes/native-browser-products/safari-input-boundary.md)
+supersede their earlier status descriptions below, while preserving those dated
+observations. The [headed Chrome receipt](../apps/docs/tests/verification-chrome-headed-20261002.json)
+adds 26 original workflow passes on the connected Mac's built-in Retina display.
+The native application uses an isolated temporary profile and its complete
+distribution is unchanged. Its scripted 1440×1000 viewport and separate display
+inventory do not establish native window sizing, display-scale transitions,
+browser zoom or manual laptop acceptance. One original narrow-layout test remains
+skipped by its project-name filter. No physical-device condition is closed.
 
 ## Initial inventory, retained as history
 
@@ -99,7 +110,10 @@ the pinned engines, with 11 generation controls and 14 pathway controls. It clos
 the original §7.5c discovery/retrieval/generated-consumer chain for a selected
 checkbox. It does not close the remaining reusable-layer or standalone generated
 example qualifications described in the [consumer audit](consumer-evidence-audit-2026-10-02.md),
-or any of the platform/manual conditions below.
+or any of the platform/manual conditions below. Subsequent receipts now close
+the bounded reusable-layer inventory (111 entries) and copied-example inventory
+(59 examples); see the latest checkpoint in the consumer audit. Their former
+"remaining" descriptions are historical, not current queue items.
 
 1. **Actual release products:** resolve current/preceding versions on named OSes,
    then acquire isolated automated or manual receipts. Record binary identity,

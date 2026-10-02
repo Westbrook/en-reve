@@ -11,6 +11,32 @@ const ledger = await json('plans/support-coverage.json');
 const readConsumerRunnerHistorical = path => read(path==='probes/native-browser-products/run.mjs' ? 'probes/native-browser-products/qualification-sources/7dd38008/run.mjs.txt' : path);
 const readNativeHistorical = path => readConsumerRunnerHistorical(['probes/native-browser-products/workflows.mjs','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs'].includes(path) ? 'probes/native-browser-products/qualification-sources/e29ffc7c/'+path.split('/').at(-1)+'.txt' : path);
 
+test('headed Chrome evidence retains native product identity, original skip and physical boundaries', async () => {
+  const r = await json('apps/docs/tests/verification-chrome-headed-20261002.json');
+  assert.equal(r.status, 'passed-subset');
+  assert.equal(r.stats.expected, 26);
+  assert.equal(r.stats.skipped, 1);
+  assert.equal(r.stats.unexpected, 0);
+  assert.equal(r.stats.flaky, 0);
+  assert.equal(r.product.headless, false);
+  assert.deepEqual(r.product.reportedVersions, ['154.0.8037.98']);
+  assert(r.product.distributionInventoryEntries > 700);
+  assert.equal(r.runtimeDistributionUnchangedAfterRun, true);
+  assert.equal(r.sourceAndInputsUnchangedAfterRun, true);
+  for (const [path, digest] of Object.entries(r.sourceHashes)) {
+    assert.equal(createHash('sha256').update(await read(path)).digest('hex'), digest, path);
+  }
+  assert.equal(r.cases.filter(c => c.status === 'passed' && c.retry === 0).length, 26);
+  assert.match(r.cases.find(c => c.status === 'skipped').titlePath.at(-1), /narrow portrait/);
+  assert.deepEqual(r.viewport, {width:1440, height:1000});
+  assert.match(r.displayObservation.boundary, /not a captured browser-window/);
+  assert.match(r.limitations.join(' '), /No physical touch/);
+  assert.notEqual(ledger.conditions.find(c => c.id === 'laptop-large').status, 'qualified');
+  const build = await json(r.buildReuse.receipt);
+  assert.equal(r.buildReuse.distManifestSHA256, build.productionBuild.distManifestSHA256);
+  assert.equal(createHash('sha256').update(await read(r.acquisitionReceipt)).digest('hex'), r.acquisitionReceiptSHA256);
+});
+
 test('Safari diagnosis preserves incomplete qualification and native focus boundaries', async () => {
   const r = await json('probes/native-browser-products/verification-safari-boundary-20261002.json');
   assert.equal(r.status, 'incomplete');

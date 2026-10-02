@@ -238,3 +238,7 @@ Local main `7dd38008b371690f4a2c7431e0a51a31e56d5474` qualifies native Firefox w
 ## Safari input and focus boundary
 
 Local main `2b16f52f6f476b78db04b08708e6d09fdf16dc81` records incomplete Safari diagnosis and120 Firefox regression passes. See `probes/native-browser-products/safari-input-boundary.md` for scope and browser limits.
+
+## Headed Chrome workflow checkpoint
+
+Local main `3485f568df1a1e623ee700b41b5a82cd89d79460` records26 headed Chrome workflow passes and1 existing skip. See `plans/support-coverage.md` for scope and browser limits.

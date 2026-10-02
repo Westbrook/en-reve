@@ -436,6 +436,13 @@
       "path": "probes/native-browser-products/verification-safari-boundary-20261002.json",
       "sha256": "2418fcc5b8df77e4fb76d76225d3d5eae2c6bcf6d683796783939776b51a2866",
       "scope": "Incomplete Safari27 native input diagnosis:4 consumer passes then a native-select failure;120 fresh Firefox consumer regressions pass. No Safari qualification claim."
+    },
+    {
+      "id": "chrome-headed-20261002",
+      "kind": "automated-native-product",
+      "path": "apps/docs/tests/verification-chrome-headed-20261002.json",
+      "sha256": "5e1c585ff31d10f17d398ea94bf72bcdf0c3c62ad9ff0d108edd986567fcc5f7",
+      "scope": "26 original reference workflow cases pass in isolated headed Chrome154.0.8037.98 on macOS;1 existing skip. Scripted viewport and display inventory do not establish physical/manual acceptance."
     }
   ],
   "conditions": [
@@ -500,7 +507,8 @@
         "firefox-interactions-20261002",
         "firefox-documents-20261002",
         "firefox-assertions-20261002",
-        "safari-boundary-20261002"
+        "safari-boundary-20261002",
+        "chrome-headed-20261002"
       ],
       "gap": "Safari27 now has visible documents and4 HTML consumer passes, but native select End/Enter and intermittent loss of document input prevent qualification.55 final-run scenarios remain unexecuted. Safari workflows/AX, Firefox explicit semantic/visual boundaries, and remaining OS/physical/manual scope stay open.",
       "nextAction": "Inspect actual input delivery in the isolated Safari automation session before another acquisition; preserve native focus rules and retain the native select comparison and input traces. Continue independent remaining scope without treating Safari as passed."
