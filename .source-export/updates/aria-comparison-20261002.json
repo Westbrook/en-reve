@@ -1,0 +1,19 @@
+{
+  "createdAt": "2026-10-02T02:08:01.717832+00:00",
+  "sourceCommit": "dcb52a27dd5d0007218a006ad9c7121e7f978222",
+  "previousSourceMain": "771f0e1f1c6a24e7103f5984c84d847ccb9abe2e",
+  "taskPaths": [
+    "plans/accessibility.md",
+    "plans/platform.md",
+    "probes/reference-target/README.md",
+    "probes/reference-target/aria-fixture.html",
+    "probes/reference-target/aria-fixture.js",
+    "probes/reference-target/aria-relations.spec.ts",
+    "probes/reference-target/vendor.test.mjs",
+    "probes/reference-target/vendor/src/adapters/text-names.js",
+    "probes/reference-target/vendor/text-names.provenance.json",
+    "probes/reference-target/verification-20261002.json"
+  ],
+  "qualification": "Expanded the original cross-root reference experiment to nested/conditional labels, descriptions/errors, active descendants, independent tree scopes and late explicit fallback hydration. Unmodified text-name adapter is pinned separately at the original upstream revision. Native error-routing and unsupported fallback relationships remain explicit limitations; no generic production ARIA forwarding or text-proxy adoption is claimed. Public probe gate evidence retained separately.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

@@ -54,3 +54,7 @@ Local main `c98507742d685c186dffd271f1bf054cfe900067` extends the shared externa
 ## Dynamic button descriptions and platform scope reconciliation
 
 Local main `771f0e1f1c6a24e7103f5984c84d847ccb9abe2e` keeps documented native descriptions synchronized with their host-tree targets. Platform plan status now points to delivered scoped and framework evidence, and records the explicitly retired historical CSS pilot rerun. Remaining real AT/device and broader relationship scope stays open.
+
+## Nested and conditional Reference Target comparison
+
+Local main `dcb52a27dd5d0007218a006ad9c7121e7f978222` completes the planned isolated description/error and active-descendant comparison, preserving the native error-routing gap and unsupported fallback relations. Production descriptions and option relationships keep their documented semantic owner. See `probes/reference-target/README.md` for evidence and limits.

@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-02",
+  "kind": "isolated-reference-target-comparison",
+  "sourceBaseCommit": "771f0e1f1c6a24e7103f5984c84d847ccb9abe2e",
+  "assertionInputs": {
+    "aria-fixture.html": "96f9ba999c001f373519362f41d7cb2af1a2795ea9d0a34a5ac287428021e187",
+    "aria-fixture.js": "60e38959f8ca86e9fac9dd287aa25c561625ca6dc011f7bf9f41733347a85a9d",
+    "aria-relations.spec.ts": "8d9c2190a949009ac52ea10976ffba50c80e3d298d6af1fee9fd8f9bf94a3f81",
+    "vendor.test.mjs": "961dac7f4b8b14800cd159e81add99805e45704c43d80432a0121d89feeb3923",
+    "vendor/src/adapters/text-names.js": "a11ce7795c707e71dcd7e32652fc842b43371d425b94648c0c465ceefbe5daa9",
+    "vendor/text-names.provenance.json": "2a45754ccda99c676cee754826da846a97f1a1a14837595038ab6237b54ffc4b"
+  },
+  "command": "npm run test:probes",
+  "output": "/private/tmp/en-reference-target-aria-20261002-03",
+  "nodeSourceImportPasses": 4,
+  "browser": {
+    "references": {
+      "stats": {
+        "startTime": "2026-10-02T02:04:52.423Z",
+        "duration": 83886.862,
+        "expected": 119,
+        "skipped": 22,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualOutcomes": {
+        "passed": 114,
+        "failed/expected": 5,
+        "skipped": 22
+      }
+    },
+    "originalPlatform": {
+      "stats": {
+        "startTime": "2026-10-02T02:06:17.441Z",
+        "duration": 6756.9310000000005,
+        "expected": 20,
+        "skipped": 1,
+        "unexpected": 0,
+        "flaky": 0
+      },
+      "actualOutcomes": {
+        "passed": 20,
+        "skipped": 1
+      }
+    }
+  },
+  "limits": [
+    "Five expected failures are retained limitations, not successful features: three upstream label replacements, Firefox raw FACE labels, Chromium native cross-root error AX routing.",
+    "Twenty-two reference capability/protocol skips and one original native scoped-registry skip remain.",
+    "No production text-name proxy adapter adoption, generic host ARIA forwarding, screen-reader speech, current-minus-one or physical-device coverage.",
+    "Observed nine initial diagnostic cases are observational captures, not behavioral qualification.",
+    "Run 02 stopped at a fresh-output-directory preflight collision; run 03 is the corrected full public gate."
+  ]
+}

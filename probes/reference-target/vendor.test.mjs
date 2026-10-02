@@ -23,3 +23,15 @@ test('component-owned controller import does not install globals or require a DO
   assert.equal(typeof OwnedLabels, 'function');
   assert.equal(typeof globalThis.document, 'undefined');
 });
+
+test('additional text-name comparison retains the same frozen revision and pure import', async () => {
+  const root = new URL('./vendor/', import.meta.url);
+  const receipt = JSON.parse(await readFile(new URL('text-names.provenance.json', root), 'utf8'));
+  assert.equal(receipt.commit, '7d30ef45468001166ad0f6ae4fc89824b19b5887');
+  for (const [path, expected] of Object.entries(receipt.files)) {
+    assert.equal(createHash('sha256').update(await readFile(new URL(path, root))).digest('hex'), expected, path);
+  }
+  const { textNames } = await import('./vendor/src/adapters/text-names.js');
+  assert.equal(textNames({getText: () => null}).id, 'text-names');
+  assert.equal(typeof globalThis.document, 'undefined');
+});

@@ -27,9 +27,9 @@ The test fixture owns its private node access; no such getter is added to En Rev
 
 ## Pinned source
 
-The unmodified label-adapter closure is vendored from
+The unmodified label-adapter closure and separately receipted text-name adapter are vendored from
 [Westbrook/reference-target-polyfill at 7d30ef45](https://github.com/Westbrook/reference-target-polyfill/tree/7d30ef45468001166ad0f6ae4fc89824b19b5887).
-The MIT license and SHA-256 receipt are retained in `vendor/`. The package has no
+The MIT license and original SHA-256 receipt are retained in `vendor/`. The added `text-names.provenance.json` retains the same frozen revision without changing the original closure receipt. The package has no
 runtime dependencies; no install scripts or framework examples are acquired.
 Do not patch that frozen copy to manufacture a passing qualification. A reviewed
 replacement revision needs a new provenance record and the same comparison.
@@ -175,7 +175,55 @@ and light-DOM native-composition routes. The production bridge does not install 
 silently patch the frozen upstream package. Its three label-replacement failures
 and Firefox's raw stale FACE label list remain visible expected failures.
 
-General host ARIA and external descriptions,
-conditional semantic targets, real screen readers and the supported device matrix
-remain separate qualification work. Closed roots are outside the current library
-contract. These broader obligations remain open in the Progress Report.
+The broader isolated comparison below covers the planned nested, conditional,
+description/error, active-descendant and hydration-order experiments. It does
+not adopt generic host ARIA forwarding: that is a separate semantic-owner API,
+explicitly outside Reference Target's purpose. Closed roots remain outside the
+library contract. Real screen readers, rolling current-minus-one releases and
+physical devices remain outstanding in the Progress Report.
+
+## Additional ARIA relationship comparison (2026-10-02)
+
+`aria-fixture.html` / `aria-relations.spec.ts` compare native routing and the
+same frozen upstream package with its opt-in `textNames` adapter. The provider
+receives a public host and returns fixture-owned plain text; it never scrapes the
+private target. Its generated hidden text proxies are an approximation, **not**
+the native description relationship and not a production En Reve adoption.
+No new field attribute, reflected-role contract or installed polyfill is added.
+
+| Relationship | Observed native Chromium 153 | Frozen forced fallback in three engines | Library consequence |
+| --- | --- | --- | --- |
+| Two nested label targets; changing/missing target | Actual native label name and focus route to the current input | Reflected label and single focus route follow target changes | Retain relationship-specific activation checks and owned FACE bridge |
+| Identical IDs in separate enclosing shadow roots | Labels stay within their own root | Reflected labels stay within their own root | Do not replace scoped ID resolution with a document scan |
+| Nested description, target replacement/removal/insertion | Native AX description updates, keeping draft, focus and caret | Provider text/proxy follows valid targets; target absence clears it | Existing library descriptions keep actual same/ancestor-tree nodes; no generic text scrape |
+| Active-descendant target changes | Native AX resolves the private option and clears a missing target; DOM getter still exposes the public host | Unsupported: reference remains the public host rather than the private option | Keep the editor/combobox semantic owner and its option IDs in the supported same-root composition |
+| Error-message target | **Known gap:** native AX omits the forwarded error relationship while the same-tree error baseline works | Unsupported: reference remains the public error host | Keep existing component-owned hint/error nodes and documented description/error relationships |
+| DSD before explicit late fallback setup | Native description is separately observed in the initial capture | Explicit hydration preserves the parsed native input, draft and caret; disposal restores authored IDREF and removes proxies | This isolated parser/adapter test complements, but does not replace, the real En Reve SSR/hydration suite |
+
+The native error case is an explicit expected failure after a passing same-tree
+baseline. Unexpected success requires reviewing the pinned browser's changed
+behavior. Capability/protocol skips are separate: Firefox 155 and WebKit 26.6
+lack native Reference Target here; CDP native AX inspection is Chromium-only.
+Their fallback IDL assertions do not establish native AX output or screen-reader
+speech. The fixture is test-owned; accessing its private nodes does not introduce
+a public library getter.
+
+The [Reference Target proposal](https://github.com/WICG/webcomponents/blob/gh-pages/proposals/reference-target-explainer.md#supported-attributes)
+intends these relationships to work, but availability of the basic property or
+label forwarding does not prove all of them. The frozen fallback explicitly
+excludes generic error, active-descendant and other cross-root ARIA forwarding.
+Keep unsupported relations on the documented same-root semantic composition;
+do not infer full parity from either an expected-failure suite or plain-text
+approximation.
+
+### Qualification receipt
+
+The full maintained `npm run test:probes` gate passes at the
+[October 2 receipt](verification-20261002.json): **114 actual reference-browser
+passes, five expected failures and 22 capability/protocol skips**, plus
+**20 original platform-browser passes and one capability skip** and **four
+source-integrity/pure-import Node checks**. Expected failures and skips are not
+successful relationship implementations. The fresh-output preflight collision
+in run 02 and corrected full run 03 remain separately retained. No production
+component code changed in this comparison; the previously qualified production
+build is reused unchanged for the source publication.
