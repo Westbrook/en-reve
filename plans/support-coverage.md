@@ -456,3 +456,34 @@ Playwright contract without changing production code or weakening the pending
 card identity check. The unchanged transport/first-paint/consumer evidence is
 reused by hash:10 first-paint and120 consumer passes are not fresh run counts.
 Packed HTML/SSR breadth and original product/OS/device/manual obligations remain.
+
+## October 2 packed HTML and SSR delivery qualification
+
+[Exact receipt](../probes/consumer-contracts/verification-20261002.json): **21 native
+ESM cases, 53 packed consumer cases, 13 pathway controls passed**, with one existing
+Firefox native scoped-registry capability skip. Packed public declarations and
+semantic test types passed. The reusable `consumer-delivery` pathway owns its
+builds, isolated fixture preparation and three-engine runs.
+
+Native import-map delivery now covers one component, two related entries and two
+unrelated entries, actual keyboard/pointer/form interactions, registration closure
+and shared module requests. The receipt includes the import map, every requested
+module URL and hashes of served assets. The packed SSR integration checks visible
+styled content while its client entry is held, immediate and delayed adoption,
+early draft/focus/selection identity, two concurrent isolated server requests,
+JavaScript-disabled editing, and an aborted hydration module in both shadow/global
+delivery. Failed imports preserve the input; ElementInternals form association
+still begins at upgrade. No library-owned no-JS submission fallback is claimed.
+
+The `packed-html` and `packed-ssr` ledger rows are qualified against the agreed
+[§7 requirements](verification.md#7-developer-and-delivery-integration). Previous
+ledger wording requiring the entire component catalog or every framework server
+stack exceeded that scope and has been corrected. Framework consumers and
+retail-product/OS/device/manual obligations retain their separate rows.
+
+Raw successful and failed runs are retained in the independent Progress Report.
+The first attempt lacked the independently locked esbuild installation. The second
+exposed an incorrect test expectation for unupgraded form submission; it was
+corrected to the documented SSR contract without changing product code. The final
+run includes the newly selected pathway regression. No failed attempt is counted
+as a pass, and the retired historical CSS-authoring rerun remains retired.

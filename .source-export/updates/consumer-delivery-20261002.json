@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-10-02T07:06:24.053824+00:00",
+  "sourceCommit": "a22b13b69b19a08df68119e3e7b65edb7c769295",
+  "previousSourceMain": "db8d826c013633251f30e8ba846d3152a654ca20",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "plans/verification.md",
+    "probes/consumer-contracts/contracts.spec.ts",
+    "probes/consumer-contracts/prepare.mjs",
+    "probes/consumer-contracts/verification-20261002.json",
+    "tooling/registration/README.md",
+    "tooling/registration/verify-packed.mjs",
+    "tooling/testing/comprehensive.mjs",
+    "tooling/testing/comprehensive.test.mjs",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Packed native ESM21 cases, packed consumer53 cases with1 Firefox native-registry skip,13 pathway controls and118 tooling checks pass. Original selected HTML/SSR delivery requirements qualified; actual product/OS/device/manual obligations remain. Historical external CSS rerun is retired.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

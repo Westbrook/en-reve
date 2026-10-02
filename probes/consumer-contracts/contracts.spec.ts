@@ -153,8 +153,8 @@ for(const delivery of ['shadow','global']) test(`${delivery}: packed SSR preserv
   expect(errors).toEqual([]);
 });
 
-test('server native input is usable without JavaScript',async({browser})=>{
-  const context=await browser.newContext({javaScriptEnabled:false});try{const page=await context.newPage();await page.goto('http://127.0.0.1:4257/ssr-shadow.html');const input=page.getByRole('textbox',{name:'Project',exact:true});await expect(input).toHaveValue('Initial');await input.fill('No JS edit');await expect(input).toHaveValue('No JS edit');}finally{await context.close();}
+for (const delivery of ['shadow','global']) test(`${delivery}: server native input is usable without JavaScript`,async({browser})=>{
+  const context=await browser.newContext({javaScriptEnabled:false});try{const page=await context.newPage();await page.goto(`http://127.0.0.1:4257/ssr-${delivery}.html`);const input=page.getByRole('textbox',{name:'Project',exact:true});await expect(input).toHaveValue('Initial');await input.fill('No JS edit');await expect(input).toHaveValue('No JS edit');}finally{await context.close();}
 });
 
 
@@ -187,3 +187,56 @@ test('failed production chunk leaves native editing and error status available',
   await page.getByRole('button',{name:'Load optional details'}).press('Enter');
   await expect(page.getByRole('status')).toHaveText('Optional details unavailable. Retry or use eager delivery.');
 });
+
+
+for (const delivery of ['shadow', 'global']) {
+  test(`${delivery}: immediate packed hydration retains visible styled server content`, async ({page}) => {
+    let release!:() => void; const held = new Promise<void>(resolve => { release = resolve; });
+    await page.route('**/ssr.js', async route => { await held; await route.continue(); });
+    await page.goto(`/ssr-${delivery}.html`, {waitUntil:'commit'});
+    const input = page.getByRole('textbox', {name:'Project', exact:true});
+    await expect(input).toBeVisible();
+    const before = await input.evaluate((node:HTMLInputElement) => {
+      (window as any).serverInput = node;
+      const box = node.getBoundingClientRect(), style = getComputedStyle(node);
+      return {width:box.width,height:box.height,border:style.borderTopStyle};
+    });
+    expect(before.width).toBeGreaterThan(0); expect(before.height).toBeGreaterThan(0);
+    expect(before.border).toBe('solid');
+    expect(await page.evaluate(() => !!window.hydration)).toBe(false);
+    expect(await input.evaluate(node => (node.getRootNode() as ShadowRoot).querySelectorAll('style').length)).toBeGreaterThan(0);
+    release(); await page.waitForFunction(() => !!window.hydration);
+    await page.evaluate(() => window.hydration.island.activate());
+    expect(await page.evaluate(() => window.hydration.island.state)).toBe('ready');
+    expect(await input.evaluate(node => node === (window as any).serverInput)).toBe(true);
+    await input.fill('Immediate edit');
+    expect(await page.evaluate(() => new FormData(window.hydration.options.root.querySelector('form')!).get('project'))).toBe('Immediate edit');
+  });
+
+  test(`${delivery}: failed hydration module preserves server input, draft, focus and selection`, async ({page}) => {
+    const errors:string[] = []; page.on('pageerror', error => errors.push(error.message));
+    const failed:string[] = [];
+    await page.route('**/chunks/ssr-module-*.js', async route => { failed.push(new URL(route.request().url()).pathname); await route.abort(); });
+    await page.goto(`/ssr-${delivery}.html`);
+    await page.waitForFunction(() => !!window.hydration);
+    const input = page.getByRole('textbox', {name:'Project', exact:true});
+    await input.fill('Keep failed-hydration draft');
+    await input.evaluate((node:HTMLInputElement) => { (window as any).serverInput = node; node.setSelectionRange(2,7); });
+    const outcome = await page.evaluate(async () => {
+      try { await window.hydration.island.activate(); return 'unexpected success'; }
+      catch { return window.hydration.island.state; }
+    });
+    expect(outcome).toBe('error'); expect(failed).toHaveLength(1);
+    await expect(input).toBeVisible(); await expect(input).toBeFocused();
+    await expect(input).toHaveValue('Keep failed-hydration draft');
+    expect(await input.evaluate((node:HTMLInputElement) => ({same:node === (window as any).serverInput, selection:[node.selectionStart,node.selectionEnd]}))).toEqual({same:true,selection:[2,7]});
+    await input.fill('Native editing after failure');
+    await expect(input).toHaveValue('Native editing after failure');
+    // ElementInternals form association begins at upgrade; the failed import
+    // leaves this shadow input editable, not a no-JS form submission fallback.
+    expect(await page.evaluate(() => ({defined:window.hydration.options.root.querySelector('en-text-field')!.matches(':defined'),value:new FormData(window.hydration.options.root.querySelector('form')!).get('project')}))).toEqual({defined:false,value:null});
+    expect(await input.evaluate((node:HTMLInputElement) => node.defaultValue)).toBe('Initial');
+    expect(errors).toEqual([]);
+    await test.info().attach('failed-hydration-module', {body:JSON.stringify({delivery, failed, outcome}),contentType:'application/json'});
+  });
+}

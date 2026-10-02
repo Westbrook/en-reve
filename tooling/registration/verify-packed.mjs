@@ -18,6 +18,7 @@ const tarballs = join(temporary, 'tarballs');
 const imports = {};
 const packages = [];
 const results = [];
+const servedAssets = new Map();
 const digest = value => createHash('sha256').update(value).digest('hex');
 let server;
 
@@ -206,6 +207,7 @@ try {
       const path = resolve(publicRoot, `.${pathname === '/' ? '/index.html' : pathname}`);
       assert(path.startsWith(publicRoot + sep));
       const body = await fs.readFile(path);
+      servedAssets.set(pathname, {sha256: digest(body), bytes: body.length});
       const type = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json' }[extname(path)] ?? 'application/octet-stream';
       response.writeHead(200, { 'Content-Type': type, 'Cache-Control': 'no-store' });
       response.end(body);
@@ -221,7 +223,7 @@ try {
   for (const [name, engine] of Object.entries({ chromium, firefox, webkit })) {
     const browser = await engine.launch();
     try {
-      for (const scenario of ['selective', 'compatible', 'conflicting-child', 'conflicting-parent', 'catalog-subset']) {
+      for (const scenario of ['selective', 'related-pair', 'unrelated-pair', 'compatible', 'conflicting-child', 'conflicting-parent', 'catalog-subset']) {
         const { page, errors, requests } = await openPage(browser, baseURL);
         const record = { engine: name, browserVersion: browser.version(), scenario };
         try {
@@ -233,6 +235,39 @@ try {
             record.interactions = [];
             for (const orientation of ['horizontal', 'vertical']) record.interactions.push(await exerciseSplit(page, orientation));
             assert.equal(requests.includes('/packages/elements/dist/catalog.js'), false, 'Selective use must not load the full catalog.');
+           } else if (scenario === 'related-pair' || scenario === 'unrelated-pair') {
+            await page.evaluate(async related => {
+              await Promise.all([
+                import('@en-reve/elements/define/split-view.js'),
+                related ? import('@en-reve/elements/define/splitter.js') : import('@en-reve/elements/define/checkbox.js'),
+              ]);
+            }, scenario === 'related-pair');
+            const expected = ['en-splitter', 'en-button', 'en-split-view'];
+            if (scenario === 'unrelated-pair') expected.push('en-checkbox');
+            assert.deepEqual((await registered(page)).sort(), expected.sort());
+            record.interactions = [];
+            for (const orientation of ['horizontal', 'vertical']) record.interactions.push(await exerciseSplit(page, orientation));
+            if (scenario === 'unrelated-pair') {
+              await page.evaluate(async () => {
+                const form = document.createElement('form');
+                form.id = 'choices';
+                form.innerHTML = '<en-checkbox name="notify" value="yes">Send updates</en-checkbox>';
+                document.body.append(form);
+                await form.firstElementChild.updateComplete;
+              });
+              const checkbox = page.getByRole('checkbox', {name: 'Send updates', exact: true});
+              await checkbox.focus();
+              await checkbox.press('Space');
+              await expect(checkbox).toBeChecked();
+              assert.equal(await page.evaluate(() => new FormData(document.querySelector('#choices')).get('notify')), 'yes');
+              await checkbox.click();
+              await expect(checkbox).not.toBeChecked();
+              assert.equal(await page.evaluate(() => new FormData(document.querySelector('#choices')).has('notify')), false);
+              record.interactions.push({component: 'en-checkbox', keyboard: 'checked', pointer: 'unchecked', formValue: 'yes then absent'});
+            }
+            assert.equal(requests.some(url => /\/elements\/dist\/(catalog|index)\.js$/.test(url)), false, 'Two-entry use must not load the catalog or main barrel.');
+            const modules = requests.filter(url => url.endsWith('.js'));
+            assert.equal(new Set(modules).size, modules.length, 'Shared native modules must have one request per URL.');
           } else if (scenario === 'compatible') {
             await page.evaluate(async () => {
               const { EnSplitter } = await import('@en-reve/elements/splitter.js');
@@ -271,6 +306,7 @@ try {
         } finally {
           record.registeredTags = await registered(page);
           record.errors = errors;
+          record.requests = [...requests];
           await page.close();
           results.push(record);
           console.log(JSON.stringify(record));
@@ -285,9 +321,9 @@ try {
   await fs.mkdir(output, { recursive: true });
   await fs.writeFile(join(output, 'packed.json'), JSON.stringify({
     checkedAt: new Date().toISOString(),
-    scope: 'Packed local workspace artifacts consumed through native browser ESM/import maps in three Playwright engines. Selective dependency closure, class/catalog side effects, compatible registrations, collision preflight, horizontal/vertical split keyboard and mouse behavior. Not scoped-registry, SSR, all-component, current-minus-one browser/framework, or manual assistive-technology acceptance.',
-    packages, results,
+    scope: 'Packed local workspace artifacts consumed through native browser ESM/import maps in three Playwright engines. Selective dependency closure, class/catalog side effects, compatible registrations, collision preflight, one/two related/unrelated imports, shared module requests, horizontal/vertical split keyboard and mouse behavior, checkbox keyboard/pointer/FormData behavior. Not scoped-registry, SSR, all-component, current-minus-one browser/framework, or manual assistive-technology acceptance.',
+    packages, importMap: {imports, sha256: digest(JSON.stringify({imports}))}, servedAssets: Object.fromEntries([...servedAssets].sort()), results,
   }, null, 2) + '\n');
   await fs.rm(temporary, { recursive: true, force: true });
 }
-if (results.length !== 15 || results.some(result => result.status !== 'passed')) process.exitCode = 1;
+if (results.length !== 21 || results.some(result => result.status !== 'passed')) process.exitCode = 1;

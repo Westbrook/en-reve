@@ -115,6 +115,7 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  graph.families=workloadFamilies;
  graph.pathways.framework=browser.filter(id=>id.includes('probes/framework-consumption/'));
  graph.pathways.registry=units.filter(id=>/node:probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('consumer-types',browser.filter(id=>/probes\/(scoped-registry|lazy-registry|lazy-delivery|lazy-delivery-editor|lazy-delivery-pagination|activation-registry|activation-library)\//.test(id)).concat('direct:packed-registration'));
+ graph.pathways['consumer-delivery']=['node:tooling/testing/comprehensive.test.mjs','direct:packed-registration','browser:probes/consumer-contracts/playwright.config.ts','semantic-test-types'];
  graph.pathways.hydration=browser.filter(id=>id.includes('probes/scoped-hydration/'));
  graph.pathways.reader=[...units,...browser].filter(id=>id.includes('showcases/performance-results/')).concat(checks.filter(id=>id.startsWith('direct:reader-')));
  for(const name of ['tokens','primitives','ssr'])graph.pathways[name]=units.filter(id=>new RegExp(`^node:packages/${name}/${name==='tokens'?'test':'tests'}/[^/]+\\.test\\.mjs$`).test(id));

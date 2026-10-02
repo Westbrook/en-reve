@@ -126,3 +126,7 @@ Local main `edef0ec0c13f78c627bee0056e7f9acadf8dfde6` qualifies56 fresh workflow
 ## Firefox pending-state and focus interactions qualification
 
 Local main `db8d826c013633251f30e8ba846d3152a654ca20` qualifies46 fresh workflow cases across two Firefox releases, including pending-card identity, delayed focus protection, cancellation and document isolation. See `plans/support-coverage.md` and the versioned receipts for acquisition identity and remaining scope.
+
+## Packed native ESM and SSR delivery qualification
+
+Local main `a22b13b69b19a08df68119e3e7b65edb7c769295` qualifies21 native ESM cases and53 packed consumer cases, with1 native-registry capability skip. See `plans/support-coverage.md` and `probes/consumer-contracts/verification-20261002.json`. Original platform/manual scope remains.

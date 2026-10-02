@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "db8d826c013633251f30e8ba846d3152a654ca20",
-  "exportedAt": "2026-10-02T06:44:59.169076+00:00",
+  "sourceCommit": "a22b13b69b19a08df68119e3e7b65edb7c769295",
+  "exportedAt": "2026-10-02T07:06:24.053824+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5437,
-  "includedBytes": 148493736,
-  "qualification": "Actual Firefox156.0.1/157.0:46 fresh workflow cases pass, including settings/chat pending state, focus protection, document isolation and SSO/selection values.10 first-paint and120 consumer cases explicitly reused by unchanged source hashes.117 tooling checks pass. Remaining exact assertions, contrast/native AX/speech and original OS/device/manual scope remain.",
-  "latestUpdate": ".source-export/updates/firefox-interactions-20261002.json",
+  "includedFiles": 5439,
+  "includedBytes": 148896741,
+  "qualification": "Packed native ESM21 cases, packed consumer53 cases with1 Firefox native-registry skip,13 pathway controls and118 tooling checks pass. Original selected HTML/SSR delivery requirements qualified; actual product/OS/device/manual obligations remain. Historical external CSS rerun is retired.",
+  "latestUpdate": ".source-export/updates/consumer-delivery-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

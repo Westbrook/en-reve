@@ -448,3 +448,28 @@ test('Firefox interaction evidence binds pending states, focus and exact isolati
  assert.equal(r.attempts.length,2);for(const a of r.attempts){assert.equal(a.stats.failed,1);assert.equal(a.case,'chat-safe-preview');assert(a.disposition);}
  assert(r.remaining.some(x=>/computed/.test(x)));assert(r.remaining.some(x=>/HTTP/.test(x)));assert(r.remaining.some(x=>/packed/.test(x)));
 });
+
+test('packed delivery qualification binds native module graphs and real SSR failure coverage', async () => {
+ const evidence=ledger.evidence.find(e=>e.id==='packed-delivery-20261002'),receipt=await json(evidence.path);
+ for(const [path,digest] of Object.entries(receipt.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(receipt.status,'passed');assert.deepEqual(receipt.stats,{nativeESMPassed:21,consumerPassed:53,consumerSkipped:1,unexpected:0,flaky:0,pathwayContractPassed:13});
+ for(const id of ['packed-html','packed-ssr']){const c=ledger.conditions.find(c=>c.id===id);assert.equal(c.status,'qualified');assert.equal(c.evidence[0],evidence.id);assert.match(c.qualificationBoundary,/selected packed SSR/);}
+ const native=receipt.nativeESM;
+ assert.equal(createHash('sha256').update(JSON.stringify({imports:native.importMap.imports})).digest('hex'),native.importMap.sha256);
+ assert.equal(native.results.length,21);
+ for(const engine of ['chromium','firefox','webkit']){
+  const cases=native.results.filter(c=>c.engine===engine);assert.equal(cases.length,7);assert(cases.every(c=>c.status==='passed'&&c.errors.length===0));
+  for(const scenario of ['related-pair','unrelated-pair']){
+   const c=cases.find(c=>c.scenario===scenario),modules=c.requests.filter(url=>url.endsWith('.js'));
+   assert.equal(new Set(modules).size,modules.length);assert(!modules.some(url=>/\/elements\/dist\/(catalog|index)\.js$/.test(url)));
+   assert.deepEqual([...c.registeredTags].sort(),['en-splitter','en-button','en-split-view',...(scenario==='unrelated-pair'?['en-checkbox']:[])].sort());
+   for(const url of modules)assert.match(native.servedAssets[url].sha256,/^[a-f0-9]{64}$/);
+  }
+  for(const delivery of ['shadow','global'])for(const fragment of ['immediate packed hydration','failed hydration module','packed SSR preserves dirty','server native input is usable']){
+   const c=receipt.consumer.cases.find(c=>c.project===engine&&c.name.startsWith(delivery+': ')&&c.name.includes(fragment));assert.equal(c?.status,'passed',`${engine}/${delivery}/${fragment}`);
+  }
+ }
+ const requests=receipt.consumer.ssr.requestIsolation;assert.equal(requests.callerRegistryUntouched,true);assert.equal(requests.distinctHTML,true);assert.equal(new Set(requests.htmlSHA256).size,2);
+ assert.equal(receipt.consumer.cases.length,54);const skips=receipt.consumer.cases.filter(c=>c.status==='skipped');assert.equal(skips.length,1);assert.equal(skips[0].project,'firefox');assert.match(skips[0].name,/native only/);
+ assert.match(receipt.limitations.join(' '),/ElementInternals/);
+});

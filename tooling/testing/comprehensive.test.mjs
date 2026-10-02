@@ -135,3 +135,11 @@ test('framework preparation and browsers share one fresh packed consumer output'
  assert(browser.dependencies.includes(prepare.id));
  assert(tasks.indexOf(prepare)<tasks.indexOf(browser));
 });
+
+
+test('focused packed delivery owns builds, preparation and semantic types without unrelated browsers',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['consumer-delivery']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['metadata','build:ssr','prepare:consumer-contracts','direct:packed-registration','browser:probes/consumer-contracts/playwright.config.ts','semantic-test-types'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/consumer-contracts/playwright.config.ts']);
+ assert(!ids.has('build:docs'));
+});

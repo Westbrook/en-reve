@@ -401,19 +401,28 @@
       "path": "probes/native-browser-products/verification-firefox-interactions-20261002.json",
       "sha256": "2537eb94082fe7d1de566a48f8937811e09d75424d7a87e4cd974cdcdc66c3f7",
       "scope": "46 selected workflow cases across actual Firefox156.0.1/157.0, extended to original settings/chat interaction branches, SSO/selection value invariants and primary workflow isolation labels. Existing production assets reused; not full native accessibility or exact Playwright implementation equivalence."
+    },
+    {
+      "id": "packed-delivery-20261002",
+      "kind": "automated-engine",
+      "path": "probes/consumer-contracts/verification-20261002.json",
+      "sha256": "f4e72027c916e5c5727c21e4fe1954ff46681091bbeea72242f01ec606bdfd04",
+      "scope": "Original plans/verification.md \u00a77 native ESM selective one/two related/unrelated imports and selected packed SSR integration. Not every component or framework server stack; product/OS/device/manual coverage remains separate. 21 native ESM cases,53 consumer cases,1 capability skip,13 pathway controls; public declarations and semantic types pass."
     }
   ],
   "conditions": [
     {
       "id": "packed-html",
       "requirement": "Plain HTML selective public imports and packed declarations",
-      "status": "partial",
+      "status": "qualified",
       "delivery": "automated-engine",
       "evidence": [
+        "packed-delivery-20261002",
         "packed-ssr"
       ],
-      "gap": "Existing selective/SSR subsets do not certify the entire catalog or all reference workflows.",
-      "nextAction": "Extend existing packed consumer, retain native import-map and registration closure assertions."
+      "gap": "",
+      "nextAction": "Rerun consumer-delivery after relevant public registration, SSR or fixture changes; retain platform/manual conditions separately.",
+      "qualificationBoundary": "Original plans/verification.md \u00a77 native ESM selective one/two related/unrelated imports and selected packed SSR integration. Not every component or framework server stack; product/OS/device/manual coverage remains separate."
     },
     {
       "id": "packed-frameworks",
@@ -429,13 +438,15 @@
     {
       "id": "packed-ssr",
       "requirement": "Request-isolated SSR and delayed/failed hydration",
-      "status": "partial",
+      "status": "qualified",
       "delivery": "automated-engine",
       "evidence": [
+        "packed-delivery-20261002",
         "packed-ssr"
       ],
-      "gap": "Scope is selected consumers/delivery paths; not every framework server stack.",
-      "nextAction": "Reuse exact public packed SSR scenarios where applicable and record source/artifact identity; qualify new framework fixtures separately."
+      "gap": "",
+      "nextAction": "Rerun consumer-delivery after relevant public registration, SSR or fixture changes; retain platform/manual conditions separately.",
+      "qualificationBoundary": "Original plans/verification.md \u00a77 native ESM selective one/two related/unrelated imports and selected packed SSR integration. Not every component or framework server stack; product/OS/device/manual coverage remains separate."
     },
     {
       "id": "browser-current",
@@ -681,6 +692,6 @@
       "note": "React19.3,Vue3.5.43,Svelte5.57.1 official observations agree with maintained current cohort pins; Vue2EOL is not current-minus-one maintained support."
     }
   ],
-  "updatedAt": "2026-10-02T06:43:42.730285+00:00",
+  "updatedAt": "2026-10-02T07:04:21.194713+00:00",
   "frameworkReleasePolicy": "probes/framework-consumption/release-lines.json"
 }
