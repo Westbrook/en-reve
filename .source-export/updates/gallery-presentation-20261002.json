@@ -1,0 +1,23 @@
+{
+  "createdAt": "2026-10-02T11:14:39.123998+00:00",
+  "sourceCommit": "7604e82f729db3fc4d227fd393b7371ae6432566",
+  "previousSourceMain": "a7ffdfa251f2d91d97d9626b568a7b48974f9cce",
+  "taskPaths": [
+    "apps/docs/scripts/authored-specimen-sources.mjs",
+    "apps/docs/src/app.ts",
+    "apps/docs/src/examples.ts",
+    "apps/docs/src/inverse-theme.ts",
+    "apps/docs/src/preview-theme.ts",
+    "apps/docs/src/site.css",
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/copied-gallery-scenarios.ts",
+    "apps/docs/tests/copied-presentation-scenarios.ts",
+    "apps/docs/tests/specimen-sources.spec.ts",
+    "apps/docs/tests/system-appearance.spec.ts",
+    "apps/docs/tests/verification-gallery-presentation-20261002.json",
+    "plans/consumer-evidence-audit-2026-10-02.md",
+    "plans/verification.md"
+  ],
+  "qualification": "Nine additional presentation/theme copies include standalone styling and native consumer journeys;47 copied modules execute per engine including36 gallery copies and11 complete API copies. Fresh SSR build, strict types,189 Node checks and36 browser cases pass. Twelve gallery copies and broader public-layer/platform/manual scope remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

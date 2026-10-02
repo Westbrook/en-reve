@@ -75,7 +75,7 @@ file transfer failure/retry/reset. Calendar, carousel, multi-step, rich text and
 virtual collection reuse the API journeys on their separately extracted gallery
 copies. They are distinct source-delivery checks, not additional feature matrices.
 
-`copied-gallery-scenarios.ts` explicitly inventories the remaining **21** gallery
+At that checkpoint, `copied-gallery-scenarios.ts` inventoried **21** remaining gallery
 copies. The test checks that covered and pending IDs match the displayed gallery;
 an added copy cannot silently become qualified. The first two failed runs remain
 in the receipt: hidden-radio click targets and ambiguous rating text were test
@@ -85,6 +85,38 @@ actual IDL references in every engine, with Chromium native AX names checked
 separately. Firefox/WebKit native AX and speech are not inferred from those checks.
 Native color acceptance uses the input value/change boundary; OS picker operation
 remains manual. Owning matrices and other platform/public-layer obligations remain.
+
+### Standalone presentation and theme copies
+
+The [presentation receipt](verification-gallery-presentation-20261002.json) adds
+nine gallery journeys: swatches, spacing/radius, identity, loading, child themes,
+local overrides, family geometry, focus recipes and popup motion. The authored
+copies now carry their own layout rules. The child-theme generator travels with
+the copy and is rendered through an SSR-compatible static CSS template; the live
+gallery still passes its current density and respects system/explicit appearance.
+The fixture does not import the docs stylesheet, runtime or theme setup.
+
+Seven copied-source tests per engine execute **47 actual modules**, comprising
+**36 of 48 gallery copies** and all eleven complete API copies. All 59 displayed
+modules compile against packed declarations. The existing four appearance tests
+per engine separately protect the live gallery and workflows, including no-JS
+paint, focus/draft identity and explicit appearance. The final matrix has 33
+passes; three additional density/identity regressions also pass, with strict types, 123 integrity and 66 extended Node checks passing.
+A fresh production SSR build is retained with the receipt.
+
+The new journeys check real computed layout and paint, responsive wrapping,
+scoped control padding, reduced-motion focus accents, native dialog/Drawer
+open/close, draft preservation and focus return. Chromium checks native clipboard
+contents and native dialog AX names. Other engines verify the actual permitted
+copy outcome and feedback, plus dialog title references; these do not establish
+OS clipboard prompts, their native AX names, speech or manual acceptance.
+Playwright's dialog name matcher and shadow/light descendant lookup are distinct
+from Chromium's native AX result; fields are located through their authored host.
+
+The tested pending inventory now contains **12** gallery copies. Remaining
+§7.4 reusable layers, native Firefox assertion comparison, platform/manual and
+separate-owner requirements stay open. Earlier failed build/test attempts remain
+in the receipt; they are not rewritten as passes.
 
 ## Production-page workflows
 

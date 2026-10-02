@@ -1,4 +1,5 @@
 import { expect, type Page } from '@playwright/test';
+import { presentationGalleryScenarios } from './copied-presentation-scenarios.js';
 import { copiedAPIScenarios } from './copied-api-scenarios.js';
 
 /** Actual gallery copies, with the consumer's explicit public registrations.
@@ -239,5 +240,7 @@ for (const [id, elements] of Object.entries({
 	copiedGalleryScenarios.push({ ...scenario, id, elements });
 }
 
+copiedGalleryScenarios.push(...presentationGalleryScenarios);
+
 // Explicitly unqualified gallery copies; compilation is not runtime evidence.
-export const pendingGalleryExamples = ['swatches', 'rhythm', 'tree-view', 'pagination', 'tabs', 'accordion', 'split-view', 'split-view-vertical', 'content-recipes', 'authored-table', 'identity', 'messages', 'loading', 'dialog-drawer', 'popover-tooltip', 'tooltip-warmup', 'theme-scopes', 'local-override', 'family-geometry', 'focus-motion', 'popup-motion'];
+export const pendingGalleryExamples = ['tree-view', 'pagination', 'tabs', 'accordion', 'split-view', 'split-view-vertical', 'content-recipes', 'authored-table', 'messages', 'dialog-drawer', 'popover-tooltip', 'tooltip-warmup'];

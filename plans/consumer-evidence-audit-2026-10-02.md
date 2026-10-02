@@ -149,3 +149,14 @@ This is named journey coverage, not every owning assertion. The reference-target
 IDL/native-AX distinction and manual native-picker boundary remain explicit.
 Remaining public layers, native Firefox assertion comparison and
 platform/manual/separate-owner requirements are unchanged.
+
+### Standalone presentation and theme qualification
+
+The [presentation batch](../apps/docs/tests/README.md#standalone-presentation-and-theme-copies)
+found and corrected real copy-delivery gaps: example-owned layout CSS and the
+inverse child-theme generator were supplied only by the docs shell. Actual copied
+modules now deliver them directly. Nine more named journeys check geometry,
+responsive layout, theme isolation, keyboard focus and overlay draft recovery.
+The final33 browser cases cover47 copied consumers per engine plus the existing
+appearance matrix; three additional density/identity regressions pass;59 copies compile. Twelve gallery copies still need independent
+runtime journeys. The original public-layer/platform/manual scope stays open.

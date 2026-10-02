@@ -10,7 +10,7 @@ import { SignalController } from '@en-reve/primitives/interactions/signal-contro
 import { definitions } from '@en-reve/elements/catalog.js';
 import { appearanceItems, effectiveAppearance, isAppearance, observeSystemAppearance } from './appearance.js';
 import type { Appearance } from './appearance.js';
-import { inversePreviewCSS, previewPairCSS, resolvePreviewPair } from './preview-theme.js';
+import { previewPairCSS, resolvePreviewPair } from './preview-theme.js';
 import type { ThemeMode, ThemeDensity, ResolvedTheme } from '@en-reve/tokens';
 import { registerPreviewTools, type PreviewSettings } from './preview-tools.js';
 import { specimens, tokenSample } from './examples.js';
@@ -39,7 +39,7 @@ export class StickerApp extends LitElement {
   private systemMode: ThemeMode = 'light';
   private presentation = this.resolvePreviewThemes();
   private theme: ResolvedTheme = this.presentation.light;
-  private themeCSS = previewPairCSS(this.presentation) + inversePreviewCSS(this.state.get().density);
+  private themeCSS = previewPairCSS(this.presentation);
   private themeStyle?: HTMLStyleElement;
   private toolsLifecycle?: AbortController;
   private navigation?: AnchorNavigation;
@@ -135,7 +135,7 @@ export class StickerApp extends LitElement {
     const inputsChanged = next.density !== current.density || next.accent !== current.accent || next.rhythm !== current.rhythm;
     // Resolve before publishing settings so an invalid shared input changes neither branch.
     const presentation = inputsChanged ? this.resolvePreviewThemes(next) : this.presentation;
-    const css = inputsChanged ? previewPairCSS(presentation) + inversePreviewCSS(next.density) : this.themeCSS;
+    const css = inputsChanged ? previewPairCSS(presentation) : this.themeCSS;
     this.presentation = presentation; this.themeCSS = css;
     this.theme = presentation[effectiveAppearance(next.mode, this.systemMode)];
     this.state.set(next);
@@ -172,7 +172,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
 ` : nothing}
       ${['content-recipes', 'authored-table'].includes(id) ? html`<p><a href=${`/workflows/assets${this.progressReportEnabled ? '?progress-report' : ''}`}>Review the asset-browser workflow</a></p>` : nothing}
 
-      <div class="specimen-content">${keyed(session.revision, specimen.render())}</div>
+      <div class="specimen-content">${keyed(session.revision, specimen.render({ density: this.state.get().density }))}</div>
       <div class="specimen-tools">
         ${specimen.interactive ? html`<en-button variant="ghost" size="small" @click=${() => this.resetSpecimen(id)}>Reset <span class="visually-hidden">${specimen.title}</span></en-button>` : nothing}
         <details class="code-disclosure" @toggle=${this.highlightCode}>

@@ -1,0 +1,4460 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T11:13:50.205007+00:00",
+  "sourceBase": "a7ffdfa251f2d91d97d9626b568a7b48974f9cce",
+  "scope": "Verification section7.5a:nine additional presentation/theme copied-gallery consumers and standalone CSS/theme delivery fixes; remaining12 gallery copies stay open.",
+  "status": "passed",
+  "inputs": {
+    "apps/docs/scripts/authored-specimen-sources.mjs": "5fbdffab1e99042798c86b8370323a6663e2c049c36ade295686eadf8896880f",
+    "apps/docs/scripts/generate-api-examples.mjs": "8748417bad548e7056474f6b5f16af503304ef29752c4fe9fda5bdeaf02f242e",
+    "apps/docs/scripts/specimen-sources.mjs": "4451d782d66d6f554f65640bfe1503ad58ecb9b5427684835bc94f27f190ae29",
+    "apps/docs/src/api-example/app.ts": "a00a9fe6064f16559606accac877d762c8199968f1304eced616468257248f84",
+    "apps/docs/src/api-example/main.ts": "4df826c88bce5bc032cfb85169156d9ace913961e323d69fbf30b48f53d1ad1e",
+    "apps/docs/src/app.ts": "d165d3accb7ec9da0d470f291f6b127a65ae9b34138c15aabf6c513a7b3eada4",
+    "apps/docs/src/calendar-demo.ts": "9ee8b9f30fb0526e08669a9c495f4306a1dfebf69c7309ae699ff4f60eec1d93",
+    "apps/docs/src/carousel-demo.ts": "b9e95233f29b4dee901810588205ed40832301594773395c902c8319004560b1",
+    "apps/docs/src/change-consumption.ts": "c581b10b764e8a750418eef2c5fe47248bc6102de25bb3963ffefbd86ed8664f",
+    "apps/docs/src/chat-patterns-demo.ts": "6f9ce4b780e130075ecef479f790a08b43f30d865e644441bd009876236dc6f9",
+    "apps/docs/src/color-spaces-demo.ts": "3054f138fafc3c46e57ac71d4b6ad7103077e0fe9e7bf03d27abf8fcd1c7a091",
+    "apps/docs/src/composable-chat-demo.definition.ts": "32931b2c0b9a0f75f06f29deff9d25d4fdd2db97a4707ca91a51cf79feeb9b25",
+    "apps/docs/src/editor-color-extension.ts": "6cec0c4b47fd4bc2e2dc7ad4c40c42258a76d4300f163fb3fcbe463f247af3db",
+    "apps/docs/src/examples.ts": "9e67d25a9af2d64fb94458d69d4044aa367ebe7c99f4b704df37a0b5ae7d4914",
+    "apps/docs/src/file-upload-demo.ts": "3b68b7d0cafb187d04b546408779e0e3148467f7f8d37f527fb923324ee22c5f",
+    "apps/docs/src/inverse-theme.ts": "c0a0cff7e8a82b6ea6007d5baee114ca4cd48466b9a4bdf204be84ca453c8e02",
+    "apps/docs/src/multi-step-demo.ts": "be58213f02d4cd1e428525130cc30e7ee2f34009adb86116203d7e41bee026b1",
+    "apps/docs/src/presence-activity-demo.ts": "de36f67960e2e62c7a36d4c00eca77afa75b853a0a1fe5cb0684716fbbf07608",
+    "apps/docs/src/preview-theme.ts": "fe73f774828e7f734b81f1d33fac8aaca785de292e36d6419df9a00c3c3ce9f2",
+    "apps/docs/src/rich-text-demo.ts": "922b3adbf7f821aad9157e5c2b7e9388b8f5a5c900a016fc154e15ae72600bed",
+    "apps/docs/src/site.css": "f3eea512972301bbdd28f184e6953c4bd7a2b81a56dee53b55f72f26ad706849",
+    "apps/docs/src/toast-demo.ts": "e3d4d3ce6b4505101126b58e439a841f213695f6674bd1cc0e40cbfeb78e040d",
+    "apps/docs/src/token-copy.ts": "8595a5338c1b505c9207ca5649c7baae30a9ade0203c467a2853b332d8f7d106",
+    "apps/docs/src/tree-data-demo.ts": "00e10d98d03d3fb354be7b4ec72a44e0cfa2d40c7dab712aae9f9f95b4e9d5c5",
+    "apps/docs/src/virtual-collection-demo.ts": "9c33e76a034e811b526952d2d44888948533cdbc21a7da74c6bb94b734ba796d",
+    "apps/docs/tests/api-reference-generator.test.mjs": "d7ca4235446cb8af825885d790f322ab0ced09b6ece951eb09eb712c040b13eb",
+    "apps/docs/tests/copied-api-scenarios.ts": "3e3bec6641d37098aa39970f8b9f78dcf79337f97bbde248b591c99cc4c52a2c",
+    "apps/docs/tests/copied-gallery-scenarios.ts": "bf7d487e182a9e66eff807b3c5ece3a97f88b306e7a86cd5a1b5fef2c46aae85",
+    "apps/docs/tests/copied-presentation-scenarios.ts": "00797a7d3776d1838183535159fc97ea7bd9b85ab0082e8d479bd3ac23e095ae",
+    "apps/docs/tests/specimen-source-assembly.test.mjs": "78f90a007536fdb2ade5969c41430d7bb1645e1cbc281128a9b68930f8f395ec",
+    "apps/docs/tests/specimen-sources.spec.ts": "8c2e8a26b5176df63facd07a6bd3df8b330c02387e0d58cb719d8fa9bd1aa19a",
+    "apps/docs/tests/system-appearance.spec.ts": "d3dfb25ad61c8b13215dd34a8e2aaed7d4bb88bb89a0c13eadc3e6846ca287e7",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106"
+  },
+  "generatedModules": {
+    "apps/docs/src/generated/calendar-source.js": "c7d197f8f92a231b1a4042d3e0e8548a0a29e7e3792bfc01e576287bad42bde1",
+    "apps/docs/src/generated/carousel-source.js": "c7d03c22fdb0304b1100da344aa752e0e86e8e178c06b3fe1ad3b827c165a80a",
+    "apps/docs/src/generated/chat-patterns-source.js": "28cdddabf935596e930d694e76e84a7cd0ad84fa860d073c66ccaf73c8bbdf3c",
+    "apps/docs/src/generated/composable-chat-source.js": "0c0748ba5e7298ba32d6cb95454ae966b182b4ae2a9082261f40c0860d68d195",
+    "apps/docs/src/generated/multi-step-source.js": "4ab34bd6fda64f244210ed507b80d69af5126cb1b14fe9b5e9e582bf19a48c8c",
+    "apps/docs/src/generated/presence-activity-source.js": "483d9aa72e8d34cd7a8e627407d35238dfe9804811ef590feca9a0aff9675112",
+    "apps/docs/src/generated/rich-text-source.js": "80145fc01c92236f6eb0b415245b8be40a147e2280e4965a62033c644967ddc4",
+    "apps/docs/src/generated/toast-source.js": "8a44e5fba27495d156d33eb6e7b31eaf15b918a5311108c24652d13f873fee4e",
+    "apps/docs/src/generated/tooltip-warmup-source.js": "07491d856fc05e4f8aa6db7c469a1bffb914b785b5501265d5e27bf06c256e95",
+    "apps/docs/src/generated/tree-data-source.js": "e46fc5c529d25e444c1780f249f12eb9c11414469c0ecf0155603ccfe52f4816",
+    "apps/docs/src/generated/virtual-collection-source.js": "95fb35024af26e7bd975cd1a7d6dc630b24bb3a3f4b9fb9e09f0f5f06dec08a3"
+  },
+  "compiledCopies": {
+    "count": 59,
+    "ids": [
+      "swatches",
+      "typography",
+      "rhythm",
+      "buttons",
+      "button-scale",
+      "command-surfaces",
+      "mixed-toolbar",
+      "menu-choices",
+      "text-fields",
+      "long-text-search",
+      "structured-values",
+      "calendar",
+      "multi-step",
+      "combobox",
+      "precision",
+      "file-upload",
+      "color-field",
+      "child-authored-choices",
+      "checkboxes-switches",
+      "radio-group",
+      "opacity",
+      "vertical-slider",
+      "rating",
+      "native-navigation",
+      "breadcrumbs",
+      "tree-view",
+      "pagination",
+      "tabs",
+      "accordion",
+      "split-view",
+      "split-view-vertical",
+      "carousel",
+      "rich-text",
+      "card",
+      "content-recipes",
+      "authored-table",
+      "virtual-collection",
+      "identity",
+      "messages",
+      "loading",
+      "dialog-drawer",
+      "popover-tooltip",
+      "tooltip-warmup",
+      "theme-scopes",
+      "local-override",
+      "family-geometry",
+      "focus-motion",
+      "popup-motion",
+      "api-calendar",
+      "api-carousel",
+      "api-chat-patterns",
+      "composable-chat",
+      "api-multi-step",
+      "api-presence-activity",
+      "api-rich-text",
+      "api-toast",
+      "api-tooltip-warmup",
+      "api-tree-data",
+      "api-virtual-collection"
+    ]
+  },
+  "galleryInventory": {
+    "qualified": [
+      "native-navigation",
+      "breadcrumbs",
+      "typography",
+      "card",
+      "combobox",
+      "command-surfaces",
+      "buttons",
+      "button-scale",
+      "mixed-toolbar",
+      "menu-choices",
+      "text-fields",
+      "long-text-search",
+      "structured-values",
+      "precision",
+      "color-field",
+      "child-authored-choices",
+      "checkboxes-switches",
+      "radio-group",
+      "opacity",
+      "vertical-slider",
+      "rating",
+      "file-upload",
+      "calendar",
+      "carousel",
+      "multi-step",
+      "rich-text",
+      "virtual-collection",
+      "swatches",
+      "rhythm",
+      "identity",
+      "loading",
+      "theme-scopes",
+      "local-override",
+      "family-geometry",
+      "focus-motion",
+      "popup-motion"
+    ],
+    "pending": [
+      "tree-view",
+      "pagination",
+      "tabs",
+      "accordion",
+      "split-view",
+      "split-view-vertical",
+      "content-recipes",
+      "authored-table",
+      "messages",
+      "dialog-drawer",
+      "popover-tooltip",
+      "tooltip-warmup"
+    ]
+  },
+  "browser": {
+    "run": "/private/tmp/en-gallery-presentation-browser-20261002-02",
+    "executionSHA256": "2d23cecdde119bf6a388dd7249e41663d81bf31c6ba841f033182b98d5eb7258",
+    "reportSHA256": "c4636b3733f66e698cc9a6b9d047b28db1a3df354c00703fda772a192d541f76",
+    "stats": {
+      "startTime": "2026-10-02T11:08:08.122Z",
+      "duration": 178275.51200000002,
+      "expected": 33,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "runtime": {
+      "sha256:4a8c10857202cb31186b83d8a60175a222026d9a8c1e7eebb341823d2826245c": {
+        "node": "v26.10.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "osRelease": "25.6.0",
+        "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+        "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+        "fileCount": 7946
+      }
+    },
+    "candidate": {
+      "head": "a7ffdfa251f2d91d97d9626b568a7b48974f9cce",
+      "sourceDigest": "sha256:e729979849b6cb2550fd8926c479c178b1c79872bddc4a2ad5f6e4f9882a80c3",
+      "files": 22727
+    },
+    "projects": {
+      "chromium": {
+        "tests": [
+          {
+            "title": "displayed examples compile without unused code, retain highlighting, and load encapsulated components and native styles without a bundler",
+            "status": "passed",
+            "durationMs": 9656,
+            "kind": "actual copied module",
+            "nativeConsumers": 8,
+            "scopedControls": {
+              "eager-color-registry-open": {
+                "consumer": "packed-eager-definitions",
+                "requestedRegistry": "auto",
+                "actualRegistry": "scoped",
+                "nativeRegistry": true,
+                "closedRoot": false,
+                "rootHasRegistry": true,
+                "ownedPicker": true,
+                "allColorRegistered": true,
+                "globalAbsent": true
+              },
+              "eager-color-registry-closed": {
+                "consumer": "packed-eager-definitions",
+                "requestedRegistry": "auto",
+                "actualRegistry": "scoped",
+                "nativeRegistry": true,
+                "closedRoot": true,
+                "rootHasRegistry": true,
+                "ownedPicker": true,
+                "allColorRegistered": true,
+                "globalAbsent": true
+              }
+            },
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": false,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "remaining complete API copies execute their application journeys against native packed modules",
+            "status": "passed",
+            "durationMs": 10317,
+            "kind": "actual copied module",
+            "nativeConsumers": 9,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: buttons, button-scale, mixed-toolbar, menu-choices, text-fields, long-text-search, structured-values",
+            "status": "passed",
+            "durationMs": 6602,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: precision, color-field, child-authored-choices, checkboxes-switches, radio-group, opacity, vertical-slider",
+            "status": "passed",
+            "durationMs": 6571,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: rating, file-upload, calendar, carousel, multi-step, rich-text, virtual-collection",
+            "status": "passed",
+            "durationMs": 9634,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: swatches, rhythm, identity, loading, theme-scopes, local-override, family-geometry",
+            "status": "passed",
+            "durationMs": 6336,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": [
+              "copied-rhythm",
+              "copied-loading",
+              "copied-theme-scopes",
+              "copied-family-geometry"
+            ]
+          },
+          {
+            "title": "gallery consumer journeys: focus-motion, popup-motion",
+            "status": "passed",
+            "durationMs": 6377,
+            "kind": "actual copied module",
+            "nativeConsumers": 2,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "all default page surfaces follow appearance before JavaScript",
+            "status": "passed",
+            "durationMs": 2497,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "sticker sheet Auto follows the system without replacing focused controls, and explicit appearance wins",
+            "status": "passed",
+            "durationMs": 3017,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "workflow navigation preserves explicit appearance and removes the Auto pin",
+            "status": "passed",
+            "durationMs": 738,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "explicit workflow appearance reaches native content despite the syntax highlighter OS scheme",
+            "status": "passed",
+            "durationMs": 441,
+            "kind": "original appearance regression"
+          }
+        ],
+        "consumers": [
+          {
+            "id": "native-navigation",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "breadcrumbs",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "typography",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css",
+              "/styles/typography.css"
+            ]
+          },
+          {
+            "id": "card",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css",
+              "/styles/typography.css"
+            ]
+          },
+          {
+            "id": "combobox",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "command-surfaces",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "composable-chat",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "api-tooltip-warmup",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "api-calendar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard navigation, canceled selection, accepted FormData and picker focus recovery"
+          },
+          {
+            "id": "api-carousel",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Bounded keyed slides, distant reveal, thumbnail activation and canceled navigation"
+          },
+          {
+            "id": "api-chat-patterns",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Attachment send failure, local retry and preservation of a newer draft"
+          },
+          {
+            "id": "api-multi-step",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Validation summary, step navigation, failed-save recovery and retained form data"
+          },
+          {
+            "id": "api-presence-activity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Presence overflow and activity load veto, failure, retry and appended content"
+          },
+          {
+            "id": "api-rich-text",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Reference insertion, retained trigger text, cancellation and composer submission"
+          },
+          {
+            "id": "api-toast",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Actionable notification, native keyboard order, retry outcome and focus recovery"
+          },
+          {
+            "id": "api-tree-data",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and collapse/expand preserving the selected key"
+          },
+          {
+            "id": "api-virtual-collection",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and removing the selected record through authored controls"
+          },
+          {
+            "id": "buttons",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native keyboard activation and disabled/loading controls"
+          },
+          {
+            "id": "button-scale",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Delivered size progression, icon-only accessible label and native link navigation"
+          },
+          {
+            "id": "mixed-toolbar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native editing keys and authored application output from mixed controls"
+          },
+          {
+            "id": "menu-choices",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Checkable/radio preview, application veto and nested export action"
+          },
+          {
+            "id": "text-fields",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "External/slotted labels, native editing, password masking and error association"
+          },
+          {
+            "id": "long-text-search",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Multiline draft editing and independent native search value"
+          },
+          {
+            "id": "structured-values",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Data-authored selection and canonical native date acceptance"
+          },
+          {
+            "id": "precision",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Number draft acceptance, keyboard stepping and disabled field"
+          },
+          {
+            "id": "color-field",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Accepted native color updates the authored swatch/output; veto preserves them"
+          },
+          {
+            "id": "child-authored-choices",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Authored dynamic choices submit native FormData with preserved value identity"
+          },
+          {
+            "id": "checkboxes-switches",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "External label activation, canceled toggle and independent switch keyboard editing"
+          },
+          {
+            "id": "radio-group",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Radio selection and transactional cancellation preserve the selected peer"
+          },
+          {
+            "id": "opacity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Exact-value commit updates the authored preview and Escape restores a draft"
+          },
+          {
+            "id": "vertical-slider",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Vertical native range semantics, ArrowUp and exact-value synchronization"
+          },
+          {
+            "id": "rating",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Accessible native radio score and explicit clearing"
+          },
+          {
+            "id": "file-upload",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Selected files survive transfer failure/retry, enter the receipt and reset"
+          },
+          {
+            "id": "calendar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard navigation, canceled selection, accepted FormData and picker focus recovery"
+          },
+          {
+            "id": "carousel",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Bounded keyed slides, distant reveal, thumbnail activation and canceled navigation"
+          },
+          {
+            "id": "multi-step",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Validation summary, step navigation, failed-save recovery and retained form data"
+          },
+          {
+            "id": "rich-text",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Reference insertion, retained trigger text, cancellation and composer submission"
+          },
+          {
+            "id": "virtual-collection",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and removing the selected record through authored controls"
+          },
+          {
+            "id": "swatches",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Standalone swatch geometry and native keyboard copy, with explicit permission-dependent feedback"
+          },
+          {
+            "id": "rhythm",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Painted spacing bars scale monotonically; inset radius and padding survive copying"
+          },
+          {
+            "id": "identity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distinct avatar geometry, initials and accessible painted icons without docs layout"
+          },
+          {
+            "id": "loading",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native determinate progress, task label and decorative two-column placeholder geometry"
+          },
+          {
+            "id": "theme-scopes",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Copied full child theme follows inverse appearance without leaking into page scope; responsive layout"
+          },
+          {
+            "id": "local-override",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "A local square-corner override remains local and native keyboard activation works"
+          },
+          {
+            "id": "family-geometry",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Scoped family padding changes real controls while preserving independent field state"
+          },
+          {
+            "id": "focus-motion",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard focus paint, immediate reduced-motion recipe and independent draft/action state"
+          },
+          {
+            "id": "popup-motion",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Immediate/motion scopes preserve drafts across Escape/reopen and apply authored Drawer placement"
+          }
+        ],
+        "browserAnnotations": [
+          {
+            "type": "browser-version",
+            "description": "153.0.8010.12"
+          }
+        ]
+      },
+      "firefox": {
+        "tests": [
+          {
+            "title": "displayed examples compile without unused code, retain highlighting, and load encapsulated components and native styles without a bundler",
+            "status": "passed",
+            "durationMs": 7336,
+            "kind": "actual copied module",
+            "nativeConsumers": 8,
+            "scopedControls": {
+              "eager-color-registry-open": {
+                "consumer": "packed-eager-definitions",
+                "requestedRegistry": "auto",
+                "actualRegistry": "global",
+                "nativeRegistry": false,
+                "closedRoot": false,
+                "rootHasRegistry": true,
+                "ownedPicker": true,
+                "allColorRegistered": true,
+                "globalAbsent": false
+              },
+              "eager-color-registry-closed": {
+                "consumer": "packed-eager-definitions",
+                "requestedRegistry": "auto",
+                "actualRegistry": "global",
+                "nativeRegistry": false,
+                "closedRoot": true,
+                "rootHasRegistry": true,
+                "ownedPicker": true,
+                "allColorRegistered": true,
+                "globalAbsent": false
+              }
+            },
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "remaining complete API copies execute their application journeys against native packed modules",
+            "status": "passed",
+            "durationMs": 10103,
+            "kind": "actual copied module",
+            "nativeConsumers": 9,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: buttons, button-scale, mixed-toolbar, menu-choices, text-fields, long-text-search, structured-values",
+            "status": "passed",
+            "durationMs": 6300,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: precision, color-field, child-authored-choices, checkboxes-switches, radio-group, opacity, vertical-slider",
+            "status": "passed",
+            "durationMs": 6055,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: rating, file-upload, calendar, carousel, multi-step, rich-text, virtual-collection",
+            "status": "passed",
+            "durationMs": 8843,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: swatches, rhythm, identity, loading, theme-scopes, local-override, family-geometry",
+            "status": "passed",
+            "durationMs": 5793,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": [
+              "copied-rhythm",
+              "copied-loading",
+              "copied-theme-scopes",
+              "copied-family-geometry"
+            ]
+          },
+          {
+            "title": "gallery consumer journeys: focus-motion, popup-motion",
+            "status": "passed",
+            "durationMs": 6053,
+            "kind": "actual copied module",
+            "nativeConsumers": 2,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "all default page surfaces follow appearance before JavaScript",
+            "status": "passed",
+            "durationMs": 2162,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "sticker sheet Auto follows the system without replacing focused controls, and explicit appearance wins",
+            "status": "passed",
+            "durationMs": 2162,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "workflow navigation preserves explicit appearance and removes the Auto pin",
+            "status": "passed",
+            "durationMs": 1026,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "explicit workflow appearance reaches native content despite the syntax highlighter OS scheme",
+            "status": "passed",
+            "durationMs": 478,
+            "kind": "original appearance regression"
+          }
+        ],
+        "consumers": [
+          {
+            "id": "native-navigation",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "breadcrumbs",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "typography",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css",
+              "/styles/typography.css"
+            ]
+          },
+          {
+            "id": "card",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css",
+              "/styles/typography.css"
+            ]
+          },
+          {
+            "id": "combobox",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "command-surfaces",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "composable-chat",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "api-tooltip-warmup",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "api-calendar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard navigation, canceled selection, accepted FormData and picker focus recovery"
+          },
+          {
+            "id": "api-carousel",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Bounded keyed slides, distant reveal, thumbnail activation and canceled navigation"
+          },
+          {
+            "id": "api-chat-patterns",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Attachment send failure, local retry and preservation of a newer draft"
+          },
+          {
+            "id": "api-multi-step",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Validation summary, step navigation, failed-save recovery and retained form data"
+          },
+          {
+            "id": "api-presence-activity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Presence overflow and activity load veto, failure, retry and appended content"
+          },
+          {
+            "id": "api-rich-text",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Reference insertion, retained trigger text, cancellation and composer submission"
+          },
+          {
+            "id": "api-toast",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Actionable notification, native keyboard order, retry outcome and focus recovery"
+          },
+          {
+            "id": "api-tree-data",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and collapse/expand preserving the selected key"
+          },
+          {
+            "id": "api-virtual-collection",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and removing the selected record through authored controls"
+          },
+          {
+            "id": "buttons",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native keyboard activation and disabled/loading controls"
+          },
+          {
+            "id": "button-scale",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Delivered size progression, icon-only accessible label and native link navigation"
+          },
+          {
+            "id": "mixed-toolbar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native editing keys and authored application output from mixed controls"
+          },
+          {
+            "id": "menu-choices",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Checkable/radio preview, application veto and nested export action"
+          },
+          {
+            "id": "text-fields",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "External/slotted labels, native editing, password masking and error association"
+          },
+          {
+            "id": "long-text-search",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Multiline draft editing and independent native search value"
+          },
+          {
+            "id": "structured-values",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Data-authored selection and canonical native date acceptance"
+          },
+          {
+            "id": "precision",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Number draft acceptance, keyboard stepping and disabled field"
+          },
+          {
+            "id": "color-field",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Accepted native color updates the authored swatch/output; veto preserves them"
+          },
+          {
+            "id": "child-authored-choices",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Authored dynamic choices submit native FormData with preserved value identity"
+          },
+          {
+            "id": "checkboxes-switches",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "External label activation, canceled toggle and independent switch keyboard editing"
+          },
+          {
+            "id": "radio-group",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Radio selection and transactional cancellation preserve the selected peer"
+          },
+          {
+            "id": "opacity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Exact-value commit updates the authored preview and Escape restores a draft"
+          },
+          {
+            "id": "vertical-slider",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Vertical native range semantics, ArrowUp and exact-value synchronization"
+          },
+          {
+            "id": "rating",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Accessible native radio score and explicit clearing"
+          },
+          {
+            "id": "file-upload",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Selected files survive transfer failure/retry, enter the receipt and reset"
+          },
+          {
+            "id": "calendar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard navigation, canceled selection, accepted FormData and picker focus recovery"
+          },
+          {
+            "id": "carousel",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Bounded keyed slides, distant reveal, thumbnail activation and canceled navigation"
+          },
+          {
+            "id": "multi-step",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Validation summary, step navigation, failed-save recovery and retained form data"
+          },
+          {
+            "id": "rich-text",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Reference insertion, retained trigger text, cancellation and composer submission"
+          },
+          {
+            "id": "virtual-collection",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and removing the selected record through authored controls"
+          },
+          {
+            "id": "swatches",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Standalone swatch geometry and native keyboard copy, with explicit permission-dependent feedback"
+          },
+          {
+            "id": "rhythm",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Painted spacing bars scale monotonically; inset radius and padding survive copying"
+          },
+          {
+            "id": "identity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distinct avatar geometry, initials and accessible painted icons without docs layout"
+          },
+          {
+            "id": "loading",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native determinate progress, task label and decorative two-column placeholder geometry"
+          },
+          {
+            "id": "theme-scopes",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Copied full child theme follows inverse appearance without leaking into page scope; responsive layout"
+          },
+          {
+            "id": "local-override",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "A local square-corner override remains local and native keyboard activation works"
+          },
+          {
+            "id": "family-geometry",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Scoped family padding changes real controls while preserving independent field state"
+          },
+          {
+            "id": "focus-motion",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard focus paint, immediate reduced-motion recipe and independent draft/action state"
+          },
+          {
+            "id": "popup-motion",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Immediate/motion scopes preserve drafts across Escape/reopen and apply authored Drawer placement"
+          }
+        ],
+        "browserAnnotations": [
+          {
+            "type": "browser-version",
+            "description": "155.0"
+          }
+        ]
+      },
+      "webkit": {
+        "tests": [
+          {
+            "title": "displayed examples compile without unused code, retain highlighting, and load encapsulated components and native styles without a bundler",
+            "status": "passed",
+            "durationMs": 7393,
+            "kind": "actual copied module",
+            "nativeConsumers": 8,
+            "scopedControls": {
+              "eager-color-registry-open": {
+                "consumer": "packed-eager-definitions",
+                "requestedRegistry": "auto",
+                "actualRegistry": "scoped",
+                "nativeRegistry": true,
+                "closedRoot": false,
+                "rootHasRegistry": true,
+                "ownedPicker": true,
+                "allColorRegistered": true,
+                "globalAbsent": true
+              },
+              "eager-color-registry-closed": {
+                "consumer": "packed-eager-definitions",
+                "requestedRegistry": "auto",
+                "actualRegistry": "scoped",
+                "nativeRegistry": true,
+                "closedRoot": true,
+                "rootHasRegistry": true,
+                "ownedPicker": true,
+                "allColorRegistered": true,
+                "globalAbsent": true
+              }
+            },
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "remaining complete API copies execute their application journeys against native packed modules",
+            "status": "passed",
+            "durationMs": 10275,
+            "kind": "actual copied module",
+            "nativeConsumers": 9,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: buttons, button-scale, mixed-toolbar, menu-choices, text-fields, long-text-search, structured-values",
+            "status": "passed",
+            "durationMs": 6211,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: precision, color-field, child-authored-choices, checkboxes-switches, radio-group, opacity, vertical-slider",
+            "status": "passed",
+            "durationMs": 5838,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: rating, file-upload, calendar, carousel, multi-step, rich-text, virtual-collection",
+            "status": "passed",
+            "durationMs": 9172,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "gallery consumer journeys: swatches, rhythm, identity, loading, theme-scopes, local-override, family-geometry",
+            "status": "passed",
+            "durationMs": 5833,
+            "kind": "actual copied module",
+            "nativeConsumers": 7,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": [
+              "copied-rhythm",
+              "copied-loading",
+              "copied-theme-scopes",
+              "copied-family-geometry"
+            ]
+          },
+          {
+            "title": "gallery consumer journeys: focus-motion, popup-motion",
+            "status": "passed",
+            "durationMs": 5794,
+            "kind": "actual copied module",
+            "nativeConsumers": 2,
+            "scopedControls": {},
+            "declarations": {
+              "count": 149,
+              "sha256": "960b717e2e7ae493316e455c76e63a31af4dae83c47fadc0bd74ce8d22cea322",
+              "workspaceDeclarations": false
+            },
+            "preparation": {
+              "key": "7d89a1a12d532fc930778ab183b6fbbc24fd2133e8baea6adb538d85042633ac",
+              "reused": true,
+              "originatingProducer": "2026-10-02T11:08:16.672Z",
+              "extractedSamplesDigest": "sha256:f75d1238001685e41091f52e5b4fbf14ef99d2751b853e3686bea79276c191cd"
+            },
+            "packages": [
+              {
+                "name": "@en-reve/tokens",
+                "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+                "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e"
+              },
+              {
+                "name": "@en-reve/styles",
+                "integrity": "sha512-3Ie/rQIirJWAgd/4t8WCffOF9GFEUywg4hwhRZtpSj3/gLlk5Jm2Lzlo4DbPtmf+aWM3u9FD/VjeG4vZlSJC/w==",
+                "shasum": "bcadc3609cbfebf8c1096d54331da44dcc3cc36b"
+              },
+              {
+                "name": "@en-reve/primitives",
+                "integrity": "sha512-13tWw3y73SXLFBmCCyXeAyBdDhz/GlOqN3zxYuXH3Ddldtr7WhevQDHMnfiWxcU9vVmy2ajti1thIMamjqg8ag==",
+                "shasum": "726cc58bd6e08c5b26aa7a9e5445e8e5af37d110"
+              },
+              {
+                "name": "@en-reve/elements",
+                "integrity": "sha512-sD5dT2Evy2GFSceBhkDshmtAFVMHIUEXkEStmhgp3Gy48uHQljoTa9uXv9iKnoVDXPtJ023e1xPxCd0Ul1UnrA==",
+                "shasum": "9afb616f25903183b536db82c11032145bf40d46"
+              }
+            ],
+            "dependencies": {
+              "packages": [
+                {
+                  "name": "@en-reve/tokens",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/styles",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/primitives",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "@en-reve/elements",
+                  "version": "0.1.0"
+                },
+                {
+                  "name": "lit",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "signal-polyfill",
+                  "version": "0.2.2"
+                },
+                {
+                  "name": "signal-utils",
+                  "version": "0.21.1"
+                },
+                {
+                  "name": "@lit/context",
+                  "version": "1.1.6"
+                },
+                {
+                  "name": "prosemirror-commands",
+                  "version": "1.7.2"
+                },
+                {
+                  "name": "prosemirror-history",
+                  "version": "1.5.0"
+                },
+                {
+                  "name": "prosemirror-keymap",
+                  "version": "1.2.3"
+                },
+                {
+                  "name": "prosemirror-model",
+                  "version": "1.25.11"
+                },
+                {
+                  "name": "prosemirror-schema-list",
+                  "version": "1.5.1"
+                },
+                {
+                  "name": "prosemirror-state",
+                  "version": "1.4.4"
+                },
+                {
+                  "name": "prosemirror-transform",
+                  "version": "1.12.1"
+                },
+                {
+                  "name": "prosemirror-view",
+                  "version": "1.42.3"
+                },
+                {
+                  "name": "@lit/reactive-element",
+                  "version": "2.1.2"
+                },
+                {
+                  "name": "lit-element",
+                  "version": "4.2.2"
+                },
+                {
+                  "name": "lit-html",
+                  "version": "3.3.3"
+                },
+                {
+                  "name": "rope-sequence",
+                  "version": "1.3.4"
+                },
+                {
+                  "name": "w3c-keyname",
+                  "version": "2.2.8"
+                },
+                {
+                  "name": "orderedmap",
+                  "version": "2.1.1"
+                },
+                {
+                  "name": "@lit-labs/ssr-dom-shim",
+                  "version": "1.6.0"
+                },
+                {
+                  "name": "@types/trusted-types",
+                  "version": "2.0.7"
+                }
+              ],
+              "importCount": 807,
+              "importMapSHA256": "6cf2d34313e278a1b6af5864329d8fd5b663458bb496fe89635f60559f16f63c"
+            },
+            "screenshots": []
+          },
+          {
+            "title": "all default page surfaces follow appearance before JavaScript",
+            "status": "passed",
+            "durationMs": 2660,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "sticker sheet Auto follows the system without replacing focused controls, and explicit appearance wins",
+            "status": "passed",
+            "durationMs": 2723,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "workflow navigation preserves explicit appearance and removes the Auto pin",
+            "status": "passed",
+            "durationMs": 977,
+            "kind": "original appearance regression"
+          },
+          {
+            "title": "explicit workflow appearance reaches native content despite the syntax highlighter OS scheme",
+            "status": "passed",
+            "durationMs": 570,
+            "kind": "original appearance regression"
+          }
+        ],
+        "consumers": [
+          {
+            "id": "native-navigation",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "breadcrumbs",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "typography",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css",
+              "/styles/typography.css"
+            ]
+          },
+          {
+            "id": "card",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css",
+              "/styles/typography.css"
+            ]
+          },
+          {
+            "id": "combobox",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "command-surfaces",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "composable-chat",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "api-tooltip-warmup",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ]
+          },
+          {
+            "id": "api-calendar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard navigation, canceled selection, accepted FormData and picker focus recovery"
+          },
+          {
+            "id": "api-carousel",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Bounded keyed slides, distant reveal, thumbnail activation and canceled navigation"
+          },
+          {
+            "id": "api-chat-patterns",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Attachment send failure, local retry and preservation of a newer draft"
+          },
+          {
+            "id": "api-multi-step",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Validation summary, step navigation, failed-save recovery and retained form data"
+          },
+          {
+            "id": "api-presence-activity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Presence overflow and activity load veto, failure, retry and appended content"
+          },
+          {
+            "id": "api-rich-text",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Reference insertion, retained trigger text, cancellation and composer submission"
+          },
+          {
+            "id": "api-toast",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Actionable notification, native keyboard order, retry outcome and focus recovery"
+          },
+          {
+            "id": "api-tree-data",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and collapse/expand preserving the selected key"
+          },
+          {
+            "id": "api-virtual-collection",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and removing the selected record through authored controls"
+          },
+          {
+            "id": "buttons",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native keyboard activation and disabled/loading controls"
+          },
+          {
+            "id": "button-scale",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Delivered size progression, icon-only accessible label and native link navigation"
+          },
+          {
+            "id": "mixed-toolbar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native editing keys and authored application output from mixed controls"
+          },
+          {
+            "id": "menu-choices",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Checkable/radio preview, application veto and nested export action"
+          },
+          {
+            "id": "text-fields",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "External/slotted labels, native editing, password masking and error association"
+          },
+          {
+            "id": "long-text-search",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Multiline draft editing and independent native search value"
+          },
+          {
+            "id": "structured-values",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Data-authored selection and canonical native date acceptance"
+          },
+          {
+            "id": "precision",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Number draft acceptance, keyboard stepping and disabled field"
+          },
+          {
+            "id": "color-field",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Accepted native color updates the authored swatch/output; veto preserves them"
+          },
+          {
+            "id": "child-authored-choices",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Authored dynamic choices submit native FormData with preserved value identity"
+          },
+          {
+            "id": "checkboxes-switches",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "External label activation, canceled toggle and independent switch keyboard editing"
+          },
+          {
+            "id": "radio-group",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Radio selection and transactional cancellation preserve the selected peer"
+          },
+          {
+            "id": "opacity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Exact-value commit updates the authored preview and Escape restores a draft"
+          },
+          {
+            "id": "vertical-slider",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Vertical native range semantics, ArrowUp and exact-value synchronization"
+          },
+          {
+            "id": "rating",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Accessible native radio score and explicit clearing"
+          },
+          {
+            "id": "file-upload",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Selected files survive transfer failure/retry, enter the receipt and reset"
+          },
+          {
+            "id": "calendar",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard navigation, canceled selection, accepted FormData and picker focus recovery"
+          },
+          {
+            "id": "carousel",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Bounded keyed slides, distant reveal, thumbnail activation and canceled navigation"
+          },
+          {
+            "id": "multi-step",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Validation summary, step navigation, failed-save recovery and retained form data"
+          },
+          {
+            "id": "rich-text",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Reference insertion, retained trigger text, cancellation and composer submission"
+          },
+          {
+            "id": "virtual-collection",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distant virtual reveal, selection and removing the selected record through authored controls"
+          },
+          {
+            "id": "swatches",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Standalone swatch geometry and native keyboard copy, with explicit permission-dependent feedback"
+          },
+          {
+            "id": "rhythm",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Painted spacing bars scale monotonically; inset radius and padding survive copying"
+          },
+          {
+            "id": "identity",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Distinct avatar geometry, initials and accessible painted icons without docs layout"
+          },
+          {
+            "id": "loading",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Native determinate progress, task label and decorative two-column placeholder geometry"
+          },
+          {
+            "id": "theme-scopes",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Copied full child theme follows inverse appearance without leaking into page scope; responsive layout"
+          },
+          {
+            "id": "local-override",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "A local square-corner override remains local and native keyboard activation works"
+          },
+          {
+            "id": "family-geometry",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Scoped family padding changes real controls while preserving independent field state"
+          },
+          {
+            "id": "focus-motion",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Keyboard focus paint, immediate reduced-motion recipe and independent draft/action state"
+          },
+          {
+            "id": "popup-motion",
+            "stylesheets": [
+              "/packages/tokens/dist/default.css"
+            ],
+            "contract": "Immediate/motion scopes preserve drafts across Escape/reopen and apply authored Drawer placement"
+          }
+        ],
+        "browserAnnotations": [
+          {
+            "type": "browser-version",
+            "description": "26.6"
+          }
+        ]
+      }
+    }
+  },
+  "densityRegression": {
+    "run": "/private/tmp/en-gallery-presentation-density-20261002-01",
+    "executionSHA256": "303030b7c8a24c6eaaafa13698ec581ce1e31dd8bbd53ca0cb014709933bd3c0",
+    "reportSHA256": "fcfdbd5a0f668930a7e3db4ac1f07d0f9ed14dfcee1fb09da7010d6bd56835c8",
+    "stats": {
+      "startTime": "2026-10-02T11:12:10.020Z",
+      "duration": 9370.056,
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "scope": "Three additional cases verify compact/spacious density, original control identity and reset against unchanged production source. These are additional to the33-case matrix."
+  },
+  "integrity": {
+    "run": "/private/tmp/en-gallery-presentation-integrity-20261002-01",
+    "executionSHA256": "97e567ae9770bb0f9e132e22b041cc0f977a264d6ded638137e12758ba7f2695",
+    "nodePasses": 123,
+    "semanticTypes": "passed",
+    "semanticDocsTypes": "passed",
+    "docsSources": "passed"
+  },
+  "productionBuild": {
+    "run": "/private/tmp/en-gallery-presentation-tooling-20261002-02",
+    "executionSHA256": "0bf7e1d53df25da87ce0d5716f1b42f262c37ad034fdc4d11a6538f57e8a85ab",
+    "nodePasses": 189,
+    "extendedNodePasses": 66,
+    "integrityPasses": 123,
+    "strictTypes": "passed",
+    "SSRBuild": "passed",
+    "distFiles": 1184,
+    "distManifestSHA256": "7b125b7290a52cebb3081795f7b27fdd6fe0f7493c166c2aee1e4a967f8deddb",
+    "reuseBoundary": "Final browser/typing edits do not change production source or generated source modules; exact fresh built assets reused."
+  },
+  "earlierAttempts": [
+    {
+      "run": "en-gallery-presentation-tooling-20261002-01",
+      "status": "failed",
+      "boundary": "Lit SSR rejects expressions inside raw-text style elements. Corrected to a static template containing only library-generated CSS; fresh full build passed."
+    },
+    {
+      "run": "en-gallery-presentation-browser-20261002-01",
+      "status": "failed",
+      "passes": 30,
+      "failures": 3,
+      "boundary": "The new status locator matched the authored confirmation and combobox live region. Corrected to the authored confirmation."
+    },
+    {
+      "run": "en-gallery-presentation-focus-20261002-01",
+      "status": "failed",
+      "passes": 0,
+      "failures": 3,
+      "boundary": "The new modal locator required a computed name absent from Playwright matching and chained through shadow/light slot ancestry. Corrected authored-host field selection, retained native dialog visibility, checked actual title references and separately confirmed Chromium native AX name."
+    },
+    {
+      "run": "en-gallery-presentation-focus-20261002-02",
+      "status": "passed",
+      "passes": 3,
+      "boundary": "Focused corrected subset only; superseded by the full33-case final matrix."
+    }
+  ],
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/gallery-presentation-20261002",
+  "limits": [
+    "47 executed copies per engine means36 gallery modules plus11 complete API modules;59 copied modules compile.",
+    "12 gallery copies still lack independent runtime journeys; exact IDs in galleryInventory.pending.",
+    "The two eager scoped color fixtures remain separately authored controls.",
+    "Fixture intentionally omits the docs stylesheet/runtime/theme setup. Application typography/reset is not inferred from standalone component paint.",
+    "Native clipboard contents and native modal AX names are checked in Chromium. Other engines verify permission-dependent copy feedback and actual modal title references, not OS prompts, native AX names or speech.",
+    "The nine new scenarios are bounded consumer journeys, not full owning matrices.",
+    "Remaining public-layer, native Firefox assertion comparison, physical/manual/Safari and separate-owner obligations stay open. Historical external CSS-authoring rerun remains retired, never passed."
+  ]
+}

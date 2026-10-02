@@ -99,7 +99,7 @@ async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<st
 	const archiveIdentity = archives.map(({ name, integrity, shasum, setup }) => ({ name, integrity, shasum, setupKey: setup.key }));
 	const identity = async () => ({ samples, archives: archiveIdentity, runtime: process.version, platform: process.platform, arch: process.arch,
 		environment: inventoryDigest(setupEnvironmentInputs(compilerEnvironment())),
-		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'apps/docs/tests/copied-gallery-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
+		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'apps/docs/tests/copied-gallery-scenarios.ts', 'apps/docs/tests/copied-presentation-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
 	const inputs = await identity();
 	const prepared = await immutableSetup({ cache: join(repository, 'node_modules/.cache/specimen-consumers'), inputs, verifyInputs: identity,
 		produce: async (output: string) => {
@@ -357,6 +357,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 			if (scenario) {
 				await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'copied-module');
 				await scenario.run(page);
+                if (['rhythm', 'theme-scopes', 'family-geometry', 'loading'].includes(id)) await testInfo.attach(`copied-${id}`, { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
 			} else if (id === 'native-navigation') {
 				const host = page.locator('en-navigation');
 				const navigation = host.getByRole('navigation', { name: 'Explore related patterns' });

@@ -136,3 +136,20 @@ test('explicit workflow appearance reaches native content despite the syntax hig
 	}
 	await original?.dispose();
 });
+
+test('sticker sheet child theme follows density without replacing its controls', async ({ page }) => {
+ await page.goto('/');
+ await expect(page.locator('en-sticker-app')).not.toHaveAttribute('data-ssr');
+ const button = page.locator('[data-en-theme="inverse"]').getByRole('button', { name: 'Primary action', exact: true });
+ const original = await button.elementHandle();
+ const height = () => button.evaluate(node => node.getBoundingClientRect().height);
+ const comfortable = await height();
+ await page.getByRole('combobox', { name: 'Density', exact: true }).selectOption('compact');
+ await expect.poll(height).toBeLessThan(comfortable);
+ await page.getByRole('combobox', { name: 'Density', exact: true }).selectOption('spacious');
+ await expect.poll(height).toBeGreaterThan(comfortable);
+ expect(await button.evaluate((node, previous) => node === previous, original)).toBe(true);
+ await page.getByRole('button', { name: 'Reset preview', exact: true }).click();
+ await expect.poll(height).toBe(comfortable);
+ await original?.dispose();
+});

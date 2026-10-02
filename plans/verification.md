@@ -362,3 +362,12 @@ all eleven complete API copies, 38 copied modules execute per pinned engine;
 types and 123 integrity checks pass. Twenty-one gallery IDs remain explicitly
 pending in the tested inventory. Existing public-layer, native Firefox comparison,
 platform/manual and separate-owner requirements remain unfinished.
+
+The [standalone presentation batch](../apps/docs/tests/README.md#standalone-presentation-and-theme-copies)
+adds nine gallery consumers and fixes missing copy-owned layout/theme delivery.
+Thirty-six of 48 gallery copies now have named journeys; all eleven complete API
+copies retain theirs.47 modules execute per engine and59 compile. The final33
+browser cases include twelve original appearance regressions; three additional
+density/identity cases pass. Fresh SSR build,
+strict types,123 integrity and66 extended Node checks pass. Twelve gallery copies,
+remaining §7.4 entries and the platform/manual/separate-owner requirements remain.

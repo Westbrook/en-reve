@@ -166,3 +166,7 @@ Local main `a4d85f16d66e3e10394a147c3809e3238bf119d3` qualifies59 copied modules
 ## Gallery consumer journeys
 
 Local main `a7ffdfa251f2d91d97d9626b568a7b48974f9cce` qualifies59 copied modules against packed declarations and38 native source consumers across three pinned engines, covering27 gallery copies and all11 complete API copies. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.
+
+## Standalone gallery presentation
+
+Local main `7604e82f729db3fc4d227fd393b7371ae6432566` qualifies59 copied modules against packed declarations and47 native source consumers across three pinned engines, covering36 gallery copies and all11 complete API copies. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.

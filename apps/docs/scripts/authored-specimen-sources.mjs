@@ -9,7 +9,7 @@ const specimenFiles = [
   'presence-activity-demo.ts', 'carousel-demo.ts', 'rich-text-demo.ts',
 ];
 const helperFiles = [
-  'change-consumption.ts', 'color-spaces-demo.ts', 'editor-color-extension.ts',
+  'change-consumption.ts', 'color-spaces-demo.ts', 'editor-color-extension.ts', 'inverse-theme.ts',
 ];
 
 /** Both docs producers assemble the same complete authored modules without evaluating them. */

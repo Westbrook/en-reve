@@ -14,12 +14,15 @@ import { treeDataExample } from './tree-data-demo.js';
 import { calendarExample } from './calendar-demo.js';
 import { contentCollectionTemplate, contentPlaceholderTemplate, emptyStateTemplate, fileCardTemplate, metadataListTemplate } from '@en-reve/primitives/templates/content.js';
 import { html, nothing, css, LitElement, type TemplateResult } from 'lit';
+import { html as staticHtml, unsafeStatic } from 'lit/static-html.js';
 import { AsyncDirective, directive } from 'lit/async-directive.js';
 import { repeat } from 'lit/directives/repeat.js';
 import { guard } from 'lit/directives/guard.js';
 import { ref } from 'lit/directives/ref.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { acceptValueChange } from './change-consumption.js';
+import { inversePreviewCSS } from './inverse-theme.js';
+import type { ThemeDensity } from '@en-reve/tokens';
 
 // example-start:navigation-sidebar
 /** Documentation-owned composition; the navigation and Drawer remain public primitives. */
@@ -192,6 +195,16 @@ import { copyTokenReference } from './token-copy.js';
 
 export function tokenSample(token: string, name: string) {
 	return html`
+		<style>
+			@layer en.docs {
+				.token-sample { display:grid;gap:var(--en-space-1);min-inline-size:0;align-content:start; }
+				.token-sample > en-swatch { inline-size:100%; }
+				.token-sample-name { font-weight:var(--en-font-label-strong-weight);margin-block-start:var(--en-space-1); }
+				.token-sample-reference { overflow-wrap:anywhere;user-select:text;font:var(--en-font-data-weight) var(--en-font-data-size)/var(--en-font-data-line-height) var(--en-font-data-family); font-style:var(--en-font-data-style); letter-spacing:var(--en-font-data-tracking); }
+				.token-sample-status { min-block-size:1lh;font-size:var(--en-font-metadata-size);line-height:var(--en-font-metadata-line-height);color:var(--en-color-text-muted); }
+				.token-sample[data-copy-state="failure"] .token-sample-status { color:var(--en-color-danger-text); }
+			}
+		</style>
 		<div class="token-sample" data-token-sample role="group" aria-label=${name}>
 			<en-swatch token=${token} label=${`Copy ${name} CSS reference`} @click=${copyTokenReference}></en-swatch>
 			<span class="token-sample-name">${name}</span>
@@ -226,6 +239,18 @@ export function typographyExample() {
 // example-start:rhythm
 export function rhythmExample() {
 	return html`
+		<style>
+			@layer en.docs {
+				.radius-outer { padding:var(--en-space-3);border:var(--en-border-width) solid var(--en-color-accent-border);border-radius:var(--en-radius-container);background:var(--en-color-accent-subtle); }
+				.radius-inner { padding:var(--en-space-4);border:var(--en-border-width) solid var(--en-color-line);border-radius:max(0px,calc(var(--en-radius-container) - var(--en-space-3)));background:var(--en-color-surface); }
+				.radius-inner span { font-weight:var(--en-font-label-strong-weight); }
+				.radius-inner p { font-size:var(--en-font-ui-size);margin-block-start:var(--en-space-2);color:var(--en-color-text-muted); }
+				.spacing-ruler { display:flex;align-items:end;gap:var(--en-space-3);flex-wrap:wrap; }
+				.spacing-ruler>div { display:flex;align-items:center;flex-direction:column;gap:var(--en-space-1); }
+				.spacing-ruler i { display:block;block-size:var(--en-space-4);background:var(--en-color-action);border-radius:var(--en-radius-control); }
+				.spacing-ruler small { color:var(--en-color-text-muted);font-size:var(--en-font-metadata-size); }
+			}
+		</style>
 		<div class="radius-outer">
 			<div class="radius-inner">
 				<span>Related, not identical</span>
@@ -1366,6 +1391,13 @@ export function cardExample() {
 // example-start:identity
 export function identityExample() {
 	return html`
+		<style>
+			@layer en.docs {
+				.specimen-row { display:flex;align-items:center;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap; }
+				.specimen-row>en-icon { flex:none; }
+				.icon-row { display:flex;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap;align-items:center; }
+			}
+		</style>
 		<div class="specimen-row">
 			<en-avatar name="Ada Lovelace" size="small"></en-avatar>
 			<en-avatar name="Mira Chen"></en-avatar>
@@ -1401,6 +1433,14 @@ export function messagesExample() {
 // example-start:loading
 export function loadingExample() {
 	return html`
+		<style>
+			@layer en.docs {
+				.specimen-row { display:flex;align-items:center;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap; }
+				.specimen-row>en-icon { flex:none; }
+				.loading-row { display:grid;grid-template-columns:var(--en-size-avatar) 1fr;gap:var(--en-space-3);align-items:center; }
+				.loading-row>div { display:flex;flex-direction:column;gap:var(--en-space-2); }
+			}
+		</style>
 		<en-progress-bar label="Export progress" value="64" max="100"></en-progress-bar>
 		<div class="specimen-row">
 			<en-spinner label="Preparing preview"></en-spinner>
@@ -1582,8 +1622,18 @@ export function tooltipWarmupExample() {
 // example-end:tooltip-warmup
 
 // example-start:theme-scopes
-export function themeScopesExample() {
+/** Only library-generated theme CSS enters the static style template, never user markup. */
+export function themeScopesExample({ density = 'comfortable' }: { density?: ThemeDensity } = {}) {
 	return html`
+		${staticHtml`<style>${unsafeStatic(inversePreviewCSS(density))}</style>`}
+		<style>
+			@layer en.docs {
+				.scope-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,calc(var(--en-layout-panel-preferred)*1.5)),1fr));gap:var(--en-space-4); }
+				.scope-sample { padding:var(--en-space-panel);border-radius:var(--en-radius-container);background:var(--en-color-canvas);color:var(--en-color-text);border:var(--en-border-width) solid var(--en-color-line); }
+				.scope-caption { display:block;font-size:var(--en-font-metadata-size);margin-block-end:var(--en-space-4);font-weight:var(--en-font-label-strong-weight); }
+				.scope-sample en-card p { margin-block-end:var(--en-space-4); }
+			}
+		</style>
 		<div class="scope-grid">
 			<div class="scope-sample">
 				<span class="scope-caption">Page theme</span>
@@ -1618,6 +1668,13 @@ export function localOverrideExample() {
 // example-start:family-geometry
 export function familyGeometryExample() {
 	return html`
+		<style>
+			@layer en.docs {
+				.geometry-scope > p { margin-block-end:var(--en-space-3);font-weight:var(--en-font-label-strong-weight); }
+				.geometry-controls { display:flex;align-items:end;flex-wrap:wrap;gap:var(--en-space-fields); }
+				.geometry-controls > :not(en-button) { flex:1 1 10rem;min-inline-size:0; }
+			}
+		</style>
 		<p>Both rows use the default medium size. The second row gives actions more inline space, tightens field padding and reduces the segmented frame inset.</p>
 		${['Shared defaults', 'Scoped family geometry'].map((label, index) => html`
 			<div class="geometry-scope" style=${index ? '--en-button-inline-padding:var(--en-space-5);--en-input-inline-padding:var(--en-space-2);--en-segmented-control-frame-inset:var(--en-space-0-5)' : ''}>
@@ -1764,6 +1821,15 @@ export function focusMotionExample() {
 		});
 	};
 	return html`
+		<style>
+            @layer en.docs {
+                .focus-motion-example, .focus-motion-sample { display:grid; gap:var(--en-space-4); min-inline-size:0; }
+                .focus-motion-example [data-focus-action-status] { min-block-size:1lh; }
+                .focus-motion-sample + .focus-motion-sample { padding-block-start:var(--en-space-5); border-block-start:var(--en-border-width) solid var(--en-color-line); }
+                .focus-motion-controls { display:flex; align-items:end; flex-wrap:wrap; gap:var(--en-space-fields); }
+                .focus-motion-controls > :not(en-button) { flex:1 1 10rem; min-inline-size:0; }
+            }
+        </style>
 		<div class="focus-motion-example">
 			<p>Tab through both rows, including the number field’s step buttons and the searchable project picker. The complete focus outline appears immediately. The second row adds an input halo and field accent.</p>
 			${[
@@ -1806,6 +1872,16 @@ export function popupMotionExample() {
 		{ id: 'motion', label: 'Scoped motion recipe', style: '--en-duration-enter:180ms;--en-duration-exit:120ms;--en-motion-surface-offset:4px;--en-motion-surface-scale:.98' },
 	];
 	return html`
+		<style>
+			@layer en.docs {
+				.specimen-row { display:flex;align-items:center;gap:var(--en-space-actions, var(--en-space-1-5));flex-wrap:wrap; }
+				.specimen-row>en-icon { flex:none; }
+				.scope-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,calc(var(--en-layout-panel-preferred)*1.5)),1fr));gap:var(--en-space-4); }
+				.scope-sample { padding:var(--en-space-panel);border-radius:var(--en-radius-container);background:var(--en-color-canvas);color:var(--en-color-text);border:var(--en-border-width) solid var(--en-color-line); }
+				.scope-caption { display:block;font-size:var(--en-font-metadata-size);margin-block-end:var(--en-space-4);font-weight:var(--en-font-label-strong-weight); }
+				.scope-sample en-card p { margin-block-end:var(--en-space-4); }
+			}
+		</style>
 		<en-stack style="--en-stack-gap:var(--en-space-4)">
 			<p>Compare opening and closing the same controls. Each side keeps its own entered text and selection. Try Escape, then reopen immediately; focus and accepted state should settle without waiting for the visual effect.</p>
 			<div class="scope-grid">
@@ -1855,7 +1931,7 @@ export interface Specimen {
 	id: string;
 	title: string;
 	tags: string;
-	render(): TemplateResult;
+	render(options?: { density: ThemeDensity }): TemplateResult;
 	interactive: boolean;
 	wide: boolean;
 }
