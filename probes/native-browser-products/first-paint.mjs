@@ -14,7 +14,7 @@ const root=resolve(import.meta.dirname,'../..'),output=process.env.EN_EXECUTION_
 assert.equal(process.platform,'darwin');assert(output?.startsWith('/'));await mkdir(output);
 const bundle=await realpath(process.env.EN_FIREFOX_APP??'/Applications/Firefox.app');
 const metadata=path=>JSON.parse(execFileSync('plutil',['-convert','json','-o','-',join(path,'Contents/Info.plist')],{encoding:'utf8'}));
-const receipt={schemaVersion:1,status:'running',sourceBase:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),startedAt:new Date().toISOString(),cases:[],host:{version:execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim(),build:execFileSync('sw_vers',['-buildVersion'],{encoding:'utf8'}).trim(),arch:process.arch},scope:'Actual Firefox headless production first-paint/hydration journeys. Existing qualified build reused, no new build/install/types. DOM identity, native editing and computed accessible name/role targets; not computed descriptions/full AX, speech, IME or physical-device acceptance.'};
+const receipt={schemaVersion:1,status:'running',sourceBase:execFileSync('git',['rev-parse','HEAD'],{cwd:root,encoding:'utf8'}).trim(),startedAt:new Date().toISOString(),cases:[],host:{version:execFileSync('sw_vers',['-productVersion'],{encoding:'utf8'}).trim(),build:execFileSync('sw_vers',['-buildVersion'],{encoding:'utf8'}).trim(),arch:process.arch},scope:'Actual Firefox headless production first-paint/hydration journeys. Existing qualified build reused, no new build/install/types. Browser-observed HTTP/redirect controls and no-JS header links, DOM identity, native editing and computed accessible name/role targets; not computed descriptions/full AX, speech, IME or physical-device acceptance.'};
 const save=()=>writeFile(join(output,'result.json'),JSON.stringify(receipt,null,2)+'\n');
 const children=[];
 function child(file,args,name){const p=spawn(file,args,{stdio:['ignore','pipe','pipe']});let log='',error;p.stdout.on('data',x=>log+=x);p.stderr.on('data',x=>log+=x);p.once('error',e=>error=e);const closed=new Promise(r=>p.once('close',(code,signal)=>r({code,signal})));const item={p,closed,name,log:()=>log,error:()=>error};children.push(item);return item;}
@@ -48,23 +48,43 @@ async function authoredReady() {
  (receipt.cases.at(-1).readinessCheckpoints??=[]).push({scene,...snapshot});
 }
 async function hydrated(){await authoredReady();}
+async function documentResponse(path){
+ const start=browser.responses.length,navigation=await browser.navigate(base+path);
+ const response=await until(()=>browser.responses.slice(start).findLast(r=>r.navigation===navigation.navigation&&r.url===navigation.url&&r.mimeType.split(';')[0]==='text/html'),'Browser document response '+path);
+ return {requestedPath:path,finalPath:new URL(navigation.url).pathname,status:response.status,redirectCount:response.redirectCount,navigation:response.navigation,request:response.request};
+}
+async function headerLink(){
+ const root='document.querySelector(".site-header")';
+ const nav=await browser.locateAcrossRoots('navigation','Documentation pages',root);assert.equal(nav.length,1);
+ const links=await browser.locateAcrossRoots('link','Workflows',root);assert.equal(links.length,1);
+ await checkNode(links[0],'e=>e.getAttribute("href")','/workflows');return {name:'Workflows',href:'/workflows'};
+}
+
 async function phase(label){receipt.cases.at(-1).phase=label;console.log('PHASE '+label);await save();}
 async function early(id){scene=id;let release;const promise=new Promise(r=>release=r);gate={promise,release,requests:[]};const path=routes.find(r=>r[0]===id)[2];await phase('navigate without load wait');await browser.navigate(base+path,'none');await phase('inspect SSR while modules held');await check('Boolean(document.querySelector("en-workflows-app")?.hasAttribute("data-ssr"))',true);await phase('SSR found; inspect isolated scene');await isolated(id);await phase('wait for held module request');await until(()=>gate.requests.length>0,'Module requests held');await check('Boolean(customElements.get("en-workflows-app"))',false);await phase('early controls ready');}
 async function enhance(){const current=gate;assert(current.requests.length>0);receipt.cases.at(-1).heldModulePaths=[...new Set(current.requests)];gate=null;current.release();await hydrated();for(const target of receipt.cases.at(-1).earlyTargets??[]){const node=await named(target.role,target.name);assert.equal(node.sharedId,target.sharedId,'Hydrated accessible target must be the original native node');}receipt.cases.at(-1).hydratedNamesAndIdentityVerified=true;}
 async function selection(node,start,end){await browser.call(node,`e=>{e.setSelectionRange(${start},${end},'backward');return true;}`);}
 async function retained(node,value,start,end){await checkNode(node,'e=>({connected:e.isConnected,value:e.value,focused:e.getRootNode().activeElement===e,start:e.selectionStart,end:e.selectionEnd,direction:e.selectionDirection})',{connected:true,value,focused:true,start,end,direction:'backward'});}
 const cases=[
+ ['network-controls','Browser response evidence detects actual 404 and redirected documents',false,async()=>{
+  const missing=await documentResponse('/__probe__/missing.html');assert.equal(missing.status,404);assert.equal(missing.redirectCount,0);assert.equal(missing.finalPath,'/__probe__/missing.html');
+  const redirected=await documentResponse('/__probe__/redirect.html');assert.equal(redirected.status,200);assert.equal(redirected.redirectCount,1);assert.equal(redirected.finalPath,'/__probe__/script-state.html');
+  receipt.cases.at(-1).responseControls={missing,redirected};
+ }],
  ['no-js-documents','All six direct/legacy SSR documents remain isolated with scripting disabled',false,async()=>{
   const result=receipt.cases.at(-1);result.documents=[];
+  const home=await documentResponse('/');assert.equal(home.status,200);assert.equal(home.redirectCount,0);result.home={...home,headerLink:await headerLink()};
   for(const [id,label,path] of routes)for(const suffix of ['', '.html']){
-   scene=id;await browser.navigate(base+path+suffix);await isolated(id);await check('document.querySelector("en-workflows-app").hasAttribute("data-ssr")',true);await check('Boolean(customElements.get("en-workflows-app"))',false);await check('location.pathname',path+suffix);
-   const nav=await browser.locateAcrossRoots('navigation','Workflow sections','document.querySelector("en-navigation.section-nav")');assert.equal(nav.length,1);
+   scene=id;const response=await documentResponse(path+suffix);assert.equal(response.status,200);assert.equal(response.redirectCount,0);await isolated(id);await check(`document.querySelector('#${id}.workflow-section').checkVisibility()`,true);await check('document.querySelector("en-workflows-app").hasAttribute("data-ssr")',true);await check('Boolean(customElements.get("en-workflows-app"))',false);await check('location.pathname',path+suffix);
+   const nav=await browser.locateAcrossRoots('navigation','Workflow sections','document.querySelector("en-navigation.section-nav")');assert.equal(nav.length,1);await checkNode(nav[0],'e=>e.checkVisibility()',true);
    for(const [,destination,destinationPath] of routes){const links=await browser.locateAcrossRoots('link',destination,'document.querySelector("en-navigation.section-nav")');assert.equal(links.length,1);assert.equal(await browser.call(links[0],'e=>new URL(e.href).pathname'),destinationPath);if(destination===label)await checkNode(links[0],'e=>e.getAttribute("aria-current")','page');}
    if(id==='sso'){await checkNode(await named('textbox','Workspace'),'e=>e.value','');await fill('textbox','Work email','before@example.test');await check('Boolean(customElements.get("en-text-field"))',false);}
    if(id==='settings')await checkNode(await named('spinbutton','Layer opacity Exact value'),'e=>e.value','64');
    if(id==='chat')await checkNode(await named('textbox','Message'),'e=>e.value','Make the cover image a little stronger.\nKeep the text easy to read.');
    if(id==='selection')await checkNode(await named('combobox','Project'),'e=>e.value','Studio North · Autumn campaign');
-   result.documents.push({id,path:path+suffix,isolated:true,unhydrated:true});
+   const title={sso:'SSO workflow',settings:'design settings workflow',chat:'chat workflow'}[id];
+   if(title){const buttons=await browser.locateAcrossRoots('button','Reset '+title,`document.querySelector('#${id}')`);assert.equal(buttons.length,1);await check(`document.querySelectorAll('pre[aria-label="${title} template source"]').length`,1);}
+   result.documents.push({id,path:path+suffix,isolated:true,visible:true,unhydrated:true,response,headerLink:await headerLink(),...(title?{resetName:'Reset '+title,templateSource:title+' template source'}:{})});
   }
  }],
  ['sso-hydration','Early account drafts preserve native identity, focus and selection and submit exact values',true,async()=>{
@@ -87,13 +107,15 @@ try{await withMachineOwner(()=>withExecutionOwner(root,async()=>{
  server=createServer(async(req,res)=>{try{
   let path=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   if(path==='/__probe__/script-state.html'){res.setHeader('Content-Type','text/html');res.end('<!doctype html><title>Scripting canary</title><script>document.documentElement.dataset.inlineScript="ran"</script><script src="/__probe__/external.js"></script><noscript>Scripting disabled</noscript>');return;}
+  if(path==='/__probe__/missing.html'){res.writeHead(404,{'Content-Type':'text/html'}).end('<!doctype html><title>Missing document control</title><p>Expected 404 control.</p>');return;}
+  if(path==='/__probe__/redirect.html'){res.writeHead(302,{Location:'/__probe__/script-state.html'}).end();return;}
   if(path==='/__probe__/external.js'){res.setHeader('Content-Type','text/javascript');res.end('document.documentElement.dataset.externalScript="ran"');return;}
   if(path==='/')path='/index.html';if(!extname(path))path+='.html';const file=resolve(root,'dist','.'+path);assert(file.startsWith(join(root,'dist')+'/'));const real=await realpath(file);assert(real.startsWith(join(root,'dist')+'/'));assert((await stat(real)).isFile());
   if(gate&&extname(file)==='.js'){gate.requests.push(path);await gate.promise;}
   res.setHeader('Content-Type',({'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.woff2':'font/woff2','.png':'image/png','.jpg':'image/jpeg'})[extname(file)]??'application/octet-stream');res.end(await readFile(real));
  }catch{if(!res.destroyed)res.writeHead(404).end();}});await new Promise(r=>server.listen(0,'127.0.0.1',r));base='http://127.0.0.1:'+server.address().port;
  for(const [id,title,javaScriptEnabled,run] of cases){const result={id,title,javaScriptEnabled,status:'running'};receipt.cases.push(result);await save();const caseOutput=join(output,id);await mkdir(caseOutput);console.log('START '+id);
-  try{browser=await firefox({bundle,output:caseOutput,metadata,child:(file,args,name)=>child(file,args,id+'-'+name),until,stop,javaScriptEnabled});assert.equal(browser.capabilities.browserVersion,app.CFBundleShortVersionString);result.capabilities=browser.capabilities;await browser.setViewport({width:1280,height:900});
+  try{browser=await firefox({bundle,output:caseOutput,metadata,child:(file,args,name)=>child(file,args,id+'-'+name),until,stop,javaScriptEnabled,captureResponses:!javaScriptEnabled});assert.equal(browser.capabilities.browserVersion,app.CFBundleShortVersionString);result.capabilities=browser.capabilities;await browser.setViewport({width:1280,height:900});
    if(javaScriptEnabled)await browser.addPreload('()=>{window.probeErrors=[];addEventListener("error",e=>probeErrors.push(e.message));addEventListener("unhandledrejection",e=>probeErrors.push(String(e.reason)));const original=console.error;console.error=(...args)=>{probeErrors.push(args.map(String).join(" "));original.apply(console,args);};}');
    await browser.navigate(base+'/__probe__/script-state.html');result.scriptCanary=await browser.evaluate('({inline:document.documentElement.getAttribute("data-inline-script"),external:document.documentElement.getAttribute("data-external-script")})');assert.deepEqual(result.scriptCanary,javaScriptEnabled?{inline:'ran',external:'ran'}:{inline:null,external:null});
    await run();if(javaScriptEnabled)assert.deepEqual(await browser.evaluate('probeErrors'),[]);result.status='passed';

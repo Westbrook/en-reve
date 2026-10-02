@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "a22b13b69b19a08df68119e3e7b65edb7c769295",
-  "exportedAt": "2026-10-02T07:06:24.053824+00:00",
+  "sourceCommit": "dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d",
+  "exportedAt": "2026-10-02T07:20:32.932503+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5439,
-  "includedBytes": 148896741,
-  "qualification": "Packed native ESM21 cases, packed consumer53 cases with1 Firefox native-registry skip,13 pathway controls and118 tooling checks pass. Original selected HTML/SSR delivery requirements qualified; actual product/OS/device/manual obligations remain. Historical external CSS rerun is retired.",
-  "latestUpdate": ".source-export/updates/consumer-delivery-20261002.json",
+  "includedFiles": 5441,
+  "includedBytes": 149901083,
+  "qualification": "Actual Firefox156.0.1/157.0:178 fresh cases pass across12 first-paint/network,46 workflow and120 packed consumer cases. HTTP status/redirect controls and no-JS document navigation qualified;119 tooling checks pass. Product/OS/device/manual boundaries remain.",
+  "latestUpdate": ".source-export/updates/firefox-documents-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

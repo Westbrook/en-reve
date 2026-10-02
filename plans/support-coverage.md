@@ -487,3 +487,29 @@ exposed an incorrect test expectation for unupgraded form submission; it was
 corrected to the documented SSR contract without changing product code. The final
 run includes the newly selected pathway regression. No failed attempt is counted
 as a pass, and the retired historical CSS-authoring rerun remains retired.
+
+## Native Firefox no-JS document responses
+
+The [document response receipt](../probes/native-browser-products/verification-firefox-documents-20261002.json)
+records **178 fresh passes** across actual Firefox156.0.1 and157.0:12 first-paint/
+network-control cases,46 production workflow cases and120 packed consumer cases.
+Both product distributions and source/build inputs retain matching before/after
+identities. Requalifying all three runners covers the shared transport change;
+these counts are fresh acquisitions, not transferred historical passes.
+
+The transport optionally subscribes to standard
+[`network.responseCompleted`](https://www.w3.org/TR/webdriver-bidi/#event-network-responseCompleted)
+events for its own browser context. Checks match the document's navigation ID and
+final URL, recording HTTP status and redirect count without headers, cookies or
+response bodies. An actual404 control and an actual302→200 redirect control
+establish that the journal distinguishes failure and redirects. Each release then
+verifies the homepage and all12 direct/legacy workflow URLs return200 without a
+redirect, with scripting disabled and the documentation-header Workflows link
+present. Visible isolated scenes, named native navigation and the original
+primary-workflow reset/source controls are checked. Four early-draft hydration
+journeys still retain input identity, focus/selection and accepted form state.
+
+These checks serve unchanged qualified production assets through an owned local
+server; they are not cloud-edge routing or deployment HTTP certification. Native
+full AX/computed descriptions, speech, incomplete contrast findings, remaining
+exact assertion differences and the original product/OS/device/manual scope remain.

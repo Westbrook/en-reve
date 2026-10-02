@@ -3,7 +3,7 @@ import {mkdir,realpath,writeFile} from 'node:fs/promises';
 import {join} from 'node:path';
 
 // Shared actual-Firefox transport; callers own output, processes and execution leases.
-export async function firefox({bundle,output,metadata,child,until,stop,javaScriptEnabled=true}){
+export async function firefox({bundle,output,metadata,child,until,stop,javaScriptEnabled=true,captureResponses=false}){
  assert.equal(metadata(bundle).CFBundleIdentifier,'org.mozilla.firefox','Expected an official Firefox application');
  const executable=await realpath(join(bundle,'Contents/MacOS/firefox'));
  assert(executable.startsWith(bundle+'/'),'Firefox executable must stay inside its distribution');
@@ -13,13 +13,22 @@ export async function firefox({bundle,output,metadata,child,until,stop,javaScrip
  const browser=child(executable,['--headless','--no-remote','--profile',profile,'--remote-debugging-port','0'],'firefox');
  const endpoint=await until(()=>browser.log().match(/WebDriver BiDi listening on (ws:\/\/127\.0\.0\.1:\d+)/)?.[1],'Firefox BiDi');
  const ws=new WebSocket(endpoint+'/session');await new Promise((res,rej)=>{ws.addEventListener('open',res,{once:true});ws.addEventListener('error',rej,{once:true});});
- let id=0;const pending=new Map();
- ws.addEventListener('message',({data})=>{const message=JSON.parse(data);const item=pending.get(message.id);if(item){pending.delete(message.id);clearTimeout(item.timer);message.type==='error'?item.reject(Error(JSON.stringify(message))):item.resolve(message.result);}});
+ assert.equal(typeof captureResponses,'boolean');
+ let id=0;const pending=new Map(),responses=[];
+ ws.addEventListener('message',({data})=>{const message=JSON.parse(data);
+  // Retain browser-observed document responses, not server-side status guesses.
+  // No headers/cookies/bodies are recorded; this is an opt-in local fixture journal.
+  if(captureResponses&&message.type==='event'&&message.method==='network.responseCompleted'){
+   const {context,navigation,redirectCount,request,response}=message.params;
+   responses.push({context,navigation,redirectCount,request:request.request,url:response.url,status:response.status,mimeType:response.mimeType,fromCache:response.fromCache});
+  }
+  const item=pending.get(message.id);if(item){pending.delete(message.id);clearTimeout(item.timer);message.type==='error'?item.reject(Error(JSON.stringify(message))):item.resolve(message.result);}});
  ws.addEventListener('close',()=>{for(const item of pending.values()){clearTimeout(item.timer);item.reject(Error('BiDi connection closed'));}pending.clear();});
  function send(method,params={}){if(ws.readyState!==WebSocket.OPEN)return Promise.reject(Error('BiDi connection closed'));return new Promise((resolve,reject)=>{const key=++id;const timer=setTimeout(()=>{pending.delete(key);reject(Error('BiDi timed out: '+method));},20000);pending.set(key,{resolve,reject,timer});ws.send(JSON.stringify({id:key,method,params}));});}
  const session=await send('session.new',{capabilities:{alwaysMatch:{browserName:'firefox'}}});
  const {context}=await send('browsingContext.create',{type:'tab'});
- return {capabilities:session.capabilities,headless:true,
+ if(captureResponses)await send('session.subscribe',{events:['network.responseCompleted'],contexts:[context]});
+ return {capabilities:session.capabilities,headless:true,responses,
   navigate:(url,wait='complete')=>send('browsingContext.navigate',{context,url,wait}),
   traverseHistory:delta=>send('browsingContext.traverseHistory',{context,delta}),
   evaluate:async expression=>{const result=await send('script.evaluate',{expression:javaScriptEnabled?`(async()=>JSON.stringify(await (${expression})))()`:`JSON.stringify((${expression}))`,target:{context},awaitPromise:javaScriptEnabled});if(result.type!=='success')throw Error(JSON.stringify(result));return result.result.value===undefined?undefined:JSON.parse(result.result.value);},

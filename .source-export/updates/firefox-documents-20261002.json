@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-02T07:20:32.932503+00:00",
+  "sourceCommit": "dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d",
+  "previousSourceMain": "a22b13b69b19a08df68119e3e7b65edb7c769295",
+  "taskPaths": [
+    "plans/support-coverage.json",
+    "plans/support-coverage.md",
+    "probes/native-browser-products/README.md",
+    "probes/native-browser-products/firefox.mjs",
+    "probes/native-browser-products/first-paint.mjs",
+    "probes/native-browser-products/verification-firefox-documents-20261002.json",
+    "tooling/testing/support-ledger.test.mjs"
+  ],
+  "qualification": "Actual Firefox156.0.1/157.0:178 fresh cases pass across12 first-paint/network,46 workflow and120 packed consumer cases. HTTP status/redirect controls and no-JS document navigation qualified;119 tooling checks pass. Product/OS/device/manual boundaries remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

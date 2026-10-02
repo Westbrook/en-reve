@@ -130,3 +130,7 @@ Local main `db8d826c013633251f30e8ba846d3152a654ca20` qualifies46 fresh workflow
 ## Packed native ESM and SSR delivery qualification
 
 Local main `a22b13b69b19a08df68119e3e7b65edb7c769295` qualifies21 native ESM cases and53 packed consumer cases, with1 native-registry capability skip. See `plans/support-coverage.md` and `probes/consumer-contracts/verification-20261002.json`. Original platform/manual scope remains.
+
+## Native Firefox document response qualification
+
+Local main `dc53b83b41e912cbf3a88aeaff527c1f74e2fa2d` qualifies178 fresh native Firefox cases and119 tooling checks. Browser-observed HTTP/redirect and no-JS navigation controls added. See `plans/support-coverage.md` and `probes/native-browser-products/verification-firefox-documents-20261002.json`. Physical/manual and other-product scope remain.

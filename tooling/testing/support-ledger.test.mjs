@@ -395,7 +395,7 @@ test('native Firefox accessibility coverage retains exact axe scope and separate
 
 test('Firefox history receipt binds native traversal and all preview-context branches',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-history-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':path==='probes/native-browser-products/workflows.mjs'?'7a089e8e368c0dc6ef300150e5c9635ba5788ab7079db874cbea8247ce3eaff8':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/first-paint.mjs'?'570516b20c32195987cec9abe43aa69800ac92d4b6b27da42544fb7a53a8530a':path==='probes/native-browser-products/workflows.mjs'?'7a089e8e368c0dc6ef300150e5c9635ba5788ab7079db874cbea8247ce3eaff8':(path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.equal(r.historyProtocol,'browsingContext.traverseHistory');assert.deepEqual(r.stats,{passed:176,failed:0,planned:176});
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
   const run=r.runs.workflows[label];assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);assert.deepEqual(run.stats,{passed:23,failed:0,planned:23});assert(run.cases.every(c=>c.status==='passed'&&c.capabilities.browserVersion===version));
@@ -416,7 +416,7 @@ test('Firefox history transport freshly requalifies first-paint and all consumer
 
 test('Firefox readiness receipt binds authored registration and validation relationships',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-readiness-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'0cbe9c0170813492259646d4ca8fd2a1e5bb040819d97591f49ef5bd2e16d1d3':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/workflows.mjs'?'0cbe9c0170813492259646d4ca8fd2a1e5bb040819d97591f49ef5bd2e16d1d3':(path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await read(path)).digest('hex'))),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:56,failed:0,planned:56});
  const prior=await json(r.previousReceipt);assert.equal(r.consumerEvidenceReuse.passes,120);for(const p of ['probes/native-browser-products/firefox.mjs','probes/native-browser-products/run.mjs'])assert.equal(r.inputs[p],prior.inputs[p]);
  for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
@@ -436,7 +436,7 @@ test('Firefox readiness receipt binds authored registration and validation relat
 
 test('Firefox interaction evidence binds pending states, focus and exact isolation names',async()=>{
  const r=await json(ledger.evidence.find(e=>e.id==='firefox-interactions-20261002').path);
- for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal((path==='probes/native-browser-products/firefox.mjs'?'164508153317d02107d9671da9b65ed2a608c19bab5dbae0f07af5f56ca8d917':path==='probes/native-browser-products/first-paint.mjs'?'5854ebdd9a185bb44af6ceee4b83897adf1063bf558eae98d66b59dbf30e6ea1':createHash('sha256').update(await read(path)).digest('hex')),digest,path);
  assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:46,failed:0,planned:46});
  const prior=await json(r.previousReceipt);for(const [p,digest] of Object.entries(r.inputs))if(!p.endsWith('/workflows.mjs'))assert.equal(digest,prior.inputs[p]);assert.equal(r.unchangedEvidenceReuse.firstPaint.passes,10);assert.equal(r.unchangedEvidenceReuse.consumers.passes,120);
  const flags={'settings-snapshot':'cancelFocusAndDirtyStateVerified','settings-incoming':'unrelatedChoicesPreserved','chat-safe-preview':'pendingCardAndInvalidApplyVerified','chat-stale':'draftEstablishedBeforeApply','chat-cancel':'postResetEditingAndCancelFocusVerified'};
@@ -472,4 +472,23 @@ test('packed delivery qualification binds native module graphs and real SSR fail
  const requests=receipt.consumer.ssr.requestIsolation;assert.equal(requests.callerRegistryUntouched,true);assert.equal(requests.distinctHTML,true);assert.equal(new Set(requests.htmlSHA256).size,2);
  assert.equal(receipt.consumer.cases.length,54);const skips=receipt.consumer.cases.filter(c=>c.status==='skipped');assert.equal(skips.length,1);assert.equal(skips[0].project,'firefox');assert.match(skips[0].name,/native only/);
  assert.match(receipt.limitations.join(' '),/ElementInternals/);
+});
+
+
+test('native Firefox document evidence detects response failures and requalifies shared transport',async()=>{
+ const r=await json(ledger.evidence.find(e=>e.id==='firefox-documents-20261002').path);
+ for(const [path,digest] of Object.entries(r.inputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ assert.equal(r.previousReceiptSHA256,createHash('sha256').update(await read(r.previousReceipt)).digest('hex'));assert.deepEqual(r.stats,{passed:178,failed:0,planned:178});assert.equal(r.networkProtocol,'network.responseCompleted');
+ for(const [label,version] of [['preceding','156.0.1'],['current','157.0']]){
+  for(const [lane,count] of [['first-paint',6],['workflows',23],['consumers',60]]){
+   const run=r.runs[lane][label];assert.equal(run.status,'passed');assert.deepEqual(run.stats,{passed:count,failed:0,planned:count});assert(run.cases.every(c=>c.status==='passed'));
+   if(lane==='consumers'){assert.equal(run.products[0].version,version);assert.equal(run.products[0].unchanged,true);}else{assert.equal(run.product.version,version);assert.equal(run.identityBefore,run.identityAfter);}
+  }
+  const run=r.runs['first-paint'][label],control=run.cases.find(c=>c.id==='network-controls'),documents=run.cases.find(c=>c.id==='no-js-documents');
+  assert.equal(control.responseControls.missing.status,404);assert.equal(control.responseControls.missing.redirectCount,0);assert.equal(control.responseControls.redirected.status,200);assert.equal(control.responseControls.redirected.redirectCount,1);assert.equal(control.responseControls.redirected.finalPath,'/__probe__/script-state.html');
+  assert.equal(documents.home.status,200);assert.equal(documents.home.redirectCount,0);assert.deepEqual(documents.home.headerLink,{name:'Workflows',href:'/workflows'});assert.deepEqual(documents.scriptCanary,{inline:null,external:null});
+  assert.equal(documents.documents.length,12);assert.equal(new Set(documents.documents.map(d=>d.path)).size,12);
+  for(const document of documents.documents){assert(document.isolated&&document.visible&&document.unhydrated);assert.equal(document.response.status,200);assert.equal(document.response.redirectCount,0);assert.equal(document.response.requestedPath,document.path);assert.equal(document.response.finalPath,document.path);assert(document.response.navigation&&document.response.request);assert.deepEqual(document.headerLink,{name:'Workflows',href:'/workflows'});if(['sso','settings','chat'].includes(document.id)){assert.match(document.resetName,/^Reset /);assert.match(document.templateSource,/ template source$/);}}
+  assert(run.cases.filter(c=>c.id.endsWith('-hydration')).every(c=>c.hydratedNamesAndIdentityVerified));
+ }
 });
