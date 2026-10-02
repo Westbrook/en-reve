@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8",
-  "exportedAt": "2026-10-02T11:35:59.594955+00:00",
+  "sourceCommit": "f186cb6fb3c42d477e5f20c11f279a3bd238cd6a",
+  "exportedAt": "2026-10-02T11:46:34.610386+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5508,
-  "includedBytes": 151153487,
-  "qualification": "The final twelve gallery copies have native consumer journeys: all48 gallery copies and11 complete API copies compile and execute in three engines.24 browser cases, fresh SSR build, strict types and189 Node checks pass. Broader public-layer/platform/manual/owner requirements remain open.",
-  "latestUpdate": ".source-export/updates/gallery-navigation-20261002.json",
+  "includedFiles": 5511,
+  "includedBytes": 151163635,
+  "qualification": "Qualified static builds now publish on a separate gh-pages history after source publication. Isolated Git controls passed for initial history, repeated no-op, fast-forward update, build/source rejection and checkout preservation. Existing qualified site build remains unchanged.",
+  "latestUpdate": ".source-export/updates/gh-pages-publishing-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

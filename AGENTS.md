@@ -121,3 +121,11 @@ Use the guidance below for the area being changed; read linked contracts as need
   [docs verification](apps/docs/tests/README.md) for documentation/workflow changes.
   Keep task status and receipts in the report or relevant plans, and update this file
   when durable project conventions change.
+
+## Publication checkpoints
+
+- At each GitHub source publication, also store the qualified static site build on
+  `gh-pages` using [the build snapshot workflow](tooling/publishing/README.md).
+  Keep its history separate from source/evidence history; use normal fast-forward
+  pushes and record the build/source provenance. This does not enable GitHub Pages
+  or change the existing Sites review-publication workflow.

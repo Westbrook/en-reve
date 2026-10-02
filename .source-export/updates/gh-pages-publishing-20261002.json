@@ -1,0 +1,12 @@
+{
+  "createdAt": "2026-10-02T11:46:34.610386+00:00",
+  "sourceCommit": "f186cb6fb3c42d477e5f20c11f279a3bd238cd6a",
+  "previousSourceMain": "d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8",
+  "taskPaths": [
+    "AGENTS.md",
+    "tooling/publishing/README.md",
+    "tooling/publishing/publish-github-build.py"
+  ],
+  "qualification": "Qualified static builds now publish on a separate gh-pages history after source publication. Isolated Git controls passed for initial history, repeated no-op, fast-forward update, build/source rejection and checkout preservation. Existing qualified site build remains unchanged.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

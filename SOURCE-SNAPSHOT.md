@@ -174,3 +174,7 @@ Local main `7604e82f729db3fc4d227fd393b7371ae6432566` qualifies59 copied modules
 ## Standalone gallery navigation and content
 
 Local main `d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8` completes the displayed-copy inventory:59 modules compile against packed declarations and execute native consumer journeys across three pinned engines. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer and manual/platform/owner obligations stay open.
+
+## GitHub build snapshots
+
+Local main `f186cb6fb3c42d477e5f20c11f279a3bd238cd6a` adds the qualified gh-pages snapshot publisher and standing publication instructions. See `tooling/publishing/README.md`. Build assets stay on their own branch and never import the original source/evidence history.
