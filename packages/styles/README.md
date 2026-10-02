@@ -345,3 +345,9 @@ carousel's generic class names are not a page-wide native stylesheet contract.
 The [collection consumer guide](docs/collection-consumers.md) defines the exact
 recipe markers, responsive/focus ownership and finite-collection limits. Use
 public CSS Parts/custom properties to customize the delivered elements.
+
+The [choice and overlay consumer guide](docs/choice-overlay-consumers.md) defines
+matching native choice/tab/disclosure/card, combobox, command and dialog/drawer
+compositions. Adopt generic overlay styles before command-palette styles in both
+deliveries. Native semantics, transactions, placement, dismissal and focus remain
+explicit application responsibilities; these are not APIs into element internals.

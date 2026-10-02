@@ -74,3 +74,10 @@ qualified entries: portable table CSS and both pagination/carousel deliveries.
 144 packed cases,21 original table cases,36 Node and131 integrity checks pass.
 Inventory coverage is78/110;32 entries and platform/manual/owner obligations remain.
 See its receipt for the native Firefox scrollbar and WebKit capability boundaries.
+
+The [choice/overlay batch](../choice-overlay-recipes/README.md) adds ten stylesheet
+entries with 180 browser and 38 Node cases. Application-owned native choices,
+tabs, surfaces, editable selection, commands and responsive modals work in both
+deliveries. Palette styles follow generic overlay styles. Coverage is 88/110;
+22 entries and platform/manual/owner obligations remain. Library runtime and the
+qualified production build are unchanged.

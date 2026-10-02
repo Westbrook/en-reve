@@ -475,3 +475,25 @@ assertion comparison, physical/manual/retail and separate-owner obligations rema
 the historical external CSS-authoring rerun stays retired, never passed. Next are
 consumer-owned choice, command and overlay compositions; editor/color/collaboration
 and remaining helper/export surfaces retain their inventory rows.
+
+
+## Native choice, command and overlay consumer qualification — 2026-10-02
+
+The [packed choice/overlay consumers](../probes/choice-overlay-recipes/README.md)
+qualify ten additional entries: JS and portable CSS for selection, surfaces,
+combobox, commands and overlays. Native radios/checks, manual tabs, disclosure,
+scoped cards, filtered editable selection, menu/toolbar/palette and responsive
+modal/drawer compositions use public imports without owning elements.
+
+All 180 browser cases (30 scenarios × two deliveries × three engines) and 38
+Node controls pass without skips or retries. The narrow-palette check caught an
+example import-order defect: generic overlays must precede palette styling.
+The corrected order and application responsibilities are documented. No library
+runtime changed; all inputs and assets of the last qualified production build
+remain byte-identical. Failed attempts remain in the linked receipt.
+
+The public-entry inventory is now 88/110 qualified, with 22 pending. This is
+bounded scenario coverage; manual AT, retail/physical browser coverage, full
+SSR/hydration and separate-owner obligations remain. Next are the remaining
+editor, color, collaboration and helper compositions. Historical external
+CSS-authoring rerun remains retired, never passed.

@@ -236,10 +236,3 @@ test('collection-style recipe pathway retains isolated preparation, declarations
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/collection-style-recipes/playwright.config.ts','browser:packages/elements/src/table/tests/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:collection-style-recipes').environment.EN_COLLECTION_STYLE_RECIPES_OUT,'$RUN/fixtures/collection-style-recipes');
 });
-
-test('choice-overlay recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['choice-overlay-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:choice-overlay-recipes','browser:probes/choice-overlay-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/choice-overlay-recipes/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:choice-overlay-recipes').environment.EN_CHOICE_OVERLAY_RECIPES_OUT,'$RUN/fixtures/choice-overlay-recipes');
-});

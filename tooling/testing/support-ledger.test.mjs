@@ -675,7 +675,7 @@ test('calendar consumer receipt binds date semantics, native observations and bo
 test('collection stylesheet receipt binds native layouts, both deliveries and table compatibility',async()=>{
  const r=await json('probes/collection-style-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,36);assert.equal(r.stats.expected,144);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/collection-style-recipes/qualification-sources/8455c55b/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,48);
  assert.equal(r.tableRegression.stats.expected,21);assert.equal(r.tableRegression.stats.skipped,0);assert.equal(r.tableRegression.stats.unexpected,0);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
@@ -685,4 +685,19 @@ test('collection stylesheet receipt binds native layouts, both deliveries and ta
  const build=await json('apps/docs/tests/verification-collection-style-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
  for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
  assert.match(r.limitations.join(' '),/32 remain/);assert.match(r.limitations.join(' '),/Option\+Tab/);assert.match(r.limitations.join(' '),/native scrollport/);
+});
+
+
+test('choice and overlay receipt binds native semantics and both stylesheet deliveries',async()=>{
+ const r=await json('probes/choice-overlay-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
+ assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,38);assert.equal(r.stats.expected,180);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,60);
+ assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
+ assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
+ assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['foundations','buttons','controls','selection','surfaces','commands','overlays','combobox'].sort().map(name=>'@en-reve/styles/'+name+'.css'));
+ assert.deepEqual(r.portableParity,r.packed.portableCSS);
+ const rows=inventory.entries.filter(row=>row.receipt==='probes/choice-overlay-recipes/verification-20261002.json');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,5);
+ const build=await json(r.buildReuse.receipt);assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.distManifestSHA256,r.buildReuse.distManifestSHA256);
+ assert.match(r.limitations.join(' '),/22 remain/);assert.match(r.limitations.join(' '),/Option\+Tab/);assert.match(r.limitations.join(' '),/No owning-element runtime changed/);
 });

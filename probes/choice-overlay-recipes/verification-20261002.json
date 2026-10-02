@@ -1,0 +1,1496 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-02T15:32:39.093702+00:00",
+  "sourceBase": "8455c55b569265491cbf5dddf009757ca552befe",
+  "status": "passed",
+  "scope": "Native choice, command, editable selection and overlay compositions in both stylesheet deliveries and three engines.",
+  "sourceInputs": {
+    "probes/choice-overlay-recipes/recipes.ts": "77c41ccf43715417484b77fbf6c440990d158c7eb9686b8d5174758878f6ba71",
+    "probes/choice-overlay-recipes/recipes.html": "7c3ae0da813f113b75f9f5cb2939ec5eafed37e399442b63a09ae7cde1b4ff7d",
+    "probes/choice-overlay-recipes/recipes.spec.ts": "1e72aa02d546f227796f6d0479304b2baf26e4054faf9b4f5c870456a1151048",
+    "probes/choice-overlay-recipes/playwright.config.ts": "e2643bd03f5069ea82cdc1a62394d7cad8e98aad929e30937968b6d39da80eed",
+    "probes/choice-overlay-recipes/prepare.mjs": "ab1a8926b94e9b38c0849336bb8bb33f34dd94b17c6a64b7a04b2619b8a0d4db",
+    "probes/choice-overlay-recipes/server.mjs": "fc8f8af2c3bae20967778e7e7279dd7ed67e8cfd538fe1219e6c8b03f039b891",
+    "probes/choice-overlay-recipes/README.md": "c71f5230bc27e89f4fe1fe64eb7aa989dea275552fee60cf77cd3e2b9a63ce5f",
+    "packages/styles/src/selection.ts": "6fdf4aa9a4e19e9bc98958605e89775bb8df8361201dad946f1cc533f3511dac",
+    "packages/styles/src/surfaces.ts": "eba0a49a90d97d4c2851bdb3677c34752200bcf2bc1eb0008510e1637c3ce911",
+    "packages/styles/src/combobox.ts": "f5310e90dddfef4e1e1e99c162585f1f83f68780ceb06a621a80f053b7241358",
+    "packages/styles/src/commands.ts": "89d13275e03b1e26e6cf54f11dce4954c80bb341ebb6945ab7eb92bbf4d5dc53",
+    "packages/styles/src/overlays.ts": "0e14124302cc6829bf8dfc6d902eddea127b3dc4d7445d209e9103888032f32f",
+    "packages/styles/docs/choice-overlay-consumers.md": "948c22e1c9af14cac454a89f51d46262bbdac7b4e9aef853361c29184e9a6f20",
+    "tooling/testing/comprehensive.mjs": "b0659894da33929b826ac3512b5c6eef520ca101d92b4046cda1bd0b39a2671d",
+    "tooling/testing/comprehensive.test.mjs": "9e2815e8758d3035cd796e4960e8190ca141e22def46d837cb75eba68731f36b",
+    "tooling/testing/browser-ports.mjs": "814577f56a64fdcb166021ed1eba805645b8fe3602caece2735d9274d4e3b33f",
+    "probes/reusable-layers/inventory.json": "f262818f9f114795d8cf90960c2c588fa7960ba81a1f334a65f32992537a25b5",
+    "probes/reusable-layers/inventory.test.mjs": "39449c851507bd02d1f75e2e01af8713bdb4ef1ee653ba792d3757f5b342b9dd",
+    "package-lock.json": "6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
+    "showcases/performance/package-lock.json": "af6ac0db4cb8e97d8fbd59a20da1984044d1d91637ee0ce9b12e7d0dbad82c32"
+  },
+  "run": "/private/tmp/en-choice-overlay-recipes-20261002-04",
+  "executionSHA256": "3f7a059e895b872ff9901b149b32905de5ec2cdc9b89aa1bafd796f02a6d590c",
+  "reportSHA256": "eb0831fe4fd2dbb4ce288ec827afe6d9477026c3a7de142f091129a6dad79b79",
+  "stats": {
+    "startTime": "2026-10-02T15:30:17.760Z",
+    "duration": 48956.725,
+    "expected": 180,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "cases": [
+    {
+      "project": "chromium",
+      "title": "native choice form has named groups and successful controls without element registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 915
+    },
+    {
+      "project": "chromium",
+      "title": "segmented selection is tentative during events and rolls back a veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 378
+    },
+    {
+      "project": "chromium",
+      "title": "author writes supersede veto without an extra semantic event",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 379
+    },
+    {
+      "project": "chromium",
+      "title": "tabs use roving focus with manual activation and skip disabled tabs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 340
+    },
+    {
+      "project": "chromium",
+      "title": "tab roving direction follows RTL and native focus remains visibly styled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 107
+    },
+    {
+      "project": "chromium",
+      "title": "disclosure preserves content while exposing expanded state and native links",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 149
+    },
+    {
+      "project": "chromium",
+      "title": "card grid and stack reflow within narrow and enlarged scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 118
+    },
+    {
+      "project": "chromium",
+      "title": "choice and surface pins stay scoped to the intended application",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 111
+    },
+    {
+      "project": "chromium",
+      "title": "combobox preserves text draft and exposes same-root candidate relationships",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 124
+    },
+    {
+      "project": "chromium",
+      "title": "combobox keyboard navigation skips disabled choices and commits with native focus retained",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 130
+    },
+    {
+      "project": "chromium",
+      "title": "combobox veto keeps the open query without accepting selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 166
+    },
+    {
+      "project": "chromium",
+      "title": "combobox no-results state is named and never references a missing candidate",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 105
+    },
+    {
+      "project": "chromium",
+      "title": "native popover light dismissal updates combobox expanded state without clearing text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 161
+    },
+    {
+      "project": "chromium",
+      "title": "combobox popup follows resized RTL anchor and does not widen the page",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 242
+    },
+    {
+      "project": "chromium",
+      "title": "combobox option-family pins preserve selected and active state surfaces",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 132
+    },
+    {
+      "project": "chromium",
+      "title": "combobox disconnect and reconnect restores geometry listeners without duplicate selection events",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 104
+    },
+    {
+      "project": "chromium",
+      "title": "command toolbar skips disabled controls and follows RTL navigation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 122
+    },
+    {
+      "project": "chromium",
+      "title": "menu native keys skip disabled action and toggle checked state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 203
+    },
+    {
+      "project": "chromium",
+      "title": "menu Escape returns focus and native light dismissal repairs expanded state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 235
+    },
+    {
+      "project": "chromium",
+      "title": "command veto leaves menu state and result unchanged",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 184
+    },
+    {
+      "project": "chromium",
+      "title": "palette search commits an active result and returns native focus to its invoker",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 156
+    },
+    {
+      "project": "chromium",
+      "title": "palette active descendant tracks keyboard result and empty queries have no dangling ID",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 159
+    },
+    {
+      "project": "chromium",
+      "title": "palette long results scroll inside a narrow short dialog and close remains reachable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "chromium",
+      "title": "menu and palette share scoped option-family paint without a second result shadow",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 219
+    },
+    {
+      "project": "chromium",
+      "title": "modal dialog exposes name description and recovers focus after Escape",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 150
+    },
+    {
+      "project": "chromium",
+      "title": "modal close veto preserves draft and native open state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 179
+    },
+    {
+      "project": "chromium",
+      "title": "dialog changes to an RTL drawer without replacing focused draft content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 171
+    },
+    {
+      "project": "chromium",
+      "title": "overlay body scroll retains header and footer access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 178
+    },
+    {
+      "project": "chromium",
+      "title": "overlay pins and reduced-motion policy affect the native modal surface",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 139
+    },
+    {
+      "project": "chromium",
+      "title": "forced colors preserves native selection and overlay boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 134
+    },
+    {
+      "project": "firefox",
+      "title": "native choice form has named groups and successful controls without element registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 894
+    },
+    {
+      "project": "firefox",
+      "title": "segmented selection is tentative during events and rolls back a veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 287
+    },
+    {
+      "project": "firefox",
+      "title": "author writes supersede veto without an extra semantic event",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 276
+    },
+    {
+      "project": "firefox",
+      "title": "tabs use roving focus with manual activation and skip disabled tabs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 231
+    },
+    {
+      "project": "firefox",
+      "title": "tab roving direction follows RTL and native focus remains visibly styled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 217
+    },
+    {
+      "project": "firefox",
+      "title": "disclosure preserves content while exposing expanded state and native links",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244
+    },
+    {
+      "project": "firefox",
+      "title": "card grid and stack reflow within narrow and enlarged scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 207
+    },
+    {
+      "project": "firefox",
+      "title": "choice and surface pins stay scoped to the intended application",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "firefox",
+      "title": "combobox preserves text draft and exposes same-root candidate relationships",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "firefox",
+      "title": "combobox keyboard navigation skips disabled choices and commits with native focus retained",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 523
+    },
+    {
+      "project": "firefox",
+      "title": "combobox veto keeps the open query without accepting selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 261
+    },
+    {
+      "project": "firefox",
+      "title": "combobox no-results state is named and never references a missing candidate",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "firefox",
+      "title": "native popover light dismissal updates combobox expanded state without clearing text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 211
+    },
+    {
+      "project": "firefox",
+      "title": "combobox popup follows resized RTL anchor and does not widen the page",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 341
+    },
+    {
+      "project": "firefox",
+      "title": "combobox option-family pins preserve selected and active state surfaces",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 211
+    },
+    {
+      "project": "firefox",
+      "title": "combobox disconnect and reconnect restores geometry listeners without duplicate selection events",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 194
+    },
+    {
+      "project": "firefox",
+      "title": "command toolbar skips disabled controls and follows RTL navigation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 206
+    },
+    {
+      "project": "firefox",
+      "title": "menu native keys skip disabled action and toggle checked state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 261
+    },
+    {
+      "project": "firefox",
+      "title": "menu Escape returns focus and native light dismissal repairs expanded state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 308
+    },
+    {
+      "project": "firefox",
+      "title": "command veto leaves menu state and result unchanged",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 673
+    },
+    {
+      "project": "firefox",
+      "title": "palette search commits an active result and returns native focus to its invoker",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 298
+    },
+    {
+      "project": "firefox",
+      "title": "palette active descendant tracks keyboard result and empty queries have no dangling ID",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 287
+    },
+    {
+      "project": "firefox",
+      "title": "palette long results scroll inside a narrow short dialog and close remains reachable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 321
+    },
+    {
+      "project": "firefox",
+      "title": "menu and palette share scoped option-family paint without a second result shadow",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 291
+    },
+    {
+      "project": "firefox",
+      "title": "modal dialog exposes name description and recovers focus after Escape",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 239
+    },
+    {
+      "project": "firefox",
+      "title": "modal close veto preserves draft and native open state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 293
+    },
+    {
+      "project": "firefox",
+      "title": "dialog changes to an RTL drawer without replacing focused draft content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 451
+    },
+    {
+      "project": "firefox",
+      "title": "overlay body scroll retains header and footer access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 291
+    },
+    {
+      "project": "firefox",
+      "title": "overlay pins and reduced-motion policy affect the native modal surface",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 315
+    },
+    {
+      "project": "firefox",
+      "title": "forced colors preserves native selection and overlay boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 650
+    },
+    {
+      "project": "webkit",
+      "title": "native choice form has named groups and successful controls without element registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 548
+    },
+    {
+      "project": "webkit",
+      "title": "segmented selection is tentative during events and rolls back a veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 246
+    },
+    {
+      "project": "webkit",
+      "title": "author writes supersede veto without an extra semantic event",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 233
+    },
+    {
+      "project": "webkit",
+      "title": "tabs use roving focus with manual activation and skip disabled tabs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232
+    },
+    {
+      "project": "webkit",
+      "title": "tab roving direction follows RTL and native focus remains visibly styled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 224
+    },
+    {
+      "project": "webkit",
+      "title": "disclosure preserves content while exposing expanded state and native links",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 274
+    },
+    {
+      "project": "webkit",
+      "title": "card grid and stack reflow within narrow and enlarged scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 214
+    },
+    {
+      "project": "webkit",
+      "title": "choice and surface pins stay scoped to the intended application",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "webkit",
+      "title": "combobox preserves text draft and exposes same-root candidate relationships",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 241
+    },
+    {
+      "project": "webkit",
+      "title": "combobox keyboard navigation skips disabled choices and commits with native focus retained",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 241
+    },
+    {
+      "project": "webkit",
+      "title": "combobox veto keeps the open query without accepting selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 294
+    },
+    {
+      "project": "webkit",
+      "title": "combobox no-results state is named and never references a missing candidate",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 237
+    },
+    {
+      "project": "webkit",
+      "title": "native popover light dismissal updates combobox expanded state without clearing text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 243
+    },
+    {
+      "project": "webkit",
+      "title": "combobox popup follows resized RTL anchor and does not widen the page",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 266
+    },
+    {
+      "project": "webkit",
+      "title": "combobox option-family pins preserve selected and active state surfaces",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "webkit",
+      "title": "combobox disconnect and reconnect restores geometry listeners without duplicate selection events",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 221
+    },
+    {
+      "project": "webkit",
+      "title": "command toolbar skips disabled controls and follows RTL navigation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 224
+    },
+    {
+      "project": "webkit",
+      "title": "menu native keys skip disabled action and toggle checked state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 285
+    },
+    {
+      "project": "webkit",
+      "title": "menu Escape returns focus and native light dismissal repairs expanded state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 296
+    },
+    {
+      "project": "webkit",
+      "title": "command veto leaves menu state and result unchanged",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 261
+    },
+    {
+      "project": "webkit",
+      "title": "palette search commits an active result and returns native focus to its invoker",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 237
+    },
+    {
+      "project": "webkit",
+      "title": "palette active descendant tracks keyboard result and empty queries have no dangling ID",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 246
+    },
+    {
+      "project": "webkit",
+      "title": "palette long results scroll inside a narrow short dialog and close remains reachable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 289
+    },
+    {
+      "project": "webkit",
+      "title": "menu and palette share scoped option-family paint without a second result shadow",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 294
+    },
+    {
+      "project": "webkit",
+      "title": "modal dialog exposes name description and recovers focus after Escape",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 256
+    },
+    {
+      "project": "webkit",
+      "title": "modal close veto preserves draft and native open state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 324
+    },
+    {
+      "project": "webkit",
+      "title": "dialog changes to an RTL drawer without replacing focused draft content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 325
+    },
+    {
+      "project": "webkit",
+      "title": "overlay body scroll retains header and footer access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 316
+    },
+    {
+      "project": "webkit",
+      "title": "overlay pins and reduced-motion policy affect the native modal surface",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 248
+    },
+    {
+      "project": "webkit",
+      "title": "forced colors preserves native selection and overlay boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 285
+    },
+    {
+      "project": "chromium",
+      "title": "native choice form has named groups and successful controls without element registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 139
+    },
+    {
+      "project": "chromium",
+      "title": "segmented selection is tentative during events and rolls back a veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 133
+    },
+    {
+      "project": "chromium",
+      "title": "author writes supersede veto without an extra semantic event",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 132
+    },
+    {
+      "project": "chromium",
+      "title": "tabs use roving focus with manual activation and skip disabled tabs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 106
+    },
+    {
+      "project": "chromium",
+      "title": "tab roving direction follows RTL and native focus remains visibly styled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 102
+    },
+    {
+      "project": "chromium",
+      "title": "disclosure preserves content while exposing expanded state and native links",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 176
+    },
+    {
+      "project": "chromium",
+      "title": "card grid and stack reflow within narrow and enlarged scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 106
+    },
+    {
+      "project": "chromium",
+      "title": "choice and surface pins stay scoped to the intended application",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 99
+    },
+    {
+      "project": "chromium",
+      "title": "combobox preserves text draft and exposes same-root candidate relationships",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 106
+    },
+    {
+      "project": "chromium",
+      "title": "combobox keyboard navigation skips disabled choices and commits with native focus retained",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 114
+    },
+    {
+      "project": "chromium",
+      "title": "combobox veto keeps the open query without accepting selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 163
+    },
+    {
+      "project": "chromium",
+      "title": "combobox no-results state is named and never references a missing candidate",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 100
+    },
+    {
+      "project": "chromium",
+      "title": "native popover light dismissal updates combobox expanded state without clearing text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 160
+    },
+    {
+      "project": "chromium",
+      "title": "combobox popup follows resized RTL anchor and does not widen the page",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 246
+    },
+    {
+      "project": "chromium",
+      "title": "combobox option-family pins preserve selected and active state surfaces",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 134
+    },
+    {
+      "project": "chromium",
+      "title": "combobox disconnect and reconnect restores geometry listeners without duplicate selection events",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 105
+    },
+    {
+      "project": "chromium",
+      "title": "command toolbar skips disabled controls and follows RTL navigation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 112
+    },
+    {
+      "project": "chromium",
+      "title": "menu native keys skip disabled action and toggle checked state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 210
+    },
+    {
+      "project": "chromium",
+      "title": "menu Escape returns focus and native light dismissal repairs expanded state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 269
+    },
+    {
+      "project": "chromium",
+      "title": "command veto leaves menu state and result unchanged",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "chromium",
+      "title": "palette search commits an active result and returns native focus to its invoker",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 179
+    },
+    {
+      "project": "chromium",
+      "title": "palette active descendant tracks keyboard result and empty queries have no dangling ID",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 187
+    },
+    {
+      "project": "chromium",
+      "title": "palette long results scroll inside a narrow short dialog and close remains reachable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 199
+    },
+    {
+      "project": "chromium",
+      "title": "menu and palette share scoped option-family paint without a second result shadow",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 204
+    },
+    {
+      "project": "chromium",
+      "title": "modal dialog exposes name description and recovers focus after Escape",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 175
+    },
+    {
+      "project": "chromium",
+      "title": "modal close veto preserves draft and native open state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 256
+    },
+    {
+      "project": "chromium",
+      "title": "dialog changes to an RTL drawer without replacing focused draft content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 212
+    },
+    {
+      "project": "chromium",
+      "title": "overlay body scroll retains header and footer access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 201
+    },
+    {
+      "project": "chromium",
+      "title": "overlay pins and reduced-motion policy affect the native modal surface",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 167
+    },
+    {
+      "project": "chromium",
+      "title": "forced colors preserves native selection and overlay boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 156
+    },
+    {
+      "project": "firefox",
+      "title": "native choice form has named groups and successful controls without element registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 393
+    },
+    {
+      "project": "firefox",
+      "title": "segmented selection is tentative during events and rolls back a veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 302
+    },
+    {
+      "project": "firefox",
+      "title": "author writes supersede veto without an extra semantic event",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 260
+    },
+    {
+      "project": "firefox",
+      "title": "tabs use roving focus with manual activation and skip disabled tabs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 259
+    },
+    {
+      "project": "firefox",
+      "title": "tab roving direction follows RTL and native focus remains visibly styled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244
+    },
+    {
+      "project": "firefox",
+      "title": "disclosure preserves content while exposing expanded state and native links",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 302
+    },
+    {
+      "project": "firefox",
+      "title": "card grid and stack reflow within narrow and enlarged scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 293
+    },
+    {
+      "project": "firefox",
+      "title": "choice and surface pins stay scoped to the intended application",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 275
+    },
+    {
+      "project": "firefox",
+      "title": "combobox preserves text draft and exposes same-root candidate relationships",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 276
+    },
+    {
+      "project": "firefox",
+      "title": "combobox keyboard navigation skips disabled choices and commits with native focus retained",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 631
+    },
+    {
+      "project": "firefox",
+      "title": "combobox veto keeps the open query without accepting selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 284
+    },
+    {
+      "project": "firefox",
+      "title": "combobox no-results state is named and never references a missing candidate",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 200
+    },
+    {
+      "project": "firefox",
+      "title": "native popover light dismissal updates combobox expanded state without clearing text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 230
+    },
+    {
+      "project": "firefox",
+      "title": "combobox popup follows resized RTL anchor and does not widen the page",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 347
+    },
+    {
+      "project": "firefox",
+      "title": "combobox option-family pins preserve selected and active state surfaces",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 212
+    },
+    {
+      "project": "firefox",
+      "title": "combobox disconnect and reconnect restores geometry listeners without duplicate selection events",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 218
+    },
+    {
+      "project": "firefox",
+      "title": "command toolbar skips disabled controls and follows RTL navigation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 259
+    },
+    {
+      "project": "firefox",
+      "title": "menu native keys skip disabled action and toggle checked state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 315
+    },
+    {
+      "project": "firefox",
+      "title": "menu Escape returns focus and native light dismissal repairs expanded state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 305
+    },
+    {
+      "project": "firefox",
+      "title": "command veto leaves menu state and result unchanged",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 614
+    },
+    {
+      "project": "firefox",
+      "title": "palette search commits an active result and returns native focus to its invoker",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 261
+    },
+    {
+      "project": "firefox",
+      "title": "palette active descendant tracks keyboard result and empty queries have no dangling ID",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 262
+    },
+    {
+      "project": "firefox",
+      "title": "palette long results scroll inside a narrow short dialog and close remains reachable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 321
+    },
+    {
+      "project": "firefox",
+      "title": "menu and palette share scoped option-family paint without a second result shadow",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 305
+    },
+    {
+      "project": "firefox",
+      "title": "modal dialog exposes name description and recovers focus after Escape",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 242
+    },
+    {
+      "project": "firefox",
+      "title": "modal close veto preserves draft and native open state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 303
+    },
+    {
+      "project": "firefox",
+      "title": "dialog changes to an RTL drawer without replacing focused draft content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 255
+    },
+    {
+      "project": "firefox",
+      "title": "overlay body scroll retains header and footer access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 308
+    },
+    {
+      "project": "firefox",
+      "title": "overlay pins and reduced-motion policy affect the native modal surface",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 267
+    },
+    {
+      "project": "firefox",
+      "title": "forced colors preserves native selection and overlay boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 558
+    },
+    {
+      "project": "webkit",
+      "title": "native choice form has named groups and successful controls without element registration",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 239
+    },
+    {
+      "project": "webkit",
+      "title": "segmented selection is tentative during events and rolls back a veto",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 246
+    },
+    {
+      "project": "webkit",
+      "title": "author writes supersede veto without an extra semantic event",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244
+    },
+    {
+      "project": "webkit",
+      "title": "tabs use roving focus with manual activation and skip disabled tabs",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 236
+    },
+    {
+      "project": "webkit",
+      "title": "tab roving direction follows RTL and native focus remains visibly styled",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 237
+    },
+    {
+      "project": "webkit",
+      "title": "disclosure preserves content while exposing expanded state and native links",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 293
+    },
+    {
+      "project": "webkit",
+      "title": "card grid and stack reflow within narrow and enlarged scopes",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 237
+    },
+    {
+      "project": "webkit",
+      "title": "choice and surface pins stay scoped to the intended application",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 223
+    },
+    {
+      "project": "webkit",
+      "title": "combobox preserves text draft and exposes same-root candidate relationships",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 243
+    },
+    {
+      "project": "webkit",
+      "title": "combobox keyboard navigation skips disabled choices and commits with native focus retained",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 249
+    },
+    {
+      "project": "webkit",
+      "title": "combobox veto keeps the open query without accepting selection",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 302
+    },
+    {
+      "project": "webkit",
+      "title": "combobox no-results state is named and never references a missing candidate",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 255
+    },
+    {
+      "project": "webkit",
+      "title": "native popover light dismissal updates combobox expanded state without clearing text",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 244
+    },
+    {
+      "project": "webkit",
+      "title": "combobox popup follows resized RTL anchor and does not widen the page",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 264
+    },
+    {
+      "project": "webkit",
+      "title": "combobox option-family pins preserve selected and active state surfaces",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 243
+    },
+    {
+      "project": "webkit",
+      "title": "combobox disconnect and reconnect restores geometry listeners without duplicate selection events",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 232
+    },
+    {
+      "project": "webkit",
+      "title": "command toolbar skips disabled controls and follows RTL navigation",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 236
+    },
+    {
+      "project": "webkit",
+      "title": "menu native keys skip disabled action and toggle checked state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 312
+    },
+    {
+      "project": "webkit",
+      "title": "menu Escape returns focus and native light dismissal repairs expanded state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 328
+    },
+    {
+      "project": "webkit",
+      "title": "command veto leaves menu state and result unchanged",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 273
+    },
+    {
+      "project": "webkit",
+      "title": "palette search commits an active result and returns native focus to its invoker",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 276
+    },
+    {
+      "project": "webkit",
+      "title": "palette active descendant tracks keyboard result and empty queries have no dangling ID",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 296
+    },
+    {
+      "project": "webkit",
+      "title": "palette long results scroll inside a narrow short dialog and close remains reachable",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 296
+    },
+    {
+      "project": "webkit",
+      "title": "menu and palette share scoped option-family paint without a second result shadow",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 289
+    },
+    {
+      "project": "webkit",
+      "title": "modal dialog exposes name description and recovers focus after Escape",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 269
+    },
+    {
+      "project": "webkit",
+      "title": "modal close veto preserves draft and native open state",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 331
+    },
+    {
+      "project": "webkit",
+      "title": "dialog changes to an RTL drawer without replacing focused draft content",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 320
+    },
+    {
+      "project": "webkit",
+      "title": "overlay body scroll retains header and footer access",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 288
+    },
+    {
+      "project": "webkit",
+      "title": "overlay pins and reduced-motion policy affect the native modal surface",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 247
+    },
+    {
+      "project": "webkit",
+      "title": "forced colors preserves native selection and overlay boundaries",
+      "status": "passed",
+      "retry": 0,
+      "durationMs": 270
+    }
+  ],
+  "nodeControls": {
+    "passed": 38
+  },
+  "packed": {
+    "schemaVersion": 1,
+    "packages": [
+      {
+        "name": "@en-reve/primitives",
+        "integrity": "sha512-duv/LllxAlxB5vkZrQYSDttu0+e3VC/Zf+lB35DDveTBqkAWCeRQTdgzkvAH2OScMfaMocMQvhQpueUsKKv7WA==",
+        "shasum": "a9c1f81e7d5a0d127c95154336d3217e09761aef",
+        "setup": {
+          "key": "c3283af10cb2fb654fede03bbb88da435d8dda8ed50e93cb30418eee53746111",
+          "reused": false,
+          "originatingProducer": "2026-10-02T15:30:13.620Z"
+        }
+      },
+      {
+        "name": "@en-reve/styles",
+        "integrity": "sha512-UTd+RiDfA8C9gT0g2DTUoZOhUp98/9w3B2TbTrWmRexOoJyuzn8u0PlaqOWY7Nxx9gvmCOOE6UUv/yOCGJqWPQ==",
+        "shasum": "ad3ba44c9b1f75c76c36899678474e593dccc21b",
+        "setup": {
+          "key": "c3283af10cb2fb654fede03bbb88da435d8dda8ed50e93cb30418eee53746111",
+          "reused": false,
+          "originatingProducer": "2026-10-02T15:30:13.620Z"
+        }
+      },
+      {
+        "name": "@en-reve/tokens",
+        "integrity": "sha512-GyZZifS+VlZENqsnuf970stvxUHRNHQ9rtqPdCGglw33we0YvTv42xCqapC1yf6I9kJ5t+e50okjU+/u2fpx2A==",
+        "shasum": "a420737c1b644c8e495d25d8723aa4d5bf05b08e",
+        "setup": {
+          "key": "c3283af10cb2fb654fede03bbb88da435d8dda8ed50e93cb30418eee53746111",
+          "reused": false,
+          "originatingProducer": "2026-10-02T15:30:13.620Z"
+        }
+      }
+    ],
+    "types": {
+      "status": "passed",
+      "packedDeclarations": [
+        "node_modules/@en-reve/primitives/dist/state/selection.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/roving-focus.d.ts",
+        "node_modules/@en-reve/primitives/dist/interactions/events.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/typography.d.ts",
+        "node_modules/@en-reve/styles/dist/foundations.d.ts",
+        "node_modules/@en-reve/styles/dist/buttons.d.ts",
+        "node_modules/@en-reve/styles/dist/controls.d.ts",
+        "node_modules/@en-reve/styles/dist/selection.d.ts",
+        "node_modules/@en-reve/styles/dist/generated/surface.d.ts",
+        "node_modules/@en-reve/styles/dist/surfaces.d.ts",
+        "node_modules/@en-reve/styles/dist/combobox.d.ts",
+        "node_modules/@en-reve/styles/dist/commands.d.ts",
+        "node_modules/@en-reve/styles/dist/overlays.d.ts"
+      ]
+    },
+    "inputs": [
+      "node_modules/@lit/reactive-element/css-tag.js",
+      "node_modules/@lit/reactive-element/reactive-element.js",
+      "node_modules/lit-html/lit-html.js",
+      "node_modules/lit-element/lit-element.js",
+      "node_modules/lit-html/is-server.js",
+      "node_modules/lit/index.js",
+      "node_modules/lit-html/directives/if-defined.js",
+      "node_modules/lit/directives/if-defined.js",
+      "node_modules/signal-polyfill/dist/index.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/primitives/dist/state/value.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/primitives/dist/state/selection.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/roving-focus.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/primitives/dist/interactions/events.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/tokens/dist/defaults.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/tokens/dist/sizing.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/token-values.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/values.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus-core.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/sizing.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/generated/typography.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/typography.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/foundations.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/target-size.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-size.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/inset-action.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/button-rules.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/control-shared.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/buttons.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/press-recipes.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/field-presentation.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/select-chevron.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/description.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/surface-motion.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/radio-rules.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/option-paint.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/focus.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/range.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/internal/link-rules.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/controls.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/selection.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/generated/surface.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/surfaces.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/combobox.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/commands.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/node_modules/@en-reve/styles/dist/overlays.js",
+      "../en-choice-overlay-recipes-20261002-04/fixtures/choice-overlay-recipes/consumer/recipes.ts"
+    ],
+    "assets": {
+      "recipes.js": "c20f3c4107c28255ad15ed695d844d836bdd122b8815d8d9b967e58649d199b0",
+      "choices.css": "e1e88237d87709bc01435a5586f1fc9cee601a190f37bede2694101efc38e171",
+      "commands.css": "94c4772325c555e7f075286766ed56a202e215fe9e5f8139ca01416189b55d05",
+      "combo.css": "21f64b3ac1d007f8871c40b970da4a744a3e86438590fdfd6535c9961461beb2",
+      "overlays.css": "06f8845c06aaea4294570dce1187283adeb169d15201f7edb851c5caff0c1541"
+    },
+    "portableCSS": {
+      "@en-reve/styles/foundations.css": "b61646e33ed957e513aa290ac5328af54ecb145243c1768c7978a1f50d433879",
+      "@en-reve/styles/buttons.css": "729d5b1dfb69dbfccb2d693e58fa1d7c02a8d362796879de91245224941febc0",
+      "@en-reve/styles/controls.css": "e4f6a0f04e11efc0f7088d8e75b4e726f66704e5c5f6aad2042a5dac09facc94",
+      "@en-reve/styles/selection.css": "c4a5093214a9bc098011ddd2be4f5907524453e4e63afb55e9481623a4e96fda",
+      "@en-reve/styles/surfaces.css": "2868fb16a48eb2897e0aac762bd6f291034fa0fbed45ddca7a726f78f74b9407",
+      "@en-reve/styles/overlays.css": "4af04a0d8a47b6e9bc8736e087b4ab31b7edc0f114afc117123710eb4611350e",
+      "@en-reve/styles/commands.css": "ee8b04820de7a8c0ef201585a3620eecec958f4aedb13008d2cbedcbd8871558",
+      "@en-reve/styles/combobox.css": "d59c3e822b61c1326a414f4da83b9d959458ebb56aa5f424c0d862d45f170e79"
+    },
+    "sourceInputs": {
+      "probes/choice-overlay-recipes/recipes.ts": "77c41ccf43715417484b77fbf6c440990d158c7eb9686b8d5174758878f6ba71",
+      "probes/choice-overlay-recipes/recipes.html": "7c3ae0da813f113b75f9f5cb2939ec5eafed37e399442b63a09ae7cde1b4ff7d"
+    },
+    "limits": [
+      "Alternate compositions of named entries only. No elements package or workspace source aliases.",
+      "Native semantic and computed-style scenarios only; manual AT, native clipboard transport, SSR/hydration and full theme visual acceptance remain separate."
+    ]
+  },
+  "portableParity": {
+    "@en-reve/styles/foundations.css": "b61646e33ed957e513aa290ac5328af54ecb145243c1768c7978a1f50d433879",
+    "@en-reve/styles/buttons.css": "729d5b1dfb69dbfccb2d693e58fa1d7c02a8d362796879de91245224941febc0",
+    "@en-reve/styles/controls.css": "e4f6a0f04e11efc0f7088d8e75b4e726f66704e5c5f6aad2042a5dac09facc94",
+    "@en-reve/styles/selection.css": "c4a5093214a9bc098011ddd2be4f5907524453e4e63afb55e9481623a4e96fda",
+    "@en-reve/styles/surfaces.css": "2868fb16a48eb2897e0aac762bd6f291034fa0fbed45ddca7a726f78f74b9407",
+    "@en-reve/styles/overlays.css": "4af04a0d8a47b6e9bc8736e087b4ab31b7edc0f114afc117123710eb4611350e",
+    "@en-reve/styles/commands.css": "ee8b04820de7a8c0ef201585a3620eecec958f4aedb13008d2cbedcbd8871558",
+    "@en-reve/styles/combobox.css": "d59c3e822b61c1326a414f4da83b9d959458ebb56aa5f424c0d862d45f170e79"
+  },
+  "fixtureAssets": {
+    "index.html": "7c3ae0da813f113b75f9f5cb2939ec5eafed37e399442b63a09ae7cde1b4ff7d",
+    "combo.css": "21f64b3ac1d007f8871c40b970da4a744a3e86438590fdfd6535c9961461beb2",
+    "overlays.css": "06f8845c06aaea4294570dce1187283adeb169d15201f7edb851c5caff0c1541",
+    "commands.css": "94c4772325c555e7f075286766ed56a202e215fe9e5f8139ca01416189b55d05",
+    "recipes.js": "c20f3c4107c28255ad15ed695d844d836bdd122b8815d8d9b967e58649d199b0",
+    "choices.css": "e1e88237d87709bc01435a5586f1fc9cee601a190f37bede2694101efc38e171"
+  },
+  "runtime": {
+    "node": "v26.10.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "osRelease": "25.6.0",
+    "digest": "sha256:6473958fdbe5ebea1e3e1d856f04299fbb9b6277382d3aa921ed24e0544ca621",
+    "policy": "Locally resolved browser installations and executable bytes; no inference from package version alone.",
+    "fileCount": 7946
+  },
+  "candidate": {
+    "head": "8455c55b569265491cbf5dddf009757ca552befe",
+    "sourceDigest": "sha256:d504f8a9c68fcf04c65ba04dd8e61f9b436a63c6c63c3b5bb643fca4ec54653f",
+    "files": 22865
+  },
+  "durableEvidence": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/choice-overlay-recipes-20261002",
+  "earlierAttempts": [
+    {
+      "run": "/private/tmp/en-choice-overlay-recipes-20261002-01",
+      "status": "failed",
+      "boundary": "Strict test compilation needed explicit ShadowRoot narrowing; no browser assertions ran."
+    },
+    {
+      "run": "/private/tmp/en-choice-overlay-recipes-20261002-02",
+      "status": "failed",
+      "boundary": "22 passed,1 failed,157 not run: generic overlay rules loaded after palette rules displaced the narrow dialog. Corrected stylesheet composition order."
+    },
+    {
+      "run": "/private/tmp/en-choice-overlay-recipes-20261002-03",
+      "status": "passed",
+      "boundary": "180 browser and37 Node cases passed before adding the final inventory binding assertion."
+    }
+  ],
+  "buildReuse": {
+    "receipt": "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+    "inputsAndGeneratedModules": "all unchanged",
+    "distFiles": 1184,
+    "distManifestSHA256": "78863d22c778f65e3a9e82c252f9a77f42a4e94508e855e9b7d5f06040279d86",
+    "reason": "This batch changes packed qualification fixtures and source documentation, not the docs application or library runtime."
+  },
+  "limitations": [
+    "Ten additional entries have bounded native composition qualification;88/110 entries qualified and22 remain pending.",
+    "Matching recipe semantics remain application-owned. Overlay styles precede palette styles in both deliveries; the failed narrow-placement run is retained. No owning-element runtime changed.",
+    "Nested menu hover, remote filtering, every export in selection/surfaces, actual IME, physical touch, retail browser products, manual AT, full SSR/hydration and separate-owner acceptance remain outside these scenarios.",
+    "WebKit uses native Option+Tab sequential navigation; engine forced-color assertions are not manual platform acceptance. Historical external CSS-authoring rerun remains retired, never passed."
+  ]
+}

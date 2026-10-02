@@ -8,7 +8,6 @@ import { deliveryBrowserOwners, deliveryNodeSources } from './lazy-delivery-clos
 const earlyCampaignControls=new Set(['showcases/performance/tests/campaigns.test.mjs','showcases/performance/tests/current-campaign-integration.test.mjs']);
 // Concrete current-library prerequisites. Historical cohorts remain separately named.
 const preparations = {
- 'choice-overlay-recipes': {file:'probes/choice-overlay-recipes/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_CHOICE_OVERLAY_RECIPES_OUT:'$RUN/fixtures/choice-overlay-recipes'}},
  'collection-style-recipes': {file:'probes/collection-style-recipes/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_COLLECTION_STYLE_RECIPES_OUT:'$RUN/fixtures/collection-style-recipes'}},
  'notification-recipes': {file:'probes/notification-recipes/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_NOTIFICATION_RECIPES_OUT:'$RUN/fixtures/notification-recipes'}},
  'tree-recipes': {file:'probes/tree-recipes/prepare.mjs',dependencies:['build:styles','build:primitives'],environment:{EN_TREE_RECIPES_OUT:'$RUN/fixtures/tree-recipes'}},
@@ -131,7 +130,6 @@ export async function comprehensiveGraph({workspaceRoot=root}={}) {
  graph.pathways['collection-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/collection-recipes/playwright.config.ts','semantic-test-types'];
  graph.pathways['native-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/native-recipes/playwright.config.ts','browser:packages/primitives/tests/content/playwright.config.ts','browser:packages/primitives/tests/navigation/playwright.config.ts','semantic-test-types'];
  graph.pathways['projection-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/projection-recipes/playwright.config.ts','semantic-test-types'];
- graph.pathways['choice-overlay-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/choice-overlay-recipes/playwright.config.ts','semantic-test-types'];
  graph.pathways['collection-style-recipes']=['node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/collection-style-recipes/playwright.config.ts','browser:packages/elements/src/table/tests/playwright.config.ts','semantic-test-types'];
  graph.pathways['notification-recipes']=['node:probes/notification-recipes/contract.test.mjs','node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/notification-recipes/playwright.config.ts','browser:packages/elements/src/swatch/tests/playwright.config.ts','semantic-test-types'];
  graph.pathways['tree-recipes']=['node:packages/primitives/tests/tree-data.test.mjs','node:tooling/testing/comprehensive.test.mjs','node:probes/reusable-layers/inventory.test.mjs','browser:probes/tree-recipes/playwright.config.ts','semantic-test-types'];
