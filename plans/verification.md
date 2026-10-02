@@ -345,3 +345,12 @@ three pinned engines without the docs runtime; two scoped-color controls are
 separate authored fixtures. A duplicate tooltip-copy prelude was fixed. Remaining
 generated-example behavior coverage, public-layer entries and platform/manual
 requirements are still open; compilation alone does not close those obligations.
+
+The [complete API copy batch](../apps/docs/tests/README.md#complete-api-copy-journeys)
+adds native consumer journeys for the remaining nine complete API modules. All
+eleven now have named scenarios in each pinned engine: 17 copied consumers per
+engine including six gallery modules, with 59 modules compiling. Six browser
+tests, strict core/docs types and 123 tooling integrity checks pass. This is
+bounded behavior qualification, not the whole owning test matrix. Forty-two
+gallery copies still need independent runtime journeys; remaining §7.4 entries
+and platform/manual/separate-owner requirements remain open.

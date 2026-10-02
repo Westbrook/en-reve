@@ -158,3 +158,7 @@ Local main `2ced899c675ef6ca06ed9333f45b7b20be14263b` qualifies maintained table
 ## Copied examples with packed declarations
 
 Local main `6dec4ea611fd2262c35c3cdf1fe1ed09cae7d133` qualifies59 copied modules against packed declarations and eight native consumer examples across three pinned engines. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.
+
+## Complete API copy consumer journeys
+
+Local main `a4d85f16d66e3e10394a147c3809e3238bf119d3` qualifies59 copied modules against packed declarations and seventeen native source consumers across three pinned engines, covering all eleven complete API copies. See `apps/docs/tests/README.md` for exact scenarios and limits. Remaining public-layer, generated-example and manual/platform obligations stay open.

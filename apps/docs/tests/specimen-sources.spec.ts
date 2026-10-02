@@ -9,9 +9,21 @@ import { createServer } from 'node:http';
 import type { AddressInfo } from 'node:net';
 import { extname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { copiedAPIScenarios } from './copied-api-scenarios.js';
 
 test('displayed examples compile without unused code, retain highlighting, and load encapsulated components and native styles without a bundler', async ({ page }, testInfo) => {
 	test.setTimeout(60_000);
+	const output = await prepareCopiedExamples(page, testInfo);
+	await verifyNativeConsumption(page, output, testInfo);
+});
+
+test('remaining complete API copies execute their application journeys against native packed modules', async ({ page }, testInfo) => {
+	test.setTimeout(60_000);
+	const output = await prepareCopiedExamples(page, testInfo);
+	await verifyNativeConsumption(page, output, testInfo, true);
+});
+
+async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<string> {
 	const errors: string[] = [];
 	page.on('pageerror', error => errors.push(error.message));
 	await page.goto('/?progress-report#navigation');
@@ -40,7 +52,10 @@ test('displayed examples compile without unused code, retain highlighting, and l
 	// copy surface and its registration/helper prelude inside this boundary.
 	const generatedRoot = join(repository, 'apps/docs/src/generated');
 	const copiedModules = (await readdir(generatedRoot)).filter(file => file.endsWith('-source.js')).sort();
-	expect(copiedModules.length).toBeGreaterThan(0);
+	// New complete copies must acquire a consumer journey rather than silently
+	// becoming compile-only examples under the existing qualification claim.
+	expect(copiedModules.map(file => file.slice(0, -'-source.js'.length))).toEqual(
+		['composable-chat', 'tooltip-warmup', ...copiedAPIScenarios.map(item => item.id.slice('api-'.length))].sort());
 	for (const file of copiedModules) {
 		const id = file.slice(0, -'-source.js'.length);
 		await page.goto(`/api-examples/${id}.html?progress-report`);
@@ -67,7 +82,7 @@ test('displayed examples compile without unused code, retain highlighting, and l
 	const archiveIdentity = archives.map(({ name, integrity, shasum, setup }) => ({ name, integrity, shasum, setupKey: setup.key }));
 	const identity = async () => ({ samples, archives: archiveIdentity, runtime: process.version, platform: process.platform, arch: process.arch,
 		environment: inventoryDigest(setupEnvironmentInputs(compilerEnvironment())),
-		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
+		files: await contentInventory(repository, ['packages', 'node_modules', 'apps/docs/tests/specimen-sources.spec.ts', 'apps/docs/tests/copied-api-scenarios.ts', 'tooling/evidence', process.execPath], (name: string) => /(^|\/)(\.cache|\.vite|artifacts|results|test-results)(\/|$)/.test(name) || name.endsWith('.tsbuildinfo')) });
 	const inputs = await identity();
 	const prepared = await immutableSetup({ cache: join(repository, 'node_modules/.cache/specimen-consumers'), inputs, verifyInputs: identity,
 		produce: async (output: string) => {
@@ -112,9 +127,10 @@ test('displayed examples compile without unused code, retain highlighting, and l
 	await testInfo.attach('preparation-identity', { body: JSON.stringify({ key: prepared.key, reused: prepared.reused, originatingProducer: prepared.originatingProducer, extractedSamplesDigest: inventoryDigest(samples), archives }), contentType: 'application/json' });
 	await testInfo.attach('compiled-examples', { body: JSON.stringify({ count: samples.length, ids: samples.map(sample => sample.id) }), contentType: 'application/json' });
 	await testInfo.attach('packed-type-resolution', { body: await readFile(join(output, 'type-resolution.json')), contentType: 'application/json' });
+	await testInfo.attach('native-dependencies', { body: await readFile(join(output, 'native-dependencies.json')), contentType: 'application/json' });
 	expect(errors).toEqual([]);
-	await verifyNativeConsumption(page, output, testInfo);
-});
+	return output;
+}
 
 const repository = fileURLToPath(new URL('../../../', import.meta.url));
 
@@ -165,24 +181,37 @@ async function mapPackage(directory: string, urlRoot: string, imports: Record<st
 			}
 		}
 	}
+	return manifest;
 }
 
 async function prepareNativeConsumption(output: string, archives: PreparedArchive[], archiveDirectory: string) {
 	const publicRoot = join(output, 'public');
 	const imports: Record<string, string> = {};
+	const dependencies = new Set<string>();
+	const manifests: Array<{ name: string; version: string }> = [];
+	const addDependencies = (manifest: { name: string; version: string; dependencies?: Record<string, string>; peerDependencies?: Record<string, string> }) => {
+		manifests.push({ name: manifest.name, version: manifest.version });
+		for (const name of Object.keys({ ...manifest.dependencies, ...manifest.peerDependencies })) {
+			if (!name.startsWith('@en-reve/')) dependencies.add(name);
+			else if (!archives.some(archive => archive.name === name)) throw new Error(`Missing packed dependency: ${name}`);
+		}
+	};
 	for (const name of ['tokens', 'styles', 'primitives', 'elements']) {
 		const archive = archives.find(item => item.name === `@en-reve/${name}`);
 		if (!archive) throw new Error(`Missing prepared archive: ${name}`);
 		const destination = join(publicRoot, 'packages', name);
 		await mkdir(destination, { recursive: true });
 		execFileSync('tar', ['-xzf', join(archiveDirectory, archive.filename), '-C', destination, '--strip-components=1'], { encoding: 'utf8', env: setupEnvironment(process.env, { production: false }) });
-		await mapPackage(destination, `/packages/${name}/`, imports);
+		addDependencies(await mapPackage(destination, `/packages/${name}/`, imports));
 	}
-	for (const name of ['lit', 'lit-html', 'lit-element', '@lit/reactive-element', '@lit/context', 'signal-polyfill', 'signal-utils']) {
+	// Follow the actual package closure, including the rich editor's ProseMirror
+	// dependencies. A handwritten Lit-only map masked unsupported consumers.
+	for (const name of dependencies) {
 		const destination = join(publicRoot, 'vendor', name);
 		await cp(join(repository, 'node_modules', name), destination, { recursive: true, dereference: true });
-		await mapPackage(destination, `/vendor/${name}/`, imports);
+		addDependencies(await mapPackage(destination, `/vendor/${name}/`, imports));
 	}
+	await writeFile(join(output, 'native-dependencies.json'), JSON.stringify({ packages: manifests, imports }));
 	await mkdir(join(publicRoot, 'styles'), { recursive: true });
 	for (const name of ['typography']) {
 		const stylesheet = imports[`@en-reve/styles/${name}.css`];
@@ -200,6 +229,7 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 	await writeFile(join(publicRoot, 'bootstrap.js'), `
 		import { html, render } from 'lit';
 		const examples = {
+			...${JSON.stringify(Object.fromEntries(copiedAPIScenarios.map(({ id, entry }) => [id, { name: entry, elements: [] }])))},
 			'native-navigation': { name: 'nativeNavigationExample', elements: ['navigation'] },
 			breadcrumbs: { name: 'breadcrumbsExample', elements: ['breadcrumbs'] },
 			typography: { name: 'typographyExample', elements: ['stack'] },
@@ -256,7 +286,7 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 	`);
 
 }
-async function verifyNativeConsumption(page: Page, output: string, testInfo: TestInfo) {
+async function verifyNativeConsumption(page: Page, output: string, testInfo: TestInfo, remainingAPI = false) {
 	const publicRoot = join(output, 'public');
 
 	const server = createServer(async (request, response) => {
@@ -292,9 +322,11 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 			stylesheets.push(new URL(response.url()).pathname);
 		}
 	});
-	const evidence: { id: string; stylesheets: string[] }[] = [];
+	const evidence: { id: string; stylesheets: string[]; contract?: string }[] = [];
 	try {
-		for (const id of ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'composable-chat', 'api-tooltip-warmup']) {
+		const cases = remainingAPI ? copiedAPIScenarios.map(item => item.id)
+			: ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'composable-chat', 'api-tooltip-warmup'];
+		for (const id of cases) await test.step(id, async () => {
 			stylesheets.length = 0;
 			await page.goto(`${baseURL}/?sample=${id}`);
 			await expect(page.locator('body')).toHaveAttribute('data-ready', id);
@@ -303,7 +335,11 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 			} else {
 				await expect(page.locator('link[href="/styles/navigation.css"]')).toHaveCount(0);
 			}
-			if (id === 'native-navigation') {
+			const scenario = copiedAPIScenarios.find(item => item.id === id);
+			if (scenario) {
+				await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'copied-module');
+				await scenario.run(page);
+			} else if (id === 'native-navigation') {
 				const host = page.locator('en-navigation');
 				const navigation = host.getByRole('navigation', { name: 'Explore related patterns' });
 				expect(await host.evaluate(element => !!element.shadowRoot?.querySelector('nav'))).toBe(true);
@@ -478,12 +514,12 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 				expect(await page.locator('en-card').evaluate(element => !!element.shadowRoot)).toBe(true);
 			}
 			if (id === 'native-navigation' || id === 'breadcrumbs') expect(stylesheets).not.toContain('/styles/navigation.css');
-			evidence.push({ id, stylesheets: [...stylesheets] });
-		}
+			evidence.push({ id, stylesheets: [...stylesheets], ...(scenario ? { contract: scenario.contract } : {}) });
+		});
 		// Independently consume pure packed definitions in an eager automatic scope.
 		// Record native versus global fallback without emulating it; this fixture does
 		// not exercise a copied application directive or optional code acquisition.
-		for (const closed of [false, true]) {
+		for (const closed of remainingAPI ? [] : [false, true]) {
 			await page.goto(`${baseURL}/?sample=composable-chat&scope=auto&closed=${closed}`);
 			await expect(page.locator('body')).toHaveAttribute('data-ready', 'composable-chat');
 			await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'packed-eager-scope');
@@ -527,6 +563,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 		expect(errors).toEqual([]);
 		await testInfo.attach('native-consumption', { body: JSON.stringify({ bundler: false, examples: evidence }), contentType: 'application/json' });
 	} finally {
+		await testInfo.attach('native-consumption-diagnostics', { body: JSON.stringify({ completed: evidence.map(item => item.id), errors }), contentType: 'application/json' });
 		await new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
 	}
 }

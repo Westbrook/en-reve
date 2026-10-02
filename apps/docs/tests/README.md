@@ -28,6 +28,35 @@ intermediate run and the final tarball-only stylesheet run. Compilation is not
 runtime qualification: remaining copied examples still require meaningful
 independent behavior coverage. Retail/physical/manual support stays separate.
 
+### Complete API copy journeys
+
+The [complete API consumer receipt](verification-complete-api-consumers-20261002.json)
+extends that qualification to all **11 complete API copies**. Two tests per
+pinned engine pass: the original eight source consumers and nine additional
+journeys from `copied-api-scenarios.ts`. Together they execute **17 actual copied
+modules per engine**, including six gallery copies. All 59 modules still compile
+against packed declarations; the two scoped-color controls remain separate.
+
+The added journeys exercise calendar selection/FormData and focus recovery,
+bounded carousel navigation, chat attachment failure/retry with a newer draft,
+multi-step validation/save recovery, presence overflow and activity paging,
+rich-editor token insertion/cancellation/submission, actionable toast keyboard
+order and focus, distant tree reveal/selection, and virtual-table selection and
+removal. They use the copied applications' own handlers. Their owning suites
+retain broader SSR, theme, accessibility and API coverage.
+
+The native import map now follows the packed roots' dependency/peer closure
+through the locked third-party installation, including ProseMirror. A missing
+packed `@en-reve` dependency fails rather than falling back to workspace code.
+The receipt retains the first failed run caused by the old fixture's incomplete
+import map, the passing intermediate run and the final run. Future complete API
+copies must add a journey to satisfy the exact module inventory guard. Strict
+core/docs types and all 123 tooling integrity checks pass.
+
+This completes the named complete-API-copy batch, not §7.5a: **42 of 48 gallery
+copies still need independent runtime journeys**. Compilation, owning docs tests,
+and these bounded journeys must not be presented as all-feature or manual support.
+
 ## Production-page workflows
 
 Build the workspace before the browser run. The browser fixture serves only the

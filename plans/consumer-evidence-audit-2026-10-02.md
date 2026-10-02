@@ -116,3 +116,20 @@ Prioritize the remaining complete API modules (calendar, carousel, chat,
 multi-step, presence/activity, rich text, toast, tree data and virtual collection),
 reusing their owning interaction assertions where possible. Remaining gallery
 samples, public-layer entries and platform/manual obligations stay open.
+
+### Complete API journeys added after copied-source qualification
+
+The [complete API consumer receipt](../apps/docs/tests/verification-complete-api-consumers-20261002.json)
+now covers the nine complete modules listed above through their actual copied
+handlers, using native packed modules. All eleven complete API copies have named
+consumer journeys in Chromium, Firefox and WebKit. Together with the six gallery
+copies this is 17 executed source consumers per engine; 59 modules compile.
+The two scoped-color fixtures remain separately authored controls. The native
+fixture now follows the locked dependency closure, fixing its missing
+ProseMirror import map; no component implementation changed in this batch.
+
+Six browser tests, strict core/docs types and 123 integrity checks pass. Exact
+journeys and failed/intermediate/final runs are recorded in the receipt. This
+resolves the complete-copy batch identified above, with bounded behavior evidence;
+42 gallery copies, the remaining public layers, native Firefox assertion
+comparison and platform/manual/separate-owner obligations remain open.
