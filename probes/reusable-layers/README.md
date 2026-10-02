@@ -68,3 +68,9 @@ covering admission and both toast/feedback/loading style forms.138 native cases,
 25 original swatch cases (two declared forced-color skips) and40 Node checks pass.
 Portable feedback no longer gives unrelated shadow hosts swatch width.73/110
 public entries have named-scenario receipts;37 and platform/manual scope remain.
+
+The [collection-style batch](../collection-style-recipes/README.md) adds five
+qualified entries: portable table CSS and both pagination/carousel deliveries.
+144 packed cases,21 original table cases,36 Node and131 integrity checks pass.
+Inventory coverage is78/110;32 entries and platform/manual/owner obligations remain.
+See its receipt for the native Firefox scrollbar and WebKit capability boundaries.

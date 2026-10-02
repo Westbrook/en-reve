@@ -229,10 +229,3 @@ test('notification recipe pathway retains isolated preparation, declarations and
  assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/notification-recipes/playwright.config.ts','browser:packages/elements/src/swatch/tests/playwright.config.ts']);
  assert.equal(selected.find(task=>task.id==='prepare:notification-recipes').environment.EN_NOTIFICATION_RECIPES_OUT,'$RUN/fixtures/notification-recipes');
 });
-
-test('collection-style recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
- const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['collection-style-recipes']),ids=new Set(selected.map(task=>task.id));
- for(const id of ['build:styles','build:primitives','prepare:collection-style-recipes','browser:probes/collection-style-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
- assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/collection-style-recipes/playwright.config.ts','browser:packages/elements/src/table/tests/playwright.config.ts']);
- assert.equal(selected.find(task=>task.id==='prepare:collection-style-recipes').environment.EN_COLLECTION_STYLE_RECIPES_OUT,'$RUN/fixtures/collection-style-recipes');
-});

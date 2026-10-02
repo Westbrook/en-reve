@@ -210,3 +210,7 @@ Local main `add3b12b53effdb4581b3a79d2407e9ddf1b4505` qualifies four tree helper
 ## Packed notification consumers
 
 Local main `e5ec420ac6b5bd327858aa2e75c29c718ecf1ca2` qualifies seven notification helper/style entries and corrects portable feedback sizing. See `probes/notification-recipes/README.md` for scope and browser limits.
+
+## Packed native collection styles
+
+Local main `8455c55b569265491cbf5dddf009757ca552befe` qualifies five collection style entries and adds a native table wrapper. See `probes/collection-style-recipes/README.md` for scope and browser limits.

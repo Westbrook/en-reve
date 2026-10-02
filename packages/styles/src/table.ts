@@ -37,9 +37,9 @@ export const tableHostStyles = sizedStyles(css`
 	}
 `);
 
-/** Opt-in authored native-table styling. Include in the same Document/ShadowRoot as en-table. */
+/** Opt-in authored native-table styling. Use an en-table or .en-table-native wrapper in the same Document/ShadowRoot. */
 export const tableStyles = sizedStyles(css`
-	:where(en-table > table) {
+	:where(:is(en-table, .en-table-native) > table) {
 		box-sizing: border-box;
 		inline-size: 100%;
 		border-collapse: separate;
@@ -51,12 +51,12 @@ export const tableStyles = sizedStyles(css`
 		background: ${o('--en-table-background', t('--en-color-surface'))};
 		color: ${o('--en-table-color', t('--en-color-text'))};
 	}
-	:where(en-table > table > caption) {
+	:where(:is(en-table, .en-table-native) > table > caption) {
 		padding: ${o('--en-table-cell-block-padding', css`var(--_en-table-cell-padding-block, ${t('--en-space-rows')})`)} ${o('--en-table-cell-inline-padding', css`var(--_en-table-cell-padding-inline, ${t('--en-space-control-inline')})`)};
 		text-align: start;
 		font-weight: ${t('--en-font-label-strong-weight')};
 	}
-	:where(en-table > table > :is(thead, tbody, tfoot) > tr > :is(th, td), en-table > table > tr > :is(th, td)) {
+	:where(:is(en-table, .en-table-native) > table > :is(thead, tbody, tfoot) > tr > :is(th, td), :is(en-table, .en-table-native) > table > tr > :is(th, td)) {
 		box-sizing: border-box;
 		padding: ${o('--en-table-cell-block-padding', css`var(--_en-table-cell-padding-block, ${t('--en-space-rows')})`)} ${o('--en-table-cell-inline-padding', css`var(--_en-table-cell-padding-inline, ${t('--en-space-control-inline')})`)};
 		border-block-start: ${t('--en-border-width')} solid ${o('--en-table-border-color', t('--en-color-line'))};
@@ -64,13 +64,13 @@ export const tableStyles = sizedStyles(css`
 		vertical-align: middle;
 	}
 	/* The data facade marks its generated leading selection cells explicitly. */
-	:where(en-table[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection) {
+	:where(:is(en-table, .en-table-native)[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection) {
 		position: sticky;
 		inset-inline-start: 0;
 		z-index: 1;
 		background: ${o('--en-table-background', t('--en-color-surface'))};
 	}
-	:where(en-table[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection)::before {
+	:where(:is(en-table, .en-table-native)[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection)::before {
 		content: '';
 		position: absolute;
 		inset-block: 0;
@@ -79,19 +79,19 @@ export const tableStyles = sizedStyles(css`
 		background: ${o('--en-table-border-color', t('--en-color-line'))};
 		pointer-events: none;
 	}
-	:where(en-table > table > thead > tr > th) {
+	:where(:is(en-table, .en-table-native) > table > thead > tr > th) {
 		background: ${o('--en-table-header-background', t('--en-color-surface-subtle'))};
 		color: ${o('--en-table-header-color', t('--en-color-text'))};
 		font-weight: ${t('--en-font-label-strong-weight')};
 	}
 	/* Sticky row groups retain multi-row header geometry and native table semantics. */
-	:where(en-table:not([sticky="none"]):not([sticky="footer"]):not([data-en-table-scroll-header]) > table > thead) {
+	:where(:is(en-table, .en-table-native):not([sticky="none"]):not([sticky="footer"]):not([data-en-table-scroll-header]) > table > thead) {
 		position: sticky;
 		inset-block-start: var(--_en-table-sticky-caption-height, 0px);
 		z-index: 2;
 		background: ${o('--en-table-header-background', t('--en-color-surface-subtle'))};
 	}
-	:where(en-table:is([sticky="footer"], [sticky="both"]):not([data-en-table-scroll-footer]) > table > tfoot) {
+	:where(:is(en-table, .en-table-native):is([sticky="footer"], [sticky="both"]):not([data-en-table-scroll-footer]) > table > tfoot) {
 		position: sticky;
 		inset-block-end: 0;
 		z-index: 2;
@@ -99,32 +99,32 @@ export const tableStyles = sizedStyles(css`
 		color: ${o('--en-table-footer-color', o('--en-table-color', t('--en-color-text')))};
 	}
 	/* Before measurement the caption scrolls normally, preventing SSR overlap. */
-	:where(en-table[sticky-caption][data-en-sticky-caption-ready] > table > caption) {
+	:where(:is(en-table, .en-table-native)[sticky-caption][data-en-sticky-caption-ready] > table > caption) {
 		position: sticky;
 		inset-block-start: 0;
 		z-index: 3;
 		background: ${o('--en-table-background', t('--en-color-surface'))};
 	}
-	:where(en-table > table > :is(thead, tfoot):focus-within) { z-index: 4; }
+	:where(:is(en-table, .en-table-native) > table > :is(thead, tfoot):focus-within) { z-index: 4; }
 	@media print {
-		:where(en-table > table > :is(thead, tfoot, caption)) { position: static !important; }
-		:where(en-table[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection) { position: static !important; }
-		:where(en-table[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection)::before,
-		:where(en-table > table > tbody > tr[data-selected] > :is(th, td):first-child)::after { display: none; }
+		:where(:is(en-table, .en-table-native) > table > :is(thead, tfoot, caption)) { position: static !important; }
+		:where(:is(en-table, .en-table-native)[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection) { position: static !important; }
+		:where(:is(en-table, .en-table-native)[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection)::before,
+		:where(:is(en-table, .en-table-native) > table > tbody > tr[data-selected] > :is(th, td):first-child)::after { display: none; }
 	}
-	:where(en-table > table > tbody > tr > th) { font-weight: ${t('--en-font-label-strong-weight')}; }
+	:where(:is(en-table, .en-table-native) > table > tbody > tr > th) { font-weight: ${t('--en-font-label-strong-weight')}; }
 	@media (hover: hover) {
-		:where(en-table > table > tbody > tr:hover > :is(th, td)) {
+		:where(:is(en-table, .en-table-native) > table > tbody > tr:hover > :is(th, td)) {
 			background: ${o('--en-table-row-hover-background', t('--en-color-surface-subtle'))};
 		}
 	}
 	/* Selected paint takes precedence over hover and never changes row geometry. */
-	:where(en-table > table > tbody > tr[data-selected] > :is(th, td)) {
+	:where(:is(en-table, .en-table-native) > table > tbody > tr[data-selected] > :is(th, td)) {
 		background: ${o('--en-table-row-selected-background', t('--en-color-selected'))};
 		color: ${o('--en-table-row-selected-color', t('--en-color-text'))};
 	}
-	:where(en-table > table > tbody > tr[data-selected] > :is(th, td):first-child:not(.en-table-selection)) { position: relative; }
-	:where(en-table > table > tbody > tr[data-selected] > :is(th, td):first-child)::after {
+	:where(:is(en-table, .en-table-native) > table > tbody > tr[data-selected] > :is(th, td):first-child:not(.en-table-selection)) { position: relative; }
+	:where(:is(en-table, .en-table-native) > table > tbody > tr[data-selected] > :is(th, td):first-child)::after {
 		content: '';
 		position: absolute;
 		inset-inline-start: 0;
@@ -133,13 +133,13 @@ export const tableStyles = sizedStyles(css`
 		background: ${o('--en-table-row-selected-indicator-color', t('--en-color-action'))};
 		pointer-events: none;
 	}
-	:where(en-table:not([data-en-sticky-selection]) > table > tbody > tr[data-selected] > .en-table-selection:first-child) { position: relative; }
+	:where(:is(en-table, .en-table-native):not([data-en-sticky-selection]) > table > tbody > tr[data-selected] > .en-table-selection:first-child) { position: relative; }
 	@media (forced-colors: active) {
-		:where(en-table > table), :where(en-table > table > :is(thead, tfoot, caption)), :where(en-table > table > thead > tr > th) { background: Canvas; color: CanvasText; }
-		:where(en-table > table > :is(thead, tbody, tfoot) > tr > :is(th, td)) { border-color: CanvasText; }
-		:where(en-table[data-en-sticky-selection] > table > tbody > tr > .en-table-selection) { background: Canvas; }
-		:where(en-table[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection)::before { background: CanvasText; }
-		:where(en-table > table > tbody > tr[data-selected] > :is(th, td)) { background: Highlight; color: HighlightText; }
-		:where(en-table > table > tbody > tr[data-selected] > :is(th, td):first-child)::after { background: HighlightText; }
+		:where(:is(en-table, .en-table-native) > table), :where(:is(en-table, .en-table-native) > table > :is(thead, tfoot, caption)), :where(:is(en-table, .en-table-native) > table > thead > tr > th) { background: Canvas; color: CanvasText; }
+		:where(:is(en-table, .en-table-native) > table > :is(thead, tbody, tfoot) > tr > :is(th, td)) { border-color: CanvasText; }
+		:where(:is(en-table, .en-table-native)[data-en-sticky-selection] > table > tbody > tr > .en-table-selection) { background: Canvas; }
+		:where(:is(en-table, .en-table-native)[data-en-sticky-selection] > table > :is(thead, tbody) > tr > .en-table-selection)::before { background: CanvasText; }
+		:where(:is(en-table, .en-table-native) > table > tbody > tr[data-selected] > :is(th, td)) { background: Highlight; color: HighlightText; }
+		:where(:is(en-table, .en-table-native) > table > tbody > tr[data-selected] > :is(th, td):first-child)::after { background: HighlightText; }
 	}
 `);

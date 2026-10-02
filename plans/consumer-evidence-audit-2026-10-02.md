@@ -251,3 +251,26 @@ announcement ownership are documented separately. A fresh production build and
 explicit metadata refresh include the change.73/110 public entries now have
 bounded receipts;37 plus platform/manual/owner scope remain. Earlier fixture
 failures and the preparation metadata-stability stop remain retained evidence.
+
+## Native collection stylesheet qualification — October 2, 2026
+
+The [packed collection-style consumers](../probes/collection-style-recipes/README.md)
+qualify five additional entries: portable table CSS and both pagination/carousel
+style deliveries. A new `.en-table-native` wrapper reuses table paint without
+registering `en-table`; its existing selector contract remains intact. Dedicated
+application shadow roots own the matching pager/carousel templates and behavior.
+
+All144 packed cases (24 scenarios × two deliveries × three engines),21 existing
+table cases and36 Node checks pass, with zero skipped/retried cases. All131 final
+integrity checks pass. A fresh production build passes with1184 assets. The
+[receipt](../probes/collection-style-recipes/verification-20261002.json) preserves
+three earlier failed attempts and the explicit native Firefox scrollbar baseline,
+WebKit Option+Tab policy and unsupported forced-color-adjust branch. These are
+bounded engine assertions, not retail/manual acceptance.
+
+The public-entry inventory is78/110 qualified,32 pending. All48 gallery and11
+complete API copies retain their separate bounded journeys. Native Firefox
+assertion comparison, physical/manual/retail and separate-owner obligations remain;
+the historical external CSS-authoring rerun stays retired, never passed. Next are
+consumer-owned choice, command and overlay compositions; editor/color/collaboration
+and remaining helper/export surfaces retain their inventory rows.

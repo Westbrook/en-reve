@@ -330,18 +330,3 @@ Themes that already set a larger shared minimum can therefore enlarge controls
 that previously ignored it. No new public token or registration is required.
 
 Implementation and verification: [API-07 target-floor follow-up](../../plans/api-07-target-floors.md).
-
-## Native collection compositions
-
-`tableStyles` / `table.css` accepts a native `.en-table-native > table` wrapper
-alongside the existing `en-table > table` contract. The app supplies the scrollport,
-caption/headers, native controls, selection, sorting and paging; CSS supplies
-geometry and paint. `sticky` and `data-en-sticky-selection` use the same logical
-header/footer/leading-cell rules. The alias never installs the element/controller.
-
-`pagination.js` / `.css` and `carousel.js` / `.css` can also be adopted in dedicated
-application shadow roots with their matching semantic templates. In particular,
-carousel's generic class names are not a page-wide native stylesheet contract.
-The [collection consumer guide](docs/collection-consumers.md) defines the exact
-recipe markers, responsive/focus ownership and finite-collection limits. Use
-public CSS Parts/custom properties to customize the delivered elements.
