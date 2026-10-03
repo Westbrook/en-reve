@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-10-03T06:04:31.571719+00:00",
+  "sourceCommit": "4bddb168c682109198d064676cc0c57a2231f77a",
+  "previousSourceMain": "4aaaeeae75630821b085a140476882deff9406dc",
+  "taskPaths": [
+    "apps/docs/tests/candidate-project-visual.spec.ts",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/verification-project-visual-capture-20261003.json",
+    "plans/candidate-visual-evidence-2026-10-03.md",
+    "plans/experience.md",
+    "plans/tokens.md",
+    "tooling/offline-review/README.md",
+    "tooling/offline-review/build.mjs",
+    "tooling/offline-review/offline-review.test.mjs",
+    "tooling/visual-review/README.md",
+    "tooling/visual-review/capture.mjs",
+    "tooling/visual-review/readiness.mjs",
+    "tooling/visual-review/target-capture.mjs"
+  ],
+  "qualification": "Project-path capture, deferred SSR readiness and full embedded pixel coverage qualified across three engines, with root/offline regressions. Full authored catalogue and final requirement audit remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

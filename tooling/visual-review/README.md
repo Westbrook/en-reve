@@ -15,9 +15,12 @@ tooling/test-pipeline/with-toolchain.sh node tooling/visual-review/capture.mjs \
 The CLI owns the normal machine and checkout leases. Output must not exist. It
 serves only verified build bytes through Playwright's request routing; external
 requests fail. No network, cloud upload, installed browser profiles or adoption
-service is used. Original root builds are currently supported; transformed hosting
-builds are rejected by the shared offline-build verifier. Use the matching private
-Site export and original root build for this checkpoint.
+service is used. Both original root and separately built project-path outputs are
+supported. A project build must declare its canonical HTTPS deployment URL and
+path, with exactly one matching `<base>` in every HTML head. Manually transformed,
+missing-base or mismatched builds are rejected. Use an export from that exact
+build; root and project exports are not interchangeable. Project capture routes
+only inventoried assets inside that path and never contacts the live host.
 
 An optional JSON configuration can select engines, viewports, authored states and
 comparison settings. Without it, the required inventory is every case in the build
@@ -48,10 +51,23 @@ not pass. The authored fixture is code-reviewable test input, not a candidate-fi
 script API. A case's selector must identify exactly one rendered target.
 
 Each case runs in a fresh context. Readiness requires the matching preview receipt,
-lazy custom-element definitions/updates, settled fonts and decoded images. Captures
+rendered custom-element definitions/updates, settled fonts and decoded images.
+Nonpainting unregistered elements and hidden SSR `defer-hydration` content are
+recorded as deferred rather than awaited forever. Readiness runs before and after
+state actions; visible unhydrated content fails. This does not claim functional
+qualification of an unopened lazy surface. Captures
 freeze Date, use UTC/en-US/LTR, CSS-pixel scale1, explicit viewport/appearance,
 reduced motion and disabled screenshot animations, with hidden caret. These settings
 are recorded, not presented as physical-device or assistive-technology coverage.
+
+Tall or wide embedded targets are captured in scroll tiles at the original viewport
+size, avoiding the iframe clipping that otherwise produces blank pixels. External
+sticky/fixed page chrome is excluded from the usable capture area. In-case sticky
+content follows its real scroll behavior, and nested scroll/virtualized regions
+retain their authored visible state: tiling does not expand their hidden content.
+Each capture records its viewport, safe area and tiles. Size changes or clipped
+tiles fail instead of producing apparently complete evidence. This is a composite
+of scroll positions, not a claim that all content is visible simultaneously.
 
 ## Evidence and reuse
 
@@ -90,7 +106,10 @@ acceptance. `different`, `failed`, `not-run` and `unsupported` remain distinct.
 
 Owning unit tests live in `plan.test.mjs`; actual preview, cache, paired/mobile,
 corruption, changed-baseline and pixel-comparison journeys live in
-`apps/docs/tests/candidate-visual.spec.ts`. Use the supported `test:workflows` entry
+`apps/docs/tests/candidate-visual.spec.ts`. Project-path capture, deferred SSR
+readiness and tall/wide pixel coverage live in
+`apps/docs/tests/candidate-project-visual.spec.ts` (set `EN_GITHUB_PAGES_BUILD` to
+the original project build). Use the supported `test:workflows` entry
 with fresh `EN_EXECUTION_OUTPUT`, as described in the test-pipeline guide.
 
 The producer and candidate-facing reader are implemented, with portable evidence

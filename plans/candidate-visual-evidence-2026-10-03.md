@@ -103,3 +103,37 @@ A subsequent narrow-screen corrupt-import check exposed long artifact hashes
 overflowing the reader. Evidence text now wraps within its container; the final
 combined-build matrix covers that recovery state as well as normal and missing
 images. Rejected imports explicitly retain the existing draft and evidence.
+
+
+## Project-path and embedded capture checkpoint
+
+Stage 4 now qualifies original project-path builds without stripping or rewriting
+their base tag or build identity. The build verifier checks declared HTTPS origin,
+base path, exact HTML base and build marker. Capture routes only verified build
+assets; project escapes and external origins fail. Locally generated image blob
+URLs remain usable in WebKit without permitting remote resources. Root-only offline
+packaging retains its separate contract.
+
+Readiness waits for visible hydrated custom elements and records deliberately
+nonpainting deferred SSR content. Embedded cases retain their viewport and use
+scroll tiles when needed, excluding external sticky page chrome. Pixel fixtures
+cover tall/wide targets, fractional scroll rounding and targets that fit the full
+viewport but not its unobstructed area. Nested scrolling, virtualization and
+in-case sticky behavior retain their authored visible state.
+
+The final combined run passes 21 tests across Chromium, Firefox and WebKit with
+zero failures, skips or retries. It includes 36 project capture comparisons:
+buttons default/focus and the settings workflow, paired light/dark, desktop/mobile,
+on all three engines. All 36 report the deliberately introduced radius difference.
+Root capture/cache and offline review regressions pass in the same run. The owning
+20 Node checks pass; semantic comparison retains the exact core471/docs57 baseline
+with zero added or resolved diagnostics. Earlier failed and interrupted attempts
+remain retained. See `apps/docs/tests/verification-project-visual-capture-20261003.json`.
+
+The published application assets are the unchanged, separately qualified root and
+project builds from the reader checkpoint; this change affects capture tooling,
+validation and plan documentation. Build reuse is explicit in the receipt.
+
+The full 59-specimen/11-workflow authored state catalogue and requirement-by-requirement
+audit remain unfinished. This checkpoint is not full visual, design, manual or
+managed-adoption acceptance.

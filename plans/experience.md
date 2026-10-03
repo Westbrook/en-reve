@@ -258,8 +258,11 @@ Unknown dependencies expand conservatively; broad computed-style checks qualify
 three representative runtime overrides. The full sheet has been reconciled with
 the authored catalogue. Candidate-facing affected views now bind the graph to the exact build and show
 both paired appearances; all 59 gallery and 11 complete API copies have independent
-packed-consumer journeys. Version-bound visual captures and their verified reader
-remain open in [the delivery plan](candidate-visual-evidence-2026-10-03.md).
+packed-consumer journeys. Version-bound visual capture, comparison, portable evidence and the verified reader
+are implemented for original root and project-path builds. Bounded three-engine
+qualification covers responsive paired themes, readiness and embedded capture,
+cache/error handling and offline import. The full authored case/state matrix and
+requirement audit remain open in [the delivery plan](candidate-visual-evidence-2026-10-03.md).
 
 ## 9. CEM-informed changelogs and interactive old/new review
 

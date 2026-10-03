@@ -290,3 +290,7 @@ Isolated local `main` `3c19f661b980218b7154d03a64453f849c3a2108` adds the Chakra
 ## Candidate visual reader checkpoint
 
 Local main `4aaaeeae75630821b085a140476882deff9406dc` adds verified portable evidence import, comparisons and offline review. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Project-path visual capture checkpoint
+
+Local main `4bddb168c682109198d064676cc0c57a2231f77a` adds exact project-path capture, deferred SSR readiness and unclipped viewport-preserving captures. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

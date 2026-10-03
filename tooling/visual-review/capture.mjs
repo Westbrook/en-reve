@@ -11,24 +11,31 @@ import {selectCandidateImpact} from '../evidence/impact-client.mjs';
 import {readEnvelope,createPlan,comparisonSettings,captureExitCode} from './plan.mjs';
 import {fontInventory,environmentIdentity} from './environment.mjs';
 import {comparePixels} from './pixels.mjs';
+import {waitForRenderedElements} from './readiness.mjs';
+import {captureTarget} from './target-capture.mjs';
 
 const types={chromium,firefox,webkit};
-const origin='https://en-reve-review.invalid';
 const scaffold='<!doctype html><html><head><style>html,body{margin:0;width:100%;height:100%;overflow:hidden}iframe{display:block;border:0;width:100%;height:100%}</style></head><body><iframe title="Candidate capture"></iframe></body></html>';
 const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.svg':'image/svg+xml','.png':'image/png','.woff2':'font/woff2','.webp':'image/webp','.ico':'image/x-icon'};
 const fixedTime='2026-09-15T12:00:00.000Z';
 const readiness={hydrated:true,fonts:'document.fonts.ready',images:'decode',settleFrames:2,fixedTime};
 const captureOptions={animations:'disabled',caret:'hide',scale:'css',type:'png',timeout:20000};
-const producerFiles=['capture.mjs','plan.mjs','environment.mjs','cache-batch.mjs'];
+const producerFiles=['capture.mjs','plan.mjs','environment.mjs','cache-batch.mjs','readiness.mjs','target-capture.mjs'];
 
-async function routedContext(browser,snapshot,viewport,appearance) {
+export async function createBuildContext(browser,snapshot,viewport,appearance) {
+ const {origin,basePath}=snapshot.deployment;
  const context=await browser.newContext({viewport:{width:viewport.width,height:viewport.height},deviceScaleFactor:1,locale:'en-US',timezoneId:'UTC',colorScheme:appearance,reducedMotion:'reduce',forcedColors:'none',serviceWorkers:'block'});
  const failures=[];const assets=new Map(snapshot.assets.map(a=>[a.path,a]));
  await context.route('**/*',async route=>{
   const url=new URL(route.request().url());
   if(url.origin!==origin){failures.push('External request blocked: '+url.href);await route.abort();return;}
-  if(url.pathname==='/__visual-review'){await route.fulfill({contentType:'text/html',body:scaffold});return;}
-  let path=decodeURIComponent(url.pathname).replace(/^\//,'')||'index.html';
+  // WebKit routes reader-created object URLs; these are local browser resources.
+  if(url.protocol==='blob:'){await route.continue();return;}
+  if(url.pathname===basePath+'__visual-review'){await route.fulfill({contentType:'text/html',body:scaffold});return;}
+  let pathname;
+  try {pathname=decodeURIComponent(url.pathname);} catch {failures.push('Malformed build URL: '+url.href);await route.abort();return;}
+  if(!pathname.startsWith(basePath)){failures.push('Request escaped project path: '+url.href);await route.abort();return;}
+  let path=pathname.slice(basePath.length)||'index.html';
   if(!assets.has(path)&&assets.has(path+'.html'))path+='.html';
   const asset=assets.get(path);
   if(!asset){failures.push('Unknown build asset: '+url.pathname);await route.abort();return;}
@@ -40,9 +47,10 @@ async function routedContext(browser,snapshot,viewport,appearance) {
  return {context,failures};
 }
 async function validateInBuild(browser,snapshot,candidate) {
- const {context,failures}=await routedContext(browser,snapshot,{width:1280,height:900},candidate.appearances[0]);
+ const {origin,basePath}=snapshot.deployment;
+ const {context,failures}=await createBuildContext(browser,snapshot,{width:1280,height:900},candidate.appearances[0]);
  try {
-  const page=await context.newPage();await page.goto(origin+'/theme-review');
+  const page=await context.newPage();await page.goto(origin+basePath+'theme-review');
   await expect(page.getByRole('button',{name:'Export candidate',exact:true})).toBeEnabled();
   await page.getByLabel('Reopen candidate',{exact:true}).setInputFiles({name:'candidate.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(candidate.envelope))});
   await expect(page.getByText('Candidate reopened. Undo returns to your previous draft.',{exact:true})).toBeVisible();
@@ -50,9 +58,10 @@ async function validateInBuild(browser,snapshot,candidate) {
  } finally {await context.close();}
 }
 async function screenshot(browser,snapshot,candidate,row) {
- const {context,failures}=await routedContext(browser,snapshot,row.viewport,row.appearance);
+ const {origin,basePath}=snapshot.deployment;
+ const {context,failures}=await createBuildContext(browser,snapshot,row.viewport,row.appearance);
  try {
-  const page=await context.newPage();await page.clock.setFixedTime(new Date(fixedTime));await page.goto(origin+'/__visual-review');
+  const page=await context.newPage();await page.clock.setFixedTime(new Date(fixedTime));await page.goto(origin+basePath+'__visual-review');
   const path=snapshot.build.pages.find(p=>p.id===row.fixture.page).path;
   await page.evaluate(({path,request})=>{
    const frame=document.querySelector('iframe');window.captureReply=null;
@@ -69,16 +78,14 @@ async function screenshot(browser,snapshot,candidate,row) {
   const target=frame.locator(row.fixture.selector);await expect(target).toHaveCount(1);await target.scrollIntoViewIfNeeded();
   // Scroll activates the real lazy specimens; wait for rendered custom controls,
   // rather than capturing SSR placeholders and calling them hydrated evidence.
-  await target.evaluate(async root=>{
-   const visit=async element=>{if(element.localName.includes('-')){await customElements.whenDefined(element.localName);if(element.updateComplete)await element.updateComplete;}for(const child of element.children)await visit(child);if(element.shadowRoot)for(const child of element.shadowRoot.children)await visit(child);};
-   await Promise.race([visit(root),new Promise((_,reject)=>setTimeout(()=>reject(new Error('Custom-element readiness timed out.')),20000))]);
-  });
+  const beforeActions=await target.evaluate(waitForRenderedElements);
   for(const action of row.fixture.actions){const element=frame.locator(action.selector);if(['fill','press','select'].includes(action.kind))await element[action.kind==='select'?'selectOption':action.kind](action.value,{timeout:10000});else await element[action.kind]({timeout:10000});}
+  const afterActions=await target.evaluate(waitForRenderedElements);
   await frame.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].filter(image=>image.currentSrc).map(image=>image.decode()));await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
   const box=await target.boundingBox();if(!box||box.width*box.height>32_000_000)throw new Error('Capture target is absent or exceeds32 million pixels.');
-  const bytes=await target.screenshot(captureOptions);
+  const {bytes,coverage}=await captureTarget(page,frame,target,captureOptions);
   if(failures.length)throw new Error(failures.join('\n'));
-  return {bytes,reply,box};
+  return {bytes,reply,box,coverage,readiness:{beforeActions,afterActions}};
  } finally {await context.close();}
 }
 
@@ -88,7 +95,7 @@ export async function captureReview({buildDirectory,baselineFile,candidateFile,o
  if(output===buildRoot||output.startsWith(buildRoot+'/')||buildRoot.startsWith(output+'/'))throw new Error('Output must be separate from the build.');
  const cachePath=resolve(cacheDirectory??output+'/cache');
  if(cachePath===buildRoot||cachePath.startsWith(buildRoot+'/'))throw new Error('Cache must be outside the immutable build.');
- const snapshot=await inspectBuild(buildRoot);
+ const snapshot=await inspectBuild(buildRoot,{allowProjectPath:true});
  const baseline=readEnvelope(await readFile(baselineFile,'utf8'),snapshot.build),candidate=readEnvelope(await readFile(candidateFile,'utf8'),snapshot.build);
  const plan=createPlan(snapshot.build,baseline,candidate,options),settings=comparisonSettings(options.comparison);
  const impact=JSON.parse(await readFile(resolve(buildRoot,'impact.json'),'utf8'));
@@ -127,7 +134,7 @@ export async function captureReview({buildDirectory,baselineFile,candidateFile,o
        const hit=fonts.complete&&options.reuse!==false?await cache.lookup(identity):{status:'miss',reason:fonts.complete?'disabled':'unverified-fonts'};
        if(hit.status==='hit')captures[variant]={identity,artifact:await copyArtifact(hit.evidence.artifacts[0]),reused:true,originatingRun:hit.evidence.originatingRun,details:hit.evidence.result};
        else{
-        try {const captured=await screenshot(browser,snapshot,subject,row);const artifact=await cache.storeArtifact(captured.bytes,{label:'Rendered case',mediaType:'image/png'});const details={reply:captured.reply,box:captured.box};pendingEvidence.stage({schemaVersion:1,identity,originatingRun:run,selectionReceipt:selectionArtifact,artifacts:[artifact],outcome:'passed',result:details});captures[variant]={identity,artifact:await copyArtifact(artifact),reused:false,originatingRun:run,cacheMiss:hit.reason,details};}
+        try {const captured=await screenshot(browser,snapshot,subject,row);const artifact=await cache.storeArtifact(captured.bytes,{label:'Rendered case',mediaType:'image/png'});const details={reply:captured.reply,box:captured.box,readiness:captured.readiness,coverage:captured.coverage};pendingEvidence.stage({schemaVersion:1,identity,originatingRun:run,selectionReceipt:selectionArtifact,artifacts:[artifact],outcome:'passed',result:details});captures[variant]={identity,artifact:await copyArtifact(artifact),reused:false,originatingRun:run,cacheMiss:hit.reason,details};}
         catch(error){const artifact=await cache.storeArtifact(JSON.stringify({error:String(error)}),{label:'Capture failure',mediaType:'application/json'});pendingEvidence.stage({schemaVersion:1,identity,originatingRun:run,selectionReceipt:selectionArtifact,artifacts:[artifact],outcome:'failed',result:{error:String(error)}});result.captureFailure={variant,identity,artifact:await copyArtifact(artifact),originatingRun:run};throw error;}
        }
       }
@@ -145,7 +152,7 @@ export async function captureReview({buildDirectory,baselineFile,candidateFile,o
    finally{if(owned)await browser?.close();}
   }
   // Catch changes during capture; rendered bytes were also checked at every route.
-  const finalSnapshot=await inspectBuild(buildRoot);
+  const finalSnapshot=await inspectBuild(buildRoot,{allowProjectPath:true});
   if(digestJson(finalSnapshot.assets)!==digestJson(snapshot.assets))throw new Error('Build changed during capture.');
   const finalFonts=await fontInventory(),finalRuntime=await executionRuntimeIdentity(fileURLToPath(new URL('../../',import.meta.url)),runtimeConfig);
   if(fonts.digest!==finalFonts.digest||fonts.complete!==finalFonts.complete||runtime.digest!==finalRuntime.digest)throw new Error('Fonts or browser runtime changed during capture; entries were not made reusable.');

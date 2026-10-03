@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "4aaaeeae75630821b085a140476882deff9406dc",
-  "exportedAt": "2026-10-03T04:54:21.657161+00:00",
+  "sourceCommit": "4bddb168c682109198d064676cc0c57a2231f77a",
+  "exportedAt": "2026-10-03T06:04:31.571719+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5812,
-  "includedBytes": 156842026,
-  "qualification": "Portable reader qualified with owning controls and browser import, stale edits, paired mobile and offline roundtrip journeys. Broader producer catalogue and project-path capture remain open.",
-  "latestUpdate": ".source-export/updates/candidate-visual-reader-20261003.json",
+  "includedFiles": 5817,
+  "includedBytes": 156980306,
+  "qualification": "Project-path capture, deferred SSR readiness and full embedded pixel coverage qualified across three engines, with root/offline regressions. Full authored catalogue and final requirement audit remain open.",
+  "latestUpdate": ".source-export/updates/project-visual-capture-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

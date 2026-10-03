@@ -9,8 +9,11 @@ submit, approve or adopt a theme. No new library element or public API is added.
 
 Keep the original `dist` from the build used to export the candidate. A freshly
 rebuilt or currently hosted site may have a different identity, even with the same
-package version. Do not use the `gh-pages` copy: its base-tag transformation changes
-HTML bytes. From the repository, with built packages installed:
+package version. Offline serving requires the original **root** build. The separately
+built GitHub project-site output has a different deployment identity and absolute
+base; it is supported by the visual capture tooling, not by this loopback packager.
+Do not remove or rewrite its base to make it look like a root build. From the
+repository, with built packages installed:
 
 ```sh
 tooling/test-pipeline/with-toolchain.sh node tooling/offline-review/package.mjs \

@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { hashValue } from '@en-reve/tokens';
 import { packageReview } from './package.mjs';
+import { inspectBuild } from './build.mjs';
 import { digest, startOfflineReview, verifyPackage } from './runtime.mjs';
 
 async function fixture(t) {
@@ -70,4 +71,34 @@ test('loopback server has bounded routes, methods, Host and per-request integrit
   assert.equal((await fetch(server.url+'/serve.mjs')).status,404);
   assert.equal((await fetch(server.url+'/%2e%2e%2fREADME.txt')).status,409);
   await writeFile(join(f.outputDirectory,'site/theme-review.html'),'changed');assert.equal((await fetch(server.url+'/theme-review')).status,409);
+});
+
+// These are synthetic transport controls, not browser-rendering evidence.
+async function projectFixture(f, {baseHTML='<base href="https://westbrook.github.io/en-reve/">', deployment={basePath:'/en-reve/',baseURL:'https://westbrook.github.io/en-reve/'}, pagePath='/en-reve/', inHead=true}={}) {
+  Object.assign(f.build,{deployment,pages:[{id:'sheet',path:pagePath,caseIds:[]}]});
+  const html=`<!doctype html><html><head><meta name="en-review-build" content="${f.build.fingerprint}">${inHead?baseHTML:''}</head><body>${inHead?'':baseHTML}Fixture</body></html>`;
+  for(const asset of f.build.assets){await writeFile(join(f.buildDirectory,asset.path),html);asset.sha256=digest(html);}
+  await writeFile(join(f.buildDirectory,'review-build.json'),JSON.stringify(f.build));await f.writeCandidate();
+}
+test('declared original project builds are capture opt-in; offline packages still require root builds',async t=>{
+  const f=await fixture(t);const root=await inspectBuild(f.buildDirectory);assert.equal(root.deployment.basePath,'/');
+  await projectFixture(f);await assert.rejects(inspectBuild(f.buildDirectory),/original root build/);
+  await assert.rejects(packageReview(f),/original root build/);
+  const project=await inspectBuild(f.buildDirectory,{allowProjectPath:true});assert.deepEqual(project.deployment,{basePath:'/en-reve/',baseURL:'https://westbrook.github.io/en-reve/',origin:'https://westbrook.github.io'});
+});
+test('project inspection rejects absent, duplicate, misplaced and inconsistent base elements even with rebound hashes',async t=>{
+  const f=await fixture(t);
+  for(const change of [{baseHTML:''},{baseHTML:'<base href="https://westbrook.github.io/en-reve/"><base href="https://westbrook.github.io/en-reve/">'},{baseHTML:'<base href="https://example.invalid/en-reve/">'},{inHead:false},{baseHTML:'<base href="https://westbrook.github.io/en-reve/" target="_blank">'}]){
+    await projectFixture(f,change);await assert.rejects(inspectBuild(f.buildDirectory,{allowProjectPath:true}),/Document base/);
+  }
+  await projectFixture(f,{deployment:{basePath:'/',baseURL:null},pagePath:'/'});await assert.rejects(inspectBuild(f.buildDirectory,{allowProjectPath:true}),/hosting base transformation/);
+});
+test('deployment metadata and review routes cannot escape the declared project',async t=>{
+  const f=await fixture(t);
+  for(const deployment of [{basePath:'/en-reve',baseURL:'https://westbrook.github.io/en-reve/'},{basePath:'/en-reve/',baseURL:'https://westbrook.github.io/other/'},{basePath:'/en-reve/',baseURL:'https://user:password@example.invalid/en-reve/'},{basePath:'/en-reve/',baseURL:'https://westbrook.github.io/en-reve/?query=1'},{basePath:'/en-reve/',baseURL:'https://westbrook.github.io/en-reve/#fragment'},{basePath:'/en-reve/',baseURL:'http://westbrook.github.io/en-reve/'}]){
+    await projectFixture(f,{deployment});await assert.rejects(inspectBuild(f.buildDirectory,{allowProjectPath:true}),/deployment|Deployment/);
+  }
+  for(const pagePath of ['/theme-review','//example.invalid/en-reve/','/en-reve/../outside']){
+    await projectFixture(f,{pagePath});await assert.rejects(inspectBuild(f.buildDirectory,{allowProjectPath:true}),/escapes/);
+  }
 });
