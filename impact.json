@@ -21,12 +21,12 @@
   },
   "inputs": {
     "packages/tokens/dist/manifest.json": "sha256:878177677bf16a05343a3da70cb40d7c6fbf3c0de630d76229904215014fe587",
-    "packages/elements/public-api.json": "sha256:bd32a410eb396c9f405ae448e4ab1657a2ea65839b3559c09af035c9e09f59fa",
+    "packages/elements/public-api.json": "sha256:fc39aad49123a09a68bb5f8fe2ab59b3dbc35908b91616cc3f0260b489516729",
     "packages/styles/css-authoring.json": "sha256:74705b57a2b8884996e3f4df005d9812f52fa95a775d0819838c412b975e3c58",
     "package-lock.json": "sha256:6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
     "tsconfig.base.json": "sha256:40adb4a43233b72907a9ca070deac2370dbb64f585c139dd914d60d52d5c5aed",
     "tooling/evidence/impact.mjs": "sha256:e1379949d9ebd729e2e1f4e358939993e8d3f5a3772be558d009ceddc19f07a6",
-    "tooling/evidence/graph.ts": "sha256:3eed8da16d508c7df88999b1ee16d14ed719451206b5f234737d3905780756f8",
+    "tooling/evidence/graph.ts": "sha256:823f149f31391fe066e4910bd6483caa09bf0ba891502af01ef8d3efecdbee07",
     "tooling/evidence/graph-core.ts": "sha256:029fcdbe287eca33c62e288a1d1bf44bd457f5971c56bc649c57c61a75f4b808",
     "tooling/customization/source-inventory.mjs": "sha256:f6f232ded9f91fb5ca13e66141658db4c91d0238e1cfc63f7875c049f9f131ff",
     "apps/docs/scripts/authored-specimen-sources.mjs": "sha256:5fbdffab1e99042798c86b8370323a6663e2c049c36ade295686eadf8896880f",
@@ -46,7 +46,7 @@
     "apps/docs/public/fonts/theme-references/GeistMono-Variable.woff2": "sha256:afaacc4c5fbba89d2ebf7a02dc4070208540874592a5504d57175782fe893101",
     "apps/docs/public/fonts/theme-references/README.md": "sha256:12d4b0f7ca0e095c9de3ba6e6342c9ed750de63fc26e9dec7d51eaf9bfc44d2a",
     "apps/docs/public/fonts/theme-references/sources.json": "sha256:1287359f3dee877f83bce9a640cf54de55c9c9df96a6085684e738909c4fd233",
-    "apps/docs/public/guides/contract-index.json": "sha256:55fb1141f618f8b5ce96652ea482908f46b71d4cd573951957ea150fc546ca19",
+    "apps/docs/public/guides/contract-index.json": "sha256:8c8357e790ab183a307dbdc2ce3a215ccd59777bf2f9ca676d624b0f469037fe",
     "apps/docs/public/guides/skills/en-reve-accessibility/SKILL.md": "sha256:69ff2a732bb03fa819cb450cc3c27938032319f9ad79967e02d1406e6652e1c2",
     "apps/docs/public/guides/skills/en-reve-app/SKILL.md": "sha256:86691d3677daa83eb2adcb511b396fb7d1a2a53b56622beb770c3a48d567615f",
     "apps/docs/public/guides/skills/en-reve-component/SKILL.md": "sha256:9497ecff61317b5731b274b434b80f58a7c95125118d96117db838c09b134bf0",
@@ -54,8 +54,8 @@
     "apps/docs/public/guides/skills/en-reve-document/SKILL.md": "sha256:9daaef758e8a404d30c447744414dfa696a3b7cb979a1b03b2d0ec8f37f9c948",
     "apps/docs/public/guides/skills/en-reve-test/SKILL.md": "sha256:a1e63a7f8f097d4fbda8061f7c59b13836d8de8f4470c6dc627f82632db4f275",
     "apps/docs/public/guides/skills/en-reve-theme/SKILL.md": "sha256:93b91f1753c178d4a250084201f6efe5ffa288200d37ae8c29b06ebb66796066",
-    "apps/docs/public/public-api.json": "sha256:bd32a410eb396c9f405ae448e4ab1657a2ea65839b3559c09af035c9e09f59fa",
-    "apps/docs/public/public-types.json": "sha256:cfbfb08a63f082d7d49b0b8836544430f01dc3ad4430ab3027815c938973c676",
+    "apps/docs/public/public-api.json": "sha256:fc39aad49123a09a68bb5f8fe2ab59b3dbc35908b91616cc3f0260b489516729",
+    "apps/docs/public/public-types.json": "sha256:5afdee432898dec1d99df1f5d0f4a0f0ca60f59aa447b1ae9f1c308bbf4e2003",
     "apps/docs/public/reviews/api-normalization/README.md": "sha256:a292050e297ee41a260c80e3ed76d4949b32d395851d3c18c9c81cee920aa788",
     "apps/docs/public/reviews/api-normalization/api-01-events.md": "sha256:a77d38a2c7e64913ce377a219f773a174fa05bcda94980d3df665947305676ba",
     "apps/docs/public/reviews/api-normalization/api-02-transactions.md": "sha256:8346257bfd61bc5871f279d6b8f2e3281392c65c8f701b48c3cfa1499e800935",
@@ -48464,5 +48464,5 @@
     "packages/elements/src/select-option/index.ts": [],
     "packages/elements/src/avatar/index.ts": []
   },
-  "digest": "sha256:dba9986d56eefe13632c7c0327a0e61d35592388bbc7e2987ccc93c45686e703"
+  "digest": "sha256:e58419063188d6b618aa957630064e1f755dbf7d37d1da718100a0377bfc183b"
 }
