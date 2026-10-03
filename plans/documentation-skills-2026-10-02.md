@@ -39,17 +39,21 @@ Documentation does not close the [support ledger](support-coverage.md)'s physica
 manual AT/IME, native Safari delivery, prior-product/OS or linguistic gaps.
 The historical external CSS-authoring pilot rerun remains explicitly retired.
 
-The experience/token plans still contain managed submission/adoption and
-version-bound visual comparison and affected-component review integration.
+The experience/token plans retain managed submission/adoption and completion of
+the full authored-state visual catalogue and requirement audit.
 Managed submission/adoption requires a selected persistence/service/authority
 model. Offline review and version comparison have since been implemented; the
 [offline follow-up](../tooling/offline-review/README.md) now supplies portable
 exact-build candidate review and the [version-review checkpoint](version-review-2026-10-02.md)
 records independently operable before/after review. [Generated impact mapping](impact-mapping-2026-10-03.md)
-adds a conservative source graph and reconciles the full sheet. Its candidate-facing
-visual integration and eleven newly surfaced gallery consumer journeys remain.
-This checkpoint makes those distinctions discoverable rather
-than manufacturing a backend or marking a preview as adopted.
+adds a conservative source graph and reconciles the full sheet. Candidate-facing
+impact and visual evidence integration, offline evidence reopening, project-path
+capture and eleven gallery consumer journeys now have bounded qualification; see
+[candidate visual evidence](candidate-visual-evidence-2026-10-03.md) and the later
+semantic-closeout receipt. Full authored-state, density and scope coverage plus
+local human assessment remain unfinished. The historical receipts retain their
+original limits. These distinctions do not manufacture a backend or mark a preview
+as adopted.
 
 The first handbook pass connects existing component docs, examples and package
 contracts; it does not claim exhaustive prose for every possible composition.

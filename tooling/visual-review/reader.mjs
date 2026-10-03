@@ -63,6 +63,11 @@ export async function verifyVisualEvidence(report,files,build){
    requireValue(input.artifacts?.build===build.fingerprint&&input.theme===subject.sourceHash&&input.fixture===hashValue(row.fixture)&&same(input.viewport,row.viewport)&&same(input.environment,report.environments[row.engine])&&input.preferences?.colorScheme===row.appearance,'Capture identity is for a different case or candidate.');
    artifactRef(capture.artifact,'image/png');if(missing.has(capture.artifact.path))unavailable.push(capture.artifact.path);
    requireValue(capture.details?.reply?.sourceHash===subject.sourceHash&&capture.details.reply.buildFingerprint===build.fingerprint&&capture.details.reply.effectiveMode===row.appearance,'Capture lacks a matching preview receipt.');
+   if(row.fixture.checks?.length)requireValue(Array.isArray(capture.details.stateChecks)&&same(capture.details.stateChecks,row.fixture.checks.map(check=>({...check,status:'passed'}))),'Capture lacks its declared state postconditions.');
+   if(row.fixture.capture==='viewport'){
+    requireValue(capture.details.coverage?.method==='viewport','Capture lacks its declared viewport framing.');
+    const size=sizes.get(capture.artifact.path);if(size)requireValue(size.width===row.viewport.width&&size.height===row.viewport.height,'Viewport PNG dimensions do not match the case.');
+   }
   }
   if(row.captureFailure){identity(row.captureFailure.identity,'rendering');artifactRef(row.captureFailure.artifact,'application/json');}
   if(row.comparison){

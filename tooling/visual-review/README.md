@@ -155,3 +155,33 @@ reopen without the matching bundle, the page says its artifacts are missing; it
 does not turn the reference into passing evidence. Keep both files with the exact
 original documentation build for offline review. Candidate replay, evidence
 integrity, build applicability, image comparison and human review are distinct.
+
+## Authored interaction catalogue (in progress)
+
+`catalogue.mjs` joins every manifest initial case with source-derived named states.
+It currently adds 23 interactions; it is not yet the complete interaction catalogue.
+No state calls private component methods or injects application state. Cases may
+include `checks` with `visible`, `hidden`, `focused`, `checked`, `text` (contains),
+`value`, `attribute` (`name` and `value`), or `count` assertions. Every check names
+an explicit Playwright selector. The producer waits for each postcondition and
+retains its result; an unmet condition fails capture. The reader requires declared
+checks to match the successful capture receipts.
+
+Use `capture: "viewport"` for open top-layer menus, dialogs and drawers. The PNG
+then covers the visible embedded viewport, including overlays outside the specimen
+box. Ordinary cases retain their element/scroll-tile framing. Framing and checks
+are part of the fixture identity and invalidate earlier captures when changed.
+
+```sh
+EN_VISUAL_CATALOGUE=1 EN_EXECUTION_OUTPUT=/absolute/fresh-run \
+  tooling/test-pipeline/with-toolchain.sh npm run test:workflows -w @en-reve/docs -- \
+  candidate-catalogue.spec.ts
+```
+
+`EN_VISUAL_SELECTED` may select comma-separated `id:state` entries during diagnosis;
+unselected rows stay in the required inventory as `not-run`. Without it all current
+catalogue entries are acquired in both appearances and desktop/mobile across the
+three pinned engines. This tests exact current-build baseline/candidate exports
+with a deliberate radius change. It does not promote a baseline or replace the
+remaining state coverage and manual/design acceptance. New examples missing from
+a frozen build fail catalogue planning rather than silently disappearing.

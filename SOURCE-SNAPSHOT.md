@@ -294,3 +294,7 @@ Local main `4aaaeeae75630821b085a140476882deff9406dc` adds verified portable evi
 ## Project-path visual capture checkpoint
 
 Local main `4bddb168c682109198d064676cc0c57a2231f77a` adds exact project-path capture, deferred SSR readiness and unclipped viewport-preserving captures. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Authored visual-state checkpoint
+
+Local main `82005a169a984296b8438d4c987fbea1b41821c3` adds observable state checks, explicit viewport framing and a partial authored interaction catalogue. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

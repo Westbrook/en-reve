@@ -137,3 +137,37 @@ validation and plan documentation. Build reuse is explicit in the receipt.
 The full 59-specimen/11-workflow authored state catalogue and requirement-by-requirement
 audit remain unfinished. This checkpoint is not full visual, design, manual or
 managed-adoption acceptance.
+
+## Authored state catalogue checkpoint
+
+The first catalogue joins all70 initial manifest cases with23 source-derived
+interaction states. State postconditions now precede capture, and top-layer
+states explicitly capture the visible embedded viewport. The reader checks that
+postcondition/framing receipts match the declared fixture. No private state
+injection is used. This catalogue is still partial: color-channel/drag states,
+editor selections/suggestions, asynchronous response states, virtual collection
+operations and compact-density candidate coverage remain to be added.
+
+The first Chromium acquisition completed every initial desktop/light case and
+found three ambiguous fixture selectors in the first interaction block (nested
+menus and specimen Reset buttons). It was deliberately interrupted after that
+block, retaining the outcomes. These are fixture corrections, not component fixes;
+the interrupted campaign is not a complete pass.
+
+The corrected interaction-only run passes all33 tests across Chromium, Firefox and
+WebKit without failures, skips or retries. It retains276 comparisons (23 states,
+desktop/mobile, light/dark, three engines), plus36 project-path comparisons and
+reader, offline, readiness and GitHub navigation regressions. All22 owning Node
+checks pass; core471/docs57 semantic diagnostics retain the exact existing baseline.
+Metadata freshness and production types were checked before separate fresh root
+and project SSR builds. See
+`apps/docs/tests/verification-candidate-state-catalogue-20261003.json`.
+
+This is partial qualification. The70 initial states remain explicitly not-run in
+this interaction-only matrix; the earlier initial captures remain separate partial
+evidence. Remaining work includes the full specimen/workflow state inventory,
+compact-density candidates, nested/scoped customization and a requirement audit.
+The audit also identifies a missing local human assessment layer: mechanical pixel
+outcomes alone cannot distinguish intentional design changes, regressions and
+unassessed differences. That layer must bind notes to exact candidate/evidence
+identity without mutating machine evidence or implying remote adoption.

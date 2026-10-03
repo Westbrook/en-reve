@@ -48,3 +48,11 @@ test('fatal end-of-run identity failure fails CLI even when individual captures 
  assert.equal(captureExitCode({status:'different',results:[{status:'different'}]}),0);
  assert.equal(captureExitCode({status:'incomplete',results:[{status:'not-run'},{status:'unsupported'}]}),0);
 });
+
+test('observable state checks and viewport framing are explicit capture inputs',()=>{
+ const subject={appearances:['light']},fixture=defaultCases(build)[0];
+ const cases=[{...fixture,capture:'viewport',checks:[{kind:'attribute',selector:'button',name:'aria-expanded',value:'true'}]}];
+ assert.equal(createPlan(build,subject,subject,{cases}).rows[0].fixture.capture,'viewport');
+ for(const bad of [{kind:'evaluate',selector:'button'},{kind:'attribute',selector:'button',value:'true'},{kind:'count',selector:'button',value:-1},{kind:'value',selector:'button',value:3}])assert.throws(()=>createPlan(build,subject,subject,{cases:[{...fixture,checks:[bad]}]}),/check/i);
+ assert.throws(()=>createPlan(build,subject,subject,{cases:[{...fixture,capture:'all'}]}),/framing/);
+});

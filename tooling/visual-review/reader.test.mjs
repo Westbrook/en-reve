@@ -5,7 +5,7 @@ import {renderingIdentity,comparisonIdentity,reviewIdentity,digestBytes} from '.
 import {verifyVisualEvidence,encodeVisualBundle,readVisualBundle,evidenceReference,validateEvidenceReference} from './reader.mjs';
 const source='sha256:'+'a'.repeat(64),old='sha256:'+'b'.repeat(64);
 const seal=value=>{const {integrity,...body}=value;return {...body,integrity:hashValue(body)};};
-function fixture(){
+function fixture(checks){
  const build={schemaVersion:1,fingerprint:source,pages:[{id:'sheet',path:'/',caseIds:['buttons']}],caseIds:['buttons'],assets:[]};
  const envelope=(sourceHash,title)=>seal({schema:'en-reve/local-theme-review',schemaVersion:1,build,draft:{candidate:{candidateSourceHash:sourceHash,theme:{mode:'light'},title}}});
  const candidate=envelope(source,'Actual'),baseline=envelope(old,'Expected'),files=new Map(),artifacts=[];
@@ -13,9 +13,9 @@ function fixture(){
  artifact(Buffer.from(JSON.stringify(candidate)),'application/json','Candidate');artifact(Buffer.from(JSON.stringify(baseline)),'application/json','Baseline');
  const image=artifact(Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aG1sAAAAASUVORK5CYII=','base64'),'image/png','Synthetic one-pixel fixture');
  const view={id:'desktop',width:1000,height:800},environment={engine:'chromium',version:'synthetic'};
- const testCase={id:'buttons',page:'sheet',state:'default',selector:'[data-specimen=buttons]',actions:[]};
+ const testCase={id:'buttons',page:'sheet',state:'default',selector:'[data-specimen=buttons]',actions:[],...(checks?{checks}:{})};
  const scope={cases:[testCase,{...testCase,state:'omitted'}],selected:['buttons:default'],engines:['chromium'],viewports:[view],policy:'test inventory'};
- const capture=theme=>({identity:renderingIdentity({artifacts:{build:source},fixture:hashValue(testCase),testCode:source,resolvedDependencies:{},theme,assets:{},environment,locale:'en-US',direction:'ltr',preferences:{colorScheme:'light'},viewport:view,readiness:{},capture:{}}),artifact:image,reused:false,originatingRun:'fixture',details:{reply:{sourceHash:theme,buildFingerprint:source,effectiveMode:'light'}}});
+ const capture=theme=>({identity:renderingIdentity({artifacts:{build:source},fixture:hashValue(testCase),testCode:source,resolvedDependencies:{},theme,assets:{},environment,locale:'en-US',direction:'ltr',preferences:{colorScheme:'light'},viewport:view,readiness:{},capture:{}}),artifact:image,reused:false,originatingRun:'fixture',details:{reply:{sourceHash:theme,buildFingerprint:source,effectiveMode:'light'},...(checks?{stateChecks:checks.map(check=>({...check,status:'passed'}))}:{})}});
  const settings={channelThreshold:0,maxDifferentPixels:0};
  const comparison={identity:comparisonIdentity({candidateImage:image.digest,baselineImage:image.digest,implementation:source,settings}),artifact:image,reused:true,originatingRun:'earlier-fixture',stats:{expected:{width:1,height:1},actual:{width:1,height:1},differentPixels:0,totalPixels:1,dimensionsMatch:true,match:true}};
  const results=[{key:'chromium/desktop/light/buttons/default',engine:'chromium',viewport:view,appearance:'light',fixture:testCase,status:'passed',captures:{expected:capture(old),actual:capture(source)},comparison},{key:'chromium/desktop/light/buttons/omitted',engine:'chromium',viewport:view,appearance:'light',fixture:scope.cases[1],status:'not-run',reason:'Not selected.'}];
@@ -45,4 +45,13 @@ test('arbitrary paths, duplicate files and executable formats are rejected',asyn
  const x=fixture(),r=structuredClone(x.report);r.artifacts[0].path='https://example.invalid/x';await assert.rejects(verifyVisualEvidence(seal(r),x.files,x.build),/path/);
  const bundle=JSON.parse(encodeVisualBundle(x.report,x.files));bundle.files.push(bundle.files[0]);await assert.rejects(readVisualBundle(JSON.stringify(bundle),x.build),/Invalid/);
  const evil=structuredClone(x.report);evil.artifacts[2].mediaType='image/svg+xml';await assert.rejects(verifyVisualEvidence(seal(evil),x.files,x.build),/Unsupported/);
+});
+
+test('declared state postconditions cannot disappear or claim failed checks on completed captures',async()=>{
+ const checks=[{kind:'attribute',selector:'button',name:'aria-expanded',value:'true'}];
+ const x=fixture(checks);await verifyVisualEvidence(x.report,x.files,x.build);
+ for(const replacement of [undefined,[],[{...checks[0],status:'failed'}],[{...checks[0],selector:'other',status:'passed'}]]){
+  const r=structuredClone(x.report);if(replacement===undefined)delete r.results[0].captures.actual.details.stateChecks;else r.results[0].captures.actual.details.stateChecks=replacement;
+  await assert.rejects(verifyVisualEvidence(seal(r),x.files,x.build),/postconditions/);
+ }
 });

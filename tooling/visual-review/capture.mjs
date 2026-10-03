@@ -12,6 +12,7 @@ import {readEnvelope,createPlan,comparisonSettings,captureExitCode} from './plan
 import {fontInventory,environmentIdentity} from './environment.mjs';
 import {comparePixels} from './pixels.mjs';
 import {waitForRenderedElements} from './readiness.mjs';
+import {verifyState} from './state-checks.mjs';
 import {captureTarget} from './target-capture.mjs';
 
 const types={chromium,firefox,webkit};
@@ -20,7 +21,7 @@ const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json
 const fixedTime='2026-09-15T12:00:00.000Z';
 const readiness={hydrated:true,fonts:'document.fonts.ready',images:'decode',settleFrames:2,fixedTime};
 const captureOptions={animations:'disabled',caret:'hide',scale:'css',type:'png',timeout:20000};
-const producerFiles=['capture.mjs','plan.mjs','environment.mjs','cache-batch.mjs','readiness.mjs','target-capture.mjs'];
+const producerFiles=['capture.mjs','plan.mjs','environment.mjs','cache-batch.mjs','readiness.mjs','target-capture.mjs','state-checks.mjs'];
 
 export async function createBuildContext(browser,snapshot,viewport,appearance) {
  const {origin,basePath}=snapshot.deployment;
@@ -81,11 +82,14 @@ async function screenshot(browser,snapshot,candidate,row) {
   const beforeActions=await target.evaluate(waitForRenderedElements);
   for(const action of row.fixture.actions){const element=frame.locator(action.selector);if(['fill','press','select'].includes(action.kind))await element[action.kind==='select'?'selectOption':action.kind](action.value,{timeout:10000});else await element[action.kind]({timeout:10000});}
   const afterActions=await target.evaluate(waitForRenderedElements);
+  const stateChecks=await verifyState(frame,row.fixture.checks);
   await frame.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].filter(image=>image.currentSrc).map(image=>image.decode()));await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
   const box=await target.boundingBox();if(!box||box.width*box.height>32_000_000)throw new Error('Capture target is absent or exceeds32 million pixels.');
-  const {bytes,coverage}=await captureTarget(page,frame,target,captureOptions);
+  const {bytes,coverage}=row.fixture.capture==='viewport'
+   ? {bytes:await page.screenshot(captureOptions),coverage:{method:'viewport',viewport:row.viewport,limitations:'The visible embedded viewport, including top-layer overlays; offscreen document content is not expanded.'}}
+   : await captureTarget(page,frame,target,captureOptions);
   if(failures.length)throw new Error(failures.join('\n'));
-  return {bytes,reply,box,coverage,readiness:{beforeActions,afterActions}};
+  return {bytes,reply,box,coverage,stateChecks,readiness:{beforeActions,afterActions}};
  } finally {await context.close();}
 }
 
@@ -134,7 +138,7 @@ export async function captureReview({buildDirectory,baselineFile,candidateFile,o
        const hit=fonts.complete&&options.reuse!==false?await cache.lookup(identity):{status:'miss',reason:fonts.complete?'disabled':'unverified-fonts'};
        if(hit.status==='hit')captures[variant]={identity,artifact:await copyArtifact(hit.evidence.artifacts[0]),reused:true,originatingRun:hit.evidence.originatingRun,details:hit.evidence.result};
        else{
-        try {const captured=await screenshot(browser,snapshot,subject,row);const artifact=await cache.storeArtifact(captured.bytes,{label:'Rendered case',mediaType:'image/png'});const details={reply:captured.reply,box:captured.box,readiness:captured.readiness,coverage:captured.coverage};pendingEvidence.stage({schemaVersion:1,identity,originatingRun:run,selectionReceipt:selectionArtifact,artifacts:[artifact],outcome:'passed',result:details});captures[variant]={identity,artifact:await copyArtifact(artifact),reused:false,originatingRun:run,cacheMiss:hit.reason,details};}
+        try {const captured=await screenshot(browser,snapshot,subject,row);const artifact=await cache.storeArtifact(captured.bytes,{label:'Rendered case',mediaType:'image/png'});const details={reply:captured.reply,box:captured.box,readiness:captured.readiness,coverage:captured.coverage,stateChecks:captured.stateChecks};pendingEvidence.stage({schemaVersion:1,identity,originatingRun:run,selectionReceipt:selectionArtifact,artifacts:[artifact],outcome:'passed',result:details});captures[variant]={identity,artifact:await copyArtifact(artifact),reused:false,originatingRun:run,cacheMiss:hit.reason,details};}
         catch(error){const artifact=await cache.storeArtifact(JSON.stringify({error:String(error)}),{label:'Capture failure',mediaType:'application/json'});pendingEvidence.stage({schemaVersion:1,identity,originatingRun:run,selectionReceipt:selectionArtifact,artifacts:[artifact],outcome:'failed',result:{error:String(error)}});result.captureFailure={variant,identity,artifact:await copyArtifact(artifact),originatingRun:run};throw error;}
        }
       }

@@ -27,6 +27,8 @@ export function createPlan(build,baseline,candidate,options={}) {
  for(const item of cases) {
   if(!known.some(c=>c.id===item.id&&c.page===item.page)||!item.state||typeof item.selector!=='string'||!item.selector||!Array.isArray(item.actions))throw new Error('Unknown or incomplete authored case.');
   for(const action of item.actions)if(!['click','focus','hover','fill','press','select'].includes(action.kind)||typeof action.selector!=='string'||(['fill','press','select'].includes(action.kind)&&typeof action.value!=='string'))throw new Error('Unsupported declarative state action.');
+  validateChecks(item.checks??[]);
+  if(item.capture!==undefined&&!['element','viewport'].includes(item.capture))throw new Error('Unknown capture framing.');
   if(item.unsupported!==undefined&&!(typeof item.unsupported==='string'&&item.unsupported.trim()))throw new Error('Unsupported states require an explanation.');
  }
  if(selected.some(id=>!cases.some(c=>c.id+':'+c.state===id)))throw new Error('Selected case is not in the required inventory.');
@@ -43,4 +45,14 @@ export function comparisonSettings(input={}) {
 // Differences are review evidence; execution failures must fail the automation.
 export function captureExitCode(report) {
  return report.status==='failed'||report.results.some(row=>row.status==='failed')?1:0;
+}
+
+export function validateChecks(checks) {
+ if (!Array.isArray(checks)) throw new Error('State checks must be an array.');
+ for (const check of checks) {
+  if (!check || !['visible','hidden','focused','checked','text','value','attribute','count'].includes(check.kind) || typeof check.selector !== 'string' || !check.selector.trim()) throw new Error('Unknown or incomplete state check.');
+  if (['text','value','attribute'].includes(check.kind) && typeof check.value !== 'string') throw new Error('State check requires a string value.');
+  if (check.kind === 'attribute' && (typeof check.name !== 'string' || !check.name.trim())) throw new Error('Attribute check requires a name.');
+  if (check.kind === 'count' && (!Number.isInteger(check.value) || check.value < 0)) throw new Error('Count check requires a nonnegative integer.');
+ }
 }

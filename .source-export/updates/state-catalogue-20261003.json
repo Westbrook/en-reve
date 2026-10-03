@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-10-03T07:10:50.822873+00:00",
+  "sourceCommit": "82005a169a984296b8438d4c987fbea1b41821c3",
+  "previousSourceMain": "4bddb168c682109198d064676cc0c57a2231f77a",
+  "taskPaths": [
+    "apps/docs/tests/candidate-catalogue.spec.ts",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+    "plans/candidate-visual-evidence-2026-10-03.md",
+    "plans/documentation-skills-2026-10-02.md",
+    "tooling/visual-review/README.md",
+    "tooling/visual-review/capture.mjs",
+    "tooling/visual-review/catalogue.mjs",
+    "tooling/visual-review/plan.mjs",
+    "tooling/visual-review/plan.test.mjs",
+    "tooling/visual-review/reader.mjs",
+    "tooling/visual-review/reader.test.mjs",
+    "tooling/visual-review/state-checks.mjs"
+  ],
+  "qualification": "Authored state postconditions and viewport captures qualified with a partial interaction catalogue. Broader state catalogue and full requirement audit remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}
