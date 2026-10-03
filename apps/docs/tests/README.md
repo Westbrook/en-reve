@@ -421,3 +421,21 @@ The sheet's own integration suite exercises all three engines, light/dark axe
 scans, interaction, five responsive widths and source disclosures. It caught and
 corrected the tree sample's code overflow and unnamed-role grouping semantics.
 No manual assistive-technology, physical-device or visual acceptance is inferred.
+
+## Expanded gallery consumer qualification
+
+The [expanded gallery receipt](verification-expanded-gallery-20261003.json)
+qualifies **all 59 gallery copies and all 11 complete API copies** in the restored
+catalogue. Run the same `specimen-sources.spec.ts` entry point: thirty browser cases
+execute seventy copied modules per engine in Chromium, Firefox and WebKit.
+`copied-expanded-gallery-scenarios.ts` covers color controls/composition, responsive
+drawer navigation, data-table selection/virtual reveal and composable references;
+chat, activity, toast and tree reuse API journeys on their separate gallery copies.
+The test's preparation identity includes the new source module. No gallery IDs
+remain in the pending inventory. Two independently authored eager scope fixtures
+per engine remain separate from copied-module counts.
+
+This is focused browser evidence. The documentation semantic gate also surfaced
+nine existing diagnostics in review/evidence/metadata tooling, recorded in the
+[checkpoint](../../../plans/expanded-gallery-2026-10-03.md). Manual accessibility,
+physical platforms and candidate visual comparison remain separate obligations.

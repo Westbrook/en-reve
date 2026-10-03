@@ -1,6 +1,7 @@
 import { expect, type Page } from '@playwright/test';
 import { navigationContentGalleryScenarios } from './copied-navigation-content-scenarios.js';
 import { presentationGalleryScenarios } from './copied-presentation-scenarios.js';
+import { expandedGalleryScenarios } from './copied-expanded-gallery-scenarios.js';
 import { copiedAPIScenarios } from './copied-api-scenarios.js';
 
 /** Actual gallery copies, with the consumer's explicit public registrations.
@@ -231,6 +232,10 @@ export const copiedGalleryScenarios: Array<{
 // Reuse the owning journey on the separately extracted gallery copy. Complete
 // API modules carry a registration prelude; gallery consumers supply it explicitly.
 for (const [id, elements] of Object.entries({
+	'chat-patterns': ['button','chat-composer','chat-message','checkbox','color-picker','dialog','editor-trigger','file-upload','icon','select','swatch','tab','tab-panel','tabs','textarea','token-editor'],
+	'presence-activity': ['activity-feed','activity-item','avatar','button','presence','presence-group','select','skeleton'],
+	toast: ['button','checkbox','select','toast','toast-region'],
+	'tree-data': ['button','switch','text-field','tree','tree-item'],
 	calendar: ['button', 'calendar', 'checkbox', 'date-picker', 'select', 'time-field'],
 	carousel: ['button', 'carousel', 'carousel-slide'],
 	'multi-step': ['alert', 'button', 'checkbox', 'date-picker', 'progress-step', 'progress-steps', 'text-field', 'validation-summary'],
@@ -245,5 +250,7 @@ copiedGalleryScenarios.push(...presentationGalleryScenarios);
 
 copiedGalleryScenarios.push(...navigationContentGalleryScenarios);
 
+copiedGalleryScenarios.push(...expandedGalleryScenarios);
+
 // Keep inventory exhaustive; compilation alone never qualifies new examples.
-export const pendingGalleryExamples: string[] = ['color-picker', 'color-plane', 'color-slider', 'color-wheel', 'navigation-sidebar', 'tree-data', 'composable-chat', 'chat-patterns', 'data-table', 'presence-activity', 'toast'];
+export const pendingGalleryExamples: string[] = [];

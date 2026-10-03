@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "ff68e423bc4049841d28cafdbf12ffd846ee1551",
-  "exportedAt": "2026-10-03T01:07:12.487406+00:00",
+  "sourceCommit": "35285e845757582af59b178619ec08a9af73278e",
+  "exportedAt": "2026-10-03T01:31:16.162528+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5765,
-  "includedBytes": 155976971,
-  "qualification": "Generated source impact mapping and full sticker-sheet catalogue. Eighteen Node checks and three cross-browser impact checks pass; manual testing remains separate.",
-  "latestUpdate": ".source-export/updates/impact-delivery-20261003.json",
+  "includedFiles": 5769,
+  "includedBytes": 156090563,
+  "qualification": "All70 displayed source copies compile and execute in30 browser cases across three engines. Existing semantic diagnostics and manual testing remain separate.",
+  "latestUpdate": ".source-export/updates/expanded-gallery-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

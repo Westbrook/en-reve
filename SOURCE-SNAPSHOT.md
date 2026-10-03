@@ -262,3 +262,7 @@ Local main `c25bc9ab68df8a3cfcd33b96e32f27ac6ae5d841` delivers generated source 
 ## Generated source impact checkpoint
 
 Local main `ff68e423bc4049841d28cafdbf12ffd846ee1551` delivers generated source impact mapping and a complete authored sticker sheet. See `plans/impact-mapping-2026-10-03.md` for verification and remaining limits.
+
+## Expanded gallery consumer checkpoint
+
+Local main `35285e845757582af59b178619ec08a9af73278e` qualifies all59 gallery and11 complete API copies. See `plans/expanded-gallery-2026-10-03.md` for verification and remaining limits.
