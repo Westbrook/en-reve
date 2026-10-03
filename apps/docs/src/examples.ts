@@ -1677,7 +1677,7 @@ export function familyGeometryExample() {
 				.geometry-controls > :not(en-button) { flex:1 1 10rem;min-inline-size:0; }
 			}
 		</style>
-		<p>Both rows use the default medium size. The second row gives actions more inline space, tightens field padding and reduces the segmented frame inset.</p>
+		<p>Both rows use the default medium size. The second row gives actions more inline space, pins field padding to space.2 and reduces the segmented frame inset. The field padding matches compact defaults and is tighter in the other densities.</p>
 		${['Shared defaults', 'Scoped family geometry'].map((label, index) => html`
 			<div class="geometry-scope" style=${index ? '--en-button-inline-padding:var(--en-space-5);--en-input-inline-padding:var(--en-space-2);--en-segmented-control-frame-inset:var(--en-space-0-5)' : ''}>
 				<p>${label}</p>

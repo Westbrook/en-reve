@@ -10,7 +10,9 @@ const scopeChecks = [
 ];
 const geometryChecks = [
  relationship(row(2)+' en-button button',row(1)+' en-button button','padding-inline-start','greater'),
- relationship(row(2)+' en-text-field input',row(1)+' en-text-field input','padding-inline-start','less'),
+ // This fixture pins space.2 (8px at its 16px root). Compact defaults already
+ // use that value, so a strict less-than comparison would reject correct output.
+ {kind:'css',selector:row(2)+' en-text-field input',name:'padding-inline-start',value:'8px'},
 ];
 export const scopeStates = [
  ...workflowStates.filter(state=>state.page==='multi-step').map(({page,...state})=>({...state,id:'multi-step',actions:state.actions.flatMap(action=>action.kind==='fill'?[{kind:'click',selector:action.selector},action]:[action])})),

@@ -312,3 +312,23 @@ GitHub Pages and scope-isolation regressions pass. The project-path captures ret
 A new full acquisition against this build and the final requirement audit remain
 pending. Full acquisition disables redundant Playwright traces while retaining all
 case assertions, screenshots, pixel comparisons and provenance.
+
+## Family geometry density correction
+
+The second full acquisition found an invalid field-padding assumption in the two
+family-geometry focus states. Compact shared defaults and the scoped space.2 pin
+are both 8px in this fixture; a strict less-than comparison rejected correct
+output. The postcondition now checks the exact scoped padding, and the example
+explains that it matches compact defaults while tightening the other densities.
+No component behavior changed.
+
+The corrected states complete all 72 comparisons across three densities, both
+appearances, both viewports and all three engines. All 12 selected browser tests
+pass, including current-build evidence-reader and GitHub Pages checks. Fresh
+root/project builds, metadata freshness and production types pass. See
+`apps/docs/tests/verification-geometry-density-20261003.json`.
+
+The interrupted full acquisition retains 156 completed comparisons, the two
+geometry assertion failures, two interruption errors and 676 unrun rows. It is
+not a completed campaign. The full 7,524-comparison acquisition and final audit
+remain outstanding; this selected correction does not shrink that scope.

@@ -318,3 +318,7 @@ Local main `849e5650718927e5f652b63e550b5b7e7d8b8641` adds 43 source-authored sp
 ## Preview coverage audit correction
 
 Local main `c76c0beb006451e33cf96a7c1d9fafc215c12658` adds planned/rendered preview counts and explicit missing-case disclosure. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Family geometry density correction
+
+Local main `b7cca55e0e4efbccf475427d4c0da5f63e490288` corrects compact-density geometry expectations and clarifies the example. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
