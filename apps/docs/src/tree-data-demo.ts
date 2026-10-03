@@ -90,7 +90,12 @@ class TreeDataDemo extends AsyncDirective {
 			this.status = '1,020 items in the model. All collections start expanded.';
 		}
 		return html`
-			<div class="tree-data-demo" style="display:grid;gap:var(--en-space-4);min-inline-size:0">
+			<style>
+        .tree-data-demo { grid-template-columns:minmax(0,1fr); }
+        .tree-data-demo > section { min-inline-size:0; grid-template-columns:minmax(0,1fr); }
+        .tree-data-demo pre { min-inline-size:0; max-inline-size:100%; overflow:auto; }
+      </style>
+      <div class="tree-data-demo" style="display:grid;gap:var(--en-space-4);min-inline-size:0">
 				<p style="margin:0">Twenty collections contain fifty assets each. Compare windowed rendering with the fully rendered expanded hierarchy; both use the same items, selection and expansion API.</p>
 				<en-switch label="Virtualize expanded items" .checked=${this.virtualize} @en-change=${this.toggle}></en-switch>
 				<en-switch label="Select multiple items" .checked=${this.multiple} @en-change=${(event: Event) => {
@@ -191,7 +196,7 @@ class TreeOperationsDemo extends AsyncDirective {
         .items=${guard([this.resetKey],()=>this.initial)} .expandedKeys=${guard([this.resetKey],()=>this.expanded)} .selectedKeys=${guard([this.resetKey],()=>this.values)} .loadChildren=${this.load} ?virtualize=${this.virtual}
         style=${this.virtual?'block-size:32rem':''}
         @en-reorder=${(event:Event)=>{if(this.rejectMoves)event.preventDefault();}}></en-tree>
-      <div aria-label="Simulated branch requests" style="display:grid;gap:var(--en-space-2)">
+      <div role="group" aria-label="Simulated branch requests" style="display:grid;gap:var(--en-space-2)">
         ${[...this.pending].map(([key])=>html`<div style="display:flex;flex-wrap:wrap;align-items:center;gap:var(--en-space-2)"><span>${key}: waiting for application</span>
           <en-button @click=${()=>this.finish(key,'loaded')}>Complete ${key}</en-button>
           <en-button @click=${()=>this.finish(key,'empty')}>Empty ${key}</en-button>

@@ -252,6 +252,14 @@ Playwright visual evidence links expected, actual, and difference captures to th
 
 The review must distinguish mechanical differences, intentional design changes, unexpected regressions, and unassessed consequences. Screenshots alone do not approve a theme. Official theme checks and consuming-team responsibility follow the accepted ownership policy.
 
+Implementation checkpoint (2026-10-03): [generated source impact mapping](impact-mapping-2026-10-03.md)
+now describes all 96 components, 59 authored sheet specimens and six workflows.
+Unknown dependencies expand conservatively; broad computed-style checks qualify
+three representative runtime overrides. The full sheet has been reconciled with
+the authored catalogue. Candidate-facing affected views and version-bound visual
+captures remain separate follow-up work. Newly surfaced gallery copies retain an
+explicit independent-runtime qualification backlog; compilation is not acceptance.
+
 ## 9. CEM-informed changelogs and interactive old/new review
 
 Each component change page links a human explanation to machine-detected API differences and any behavioral, style, or accessibility changes that the manifest cannot express. Explain the trigger and resulting behavior, affected public surfaces, consumer action if needed, and the actual evidence available.

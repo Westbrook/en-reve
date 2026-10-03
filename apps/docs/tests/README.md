@@ -393,3 +393,27 @@ external requests blocked. `EN_VERSION_REVIEW_BEFORE_BUILD` supplies an original
 baseline build; without it the test is explicitly a same-build sample fixture.
 The package controls and release-record reproduction live in
 `tooling/releases/review-package.test.mjs`. Neither establishes release approval.
+
+## Generated impact and full-sheet inventory
+
+`impact.spec.ts` compares source-derived selection with uncached computed-style
+changes in every rendered sticker-sheet case. Three representative runtime pins
+exercise button radius, shared control radius and action color in Chromium,
+Firefox and WebKit. The graph remains a conservative source-level superset;
+these initial-state observations do not establish hidden-state or pixel coverage.
+The build emits the exact input-bound `impact.json` before sealing its asset list.
+See [the impact checkpoint](../../../plans/impact-mapping-2026-10-03.md).
+
+The full sheet now includes all **59 authored specimens**. Eleven had previously
+been available only through other documentation surfaces. All **70 displayed
+source modules** (59 gallery, 11 complete API copies) compile against packed
+public declarations. Their module IDs keep API and gallery copies separate.
+The existing eight native consumer journeys retain their independent execution;
+this does not qualify the eleven newly displayed gallery copies at runtime.
+`pendingGalleryExamples` lists that new obligation explicitly. Historical
+48-gallery qualification remains valid for its recorded inputs.
+
+The sheet's own integration suite exercises all three engines, light/dark axe
+scans, interaction, five responsive widths and source disclosures. It caught and
+corrected the tree sample's code overflow and unnamed-role grouping semantics.
+No manual assistive-technology, physical-device or visual acceptance is inferred.

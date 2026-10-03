@@ -246,4 +246,4 @@ copiedGalleryScenarios.push(...presentationGalleryScenarios);
 copiedGalleryScenarios.push(...navigationContentGalleryScenarios);
 
 // Keep inventory exhaustive; compilation alone never qualifies new examples.
-export const pendingGalleryExamples: string[] = [];
+export const pendingGalleryExamples: string[] = ['color-picker', 'color-plane', 'color-slider', 'color-wheel', 'navigation-sidebar', 'tree-data', 'composable-chat', 'chat-patterns', 'data-table', 'presence-activity', 'toast'];

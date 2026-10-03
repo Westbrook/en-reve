@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "e5a648c2db3b2df247fffe8f53f7c38e4fb7683c",
-  "exportedAt": "2026-10-03T00:10:43.602813+00:00",
+  "sourceCommit": "c25bc9ab68df8a3cfcd33b96e32f27ac6ae5d841",
+  "exportedAt": "2026-10-03T00:57:04.548558+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5757,
-  "includedBytes": 155840706,
-  "qualification": "Interactive version review. Twelve Node controls, three version browser cases and twelve handbook/offline regression cases pass; physical/manual testing remains separate.",
-  "latestUpdate": ".source-export/updates/version-review-20261002.json",
+  "includedFiles": 5764,
+  "includedBytes": 155973886,
+  "qualification": "Generated source impact mapping and full sticker-sheet catalogue. Eighteen Node checks and three cross-browser impact checks pass; manual testing remains separate.",
+  "latestUpdate": ".source-export/updates/impact-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

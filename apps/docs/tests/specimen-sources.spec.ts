@@ -82,9 +82,9 @@ async function prepareCopiedExamples(page: Page, testInfo: TestInfo): Promise<st
 		const source = (await code.textContent())!;
 		const generated = await readFile(join(generatedRoot, file), 'utf8');
 		expect(source).toBe(JSON.parse(generated.split('export default ')[1]!.trim().replace(/;$/u, '')));
-		samples.push({ id: id === 'composable-chat' ? id : `api-${id}`, source });
+		samples.push({ id: `api-${id}`, source });
 	}
-	const composable = samples.find(sample => sample.id === 'composable-chat')!;
+	const composable = samples.find(sample => sample.id === 'api-composable-chat')!;
 	for (const name of ['color-picker', 'swatch', 'tab', 'tab-panel', 'tabs']) {
 		expect(composable.source).toContain(`import '@en-reve/elements/define/${name}.js';`);
 	}
@@ -255,14 +255,14 @@ async function prepareNativeConsumption(output: string, archives: PreparedArchiv
 			card: { name: 'cardExample', elements: ['card', 'stack', 'avatar', 'badge', 'button'] },
 			combobox: { name: 'comboboxExample', elements: ['combobox', 'select', 'button'] },
 			'command-surfaces': { name: 'commandSurfacesExample', elements: ['stack', 'button', 'toolbar', 'menu', 'menu-item', 'command-palette'] },
-			'composable-chat': { name: 'composableChatExample', elements: [] },
+			'api-composable-chat': { name: 'composableChatExample', elements: [] },
 			'api-tooltip-warmup': { name: 'tooltipWarmupExample', elements: [] },
 		};
 		const id = new URL(location.href).searchParams.get('sample');
 		const example = examples[id];
 		if (!example) throw new Error('Unknown example: ' + id);
 		await Promise.all(example.elements.map(name => import('@en-reve/elements/define/' + name + '.js')));
-		if (id === 'composable-chat' && new URL(location.href).searchParams.get('scope') === 'auto') {
+		if (id === 'api-composable-chat' && new URL(location.href).searchParams.get('scope') === 'auto') {
 			// This separate packed-component fixture never imports the copied module:
 			// its eager global prelude would contaminate native scoped-registry checks.
 			const { createElementScope, elementScopeCapabilities } = await import('@en-reve/elements/element-scope.js');
@@ -344,7 +344,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 	const evidence: { id: string; stylesheets: string[]; contract?: string }[] = [];
 	try {
 		const cases = Array.isArray(remainingAPI) ? remainingAPI : remainingAPI ? copiedAPIScenarios.map(item => item.id)
-			: ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'composable-chat', 'api-tooltip-warmup'];
+			: ['native-navigation', 'breadcrumbs', 'typography', 'card', 'combobox', 'command-surfaces', 'api-composable-chat', 'api-tooltip-warmup'];
 		for (const id of cases) await test.step(id, async () => {
 			stylesheets.length = 0;
 			await page.goto(`${baseURL}/?sample=${id}`);
@@ -456,7 +456,7 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 				await expect(searchTrigger).toBeFocused();
 			} else if (id === 'api-tooltip-warmup') {
 				await runTooltipWarmup(page);
-			} else if (id === 'composable-chat') {
+			} else if (id === 'api-composable-chat') {
 				const colorTags = ['en-color-picker', 'en-swatch', 'en-tab', 'en-tab-panel', 'en-tabs'];
 				await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'copied-module');
 				// The exact copied prelude registers every authored color root before interaction;
@@ -525,8 +525,8 @@ async function verifyNativeConsumption(page: Page, output: string, testInfo: Tes
 		// Record native versus global fallback without emulating it; this fixture does
 		// not exercise a copied application directive or optional code acquisition.
 		for (const closed of remainingAPI ? [] : [false, true]) {
-			await page.goto(`${baseURL}/?sample=composable-chat&scope=auto&closed=${closed}`);
-			await expect(page.locator('body')).toHaveAttribute('data-ready', 'composable-chat');
+			await page.goto(`${baseURL}/?sample=api-composable-chat&scope=auto&closed=${closed}`);
+			await expect(page.locator('body')).toHaveAttribute('data-ready', 'api-composable-chat');
 			await expect(page.locator('body')).toHaveAttribute('data-consumer-kind', 'packed-eager-scope');
 			const nativeRegistry = await page.locator('body').getAttribute('data-native-registry') === 'true';
 			await expect(page.locator('body')).toHaveAttribute('data-registry-mode', nativeRegistry ? 'scoped' : 'global');

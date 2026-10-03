@@ -21,7 +21,7 @@ type Settings = PreviewSettings;
 export const initialSettings: Readonly<Settings> = Object.freeze({ mode: 'auto', density: 'comfortable', accent: '', rhythm: .25, direction: 'ltr' });
 const sections = [
   ['foundations', 'Foundations'], ['actions', 'Actions'], ['fields', 'Fields'],
-  ['choices', 'Selection'], ['navigation', 'Navigation'], ['surfaces', 'Surfaces'],
+  ['colors', 'Color'], ['choices', 'Selection'], ['navigation', 'Navigation'], ['surfaces', 'Surfaces'],
   ['feedback', 'Feedback'], ['overlays', 'Overlays'], ['scopes', 'Theme scopes'],
   ['review-notes', 'Review notes'],
 ];
@@ -258,6 +258,16 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
           </div>
         </section>
 
+        <section id="colors" class="sheet-section en-navigation-target" tabindex="-1" aria-labelledby="colors-title">
+          <div class="section-heading"><div><h2 id="colors-title">Color in context</h2></div><p>Explore complete pickers and independently composed color controls.</p></div>
+          <div class="specimen-grid">
+            ${this.specimen("color-picker")}
+            ${this.specimen("color-plane")}
+            ${this.specimen("color-slider")}
+            ${this.specimen("color-wheel")}
+          </div>
+        </section>
+
         <section id="choices" class="sheet-section en-navigation-target" tabindex="-1" aria-labelledby="choices-title">
           <div class="section-heading"><div><h2 id="choices-title">From a choice to fine control</h2></div><p>Keyboard and pointer interactions share the same values.</p></div>
           <div class="specimen-grid">
@@ -274,8 +284,10 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
           <div class="section-heading"><div><h2 id="navigation-title">Structure without losing your place</h2></div><p>Operate tabs, disclosures, and a resizable workspace.</p></div>
           <div class="specimen-grid">
             ${this.specimen("native-navigation")}
+            ${this.specimen("navigation-sidebar")}
             ${this.specimen("breadcrumbs")}
             ${this.specimen("tree-view")}
+            ${this.specimen("tree-data")}
             ${this.specimen("pagination")}
             ${this.specimen("tabs")}
             ${this.specimen("accordion")}
@@ -289,11 +301,15 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
           <div class="specimen-grid">
             ${this.specimen("carousel")}
             ${this.specimen("rich-text")}
+            ${this.specimen("composable-chat")}
+            ${this.specimen("chat-patterns")}
             ${this.specimen("card")}
             ${this.specimen("content-recipes")}
             ${this.specimen("authored-table")}
+            ${this.specimen("data-table")}
             ${this.specimen("virtual-collection")}
             ${this.specimen("identity")}
+            ${this.specimen("presence-activity")}
           </div>
         </section>
 
@@ -301,6 +317,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
           <div class="section-heading"><div><h2 id="feedback-title">State you can understand</h2></div><p>Useful progress and messages, with room to recover.</p></div>
           <div class="specimen-grid">
             ${this.specimen("messages")}
+            ${this.specimen("toast")}
             ${this.specimen("loading")}
           </div>
         </section>
@@ -322,7 +339,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
         <section id="review-notes" class="review-notes en-navigation-target" tabindex="-1" aria-labelledby="review-title">
           <h2 id="review-title">What feels right—and what gets in the way?</h2>
           <div class="review-prompts"><p><strong>Readability</strong><br>Are labels and supporting text comfortable at all three densities?</p><p><strong>Relationships</strong><br>Do spacing, borders, and nested corners feel consistent?</p><p><strong>Use</strong><br>Try a keyboard path, resize the page, and open an overlay.</p></div>
-          <p class="muted">This is the first working collection, not the complete 72-pattern library. The values are proposals for review. Submission and adoption are not performed by this page.</p>
+          <p class="muted">This sheet includes the authored component catalogue. Hidden states and additional workflows still need their dedicated reviews. The values are proposals for review. Submission and adoption are not performed by this page.</p>
           <en-accordion-item class="token-disclosure" label="Token snapshot and coverage" heading-level="3"><p>${Object.keys(this.theme.tokens).length} resolved token values · ${definitions.length} custom elements · preview ${this.theme.sourceHash.slice(7,19)}</p>
             <p>${this.theme.diagnostics.length ? html`${this.theme.diagnostics.length} action-color checks need review: ${this.theme.diagnostics.map(d=>d.message).join(' ')}` : 'The implemented action-color pair checks pass for this preview. This is not a complete accessibility assessment.'}</p>
             <div class="token-table-wrap"><table><caption>All resolved token values</caption><thead><tr><th>Token</th><th>Value</th><th>Source</th></tr></thead><tbody>${Object.values(this.theme.tokens).map(t=>html`<tr><th scope="row"><code>${t.cssName}</code></th><td>${t.cssValue}</td><td>${t.provenance}</td></tr>`)}</tbody></table></div>

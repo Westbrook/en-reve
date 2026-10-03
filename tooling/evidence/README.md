@@ -41,11 +41,42 @@ The receipt explains each affected node. Incomplete metadata or unknown edges
 expand selection to every known node and leave explicit gaps. A token source can
 therefore invalidate controls and contrast/state recipes without their JS changing.
 
-Graphs are explicit inputs in this first implementation. Source/consumer graph
-generation, import-map runtime observations and token-manifest adapters must feed
-those inputs later. Tests prove selector semantics on structured graphs, not the
-completeness of a real library graph. Compare focused selection against a broad
-uncached run before trusting newly generated graph/caching logic.
+`impact.mjs` now generates a graph from the current built token manifest, public
+component graph, authored module imports, customization-source inventory and the
+same specimen assembler used by docs. The docs build emits `/impact.json` before
+its exact-build inventory is sealed. Run the normal metadata freshness checks
+before rebuilding; the generator consumes that matching producer output.
+
+```sh
+node tooling/evidence/impact.mjs /absolute/new-impact-directory
+node tooling/evidence/impact.mjs select /absolute/new-impact-directory/impact.json token:component.button.radius
+node tooling/evidence/impact.mjs select dist/impact.json source:packages/styles/src/buttons.ts
+```
+
+The manifest contains source/content and compiler identities, potential token
+alias/derivation edges, optional-property fallbacks, runtime imports (including
+literal lazy imports), declared generated children, source locations,  authored
+specimen consumers and workflows. CSS-authored adapters point back to their
+inputs. Open token-name swatches depend on all properties; shared module imports
+are a conservative superset of the particular exports used. Docs asset changes
+select all docs cases rather than pretending precise asset ownership. Nonliteral
+imports, missing sources and unknown CSS expressions expand selection to all
+known nodes. Unknown changed IDs also expand; they never produce an empty pass.
+
+The result is **potential source impact**, not browser-effective cascade proof.
+External application code and consumer import-map observations remain outside
+this authored-library graph. It does not prune the full review sheet or skip any
+required gate. The broad browser qualification compares observed computed-style
+changes across every rendered sticker-sheet case with selected cases for three
+representative pins; initial-state observations do not prove all hidden states,
+all candidate values or pixel equivalence. The visual evidence pipeline remains
+separate. A retained manifest describes its exact inputs, not the current checkout
+merely because the pathname is unchanged.
+
+The pure traversal is shared in `graph-core.ts`; `graph.ts` adds content identity
+for Node consumers. Tests retain selector, identity and cache controls alongside
+real-source coverage. Newly introduced dependency policies require broad uncached
+qualification before trusting reduced execution or cache reuse.
 
 `coverageReceipt(required, outcomes)` distinguishes `passed`, `failed`, `not-run`,
 `unsupported` and `reused`. Missing checks become `not-run` with a next action;

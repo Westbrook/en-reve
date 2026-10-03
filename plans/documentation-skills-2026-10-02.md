@@ -39,13 +39,16 @@ Documentation does not close the [support ledger](support-coverage.md)'s physica
 manual AT/IME, native Safari delivery, prior-product/OS or linguistic gaps.
 The historical external CSS-authoring pilot rerun remains explicitly retired.
 
-The experience/token plans still contain managed submission/adoption, complete
-offline review packages and comprehensive interactive old/new release delivery.
+The experience/token plans still contain managed submission/adoption and
+version-bound visual comparison and affected-component review integration.
 Managed submission/adoption requires a selected persistence/service/authority
-model. Offline review and version comparison can proceed independently; the
+model. Offline review and version comparison have since been implemented; the
 [offline follow-up](../tooling/offline-review/README.md) now supplies portable
-exact-build candidate review. The current release-draft tooling remains a
-foundation for interactive old/new delivery. This checkpoint makes those distinctions discoverable rather
+exact-build candidate review and the [version-review checkpoint](version-review-2026-10-02.md)
+records independently operable before/after review. [Generated impact mapping](impact-mapping-2026-10-03.md)
+adds a conservative source graph and reconciles the full sheet. Its candidate-facing
+visual integration and eleven newly surfaced gallery consumer journeys remain.
+This checkpoint makes those distinctions discoverable rather
 than manufacturing a backend or marking a preview as adopted.
 
 The first handbook pass connects existing component docs, examples and package

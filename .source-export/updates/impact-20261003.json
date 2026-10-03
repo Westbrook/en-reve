@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-03T00:57:04.548558+00:00",
+  "sourceCommit": "c25bc9ab68df8a3cfcd33b96e32f27ac6ae5d841",
+  "previousSourceMain": "e5a648c2db3b2df247fffe8f53f7c38e4fb7683c",
+  "taskPaths": [
+    "apps/docs/guides.html",
+    "apps/docs/scripts/build-ssr.mjs",
+    "apps/docs/src/app.ts",
+    "apps/docs/src/tree-data-demo.ts",
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/copied-gallery-scenarios.ts",
+    "apps/docs/tests/impact.spec.ts",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/specimen-sources.spec.ts",
+    "apps/docs/tests/verification-impact-20261003.json",
+    "plans/documentation-skills-2026-10-02.md",
+    "plans/experience.md",
+    "plans/impact-mapping-2026-10-03.md",
+    "tooling/evidence/README.md",
+    "tooling/evidence/graph-core.ts",
+    "tooling/evidence/graph.ts",
+    "tooling/evidence/impact.mjs",
+    "tooling/evidence/impact.test.mjs",
+    "tooling/sticker-sheet/verify.mjs",
+    "tooling/testing/pathways.mjs"
+  ],
+  "qualification": "Generated source impact mapping and full sticker-sheet catalogue. Eighteen Node checks and three cross-browser impact checks pass; manual testing remains separate.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

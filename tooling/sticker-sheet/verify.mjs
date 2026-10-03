@@ -127,7 +127,7 @@ for (const [name,engine] of Object.entries({chromium,firefox,webkit})) {
    await page.locator('en-navigation.section-nav').getByRole('link',{name:'Feedback',exact:true}).click();
    await expect.poll(async()=>{const nav=await page.getByRole('navigation', { name: 'Sticker sheet sections', exact: true }).boundingBox();const section=await page.locator('#feedback').boundingBox();return section.y>=nav.y+nav.height-1;}).toBe(true);
    const nav=await page.getByRole('navigation', { name: 'Sticker sheet sections', exact: true }).boundingBox();assert.ok(Math.abs(nav.y)<2);
-   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);viewportChecks.push({...viewport,overflow,navigationHeight:nav.height});assert.equal(overflow,false);
+   const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);viewportChecks.push({...viewport,overflow,navigationHeight:nav.height});assert.equal(overflow,false, JSON.stringify(await page.locator('[data-specimen]').evaluateAll(nodes=>nodes.map(node=>({id:node.getAttribute('data-specimen'),left:node.getBoundingClientRect().left,right:node.getBoundingClientRect().right,scroll:node.scrollWidth,width:node.clientWidth})).filter(row=>row.scroll>row.width+1||row.left < -1||row.right>innerWidth+1))));
  }
  await page.getByRole('button',{name:'Reset preview',exact:true}).click();await page.locator('en-sticker-app').evaluate(el=>el.updateComplete);
  // Large specimen inventories can exceed Firefox's 32767px screenshot limit.
@@ -149,7 +149,7 @@ for (const [name,engine] of Object.entries({chromium,firefox,webkit})) {
  await expect.poll(async()=>{const section=await page.locator('#fields').boundingBox();return section.y<0;}).toBe(true);
  assert.equal(await page.getByRole('link',{name:'Progress Report',exact:true}).count(),0);await page.goto(new URL('?progress-report',baseURL).href);await page.getByRole('link',{name:'Progress Report',exact:true}).waitFor();assert.equal(await page.getByRole('link',{name:'Progress Report',exact:true}).getAttribute('href'),'http://127.0.0.1:4177');
  assert.deepEqual(errors,[]);report.push({engine:name,status:'passed',errors,violations,specimenCount,sourcePanels,sourceIndentation,viewportChecks,toolsResult,webMCPContext:'injected API contract test; not a native host integration'});console.log(JSON.stringify(report.at(-1)));
- } catch(e) {report.push({engine:name,status:'failed',error:String(e),errors});console.log(JSON.stringify(report.at(-1)));await page.screenshot({path:new URL(name+'-failure.png',evidenceDir).pathname});}finally{await browser.close();}
+ } catch(e) {report.push({engine:name,status:'failed',error:String(e),stack:e.stack,errors});console.log(JSON.stringify(report.at(-1)));await page.screenshot({path:new URL(name+'-failure.png',evidenceDir).pathname});}finally{await browser.close();}
 }
 await fs.writeFile(new URL('verification.json',evidenceDir),JSON.stringify(report,null,2));
 if(report.some(r=>r.status==='failed'||r.violations?.length))process.exitCode=1;

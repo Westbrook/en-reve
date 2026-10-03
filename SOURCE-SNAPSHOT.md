@@ -254,3 +254,7 @@ Local main `53126ea3db6ae5d7c94e4cd1cfd0840aa9fb6e85` delivers portable offline 
 ## Interactive version review checkpoint
 
 Local main `e5a648c2db3b2df247fffe8f53f7c38e4fb7683c` delivers interactive isolated version review. See `plans/version-review-2026-10-02.md` for verification and remaining limits.
+
+## Generated source impact checkpoint
+
+Local main `c25bc9ab68df8a3cfcd33b96e32f27ac6ae5d841` delivers generated source impact mapping and a complete authored sticker sheet. See `plans/impact-mapping-2026-10-03.md` for verification and remaining limits.

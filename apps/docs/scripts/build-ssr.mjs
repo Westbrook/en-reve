@@ -9,6 +9,7 @@ import { createDocumentStylesInliner } from './document-styles.mjs';
 import { createDocumentMinifier } from '../../../tooling/minify/document.mjs';
 import { minifyLitTemplates } from '../../../tooling/minify/literals.mjs';
 import { prepareDocs } from './prepare-docs.mjs';
+import { generateImpact } from '../../../tooling/evidence/impact.mjs';
 
 const docsRoot = fileURLToPath(new URL('..', import.meta.url));
 const workspaceRoot = fileURLToPath(new URL('../../..', import.meta.url));
@@ -107,6 +108,9 @@ for (const page of apiExamplePages) {
   await writeFile(resolve(outputRoot, 'evidence', receipt), JSON.stringify({mode:'build-time',caseId:page.id,bytes:Buffer.byteLength(html),minification:report,customElementTags:example.tags},null,2)+'\n');
 }
 console.log(`Rendered ${apiExamplePages.length} isolated API examples at build time.`);
+
+// Bind generated dependency evidence to the same original documentation build.
+await writeFile(resolve(outputRoot, 'impact.json'), JSON.stringify(await generateImpact({root:workspaceRoot}), null, 2) + '\n');
 
 // The manifest binds local review files to the actual pages and executable assets.
 // It excludes itself to avoid a circular hash; package version strings are not identity.
