@@ -25,6 +25,10 @@ const sections = [
   ['feedback', 'Feedback'], ['overlays', 'Overlays'], ['scopes', 'Theme scopes'],
   ['review-notes', 'Review notes'],
 ];
+// Large examples remain fully server-rendered at their standalone URLs. The sheet
+// upgrades their linked fallbacks after hydration to avoid repeating multi-megabyte
+// shadow styles in the initial document.
+const enhancedSpecimenIds = new Set(['color-picker', 'color-plane', 'color-slider', 'color-wheel', 'navigation-sidebar', 'tree-data', 'composable-chat', 'chat-patterns', 'data-table', 'presence-activity', 'toast']);
 const paletteRoles = ['canvas','surface','surface-subtle','text','text-muted','brand','on-brand','action','action-hover','accent-subtle','boundary','danger-text','warning-text','success-text'];
 const densityItems = [{ value: 'compact', label: 'Compact' }, { value: 'comfortable', label: 'Comfortable' }, { value: 'spacious', label: 'Spacious' }];
 const rhythmItems = [.125, .1875, .25, .3125, .375, .5].map(value => ({ value: String(value), label: `${value} rem` }));
@@ -34,6 +38,7 @@ const directionItems = [{ value: 'ltr', label: 'Left to right' }, { value: 'rtl'
 export class StickerApp extends LitElement {
   static properties = { progressReportEnabled: { state: true } };
   declare progressReportEnabled: boolean;
+  private enhancedSpecimens = false;
   private state = new Signal.State<Settings>({ ...initialSettings });
   private observer = new SignalController(this, () => this.state.get());
   private systemMode: ThemeMode = 'light';
@@ -69,6 +74,8 @@ export class StickerApp extends LitElement {
   get previewCSS(): string { return this.themeCSS; }
 
   protected firstUpdated() {
+    this.enhancedSpecimens = true;
+    this.requestUpdate();
     this.connectBrowserTools();
     this.connectNavigation();
   }
@@ -172,7 +179,9 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
 ` : nothing}
       ${['content-recipes', 'authored-table'].includes(id) ? html`<p><a href=${`/workflows/assets${this.progressReportEnabled ? '?progress-report' : ''}`}>Review the asset-browser workflow</a></p>` : nothing}
 
-      <div class="specimen-content">${keyed(session.revision, specimen.render({ density: this.state.get().density }))}</div>
+      <div class="specimen-content">${this.enhancedSpecimens || !enhancedSpecimenIds.has(id)
+        ? keyed(session.revision, specimen.render({ density: this.state.get().density }))
+        : html`<p class="specimen-preview-link">This example loads here when JavaScript is available. <a href=${`/api-examples/${id}${this.progressReportEnabled ? '?progress-report' : ''}`}>Open ${specimen.title} example</a>.</p>`}</div>
       <div class="specimen-tools">
         ${specimen.interactive ? html`<en-button variant="ghost" size="small" @click=${() => this.resetSpecimen(id)}>Reset <span class="visually-hidden">${specimen.title}</span></en-button>` : nothing}
         <details class="code-disclosure" @toggle=${this.highlightCode}>
@@ -205,7 +214,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
         <div class="page-heading">
           <div><h1>Component sticker sheet</h1>
           <p class="lede">Try the controls, compare states, and explore how a few shared values change the whole collection.</p></div>
-          <div class="collection-count"><strong>${definitions.length}</strong><span>custom elements<br>in this first sheet</span></div>
+          <div class="collection-count"><strong>${definitions.length}</strong><span>custom elements<br>${specimens.length} authored examples · ${this.enhancedSpecimens ? specimens.length : specimens.length - enhancedSpecimenIds.size} live here${this.enhancedSpecimens ? nothing : html` · ${enhancedSpecimenIds.size} linked until loaded`}</span></div>
         </div>
         <section class="theme-controls" aria-label="Preview settings">
           <en-segmented-control label="Appearance" .value=${s.mode} .items=${appearanceItems} @en-change=${(event: CustomEvent<{ proposed: string }>) => { acceptValueChange<Appearance>(event, mode => { this.change({ mode }); return this.state.get().mode; }); }}></en-segmented-control>

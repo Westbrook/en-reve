@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "recordedAt": "2026-10-03T00:56:27.365753+00:00",
+  "recordedAt": "2026-10-03T01:06:44.112959+00:00",
   "sourceBase": "e5a648c2db3b2df247fffe8f53f7c38e4fb7683c",
   "status": "passed",
   "scope": "Generated source impact, full-sheet coverage, packed-source compilation and existing sample journeys. Not a full-system or manual acceptance claim.",
@@ -137,7 +137,6 @@
     "apps/docs/public/styles/tokens.css": "870683c3a0d9383d35c76bc8258be82ca279e1292d6c505bbd432d7ff0ccce17",
     "apps/docs/public/styles/typography.css": "5efa834903afcc8570e239363cf8d74a174b7866804e9ad8b98c67750ac1bf85",
     "apps/docs/scripts/authored-specimen-sources.mjs": "5fbdffab1e99042798c86b8370323a6663e2c049c36ade295686eadf8896880f",
-    "apps/docs/scripts/build-ssr.mjs": "329f4739f776e22ec8ea1b02938a5ba366fa57cc439e338547030707294455f0",
     "apps/docs/scripts/generate-api-examples.mjs": "8748417bad548e7056474f6b5f16af503304ef29752c4fe9fda5bdeaf02f242e",
     "apps/docs/scripts/prepare-docs-producer.mjs": "2335ddcb0b985320dc1b9ad73efd42c8f5257184424b4ec1d3ebe01aff4fc57e",
     "apps/docs/scripts/prepare-docs.mjs": "34c216e336ee3c134bde8bd2eefaa3e6e5e05516ad53afc5fc4a47f60452bd0e",
@@ -146,7 +145,7 @@
     "apps/docs/src/api-example/app.ts": "a00a9fe6064f16559606accac877d762c8199968f1304eced616468257248f84",
     "apps/docs/src/api-example/main.ts": "4df826c88bce5bc032cfb85169156d9ace913961e323d69fbf30b48f53d1ad1e",
     "apps/docs/src/api-example/styles.css": "195427522f5c7ec8e7f2437b23cfc4f203d26d4e89f6b87deb97a81e92cf25f6",
-    "apps/docs/src/app.ts": "5623e14a7fce44c1494f21970c9328c2e3f50039aa9fe1ccf1387ac21e34e280",
+    "apps/docs/src/app.ts": "2d3ac023293a061baa5d9412dfd1e549bf53f9816858ea1a4e3c1541620c62c2",
     "apps/docs/src/appearance.ts": "c481d00deffc5778a0daa0929710048a8835bb4f6a65ef4fe897847113a06c80",
     "apps/docs/src/calendar-demo.ts": "9ee8b9f30fb0526e08669a9c495f4306a1dfebf69c7309ae699ff4f60eec1d93",
     "apps/docs/src/carousel-demo.ts": "b9e95233f29b4dee901810588205ed40832301594773395c902c8319004560b1",
@@ -225,14 +224,14 @@
     "apps/docs/src/workflows/sso/service.ts": "2e51ee2121a2000cf56368317410ec4ba4b985a477987ab0c72a023cfba3fc00",
     "apps/docs/src/workflows/sso/styles.ts": "9aac576aaf205a44352a35dbed2dcaf3377aa7c9b3a6d96030cb13f798e2cba6",
     "apps/docs/src/workflows/sso/template.ts": "9dd16a0fe98664e6a16fb20f20eecdfcf5eedb6938e23081ffeb4e38ad2593e4",
-    "apps/docs/tests/README.md": "ebcea26d815aab2864b98b5c8f44e6c6071467b6c45197a074ea15d16ebb65b9",
+    "apps/docs/tests/README.md": "ce45ab44a7ef97a72af163ac63fbee63ebce12701c19e521bd0af95990d4fdaf",
     "apps/docs/tests/api-reference-generator.test.mjs": "d7ca4235446cb8af825885d790f322ab0ced09b6ece951eb09eb712c040b13eb",
     "apps/docs/tests/copied-api-scenarios.ts": "3e3bec6641d37098aa39970f8b9f78dcf79337f97bbde248b591c99cc4c52a2c",
     "apps/docs/tests/copied-gallery-scenarios.ts": "f5f731d915f19d5a1e419f05d4fcb0567f10b8d4259c43b841a2325ec2c4fe01",
     "apps/docs/tests/copied-navigation-content-scenarios.ts": "3e493ee176418a80d310f5ad04456e902df997e0520b4aaede132e8ade77d4a4",
     "apps/docs/tests/copied-presentation-scenarios.ts": "00797a7d3776d1838183535159fc97ea7bd9b85ab0082e8d479bd3ac23e095ae",
     "apps/docs/tests/guides.spec.ts": "6e132c417dddd9b4db0975fc102fa8eed42d9ad1fc8904b86c45b663c6395f73",
-    "apps/docs/tests/impact.spec.ts": "0356e6aaab37076665dde4b0e980877012acc5e1118c82544570bcfb05d1be3a",
+    "apps/docs/tests/impact.spec.ts": "3d016ab9d4c9436022ad8c2150746c86f267af3d8f0d0de50c938c1a71edc99d",
     "apps/docs/tests/offline-review.spec.ts": "b40f7c1a1f55ca1de5b4420e101c5c9a6b26c09d1564a8950f2813d01c93842d",
     "apps/docs/tests/playwright.config.ts": "e750c411f309dcd96c416351bc6945743d02e7b19b4921f463506e1649c605c7",
     "apps/docs/tests/specimen-source-assembly.test.mjs": "78f90a007536fdb2ade5969c41430d7bb1645e1cbc281128a9b68930f8f395ec",
@@ -767,7 +766,7 @@
     "packages/tokens/src/value.ts": "6678ac4dd536b19c692fd67c1e58cc0942e4ab4508b0ab65e2ff843264417ebc",
     "plans/documentation-skills-2026-10-02.md": "9bb4c8a2a9eef883aa047043ba346e832e111994db856f681dd10b33260c1554",
     "plans/experience.md": "a1c4d660314815b0a823c629addf27e50f1a975a6e42336587cdb500be7df47f",
-    "plans/impact-mapping-2026-10-03.md": "e52ca5ba363289f282dc0bd9320a9b768b5f09874172286becba68528384d381",
+    "plans/impact-mapping-2026-10-03.md": "877ebca6c5810883b742fec53f2a16af7898114031ad64bca9481f599666dc46",
     "plans/offline-review-2026-10-02.md": "6bd4b48a59165b38fbfdd45f388b4586f537d2142ed42bc2b11b5e4a01868671",
     "plans/version-review-2026-10-02.md": "b7b3705a63df862f8405707bf8dd793333d04482ac44a84260e09f40d4b56543",
     "probes/component-patterns/gallery.spec.ts": "625a2a6a1c7c516db32a8b0bb398913748a74c2d91ed30256079dd694a3209ed",
@@ -782,11 +781,9 @@
     "skills/en-reve-test/SKILL.md": "a1e63a7f8f097d4fbda8061f7c59b13836d8de8f4470c6dc627f82632db4f275",
     "skills/en-reve-theme/SKILL.md": "93b91f1753c178d4a250084201f6efe5ffa288200d37ae8c29b06ebb66796066",
     "tooling/customization/source-inventory.mjs": "f6f232ded9f91fb5ca13e66141658db4c91d0238e1cfc63f7875c049f9f131ff",
-    "tooling/evidence/README.md": "29e3aaf78d46cceaf667e9983472afcb744f2ee3083c764d80d85e15a0c66df9",
     "tooling/evidence/graph-core.ts": "029fcdbe287eca33c62e288a1d1bf44bd457f5971c56bc649c57c61a75f4b808",
     "tooling/evidence/graph.ts": "3eed8da16d508c7df88999b1ee16d14ed719451206b5f234737d3905780756f8",
     "tooling/evidence/impact.mjs": "e1379949d9ebd729e2e1f4e358939993e8d3f5a3772be558d009ceddc19f07a6",
-    "tooling/evidence/impact.test.mjs": "235ad5cb92506657c4d09f2abc832a38cf8135771601b1ea08fec0414293f91d",
     "tooling/offline-review/README.md": "f25f83eaad991f3ba6808fb91e467475c3a6ec082d85067ca9c6086d0351b40a",
     "tooling/offline-review/build.mjs": "692c5af7c8b189d60d3d4564b9633baf02da7b451a5a93c3a2cb042b39e75074",
     "tooling/offline-review/index.html": "194439cb5da097a2fb9bad9ac613c69903d63fcb8331427a53c879c421660e0a",
@@ -802,7 +799,6 @@
     "tooling/releases/review.css": "6fcf6928051ca2a7b37ea763dee066f02ddad50297fb804e63d1cce17cb35cac",
     "tooling/releases/review.html": "73da8c77d9256536d6b4f639161aadf2b097aa0ad22b66e830dee1612da7fcdb",
     "tooling/releases/scoped-fixture.mjs": "0b57c29a7847c0643725c33b97f0d7e4b6d86f19af4270489679145eeca198a6",
-    "tooling/sticker-sheet/verify.mjs": "1ead7f9d37ee27f66aca16a75debecbfdddedd7504e5068faea2a344c6048e31",
     "tooling/testing/pathways.mjs": "c759721beae337d26318bfe397bfada0b636ee75b4f5ad08e19fc0ce4af86a58",
     "tsconfig.base.json": "40adb4a43233b72907a9ca070deac2370dbb64f585c139dd914d60d52d5c5aed"
   },
@@ -835,11 +831,11 @@
   "productionBuild": {
     "SSRBuild": "passed",
     "distFiles": 1197,
-    "distManifestSHA256": "eb1d3e5b2ed8082fb69ba324398aed9d6b673960ed50e03e2af03a8a1e378ef4",
-    "receiptSHA256": "5c22af1a446ab63b497cf6683395440444be8599252c204b7a3b56c5147692b9"
+    "distManifestSHA256": "ff6dc62fa3be056a756415168e7588479ab29f8bce7e3f83d49b8ef2f4ba997b",
+    "receiptSHA256": "89d5dfda416132ead0aeff06fde2f825f5647ea11415aeae1de6dc74ac234531"
   },
   "impact": {
-    "digest": "sha256:086e5044c889d116a10aa47cf366a718f6ae42f4079dd0ead5fb988134f2906b",
+    "digest": "sha256:dba9986d56eefe13632c7c0327a0e61d35592388bbc7e2987ccc93c45686e703",
     "nodes": 2233,
     "components": 96,
     "scenarios": 65,
@@ -854,7 +850,7 @@
     "passed": 6,
     "failed": 0,
     "skipped": 0,
-    "receiptSHA256": "7390a6913177c5bbbb7d0e16545fb65b3648806eb1eb36ac420e7f448eaacab1",
+    "receiptSHA256": "1e6972ce162f66c573380496b4da612e5ec600734b35e3ae5b03193997f5e4e8",
     "engines": [
       "chromium",
       "firefox",
@@ -879,7 +875,7 @@
   },
   "retainedAttempts": {
     "directory": "/Users/westbrook/.codex/visualizations/2026/09/08/01a0819f-e5d6-71a3-802e-6390c2c90ad3/design-system-progress/evidence/impact-20261003",
-    "summary": "Initial impact checks exposed eleven omitted cases; a palette-seed runtime override was corrected to action color. Sheet checks exposed tree code overflow and an aria-label on a generic container. Failed logs and available traces remain separate. First sheet screenshots were replaced by the second attempt in the legacy default output before explicit isolated output was configured; its command log remains."
+    "summary": "The first private publication failed because repeated SSR styles made index.html 34 MB, above the 25 MiB host limit. Eleven larger cases now have linked SSR fallbacks and render after hydration; every live case remains checked. Initial impact checks exposed eleven omitted cases; a palette-seed runtime override was corrected to action color. Sheet checks exposed tree code overflow and an aria-label on a generic container. Failed logs and available traces remain separate. First sheet screenshots were replaced by the second attempt in the legacy default output before explicit isolated output was configured; its command log remains."
   },
   "limitations": [
     "Potential authored-source graph over-selects shared modules; not effective cascade or external-app proof.",

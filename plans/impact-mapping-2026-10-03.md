@@ -14,7 +14,10 @@ and CLI are documented in [tooling/evidence](../tooling/evidence/README.md).
 - The build emits `impact.json` before its sealed review asset inventory. The
   handbook links the artifact and querying workflow. Pure traversal is shared
   between browser-capable consumers and the existing Node identity wrapper.
-- Eleven previously omitted specimens are restored to the full sheet. The tree
+- Eleven previously omitted specimens are restored to the hydrated full sheet.
+  Their SSR fallbacks link to complete standalone examples and disclose the
+  initial live/linked counts. This avoids the 25 MiB hosting limit caused by
+  repeated shadow styles without omitting cases from the hydrated review. The tree
   demo constrains code inside its grid and labels request controls as a group.
 
 ## Verification and limits

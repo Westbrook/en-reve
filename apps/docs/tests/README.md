@@ -404,7 +404,11 @@ these initial-state observations do not establish hidden-state or pixel coverage
 The build emits the exact input-bound `impact.json` before sealing its asset list.
 See [the impact checkpoint](../../../plans/impact-mapping-2026-10-03.md).
 
-The full sheet now includes all **59 authored specimens**. Eleven had previously
+The hydrated full sheet now includes all **59 authored specimens**. Its initial
+HTML has 48 live specimens and eleven linked fallbacks; those eleven enhance
+after hydration to avoid the host's 25 MiB HTML-file ceiling. Their standalone
+pages retain full SSR. The impact test checks both the no-JavaScript links and
+all 59 hydrated cases. Eleven had previously
 been available only through other documentation surfaces. All **70 displayed
 source modules** (59 gallery, 11 complete API copies) compile against packed
 public declarations. Their module IDs keep API and gallery copies separate.

@@ -20,10 +20,18 @@ async function paint(page:Page){
   });
 }
 
-test('generated impact selection contains broad uncached rendered-style changes',async({page,request},info)=>{
+test('generated impact selection contains broad uncached rendered-style changes',async({page,request,browser},info)=>{
   test.setTimeout(120000);
   const response=await request.get('/impact.json');expect(response.ok()).toBe(true);const manifest=await response.json();
   expect(manifest.gaps).toEqual([]);
+  const staticContext=await browser.newContext({javaScriptEnabled:false});
+  try {
+    const staticPage=await staticContext.newPage();await staticPage.goto(new URL('/',response.url()).href);
+    await expect(staticPage.locator('.specimen-preview-link')).toHaveCount(11);
+    await expect(staticPage.locator('.collection-count')).toContainText('48 live here');
+    const links=await staticPage.locator('.specimen-preview-link a').evaluateAll(nodes=>nodes.map(node=>node.getAttribute('href')));
+    for(const href of links){const example=await request.get(href!);expect(example.ok(),href!).toBe(true);}
+  } finally {await staticContext.close();}
   await page.goto('/');await expect(page.locator('en-sticker-app')).toHaveJSProperty('hasUpdated',true);
   await page.evaluate(async()=>{
     await document.fonts.ready;
@@ -32,6 +40,8 @@ test('generated impact selection contains broad uncached rendered-style changes'
       await Promise.all(elements.map(e=>(e as Element&{updateComplete?:Promise<unknown>}).updateComplete));
     }
   });
+  await expect(page.locator('.specimen-preview-link')).toHaveCount(0);
+  await expect(page.locator('.collection-count')).toContainText('59 live here');
   const baseline=await paint(page);expect(Object.keys(baseline).sort()).toEqual(manifest.scenarios.filter((s:{id:string})=>!s.id.startsWith('workflow:')).map((s:{id:string})=>s.id).sort());
   const evidence=[];
   for(const [token,property,value] of [['component.button.radius','--en-button-radius','0px'],['radius.control','--en-radius-control','2rem'],['color.action','--en-color-action','rgb(180 35 90)']]){
