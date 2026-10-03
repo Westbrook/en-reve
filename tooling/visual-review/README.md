@@ -337,3 +337,11 @@ all existing dependency, build, environment, artifact and failure-history checks
 succeed. The final review receipt must distinguish these reused images from fresh
 ones and bind them to their original report. Reuse is neither a new acquisition
 nor permission to erase the original failed attempt.
+
+Numeric `value` postconditions may explicitly declare `tolerance` in the input's
+units, for native pointer-coordinate rounding. Exact string matching remains the
+default. The tolerance and expected value must be finite, the tolerance must be
+nonnegative, and blank/non-numeric actual values fail. The authored tolerance is
+part of fixture identity and retained evidence; it does not relax pixel comparison
+thresholds. Color-plane midpoint gestures use 50 ± 0.5 percentage point, while
+keyboard and cancellation checks retain their exact values.

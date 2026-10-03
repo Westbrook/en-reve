@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Immutable historical qualification inputs; not qualification of current sources.",
+  "entries": [
+    {
+      "path": "apps/docs/tests/playwright.config.ts",
+      "sha256": "c68fa7f41a4f0104e8e5ec10f7a7e6ebf625d6f1b048df98790a37bf1bc73ae3",
+      "receipts": [
+        "apps/docs/tests/verification-chrome-headed-20261002.json",
+        "apps/docs/tests/verification-chrome-stable-20261002.json",
+        "apps/docs/tests/verification-edge-lines-20261002.json",
+        "apps/docs/tests/verification-products-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/c68fa7f41a4f0104e8e5ec10f7a7e6ebf625d6f1b048df98790a37bf1bc73ae3.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "0b935772368c40a611dc2ea15478db28d89b0e1d",
+        "path": "apps/docs/tests/playwright.config.ts"
+      }
+    },
+    {
+      "path": "apps/docs/src/app.ts",
+      "sha256": "d165d3accb7ec9da0d470f291f6b127a65ae9b34138c15aabf6c513a7b3eada4",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/d165d3accb7ec9da0d470f291f6b127a65ae9b34138c15aabf6c513a7b3eada4.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "7604e82f729db3fc4d227fd393b7371ae6432566",
+        "path": "apps/docs/src/app.ts"
+      }
+    },
+    {
+      "path": "apps/docs/src/examples.ts",
+      "sha256": "ef49b8a7280219eb40cf7f79cfbe1d8675f824af84867205b76fd72705b22ef3",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/ef49b8a7280219eb40cf7f79cfbe1d8675f824af84867205b76fd72705b22ef3.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8",
+        "path": "apps/docs/src/examples.ts"
+      }
+    },
+    {
+      "path": "apps/docs/src/tree-data-demo.ts",
+      "sha256": "00e10d98d03d3fb354be7b4ec72a44e0cfa2d40c7dab712aae9f9f95b4e9d5c5",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/00e10d98d03d3fb354be7b4ec72a44e0cfa2d40c7dab712aae9f9f95b4e9d5c5.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "0b7ab3321f40be8cf7c0db37f869a4840f7f9321",
+        "path": "apps/docs/src/tree-data-demo.ts"
+      }
+    },
+    {
+      "path": "apps/docs/tests/copied-gallery-scenarios.ts",
+      "sha256": "9f163dab122a0b50ff85478efaddbf1d14a726fdc20be51094e5b9c5d54c887b",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/9f163dab122a0b50ff85478efaddbf1d14a726fdc20be51094e5b9c5d54c887b.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8",
+        "path": "apps/docs/tests/copied-gallery-scenarios.ts"
+      }
+    },
+    {
+      "path": "apps/docs/tests/specimen-sources.spec.ts",
+      "sha256": "9fc1d4963a469477ed1554d0543bcaea68ff14486f51886b814fd04f5755191f",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/9fc1d4963a469477ed1554d0543bcaea68ff14486f51886b814fd04f5755191f.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "d23dc3dc409dce8ef92bd72e23cd13ed98a3f3e8",
+        "path": "apps/docs/tests/specimen-sources.spec.ts"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/tree-data-source.js",
+      "sha256": "e46fc5c529d25e444c1780f249f12eb9c11414469c0ecf0155603ccfe52f4816",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/e46fc5c529d25e444c1780f249f12eb9c11414469c0ecf0155603ccfe52f4816.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/tree-data-source.js",
+        "note": "Recovered from the preserved original checkout; exact bytes match all listed historical receipts. No regeneration or receipt hash change."
+      }
+    },
+    {
+      "path": "apps/docs/tests/virtual-collection.spec.ts",
+      "sha256": "3ed9933d6aa61975d6639b0af2b1ebfd148b37fe23736e24b2d7cfc4ed2fa786",
+      "receipts": [
+        "probes/collection-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/3ed9933d6aa61975d6639b0af2b1ebfd148b37fe23736e24b2d7cfc4ed2fa786.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "390be220c1d47b90295cdf7eb6e7e321b25bca01",
+        "path": "apps/docs/tests/virtual-collection.spec.ts"
+      }
+    }
+  ]
+}

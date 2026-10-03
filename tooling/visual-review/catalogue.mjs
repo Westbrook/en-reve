@@ -1209,7 +1209,9 @@ export const authoredStates=[
       {
         "kind": "value",
         "selector": "[data-specimen=\"color-plane\"] en-color-slider[part~=\"saturation\"] input[type=\"range\"]",
-        "value": "50"
+        "value": "50",
+        "tolerance": 0.5,
+        "description": "Pointer midpoint saturation within 0.5 percentage point for native pixel rounding"
       }
     ]
   },
@@ -1235,7 +1237,9 @@ export const authoredStates=[
       {
         "kind": "value",
         "selector": "[data-specimen=\"color-plane\"] en-color-slider[part~=\"saturation\"] input[type=\"range\"]",
-        "value": "50"
+        "value": "50",
+        "tolerance": 0.5,
+        "description": "Pointer midpoint saturation within 0.5 percentage point for native pixel rounding"
       }
     ]
   },

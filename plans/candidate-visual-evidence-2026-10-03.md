@@ -401,3 +401,18 @@ The color-plane states and owning pointer tests still require qualification acro
 engines and densities; this diagnosis is not a claimed browser pass. Changing the
 shared runner changes capture identity, so older captures must not be reused under
 the new producer identity merely because their pixels appear unchanged.
+
+## Native pointer rounding qualification pending
+
+The focused rerun proves the sticky-navigation correction in Chromium and Firefox.
+Firefox's desktop midpoint gesture produces saturation `49.8` instead of exactly
+`50`, while the mobile gesture reaches the asserted value. Native pointer-coordinate
+rounding makes exact string equality inappropriate for this pointer postcondition;
+the owning color-plane test already allows a bounded numeric range for pointer use.
+
+The two midpoint fixtures now declare a 0.5 percentage-point tolerance around 50.
+Exact keyboard values and the cancellation restoration value remain exact. Numeric
+tolerance is explicit capture input, validated as finite and nonnegative, and only
+allowed for numeric value checks. A browser negative control rejects the unchanged
+58.3 value and blank input; Node controls reject invalid tolerance contracts.
+This update awaits execution and does not convert the failed first run into a pass.

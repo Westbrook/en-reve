@@ -64,6 +64,16 @@ test('state postconditions reject unmet UI and accept asynchronously reached sta
  await expect(verifyState(page,[{kind:'count',selector:'button',value:2}])).rejects.toThrow();
 });
 
+test('numeric pointer postconditions allow rounding but reject an unchanged value',async({page})=>{
+ await page.setContent('<input type="number" value="49.8">');
+ const check={kind:'value',selector:'input',value:'50',tolerance:.5};
+ await verifyState(page,[check]);
+ await page.locator('input').fill('58.3');
+ await expect(verifyState(page,[check])).rejects.toThrow();
+ await page.locator('input').fill('');
+ await expect(verifyState(page,[{...check,value:'0'}])).rejects.toThrow();
+});
+
 test('CSS postconditions distinguish local overrides from inherited siblings',async({page})=>{
  await page.setContent('<main style="color:rgb(10, 20, 30)"><button class="shared" style="padding:10px;border-radius:8px">Shared</button><section style="color:rgb(40, 50, 60)"><button class="local" style="padding:20px;border-radius:0">Local</button></section></main>');
  await verifyState(page,[

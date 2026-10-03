@@ -98,3 +98,11 @@ test('CSS state contracts bind named properties and explicit relationships witho
  ])assert.throws(()=>createPlan(build,subject,subject,{cases:[{...fixture,checks:[bad]}]}),/check/i);
  assert.notEqual(hashValue(checks),hashValue([checks[0],{...checks[1],relation:'equal'}]));
 });
+
+test('numeric value tolerance is explicit and cannot apply to nonnumeric checks',()=>{
+ const subject=readEnvelope(JSON.stringify(envelope()),build);
+ const fixture=defaultCases(build)[0];
+ const check={kind:'value',selector:'input',value:'50',tolerance:.5};
+ assert.deepEqual(createPlan(build,subject,subject,{cases:[{...fixture,checks:[check]}]}).rows[0].fixture.checks,[check]);
+ for(const bad of [{...check,tolerance:-1},{...check,tolerance:Infinity},{...check,tolerance:NaN},{...check,tolerance:'0.5'},{...check,value:''},{...check,value:'blue'},{...check,kind:'text'}])assert.throws(()=>createPlan(build,subject,subject,{cases:[{...fixture,checks:[bad]}]}),/tolerance/);
+});

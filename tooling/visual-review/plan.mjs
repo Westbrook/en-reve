@@ -53,6 +53,7 @@ export function validateChecks(checks) {
  for (const check of checks) {
   if (!check || !['visible','hidden','focused','checked','text','value','attribute','count','css','css-relationship'].includes(check.kind) || typeof check.selector !== 'string' || !check.selector.trim()) throw new Error('Unknown or incomplete state check.');
   if (['text','value','attribute','css'].includes(check.kind) && typeof check.value !== 'string') throw new Error('State check requires a string value.');
+  if (check.tolerance !== undefined && (check.kind !== 'value' || !Number.isFinite(check.tolerance) || check.tolerance < 0 || !check.value.trim() || !Number.isFinite(Number(check.value)))) throw new Error('Numeric value check tolerance requires a finite nonnegative number and numeric expected value.');
   if (check.kind === 'attribute' && (typeof check.name !== 'string' || !check.name.trim())) throw new Error('Attribute check requires a name.');
   if (['css','css-relationship'].includes(check.kind) && (typeof check.name !== 'string' || !/^(?:--)?[a-z][a-z0-9-]*$/.test(check.name))) throw new Error('CSS check requires a property name.');
   if (check.kind === 'css-relationship' && (typeof check.referenceSelector !== 'string' || !check.referenceSelector.trim() || !['equal','different','greater','less'].includes(check.relation))) throw new Error('CSS relationship check requires a reference and relation.');

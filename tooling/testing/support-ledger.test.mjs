@@ -8,6 +8,9 @@ const root = new URL('../../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
 const json = async path => JSON.parse(await read(path));
 const ledger = await json('plans/support-coverage.json');
+const historicalInputs = (await json('tooling/testing/qualification-sources/20261003/manifest.json')).entries;
+const historicalInputPath = (path,digest,currentPath=path) => historicalInputs.find(entry=>entry.path===path&&entry.sha256===digest)?.snapshot??currentPath;
+const readHistoricalInput = (path,digest,currentPath=path) => read(historicalInputPath(path,digest,currentPath));
 const readConsumerRunnerHistorical = path => read(path==='probes/native-browser-products/run.mjs' ? 'probes/native-browser-products/qualification-sources/7dd38008/run.mjs.txt' : path);
 const readNativeHistorical = path => readConsumerRunnerHistorical(['probes/native-browser-products/workflows.mjs','probes/native-browser-products/first-paint.mjs','probes/native-browser-products/firefox.mjs'].includes(path) ? 'probes/native-browser-products/qualification-sources/e29ffc7c/'+path.split('/').at(-1)+'.txt' : path);
 
@@ -24,7 +27,7 @@ test('headed Chrome evidence retains native product identity, original skip and 
   assert.equal(r.runtimeDistributionUnchangedAfterRun, true);
   assert.equal(r.sourceAndInputsUnchangedAfterRun, true);
   for (const [path, digest] of Object.entries(r.sourceHashes)) {
-    assert.equal(createHash('sha256').update(await read(path)).digest('hex'), digest, path);
+    assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest)).digest('hex'), digest, path);
   }
   assert.equal(r.cases.filter(c => c.status === 'passed' && c.retry === 0).length, 26);
   assert.match(r.cases.find(c => c.status === 'skipped').titlePath.at(-1), /narrow portrait/);
@@ -279,7 +282,7 @@ test('actual product workflows retain exact sources, distribution identity and e
  assert.equal(receipt.runtimeDistributionUnchangedAfterRun,true);
  assert.equal(receipt.sourceAndInputsUnchangedAfterRun,true);
  assert(receipt.distInventoryEntries>1000);
- for(const [path,digest] of Object.entries(receipt.sourceHashes))assert.equal(createHash('sha256').update(await readNativeHistorical(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(receipt.sourceHashes))assert.equal(createHash('sha256').update(await readNativeHistorical(historicalInputPath(path,digest))).digest('hex'),digest,path);
  assert.equal(receipt.cases.length,27 * receipt.products.length);
  assert(receipt.cases.filter(c=>c.status==='skipped').every(c=>c.titlePath.at(-1).startsWith('narrow portrait')));
  assert.equal(ledger.conditions.find(c=>c.id==='browser-current').status,'partial');
@@ -684,7 +687,7 @@ test('native recipe qualification binds both style deliveries, real SSR and orig
 test('packed collection qualification binds maintained assertions, native SSR and bounded public-layer scope',async()=>{
  const r=await json('probes/collection-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.report.passed,81);assert.equal(r.report.workers,1);assert.equal(r.packed.types.status,'passed');
- for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "tooling/testing/browser-ports.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/collection-recipes/qualification-sources/f186cb6f/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "tooling/testing/browser-ports.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/collection-recipes/qualification-sources/f186cb6f/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  assert(r.report.cases.every(c=>c.status==='passed'&&c.retry===0));
  assert.equal(r.originalOwner.status,'passed');assert.equal(r.originalOwner.passed,51);assert(r.originalOwner.cases.every(c=>c.status==='passed'));
  assert.equal(Object.values(r.originalOwner.sourceHashes)[0],r.sourceInputs['apps/docs/tests/virtual-collection.spec.ts']);
@@ -738,7 +741,7 @@ test('packed state receipt binds native application journeys and real lazy chunk
 test('presentation receipt binds native patterns, both style forms and choice SSR regression evidence',async()=>{
  const r=await json('probes/presentation-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,33);
- for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=['tooling/testing/browser-ports.mjs','tooling/testing/comprehensive.mjs','tooling/testing/comprehensive.test.mjs','probes/reusable-layers/inventory.json','probes/reusable-layers/inventory.test.mjs'].includes(path)?'probes/presentation-recipes/qualification-sources/52c66b4b/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=['tooling/testing/browser-ports.mjs','tooling/testing/comprehensive.mjs','tooling/testing/comprehensive.test.mjs','probes/reusable-layers/inventory.json','probes/reusable-layers/inventory.test.mjs'].includes(path)?'probes/presentation-recipes/qualification-sources/52c66b4b/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  for(const [name,count] of [['packed',114],['gallery',32]]){assert.equal(r.reports[name].stats.expected,count);for(const key of ['unexpected','skipped','flaky'])assert.equal(r.reports[name].stats[key],0);assert(r.reports[name].cases.every(c=>c.status==='passed'&&c.retry===0));}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.reports.packed.cases.filter(c=>c.project===engine).length,38);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
@@ -746,14 +749,14 @@ test('presentation receipt binds native patterns, both style forms and choice SS
  assert.equal(Object.keys(r.packed.portableCSS).length,8);
  const rows=inventory.entries.filter(row=>row.receipt==='probes/presentation-recipes/verification-20261002.json');assert.equal(rows.length,14);assert.equal(rows.filter(row=>row.delivery==='css').length,7);
  const build=await json('apps/docs/tests/verification-presentation-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.run,r.run);
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  assert.match(r.limitations.join(' '),/full hydration/);assert.match(r.limitations.join(' '),/other51/);
 });
 
 test('notification consumer receipt binds admission, native lifecycle and scoped feedback sizing',async()=>{
  const r=await json('probes/notification-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,40);assert.equal(r.stats.expected,138);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs", "packages/styles/README.md"].includes(path)?'probes/notification-recipes/qualification-sources/e5ec420a/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs", "packages/styles/README.md"].includes(path)?'probes/notification-recipes/qualification-sources/e5ec420a/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,46);
  assert.equal(r.swatchRegression.stats.expected,25);assert.equal(r.swatchRegression.stats.skipped,2);assert.equal(r.swatchRegression.stats.unexpected,0);
  assert.deepEqual(r.swatchRegression.cases.filter(c=>c.status==='skipped').map(c=>c.project).sort(),['firefox','webkit']);
@@ -761,7 +764,7 @@ test('notification consumer receipt binds admission, native lifecycle and scoped
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));assert.deepEqual(Object.keys(r.packed.portableCSS).sort(),['activity','buttons','feedback','foundations','toast'].map(name=>'@en-reve/styles/'+name+'.css'));
  const rows=inventory.entries.filter(row=>row.receipt==='probes/notification-recipes/verification-20261002.json');assert.equal(rows.length,7);assert.equal(rows.filter(row=>row.delivery==='css').length,3);
  const build=await json('apps/docs/tests/verification-notification-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');assert.equal(build.productionBuild.run,r.run);
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  assert.match(r.limitations.join(' '),/other37/);assert.match(r.limitations.join(' '),/two cases/);
 });
 
@@ -791,7 +794,7 @@ test('calendar consumer receipt binds date semantics, native observations and bo
 test('collection stylesheet receipt binds native layouts, both deliveries and table compatibility',async()=>{
  const r=await json('probes/collection-style-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,36);assert.equal(r.stats.expected,144);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/collection-style-recipes/qualification-sources/8455c55b/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/collection-style-recipes/qualification-sources/8455c55b/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,48);
  assert.equal(r.tableRegression.stats.expected,21);assert.equal(r.tableRegression.stats.skipped,0);assert.equal(r.tableRegression.stats.unexpected,0);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
@@ -799,7 +802,7 @@ test('collection stylesheet receipt binds native layouts, both deliveries and ta
  assert.deepEqual(r.postBuildPortableParity,r.packed.portableCSS);
  const rows=inventory.entries.filter(row=>row.receipt==='probes/collection-style-recipes/verification-20261002.json');assert.equal(rows.length,5);assert.equal(rows.filter(row=>row.delivery==='css').length,3);
  const build=await json('apps/docs/tests/verification-collection-style-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules})){const retained=path==='packages/styles/scripts/export-css.mjs'?'probes/editor-collaboration-recipes/qualification-sources/2730982c/export-css.mjs.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  assert.match(r.limitations.join(' '),/32 remain/);assert.match(r.limitations.join(' '),/Option\+Tab/);assert.match(r.limitations.join(' '),/native scrollport/);
 });
 
@@ -837,7 +840,7 @@ test('editor collaboration receipt binds alternate native editing and explicit c
 test('color receipt binds independent portable plane, native controls and style discovery',async()=>{
  const r=await json('probes/color-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,41);assert.equal(r.stats.expected,144);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/color-recipes/qualification-sources/e4606d2e/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await read(retained)).digest('hex'),digest,path);}
+ for(const [path,digest] of Object.entries(r.sourceInputs)){const retained=["tooling/testing/browser-ports.mjs", "tooling/testing/comprehensive.mjs", "tooling/testing/comprehensive.test.mjs", "probes/reusable-layers/inventory.json", "probes/reusable-layers/inventory.test.mjs"].includes(path)?'probes/color-recipes/qualification-sources/e4606d2e/'+path.split('/').at(-1)+'.txt':path;assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest,retained)).digest('hex'),digest,path);}
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,48);
  assert.equal(r.packed.types.status,'passed');assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/')));
  assert(!r.packed.inputs.some(path=>path.includes('/@en-reve/elements/')||/\/packages\/[^/]+\/src\//.test(path)));
@@ -845,14 +848,14 @@ test('color receipt binds independent portable plane, native controls and style 
  assert.deepEqual(r.portableParity,r.packed.portableCSS);
  const rows=inventory.entries.filter(row=>row.receipt==='probes/color-recipes/verification-20261002.json');assert.equal(rows.length,10);assert.equal(rows.filter(row=>row.delivery==='css').length,4);
  const build=await json('apps/docs/tests/verification-color-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest)).digest('hex'),digest,path);
  assert.match(r.limitations.join(' '),/3 interaction helpers/);assert.match(r.limitations.join(' '),/Manual AT/);assert.match(r.limitations.join(' '),/color-plane.css/);
 });
 
 test('helper receipt binds advanced SSR protocols, logical scrolling and existing owners',async()=>{
  const r=await json('probes/helper-recipes/verification-20261002.json'),inventory=await json('probes/reusable-layers/inventory.json');
  assert.equal(r.status,'passed');assert.equal(r.nodeControls.passed,43);assert.equal(r.stats.expected,111);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.stats[k],0);
- for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries(r.sourceInputs))assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest)).digest('hex'),digest,path);
  for(const engine of ['chromium','firefox','webkit'])assert.equal(r.cases.filter(c=>c.project===engine&&c.status==='passed'&&c.retry===0).length,37);
  assert.equal(r.ownerRegression.stats.expected,153);for(const k of ['unexpected','skipped','flaky'])assert.equal(r.ownerRegression.stats[k],0);
  assert.equal(r.packed.types.status,'passed');assert.equal(r.packed.types.packedDeclarations.length,3);assert(r.packed.types.packedDeclarations.every(path=>path.startsWith('node_modules/@en-reve/primitives/')));
@@ -860,6 +863,22 @@ test('helper receipt binds advanced SSR protocols, logical scrolling and existin
  const rows=inventory.entries.filter(row=>row.receipt==='probes/helper-recipes/verification-20261002.json');assert.equal(rows.length,3);
  assert(inventory.entries.every(row=>row.qualification==='qualified-scenarios'));
  const build=await json('apps/docs/tests/verification-helper-recipes-20261002.json');assert.equal(build.status,'passed');assert.equal(build.productionBuild.SSRBuild,'passed');
- for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await read(path)).digest('hex'),digest,path);
+ for(const [path,digest] of Object.entries({...build.inputs,...build.generatedModules}))assert.equal(createHash('sha256').update(await readHistoricalInput(path,digest)).digest('hex'),digest,path);
  assert.match(r.limitations.join(' '),/internal renderer\/controller/);assert.match(r.limitations.join(' '),/Manual AT/);assert.match(r.limitations.join(' '),/not full-goal completion/);
+});
+
+
+test('retained qualification snapshots match the unchanged receipts they cite',async()=>{
+ const keys=new Set();
+ for(const entry of historicalInputs){
+  const key=entry.path+':'+entry.sha256;assert(!keys.has(key));keys.add(key);
+  assert.match(entry.sha256,/^[a-f0-9]{64}$/);
+  assert.equal(entry.snapshot,`tooling/testing/qualification-sources/20261003/${entry.sha256}.txt`);
+  assert.equal(createHash('sha256').update(await read(entry.snapshot)).digest('hex'),entry.sha256);
+  assert(entry.receipts.length>0);
+  for(const path of entry.receipts){
+   const receipt=await json(path);
+   assert.equal({...receipt.sourceHashes,...receipt.sourceInputs,...receipt.inputs,...receipt.generatedModules}[entry.path],entry.sha256);
+  }
+ }
 });

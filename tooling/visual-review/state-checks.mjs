@@ -11,7 +11,13 @@ export async function verifyState(frame, checks = []) {
    case 'focused': await assertion.toBeFocused(); break;
    case 'checked': await assertion.toBeChecked(); break;
    case 'text': await assertion.toContainText(check.value); break;
-   case 'value': await assertion.toHaveValue(check.value); break;
+   case 'value':
+    if(check.tolerance===undefined)await assertion.toHaveValue(check.value);
+    else await expect.poll(async()=>{
+     const value=await target.inputValue(),actual=Number(value);
+     return value.trim()&&Number.isFinite(actual)?Math.abs(actual-Number(check.value)):Infinity;
+    },{message:check.description??`Numeric value ${check.selector}: ${check.value} ± ${check.tolerance}`}).toBeLessThanOrEqual(check.tolerance);
+    break;
    case 'attribute': await assertion.toHaveAttribute(check.name, check.value); break;
    case 'css': await assertion.toHaveCSS(check.name, check.value); break;
    case 'css-relationship': {
@@ -35,4 +41,3 @@ export async function verifyState(frame, checks = []) {
  }
  return checks.map(check => ({...check, status: 'passed'}));
 }
-
