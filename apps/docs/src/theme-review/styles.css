@@ -46,3 +46,9 @@ en-theme-review-app main { max-inline-size:none; }
 .theme-editor-current dd { margin:0; overflow-wrap:anywhere; }
 .theme-editor-source pre { max-block-size:16rem; overflow:auto; }
 @media (max-width: 30rem) { .theme-editor-channels,.theme-editor-coordinates { grid-template-columns: minmax(0,1fr); } }
+
+.review-impact { margin-block:var(--en-space-4); padding:var(--en-space-3); border:var(--en-border-width) solid var(--en-color-boundary); border-radius:var(--en-radius-control); }
+.review-impact h3 { margin-block-start:0; }
+.review-impact-cases { display:flex; flex-wrap:wrap; gap:var(--en-space-2); list-style:none; padding:0; max-block-size:20rem; overflow:auto; }
+.review-impact code { overflow-wrap:anywhere; }
+.review-impact-summary { font-variant-numeric:tabular-nums; }

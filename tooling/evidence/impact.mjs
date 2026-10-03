@@ -1,3 +1,4 @@
+import {selectCandidateImpact} from './impact-client.mjs';
 import {readFile, writeFile, mkdir, readdir} from 'node:fs/promises';
 import {existsSync, realpathSync} from 'node:fs';
 import {resolve, relative, dirname, sep} from 'node:path';
@@ -6,7 +7,6 @@ import {ts, compilerIdentity} from '../metadata/compiler-api.mjs';
 import {inspectCustomizationSource} from '../customization/source-inventory.mjs';
 import {readAuthoredSpecimens} from '../../apps/docs/scripts/authored-specimen-sources.mjs';
 import {digestBytes, digestJson} from './identity.ts';
-import {selectAffected} from './graph.ts';
 
 const defaultRoot=fileURLToPath(new URL('../..',import.meta.url));
 const unique=values=>[...new Set(values)].sort();
@@ -42,7 +42,7 @@ export async function generateImpact({root=defaultRoot}={}){
   const api=await json('packages/elements/public-api.json');
   const authoring=await json('packages/styles/css-authoring.json');
   await read('package-lock.json');await read('tsconfig.base.json');
-  for(const path of ['tooling/evidence/impact.mjs','tooling/evidence/graph.ts','tooling/evidence/graph-core.ts','tooling/customization/source-inventory.mjs','apps/docs/scripts/authored-specimen-sources.mjs','apps/docs/scripts/specimen-sources.mjs'])await read(path);
+  for(const path of ['tooling/evidence/impact.mjs','tooling/evidence/graph.ts','tooling/evidence/graph-core.ts','tooling/evidence/impact-client.mjs','tooling/customization/source-inventory.mjs','apps/docs/scripts/authored-specimen-sources.mjs','apps/docs/scripts/specimen-sources.mjs'])await read(path);
   const add=(id,kind,dependencies=[],complete=true)=>{
     const old=nodes.get(id);nodes.set(id,{id,kind,dependencies:unique([...(old?.dependencies??[]),...dependencies]),complete:(old?.complete??true)&&complete});return id;
   };
@@ -163,11 +163,8 @@ export async function generateImpact({root=defaultRoot}={}){
   return {...result,digest:digestJson(result)};
 }
 
-export function selectImpact(manifest,changed){
-  const {digest,...body}=manifest;if(digestJson(body)!==digest)throw new Error('Impact manifest integrity mismatch');
-  const receipt=selectAffected(manifest.graph,changed);
-  return {...receipt,impactDigest:digest,components:receipt.affected.filter(id=>id.startsWith('component:')).map(id=>id.slice(10)),caseIds:receipt.scenarios.map(id=>id.slice(9)),policy:manifest.policy};
-}
+export const selectImpact = selectCandidateImpact;
+
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
   if(process.argv[2]==='select'){
     if(process.argv.length<5)throw new Error('Usage: node tooling/evidence/impact.mjs select <impact.json> <changed-node-id> ...');

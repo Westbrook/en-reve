@@ -73,8 +73,12 @@ all candidate values or pixel equivalence. The visual evidence pipeline remains
 separate. A retained manifest describes its exact inputs, not the current checkout
 merely because the pathname is unchanged.
 
-The pure traversal is shared in `graph-core.ts`; `graph.ts` adds content identity
-for Node consumers. Tests retain selector, identity and cache controls alongside
+The pure traversal is shared in `graph-core.ts`. `impact-client.mjs` provides a
+browser-safe integrity/selection boundary used by both the CLI and Theme Review;
+`graph.ts` also adds content identity for general Node consumers. The candidate UI
+checks the map’s transport digest against its exact review build before selection.
+Paired changes select across both appearances, and exports retain the selection
+and candidate identities. This does not mark visual evidence run or approve a theme. Tests retain selector, identity and cache controls alongside
 real-source coverage. Newly introduced dependency policies require broad uncached
 qualification before trusting reduced execution or cache reuse.
 

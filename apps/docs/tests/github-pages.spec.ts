@@ -68,4 +68,6 @@ test('review manifest, handbook artifacts and preview frames bind to the subpath
  const downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'Export candidate',exact:true}).click();
  const file=await (await downloaded).path();const candidate=JSON.parse(await readFile(file!,'utf8'));
  expect(candidate.build.fingerprint).toBe(manifest.fingerprint);expect(candidate.build.pages.every((p:any)=>p.path.startsWith(prefix))).toBeTruthy();
+ expect(candidate.impact.status).not.toBe('unavailable');expect(candidate.impact.changed).toEqual([]);
+ await expect(page.locator('.review-impact-summary')).toContainText('0 changed token values');
 });

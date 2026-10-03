@@ -8,6 +8,8 @@ import { SignalController } from '@en-reve/primitives/interactions/signal-contro
 import { skipLinkTemplate } from '@en-reve/primitives/templates/navigation.js';
 import { affectedTokens, createReviewDraft } from '@en-reve/tokens';
 import type { ThemeReviewDraft, ThemeMode, ThemeDensity } from '@en-reve/tokens';
+import {candidateImpact,loadCandidateImpact,type ImpactManifest} from './impact.js';
+import {impactTemplate} from './impact-view.js';
 import { managedTokenEditorTemplate } from './editor.js';
 import { createReviewWorkspace, type PreviewAppearance, type PreviewPreference, type ReviewWorkspace } from './workspace.js';
 import { createCandidateFileIntake } from './candidate-file-intake.js';
@@ -51,6 +53,10 @@ export class ThemeReviewApp extends LitElement {
 	private editorError = '';
 	private build?: ReviewBuild;
 	private buildError = '';
+	private impact?: ImpactManifest;
+	private impactError = '';
+	private selectedCase?: string;
+	private impactCache?: {workspace:ReviewWorkspace; theme:ReviewWorkspace['presentation']; manifest:ImpactManifest; value:ReturnType<typeof candidateImpact>};
 	private metadataGeneration = 0;
 	private editorResetRevision = 0;
 	private pendingRequests = new Map<Window,PendingPreview>();
@@ -98,6 +104,7 @@ export class ThemeReviewApp extends LitElement {
 		this.lifecycle?.abort();
 		this.lifecycle = new AbortController();
 		const lifecycle = this.lifecycle;
+    this.impact=undefined;this.impactError='';
 		const preference = window.matchMedia('(prefers-color-scheme: dark)');
 		this.systemMode = preference.matches ? 'dark' : 'light';
 		preference.addEventListener('change', () => {
@@ -106,7 +113,14 @@ export class ThemeReviewApp extends LitElement {
 		}, {signal:lifecycle.signal});
 		this.flagged = new URLSearchParams(location.search).has('progress-report');
 		window.addEventListener('message', event => this.receivePreview(event), {signal:this.lifecycle.signal});
-		void loadReviewBuild().then(build => { if (!this.isConnected || lifecycle.signal.aborted) return; this.build = build; this.touch(); this.syncPreviews(); }).catch(() => {
+		void loadReviewBuild().then(build => { if (!this.isConnected || lifecycle.signal.aborted) return; this.build = build; this.touch(); this.syncPreviews();
+      void loadCandidateImpact(build,lifecycle.signal).then(manifest=>{
+        if (!this.isConnected || lifecycle.signal.aborted || this.build !== build) return;
+        this.impact=manifest;this.impactError='';this.touch();
+      }).catch(error=>{
+        if (!this.isConnected || lifecycle.signal.aborted) return;
+        this.impact=undefined;this.impactError=error instanceof Error ? error.message : 'Source impact is unavailable.';this.touch();
+      }); }).catch(() => {
 			if (!this.isConnected || lifecycle.signal.aborted) return;
 			if (import.meta.env.DEV) this.buildError = 'Development preview. Export and reopen are available in the built review page.';
 			else this.buildError = 'Review assets could not be loaded. Reload this page to enable export and reopen.';
@@ -142,13 +156,13 @@ export class ThemeReviewApp extends LitElement {
 		} else this.change(()=>this.workspace.redo(),'Edit reapplied.',{resetInputs:true});
 	}
 	private selectToken(id:string) { this.relatedPinJump = undefined; this.selected = id; this.editorError = ''; this.touch(); }
-	private href(path:string) { return path + (this.flagged ? '?progress-report' : ''); }
+	private href(path:string) { return path + (this.flagged ? (path.includes('?') ? '&' : '?')+'progress-report' : ''); }
 	private async exportCandidate() {
 		if (!this.build) return;
 		const titleField = this.querySelector('en-text-field[name="candidate-title"]') as HTMLElement & {value:string;reportValidity():boolean};
 		if (!titleField.reportValidity()) { this.error = 'Add a title before exporting.'; this.touch(); return; }
 		try {
-			const json = exportReviewBundle(this.draft,this.build,{title:this.candidateTitle,rationale:this.rationale},this.receipts,{pair:this.workspace.pair});
+			const json = exportReviewBundle(this.draft,this.build,{title:this.candidateTitle,rationale:this.rationale},this.receipts,{pair:this.workspace.pair,impact:this.impactSelection()});
 			const candidate = this.preparedCandidate();
 			const url = URL.createObjectURL(new Blob([json],{type:'application/json'}));
 			const link = this.ownerDocument.createElement('a'); link.href = url; link.download = this.workspace.pair ? `theme-pair-${this.workspace.identity.slice(7,31)}.json` : `${candidate.id}.json`;
@@ -226,8 +240,27 @@ export class ThemeReviewApp extends LitElement {
 		}
 		return this.prepared.candidate;
 	}
-	private selectPreviewPage(page:string) {
-		if (this.page === page || !reviewPages.some(item=>item.value === page)) return;
+	private impactSelection() {
+    if (!this.impact) return undefined;
+    const theme=this.workspace.presentation;
+    if(this.impactCache?.workspace!==this.workspace || this.impactCache.theme!==theme || this.impactCache.manifest!==this.impact)
+      this.impactCache={workspace:this.workspace,theme,manifest:this.impact,value:candidateImpact(this.impact,this.workspace)};
+    return this.impactCache.value;
+  }
+  private reviewImpactCase(id:string) {
+    const page=id.startsWith('workflow:') ? id.slice(9) : 'sheet';
+    if(!reviewPages.some(item=>item.value===page) || (page==='sheet' && !this.build?.caseIds.includes(id))) return;
+    // Fragment changes retain the same document and do not repeat its listening
+    // handshake. Preserve that binding while revoking older request receipts.
+    this.pendingRequests.clear();
+    if(this.page!==page)this.listeningDocuments.clear();
+    this.candidatePreview=undefined;
+    this.page=page;this.selectedCase=page==='sheet'?id:undefined;this.previewsOpen=true;this.view='preview';this.touch();
+    void this.updateComplete.then(()=>{if(this.isConnected)this.syncPreviews();});
+  }
+  private selectPreviewPage(page:string) {
+		if ((this.page === page && !this.selectedCase) || !reviewPages.some(item=>item.value === page)) return;
+    this.selectedCase=undefined;
 		// WindowProxy survives navigation; old replies must lose their authority
 		// before Lit changes either iframe's src.
 		this.pendingRequests.clear(); this.listeningDocuments.clear(); this.candidatePreview = undefined;
@@ -317,6 +350,8 @@ export class ThemeReviewApp extends LitElement {
 		const token = theme.tokens[this.selected];
 		const candidate = this.preparedCandidate();
 		const page = reviewPages.find(page=>page.value===this.page)!;
+		const impact=this.impactSelection();
+    const previewPath=page.path+'?theme-preview'+(this.selectedCase ? '#specimen-'+encodeURIComponent(this.selectedCase) : '');
 		const currentReceipt = this.candidatePreview ? this.receipts[this.receiptKey(this.candidatePreview.pageId,this.candidatePreview.effectiveMode)] : undefined;
 		const previewReady = this.candidatePreview && this.candidatePreview.document === this.querySelector<HTMLIFrameElement>('iframe[data-variant="candidate"]')?.contentDocument && this.candidatePreview?.ready && currentReceipt?.sourceHash === this.workspace.identity && currentReceipt?.buildFingerprint === this.build?.fingerprint && this.candidatePreview.direction === this.direction && this.candidatePreview.appearance === this.workspace.previewAppearance && this.candidatePreview.effectiveMode === this.effectiveMode(this.workspace.previewAppearance);
 		return html`
@@ -372,10 +407,11 @@ export class ThemeReviewApp extends LitElement {
 						<p class="review-help">The baseline uses unchanged library rules for the same appearance and density. Each preview keeps its own theme and interactions, independently of Page appearance.</p>
 						${!this.previewsOpen ? html`<en-button @click=${async()=>{this.previewsOpen=true;this.touch();await this.updateComplete;this.syncPreviews();}}>Load previews</en-button><p class="review-help">Loads both complete pages when you need them.</p>` : html`
 							<p class="review-preview-status">${previewReady ? `${currentReceipt.caseIds.length} candidate cases rendered. Interaction and visual checks remain to be reviewed.` : 'Loading candidate preview…'}</p>
-							<div class="review-frames"><section><h3>Baseline</h3><iframe title="Baseline preview" data-variant="baseline" src=${page.path+'?theme-preview'} @load=${(event:Event)=>this.syncPreviews(event.currentTarget as HTMLIFrameElement)}></iframe></section><section><h3>Candidate</h3><iframe title="Candidate preview" data-variant="candidate" src=${page.path+'?theme-preview'} @load=${(event:Event)=>this.syncPreviews(event.currentTarget as HTMLIFrameElement)}></iframe></section></div>
+							<div class="review-frames"><section><h3>Baseline</h3><iframe title="Baseline preview" data-variant="baseline" src=${previewPath} @load=${(event:Event)=>this.syncPreviews(event.currentTarget as HTMLIFrameElement)}></iframe></section><section><h3>Candidate</h3><iframe title="Candidate preview" data-variant="candidate" src=${previewPath} @load=${(event:Event)=>this.syncPreviews(event.currentTarget as HTMLIFrameElement)}></iframe></section></div>
 						`}
+						${impactTemplate({selection:impact,manifest:this.impact,error:this.impactError,openCase:id=>this.reviewImpactCase(id),href:path=>this.href(path)})}
 						<details class="review-details"><summary>Changed values (${candidate.changedTokens.length})</summary><div class="review-table" tabindex="0" aria-label="Changed token values"><table><thead><tr><th>Token</th><th>Baseline</th><th>Candidate</th><th>Rule</th></tr></thead><tbody>${candidate.changedTokens.map(id=>html`<tr><th scope="row">${id}</th><td>${this.draft.base.tokens[id]?.cssValue ?? '—'}</td><td>${theme.tokens[id]?.cssValue ?? '—'}</td><td>${theme.tokens[id]?.provenance}</td></tr>`)}</tbody></table></div></details>
-						<details class="review-details"><summary>Diagnostics and review scope</summary><p>Every shipped specimen is available in the full sticker sheet. Component impact mapping is incomplete, so review all cases. A rendered case is not a passed interaction or accessibility test.</p>${theme.diagnostics.length ? html`<ul>${theme.diagnostics.map(d=>html`<li>${d.message}</li>`)}</ul>` : html`<p>No token diagnostics reported. Review contrast, focus, text growth and workflows in context.</p>`}<p>Exports contain source options, compiled CSS, resolved tokens, dependency data, build identity and recorded preview coverage. Reopen using this same documentation build. The JSON does not include an offline copy of the site.</p><p>This is a local candidate. Official library changes require library review; consuming teams review their own customizations. Export does not submit or adopt a change.</p>${this.build ? html`<p>Build <code>${this.build.fingerprint}</code></p>` : nothing}<p>Candidate <code>${this.workspace.pair ? this.workspace.identity : candidate.id}</code></p></details>
+						<details class="review-details"><summary>Diagnostics and review scope</summary><p>Every shipped specimen is available in the full sticker sheet. Potential source impact helps focus review without pruning any required cases. Unknown dependencies expand the selection; unavailable evidence does not mean no impact. A rendered case is not a passed interaction or accessibility test.</p>${theme.diagnostics.length ? html`<ul>${theme.diagnostics.map(d=>html`<li>${d.message}</li>`)}</ul>` : html`<p>No token diagnostics reported. Review contrast, focus, text growth and workflows in context.</p>`}<p>Exports contain source options, compiled CSS, resolved tokens, dependency data, build identity and recorded preview coverage. Reopen using this same documentation build. The JSON does not include an offline copy of the site.</p><p>This is a local candidate. Official library changes require library review; consuming teams review their own customizations. Export does not submit or adopt a change.</p>${this.build ? html`<p>Build <code>${this.build.fingerprint}</code></p>` : nothing}<p>Candidate <code>${this.workspace.pair ? this.workspace.identity : candidate.id}</code></p></details>
 					</section>
 				</div>
 			</main>

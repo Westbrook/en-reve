@@ -274,3 +274,7 @@ Local main `364608448b16ebfbff58093138835401df401c40` resolves nine unbaselined 
 ## GitHub Pages deployment checkpoint
 
 Local main `598988efe91bbb8dad1ae7fd17a17cf831df11b0` resolves nine unbaselined documentation GitHub Pages deployment paths. See `plans/github-pages-subpath-2026-10-03.md` for verification and remaining limits.
+
+## Candidate impact checkpoint
+
+Local main `c5bf03a6a274c5814f0fe6091d4dbbd48b8e52a1` adds verified candidate source-impact review. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

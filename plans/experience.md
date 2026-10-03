@@ -256,9 +256,10 @@ Implementation checkpoint (2026-10-03): [generated source impact mapping](impact
 now describes all 96 components, 59 authored sheet specimens and six workflows.
 Unknown dependencies expand conservatively; broad computed-style checks qualify
 three representative runtime overrides. The full sheet has been reconciled with
-the authored catalogue. Candidate-facing affected views and version-bound visual
-captures remain separate follow-up work. Newly surfaced gallery copies retain an
-explicit independent-runtime qualification backlog; compilation is not acceptance.
+the authored catalogue. Candidate-facing affected views now bind the graph to the exact build and show
+both paired appearances; all 59 gallery and 11 complete API copies have independent
+packed-consumer journeys. Version-bound visual captures and their verified reader
+remain open in [the delivery plan](candidate-visual-evidence-2026-10-03.md).
 
 ## 9. CEM-informed changelogs and interactive old/new review
 

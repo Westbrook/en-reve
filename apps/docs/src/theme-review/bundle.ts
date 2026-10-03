@@ -1,3 +1,4 @@
+import type {candidateImpact} from './impact.js';
 import { presetCompanion } from './companion.js';
 import { createThemePair, exportThemeReviewPair, hashValue, reopenReviewDraft, reopenThemeReviewPair, stableStringify } from '@en-reve/tokens';
 import type { ResolvedTheme, ThemeMode, ThemeReviewDraft, ThemeReviewPairDraft } from '@en-reve/tokens';
@@ -27,6 +28,7 @@ export const reviewPages = [
 	{ value: 'chat', label: 'Contextual chat', path: '/workflows/chat' },
 	{ value: 'selection', label: 'Project selection', path: '/workflows/selection' },
 	{ value: 'assets', label: 'Asset browser', path: '/workflows/assets' },
+  { value: 'multi-step', label: 'Project brief', path: '/workflows/multi-step' },
 ];
 export async function loadReviewBuild(): Promise<ReviewBuild> {
 	const response = await fetch('/review-build.json');
@@ -39,14 +41,14 @@ export async function loadReviewBuild(): Promise<ReviewBuild> {
 function resolvedTokens(theme: ResolvedTheme) {
 	return Object.fromEntries(Object.values(theme.tokens).map(token => [token.id, {type:token.type,value:token.value,provenance:token.provenance,cssName:token.cssName}]));
 }
-export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, metadata: {title:string;rationale:string}, receipts: Record<string,PreviewReceipt>, options: {pair?:ReviewPairDraft} = {}) {
+export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, metadata: {title:string;rationale:string}, receipts: Record<string,PreviewReceipt>, options: {pair?:ReviewPairDraft;impact?:ReturnType<typeof candidateImpact>} = {}) {
 	if (options.pair) {
 		const pair = options.pair;
 		if (draft !== pair.light && draft !== pair.dark) throw new Error('The active draft must belong to this appearance pair.');
 		const theme = createThemePair({name:pair.name,light:pair.light.theme,dark:pair.dark.theme});
 		const payload = {
 			schema: 'en-reve/local-theme-review', schemaVersion: 2,
-			build, activeAppearance: draft.theme.mode,
+			build, impact:options.impact ?? {status:'unavailable',reason:'No verified source-impact graph was available at export.'}, activeAppearance: draft.theme.mode,
             ...(presetCompanion(theme) ? {companion:presetCompanion(theme)} : {}),
 			draft: JSON.parse(exportThemeReviewPair(pair,metadata)) as unknown,
 			resolvedTokens: {light:resolvedTokens(pair.light.theme),dark:resolvedTokens(pair.dark.theme)},
@@ -65,6 +67,7 @@ export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, 
 	const payload = {
 		schema: 'en-reve/local-theme-review', schemaVersion: 1,
 		build,
+    impact:options.impact ?? {status:'unavailable',reason:'No verified source-impact graph was available at export.'},
 		draft: JSON.parse(draft.exportJSON(metadata)) as unknown,
 		resolvedTokens: resolvedTokens(theme),
 		coverage: {

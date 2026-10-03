@@ -1,0 +1,27 @@
+{
+  "createdAt": "2026-10-03T02:48:46.183841+00:00",
+  "sourceCommit": "c5bf03a6a274c5814f0fe6091d4dbbd48b8e52a1",
+  "previousSourceMain": "598988efe91bbb8dad1ae7fd17a17cf831df11b0",
+  "taskPaths": [
+    "apps/docs/guides.html",
+    "apps/docs/src/theme-review/README.md",
+    "apps/docs/src/theme-review/app.ts",
+    "apps/docs/src/theme-review/bundle.ts",
+    "apps/docs/src/theme-review/impact-view.ts",
+    "apps/docs/src/theme-review/impact.ts",
+    "apps/docs/src/theme-review/styles.css",
+    "apps/docs/tests/candidate-impact.spec.ts",
+    "apps/docs/tests/github-pages.spec.ts",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/verification-candidate-impact-20261003.json",
+    "plans/candidate-visual-evidence-2026-10-03.md",
+    "plans/experience.md",
+    "tooling/evidence/README.md",
+    "tooling/evidence/impact-client.d.mts",
+    "tooling/evidence/impact-client.mjs",
+    "tooling/evidence/impact-client.test.mjs",
+    "tooling/evidence/impact.mjs"
+  ],
+  "qualification": "Candidate source-impact views verified with20 owning Node controls,semantic gates,18 root browser and6 project-path cases. Visual capture/comparison stages remain incomplete.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

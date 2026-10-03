@@ -189,8 +189,9 @@ for the exact matrix and numerical limits.
 
 Rendered-case receipts show preview coverage, not passed tests. The export keeps
 interaction, visual-comparison and manual-accessibility results `not-run`.
-Resolver diagnostics do not certify accessibility or visual acceptance. Component
-impact mapping remains incomplete, so the full shipped sheet stays available.
+Resolver diagnostics do not certify accessibility or visual acceptance. The exact-build source-impact map now shows potentially affected components and
+cases for both appearances. Case buttons open the current candidate in its preview.
+The full shipped sheet stays available; conservative selection is not test coverage.
 
 The JSON itself contains no offline copy of the documentation or saved workflow/browser
 session. The [offline review packager](../../../../tooling/offline-review/README.md)
@@ -210,9 +211,30 @@ it does not adopt those drafts as candidate values.
 
 `app.ts` owns the page, `editor.ts` renders managed controls, `preview.ts` supplies
 the bridge, and `bundle.ts` owns the outer build/coverage envelope. `candidate-file-intake.ts` owns only native file intake, drag feedback and asynchronous read lifetime. Component
-internals remain private. Offline build/candidate packaging is delivered separately; complete component
-dependency mapping, expected/actual/diff visual evidence, review-cache policy and
+internals remain private. Offline build/candidate packaging is delivered separately; candidate-bound expected/actual/diff visual evidence, review-cache integration and
 explicit adoption integration remain planned. This local editor does not complete
 the managed admin. The initial four-audience handbook is delivered separately at
 `/guides.html`; it does not change these candidate/adoption boundaries. See the [token plan](../../../../plans/tokens.md)
 and [verification guide](../../tests/README.md).
+
+
+## Candidate-facing source impact
+
+`impact.ts` binds the fetched map bytes to `review-build.json`, then uses the same
+browser-safe selector as the maintainer CLI. `impact-view.ts` renders only that
+selection and its limitations. Accepted changes update the selected set; paired
+candidates include both branches. The UI memoizes against the actual presentation,
+workspace and verified map, not merely the edited token or current appearance.
+
+Case actions retain the draft and open the same baseline/candidate preview pair.
+Workflow cases include the project-brief workflow. The complete sheet remains
+accessible and is never pruned. Missing, corrupt or stale map bytes produce an
+unavailable message, with full review still available. Export records the matching
+candidate/base-set/graph identities and selection, or an explicit unavailable state.
+It does not mark visual checks run or reinterpret reopened evidence as acceptance.
+
+The original source graph conservatively over-selects shared code and token paths.
+Unknown dependencies expand rather than narrowing required review. Source impact
+is not browser-effective cascade, image comparison or external application coverage.
+The remaining visual producer/reader work is in
+[the delivery plan](../../../../plans/candidate-visual-evidence-2026-10-03.md).
