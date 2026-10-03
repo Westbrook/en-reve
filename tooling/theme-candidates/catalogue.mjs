@@ -8,6 +8,7 @@ export const candidateRecipes = Object.freeze({
 	'shadcn-inspired': 'inspired/shadcn',
 	'radix-inspired': 'inspired/radix',
 	'web-awesome-inspired': 'inspired/web-awesome',
+	'chakra-inspired': 'inspired/chakra',
 	'holotable-inspired': 'inspired/holotable',
 	vellum: 'originals/vellum',
 	signal: 'originals/signal',

@@ -13173,6 +13173,1555 @@
     }
   },
   {
+    "id": "chakra-inspired",
+    "inputs": {
+      "light": "inspired/chakra.light.json",
+      "dark": "inspired/chakra.dark.json"
+    },
+    "density": "comfortable",
+    "title": "Chakra UI-inspired · Light and dark",
+    "rationale": "Chakra UI 3.37.0 teal interpretation with neutral light/dark surfaces, Inter/system typography, compact 4px controls, 6px panels, outlined secondary actions and layered elevation. Stronger functional boundaries, mode-specific focus, opaque contrast-adapted teal fills, protected targets and shared native choice anatomy are documented adaptations.",
+    "reference": {
+      "url": "https://chakra-ui.com/",
+      "flavor": "Chakra UI v3 with teal colorPalette; light and dark",
+      "themePackageVersion": "3.37.0",
+      "sourceTag": "@chakra-ui/react@3.37.0",
+      "sourceCommit": "2e7517745cff2fcde0b8012f136cf99611ff262a",
+      "verifiedAt": "2026-10-02",
+      "pairedMapping": "tooling/theme-candidates/inspired/chakra-mapping.md"
+    },
+    "baseOptions": {
+      "light": {
+        "pins": {
+          "font.ui.family": [
+            "Inter",
+            "-apple-system",
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Helvetica",
+            "Arial",
+            "sans-serif",
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol"
+          ],
+          "font.code.family": [
+            "SFMono-Regular",
+            "Menlo",
+            "Monaco",
+            "Consolas",
+            "Liberation Mono",
+            "Courier New",
+            "monospace"
+          ],
+          "font.body.size": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "font.body.line-height": 1.5,
+          "font.ui.size": {
+            "value": 0.875,
+            "unit": "rem"
+          },
+          "font.ui.line-height": 1.4285714285714286,
+          "font.input.size": "{font.ui.size}",
+          "font.input.line-height": "{font.ui.line-height}",
+          "font.data.size": {
+            "value": 0.875,
+            "unit": "rem"
+          },
+          "font.data.line-height": 1.4285714285714286,
+          "font.metadata.size": {
+            "value": 0.75,
+            "unit": "rem"
+          },
+          "font.metadata.line-height": 1.3333333333333333,
+          "font.heading-small.size": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "font.heading-small.line-height": 1.5,
+          "font.heading-medium.size": {
+            "value": 1.5,
+            "unit": "rem"
+          },
+          "font.heading-medium.line-height": 1.3333333333333333,
+          "font.heading-large.size": {
+            "value": 2.25,
+            "unit": "rem"
+          },
+          "font.heading-large.line-height": 1.2222222222222223,
+          "font.heading-large.tracking": {
+            "value": -0.9,
+            "unit": "px"
+          },
+          "size.control-min": {
+            "value": 2.5,
+            "unit": "rem"
+          },
+          "size.icon": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "radius.choice": {
+            "value": 2,
+            "unit": "px"
+          },
+          "component.choice.size": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "size.switch-inline": {
+            "value": 2.5,
+            "unit": "rem"
+          },
+          "size.switch-block": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "size.switch-thumb": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "space.switch-inset": {
+            "value": 1,
+            "unit": "px"
+          },
+          "duration.fast": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "duration.press": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "duration.release": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.button.shadow": "{shadow.none}",
+          "component.button.pressed-shadow": "{shadow.none}",
+          "component.button.pressed-scale": 1,
+          "component.button.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.surface.shadow": "{shadow.none}",
+          "component.input.radius": "{radius.control}",
+          "component.input.border-width": "{border.width}",
+          "component.input.invalid-border-width": "{border.invalid-width}",
+          "component.input.border-color": "{color.boundary}",
+          "component.input.hover-border-color": "{color.action-text}",
+          "component.input.invalid-border-color": "{color.danger-text}",
+          "component.navigation.hover-background": "{color.surface-subtle}",
+          "component.navigation.hover-color": "{color.text}",
+          "component.navigation.current-background": "{color.selected}",
+          "component.navigation.current-color": "{color.action-text}",
+          "component.navigation.pressed-background": "{component.option.pressed-background}",
+          "component.navigation.current-indicator-color": "{color.action-text}",
+          "component.tab.hover-background": "{color.surface-subtle}",
+          "component.tab.hover-color": "{color.text}",
+          "component.tab.selected-background": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "alpha": 0
+          },
+          "component.tab.selected-color": "{color.action-text}",
+          "component.tab.pressed-background": "{component.option.pressed-background}",
+          "component.tab.indicator-color": "{color.action-text}",
+          "font.body.family": "{font.ui.family}",
+          "font.input.family": "{font.ui.family}",
+          "font.data.family": "{font.ui.family}",
+          "font.metadata.family": "{font.ui.family}",
+          "font.label-strong.family": "{font.ui.family}",
+          "font.heading-small.family": "{font.ui.family}",
+          "font.heading-medium.family": "{font.ui.family}",
+          "font.heading-large.family": "{font.ui.family}",
+          "component.button.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.button.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.checkbox.pressed-scale": 1,
+          "component.checkbox.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.checkbox.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.checkbox.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.radio.pressed-scale": 1,
+          "component.radio.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.radio.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.radio.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.switch.pressed-scale": 1,
+          "component.switch.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.switch.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.switch.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.option.pressed-scale": 1,
+          "component.option.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.option.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.option.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.segmented.pressed-scale": 1,
+          "component.segmented.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.segmented.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.segmented.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.accordion.pressed-scale": 1,
+          "component.accordion.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.accordion.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.accordion.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.tab.pressed-scale": 1,
+          "component.tab.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.tab.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.tab.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.rating.pressed-scale": 1,
+          "component.rating.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.rating.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.rating.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.combobox-trigger.pressed-scale": 1,
+          "component.combobox-trigger.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.combobox-trigger.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.combobox-trigger.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.navigation.pressed-scale": 1,
+          "component.navigation.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.navigation.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.navigation.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.editor-token.pressed-scale": 1,
+          "component.editor-token.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.editor-token.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.editor-token.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.calendar.pressed-scale": 1,
+          "component.calendar.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.calendar.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.calendar.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.select.pressed-scale": 1,
+          "component.select.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.select.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.select.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.number-step.pressed-scale": 1,
+          "component.number-step.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.number-step.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.number-step.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.segmented.pressed-background": "{component.option.pressed-background}",
+          "component.segmented.pressed-color": "{component.option.pressed-color}",
+          "component.accordion.pressed-background": "{component.option.pressed-background}",
+          "component.accordion.pressed-color": "{component.option.pressed-color}",
+          "component.tab.pressed-color": "{component.option.pressed-color}",
+          "component.rating.pressed-background": "{component.option.pressed-background}",
+          "component.rating.pressed-color": "{component.option.pressed-color}",
+          "component.combobox-trigger.pressed-background": "{component.option.pressed-background}",
+          "component.combobox-trigger.pressed-color": "{component.option.pressed-color}",
+          "component.navigation.pressed-color": "{component.option.pressed-color}",
+          "component.editor-token.pressed-background": "{component.option.pressed-background}",
+          "component.editor-token.pressed-color": "{component.option.pressed-color}",
+          "component.select.pressed-background": "{component.option.pressed-background}",
+          "component.select.pressed-color": "{component.option.pressed-color}",
+          "component.number-step.pressed-background": "{component.option.pressed-background}",
+          "shadow.overlay": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.09411764705882353,
+                  0.09411764705882353,
+                  0.10588235294117647
+                ],
+                "alpha": 0.1
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 4,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 8,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.09411764705882353,
+                  0.09411764705882353,
+                  0.10588235294117647
+                ],
+                "alpha": 0.3
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 0,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            }
+          ],
+          "shadow.dialog": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.09411764705882353,
+                  0.09411764705882353,
+                  0.10588235294117647
+                ],
+                "alpha": 0.1
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 8,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 16,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.09411764705882353,
+                  0.09411764705882353,
+                  0.10588235294117647
+                ],
+                "alpha": 0.3
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 0,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            }
+          ],
+          "component.card.shadow": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.09411764705882353,
+                  0.09411764705882353,
+                  0.10588235294117647
+                ],
+                "alpha": 0.1
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 1,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 2,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.09411764705882353,
+                  0.09411764705882353,
+                  0.10588235294117647
+                ],
+                "alpha": 0.2
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 0,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            }
+          ]
+        },
+        "source": {
+          "theme": {
+            "button": {
+              "primary": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": "{color.action}"
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": "{color.on-action}"
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": "{color.action-hover}"
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": "{color.on-action}"
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": "{color.action-pressed}"
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": "{color.on-action}"
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                }
+              },
+              "secondary": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": "{color.selected}"
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": "{color.accent-subtle}"
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                }
+              },
+              "ghost": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": "{color.selected}"
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": "{color.accent-subtle}"
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                }
+              },
+              "danger": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.8627450980392157,
+                      0.14901960784313725,
+                      0.14901960784313725
+                    ]
+                  }
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.7254901960784313,
+                      0.10980392156862745,
+                      0.10980392156862745
+                    ]
+                  }
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.6,
+                      0.09803921568627451,
+                      0.09803921568627451
+                    ]
+                  }
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "dark": {
+        "pins": {
+          "font.ui.family": [
+            "Inter",
+            "-apple-system",
+            "BlinkMacSystemFont",
+            "Segoe UI",
+            "Helvetica",
+            "Arial",
+            "sans-serif",
+            "Apple Color Emoji",
+            "Segoe UI Emoji",
+            "Segoe UI Symbol"
+          ],
+          "font.code.family": [
+            "SFMono-Regular",
+            "Menlo",
+            "Monaco",
+            "Consolas",
+            "Liberation Mono",
+            "Courier New",
+            "monospace"
+          ],
+          "font.body.size": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "font.body.line-height": 1.5,
+          "font.ui.size": {
+            "value": 0.875,
+            "unit": "rem"
+          },
+          "font.ui.line-height": 1.4285714285714286,
+          "font.input.size": "{font.ui.size}",
+          "font.input.line-height": "{font.ui.line-height}",
+          "font.data.size": {
+            "value": 0.875,
+            "unit": "rem"
+          },
+          "font.data.line-height": 1.4285714285714286,
+          "font.metadata.size": {
+            "value": 0.75,
+            "unit": "rem"
+          },
+          "font.metadata.line-height": 1.3333333333333333,
+          "font.heading-small.size": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "font.heading-small.line-height": 1.5,
+          "font.heading-medium.size": {
+            "value": 1.5,
+            "unit": "rem"
+          },
+          "font.heading-medium.line-height": 1.3333333333333333,
+          "font.heading-large.size": {
+            "value": 2.25,
+            "unit": "rem"
+          },
+          "font.heading-large.line-height": 1.2222222222222223,
+          "font.heading-large.tracking": {
+            "value": -0.9,
+            "unit": "px"
+          },
+          "size.control-min": {
+            "value": 2.5,
+            "unit": "rem"
+          },
+          "size.icon": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "radius.choice": {
+            "value": 2,
+            "unit": "px"
+          },
+          "component.choice.size": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "size.switch-inline": {
+            "value": 2.5,
+            "unit": "rem"
+          },
+          "size.switch-block": {
+            "value": 1.25,
+            "unit": "rem"
+          },
+          "size.switch-thumb": {
+            "value": 1,
+            "unit": "rem"
+          },
+          "space.switch-inset": {
+            "value": 1,
+            "unit": "px"
+          },
+          "duration.fast": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "duration.press": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "duration.release": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.button.shadow": "{shadow.none}",
+          "component.button.pressed-shadow": "{shadow.none}",
+          "component.button.pressed-scale": 1,
+          "component.button.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.surface.shadow": "{shadow.none}",
+          "component.input.radius": "{radius.control}",
+          "component.input.border-width": "{border.width}",
+          "component.input.invalid-border-width": "{border.invalid-width}",
+          "component.input.border-color": "{color.boundary}",
+          "component.input.hover-border-color": "{color.action-text}",
+          "component.input.invalid-border-color": "{color.danger-text}",
+          "component.navigation.hover-background": "{color.surface-subtle}",
+          "component.navigation.hover-color": "{color.text}",
+          "component.navigation.current-background": "{color.selected}",
+          "component.navigation.current-color": "{color.action-text}",
+          "component.navigation.pressed-background": "{component.option.pressed-background}",
+          "component.navigation.current-indicator-color": "{color.action-text}",
+          "component.tab.hover-background": "{color.surface-subtle}",
+          "component.tab.hover-color": "{color.text}",
+          "component.tab.selected-background": {
+            "colorSpace": "srgb",
+            "components": [
+              0.0,
+              0.0,
+              0.0
+            ],
+            "alpha": 0
+          },
+          "component.tab.selected-color": "{color.action-text}",
+          "component.tab.pressed-background": "{component.option.pressed-background}",
+          "component.tab.indicator-color": "{color.action-text}",
+          "font.body.family": "{font.ui.family}",
+          "font.input.family": "{font.ui.family}",
+          "font.data.family": "{font.ui.family}",
+          "font.metadata.family": "{font.ui.family}",
+          "font.label-strong.family": "{font.ui.family}",
+          "font.heading-small.family": "{font.ui.family}",
+          "font.heading-medium.family": "{font.ui.family}",
+          "font.heading-large.family": "{font.ui.family}",
+          "component.button.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.button.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.checkbox.pressed-scale": 1,
+          "component.checkbox.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.checkbox.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.checkbox.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.radio.pressed-scale": 1,
+          "component.radio.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.radio.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.radio.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.switch.pressed-scale": 1,
+          "component.switch.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.switch.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.switch.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.option.pressed-scale": 1,
+          "component.option.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.option.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.option.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.segmented.pressed-scale": 1,
+          "component.segmented.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.segmented.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.segmented.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.accordion.pressed-scale": 1,
+          "component.accordion.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.accordion.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.accordion.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.tab.pressed-scale": 1,
+          "component.tab.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.tab.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.tab.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.rating.pressed-scale": 1,
+          "component.rating.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.rating.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.rating.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.combobox-trigger.pressed-scale": 1,
+          "component.combobox-trigger.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.combobox-trigger.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.combobox-trigger.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.navigation.pressed-scale": 1,
+          "component.navigation.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.navigation.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.navigation.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.editor-token.pressed-scale": 1,
+          "component.editor-token.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.editor-token.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.editor-token.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.calendar.pressed-scale": 1,
+          "component.calendar.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.calendar.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.calendar.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.select.pressed-scale": 1,
+          "component.select.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.select.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.select.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.number-step.pressed-scale": 1,
+          "component.number-step.pressed-offset": {
+            "value": 0,
+            "unit": "px"
+          },
+          "component.number-step.press-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.number-step.release-duration": {
+            "value": 150,
+            "unit": "ms"
+          },
+          "component.segmented.pressed-background": "{component.option.pressed-background}",
+          "component.segmented.pressed-color": "{component.option.pressed-color}",
+          "component.accordion.pressed-background": "{component.option.pressed-background}",
+          "component.accordion.pressed-color": "{component.option.pressed-color}",
+          "component.tab.pressed-color": "{component.option.pressed-color}",
+          "component.rating.pressed-background": "{component.option.pressed-background}",
+          "component.rating.pressed-color": "{component.option.pressed-color}",
+          "component.combobox-trigger.pressed-background": "{component.option.pressed-background}",
+          "component.combobox-trigger.pressed-color": "{component.option.pressed-color}",
+          "component.navigation.pressed-color": "{component.option.pressed-color}",
+          "component.editor-token.pressed-background": "{component.option.pressed-background}",
+          "component.editor-token.pressed-color": "{component.option.pressed-color}",
+          "component.select.pressed-background": "{component.option.pressed-background}",
+          "component.select.pressed-color": "{component.option.pressed-color}",
+          "component.number-step.pressed-background": "{component.option.pressed-background}",
+          "shadow.overlay": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.03529411764705882,
+                  0.03529411764705882,
+                  0.043137254901960784
+                ],
+                "alpha": 0.64
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 4,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 8,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.8313725490196079,
+                  0.8313725490196079,
+                  0.8470588235294118
+                ],
+                "alpha": 0.3
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 0,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              },
+              "inset": true
+            }
+          ],
+          "shadow.dialog": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.03529411764705882,
+                  0.03529411764705882,
+                  0.043137254901960784
+                ],
+                "alpha": 0.64
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 8,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 16,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.8313725490196079,
+                  0.8313725490196079,
+                  0.8470588235294118
+                ],
+                "alpha": 0.3
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 0,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              },
+              "inset": true
+            }
+          ],
+          "component.card.shadow": [
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.03529411764705882,
+                  0.03529411764705882,
+                  0.043137254901960784
+                ],
+                "alpha": 0.64
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 1,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              }
+            },
+            {
+              "color": {
+                "colorSpace": "srgb",
+                "components": [
+                  0.8313725490196079,
+                  0.8313725490196079,
+                  0.8470588235294118
+                ],
+                "alpha": 0.2
+              },
+              "offsetX": {
+                "value": 0,
+                "unit": "px"
+              },
+              "offsetY": {
+                "value": 0,
+                "unit": "px"
+              },
+              "blur": {
+                "value": 1,
+                "unit": "px"
+              },
+              "spread": {
+                "value": 0,
+                "unit": "px"
+              },
+              "inset": true
+            }
+          ]
+        },
+        "source": {
+          "theme": {
+            "button": {
+              "primary": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": "{color.action}"
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": "{color.on-action}"
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": "{color.action-hover}"
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": "{color.on-action}"
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": "{color.action-pressed}"
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": "{color.on-action}"
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                }
+              },
+              "secondary": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": "{color.selected}"
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": "{color.accent-subtle}"
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                }
+              },
+              "ghost": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": "{color.selected}"
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": "{color.accent-subtle}"
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": "{color.action-text}"
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                }
+              },
+              "danger": {
+                "rest-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.8627450980392157,
+                      0.14901960784313725,
+                      0.14901960784313725
+                    ]
+                  }
+                },
+                "rest-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                },
+                "hover-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.7254901960784313,
+                      0.10980392156862745,
+                      0.10980392156862745
+                    ]
+                  }
+                },
+                "hover-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                },
+                "pressed-background": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.6,
+                      0.09803921568627451,
+                      0.09803921568627451
+                    ]
+                  }
+                },
+                "pressed-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      1.0,
+                      1.0,
+                      1.0
+                    ]
+                  }
+                },
+                "border-color": {
+                  "$type": "color",
+                  "$value": {
+                    "colorSpace": "srgb",
+                    "components": [
+                      0.0,
+                      0.0,
+                      0.0
+                    ],
+                    "alpha": 0
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "label": "Chakra UI-inspired",
+    "companion": {
+      "schemaVersion": 1,
+      "id": "chakra-inspired-variants",
+      "rules": [
+        {
+          "target": "button",
+          "variant": "primary",
+          "tokens": {
+            "--en-button-rest-background": "theme.button.primary.rest-background",
+            "--en-button-rest-color": "theme.button.primary.rest-color",
+            "--en-button-hover-background": "theme.button.primary.hover-background",
+            "--en-button-hover-color": "theme.button.primary.hover-color",
+            "--en-button-pressed-background": "theme.button.primary.pressed-background",
+            "--en-button-pressed-color": "theme.button.primary.pressed-color",
+            "--en-button-border-color": "theme.button.primary.border-color"
+          }
+        },
+        {
+          "target": "button",
+          "variant": "secondary",
+          "tokens": {
+            "--en-button-rest-background": "theme.button.secondary.rest-background",
+            "--en-button-rest-color": "theme.button.secondary.rest-color",
+            "--en-button-hover-background": "theme.button.secondary.hover-background",
+            "--en-button-hover-color": "theme.button.secondary.hover-color",
+            "--en-button-pressed-background": "theme.button.secondary.pressed-background",
+            "--en-button-pressed-color": "theme.button.secondary.pressed-color",
+            "--en-button-border-color": "theme.button.secondary.border-color"
+          }
+        },
+        {
+          "target": "button",
+          "variant": "ghost",
+          "tokens": {
+            "--en-button-rest-background": "theme.button.ghost.rest-background",
+            "--en-button-rest-color": "theme.button.ghost.rest-color",
+            "--en-button-hover-background": "theme.button.ghost.hover-background",
+            "--en-button-hover-color": "theme.button.ghost.hover-color",
+            "--en-button-pressed-background": "theme.button.ghost.pressed-background",
+            "--en-button-pressed-color": "theme.button.ghost.pressed-color",
+            "--en-button-border-color": "theme.button.ghost.border-color"
+          }
+        },
+        {
+          "target": "button",
+          "variant": "danger",
+          "tokens": {
+            "--en-button-rest-background": "theme.button.danger.rest-background",
+            "--en-button-rest-color": "theme.button.danger.rest-color",
+            "--en-button-hover-background": "theme.button.danger.hover-background",
+            "--en-button-hover-color": "theme.button.danger.hover-color",
+            "--en-button-pressed-background": "theme.button.danger.pressed-background",
+            "--en-button-pressed-color": "theme.button.danger.pressed-color",
+            "--en-button-border-color": "theme.button.danger.border-color"
+          }
+        }
+      ]
+    }
+  },
+  {
     "id": "holotable-inspired",
     "inputs": {
       "light": "inspired/holotable.light.json",

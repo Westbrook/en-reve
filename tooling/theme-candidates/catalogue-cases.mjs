@@ -7,6 +7,7 @@ import {
 	colorFromHex, contrastRatio, createReviewDraft, createThemePair, emitThemePairCSS, reopenThemeReviewPair, stableStringify, validateRenderedRelationships,
 } from '@en-reve/tokens';
 import { exportReviewBundle, reopenReviewBundle } from '../../apps/docs/src/theme-review/bundle.ts';
+import generatedCatalogue from '../../apps/docs/src/generated/showcase-catalogue.js';
 import { candidateIds, validateCandidateDefinitions } from './catalogue.mjs';
 
 // prepare:docs supplies bundle.ts's authoritative generated catalogue. A synthetic
@@ -46,14 +47,24 @@ function pairFromBaselines(name, baseOptions) {
 	return pair;
 }
 
-test('the catalogue contains all seven inspired and three original pairs in canonical order', () => {
-	assert.equal(candidateIds.length, 10);
-	assert.equal(definitions.length * modes.length, 20);
+test('the catalogue contains all eight inspired and three original pairs in canonical order', () => {
+	assert.equal(candidateIds.length, 11);
+	assert.equal(definitions.length * modes.length, 22);
 	assert.deepEqual(candidateIds, [
 		'spectrum-inspired', 'fluent-inspired', 'astryx-inspired', 'shadcn-inspired',
-		'radix-inspired', 'web-awesome-inspired', 'holotable-inspired', 'vellum', 'signal', 'kinetic',
+		'radix-inspired', 'web-awesome-inspired', 'chakra-inspired', 'holotable-inspired', 'vellum', 'signal', 'kinetic',
 	]);
 	assert.equal(validateCandidateDefinitions(definitions), definitions);
+});
+
+test('the generated documentation catalogue delivers every canonical baseline and companion', () => {
+	assert.deepEqual(generatedCatalogue.map(definition => definition.id), candidateIds);
+	for (const definition of definitions) {
+		const generated = generatedCatalogue.find(item => item.id === definition.id);
+		assert.deepEqual(generated.baseOptions, definition.baseOptions, `${definition.id}: authoritative branch baselines`);
+		assert.ok(definition.companion, `${definition.id}: authored companion required`);
+		assert.deepEqual(generated.companion, definition.companion, `${definition.id}: trusted companion recipe`);
+	}
 });
 
 test('catalogue validation rejects wrong recipe branches and incomplete branch baselines', () => {
@@ -68,8 +79,8 @@ test('catalogue validation rejects wrong recipe branches and incomplete branch b
 	assert.throws(() => validateCandidateDefinitions(missingBase), /both authoritative branch baselines/);
 });
 
-test('Web Awesome-inspired action text, focus and functional boundaries remain legible on both surface contexts', async () => {
-	const definition = definitions.find(item => item.id === 'web-awesome-inspired');
+for (const id of ['web-awesome-inspired', 'chakra-inspired']) test(`${id}: action text, focus and functional boundaries remain legible on both surface contexts`, async () => {
+	const definition = definitions.find(item => item.id === id);
 	for (const mode of modes) {
 		const edits = JSON.parse(await readFile(new URL(definition.inputs[mode], import.meta.url), 'utf8'));
 		const { tokens } = replay(edits, definition.baseOptions[mode]).theme;
@@ -132,6 +143,11 @@ for (const definition of definitions) {
 			assert.equal(exported, initialExports[activeAppearance]);
 			const envelope = JSON.parse(exported);
 			assert.equal(envelope.schemaVersion, 2);
+			assert.deepEqual(envelope.companion?.recipe, definition.companion, `${definition.id}: export includes its trusted companion`);
+			for (const mode of modes) {
+				assert.ok(envelope.companion.css.includes(`[data-en-theme="${definition.id}"][data-en-appearance="${mode}"]`), `${definition.id}: companion targets explicit ${mode}`);
+				assert.ok(envelope.companion.css.includes(`prefers-color-scheme: ${mode}`), `${definition.id}: companion follows automatic ${mode}`);
+			}
 			assert.equal(envelope.activeAppearance, activeAppearance);
 			assert.equal(envelope.draft.pairSourceHash, resolved.sourceHash);
 			assert.equal(envelope.draft.artifacts['theme.css'], css);

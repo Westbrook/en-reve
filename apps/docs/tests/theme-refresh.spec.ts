@@ -5,7 +5,7 @@ import { emulationLimits } from './theme-proof-exceptions.js';
 import { holdThemeController } from './theme-controller-transport.js';
 
 const originals = ['vellum', 'signal', 'kinetic'] as const;
-const themes = ['spectrum-inspired', 'fluent-inspired', 'astryx-inspired', 'shadcn-inspired', 'holotable-inspired', 'radix-inspired', 'web-awesome-inspired', ...originals];
+const themes = ['spectrum-inspired', 'fluent-inspired', 'astryx-inspired', 'shadcn-inspired', 'radix-inspired', 'web-awesome-inspired', 'chakra-inspired', 'holotable-inspired', ...originals];
 type Appearance = 'light' | 'dark';
 interface Definition {
 	id: string;
@@ -271,13 +271,19 @@ for (const id of themes) {
 			const selectedLabel = await page.locator('#showcase-theme').getByRole('combobox').evaluate((element: HTMLSelectElement) => element.selectedOptions[0]?.label);
 			expect(selectedLabel, 'The visible selector uses the canonical Radix provenance label').toBe(definition.label);
 		}
+		if (id === 'chakra-inspired') {
+			expect(definition.reference?.url, 'Chakra names the official site as its primary source').toBe('https://chakra-ui.com/');
+			expect(definition.label).toBe('Chakra UI-inspired');
+			const selectedLabel = await page.locator('#showcase-theme').getByRole('combobox').evaluate((element: HTMLSelectElement) => element.selectedOptions[0]?.label);
+			expect(selectedLabel, 'The visible selector uses the canonical Chakra provenance label').toBe(definition.label);
+		}
 		const receipts: unknown[] = [];
 		let last: Awaited<ReturnType<typeof download>> | undefined;
 		for (const mode of ['light', 'dark'] as const) {
 			await appearance(page, mode);
 			last = await download(page, `${id}-${mode}.json`, info);
 			expect(last.value.schemaVersion).toBe(2);
-			if (id === 'fluent-inspired' || id === 'radix-inspired') {
+			if (id === 'fluent-inspired' || id === 'radix-inspired' || id === 'chakra-inspired') {
 				expect(last.value.draft.title).toBe(definition.title);
 				expect(last.value.draft.rationale).toBe(definition.rationale);
 			}
@@ -348,7 +354,10 @@ for (const id of themes) {
 	});
 }
 
-test('web-awesome-inspired: shared selectors and narrow RTL layouts retain the paired theme', async ({ page }, info) => {
+for (const { id, label, radius } of [
+	{ id: 'web-awesome-inspired', label: 'Web Awesome-inspired', radius: '0.375rem' },
+	{ id: 'chakra-inspired', label: 'Chakra UI-inspired', radius: '0.25rem' },
+]) test(`${id}: shared selectors and narrow RTL layouts retain the paired theme`, async ({ page }, info) => {
 	const presetRequests: string[] = [];
 	const capturePreset = (request: { url(): string }) => { if (/\/(?:showcase-catalogue|companion)-/.test(request.url())) presetRequests.push(request.url()); };
 	page.on('request', capturePreset);
@@ -357,28 +366,28 @@ test('web-awesome-inspired: shared selectors and narrow RTL layouts retain the p
 	await expect(page.locator('html')).toHaveAttribute('data-en-appearance', 'dark');
 	expect(presetRequests, 'Ordinary workflows do not fetch the preset catalogue or companion compiler').toEqual([]);
 	page.off('request', capturePreset);
-	await ready(page, 'web-awesome-inspired');
-	await expect(page.locator('#showcase-theme').getByRole('combobox').locator('option[value="web-awesome-inspired"]')).toHaveText('Web Awesome-inspired');
+	await ready(page, id);
+	await expect(page.locator('#showcase-theme').getByRole('combobox').locator(`option[value="${id}"]`)).toHaveText(label);
 	await page.setViewportSize({ width: 390, height: 844 });
 	for (const mode of ['light', 'dark'] as const) {
 		await appearance(page, mode);
 		await page.locator('html').evaluate(element => element.setAttribute('dir', 'rtl'));
 		await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth - innerWidth)).toBeLessThanOrEqual(1);
 		await expect(field(page)).toBeVisible();
-		await page.screenshot({ path: info.outputPath(`web-awesome-${mode}-mobile-rtl.png`), fullPage: true });
+		await page.screenshot({ path: info.outputPath(`${id}-${mode}-mobile-rtl.png`), fullPage: true });
 	}
 	await page.goto('/api-examples/tree-view');
-	await page.getByRole('combobox', { name: 'Inspired theme', exact: true }).selectOption('web-awesome-inspired');
-	await expect(page.getByRole('status', { name: 'Theme result' })).toContainText('Web Awesome-inspired');
-	await expect.poll(() => page.locator('html').evaluate(element => getComputedStyle(element).getPropertyValue('--en-radius-control').trim())).toBe('0.375rem');
-	await expect(page.locator('html')).toHaveAttribute('data-en-theme', 'web-awesome-inspired');
+	await page.getByRole('combobox', { name: 'Inspired theme', exact: true }).selectOption(id);
+	await expect(page.getByRole('status', { name: 'Theme result' })).toContainText(label);
+	await expect.poll(() => page.locator('html').evaluate(element => getComputedStyle(element).getPropertyValue('--en-radius-control').trim())).toBe(radius);
+	await expect(page.locator('html')).toHaveAttribute('data-en-theme', id);
 	expect(await page.locator('style[data-example-theme]').textContent()).toContain('--en-button-rest-background');
 	await page.getByRole('combobox', { name: 'Inspired theme', exact: true }).selectOption('default');
 	await expect(page.locator('style[data-example-theme]')).toHaveCount(0);
-	await expect(page.locator('html')).not.toHaveAttribute('data-en-theme', 'web-awesome-inspired');
-	await page.goto('/component-patterns?theme=web-awesome-inspired&appearance=dark');
-	await expect(page.locator('html')).toHaveAttribute('data-en-theme', 'web-awesome-inspired');
-	await expect(page.locator('#theme')).toHaveValue('web-awesome-inspired');
+	await expect(page.locator('html')).not.toHaveAttribute('data-en-theme', id);
+	await page.goto(`/component-patterns?theme=${id}&appearance=dark`);
+	await expect(page.locator('html')).toHaveAttribute('data-en-theme', id);
+	await expect(page.locator('#theme')).toHaveValue(id);
 });
 
 test('web-awesome-inspired: trusted companions follow paired themes into workflow previews', async ({ page }, info) => {
