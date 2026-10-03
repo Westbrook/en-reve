@@ -245,3 +245,48 @@ workflow evidence, not a completed 166-case matrix. Remaining specimen interacti
 explicit density/scope cases and the final requirement audit remain open.
 Root/project runtime builds are unchanged from 118f2244 and reused with exact
 asset/source checks. The receipt records reuse instead of claiming a fresh build.
+
+## Specimen and scope expansion (qualification in progress)
+
+The catalogue now declares 139 interaction states and 70 initial cases. Forty-three
+new states cover remaining interactive specimens, the sheet's multi-step workflow,
+scoped inverse themes, local overrides, family geometry and native link focus.
+Computed CSS postconditions distinguish scope relationships from screenshots alone.
+The acquisition driver now separates compact, comfortable and spacious pairs.
+
+Sixteen Node checks and both fresh deployment builds pass. The first Chromium
+light block reached all 43 new cases: 39 completed, while four fixture assumptions
+failed (ambiguous combobox disclosure, carousel button label placement, tree ancestor
+text matching, and virtual table status wording). The diagnostic run was explicitly
+interrupted after that block; it is not a passing campaign. Corrections target the
+named controls and assert the requested virtual row as well as success feedback.
+Focused correction qualification and full acquisition remain pending. No product
+behavior defect or user acceptance is inferred from this diagnostic run.
+
+The corrected checkpoint passes 18 final browser tests across Chromium, Firefox
+and WebKit. It retains 48 exact current-fixture comparisons: 36 unchanged successful
+combobox/carousel/tree rows from the preceding run plus 12 virtual-reveal rows from
+the final run. Both expected and actual postcondition lists are verified. The
+preceding run itself failed and is preserved, including its four WebKit pointer-
+guard failures and six skipped Pages checks; all Pages checks passed in the final run.
+
+The pointer diagnosis distinguished automation from delivered behavior. WebKit's
+Playwright click guard rejected the text field inside nested shadow/details roots,
+while real pointer dispatch at the visible field center focused it and completed
+the reveal in both standalone and sheet demos. Those pointer regressions now pass
+in all three engines. The catalogue uses ordinary Tab/Enter and public text input,
+with value, focus, success and rendered-row assertions. No force click, private
+component state write, or product behavior workaround was introduced.
+
+A new same-session test verifies that candidate pins and all three density changes
+leave the accepted parent styles and baseline radius unchanged. Nested full themes
+reset inherited component radius pins, local zero-radius overrides remain local,
+and scoped field nodes/drafts survive updates and paired reset. This passes all
+three engines. Reader, CSS and native-action control tests also pass across all
+three engines in the preceding run; its overall failure is not relabeled as a pass.
+See `apps/docs/tests/verification-specimen-catalogue-20261003.json` for exact receipts.
+
+Full acquisition of all 209 cases across three densities, two appearances, two
+viewports and three engines remains unfinished, as does the final requirement audit.
+This checkpoint adds and qualifies the machinery and selected states; it does not
+establish complete matrix coverage or manual acceptance.

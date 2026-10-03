@@ -310,3 +310,7 @@ Local main `118f22447c0e9997d2462cca3d9bbb732e4c1cb9` adds separate local classi
 ## Workflow visual coverage checkpoint
 
 Local main `0b49777aea373b90d24bd3f58cac5b54e71b223f` adds 24 source-authored workflow capture states with observable postconditions and retained browser evidence. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Specimen and scope visual coverage checkpoint
+
+Local main `849e5650718927e5f652b63e550b5b7e7d8b8641` adds 43 source-authored specimen/scope capture states with observable postconditions and retained browser evidence. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

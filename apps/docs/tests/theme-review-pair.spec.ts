@@ -275,3 +275,41 @@ test('the default review page follows the system while a single candidate and ba
 	await expect(selector(page, 'Candidate appearance')).toHaveValue('dark');
 	await expect(selector(page, 'Candidate density')).toHaveValue('spacious');
 });
+
+test('candidate pins and density changes preserve parent baseline and nested scope ownership', async ({page}) => {
+ await openPage(page); await loadPreviews(page);
+ const parent = page.getByRole('textbox',{name:'Candidate title',exact:true});
+ const style = () => parent.evaluate(element => {
+  const field=getComputedStyle(element),body=getComputedStyle(document.body);
+  return {radius:field.borderTopLeftRadius,padding:field.paddingInlineStart,color:field.color,background:body.backgroundColor};
+ });
+ const acceptedStyle = await style();
+ const scoped = (kind:'Baseline'|'Candidate',nested=false) => preview(page,kind).locator(`[data-specimen="theme-scopes"] .scope-sample${nested?'[data-en-theme="inverse"]':':not([data-en-theme])'} en-button button`);
+ const local = preview(page).locator('[data-specimen="local-override"] en-button button');
+ await expect(scoped('Baseline')).toHaveCSS('border-top-left-radius','8px');
+ await importedPair(page); await setPreview(page,'light');
+ await expect(scoped('Candidate')).toHaveCSS('border-top-left-radius','18px');
+ await expect(scoped('Candidate',true)).toHaveCSS('border-top-left-radius','8px');
+ await expect(local).toHaveCSS('border-top-left-radius','0px');
+ expect(await style()).toEqual(acceptedStyle);
+ const field=preview(page).locator('[data-specimen="family-geometry"] .geometry-scope').nth(1).getByRole('textbox',{name:'Project',exact:true});
+ await field.fill('Keep my scoped draft'); const original=await field.elementHandle();
+ await selector(page,'Editing appearance').selectOption('dark'); await setPreview(page,'dark');
+ await chooseRadius(page,'1.25rem');
+ for(const density of ['compact','comfortable','spacious']) {
+  await selector(page,'Candidate density').selectOption(density);
+  await expect(scoped('Candidate')).toHaveCSS('border-top-left-radius','20px');
+  await expect(scoped('Candidate',true)).toHaveCSS('border-top-left-radius','8px');
+  await expect(scoped('Baseline')).toHaveCSS('border-top-left-radius','8px');
+  await expect(scoped('Baseline',true)).toHaveCSS('border-top-left-radius','8px');
+  await expect(local).toHaveCSS('border-top-left-radius','0px');
+  await expect(field).toHaveValue('Keep my scoped draft');
+  expect(await field.evaluate((input,initial)=>input===initial,original)).toBe(true);
+  expect(await style()).toEqual(acceptedStyle);
+ }
+ await button(page,'Reset both appearances').click();
+ await expect(scoped('Candidate')).toHaveCSS('border-top-left-radius','8px');
+ await expect(scoped('Candidate',true)).toHaveCSS('border-top-left-radius','8px');
+ await expect(local).toHaveCSS('border-top-left-radius','0px');
+ expect(await style()).toEqual(acceptedStyle);
+});

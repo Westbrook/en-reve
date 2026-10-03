@@ -44,21 +44,41 @@ test('state postconditions reject unmet UI and accept asynchronously reached sta
  await expect(verifyState(page,[{kind:'count',selector:'button',value:2}])).rejects.toThrow();
 });
 
+test('CSS postconditions distinguish local overrides from inherited siblings',async({page})=>{
+ await page.setContent('<main style="color:rgb(10, 20, 30)"><button class="shared" style="padding:10px;border-radius:8px">Shared</button><section style="color:rgb(40, 50, 60)"><button class="local" style="padding:20px;border-radius:0">Local</button></section></main>');
+ await verifyState(page,[
+  {kind:'css',selector:'.local',name:'border-top-left-radius',value:'0px'},
+  {kind:'css-relationship',selector:'section',referenceSelector:'main',name:'color',relation:'different'},
+  {kind:'css-relationship',selector:'.local',referenceSelector:'.shared',name:'padding-left',relation:'greater'},
+  {kind:'css-relationship',selector:'.shared',referenceSelector:'.local',name:'padding-left',relation:'less'},
+  {kind:'css-relationship',selector:'.shared',referenceSelector:'.shared',name:'border-top-left-radius',relation:'equal'},
+ ]);
+ await expect(verifyState(page,[{kind:'css',selector:'.local',name:'border-top-left-radius',value:'8px'}])).rejects.toThrow();
+ await expect(verifyState(page,[{kind:'css-relationship',selector:'section',referenceSelector:'main',name:'color',relation:'equal'}])).rejects.toThrow();
+ await expect(verifyState(page,[{kind:'css-relationship',selector:'section',referenceSelector:'main',name:'color',relation:'greater'}])).rejects.toThrow(/pixel lengths/);
+});
+
 test('authored catalogue captures real state with exact candidate identity',async({browser,browserName},info)=>{
- test.skip(process.env.EN_VISUAL_CATALOGUE!=='1','Opt-in full visual catalogue acquisition.');test.setTimeout(3*60*60*1000);
+ test.skip(process.env.EN_VISUAL_CATALOGUE!=='1','Opt-in full visual catalogue acquisition.');test.setTimeout(12*60*60*1000);
  const buildDirectory=fileURLToPath(new URL('../../../dist',import.meta.url));const build=JSON.parse(await readFile(buildDirectory+'/review-build.json','utf8'));
- const light=createReviewDraft(),dark=createReviewDraft();dark.setContext({mode:'dark'});
+ const densities=(process.env.EN_VISUAL_DENSITIES??'compact,comfortable,spacious').split(',');
+ expect(densities.length).toBe(new Set(densities).size);
+ for(const density of densities){
+ expect(['compact','comfortable','spacious']).toContain(density);
+ const light=createReviewDraft(),dark=createReviewDraft();
+ light.setContext({density:density as 'compact'|'comfortable'|'spacious'});dark.setContext({mode:'dark',density:density as 'compact'|'comfortable'|'spacious'});
  const baseline=exportReviewBundle(light,build,{title:'Catalogue baseline',rationale:''},{},{pair:{name:'catalogue',light,dark}});
  light.setToken('radius.control',{value:1,unit:'rem'});dark.setToken('radius.control',{value:0.75,unit:'rem'});
  const candidate=exportReviewBundle(light,build,{title:'Catalogue radius candidate',rationale:'Exercise real authored states and both responsive appearances.'},{},{pair:{name:'catalogue',light,dark}});
- const baselineFile=info.outputPath('baseline.json'),candidateFile=info.outputPath('candidate.json');await writeFile(baselineFile,baseline);await writeFile(candidateFile,candidate);
+ const baselineFile=info.outputPath(density+'-baseline.json'),candidateFile=info.outputPath(density+'-candidate.json');await writeFile(baselineFile,baseline);await writeFile(candidateFile,candidate);
  const cases=catalogue(build);const selected=process.env.EN_VISUAL_SELECTED?.split(',');
  const viewports=[{id:'desktop',width:1280,height:900},{id:'mobile',width:390,height:844}].filter(viewport=>!process.env.EN_VISUAL_VIEWPORTS || process.env.EN_VISUAL_VIEWPORTS.split(',').includes(viewport.id));
- const result=await captureReview({buildDirectory,baselineFile,candidateFile,outputDirectory:info.outputPath('capture'),cacheDirectory:undefined,options:{engines:[browserName],viewports,cases,...(selected?{selected}:{})},browsers:{[browserName]:browser}});
+ const result=await captureReview({buildDirectory,baselineFile,candidateFile,outputDirectory:info.outputPath(density+'-capture'),cacheDirectory:undefined,options:{engines:[browserName],viewports,cases,...(selected?{selected}:{})},browsers:{[browserName]:browser}});
  expect(result.results.filter((row:any)=>row.status==='failed').map((row:any)=>({key:row.key,reason:row.reason}))).toEqual([]);
  for(const row of result.results.filter((row:any)=>['passed','different'].includes(row.status))){
   expect(row.captures.actual.details.stateChecks).toHaveLength(row.fixture.checks?.length??0);
   if(row.fixture.capture==='viewport')expect(row.captures.actual.details.coverage.method).toBe('viewport');
  }
  expect(result.results.filter((row:any)=>['passed','different'].includes(row.status))).toHaveLength((selected?.length??cases.length)*viewports.length*2);
+ }
 });

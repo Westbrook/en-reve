@@ -87,3 +87,14 @@ test('responsive actions use explicit inclusive viewport bounds, never swallowed
  for(const bounds of [{},{width:390},{maxWidth:'768'},{maxWidth:0},{minWidth:800,maxWidth:700},[]])assert.throws(()=>validateActions([{...action,whenViewport:bounds}]),/Viewport/);
  assert.notEqual(hashValue(action),hashValue({...action,whenViewport:{maxWidth:769}}));
 });
+
+test('CSS state contracts bind named properties and explicit relationships without executable input',()=>{
+ const subject={appearances:['light']},fixture=defaultCases(build)[0];
+ const checks=[{kind:'css',selector:'button',name:'border-top-left-radius',value:'0px'},{kind:'css-relationship',selector:'.nested',referenceSelector:'.parent',name:'background-color',relation:'different'}];
+ assert.deepEqual(createPlan(build,subject,subject,{cases:[{...fixture,checks}]}).rows[0].fixture.checks,checks);
+ for(const bad of [
+  {...checks[0],name:'background; color'}, {...checks[0],value:0},
+  {...checks[1],referenceSelector:''}, {...checks[1],relation:'evaluate'},
+ ])assert.throws(()=>createPlan(build,subject,subject,{cases:[{...fixture,checks:[bad]}]}),/check/i);
+ assert.notEqual(hashValue(checks),hashValue([checks[0],{...checks[1],relation:'equal'}]));
+});

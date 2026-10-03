@@ -201,7 +201,7 @@ in the surrounding review page.
 The expanded catalogue includes color, navigation, collection, feedback, chat,
 file selection and transfer recovery states. The native action controls and two
 corrected states pass across all three engines and responsive appearances. The
-complete 96-state acquisition remains pending; earlier receipts retain their
+complete 139-state acquisition remains pending; earlier receipts retain their
 original23-state scope. For fixture
 diagnosis `EN_VISUAL_VIEWPORTS=desktop` explicitly selects one viewport in the
 catalogue browser test; omitted viewport acquisitions are not full-matrix evidence.
@@ -255,3 +255,36 @@ The product build is reused unchanged from the assessment checkpoint; only
 standalone capture tooling and planning/evidence documentation changed. See
 `apps/docs/tests/verification-workflow-catalogue-20261003.json`. Complete specimen,
 density/scope and full-matrix qualification remain open.
+
+## Specimen, density and scope catalogue
+
+`specimen-catalogue.mjs` and `scope-catalogue.mjs` add 43 states for the remaining
+interactive specimens and the sheet's multi-step composition. Editor triggers use
+native key events. Hierarchical items use exact accessible names; exposed parts
+identify generated carousel controls. Virtual reveal checks both the success
+message and the actual requested row. Typography, rhythm, identity and loading
+are presentational specimens covered by their initial captures, without invented
+interaction states. Native operating-system color chooser behavior remains manual.
+
+CSS postconditions check exact resolved values or explicit relationships between
+scoped controls and inherited siblings. Numeric ordering accepts resolved pixel
+lengths only. These checks are read-only, validated and included in fixture identity;
+they cannot inject styles or execute imported script. Scope cases cover independent
+inverse colors, a local zero-radius override, family padding and focus within both
+inherited and customized regions.
+
+The browser catalogue defaults to separate `compact`, `comfortable` and `spacious`
+paired exports and capture directories. Each density has its own exact baseline
+and candidate source identities. `EN_VISUAL_DENSITIES=comfortable` selects a focused
+run; it does not establish coverage for other densities. Existing engine, viewport
+and case filters remain explicit. The complete catalogue declares 209 cases;
+qualification status and retained attempts are recorded in the delivery plan.
+
+The specimen checkpoint qualifies 48 corrected comparisons across all three engines
+and responsive appearances, using exact unchanged rows from the prior diagnostic
+run plus the final correction. Direct parent/baseline/nested-scope ownership checks
+exercise all three densities. Real pointer entry and keyboard reveal are separate
+regressions: WebKit's guarded click rejected nested shadow/details hit testing,
+while native pointer dispatch and focus assertions pass. Failed attempts remain
+retained. See `verification-specimen-catalogue-20261003.json` for the boundaries;
+the complete 209-case density matrix remains pending.

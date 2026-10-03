@@ -1,0 +1,21 @@
+{
+  "createdAt": "2026-10-03T09:51:36.758829+00:00",
+  "sourceCommit": "849e5650718927e5f652b63e550b5b7e7d8b8641",
+  "previousSourceMain": "0b49777aea373b90d24bd3f58cac5b54e71b223f",
+  "taskPaths": [
+    "apps/docs/tests/candidate-catalogue.spec.ts",
+    "apps/docs/tests/theme-review-pair.spec.ts",
+    "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+    "apps/docs/tests/virtual-collection.spec.ts",
+    "plans/candidate-visual-evidence-2026-10-03.md",
+    "tooling/visual-review/README.md",
+    "tooling/visual-review/catalogue.mjs",
+    "tooling/visual-review/plan.mjs",
+    "tooling/visual-review/plan.test.mjs",
+    "tooling/visual-review/scope-catalogue.mjs",
+    "tooling/visual-review/specimen-catalogue.mjs",
+    "tooling/visual-review/state-checks.mjs"
+  ],
+  "qualification": "Specimen and scope states, CSS postconditions and density-separated captures implemented. Four corrected fixtures qualified across three engines, two viewports and both appearances. Complete catalogue, density/scope coverage and final audit remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

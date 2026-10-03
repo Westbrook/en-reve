@@ -524,3 +524,21 @@ for (const view of ['table', 'list'] as const) {
 		await expectBounded(page); await saved.dispose();
 	});
 }
+
+for(const [name,path] of [['standalone','/api-examples/virtual-collection.html'],['sheet','/']] as const){
+ test(`virtual reveal pointer entry in ${name}`,async({page},info)=>{
+  await page.goto(path);
+  const demo=page.locator('en-virtual-collection-demo');
+  await demo.scrollIntoViewIfNeeded();
+  await demo.locator('#scroll-demo-heading').click();
+  const field=demo.getByRole('textbox',{name:'Asset key',exact:true});
+  await field.scrollIntoViewIfNeeded(); await expect(field).toBeVisible();
+  const bounds=await field.boundingBox();expect(bounds).not.toBeNull();
+  // Real pointer dispatch independently checks the engine's shadow/details hit path.
+  await page.mouse.click(bounds!.x+bounds!.width/2,bounds!.y+bounds!.height/2);
+  await expect(field).toBeFocused();
+  await field.fill('asset-09000');await field.press('Enter');
+  await field.press('Tab'); await page.keyboard.press('Enter');
+  await expect(demo.locator('tr[data-en-virtual-key="asset-09000"]')).toBeVisible();
+ });
+}
