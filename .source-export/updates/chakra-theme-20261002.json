@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-10-03T04:34:06.584947+00:00",
+  "sourceCommit": "3c19f661b980218b7154d03a64453f849c3a2108",
+  "previousSourceMain": "c36986a2b744855e781d2643d28a74891722909e",
+  "previousGitHubSourceMain": "c36986a2b744855e781d2643d28a74891722909e",
+  "previousExportSourceCommit": "c5cb127e8d70b4554bec39d0bb1438d890846457",
+  "sourceHistory": "Isolated continuation of the existing source-only GitHub main history.",
+  "taskPaths": [
+    "apps/docs/tests/theme-refresh.spec.ts",
+    "tooling/theme-candidates/README.md",
+    "tooling/theme-candidates/catalogue-cases.mjs",
+    "tooling/theme-candidates/catalogue.mjs",
+    "tooling/theme-candidates/definitions.json",
+    "tooling/theme-candidates/inspired/chakra-mapping.md",
+    "tooling/theme-candidates/inspired/chakra.dark.json",
+    "tooling/theme-candidates/inspired/chakra.light.json"
+  ],
+  "qualification": "Clean isolated installation and production build passed. Full theme gate passed: 226 Node checks and 653 browser cases across Chromium, Firefox and WebKit, with four expected skips; property, scope and candidate contrast verifiers passed. Separate GitHub project-build qualification is retained in the project progress report.",
+  "largeEvidence": "Original full-history checkout and omitted historical evidence remain unchanged locally."
+}

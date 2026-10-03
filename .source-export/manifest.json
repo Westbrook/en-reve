@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "c5cb127e8d70b4554bec39d0bb1438d890846457",
-  "exportedAt": "2026-10-03T03:39:36.156356+00:00",
+  "sourceCommit": "3c19f661b980218b7154d03a64453f849c3a2108",
+  "exportedAt": "2026-10-03T04:34:06.584947+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5800,
-  "includedBytes": 156602594,
-  "qualification": "Visual producer verified with19 Node controls,nine browser cases,standalone CLI and semantic gates. Candidate-facing reader and final qualification remain incomplete.",
-  "latestUpdate": ".source-export/updates/candidate-visual-producer-20261003.json",
+  "includedFiles": 5804,
+  "includedBytes": 156683275,
+  "qualification": "Clean isolated installation and production build passed. Full theme gate passed: 226 Node checks and 653 browser cases across Chromium, Firefox and WebKit, with four expected skips; property, scope and candidate contrast verifiers passed. Separate GitHub project-build qualification is retained in the project progress report.",
+  "latestUpdate": ".source-export/updates/chakra-theme-20261002.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
