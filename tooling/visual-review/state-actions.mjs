@@ -10,6 +10,12 @@ export async function performActions(page,frame,actions) {
   else if (action.kind==='drag') {
    const target=action.target?frame.locator(action.target):element;
    await element.scrollIntoViewIfNeeded(options);await target.scrollIntoViewIfNeeded(options);
+   const initialBox=await element.boundingBox();
+   if(!initialBox?.width||!initialBox?.height)throw new Error('Drag source has no rendered geometry.');
+   // Native hover performs hit-target checks and may scroll around sticky chrome.
+   // Raw mouse coordinates alone can start a gesture on an overlapping navigation.
+   await element.hover({...options,position:{x:initialBox.width*action.from.x,y:initialBox.height*action.from.y}});
+   // Hover can scroll either frame: acquire both final boxes only afterwards.
    const sourceBox=await element.boundingBox(),targetBox=await target.boundingBox();
    if (!sourceBox?.width || !sourceBox?.height || !targetBox?.width || !targetBox?.height) throw new Error('Drag source or target has no rendered geometry.');
    const from={x:sourceBox.x+sourceBox.width*action.from.x,y:sourceBox.y+sourceBox.height*action.from.y};

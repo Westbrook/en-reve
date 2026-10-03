@@ -7,6 +7,7 @@ import {captureReview,createBuildContext} from '../../../tooling/visual-review/c
 import {captureTarget} from '../../../tooling/visual-review/target-capture.mjs';
 import {waitForRenderedElements} from '../../../tooling/visual-review/readiness.mjs';
 import {packageVisualEvidence} from '../../../tooling/visual-review/package.mjs';
+import {packageVisualEvidenceParts,verifyVisualEvidenceParts} from '../../../tooling/visual-review/package-parts.mjs';
 
 const buildDirectory=process.env.EN_GITHUB_PAGES_BUILD;
 test.skip(!buildDirectory,'Requires the original separately qualified project-path build.');
@@ -46,6 +47,29 @@ test('project-path capture preserves paired responsive states and imports into i
   await page.locator('.visual-results summary').first().click();await page.locator('.visual-images').first().scrollIntoViewIfNeeded();await expect.poll(()=>page.locator('.visual-images').first().locator('img').evaluateAll((images: Element[])=>images.length===3&&images.every(image=>(image as HTMLImageElement).naturalWidth>0))).toBe(true);
   const pending=page.waitForEvent('download');await page.getByRole('button',{name:'Export candidate',exact:true}).click();
   const exported=JSON.parse(await readFile((await(await pending).path())!,'utf8'));expect(exported.build.fingerprint).toBe(build.fingerprint);expect(exported.visualEvidence.integrity).toBe(JSON.parse(bundle).report.integrity);
+  // Force a real multi-part transfer from the same acquisition; do not recapture.
+  const partsDirectory=info.outputPath('portable-parts');
+  const index=await packageVisualEvidenceParts(outputDirectory,build,partsDirectory,{maxBytes:Buffer.byteLength(bundle)-1});
+  expect(index.parts.length).toBeGreaterThan(1);
+  const verified=await verifyVisualEvidenceParts(partsDirectory,build);expect(verified.rows).toBe(12);
+  const seen=new Set<string>();
+  for(const part of index.parts){
+   const bytes=await readFile(partsDirectory+'/'+part.path);
+   await page.getByLabel('Import visual evidence',{exact:true}).setInputFiles({name:part.path,mimeType:'application/json',buffer:bytes});
+   await expect(page.locator('.visual-evidence').getByText(part.integrity,{exact:true})).toHaveCount(1);
+   await expect(page.locator('.visual-evidence [role=alert]')).toHaveCount(0);
+   await expect(page.locator('.visual-results summary')).toHaveCount(part.rows.length);
+   await expect(page.locator('[data-evidence-applicability]')).toContainText('Captured source matches');
+   const summary=page.locator('.visual-results summary').first();
+   if(await summary.locator('..').getAttribute('open')===null)await summary.click();
+   await expect(page.locator('.visual-images').first()).toBeVisible();
+   await expect.poll(()=>page.locator('.visual-images').first().locator('img').evaluateAll((images: Element[])=>images.length===3&&images.every(image=>(image as HTMLImageElement).naturalWidth>0))).toBe(true);
+   const partDownload=page.waitForEvent('download');await page.getByRole('button',{name:'Export candidate',exact:true}).click();
+   const partExport=JSON.parse(await readFile((await(await partDownload).path())!,'utf8'));
+   expect(partExport.visualEvidence.integrity).toBe(part.integrity);
+   for(const key of part.rows){expect(seen.has(key)).toBe(false);seen.add(key);}
+  }
+  expect([...seen].sort()).toEqual(result.results.map((row:any)=>row.key).sort());
   expect(failures).toEqual([]);
   // The routing boundary also refuses same-origin paths outside the project.
   await page.evaluate(()=>{void fetch('/outside-project').catch(()=>undefined);void fetch('https://example.invalid/outside-origin').catch(()=>undefined);});

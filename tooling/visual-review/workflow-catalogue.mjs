@@ -269,6 +269,11 @@ export const workflowStates = [
         "selector": "#settings-save-trigger"
       },
       {
+        "kind": "press",
+        "selector": "#settings-save-trigger",
+        "value": "Escape"
+      },
+      {
         "kind": "click",
         "selector": "en-button:has-text(\"Cancel save\")"
       }

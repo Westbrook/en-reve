@@ -50,10 +50,13 @@ adds a conservative source graph and reconciles the full sheet. Candidate-facing
 impact and visual evidence integration, offline evidence reopening, project-path
 capture and eleven gallery consumer journeys now have bounded qualification; see
 [candidate visual evidence](candidate-visual-evidence-2026-10-03.md) and the later
-semantic-closeout receipt. Full authored-state, density and scope coverage plus
-local human assessment remain unfinished. The historical receipts retain their
-original limits. These distinctions do not manufacture a backend or mark a preview
-as adopted.
+semantic-closeout receipt. The local assessment interface is implemented and has
+bounded qualification for classification, notes, import/export, stale drafts and
+recovery; see the [assessment receipt](../apps/docs/tests/verification-visual-assessment-20261003.json).
+Full authored-state, density and scope acquisition and the final requirement audit
+remain unfinished. Human acceptance remains separate from the assessment tooling.
+The historical receipts retain their original limits. These distinctions do not
+manufacture a backend or mark a preview as adopted.
 
 The first handbook pass connects existing component docs, examples and package
 contracts; it does not claim exhaustive prose for every possible composition.

@@ -1,6 +1,7 @@
 import {test,expect} from '@playwright/test';
 import {readFile,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
+import {resolve} from 'node:path';
 import {createReviewDraft} from '@en-reve/tokens';
 import {exportReviewBundle} from '../src/theme-review/bundle.js';
 import {captureReview} from '../../../tooling/visual-review/capture.mjs';
@@ -34,6 +35,25 @@ test('native file and pointer actions preserve real input events and cancellatio
  await performActions(page,frame,[{...drag,end:'escape'},{kind:'files',selector:'input',files:[]}]);
  await expect(frame.locator('[role="slider"]')).toHaveAttribute('data-drag','cancelled');
  await expect(frame.locator('output')).toHaveText('');
+});
+
+test('pointer actions reach the source below sticky page navigation',async({page})=>{
+ await page.setViewportSize({width:390,height:844});
+ await page.setContent('<iframe style="position:fixed;inset:0;width:100%;height:100%;border:0" srcdoc="<style>body{margin:0}nav{position:sticky;top:0;height:145px;background:white;z-index:2}#plane{height:192px;background:gray;touch-action:none}</style><nav>Navigation</nav><div style=height:1000px></div><div id=plane></div><div style=height:1500px></div>"></iframe>');
+ const frame=page.frames()[1]!;
+ await frame.locator('#plane').evaluate(plane=>{
+  document.querySelector('nav')!.addEventListener('pointerdown',()=>document.querySelector('nav')!.setAttribute('data-hit','true'));
+  plane.addEventListener('pointerdown',event=>{plane.setAttribute('data-drag','active');plane.setPointerCapture((event as PointerEvent).pointerId);});
+  plane.addEventListener('pointermove',event=>{if((event as PointerEvent).buttons)plane.setAttribute('data-moved','true');});
+  plane.addEventListener('pointerup',()=>plane.setAttribute('data-drag','released'));
+  scrollTo(0,plane.getBoundingClientRect().top+scrollY-80);
+ });
+ const plane=frame.locator('#plane');
+ expect((await plane.boundingBox())!.y).toBe(80);
+ await performActions(page,frame,[{kind:'drag',selector:'#plane',from:{x:.2,y:.2},to:{x:.5,y:.5},end:'release'}]);
+ await expect(plane).toHaveAttribute('data-moved','true');
+ await expect(plane).toHaveAttribute('data-drag','released');
+ await expect(frame.locator('nav')).not.toHaveAttribute('data-hit','true');
 });
 
 test('state postconditions reject unmet UI and accept asynchronously reached state',async({page})=>{
@@ -73,7 +93,8 @@ test('authored catalogue captures real state with exact candidate identity',asyn
  const baselineFile=info.outputPath(density+'-baseline.json'),candidateFile=info.outputPath(density+'-candidate.json');await writeFile(baselineFile,baseline);await writeFile(candidateFile,candidate);
  const cases=catalogue(build);const selected=process.env.EN_VISUAL_SELECTED?.split(',');
  const viewports=[{id:'desktop',width:1280,height:900},{id:'mobile',width:390,height:844}].filter(viewport=>!process.env.EN_VISUAL_VIEWPORTS || process.env.EN_VISUAL_VIEWPORTS.split(',').includes(viewport.id));
- const result=await captureReview({buildDirectory,baselineFile,candidateFile,outputDirectory:info.outputPath(density+'-capture'),cacheDirectory:undefined,options:{engines:[browserName],viewports,cases,...(selected?{selected}:{})},browsers:{[browserName]:browser}});
+ const cacheDirectory=process.env.EN_VISUAL_CACHE_ROOT?resolve(process.env.EN_VISUAL_CACHE_ROOT,browserName,density):undefined;
+ const result=await captureReview({buildDirectory,baselineFile,candidateFile,outputDirectory:info.outputPath(density+'-capture'),cacheDirectory,options:{engines:[browserName],viewports,cases,...(selected?{selected}:{})},browsers:{[browserName]:browser}});
  expect(result.results.filter((row:any)=>row.status==='failed').map((row:any)=>({key:row.key,reason:row.reason}))).toEqual([]);
  for(const row of result.results.filter((row:any)=>['passed','different'].includes(row.status))){
   expect(row.captures.actual.details.stateChecks).toHaveLength(row.fixture.checks?.length??0);

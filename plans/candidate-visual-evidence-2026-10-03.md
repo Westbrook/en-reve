@@ -332,3 +332,72 @@ The interrupted full acquisition retains 156 completed comparisons, the two
 geometry assertion failures, two interruption errors and 676 unrun rows. It is
 not a completed campaign. The full 7,524-comparison acquisition and final audit
 remain outstanding; this selected correction does not shrink that scope.
+
+### Full-acquisition packaging follow-up (implementation, qualification pending)
+
+The full authored-state capture exceeded the portable reader's 128 MiB limit
+before finishing its first density/engine report. Keep the original acquisition
+and reader limit. `tooling/visual-review/package-parts.mjs` now drafts a
+post-acquisition partition path with ordinary importable bundles and an index
+bound to the original manifest. Each authored case retains all of its environment
+rows; failed, omitted and unsupported rows, original exports, identity inventories,
+and otherwise unreferenced artifacts must survive unchanged. The verifier rejects
+incomplete or changed sets. A single oversize case fails rather than disappearing.
+
+Implementation is isolated in `codex/visual-evidence-parts` while the full matrix
+runs on frozen `b7cca55e`. Node controls cover preservation, exact byte boundaries,
+corruption, changed scope, duplicate/omitted cases and atomic output failure.
+Syntax checks have passed; these controls and real reader import qualification
+have **not yet run**. Run them through the owning validation entry points once the
+current machine lease is released. Reconcile the original full acquisition before
+merging, then qualify partitioning of those exact retained artifacts. No new
+capture, baseline promotion, manual acceptance or source publication is claimed
+by this checkpoint.
+
+
+### Compact mobile cancellation fixture (qualification pending)
+
+Full acquisition 03 exposed an occluded pointer target in
+`workflow:settings-pending-save/cancelled-save` for Chromium compact/mobile/light.
+The focused Save trigger deliberately retains its tooltip; its block-end overlay
+covers Cancel in this narrow layout. The tooltip contract supplies Escape to dismiss
+that focused interval without moving focus. The authored cancellation journey now
+presses Escape on Save before the ordinary, hit-tested Cancel click. It retains the
+same cancellation outcome assertion and changes neither product behavior nor the
+case inventory. No force click, private state write or pointer-event override is used.
+
+The original failed row and reason remain evidence. The fixture is not yet qualified.
+Let the current compact capture segment finish its build/runtime checks before
+stopping the known-failing outer run; retain its completed cache and all outcomes.
+Then qualify the corrected journey across densities, responsive appearances and
+engines. Exact unchanged rendering identities may use the documented cache contract;
+the changed fixture must acquire fresh evidence. Any assembled full-matrix receipt
+must retain original acquisition and reuse provenance, not claim all images were
+newly captured. Packaging and final coverage qualification remain outstanding.
+
+
+The catalogue now has an explicit optional `EN_VISUAL_CACHE_ROOT` forwarding
+surface so a completed, preserved capture cache can be copied to fresh storage
+for continuation. All nine engine/density reports and all 7,524 required rows
+remain mandatory. This wiring is pending qualification along with the cancellation
+correction; no reuse is claimed until the original segment reaches terminal and
+the ordinary identity checks accept a copied entry.
+
+## Pointer hit-target qualification pending
+
+The full compact acquisition also found unchanged saturation (`58.3` instead of
+`50`) for the mobile color-plane preview and commit gestures. The retained default
+capture places the specimen at y=-8.828125 with a 145px sticky navigation area;
+the plane begins about 91px into the specimen, so its authored 20% drag start is
+covered. The action runner previously checked viewport bounds but sent raw mouse
+coordinates without checking which element received pointerdown.
+
+The isolated correction uses Playwright's native hover actionability at the
+source fraction before measuring the final drag geometry. This permits normal
+scrolling around sticky content without forced events or changing component state.
+A browser regression starts the source visibly inside the viewport but under
+sticky navigation and requires a real completed drag without a navigation hit.
+The color-plane states and owning pointer tests still require qualification across
+engines and densities; this diagnosis is not a claimed browser pass. Changing the
+shared runner changes capture identity, so older captures must not be reused under
+the new producer identity merely because their pixels appear unchanged.

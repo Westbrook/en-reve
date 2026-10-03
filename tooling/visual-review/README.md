@@ -130,8 +130,35 @@ tooling/test-pipeline/with-toolchain.sh node tooling/visual-review/package.mjs \
 The packager checks the complete declared matrix, original baseline/candidate
 exports, rendering/comparison identities, artifact hashes and dimensions before
 writing a new file. It never fetches a URL from evidence. The bundle is limited
-to 128 MB; retain the directory for larger campaigns and split their declared
-capture runs explicitly. A narrowed run is never described as full coverage.
+to 128 MiB. Larger completed acquisitions can be partitioned **after capture**,
+without reacquiring images or narrowing the original inventory:
+
+```sh
+tooling/test-pipeline/with-toolchain.sh node tooling/visual-review/package-parts.mjs create \
+  /absolute/capture-output /absolute/original-dist/review-build.json \
+  /absolute/new-evidence-parts
+tooling/test-pipeline/with-toolchain.sh node tooling/visual-review/package-parts.mjs verify \
+  /absolute/new-evidence-parts /absolute/original-dist/review-build.json
+```
+
+The fresh output directory contains `index.json`, the byte-identical original
+`parent-evidence.json`, and numbered ordinary importable bundles. Cases remain in
+source order; all environments and appearances for a case stay together. Each
+bundle declares its own subset scope and review identity. Every original result,
+including failures and omissions, is unchanged. Original exports and identity
+inventories remain in each bundle; all other artifacts are retained across the set.
+The verifier checks exact coverage against the parent, hashes, per-part limits,
+row contents and the complete artifact union. One part alone is subset evidence;
+the verified set proves preservation of the original acquisition scope, not human
+acceptance or producer authenticity. Keep the original acquisition as well.
+
+Import the numbered bundles individually in Theme Review. Their assessment files
+are separate because their evidence identities differ; retain each assessment with
+its bundle and the index. The index is a maintainer verification file, not an import
+for the browser. A case that cannot fit with its required shared artifacts fails
+with an explicit error; it is never dropped or split silently. The reader's limit
+is not raised. An unsuccessful packaging call removes its own fresh output directory
+and never overwrites an existing destination.
 
 In the matching built **Theme Review**, use **Import visual evidence**. The page
 repeats integrity checks, semantically reopens both original exports with this
@@ -288,3 +315,25 @@ regressions: WebKit's guarded click rejected nested shadow/details hit testing,
 while native pointer dispatch and focus assertions pass. Failed attempts remain
 retained. See `verification-specimen-catalogue-20261003.json` for the boundaries;
 the complete 209-case density matrix remains pending.
+
+
+### Continuing a catalogue acquisition with verified cache entries
+
+`EN_VISUAL_CACHE_ROOT=/absolute/private-cache-root` opts the catalogue test into
+separate `<engine>/<density>` cache directories. The default remains a new cache
+inside each capture directory. The optional root changes storage only: the same
+full case matrix, state postconditions, final build/runtime checks and outcome
+assertions still apply. Each capture reports whether it executed or reused an
+exact rendering identity and retains the originating run.
+
+To continue after correcting an authored fixture, first let the preceding capture
+segment finish its source/runtime checks and commit its cache. Preserve that
+original report, cache and failures unchanged. Copy the completed cache into a
+fresh cache root under the matching engine/density; never promote an interrupted
+or in-progress segment's staged entries. Retain a byte inventory of that transfer.
+Then use a fresh execution/capture output with the new cache root. Changed fixtures
+have different identities and must execute; unchanged cases can reuse only when
+all existing dependency, build, environment, artifact and failure-history checks
+succeed. The final review receipt must distinguish these reused images from fresh
+ones and bind them to their original report. Reuse is neither a new acquisition
+nor permission to erase the original failed attempt.

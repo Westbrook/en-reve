@@ -322,3 +322,7 @@ Local main `c76c0beb006451e33cf96a7c1d9fafc215c12658` adds planned/rendered prev
 ## Family geometry density correction
 
 Local main `b7cca55e0e4efbccf475427d4c0da5f63e490288` corrects compact-density geometry expectations and clarifies the example. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Visual evidence qualification checkpoint
+
+Local main `ec44142d00d44d7e1e8a0621566d83e9fe980ea0` adds bounded evidence partitions and corrects pointer/cancellation acquisition fixtures; behavioral qualification remains pending. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
