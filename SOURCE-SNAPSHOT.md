@@ -266,3 +266,7 @@ Local main `ff68e423bc4049841d28cafdbf12ffd846ee1551` delivers generated source 
 ## Expanded gallery consumer checkpoint
 
 Local main `35285e845757582af59b178619ec08a9af73278e` qualifies all59 gallery and11 complete API copies. See `plans/expanded-gallery-2026-10-03.md` for verification and remaining limits.
+
+## Documentation semantic checkpoint
+
+Local main `364608448b16ebfbff58093138835401df401c40` resolves nine unbaselined documentation semantic diagnostics. See `plans/semantic-closeout-2026-10-03.md` for verification and remaining limits.

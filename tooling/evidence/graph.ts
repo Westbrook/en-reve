@@ -12,7 +12,8 @@ export function selectAffected(graph: DependencyGraph, changed: string[]): Selec
 export type EvidenceOutcome =
   | { status: 'passed' | 'failed'; evidence: string[]; originatingRun: string }
   | { status: 'reused'; evidence: string[]; originatingRun: string; cacheKey: string }
-  | { status: 'not-run' | 'unsupported'; reason: string; nextAction: string };
+  | { status: 'not-run'; reason: string; nextAction: string }
+  | { status: 'unsupported'; reason: string; nextAction: string };
 
 export function coverageReceipt(required: string[], outcomes: Record<string, EvidenceOutcome>) {
   const checks = Object.fromEntries([...new Set(required)].sort().map(id => {

@@ -1,0 +1,17 @@
+{
+  "createdAt": "2026-10-03T01:44:20.350751+00:00",
+  "sourceCommit": "364608448b16ebfbff58093138835401df401c40",
+  "previousSourceMain": "35285e845757582af59b178619ec08a9af73278e",
+  "taskPaths": [
+    "apps/docs/tests/verification-semantic-closeout-20261003.json",
+    "apps/docs/tests/version-review.spec.ts",
+    "packages/elements/public-api.json",
+    "packages/elements/public-types.json",
+    "plans/semantic-closeout-2026-10-03.md",
+    "tooling/evidence/graph.ts",
+    "tooling/metadata/type-snapshot.ts",
+    "tooling/testing/semantic-types-core-baseline.json"
+  ],
+  "qualification": "Nine unbaselined diagnostics fixed; both semantic gates,25 Node controls,metadata freshness and3 browser cases pass. Known baseline debt and manual acceptance remain.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

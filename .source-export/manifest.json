@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "35285e845757582af59b178619ec08a9af73278e",
-  "exportedAt": "2026-10-03T01:31:16.162528+00:00",
+  "sourceCommit": "364608448b16ebfbff58093138835401df401c40",
+  "exportedAt": "2026-10-03T01:44:20.350751+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5769,
-  "includedBytes": 156090563,
-  "qualification": "All70 displayed source copies compile and execute in30 browser cases across three engines. Existing semantic diagnostics and manual testing remain separate.",
-  "latestUpdate": ".source-export/updates/expanded-gallery-20261003.json",
+  "includedFiles": 5772,
+  "includedBytes": 156193639,
+  "qualification": "Nine unbaselined diagnostics fixed; both semantic gates,25 Node controls,metadata freshness and3 browser cases pass. Known baseline debt and manual acceptance remain.",
+  "latestUpdate": ".source-export/updates/semantic-closeout-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

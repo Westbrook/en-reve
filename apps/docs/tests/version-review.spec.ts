@@ -3,7 +3,7 @@ import { readFile, writeFile, mkdir, symlink } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { createRelease } from '../../../tooling/releases/release.ts';
-import { digest } from '../../../tooling/offline-review/runtime.mjs';
+import { digestBytes as digest } from '../../../tooling/evidence/identity.ts';
 import { bundleScopedFixture } from '../../../tooling/releases/scoped-fixture.mjs';
 import { packageVersionReview } from '../../../tooling/releases/review-package.mjs';
 

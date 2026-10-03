@@ -57,7 +57,7 @@ export async function generateTypeSnapshot(packageRoot: string): Promise<TypeSna
   if (diagnostics.length) throw new Error(ts.formatDiagnostics(diagnostics, { getCanonicalFileName: (f: string) => f, getCurrentDirectory: () => packageRoot, getNewLine: () => '\n' }));
   const emitted = new Map<string, string>();
   const outputs = new Map<string, string>();
-  const result = program.emit(undefined, (file: string, text: string, _bom: boolean, _error: unknown, sources: any[]) => {
+  const result = program.emit(undefined, (file, text, _bom, _error, sources) => {
     if (file.endsWith('.d.ts') && sources?.length === 1) {
       emitted.set(resolve(sources[0].fileName), text);
       outputs.set(resolve(file), resolve(sources[0].fileName));
@@ -73,6 +73,12 @@ export async function generateTypeSnapshot(packageRoot: string): Promise<TypeSna
   };
   const declarationsProgram = ts.createProgram([...emitted.keys()], options, host);
   const checker = declarationsProgram.getTypeChecker();
+  // The pinned TS6 runtime exposes this transitive type-only alias query, but its
+  // public declarations omit it. Keep the boundary narrow and fail if it changes.
+  const aliasChecker = checker as typeof checker & {
+    getTypeOnlyAliasDeclaration(symbol: Parameters<typeof checker.getAliasedSymbol>[0]): unknown;
+  };
+  if (typeof aliasChecker.getTypeOnlyAliasDeclaration !== 'function') throw new Error('Type snapshot requires the pinned TS6 type-only alias query.');
   const printer = ts.createPrinter({ newLine: ts.NewLineKind.LineFeed, removeComments: true });
   const entries = new Map<string, string>();
   const exports = new Map<string, string>();
@@ -132,7 +138,7 @@ export async function generateTypeSnapshot(packageRoot: string): Promise<TypeSna
     declarations.set(id, entry); // Cycles are graph edges, never recursive expansion.
     const refs = new Set<string>();
     function visit(node: any) {
-      if (ts.isIdentifier(node) && node !== node.parent?.name) {
+      if (ts.isIdentifier(node) && (!node.parent || !('name' in node.parent) || node !== node.parent.name)) {
         const ref = recordSymbol(checker.getSymbolAtLocation(node));
         if (ref && ref !== id) refs.add(ref);
       }
@@ -151,7 +157,7 @@ export async function generateTypeSnapshot(packageRoot: string): Promise<TypeSna
       const target = recordSymbol(symbol);
       if (target) {
         exports.set(key, target);
-        exportKinds.set(key, !(unalias(symbol).flags & ts.SymbolFlags.Value) || checker.getTypeOnlyAliasDeclaration(symbol) ? 'type' : 'value');
+        exportKinds.set(key, !(unalias(symbol).flags & ts.SymbolFlags.Value) || aliasChecker.getTypeOnlyAliasDeclaration(symbol) ? 'type' : 'value');
       } else gaps.add(`Unresolved export ${key}`);
     }
   }
