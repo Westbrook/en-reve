@@ -96,7 +96,7 @@
     "apps/docs/public/reviews/theme-customization/button-like-press-implementation.md": "sha256:f6b31279822ebff0b7d35fb17f9d27f7f04739ed609742c75a28b6b8c1240fd4",
     "apps/docs/public/reviews/theme-customization/component-gap-closure.md": "sha256:50d6b456ee6edb5b6ae1fda501876801aada7073e03337195fd2c44459a8db5b",
     "apps/docs/public/reviews/theme-customization/component-gap-implementation.md": "sha256:869c3c94b56da2956b8d6b57a985ff5ad6e1269d2012da92d6a647846eeb4a8c",
-    "apps/docs/public/reviews/theme-customization/contract-guide.md": "sha256:2e1dee24f93a44918863cd3ca97f337fb18e10178e18a7351b5902faec2684b4",
+    "apps/docs/public/reviews/theme-customization/contract-guide.md": "sha256:e18f5c2cc90087aeb210d9cce8fabbf02a18a93ee66ed5d3d97fc7b1294472d3",
     "apps/docs/public/reviews/theme-customization/coverage.json": "sha256:7d463f54ef96a368208aebed65e356196469879f729613073ccd6c372af4aa12",
     "apps/docs/public/reviews/theme-customization/coverage.md": "sha256:ea43b308146e8c230f617d3fe532328d67ce9c729175368ced9a6d1028247ff9",
     "apps/docs/public/reviews/theme-customization/customization.json": "sha256:2526ca69447d63f918679c98decfff130ad8c7a16604ccfde6027621c5b633a9",
@@ -111,7 +111,7 @@
     "apps/docs/public/reviews/theme-customization/theme-07-css-readme.md": "sha256:f26d25b4f51135acc5a3d4e1d22641a7756bbd0d144a970400d5dd29c878fb25",
     "apps/docs/public/reviews/theme-customization/theme-07-pilot-readme.md": "sha256:84a12fa6d5d1b3a3f93c9b5a5ed9dce4b377391ecbc9ca51916b3d296c54913e",
     "apps/docs/public/reviews/theme-customization/theme-08-proof.md": "sha256:30ed60d534288c8cba0bbc67b003fc1f6056f0929c6fd8f8ae9d0e8dbd3beab2",
-    "apps/docs/public/reviews/theme-customization/theme-api-authoring-contract.md": "sha256:8f238b9cef478ce0b56b3732a759522e859e78b012368d4e7f66618400a9b4c4",
+    "apps/docs/public/reviews/theme-customization/theme-api-authoring-contract.md": "sha256:78e009e7efcc74f380710e6907fecdfbe9775f5f561fc7dad494b09c2d3ed99d",
     "apps/docs/public/reviews/theme-customization/theme-api-implementation.md": "sha256:3cee35a0db61a353e837007ae975fc8897374c04f5a2c7e3f2559550ff3450e0",
     "apps/docs/public/reviews/theme-customization/theme-coverage.json": "sha256:9dcaee894194495f7e5fa0c748cc0a3fe35472c180713e916dd9bbbe1f508939",
     "apps/docs/public/reviews/theme-customization/theme-coverage.md": "sha256:8192b4c06847ddbd98e06af384717e248f342b9ebb785af8f299257c40a2264a",
@@ -332,7 +332,7 @@
     "packages/elements/src/context.ts": "sha256:29fbfc890cea12284aa07516e4911c2a29a90ef3e04be6ed8f35af470891cdc2",
     "packages/tokens/src/index.ts": "sha256:855141bdfcc8591254477e456833b4038ee3753533a82638d2a9db2f2076bbf7",
     "packages/tokens/src/admin.ts": "sha256:6088de2ef066ae59b2e6ca93ff0a7b28fc89e8efa392952bee051523493722fc",
-    "packages/tokens/src/authoring.ts": "sha256:fae49b26031b12f7422f32c643b529b60b21d73fb9288abe873170f03af70285",
+    "packages/tokens/src/authoring.ts": "sha256:c5dbb1f83e4b7c6d0b64813d87cfa2937d9f32241e53bc8195b049811e590903",
     "packages/tokens/src/candidate.ts": "sha256:01587c9ece1c4ebe1056d8197935efde2be43f9a66140e2732b19a8311dfb822",
     "packages/tokens/src/color.ts": "sha256:0ca5135270a976fbe375b39d24d77a1c050ca39dd2a29b225bab8a02a4df8b6e",
     "packages/tokens/src/css.ts": "sha256:d05f9e91431d1acc1fa3b1ab0e1180d3a288908d5a4e625f2b02eaf520f906e6",
@@ -667,7 +667,7 @@
     "packages/elements/src/definitions/table.ts": "sha256:25b98a1383c9e00e5d140c357c616e24385add775904c140b860394d98f6aba7",
     "packages/styles/src/css/surface.css": "sha256:95eb59390d8395736145cd19499c4e74df25016d1d46aa3d84dc17eb75b0fe72",
     "packages/elements/src/calendar.ts": "sha256:73b0eb051d74d573a0ba900c16407f24f59fc565d705c0a3f79e355824fd030e",
-    "apps/docs/src/theme-review/document-theme.ts": "sha256:0f01cf6776fdbc6a123ec1d266e029a19d0ef8561b01c456fc473381be773c8d",
+    "apps/docs/src/theme-review/document-theme.ts": "sha256:f22d344302e5f890f5b1ab9291f875eab6f57722409d3529b463e724dcde0ec3",
     "packages/elements/src/definitions/badge.ts": "sha256:7ebb76d1fc0a5c434bb6c84f4639911b2fc8b70a46a1dba2a4795c166cb871c0",
     "packages/elements/src/definitions/navigation.ts": "sha256:36cd3f5c73b8689a0f3b41ac0db8ba039e4b2fa06e7e0681f5e48f2051c9475d",
     "packages/elements/src/definitions/segmented-control.ts": "sha256:1890097e309ca56dd42df34dd66f47b738dbf7dd80b96c77c7267725f5b7ac5c",
@@ -48465,5 +48465,5 @@
     "packages/elements/src/select-option/index.ts": [],
     "packages/elements/src/avatar/index.ts": []
   },
-  "digest": "sha256:686239deeaded94b22476efc82d2defb48b4e1d7421bbeee3c309c779a21a27a"
+  "digest": "sha256:db7ab432af8dd7bd3ed8028d0f2ca90c61ea681cac959ffbce83930f50ce0cbb"
 }

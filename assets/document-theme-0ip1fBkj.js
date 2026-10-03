@@ -1,1 +1,0 @@
-import{n as e,t}from"./document-theme-Bg6Ifdpt.js";e();export{t as attachDocumentTheme};
