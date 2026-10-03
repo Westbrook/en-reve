@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "df59c9e81b5a370a08f0f547e49540506346e779",
-  "exportedAt": "2026-10-03T13:03:50.441460+00:00",
+  "sourceCommit": "ccc72465feb448adf69d80ad4d23f24e1e9c07dc",
+  "exportedAt": "2026-10-03T19:59:29.377401+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5861,
-  "includedBytes": 158428845,
-  "qualification": "Bounded qualification passes:187Node tests, semantic gate, both builds,33browser tests without skips or retries,144selected comparisons plus36project captures including multipart imports. Full7524matrix and final requirement audit remain pending; manual and managed adoption remain separate.",
-  "latestUpdate": ".source-export/updates/visual-parts-20261003-04.json",
+  "includedFiles": 5873,
+  "includedBytes": 159150917,
+  "qualification": "Complete theme+api union and project-prefix build/browser qualification; automated evidence, with manual assistive-technology acceptance remaining separate.",
+  "latestUpdate": ".source-export/updates/chakra-component-review-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

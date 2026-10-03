@@ -338,3 +338,7 @@ Local main `9a34e9ddde384532b861a77d453a21cc10db34f2` adds bounded evidence part
 ## Visual evidence qualification checkpoint
 
 Local main `df59c9e81b5a370a08f0f547e49540506346e779` adds bounded evidence partitions and corrects pointer/cancellation acquisition fixtures; bounded behavioral qualification passes. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Chakra component recipe review — chakra-component-review-20261003
+
+Local `main` `ccc72465feb448adf69d80ad4d23f24e1e9c07dc` maps the neutral Chakra component recipes through typed public-Part companions, documents the complete reference overview and retains source-bound qualification. It descends from source-only GitHub main `dad768954619d245c2c4cfacf4bff631e811fdbf`; prior checkpoints and omitted historical evidence are preserved. See [the component source update](.source-export/updates/chakra-component-review-20261003.json) for exact changed paths, receipt identity and qualification limits.
