@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "c1169a3ae5c3e64cef75315e20f6ec8eb1972279",
-  "exportedAt": "2026-10-03T12:39:58.188187+00:00",
+  "sourceCommit": "9a34e9ddde384532b861a77d453a21cc10db34f2",
+  "exportedAt": "2026-10-03T13:02:55.684390+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5858,
-  "includedBytes": 158300873,
-  "qualification": "Source checkpoint: explicit historical qualification snapshots preserve original receipt hashes; complete owning tooling gate passes. Initial browser run22/24 passes; two catalogue failures isolate native pointer rounding. Explicit numeric tolerance correction and negative controls committed, repeat browser qualification and semantic checks pending. Full matrix and website publication remain pending.",
-  "latestUpdate": ".source-export/updates/visual-parts-20261003-02.json",
+  "includedFiles": 5860,
+  "includedBytes": 158427321,
+  "qualification": "Bounded qualification passes:187Node tests, semantic gate, both builds,33browser tests without skips or retries,144selected comparisons plus36project captures including multipart imports. Full7524matrix and final requirement audit remain pending; manual and managed adoption remain separate.",
+  "latestUpdate": ".source-export/updates/visual-parts-20261003-03.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

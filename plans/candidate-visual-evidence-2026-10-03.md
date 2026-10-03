@@ -416,3 +416,23 @@ tolerance is explicit capture input, validated as finite and nonnegative, and on
 allowed for numeric value checks. A browser negative control rejects the unchanged
 58.3 value and blank input; Node controls reject invalid tolerance contracts.
 This update awaits execution and does not convert the failed first run into a pass.
+
+## Corrected fixture and multipart qualification
+
+The subsequent [qualification receipt](../apps/docs/tests/verification-visual-parts-20261003.json)
+supersedes the pending qualification notes above. All 33 focused browser tests
+pass across pinned Chromium, Firefox and WebKit, without retries or skips. The
+four corrected cancellation/pointer states cover all three densities, both
+appearances and both viewports: 144 comparisons. Another 36 project-path captures
+verify responsive evidence and multipart imports into their exact build. Negative
+controls reject unchanged values and blank numeric inputs. All 187 owning tooling
+tests and the semantic type gate pass; root and GitHub project-path builds pass.
+
+The original failed and interrupted acquisitions remain retained. The interrupted
+full run was stopped after the shared producer change invalidated its reuse value;
+no old capture is reused or relabeled. Exact historical input snapshots now bind
+historical receipts to their original bytes, without qualifying current sources.
+
+This is bounded qualification. The complete 209-case, 7,524-comparison matrix,
+partition verification for its nine reports, and final requirement audit remain
+outstanding. Physical/manual acceptance and managed remote adoption remain separate.
