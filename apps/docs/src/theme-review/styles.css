@@ -62,3 +62,11 @@ en-theme-review-app main { max-inline-size:none; }
 .visual-images figure { margin: 0; min-inline-size: 0; }
 .visual-images figcaption { margin-block-end: .5rem; overflow-wrap: anywhere; }
 .visual-images img { display: block; max-inline-size: 100%; block-size: auto; }
+.visual-assessment-form { margin-block-start:var(--en-space-4); }
+.visual-assessment-form fieldset { display:grid; gap:var(--en-space-3); min-inline-size:0; margin:0; padding:var(--en-space-3); border:var(--en-border-width) solid var(--en-color-boundary); border-radius:var(--en-radius-control); }
+.visual-assessment-form label { display:grid; gap:var(--en-space-1); min-inline-size:0; }
+.visual-assessment-form select,.visual-assessment-form textarea { box-sizing:border-box; inline-size:100%; min-inline-size:0; padding:var(--en-space-2); font:inherit; color:var(--en-color-text); background:var(--en-color-surface); border:var(--en-border-width) solid var(--en-color-boundary); border-radius:var(--en-radius-control); }
+.visual-assessment-form textarea { resize:vertical; }
+.visual-assessment-form select:focus-visible,.visual-assessment-form textarea:focus-visible { outline:var(--en-focus-width) solid var(--en-color-focus); outline-offset:var(--en-focus-offset); }
+.visual-assessment-form en-button { justify-self:start; }
+.visual-assessment [data-assessment-summary] { font-variant-numeric:tabular-nums; }

@@ -1,3 +1,4 @@
+import {createAssessment,updateAssessment,importAssessment,exportAssessment,MAX_ASSESSMENT_BYTES,type VisualAssessment,type AssessmentCategory} from '../../../../tooling/visual-review/assessment.mjs';
 import {readVisualBundle,encodeVisualBundle,evidenceReference,MAX_VISUAL_BUNDLE_BYTES} from '../../../../tooling/visual-review/reader.mjs';
 import {visualEvidenceTemplate,type VisualEvidence} from './visual-evidence-view.js';
 import { acceptValueChange } from '../change-consumption.js';
@@ -95,6 +96,49 @@ export class ThemeReviewApp extends LitElement {
  private visualError='';
  private visualMessage='';
  private visualBusy=false;
+ private visualAssessment?:VisualAssessment;
+ private assessmentHistory=new Map<string,VisualAssessment>();
+ private assessmentGeneration=0;
+ private assessmentRevision=0;
+ private assessmentBusy=false;
+ private assessmentError='';
+ private assessmentMessage='';
+ private assessmentKey(evidence:VisualEvidence){return evidence.report.integrity+':'+[...evidence.missing].sort().join('|');}
+ private rememberAssessment(value:VisualAssessment){
+  if(!this.visualEvidence)return;
+  this.visualAssessment=value;this.assessmentHistory.set(this.assessmentKey(this.visualEvidence),value);
+ }
+ private saveAssessment(key:string,event:Event){
+  event.preventDefault();const evidence=this.visualEvidence,assessment=this.visualAssessment;
+  if(!evidence||!assessment||this.assessmentBusy||evidence.report.candidate.sourceHash!==this.workspace.identity)return;
+  const values=new FormData(event.currentTarget as HTMLFormElement);
+  this.assessmentError='';
+  try{this.rememberAssessment(updateAssessment(assessment,evidence,key,{category:String(values.get('category')) as AssessmentCategory,feedback:String(values.get('feedback')) as 'open'|'resolved',note:String(values.get('note')??'')}));this.assessmentMessage='Assessment saved in this page session. Export it before closing; machine evidence is unchanged.';}
+  catch(error){this.assessmentError=error instanceof Error?error.message:'Assessment could not be saved.';}
+  this.touch();
+ }
+ private async openAssessment(event:Event){
+  const input=event.currentTarget as HTMLInputElement,files=Array.from(input.files??[]);input.value='';const evidence=this.visualEvidence;
+  if(!files.length||!evidence)return;
+  const generation=++this.assessmentGeneration,sourceHash=this.workspace.identity;
+  const current=()=>this.isConnected&&generation===this.assessmentGeneration&&evidence===this.visualEvidence&&sourceHash===this.workspace.identity;
+  this.assessmentBusy=true;this.assessmentError='';this.touch();
+  try{
+   if(files.length!==1||files[0]!.size>MAX_ASSESSMENT_BYTES)throw new Error('Choose one assessment JSON file of 1 MB or smaller.');
+   const assessment=importAssessment(await files[0]!.text(),evidence);
+   if(!current())return;
+   this.rememberAssessment(assessment);this.assessmentRevision++;this.assessmentMessage='Assessment imported for this exact evidence. It is a local opinion, not authenticated approval or baseline adoption.';
+  }catch(error){if(current())this.assessmentError='Import rejected; existing notes are unchanged. '+(error instanceof Error?error.message:'Assessment could not be opened.');}
+  finally{if(generation===this.assessmentGeneration){this.assessmentBusy=false;this.touch();}}
+ }
+ private downloadAssessment(){
+  if(!this.visualEvidence||!this.visualAssessment)return;
+  this.downloadVisualJSON(exportAssessment(this.visualAssessment,this.visualEvidence),'visual-assessment-'+this.visualEvidence.report.integrity.slice(7,23)+'.json');
+ }
+ private downloadVisualJSON(text:string,name:string){
+  const url=URL.createObjectURL(new Blob([text],{type:'application/json'})),link=this.ownerDocument.createElement('a');
+  link.href=url;link.download=name;this.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+ }
  private releaseVisualURLs(){for(const url of this.visualURLs.values())URL.revokeObjectURL(url);this.visualURLs.clear();}
  private async prepareVisualURLs(evidence:VisualEvidence){
   const urls=new Map<string,string>();
@@ -115,17 +159,17 @@ export class ThemeReviewApp extends LitElement {
    const urls=await this.prepareVisualURLs(evidence);
    if(!current()){for(const url of urls.values())URL.revokeObjectURL(url);return;}
    this.releaseVisualURLs();this.visualURLs=urls;this.visualEvidence=evidence;
+   this.assessmentGeneration++;this.assessmentBusy=false;this.assessmentError='';this.assessmentMessage='Assessments stay in this page session until exported.';
+   this.visualAssessment=this.assessmentHistory.get(this.assessmentKey(evidence))??createAssessment(evidence);
    this.visualReference=evidenceReference(evidence);this.visualMessage='Visual evidence loaded. Reported outcomes are separate from human review.';
   }catch(error){if(current())this.visualError='Import rejected; the draft and any previously loaded evidence are unchanged. '+(error instanceof Error?error.message:'Visual evidence could not be opened.');}
   finally{if(generation===this.visualGeneration){this.visualBusy=false;this.touch();}}
  }
  private downloadVisual(){
-  if(!this.visualEvidence)return;
-  const text=encodeVisualBundle(this.visualEvidence.report,this.visualEvidence.files),url=URL.createObjectURL(new Blob([text],{type:'application/json'}));
-  const link=this.ownerDocument.createElement('a');link.href=url;link.download='visual-evidence-'+this.visualEvidence.report.integrity.slice(7,23)+'.json';this.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+  if(this.visualEvidence)this.downloadVisualJSON(encodeVisualBundle(this.visualEvidence.report,this.visualEvidence.files),'visual-evidence-'+this.visualEvidence.report.integrity.slice(7,23)+'.json');
  }
  private openVisualCandidate(){if(this.visualEvidence&&this.build){this.acceptReopened(reopenReviewBundle(JSON.stringify(this.visualEvidence.candidate),this.build));this.visualReference=evidenceReference(this.visualEvidence);this.touch();}}
- private unloadVisual(){this.visualGeneration++;this.releaseVisualURLs();this.visualEvidence=undefined;this.visualBusy=false;this.visualError='';this.visualMessage='Evidence unloaded. Its reference is retained with this draft.';this.touch();}
+ private unloadVisual(){this.visualGeneration++;this.assessmentGeneration++;this.assessmentBusy=false;this.visualAssessment=undefined;this.releaseVisualURLs();this.visualEvidence=undefined;this.visualBusy=false;this.visualError='';this.visualMessage='Evidence unloaded. Its reference is retained with this draft.';this.touch();}
 
 
 	get previewCSS() { return ''; }
@@ -134,7 +178,7 @@ export class ThemeReviewApp extends LitElement {
 		return this;
 	}
 	connectedCallback() { super.connectedCallback(); if (this.hasUpdated) this.connect(); }
-	disconnectedCallback() { this.visualGeneration++;this.visualBusy=false;this.releaseVisualURLs(); this.documentTheme?.disconnect(); this.documentTheme = undefined; this.intake.invalidate(); this.intake.clearDrag(); this.lifecycle?.abort(); this.pendingRequests.clear(); this.listeningDocuments.clear(); this.candidatePreview = undefined; super.disconnectedCallback(); }
+	disconnectedCallback() { this.assessmentGeneration++;this.assessmentBusy=false;this.visualGeneration++;this.visualBusy=false;this.releaseVisualURLs(); this.documentTheme?.disconnect(); this.documentTheme = undefined; this.intake.invalidate(); this.intake.clearDrag(); this.lifecycle?.abort(); this.pendingRequests.clear(); this.listeningDocuments.clear(); this.candidatePreview = undefined; super.disconnectedCallback(); }
 	protected firstUpdated() { this.connect(); }
 	protected updated() {
 		if (this.pageAppearance === 'candidate') this.documentTheme?.apply(this.workspace.presentation, {direction:this.direction,appearance:this.workspace.previewAppearance});
@@ -456,7 +500,7 @@ export class ThemeReviewApp extends LitElement {
 						<details class="review-details"><summary>Diagnostics and review scope</summary><p>Every shipped specimen is available in the full sticker sheet. Potential source impact helps focus review without pruning any required cases. Unknown dependencies expand the selection; unavailable evidence does not mean no impact. A rendered case is not a passed interaction or accessibility test.</p>${theme.diagnostics.length ? html`<ul>${theme.diagnostics.map(d=>html`<li>${d.message}</li>`)}</ul>` : html`<p>No token diagnostics reported. Review contrast, focus, text growth and workflows in context.</p>`}<p>Exports contain source options, compiled CSS, resolved tokens, dependency data, build identity and recorded preview coverage. Reopen using this same documentation build. The JSON does not include an offline copy of the site.</p><p>This is a local candidate. Official library changes require library review; consuming teams review their own customizations. Export does not submit or adopt a change.</p>${this.build ? html`<p>Build <code>${this.build.fingerprint}</code></p>` : nothing}<p>Candidate <code>${this.workspace.pair ? this.workspace.identity : candidate.id}</code></p></details>
 					</section>
 				</div>
-                ${visualEvidenceTemplate({evidence:this.visualEvidence,reference:this.visualReference,sourceHash:this.workspace.identity,urls:this.visualURLs,error:this.visualError,message:this.visualMessage,busy:this.visualBusy,enabled:!!this.build,open:event=>void this.importVisual(event),download:()=>this.downloadVisual(),openCandidate:()=>this.openVisualCandidate(),clear:()=>this.unloadVisual()})}
+                ${visualEvidenceTemplate({evidence:this.visualEvidence,reference:this.visualReference,sourceHash:this.workspace.identity,urls:this.visualURLs,error:this.visualError,message:this.visualMessage,busy:this.visualBusy,enabled:!!this.build,open:event=>void this.importVisual(event),download:()=>this.downloadVisual(),openCandidate:()=>this.openVisualCandidate(),clear:()=>this.unloadVisual(),assessment:this.visualAssessment,assessmentRevision:this.assessmentRevision,assessmentBusy:this.assessmentBusy,assessmentError:this.assessmentError,assessmentMessage:this.assessmentMessage,saveAssessment:(key,event)=>this.saveAssessment(key,event),openAssessment:event=>void this.openAssessment(event),downloadAssessment:()=>this.downloadAssessment()})}
 			</main>
 			<footer class="site-footer"><span>en-reve · A working design system</span><a href="#theme-review">Back to top ↑</a></footer>
 			${this.flagged ? html`<a class="progress-return" href="http://127.0.0.1:4177">Progress Report</a>` : nothing}

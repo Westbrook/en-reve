@@ -211,3 +211,27 @@ CSS pixel widths. This opens the native compact navigation disclosure only in it
 authored narrow layout. Conditions are validated and bound into fixture identity;
 matching actions retain ordinary strict locator errors. Final state checks remain
 mandatory for the declared interactive result, including visible expanded content.
+
+## Local visual assessments
+
+Theme Review keeps human assessment separate from immutable capture outcomes.
+For each row, select **Unassessed**, **Intentional change**, or **Suspected
+regression**, add a rationale, and save. Follow-up notes can remain open or be
+resolved independently. Missing/failed/omitted captures accept notes but cannot
+receive a visual classification. A matching screenshot is not automatically an
+intentional or accepted result.
+
+Changing the draft disables assessment editing until its captured source is
+restored. Notes remain exportable while stale. **Export assessment** writes a
+separate JSON file tied to the exact evidence manifest, baseline, candidate,
+build and individual rows. **Import assessment** rejects changed or mismatched
+files without replacing saved notes. It never modifies machine receipts or
+promotes a visual baseline. This is local reviewer opinion, not authenticated
+approval or managed adoption.
+
+Saved notes live in this page session, including unload/reload of the same
+available evidence; export before closing or refreshing. Keep the candidate,
+visual evidence, assessment and matching build together for offline reopening.
+An import interrupted by a draft/evidence change cannot replace newer work.
+Different sets of available image artifacts have separate session assessments;
+restore complete images before importing a classified assessment.

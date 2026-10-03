@@ -197,3 +197,32 @@ This checkpoint does not establish the full72-state or70-initial-case matrix.
 Remaining workflow/specimen states, dense/scoped candidates, local human assessment
 controls and the final requirement audit remain in scope. Mechanical differences
 do not grant design acceptance; manual and managed-adoption gates remain separate.
+
+## Local assessment checkpoint
+
+Theme Review now separates human classifications and follow-up notes from capture
+outcomes. Each row starts unassessed. Complete images can be classified as an
+intentional change or suspected regression with a rationale; missing/failed/omitted
+rows accept notes without claiming a visual classification. Open/resolved follow-up
+status is independent of matching pixels. Editing is disabled when the draft differs
+from the captured candidate, while saved notes remain exportable.
+
+Assessment JSON binds the exact manifest, baseline, candidate, build and row
+identities. Imports reject corrupted or mismatched records without replacing prior
+notes; successful imports reset unsaved native form text. Imports that finish after
+a draft change cannot overwrite current work. Session history preserves notes when
+the same available evidence is unloaded and reopened. Explicit export is required
+before refreshing or closing the page. Local opinions do not authenticate a reviewer,
+adopt a theme, change a baseline or establish manual acceptance.
+
+Thirty owning Node checks and the unchanged core471/docs57 semantic baseline pass.
+Eighteen browser journeys pass across Chromium, Firefox and WebKit: assessment
+editing/import/recovery, stale drafts, unavailable captures, offline roundtrip,
+late-import protection and GitHub Pages paths. Both deployment builds are qualified.
+The first interrupted browser attempt exposed test locator/native-option assertion
+issues; it is retained separately, and the corrected run has no skips or retries.
+See `apps/docs/tests/verification-visual-assessment-20261003.json`.
+
+The remaining implementation is the complete authored specimen/workflow state,
+density and scope catalogue, followed by full acquisition and the final requirement
+by requirement audit. Managed adoption and physical/manual gates remain separate.

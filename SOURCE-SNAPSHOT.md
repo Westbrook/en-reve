@@ -302,3 +302,7 @@ Local main `82005a169a984296b8438d4c987fbea1b41821c3` adds observable state chec
 ## Native action and responsive fixture checkpoint
 
 Local main `41a0330b30b3c2397b1d074e3114b725bb4be113` adds native file and pointer actions, explicit viewport conditions and49 additional authored states awaiting full acquisition. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Local visual assessment checkpoint
+
+Local main `118f22447c0e9997d2462cca3d9bbb732e4c1cb9` adds separate local classifications and notes tied to exact visual evidence, with import/export, stale-draft protection and offline reopening. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
