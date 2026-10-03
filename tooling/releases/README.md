@@ -77,9 +77,10 @@ SSR compatibility or performance; declared records and live evidence remain
 necessary.
 
 The initial implementation does not select a submission service, grant an adoption
-authority, enforce time-based deprecation windows, or generate interactive old/new
-demos. Those surfaces consume this record and supply evidence links as they become
-available.
+authority or enforce time-based deprecation windows. The
+[interactive version review packager](REVIEW.md) now consumes the exact release
+record and two original documentation builds, with mapped live scenarios and
+version-bound feedback. This does not adopt a release or qualify missing evidence.
 
 ## Pending theme migration
 

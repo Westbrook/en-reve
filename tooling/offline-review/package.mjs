@@ -1,33 +1,17 @@
+import { inspectBuild, copyBuild } from './build.mjs';
 import { readFile, mkdir, writeFile, rm, lstat } from 'node:fs/promises';
-import { dirname, resolve, sep } from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { resolve, sep } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { hashValue, stableStringify } from '@en-reve/tokens';
-import { digest, inventory, safePath, verifyPackage } from './runtime.mjs';
+import { inventory, verifyPackage } from './runtime.mjs';
 
 /** Preserve exact production bytes. Candidate semantics remain owned by that build. */
 export async function packageReview({ buildDirectory, candidateFile, outputDirectory }) {
   const buildRoot = resolve(buildDirectory), output = resolve(outputDirectory);
   if (output === buildRoot || output.startsWith(buildRoot + sep) || buildRoot.startsWith(output + sep)) throw new Error('Output must be separate from the build');
-  const assets = await inventory(buildRoot);
-  const buildBytes = await readFile(resolve(buildRoot, 'review-build.json'));
-  const build = JSON.parse(buildBytes);
-  if (build.schemaVersion !== 1 || !/^sha256:[a-f0-9]{64}$/.test(build.fingerprint) || !Array.isArray(build.assets) || !Array.isArray(build.pages) || !Array.isArray(build.caseIds)) throw new Error('Invalid review build');
-  const expected = new Map();
-  for (const entry of build.assets) {
-    safePath(entry.path);
-    if (expected.has(entry.path) || entry.path === 'review-build.json') throw new Error('Duplicate or invalid build entry');
-    expected.set(entry.path, entry.sha256);
-  }
-  for (const entry of assets.filter(entry => entry.path !== 'review-build.json')) {
-    if (expected.get(entry.path) !== entry.sha256) throw new Error('Build integrity mismatch: ' + entry.path);
-    expected.delete(entry.path);
-  }
-  if (expected.size) throw new Error('Build is missing assets');
+  const snapshot = await inspectBuild(buildRoot);
+  const { build, assets } = snapshot;
   if (!assets.some(entry => entry.path === 'theme-review.html')) throw new Error('Theme Review page is missing');
-  for (const entry of assets.filter(entry => entry.path.endsWith('.html'))) {
-    const text = await readFile(resolve(buildRoot, entry.path), 'utf8');
-    if (!text.includes(`<meta name="en-review-build" content="${build.fingerprint}">`) || /<base\b/i.test(text)) throw new Error('Use the original bound build, without a hosting base transformation: ' + entry.path);
-  }
   const candidateStat = await lstat(candidateFile);
   if (!candidateStat.isFile() || candidateStat.size > 8_000_000) throw new Error('Candidate must be a regular JSON file under 8 MB');
   const candidateBytes = await readFile(candidateFile);
@@ -38,12 +22,7 @@ export async function packageReview({ buildDirectory, candidateFile, outputDirec
   // Exclusive creation: never replace a reviewer package or a preexisting path.
   await mkdir(output);
   try {
-    for (const entry of assets) {
-      const bytes = await readFile(resolve(buildRoot, entry.path));
-      if (digest(bytes) !== entry.sha256) throw new Error('Build changed during packaging');
-      const target = resolve(output, 'site', entry.path);
-      await mkdir(dirname(target), { recursive: true }); await writeFile(target, bytes, { flag: 'wx' });
-    }
+    await copyBuild(snapshot, resolve(output, 'site'));
     await writeFile(resolve(output, 'candidate.json'), candidateBytes, { flag: 'wx' });
     await writeFile(resolve(output, 'serve.mjs'), await readFile(new URL('./runtime.mjs', import.meta.url)), { flag: 'wx' });
     await writeFile(resolve(output, 'index.html'), await readFile(new URL('./index.html', import.meta.url)), { flag: 'wx' });

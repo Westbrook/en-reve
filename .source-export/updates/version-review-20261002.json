@@ -1,0 +1,29 @@
+{
+  "createdAt": "2026-10-03T00:10:43.602813+00:00",
+  "sourceCommit": "e5a648c2db3b2df247fffe8f53f7c38e4fb7683c",
+  "previousSourceMain": "53126ea3db6ae5d7c94e4cd1cfd0840aa9fb6e85",
+  "taskPaths": [
+    "apps/docs/guides.html",
+    "apps/docs/tests/README.md",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/verification-version-review-20261002.json",
+    "apps/docs/tests/version-review.spec.ts",
+    "plans/experience.md",
+    "plans/version-review-2026-10-02.md",
+    "tooling/offline-review/build.mjs",
+    "tooling/offline-review/package.mjs",
+    "tooling/offline-review/runtime.mjs",
+    "tooling/releases/README.md",
+    "tooling/releases/REVIEW.md",
+    "tooling/releases/review-client.js",
+    "tooling/releases/review-package.mjs",
+    "tooling/releases/review-package.test.mjs",
+    "tooling/releases/review-server.mjs",
+    "tooling/releases/review.css",
+    "tooling/releases/review.html",
+    "tooling/releases/scoped-fixture.mjs",
+    "tooling/testing/pathways.mjs"
+  ],
+  "qualification": "Interactive version review. Twelve Node controls, three version browser cases and twelve handbook/offline regression cases pass; physical/manual testing remains separate.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

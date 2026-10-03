@@ -250,3 +250,7 @@ Local main `d5c757027acc158d9eb8e53a7a0eb7fd5331f452` delivers the handbook and 
 ## Offline review checkpoint
 
 Local main `53126ea3db6ae5d7c94e4cd1cfd0840aa9fb6e85` delivers portable offline candidate review. See `plans/offline-review-2026-10-02.md` for verification and remaining limits.
+
+## Interactive version review checkpoint
+
+Local main `e5a648c2db3b2df247fffe8f53f7c38e4fb7683c` delivers interactive isolated version review. See `plans/version-review-2026-10-02.md` for verification and remaining limits.

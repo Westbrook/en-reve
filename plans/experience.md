@@ -9,8 +9,10 @@ layers have separate receipts in the [consumer audit](consumer-evidence-audit-20
 Physical/manual acceptance remains open in the [support ledger](support-coverage.md).
 Portable exact-build offline candidate review is implemented in
 [the offline review tooling](../tooling/offline-review/README.md). Managed
-submission/adoption infrastructure and comprehensive interactive old/new version
-delivery remain separate work; no service, authority or adoption transport is selected here.
+submission/adoption infrastructure remains separate; no service, authority or
+adoption transport is selected here. [Interactive old/new release review](../tooling/releases/REVIEW.md)
+now supplies exact paired builds, authored scenario mappings and version-bound
+feedback. Actual acceptance and missing release evidence remain explicit.
 
 ### Historical implementation checkpoint
 

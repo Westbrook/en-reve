@@ -384,3 +384,12 @@ baseline/candidate paint, re-export and runtime errors across the maintained
 engines. This verifies disconnected loopback delivery, not physical connectivity,
 manual acceptance or adoption. Package/server controls live in
 `tooling/offline-review/offline-review.test.mjs`.
+
+## Interactive version review
+
+`version-review.spec.ts` exercises separately served production builds, control/storage
+isolation, responsive layouts and exact-version feedback round-trip/rejection with
+external requests blocked. `EN_VERSION_REVIEW_BEFORE_BUILD` supplies an original
+baseline build; without it the test is explicitly a same-build sample fixture.
+The package controls and release-record reproduction live in
+`tooling/releases/review-package.test.mjs`. Neither establishes release approval.

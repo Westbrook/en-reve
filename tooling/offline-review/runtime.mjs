@@ -22,21 +22,37 @@ export async function inventory(root, prefix = '') {
   }
   return files;
 }
-export async function verifyPackage(root) {
-  const actual = await inventory(root);
-  const manifest = JSON.parse(await readFile(resolve(root, 'offline-review.json'), 'utf8'));
-  if (manifest.schema !== 'en-reve/offline-review' || manifest.schemaVersion !== 1 || !Array.isArray(manifest.files)) throw new Error('Unsupported offline review package');
+export async function verifyFiles(root, files, manifestPath, actual = null) {
+  actual ??= await inventory(root);
   const expected = new Map();
-  for (const entry of manifest.files) {
+  for (const entry of files) {
     safePath(entry.path);
-    if (expected.has(entry.path) || entry.path === 'offline-review.json' || !/^sha256:[a-f0-9]{64}$/.test(entry.sha256)) throw new Error('Invalid package file record');
+    if (expected.has(entry.path) || entry.path === manifestPath || !/^sha256:[a-f0-9]{64}$/.test(entry.sha256)) throw new Error('Invalid package file record');
     expected.set(entry.path, entry.sha256);
   }
-  for (const entry of actual.filter(entry => entry.path !== 'offline-review.json')) {
+  for (const entry of actual.filter(entry => entry.path !== manifestPath)) {
     if (expected.get(entry.path) !== entry.sha256) throw new Error('Package integrity mismatch: ' + entry.path);
     expected.delete(entry.path);
   }
   if (expected.size) throw new Error('Missing package files: ' + [...expected.keys()].join(', '));
+}
+
+export async function readVerifiedFile(root, path, expectedDigest) {
+  safePath(path);
+  const absolute = resolve(root, path);
+  for (let current = absolute; current !== root; current = dirname(current)) {
+    if ((await lstat(current)).isSymbolicLink()) throw new Error('Package changed: symlink');
+  }
+  const bytes = await readFile(absolute);
+  if (digest(bytes) !== expectedDigest) throw new Error('Package changed: ' + path);
+  return bytes;
+}
+
+export async function verifyPackage(root) {
+  const actual = await inventory(root);
+  const manifest = JSON.parse(await readFile(resolve(root, 'offline-review.json'), 'utf8'));
+  if (manifest.schema !== 'en-reve/offline-review' || manifest.schemaVersion !== 1 || !Array.isArray(manifest.files)) throw new Error('Unsupported offline review package');
+  await verifyFiles(root, manifest.files, 'offline-review.json', actual);
   for (const required of ['serve.mjs', 'site/review-build.json', 'site/theme-review.html', 'candidate.json', 'index.html']) {
     if (!manifest.files.some(entry => entry.path === required)) throw new Error('Missing required package entry: ' + required);
   }
@@ -66,12 +82,7 @@ export async function startOfflineReview(root, { port = 0 } = {}) {
       }
       if (!hashes.has(path)) { response.writeHead(404).end(); return; }
       // Check the actual bytes immediately before delivery as well as at startup.
-      const absolute = resolve(root, path);
-      for (let current = absolute; current !== root; current = dirname(current)) {
-        if ((await lstat(current)).isSymbolicLink()) throw new Error('Package changed: symlink');
-      }
-      const bytes = await readFile(absolute);
-      if (digest(bytes) !== hashes.get(path)) throw new Error('Package changed: ' + path);
+      const bytes = await readVerifiedFile(root, path, hashes.get(path));
       response.writeHead(200, {
         'Content-Type': mime[extname(path)] ?? 'application/octet-stream',
         'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff',
