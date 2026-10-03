@@ -60,7 +60,7 @@ export function attachDocumentTheme({ root, selector, styleAttribute = 'data-en-
   let writtenAppearance: Appearance | undefined;
   let writtenName: string | undefined;
 
-  const connected = () => !disconnected && root.isConnected && root.ownerDocument === document && Boolean(document.head);
+  const connected = () => !disconnected && root.isConnected && root.ownerDocument === document && Boolean(document.body ?? document.head);
   const restoreDirection = () => {
     if (writtenDirection !== undefined && html.getAttribute('dir') === writtenDirection && original) {
       if (original.dir === null) html.removeAttribute('dir');
@@ -77,7 +77,10 @@ export function attachDocumentTheme({ root, selector, styleAttribute = 'data-en-
   };
   const refresh = (): boolean => {
     if (!applied || !connected()) return false;
-    if (document.head.lastElementChild !== style) document.head.append(style);
+    // Native recipe styles may be loaded by body content. Keep the owned
+    // candidate after them without moving or replacing application nodes.
+    const styleParent = document.body ?? document.head;
+    if (styleParent.lastElementChild !== style) styleParent.append(style);
     html.setAttribute('data-en-theme', applied.theme.name);
     writtenName = applied.theme.name;
     if (manageAppearance) {

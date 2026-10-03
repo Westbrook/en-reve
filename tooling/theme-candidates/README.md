@@ -74,8 +74,26 @@ token observations; popup motion has its own browser suite.
 
 All eleven canonical definitions now carry a trusted `ThemeCompanionRecipe`. Prepared output retains the standard `<id>.css` token pair and adds `<id>.companion.css`, with independent identity and file digest in the manifest. Load token CSS first and the sidecar second beneath the named explicit theme/appearance boundary. Automatic appearance uses matching light/dark media rules. Showcase's Download CSS combines both files for application use. The build-bound JSON outer envelope includes a regenerated companion; reopen rejects altered companion data. See [the adoption report](../../plans/theme-inspired-adoption.md) for source mappings and limitations.
 
+Finite component `presentation` keys can bind typed token IDs through `roles` to
+documented public Parts and native helpers, alongside registered `tokens` hook
+assignments. Imported data supplies no selectors or CSS. Trusted helper code owns
+the allowed declarations, forced-color guards, target floors and size behavior.
+Companion CSS uses named container style queries to isolate nested theme
+boundaries, including repeated same-name themes, and direct rules for a matching
+boundary host/native helper. It reserves `--en-theme-companion` in each full
+boundary's `container-name` list without adding size containment. Consumer
+`container-name` or `container` declarations must preserve that name; omitting it
+can break presentation and nested isolation. See the
+[authoring contract](../../plans/theme-api-authoring-contract.md) for browser
+support, composition and cascade behavior.
+
 The Web Awesome-inspired pair uses the Default theme and palette from 3.13.0, with documented contrast adaptations. See [its mapping and verification report](../../plans/web-awesome-theme.md). The native comparison remains an isolated sub-project.
 
-The Chakra UI-inspired pair adapts Chakra's teal palette, neutral surfaces, system typography and rounded geometry into independent light and dark branches. Its [source mapping](./inspired/chakra-mapping.md) records the reference version and the contrast adaptations used for En Reve's controls.
+The Chakra UI-inspired pair maps Chakra UI 3.37.0's default neutral palette,
+component geometry, typography, state paint and surface sections into independent
+light and dark branches. Its [source mapping](./inspired/chakra-mapping.md) and
+[complete component crosswalk](./inspired/chakra-component-mapping.json) distinguish
+public controls, composed equivalents and anatomy limits across the reference
+overview. Source mapping is separate from browser qualification and acceptance.
 
 The three process groups register the unchanged shared case bodies from the actual catalogue. The compatibility `catalogue.test.mjs` file still runs the entire catalogue in one process for diagnostic baseline comparisons; do not select it together with the three groups. `test:theme` selects only the groups and caps the whole Node stage at three workers.

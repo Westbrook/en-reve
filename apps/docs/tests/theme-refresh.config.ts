@@ -11,7 +11,7 @@ const externalURL = process.env.EN_DOCS_ORIGIN ?? process.env.EN_WORKFLOW_BASE_U
 export default defineConfig({
   forbidOnly: true,
 	...base,
-	testMatch: 'theme-refresh.spec.ts',
+	testMatch: ['theme-refresh.spec.ts', 'chakra-component-fidelity.spec.ts'],
 	workers: 3,
 	timeout: 120_000,
 	outputDir: resolve(output, 'artifacts'),

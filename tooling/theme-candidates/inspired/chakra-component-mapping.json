@@ -1,0 +1,4678 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Authored Chakra reference-to-public-control crosswalk. This documentation is not executable theme configuration or qualification evidence.",
+  "reference": {
+    "package": "@chakra-ui/react",
+    "version": "3.37.0",
+    "tag": "@chakra-ui/react@3.37.0",
+    "commit": "2e7517745cff2fcde0b8012f136cf99611ff262a",
+    "overview": "https://chakra-ui.com/docs/components/concepts/overview",
+    "palette": "Default neutral gray colorPalette in light and dark",
+    "sourceRoot": "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/"
+  },
+  "authoring": {
+    "definition": "tooling/theme-candidates/definitions.json#chakra-inspired",
+    "managedBranches": [
+      "tooling/theme-candidates/inspired/chakra.light.json",
+      "tooling/theme-candidates/inspired/chakra.dark.json"
+    ],
+    "trustedCompanionHelpers": "packages/tokens/src/companion/",
+    "contract": "plans/theme-api-authoring-contract.md",
+    "grammar": "Finite target/presentation keys bind typed token IDs to fixed public Parts/native helpers. Imported data cannot provide CSS, selectors, properties, HTML or arbitrary role names.",
+    "boundary": "Named container style queries select the nearest full data-en-theme boundary, including repeated names; direct rules include matching boundary hosts/native helpers, and auto light/dark follows matching media. Every full boundary reserves --en-theme-companion in container-name; consumer container-name/container declarations must retain it or presentation and nested isolation can fail. No container-type or size containment is added. Full themes reset optional pins; partial overrides preserve unspecified pins.",
+    "protectedBehavior": [
+      "documented custom-property hooks",
+      "content and minimum/coarse targets",
+      "keyboard and editing semantics",
+      "native modality and overlay positioning",
+      "forced colors",
+      "reduced motion",
+      "RTL logical layout"
+    ]
+  },
+  "classificationDefinitions": {
+    "component-equivalent": "Existing component/native helper exposes relevant visual controls; family limits still apply.",
+    "adapted-equivalent": "Related En Reve component is styled through public controls, with explicit anatomy or behavior differences.",
+    "authored-composition": "Semantic native markup or existing components can be composed; no dedicated Chakra-equivalent component is claimed.",
+    "layout-utility": "Consumer-owned layout/position/overflow utility; shared tokens are available.",
+    "runtime-utility": "Behavior/context/rendering service, outside aesthetic theme compilation.",
+    "no-counterpart": "No corresponding En Reve component; nearby components must not be presented as feature equivalents."
+  },
+  "overviewComponents": [
+    {
+      "name": "Aspect Ratio",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Bleed",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Box",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Center (Absolute)",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Center",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Container",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Flex",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "en-stack or authored CSS layout",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Float",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Grid",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Group",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "en-stack or authored CSS layout",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Scroll Area",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Separator",
+      "category": "Layout",
+      "classification": "component-equivalent",
+      "family": "layout",
+      "enReveEquivalent": ".en-divider",
+      "scope": "Source solid/sm1px maps existing native divider with color.line and --en-divider-color; optional dashed/dotted variants remain authored CSS."
+    },
+    {
+      "name": "SimpleGrid",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "authored CSS/native HTML",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Stack",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "en-stack or authored CSS layout",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Wrap",
+      "category": "Layout",
+      "classification": "layout-utility",
+      "family": "layout",
+      "enReveEquivalent": "en-stack or authored CSS layout",
+      "scope": "Layout/overflow/positioning is consumer-owned; use shared space, layout and line tokens. No component recipe equivalence is asserted."
+    },
+    {
+      "name": "Splitter",
+      "category": "Layout",
+      "classification": "component-equivalent",
+      "family": "splitter",
+      "enReveEquivalent": "en-splitter, en-split-view",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Blockquote",
+      "category": "Typography",
+      "classification": "component-equivalent",
+      "family": "prose",
+      "enReveEquivalent": ".en-recipe-quote / .en-prose blockquote",
+      "scope": "Finite quote/subtle and prose/content map source default inset/border/gap. Source caption/icon content remains authored."
+    },
+    {
+      "name": "List",
+      "category": "Typography",
+      "classification": "component-equivalent",
+      "family": "prose",
+      "enReveEquivalent": ".en-prose ul / .en-prose ol",
+      "scope": "Finite prose/content maps neutral subtle marker ink; keep native list semantics, indentation and consumer-supplied gap."
+    },
+    {
+      "name": "Mark",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "prose",
+      "enReveEquivalent": "semantic HTML inside .en-prose or .en-body",
+      "scope": "Shared typography/rhythm is available; specialized source quote/marker/highlight anatomy remains authored content."
+    },
+    {
+      "name": "Prose",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "prose",
+      "enReveEquivalent": "semantic HTML inside .en-prose or .en-body",
+      "scope": "Public .en-prose body/measure/rhythm plus finite quote/list descendant presentation; no complete Chakra prose snippet equivalence claim."
+    },
+    {
+      "name": "Highlight",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "prose",
+      "enReveEquivalent": "semantic HTML inside .en-prose or .en-body",
+      "scope": "Shared typography/rhythm is available; specialized source quote/marker/highlight anatomy remains authored content."
+    },
+    {
+      "name": "Code",
+      "category": "Typography",
+      "classification": "component-equivalent",
+      "family": "code",
+      "enReveEquivalent": "code.en-code",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Code Block",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "code",
+      "enReveEquivalent": "codeBlockTemplate",
+      "scope": "Exported label/code/optional-copy composition uses shared spacing/radius/surface tokens; pre uses fixed monospace. No public syntax/header/line/diff controls."
+    },
+    {
+      "name": "Kbd",
+      "category": "Typography",
+      "classification": "component-equivalent",
+      "family": "code",
+      "enReveEquivalent": "kbd.en-keycap",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Em",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "typography",
+      "enReveEquivalent": "semantic HTML with .en-body/.en-heading-small/.en-heading-medium/.en-heading-large",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Heading",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "typography",
+      "enReveEquivalent": "semantic HTML with .en-body/.en-heading-small/.en-heading-medium/.en-heading-large",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Text",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "typography",
+      "enReveEquivalent": "semantic HTML with .en-body/.en-heading-small/.en-heading-medium/.en-heading-large",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Link",
+      "category": "Typography",
+      "classification": "component-equivalent",
+      "family": "link",
+      "enReveEquivalent": "en-link",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Link Overlay",
+      "category": "Typography",
+      "classification": "authored-composition",
+      "family": "link",
+      "enReveEquivalent": "en-link or .en-link inside authored layout",
+      "scope": "Theme link paint applies; expanded overlay click geometry is application-owned."
+    },
+    {
+      "name": "Rich Text Editor",
+      "category": "Typography",
+      "classification": "adapted-equivalent",
+      "family": "editor",
+      "enReveEquivalent": "en-rich-text-editor",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Button",
+      "category": "Buttons",
+      "classification": "component-equivalent",
+      "family": "button",
+      "enReveEquivalent": "en-button / .en-button; delivered dismiss Parts for close actions",
+      "scope": "Button recipe and protected icon/dismiss targets; accessible names and close behavior remain with the owning component."
+    },
+    {
+      "name": "Close Button",
+      "category": "Buttons",
+      "classification": "authored-composition",
+      "family": "button",
+      "enReveEquivalent": "en-button / .en-button; delivered dismiss Parts for close actions",
+      "scope": "Button recipe and protected icon/dismiss targets; accessible names and close behavior remain with the owning component."
+    },
+    {
+      "name": "Icon Button",
+      "category": "Buttons",
+      "classification": "authored-composition",
+      "family": "button",
+      "enReveEquivalent": "en-button / .en-button; delivered dismiss Parts for close actions",
+      "scope": "Button recipe and protected icon/dismiss targets; accessible names and close behavior remain with the owning component."
+    },
+    {
+      "name": "Download Trigger",
+      "category": "Buttons",
+      "classification": "authored-composition",
+      "family": "button",
+      "enReveEquivalent": "en-button or native link",
+      "scope": "Theme styles the action; application supplies the download behavior and filename."
+    },
+    {
+      "name": "Date Input",
+      "category": "Date / Time",
+      "classification": "adapted-equivalent",
+      "family": "input",
+      "enReveEquivalent": "en-date-input",
+      "scope": "Native localized date control, not Chakra segmented date fields."
+    },
+    {
+      "name": "Date Picker",
+      "category": "Date / Time",
+      "classification": "component-equivalent",
+      "family": "calendar",
+      "enReveEquivalent": "en-calendar, en-date-picker",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Calendar",
+      "category": "Date / Time",
+      "classification": "component-equivalent",
+      "family": "calendar",
+      "enReveEquivalent": "en-calendar",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Checkbox",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "choice",
+      "enReveEquivalent": "en-checkbox, en-checkbox-group, en-radio, en-radio-group",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Checkbox Card",
+      "category": "Forms",
+      "classification": "authored-composition",
+      "family": "choice",
+      "enReveEquivalent": "en-card with en-checkbox/en-radio",
+      "scope": "Public card/choice styling composes; no source selected-card API or whole-card selection behavior is added."
+    },
+    {
+      "name": "Color Picker",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "color",
+      "enReveEquivalent": "en-color-picker, en-color-plane, en-color-slider, en-color-wheel, en-color-field, en-swatch",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Color Swatch",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "color",
+      "enReveEquivalent": "en-color-picker, en-color-plane, en-color-slider, en-color-wheel, en-color-field, en-swatch",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Editable",
+      "category": "Forms",
+      "classification": "authored-composition",
+      "family": "input",
+      "enReveEquivalent": "en-text-field with authored display/actions",
+      "scope": "No inline edit/preview component; shared input and button styles do not provide its state machine."
+    },
+    {
+      "name": "Field",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "field",
+      "enReveEquivalent": "en-text-field, en-textarea, en-checkbox-group, en-radio-group",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Fieldset",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "field",
+      "enReveEquivalent": "en-text-field, en-textarea, en-checkbox-group, en-radio-group",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "File Upload",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "upload",
+      "enReveEquivalent": "en-file-upload",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Input",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "input",
+      "enReveEquivalent": "en-text-field, en-search-input, en-textarea, en-number-field, en-select, en-date-input, en-time-field, en-color-field, en-otp-field",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Number Input",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "input",
+      "enReveEquivalent": "en-text-field, en-search-input, en-textarea, en-number-field, en-select, en-date-input, en-time-field, en-color-field, en-otp-field",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Password Input",
+      "category": "Forms",
+      "classification": "authored-composition",
+      "family": "input",
+      "enReveEquivalent": "en-text-field type=password",
+      "scope": "Native password editing inherits input styling; reveal/copy/strength composition remains application-owned."
+    },
+    {
+      "name": "Pin Input",
+      "category": "Forms",
+      "classification": "adapted-equivalent",
+      "family": "input",
+      "enReveEquivalent": "en-otp-field",
+      "scope": "Single native OTP input keeps platform editing semantics; no separate-cell styling claim."
+    },
+    {
+      "name": "Radio Card",
+      "category": "Forms",
+      "classification": "authored-composition",
+      "family": "choice",
+      "enReveEquivalent": "en-card with en-checkbox/en-radio",
+      "scope": "Public card/choice styling composes; no source selected-card API or whole-card selection behavior is added."
+    },
+    {
+      "name": "Radio",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "choice",
+      "enReveEquivalent": "en-checkbox, en-checkbox-group, en-radio, en-radio-group",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Rating",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "rating",
+      "enReveEquivalent": "en-rating",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Segmented Control",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "segmented",
+      "enReveEquivalent": "en-segmented-control, en-segmented-item",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Select (Native)",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "input",
+      "enReveEquivalent": "en-select / .en-select",
+      "scope": "Maps Chakra NativeSelect; operating-system option popup is platform-owned."
+    },
+    {
+      "name": "Switch",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "switch",
+      "enReveEquivalent": "en-switch",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Slider",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "slider",
+      "enReveEquivalent": "en-slider, en-range-slider",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Textarea",
+      "category": "Forms",
+      "classification": "component-equivalent",
+      "family": "input",
+      "enReveEquivalent": "en-text-field, en-search-input, en-textarea, en-number-field, en-select, en-date-input, en-time-field, en-color-field, en-otp-field",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Tags Input",
+      "category": "Forms",
+      "classification": "adapted-equivalent",
+      "family": "editor",
+      "enReveEquivalent": "en-token-editor",
+      "scope": "Public token/control presentation maps; En Reve editing data model differs from a list-valued tags input."
+    },
+    {
+      "name": "Combobox",
+      "category": "Collections",
+      "classification": "component-equivalent",
+      "family": "combobox",
+      "enReveEquivalent": "en-combobox",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Listbox",
+      "category": "Collections",
+      "classification": "adapted-equivalent",
+      "family": "combobox",
+      "enReveEquivalent": "en-multiselect / en-selection-collection / .en-listbox",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Select",
+      "category": "Collections",
+      "classification": "adapted-equivalent",
+      "family": "combobox",
+      "enReveEquivalent": "custom selection via en-combobox/en-multiselect; en-select is native",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Tree View",
+      "category": "Collections",
+      "classification": "component-equivalent",
+      "family": "tree",
+      "enReveEquivalent": "en-tree / en-tree-item",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Action Bar",
+      "category": "Overlays",
+      "classification": "authored-composition",
+      "family": "button",
+      "enReveEquivalent": "en-toolbar with en-button",
+      "scope": "Selection-aware floating action-bar composition is consumer-owned."
+    },
+    {
+      "name": "Dialog",
+      "category": "Overlays",
+      "classification": "component-equivalent",
+      "family": "dialog",
+      "enReveEquivalent": "en-dialog",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Drawer",
+      "category": "Overlays",
+      "classification": "component-equivalent",
+      "family": "drawer",
+      "enReveEquivalent": "en-drawer",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Floating Panel",
+      "category": "Overlays",
+      "classification": "no-counterpart",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "No movable/resizable floating window component; en-dialog/en-popover do not add that behavior."
+    },
+    {
+      "name": "Hover Card",
+      "category": "Overlays",
+      "classification": "adapted-equivalent",
+      "family": "hoverCard",
+      "enReveEquivalent": "en-hover-card",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Menu",
+      "category": "Overlays",
+      "classification": "component-equivalent",
+      "family": "menu",
+      "enReveEquivalent": "en-menu / en-context-menu / en-menubar",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Overlay Manager",
+      "category": "Overlays",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Overlay orchestration is framework behavior, not theme paint."
+    },
+    {
+      "name": "Popover",
+      "category": "Overlays",
+      "classification": "component-equivalent",
+      "family": "popover",
+      "enReveEquivalent": "en-popover",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Toggle Tip",
+      "category": "Overlays",
+      "classification": "authored-composition",
+      "family": "popover",
+      "enReveEquivalent": "en-popover with an authored trigger",
+      "scope": "Source click-tooltip composition differs from hover tooltip; preserve En Reve popover semantics."
+    },
+    {
+      "name": "Tooltip",
+      "category": "Overlays",
+      "classification": "component-equivalent",
+      "family": "tooltip",
+      "enReveEquivalent": "en-tooltip",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Accordion",
+      "category": "Disclosure",
+      "classification": "component-equivalent",
+      "family": "accordion",
+      "enReveEquivalent": "en-accordion / en-accordion-item",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Breadcrumb",
+      "category": "Disclosure",
+      "classification": "component-equivalent",
+      "family": "breadcrumb",
+      "enReveEquivalent": "en-breadcrumbs",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Carousel",
+      "category": "Disclosure",
+      "classification": "component-equivalent",
+      "family": "carousel",
+      "enReveEquivalent": "en-carousel",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Collapsible",
+      "category": "Disclosure",
+      "classification": "authored-composition",
+      "family": "accordion",
+      "enReveEquivalent": "en-accordion-item or .en-recipe-disclosure",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Pagination",
+      "category": "Disclosure",
+      "classification": "adapted-equivalent",
+      "family": "pagination",
+      "enReveEquivalent": "en-pagination",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Steps",
+      "category": "Disclosure",
+      "classification": "adapted-equivalent",
+      "family": "steps",
+      "enReveEquivalent": "en-progress-steps / en-progress-step",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Tabs",
+      "category": "Disclosure",
+      "classification": "component-equivalent",
+      "family": "tabs",
+      "enReveEquivalent": "en-tabs / en-tab / en-tab-panel",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Alert",
+      "category": "Feedback",
+      "classification": "component-equivalent",
+      "family": "alert",
+      "enReveEquivalent": "en-alert",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Empty State",
+      "category": "Feedback",
+      "classification": "authored-composition",
+      "family": "card",
+      "enReveEquivalent": "en-card plus native heading/text and en-button",
+      "scope": "No dedicated empty-state component; source icon/title/action composition stays application-owned."
+    },
+    {
+      "name": "Progress Circle",
+      "category": "Feedback",
+      "classification": "no-counterpart",
+      "family": "progress",
+      "enReveEquivalent": "en-progress-bar",
+      "scope": "No determinate circular progress component; en-spinner is only indeterminate."
+    },
+    {
+      "name": "Progress",
+      "category": "Feedback",
+      "classification": "component-equivalent",
+      "family": "progress",
+      "enReveEquivalent": "en-progress-bar",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Skeleton",
+      "category": "Feedback",
+      "classification": "component-equivalent",
+      "family": "skeleton",
+      "enReveEquivalent": "en-skeleton",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Spinner",
+      "category": "Feedback",
+      "classification": "component-equivalent",
+      "family": "spinner",
+      "enReveEquivalent": "en-spinner",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Status",
+      "category": "Feedback",
+      "classification": "adapted-equivalent",
+      "family": "status",
+      "enReveEquivalent": "en-presence status/indicator Parts",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Toast",
+      "category": "Feedback",
+      "classification": "component-equivalent",
+      "family": "toast",
+      "enReveEquivalent": "en-toast / en-toast-region",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Avatar",
+      "category": "Data Display",
+      "classification": "component-equivalent",
+      "family": "avatar",
+      "enReveEquivalent": "en-avatar",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Badge",
+      "category": "Data Display",
+      "classification": "component-equivalent",
+      "family": "badge",
+      "enReveEquivalent": "en-badge",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Card",
+      "category": "Data Display",
+      "classification": "component-equivalent",
+      "family": "card",
+      "enReveEquivalent": "en-card",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Clipboard",
+      "category": "Data Display",
+      "classification": "authored-composition",
+      "family": "button",
+      "enReveEquivalent": "en-button / .en-button",
+      "scope": "The application supplies clipboard read/write and success feedback; theme only styles the action."
+    },
+    {
+      "name": "Image",
+      "category": "Data Display",
+      "classification": "authored-composition",
+      "family": "icon",
+      "enReveEquivalent": "native img",
+      "scope": "Image content, fit and loading layout remain application-owned."
+    },
+    {
+      "name": "Data List",
+      "category": "Data Display",
+      "classification": "adapted-equivalent",
+      "family": "prose",
+      "enReveEquivalent": ".en-recipe-description-list",
+      "scope": "Finite description-list/subtle maps md text,muted label and pair spacing on flat semantic dt/dd; source wrappers/orientation are not added."
+    },
+    {
+      "name": "Icon",
+      "category": "Data Display",
+      "classification": "component-equivalent",
+      "family": "icon",
+      "enReveEquivalent": "en-icon",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Marquee",
+      "category": "Data Display",
+      "classification": "no-counterpart",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "No continuously scrolling marquee component."
+    },
+    {
+      "name": "QR Code",
+      "category": "Data Display",
+      "classification": "no-counterpart",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "No QR-code generation or rendering component."
+    },
+    {
+      "name": "Stat",
+      "category": "Data Display",
+      "classification": "authored-composition",
+      "family": "prose",
+      "enReveEquivalent": "native text with .en-data/.en-heading-medium/.en-metadata",
+      "scope": "No dedicated statistic/trend component; semantic font roles can be composed."
+    },
+    {
+      "name": "Table",
+      "category": "Data Display",
+      "classification": "component-equivalent",
+      "family": "table",
+      "enReveEquivalent": "en-table / en-data-table / .en-table-native",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Tag",
+      "category": "Data Display",
+      "classification": "component-equivalent",
+      "family": "tag",
+      "enReveEquivalent": "en-tag",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "Timeline",
+      "category": "Data Display",
+      "classification": "adapted-equivalent",
+      "family": "timeline",
+      "enReveEquivalent": "en-activity-feed / en-activity-item",
+      "scope": "Use the family mapping, public control bindings and adaptations below."
+    },
+    {
+      "name": "LocaleProvider",
+      "category": "Internationalization",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Locale and formatting behavior belongs to application/native Intl services; theme adds no provider."
+    },
+    {
+      "name": "FormatNumber",
+      "category": "Internationalization",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Locale and formatting behavior belongs to application/native Intl services; theme adds no provider."
+    },
+    {
+      "name": "FormatByte",
+      "category": "Internationalization",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Locale and formatting behavior belongs to application/native Intl services; theme adds no provider."
+    },
+    {
+      "name": "Checkmark",
+      "category": "Utilities",
+      "classification": "authored-composition",
+      "family": "choice",
+      "enReveEquivalent": "en-checkbox/en-radio internal public control Parts",
+      "scope": "Source decorative mark utilities correspond to control mark appearance; no standalone mark component is added."
+    },
+    {
+      "name": "Radiomark",
+      "category": "Utilities",
+      "classification": "authored-composition",
+      "family": "choice",
+      "enReveEquivalent": "en-checkbox/en-radio internal public control Parts",
+      "scope": "Source decorative mark utilities correspond to control mark appearance; no standalone mark component is added."
+    },
+    {
+      "name": "ClientOnly",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Rendering/context/conditional/mount lifecycle utility. Chakra Presence is not En Reve user-status en-presence."
+    },
+    {
+      "name": "EnvironmentProvider",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Rendering/context/conditional/mount lifecycle utility. Chakra Presence is not En Reve user-status en-presence."
+    },
+    {
+      "name": "For",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Rendering/context/conditional/mount lifecycle utility. Chakra Presence is not En Reve user-status en-presence."
+    },
+    {
+      "name": "Presence",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Rendering/context/conditional/mount lifecycle utility. Chakra Presence is not En Reve user-status en-presence."
+    },
+    {
+      "name": "Portal",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Rendering/context/conditional/mount lifecycle utility. Chakra Presence is not En Reve user-status en-presence."
+    },
+    {
+      "name": "Show",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "",
+      "scope": "Rendering/context/conditional/mount lifecycle utility. Chakra Presence is not En Reve user-status en-presence."
+    },
+    {
+      "name": "Skip Nav",
+      "category": "Utilities",
+      "classification": "authored-composition",
+      "family": "link",
+      "enReveEquivalent": "native .en-link with application skip-target semantics",
+      "scope": "The application owns skip target, focus transfer and reveal-on-focus layout."
+    },
+    {
+      "name": "Visually Hidden",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": ".en-sr-only",
+      "scope": "Existing public accessibility helper supplies visually hidden text; no aesthetic theme override."
+    },
+    {
+      "name": "Theme",
+      "category": "Utilities",
+      "classification": "runtime-utility",
+      "family": "utility",
+      "enReveEquivalent": "data-en-theme / data-en-appearance boundaries",
+      "scope": "Explicit En Reve full-theme/partial override and paired appearance boundaries replace React theme-context composition."
+    }
+  ],
+  "families": {
+    "typography": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/heading.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/text-styles.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/tokens/fonts.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/tokens/font-sizes.ts"
+      ],
+      "sourceDefaults": {
+        "body": "md 16px/24px, weight400",
+        "heading": "default xl 20px/30px, weight600; 2xl 24px/32px; 4xl 36px/44px with -0.025em tracking",
+        "font": "Inter followed by platform system fallbacks; mono SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace"
+      },
+      "enReve": {
+        "elements": [],
+        "nativeHelpers": [
+          ".en-body",
+          ".en-prose",
+          ".en-heading-small",
+          ".en-heading-medium",
+          ".en-heading-large",
+          ".en-metadata",
+          ".en-data"
+        ],
+        "tokenFamilies": [
+          "font.body.*",
+          "font.ui.*",
+          "font.input.*",
+          "font.data.*",
+          "font.metadata.*",
+          "font.heading-small.*",
+          "font.heading-medium.*",
+          "font.heading-large.*"
+        ],
+        "companionTargets": [],
+        "publicParts": {},
+        "companionBindings": []
+      },
+      "adaptationsAndLimits": [
+        "Three native heading roles map xl/2xl/4xl; this does not add the complete Chakra heading size API.",
+        "Font stacks name local fonts; no font download or guarantee of identical glyph metrics.",
+        "Native emphasis, HTML heading levels and application paragraph semantics remain authoritative."
+      ]
+    },
+    "prose": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/blockquote.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/list.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/mark.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/data-list.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/stat.ts"
+      ],
+      "sourceDefaults": {
+        "blockquote": "subtle/start: column gap8px, inline20px, start border4px palette.muted; caption14px/20px muted; icon20px",
+        "list": "marker variant: browser list style, fg.subtle markers, optional --list-gap; indicator end gap8px",
+        "mark": "base transparent/inherited color/nowrap; no default variant",
+        "dataList": "md vertical: label muted14px, value14px, root gap16px",
+        "stat": "md: label14px/20px muted, value24px/32px weight600; help12px/16px muted"
+      },
+      "enReve": {
+        "elements": [],
+        "nativeHelpers": [
+          ".en-prose",
+          ".en-body",
+          ".en-metadata",
+          ".en-data",
+          ".en-heading-medium",
+          ".en-recipe-quote",
+          ".en-prose blockquote",
+          ".en-prose ul",
+          ".en-prose ol",
+          ".en-recipe-description-list"
+        ],
+        "tokenFamilies": [
+          "font.body.*",
+          "font.metadata.*",
+          "font.data.*",
+          "color.text",
+          "color.text-muted",
+          "space.4",
+          "space.6",
+          "size.quote-border"
+        ],
+        "companionTargets": [
+          "quote",
+          "prose",
+          "description-list"
+        ],
+        "publicParts": {},
+        "companionBindings": [
+          {
+            "target": "quote",
+            "presentation": "subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "inlinePadding": "theme.typography.quote.inline-padding",
+              "borderWidth": "theme.typography.quote.border-width",
+              "borderColor": "theme.typography.quote.border-color",
+              "gap": "theme.typography.quote.gap"
+            }
+          },
+          {
+            "target": "prose",
+            "presentation": "content",
+            "hookTokens": {},
+            "typedRoles": {
+              "inlinePadding": "theme.typography.quote.inline-padding",
+              "borderWidth": "theme.typography.quote.border-width",
+              "borderColor": "theme.typography.quote.border-color",
+              "gap": "theme.typography.quote.gap",
+              "markerColor": "theme.typography.list.marker-color"
+            }
+          },
+          {
+            "target": "description-list",
+            "presentation": "subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.typography.description-list.font-size",
+              "lineHeight": "theme.typography.description-list.line-height",
+              "labelWeight": "theme.typography.description-list.label-weight",
+              "labelColor": "theme.typography.description-list.label-color",
+              "labelGap": "theme.typography.description-list.label-gap",
+              "itemGap": "theme.typography.description-list.item-gap"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Quote/subtle and prose/content map 20px inline padding,4px muted start border,8px gap and neutral subtle markers through documented helpers; source quotation icons/captions remain authored content.",
+        "Description-list/subtle maps14/20px text,normal400 muted labels,4px within-pair/16px between-pair spacing through flat dt/dd; arbitrary multi-term/grouped descriptions and source orientation remain authored composition.",
+        "Prose retains its established readable measure,16px outer paragraph/list rhythm and24px list indentation. The source list-gap has no invented default.",
+        "Mark/Highlight has no dedicated opt-in helper; arbitrary marked ranges and source variants remain consumer-owned.",
+        "Stat has no dedicated label/value/unit/trend slots. Native text can use mapped heading-medium/body/metadata roles; .en-data retains tabular numerals rather than source proportional numerals."
+      ]
+    },
+    "code": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/code.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/badge.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/kbd.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/code-block.ts"
+      ],
+      "sourceDefaults": {
+        "inlineCode": "subtle/sm: mono12px/16px, min20px, inline6px, radius4px",
+        "kbd": "raised/md: mono14px/20px weight500, min20px, inline4px, radius4px, 1px border with2px bottom, word spacing -0.5em",
+        "codeBlock": "md: mono14px with1.625 line height, padding16px, radius8px, border1px, max content320px, header40px"
+      },
+      "enReve": {
+        "elements": [],
+        "nativeHelpers": [
+          "code.en-code",
+          "kbd.en-keycap"
+        ],
+        "tokenFamilies": [
+          "font.code.family",
+          "radius.control",
+          "color.surface-subtle",
+          "color.text",
+          "color.line"
+        ],
+        "companionTargets": [
+          "code",
+          "keycap"
+        ],
+        "compositionAPIs": [
+          "codeBlockTemplate (packages/primitives/src/templates/patterns.ts)"
+        ],
+        "publicParts": {},
+        "companionBindings": [
+          {
+            "target": "code",
+            "presentation": "code-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.neutral.subtle",
+              "color": "theme.feedback.neutral.foreground",
+              "font-size": "theme.feedback.type.small",
+              "line-height": "theme.feedback.type.small-line",
+              "inline-padding": "theme.feedback.geometry.padding-6",
+              "minimum-size": "theme.feedback.geometry.size-20"
+            }
+          },
+          {
+            "target": "keycap",
+            "presentation": "keycap-raised",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.neutral.subtle",
+              "color": "theme.feedback.neutral.foreground",
+              "border-color": "theme.feedback.neutral.muted",
+              "font-size": "theme.feedback.type.control",
+              "line-height": "theme.feedback.type.control-line",
+              "font-weight": "theme.feedback.type.medium",
+              "inline-padding": "theme.feedback.geometry.gap-4",
+              "minimum-size": "theme.feedback.geometry.size-20"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Inline code keeps inline-flex; preformatted blocks retain block layout.",
+        "Exported codeBlockTemplate supplies an authored label, preformatted code and optional copy callback/button. Its figure/header/pre classes are private pattern bindings, not public companion targets.",
+        "The template uses shared space.4, radius.control and color.surface-subtle; its pre uses fixed monospace and inherited size, so font.code does not currently customize that pre.",
+        "Source syntax rendering, line numbers, focused/diff lines, toolbar layout and expanding content have no supported template controls."
+      ]
+    },
+    "button": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/button.ts"
+      ],
+      "sourceDefaults": {
+        "default": "solid/md",
+        "sizes": "sm36px,md40px,lg44px; inline14/16/20px; text14/14/16px; icon16/20/20px",
+        "shape": "radius4px, weight500",
+        "states": "solid palette.solid/contrast; hover palette.solid at90%; outline and ghost hover palette.subtle; disabled opacity0.5; duration200ms"
+      },
+      "enReve": {
+        "elements": [
+          "en-button",
+          "en-toggle-button"
+        ],
+        "nativeHelpers": [
+          ".en-button"
+        ],
+        "tokenFamilies": [
+          "component.button.*",
+          "size.control-*",
+          "font.ui.*",
+          "radius.control"
+        ],
+        "companionTargets": [
+          "button"
+        ],
+        "publicParts": {
+          "en-button": [
+            "control",
+            "indicator",
+            "label"
+          ],
+          "en-toggle-button": [
+            "control",
+            "indicator",
+            "label"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "button",
+            "variant": "primary",
+            "presentation": "compact",
+            "hookTokens": {
+              "--en-button-rest-background": "theme.button.primary.rest-background",
+              "--en-button-rest-color": "theme.button.primary.rest-color",
+              "--en-button-hover-background": "theme.button.primary.hover-background",
+              "--en-button-hover-color": "theme.button.primary.hover-color",
+              "--en-button-pressed-background": "theme.button.primary.pressed-background",
+              "--en-button-pressed-color": "theme.button.primary.pressed-color",
+              "--en-button-border-color": "theme.button.primary.border-color"
+            },
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "background": "theme.button.primary.rest-background",
+              "color": "theme.button.primary.rest-color",
+              "border": "theme.button.primary.border-color",
+              "duration": "theme.controls.button-duration",
+              "inline-padding-small": "theme.controls.button-padding-small",
+              "inline-padding-medium": "theme.controls.button-padding-medium",
+              "inline-padding-large": "theme.controls.button-padding-large",
+              "gap-small": "theme.controls.button-gap-small",
+              "gap-medium": "theme.controls.button-gap-medium",
+              "gap-large": "theme.controls.button-gap-large",
+              "line-height-small": "theme.controls.line-height-small",
+              "line-height-medium": "theme.controls.line-height-medium",
+              "line-height-large": "theme.controls.line-height-large"
+            }
+          },
+          {
+            "target": "button",
+            "variant": "secondary",
+            "presentation": "compact",
+            "hookTokens": {
+              "--en-button-rest-background": "theme.button.secondary.rest-background",
+              "--en-button-rest-color": "theme.button.secondary.rest-color",
+              "--en-button-hover-background": "theme.button.secondary.hover-background",
+              "--en-button-hover-color": "theme.button.secondary.hover-color",
+              "--en-button-pressed-background": "theme.button.secondary.pressed-background",
+              "--en-button-pressed-color": "theme.button.secondary.pressed-color",
+              "--en-button-border-color": "theme.button.secondary.border-color"
+            },
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "background": "theme.button.secondary.rest-background",
+              "color": "theme.button.secondary.rest-color",
+              "border": "theme.button.secondary.border-color",
+              "duration": "theme.controls.button-duration",
+              "inline-padding-small": "theme.controls.button-padding-small",
+              "inline-padding-medium": "theme.controls.button-padding-medium",
+              "inline-padding-large": "theme.controls.button-padding-large",
+              "gap-small": "theme.controls.button-gap-small",
+              "gap-medium": "theme.controls.button-gap-medium",
+              "gap-large": "theme.controls.button-gap-large",
+              "line-height-small": "theme.controls.line-height-small",
+              "line-height-medium": "theme.controls.line-height-medium",
+              "line-height-large": "theme.controls.line-height-large"
+            }
+          },
+          {
+            "target": "button",
+            "variant": "ghost",
+            "presentation": "compact",
+            "hookTokens": {
+              "--en-button-rest-background": "theme.button.ghost.rest-background",
+              "--en-button-rest-color": "theme.button.ghost.rest-color",
+              "--en-button-hover-background": "theme.button.ghost.hover-background",
+              "--en-button-hover-color": "theme.button.ghost.hover-color",
+              "--en-button-pressed-background": "theme.button.ghost.pressed-background",
+              "--en-button-pressed-color": "theme.button.ghost.pressed-color",
+              "--en-button-border-color": "theme.button.ghost.border-color"
+            },
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "background": "theme.button.ghost.rest-background",
+              "color": "theme.button.ghost.rest-color",
+              "border": "theme.button.ghost.border-color",
+              "duration": "theme.controls.button-duration",
+              "inline-padding-small": "theme.controls.button-padding-small",
+              "inline-padding-medium": "theme.controls.button-padding-medium",
+              "inline-padding-large": "theme.controls.button-padding-large",
+              "gap-small": "theme.controls.button-gap-small",
+              "gap-medium": "theme.controls.button-gap-medium",
+              "gap-large": "theme.controls.button-gap-large",
+              "line-height-small": "theme.controls.line-height-small",
+              "line-height-medium": "theme.controls.line-height-medium",
+              "line-height-large": "theme.controls.line-height-large"
+            }
+          },
+          {
+            "target": "button",
+            "variant": "danger",
+            "presentation": "compact",
+            "hookTokens": {
+              "--en-button-rest-background": "theme.button.danger.rest-background",
+              "--en-button-rest-color": "theme.button.danger.rest-color",
+              "--en-button-hover-background": "theme.button.danger.hover-background",
+              "--en-button-hover-color": "theme.button.danger.hover-color",
+              "--en-button-pressed-background": "theme.button.danger.pressed-background",
+              "--en-button-pressed-color": "theme.button.danger.pressed-color",
+              "--en-button-border-color": "theme.button.danger.border-color"
+            },
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "background": "theme.button.danger.rest-background",
+              "color": "theme.button.danger.rest-color",
+              "border": "theme.button.danger.border-color",
+              "duration": "theme.controls.button-duration",
+              "inline-padding-small": "theme.controls.button-padding-small",
+              "inline-padding-medium": "theme.controls.button-padding-medium",
+              "inline-padding-large": "theme.controls.button-padding-large",
+              "gap-small": "theme.controls.button-gap-small",
+              "gap-medium": "theme.controls.button-gap-medium",
+              "gap-large": "theme.controls.button-gap-large",
+              "line-height-small": "theme.controls.line-height-small",
+              "line-height-medium": "theme.controls.line-height-medium",
+              "line-height-large": "theme.controls.line-height-large"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Primary/secondary/ghost/danger map the four existing En Reve variants; Chakra variant and size APIs are not added.",
+        "Source36px small controls remain subject to En Reve minimum target floors, content wrapping and coarse pointer expansion.",
+        "Opaque solid hover colors model 90% source paint on the canonical panel; arbitrary backgrounds can produce different composites.",
+        "Outline borders use stronger functional boundary colors."
+      ]
+    },
+    "link": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/link.ts"
+      ],
+      "sourceDefaults": {
+        "default": "plain: palette.fg, no rest underline; hover underline at3px offset with currentColor20%; radius2px,gap6px"
+      },
+      "enReve": {
+        "elements": [
+          "en-link"
+        ],
+        "nativeHelpers": [
+          ".en-link"
+        ],
+        "tokenFamilies": [
+          "color.link",
+          "color.action-text",
+          "focus.*"
+        ],
+        "companionTargets": [
+          "link"
+        ],
+        "publicParts": {
+          "en-link": [
+            "control"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "link",
+            "presentation": "plain",
+            "hookTokens": {},
+            "typedRoles": {
+              "color": "color.link",
+              "underline-color": "theme.controls.link-underline",
+              "radius": "theme.controls.link-radius",
+              "gap": "theme.controls.link-gap",
+              "underline-offset": "theme.controls.link-underline-offset"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Native anchor navigation, disabled state, focus and consumer-authored link content remain intact.",
+        "Link Overlay is an application composition; the theme does not expand click regions over unrelated descendants."
+      ]
+    },
+    "field": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/field.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/fieldset.ts"
+      ],
+      "sourceDefaults": {
+        "field": "gap6px;label14/20px weight500;helper12/16px weight400;error12/16px weight500;disabled labelopacity0.5",
+        "fieldset": "md legend14/20px weight500,helper14/20px,gap16px"
+      },
+      "enReve": {
+        "elements": [
+          "en-text-field",
+          "en-textarea",
+          "en-checkbox-group",
+          "en-radio-group"
+        ],
+        "nativeHelpers": [
+          ".en-field",
+          ".en-label",
+          ".en-description",
+          ".en-error",
+          ".en-fieldset",
+          ".en-legend"
+        ],
+        "tokenFamilies": [
+          "font.label-strong.*",
+          "space.label-control",
+          "space.fields"
+        ],
+        "companionTargets": [
+          "form-field"
+        ],
+        "publicParts": {
+          "en-text-field": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-textarea": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-checkbox-group": [
+            "description",
+            "field",
+            "option",
+            "option-content",
+            "options"
+          ],
+          "en-radio-group": [
+            "description",
+            "error",
+            "field",
+            "label",
+            "options"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "form-field",
+            "presentation": "compact",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "helper-size": "theme.controls.helper-size",
+              "helper-line-height": "theme.controls.helper-line-height",
+              "helper-weight": "theme.controls.normal-weight",
+              "error-size": "theme.controls.helper-size",
+              "error-line-height": "theme.controls.helper-line-height",
+              "error-weight": "theme.controls.medium-weight"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Labels, error visibility, validation announcements and fieldset semantics remain component/application behavior."
+      ]
+    },
+    "input": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/input.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/textarea.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/number-input.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/native-select.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/pin-input.ts"
+      ],
+      "sourceDefaults": {
+        "input": "outline/md:40px,transparent background,1px border,inline12px,text14/20px,radius4px;sm36px inline10px;lg44px inline16px",
+        "textarea": "md inline12px/block8px;sm10px/8px;lg16px/12px",
+        "numberInput": "source40px md with24px end control split into stacked steppers",
+        "nativeSelect": "md40px,text14/20px,start12px/end32px,indicator18px/end8px;lg44px",
+        "pinInput": "md40px separate input cells; source shared Input recipe"
+      },
+      "enReve": {
+        "elements": [
+          "en-text-field",
+          "en-search-input",
+          "en-textarea",
+          "en-number-field",
+          "en-select",
+          "en-date-input",
+          "en-time-field",
+          "en-color-field",
+          "en-otp-field"
+        ],
+        "nativeHelpers": [
+          ".en-input",
+          ".en-textarea",
+          ".en-select"
+        ],
+        "tokenFamilies": [
+          "component.input.*",
+          "component.number-step.*",
+          "component.select.*",
+          "size.control-*",
+          "font.input.*"
+        ],
+        "companionTargets": [
+          "text-control",
+          "textarea",
+          "number-field",
+          "native-select",
+          "date-input",
+          "time-field",
+          "color-field",
+          "otp-field"
+        ],
+        "publicParts": {
+          "en-text-field": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-search-input": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-textarea": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-number-field": [
+            "control",
+            "decrement",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "increment",
+            "label",
+            "stepper"
+          ],
+          "en-select": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label",
+            "option",
+            "selected-button",
+            "selected-content"
+          ],
+          "en-date-input": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-time-field": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "format-hint",
+            "label"
+          ],
+          "en-color-field": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-otp-field": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "text-control",
+            "presentation": "outline",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "background": "theme.controls.transparent",
+              "color": "color.text",
+              "border": "color.boundary",
+              "inline-padding-small": "theme.controls.input-padding-small",
+              "inline-padding-medium": "theme.controls.input-padding-medium",
+              "inline-padding-large": "theme.controls.input-padding-large",
+              "line-height-small": "theme.controls.line-height-small",
+              "line-height-medium": "theme.controls.line-height-medium",
+              "line-height-large": "theme.controls.line-height-large"
+            }
+          },
+          {
+            "target": "textarea",
+            "presentation": "compact",
+            "hookTokens": {},
+            "typedRoles": {
+              "block-padding": "theme.controls.textarea-padding",
+              "block-padding-small": "theme.controls.textarea-padding-small",
+              "block-padding-medium": "theme.controls.textarea-padding-medium",
+              "block-padding-large": "theme.controls.textarea-padding-large"
+            }
+          },
+          {
+            "target": "number-field",
+            "presentation": "subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "background": "theme.controls.transparent",
+              "color": "color.text-muted",
+              "hover-background": "color.surface-subtle",
+              "pressed-background": "theme.controls.emphasized"
+            }
+          },
+          {
+            "target": "native-select",
+            "presentation": "compact",
+            "hookTokens": {},
+            "typedRoles": {
+              "end-padding": "theme.controls.select-end",
+              "indicator-size": "theme.controls.select-indicator",
+              "indicator-inset": "theme.controls.select-indicator-inset",
+              "indicator-color": "color.text-muted"
+            }
+          },
+          {
+            "target": "date-input",
+            "presentation": "compact-field",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.date-input.font-size",
+              "line-height": "theme.specialized.date-input.line-height",
+              "font-weight": "theme.specialized.date-input.font-weight",
+              "label-size": "theme.specialized.date-input.label-size",
+              "label-weight": "theme.specialized.date-input.label-weight",
+              "helper-size": "theme.specialized.date-input.helper-size",
+              "helper-line-height": "theme.specialized.date-input.helper-line-height",
+              "helper-weight": "theme.specialized.date-input.helper-weight",
+              "error-weight": "theme.specialized.date-input.error-weight",
+              "field-gap": "theme.specialized.date-input.field-gap",
+              "disabled-opacity": "theme.specialized.date-input.disabled-opacity",
+              "input-padding-small": "theme.specialized.date-input.input-padding-small",
+              "input-padding-medium": "theme.specialized.date-input.input-padding-medium",
+              "input-padding-large": "theme.specialized.date-input.input-padding-large"
+            }
+          },
+          {
+            "target": "time-field",
+            "presentation": "compact-field",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.time-field.font-size",
+              "line-height": "theme.specialized.time-field.line-height",
+              "font-weight": "theme.specialized.time-field.font-weight",
+              "label-size": "theme.specialized.time-field.label-size",
+              "label-weight": "theme.specialized.time-field.label-weight",
+              "helper-size": "theme.specialized.time-field.helper-size",
+              "helper-line-height": "theme.specialized.time-field.helper-line-height",
+              "helper-weight": "theme.specialized.time-field.helper-weight",
+              "error-weight": "theme.specialized.time-field.error-weight",
+              "field-gap": "theme.specialized.time-field.field-gap",
+              "disabled-opacity": "theme.specialized.time-field.disabled-opacity",
+              "input-padding-small": "theme.specialized.time-field.input-padding-small",
+              "input-padding-medium": "theme.specialized.time-field.input-padding-medium",
+              "input-padding-large": "theme.specialized.time-field.input-padding-large"
+            }
+          },
+          {
+            "target": "color-field",
+            "presentation": "compact-field",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.color-field.font-size",
+              "line-height": "theme.specialized.color-field.line-height",
+              "font-weight": "theme.specialized.color-field.font-weight",
+              "label-size": "theme.specialized.color-field.label-size",
+              "label-weight": "theme.specialized.color-field.label-weight",
+              "helper-size": "theme.specialized.color-field.helper-size",
+              "helper-line-height": "theme.specialized.color-field.helper-line-height",
+              "helper-weight": "theme.specialized.color-field.helper-weight",
+              "error-weight": "theme.specialized.color-field.error-weight",
+              "field-gap": "theme.specialized.color-field.field-gap",
+              "disabled-opacity": "theme.specialized.color-field.disabled-opacity"
+            }
+          },
+          {
+            "target": "otp-field",
+            "presentation": "continuous-pin",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.otp-field.font-size",
+              "line-height": "theme.specialized.otp-field.line-height",
+              "font-weight": "theme.specialized.otp-field.font-weight",
+              "label-size": "theme.specialized.otp-field.label-size",
+              "label-weight": "theme.specialized.otp-field.label-weight",
+              "helper-size": "theme.specialized.otp-field.helper-size",
+              "helper-line-height": "theme.specialized.otp-field.helper-line-height",
+              "helper-weight": "theme.specialized.otp-field.helper-weight",
+              "error-weight": "theme.specialized.otp-field.error-weight",
+              "field-gap": "theme.specialized.otp-field.field-gap",
+              "disabled-opacity": "theme.specialized.otp-field.disabled-opacity",
+              "font-family": "theme.specialized.otp-field.font-family",
+              "input-padding-small": "theme.specialized.otp-field.input-padding-small",
+              "input-padding-medium": "theme.specialized.otp-field.input-padding-medium",
+              "input-padding-large": "theme.specialized.otp-field.input-padding-large"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Source1px inside focus is adapted to a2px inset contour; visible-error authority and forced colors remain intact.",
+        "Number field keeps horizontal increment/decrement controls and protected target size; it cannot reproduce stacked source steppers through current public Parts.",
+        "Native select popup and date/time/password editing UI are platform-owned. Custom Chakra Select is a separate family.",
+        "OTP remains one real native input; the theme does not split it into cells or alter composition, paste, selection or autofill.",
+        "Textarea keeps rows, resize behavior and content-driven height."
+      ]
+    },
+    "choice": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/checkbox.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/checkmark.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/radio-group.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/radiomark.ts"
+      ],
+      "sourceDefaults": {
+        "default": "solid/md",
+        "sizes": "choice16/20/24px;label gap10px;checkboxradius2px",
+        "paint": "unchecked transparent with1px emphasized border; checked solid fill/contrast mark; radio inner contrasting dot at40% scale"
+      },
+      "enReve": {
+        "elements": [
+          "en-checkbox",
+          "en-checkbox-group",
+          "en-radio",
+          "en-radio-group"
+        ],
+        "nativeHelpers": [
+          ".en-checkbox",
+          ".en-radio"
+        ],
+        "tokenFamilies": [
+          "component.choice.size",
+          "component.checkbox.*",
+          "component.radio.*",
+          "radius.choice-*"
+        ],
+        "companionTargets": [
+          "checkbox",
+          "radio"
+        ],
+        "publicParts": {
+          "en-checkbox": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "label",
+            "label-text"
+          ],
+          "en-checkbox-group": [
+            "description",
+            "field",
+            "option",
+            "option-content",
+            "options"
+          ],
+          "en-radio": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "label",
+            "label-text"
+          ],
+          "en-radio-group": [
+            "description",
+            "error",
+            "field",
+            "label",
+            "options"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "checkbox",
+            "presentation": "solid",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "gap": "theme.controls.choice-gap",
+              "label-line-height": "theme.controls.choice-line-height",
+              "background": "theme.controls.transparent",
+              "border": "color.boundary",
+              "selected-background": "color.action",
+              "selected-color": "color.on-action",
+              "gap-small": "theme.controls.choice-gap-small",
+              "gap-medium": "theme.controls.choice-gap-medium",
+              "gap-large": "theme.controls.choice-gap-large"
+            }
+          },
+          {
+            "target": "radio",
+            "presentation": "solid",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "gap": "theme.controls.choice-gap",
+              "label-line-height": "theme.controls.choice-line-height",
+              "background": "theme.controls.transparent",
+              "border": "color.boundary",
+              "selected-background": "color.action",
+              "selected-color": "color.on-action",
+              "gap-small": "theme.controls.choice-gap-small",
+              "gap-medium": "theme.controls.choice-gap-medium",
+              "gap-large": "theme.controls.choice-gap-large"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Control marks can be source-sized while labeled click targets retain En Reve minimums.",
+        "Checkbox Card and Radio Card are authored card/choice compositions; no dedicated selected-card recipe/API is introduced."
+      ]
+    },
+    "switch": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/switch.ts"
+      ],
+      "sourceDefaults": {
+        "default": "solid/md",
+        "sizes": "track32x16/40x20/48x24px;thumb80% of track height (md16px);md visualinset2px",
+        "paint": "unchecked bg.emphasized track with white thumb; checked palette.solid track with palette.contrast thumb (light white, dark #09090b); shadow.sm;gap10px,label14px weight500;150ms translation",
+        "visualShadow": "The source thumb is scaled80%; the mapped16px thumb uses a dedicated shadow with lengths scaled0.8 to retain the same visual elevation."
+      },
+      "enReve": {
+        "elements": [
+          "en-switch"
+        ],
+        "nativeHelpers": [
+          ".en-switch"
+        ],
+        "tokenFamilies": [
+          "size.switch-*",
+          "space.switch-inset-*",
+          "component.switch.*"
+        ],
+        "companionTargets": [
+          "switch"
+        ],
+        "publicParts": {
+          "en-switch": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "label",
+            "label-text"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "switch",
+            "presentation": "solid",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "gap": "theme.controls.switch-gap",
+              "label-line-height": "theme.controls.switch-line-height",
+              "background": "theme.controls.emphasized",
+              "border": "theme.controls.transparent",
+              "selected-background": "color.action",
+              "selected-color": "color.on-action",
+              "thumb-background": "theme.controls.white",
+              "thumb-shadow": "theme.controls.switch-thumb-shadow"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Transparent retained border and adjusted insets preserve existing switch arithmetic.",
+        "Target floors, checked/disabled semantics, RTL and reduced motion remain authoritative."
+      ]
+    },
+    "slider": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/slider.ts"
+      ],
+      "sourceDefaults": {
+        "default": "outline/md:track8px,thumb20px,border2px palette solid,background fill; range palette solid"
+      },
+      "enReve": {
+        "elements": [
+          "en-slider",
+          "en-range-slider"
+        ],
+        "nativeHelpers": [
+          ".en-range",
+          ".en-range-row"
+        ],
+        "tokenFamilies": [
+          "size.range-track-*",
+          "size.range-thumb-*",
+          "component.slider-thumb.*",
+          "color.action"
+        ],
+        "companionTargets": [],
+        "publicParts": {
+          "en-slider": [
+            "control",
+            "description",
+            "editor",
+            "editor-label",
+            "error",
+            "field",
+            "label",
+            "output",
+            "row"
+          ],
+          "en-range-slider": [
+            "description",
+            "editors",
+            "lower-thumb",
+            "track",
+            "upper-thumb"
+          ]
+        },
+        "companionBindings": []
+      },
+      "adaptationsAndLimits": [
+        "Public native control supports geometry and accent hooks; independent portable track-fill/outlined-thumb Parts do not exist across engines.",
+        "Range slider retains its own two-thumb constraints, keyboard semantics and target floors."
+      ]
+    },
+    "rating": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/rating-group.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md20px source stars; palette solid foreground with layered SVG fill and half-value support"
+      },
+      "enReve": {
+        "elements": [
+          "en-rating"
+        ],
+        "nativeHelpers": [
+          ".en-rating",
+          ".en-rating-item"
+        ],
+        "tokenFamilies": [
+          "component.rating.*",
+          "color.action",
+          "color.text-muted"
+        ],
+        "companionTargets": [
+          "rating"
+        ],
+        "publicParts": {
+          "en-rating": [
+            "clear-option",
+            "control",
+            "description",
+            "error",
+            "field",
+            "label",
+            "option",
+            "options",
+            "star",
+            "star-option",
+            "star-options"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "rating",
+            "presentation": "compact",
+            "hookTokens": {},
+            "typedRoles": {
+              "filled-color": "color.action",
+              "empty-color": "theme.controls.emphasized"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "En Reve uses font-star buttons, clear action and protected targets; no exported filled/half-star Part permits exact layered SVG rendering."
+      ]
+    },
+    "segmented": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/segment-group.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md:40px items,inline16px,gap8px,text14px;rootradius4px,mutedbackground,insetshadow,no rootpadding/gap",
+        "selected": "white/light or emphasized/dark surface,shadow.sm,neutral text"
+      },
+      "enReve": {
+        "elements": [
+          "en-segmented-control",
+          "en-segmented-item"
+        ],
+        "nativeHelpers": [
+          ".en-segmented"
+        ],
+        "tokenFamilies": [
+          "component.segmented.*",
+          "font.ui.*"
+        ],
+        "companionTargets": [
+          "segmented-control"
+        ],
+        "publicParts": {
+          "en-segmented-control": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "label",
+            "option",
+            "option-disabled",
+            "option-enabled",
+            "option-end",
+            "option-joined",
+            "option-label",
+            "option-selected",
+            "option-start",
+            "options"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "segmented-control",
+            "presentation": "enclosed",
+            "hookTokens": {},
+            "typedRoles": {
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "radius": "theme.controls.segment-radius",
+              "inline-padding": "theme.controls.segment-padding",
+              "background": "color.surface-subtle",
+              "color": "color.text",
+              "shadow": "theme.controls.inset-shadow",
+              "selected-background": "theme.controls.segment-selected-background",
+              "selected-shadow": "theme.controls.small-shadow",
+              "weight": "theme.controls.normal-weight"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Source separators and moving indicator are not public En Reve anatomy; selected item paint and target floors remain native."
+      ]
+    },
+    "combobox": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/combobox.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/select.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/listbox.ts"
+      ],
+      "sourceDefaults": {
+        "combobox": "outline/md40px,input endreserve40px,indicator16px;popup radius4px,padding4px,max384px,shadow.md;row14/20px,inline8px/block6px,radius2px,weight400",
+        "customSelect": "source custom Select lg48px, distinct from44px NativeSelect",
+        "listbox": "subtle:panel,1pxborder,radius4px,padding4px,gap4px,max24rem;selected muted;highlight emphasized60%;indicator16px"
+      },
+      "enReve": {
+        "elements": [
+          "en-combobox",
+          "en-multiselect",
+          "en-selection-collection"
+        ],
+        "nativeHelpers": [
+          ".en-listbox",
+          ".en-option"
+        ],
+        "tokenFamilies": [
+          "component.option-list.*",
+          "component.option.*",
+          "component.combobox-trigger.*"
+        ],
+        "companionTargets": [
+          "combobox",
+          "listbox",
+          "native-listbox",
+          "native-option"
+        ],
+        "publicParts": {
+          "en-combobox": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label",
+            "listbox",
+            "option",
+            "option-active",
+            "option-disabled",
+            "option-indicator",
+            "option-label",
+            "option-selected",
+            "popup",
+            "space-status",
+            "status",
+            "trigger"
+          ],
+          "en-multiselect": [
+            "description",
+            "field",
+            "option",
+            "options",
+            "tags"
+          ],
+          "en-selection-collection": [
+            "actions",
+            "description",
+            "status"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "combobox",
+            "presentation": "compact",
+            "hookTokens": {},
+            "typedRoles": {
+              "indicator-size": "theme.controls.combobox-indicator",
+              "input-end-padding": "theme.controls.combobox-input-end",
+              "trigger-background": "theme.controls.transparent",
+              "trigger-color": "color.text-muted",
+              "disabled-opacity": "theme.controls.disabled-opacity",
+              "input-end-padding-small": "theme.controls.combobox-input-end-small",
+              "input-end-padding-medium": "theme.controls.combobox-input-end-medium",
+              "input-end-padding-large": "theme.controls.combobox-input-end-large",
+              "large-minimum": "theme.controls.combobox-input-end-large"
+            }
+          },
+          {
+            "target": "listbox",
+            "presentation": "subtle",
+            "hookTokens": {
+              "--en-option-radius": "theme.navigation.menu.row-radius",
+              "--en-option-inline-padding": "theme.navigation.menu.inline-padding",
+              "--en-option-block-padding": "theme.navigation.menu.block-padding",
+              "--en-option-font-weight": "theme.navigation.menu.weight",
+              "--en-option-selected-font-weight": "theme.navigation.normal-weight",
+              "--en-option-rest-background": "theme.navigation.menu.rest-background",
+              "--en-option-rest-color": "theme.navigation.menu.rest-color",
+              "--en-option-disabled-color": "theme.navigation.menu.disabled-color",
+              "--en-option-hover-background": "theme.navigation.menu.highlight-background",
+              "--en-option-hover-color": "theme.navigation.menu.highlight-color",
+              "--en-option-active-background": "theme.navigation.menu.highlight-background",
+              "--en-option-active-color": "theme.navigation.menu.highlight-color",
+              "--en-option-pressed-background": "theme.navigation.menu.highlight-background",
+              "--en-option-pressed-color": "theme.navigation.menu.highlight-color",
+              "--en-option-selected-background": "color.surface-subtle",
+              "--en-option-selected-color": "color.text"
+            },
+            "typedRoles": {
+              "fontSize": "font.ui.size",
+              "lineHeight": "font.ui.line-height",
+              "weight": "theme.navigation.normal-weight",
+              "radius": "theme.navigation.menu.row-radius",
+              "inlinePadding": "theme.navigation.menu.inline-padding",
+              "blockPadding": "theme.navigation.menu.block-padding",
+              "disabledOpacity": "theme.navigation.disabled-opacity",
+              "selectedBackground": "color.surface-subtle",
+              "selectedColor": "color.text",
+              "surfaceRadius": "radius.control",
+              "surfacePadding": "space.1",
+              "gap": "space.1",
+              "maxBlockSize": "theme.navigation.listbox.max-block-size",
+              "surfaceBackground": "color.surface-raised",
+              "surfaceBorder": "color.line"
+            }
+          },
+          {
+            "target": "native-listbox",
+            "presentation": "subtle",
+            "hookTokens": {
+              "--en-option-radius": "theme.navigation.menu.row-radius",
+              "--en-option-inline-padding": "theme.navigation.menu.inline-padding",
+              "--en-option-block-padding": "theme.navigation.menu.block-padding",
+              "--en-option-font-weight": "theme.navigation.menu.weight",
+              "--en-option-selected-font-weight": "theme.navigation.normal-weight",
+              "--en-option-rest-background": "theme.navigation.menu.rest-background",
+              "--en-option-rest-color": "theme.navigation.menu.rest-color",
+              "--en-option-disabled-color": "theme.navigation.menu.disabled-color",
+              "--en-option-hover-background": "theme.navigation.menu.highlight-background",
+              "--en-option-hover-color": "theme.navigation.menu.highlight-color",
+              "--en-option-active-background": "theme.navigation.menu.highlight-background",
+              "--en-option-active-color": "theme.navigation.menu.highlight-color",
+              "--en-option-pressed-background": "theme.navigation.menu.highlight-background",
+              "--en-option-pressed-color": "theme.navigation.menu.highlight-color",
+              "--en-option-selected-background": "color.surface-subtle",
+              "--en-option-selected-color": "color.text"
+            },
+            "typedRoles": {
+              "surfaceRadius": "radius.control",
+              "surfacePadding": "space.1",
+              "gap": "space.1",
+              "maxBlockSize": "theme.navigation.listbox.max-block-size",
+              "surfaceBackground": "color.surface-raised",
+              "surfaceBorder": "color.line"
+            }
+          },
+          {
+            "target": "native-option",
+            "presentation": "subtle",
+            "hookTokens": {
+              "--en-option-radius": "theme.navigation.menu.row-radius",
+              "--en-option-inline-padding": "theme.navigation.menu.inline-padding",
+              "--en-option-block-padding": "theme.navigation.menu.block-padding",
+              "--en-option-font-weight": "theme.navigation.menu.weight",
+              "--en-option-selected-font-weight": "theme.navigation.normal-weight",
+              "--en-option-rest-background": "theme.navigation.menu.rest-background",
+              "--en-option-rest-color": "theme.navigation.menu.rest-color",
+              "--en-option-disabled-color": "theme.navigation.menu.disabled-color",
+              "--en-option-hover-background": "theme.navigation.menu.highlight-background",
+              "--en-option-hover-color": "theme.navigation.menu.highlight-color",
+              "--en-option-active-background": "theme.navigation.menu.highlight-background",
+              "--en-option-active-color": "theme.navigation.menu.highlight-color",
+              "--en-option-pressed-background": "theme.navigation.menu.highlight-background",
+              "--en-option-pressed-color": "theme.navigation.menu.highlight-color",
+              "--en-option-selected-background": "color.surface-subtle",
+              "--en-option-selected-color": "color.text"
+            },
+            "typedRoles": {
+              "fontSize": "font.ui.size",
+              "lineHeight": "font.ui.line-height",
+              "weight": "theme.navigation.normal-weight",
+              "radius": "theme.navigation.menu.row-radius",
+              "inlinePadding": "theme.navigation.menu.inline-padding",
+              "blockPadding": "theme.navigation.menu.block-padding",
+              "disabledOpacity": "theme.navigation.disabled-opacity",
+              "selectedBackground": "color.surface-subtle",
+              "selectedColor": "color.text"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "En Reve en-select is a native select, not the Chakra custom Select implementation.",
+        "Combobox and multiselect retain their own filtering, query, tag and selection semantics; source group/clear/multiple APIs are not added.",
+        "Rows retain minimum40px target envelope and protected popup positioning/available-height calculations."
+      ]
+    },
+    "tree": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/tree-view.ts"
+      ],
+      "sourceDefaults": {
+        "default": "subtle/md14/20px weight400;inline12px/block6px,radius4px,gap8px;indent24px,icon16px;hovermuted,selectedpalette.subtle/fg;inside2pxfocus"
+      },
+      "enReve": {
+        "elements": [
+          "en-tree",
+          "en-tree-item"
+        ],
+        "nativeHelpers": [
+          ".en-tree",
+          ".en-tree-group"
+        ],
+        "tokenFamilies": [
+          "component.option.*",
+          "component.tree.*"
+        ],
+        "companionTargets": [
+          "tree"
+        ],
+        "publicParts": {
+          "en-tree": [
+            "base",
+            "branch-controls",
+            "branch-loading",
+            "branch-status",
+            "drag-handle",
+            "drag-preview",
+            "drop-indicator",
+            "group",
+            "indicator",
+            "item",
+            "label",
+            "move-controls",
+            "move-status",
+            "option",
+            "viewport"
+          ],
+          "en-tree-item": [
+            "base",
+            "drag-handle",
+            "group",
+            "indicator",
+            "label",
+            "option"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "tree",
+            "presentation": "subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "indent": "space.6",
+              "iconSize": "space.4",
+              "smallIconSize": "space.3",
+              "indicatorColor": "color.text-muted",
+              "selectedWeight": "theme.navigation.normal-weight",
+              "hoverBackground": "color.surface-subtle",
+              "disabledOpacity": "theme.navigation.disabled-opacity"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Virtualized measured rows keep their layout geometry; no external margins or source-expansion animation are fabricated.",
+        "Source subtle focus boundary is strengthened; disclosure semantics remain native."
+      ]
+    },
+    "dialog": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/dialog.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md32rem,source topplacement with4rem margin;panel,radius6px,shadow.lg,no border,text14/20px",
+        "sections": "header inline24px/top24px/bottom16px,gap8px;body inline24px/top8px/bottom24px;footer inline24px/top8px/bottom16px,gap12px",
+        "title": "18/28px weight600;descriptionmuted",
+        "motion": "200ms enter/100ms exit; source backdrop300/200ms",
+        "scrim": "rgba(0,0,0,0.36)"
+      },
+      "enReve": {
+        "elements": [
+          "en-dialog"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.dialog.*",
+          "shadow.dialog",
+          "radius.dialog"
+        ],
+        "companionTargets": [
+          "dialog"
+        ],
+        "publicParts": {
+          "en-dialog": [
+            "body",
+            "close",
+            "description",
+            "footer",
+            "header",
+            "heading",
+            "surface"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "dialog",
+            "presentation": "sectioned",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.display.dialog.font-size",
+              "lineHeight": "theme.display.dialog.line-height",
+              "fontWeight": "theme.display.dialog.font-weight",
+              "background": "theme.display.dialog.background",
+              "color": "theme.display.dialog.color",
+              "borderColor": "theme.display.dialog.border-color",
+              "borderWidth": "theme.display.dialog.border-width",
+              "shadow": "theme.display.dialog.shadow",
+              "enterDuration": "theme.display.dialog.enter-duration",
+              "exitDuration": "theme.display.dialog.exit-duration",
+              "inlineSize": "theme.display.dialog.inline-size",
+              "sectionInlinePadding": "theme.display.dialog.section-inline-padding",
+              "headerBlockStartPadding": "theme.display.dialog.header-block-start-padding",
+              "headerBlockEndPadding": "theme.display.dialog.header-block-end-padding",
+              "headerGap": "theme.display.dialog.header-gap",
+              "bodyBlockStartPadding": "theme.display.dialog.body-block-start-padding",
+              "bodyBlockEndPadding": "theme.display.dialog.body-block-end-padding",
+              "footerBlockStartPadding": "theme.display.dialog.footer-block-start-padding",
+              "footerBlockEndPadding": "theme.display.dialog.footer-block-end-padding",
+              "footerGap": "theme.display.dialog.footer-gap",
+              "titleFontSize": "theme.display.dialog.title-font-size",
+              "titleLineHeight": "theme.display.dialog.title-line-height",
+              "titleFontWeight": "theme.display.dialog.title-font-weight",
+              "descriptionColor": "theme.display.dialog.description-color",
+              "surfaceScale": "theme.display.dialog.surface-scale",
+              "surfaceOffset": "theme.display.dialog.surface-offset"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "En Reve centered/responsive placement, native modality, visible dismiss control and long-title target clearance remain authoritative.",
+        "Description uses public Part and inline section padding; optional source composition does not create new slots.",
+        "Modal travel is bounded and backdrop shares modal duration; this is not the full Chakra presence/positioning recipe."
+      ]
+    },
+    "drawer": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/drawer.ts"
+      ],
+      "sourceDefaults": {
+        "default": "xs20rem,endplacement,panel,no radius,shadow.lg,text14/20px",
+        "sections": "header24px inline/top16px bottom;body24px inline/8px block;footer24px inline/8px top16px bottom,gap12px;title18/28px weight600",
+        "motion": "500ms enter/400ms exit,cubic-bezier(.32,.72,0,1),source full slide+fade",
+        "scrim": "rgba(0,0,0,0.36)"
+      },
+      "enReve": {
+        "elements": [
+          "en-drawer",
+          "en-sheet"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.drawer.*",
+          "component.dialog.*"
+        ],
+        "companionTargets": [
+          "drawer"
+        ],
+        "publicParts": {
+          "en-drawer": [
+            "body",
+            "close",
+            "description",
+            "footer",
+            "header",
+            "heading",
+            "surface"
+          ],
+          "en-sheet": [
+            "body",
+            "close",
+            "description",
+            "footer",
+            "handle",
+            "header",
+            "heading",
+            "surface"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "drawer",
+            "presentation": "sectioned",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.display.drawer.font-size",
+              "lineHeight": "theme.display.drawer.line-height",
+              "fontWeight": "theme.display.drawer.font-weight",
+              "background": "theme.display.drawer.background",
+              "color": "theme.display.drawer.color",
+              "borderColor": "theme.display.drawer.border-color",
+              "borderWidth": "theme.display.drawer.border-width",
+              "shadow": "theme.display.drawer.shadow",
+              "enterDuration": "theme.display.drawer.enter-duration",
+              "exitDuration": "theme.display.drawer.exit-duration",
+              "inlineSize": "theme.display.drawer.inline-size",
+              "sectionInlinePadding": "theme.display.drawer.section-inline-padding",
+              "headerBlockStartPadding": "theme.display.drawer.header-block-start-padding",
+              "headerBlockEndPadding": "theme.display.drawer.header-block-end-padding",
+              "headerGap": "theme.display.drawer.header-gap",
+              "bodyBlockStartPadding": "theme.display.drawer.body-block-start-padding",
+              "bodyBlockEndPadding": "theme.display.drawer.body-block-end-padding",
+              "footerBlockStartPadding": "theme.display.drawer.footer-block-start-padding",
+              "footerBlockEndPadding": "theme.display.drawer.footer-block-end-padding",
+              "footerGap": "theme.display.drawer.footer-gap",
+              "titleFontSize": "theme.display.drawer.title-font-size",
+              "titleLineHeight": "theme.display.drawer.title-line-height",
+              "titleFontWeight": "theme.display.drawer.title-font-weight",
+              "descriptionColor": "theme.display.drawer.description-color",
+              "enterEase": "theme.display.drawer.enter-ease",
+              "exitEase": "theme.display.drawer.exit-ease",
+              "surfaceOffset": "theme.display.drawer.surface-offset"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Responsive bottom drawers remain viewport-fluid. En Reve bounds travel to8px and shares backdrop timing; no full-distance private transform override.",
+        "Sheet receives shared tokens only; it is not a new Chakra Drawer placement API."
+      ]
+    },
+    "popover": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/popover.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md20rem capped by viewport minus1rem,panel,radius6px,shadow.lg,border0,text14/20px,padding20px",
+        "motion": "150ms enter/100ms exit"
+      },
+      "enReve": {
+        "elements": [
+          "en-popover"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.popover.*",
+          "component.popup.*",
+          "component.overlay.*"
+        ],
+        "companionTargets": [
+          "popover"
+        ],
+        "publicParts": {
+          "en-popover": [
+            "arrow",
+            "arrow-shape",
+            "body",
+            "close",
+            "content",
+            "heading",
+            "surface"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "popover",
+            "presentation": "sectioned",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.display.popover.font-size",
+              "lineHeight": "theme.display.popover.line-height",
+              "fontWeight": "theme.display.popover.font-weight",
+              "background": "theme.display.popover.background",
+              "color": "theme.display.popover.color",
+              "borderColor": "theme.display.popover.border-color",
+              "borderWidth": "theme.display.popover.border-width",
+              "shadow": "theme.display.popover.shadow",
+              "enterDuration": "theme.display.popover.enter-duration",
+              "exitDuration": "theme.display.popover.exit-duration",
+              "inlineSize": "theme.display.popover.inline-size",
+              "padding": "theme.display.popover.padding",
+              "titleFontSize": "theme.display.popover.title-font-size",
+              "titleLineHeight": "theme.display.popover.title-line-height",
+              "titleFontWeight": "theme.display.popover.title-font-weight"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Always-present heading/dismiss anatomy remains; source optional header/footer composition has no exact counterpart.",
+        "Public width/padding hooks and available-space positioning remain effective; core owns anchored transform."
+      ]
+    },
+    "hoverCard": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/hover-card.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md,intrinsic width capped20rem,padding20px,text14/20px,panel,radius6px,shadow.lg",
+        "motion": "150ms enter/100ms exit"
+      },
+      "enReve": {
+        "elements": [
+          "en-hover-card"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.popover.*",
+          "component.popup.*",
+          "component.overlay.*"
+        ],
+        "companionTargets": [
+          "hover-card"
+        ],
+        "publicParts": {
+          "en-hover-card": [
+            "arrow",
+            "arrow-shape",
+            "body",
+            "close",
+            "content",
+            "heading",
+            "surface"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "hover-card",
+            "presentation": "sectioned",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.display.hover-card.font-size",
+              "lineHeight": "theme.display.hover-card.line-height",
+              "fontWeight": "theme.display.hover-card.font-weight",
+              "background": "theme.display.hover-card.background",
+              "color": "theme.display.hover-card.color",
+              "borderColor": "theme.display.hover-card.border-color",
+              "borderWidth": "theme.display.hover-card.border-width",
+              "shadow": "theme.display.hover-card.shadow",
+              "enterDuration": "theme.display.hover-card.enter-duration",
+              "exitDuration": "theme.display.hover-card.exit-duration",
+              "inlineSize": "theme.display.hover-card.inline-size",
+              "padding": "theme.display.hover-card.padding",
+              "titleFontSize": "theme.display.hover-card.title-font-size",
+              "titleLineHeight": "theme.display.hover-card.title-line-height",
+              "titleFontWeight": "theme.display.hover-card.title-font-weight"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Mandatory visible title/dismiss action remain; source arbitrary preview composition differs.",
+        "Source slide/fade transform remains positioning-core behavior; theme controls timing and surface paint."
+      ]
+    },
+    "tooltip": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/tooltip.ts"
+      ],
+      "sourceDefaults": {
+        "default": "inversebg/fg,inline10px/block4px,12/16px weight500,radius4px,shadow.md,max20rem",
+        "light": "bg#09090b,fg#fafafa",
+        "dark": "bg#ffffff,fg#09090b",
+        "motion": "150ms enter/exit"
+      },
+      "enReve": {
+        "elements": [
+          "en-tooltip"
+        ],
+        "nativeHelpers": [
+          ".en-tooltip"
+        ],
+        "tokenFamilies": [
+          "component.tooltip.*",
+          "component.overlay.*"
+        ],
+        "companionTargets": [
+          "tooltip"
+        ],
+        "publicParts": {
+          "en-tooltip": [
+            "arrow",
+            "arrow-shape",
+            "content",
+            "surface"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "tooltip",
+            "presentation": "compact",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.display.tooltip.font-size",
+              "lineHeight": "theme.display.tooltip.line-height",
+              "fontWeight": "theme.display.tooltip.font-weight",
+              "background": "theme.display.tooltip.background",
+              "color": "theme.display.tooltip.color",
+              "borderColor": "theme.display.tooltip.border-color",
+              "borderWidth": "theme.display.tooltip.border-width",
+              "shadow": "theme.display.tooltip.shadow",
+              "enterDuration": "theme.display.tooltip.enter-duration",
+              "exitDuration": "theme.display.tooltip.exit-duration",
+              "maxInlineSize": "theme.display.tooltip.max-inline-size",
+              "paddingInline": "theme.display.tooltip.padding-inline",
+              "paddingBlock": "theme.display.tooltip.padding-block",
+              "radius": "theme.display.tooltip.radius"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Host public overlay paint hooks keep arrow fill coherent. En Reve triangle geometry is not the source rotated square arrow.",
+        "Accessible trigger/description association and reduced-motion behavior remain unchanged."
+      ]
+    },
+    "menu": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/menu.ts"
+      ],
+      "sourceDefaults": {
+        "default": "subtle/md:surface radius4px,padding6px,source minimum8rem,shadow.lg,no border",
+        "row": "14/20px weight400,inline8px/block6px,radius2px,gap8px;highlight emphasized60%;checkmark16px",
+        "shortcut": "12px,opacity0.6,startgap16px,widest tracking",
+        "motion": "150ms enter/100ms exit"
+      },
+      "enReve": {
+        "elements": [
+          "en-menu",
+          "en-menu-item",
+          "en-context-menu",
+          "en-menubar",
+          "en-action-overflow"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.menu.*",
+          "component.option.*",
+          "component.popup.*"
+        ],
+        "companionTargets": [
+          "menu",
+          "menu-item"
+        ],
+        "publicParts": {
+          "en-menu": [
+            "back",
+            "surface"
+          ],
+          "en-menu-item": [
+            "checkmark",
+            "control",
+            "label",
+            "option",
+            "option-disabled",
+            "shortcut",
+            "submenu-indicator"
+          ],
+          "en-context-menu": [
+            "back",
+            "surface"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "menu",
+            "presentation": "compact-surface",
+            "hookTokens": {
+              "--en-option-radius": "theme.navigation.menu.row-radius",
+              "--en-option-inline-padding": "theme.navigation.menu.inline-padding",
+              "--en-option-block-padding": "theme.navigation.menu.block-padding",
+              "--en-option-font-weight": "theme.navigation.menu.weight",
+              "--en-option-selected-font-weight": "theme.navigation.menu.weight",
+              "--en-option-rest-background": "theme.navigation.menu.rest-background",
+              "--en-option-rest-color": "theme.navigation.menu.rest-color",
+              "--en-option-disabled-color": "theme.navigation.menu.disabled-color",
+              "--en-option-hover-background": "theme.navigation.menu.highlight-background",
+              "--en-option-hover-color": "theme.navigation.menu.highlight-color",
+              "--en-option-active-background": "theme.navigation.menu.highlight-background",
+              "--en-option-active-color": "theme.navigation.menu.highlight-color",
+              "--en-option-pressed-background": "theme.navigation.menu.highlight-background",
+              "--en-option-pressed-color": "theme.navigation.menu.highlight-color"
+            },
+            "typedRoles": {
+              "fontSize": "theme.display.menu.font-size",
+              "lineHeight": "theme.display.menu.line-height",
+              "fontWeight": "theme.display.menu.font-weight",
+              "background": "theme.display.menu.background",
+              "color": "theme.display.menu.color",
+              "borderColor": "theme.display.menu.border-color",
+              "borderWidth": "theme.display.menu.border-width",
+              "shadow": "theme.display.menu.shadow",
+              "enterDuration": "theme.display.menu.enter-duration",
+              "exitDuration": "theme.display.menu.exit-duration",
+              "padding": "theme.display.menu.padding",
+              "radius": "theme.display.menu.radius"
+            }
+          },
+          {
+            "target": "menu-item",
+            "presentation": "compact",
+            "hookTokens": {
+              "--en-option-radius": "theme.navigation.menu.row-radius",
+              "--en-option-inline-padding": "theme.navigation.menu.inline-padding",
+              "--en-option-block-padding": "theme.navigation.menu.block-padding",
+              "--en-option-font-weight": "theme.navigation.menu.weight",
+              "--en-option-selected-font-weight": "theme.navigation.menu.weight",
+              "--en-option-rest-background": "theme.navigation.menu.rest-background",
+              "--en-option-rest-color": "theme.navigation.menu.rest-color",
+              "--en-option-disabled-color": "theme.navigation.menu.disabled-color",
+              "--en-option-hover-background": "theme.navigation.menu.highlight-background",
+              "--en-option-hover-color": "theme.navigation.menu.highlight-color",
+              "--en-option-active-background": "theme.navigation.menu.highlight-background",
+              "--en-option-active-color": "theme.navigation.menu.highlight-color",
+              "--en-option-pressed-background": "theme.navigation.menu.highlight-background",
+              "--en-option-pressed-color": "theme.navigation.menu.highlight-color"
+            },
+            "typedRoles": {
+              "fontSize": "font.ui.size",
+              "lineHeight": "font.ui.line-height",
+              "weight": "theme.navigation.normal-weight",
+              "radius": "theme.navigation.menu.row-radius",
+              "inlinePadding": "theme.navigation.menu.inline-padding",
+              "blockPadding": "theme.navigation.menu.block-padding",
+              "disabledOpacity": "theme.navigation.disabled-opacity",
+              "selectedBackground": "color.surface-subtle",
+              "selectedColor": "color.text",
+              "shortcutSize": "font.metadata.size",
+              "shortcutLineHeight": "font.metadata.line-height",
+              "shortcutOpacity": "theme.navigation.menu.shortcut-opacity",
+              "shortcutGap": "space.4",
+              "shortcutTracking": "theme.navigation.menu.shortcut-tracking",
+              "choiceInset": "theme.navigation.menu.choice-inset",
+              "choicePadding": "theme.navigation.menu.choice-padding"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Source8rem surface minimum is not imposed because the owned visual-viewport cap must remain intact and no independent minimum hook exists.",
+        "Row target minimums remain40px; public choice/shortcut Parts receive finite styling.",
+        "Context menu, menubar and action overflow consume shared menu tokens; their navigation/opening behavior is En Reve behavior."
+      ]
+    },
+    "card": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/card.ts"
+      ],
+      "sourceDefaults": {
+        "default": "outline/md:panel,1px decorativeline,radius6px,shadow.none",
+        "sections": "header24px inline/top,gap6px;body24px;footer24px inline/bottom,gap8px;title18/28px weight600",
+        "bodyTypography": "Inherited default body:16/24px weight400; Card.Description has separate authored typography."
+      },
+      "enReve": {
+        "elements": [
+          "en-card"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.card.*",
+          "component.surface.*"
+        ],
+        "companionTargets": [
+          "card"
+        ],
+        "publicParts": {
+          "en-card": [
+            "base",
+            "content",
+            "footer",
+            "header"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "card",
+            "presentation": "sectioned",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "theme.display.card.font-size",
+              "lineHeight": "theme.display.card.line-height",
+              "fontWeight": "theme.display.card.font-weight",
+              "background": "theme.display.card.background",
+              "color": "theme.display.card.color",
+              "borderColor": "theme.display.card.border-color",
+              "borderWidth": "theme.display.card.border-width",
+              "shadow": "theme.display.card.shadow",
+              "sectionInlinePadding": "theme.display.card.section-inline-padding",
+              "headerPadding": "theme.display.card.header-padding",
+              "bodyPadding": "theme.display.card.body-padding",
+              "footerPadding": "theme.display.card.footer-padding",
+              "headerGap": "theme.display.card.header-gap",
+              "footerGap": "theme.display.card.footer-gap",
+              "titleFontSize": "theme.display.card.title-font-size",
+              "titleLineHeight": "theme.display.card.title-line-height",
+              "titleFontWeight": "theme.display.card.title-font-weight"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Header slot may contain arbitrary title/description markup; no separate title/description Parts permit rewriting consumer typography.",
+        "Empty State and card choices are application compositions using these surface and text controls."
+      ]
+    },
+    "tabs": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/tabs.ts"
+      ],
+      "sourceDefaults": {
+        "default": "line/md:40px minimum,inline16px/block8px,text14/20px weight500;muted rest,neutral selected;selectedline2px;listborder1px/gap0;contentpadding16px"
+      },
+      "enReve": {
+        "elements": [
+          "en-tabs",
+          "en-tab",
+          "en-tab-panel"
+        ],
+        "nativeHelpers": [
+          ".en-tabs",
+          ".en-tab-list",
+          ".en-tab",
+          ".en-tab-panel"
+        ],
+        "tokenFamilies": [
+          "component.tab.*",
+          "color.text",
+          "color.text-muted"
+        ],
+        "companionTargets": [
+          "tabs",
+          "tab-list",
+          "tab",
+          "vertical-tab",
+          "tab-panel",
+          "vertical-tab-panel"
+        ],
+        "publicParts": {
+          "en-tabs": [
+            "base",
+            "panels",
+            "tab-list"
+          ],
+          "en-tab": [
+            "base"
+          ],
+          "en-tab-panel": [
+            "base"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "tabs",
+            "presentation": "line",
+            "hookTokens": {},
+            "typedRoles": {
+              "gap": "theme.navigation.zero"
+            }
+          },
+          {
+            "target": "tab-list",
+            "presentation": "line",
+            "hookTokens": {},
+            "typedRoles": {
+              "gap": "theme.navigation.zero"
+            }
+          },
+          {
+            "target": "tab",
+            "presentation": "line",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "font.ui.size",
+              "lineHeight": "font.ui.line-height",
+              "weight": "font.label-strong.weight",
+              "minInlineSize": "size.control-min",
+              "inlinePadding": "space.4",
+              "blockPadding": "space.2",
+              "indicatorWidth": "size.tab-indicator",
+              "restColor": "color.text-muted",
+              "selectedColor": "color.text",
+              "indicatorColor": "color.action",
+              "disabledOpacity": "theme.navigation.disabled-opacity"
+            }
+          },
+          {
+            "target": "vertical-tab",
+            "presentation": "line",
+            "hookTokens": {},
+            "typedRoles": {
+              "indicatorWidth": "size.tab-indicator",
+              "indicatorColor": "color.action"
+            }
+          },
+          {
+            "target": "tab-panel",
+            "presentation": "line",
+            "hookTokens": {},
+            "typedRoles": {
+              "padding": "space.4"
+            }
+          },
+          {
+            "target": "vertical-tab-panel",
+            "presentation": "line",
+            "hookTokens": {},
+            "typedRoles": {
+              "padding": "space.4"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Horizontal bottom and vertical logical-end markers use public targets; minimums and content growth stay intact.",
+        "Source enclosed/plain variants are not simultaneously applied."
+      ]
+    },
+    "accordion": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/accordion.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/collapsible.ts"
+      ],
+      "sourceDefaults": {
+        "default": "outline/md:trigger16/24px weight500,block8px/inline0,gap12px,radius4px;paneltop8px/bottom16px;itembottom border1px",
+        "indicator": "1.2em chevron,fg.subtle,180deg open rotation200ms",
+        "collapsible": "canonical recipe only overflow and200ms expand/fade; trigger/content are consumer-owned"
+      },
+      "enReve": {
+        "elements": [
+          "en-accordion",
+          "en-accordion-item"
+        ],
+        "nativeHelpers": [
+          ".en-accordion",
+          ".en-accordion-item",
+          ".en-accordion-trigger",
+          ".en-accordion-panel"
+        ],
+        "tokenFamilies": [
+          "component.accordion.*"
+        ],
+        "companionTargets": [
+          "accordion-item",
+          "accordion-trigger",
+          "accordion-panel"
+        ],
+        "publicParts": {
+          "en-accordion": [
+            "base"
+          ],
+          "en-accordion-item": [
+            "base",
+            "control",
+            "heading",
+            "indicator",
+            "panel"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "accordion-item",
+            "presentation": "outline",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "font.body.size",
+              "lineHeight": "font.body.line-height",
+              "weight": "font.label-strong.weight",
+              "smallFontSize": "font.ui.size",
+              "largeFontSize": "theme.navigation.accordion.large-font-size",
+              "radius": "radius.control",
+              "gap": "space.3",
+              "blockPadding": "space.2",
+              "panelStart": "space.2",
+              "panelEnd": "space.4",
+              "indicatorSize": "theme.navigation.accordion.indicator-size",
+              "indicatorMarkSize": "theme.navigation.accordion.indicator-mark-size",
+              "indicatorStroke": "theme.navigation.accordion.indicator-stroke",
+              "indicatorColor": "theme.navigation.accordion.indicator-color",
+              "duration": "duration.regular",
+              "disabledOpacity": "theme.navigation.disabled-opacity"
+            }
+          },
+          {
+            "target": "accordion-trigger",
+            "presentation": "outline",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "font.body.size",
+              "lineHeight": "font.body.line-height",
+              "weight": "font.label-strong.weight",
+              "radius": "radius.control",
+              "gap": "space.3",
+              "blockPadding": "space.2",
+              "disabledOpacity": "theme.navigation.disabled-opacity"
+            }
+          },
+          {
+            "target": "accordion-panel",
+            "presentation": "outline",
+            "hookTokens": {},
+            "typedRoles": {
+              "panelStart": "space.2",
+              "panelEnd": "space.4"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Hidden content and disclosure lifecycle are not overridden with incidental CSS animation.",
+        "Collapsible maps to authored disclosure composition; no standalone Chakra component API is introduced."
+      ]
+    },
+    "breadcrumb": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/breadcrumb.ts"
+      ],
+      "sourceDefaults": {
+        "default": "plain/md14/20px weight400,gap6px;muted links without restunderline;neutral hover/current;radius2px;separator1em chevron opacity0.8,RTL reversal"
+      },
+      "enReve": {
+        "elements": [
+          "en-breadcrumbs"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.breadcrumb.*",
+          "color.text",
+          "color.text-muted"
+        ],
+        "companionTargets": [
+          "breadcrumbs",
+          "breadcrumb-link"
+        ],
+        "publicParts": {
+          "en-breadcrumbs": [
+            "base",
+            "item",
+            "list",
+            "separator"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "breadcrumbs",
+            "presentation": "plain",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "font.ui.size",
+              "lineHeight": "font.ui.line-height",
+              "weight": "theme.navigation.normal-weight",
+              "gap": "space.1-5",
+              "separatorSize": "theme.navigation.breadcrumb.separator-size",
+              "separatorMarkSize": "theme.navigation.breadcrumb.separator-mark-size",
+              "separatorStroke": "theme.navigation.breadcrumb.separator-stroke",
+              "separatorColor": "color.text-muted",
+              "separatorOpacity": "theme.navigation.breadcrumb.separator-opacity"
+            }
+          },
+          {
+            "target": "breadcrumb-link",
+            "presentation": "plain",
+            "hookTokens": {},
+            "typedRoles": {
+              "fontSize": "font.ui.size",
+              "lineHeight": "font.ui.line-height",
+              "weight": "theme.navigation.normal-weight",
+              "radius": "theme.navigation.menu.row-radius",
+              "restColor": "color.text-muted",
+              "currentColor": "color.text"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Authored native links remain consumer-owned when no forwarded link Part is available.",
+        "Navigation state and target minimums remain intact."
+      ]
+    },
+    "pagination": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/apps/compositions/src/examples/pagination-basic.tsx"
+      ],
+      "sourceDefaults": {
+        "sourceComposition": "Pinned basic docs example composes ButtonGroup ghost/sm, current page outline; no standalone pagination theme recipe"
+      },
+      "enReve": {
+        "elements": [
+          "en-pagination"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.button.*",
+          "font.ui.*",
+          "color.action"
+        ],
+        "companionTargets": [],
+        "publicParts": {
+          "en-pagination": [
+            "actions",
+            "base",
+            "cancel",
+            "compact-status",
+            "control",
+            "direct",
+            "direct-summary",
+            "expanded-status",
+            "gap",
+            "go",
+            "jump",
+            "middle",
+            "next",
+            "page",
+            "page-input",
+            "pages",
+            "previous",
+            "status"
+          ]
+        },
+        "companionBindings": []
+      },
+      "adaptationsAndLimits": [
+        "No public current/uncurrent page Part exposes the source button distinction; inherited button tokens supply geometry and typography.",
+        "Responsive chooser, total/status text and protected small targets remain En Reve behavior."
+      ]
+    },
+    "calendar": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/date-picker.ts"
+      ],
+      "sourceDefaults": {
+        "default": "solid selection/contrast includinghover;subtle range bands withsolid endpoints;todayunderline;navigation/title/day typography frommd recipe"
+      },
+      "enReve": {
+        "elements": [
+          "en-calendar",
+          "en-date-picker"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.calendar.*",
+          "component.date-picker.*",
+          "font.ui.*"
+        ],
+        "companionTargets": [
+          "calendar",
+          "date-picker"
+        ],
+        "publicParts": {
+          "en-calendar": [
+            "base",
+            "calendar-label",
+            "configuration",
+            "day",
+            "grid",
+            "header",
+            "heading",
+            "in-range",
+            "next",
+            "preview",
+            "previous",
+            "range-band",
+            "range-band-end",
+            "range-band-preview",
+            "range-band-start",
+            "range-end",
+            "range-start",
+            "range-status",
+            "selected",
+            "today",
+            "weekday"
+          ],
+          "en-date-picker": [
+            "calendar",
+            "calendar-day",
+            "calendar-in-range",
+            "calendar-preview",
+            "calendar-range-band",
+            "calendar-range-band-end",
+            "calendar-range-band-preview",
+            "calendar-range-band-start",
+            "calendar-range-end",
+            "calendar-range-start",
+            "calendar-selected",
+            "calendar-status",
+            "calendar-summary",
+            "close",
+            "control",
+            "description",
+            "edit-hint",
+            "error",
+            "field",
+            "focus-frame",
+            "label",
+            "picker-layout",
+            "range-actions",
+            "range-error",
+            "range-fields",
+            "range-summary",
+            "surface",
+            "trigger"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "calendar",
+            "presentation": "solid-date-selection",
+            "hookTokens": {},
+            "typedRoles": {
+              "day-weight": "font.input.weight",
+              "heading-weight": "theme.calendar.heading-weight",
+              "weekday-size": "font.metadata.size",
+              "weekday-line-height": "font.metadata.line-height",
+              "weekday-weight": "font.label-strong.weight",
+              "weekday-padding": "space.2",
+              "header-gap": "space.3",
+              "row-gap": "space.1",
+              "hover-background": "color.selected",
+              "hover-color": "color.text",
+              "hover-opacity": "theme.calendar.hover-opacity",
+              "selected-background": "color.action",
+              "selected-color": "color.on-action",
+              "range-background": "color.selected",
+              "range-color": "color.action-text",
+              "endpoint-background": "color.action",
+              "endpoint-color": "color.on-action",
+              "day-radius": "radius.control",
+              "today-color": "color.action-text",
+              "today-weight": "theme.calendar.today-weight",
+              "today-underline-thickness": "theme.calendar.today-underline-thickness",
+              "today-underline-offset": "theme.calendar.today-underline-offset"
+            }
+          },
+          {
+            "target": "date-picker",
+            "presentation": "solid-date-selection",
+            "hookTokens": {},
+            "typedRoles": {
+              "day-weight": "font.input.weight",
+              "heading-weight": "theme.calendar.heading-weight",
+              "hover-background": "color.selected",
+              "hover-color": "color.text",
+              "hover-opacity": "theme.calendar.hover-opacity",
+              "selected-background": "color.action",
+              "selected-color": "color.on-action",
+              "range-background": "color.selected",
+              "range-color": "color.action-text",
+              "endpoint-background": "color.action",
+              "endpoint-color": "color.on-action",
+              "day-radius": "radius.control",
+              "surface-radius": "radius.control",
+              "surface-padding": "space.3"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Calendar receives day/header/weekday controls and explicit today underline. Date picker forwards fewer Parts, so today/header/weekday details cannot all be specialized through its shell.",
+        "Civil dates, locale, keyboard navigation, range constraints and popup target floors remain unchanged."
+      ]
+    },
+    "table": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/table.ts"
+      ],
+      "sourceDefaults": {
+        "default": "line/md14/20px;cellinline16px/block12px;sm12px/8px;lg16px/16px;bottom separators,transparentheader,no rounded container"
+      },
+      "enReve": {
+        "elements": [
+          "en-table",
+          "en-data-table"
+        ],
+        "nativeHelpers": [
+          ".en-table-native",
+          ".en-recipe-table"
+        ],
+        "tokenFamilies": [
+          "component.table.*",
+          "font.data.*",
+          "color.line"
+        ],
+        "companionTargets": [
+          "table",
+          "data-table"
+        ],
+        "publicParts": {
+          "en-table": [
+            "base",
+            "viewport"
+          ],
+          "en-data-table": [
+            "body",
+            "caption",
+            "empty",
+            "header",
+            "pagination",
+            "pagination-control",
+            "pagination-next",
+            "pagination-page",
+            "pagination-previous",
+            "surface",
+            "table",
+            "table-surface",
+            "viewport"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "table",
+            "presentation": "line-table",
+            "hookTokens": {},
+            "typedRoles": {
+              "block-padding-small": "space.2",
+              "block-padding-medium": "space.3",
+              "block-padding-large": "space.3",
+              "inline-padding-small": "space.2",
+              "inline-padding-medium": "space.3",
+              "inline-padding-large": "space.4",
+              "caption-size": "font.metadata.size",
+              "caption-line-height": "font.metadata.line-height",
+              "caption-weight": "font.label-strong.weight",
+              "footer-weight": "font.label-strong.weight",
+              "background": "color.canvas",
+              "header-background": "color.canvas",
+              "border-color": "color.line",
+              "hover-background": "color.selected"
+            }
+          },
+          {
+            "target": "data-table",
+            "presentation": "line-table",
+            "hookTokens": {},
+            "typedRoles": {
+              "block-padding-small": "space.2",
+              "block-padding-medium": "space.3",
+              "block-padding-large": "space.3",
+              "inline-padding-small": "space.2",
+              "inline-padding-medium": "space.3",
+              "inline-padding-large": "space.4",
+              "caption-size": "font.metadata.size",
+              "caption-line-height": "font.metadata.line-height",
+              "caption-weight": "font.label-strong.weight",
+              "background": "color.canvas",
+              "header-background": "color.canvas",
+              "border-color": "color.line",
+              "hover-background": "color.selected"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Native table helper exposes cell padding directly; data-table internal cell directions are not fully forwarded.",
+        "Virtualization, sorting, selection and accessible table semantics are not replaced."
+      ]
+    },
+    "carousel": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/carousel.ts"
+      ],
+      "sourceDefaults": {
+        "source": "default layout gap16px; source indicators are10px dots"
+      },
+      "enReve": {
+        "elements": [
+          "en-carousel",
+          "en-carousel-slide"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.carousel.*"
+        ],
+        "companionTargets": [
+          "carousel"
+        ],
+        "publicParts": {
+          "en-carousel": [
+            "announcement",
+            "base",
+            "controls",
+            "first",
+            "last",
+            "next",
+            "picker",
+            "picker-button",
+            "picker-current",
+            "picker-number",
+            "picker-range",
+            "picker-tooltip-surface",
+            "position",
+            "previous",
+            "reading-item",
+            "reading-list",
+            "rotation",
+            "slide",
+            "thumbnail",
+            "track",
+            "viewport"
+          ],
+          "en-carousel-slide": [
+            "base"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "carousel",
+            "presentation": "solid-position-selection",
+            "hookTokens": {},
+            "typedRoles": {
+              "layout-gap": "space.2",
+              "picker-gap": "space.3",
+              "selected-background": "color.action",
+              "selected-color": "color.on-action"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Layout gap uses the public measured --en-carousel-gap hook.",
+        "Numbered/thumbnail navigation retains accessible labels and target floors; source10px indicators are not substituted for protected controls."
+      ]
+    },
+    "steps": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/steps.ts"
+      ],
+      "sourceDefaults": {
+        "default": "solid/md:indicator40px circle,2px border,gutter12px,title14px weight500,rootgap16px;current muted withsolidborder;complete solid/contrast"
+      },
+      "enReve": {
+        "elements": [
+          "en-progress-steps",
+          "en-progress-step"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "--en-progress-steps-gap",
+          "font.ui.*"
+        ],
+        "companionTargets": [
+          "progress-steps"
+        ],
+        "publicParts": {
+          "en-progress-steps": [
+            "base",
+            "control",
+            "disclosure",
+            "disclosure-control",
+            "error",
+            "item",
+            "label",
+            "list",
+            "number",
+            "status"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "progress-steps",
+            "presentation": "steps-indicators",
+            "hookTokens": {},
+            "typedRoles": {
+              "indicator-scale": "theme.feedback.steps.indicator-scale",
+              "control-gap": "space.3",
+              "label-weight": "theme.feedback.type.medium",
+              "gap": "space.3"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Public number/control/label Parts carry proportional40px indices,12px gaps and500 labels.",
+        "Current/error tile paint, navigation/disclosure and target floors remain. No public connector or indicator-state anatomy permits exact current/completed circles and connecting lines.",
+        "en-progress-step is a display:contents descriptor; the parent owns its visible presentation."
+      ]
+    },
+    "avatar": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/avatar.ts"
+      ],
+      "sourceDefaults": {
+        "default": "subtle/md40px circle,16px initials,weight500,uppercase,lineheight1,palette.muted/fg;sm36px/lg44px"
+      },
+      "enReve": {
+        "elements": [
+          "en-avatar"
+        ],
+        "nativeHelpers": [
+          ".en-avatar"
+        ],
+        "tokenFamilies": [
+          "component.avatar.*",
+          "size.avatar-*"
+        ],
+        "companionTargets": [
+          "avatar"
+        ],
+        "publicParts": {
+          "en-avatar": [
+            "base",
+            "fallback",
+            "image"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "avatar",
+            "presentation": "avatar-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.neutral.muted",
+              "color": "theme.feedback.neutral.foreground",
+              "font-scale": "theme.feedback.avatar.font-scale",
+              "font-weight": "theme.feedback.type.medium"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Fallback font scales from inherited UI typography; the complete Chakra discrete avatar-size API is not added.",
+        "Application image content, fallback selection and accessible naming stay intact."
+      ]
+    },
+    "badge": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/badge.ts"
+      ],
+      "sourceDefaults": {
+        "default": "subtle/sm12/16px weight500,inline6px,gap4px,min20px,radius4px,border0;neutralpalette.subtle/fg"
+      },
+      "enReve": {
+        "elements": [
+          "en-badge"
+        ],
+        "nativeHelpers": [
+          ".en-badge"
+        ],
+        "tokenFamilies": [
+          "component.badge.*",
+          "space.badge-*"
+        ],
+        "companionTargets": [
+          "badge"
+        ],
+        "publicParts": {
+          "en-badge": [
+            "base",
+            "label"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "badge",
+            "presentation": "badge-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "minimum-size": "theme.feedback.geometry.size-20",
+              "inline-padding": "theme.feedback.geometry.padding-6",
+              "gap": "theme.feedback.geometry.gap-4",
+              "background": "theme.feedback.neutral.subtle",
+              "color": "theme.feedback.neutral.foreground"
+            }
+          },
+          {
+            "target": "badge",
+            "variant": "neutral",
+            "presentation": "badge-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.neutral.subtle",
+              "color": "theme.feedback.neutral.foreground"
+            }
+          },
+          {
+            "target": "badge",
+            "variant": "accent",
+            "presentation": "badge-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "color.selected",
+              "color": "color.action-text"
+            }
+          },
+          {
+            "target": "badge",
+            "variant": "success",
+            "presentation": "badge-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.status.success.subtle",
+              "color": "theme.feedback.status.success.foreground"
+            }
+          },
+          {
+            "target": "badge",
+            "variant": "warning",
+            "presentation": "badge-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.status.warning.subtle",
+              "color": "theme.feedback.status.warning.foreground"
+            }
+          },
+          {
+            "target": "badge",
+            "variant": "danger",
+            "presentation": "badge-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.status.danger.subtle",
+              "color": "theme.feedback.status.danger.foreground"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Semantic success/warning/danger variants keep their independent status palettes; decorative badge sizing does not shrink interactive controls."
+      ]
+    },
+    "tag": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/tag.ts"
+      ],
+      "sourceDefaults": {
+        "default": "surface/md12/16px,inline6px,gap4px,min20px,radius4px,inset1px palette.muted"
+      },
+      "enReve": {
+        "elements": [
+          "en-tag"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.tag.*"
+        ],
+        "companionTargets": [
+          "tag"
+        ],
+        "publicParts": {
+          "en-tag": [
+            "base",
+            "remove"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "tag",
+            "presentation": "tag-surface",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.neutral.subtle",
+              "color": "theme.feedback.neutral.foreground",
+              "shadow": "theme.feedback.tag.shadow",
+              "radius": "radius.control",
+              "font-size": "theme.feedback.type.small",
+              "line-height": "theme.feedback.type.small-line",
+              "inline-padding": "theme.feedback.geometry.padding-6",
+              "gap": "theme.feedback.geometry.gap-4",
+              "minimum-size": "theme.feedback.geometry.size-20"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Removable tags retain remove target floors, focus and disabled semantics. Internal .en-tag bindings are not promoted to an undocumented native helper."
+      ]
+    },
+    "alert": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/alert.ts"
+      ],
+      "sourceDefaults": {
+        "default": "subtle/md:padding16px,gap12px,radius6px,body14/20px,title500,icon20px,contentgap4px;info blue/successgreen/warningorange/errorred"
+      },
+      "enReve": {
+        "elements": [
+          "en-alert",
+          "en-validation-summary"
+        ],
+        "nativeHelpers": [
+          ".en-alert"
+        ],
+        "tokenFamilies": [
+          "component.alert.*",
+          "color.success-*",
+          "color.warning-*",
+          "color.danger-*"
+        ],
+        "companionTargets": [
+          "alert"
+        ],
+        "publicParts": {
+          "en-alert": [
+            "base",
+            "close",
+            "content",
+            "icon"
+          ],
+          "en-validation-summary": [
+            "base",
+            "description",
+            "error",
+            "heading",
+            "item",
+            "link",
+            "list"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "alert",
+            "presentation": "alert-subtle",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-weight": "theme.feedback.type.normal",
+              "icon-size": "theme.feedback.geometry.size-20",
+              "success-background": "theme.feedback.status.success.subtle",
+              "success-color": "theme.feedback.status.success.foreground",
+              "warning-background": "theme.feedback.status.warning.subtle",
+              "warning-color": "theme.feedback.status.warning.foreground",
+              "danger-background": "theme.feedback.status.danger.subtle",
+              "danger-color": "theme.feedback.status.danger.foreground",
+              "info-background": "theme.feedback.status.info.subtle",
+              "info-color": "theme.feedback.status.info.foreground"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Source borderless appearance uses a transparent retained1px boundary so authored border-color hooks remain useful.",
+        "Validation summary consumes inherited typography/status tokens; it retains its own links and error navigation."
+      ]
+    },
+    "toast": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/toast.ts"
+      ],
+      "sourceDefaults": {
+        "default": "panel/fg,shadow.xl,radius4px,padding16px withend24px,gap12px,title14/20px weight500,descriptionopacity0.8"
+      },
+      "enReve": {
+        "elements": [
+          "en-toast",
+          "en-toast-region"
+        ],
+        "nativeHelpers": [
+          ".en-toast"
+        ],
+        "tokenFamilies": [
+          "component.toast.*",
+          "component.toast-region.*"
+        ],
+        "companionTargets": [
+          "toast"
+        ],
+        "publicParts": {
+          "en-toast": [
+            "actions",
+            "base",
+            "close",
+            "content",
+            "icon"
+          ],
+          "en-toast-region": [
+            "announcements",
+            "base",
+            "history",
+            "history-list",
+            "history-summary",
+            "stack-summary",
+            "urgent"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "toast",
+            "presentation": "toast-notification",
+            "hookTokens": {},
+            "typedRoles": {
+              "end-padding": "theme.feedback.toast.end-padding",
+              "font-weight": "theme.feedback.type.normal"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Success solid uses green700 instead ofgreen600, light warning orange700 instead oforange600 for ordinary white-text contrast; dark warning retains source orange500/black.",
+        "Close action keeps protected third column; timeouts, announcements, dismissal and authored general-padding hook remain intact."
+      ]
+    },
+    "progress": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/progress.ts"
+      ],
+      "sourceDefaults": {
+        "default": "outline/md10px track,radius2px,mutedbackground,inset1px black5%,solid range,300ms"
+      },
+      "enReve": {
+        "elements": [
+          "en-progress-bar"
+        ],
+        "nativeHelpers": [
+          "progress.en-progress"
+        ],
+        "tokenFamilies": [
+          "component.progress.*"
+        ],
+        "companionTargets": [
+          "progress-bar"
+        ],
+        "publicParts": {
+          "en-progress-bar": [
+            "circle",
+            "track"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "progress-bar",
+            "presentation": "progress-rounded",
+            "hookTokens": {},
+            "typedRoles": {
+              "radius": "theme.feedback.progress.radius",
+              "shadow": "theme.feedback.progress.shadow"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Native determinate fill and browser pseudo-element anatomy limit exact range presentation.",
+        "Progress Circle has no determinate circular counterpart; Spinner is only an indeterminate alternative."
+      ]
+    },
+    "spinner": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/spinner.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md20px,stroke2px,500ms linear;bottom andinline-start sectors transparent"
+      },
+      "enReve": {
+        "elements": [
+          "en-spinner"
+        ],
+        "nativeHelpers": [
+          ".en-spinner"
+        ],
+        "tokenFamilies": [
+          "component.spinner.*"
+        ],
+        "companionTargets": [
+          "spinner"
+        ],
+        "publicParts": {
+          "en-spinner": [
+            "base"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "spinner",
+            "presentation": "spinner-open",
+            "hookTokens": {},
+            "typedRoles": {}
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Reduced-motion behavior and accessible loading announcements remain authoritative."
+      ]
+    },
+    "skeleton": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/skeleton.ts"
+      ],
+      "sourceDefaults": {
+        "default": "pulse:emphasizedbackground,radius4px,1.2s cubic-bezier(.4,0,.6,1),opacity0.5 at50%"
+      },
+      "enReve": {
+        "elements": [
+          "en-skeleton"
+        ],
+        "nativeHelpers": [
+          ".en-skeleton"
+        ],
+        "tokenFamilies": [
+          "component.skeleton.*"
+        ],
+        "companionTargets": [
+          "skeleton"
+        ],
+        "publicParts": {
+          "en-skeleton": [
+            "base"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "skeleton",
+            "presentation": "skeleton-pulse",
+            "hookTokens": {},
+            "typedRoles": {
+              "background": "theme.feedback.neutral.muted"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Pulse applies only with no reduced-motion preference and no forced colors. Source shine/loading-presence APIs are not added."
+      ]
+    },
+    "status": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/status.ts"
+      ],
+      "sourceDefaults": {
+        "default": "md14/20px,gap8px,indicator0.64em circle,palette.solid"
+      },
+      "enReve": {
+        "elements": [
+          "en-presence",
+          "en-presence-group"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.presence.*",
+          "font.ui.*"
+        ],
+        "companionTargets": [
+          "presence"
+        ],
+        "publicParts": {
+          "en-presence": [
+            "avatar",
+            "base",
+            "indicator",
+            "link",
+            "name",
+            "status"
+          ],
+          "en-presence-group": [
+            "base",
+            "members",
+            "overflow",
+            "overflow-control"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "presence",
+            "presentation": "status-inline",
+            "hookTokens": {},
+            "typedRoles": {
+              "gap": "space.2",
+              "indicator-scale": "theme.feedback.presence.indicator-scale"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Status corresponds to the public presence status/indicator Parts; identity/avatar/name and link geometry remain.",
+        "Online/busy/offline/away semantic colors and shape cues remain; a generic source status must not erase meaning."
+      ]
+    },
+    "timeline": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/timeline.ts"
+      ],
+      "sourceDefaults": {
+        "default": "subtle/md:indicator20px,1pxconnector,gutter4px,itemgap16px,contentbottom24px,title14/20px weight500,gap6px,description12/16pxmuted"
+      },
+      "enReve": {
+        "elements": [
+          "en-activity-feed",
+          "en-activity-item"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.activity.*",
+          "font.ui.*",
+          "font.metadata.*"
+        ],
+        "companionTargets": [
+          "activity-feed",
+          "activity-item"
+        ],
+        "publicParts": {
+          "en-activity-feed": [
+            "announcement",
+            "base",
+            "cancel-load",
+            "empty",
+            "error",
+            "group-context",
+            "group-heading",
+            "list",
+            "load-more",
+            "loading",
+            "pagination",
+            "row",
+            "updates",
+            "viewport"
+          ],
+          "en-activity-item": [
+            "actions",
+            "attachments",
+            "author",
+            "base",
+            "content",
+            "header",
+            "item",
+            "metadata",
+            "time"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "activity-feed",
+            "presentation": "timeline-feed",
+            "hookTokens": {
+              "--en-font-ui-weight": "theme.feedback.type.normal"
+            },
+            "typedRoles": {
+              "label-weight": "theme.feedback.type.medium"
+            }
+          },
+          {
+            "target": "activity-item",
+            "presentation": "timeline-entry",
+            "hookTokens": {
+              "--en-font-ui-weight": "theme.feedback.type.normal"
+            },
+            "typedRoles": {
+              "header-gap": "space.1-5",
+              "label-weight": "theme.feedback.type.medium",
+              "body-weight": "theme.feedback.type.normal",
+              "metadata-scale": "theme.feedback.activity.metadata-scale"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Transparent unboxed entries,24px gaps and public header/author/time typography are mapped.",
+        "Feed does not forward generated item Parts; those children receive inherited hooks/type only.",
+        "No public connector/indicator/last-item anatomy supports exact source lines. Grouped and virtual pages keep their own structure; no artificial timeline is painted through them."
+      ]
+    },
+    "color": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/color-picker.ts",
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/color-swatch.ts"
+      ],
+      "sourceDefaults": {
+        "colorPicker": "panel256px,inset16px,gap12px,radius6px,shadow.lg;plane180px tall;thumb/track14px,radius4px;preview28px/radius2px;channelgap8px,helper12px/body14px;checker8px pattern with4px tiles",
+        "swatch": "source decorative20px,radius2px,insetblack10%"
+      },
+      "enReve": {
+        "elements": [
+          "en-color-picker",
+          "en-color-plane",
+          "en-color-slider",
+          "en-color-wheel",
+          "en-color-field",
+          "en-swatch"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.color-*",
+          "component.swatch.*"
+        ],
+        "companionTargets": [
+          "color-picker",
+          "color-plane",
+          "color-slider",
+          "swatch"
+        ],
+        "publicParts": {
+          "en-color-picker": [
+            "alpha",
+            "alpha-toggle",
+            "base",
+            "blue",
+            "brightness",
+            "channel",
+            "channel-error",
+            "channel-field",
+            "channel-input",
+            "channels",
+            "conversion",
+            "format",
+            "formats",
+            "gamut-message",
+            "gradient",
+            "green",
+            "hex",
+            "hex-description",
+            "hex-error",
+            "hex-field",
+            "hue",
+            "lightness",
+            "plane",
+            "plane-axes",
+            "plane-control",
+            "plane-thumb",
+            "preview",
+            "preview-frame",
+            "red",
+            "saturation",
+            "slider",
+            "space",
+            "summary",
+            "validation-message",
+            "value"
+          ],
+          "en-color-plane": [
+            "alpha",
+            "axes",
+            "base",
+            "brightness",
+            "channel",
+            "channel-error",
+            "channel-field",
+            "channel-input",
+            "channels",
+            "error",
+            "gradient",
+            "hue",
+            "plane",
+            "saturation",
+            "slider",
+            "thumb"
+          ],
+          "en-color-slider": [
+            "control",
+            "description",
+            "editor",
+            "editor-field",
+            "editor-label",
+            "error",
+            "field",
+            "gradient",
+            "label",
+            "output",
+            "row"
+          ],
+          "en-color-wheel": [
+            "base",
+            "center",
+            "control",
+            "editor",
+            "editor-field",
+            "editor-label",
+            "error",
+            "label",
+            "ring",
+            "thumb"
+          ],
+          "en-color-field": [
+            "control",
+            "description",
+            "error",
+            "field",
+            "focus-frame",
+            "label"
+          ],
+          "en-swatch": [
+            "color",
+            "control",
+            "label",
+            "sample"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "color-plane",
+            "presentation": "compact-channels",
+            "hookTokens": {},
+            "typedRoles": {
+              "plane-height": "theme.specialized.color-plane.plane-height",
+              "plane-radius": "theme.specialized.color-plane.plane-radius",
+              "thumb-size": "theme.specialized.color-plane.thumb-size",
+              "track-size": "theme.specialized.color-plane.track-size",
+              "track-radius": "theme.specialized.color-plane.track-radius",
+              "checker-size": "theme.specialized.color-plane.checker-size",
+              "checker-light": "theme.specialized.color-plane.checker-light",
+              "checker-dark": "theme.specialized.color-plane.checker-dark",
+              "gap": "theme.specialized.color-plane.gap",
+              "helper-size": "theme.specialized.color-plane.helper-size",
+              "helper-line-height": "theme.specialized.color-plane.helper-line-height"
+            }
+          },
+          {
+            "target": "color-slider",
+            "presentation": "compact-channels",
+            "hookTokens": {},
+            "typedRoles": {
+              "plane-height": "theme.specialized.color-slider.plane-height",
+              "plane-radius": "theme.specialized.color-slider.plane-radius",
+              "thumb-size": "theme.specialized.color-slider.thumb-size",
+              "track-size": "theme.specialized.color-slider.track-size",
+              "track-radius": "theme.specialized.color-slider.track-radius",
+              "checker-size": "theme.specialized.color-slider.checker-size",
+              "checker-light": "theme.specialized.color-slider.checker-light",
+              "checker-dark": "theme.specialized.color-slider.checker-dark"
+            }
+          },
+          {
+            "target": "color-picker",
+            "presentation": "compact-panel",
+            "hookTokens": {},
+            "typedRoles": {
+              "plane-height": "theme.specialized.color-picker.plane-height",
+              "plane-radius": "theme.specialized.color-picker.plane-radius",
+              "thumb-size": "theme.specialized.color-picker.thumb-size",
+              "track-size": "theme.specialized.color-picker.track-size",
+              "track-radius": "theme.specialized.color-picker.track-radius",
+              "checker-size": "theme.specialized.color-picker.checker-size",
+              "checker-light": "theme.specialized.color-picker.checker-light",
+              "checker-dark": "theme.specialized.color-picker.checker-dark",
+              "font-size": "theme.specialized.color-picker.font-size",
+              "line-height": "theme.specialized.color-picker.line-height",
+              "font-weight": "theme.specialized.color-picker.font-weight",
+              "inline-size": "theme.specialized.color-picker.inline-size",
+              "gap": "theme.specialized.color-picker.gap",
+              "padding": "theme.specialized.color-picker.padding",
+              "radius": "theme.specialized.color-picker.radius",
+              "preview-size": "theme.specialized.color-picker.preview-size",
+              "preview-radius": "theme.specialized.color-picker.preview-radius",
+              "summary-gap": "theme.specialized.color-picker.summary-gap",
+              "helper-size": "theme.specialized.color-picker.helper-size",
+              "helper-line-height": "theme.specialized.color-picker.helper-line-height",
+              "background": "theme.specialized.color-picker.background",
+              "color": "theme.specialized.color-picker.color",
+              "shadow": "theme.specialized.color-picker.shadow"
+            }
+          },
+          {
+            "target": "swatch",
+            "presentation": "compact-sample",
+            "hookTokens": {},
+            "typedRoles": {
+              "size": "theme.specialized.swatch.size",
+              "radius": "theme.specialized.swatch.radius",
+              "shadow": "theme.specialized.swatch.shadow"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "En Reve color picker is inline; source trigger/popover composition is not added.",
+        "Native range thumb paint, gamut/conversion controls and color wheel anatomy remain En Reve behavior.",
+        "Swatch is interactive and preserves its target floor and dynamic authored color rather than overriding it with a fixed theme swatch."
+      ]
+    },
+    "upload": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/file-upload.ts"
+      ],
+      "sourceDefaults": {
+        "default": "dropzone centered,min256px,radius6px,border2pxdashed,paddinginline12px/block8px,gap16px;listgap12px,rowpadding16px/radius4px/border1px;filename14px weight500"
+      },
+      "enReve": {
+        "elements": [
+          "en-file-upload"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.file-upload.*"
+        ],
+        "companionTargets": [
+          "file-upload"
+        ],
+        "publicParts": {
+          "en-file-upload": [
+            "choose-label",
+            "control",
+            "description",
+            "drop-label",
+            "dropzone",
+            "error",
+            "field",
+            "file",
+            "file-name",
+            "label",
+            "list",
+            "remove",
+            "remove-button"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "file-upload",
+            "presentation": "stacked-dropzone",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.file-upload.font-size",
+              "line-height": "theme.specialized.file-upload.line-height",
+              "font-weight": "theme.specialized.file-upload.font-weight",
+              "label-size": "theme.specialized.file-upload.label-size",
+              "label-weight": "theme.specialized.file-upload.label-weight",
+              "helper-size": "theme.specialized.file-upload.helper-size",
+              "helper-line-height": "theme.specialized.file-upload.helper-line-height",
+              "helper-weight": "theme.specialized.file-upload.helper-weight",
+              "error-weight": "theme.specialized.file-upload.error-weight",
+              "field-gap": "theme.specialized.file-upload.field-gap",
+              "disabled-opacity": "theme.specialized.file-upload.disabled-opacity",
+              "min-height": "theme.specialized.file-upload.min-height",
+              "radius": "theme.specialized.file-upload.radius",
+              "border-width": "theme.specialized.file-upload.border-width",
+              "padding-inline": "theme.specialized.file-upload.padding-inline",
+              "padding-block": "theme.specialized.file-upload.padding-block",
+              "gap": "theme.specialized.file-upload.gap",
+              "list-gap": "theme.specialized.file-upload.list-gap",
+              "file-padding": "theme.specialized.file-upload.file-padding",
+              "file-radius": "theme.specialized.file-upload.file-radius",
+              "file-gap": "theme.specialized.file-upload.file-gap",
+              "file-weight": "theme.specialized.file-upload.file-weight",
+              "background": "theme.specialized.file-upload.background",
+              "hover-background": "theme.specialized.file-upload.hover-background",
+              "border-color": "theme.specialized.file-upload.border-color",
+              "file-background": "theme.specialized.file-upload.file-background",
+              "file-border-color": "theme.specialized.file-upload.file-border-color"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Hidden real file-input opacity and browser selection semantics remain intact.",
+        "Remove targets stay protected; file previews/sizes and source custom composition are not fabricated."
+      ]
+    },
+    "editor": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/tags-input.ts"
+      ],
+      "sourceDefaults": {
+        "tagsInput": "md control14/20px,inline12px/block8px;tokenmin28px,radius2px,inline8px,gap4px"
+      },
+      "enReve": {
+        "elements": [
+          "en-token-editor",
+          "en-rich-text-editor",
+          "en-editor-toolbar",
+          "en-editor-trigger"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.editor-token.*",
+          "component.input.*",
+          "font.input.*"
+        ],
+        "companionTargets": [
+          "token-editor",
+          "rich-text-editor"
+        ],
+        "publicParts": {
+          "en-token-editor": [
+            "control",
+            "description",
+            "label",
+            "option",
+            "popup",
+            "token",
+            "token-content",
+            "token-interactive"
+          ],
+          "en-rich-text-editor": [
+            "control",
+            "description",
+            "label",
+            "option",
+            "popup",
+            "range-decoration",
+            "token",
+            "token-content",
+            "token-interactive"
+          ],
+          "en-editor-toolbar": [
+            "base",
+            "command",
+            "command-icon",
+            "link-editor",
+            "toolbar"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "token-editor",
+            "presentation": "compact-tokens",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.token-editor.font-size",
+              "line-height": "theme.specialized.token-editor.line-height",
+              "font-weight": "theme.specialized.token-editor.font-weight",
+              "label-size": "theme.specialized.token-editor.label-size",
+              "label-weight": "theme.specialized.token-editor.label-weight",
+              "helper-size": "theme.specialized.token-editor.helper-size",
+              "helper-line-height": "theme.specialized.token-editor.helper-line-height",
+              "helper-weight": "theme.specialized.token-editor.helper-weight",
+              "error-weight": "theme.specialized.token-editor.error-weight",
+              "field-gap": "theme.specialized.token-editor.field-gap",
+              "disabled-opacity": "theme.specialized.token-editor.disabled-opacity",
+              "padding-inline": "theme.specialized.token-editor.padding-inline",
+              "padding-block": "theme.specialized.token-editor.padding-block",
+              "token-size": "theme.specialized.token-editor.token-size",
+              "token-radius": "theme.specialized.token-editor.token-radius",
+              "token-padding-inline": "theme.specialized.token-editor.token-padding-inline",
+              "token-padding-block": "theme.specialized.token-editor.token-padding-block",
+              "token-gap": "theme.specialized.token-editor.token-gap",
+              "token-font-size": "theme.specialized.token-editor.token-font-size",
+              "token-line-height": "theme.specialized.token-editor.token-line-height",
+              "token-background": "theme.specialized.token-editor.token-background",
+              "token-color": "theme.specialized.token-editor.token-color",
+              "token-hover-background": "theme.specialized.token-editor.token-hover-background",
+              "token-pressed-background": "theme.specialized.token-editor.token-pressed-background"
+            }
+          },
+          {
+            "target": "rich-text-editor",
+            "presentation": "compact-tokens",
+            "hookTokens": {},
+            "typedRoles": {
+              "font-size": "theme.specialized.rich-text-editor.font-size",
+              "line-height": "theme.specialized.rich-text-editor.line-height",
+              "font-weight": "theme.specialized.rich-text-editor.font-weight",
+              "label-size": "theme.specialized.rich-text-editor.label-size",
+              "label-weight": "theme.specialized.rich-text-editor.label-weight",
+              "helper-size": "theme.specialized.rich-text-editor.helper-size",
+              "helper-line-height": "theme.specialized.rich-text-editor.helper-line-height",
+              "helper-weight": "theme.specialized.rich-text-editor.helper-weight",
+              "error-weight": "theme.specialized.rich-text-editor.error-weight",
+              "field-gap": "theme.specialized.rich-text-editor.field-gap",
+              "disabled-opacity": "theme.specialized.rich-text-editor.disabled-opacity",
+              "padding-inline": "theme.specialized.rich-text-editor.padding-inline",
+              "padding-block": "theme.specialized.rich-text-editor.padding-block",
+              "token-size": "theme.specialized.rich-text-editor.token-size",
+              "token-radius": "theme.specialized.rich-text-editor.token-radius",
+              "token-padding-inline": "theme.specialized.rich-text-editor.token-padding-inline",
+              "token-padding-block": "theme.specialized.rich-text-editor.token-padding-block",
+              "token-gap": "theme.specialized.rich-text-editor.token-gap",
+              "token-font-size": "theme.specialized.rich-text-editor.token-font-size",
+              "token-line-height": "theme.specialized.rich-text-editor.token-line-height",
+              "token-background": "theme.specialized.rich-text-editor.token-background",
+              "token-color": "theme.specialized.rich-text-editor.token-color",
+              "token-hover-background": "theme.specialized.rich-text-editor.token-hover-background",
+              "token-pressed-background": "theme.specialized.rich-text-editor.token-pressed-background"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Token editor is an editing model rather than Chakra list-valued TagsInput; rich-text editor uses the matching public text/control/token surfaces.",
+        "Chakra Rich Text Editor is a Tiptap composition, not a pinned core slot recipe. Formatting, selection, composition and undo behavior are not reproduced by theme."
+      ]
+    },
+    "splitter": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/splitter.ts"
+      ],
+      "sourceDefaults": {
+        "default": "separatorline1px,handle8x24px capsule,border1px,shadow.xs"
+      },
+      "enReve": {
+        "elements": [
+          "en-splitter",
+          "en-split-view"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "component.splitter.*"
+        ],
+        "companionTargets": [
+          "splitter",
+          "split-view"
+        ],
+        "publicParts": {
+          "en-splitter": [
+            "base",
+            "grip"
+          ],
+          "en-split-view": [
+            "base",
+            "controls",
+            "primary",
+            "primary-action",
+            "primary-toggle",
+            "secondary",
+            "secondary-action",
+            "secondary-toggle",
+            "separator"
+          ]
+        },
+        "companionBindings": [
+          {
+            "target": "splitter",
+            "presentation": "capsule-handle",
+            "hookTokens": {},
+            "typedRoles": {
+              "handle-size": "theme.specialized.splitter.handle-size",
+              "handle-length": "theme.specialized.splitter.handle-length",
+              "handle-radius": "theme.specialized.splitter.handle-radius",
+              "border-width": "theme.specialized.splitter.border-width",
+              "border-color": "theme.specialized.splitter.border-color",
+              "handle-background": "theme.specialized.splitter.handle-background",
+              "focus-background": "theme.specialized.splitter.focus-background",
+              "active-background": "theme.specialized.splitter.active-background",
+              "shadow": "theme.specialized.splitter.shadow"
+            }
+          },
+          {
+            "target": "split-view",
+            "presentation": "capsule-handle",
+            "hookTokens": {},
+            "typedRoles": {
+              "handle-size": "theme.specialized.split-view.handle-size",
+              "handle-length": "theme.specialized.split-view.handle-length",
+              "handle-radius": "theme.specialized.split-view.handle-radius",
+              "border-width": "theme.specialized.split-view.border-width",
+              "border-color": "theme.specialized.split-view.border-color",
+              "handle-background": "theme.specialized.split-view.handle-background",
+              "focus-background": "theme.specialized.split-view.focus-background",
+              "active-background": "theme.specialized.split-view.active-background",
+              "shadow": "theme.specialized.split-view.shadow"
+            }
+          }
+        ]
+      },
+      "adaptationsAndLimits": [
+        "Public base/grip Parts and split-view separator receive finite presentation; resizing grid math, keyboard/RTL constraints and hit targets stay intact."
+      ]
+    },
+    "layout": {
+      "referenceSources": [
+        "https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2fcde0b8012f136cf99611ff262a/packages/react/src/theme/recipes/separator.ts"
+      ],
+      "sourceDefaults": {
+        "separator": "solid,1pxborder",
+        "spacing": "4px-based source spacing scale; application layout selects its own dimensions"
+      },
+      "enReve": {
+        "elements": [
+          "en-stack"
+        ],
+        "nativeHelpers": [
+          ".en-stack",
+          ".en-cluster",
+          ".en-grid",
+          ".en-scroll-region",
+          ".en-divider"
+        ],
+        "tokenFamilies": [
+          "space.*",
+          "layout.*",
+          "color.line"
+        ],
+        "companionTargets": [],
+        "publicParts": {
+          "en-stack": [
+            "base"
+          ]
+        },
+        "companionBindings": []
+      },
+      "adaptationsAndLimits": [
+        "Box/flex/grid/position/aspect/overflow helpers are layout utilities. Shared tokens are available; a theme does not rewrite application layout or add Chakra utility props.",
+        "Documented .en-divider maps the source solid/sm1px separator through shared line tokens; no new separator component is created."
+      ]
+    },
+    "icon": {
+      "referenceSources": [],
+      "sourceDefaults": {
+        "source": "authored icon/image content inherits surrounding color and explicit size"
+      },
+      "enReve": {
+        "elements": [
+          "en-icon"
+        ],
+        "nativeHelpers": [],
+        "tokenFamilies": [
+          "size.icon-*",
+          "color.text"
+        ],
+        "companionTargets": [],
+        "publicParts": {
+          "en-icon": [
+            "base"
+          ]
+        },
+        "companionBindings": []
+      },
+      "adaptationsAndLimits": [
+        "Icon artwork and native image sizing remain content/application choices; no Chakra icon package or imagery is bundled."
+      ]
+    },
+    "utility": {
+      "referenceSources": [],
+      "sourceDefaults": {
+        "source": "behavior/context/composition utilities without a canonical visual recipe"
+      },
+      "enReve": {
+        "elements": [],
+        "nativeHelpers": [],
+        "tokenFamilies": [],
+        "companionTargets": [],
+        "publicParts": {},
+        "companionBindings": []
+      },
+      "adaptationsAndLimits": [
+        "Theme tokens and companions do not create runtime providers, client-only rendering, portals, collection loops, download/copy actions, locale formatters or transition lifecycles."
+      ]
+    }
+  },
+  "evidencePolicy": "Source defaults and authored controls are design mapping. Catalogue/compiler/browser execution receipts, visual comparison and manual acceptance are separate evidence; this file asserts none of those outcomes."
+}

@@ -19,7 +19,7 @@ Light and dark use independent source with matching token IDs/types. Full bounda
 
 ## Portable source versus review evidence
 
-The nine canonical recipes in `tooling/theme-candidates/definitions.json` are the retained release corpus. They carry independent trusted branch baselines plus managed edits. Selector loading, candidate preparation and same-build reopen use the same catalogue. A production consumer can resolve these inputs and emit CSS without a review build.
+The eleven canonical pairs in `tooling/theme-candidates/definitions.json` are the retained release corpus. They carry independent trusted branch baselines plus managed edits. Selector loading, candidate preparation and same-build reopen use the same catalogue. A production consumer can resolve these inputs and emit CSS without a review build.
 
 A review JSON download is an exact-build evidence envelope. Reopen verifies its source, authoritative baseline, transcript and regenerated CSS. It cannot choose a new trusted baseline or install CSS supplied by an imported envelope. A changed schema/consumer build requires regenerating review evidence; old downloads are not silently rebased. Keep the source recipe and required font/companion assets alongside the review artifact.
 
@@ -41,11 +41,57 @@ const companion = createThemeCompanion(theme, {
 // Record companion.identity beside the theme sourceHash.
 ```
 
-The grammar admits the fixed `button`, `card`, and `field` host/native recipe targets. Optional variants are the four existing button variants. Declarations assign **registered typed override hooks** from same-type resolved tokens; unknown targets, arbitrary selectors, mechanical/configuration properties and type-confused assignments fail before emission. Primary variants require explicit `variant="primary"` / `data-variant="primary"` on their host/native target. Recipes carry `schemaVersion`, ID, rules, source hash, deterministic CSS and a content identity. They are not accepted as executable review-envelope input.
+The grammar admits a finite set of component hosts and documented native helpers. The `tokens` map assigns **registered typed override hooks**, or the supported inherited typography roles, from same-type resolved tokens. Button and badge variants retain their declared finite sets. Primary buttons require explicit `variant="primary"` / `data-variant="primary"` on their host/native target.
 
-For a paired theme whose branch name differs from the boundary, pass `{name: pair.name}` as the third argument. Generated selectors have zero specificity, match an explicit `data-en-theme` plus light/dark appearance, and exclude descendant theme boundaries. Place a companion at each real portal boundary. Auto appearance must be resolved by the application to light/dark for this v1 companion route. Unlayered application rules can intentionally refine it. Do not use the companion to override protected target floors or replace forced-color/reduced-motion rules. Rendering tests cover variant isolation and nested boundaries.
+A code-owned `presentation` can additionally expose typed `roles` for its documented Parts. For example, `tooltip` with `compact` accepts spacing, typography, paint and elevation roles:
 
-Arbitrary Parts rules are separately trusted CSS, not strings in this JSON grammar. Use documented host variants and public Parts only; avoid private `.en-*` classes inside a shadow root. Maintain that CSS with a source/content hash, dependency version, scope, appearance and a list of reached Parts. For example, grouped Astryx actions can opt out of whole-button movement with `data-press="none"` on each `en-button`; native buttons use the same attribute. Popup semantics (`aria-haspopup`, including closed triggers) use `component.button.popup-pressed-scale` and `popup-pressed-offset`, falling back to ordinary button motion. Shadcn pins these to 1/0 to preserve its source exception; Astryx inherits .98. No selector infers grouping from visual proximity.
+```ts
+const tooltipCompanion = createThemeCompanion(theme, {
+  schemaVersion: 1,
+  id: 'compact-help',
+  rules: [{
+    target: 'tooltip',
+    presentation: 'compact',
+    tokens: {},
+    roles: {
+      background: 'color.text',
+      color: 'color.canvas',
+      paddingInline: 'space.2',
+      paddingBlock: 'space.1',
+      radius: 'radius.control',
+      fontSize: 'font.metadata.size',
+    },
+  }],
+});
+```
+
+Role values are token IDs, never CSS values. Each target/presentation pair declares its own role names and token types; `tooltip/compact` differs from the sectioned card, dialog, drawer and popover recipes. Omitted optional roles leave those declarations to the component. The presentation itself can still establish its documented structure, such as removing the surface inset and placing padding on the content Part. Existing token-only rules remain valid. Unknown fields, targets, presentations, role names, missing token IDs and mismatched types fail before emission; arbitrary selectors, property maps and CSS text are rejected. Configuration and mechanical hooks remain outside the `tokens` assignment grammar.
+
+Recipes carry `schemaVersion`, ID and rules; compiled artifacts add the source hash, deterministic CSS and a content identity. Reordering role-map keys does not change that identity. Changing a consumed token regenerates the presentation. Review-file reopening always regenerates the companion from the build's trusted catalogue and rejects replaced recipe or CSS data.
+
+For a paired theme whose branch name differs from the boundary, pass `{name: pair.name}` as the third argument for each branch. Named container style queries select the nearest full `[data-en-theme]` boundary. Each boundary resets a private marker for the theme name and appearance; matching boundaries activate it. Direct rules also include matching components and native helpers on the boundary itself. Different and repeated same-name nested themes remain independent. Public declarations stay on the consuming host, Part or native helper, so their public custom-property expressions resolve locally. The repository's paired compiler adds `data-en-appearance="auto"` rules under matching `prefers-color-scheme` media queries; stronger private marker activation survives the repeated resets in those copies. The lower-level `createThemeCompanion` emits one resolved branch. Place a companion at each real portal boundary; native top-layer surfaces that remain in their component tree keep that tree's theme.
+
+Load public component styles before token CSS and companion CSS. This ordering includes stylesheet links inside the body: inserting a companion at the end of the head still places it before those links. The docs presentation controller keeps its owned candidate stylesheet after the application's authored styles without moving application nodes.
+
+Companion CSS reserves `--en-theme-companion` in the `container-name` list of every full theme boundary. Applications that declare `container-name` or the `container` shorthand on those boundaries must preserve the reserved name alongside their own names:
+
+```css
+.panel[data-en-theme] {
+  container-name: app-panel --en-theme-companion;
+}
+/* A consumer that already needs size queries can compose the shorthand. */
+.sized-panel[data-en-theme] {
+  container: app-panel --en-theme-companion / inline-size;
+}
+```
+
+Omitting the reserved name can make queries select an outer boundary, causing missing presentation or loss of nested-theme isolation. Reserve the name for full theme boundaries. The companion itself does not set `container-type` or add size containment. Container names form a space-separated list; see the [container naming specification](https://drafts.csswg.org/css-conditional-5/#container-name).
+
+Delivery requires custom-property container style queries, available in [Firefox 151](https://www.firefox.com/en-US/firefox/151.0/releasenotes/) and [Safari 18](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#style-queries). The repository's pinned rendered matrix uses Chromium 153, Firefox 155 and WebKit 26.6; this requirement is not a promise of equivalent rendering in older browsers. Hook assignments have zero selector specificity, so ordinary consumer classes and inline declarations can override those defaults. Native presentations match the documented helper's class weight; Part selectors retain their usual pseudo-element weight. Normal cascade specificity and source order govern overrides. Use public hooks, an appropriate public selector or inline declarations to override direct geometry and paint.
+
+Install companion CSS after token CSS. Author paint in the new Part presentations is guarded by `forced-colors: none`, leaving component system-color rules in control. Motion roles use the existing bounded family hooks and reduced-motion behavior. Geometry uses logical dimensions and preserves content growth, scroll/viewport constraints and independent action target floors. Presentations do not change component state, focus, input identity, dismissal or modality. Rendered verification is still required for the actual Parts, nesting, preference modes and size contexts in use.
+
+Parts rules outside those finite presentations remain separately trusted CSS, not strings in this JSON grammar. Use documented host variants and public Parts only; avoid private `.en-*` classes inside a shadow root. Maintain that CSS with a source/content hash, dependency version, scope, appearance and a list of reached Parts. For example, grouped Astryx actions can opt out of whole-button movement with `data-press="none"` on each `en-button`; native buttons use the same attribute. Popup semantics (`aria-haspopup`, including closed triggers) use `component.button.popup-pressed-scale` and `popup-pressed-offset`, falling back to ordinary button motion. Shadcn pins these to 1/0 to preserve its source exception; Astryx inherits .98. No selector infers grouping from visual proximity.
 
 ## Connected presentation roles
 

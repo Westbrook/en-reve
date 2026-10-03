@@ -839,7 +839,7 @@ async function previewPresentation(page: Page) {
 		name: html.getAttribute('data-en-theme'), appearance: html.getAttribute('data-en-appearance'), direction: html.getAttribute('dir'),
 		colorScheme: html.style.getPropertyValue('color-scheme'), priority: html.style.getPropertyPriority('color-scheme'),
 		preview: document.querySelector('en-workflows-app')!.getAttribute('data-en-theme-preview'),
-		styles: [...document.head.querySelectorAll('style[data-en-theme-review], style[data-en-theme-review-controls]')].map(style => ({
+		styles: [...document.querySelectorAll('style[data-en-theme-review], style[data-en-theme-review-controls]')].map(style => ({
 			marker: style.hasAttribute('data-en-theme-review') ? 'theme' : 'controls', css: style.textContent,
 		})),
 		controls: [...document.querySelectorAll<HTMLElement>('.theme-controls, .site-header a[hidden]')].map(control => ({

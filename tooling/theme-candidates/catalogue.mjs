@@ -25,7 +25,7 @@ export function validateCandidateDefinitions(definitions) {
         if (companion) {
           assert.equal(companion.schemaVersion, 1);
           assert.equal(companion.id, `${id}-variants`);
-          assert.deepEqual(companion.rules.filter(rule => rule.target === 'button').map(rule => rule.variant), ["primary", "secondary", "ghost", "danger"]);
+          assert.deepEqual(companion.rules.filter(rule => rule.target === 'button' && rule.variant).map(rule => rule.variant), ["primary", "secondary", "ghost", "danger"]);
         }
 		assert.ok(typeof definition.title === 'string' && definition.title.trim(), `${id}: title required.`);
 		assert.ok(typeof definition.rationale === 'string' && definition.rationale.trim(), `${id}: rationale required.`);

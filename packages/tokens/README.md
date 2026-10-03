@@ -336,3 +336,48 @@ for the capability matrix, full examples and a runnable export/reopen workflow.
 ## Release authoring contract
 
 See the [complete authoring and delivery contract](../../plans/theme-api-authoring-contract.md) for typed/managed layers, portable companion recipes, pressed presentation, family refinements, consumed-role provenance, rendered alpha validation and licensed font delivery. `fontStyle` is a bounded normal/italic/oblique token type. Opt into unknown library-hook diagnostics with `resolveTheme({warnUnknownComponentHooks:true})`.
+
+`createThemeCompanion(theme, recipe)` supports finite component presentations over
+documented public Parts as well as the existing typed hook assignments. A rule's
+optional `roles` map supplies token IDs to the chosen presentation's declared
+role names and types:
+
+```ts
+const companion = createThemeCompanion(theme, {
+  schemaVersion: 1,
+  id: 'compact-help',
+  rules: [{
+    target: 'tooltip', presentation: 'compact', tokens: {},
+    roles: {paddingInline: 'space.2', paddingBlock: 'space.1', radius: 'radius.control'},
+  }],
+});
+```
+
+Unknown roles, incompatible token types, arbitrary selectors and CSS strings are
+rejected. Omitted roles preserve component declarations; the selected presentation
+may still establish its documented Part layout. Load the library's component
+styles first, then theme CSS and the regenerated companion. Stylesheet order is
+document order: a base stylesheet linked in the body can follow a companion in
+the head. Named container style queries select the nearest full theme
+boundary, including repeated same-name themes. Matching components and native
+helpers on the boundary itself receive direct rules. Public hook expressions stay
+on their consuming host or Part, so local overrides resolve there.
+
+Companions reserve `--en-theme-companion` in the `container-name` list of every
+`[data-en-theme]` boundary. Application declarations of `container-name` or the
+`container` shorthand must retain that name, for example
+`container-name: app-panel --en-theme-companion`. Omitting it can select an outer
+boundary, causing missing presentation or loss of nested-theme isolation. Reserve
+this name for full theme boundaries. Companion CSS does not set `container-type`
+or add size containment. See the [authoring contract](../../plans/theme-api-authoring-contract.md)
+for composition and cascade details.
+
+Delivery requires custom-property container style queries, available in
+[Firefox 151](https://www.firefox.com/en-US/firefox/151.0/releasenotes/) and
+[Safari 18](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#style-queries).
+The repository's pinned browser matrix is Chromium 153, Firefox 155 and WebKit 26.6.
+Its author paint leaves forced colors to the component. The lower-level compiler emits one
+light or dark branch; the repository's paired companion delivery adds automatic
+appearance media rules. The eleven catalogue pairs retain independent trusted
+branch sources and exact review-file roundtrips. See the contract above for
+presentation scope, size/target limits and required rendered verification.

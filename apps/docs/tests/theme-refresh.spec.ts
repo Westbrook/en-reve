@@ -272,7 +272,7 @@ for (const id of themes) {
 			expect(selectedLabel, 'The visible selector uses the canonical Radix provenance label').toBe(definition.label);
 		}
 		if (id === 'chakra-inspired') {
-			expect(definition.reference?.url, 'Chakra names the official site as its primary source').toBe('https://chakra-ui.com/');
+			expect(definition.reference?.url, 'Chakra names the audited component overview as its primary source').toBe('https://chakra-ui.com/docs/components/concepts/overview');
 			expect(definition.label).toBe('Chakra UI-inspired');
 			const selectedLabel = await page.locator('#showcase-theme').getByRole('combobox').evaluate((element: HTMLSelectElement) => element.selectedOptions[0]?.label);
 			expect(selectedLabel, 'The visible selector uses the canonical Chakra provenance label').toBe(definition.label);
@@ -388,6 +388,67 @@ for (const { id, label, radius } of [
 	await page.goto(`/component-patterns?theme=${id}&appearance=dark`);
 	await expect(page.locator('html')).toHaveAttribute('data-en-theme', id);
 	await expect(page.locator('#theme')).toHaveValue(id);
+});
+
+test('chakra-inspired: document controller follows body recipe styles without replacing native content', async ({ page }) => {
+	await page.goto('/api-examples/content-recipes');
+	const theme = page.getByRole('combobox', { name: 'Inspired theme', exact: true });
+	const appearanceControl = page.getByRole('combobox', { name: 'Appearance', exact: true });
+	const density = page.getByRole('combobox', { name: 'Density', exact: true });
+	await expect(theme).toBeEnabled();
+	await appearanceControl.selectOption('light');
+	await expect(page.locator('html')).toHaveAttribute('data-en-appearance', 'light');
+	const recipe = page.locator('body link[rel="stylesheet"][href="/styles/content.css"]');
+	await expect(recipe).toHaveCount(1);
+	await expect.poll(() => recipe.evaluate((element: HTMLLinkElement) => Boolean(element.sheet))).toBe(true);
+	const radio = page.getByRole('radio', { name: 'Campaign brief', exact: true });
+	await radio.check();
+	const card = page.locator('.en-card.en-file-card').filter({ has: radio });
+	const app = page.locator('en-api-example-app');
+	const originals = { app: await app.elementHandle(), card: await card.elementHandle(), radio: await radio.elementHandle(), recipe: await recipe.elementHandle() };
+	const geometry = () => card.evaluate(element => {
+		const css = getComputedStyle(element);
+		return { padding: css.paddingTop, inlinePadding: css.paddingInlineStart, gap: css.gap };
+	});
+	await expect.poll(async () => Number.parseFloat((await geometry()).padding)).toBeGreaterThan(0);
+	const baseline = await geometry();
+	expect(Number.parseFloat(baseline.gap)).toBeGreaterThan(0);
+	const preserved = async () => {
+		for (const key of ['app', 'card', 'radio', 'recipe'] as const) {
+			const locator = { app, card, radio, recipe }[key];
+			expect(await locator.evaluate((element, original) => element === original, originals[key]), `${key} retains its original node`).toBe(true);
+		}
+		await expect(radio).toBeChecked();
+	};
+	const candidate = page.locator('style[data-example-theme]');
+	const candidateWins = async () => {
+		await expect(candidate).toHaveCount(1);
+		await expect.poll(() => geometry()).toEqual({ padding: '0px', inlinePadding: '0px', gap: '0px' });
+		expect(await candidate.evaluate(element => {
+			const recipe = document.querySelector('body link[rel="stylesheet"][href="/styles/content.css"]')!;
+			return element.parentElement === document.body && document.body.lastElementChild === element
+				&& Boolean(recipe.compareDocumentPosition(element) & Node.DOCUMENT_POSITION_FOLLOWING);
+		}), 'The real document controller places its owned stylesheet after the preserved body recipe link').toBe(true);
+		await preserved();
+	};
+	await theme.selectOption('chakra-inspired');
+	await expect(page.getByRole('status', { name: 'Theme result' })).toContainText('Chakra UI-inspired');
+	await expect(page.locator('html')).toHaveAttribute('data-en-theme', 'chakra-inspired');
+	await candidateWins();
+	for (const [mode, value] of [['dark', 'compact'], ['light', 'comfortable']] as const) {
+		await appearanceControl.selectOption(mode);
+		await expect(page.locator('html')).toHaveAttribute('data-en-appearance', mode);
+		const previousCSS = await candidate.textContent();
+		await density.selectOption(value);
+		await expect(page.locator('html')).toHaveAttribute('data-example-density', value);
+		await expect.poll(async () => (await candidate.textContent()) !== previousCSS).toBe(true);
+		await candidateWins();
+	}
+	await theme.selectOption('default');
+	await expect(candidate).toHaveCount(0);
+	await expect(page.locator('html')).not.toHaveAttribute('data-en-theme', 'chakra-inspired');
+	await expect.poll(() => geometry()).toEqual(baseline);
+	await preserved();
 });
 
 test('web-awesome-inspired: trusted companions follow paired themes into workflow previews', async ({ page }, info) => {

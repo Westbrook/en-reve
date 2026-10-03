@@ -2,6 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {resolveTheme,tokenDocument,colorFromHex,createReviewDraft,emitThemeCSS,createThemeCompanion,validateRoleProvenance,validateRenderedRelationships,customizationContracts} from '../dist/index.js';
 
+function assertNamedBoundary(css, name, mode = 'light') {
+ const marker = `--en-companion-${name}-${mode}`;
+ assert.ok(css.includes(`:where([data-en-theme]) { container-name: --en-theme-companion; ${marker}: initial; }`));
+ assert.ok(css.includes(`[data-en-theme="${name}"][data-en-appearance="${mode}"] { ${marker}: 1; }`));
+ assert.ok(css.includes(`@container --en-theme-companion style(${marker}: 1)`));
+ assert.doesNotMatch(css, /@scope|:scope/);
+}
+
 test('unknown component warnings are opt-in and preserve valid application outputs and identity',()=>{
  const source=tokenDocument({'component.button.typo':{$type:'number',$value:1}});
  const base=resolveTheme({source}); const checked=resolveTheme({source,warnUnknownComponentHooks:true});
@@ -23,7 +31,7 @@ test('new typed roles remain optional, editable and cleared at full boundaries',
 test('variant companions have stable identities and reject selectors, mechanical hooks and type confusion',()=>{
  const theme=resolveTheme();const recipe={schemaVersion:1,id:'neutral-actions',rules:[{target:'button',variant:'ghost',tokens:{'--en-button-pressed-background':'color.selected'}}]};
  const a=createThemeCompanion(theme,recipe), b=createThemeCompanion(theme,structuredClone(recipe));
- assert.equal(a.identity,b.identity);assert.match(createThemeCompanion(theme,recipe,{name:'paired-theme'}).css,/data-en-theme="paired-theme"/);assert.throws(()=>createThemeCompanion(theme,recipe,{name:'bad name'}),/name/);assert.match(a.css,/variant="ghost"/);assert.match(a.css,/:not\(:where\(/);
+ assert.equal(a.identity,b.identity);assert.match(createThemeCompanion(theme,recipe,{name:'paired-theme'}).css,/data-en-theme="paired-theme"/);assert.throws(()=>createThemeCompanion(theme,recipe,{name:'bad name'}),/name/);assert.match(a.css,/variant="ghost"/);assertNamedBoundary(a.css,theme.name);
  assert.throws(()=>createThemeCompanion(theme,{...recipe,rules:[{target:'body {',tokens:{}}]}),/Unsupported target/);
  assert.throws(()=>createThemeCompanion(theme,{...recipe,rules:[{target:'button',tokens:{'--en-button-pressed-background':'size.icon'}}]}),/compatible token/);
  assert.throws(()=>createThemeCompanion(theme,{...recipe,rules:[{target:'button',tokens:{'--en-navigation-position':'color.text'}}]}),/registered typed hook/);
@@ -50,7 +58,7 @@ test('companions scope public typography to known families without opening arbit
   {target:'choice',tokens:{'--en-font-label-strong-weight':'font.body.weight'}},
  ]};
  const out=createThemeCompanion(theme,recipe,{name:'example'});
- assert.match(out.css,/en-badge/);assert.match(out.css,/\.en-badge/);assert.match(out.css,/--en-font-ui-weight: 600/);assert.match(out.css,/:not\(:where\(/);
+ assert.match(out.css,/en-badge/);assert.match(out.css,/\.en-badge/);assert.match(out.css,/--en-font-ui-weight: 600/);assertNamedBoundary(out.css,'example');
  assert.match(out.css,/en-checkbox/);assert.match(out.css,/en-switch/);assert.match(out.css,/--en-font-label-strong-weight: 400/);
  for(const [target,tokens] of [['button',{'--en-space-control-block':'space.4'}],['badge',{'--en-font-ui-weight':'color.text'}],['body',{'--en-font-ui-weight':'font.body.weight'}],['badge',{'font-size':'font.ui.size'}]]) {
   assert.throws(()=>createThemeCompanion(theme,{...recipe,rules:[{target,tokens}]}),{code:'invalid-companion'});
@@ -65,6 +73,6 @@ test('presentation recipes are finite, scoped and keep action intent explicit',(
  const recipe={schemaVersion:1,id:'details',rules:[{target:'segmented-control',presentation:'joined',tokens:{}},{target:'link',presentation:'dotted-underline',tokens:{}},{target:'standalone-action',presentation:'stretch',tokens:{}}]};
  const css=createThemeCompanion(theme,recipe,{name:'example'}).css;
  assert.match(css,/::part\(option-start\)/);assert.match(css,/::part\(option-selected\)/);assert.match(css,/margin-inline-start/);assert.match(css,/forced-colors/);
- assert.match(css,/data-en-action="standalone"/);assert.match(css,/text-decoration-style: solid/);assert.match(css,/:not\(:where\(/);
+ assert.match(css,/data-en-action="standalone"/);assert.match(css,/text-decoration-style: solid/);assertNamedBoundary(css,'example');
  for(const rule of [{target:'button',presentation:'stretch',tokens:{}},{target:'link',presentation:'joined',tokens:{}},{target:'segmented-control',presentation:'color:red',tokens:{}}]) assert.throws(()=>createThemeCompanion(theme,{...recipe,rules:[rule]}),{code:'invalid-companion'});
 });
