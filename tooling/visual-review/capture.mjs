@@ -13,6 +13,7 @@ import {fontInventory,environmentIdentity} from './environment.mjs';
 import {comparePixels} from './pixels.mjs';
 import {waitForRenderedElements} from './readiness.mjs';
 import {verifyState} from './state-checks.mjs';
+import {performActions} from './state-actions.mjs';
 import {captureTarget} from './target-capture.mjs';
 
 const types={chromium,firefox,webkit};
@@ -21,7 +22,7 @@ const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json
 const fixedTime='2026-09-15T12:00:00.000Z';
 const readiness={hydrated:true,fonts:'document.fonts.ready',images:'decode',settleFrames:2,fixedTime};
 const captureOptions={animations:'disabled',caret:'hide',scale:'css',type:'png',timeout:20000};
-const producerFiles=['capture.mjs','plan.mjs','environment.mjs','cache-batch.mjs','readiness.mjs','target-capture.mjs','state-checks.mjs'];
+const producerFiles=['capture.mjs','plan.mjs','environment.mjs','cache-batch.mjs','readiness.mjs','target-capture.mjs','state-checks.mjs','action-contract.mjs','state-actions.mjs'];
 
 export async function createBuildContext(browser,snapshot,viewport,appearance) {
  const {origin,basePath}=snapshot.deployment;
@@ -80,7 +81,7 @@ async function screenshot(browser,snapshot,candidate,row) {
   // Scroll activates the real lazy specimens; wait for rendered custom controls,
   // rather than capturing SSR placeholders and calling them hydrated evidence.
   const beforeActions=await target.evaluate(waitForRenderedElements);
-  for(const action of row.fixture.actions){const element=frame.locator(action.selector);if(['fill','press','select'].includes(action.kind))await element[action.kind==='select'?'selectOption':action.kind](action.value,{timeout:10000});else await element[action.kind]({timeout:10000});}
+  await performActions(page,frame,row.fixture.actions);
   const afterActions=await target.evaluate(waitForRenderedElements);
   const stateChecks=await verifyState(frame,row.fixture.checks);
   await frame.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].filter(image=>image.currentSrc).map(image=>image.decode()));await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});

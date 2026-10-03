@@ -159,7 +159,7 @@ integrity, build applicability, image comparison and human review are distinct.
 ## Authored interaction catalogue (in progress)
 
 `catalogue.mjs` joins every manifest initial case with source-derived named states.
-It currently adds 23 interactions; it is not yet the complete interaction catalogue.
+It currently adds 72 interactions; it is not yet the complete interaction catalogue.
 No state calls private component methods or injects application state. Cases may
 include `checks` with `visible`, `hidden`, `focused`, `checked`, `text` (contains),
 `value`, `attribute` (`name` and `value`), or `count` assertions. Every check names
@@ -185,3 +185,29 @@ three pinned engines. This tests exact current-build baseline/candidate exports
 with a deliberate radius change. It does not promote a baseline or replace the
 remaining state coverage and manual/design acceptance. New examples missing from
 a frozen build fail catalogue planning rather than silently disappearing.
+
+### Native file and pointer states
+
+Authored actions can supply `files` as basename/MIME/base64 fixtures, click with
+explicit keyboard `modifiers`, and `drag` between normalized points in rendered
+source/target elements. File actions never read arbitrary filesystem paths.
+Drags require both endpoints in the authored viewport and may release, cancel with
+Escape, or remain held for a preview capture; the isolated context then closes.
+The contract and executor are included in the producer identity. For Escape in an
+embedded preview, author focus on an equivalent control before dragging so the
+keyboard event belongs to that document; pointer-only activation may leave focus
+in the surrounding review page.
+
+The expanded catalogue includes color, navigation, collection, feedback, chat,
+file selection and transfer recovery states. The native action controls and two
+corrected states pass across all three engines and responsive appearances. The
+complete72-state acquisition remains pending; earlier receipts retain their
+original23-state scope. For fixture
+diagnosis `EN_VISUAL_VIEWPORTS=desktop` explicitly selects one viewport in the
+catalogue browser test; omitted viewport acquisitions are not full-matrix evidence.
+
+Responsive actions may declare `whenViewport: {minWidth, maxWidth}` using inclusive
+CSS pixel widths. This opens the native compact navigation disclosure only in its
+authored narrow layout. Conditions are validated and bound into fixture identity;
+matching actions retain ordinary strict locator errors. Final state checks remain
+mandatory for the declared interactive result, including visible expanded content.

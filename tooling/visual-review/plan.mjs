@@ -1,4 +1,5 @@
 import {hashValue,stableStringify} from '@en-reve/tokens';
+import {validateActions} from './action-contract.mjs';
 
 export function readEnvelope(bytes,build) {
  if(bytes.length>8_000_000)throw new Error('Candidate exceeds the review import limit.');
@@ -26,7 +27,7 @@ export function createPlan(build,baseline,candidate,options={}) {
  const known=defaultCases(build);
  for(const item of cases) {
   if(!known.some(c=>c.id===item.id&&c.page===item.page)||!item.state||typeof item.selector!=='string'||!item.selector||!Array.isArray(item.actions))throw new Error('Unknown or incomplete authored case.');
-  for(const action of item.actions)if(!['click','focus','hover','fill','press','select'].includes(action.kind)||typeof action.selector!=='string'||(['fill','press','select'].includes(action.kind)&&typeof action.value!=='string'))throw new Error('Unsupported declarative state action.');
+  validateActions(item.actions);
   validateChecks(item.checks??[]);
   if(item.capture!==undefined&&!['element','viewport'].includes(item.capture))throw new Error('Unknown capture framing.');
   if(item.unsupported!==undefined&&!(typeof item.unsupported==='string'&&item.unsupported.trim()))throw new Error('Unsupported states require an explanation.');

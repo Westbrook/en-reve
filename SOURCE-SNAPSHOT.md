@@ -298,3 +298,7 @@ Local main `4bddb168c682109198d064676cc0c57a2231f77a` adds exact project-path ca
 ## Authored visual-state checkpoint
 
 Local main `82005a169a984296b8438d4c987fbea1b41821c3` adds observable state checks, explicit viewport framing and a partial authored interaction catalogue. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Native action and responsive fixture checkpoint
+
+Local main `41a0330b30b3c2397b1d074e3114b725bb4be113` adds native file and pointer actions, explicit viewport conditions and49 additional authored states awaiting full acquisition. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

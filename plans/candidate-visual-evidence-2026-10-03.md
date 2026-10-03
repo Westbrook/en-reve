@@ -171,3 +171,29 @@ The audit also identifies a missing local human assessment layer: mechanical pix
 outcomes alone cannot distinguish intentional design changes, regressions and
 unassessed differences. That layer must bind notes to exact candidate/evidence
 identity without mutating machine evidence or implying remote adoption.
+
+
+## Native actions and responsive fixtures checkpoint
+
+The catalogue now has72 authored interaction states in addition to the70 initial
+manifest cases. File fixtures use explicit portable bytes; modifier clicks and
+normalized pointer gestures exercise native browser events. Pointer states may
+commit, cancel with Escape, or remain held for preview capture. Declarative
+viewport bounds open responsive navigation only in the applicable layout; skipped
+actions never suppress strict locator errors or final visible-state assertions.
+
+The corrected navigation branch and color-plane cancellation states pass24
+comparisons (two states × desktop/mobile × light/dark × three engines). All nine
+selected browser tests pass, including native file/pointer/modifier and async
+postcondition controls. Twenty-four owning Node checks pass, and the semantic
+gates retain their exact core471/docs57 baseline without added or resolved
+diagnostics. Both deployment builds are fresh. Fifteen additional browser journeys pass across
+all three engines for reader import/recovery, stale identities, offline evidence
+and GitHub Pages paths. See
+`apps/docs/tests/verification-expanded-catalogue-20261003.json`. Earlier failed fixture attempts
+remain retained separately; their output is not a passing full campaign.
+
+This checkpoint does not establish the full72-state or70-initial-case matrix.
+Remaining workflow/specimen states, dense/scoped candidates, local human assessment
+controls and the final requirement audit remain in scope. Mechanical differences
+do not grant design acceptance; manual and managed-adoption gates remain separate.
