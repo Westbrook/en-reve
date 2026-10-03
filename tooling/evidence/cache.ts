@@ -40,6 +40,13 @@ export class EvidenceCache {
     return { digest, ...details };
   }
 
+  /** Copy cached bytes only after rechecking the content identity. */
+  async readArtifact(artifact: EvidenceArtifact): Promise<Uint8Array> {
+    const bytes = await readFile(this.#blobPath(artifact.digest));
+    if (digestBytes(bytes) !== artifact.digest) throw new Error(`Corrupt evidence artifact: ${artifact.label}`);
+    return bytes;
+  }
+
   async writeCompleted(evidence: CompletedEvidence): Promise<void> {
     this.#validate(evidence);
     await this.#verifyArtifacts(evidence);

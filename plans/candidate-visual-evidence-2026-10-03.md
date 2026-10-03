@@ -51,3 +51,27 @@ returning to a case on the same document; the final run verifies repeat-case
 navigation after Undo/Redo. Both separately qualified production builds and the
 failed attempts are retained in `apps/docs/tests/verification-candidate-impact-20261003.json`.
 Stages2–4 remain incomplete; this checkpoint supplies no visual comparison result.
+
+## Visual producer checkpoint
+
+Stage 2 now supplies the reproducible CLI in `tooling/visual-review/README.md`.
+It reopens both exact-build exports in the built application, captures declared
+cases through the real preview bridge, produces expected/actual/difference PNGs,
+and retains rendering/comparison/review identities plus every required outcome.
+Full installed browser and system font inventories bind reuse. Cache entries are
+staged until final build/runtime/font checks; disagreement for identical rendering
+inputs disables reuse. The CLI reports fatal end-of-run failures even when prior
+individual captures succeeded.
+
+Qualification covers the bounded buttons default/focus cases, paired mobile
+appearances, corrupt artifacts, metadata-only reuse, changed baseline/settings,
+missing targets, explicit unsupported/omitted states, and pixel dimensions. A
+standalone uncached CLI capture additionally verifies the executable path. See
+`apps/docs/tests/verification-candidate-visual-producer-20261003.json`. These are
+not all-case, all-state or manual acceptance results.
+
+Stages 3 and 4 remain open: verified candidate-facing reader, portable evidence
+export/reopen and offline delivery, broader state/case qualification, and final
+requirement audit. The current producer supports original root builds only;
+project-path capture support remains an explicit portability limitation to resolve
+in the remaining integration rather than hiding it as successful coverage.

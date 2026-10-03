@@ -1,0 +1,23 @@
+{
+  "createdAt": "2026-10-03T03:39:36.156356+00:00",
+  "sourceCommit": "c5cb127e8d70b4554bec39d0bb1438d890846457",
+  "previousSourceMain": "c5bf03a6a274c5814f0fe6091d4dbbd48b8e52a1",
+  "taskPaths": [
+    "apps/docs/tests/candidate-visual.spec.ts",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+    "plans/candidate-visual-evidence-2026-10-03.md",
+    "tooling/evidence/README.md",
+    "tooling/evidence/cache.ts",
+    "tooling/testing/pathways.mjs",
+    "tooling/visual-review/README.md",
+    "tooling/visual-review/cache-batch.mjs",
+    "tooling/visual-review/capture.mjs",
+    "tooling/visual-review/environment.mjs",
+    "tooling/visual-review/pixels.mjs",
+    "tooling/visual-review/plan.mjs",
+    "tooling/visual-review/plan.test.mjs"
+  ],
+  "qualification": "Visual producer verified with19 Node controls,nine browser cases,standalone CLI and semantic gates. Candidate-facing reader and final qualification remain incomplete.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

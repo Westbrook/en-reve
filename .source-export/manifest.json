@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "c5bf03a6a274c5814f0fe6091d4dbbd48b8e52a1",
-  "exportedAt": "2026-10-03T02:48:46.183841+00:00",
+  "sourceCommit": "c5cb127e8d70b4554bec39d0bb1438d890846457",
+  "exportedAt": "2026-10-03T03:39:36.156356+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5790,
-  "includedBytes": 156447805,
-  "qualification": "Candidate source-impact views verified with20 owning Node controls,semantic gates,18 root browser and6 project-path cases. Visual capture/comparison stages remain incomplete.",
-  "latestUpdate": ".source-export/updates/candidate-impact-20261003.json",
+  "includedFiles": 5800,
+  "includedBytes": 156602594,
+  "qualification": "Visual producer verified with19 Node controls,nine browser cases,standalone CLI and semantic gates. Candidate-facing reader and final qualification remain incomplete.",
+  "latestUpdate": ".source-export/updates/candidate-visual-producer-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }

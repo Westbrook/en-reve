@@ -1,7 +1,9 @@
 # Evidence identity, selection and cache
 
-Private maintainer modules, executable with Node 24. They do not execute browser
-tests or imply that a component, screenshot or accessibility workflow passed.
+Private maintainer identity/cache modules, executable with Node 24. These modules
+do not execute browsers or imply that a component or accessibility workflow passed.
+The [candidate visual producer](../visual-review/README.md) composes them with
+real Playwright captures and pixel comparisons; its reader integration remains open.
 
 ```sh
 node tooling/evidence/cli.ts --help
@@ -94,6 +96,7 @@ assets. `storeArtifact(bytes, { label, mediaType })` writes a content-addressed
 artifact. `writeCompleted` accepts a validated identity, originating run, outcome,
 selection-receipt artifact, result data and complete evidence artifacts. Files
 become visible through atomic rename only after full writes and integrity checks.
+`readArtifact` rechecks content when reading an artifact after lookup.
 Every lookup revalidates entry and artifact hashes; missing/corrupt/interrupted
 entries cannot become hits. History retains every completed attempt.
 
