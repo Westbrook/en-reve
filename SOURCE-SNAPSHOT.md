@@ -306,3 +306,7 @@ Local main `41a0330b30b3c2397b1d074e3114b725bb4be113` adds native file and point
 ## Local visual assessment checkpoint
 
 Local main `118f22447c0e9997d2462cca3d9bbb732e4c1cb9` adds separate local classifications and notes tied to exact visual evidence, with import/export, stale-draft protection and offline reopening. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Workflow visual coverage checkpoint
+
+Local main `0b49777aea373b90d24bd3f58cac5b54e71b223f` adds 24 source-authored workflow capture states with observable postconditions and retained browser evidence. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

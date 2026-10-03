@@ -226,3 +226,22 @@ See `apps/docs/tests/verification-visual-assessment-20261003.json`.
 The remaining implementation is the complete authored specimen/workflow state,
 density and scope catalogue, followed by full acquisition and the final requirement
 by requirement audit. Managed adoption and physical/manual gates remain separate.
+
+## Workflow state checkpoint
+
+Twenty-four additional states now qualify settings commands/validation/save retry,
+pending saves with newer edits, incoming collaborator changes, project selection,
+multi-step failure/recovery, and contextual chat preview/apply/cancel/retry.
+Each drives public UI and checks its observable result before capture. All 288
+comparisons completed across the three engines, two viewports and both appearances;
+15 Node controls pass. The final three-engine selection rerun passes three browser tests. The first diagnostic run was interrupted
+after a strict selector matched the settings menu and its nested submenu; the
+named outer-menu correction passes. Mobile WebKit then exposed offscreen Project
+field filling; all 36 selection combinations were rerun after adding an explicit
+click before typing. The other 252 successful fixture comparisons remain unchanged.
+
+This brings authored interactions to 96, plus 70 initial cases. This is selected
+workflow evidence, not a completed 166-case matrix. Remaining specimen interactions,
+explicit density/scope cases and the final requirement audit remain open.
+Root/project runtime builds are unchanged from 118f2244 and reused with exact
+asset/source checks. The receipt records reuse instead of claiming a fresh build.

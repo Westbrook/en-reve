@@ -201,7 +201,7 @@ in the surrounding review page.
 The expanded catalogue includes color, navigation, collection, feedback, chat,
 file selection and transfer recovery states. The native action controls and two
 corrected states pass across all three engines and responsive appearances. The
-complete72-state acquisition remains pending; earlier receipts retain their
+complete 96-state acquisition remains pending; earlier receipts retain their
 original23-state scope. For fixture
 diagnosis `EN_VISUAL_VIEWPORTS=desktop` explicitly selects one viewport in the
 catalogue browser test; omitted viewport acquisitions are not full-matrix evidence.
@@ -235,3 +235,23 @@ visual evidence, assessment and matching build together for offline reopening.
 An import interrupted by a draft/evidence change cannot replace newer work.
 Different sets of available image artifacts have separate session assessments;
 restore complete images before importing a classified assessment.
+
+## Workflow state qualification
+
+The standalone `workflow-catalogue.mjs` adds 24 public interaction states for
+settings, project selection, multi-step recovery and contextual chat. Cases assert
+observable outcomes before capture, including empty results, retained newer edits,
+failed/retried saves, collaborator updates and canceled/applied adjustments.
+The settings menu selector names the outer menu so a nested submenu cannot make
+the assertion ambiguous. No private state is injected.
+
+All 288 selected comparisons completed across three engines, desktop/mobile and
+light/dark, with 15 Node controls passing. The selected correction run passes three browser
+tests; 252 unchanged comparisons are retained from the prior run and 36 corrected
+selection comparisons come from the final run. Pixel differences
+are expected for the deliberately changed radius candidate; they are not design
+approval. The other declared cases remain `not-run` in this focused receipt.
+The product build is reused unchanged from the assessment checkpoint; only
+standalone capture tooling and planning/evidence documentation changed. See
+`apps/docs/tests/verification-workflow-catalogue-20261003.json`. Complete specimen,
+density/scope and full-matrix qualification remain open.

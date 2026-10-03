@@ -1,4 +1,5 @@
 import {defaultCases} from './plan.mjs';
+import {workflowStates} from './workflow-catalogue.mjs';
 
 const action=(kind,selector,value)=>({kind,selector,...(value===undefined?{}:{value})});
 const check=(kind,selector,value,name)=>({kind,selector,...(value===undefined?{}:{value}),...(name===undefined?{}:{name})});
@@ -10,6 +11,7 @@ const attribute=(selector,name,value)=>check('attribute',selector,value,name);
 
 /** Named states operate authored examples. No private method calls or state injection. */
 export const authoredStates=[
+ ...workflowStates,
  {id:'buttons',state:'keyboard-focus',actions:[action('focus','#api-save-changes button')],checks:[check('focused','#api-save-changes button')]},
  {id:'buttons',state:'hover',actions:[action('hover','#api-save-changes button')],checks:[visible('#api-save-changes button:hover')]},
  {id:'command-surfaces',state:'landscape',actions:[click('#specimen-toolbar en-button:has-text("Landscape")')],checks:[attribute('[data-command-preview]','data-layout','landscape')]},
