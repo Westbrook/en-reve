@@ -334,3 +334,7 @@ Local main `c1169a3ae5c3e64cef75315e20f6ec8eb1972279` adds bounded evidence part
 ## Visual evidence qualification checkpoint
 
 Local main `9a34e9ddde384532b861a77d453a21cc10db34f2` adds bounded evidence partitions and corrects pointer/cancellation acquisition fixtures; bounded behavioral qualification passes. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Visual evidence qualification checkpoint
+
+Local main `df59c9e81b5a370a08f0f547e49540506346e779` adds bounded evidence partitions and corrects pointer/cancellation acquisition fixtures; bounded behavioral qualification passes. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

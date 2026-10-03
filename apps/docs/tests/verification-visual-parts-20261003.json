@@ -787,7 +787,7 @@
     "packages/tokens/src/theme-pair.ts": "ad4019fb1f3c1e46e7481a16bba22fc6795c85b3e5d2cb5f189f44a6638e5a71",
     "packages/tokens/src/theme.ts": "9f1d1369ec6aca07f67d96e006e7c5ecaf6d2f54e51340d55151607e642973b8",
     "packages/tokens/src/value.ts": "6678ac4dd536b19c692fd67c1e58cc0942e4ab4508b0ab65e2ff843264417ebc",
-    "plans/candidate-visual-evidence-2026-10-03.md": "d97be65e87c31dd070c3291bc4ead656abc513804ee08b4216a244c9f750750b",
+    "plans/candidate-visual-evidence-2026-10-03.md": "9bb832bc16bfa8b3c6ebf06101604100e1dbf800e2f0e3c209abdaffb0b14de3",
     "plans/documentation-skills-2026-10-02.md": "04be8085520d1edd8dfdff7f5d09e5303e3ce7b4384e1996643b229a121a3005",
     "plans/expanded-gallery-2026-10-03.md": "7199ca7e18b657f5cf4f6b5eada2949f2b4cbcecb0824558725bae82be586288",
     "plans/experience.md": "73c00c97247d218c5868359f412913686c617de9b03b9e4104e2c95cdb0d90d8",
@@ -1293,5 +1293,13 @@
     "Initial failed tooling checks bound historical receipts to subsequently changed sources. Exact original input snapshots now preserve those receipts; they do not qualify current sources.",
     "First browser wave retained22passes/2failures due exact midpoint checks inFirefox/WebKit. Corrected checks explicitly allow0.5percentage-point native rounding; negative controls reject unchanged58.3 and blank values.",
     "Physical/manual acceptance, actual product coverage and managed remote adoption remain separate."
+  ],
+  "postQualificationNonBuildChanges": [
+    {
+      "path": "plans/candidate-visual-evidence-2026-10-03.md",
+      "qualifiedDigest": "d97be65e87c31dd070c3291bc4ead656abc513804ee08b4216a244c9f750750b",
+      "publicationDigest": "9bb832bc16bfa8b3c6ebf06101604100e1dbf800e2f0e3c209abdaffb0b14de3",
+      "reason": "Appended verified qualification results and remaining scope after terminal acquisition. Planning prose is not a build input; qualified runtime, generated modules and both build byte inventories remain unchanged."
+    }
   ]
 }

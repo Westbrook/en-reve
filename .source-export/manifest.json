@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "9a34e9ddde384532b861a77d453a21cc10db34f2",
-  "exportedAt": "2026-10-03T13:02:55.684390+00:00",
+  "sourceCommit": "df59c9e81b5a370a08f0f547e49540506346e779",
+  "exportedAt": "2026-10-03T13:03:50.441460+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5860,
-  "includedBytes": 158427321,
+  "includedFiles": 5861,
+  "includedBytes": 158428845,
   "qualification": "Bounded qualification passes:187Node tests, semantic gate, both builds,33browser tests without skips or retries,144selected comparisons plus36project captures including multipart imports. Full7524matrix and final requirement audit remain pending; manual and managed adoption remain separate.",
-  "latestUpdate": ".source-export/updates/visual-parts-20261003-03.json",
+  "latestUpdate": ".source-export/updates/visual-parts-20261003-04.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
