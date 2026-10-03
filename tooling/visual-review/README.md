@@ -159,7 +159,7 @@ integrity, build applicability, image comparison and human review are distinct.
 ## Authored interaction catalogue (in progress)
 
 `catalogue.mjs` joins every manifest initial case with source-derived named states.
-It currently adds 72 interactions; it is not yet the complete interaction catalogue.
+It currently adds 139 interactions to 70 initial cases; full matrix qualification remains open.
 No state calls private component methods or injects application state. Cases may
 include `checks` with `visible`, `hidden`, `focused`, `checked`, `text` (contains),
 `value`, `attribute` (`name` and `value`), or `count` assertions. Every check names

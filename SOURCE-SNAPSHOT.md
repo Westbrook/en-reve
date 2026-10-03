@@ -314,3 +314,7 @@ Local main `0b49777aea373b90d24bd3f58cac5b54e71b223f` adds 24 source-authored wo
 ## Specimen and scope visual coverage checkpoint
 
 Local main `849e5650718927e5f652b63e550b5b7e7d8b8641` adds 43 source-authored specimen/scope capture states with observable postconditions and retained browser evidence. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.
+
+## Preview coverage audit correction
+
+Local main `c76c0beb006451e33cf96a7c1d9fafc215c12658` adds planned/rendered preview counts and explicit missing-case disclosure. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

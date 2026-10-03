@@ -246,7 +246,7 @@ explicit density/scope cases and the final requirement audit remain open.
 Root/project runtime builds are unchanged from 118f2244 and reused with exact
 asset/source checks. The receipt records reuse instead of claiming a fresh build.
 
-## Specimen and scope expansion (qualification in progress)
+## Specimen and scope checkpoint
 
 The catalogue now declares 139 interaction states and 70 initial cases. Forty-three
 new states cover remaining interactive specimens, the sheet's multi-step workflow,
@@ -260,8 +260,8 @@ failed (ambiguous combobox disclosure, carousel button label placement, tree anc
 text matching, and virtual table status wording). The diagnostic run was explicitly
 interrupted after that block; it is not a passing campaign. Corrections target the
 named controls and assert the requested virtual row as well as success feedback.
-Focused correction qualification and full acquisition remain pending. No product
-behavior defect or user acceptance is inferred from this diagnostic run.
+The focused correction qualification is recorded below; full acquisition remains
+pending. No product behavior defect or user acceptance is inferred from this diagnostic run.
 
 The corrected checkpoint passes 18 final browser tests across Chromium, Firefox
 and WebKit. It retains 48 exact current-fixture comparisons: 36 unchanged successful
@@ -290,3 +290,25 @@ Full acquisition of all 209 cases across three densities, two appearances, two
 viewports and three engines remains unfinished, as does the final requirement audit.
 This checkpoint adds and qualifies the machinery and selected states; it does not
 establish complete matrix coverage or manual acceptance.
+
+
+## Preview coverage audit correction
+
+The clause audit found that Theme Review displayed only the returned case count,
+without its planned denominator or missing-case list. Partial and empty responses
+could therefore look like an ordinary ready preview. The status now compares the
+current response with the selected page’s exact build inventory and discloses all
+missing IDs. A failed response leaves the planned count visible and reports its
+error without inventing rendered coverage. Export retains the original required
+and actually returned case lists; neither rendering nor export grants acceptance.
+
+The first full acquisition on849e5650 was deliberately interrupted to make this
+correction before capturing the complete matrix. Its partial results remain
+historical evidence, not a complete pass. The correction passes 57 browser checks
+across Chromium, Firefox and WebKit, including all nine partial, empty and failed
+response cases. Current producer/cache, project-path capture, offline reader,
+GitHub Pages and scope-isolation regressions pass. The project-path captures retain
+36 comparisons. See `apps/docs/tests/verification-preview-coverage-20261003.json`.
+A new full acquisition against this build and the final requirement audit remain
+pending. Full acquisition disables redundant Playwright traces while retaining all
+case assertions, screenshots, pixel comparisons and provenance.

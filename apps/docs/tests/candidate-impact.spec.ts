@@ -57,3 +57,43 @@ test('a mismatched impact response is unavailable evidence, never an empty or pa
  const file=await exportCandidate(page);expect(file.impact.status).toBe('unavailable');expect(file.coverage.visualComparison).toBe('not-run');
  await expect(page.getByRole('button',{name:'Load previews',exact:true})).toBeEnabled();
 });
+
+for (const response of ['partial','empty','failed'] as const) {
+ test(`preview coverage exposes ${response} responses against the planned inventory`,async({page,request})=>{
+  const build=await (await request.get('/review-build.json')).json();
+  const planned=build.pages.find((item:{id:string})=>item.id==='sheet').caseIds as string[];
+  expect(planned.length).toBeGreaterThan(1);
+  // Simulate an incomplete or failed preview at its public message boundary.
+  // Keep origin, source, request and build identities intact.
+  await page.addInitScript(({response,missing})=>{
+   if(window!==window.top)return;
+   window.addEventListener('message',event=>{
+    if(event.source!==document.querySelector<HTMLIFrameElement>('iframe[data-variant="candidate"]')?.contentWindow || event.data?.type!=='en-theme-preview-ready')return;
+    if(response==='failed') {event.data.type='en-theme-preview-error';event.data.message='Preview fixture could not render its planned cases.';}
+    else event.data.caseIds=response==='empty'?[]:event.data.caseIds.filter((id:string)=>id!==missing);
+   },true);
+  },{response,missing:planned[0]!});
+  await page.goto('/theme-review');
+  await page.getByRole('button',{name:'Load previews',exact:true}).click();
+  const status=page.locator('.review-preview-status');
+  if(response==='failed') {
+   await expect(page.getByRole('alert')).toContainText('Preview fixture could not render');
+   await expect(status).toContainText(`${planned.length} candidate cases planned`);
+   await expect(status).not.toContainText('candidate cases rendered');
+   expect((await exportCandidate(page)).coverage.rendered).toEqual([]);
+  } else {
+   const count=response==='empty'?0:planned.length-1;
+   await expect(status).toContainText(`${count} of ${planned.length} candidate cases rendered`);
+   const missing=page.locator('.review-preview-missing');
+   await expect(missing.locator('summary')).toContainText(`${planned.length-count} planned`);
+   await missing.locator('summary').click();
+   await expect(missing).toContainText('This preview is incomplete');
+   await expect(missing.locator('li')).toHaveCount(planned.length-count);
+   await expect(missing).toContainText(planned[0]!);
+   const exported=await exportCandidate(page);
+   expect(exported.coverage.required.find((item:{page:string})=>item.page==='sheet').caseIds).toEqual(planned);
+   expect(exported.coverage.rendered.find((item:{page:string})=>item.page==='sheet').caseIds).toHaveLength(count);
+   expect(exported.coverage.browserInteraction).toBe('not-run');
+  }
+ });
+}

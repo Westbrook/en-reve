@@ -260,3 +260,13 @@ not invalidate pixel evidence but never rewrite the captured original export.
 Integrity establishes internally consistent bytes, not producer authenticity or
 human acceptance. The UI labels outcomes as reported and preserves executed/reused,
 failed, omitted, unsupported and missing distinctions. It never promotes baselines.
+
+
+### Planned and rendered preview coverage
+
+The preview status reports the number of returned cases against the selected
+page’s planned build inventory. A partial or empty response exposes an incomplete
+preview and lists the missing IDs. Failed responses retain the planned count and
+show the error; they create no rendered receipt. Candidate exports keep the
+required and returned inventories distinct. Rendered coverage does not establish
+interaction, visual or accessibility acceptance.

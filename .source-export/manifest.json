@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "849e5650718927e5f652b63e550b5b7e7d8b8641",
-  "exportedAt": "2026-10-03T09:51:36.758829+00:00",
+  "sourceCommit": "c76c0beb006451e33cf96a7c1d9fafc215c12658",
+  "exportedAt": "2026-10-03T10:34:54.216309+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5838,
-  "includedBytes": 157718324,
-  "qualification": "Specimen and scope states, CSS postconditions and density-separated captures implemented. Four corrected fixtures qualified across three engines, two viewports and both appearances. Complete catalogue, density/scope coverage and final audit remain open.",
-  "latestUpdate": ".source-export/updates/specimen-catalogue-20261003.json",
+  "includedFiles": 5840,
+  "includedBytes": 157835218,
+  "qualification": "Preview partial/empty/failure responses now retain planned counts and disclose missing cases. Current impact, producer, project-path, reader, Pages and scope browser qualification passes. Full catalogue remains open.",
+  "latestUpdate": ".source-export/updates/preview-coverage-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
