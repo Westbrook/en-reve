@@ -270,3 +270,7 @@ Local main `35285e845757582af59b178619ec08a9af73278e` qualifies all59 gallery an
 ## Documentation semantic checkpoint
 
 Local main `364608448b16ebfbff58093138835401df401c40` resolves nine unbaselined documentation semantic diagnostics. See `plans/semantic-closeout-2026-10-03.md` for verification and remaining limits.
+
+## GitHub Pages deployment checkpoint
+
+Local main `598988efe91bbb8dad1ae7fd17a17cf831df11b0` resolves nine unbaselined documentation GitHub Pages deployment paths. See `plans/github-pages-subpath-2026-10-03.md` for verification and remaining limits.

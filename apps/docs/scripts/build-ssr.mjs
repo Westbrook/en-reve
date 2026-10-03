@@ -4,6 +4,7 @@ import { createHash } from 'node:crypto';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { resolve } from 'node:path';
 import { build } from 'vite';
+import { deploymentBase, deploymentPaths, deploymentDocument, deploymentURL } from './deployment-paths.mjs';
 import { injectStickerSheet, injectWorkflows, injectThemeReview, injectShowcase, injectConversation, injectAPIReference, injectAPIExample, injectReviewBuild } from './document.mjs';
 import { createDocumentStylesInliner } from './document-styles.mjs';
 import { createDocumentMinifier } from '../../../tooling/minify/document.mjs';
@@ -13,13 +14,15 @@ import { generateImpact } from '../../../tooling/evidence/impact.mjs';
 
 const docsRoot = fileURLToPath(new URL('..', import.meta.url));
 const workspaceRoot = fileURLToPath(new URL('../../..', import.meta.url));
-const outputRoot = resolve(workspaceRoot, 'dist');
+const base = deploymentBase(process.env.EN_DOCS_BASE_PATH);
+const outputRoot = resolve(docsRoot, process.env.EN_DOCS_OUTPUT ?? '../../dist');
 const minifyDocument = createDocumentMinifier();
-const inlineDocumentStyles = createDocumentStylesInliner({ outputRoot });
+const inlineDocumentStyles = createDocumentStylesInliner({ outputRoot, base });
 const serverOutput = resolve(workspaceRoot, 'node_modules/.cache/en-reve-docs-ssr');
 
 async function finalizeDocument(source, options) {
-  return minifyDocument(await inlineDocumentStyles(source, options), options);
+  const inlined = await inlineDocumentStyles(source, options);
+  return minifyDocument(inlined, options);
 }
 
 const { apiExamplePages, settingsScenarioPages } = await prepareDocs();
@@ -27,7 +30,7 @@ await build({ root: docsRoot, configFile: resolve(docsRoot, 'vite.config.ts') })
 await build({
   root: docsRoot,
   configFile: false,
-  plugins: [minifyLitTemplates({
+  plugins: [deploymentPaths(base), minifyLitTemplates({
     include: [resolve(docsRoot, 'src'), resolve(workspaceRoot, 'packages')],
   })],
   // Lit hydration hashes template strings. Local package templates must pass
@@ -112,6 +115,22 @@ console.log(`Rendered ${apiExamplePages.length} isolated API examples at build t
 // Bind generated dependency evidence to the same original documentation build.
 await writeFile(resolve(outputRoot, 'impact.json'), JSON.stringify(await generateImpact({root:workspaceRoot}), null, 2) + '\n');
 
+// Apply deployment semantics to static and SSR pages alike, before sealing hashes.
+if (base !== '/') {
+  async function bind(directory, prefix = '') {
+    for (const entry of await readdir(directory, {withFileTypes:true})) {
+      const name = prefix + entry.name, path = resolve(directory, entry.name);
+      if (entry.isDirectory()) await bind(path, name + '/');
+      else if (entry.name.endsWith('.html')) await writeFile(path, deploymentDocument(await readFile(path, 'utf8'), name, base));
+    }
+  }
+  await bind(outputRoot);
+  const path = resolve(outputRoot, 'guides/contract-index.json');
+  const index = JSON.parse(await readFile(path, 'utf8'));
+  for (const artifact of [...index.artifacts, ...index.skills]) artifact.href = deploymentURL(artifact.href, base);
+  await writeFile(path, JSON.stringify(index, null, 2) + '\n');
+}
+
 // The manifest binds local review files to the actual pages and executable assets.
 // It excludes itself to avoid a circular hash; package version strings are not identity.
 const assets = [];
@@ -140,4 +159,4 @@ for (const [page, receiptName] of Object.entries(renderedReceipts)) {
   await writeFile(receiptPath, JSON.stringify(receipt, null, 2) + '\n');
 }
 for (const asset of assets) asset.sha256 = 'sha256:' + createHash('sha256').update(await readFile(resolve(outputRoot, asset.path))).digest('hex');
-await writeFile(resolve(outputRoot, 'review-build.json'), JSON.stringify({schemaVersion:1, fingerprint, assets, caseIds:reviewCaseIds, pages:[{id:'sheet',path:'/',caseIds:reviewCaseIds}, ...workflowDocuments.map(page=>({id:page.id,path:page.path,caseIds:[page.workflowId], ...(page.scenario ? {scenario:page.scenario} : {})}))]}, null, 2) + '\n');
+await writeFile(resolve(outputRoot, 'review-build.json'), JSON.stringify({schemaVersion:1, deployment:{basePath:base,baseURL:base === '/' ? null : 'https://westbrook.github.io' + base}, fingerprint, assets, caseIds:reviewCaseIds, pages:[{id:'sheet',path:base,caseIds:reviewCaseIds}, ...workflowDocuments.map(page=>({id:page.id,path:deploymentURL(page.path, base),caseIds:[page.workflowId], ...(page.scenario ? {scenario:page.scenario} : {})}))]}, null, 2) + '\n');

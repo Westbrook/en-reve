@@ -1,44 +1,47 @@
 # GitHub build snapshots
 
-After each GitHub source publication, publish the same qualified site build to
-`gh-pages`. This is the user's standing publication preference. Keep the source-only
-`main` export and full local evidence history unchanged.
+After each GitHub source publication, publish a separately qualified project-site
+build to `gh-pages`. Keep the root/private build separate:
+
+```sh
+EN_DOCS_BASE_PATH=/en-reve/ EN_DOCS_OUTPUT=/absolute/path/to/github-dist \
+  tooling/test-pipeline/with-toolchain.sh npm run build -w @en-reve/docs
+```
+
+Use the normal execution-owner/receipt wrapper and a fresh evidence directory.
+The shared client/SSR deployment transform prefixes documentation URLs, while
+Vite prefixes executable and stylesheet assets. Build finalization adds exactly
+`<base href="https://westbrook.github.io/en-reve/">` first in each HTML head,
+binds static same-document fragments and handbook URLs, then seals review hashes.
+Hydrated fragment links retain native same-document navigation. Source examples
+and editor slash triggers remain source content. With no deployment configuration,
+the private/root build retains its existing URLs and contains no base element.
+
+Qualify `deployment-paths.test.mjs`, document-style tests and
+`github-pages.spec.ts` against the isolated output (`EN_GITHUB_PAGES_BUILD`).
+The browser fixture serves exact output bytes at the real project prefix and
+rejects requests outside it. Retain its engine matrix and every manifest hash.
+
+Commit local `main`, push its source-only export, then publish:
 
 ```sh
 tooling/test-pipeline/with-toolchain.sh python3 tooling/publishing/publish-github-build.py \
   --repository /absolute/path/to/source-only-export \
-  --build /absolute/path/to/qualified/dist \
+  --build /absolute/path/to/github-dist \
   --receipt /absolute/path/to/passing-build-receipt.json
 ```
 
-Run from the clean local source checkout (`--source` can name it explicitly).
-First commit to local `main` and push through the existing source-only export.
-The publisher checks that GitHub `main`'s export manifest identifies that source
-commit, that the receipt's qualified inputs/generated modules still match, and
-that every static file matches the qualified build manifest. Build receipts use
-the existing docs verification format (`status`, `inputs`, `generatedModules`,
-`productionBuild.SSRBuild`, `distFiles`, `distManifestSHA256`). A build may be reused
-for publishing-tool/docs-only changes when these checks still pass; changed
-application output needs a new qualified build and receipt.
+The publisher requires a clean source checkout, GitHub `main` bound to that source
+commit, matching receipt input/generated hashes, passing SSR qualification and an
+exact output manifest. It also requires the project-site deployment identity,
+matching review asset hashes and the exact base already in every HTML head.
+It **never mutates qualified HTML**; a root build is rejected. Receipt fields are
+`status`, `inputs`, `generatedModules`, `productionBuild.SSRBuild`, `distFiles` and
+`distManifestSHA256` (see documentation verification receipts).
 
-The publisher verifies the exact qualified build first, then adds
-`<base href="https://westbrook.github.io/en-reve/">` as the first item in each
-HTML document’s `<head>`. This GitHub-only transformation leaves the qualified
-local output and private Sites build untouched. It is idempotent for the same
-base and rejects missing/ambiguous heads or conflicting base tags.
-
-The branch contains that derived build at its root, `.nojekyll`, and
-`.en-reve-build.json` linking the local/GitHub source commits, receipt and build
-manifest. Provenance records both `qualifiedBuildManifestSHA256` (original) and
-`buildManifestSHA256` (published), the base URL and affected HTML count.
-Its first commit is parentless, avoiding source/evidence history;
-subsequent snapshots retain `gh-pages` history through ordinary fast-forward
-pushes. An identical publication does not create a duplicate commit. The script
-uses a temporary index and refs, leaving developer checkouts and indexes alone.
-A concurrent source/build update causes a retry, never a force push.
-
-This stores build artifacts. It does not enable GitHub Pages, change repository
-visibility, or rewrite root-relative asset URLs for a project-site subpath.
-Continue publishing the existing Sites review deployment through its normal
-workflow. Retain the returned branch commit and build digest in the independent
-Progress Report alongside the source and Sites publication receipts.
+The branch contains qualified output, `.nojekyll` and `.en-reve-build.json` with
+source, receipt and manifest provenance. Its first commit is parentless; later
+snapshots retain history through ordinary fast-forward pushes. Temporary indexes
+and refs leave developer checkouts untouched. A concurrent publication fails for
+retry; no force push is used. Repository visibility and Pages configuration are
+not changed. Continue publishing the **root** build to the existing private Site.

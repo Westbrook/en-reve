@@ -14,7 +14,7 @@ function assertWithin(root, path) {
 }
 
 /** One build owns the read/validation cache; only active head links are rewritten. */
-export function createDocumentStylesInliner({ outputRoot }) {
+export function createDocumentStylesInliner({ outputRoot, base = '/' }) {
   const root = resolve(outputRoot);
   const stylesheets = new Map();
   let actualRoot;
@@ -34,10 +34,10 @@ export function createDocumentStylesInliner({ outputRoot }) {
         // imports and other URL forms still require an explicit delivery design.
         const { dependencies } = transform({ filename: path, code: Buffer.from(css), analyzeDependencies: true });
         for (const dependency of dependencies ?? []) {
-          if (dependency.type !== 'url' || !/^\/fonts\/theme-references\/[A-Za-z0-9_-]+\.woff2$/.test(dependency.url)) {
+          if (dependency.type !== 'url' || !/^\/fonts\/theme-references\/[A-Za-z0-9_-]+\.woff2$/.test(dependency.url.startsWith(base) ? '/' + dependency.url.slice(base.length) : dependency.url)) {
             throw new Error(`Cannot inline document stylesheet with unsupported url() or @import dependencies: ${path}`);
           }
-          const asset = await realpath(resolve(root, `.${dependency.url}`));
+          const asset = await realpath(resolve(root, `.${dependency.url.startsWith(base) ? '/' + dependency.url.slice(base.length) : dependency.url}`));
           assertWithin(actualRoot, asset);
           if (!(await stat(asset)).isFile()) throw new Error(`Document font asset must be a file: ${dependency.url}`);
         }
@@ -76,6 +76,7 @@ export function createDocumentStylesInliner({ outputRoot }) {
       if (!pathname || /[\\\u0000]/u.test(pathname) || pathname.startsWith('//')) {
         throw new Error(`Invalid document stylesheet path in ${filename}: ${href}`);
       }
+      if (base !== '/' && pathname.startsWith(base)) pathname = '/' + pathname.slice(base.length);
       const path = pathname.startsWith('/')
         ? resolve(root, `.${pathname}`)
         : resolve(dirname(documentPath), pathname);

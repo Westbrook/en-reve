@@ -24,7 +24,7 @@ BASE_URL = 'https://westbrook.github.io/en-reve/'
 
 
 def github_html(content):
-    """Add the GitHub-only base before any relative resources, preserving source bytes."""
+    """Require the qualified base; publication must not invalidate review hashes."""
     source = content.decode('utf-8')
 
     class HeadParser(HTMLParser):
@@ -55,8 +55,7 @@ def github_html(content):
         if parser.bases == [(True, [('href', BASE_URL)])]:
             return content
         raise ValueError('Conflicting existing base tag in published HTML.')
-    offset = parser.head_ends[0]
-    return (source[:offset] + f'<base href="{BASE_URL}">' + source[offset:]).encode('utf-8')
+    raise ValueError('Missing qualified base: build with EN_DOCS_BASE_PATH=/en-reve/ before publishing.')
 
 
 def publish(args):
@@ -90,6 +89,16 @@ def publish(args):
     qualified = receipt['productionBuild']
     if len(files) != qualified['distFiles'] or digest != qualified['distManifestSHA256']:
         raise ValueError('Static files differ from the qualified build receipt.')
+
+    review = json.loads((build / 'review-build.json').read_text())
+    if review.get('deployment') != {'basePath': '/en-reve/', 'baseURL': BASE_URL}:
+        raise ValueError('GitHub Pages requires a separately qualified /en-reve/ build.')
+    for asset in review['assets']:
+        if files.get(asset['path']) != asset['sha256'].removeprefix('sha256:'):
+            raise ValueError('Review manifest does not match published asset: ' + asset['path'])
+    for name in files:
+        if Path(name).suffix.lower() in {'.html', '.htm'}:
+            github_html((build / name).read_bytes())
 
     def heads():
         return dict((line.split()[1], line.split()[0]) for line in

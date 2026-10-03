@@ -201,7 +201,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
         <a class="wordmark" href="#sheet" aria-label="en-reve sticker sheet"><span class="mark" aria-hidden="true">en</span><span>en-reve</span></a>
         <div class="header-context"><span>Design system</span><en-badge class="version">0.1.0 · design review</en-badge></div>
         <nav class="header-context" aria-label="Documentation pages">
-          <a href=${this.progressReportEnabled ? '/?progress-report' : '/'} aria-current="page">Sticker sheet</a>
+          <a href=${this.progressReportEnabled ? '/?progress-report' : '/index.html'} aria-current="page">Sticker sheet</a>
           <a href=${this.progressReportEnabled ? '/showcase?progress-report' : '/showcase'}>Showcase</a>
           <a href=${this.progressReportEnabled ? '/workflows?progress-report' : '/workflows'}>Workflows</a>
           <a href=${this.progressReportEnabled ? '/theme-review?progress-report' : '/theme-review'}>Theme Review</a>

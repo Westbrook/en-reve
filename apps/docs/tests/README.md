@@ -439,3 +439,14 @@ This is focused browser evidence. The documentation semantic gate also surfaced
 nine existing diagnostics in review/evidence/metadata tooling, recorded in the
 [checkpoint](../../../plans/expanded-gallery-2026-10-03.md). Manual accessibility,
 physical platforms and candidate visual comparison remain separate obligations.
+
+## GitHub Pages project-path delivery
+
+Build with `EN_DOCS_BASE_PATH=/en-reve/` and an isolated `EN_DOCS_OUTPUT`, then run
+`github-pages.spec.ts` through `test:workflows` with `EN_GITHUB_PAGES_BUILD` pointing
+to that output. Its browser routing serves exact bytes at the actual project URL,
+rejecting root-origin fallbacks. The six engine cases cover navigation, hydration,
+calendar selection, slash commands, fragments, preview frames and candidate export.
+Every review asset and handbook artifact hash is checked. The publisher requires
+the already-qualified base and cannot patch sealed HTML after verification.
+See [the deployment contract](../../../tooling/publishing/README.md).

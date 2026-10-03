@@ -177,8 +177,8 @@ export class ThemeReviewApp extends LitElement {
 			const document = frame.contentDocument;
 			if (!target || !document || target.location.origin !== location.origin) return;
 			const path = target.location.pathname;
-			const canonical = path === '/index.html' ? '/' : path.replace(/\.html$/, '').replace(/\/$/, '') || '/';
-			const page = reviewPages.find(page=>page.path === canonical);
+			const canonical = (value:string) => value.replace(/\/index\.html$/, '/').replace(/\.html$/, '').replace(/\/$/, '') || '/';
+			const page = reviewPages.find(page=>canonical(page.path) === canonical(path));
 			if (page) return {target,document,pageId:page.value,path};
 		} catch { /* A frame may be navigating or have left this origin. */ }
 	}

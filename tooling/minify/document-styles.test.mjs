@@ -61,3 +61,11 @@ test('rejects a font symlink escaping the build output', async t => {
 	await symlink(outsideFont, join(outputRoot, 'fonts/theme-references/escaped.woff2'));
 	await assert.rejects(() => inline(document));
 });
+
+test('project builds inline prefixed styles while retaining prefixed font requests', async t => {
+ const css = fontFace('/en-reve/fonts/theme-references/family.woff2');
+ const {outputRoot} = await fixture(t, css);
+ const inline = createDocumentStylesInliner({outputRoot,base:'/en-reve/'});
+ const result = await inline(document.replace('/styles/', '/en-reve/styles/'));
+ assert.ok(result.includes(`<style media="screen">${css}</style>`));
+});

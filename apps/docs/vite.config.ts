@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { deploymentBase, deploymentPaths } from './scripts/deployment-paths.mjs';
 import { fileURLToPath } from 'node:url';
 import { litHighlighting } from './src/highlighting/vite.js';
 import { minifyLitTemplates } from '../../tooling/minify/literals.mjs';
@@ -7,7 +8,8 @@ import { prepareDocs, prepareDocsPlugin } from './scripts/prepare-docs.mjs';
 export default defineConfig(async () => {
   const { apiExamplePages, settingsScenarioPages } = await prepareDocs();
   return {
-  plugins: [prepareDocsPlugin(), litHighlighting(), minifyLitTemplates({
+  base: deploymentBase(process.env.EN_DOCS_BASE_PATH),
+  plugins: [deploymentPaths(), prepareDocsPlugin(), litHighlighting(), minifyLitTemplates({
     include: [new URL('./src/', import.meta.url), new URL('../../packages/', import.meta.url)],
   })],
   server: { host: '127.0.0.1', port: 4180, strictPort: true, fs: { allow: ['../..'] } },
@@ -48,7 +50,7 @@ export default defineConfig(async () => {
     // Preserve native light-dark() and inherited color-scheme in syntax themes.
     // These CSS feature floors are older than our current-minus-one policy.
     cssTarget: ['chrome123', 'firefox120', 'safari17.5'],
-    outDir: '../../dist',
+    outDir: process.env.EN_DOCS_OUTPUT ?? '../../dist',
     emptyOutDir: true,
     sourcemap: true,
     // The package loads a finite grammar set using a variable dynamic import.

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "364608448b16ebfbff58093138835401df401c40",
-  "exportedAt": "2026-10-03T01:44:20.350751+00:00",
+  "sourceCommit": "598988efe91bbb8dad1ae7fd17a17cf831df11b0",
+  "exportedAt": "2026-10-03T02:11:58.819152+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5772,
-  "includedBytes": 156193639,
-  "qualification": "Nine unbaselined diagnostics fixed; both semantic gates,25 Node controls,metadata freshness and3 browser cases pass. Known baseline debt and manual acceptance remain.",
-  "latestUpdate": ".source-export/updates/semantic-closeout-20261003.json",
+  "includedFiles": 5781,
+  "includedBytes": 156318122,
+  "qualification": "Separate project-path build,14 Node checks,2 publisher checks,docs semantic gate and6 subpath browser cases pass. Root build qualified separately; manual acceptance remains.",
+  "latestUpdate": ".source-export/updates/github-pages-subpath-20261003.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
