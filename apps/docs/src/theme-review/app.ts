@@ -1,3 +1,5 @@
+import {readVisualBundle,encodeVisualBundle,evidenceReference,MAX_VISUAL_BUNDLE_BYTES} from '../../../../tooling/visual-review/reader.mjs';
+import {visualEvidenceTemplate,type VisualEvidence} from './visual-evidence-view.js';
 import { acceptValueChange } from '../change-consumption.js';
 import { LitElement, html, nothing } from 'lit';
 import { keyed } from 'lit/directives/keyed.js';
@@ -23,7 +25,7 @@ const densities = [{value:'compact',label:'Compact'},{value:'comfortable',label:
 const directions = [{value:'ltr',label:'Left to right'},{value:'rtl',label:'Right to left'}];
 const coordinated = [{id:'palette.accent',label:'Accent seed'},{id:'rhythm.base',label:'Layout rhythm'},{id:'size.scale-medium',label:'Control size'},{id:'radius.control',label:'Control corners'}];
 
-type SavedDraft = { workspace: ReviewWorkspace; title: string; rationale: string };
+type SavedDraft = { workspace: ReviewWorkspace; title: string; rationale: string;visualReference?:ReturnType<typeof evidenceReference> };
 type PendingPreview = {
 	id: string; variant: 'baseline'|'candidate'; pageId: string; document: Document;
 	sourceHash: string; buildFingerprint: string; direction: 'ltr'|'rtl'; appearance: PreviewAppearance; effectiveMode: ThemeMode; ready: boolean;
@@ -86,6 +88,45 @@ export class ThemeReviewApp extends LitElement {
 	private importedRedo?: SavedDraft;
 	private lifecycle?: AbortController;
 	private flagged = false;
+ private visualEvidence?:VisualEvidence;
+ private visualReference?:ReturnType<typeof evidenceReference>;
+ private visualURLs=new Map<string,string>();
+ private visualGeneration=0;
+ private visualError='';
+ private visualMessage='';
+ private visualBusy=false;
+ private releaseVisualURLs(){for(const url of this.visualURLs.values())URL.revokeObjectURL(url);this.visualURLs.clear();}
+ private async prepareVisualURLs(evidence:VisualEvidence){
+  const urls=new Map<string,string>();
+  try{for(const artifact of evidence.report.artifacts){const bytes=evidence.files.get(artifact.path);if(artifact.mediaType!=='image/png'||!bytes)continue;const url=URL.createObjectURL(new Blob([bytes],{type:'image/png'}));urls.set(artifact.path,url);const image=new Image();image.src=url;await image.decode();}return urls;}
+  catch{for(const url of urls.values())URL.revokeObjectURL(url);throw new Error('An evidence image could not be decoded. The previous evidence is unchanged.');}
+ }
+ private async importVisual(event:Event){
+  const input=event.currentTarget as HTMLInputElement,files=Array.from(input.files??[]);input.value='';if(!files.length||!this.build)return;
+  const generation=++this.visualGeneration,build=this.build,workspace=this.workspace,presentation=workspace.presentation;
+  const current=()=>this.isConnected&&generation===this.visualGeneration&&build===this.build&&workspace===this.workspace&&presentation===workspace.presentation;
+  this.visualBusy=true;this.visualError='';this.touch();
+  try{
+   if(files.length!==1||files[0]!.size>MAX_VISUAL_BUNDLE_BYTES)throw new Error('Choose one visual evidence JSON file of 128 MB or smaller.');
+   const evidence=await readVisualBundle(await files[0]!.text(),build);
+   // Token replay remains authoritative; the visual reader never executes imported CSS.
+   reopenReviewBundle(JSON.stringify(evidence.candidate),build);reopenReviewBundle(JSON.stringify(evidence.baseline),build);
+   if(!current())return;
+   const urls=await this.prepareVisualURLs(evidence);
+   if(!current()){for(const url of urls.values())URL.revokeObjectURL(url);return;}
+   this.releaseVisualURLs();this.visualURLs=urls;this.visualEvidence=evidence;
+   this.visualReference=evidenceReference(evidence);this.visualMessage='Visual evidence loaded. Reported outcomes are separate from human review.';
+  }catch(error){if(current())this.visualError='Import rejected; the draft and any previously loaded evidence are unchanged. '+(error instanceof Error?error.message:'Visual evidence could not be opened.');}
+  finally{if(generation===this.visualGeneration){this.visualBusy=false;this.touch();}}
+ }
+ private downloadVisual(){
+  if(!this.visualEvidence)return;
+  const text=encodeVisualBundle(this.visualEvidence.report,this.visualEvidence.files),url=URL.createObjectURL(new Blob([text],{type:'application/json'}));
+  const link=this.ownerDocument.createElement('a');link.href=url;link.download='visual-evidence-'+this.visualEvidence.report.integrity.slice(7,23)+'.json';this.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),10000);
+ }
+ private openVisualCandidate(){if(this.visualEvidence&&this.build){this.acceptReopened(reopenReviewBundle(JSON.stringify(this.visualEvidence.candidate),this.build));this.visualReference=evidenceReference(this.visualEvidence);this.touch();}}
+ private unloadVisual(){this.visualGeneration++;this.releaseVisualURLs();this.visualEvidence=undefined;this.visualBusy=false;this.visualError='';this.visualMessage='Evidence unloaded. Its reference is retained with this draft.';this.touch();}
+
 
 	get previewCSS() { return ''; }
 	protected createRenderRoot() {
@@ -93,13 +134,14 @@ export class ThemeReviewApp extends LitElement {
 		return this;
 	}
 	connectedCallback() { super.connectedCallback(); if (this.hasUpdated) this.connect(); }
-	disconnectedCallback() { this.documentTheme?.disconnect(); this.documentTheme = undefined; this.intake.invalidate(); this.intake.clearDrag(); this.lifecycle?.abort(); this.pendingRequests.clear(); this.listeningDocuments.clear(); this.candidatePreview = undefined; super.disconnectedCallback(); }
+	disconnectedCallback() { this.visualGeneration++;this.visualBusy=false;this.releaseVisualURLs(); this.documentTheme?.disconnect(); this.documentTheme = undefined; this.intake.invalidate(); this.intake.clearDrag(); this.lifecycle?.abort(); this.pendingRequests.clear(); this.listeningDocuments.clear(); this.candidatePreview = undefined; super.disconnectedCallback(); }
 	protected firstUpdated() { this.connect(); }
 	protected updated() {
 		if (this.pageAppearance === 'candidate') this.documentTheme?.apply(this.workspace.presentation, {direction:this.direction,appearance:this.workspace.previewAppearance});
 		else this.documentTheme?.reset();
 	}
 	private connect() {
+        if(this.visualEvidence)for(const artifact of this.visualEvidence.report.artifacts){const bytes=this.visualEvidence.files.get(artifact.path);if(artifact.mediaType==='image/png'&&bytes&&!this.visualURLs.has(artifact.path))this.visualURLs.set(artifact.path,URL.createObjectURL(new Blob([bytes],{type:'image/png'})));}
 		this.documentTheme ??= attachDocumentTheme({root:this});
 		this.lifecycle?.abort();
 		this.lifecycle = new AbortController();
@@ -137,9 +179,9 @@ export class ThemeReviewApp extends LitElement {
 			this.touch(); this.syncPreviews();
 		} catch(error) { this.editorError = error instanceof Error ? error.message : 'This value could not be applied.'; this.touch(); }
 	}
-	private saveDraft(): SavedDraft { return {workspace:this.workspace,title:this.candidateTitle,rationale:this.rationale}; }
+	private saveDraft(): SavedDraft { return {workspace:this.workspace,title:this.candidateTitle,rationale:this.rationale,visualReference:this.visualReference}; }
 	private restoreSaved(saved:SavedDraft) {
-		this.workspace = saved.workspace; this.candidateTitle = saved.title; this.rationale = saved.rationale;
+		this.visualReference=saved.visualReference;this.workspace = saved.workspace; this.candidateTitle = saved.title; this.rationale = saved.rationale;
 		this.metadataGeneration++; this.editorResetRevision++; this.intake.invalidate();
 		this.error=''; this.editorError=''; this.touch(); this.syncPreviews();
 	}
@@ -162,7 +204,7 @@ export class ThemeReviewApp extends LitElement {
 		const titleField = this.querySelector('en-text-field[name="candidate-title"]') as HTMLElement & {value:string;reportValidity():boolean};
 		if (!titleField.reportValidity()) { this.error = 'Add a title before exporting.'; this.touch(); return; }
 		try {
-			const json = exportReviewBundle(this.draft,this.build,{title:this.candidateTitle,rationale:this.rationale},this.receipts,{pair:this.workspace.pair,impact:this.impactSelection()});
+			const json = exportReviewBundle(this.draft,this.build,{title:this.candidateTitle,rationale:this.rationale},this.receipts,{pair:this.workspace.pair,impact:this.impactSelection(),visualEvidence:this.visualReference});
 			const candidate = this.preparedCandidate();
 			const url = URL.createObjectURL(new Blob([json],{type:'application/json'}));
 			const link = this.ownerDocument.createElement('a'); link.href = url; link.download = this.workspace.pair ? `theme-pair-${this.workspace.identity.slice(7,31)}.json` : `${candidate.id}.json`;
@@ -173,7 +215,7 @@ export class ThemeReviewApp extends LitElement {
 	private acceptReopened(opened: ReturnType<typeof reopenReviewBundle>) {
 		const workspace = createReviewWorkspace(opened.draft, opened.pair);
 		this.importedPrevious = this.saveDraft(); this.importedRedo = undefined; this.workspace = workspace; this.importedBoundary = this.workspace.identity;
-		this.candidateTitle = opened.title; this.rationale = opened.rationale; this.metadataGeneration += 1;
+		this.visualReference=opened.visualEvidence;this.candidateTitle = opened.title; this.rationale = opened.rationale; this.metadataGeneration += 1;
 		this.editorResetRevision++;
 		this.pendingRequests.clear(); this.candidatePreview = undefined;
 		this.receipts = {}; this.error = ''; this.editorError = ''; this.message = 'Candidate reopened. Undo returns to your previous draft.';
@@ -414,6 +456,7 @@ export class ThemeReviewApp extends LitElement {
 						<details class="review-details"><summary>Diagnostics and review scope</summary><p>Every shipped specimen is available in the full sticker sheet. Potential source impact helps focus review without pruning any required cases. Unknown dependencies expand the selection; unavailable evidence does not mean no impact. A rendered case is not a passed interaction or accessibility test.</p>${theme.diagnostics.length ? html`<ul>${theme.diagnostics.map(d=>html`<li>${d.message}</li>`)}</ul>` : html`<p>No token diagnostics reported. Review contrast, focus, text growth and workflows in context.</p>`}<p>Exports contain source options, compiled CSS, resolved tokens, dependency data, build identity and recorded preview coverage. Reopen using this same documentation build. The JSON does not include an offline copy of the site.</p><p>This is a local candidate. Official library changes require library review; consuming teams review their own customizations. Export does not submit or adopt a change.</p>${this.build ? html`<p>Build <code>${this.build.fingerprint}</code></p>` : nothing}<p>Candidate <code>${this.workspace.pair ? this.workspace.identity : candidate.id}</code></p></details>
 					</section>
 				</div>
+                ${visualEvidenceTemplate({evidence:this.visualEvidence,reference:this.visualReference,sourceHash:this.workspace.identity,urls:this.visualURLs,error:this.visualError,message:this.visualMessage,busy:this.visualBusy,enabled:!!this.build,open:event=>void this.importVisual(event),download:()=>this.downloadVisual(),openCandidate:()=>this.openVisualCandidate(),clear:()=>this.unloadVisual()})}
 			</main>
 			<footer class="site-footer"><span>en-reve · A working design system</span><a href="#theme-review">Back to top ↑</a></footer>
 			${this.flagged ? html`<a class="progress-return" href="http://127.0.0.1:4177">Progress Report</a>` : nothing}

@@ -75,3 +75,31 @@ export/reopen and offline delivery, broader state/case qualification, and final
 requirement audit. The current producer supports original root builds only;
 project-path capture support remains an explicit portability limitation to resolve
 in the remaining integration rather than hiding it as successful coverage.
+
+## Visual reader checkpoint
+
+Stage 3 implements the browser-safe evidence reader, portable JSON packaging and
+Theme Review import, expected/actual/difference images, explicit source applicability,
+provenance disclosures and missing-artifact outcomes. It checks the declared matrix,
+manifest and artifact hashes, original exports, capture/comparison identities and
+outcome consistency. The application separately replays both token exports and decodes
+PNGs before replacing prior evidence. Imported CSS and remote URLs are never executed.
+These checks establish internal consistency, not producer authentication or approval.
+
+Nine browser journeys now pass across Chromium, Firefox and WebKit: stale source
+edits/Undo, candidate-reference and separate image export/reopen, corrupt import
+recovery, paired mobile missing images and wrong-build rejection, and an offline
+package with external network access blocked. Six mobile/offline journeys passed in
+the first matrix; the three main journeys were rerun after correcting a test option
+from nonexistent `0px` to the actual `0rem`. Earlier failed attempts are retained.
+The original producer checkpoint remains the bounded capture/cache evidence.
+
+Stage 4 remains open: project-path producer capture, broader sheet/workflow state
+qualification and a complete requirement audit. The manifest currently inventories
+59 sheet specimens and 11 workflow cases. Reader roundtrips do not establish that
+full visual matrix, physical/manual acceptance or managed remote adoption.
+
+A subsequent narrow-screen corrupt-import check exposed long artifact hashes
+overflowing the reader. Evidence text now wraps within its container; the final
+combined-build matrix covers that recovery state as well as normal and missing
+images. Rejected imports explicitly retain the existing draft and evidence.

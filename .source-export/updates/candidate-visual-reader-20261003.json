@@ -1,0 +1,32 @@
+{
+  "createdAt": "2026-10-03T04:54:21.657161+00:00",
+  "sourceCommit": "4aaaeeae75630821b085a140476882deff9406dc",
+  "previousSourceMain": "c5cb127e8d70b4554bec39d0bb1438d890846457",
+  "taskPaths": [
+    "apps/docs/src/theme-review/README.md",
+    "apps/docs/src/theme-review/app.ts",
+    "apps/docs/src/theme-review/bundle.ts",
+    "apps/docs/src/theme-review/styles.css",
+    "apps/docs/src/theme-review/visual-evidence-view.ts",
+    "apps/docs/tests/playwright.config.ts",
+    "apps/docs/tests/theme-refresh.spec.ts",
+    "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+    "apps/docs/tests/visual-evidence-reader.spec.ts",
+    "plans/candidate-visual-evidence-2026-10-03.md",
+    "tooling/testing/pathways.mjs",
+    "tooling/theme-candidates/README.md",
+    "tooling/theme-candidates/catalogue-cases.mjs",
+    "tooling/theme-candidates/catalogue.mjs",
+    "tooling/theme-candidates/definitions.json",
+    "tooling/theme-candidates/inspired/chakra-mapping.md",
+    "tooling/theme-candidates/inspired/chakra.dark.json",
+    "tooling/theme-candidates/inspired/chakra.light.json",
+    "tooling/visual-review/README.md",
+    "tooling/visual-review/package.mjs",
+    "tooling/visual-review/reader.d.mts",
+    "tooling/visual-review/reader.mjs",
+    "tooling/visual-review/reader.test.mjs"
+  ],
+  "qualification": "Portable reader qualified with owning controls and browser import, stale edits, paired mobile and offline roundtrip journeys. Broader producer catalogue and project-path capture remain open.",
+  "largeEvidence": "Preserved locally; no historical source or evidence removed."
+}

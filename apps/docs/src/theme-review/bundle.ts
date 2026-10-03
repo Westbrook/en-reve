@@ -1,3 +1,4 @@
+import {validateEvidenceReference} from '../../../../tooling/visual-review/reader.mjs';
 import type {candidateImpact} from './impact.js';
 import { presetCompanion } from './companion.js';
 import { createThemePair, exportThemeReviewPair, hashValue, reopenReviewDraft, reopenThemeReviewPair, stableStringify } from '@en-reve/tokens';
@@ -41,13 +42,14 @@ export async function loadReviewBuild(): Promise<ReviewBuild> {
 function resolvedTokens(theme: ResolvedTheme) {
 	return Object.fromEntries(Object.values(theme.tokens).map(token => [token.id, {type:token.type,value:token.value,provenance:token.provenance,cssName:token.cssName}]));
 }
-export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, metadata: {title:string;rationale:string}, receipts: Record<string,PreviewReceipt>, options: {pair?:ReviewPairDraft;impact?:ReturnType<typeof candidateImpact>} = {}) {
+export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, metadata: {title:string;rationale:string}, receipts: Record<string,PreviewReceipt>, options: {pair?:ReviewPairDraft;impact?:ReturnType<typeof candidateImpact>;visualEvidence?:ReturnType<typeof validateEvidenceReference>} = {}) {
 	if (options.pair) {
 		const pair = options.pair;
 		if (draft !== pair.light && draft !== pair.dark) throw new Error('The active draft must belong to this appearance pair.');
 		const theme = createThemePair({name:pair.name,light:pair.light.theme,dark:pair.dark.theme});
 		const payload = {
 			schema: 'en-reve/local-theme-review', schemaVersion: 2,
+            ...(options.visualEvidence ? {visualEvidence:validateEvidenceReference(options.visualEvidence)} : {}),
 			build, impact:options.impact ?? {status:'unavailable',reason:'No verified source-impact graph was available at export.'}, activeAppearance: draft.theme.mode,
             ...(presetCompanion(theme) ? {companion:presetCompanion(theme)} : {}),
 			draft: JSON.parse(exportThemeReviewPair(pair,metadata)) as unknown,
@@ -66,6 +68,7 @@ export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, 
 	const theme = draft.theme;
 	const payload = {
 		schema: 'en-reve/local-theme-review', schemaVersion: 1,
+        ...(options.visualEvidence ? {visualEvidence:validateEvidenceReference(options.visualEvidence)} : {}),
 		build,
     impact:options.impact ?? {status:'unavailable',reason:'No verified source-impact graph was available at export.'},
 		draft: JSON.parse(draft.exportJSON(metadata)) as unknown,
@@ -80,13 +83,14 @@ export function exportReviewBundle(draft: ThemeReviewDraft, build: ReviewBuild, 
 	};
 	return JSON.stringify({ ...payload, integrity: hashValue(payload) }, null, '\t') + '\n';
 }
-export function reopenReviewBundle(text: string, build: ReviewBuild): {draft:ThemeReviewDraft;pair?:ReviewPairDraft;title:string;rationale:string} {
+export function reopenReviewBundle(text: string, build: ReviewBuild): {draft:ThemeReviewDraft;pair?:ReviewPairDraft;title:string;rationale:string;visualEvidence?:ReturnType<typeof validateEvidenceReference>} {
 	if (text.length > 8_000_000) throw new Error('This file is too large. Choose an en-reve theme review JSON file under 8 MB.');
 	let value: Record<string,unknown>;
 	try { value = JSON.parse(text) as Record<string,unknown>; } catch { throw new Error('This file is not valid JSON. Choose an exported theme review file.'); }
 	if (!value || typeof value !== 'object' || Array.isArray(value) || value.schema !== 'en-reve/local-theme-review' || (value.schemaVersion !== 1 && value.schemaVersion !== 2)) throw new Error('This is not a supported en-reve theme review file.');
 	const {integrity,...payload} = value;
 	if (hashValue(payload) !== integrity) throw new Error('The review file has changed or is incomplete. Reopen the original export.');
+	const visualEvidence=validateEvidenceReference(value.visualEvidence);
 	const importedBuild = value.build as ReviewBuild | undefined;
 	if (importedBuild?.fingerprint !== build.fingerprint || stableStringify(importedBuild) !== stableStringify(build)) throw new Error('This candidate belongs to a different documentation build. Open it with its recorded build; automatic rebasing is not applied.');
 	if (value.schemaVersion === 2) {
@@ -99,9 +103,9 @@ export function reopenReviewBundle(text: string, build: ReviewBuild): {draft:The
 		const pair = {name:opened.name,light:opened.light,dark:opened.dark};
         const companion = presetCompanion(createThemePair({name:pair.name,light:pair.light.theme,dark:pair.dark.theme}));
         if (stableStringify(value.companion ?? null) !== stableStringify(companion ?? null)) throw new Error("The companion recipe does not match this build and theme. Reopen the original export.");
-		return {draft:pair[value.activeAppearance],pair,title:opened.title,rationale:opened.rationale};
+		return {draft:pair[value.activeAppearance],pair,title:opened.title,rationale:opened.rationale,visualEvidence};
 	}
 	const draft = reopenReviewDraft(JSON.stringify(value.draft),{baseOptions:{}});
 	const source = value.draft as {candidate:{title:string;rationale:string}};
-	return { draft, title: source.candidate.title, rationale: source.candidate.rationale };
+	return { draft, title: source.candidate.title, rationale: source.candidate.rationale,visualEvidence };
 }

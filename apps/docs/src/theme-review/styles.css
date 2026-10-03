@@ -52,3 +52,13 @@ en-theme-review-app main { max-inline-size:none; }
 .review-impact-cases { display:flex; flex-wrap:wrap; gap:var(--en-space-2); list-style:none; padding:0; max-block-size:20rem; overflow:auto; }
 .review-impact code { overflow-wrap:anywhere; }
 .review-impact-summary { font-variant-numeric:tabular-nums; }
+
+.visual-evidence { margin-block-start: var(--en-space-6); padding: var(--en-space-5); border: var(--en-border-width) solid var(--en-color-boundary); border-radius: var(--en-radius-container); background: var(--en-color-surface); min-inline-size: 0; }
+.visual-evidence { overflow-wrap: anywhere; }
+.visual-evidence dd { margin-inline-start: 0; margin-block-end: .75rem; }
+.visual-results { list-style: none; padding: 0; display: grid; gap: 1rem; }
+.visual-results summary { cursor: pointer; overflow-wrap: anywhere; }
+.visual-images { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); gap: 1rem; }
+.visual-images figure { margin: 0; min-inline-size: 0; }
+.visual-images figcaption { margin-block-end: .5rem; overflow-wrap: anywhere; }
+.visual-images img { display: block; max-inline-size: 100%; block-size: auto; }

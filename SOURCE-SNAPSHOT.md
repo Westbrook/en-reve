@@ -286,3 +286,7 @@ Local main `c5cb127e8d70b4554bec39d0bb1438d890846457` adds candidate visual capt
 ## Chakra UI inspired theme checkpoint
 
 Isolated local `main` `3c19f661b980218b7154d03a64453f849c3a2108` adds the Chakra UI inspired theme as a descendant of source-only GitHub main `c36986a2b744855e781d2643d28a74891722909e`. The previous export mapped to original local source `c5cb127e8d70b4554bec39d0bb1438d890846457`; that full-history checkout and its historical evidence remain unchanged. See [the source update](.source-export/updates/chakra-theme-20261002.json) for exact changed paths and qualification.
+
+## Candidate visual reader checkpoint
+
+Local main `4aaaeeae75630821b085a140476882deff9406dc` adds verified portable evidence import, comparisons and offline review. See `plans/candidate-visual-evidence-2026-10-03.md` for verification and remaining limits.

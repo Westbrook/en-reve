@@ -93,7 +93,46 @@ corruption, changed-baseline and pixel-comparison journeys live in
 `apps/docs/tests/candidate-visual.spec.ts`. Use the supported `test:workflows` entry
 with fresh `EN_EXECUTION_OUTPUT`, as described in the test-pipeline guide.
 
-This checkpoint provides the producer. The verified candidate-facing evidence
-reader, portable evidence integration, broader authored state catalogue and final
+The producer and candidate-facing reader are implemented, with portable evidence
+packaging below. Reader qualification is recorded in the delivery plan; the broader authored state catalogue and final
 scope audit remain in `plans/candidate-visual-evidence-2026-10-03.md`. A successful
 bounded qualification run does not establish all-case or manual acceptance.
+
+## Portable evidence and Theme Review
+
+After capture, package the manifest and its content-addressed files together:
+
+```sh
+tooling/test-pipeline/with-toolchain.sh node tooling/visual-review/package.mjs \
+  /absolute/capture-output /absolute/original-dist/review-build.json \
+  /absolute/new-visual-evidence.json
+```
+
+The packager checks the complete declared matrix, original baseline/candidate
+exports, rendering/comparison identities, artifact hashes and dimensions before
+writing a new file. It never fetches a URL from evidence. The bundle is limited
+to 128 MB; retain the directory for larger campaigns and split their declared
+capture runs explicitly. A narrowed run is never described as full coverage.
+
+In the matching built **Theme Review**, use **Import visual evidence**. The page
+repeats integrity checks, semantically reopens both original exports with this
+build's token compiler and decodes PNGs before replacing the previous evidence.
+A failed import leaves both the draft and previous evidence intact. Reported
+outcomes and reused/executed provenance remain separate from human acceptance.
+These checks establish internal consistency and unmodified bytes, not the
+identity or trustworthiness of the producer. Only use evidence from a source
+you trust; a self-authored hash is not a digital signature.
+
+Import does not replace the draft. **Open captured candidate** explicitly reopens
+its original draft, preserving Undo. Changes to rendering source make the loaded
+results stale; Undo can make them applicable again. Metadata changes do not change
+pixels: captured metadata remains in the original immutable export. The explicitly
+chosen expected baseline remains visible and is not assumed to be the live preview's
+library baseline.
+
+**Export candidate** retains a small evidence reference. **Export visual evidence**
+retains the separate image bundle, including missing-artifact distinctions. On
+reopen without the matching bundle, the page says its artifacts are missing; it
+does not turn the reference into passing evidence. Keep both files with the exact
+original documentation build for offline review. Candidate replay, evidence
+integrity, build applicability, image comparison and human review are distinct.

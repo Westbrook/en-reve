@@ -211,8 +211,9 @@ it does not adopt those drafts as candidate values.
 
 `app.ts` owns the page, `editor.ts` renders managed controls, `preview.ts` supplies
 the bridge, and `bundle.ts` owns the outer build/coverage envelope. `candidate-file-intake.ts` owns only native file intake, drag feedback and asynchronous read lifetime. Component
-internals remain private. Offline build/candidate packaging is delivered separately; candidate-bound expected/actual/diff visual evidence, review-cache integration and
-explicit adoption integration remain planned. This local editor does not complete
+internals remain private. Offline build/candidate packaging is delivered separately. Candidate-bound
+expected/actual/difference evidence and capture-cache provenance use the visual
+evidence workflow below; explicit remote adoption integration remains planned. This local editor does not complete
 the managed admin. The initial four-audience handbook is delivered separately at
 `/guides.html`; it does not change these candidate/adoption boundaries. See the [token plan](../../../../plans/tokens.md)
 and [verification guide](../../tests/README.md).
@@ -236,5 +237,26 @@ It does not mark visual checks run or reinterpret reopened evidence as acceptanc
 The original source graph conservatively over-selects shared code and token paths.
 Unknown dependencies expand rather than narrowing required review. Source impact
 is not browser-effective cascade, image comparison or external application coverage.
-The remaining visual producer/reader work is in
+The visual producer/reader delivery and remaining qualification are tracked in
 [the delivery plan](../../../../plans/candidate-visual-evidence-2026-10-03.md).
+
+## Visual evidence reader
+
+The Visual evidence section imports portable bundles from
+`tooling/visual-review/package.mjs`. Its shared reader validates the required
+case matrix, exact build and candidate/base exports, content-addressed artifacts,
+rendering/comparison/review identities and outcome consistency. Token replay stays
+in `reopenReviewBundle`; imported CSS and URLs are never executed. The browser
+also decodes PNGs before replacement. Missing images remain unavailable; corrupt
+or wrong-build imports preserve the current draft and previous evidence.
+
+Rendering-source edits make prior evidence stale while retaining its provenance.
+An explicit Open captured candidate action uses normal undoable draft reopening.
+Candidate exports contain only an optional evidence reference; image bundles are
+exported separately and work with the original offline documentation build. A
+reference without the matching images is missing evidence. Metadata changes do
+not invalidate pixel evidence but never rewrite the captured original export.
+
+Integrity establishes internally consistent bytes, not producer authenticity or
+human acceptance. The UI labels outcomes as reported and preserves executed/reused,
+failed, omitted, unsupported and missing distinctions. It never promotes baselines.
