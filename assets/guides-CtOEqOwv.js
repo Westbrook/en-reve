@@ -1,2 +1,0 @@
-import{t as e}from"./modulepreload-polyfill-lLXDlF_5.js";import{t}from"./rolldown-runtime-B0lUwjiP.js";function n(){return(n=t((()=>{if(new URLSearchParams(location.search).has(`progress-report`)){let e=document.querySelector(`#progress-return`);e&&(e.hidden=!1);for(let e of document.querySelectorAll(`a[data-preserve-report]`)){let t=new URL(e.href);t.searchParams.set(`progress-report`,``),e.href=t.href}}})))()}function r(){return(r=t((()=>{e(),n()})))()}r();
-//# sourceMappingURL=guides-CtOEqOwv.js.map

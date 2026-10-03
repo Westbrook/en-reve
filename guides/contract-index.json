@@ -4,22 +4,22 @@
   "identity": "SHA-256 of the delivered bytes. Use the complete artifact set from one build and compare it to the installed package; hashes do not establish behavioral support.",
   "artifacts": [
     {
-      "href": "/custom-elements.json",
+      "href": "/en-reve/custom-elements.json",
       "sha256": "1daa94a9ddf259bd827a8b55d129bfbd11fae14d8252f49b316c5cd5e8648271",
       "bytes": 4390265
     },
     {
-      "href": "/custom-elements.json.receipt.json",
+      "href": "/en-reve/custom-elements.json.receipt.json",
       "sha256": "519bbfab045bf33ce28e19f030afa6708dc9d0ee9abd58d0cf6815db7f56ff07",
       "bytes": 1075722
     },
     {
-      "href": "/public-api.json",
+      "href": "/en-reve/public-api.json",
       "sha256": "fc39aad49123a09a68bb5f8fe2ab59b3dbc35908b91616cc3f0260b489516729",
       "bytes": 2833814
     },
     {
-      "href": "/public-types.json",
+      "href": "/en-reve/public-types.json",
       "sha256": "5afdee432898dec1d99df1f5d0f4a0f0ca60f59aa447b1ae9f1c308bbf4e2003",
       "bytes": 856186
     }
@@ -31,7 +31,7 @@
       "responsibility": "Implementation, reusable layers, definitions and public contracts.",
       "boundary": "Application integration belongs to en-reve-consume; workflow orchestration to en-reve-app; theme design to en-reve-theme. Use testing/documentation skills only for the corresponding requested work.",
       "source": "skills/en-reve-component/SKILL.md",
-      "href": "/guides/skills/en-reve-component/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-component/SKILL.md",
       "sha256": "9497ecff61317b5731b274b434b80f58a7c95125118d96117db838c09b134bf0",
       "bytes": 4927
     },
@@ -41,7 +41,7 @@
       "responsibility": "Functional test authoring, execution and scoped results.",
       "boundary": "Accessibility semantics, WCAG and AT review belong to en-reve-accessibility; performance campaigns retain their own protocol. Report product defects; use en-reve-component when implementing an authorized fix.",
       "source": "skills/en-reve-test/SKILL.md",
-      "href": "/guides/skills/en-reve-test/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-test/SKILL.md",
       "sha256": "a1e63a7f8f097d4fbda8061f7c59b13836d8de8f4470c6dc627f82632db4f275",
       "bytes": 4416
     },
@@ -51,7 +51,7 @@
       "responsibility": "Semantic ownership, keyboard/focus, accessibility preferences and automated/manual evidence.",
       "boundary": "General state-machine and transport tests belong to en-reve-test; component implementation and theme fixes retain their own owners. Accessibility findings do not authorize changes to platform settings or acceptance scope.",
       "source": "skills/en-reve-accessibility/SKILL.md",
-      "href": "/guides/skills/en-reve-accessibility/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-accessibility/SKILL.md",
       "sha256": "69ff2a732bb03fa819cb450cc3c27938032319f9ad79967e02d1406e6652e1c2",
       "bytes": 4726
     },
@@ -61,7 +61,7 @@
       "responsibility": "User/developer/designer guidance, runnable example presentation, migrations and contract delivery.",
       "boundary": "Do not redesign public APIs, implement runtime features, certify accessibility or publish a release as a side effect of documenting them. Route an exposed defect to its owning skill.",
       "source": "skills/en-reve-document/SKILL.md",
-      "href": "/guides/skills/en-reve-document/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-document/SKILL.md",
       "sha256": "9daaef758e8a404d30c447744414dfa696a3b7cb979a1b03b2d0ec8f37f9c948",
       "bytes": 4404
     },
@@ -71,7 +71,7 @@
       "responsibility": "Select and wire existing public component APIs inside an application.",
       "boundary": "Whole-application routing, service adapters and workflow state belong to en-reve-app. New library components belong to en-reve-component. Theme design belongs to en-reve-theme. Keep a one-control integration a one-control task.",
       "source": "skills/en-reve-consume/SKILL.md",
-      "href": "/guides/skills/en-reve-consume/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-consume/SKILL.md",
       "sha256": "3a5e02a2d6d1a99b5631cc9fb2a2eb59a1b80a3c7ccbac30eed69f78db9b8b62",
       "bytes": 5330
     },
@@ -81,7 +81,7 @@
       "responsibility": "Application-level state, routing, service boundaries, composition and responsive task flow.",
       "boundary": "Delegate individual component contracts to en-reve-consume and visual theme rules to en-reve-theme. Do not alter library internals or create a new component merely to deliver an app.",
       "source": "skills/en-reve-app/SKILL.md",
-      "href": "/guides/skills/en-reve-app/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-app/SKILL.md",
       "sha256": "86691d3677daa83eb2adcb511b396fb7d1a2a53b56622beb770c3a48d567615f",
       "bytes": 4662
     },
@@ -91,7 +91,7 @@
       "responsibility": "Token relationships, appearance/scoping, group/component properties and candidate theme authoring.",
       "boundary": "Runtime behavior belongs to en-reve-component, application architecture to en-reve-app, and acceptance testing to the relevant test skill. A theme edit does not authorize adoption or baseline promotion.",
       "source": "skills/en-reve-theme/SKILL.md",
-      "href": "/guides/skills/en-reve-theme/SKILL.md",
+      "href": "/en-reve/guides/skills/en-reve-theme/SKILL.md",
       "sha256": "93b91f1753c178d4a250084201f6efe5ffa288200d37ae8c29b06ebb66796066",
       "bytes": 4734
     }

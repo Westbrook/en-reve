@@ -1,2 +1,0 @@
-import{t as e}from"./modulepreload-polyfill-lLXDlF_5.js";import"./site-CCn1K0Vy.js";import{t}from"./rolldown-runtime-B0lUwjiP.js";function n(){return(n=t((()=>{if(new URLSearchParams(location.search).has(`progress-report`)){document.querySelector(`.progress-return`)?.removeAttribute(`hidden`);for(let e of document.querySelectorAll(`a[href]`)){let t=new URL(e.href);t.origin===location.origin&&(t.searchParams.set(`progress-report`,``),e.href=t.href)}}})))()}function r(){return(r=t((()=>{e(),n()})))()}r();
-//# sourceMappingURL=apiExamples-BqmTPlmb.js.map

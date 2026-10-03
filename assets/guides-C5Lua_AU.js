@@ -1,0 +1,2 @@
+import{n as e,t}from"./deployment-fragments-C3Yo3Per.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";function r(){return(r=n((()=>{if(new URLSearchParams(location.search).has(`progress-report`)){let e=document.querySelector(`#progress-return`);e&&(e.hidden=!1);for(let e of document.querySelectorAll(`a[data-preserve-report]`)){let t=new URL(e.href);t.searchParams.set(`progress-report`,``),e.href=t.href}}})))()}function i(){return(i=n((()=>{e(),t(),r()})))()}i();
+//# sourceMappingURL=guides-C5Lua_AU.js.map

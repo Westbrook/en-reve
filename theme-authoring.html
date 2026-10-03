@@ -3,67 +3,67 @@
 <head><base href="https://westbrook.github.io/en-reve/">
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light dark"><title>en-reve · Theme authoring</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/styles/tokens.css">
+  <link rel="icon" type="image/svg+xml" href="/en-reve/favicon.svg">
+  <link rel="stylesheet" href="/en-reve/styles/tokens.css">
   <style>@layer en.docs{main{max-inline-size:78rem}.authoring-heading{max-inline-size:52rem;padding-block:2rem 3rem}.eyebrow{font:600 .75rem var(--en-font-code-family);letter-spacing:.1em;color:var(--en-color-text-muted);margin-block-end:1rem}h1{letter-spacing:-.04em;font-size:clamp(2rem,5vw,3.75rem);line-height:1.1}.lede{max-inline-size:65ch;margin-block-start:1.25rem;line-height:1.65}.lab{border-block-start:1px solid var(--en-color-line);padding-block:2rem}.lab>p{max-inline-size:78ch;margin-block:1rem;line-height:1.6}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;margin-block:1.5rem;display:grid}.specimen{border:1px solid var(--en-color-line);background:var(--en-color-surface);border-radius:1rem;min-inline-size:0;padding:1.5rem}.specimen>h3{margin-block-end:.5rem}.specimen>p{color:var(--en-color-text-muted);margin-block-end:1.5rem;line-height:1.5}.sample{background:var(--en-color-canvas);border-radius:.5rem;gap:1rem;padding:1rem;display:grid}en-text-field,en-card{display:block}en-button{justify-self:start}.toolbar{flex-wrap:wrap;align-items:center;gap:1rem;margin-block:1rem;display:flex}.toolbar label{flex-wrap:wrap;align-items:center;gap:.7rem;min-inline-size:0;max-inline-size:100%;display:flex}select,button,.file-label{border:1px solid var(--en-color-boundary);background:var(--en-color-surface);min-block-size:2.75rem;color:var(--en-color-text);font:inherit;border-radius:.5rem;padding:.5rem .8rem}button{cursor:pointer}select{min-inline-size:0;max-inline-size:100%}#shadow-choice{inline-size:min(100%,32rem)}.file-label{cursor:pointer;position:relative}.file-label input{opacity:0;cursor:pointer;inline-size:100%;position:absolute;inset:0}.file-label:focus-within{outline:2px solid var(--en-color-focus);outline-offset:3px}output,.status{overflow-wrap:anywhere;margin-block:1rem;line-height:1.6;display:block}.readout{font:.85rem/1.6 var(--en-font-code-family)}pre{background:var(--en-color-canvas);border-radius:.5rem;max-inline-size:100%;padding:1rem;overflow:auto}details{margin-block:1rem}summary{cursor:pointer}table{border-collapse:collapse;inline-size:100%;font-size:.9rem}th,td{text-align:start;vertical-align:top;border-block-end:1px solid var(--en-color-line);padding:1rem;line-height:1.5}.table-scroll{overflow:auto}#rich en-card::part(base){box-shadow:var(--en-shadow-overlay);font-family:var(--en-font-ui-family);font-weight:var(--en-font-ui-weight)}#css-art en-card::part(base){background:linear-gradient(120deg,var(--en-color-surface),var(--en-color-selected));border-radius:1.5rem .25rem}.site-header nav{flex-wrap:wrap;gap:1rem;display:flex}@media (width<=48rem){.grid{grid-template-columns:minmax(0,1fr)}.specimen{padding:1rem}th,td{padding:.7rem}}}</style>
-  <script type="module" crossorigin src="/assets/themeAuthoring-CJadRE6m.js"></script>
-  <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-B0lUwjiP.js">
-  <link rel="modulepreload" crossorigin href="/assets/modulepreload-polyfill-lLXDlF_5.js">
-  <link rel="modulepreload" crossorigin href="/assets/site-CCn1K0Vy.js">
-  <link rel="modulepreload" crossorigin href="/assets/registration-C-99iFfM.js">
-  <link rel="modulepreload" crossorigin href="/assets/lit-B8wTlSYy.js">
-  <link rel="modulepreload" crossorigin href="/assets/static-styles-Dj0ftCgc.js">
-  <link rel="modulepreload" crossorigin href="/assets/en-element-CTYjdcmc.js">
-  <link rel="modulepreload" crossorigin href="/assets/sizing-BHSe9Zqu.js">
-  <link rel="modulepreload" crossorigin href="/assets/sizing-BP-4_-ml.js">
-  <link rel="modulepreload" crossorigin href="/assets/typography-BPDGX1SN.js">
-  <link rel="modulepreload" crossorigin href="/assets/foundations-C3ZYhCmF.js">
-  <link rel="modulepreload" crossorigin href="/assets/target-size-DHLfQB5T.js">
-  <link rel="modulepreload" crossorigin href="/assets/control-size-B8crdG5E.js">
-  <link rel="modulepreload" crossorigin href="/assets/inset-action-BIUEi0DE.js">
-  <link rel="modulepreload" crossorigin href="/assets/button-rules-OfydDi7s.js">
-  <link rel="modulepreload" crossorigin href="/assets/control-shared-XIV7o2vs.js">
-  <link rel="modulepreload" crossorigin href="/assets/buttons-cwqDv6vA.js">
-  <link rel="modulepreload" crossorigin href="/assets/activity-D5z-DEgj.js">
-  <link rel="modulepreload" crossorigin href="/assets/if-defined-CD_1dwKY.js">
-  <link rel="modulepreload" crossorigin href="/assets/focus-participant-BMq7jgYQ.js">
-  <link rel="modulepreload" crossorigin href="/assets/id-reference-Bt2sgbVj.js">
-  <link rel="modulepreload" crossorigin href="/assets/button-DaRU3jf8.js">
-  <link rel="modulepreload" crossorigin href="/assets/button-D8uaKhdz.js">
-  <link rel="modulepreload" crossorigin href="/assets/css-vtazsnPq.js">
-  <link rel="modulepreload" crossorigin href="/assets/theme-CqlidhcM.js">
-  <link rel="modulepreload" crossorigin href="/assets/review-draft-vus1uO8i.js">
-  <link rel="modulepreload" crossorigin href="/assets/focus-BmYPyrx-.js">
-  <link rel="modulepreload" crossorigin href="/assets/press-recipes-WsII4_t9.js">
-  <link rel="modulepreload" crossorigin href="/assets/description-PDi6-Zbs.js">
-  <link rel="modulepreload" crossorigin href="/assets/select-chevron-DVM0boTx.js">
-  <link rel="modulepreload" crossorigin href="/assets/surface-motion-Bz2skXN-.js">
-  <link rel="modulepreload" crossorigin href="/assets/option-paint-D1ZtxOoI.js">
-  <link rel="modulepreload" crossorigin href="/assets/link-rules-tkBrHqvy.js">
-  <link rel="modulepreload" crossorigin href="/assets/controls-D_G6JvZ4.js">
-  <link rel="modulepreload" crossorigin href="/assets/events-jrU7vEvn.js">
-  <link rel="modulepreload" crossorigin href="/assets/default-state-Cvzetr5I.js">
-  <link rel="modulepreload" crossorigin href="/assets/field-labels-XjA5RVxR.js">
-  <link rel="modulepreload" crossorigin href="/assets/description-Be4lsYQH.js">
-  <link rel="modulepreload" crossorigin href="/assets/dist-gZqZ_ZdS.js">
-  <link rel="modulepreload" crossorigin href="/assets/draft-jBv6X5pR.js">
-  <link rel="modulepreload" crossorigin href="/assets/reaction.ts-Ci9rz0L1.js">
-  <link rel="modulepreload" crossorigin href="/assets/signal-controller-8vE5UbHa.js">
-  <link rel="modulepreload" crossorigin href="/assets/form-controller-hN2u-IYu.js">
-  <link rel="modulepreload" crossorigin href="/assets/form-field-BB6IHNNU.js">
-  <link rel="modulepreload" crossorigin href="/assets/editing-controller-FpXKD2Xe.js">
-  <link rel="modulepreload" crossorigin href="/assets/editable-field-CWeumLwE.js">
-  <link rel="modulepreload" crossorigin href="/assets/text-field-CyvodCv6.js">
-  <link rel="modulepreload" crossorigin href="/assets/text-field-17CmmrLY.js">
-  <link rel="modulepreload" crossorigin href="/assets/optional-slot-presence-gYPUSGZe.js">
-  <link rel="modulepreload" crossorigin href="/assets/surface-D3-hEj5J.js">
-  <link rel="modulepreload" crossorigin href="/assets/surfaces-BMP9qGEK.js">
-  <link rel="modulepreload" crossorigin href="/assets/card-HRmwyTop.js">
-  <link rel="modulepreload" crossorigin href="/assets/card-_huR6NGr.js">
-  <link rel="stylesheet" crossorigin href="/assets/site-C8mGG7P3.css">
-<meta name="en-review-build" content="sha256:6f25a61b29fa52ec2c9ac7912e20d28415215ca8b1a5ab321d6751ca63298380"></head>
+  <script type="module" crossorigin src="/en-reve/assets/themeAuthoring-DZ_7YpK3.js"></script>
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/rolldown-runtime-B0lUwjiP.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/deployment-fragments-C3Yo3Per.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/site-x7Whl3sL.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/registration-C-99iFfM.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/lit-B8wTlSYy.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/static-styles-Dj0ftCgc.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/en-element-CTYjdcmc.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/sizing-BHSe9Zqu.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/sizing-BP-4_-ml.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/typography-BPDGX1SN.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/foundations-C3ZYhCmF.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/target-size-DHLfQB5T.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/control-size-B8crdG5E.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/inset-action-BIUEi0DE.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/button-rules-OfydDi7s.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/control-shared-XIV7o2vs.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/buttons-cwqDv6vA.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/activity-D5z-DEgj.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/if-defined-CD_1dwKY.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/focus-participant-BMq7jgYQ.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/id-reference-Bt2sgbVj.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/button-DaRU3jf8.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/button-D8uaKhdz.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/css-vtazsnPq.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/theme-CqlidhcM.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/review-draft-vus1uO8i.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/focus-BmYPyrx-.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/press-recipes-WsII4_t9.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/description-PDi6-Zbs.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/select-chevron-DVM0boTx.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/surface-motion-Bz2skXN-.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/option-paint-D1ZtxOoI.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/link-rules-tkBrHqvy.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/controls-D_G6JvZ4.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/events-jrU7vEvn.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/default-state-Cvzetr5I.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/field-labels-XjA5RVxR.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/description-Be4lsYQH.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/dist-gZqZ_ZdS.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/draft-jBv6X5pR.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/reaction.ts-Ci9rz0L1.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/signal-controller-8vE5UbHa.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/form-controller-hN2u-IYu.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/form-field-BB6IHNNU.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/editing-controller-FpXKD2Xe.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/editable-field-CWeumLwE.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/text-field-CyvodCv6.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/text-field-17CmmrLY.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/optional-slot-presence-gYPUSGZe.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/surface-D3-hEj5J.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/surfaces-BMP9qGEK.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/card-HRmwyTop.js">
+  <link rel="modulepreload" crossorigin href="/en-reve/assets/card-_huR6NGr.js">
+  <link rel="stylesheet" crossorigin href="/en-reve/assets/site-DH_Q0BXT.css">
+<meta name="en-review-build" content="sha256:e4f5ee651553a6dc265a5aa72aa9924edec8f2817f2ae40e66abbc46638d7eea"></head>
 <body>
-  <header class="site-header"><a class="wordmark" href="/" data-preserve-report><span class="mark" aria-hidden="true">en</span> en-reve</a><nav aria-label="Documentation"><a href="/theme-review.html" data-preserve-report>Theme Review</a><a href="/reviews/theme-customization?progress-report#THEME-05">Decision register</a></nav></header>
+  <header class="site-header"><a class="wordmark" href="/en-reve/" data-preserve-report><span class="mark" aria-hidden="true">en</span> en-reve</a><nav aria-label="Documentation"><a href="/en-reve/theme-review.html" data-preserve-report>Theme Review</a><a href="/en-reve/reviews/theme-customization?progress-report#THEME-05">Decision register</a></nav></header>
   <main>
     <div class="authoring-heading"><p class="eyebrow">THEME-05 · IMPLEMENTATION REVIEW</p><h1>Choose how you author.</h1><p class="lede">Managed choices, typed code, and ordinary CSS each have a clear role. Use the editor for shared controls, seed richer values in code, and keep CSS and Parts for expressive details.</p></div>
     <section class="lab" aria-labelledby="geometry-title">
@@ -93,7 +93,7 @@
       <tr><th scope="row">Typography</th><td>Custom family stacks and weights 1–1000</td><td>Baseline family choices and curated weights; exact existing values are preserved</td><td>Font features and local treatments; applications load fonts</td></tr>
       <tr><th scope="row">Elevation</th><td>Structured multi-layer and inset shadows</td><td>Shadows seeded in the baseline</td><td>Additional material effects and family Parts</td></tr>
       <tr><th scope="row">Color</th><td>sRGB and alpha</td><td>sRGB; opacity only on designated controls</td><td>Wider CSS colors on compatible hooks, subject to browser and registration policy</td></tr>
-    </tbody></table></div><p>Display-P3 is not a typed theme format. A wide-gamut color picker does not change the compiler schema, derived colors, or serialization. No arbitrary CSS strings are accepted as typed colors or dimensions.</p><p><a href="/reviews/theme-customization/theme-05-authoring.md">Authoring guide and promoted hooks</a></p></section>
+    </tbody></table></div><p>Display-P3 is not a typed theme format. A wide-gamut color picker does not change the compiler schema, derived colors, or serialization. No arbitrary CSS strings are accepted as typed colors or dimensions.</p><p><a href="/en-reve/reviews/theme-customization/theme-05-authoring.md">Authoring guide and promoted hooks</a></p></section>
   </main>
   <footer class="site-footer">en-reve · Real components and the installed token compiler<a id="progress-return" class="progress-return" href="http://127.0.0.1:4177" hidden>Progress Report</a></footer>
 </body>

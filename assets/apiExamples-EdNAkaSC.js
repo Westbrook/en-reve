@@ -1,0 +1,2 @@
+import{n as e,t}from"./deployment-fragments-C3Yo3Per.js";import"./site-x7Whl3sL.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";function r(){return(r=n((()=>{if(new URLSearchParams(location.search).has(`progress-report`)){document.querySelector(`.progress-return`)?.removeAttribute(`hidden`);for(let e of document.querySelectorAll(`a[href]`)){let t=new URL(e.href);t.origin===location.origin&&(t.searchParams.set(`progress-report`,``),e.href=t.href)}}})))()}function i(){return(i=n((()=>{e(),t(),r()})))()}i();
+//# sourceMappingURL=apiExamples-EdNAkaSC.js.map
