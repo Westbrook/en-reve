@@ -11,6 +11,7 @@ import { createDocumentMinifier } from '../../../tooling/minify/document.mjs';
 import { minifyLitTemplates } from '../../../tooling/minify/literals.mjs';
 import { prepareDocs } from './prepare-docs.mjs';
 import { generateImpact } from '../../../tooling/evidence/impact.mjs';
+import { buildPerformanceResults } from './performance-results.mjs';
 
 const docsRoot = fileURLToPath(new URL('..', import.meta.url));
 const workspaceRoot = fileURLToPath(new URL('../../..', import.meta.url));
@@ -29,6 +30,7 @@ const { apiExamplePages, settingsScenarioPages } = await prepareDocs();
 await build({ root: docsRoot, configFile: resolve(docsRoot, 'vite.config.ts') });
 await build({
   root: docsRoot,
+  base,
   configFile: false,
   plugins: [deploymentPaths(base), minifyLitTemplates({
     include: [resolve(docsRoot, 'src'), resolve(workspaceRoot, 'packages')],
@@ -114,6 +116,8 @@ console.log(`Rendered ${apiExamplePages.length} isolated API examples at build t
 
 // Bind generated dependency evidence to the same original documentation build.
 await writeFile(resolve(outputRoot, 'impact.json'), JSON.stringify(await generateImpact({root:workspaceRoot}), null, 2) + '\n');
+
+await buildPerformanceResults({ workspaceRoot, outputRoot, base });
 
 // Apply deployment semantics to static and SSR pages alike, before sealing hashes.
 if (base !== '/') {

@@ -208,6 +208,7 @@ ${['carousel', 'menu-choices', 'focus-motion', 'child-authored-choices', 'conten
           <a href=${this.progressReportEnabled ? '/api-reference?progress-report' : '/api-reference'}>API reference</a>
           <a href=${this.progressReportEnabled ? '/api-examples?progress-report' : '/api-examples'}>API examples</a>
           <a href=${this.progressReportEnabled ? '/guides.html?progress-report' : '/guides.html'}>Handbook</a>
+          ${import.meta.env.BASE_URL === '/en-reve/' ? html`<a href=${this.progressReportEnabled ? '/en-reve/performance/?progress-report' : '/en-reve/performance/'}>Performance results</a>` : nothing}
         </nav>
       </header>
       <main id="sheet" tabindex="-1" class="en-navigation-target">

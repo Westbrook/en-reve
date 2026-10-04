@@ -18,11 +18,69 @@ test.beforeEach(async({context,page},info)=>{
   let relative=decodeURIComponent(url.pathname.slice(prefix.length)) || 'index.html';
   let file=resolve(root!,relative);
   if(!file.startsWith(resolve(root!)+'/')){failures.push('Unsafe path: '+url.href);await route.abort();return;}
-  if(!await stat(file).then(s=>s.isFile()).catch(()=>false))file += '.html';
+  const entry=await stat(file).catch(()=>undefined);
+  if(entry?.isDirectory())file=resolve(file,'index.html');
+  else if(!entry?.isFile())file += '.html';
   try {await route.fulfill({status:200,contentType:types[extname(file)]??'application/octet-stream',body:await readFile(file)});}
   catch {failures.push('Missing asset: '+url.href);await route.fulfill({status:404,body:'Not found'});}
  });
  (info as any).deploymentFailures=failures;
+});
+
+test('performance results include current source, linked evidence, sorting and downloads under the project prefix',async({page})=>{
+ await page.goto(origin+prefix+'?progress-report');
+ await expect(page.locator('en-sticker-app')).not.toHaveAttribute('data-ssr');
+ await page.getByRole('link',{name:'Performance results',exact:true}).click();
+ await expect(page).toHaveURL(origin+prefix+'performance/?progress-report');
+ await expect(page.locator('base')).toHaveAttribute('href',origin+prefix);
+ const provenance=JSON.parse(await readFile(resolve(root!,'performance/source.json'),'utf8'));
+ const source=await readFile(new URL('../../../plans/native-showcase-performance-results.md',import.meta.url),'utf8');
+ expect(provenance.sourceHash).toBe(createHash('sha256').update(source).digest('hex'));
+ expect(provenance.basePath).toBe(prefix+'performance/');
+ expect(await page.evaluate(async url=>await(await fetch(url)).text(),prefix+'performance/results.md')).toBe(source);
+ await expect(page.locator('article h2')).toHaveText([...source.matchAll(/^## (.+)$/gm)].map(m=>m[1]));
+ const localLinks=await page.locator('article a').evaluateAll(nodes=>nodes.map(n=>n.getAttribute('href')!).filter(h=>h.startsWith('/')));
+ expect(localLinks.some(h=>h.startsWith(prefix+'performance/documents/'))).toBeTruthy();
+ expect(localLinks.every(h=>h.startsWith(prefix+'performance/'))).toBeTruthy();
+ for(const resource of provenance.resources){
+  const bytes=await readFile(resolve(root!,'performance',resource.path));
+  expect(createHash('sha256').update(bytes).digest('hex')).toBe(resource.sha256);
+ }
+ const evidenceLink=localLinks.find(h=>h.startsWith(prefix+'performance/documents/'))!;
+ expect(await page.evaluate(async url=>(await fetch(url)).status,evidenceLink)).toBe(200);
+ const section=page.locator('nav[aria-label="Report sections"] a').last();
+ await section.click();
+ expect(new URL(page.url()).pathname).toBe(prefix+'performance/');
+ expect(new URL(page.url()).search).toBe('?progress-report');
+ await expect(page.getByRole('link',{name:'Progress Report',exact:true})).toBeVisible();
+ const table=page.locator('#results-table');
+ await expect(table.locator('tbody tr').first()).toBeVisible();
+ const header=table.locator('thead th').nth(4);
+ await header.getByRole('button').click();await expect(header).toHaveAttribute('aria-sort','ascending');
+ await header.getByRole('button').click();await expect(header).toHaveAttribute('aria-sort','descending');
+ const sourceDownload=page.waitForEvent('download');
+ await page.getByRole('link',{name:'Download source',exact:false}).click();
+ const sourceFile=await (await sourceDownload).path();
+ expect(await readFile(sourceFile!,'utf8')).toBe(source);
+ const csvDownload=page.waitForEvent('download');
+ await page.locator('#reference-comparison .export-table').getByRole('button').click();
+ expect((await csvDownload).suggestedFilename()).toMatch(/\.csv$/);
+ await page.setViewportSize({width:390,height:844});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+});
+
+test.describe('performance results without JavaScript',()=>{
+ test.use({javaScriptEnabled:false});
+ test('static report and section navigation remain available',async({page})=>{
+  await page.goto(origin+prefix+'performance/');
+  await expect(page.locator('#comparison-fallback')).toBeVisible();
+  await expect(page.locator('#comparison-interactive')).toBeHidden();
+  await expect(page.locator('article')).toContainText('Latest measured source:');
+  const section=page.locator('nav[aria-label="Report sections"] a').last();
+  const href=await section.getAttribute('href');
+  expect(href).toMatch(/^\/en-reve\/performance\/index\.html#/);
+  await section.click();await expect(page).toHaveURL(origin+href!);
+ });
 });
 test.afterEach(async({},info)=>{expect((info as any).deploymentFailures).toEqual([]);});
 test('project base preserves hydrated navigation, nested controls and fragment links',async({page})=>{

@@ -4,6 +4,9 @@ After each GitHub source publication, publish a separately qualified project-sit
 build to `gh-pages`. Keep the root/private build separate:
 
 ```sh
+# Once per checkout or reader lockfile change; preserve its isolated dependencies.
+tooling/test-pipeline/with-toolchain.sh npm --prefix showcases/performance-results ci --workspaces=false
+
 EN_DOCS_BASE_PATH=/en-reve/ EN_DOCS_OUTPUT=/absolute/path/to/github-dist \
   tooling/test-pipeline/with-toolchain.sh npm run build -w @en-reve/docs
 ```
@@ -17,10 +20,30 @@ Hydrated fragment links retain native same-document navigation. Source examples
 and editor slash triggers remain source content. With no deployment configuration,
 the private/root build retains its existing URLs and contains no base element.
 
+The `/en-reve/` build also builds the independent performance reader at
+`/en-reve/performance/`, linked from the sticker sheet. It renders the canonical
+`plans/native-showcase-performance-results.md` and copies its explicitly linked
+documents. This includes the latest completed dated main/peer and calendar
+results; it does not acquire measurements, relabel old samples as current, or
+repack frozen comparison dependencies. `PERF_REPORT_SOURCE` overrides are ignored
+for this publication. Root/private docs builds remain independent of the reader.
+The two explicitly linked `baseline.json` / `summary.json` files beneath
+`showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/` are compact,
+unchanged historical evidence retained for the reader; including them does not
+promote a timing baseline or restore the omitted acquisition archives.
+
+The viewer, Markdown download and linked evidence are included before review
+hashes are sealed. `performance/source.json` binds their hashes, viewer source,
+lockfile and frozen package inputs. The publisher rejects missing output or
+source/evidence changes and records the report identity in `.en-reve-build.json`.
+
 Qualify `deployment-paths.test.mjs`, document-style tests and
 `github-pages.spec.ts` against the isolated output (`EN_GITHUB_PAGES_BUILD`).
 The browser fixture serves exact output bytes at the real project prefix and
 rejects requests outside it. Retain its engine matrix and every manifest hash.
+Its performance cases cover source/evidence delivery, section navigation with
+the project base, sorting, downloads, narrow layout and the static fallback.
+Run the publisher tests as well: `python3 tooling/publishing/publish-github-build.test.py`.
 
 Commit local `main`, push its source-only export, then publish:
 
