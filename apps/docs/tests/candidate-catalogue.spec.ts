@@ -88,13 +88,17 @@ test('CSS postconditions distinguish local overrides from inherited siblings',as
  await expect(verifyState(page,[{kind:'css-relationship',selector:'section',referenceSelector:'main',name:'color',relation:'greater'}])).rejects.toThrow(/pixel lengths/);
 });
 
-test('authored catalogue captures real state with exact candidate identity',async({browser,browserName},info)=>{
+// Keep each density independently reportable: a failed report must not skip the
+// remaining densities for this engine. Capture identities and cache policy stay
+// owned by captureReview; splitting tests does not change the declared matrix.
+const catalogueDensities=(process.env.EN_VISUAL_DENSITIES??'compact,comfortable,spacious').split(',');
+if(catalogueDensities.length!==new Set(catalogueDensities).size || catalogueDensities.some(density=>!['compact','comfortable','spacious'].includes(density))) {
+ throw new Error('EN_VISUAL_DENSITIES must contain distinct supported densities.');
+}
+for(const density of catalogueDensities){
+ test(`authored catalogue captures real state with exact candidate identity (${density})`,async({browser,browserName},info)=>{
  test.skip(process.env.EN_VISUAL_CATALOGUE!=='1','Opt-in full visual catalogue acquisition.');test.setTimeout(12*60*60*1000);
  const buildDirectory=fileURLToPath(new URL('../../../dist',import.meta.url));const build=JSON.parse(await readFile(buildDirectory+'/review-build.json','utf8'));
- const densities=(process.env.EN_VISUAL_DENSITIES??'compact,comfortable,spacious').split(',');
- expect(densities.length).toBe(new Set(densities).size);
- for(const density of densities){
- expect(['compact','comfortable','spacious']).toContain(density);
  const light=createReviewDraft(),dark=createReviewDraft();
  light.setContext({density:density as 'compact'|'comfortable'|'spacious'});dark.setContext({mode:'dark',density:density as 'compact'|'comfortable'|'spacious'});
  const baseline=exportReviewBundle(light,build,{title:'Catalogue baseline',rationale:''},{},{pair:{name:'catalogue',light,dark}});
@@ -111,5 +115,5 @@ test('authored catalogue captures real state with exact candidate identity',asyn
   if(row.fixture.capture==='viewport')expect(row.captures.actual.details.coverage.method).toBe('viewport');
  }
  expect(result.results.filter((row:any)=>['passed','different'].includes(row.status))).toHaveLength((selected?.length??cases.length)*viewports.length*2);
- }
-});
+ });
+}

@@ -27,10 +27,50 @@ earlier sources.
 The remaining delivery is the complete **209-case × 3-density × 2-appearance ×
 2-viewport × 3-engine matrix (7,524 comparisons)**, partition verification for its
 nine reports, and the final requirement audit. These are unfinished qualification
-deliverables, not missing component implementation. No acquisition is currently
-running. The next campaign needs a deliberate execution decision and a frozen
-source/build; it must not reuse interrupted or mismatched evidence as a pass.
-Manual/device acceptance and managed adoption retain their separate blockers.
+deliverables, not missing component implementation. The planned campaign was run
+against the published build and is now stopped after the startup failure below.
+No additional approval is needed to continue this agreed work. Manual/device
+acceptance and managed adoption retain their separate blockers.
+
+### Published-build campaign checkpoint — October 4, 2026
+
+Run `en-published-catalogue-20261004-01` retained all 209 cases, three densities,
+two appearances, two viewports and three engines; no case/environment filters
+were introduced. Chromium compact finalized with 835 captured comparisons
+(799 different, 36 equal) and one failure. The failure was a 20-second wait for
+the embedded preview's ready message for mobile/dark `color-plane:pointer-cancel`,
+before its focus, drag, Escape or value assertions ran. This is an unresolved
+preview-startup failure, not evidence that color-plane cancellation failed.
+The deliberate radius candidate explains comparison differences; equal/different
+outcomes are not visual approval.
+
+The report completed its final build/runtime/font checks and retained its
+`incomplete` status. The owning runner was stopped with SIGINT after it advanced
+to Firefox, since the failed Chromium test omitted its later densities and this
+invocation could no longer deliver the complete matrix. The outer execution is
+failed; partial Firefox output remains unqualified. Preserve both the failure
+and original evidence under `/private/tmp/en-published-catalogue-20261004-01`.
+
+Next: diagnose the affected preview startup using the same original build,
+producer and readiness budget, with passive navigation/console/request logging.
+Use the normal machine/checkout admission; do not steal a lease or reinterpret
+an admission failure as a browser result. Resume the complete matrix after that
+diagnosis, using only finalized, exact-identity cache entries under the existing
+reuse contract. Failed history must remain visible even if a later attempt passes;
+interrupted Firefox entries are not reusable completed captures. Nine-report
+packaging and the final requirement audit remain pending.
+
+The focused `en-preview-startup-diagnosis-owned-20261004-01` command passed on
+unchanged producer/build inputs: mobile light and dark, baseline and candidate,
+including all four exact cancellation value checks. Passive observations recorded
+no page errors, crashes, failed requests or pending requests at closure; existing
+native color-input warnings were present. It did not reproduce the startup
+failure and does not erase it or establish full-matrix qualification.
+
+The catalogue harness now declares each density as its own test. A failed density
+therefore no longer skips the other two densities for that browser. The same nine
+engine/density reports and 7,524 comparisons remain required; capture inputs,
+readiness limits, assertions and cache failure-history policy are unchanged.
 
 ## Delivery sequence
 
