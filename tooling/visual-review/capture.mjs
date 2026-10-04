@@ -6,6 +6,7 @@ import {inspectBuild} from '../offline-review/build.mjs';
 import {CaptureCacheBatch} from './cache-batch.mjs';
 import {executionRuntimeIdentity} from '../testing/runtime-identity.mjs';
 import {EvidenceCache} from '../evidence/cache.ts';
+import {atomicJSON} from '../evidence/setup.mjs';
 import {digestBytes,digestJson,renderingIdentity,comparisonIdentity,reviewIdentity} from '../evidence/identity.ts';
 import {selectCandidateImpact} from '../evidence/impact-client.mjs';
 import {readEnvelope,createPlan,comparisonSettings,captureExitCode} from './plan.mjs';
@@ -118,7 +119,7 @@ export async function captureReview({buildDirectory,baselineFile,candidateFile,o
  const runtime=await executionRuntimeIdentity(fileURLToPath(new URL('../../',import.meta.url)),runtimeConfig);
  const fonts=await fontInventory();
  const report={schema:'en-reve/candidate-visual-evidence',schemaVersion:1,run,createdAt:new Date().toISOString(),status:'running',buildFingerprint:snapshot.build.fingerprint,candidate:{sourceHash:candidate.sourceHash,envelopeIntegrity:candidate.integrity},baseline:{sourceHash:baseline.sourceHash,envelopeIntegrity:baseline.integrity},scope:{cases:plan.cases,selected:plan.selected,engines:plan.engines,viewports:plan.viewports,policy:'All declared rows retained; an unselected or unsupported row is not passed. Default inventory covers initial states only.'},environments:{},results:plan.rows.map(({selected,...row})=>row),artifacts:[],comparisonSettings:settings,manualAcceptance:'not-run',reviewIdentity:/** @type {ReturnType<typeof reviewIdentity>|null} */(null)};
- const persist=async()=>{report.artifacts=[...artifacts.values()];const body={...report};await writeFile(resolve(output,'evidence.json'),JSON.stringify({...body,integrity:digestJson(body)},null,2)+'\n');};
+ const persist=async()=>{report.artifacts=[...artifacts.values()];const body={...report};await atomicJSON(resolve(output,'evidence.json'),{...body,integrity:digestJson(body)});};
  await add(await readFile(baselineFile),{label:'Baseline export',mediaType:'application/json'});await add(await readFile(candidateFile),{label:'Candidate export',mediaType:'application/json'});await copyArtifact(selectionArtifact);await add(JSON.stringify(fonts),{label:'System font inventory',mediaType:'application/json'});await add(JSON.stringify(runtime),{label:'Installed browser runtime inventory',mediaType:'application/json'});await add(JSON.stringify(snapshot.assets),{label:'Build asset inventory',mediaType:'application/json'});await persist();
  try {
   for(const engine of plan.engines){
