@@ -142,6 +142,10 @@ export class EnButton<Events extends { [K in keyof Events]: Event } = {}> extend
   protected override updated(): void {
     const control = this.renderRoot.querySelector<HTMLButtonElement>('button');
     if (!control) return;
+    // A containing component can change availability before this button hydrates.
+    // Hydration claims current bindings while retaining the SSR native attribute.
+    const disabled = this.disabled || this.loading;
+    if (control.disabled !== disabled) control.disabled = disabled;
     // Composite tab-stop ownership can precede the native control's hydration.
     if (control.tabIndex !== this.tabStop) control.tabIndex = this.tabStop;
     // A menu can attach popup semantics before this button hydrates. Hydration

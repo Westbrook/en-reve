@@ -21,7 +21,10 @@ elements, includes the internal `label-text` reference, and restores the interna
 reference when an external label is removed. Compact `::part(label-text)` styling
 continues to work. Native Reference Target handles activation when the actual
 native relationship is present; otherwise the controller focuses and calls the
-native input's `click()` once after the original label dispatch completes.
+native input's `click()` once after the original label dispatch completes. The public
+`labels` facade returns the browser’s `ElementInternals.labels` list. With native
+Reference Target, labels transfer to the enclosed input and that host list is
+empty; the native naming and activation relationship remains connected.
 
 The existing synchronous `en-change` transaction still owns toggling, rollback and
 FormData. Grouped radios route only through their owning group. Disabled fields,
@@ -59,6 +62,8 @@ slider.addEventListener('en-change', (event) => {
 Cancellation must be synchronous. To await application approval, cancel immediately and assign the accepted property later. Event listeners observe tentative state, so application effects such as saving or broadcasting should occur after the dispatch resolves rather than assuming every observed event is accepted.
 
 Checkbox, switch and standalone radio changes use boolean values. Radio-group proposals use the selected string; slider/rating proposals use numbers. Slider proposes each native input adjustment, with `reason: 'input'`. Checkbox/switch use `toggle`; radio groups use `select` or `keyboard`; rating uses `select`.
+
+The checkbox, radio and switch label hooks are `--en-choice-label-color`, `--en-choice-label-hover-color`, `--en-choice-label-focus-color`, `--en-choice-label-pressed-color` and `--en-choice-label-disabled-color`. State hooks fall back to the label color and then ordinary text color. Disabled paint wins over held, native-input focus-visible and hover paint, in that order; ordinary focus alone does not change the label. Group and fieldset disabling follow the actual input. Invalid and checked states retain the same label roles, and descriptions, errors and typography remain separate. Customize the visible label directly through `::part(label-text)` when needed. Forced colors keep the system label color. See the [native helper contract](../../../styles/README.md) for equivalent light-DOM labels.
 
 The form-associated hosts support native `FormData`, disabled fieldsets, reset, restoration and validity APIs. The checkbox/radio checked attribute and numeric/group value attribute define reset defaults. Browser restoration writes authoritative state. Applications that own reset behavior cancel the form's native `reset` event with `preventDefault()` and then assign any desired values; uncanceled reset restores the defaults. Grouped radios do not submit individual entries or independently reset.
 
@@ -118,3 +123,10 @@ tree checks do not establish VoiceOver speech behavior; confirm that during revi
 `defaultValue` reflects the `value` attribute; checkboxes, switches and standalone radios instead use `defaultChecked` and `checked`. Defaults update current state while pristine. A current-state assignment (including the same value), user editing or browser restoration makes it dirty. Later default changes preserve the current value/draft; uncanceled form reset restores defaults and makes it pristine again. Defaults and current-state writes are silent. Numeric defaults retain the component's existing clamp/snap rules.
 
 All form-associated controls expose `form`, `labels`, `validity`, `validationMessage`, `willValidate`, `checkValidity()` and `reportValidity()`. `name`, supported `required`, and `disabled` reflect. Set `error` to invalidate a value for an application rule and show associated `::part(error)` feedback. Clear it explicitly with `error = ''`; reset does not clear application errors. `validationText` changes existing constraint feedback only. A zero rating is a defined score; sliders and ratings do not gain a `required` constraint.
+
+
+Checkbox, radio and switch expose the additive `control-invalid` Part when their
+existing application or reported constraint feedback is visible. It marks the
+same native input as `control`, matching `aria-invalid`; it does not expose a
+pristine required constraint failure as an error prematurely. Clearing feedback
+removes the additional Part. Disabled paint and forced colors remain independent.

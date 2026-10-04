@@ -1,0 +1,266 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { spawn } from 'node:child_process';
+import { comprehensiveGraph } from './comprehensive.mjs';
+import { selectTasks } from './pathways.mjs';
+import { selectAffected } from '../evidence/graph.ts';
+import { maintainedFiles, workloadManifest } from './workload.mjs';
+import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+const workspaceRoot=process.env.EN_GRAPH_FIXTURE_ROOT??new URL('../../',import.meta.url).pathname;
+
+async function pipedPlan(file,args){
+ const child=spawn(process.execPath,[new URL(file,import.meta.url).pathname,'--plan',...args],{stdio:['ignore','pipe','pipe']});
+ const chunks=[];let stderr='';
+ child.stderr.on('data',chunk=>stderr+=chunk);
+ child.stdout.on('data',chunk=>chunks.push(chunk));
+ child.stdout.pause();
+ const resume=setTimeout(()=>child.stdout.resume(),100);
+ const code=await new Promise((resolve,reject)=>{child.once('error',reject);child.once('close',resolve);});
+ clearTimeout(resume);
+ assert.equal(code,0,stderr);
+ return Buffer.concat(chunks).toString();
+}
+
+test('the comprehensive plan remains complete through a backpressured stdout pipe',async()=>{
+ const output=await pipedPlan('./run-comprehensive.mjs',['--pathways=correctness']);
+ assert(output.length>65536,'Exercise a plan larger than the stdout pipe buffer');
+ const plan=JSON.parse(output);
+ assert(plan.tasks.length>0);
+ assert.deepEqual(plan.selected,selectTasks(plan,['correctness']).map(task=>task.id));
+});
+
+test('public, specialized and legacy plans remain parseable through stdout pipes',async()=>{
+ const forwarded='retained-filter-'.repeat(6000);
+ const publicPlan=JSON.parse(await pipedPlan('./run-public-view.mjs',['--view=root#test:extended:button','--','--grep',forwarded]));
+ assert(JSON.stringify(publicPlan).includes(forwarded),'Retain the complete caller selection');
+ const specialized=JSON.parse(await pipedPlan('./run-specialized.mjs',['--pathway=date']));
+ assert.equal(specialized.pathway,'date');
+ assert(specialized.plan.length>0);assert.equal(specialized.libraryComplete,false);
+ const legacy=JSON.parse(await pipedPlan('./run.mjs',['--pathways=api,release,theme']));
+ assert.deepEqual(legacy.selected,selectTasks(legacy,['api','release','theme']).map(task=>task.id));
+});
+
+test('broad current graph inventories every maintained config and preserves standalone API stale-metadata detection',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot});
+ const api=selectTasks(graph,['api']);
+ assert(!api.some(task=>task.kind==='producer'),'Standalone API must not regenerate the metadata it checks');
+ assert(api.some(task=>task.id==='check-api'));
+ const release=selectTasks(graph,['release']);assert(release.some(task=>task.id==='metadata:types'));assert(release.some(task=>task.id==='build:docs'));
+ const union=selectTasks(graph,['correctness']);assert.equal(union.length,new Set(union.map(task=>task.id)).size);
+ const dependencyGraph={schemaVersion:1,nodes:graph.tasks.map(task=>({id:task.id,kind:'scenario',dependencies:task.dependencies,complete:false}))};
+ const validation=selectAffected(dependencyGraph,['unknown-changed-file']);
+ assert.equal(validation.mode,'expanded');assert.equal(validation.affected.length,graph.tasks.length+1);
+ assert(!validation.gaps.some(gap=>gap.startsWith('Unknown dependency ')),validation.gaps.join('\n'));
+ assert.equal(union.filter(task=>task.id==='node:tooling/theme-candidates/catalogue.test.mjs').length,0);
+ assert.equal(union.filter(task=>/node:tooling\/theme-candidates\/catalogue-group-\d.test.mjs/.test(task.id)).length,3);
+ const reader=selectTasks(graph,['reader']);assert.equal(reader.filter(task=>task.kind==='reader-browser').length,4);
+ const crumbs=selectTasks(graph,['breadcrumbs']);const types=crumbs.find(task=>task.id==='breadcrumbs-types');assert(types.command.includes('--noUnusedLocals'));assert(types.command.includes('--noUnusedParameters'));
+ const registry=selectTasks(graph,['registry']);assert.equal(registry.filter(task=>task.id==='prepare:packages').length,1);assert(registry.findIndex(task=>task.id==='prepare:packages')<registry.findIndex(task=>task.id==='prepare:scoped-registry'));
+ assert(graph.pathways['extended-node'].includes('node:apps/docs/tests/specimen-source-assembly.test.mjs'),'Keep newly declared generator regressions selected');
+ const ssr=selectTasks(graph,['ssr-browser']);assert.equal(ssr.filter(task=>task.id==='prepare:ssr-minification').length,1);assert(ssr.findIndex(task=>task.id==='prepare:ssr-minification')<ssr.findIndex(task=>task.id==='browser:packages/ssr/playwright.config.ts'));
+ assert.equal(ssr.find(task=>task.id==='prepare:ssr-minification').command.at(-1),'--source-only','The server owns the one fresh fixture build; the graph binds generated source only.');
+ assert.equal(graph.completedResultReuse,false,'Unknown edges must not enable completed-result reuse');
+});
+
+
+test('maintained discovery retains new sources but ignores generated Vite dependency caches', async () => {
+ const fixture = await mkdtemp(join(tmpdir(), 'en-maintained-files-'));
+ try {
+  for (const directory of ['packages', 'apps', 'tooling', 'probes', 'showcases']) await mkdir(join(fixture, directory));
+  const authored = ['packages/new-consumer/package.json', 'packages/new-consumer/new.test.mjs', 'probes/.vite-fixture/consumer.test.mjs'];
+  const generated = ['packages/new-consumer/.vite/deps/package.json', 'packages/new-consumer/.vite/deps/generated.test.mjs', 'apps/.vite-temp/generated.test.mjs'];
+  for (const file of [...authored, ...generated]) {
+   await mkdir(join(fixture, file, '..'), { recursive: true });
+   await writeFile(join(fixture, file), '{}');
+  }
+  assert.deepEqual(await maintainedFiles(fixture), authored.sort());
+  await writeFile(join(fixture, 'probes/added.test.mjs'), '{}');
+  await rm(join(fixture, authored[0]));
+  assert.deepEqual(await maintainedFiles(fixture), [...authored.slice(1), 'probes/added.test.mjs'].sort());
+ } finally { await rm(fixture, { recursive: true, force: true }); }
+});
+
+
+test('Integration wrapper is explicitly inventoried while packed consumers retain their real preparation dependencies',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot});
+ assert(!graph.tasks.some(task=>task.id==='browser:tooling/integration-gates/playwright.config.ts'));
+ const wrapper=graph.inactive.find(item=>item.file==='tooling/integration-gates/playwright.config.ts');
+ assert.equal(wrapper.classification,'orchestration-wrapper');assert.equal(wrapper.provider,'tooling/integration-gates/run.mjs');assert.deepEqual(wrapper.requiredEnvironment,['EN_GATE_CONFIG','EN_GATE_STAGE_OUTPUT']);
+ const union=selectTasks(graph,['correctness']);const prepare=union.find(task=>task.id==='prepare:consumer-contracts'),browser=union.find(task=>task.id==='browser:probes/consumer-contracts/playwright.config.ts');
+ assert(prepare&&browser);assert.deepEqual(prepare.dependencies,['metadata','build:ssr']);assert(browser.dependencies.includes(prepare.id));assert.equal(prepare.environment.EN_CONSUMER_CONTRACTS_OUT,'$RUN/fixtures/consumer-contracts');assert.equal(browser.environment.EN_CONSUMER_CONTRACTS_OUT,prepare.environment.EN_CONSUMER_CONTRACTS_OUT);assert(union.indexOf(prepare)<union.indexOf(browser));
+ const inventory=await workloadManifest(),entry=inventory.configs.find(item=>item.path==='tooling/integration-gates/playwright.config.ts');assert.equal(entry.role.kind,'orchestration-wrapper');assert.equal(entry.discovery,null);assert(inventory.configs.find(item=>item.path==='probes/consumer-contracts/playwright.config.ts').discovery.includes('--list'));
+});
+
+// These readers import generated tables during module evaluation, before test callbacks.
+test('reader table assertions wait for the owned build while pure sorting stays early',async()=>{const graph=await comprehensiveGraph({workspaceRoot});for(const name of ['acquisition-tables','reader-test-receipts','sort-coverage'])assert.deepEqual(graph.tasks.find(task=>task.id===`node:showcases/performance-results/scripts/${name}.test.mjs`).dependencies,['prepare:reader']);assert.deepEqual(graph.tasks.find(task=>task.id==='node:showcases/performance-results/tests/table-data.test.mjs').dependencies,[]);});
+
+test('the real CSS watcher control owns an exclusive Node cohort without relaxing its deadline',async()=>{const graph=await comprehensiveGraph({workspaceRoot});assert.equal(graph.tasks.find(task=>task.id==='node:tooling/css-authoring/compiler.test.mjs').nodeIsolation,'exclusive');});
+
+test('semantic docs types follow source preparation before bundling and core types stay independent',async()=>{const graph=await comprehensiveGraph({workspaceRoot});const task=id=>graph.tasks.find(task=>task.id===id);assert.deepEqual(task('semantic-doc-types').dependencies,['build:docs-sources']);assert.deepEqual(task('build:docs').dependencies,['build:docs-sources']);assert(task('build:docs').command.includes('--ignore-scripts'));assert(!selectTasks(graph,['fast']).some(task=>task.id==='build:docs-sources'));});
+
+test('synthetic delivery analysis owners run without builds or acquisition',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['analysis-controls']);
+ assert.equal(selected.length,7);assert(selected.every(task=>task.kind==='python'&&task.dependencies.length===0&&task.command[1].endsWith('.test.py')&&task.environment.PYTHONDONTWRITEBYTECODE==='1'));
+ const ids=new Set(selectTasks(graph,['correctness']).map(task=>task.id));for(const task of selected)assert(ids.has(task.id));
+});
+
+// Newly discovered configurations must join the owned evidence protocol before
+// the expensive browser phase, rather than pass assertions and lose their receipt.
+test('every maintained browser owner opts into isolated pipeline reports',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot});
+ for(const task of graph.tasks.filter(task=>task.kind==='browser')) {
+  const source=await readFile(join(workspaceRoot,task.config),'utf8');
+  assert.match(source,/pipelineOutput\(import\.meta\.url\)/,`${task.config} must retain caller-owned artifacts and native JSON/facet reports`);
+ }
+});
+
+test('accepted synthetic campaign controls precede builds without adding lab installs to fast',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),fast=new Set(selectTasks(graph,['fast']).map(task=>task.id));
+ for(const file of ['campaigns.test.mjs','current-campaign-integration.test.mjs'])assert.deepEqual(graph.tasks.find(task=>task.id==='node:showcases/performance/tests/'+file).dependencies,[]);
+ assert(fast.has('node:showcases/performance/tests/current-campaign-integration.test.mjs'));
+ assert(!fast.has('node:showcases/performance/tests/campaigns.test.mjs'),'Lighthouse-dependent synthetic controls retain isolated lab setup in correctness');
+});
+
+
+test('framework preparation and browsers share one fresh packed consumer output', async () => {
+ const graph=await comprehensiveGraph({workspaceRoot});
+ const tasks=selectTasks(graph,['framework']);
+ const prepare=tasks.find(t=>t.id==='prepare:framework');
+ const browser=tasks.find(t=>t.id==='browser:probes/framework-consumption/playwright.config.ts');
+ assert(prepare && browser);
+ assert.equal(prepare.environment.EN_FRAMEWORK_OUT,'$RUN/fixtures/framework');
+ assert.equal(browser.environment.EN_FRAMEWORK_OUT,prepare.environment.EN_FRAMEWORK_OUT);
+ assert(browser.dependencies.includes(prepare.id));
+ assert(tasks.indexOf(prepare)<tasks.indexOf(browser));
+});
+
+
+test('focused packed delivery owns builds, preparation and semantic types without unrelated browsers',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['consumer-delivery']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['metadata','build:ssr','prepare:consumer-contracts','direct:packed-registration','browser:probes/consumer-contracts/playwright.config.ts','semantic-test-types'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/consumer-contracts/playwright.config.ts']);
+ assert(!ids.has('build:docs'));
+});
+
+test('metadata consumer owns fresh public artifacts and negative generation controls without docs browsers',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['metadata-consumer']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['metadata','build:elements','node:tooling/metadata/consumer-source.test.mjs','direct:metadata-consumer'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='custom-browser').map(task=>task.id),['direct:metadata-consumer']);
+ assert(!selected.some(task=>task.kind==='browser'));
+ assert(!ids.has('build:docs'));
+ assert.equal(graph.tasks.find(task=>task.id==='direct:metadata-consumer').command.at(-1),'tooling/metadata/verify-consumer.mjs');
+});
+
+
+test('reusable layers qualify alternate packed compositions without loading elements or docs',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['reusable-layers']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:reusable-layers','browser:probes/reusable-layers/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/reusable-layers/playwright.config.ts']);
+ const prepare=selected.find(task=>task.id==='prepare:reusable-layers');
+ assert.equal(prepare.environment.EN_REUSABLE_LAYERS_OUT,'$RUN/fixtures/reusable-layers');
+ assert(!ids.has('build:docs'));
+});
+
+
+test('native recipes qualify packed content/navigation with explicit skeleton and no docs build',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['native-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:elements','prepare:native-recipes','browser:probes/native-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id).sort(),['browser:packages/primitives/tests/content/playwright.config.ts','browser:packages/primitives/tests/navigation/playwright.config.ts','browser:probes/native-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:native-recipes').environment.EN_NATIVE_RECIPES_OUT,'$RUN/fixtures/native-recipes');
+ assert(!ids.has('build:docs'));
+});
+
+
+test('packed collection pathway binds SSR packages, fresh consumer preparation and maintained browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['collection-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:ssr','prepare:collection-recipes','browser:probes/collection-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/collection-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:collection-recipes').environment.EN_COLLECTION_RECIPES_OUT,'$RUN/fixtures/collection-recipes');
+});
+
+
+test('projection recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['projection-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:projection-recipes','browser:probes/projection-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/projection-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:projection-recipes').environment.EN_PROJECTION_RECIPES_OUT,'$RUN/fixtures/projection-recipes');
+});
+
+test('form recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['form-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:form-recipes','browser:probes/form-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/form-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:form-recipes').environment.EN_FORM_RECIPES_OUT,'$RUN/fixtures/form-recipes');
+});
+
+test('state recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['state-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:state-recipes','browser:probes/state-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/state-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:state-recipes').environment.EN_STATE_RECIPES_OUT,'$RUN/fixtures/state-recipes');
+});
+
+test('presentation recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['presentation-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:presentation-recipes','browser:probes/presentation-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/presentation-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:presentation-recipes').environment.EN_PRESENTATION_RECIPES_OUT,'$RUN/fixtures/presentation-recipes');
+});
+
+test('calendar recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['calendar-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:calendar-recipes','browser:probes/calendar-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/calendar-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:calendar-recipes').environment.EN_CALENDAR_RECIPES_OUT,'$RUN/fixtures/calendar-recipes');
+});
+
+test('tree recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['tree-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:tree-recipes','browser:probes/tree-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/tree-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:tree-recipes').environment.EN_TREE_RECIPES_OUT,'$RUN/fixtures/tree-recipes');
+});
+
+test('notification recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['notification-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:notification-recipes','browser:probes/notification-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/notification-recipes/playwright.config.ts','browser:packages/elements/src/swatch/tests/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:notification-recipes').environment.EN_NOTIFICATION_RECIPES_OUT,'$RUN/fixtures/notification-recipes');
+});
+
+test('collection-style recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['collection-style-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:collection-style-recipes','browser:probes/collection-style-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/collection-style-recipes/playwright.config.ts','browser:packages/elements/src/table/tests/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:collection-style-recipes').environment.EN_COLLECTION_STYLE_RECIPES_OUT,'$RUN/fixtures/collection-style-recipes');
+});
+
+test('choice-overlay recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['choice-overlay-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:choice-overlay-recipes','browser:probes/choice-overlay-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/choice-overlay-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:choice-overlay-recipes').environment.EN_CHOICE_OVERLAY_RECIPES_OUT,'$RUN/fixtures/choice-overlay-recipes');
+});
+
+test('editor-collaboration recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['editor-collaboration-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:editor-collaboration-recipes','browser:probes/editor-collaboration-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/editor-collaboration-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:editor-collaboration-recipes').environment.EN_EDITOR_COLLABORATION_RECIPES_OUT,'$RUN/fixtures/editor-collaboration-recipes');
+});
+
+test('color recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['color-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:color-recipes','browser:probes/color-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/color-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:color-recipes').environment.EN_COLOR_RECIPES_OUT,'$RUN/fixtures/color-recipes');
+});
+
+test('helper recipe pathway retains isolated preparation, declarations and browser assertions',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['helper-recipes']),ids=new Set(selected.map(task=>task.id));
+ for(const id of ['build:styles','build:primitives','prepare:helper-recipes','browser:probes/helper-recipes/playwright.config.ts','semantic-test-types','node:probes/reusable-layers/inventory.test.mjs'])assert(ids.has(id),id);
+ assert.deepEqual(selected.filter(task=>task.kind==='browser').map(task=>task.id),['browser:probes/helper-recipes/playwright.config.ts']);
+ assert.equal(selected.find(task=>task.id==='prepare:helper-recipes').environment.EN_HELPER_RECIPES_OUT,'$RUN/fixtures/helper-recipes');
+});

@@ -11,6 +11,7 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * @csspart field - Field layout.
  * @csspart label - Visible label.
  * @csspart control - Native textarea.
+ * @csspart control-invalid - Native control while associated application or reported constraint feedback is visible.
  * @csspart focus-frame - Noninteractive field frame supporting the supplemental focus accent.
  * @csspart description - Supporting text.
  * @csspart error - Validation feedback.
@@ -54,7 +55,7 @@ export class EnTextarea extends EditableFieldElement {
   }
 
   protected renderControl() {
-    return html`<textarea id="control" class="en-textarea" part="control" name=${this.name}
+    return html`<textarea id="control" class="en-textarea" part=${this.visibleError ? 'control control-invalid' : 'control'} name=${this.name}
       rows=${this.rows} placeholder=${this.placeholder || nothing} autocomplete=${this.autocomplete || nothing}
       inputmode=${this.inputMode || nothing} minlength=${this.minLength ?? nothing} maxlength=${this.maxLength ?? nothing}
       ?disabled=${this.isDisabled} ?readonly=${this.readOnly} ?required=${this.required}

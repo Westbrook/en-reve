@@ -80,12 +80,25 @@ for(const tag of ['text-field','checkbox','switch','radio','slider','color-slide
    form.innerHTML='<label for="control">External label</label>';form.append(el);document.querySelector('#fixture')!.append(form);await el.updateComplete;
    el.error='Server rejected this value';await el.updateComplete;
    const error=el.shadowRoot.querySelector('[part~="error"]');const anchor=el.shadowRoot.querySelector('[aria-describedby*="error"]');
+   const externalLabel=form.querySelector('label')!;
+   const referenceTarget=(el.shadowRoot as ShadowRoot & {referenceTarget?: string | null}).referenceTarget ?? null;
+   const target=referenceTarget ? el.shadowRoot.getElementById(referenceTarget) as HTMLInputElement | null : null;
+   const labelRoute={referenceTarget,control:externalLabel.control===el,
+    host:Array.from(el.labels as NodeList, node=>node===externalLabel),
+    target:Array.from(target?.labels ?? []).filter(label=>label.getRootNode()===el.getRootNode()).map(label=>label===externalLabel)};
+   const supportsReferenceTarget='referenceTarget' in ShadowRoot.prototype;
    const first={form:el.form===form,labels:el.labels.length,will:el.willValidate,valid:el.checkValidity(),custom:el.validity.customError,message:el.validationMessage,error:error?.textContent,associated:!!anchor};
    el.error='';await el.updateComplete;const cleared=el.checkValidity();
    el.disabled=true;await el.updateComplete;const disabled=el.willValidate;
-   return {first,cleared,disabled};
+   return {first,cleared,disabled,labelRoute,supportsReferenceTarget};
   },tag);
-  expect(result).toEqual({first:{form:true,labels:1,will:true,valid:false,custom:true,message:'Server rejected this value',error:'Server rejected this value',associated:true},cleared:true,disabled:false});
+  const {labelRoute,supportsReferenceTarget,...validation}=result;
+  const forwarded=supportsReferenceTarget && ['text-field','checkbox','switch','radio'].includes(tag);
+  // Native Reference Target transfers labels from ElementInternals to the
+  // enclosed input. Keep the exact public facade count and real label identity.
+  expect(labelRoute).toEqual({referenceTarget:forwarded ? 'control' : null,control:true,
+   host:forwarded ? [] : [true],target:forwarded ? [true] : []});
+  expect(validation).toEqual({first:{form:true,labels:forwarded ? 0 : 1,will:true,valid:false,custom:true,message:'Server rejected this value',error:'Server rejected this value',associated:true},cleared:true,disabled:false});
  });
 }
 

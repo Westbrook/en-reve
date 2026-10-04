@@ -18,7 +18,7 @@ export interface ChoiceView {
 export function choiceTemplate(view: ChoiceView, onChange: (event: Event) => void) {
   return html`<div part="field" class="en-field">
     <label class="en-choice" part="label">
-      <input id="control" part="control" class=${`en-${view.kind}`} type=${view.kind === 'radio' ? 'radio' : 'checkbox'}
+      <input id="control" part=${view.error ? 'control control-invalid' : 'control'} class=${`en-${view.kind}`} type=${view.kind === 'radio' ? 'radio' : 'checkbox'}
         role=${view.kind === 'switch' ? 'switch' : nothing}
         ?checked=${view.checked} aria-checked=${view.kind === 'checkbox' && view.indeterminate ? 'mixed' : nothing}
         .value=${view.value} ?disabled=${view.disabled} ?required=${view.required}

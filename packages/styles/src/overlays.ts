@@ -11,9 +11,12 @@ export const overlayResponsiveQuery = `(width < ${defaultCSSValue('--en-layout-d
 /** Native dialog/popover surfaces. Elements supply positioning, modality, and focus behavior. */
 export const overlayStyles = sizedStyles(css`
   .en-dialog, .en-drawer, .en-popover, .en-tooltip {
+    /* A companion may supply this library-owned source default on the surface.
+       Reset it here so nested overlays cannot inherit another surface's width. */
+    --_en-source-overlay-max-inline-size: initial;
     box-sizing: border-box;
     min-inline-size: 0;
-    max-inline-size: min(${o('--en-overlay-max-inline-size', t('--en-layout-form-max'))}, calc(100% - ${t('--en-space-8')}));
+    max-inline-size: min(${o('--en-overlay-max-inline-size', css`var(--_en-source-overlay-max-inline-size, ${t('--en-layout-form-max')})`)}, calc(100% - ${t('--en-space-8')}));
     max-block-size: ${o('--en-overlay-max-block-size', css`calc(100dvh - ${t('--en-space-8')})`)};
     padding: ${o('--en-overlay-padding', t('--en-space-panel'))};
     border: ${t('--en-border-width')} solid ${o('--en-overlay-border-color', t('--en-color-boundary'))};

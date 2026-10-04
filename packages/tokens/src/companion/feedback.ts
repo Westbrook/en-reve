@@ -43,7 +43,7 @@ function nativeBlock(ctx: CompanionPresentationContext, css: string): string {
 export const feedbackPresentations = {
   badge: {
     'badge-subtle': {
-      roles: { 'minimum-size': 'dimension', 'inline-padding': 'dimension', gap: 'dimension', background: 'color', color: 'color' },
+      roles: { 'minimum-size': 'dimension', 'inline-padding': 'dimension', gap: 'dimension', radius: 'dimension', background: 'color', color: 'color' },
       render(ctx) {
         // Finite typed roles may supply CSS-only hooks without broadening token-map admission.
         // Keep defaults on zero-specificity hosts; the component consumes its public hooks.
@@ -52,17 +52,26 @@ export const feedbackPresentations = {
         }))) + part(ctx, 'base', declarations({
           'min-block-size': ctx.role('minimum-size'), 'padding-inline': ctx.role('inline-padding'),
           'padding-block': '0', gap: ctx.role('gap'), 'font-variant-numeric': 'tabular-nums',
+          'border-radius': ctx.role('radius') ? `var(--en-badge-radius, ${ctx.role('radius')})` : undefined,
         })) + authorPaint(part(ctx, 'base', 'border: 0;'));
       },
     },
   },
   avatar: {
     'avatar-subtle': {
-      roles: { background: 'color', color: 'color', 'font-scale': 'number', 'font-weight': 'fontWeight' },
+      roles: { background: 'color', color: 'color', radius: 'dimension', 'font-scale': 'number', 'diameter-font-scale': 'number', 'font-weight': 'fontWeight' },
       render(ctx) {
-        return authorPaint(part(ctx, 'base', declarations({ background: ctx.role('background'), color: ctx.role('color') })))
+        // Match the size consumer used by the public avatar surface. This
+        // library-owned bridge follows size=inherit and the local size hook;
+        // imported recipes supply only a typed ratio, never private CSS names.
+        const diameterScale = ctx.role('diameter-font-scale');
+        const fontSize = diameterScale === undefined
+          ? ctx.role('font-scale') ? `calc(1em * ${ctx.role('font-scale')})` : undefined
+          : `calc(var(--en-avatar-size, var(--_en-sized-size-avatar, var(--en-size-avatar))) * ${diameterScale})`;
+        return part(ctx, 'base', declarations({ 'border-radius': ctx.role('radius') ? `var(--en-avatar-radius, ${ctx.role('radius')})` : undefined }))
+          + authorPaint(part(ctx, 'base', declarations({ background: ctx.role('background'), color: ctx.role('color') })))
           + part(ctx, 'fallback', declarations({
-            'font-size': ctx.role('font-scale') ? `calc(1em * ${ctx.role('font-scale')})` : undefined, 'font-weight': ctx.role('font-weight'),
+            'font-size': fontSize, 'font-weight': ctx.role('font-weight'),
             'line-height': '1', 'text-transform': 'uppercase',
           }), '.en-avatar__fallback');
       },
@@ -111,6 +120,64 @@ export const feedbackPresentations = {
     },
   },
   toast: {
+    'toast-accent-rail': {
+      roles: {
+        accentWidth: 'dimension', background: 'color', iconScale: 'number', gap: 'dimension',
+        infoAccent: 'color', successAccent: 'color',
+        warningAccent: 'color', dangerAccent: 'color',
+      },
+      render(ctx) {
+        const width = ctx.role('accentWidth');
+        const background = ctx.role('background');
+        if (!width || !background) return '';
+        const variants = ['info', 'success', 'warning', 'danger'];
+        const rail = (color: string | undefined, variant?: string, rtl = false) => {
+          if (!color) return '';
+          const plate = `var(--en-toast-background, ${background})`;
+          const paint = variant ? `var(--en-toast-${variant}-background, ${plate})` : plate;
+          // The second layer accepts a color or gradient from the documented
+          // paint hook. Its border-box plate remains behind the outer border;
+          // only the first layer is clipped to the inner rounded padding box.
+          return `background: linear-gradient(${color}, ${color}) ${rtl ? 'right' : 'left'} top / ${width} 100% no-repeat padding-box, ${paint};`;
+        };
+        // The first grid column reserves the rail even in an iconless native
+        // composition. Its icon margin adds exactly the rail width to the
+        // occupied auto column, leaving arbitrary public padding shorthands
+        // and the close action's end inset intact. Inline-flex recipes retain
+        // the same icon margin without consuming the grid declaration.
+        const geometry = part(ctx, 'base', declarations({
+          'grid-template-columns': `minmax(${width}, auto) minmax(0, 1fr) auto`,
+          'column-gap': ctx.role('gap'),
+        })) + part(ctx, 'icon', `margin-inline-start: ${width};`, '.en-toast__icon');
+        const iconScale = ctx.role('iconScale');
+        const iconSize = iconScale ? `calc(1em * ${iconScale})` : undefined;
+        // EnIcon owns a sized foundation. Scope semantic size defaults to the
+        // status icon Part only; its documented --en-icon-size override stays
+        // first and the sibling close glyph receives none of these defaults.
+        const icons = iconSize ? part(ctx, 'icon', declarations({
+          '--en-size-icon': iconSize, '--en-size-icon-small': iconSize,
+          '--en-size-icon-medium': iconSize, '--en-size-icon-large': iconSize,
+        }), '.en-toast__icon') + ctx.style(ctx.selectors.slice(1).map(selector =>
+          `${nativeSurface(selector)} > .en-toast__icon:not([data-en-theme]) > .en-icon:not([data-en-theme])`),
+        `inline-size: var(--en-icon-size, ${iconSize}); block-size: var(--en-icon-size, ${iconSize});`) : '';
+        // The native helper permits an omitted icon. Span the first two
+        // tracks so its empty icon-column gap does not become extra inset;
+        // the body remains display:contents and the close stays in column3.
+        const iconless = ctx.style(ctx.selectors.slice(1).flatMap(selector => ['content', 'actions'].map(name =>
+          `${nativeSurface(selector)}:not(:has(> .en-toast__icon)) > .en-toast__body:not([data-en-theme]) > .en-toast__${name}:not([data-en-theme])`)),
+        `grid-column: 1 / 3; margin-inline-start: ${width};`);
+        const paint = part(ctx, 'base', rail(ctx.role('infoAccent')))
+          + variants.map(variant => statusPart(ctx, variant, rail(ctx.role(`${variant}Accent`), variant))).join('\n');
+        const rtl = [undefined, ...variants].map(variant => ctx.style(ctx.selectors.map((selector, index) => index === 0
+          ? `${selector}:dir(rtl)${variant ? `[variant="${variant}"]` : ''}::part(base)`
+          : `${nativeSurface(selector)}:dir(rtl)${variant ? `[data-variant="${variant}"]` : ''}`),
+        rail(ctx.role(`${variant ?? 'info'}Accent`), variant, true))).join('\n');
+        // Keep public paint hooks, shadow and the core queued-stack pseudo-
+        // elements. The source rail is decorative: system colors retain the
+        // owning toast's original presentation, including its original grid.
+        return authorPaint(geometry + icons + iconless + paint + rtl);
+      },
+    },
     'toast-notification': {
       roles: { 'end-padding': 'dimension', 'font-weight': 'fontWeight' },
       render(ctx) {
@@ -122,10 +189,14 @@ export const feedbackPresentations = {
   },
   'progress-bar': {
     'progress-rounded': {
-      roles: { radius: 'dimension', shadow: 'shadow' },
+      roles: { radius: 'dimension', shadow: 'shadow', trackColor: 'color' },
       render(ctx) {
         return part(ctx, 'track', declarations({ 'border-radius': ctx.role('radius') }))
-          + authorPaint(part(ctx, 'track', declarations({ 'box-shadow': ctx.role('shadow') })));
+          // Set a private default only on matched controls, never a theme container.
+          // The core native progress rail reads the public override first, including
+          // its WebKit pseudo-element; forced colors retain their system paint.
+          + authorPaint(ctx.block('', declarations({ '--_en-source-progress-track-color': ctx.role('trackColor') }))
+            + part(ctx, 'track', declarations({ 'box-shadow': ctx.role('shadow') })));
       },
     },
   },

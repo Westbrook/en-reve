@@ -209,9 +209,49 @@ test('unknown pair names cannot nominate custom bases, while ordinary default-ba
 });
 
 test('companion export regenerates after editing, and rejects replaced CSS even with recomputed envelope integrity', async () => {
- const {hashValue}=await import('@en-reve/tokens');
+ const {hashValue,emitThemeCSS}=await import('@en-reve/tokens');
  const d=definitions.find(d=>d.id==='radix-inspired');const pair={name:d.id};
  for(const mode of modes)pair[mode]=replay(JSON.parse(await readFile(new URL(d.inputs[mode],import.meta.url),'utf8')),d.baseOptions[mode]);
+ // These finite presentation defaults must not become unconditional component
+ // pins merely to pass companion token-map validation. Both branch baselines
+ // keep contextual hooks unset; export must compile the source roles separately.
+ const finiteHooks = ['avatar-radius', 'badge-radius', 'overlay-radius', 'overlay-max-inline-size', 'progress-track-color'];
+ const themeCSS = modes.map(mode => emitThemeCSS(pair[mode].theme)).join('\n');
+ for (const hook of finiteHooks) {
+  const name = `--en-${hook}`;
+  const declarations = [...themeCSS.matchAll(new RegExp(`${name}: ([^;]+);`, 'g'))];
+  assert.ok(declarations.length >= 2, `${name}: both full branches retain the public reset`);
+  assert.ok(declarations.every(match => match[1] === 'initial'), `${name}: source anatomy must not create a global pin`);
+  assert.ok(d.companion.rules.every(rule => !Object.hasOwn(rule.tokens, name)), `${name}: CSS-only hooks use finite typed roles`);
+ }
+ for (const [target, roles] of [['avatar',['radius']], ['badge',['radius']], ['dialog',['radius']], ['popover',['radius','maxInlineSize']], ['hover-card',['radius','maxInlineSize']], ['progress-bar',['trackColor']]]) {
+  const rule = d.companion.rules.find(rule => rule.target === target);
+  for (const role of roles) for (const mode of modes) assert.equal(pair[mode].theme.tokens[rule.roles[role]].type, role === 'trackColor' ? 'color' : 'dimension');
+ }
+ // Regression for actual soft held-state compositing, including the browser's
+ // three-decimal alpha serialization. Keep source fills and the 4.5:1 threshold.
+ const heldRelationships = modes.flatMap(mode => {
+  const value = id => pair[mode].theme.tokens[id].value;
+  const sourceFill = value('theme.button.secondary.pressed-background');
+  return ['color.canvas', 'color.surface', 'color.surface-raised'].flatMap(surface => [sourceFill, {...sourceFill, alpha: Math.round((sourceFill.alpha ?? 1) * 1000) / 1000}].map((fill, serialization) => ({
+   id: `radix/${mode}/secondary-held/${surface}/${serialization}`, consumer: 'button', appearance: mode, state: 'pressed', minimum: 4.5,
+   foreground: value('theme.button.secondary.pressed-color'), backgrounds: [fill, value(surface)],
+  })));
+ });
+ // The replayed chip fills are solid source Indigo3/4/5, distinct from the
+ // accent9 option row. Verify real rest/hover/held foreground/background pairs.
+ const chipRelationships = modes.flatMap(mode => {
+  const value = id => pair[mode].theme.tokens[id].value;
+  return [
+   ['rest', 'component.editor-token.background', 'component.editor-token.color'],
+   ['hover', 'component.editor-token.hover-background', 'component.editor-token.color'],
+   ['pressed', 'component.editor-token.pressed-background', 'component.editor-token.pressed-color'],
+  ].flatMap(([state, background, foreground]) => ['color.canvas', 'color.surface', 'color.surface-raised'].map(surface => ({
+   id: `radix/${mode}/editor-token/${state}/${surface}`, consumer: 'editor-token', appearance: mode, state, minimum: 4.5,
+   foreground: value(foreground), backgrounds: [value(background), value(surface)],
+  })));
+ });
+ assert.deepEqual(validateRenderedRelationships([...heldRelationships, ...chipRelationships]).filter(result => result.status !== 'pass'), []);
  const initial=JSON.parse(exportReviewBundle(pair.light,build,metadata,{}, {pair}));
  assert.ok(initial.companion?.css.includes('prefers-color-scheme: dark'));
  pair.light.setToken('color.action',colorFromHex('#305090'));

@@ -39,6 +39,10 @@ export function catalog(root) {
   pw('theme-cascade','packages/styles/tests/theme-cascade/playwright.config.ts'),
   pw('theme-states','packages/styles/tests/state-paint/playwright.config.ts'),
   pw('theme-composition','packages/styles/tests/composition/playwright.config.ts'),
+  pw('theme-slider','packages/elements/src/slider/tests/playwright.config.ts'),
+  pw('theme-rating','packages/elements/src/rating/tests/playwright.config.ts'),
+  pw('theme-accordion','packages/elements/src/accordion/tests/playwright.config.ts'),
+  pw('theme-docs-composition','apps/docs/tests/theme-composition.config.ts'),
   pw('theme-docs','apps/docs/tests/theme-regression.config.ts'),
   pw('theme-candidates','apps/docs/tests/theme-refresh.config.ts'),
   {id:'scope-prepare',deps:['build'],command:node('probes/scoped-registry/prepare-packed.mjs')},
@@ -88,7 +92,7 @@ export const groups = {
  'date-fixtures':['date-fixtures'],
  metadata:['metadata-api','metadata-types','metadata-lazy','metadata-customization','metadata-cem','metadata-delivery'],
  release:['metadata-api','tooling','parts','events','transactions','transactions-unit','geometry','commands','metadata-customization'],
- theme:['metadata-customization','theme-unit','theme-contrast','theme-properties','theme-scopes','theme-cascade','theme-states','parts','theme-composition','theme-docs','theme-candidates'],
+ theme:['metadata-customization','theme-unit','theme-contrast','theme-properties','theme-scopes','theme-cascade','theme-states','parts','theme-composition','theme-slider','theme-rating','theme-accordion','patterns','theme-docs-composition','theme-docs','theme-candidates'],
  registry:['capabilities','scope','context','lazy-unit','lazy','lazy-delivery-unit','lazy-delivery','lazy-delivery-editor','lazy-delivery-pagination','activation','activation-library','registration-unit','registry-types','ssr-unit','hydration'],
 };
 groups.delivery=[...groups.metadata,'tooling',...groups.registry,'consumer-contracts','date-fixtures','ssr-browser','delivery-unit',...deliveryBrowserOwners.map(([id])=>id),'delivery-gallery','commands','events','transactions','transactions-unit','parts','geometry','theme-cascade','theme-states','workflows'];

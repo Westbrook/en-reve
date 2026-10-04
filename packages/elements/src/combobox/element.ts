@@ -56,6 +56,7 @@ export type { ComboboxItem } from './model.js';
  * @csspart field - Complete field layout.
  * @csspart label - Same-shadow native label.
  * @csspart control - Native textbox with combobox semantics.
+ * @csspart control-invalid - Native textbox while associated application or reported constraint feedback is visible.
  * @csspart focus-frame - Noninteractive field frame supporting the supplemental focus accent.
  * @csspart trigger - Native disclosure button, outside the sequential Tab order.
  * @csspart popup - Native manual popover, or inline fallback surface.

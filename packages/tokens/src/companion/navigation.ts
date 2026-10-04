@@ -7,7 +7,7 @@ export const navigationTargets = {
   tab: ['en-tab', '.en-tab'],
   'vertical-tab': ['en-tabs[orientation="vertical"] > en-tab', '.en-tab-list[aria-orientation="vertical"] > .en-tab', '.en-tab-list[data-orientation="vertical"] > .en-tab'],
   'tab-panel': ['en-tab-panel', '.en-tab-panel'],
-  'vertical-tab-panel': ['en-tabs[orientation="vertical"] > en-tab-panel'],
+  'vertical-tab-panel': ['en-tabs[orientation="vertical"] > en-tab-panel', '.en-tabs[data-orientation="vertical"] > .en-tab-panel'],
   'accordion-item': ['en-accordion-item'],
   'accordion-trigger': ['.en-accordion-trigger'],
   'accordion-panel': ['.en-accordion-panel'],
@@ -23,6 +23,7 @@ export const navigationTargets = {
 /** Complex native contexts retain zero weight; only their public destination contributes. */
 function nativeSelector(selector: string): string {
   if (selector.includes(':where(.en-tab-list[')) return `${selector}.en-tab`;
+  if (selector.includes(':where(.en-tabs[data-orientation="vertical"] > .en-tab-panel)')) return `${selector}.en-tab-panel`;
   if (selector.includes(':where(.en-breadcrumbs .en-navigation-link)')) return `${selector}.en-navigation-link`;
   if (selector.includes(':where(.en-listbox > .en-option)')) return `${selector}.en-option`;
   return nativeSurface(selector);
@@ -37,6 +38,32 @@ function nativeBlock(ctx: CompanionPresentationContext, suffix: string, css: str
 function hostAndNative(ctx: CompanionPresentationContext, part: string, css: string, state = ''): string {
   return ctx.style(ctx.selectors.map((selector, index) => `${index === 0 ? selector : nativeSelector(selector)}${state}${index === 0 ? `::part(${part})` : ''}`), css);
 }
+const lineListRoles = { gap: 'dimension', trackWidth: 'dimension', trackColor: 'color' } as const;
+
+/** Match source fractional-pixel rail protection when a rail role is supplied. */
+function lineTrackWidth(ctx: CompanionPresentationContext): string | undefined {
+  const width = ctx.role('trackWidth');
+  return width ? `max(0.5px, round(${width}, 0.5px))` : undefined;
+}
+
+/** Optional source rail anatomy, on the documented tab-list Part/native helper. */
+function lineTabList(ctx: CompanionPresentationContext, native = false): string {
+  const all = ctx.selectors.map(selector => native ? nativeSelector(selector) : selector);
+  const vertical = native ? ':is([aria-orientation="vertical"], [data-orientation="vertical"])' : '[orientation="vertical"]';
+  const part = native ? '' : '::part(tab-list)';
+  // Custom Part guards stay zero-specificity so ordinary consumer Part CSS wins.
+  // Native geometry matches the helper's existing orientation specificity.
+  const horizontalSelectors = all.map(selector => `${selector}${native ? `:not(${vertical})` : `:where(:not(${vertical}))`}${part}`);
+  const verticalSelectors = all.map(selector => `${selector}${native ? vertical : `:where(${vertical})`}${part}`);
+  return [
+    ctx.style(all.map(selector => selector + part), declarations({ gap: ctx.role('gap') })),
+    ctx.style(horizontalSelectors, declarations({ 'border-block-end-width': lineTrackWidth(ctx) })),
+    ctx.style(verticalSelectors, declarations({ 'border-inline-end-width': lineTrackWidth(ctx) })),
+    authorPaint(ctx.style(horizontalSelectors, declarations({ 'border-block-end-color': ctx.role('trackColor') }))
+      + ctx.style(verticalSelectors, declarations({ 'border-inline-end-color': ctx.role('trackColor') }))),
+  ].join('\n');
+}
+
 const textRoles = { fontSize: 'dimension', lineHeight: 'number', weight: 'fontWeight' } as const;
 const optionRoles = {
   ...textRoles, radius: 'dimension', inlinePadding: 'dimension', blockPadding: 'dimension',
@@ -46,55 +73,87 @@ const optionRoles = {
 export const navigationPresentations = {
   tabs: {
     line: {
-      roles: { gap: 'dimension' },
-      render: ctx => ctx.block('::part(tab-list)', declarations({ gap: ctx.role('gap') })),
+      roles: lineListRoles,
+      render: ctx => lineTabList(ctx),
     },
   },
   'tab-list': {
     line: {
-      roles: { gap: 'dimension' },
-      render: ctx => nativeBlock(ctx, '', declarations({ gap: ctx.role('gap') })),
+      roles: lineListRoles,
+      render: ctx => lineTabList(ctx, true),
     },
   },
   tab: {
     line: {
-      roles: { ...textRoles, minInlineSize: 'dimension', inlinePadding: 'dimension', blockPadding: 'dimension', indicatorWidth: 'dimension', restColor: 'color', selectedColor: 'color', indicatorColor: 'color', disabledOpacity: 'number' },
+      roles: { ...textRoles, minInlineSize: 'dimension', minBlockSize: 'dimension', selectedTracking: 'number', inlinePadding: 'dimension', blockPadding: 'dimension', indicatorWidth: 'dimension', trackWidth: 'dimension', restColor: 'color', selectedColor: 'color', indicatorColor: 'color', disabledOpacity: 'number' },
       render: ctx => [
         hostAndNative(ctx, 'base', declarations({
           'min-inline-size': ctx.role('minInlineSize') ? `max(var(--en-size-target-min), ${ctx.role('minInlineSize')})` : undefined,
-          'padding-inline': ctx.role('inlinePadding'), 'padding-block': ctx.role('blockPadding'),
+          // Source geometry is a fallback, never a local assignment of a public hook.
+          'min-block-size': ctx.role('minBlockSize') ? `max(var(--en-size-target-min), var(--en-control-min-size, ${ctx.role('minBlockSize')}))` : undefined,
+          'padding-inline': ctx.role('inlinePadding') ? `var(--en-control-inline-padding, ${ctx.role('inlinePadding')})` : undefined, 'padding-block': ctx.role('blockPadding'),
           'font-size': ctx.role('fontSize'), 'line-height': ctx.role('lineHeight'), 'font-weight': ctx.role('weight'),
-          'border-block-end-width': ctx.role('indicatorWidth'), 'margin-block-end': '-1px',
+          'border-block-end-width': lineTrackWidth(ctx) ?? ctx.role('indicatorWidth'), 'margin-block-end': ctx.role('trackWidth') ? `calc(-1 * ${lineTrackWidth(ctx)})` : '-1px',
         })),
-        ctx.role('minInlineSize') ? `@media (any-pointer: coarse) { ${hostAndNative(ctx, 'base', declarations({
-          'min-inline-size': `max(var(--en-size-target-touch), ${ctx.role('minInlineSize')})`,
+        ctx.role('minInlineSize') || ctx.role('minBlockSize') ? `@media (any-pointer: coarse) { ${hostAndNative(ctx, 'base', declarations({
+          'min-inline-size': ctx.role('minInlineSize') ? `max(var(--en-size-target-touch), ${ctx.role('minInlineSize')})` : undefined,
+          'min-block-size': ctx.role('minBlockSize') ? `max(var(--en-size-target-min), var(--en-size-target-touch), var(--en-control-min-size, ${ctx.role('minBlockSize')}))` : undefined,
         }))} }` : '',
-        authorPaint(hostAndNative(ctx, 'base', declarations({ background: 'transparent', color: ctx.role('restColor'), 'border-block-end-color': 'transparent' }))),
-        authorPaint(hostAndNative(ctx, 'base', declarations({ color: ctx.role('selectedColor'), 'border-block-end-color': ctx.role('indicatorColor') }), '[aria-selected="true"]')),
+        // The selected source adjustment tracks the actual font size. A zero-weight
+        // state keeps ordinary public Part styling above this decorative default.
+        hostAndNative(ctx, 'base', declarations({
+          'letter-spacing': ctx.role('selectedTracking') ? `calc(1em * ${ctx.role('selectedTracking')})` : undefined,
+        }), ':where([aria-selected="true"])'),
+        // Source defaults remain behind the public local state hooks. The
+        // outer Part paint must preserve them in every state, not only at rest.
+        authorPaint(hostAndNative(ctx, 'base', declarations({
+          background: 'var(--en-tab-background, transparent)',
+          color: ctx.role('restColor') ? `var(--en-tab-color, ${ctx.role('restColor')})` : undefined,
+          'border-block-end-color': 'transparent',
+        }))),
+        authorPaint(hostAndNative(ctx, 'base', declarations({
+          background: 'var(--en-tab-selected-background, var(--en-tab-background, transparent))',
+          color: ctx.role('selectedColor') ? `var(--en-tab-selected-color, var(--en-tab-color, ${ctx.role('selectedColor')}))` : undefined,
+          'border-block-end-color': ctx.role('indicatorColor') ? `var(--en-tab-indicator-color, ${ctx.role('indicatorColor')})` : undefined,
+        }), '[aria-selected="true"]')),
+        ...[false, true].map(selected => {
+          const state = `:not([aria-disabled="true"]):not([disabled])${selected ? '[aria-selected="true"]' : ':not([aria-selected="true"])'}`;
+          const background = selected ? 'var(--en-tab-selected-background, var(--en-tab-background, transparent))' : 'var(--en-tab-background, transparent)';
+          const color = selected
+            ? ctx.role('selectedColor') ? `var(--en-tab-selected-color, var(--en-tab-color, ${ctx.role('selectedColor')}))` : undefined
+            : ctx.role('restColor') ? `var(--en-tab-color, ${ctx.role('restColor')})` : undefined;
+          return authorPaint(`@media (hover: hover) { ${hostAndNative(ctx, 'base', declarations({
+            background: `var(--en-tab-hover-background, ${background})`,
+            color: color ? `var(--en-tab-hover-color, ${color})` : undefined,
+          }), `${state}:hover`)} }` + hostAndNative(ctx, 'base', declarations({
+            background: `var(--en-tab-pressed-background, ${background})`,
+            color: color ? `var(--en-tab-pressed-color, ${color})` : undefined,
+          }), `${state}:active`));
+        }),
         authorPaint(hostAndNative(ctx, 'base', declarations({ opacity: ctx.role('disabledOpacity') }), '[aria-disabled="true"]')),
       ].join('\n'),
     },
   },
   'vertical-tab': {
     line: {
-      roles: { indicatorWidth: 'dimension', indicatorColor: 'color' },
+      roles: { indicatorWidth: 'dimension', trackWidth: 'dimension', indicatorColor: 'color' },
       render: ctx => [
-        hostAndNative(ctx, 'base', declarations({ 'border-block-end-width': '0px', 'border-inline-end-width': ctx.role('indicatorWidth'), 'border-inline-end-style': 'solid', 'margin-block-end': '0px', 'margin-inline-end': '-1px' })),
+        hostAndNative(ctx, 'base', declarations({ 'border-block-end-width': '0px', 'border-inline-end-width': lineTrackWidth(ctx) ?? ctx.role('indicatorWidth'), 'border-inline-end-style': 'solid', 'margin-block-end': '0px', 'margin-inline-end': ctx.role('trackWidth') ? `calc(-1 * ${lineTrackWidth(ctx)})` : '-1px' })),
         authorPaint(hostAndNative(ctx, 'base', 'border-inline-end-color: transparent;')),
-        authorPaint(hostAndNative(ctx, 'base', declarations({ 'border-inline-end-color': ctx.role('indicatorColor') }), '[aria-selected="true"]')),
+        authorPaint(hostAndNative(ctx, 'base', declarations({ 'border-inline-end-color': ctx.role('indicatorColor') ? `var(--en-tab-indicator-color, ${ctx.role('indicatorColor')})` : undefined }), '[aria-selected="true"]')),
       ].join('\n'),
     },
   },
   'tab-panel': {
     line: {
-      roles: { padding: 'dimension' },
-      render: ctx => hostAndNative(ctx, 'base', declarations({ 'padding-block-start': ctx.role('padding'), 'padding-block-end': '0px' })),
+      roles: { padding: 'dimension', paddingEnd: 'dimension', inlinePadding: 'dimension' },
+      render: ctx => hostAndNative(ctx, 'base', declarations({ 'padding-block-start': ctx.role('padding'), 'padding-block-end': ctx.role('paddingEnd') ?? '0px', 'padding-inline': ctx.role('inlinePadding') })),
     },
   },
   'vertical-tab-panel': {
     line: {
-      roles: { padding: 'dimension' },
-      render: ctx => ctx.block('::part(base)', declarations({ 'padding-block': '0px', 'padding-inline-start': ctx.role('padding') })),
+      roles: { padding: 'dimension', paddingEnd: 'dimension' },
+      render: ctx => hostAndNative(ctx, 'base', declarations({ 'padding-block': '0px', 'padding-inline-start': ctx.role('padding'), 'padding-inline-end': ctx.role('paddingEnd') })),
     },
   },
   'accordion-item': {

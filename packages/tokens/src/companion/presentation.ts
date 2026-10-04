@@ -4,6 +4,7 @@ import type { TokenType } from '../types.js';
 export interface CompanionPresentationContext {
   readonly selectors: readonly string[];
   readonly role: (name: string) => string | undefined;
+  /** Emit every trusted selector rule through the shared boundary policy. */
   readonly style: (selectors: readonly string[], declarations: string) => string;
   readonly block: (suffix: string, declarations: string) => string;
 }

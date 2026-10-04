@@ -48,7 +48,8 @@
 	.showcase-swatches en-swatch::part(control) { min-block-size:4rem; }
 	.showcase-color-preview { background:var(--study-accent); color:white; padding:var(--en-space-5); border-radius:var(--en-radius-control); display:flex; flex-direction:column; gap:var(--en-space-8); min-block-size:12rem; }
 	.showcase-color-preview span, .showcase-color-preview strong { background:#000; color:#fff; padding:var(--en-space-1); inline-size:fit-content; }
-	.showcase-color-preview strong { font-size:var(--en-font-heading-large-size); line-height:var(--en-font-heading-large-line-height); overflow-wrap:anywhere; max-inline-size:100%; }
+	/* A small artwork tile uses the medium heading role; the page title keeps display type. */
+	.showcase-color-preview strong { font:var(--en-font-heading-medium-weight) var(--en-font-heading-medium-size)/var(--en-font-heading-medium-line-height) var(--en-font-heading-medium-family); font-style:var(--en-font-heading-medium-style); letter-spacing:var(--en-font-heading-medium-tracking); overflow-wrap:anywhere; max-inline-size:100%; }
 	.showcase-caption, .showcase-chart figcaption { font-size:var(--en-font-metadata-size); line-height:var(--en-font-metadata-line-height); color:var(--en-color-text-muted); }
 	.showcase-chart { margin:0; }
 	.showcase-bars { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:var(--en-space-2); block-size:13rem; margin-block:var(--en-space-4); }

@@ -15,7 +15,9 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * @csspart field - Field layout.
  * @csspart label - Visible label.
  * @csspart control - Native input.
+ * @csspart control-invalid - Native control while associated application or reported constraint feedback is visible.
  * @csspart focus-frame - Noninteractive field frame supporting the supplemental focus accent.
+ * @csspart focus-frame-invalid - Adorned field perimeter while associated feedback is visible.
  * @csspart description - Supporting text.
  * @csspart error - Validation feedback.
  * @cssprop --en-input-border-color - Optional theme presentation; see the customization registry for state, fallback and reachability.
@@ -78,12 +80,12 @@ export class EnTextField extends EditableFieldElement {
 
   protected override renderControlFrame() {
     if (!this.adorned) return super.renderControlFrame();
-    return html`<div class="en-field-focus-frame en-adorned" part="focus-frame" ?data-invalid=${Boolean(this.visibleError)}><slot name="prefix"></slot>${this.renderControl()}<slot name="suffix"></slot><slot name="help-action"></slot></div>`;
+    return html`<div class="en-field-focus-frame en-adorned" part=${this.visibleError ? 'focus-frame focus-frame-invalid' : 'focus-frame'} ?data-invalid=${Boolean(this.visibleError)}><slot name="prefix"></slot>${this.renderControl()}<slot name="suffix"></slot><slot name="help-action"></slot></div>`;
   }
 
   protected renderControl() {
     const inputType = ['text', 'email', 'password', 'url', 'tel'].includes(this.type) ? this.type : 'text';
-    return html`<input id="control" class="en-input en-text-input" part="control"
+    return html`<input id="control" class="en-input en-text-input" part=${this.visibleError ? 'control control-invalid' : 'control'}
       type=${inputType} name=${this.name} value=${this.defaultControlValue}
       placeholder=${this.placeholder || nothing} autocomplete=${this.autocomplete || nothing}
       inputmode=${this.inputMode || nothing} minlength=${this.minLength ?? nothing}

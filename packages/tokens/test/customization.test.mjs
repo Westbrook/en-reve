@@ -53,6 +53,7 @@ test('full resets include visual additions while preserving configuration and me
   }
   for (const name of [...styleConfigurationProperties,...styleStateProperties]) {
     assert.equal(getCustomizationContract(theme, name).reset, 'preserve');
+    assert.equal(getCustomizationContract(theme, name).managed.supported, false);
     assert.ok(!styleOverrideNames.includes(name));
     assert.ok(!css.includes(`${name}:`));
   }
@@ -77,11 +78,13 @@ test('registration defaults preserve unset fallback and relative-value semantics
 });
 
 test('theme source and explicit reset extensions cannot claim preserved inputs', () => {
-  for (const [family,role] of [['progress','value'],['editor','max-size'],['data-table','viewport-size']]) {
+  for (const [family,role] of [['progress','value'],['slider','value-percent'],['editor','max-size'],['data-table','viewport-size']]) {
     assert.throws(() => resolveTheme({source:{component:{[family]:{[role]:{$type:'number',$value:1}}}}}), {code:'reserved-customization-property'});
   }
   const theme = resolveTheme();
-  assert.throws(() => emitThemeCSS(theme,{componentOverrides:['--en-split-ratio']}), {code:'reserved-customization-property'});
+  for (const name of [...styleConfigurationProperties,...styleStateProperties]) {
+    assert.throws(() => emitThemeCSS(theme,{componentOverrides:[name]}), {code:'reserved-customization-property'});
+  }
   const injected = {...theme,tokens:{...theme.tokens,'component.progress.value':{...theme.tokens['calendar.hover-opacity'],id:'component.progress.value',cssName:'--en-progress-value'}}};
   assert.throws(() => customizationContracts(injected), {code:'reserved-customization-property'});
 });

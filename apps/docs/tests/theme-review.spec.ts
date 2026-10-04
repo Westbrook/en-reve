@@ -354,7 +354,7 @@ test('color and alias edits propagate while invalid numeric drafts survive expor
 			await editor(page).getByRole('spinbutton', { name: `${channel} channel`, exact: true }).fill(String(components[index]));
 		}
 		await apply().click();
-		await expect(page.getByRole('status')).toContainText(`${id} pinned`);
+		await expect(page.getByRole('status').and(page.locator('.review-status'))).toContainText(`${id} pinned`);
 	}
 	await color('palette.accent', [128, 64, 192]);
 	await expect(preview(page, 'Candidate').locator('.wordmark')).toHaveCSS('color', 'rgb(128, 64, 192)');
@@ -651,10 +651,11 @@ test('a reopened candidate themes the whole review page in place while the basel
 	await appearance.getByText('Candidate',{exact:true}).click();
 	await expect.poll(rootToken).toBe(1);
 	await page.locator('en-theme-review-app').evaluate(host=>{
-		(window as any).__detachedThemeReview={host,next:host.nextSibling,parent:host.parentNode};host.remove();
+		const anchor=document.createComment('theme-review-reconnect');host.before(anchor);
+		(window as any).__detachedThemeReview={host,anchor};host.remove();
 	});
 	await expect.poll(rootToken).toBe(0.5);
-	await page.evaluate(()=>{const {host,next,parent}=(window as any).__detachedThemeReview;parent.insertBefore(host,next);});
+	await page.evaluate(()=>{const {host,anchor}=(window as any).__detachedThemeReview;anchor.replaceWith(host);delete (window as any).__detachedThemeReview;});
 	await expect.poll(rootToken).toBe(1);
 });
 
@@ -759,7 +760,7 @@ test('newer intake and disconnection permanently supersede earlier reads', async
 	await expect(title).toHaveValue('Newest file');
 
 	await reopenCandidate(page,first.value,'held-disconnect.json');
-	await page.locator('en-theme-review-app').evaluate(host=>{const next=host.nextSibling;const parent=host.parentNode!;host.remove();parent.insertBefore(host,next);});
+	await page.locator('en-theme-review-app').evaluate(host=>{const anchor=document.createComment('theme-review-reconnect');host.before(anchor);host.remove();anchor.replaceWith(host);});
 	await expect(button(page,'Export candidate')).toBeEnabled();
 	await finishCandidateRead(page,'held-disconnect.json',true);
 	await expect(title).toHaveValue('Newest file');
@@ -1030,7 +1031,8 @@ test('detached preview adoption during controller delivery invalidates its reque
 	try {
 		const first = (await incomingPreviewRequests(page)).at(-1)!;
 		expect(await host.evaluate(host => {
-			(window as any).__detachedPreviewHost = { host, parent: host.parentNode!, next: host.nextSibling };
+			const anchor = document.createComment('preview-reconnect'); host.before(anchor);
+			(window as any).__detachedPreviewHost = { host, anchor };
 			const detached = document.implementation.createHTMLDocument('Detached preview adoption');
 			const adopted = detached.adoptNode(host);
 			// Do not connect this app to an inert document: its appearance owner
@@ -1039,8 +1041,8 @@ test('detached preview adoption during controller delivery invalidates its reque
 		})).toEqual({ sameNode: true, differentDocument: true, connected: false });
 		await expect(preview(page, 'Candidate').locator('style[data-en-theme-review], style[data-en-theme-review-controls]')).toHaveCount(0);
 		expect(await html.evaluate(() => {
-			const { host, parent, next } = (window as any).__detachedPreviewHost;
-			parent.insertBefore(host, next);
+			const { host, anchor } = (window as any).__detachedPreviewHost;
+			anchor.replaceWith(host); delete (window as any).__detachedPreviewHost;
 			return host === document.querySelector('en-workflows-app') && host.ownerDocument === document;
 		})).toBe(true);
 		// A public control supplies a new request after the root's normal Lit

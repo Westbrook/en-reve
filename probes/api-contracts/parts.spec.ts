@@ -38,6 +38,9 @@ for(const component of components) test(`${component.tagName} advertised Parts a
     if(tag==='en-toggle-group')host.items=[{value:'one',label:'One',icon:'check'}];
     if(tag==='en-tag'){host.label='One';host.removable=true;}
     if(tag==='en-progress-bar'&&state==='alternate')host.shape='circle';
+    // The invalid perimeter Part belongs to the public adorned composition;
+    // ordinary populated states still exercise the unadorned native control.
+    if(['en-text-field','en-otp-field'].includes(tag)&&state==='invalid')host.adorned=true;
     if(tag==='en-combobox'){host.items=[{value:'one',label:'One',description:'Description'},{value:'two',label:'Two',disabled:true}];host.value='one';}
     if(tag==='en-command-palette')host.commands=[{action:'one',label:'One',description:'Description',shortcut:'Ctrl+K'}];
     if(tag==='en-validation-summary')host.items=[{target:'anchor',message:'Required'}];

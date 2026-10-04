@@ -14,8 +14,14 @@ import { ChoiceBase } from './choice-base.js';
  * @slot description - Supporting text; falls back to the description attribute/property.
  * @csspart field - The outer field.
  * @csspart control - The native checkbox.
+ * @csspart control-invalid - Native control while associated application or reported constraint feedback is visible.
  * @csspart label - The associated label.
  * @csspart label-text - Label content referenced by the native control; plain labels may be visually omitted with display:none.
+ * @cssprop --en-choice-label-color - Optional visible label text color and fallback for label state hooks; descriptions and errors keep their own paint.
+ * @cssprop --en-choice-label-hover-color - Optional enabled label hover color.
+ * @cssprop --en-choice-label-focus-color - Optional label color while the native input is focus-visible; ordinary focus does not activate it.
+ * @cssprop --en-choice-label-pressed-color - Optional enabled control or associated label held color.
+ * @cssprop --en-choice-label-disabled-color - Optional disabled label color; native fieldset and group disabling take precedence over enabled states.
  * @csspart description - Supporting text.
  * @csspart error - Associated application or constraint validation feedback.
  * @cssprop --en-choice-size - Optional family presentation; see the customization registry.

@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { AxeBuilder } from '@axe-core/playwright';
 const demo = '/api-examples/composable-chat.html';
 async function load(page: any, path = demo) {
   await page.goto(path); await expect(page.locator('en-api-example-app')).not.toHaveAttribute('data-ssr');
@@ -149,6 +149,65 @@ test('standalone color slider keeps native keyboard, form and safe gradient beha
   expect(await slider.locator('[part=gradient]').evaluate(el=>el.getAttribute('style'))).toContain('linear-gradient(to right, #000000,#ffffff)');
   expect(await range.evaluate(el=>getComputedStyle(el).getPropertyValue('--_en-color-gradient').trim())).toBe('linear-gradient(to left, #000000,#ffffff)');
   await slider.evaluate((el:any)=>el.addEventListener('en-change',(e:Event)=>e.preventDefault(),{once:true}));await range.focus();await range.press('Home');await expect(slider).toHaveJSProperty('value',100);
+});
+test('color slider keeps its hollow double ring through inherited slider states', async ({ page }) => {
+  await load(page, '/api-examples/color-slider.html');
+  const slider = page.locator('en-color-slider');
+  await slider.evaluate(async (el: any) => {
+    el.min = 0; el.max = 100; el.value = 50; el.stops = ['#80c0a0', '#80c0a0']; el.checkerboard = false;
+    el.style.cssText += ';background:white;--en-color-slider-thumb-size:28px;--en-color-slider-track-size:24px;--en-color-focus:#ff00ff;--en-slider-fill-background:red;--en-slider-paint-duration:0ms';
+    await el.updateComplete;
+  });
+  const range = slider.getByRole('slider', { name: 'Alpha', exact: true });
+  const painted = async () => {
+    const png = (await range.screenshot({ scale: 'css' })).toString('base64');
+    return page.evaluate(async png => {
+      const image = new Image(); image.src = `data:image/png;base64,${png}`; await image.decode();
+      const canvas = document.createElement('canvas'); canvas.width = image.width; canvas.height = image.height;
+      const context = canvas.getContext('2d')!; context.drawImage(image, 0, 0);
+      const { data, width, height } = context.getImageData(0, 0, canvas.width, canvas.height);
+      const pixel = (x: number, y: number) => Array.from(data.slice((Math.floor(y) * width + Math.floor(x)) * 4, (Math.floor(y) * width + Math.floor(x)) * 4 + 3));
+      const neutralDark = (p: number[]) => {
+        const red = p[0]!, green = p[1]!, blue = p[2]!;
+        const maximum = Math.max(...p), spread = maximum - Math.min(...p);
+        // Keep the original neutral test. Firefox also blends the 1px #222
+        // ring with this fixture's #80c0a0 rail: G >= B >= R and B = (R+G)/2.
+        // Allow only that green fringe, with one-channel rounding tolerance.
+        const sourceGreenFringe = spread >= 12 && spread <= 32
+          && green + 1 >= blue && blue + 1 >= red
+          && Math.abs(2 * blue - red - green) <= 2;
+        return maximum < 190 && (spread < 12 || sourceGreenFringe);
+      };
+      const center = width / 2;
+      const ringPixels = [-1, 1].map(sign => {
+        let count = 0;
+        for (let d = 9; d <= 16; d++) if (neutralDark(pixel(center + sign * d, height / 2))) count++;
+        return count;
+      });
+      return { ringPixels, middle: pixel(center, height / 2), before: pixel(width / 4, height / 2), after: pixel(width * .75, height / 2) };
+    }, png);
+  };
+  const check = async (disabled = false) => {
+    const result = await painted();
+    // Dark ring pixels on both sides distinguish the hollow handle from a white
+    // border alone. The colored middle and equal rail samples prove no value fill.
+    for (const count of result.ringPixels) expect(count).toBeGreaterThanOrEqual(2);
+    const expected = disabled ? [185, 220, 203] : [128, 192, 160];
+    for (const sample of [result.middle, result.before, result.after])
+      sample.forEach((channel, index) => expect(Math.abs(channel - expected[index]!)).toBeLessThanOrEqual(4));
+  };
+  await page.mouse.move(0, 0); await check();
+  await range.hover(); await check();
+  await range.focus(); await range.press('ArrowRight'); await range.press('ArrowLeft'); await check();
+  await slider.evaluate(async (el: any) => { el.disabled = true; await el.updateComplete; });
+  await expect(range).toBeDisabled(); await check(true);
+  await slider.evaluate(async (el: any) => { el.disabled = false; el.style.setProperty('--en-slider-thumb-size', '40px'); await el.updateComplete; });
+  await page.mouse.move(0, 0); await range.evaluate(el => (el as HTMLInputElement).blur());
+  // The specialized 28px size remains authoritative over the generic 40px hook.
+  await check();
+  await slider.evaluate((el: any) => el.style.setProperty('--en-slider-thumb-shadow', 'none'));
+  const withoutRing = await painted();
+  expect(withoutRing.ringPixels).toEqual([0, 0]);
 });
 test('numeric validation survives tab switching and a corrected draft applies on the first click',async({page})=>{
   await load(page);await writeMessage(page.getByRole('textbox',{name:'Structured message'}),'#');const dialog=page.getByRole('dialog');const picker=dialog.locator('en-color-picker');

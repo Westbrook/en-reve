@@ -39,6 +39,44 @@ async function selectKeyboard(page: Page, label: string) {
 	await input(page).press('Enter');
 }
 
+test('invalid control Part follows visible feedback while query edits and the native node survive', async ({ page }) => {
+	const picker = host(page), control = input(page), original = await control.elementHandle();
+	const feedback = async (visible: boolean) => {
+		await expect(picker.locator('input[part~="control"]')).toHaveCount(1);
+		await expect(picker.locator('[part~="control-invalid"]')).toHaveCount(visible ? 1 : 0);
+		await expect(picker.locator('[part~="error"]')).toHaveCount(visible ? 1 : 0);
+		if (visible) await expect(control).toHaveAttribute('aria-invalid', 'true');
+		else await expect(control).not.toHaveAttribute('aria-invalid', 'true');
+		expect(await control.evaluate((element, original) => element === original, original)).toBe(true);
+	};
+	await picker.evaluate(element => { (element as HTMLElement & { value: string }).value = ''; }); await settle(page);
+	await expect(control).toHaveValue(''); await feedback(false);
+	expect(await picker.evaluate(element => (element as HTMLElement & { validity: ValidityState }).validity.valueMissing)).toBe(true);
+	await filter(page, 'For'); await control.evaluate(element => (element as HTMLInputElement).setSelectionRange(1, 2));
+	for (const error of ['Application selection error', '']) {
+		await picker.evaluate(async (element, error) => { const field = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; field.error = error; await field.updateComplete; }, error);
+		await feedback(Boolean(error)); await expect(control).toHaveValue('For'); await expect(control).toBeFocused();
+		expect(await control.evaluate(element => { const input = element as HTMLInputElement; return [input.selectionStart, input.selectionEnd]; })).toEqual([1, 2]);
+		await expect(picker).toHaveJSProperty('value', '');
+	}
+	expect(await picker.evaluate(element => (element as HTMLElement & { reportValidity(): boolean }).reportValidity())).toBe(false);
+	await feedback(true); await expect(control).toHaveValue('For'); await expect(control).toBeFocused();
+	await selectKeyboard(page, 'Forest canvas'); await feedback(false);
+	await expect(picker).toHaveJSProperty('value', 'forest'); await expect(control).toHaveValue('Forest canvas');
+	await filter(page, 'Sun');
+	expect(await picker.evaluate(element => (element as HTMLElement & { reportValidity(): boolean }).reportValidity())).toBe(false);
+	await feedback(true); await expect(control).toHaveValue('Sun');
+	await control.press('Escape'); await feedback(false);
+	await expect(control).toHaveValue('Forest canvas'); await expect(control).toBeFocused();
+	await picker.evaluate(async element => { const field = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; field.error = 'Accepted selection needs review'; await field.updateComplete; });
+	await feedback(true); await expect(control).toHaveValue('Forest canvas');
+	await picker.evaluate(async element => { const field = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; field.error = ''; await field.updateComplete; });
+	await feedback(false); await expect(control).toBeFocused();
+	await page.locator('#asset-form').evaluate(form => (form as HTMLFormElement).reset()); await settle(page);
+	await feedback(false); await expect(control).toHaveValue('Forest canvas'); await expect(control).toBeFocused();
+	await original?.dispose();
+});
+
 test('selective native ESM use keeps query text out of form data and commits one keyboard selection', async ({ page }) => {
 	expect(await host(page).evaluate(element => 'controlled' in element)).toBe(false);
 	expect(await page.evaluate(() => ({

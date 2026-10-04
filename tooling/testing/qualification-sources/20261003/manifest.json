@@ -132,6 +132,284 @@
         "commit": "390be220c1d47b90295cdf7eb6e7e321b25bca01",
         "path": "apps/docs/tests/virtual-collection.spec.ts"
       }
+    },
+    {
+      "path": "apps/docs/src/generated/calendar-source.js",
+      "sha256": "c7d197f8f92a231b1a4042d3e0e8548a0a29e7e3792bfc01e576287bad42bde1",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/c7d197f8f92a231b1a4042d3e0e8548a0a29e7e3792bfc01e576287bad42bde1.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/calendar-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559401+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/carousel-source.js",
+      "sha256": "c7d03c22fdb0304b1100da344aa752e0e86e8e178c06b3fe1ad3b827c165a80a",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/c7d03c22fdb0304b1100da344aa752e0e86e8e178c06b3fe1ad3b827c165a80a.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/carousel-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559495+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/chat-patterns-source.js",
+      "sha256": "28cdddabf935596e930d694e76e84a7cd0ad84fa860d073c66ccaf73c8bbdf3c",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/28cdddabf935596e930d694e76e84a7cd0ad84fa860d073c66ccaf73c8bbdf3c.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/chat-patterns-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559497+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/composable-chat-source.js",
+      "sha256": "0c0748ba5e7298ba32d6cb95454ae966b182b4ae2a9082261f40c0860d68d195",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/0c0748ba5e7298ba32d6cb95454ae966b182b4ae2a9082261f40c0860d68d195.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/composable-chat-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559498+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/multi-step-source.js",
+      "sha256": "4ab34bd6fda64f244210ed507b80d69af5126cb1b14fe9b5e9e582bf19a48c8c",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/4ab34bd6fda64f244210ed507b80d69af5126cb1b14fe9b5e9e582bf19a48c8c.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/multi-step-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559499+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/presence-activity-source.js",
+      "sha256": "483d9aa72e8d34cd7a8e627407d35238dfe9804811ef590feca9a0aff9675112",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/483d9aa72e8d34cd7a8e627407d35238dfe9804811ef590feca9a0aff9675112.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/presence-activity-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559499+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/rich-text-source.js",
+      "sha256": "80145fc01c92236f6eb0b415245b8be40a147e2280e4965a62033c644967ddc4",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/80145fc01c92236f6eb0b415245b8be40a147e2280e4965a62033c644967ddc4.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/rich-text-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559500+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/toast-source.js",
+      "sha256": "8a44e5fba27495d156d33eb6e7b31eaf15b918a5311108c24652d13f873fee4e",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/8a44e5fba27495d156d33eb6e7b31eaf15b918a5311108c24652d13f873fee4e.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/toast-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559501+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/tooltip-warmup-source.js",
+      "sha256": "07491d856fc05e4f8aa6db7c469a1bffb914b785b5501265d5e27bf06c256e95",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/07491d856fc05e4f8aa6db7c469a1bffb914b785b5501265d5e27bf06c256e95.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/tooltip-warmup-source.js",
+        "checkout": "/private/tmp/en-reve-initial-pass-closeout",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559501+00:00"
+      }
+    },
+    {
+      "path": "apps/docs/src/generated/virtual-collection-source.js",
+      "sha256": "95fb35024af26e7bd975cd1a7d6dc630b24bb3a3f4b9fb9e09f0f5f06dec08a3",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "apps/docs/tests/verification-presentation-recipes-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/95fb35024af26e7bd975cd1a7d6dc630b24bb3a3f4b9fb9e09f0f5f06dec08a3.txt",
+      "origin": {
+        "kind": "retained-generated-output",
+        "path": "apps/docs/src/generated/virtual-collection-source.js",
+        "checkout": "/Users/westbrook/Documents/repos/design-system",
+        "note": "Recovered without regeneration from the preserved checkout; exact bytes match every listed unchanged historical receipt. This snapshot qualifies historical inputs only.",
+        "retainedAt": "2026-10-03T15:24:25.559502+00:00"
+      }
+    },
+    {
+      "path": "packages/styles/src/color-slider.ts",
+      "sha256": "6a3202141531871f5a7fdd9e163dc8df7efa0439759ab20d8928f506e9710988",
+      "receipts": [
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "probes/color-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/6a3202141531871f5a7fdd9e163dc8df7efa0439759ab20d8928f506e9710988.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "df59c9e81b5a370a08f0f547e49540506346e779",
+        "path": "packages/styles/src/color-slider.ts",
+        "retainedAt": "2026-10-03T16:01:03.735171+00:00",
+        "note": "Exact baseline source bytes match all listed unchanged historical receipts. This retains historical inputs; it does not qualify the current specialized slider change."
+      }
+    },
+    {
+      "path": "tooling/testing/comprehensive.test.mjs",
+      "sha256": "29a81a149ffa65186475e6fb4be361fc98f9944c9c61d212dabc03a177f53033",
+      "receipts": [
+        "probes/helper-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/29a81a149ffa65186475e6fb4be361fc98f9944c9c61d212dabc03a177f53033.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "7b156aa462dd00c5d2c419f3cd6fc36c5f4ece58",
+        "path": "tooling/testing/comprehensive.test.mjs"
+      }
+    },
+    {
+      "path": "tooling/testing/semantic-types-docs-baseline.json",
+      "sha256": "7751582a8577d05b26ec975e788433e6c0920ba320c3a7611b78d8126907ad9b",
+      "receipts": [
+        "probes/collection-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/7751582a8577d05b26ec975e788433e6c0920ba320c3a7611b78d8126907ad9b.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "b99c8770bf03d8029690c2dc42ff6b2d75f7b897",
+        "path": "tooling/testing/semantic-types-docs-baseline.json"
+      }
+    },
+    {
+      "path": "packages/styles/src/feedback.ts",
+      "sha256": "2e5e6d5c8123dad3ae2290ba2ea6fe75bd6631d491bf0b97b2a6ea49e2080c23",
+      "receipts": [
+        "apps/docs/tests/verification-collection-style-recipes-20261002.json",
+        "apps/docs/tests/verification-color-recipes-20261002.json",
+        "apps/docs/tests/verification-helper-recipes-20261002.json",
+        "apps/docs/tests/verification-notification-recipes-20261002.json",
+        "probes/notification-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/2e5e6d5c8123dad3ae2290ba2ea6fe75bd6631d491bf0b97b2a6ea49e2080c23.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "df59c9e81b5a370a08f0f547e49540506346e779",
+        "path": "packages/styles/src/feedback.ts"
+      }
+    },
+    {
+      "path": "packages/styles/src/commands.ts",
+      "sha256": "89d13275e03b1e26e6cf54f11dce4954c80bb341ebb6945ab7eb92bbf4d5dc53",
+      "receipts": [
+        "probes/choice-overlay-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/89d13275e03b1e26e6cf54f11dce4954c80bb341ebb6945ab7eb92bbf4d5dc53.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "8455c55b569265491cbf5dddf009757ca552befe",
+        "path": "packages/styles/src/commands.ts",
+        "note": "Exact bytes from the historical receipt sourceBase. This retains historical inputs; it does not qualify the current menu sizing changes."
+      }
+    },
+    {
+      "path": "packages/styles/src/overlays.ts",
+      "sha256": "0e14124302cc6829bf8dfc6d902eddea127b3dc4d7445d209e9103888032f32f",
+      "receipts": [
+        "probes/choice-overlay-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/0e14124302cc6829bf8dfc6d902eddea127b3dc4d7445d209e9103888032f32f.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "8455c55b569265491cbf5dddf009757ca552befe",
+        "path": "packages/styles/src/overlays.ts",
+        "note": "Exact bytes from the historical receipt sourceBase. This retains historical inputs; it does not qualify the current source overlay width fallback."
+      }
     }
   ]
 }

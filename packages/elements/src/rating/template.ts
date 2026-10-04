@@ -19,7 +19,7 @@ export function ratingTemplate(view: RatingView, onChange: (event: Event) => voi
       <input part="control" class="en-rating-input en-sr-only" type="radio" name="rating" value=${value}
         ?checked=${view.value === value} aria-label=${view.optionLabel(value, view.max)} @change=${onChange}>
       ${value === 0 ? html`<span>${view.optionLabel(0, view.max)}</span>`
-        : html`<span class="en-rating-star" part="star" data-filled=${value <= view.value ? '' : nothing}
+        : html`<span class="en-rating-star" part=${value <= view.value ? 'star star-filled' : 'star'} data-filled=${value <= view.value ? '' : nothing}
             aria-hidden="true">${value <= view.value ? '★' : '☆'}</span>`}
     </label>`;
   return html`<fieldset part="field" class="en-fieldset en-rating-field" ?disabled=${view.disabled}

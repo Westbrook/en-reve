@@ -1,17 +1,18 @@
 import { authorPaint, declarations, nativeSurface, type CompanionPresentationContext, type CompanionPresentationRegistry } from './presentation.js';
+import { sourceSizedRoles, sourceSizedValue } from './astryx.js';
 
 /** Finite control surfaces. Every shadow selector below addresses a documented Part. */
 export const controlTargets = {
   'form-field': ['en-text-field', 'en-search-input', 'en-textarea', 'en-number-field', 'en-combobox', 'en-select', 'en-checkbox', 'en-radio', 'en-switch'],
   'text-control': ['en-text-field', 'en-search-input', 'en-textarea', 'en-number-field', 'en-combobox', 'en-select'],
-  textarea: ['en-textarea'],
+  textarea: ['en-textarea', '.en-textarea'],
   'number-field': ['en-number-field'],
   combobox: ['en-combobox'],
   'native-select': ['en-select'],
   checkbox: ['en-checkbox'],
   radio: ['en-radio'],
   switch: ['en-switch'],
-  rating: ['en-rating'],
+  rating: ['en-rating', '.en-rating'],
 } as const;
 
 /** The native button variant is a public selector, and its state paint must
@@ -25,10 +26,24 @@ function controlSurface(selector: string): string {
 
 function part(ctx: CompanionPresentationContext, name: string, css: string, state = ''): string {
   if (!css) return '';
-  // Button also supports the documented native recipe. Other new targets are hosts.
+  // Native recipes address their own surface; custom hosts expose a public Part.
   return ctx.selectors.map(selector => ctx.style([/:where\(\.en-/.test(selector)
     ? `${controlSurface(selector)}${state}`
     : `${selector}::part(${name})${state}`], css)).join('\n');
+}
+/** The documented native rating recipe owns these light-DOM children. Custom
+ * elements continue to use Parts, never the equivalent shadow ancestry. */
+function ratingPart(ctx: CompanionPresentationContext, name: 'star-options' | 'star-option' | 'star' | 'star-filled', css: string, disabled = false): string {
+  if (!css) return '';
+  const children = {
+    'star-options': ' > .en-rating-values:not([data-en-theme])',
+    'star-option': ' > .en-rating-values:not([data-en-theme]) > .en-rating-item:not([data-en-theme])',
+    star: ' > .en-rating-values:not([data-en-theme]) > .en-rating-item:not([data-en-theme]) > .en-rating-star:not([data-en-theme])',
+    'star-filled': ' > .en-rating-values:not([data-en-theme]) > .en-rating-item:not([data-en-theme]) > .en-rating-star:not([data-en-theme])[data-filled]',
+  };
+  return ctx.selectors.map(selector => ctx.style([/:where\(\.en-/.test(selector)
+    ? `${nativeSurface(selector)}${disabled ? `:has(${children['star-option']} > .en-rating-input:not([data-en-theme]):disabled)` : ''}${children[name]}`
+    : `${selector}${disabled ? ':is([disabled], :disabled)' : ''}::part(${name})`], css)).join('\n');
 }
 function sized(ctx: CompanionPresentationContext, name: string, property: string, role: string): string {
   return (['small', 'medium', 'large'] as const).map(size => {
@@ -94,14 +109,16 @@ export const controlPresentations = {
         ...disabledRole, ...lineHeightRoles, background: 'color', color: 'color', border: 'color',
         'inline-padding-small': 'dimension', 'inline-padding-medium': 'dimension', 'inline-padding-large': 'dimension',
         'gap-small': 'dimension', 'gap-medium': 'dimension', 'gap-large': 'dimension',
-        duration: 'duration',
+        duration: 'duration', 'focus-color': 'color',
       },
       render(ctx) {
+        const focus = ctx.role('focus-color');
         const disabledPaint = declarations({background: ctx.role('background'), color: ctx.role('color'), 'border-color': ctx.role('border'), opacity: ctx.role('disabled-opacity')});
         return sizedHook(ctx, '--en-button-inline-padding', 'inline-padding')
           + sizedHook(ctx, '--en-font-ui-line-height', 'line-height')
           + sized(ctx, 'control', 'gap', 'gap')
           + part(ctx, 'control', declarations({'transition-duration': ctx.role('duration')}))
+          + authorPaint(part(ctx, 'control', declarations({'outline-color': focus === undefined ? undefined : `var(--en-button-focus-color, ${focus})`}), ':focus-visible'))
           + authorPaint(part(ctx, 'control', disabledPaint, ':disabled')
             + ctx.selectors.filter(selector => !/:where\(\.en-/.test(selector)).map(selector => ctx.style([`${selector}[aria-disabled="true"]::part(control)`], disabledPaint)).join('\n')
             + ctx.selectors.filter(selector => /:where\(\.en-/.test(selector)).map(selector => ctx.style([`${controlSurface(selector)}[aria-disabled="true"]`], disabledPaint)).join('\n'));
@@ -131,9 +148,13 @@ export const controlPresentations = {
   },
   textarea: {
     compact: {
-      roles: {'block-padding': 'dimension', 'block-padding-small': 'dimension', 'block-padding-medium': 'dimension', 'block-padding-large': 'dimension'},
+      roles: {'block-padding': 'dimension', 'block-padding-em': 'number', 'block-padding-small': 'dimension', 'block-padding-medium': 'dimension', 'block-padding-large': 'dimension'},
       render(ctx) {
-        return part(ctx, 'control', declarations({'padding-block': ctx.role('block-padding'), 'scroll-padding-block-end': ctx.role('block-padding')}))
+        // A finite relative role follows the editor's actual font size without
+        // expanding the public DTCG dimension grammar beyond px/rem.
+        const relativePadding = ctx.role('block-padding-em');
+        const padding = relativePadding === undefined ? ctx.role('block-padding') : `${relativePadding}em`;
+        return part(ctx, 'control', declarations({'padding-block': padding, 'scroll-padding-block-end': padding}))
           + sized(ctx, 'control', 'padding-block', 'block-padding');
       },
     },
@@ -223,13 +244,42 @@ export const controlPresentations = {
   },
   rating: {
     compact: {
-      roles: {'filled-color': 'color', 'empty-color': 'color'},
+      roles: {
+        'filled-color': 'color', 'empty-color': 'color', 'disabled-filled-color': 'color', 'disabled-opacity': 'number',
+        'pressed-background': 'color', 'pressed-scale': 'number', 'pressed-offset': 'dimension', 'pressed-shadow': 'shadow',
+        ...sourceSizedRoles('glyphSize'), ...sourceSizedRoles('glyphInlineSize'), ...sourceSizedRoles('glyphBlockSize'),
+        ...sourceSizedRoles('gap'), ...sourceSizedRoles('padding'), ...sourceSizedRoles('targetSize'),
+      },
       render(ctx) {
-        return part(ctx, 'star-options', 'gap: 0;')
-          + part(ctx, 'star-option', 'inline-size: auto; block-size: auto; min-inline-size: var(--en-size-target-min); min-block-size: var(--en-size-target-min); padding: 0;')
-          + `@media (any-pointer: coarse) { ${part(ctx, 'star-option', 'min-inline-size: var(--en-size-target-touch); min-block-size: var(--en-size-target-touch);')} }`
+        const size = (name: string) => sourceSizedValue(ctx, name);
+        const target = size('targetSize');
+        const side = target ? `max(var(--en-size-target-min), ${target})` : 'auto';
+        const glyphInline = size('glyphInlineSize');
+        const glyphBlock = size('glyphBlockSize');
+        return ratingPart(ctx, 'star-options', `gap: ${size('gap') ?? '0'};`)
+          // Source symbol cells may be smaller than interactive radio targets.
+          // Keep positive targets square and retain both pointer target floors.
+          + ratingPart(ctx, 'star-option', `box-sizing: border-box; inline-size: ${side}; block-size: ${side}; min-inline-size: var(--en-size-target-min); min-block-size: var(--en-size-target-min); padding: ${size('padding') ?? '0'};`)
+          + ratingPart(ctx, 'star', declarations({
+            'font-size': size('glyphSize'), 'line-height': size('glyphSize') ? '1' : undefined,
+            'inline-size': glyphInline, 'block-size': glyphBlock,
+            display: glyphInline || glyphBlock ? 'inline-flex' : undefined,
+            'align-items': glyphInline || glyphBlock ? 'center' : undefined,
+            'justify-content': glyphInline || glyphBlock ? 'center' : undefined,
+          }))
+          + ratingPart(ctx, 'star-option', declarations({
+            '--_en-source-rating-pressed-scale': ctx.role('pressed-scale'),
+            '--_en-source-rating-pressed-offset': ctx.role('pressed-offset'),
+          }))
+          + `@media (any-pointer: coarse) { ${ratingPart(ctx, 'star-option', 'min-inline-size: var(--en-size-target-touch); min-block-size: var(--en-size-target-touch);')} }`
           // Public semantic paint inputs retain the internal filled/disabled state ownership.
-          + authorPaint(part(ctx, 'star-option', 'border-width: 0;') + part(ctx, 'star', declarations({'--en-color-action-text': ctx.role('filled-color'), '--en-color-text-muted': ctx.role('empty-color')})));
+          + authorPaint(ratingPart(ctx, 'star-option', declarations({
+            'border-width': '0', '--_en-source-rating-pressed-background': ctx.role('pressed-background'), '--_en-source-rating-pressed-shadow': ctx.role('pressed-shadow'),
+          })) + ratingPart(ctx, 'star', declarations({'--en-color-action-text': ctx.role('filled-color'), '--en-color-text-muted': ctx.role('empty-color')}))
+          // The semantic Part follows the actual score in CSR and SSR. Refine
+          // the existing disabled ink input without replacing native state.
+          + ratingPart(ctx, 'star-filled', declarations({ '--en-color-text-muted': ctx.role('disabled-filled-color') }), true)
+          + ratingPart(ctx, 'star-options', declarations({ opacity: ctx.role('disabled-opacity') }), true));
       },
     },
   },

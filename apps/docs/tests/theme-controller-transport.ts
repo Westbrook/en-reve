@@ -71,7 +71,9 @@ export async function holdThemeController(page: Page, options: {
 		const frame = route.request().frame();
 		const matches = options.matchesFrame ? await options.matchesFrame(frame) : frame === page.mainFrame();
 		if (!matches) { await route.continue(); return; }
-		const response = await route.fetch();
+		// Retry one reset of the idempotent real-module GET (for example, an idle
+		// keep-alive socket closing). HTTP failures and lifecycle assertions still fail.
+		const response = await route.fetch({ maxRetries: 1 });
 		captured++;
 		await gate;
 		// Preserve the served status, headers and body; only transport timing changes.

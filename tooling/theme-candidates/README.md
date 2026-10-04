@@ -72,6 +72,14 @@ token observations; popup motion has its own browser suite.
 
 ## Variant companions
 
+The October component review expands the trusted companions from variant paint
+to finite, typed component anatomy. Its [review and exhaustive crosswalk](../../plans/theme-deep-review/README.md)
+cover Spectrum, Fluent 2, Astryx, shadcn Rhea, Radix Themes and Web Awesome.
+Chakra UI and Holotable are outside that review. Source adaptations and actual
+validation receipts are recorded separately. The focused source-fidelity
+browser cases run through `theme-refresh.config.ts` with the existing three
+engines, using downloaded token-plus-companion CSS and real API specimens.
+
 All eleven canonical definitions now carry a trusted `ThemeCompanionRecipe`. Prepared output retains the standard `<id>.css` token pair and adds `<id>.companion.css`, with independent identity and file digest in the manifest. Load token CSS first and the sidecar second beneath the named explicit theme/appearance boundary. Automatic appearance uses matching light/dark media rules. Showcase's Download CSS combines both files for application use. The build-bound JSON outer envelope includes a regenerated companion; reopen rejects altered companion data. See [the adoption report](../../plans/theme-inspired-adoption.md) for source mappings and limitations.
 
 Finite component `presentation` keys can bind typed token IDs through `roles` to

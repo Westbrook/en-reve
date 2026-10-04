@@ -10,6 +10,15 @@ import { collectionsTargets, collectionsPresentations } from './companion/collec
 import { specializedTargets, specializedPresentations } from './companion/specialized.js';
 import { typographyTargets, typographyPresentations } from './companion/typography.js';
 import type { CompanionPresentationRegistry } from './companion/presentation.js';
+import { spectrumTargets, spectrumPresentations } from './companion/spectrum.js';
+import { spectrumTabsTargets, spectrumTabsPresentations } from './companion/spectrum-tabs.js';
+import { fluentTargets, fluentPresentations } from './companion/fluent.js';
+import { astryxTargets, astryxPresentations } from './companion/astryx.js';
+import { sourceShapeTargets, sourceShapePresentations } from './companion/source-shapes.js';
+import { radixTargets, radixPresentations } from './companion/radix.js';
+import { sliderTargets, sliderPresentations } from './companion/slider.js';
+import { webAwesomeDetailsTargets, webAwesomeDetailsPresentations } from './companion/web-awesome-details.js';
+import { sourceAlertTargets, sourceAlertPresentations } from './companion/source-alert.js';
 
 /** Opt-in: application-owned component tokens remain legal. Warnings don't affect identity. */
 export function unknownComponentHooks(theme: Pick<ResolvedTheme, 'tokens'>): readonly ThemeDiagnostic[] {
@@ -42,19 +51,21 @@ export function validateRoleProvenance(theme: ResolvedTheme, entries: readonly T
 }
 
 const targets = {
-  button: ['en-button', '.en-button'],
+  button: ['en-button', 'en-toggle-button', '.en-button'],
   choice: ['en-checkbox', 'en-switch', 'en-radio', '.en-choice'],
   link: ['en-link', '.en-link'],
   'segmented-control': ['en-segmented-control'],
   'reset-action': ['en-button[data-en-action="reset"]', '.en-button[data-en-action="reset"]'],
   'standalone-action': ['en-button[data-en-action="standalone"]', '.en-button[data-en-action="standalone"]'],
-  field: ['en-text-field','en-textarea','en-select','en-combobox','en-number-field','en-date-picker','en-token-editor','.en-input','.en-textarea','.en-select'],
+  field: ['en-text-field','en-search-input','en-textarea','en-select','en-combobox','en-number-field','en-date-input','en-date-picker','en-multiselect','en-token-editor','.en-input','.en-textarea','.en-select'],
   ...controlTargets, ...displayTargets, ...feedbackTargets,
   ...navigationTargets, ...collectionsTargets, ...specializedTargets, ...typographyTargets,
+  ...spectrumTargets, ...spectrumTabsTargets, ...fluentTargets, ...astryxTargets, ...sourceShapeTargets, ...radixTargets, ...sliderTargets, ...webAwesomeDetailsTargets, ...sourceAlertTargets,
 } as const;
 const presentations = {
   ...controlPresentations, ...displayPresentations, ...feedbackPresentations,
   ...navigationPresentations, ...collectionsPresentations, ...specializedPresentations, ...typographyPresentations,
+  ...spectrumPresentations, ...spectrumTabsPresentations, ...fluentPresentations, ...astryxPresentations, ...sourceShapePresentations, ...radixPresentations, ...sliderPresentations, ...webAwesomeDetailsPresentations, ...sourceAlertPresentations,
 } as const satisfies CompanionPresentationRegistry;
 type PresentationNames<Registry> = { [Target in keyof Registry]: keyof Registry[Target] }[keyof Registry] & string;
 export interface ThemeCompanionRule {
@@ -125,9 +136,17 @@ export function createThemeCompanion(theme: ResolvedTheme, recipe: ThemeCompanio
       if (!contract || (!hook && !typography) || !contract.tokenType || token?.type !== contract.tokenType) throw new TokenError('invalid-companion','Companions require a registered typed hook or public typography role and a compatible token.',id);
       return `  ${name}: ${token.cssValue};`;
     });
-    const selectors = targets[rule.target].map(target => {
-      const variant = rule.variant ? target.startsWith('.') ? `[data-variant="${rule.variant}"]` : `[variant="${rule.variant}"]` : '';
-      return `:where(${target}${variant})`;
+    const selectors = targets[rule.target].flatMap(target => {
+      const attribute = target.startsWith('.') ? 'data-variant' : 'variant';
+      const variant = rule.variant ? `[${attribute}="${rule.variant}"]` : '';
+      const matches = [`:where(${target}${variant})`];
+      // Respect each public action's omitted-variant default. Keep fallback
+      // branches separate so native presentation recipes identify their class.
+      if (rule.target === 'button' && rule.variant === (target === 'en-toggle-button' ? 'secondary' : 'primary')) {
+        const aliases = target.startsWith('.') ? ':where(:not(.en-button--secondary, .en-button--quiet, .en-button--danger))' : '';
+        matches.push(`:where(${target}):where(:not([${attribute}]))${aliases}`);
+      }
+      return matches;
     });
     const base = style(selectors, declarations.join('\n'));
     const block = (suffix: string, css: string) => style(selectors.map(selector => selector + suffix), css);

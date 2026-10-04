@@ -29,12 +29,12 @@ export const pressRecipes = {
     paint: css`background: var(--en-tab-pressed-background, ${t("--en-color-accent-subtle")}); color: var(--en-tab-pressed-color, var(--en-tab-color, ${t("--en-color-action-text")}));`,
   },
   'rating': {
-    scale: css`var(--en-rating-pressed-scale, 1)`,
-    offset: css`var(--en-rating-pressed-offset, 0px)`,
+    scale: css`var(--en-rating-pressed-scale, var(--_en-source-rating-pressed-scale, 1))`,
+    offset: css`var(--en-rating-pressed-offset, var(--_en-source-rating-pressed-offset, 0px))`,
     press: css`var(--en-rating-press-duration, ${t('--en-duration-press')})`,
     release: css`var(--en-rating-release-duration, ${t('--en-duration-release')})`,
-    shadow: css`var(--en-rating-pressed-shadow, 0 0 0 0 transparent)`,
-    paint: css`background: var(--en-rating-pressed-background, ${t("--en-color-accent-subtle")}); color: var(--en-rating-pressed-color, ${t("--en-color-text")});`,
+    shadow: css`var(--en-rating-pressed-shadow, var(--_en-source-rating-pressed-shadow, 0 0 0 0 transparent))`,
+    paint: css`background: var(--en-rating-pressed-background, var(--_en-source-rating-pressed-background, ${t("--en-color-accent-subtle")})); color: var(--en-rating-pressed-color, ${t("--en-color-text")});`,
   },
   'combobox-trigger': {
     scale: css`var(--en-combobox-trigger-pressed-scale, 1)`,

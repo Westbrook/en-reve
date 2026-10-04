@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 1,
+  "reviewedAtUTC": "2026-10-03",
+  "sourceCommit": "d2daa25689f6e7552df17b10194eec4ad34f7575",
+  "sourceCommittedAtUTC": "2026-10-03T12:14:50Z",
+  "coreSourceVersion": "0.6.4",
+  "captureDirectory": "/tmp/en-astryx-deep-review",
+  "sources": [
+    {
+      "path": "apps/docsite/src/constants.ts",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/apps/docsite/src/constants.ts",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/apps/docsite/src/constants.ts",
+      "sha256": "3b7abd58af957552256fee58e644f45acdf9d4de523df461feb52b9b83dc8497"
+    },
+    {
+      "path": "apps/docsite/src/themes/astryxTheme.ts",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/apps/docsite/src/themes/astryxTheme.ts",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/apps/docsite/src/themes/astryxTheme.ts",
+      "sha256": "d80be2c50f77ecf56c47309e3e5b86d71b1c971ddde6936c58c2cefb894a6c12"
+    },
+    {
+      "path": "packages/core/package.json",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/package.json",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/package.json",
+      "sha256": "93d3d42c6f26c072f42f5e3ca747222b57b3c0b89a2ffe3417279850dae3bc52"
+    },
+    {
+      "path": "packages/core/src/Button/Button.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Button/Button.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Button/Button.tsx",
+      "sha256": "e47723bfb2c8b6f776c2b71a3386c2a20a90d4498d26dec18b632687d2ea70f2"
+    },
+    {
+      "path": "packages/core/src/Card/Card.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Card/Card.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Card/Card.tsx",
+      "sha256": "6ba3210045e3ae0adba926776cd2e807d9b1e307f7fa99e8bc760edb32b963ae"
+    },
+    {
+      "path": "packages/core/src/CheckboxInput/CheckboxInput.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/CheckboxInput/CheckboxInput.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/CheckboxInput/CheckboxInput.tsx",
+      "sha256": "343107b4af3a433ba932b2104cd83b23d7d9968244b9f6b08d93a766262ae5a4"
+    },
+    {
+      "path": "packages/core/src/Dialog/Dialog.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Dialog/Dialog.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Dialog/Dialog.tsx",
+      "sha256": "9c317a8a100364b3cbe14d179a7135cb671e9dda1241a58c79aba8c3c3c5e0e3"
+    },
+    {
+      "path": "packages/core/src/Field/inputStyles.stylex.ts",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Field/inputStyles.stylex.ts",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Field/inputStyles.stylex.ts",
+      "sha256": "3510b226790125a8ea404eb6602d61cd7c2aaec3a42f51155a252378f51e5281"
+    },
+    {
+      "path": "packages/core/src/Indicator/CheckboxIndicator.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Indicator/CheckboxIndicator.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Indicator/CheckboxIndicator.tsx",
+      "sha256": "3cec1c76c54d7be3fc84acfd4ef0473634af62f7ceb9cb5bf813dbf4dcf1f7ae"
+    },
+    {
+      "path": "packages/core/src/Popover/Popover.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Popover/Popover.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Popover/Popover.tsx",
+      "sha256": "34466fd938823b64d9b867bfc52afe5c42a9dd1ec02822fbffe78a2c1f2b2d9b"
+    },
+    {
+      "path": "packages/core/src/Popover/usePopover.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Popover/usePopover.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Popover/usePopover.tsx",
+      "sha256": "bee6b83232cc4457aae3bc069991ad4b225053e8670b7ef6059da2bf2ffb6771"
+    },
+    {
+      "path": "packages/core/src/SegmentedControl/SegmentedControl.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/SegmentedControl/SegmentedControl.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/SegmentedControl/SegmentedControl.tsx",
+      "sha256": "84a68d1f297fadc6db77dc3932afd99aa8174810a8eb12d3187bf1c56fcabff0"
+    },
+    {
+      "path": "packages/core/src/SegmentedControl/SegmentedControlItem.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/SegmentedControl/SegmentedControlItem.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/SegmentedControl/SegmentedControlItem.tsx",
+      "sha256": "862d4a0260d2ae90ee3f3e1943d0a99d282fcbeddcf9dc41928b7727f9c41bd3"
+    },
+    {
+      "path": "packages/core/src/Switch/Switch.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Switch/Switch.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Switch/Switch.tsx",
+      "sha256": "14e1bcbf0d9385a7d2f782b8c06fcd2bf41c58680afc7c41c4170ff48b0c7b9c"
+    },
+    {
+      "path": "packages/core/src/TabList/Tab.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/TabList/Tab.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/TabList/Tab.tsx",
+      "sha256": "f7c7e6f5d977e1654ba449f446915aedb783f96b1ade10a35a8c0ec639997cf9"
+    },
+    {
+      "path": "packages/core/src/TabList/TabList.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/TabList/TabList.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/TabList/TabList.tsx",
+      "sha256": "91c2f5bead72c28df836d61e6f5eb2b339be3cce92df1e96a083b704328e87bc"
+    },
+    {
+      "path": "packages/core/src/Toast/Toast.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Toast/Toast.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Toast/Toast.tsx",
+      "sha256": "0e00423632a62f0fd3bbb4c7b210f2d8503ad3619d71f2a9fe6a74a69eb47977"
+    },
+    {
+      "path": "packages/core/src/Toast/ToastViewport.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Toast/ToastViewport.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Toast/ToastViewport.tsx",
+      "sha256": "91d56e5c7eb6521b6b0f2f3c2b0f808acfcdc07e90c770d8f469c78f50edc5a8"
+    },
+    {
+      "path": "packages/core/src/Token/Token.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Token/Token.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Token/Token.tsx",
+      "sha256": "4274aaf1b6a5fde3fa349219111a3400f18174834889d4928e80710caa308314"
+    },
+    {
+      "path": "packages/core/src/Tooltip/Tooltip.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Tooltip/Tooltip.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Tooltip/Tooltip.tsx",
+      "sha256": "bf63fbfbb62a72adcb2c08dd15fa458a003c4d507f65c580a509022bd300df62"
+    },
+    {
+      "path": "packages/core/src/Tooltip/useTooltip.tsx",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Tooltip/useTooltip.tsx",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/Tooltip/useTooltip.tsx",
+      "sha256": "ccc40af83a6db3077d67b8f10fa4071995132a2096dab9f0b294e80ee5c0cb00"
+    },
+    {
+      "path": "packages/core/src/theme/tokens.stylex.ts",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/theme/tokens.stylex.ts",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/theme/tokens.stylex.ts",
+      "sha256": "7d5b5321220e0924213d9b37cf4acf9ba5bb16f3de1485710dd543f964676f81"
+    },
+    {
+      "path": "packages/core/src/utils/interactionOverlay.stylex.ts",
+      "url": "https://github.com/facebook/astryx/blob/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/utils/interactionOverlay.stylex.ts",
+      "rawUrl": "https://raw.githubusercontent.com/facebook/astryx/d2daa25689f6e7552df17b10194eec4ad34f7575/packages/core/src/utils/interactionOverlay.stylex.ts",
+      "sha256": "610f25e6b55d1969eb342416c60470156781ba7eb43a5eab12639f6e11098eb4"
+    }
+  ]
+}

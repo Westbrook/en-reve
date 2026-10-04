@@ -43,7 +43,7 @@ export function comboboxTemplate(view: ComboboxView, events: ComboboxEvents) {
     <label id="control-label" class="en-label" part="label" for="control"><slot name="label">${view.label || nothing}</slot></label>
     <div class="en-combobox" @focusout=${events.focusout}>
     <div class="en-combobox-anchor en-field-focus-frame" part="focus-frame">
-    <input id="control" class="en-input en-text-input en-combobox-input" part="control" type="text"
+    <input id="control" class="en-input en-text-input en-combobox-input" part=${view.invalid === 'true' ? 'control control-invalid' : 'control'} type="text"
       role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded=${String(view.expanded)}
       aria-controls="listbox" aria-activedescendant=${view.expanded && !view.blocked ? view.active?.id ?? nothing : nothing}
       aria-describedby=${view.describedBy} aria-invalid=${view.invalid} aria-required=${String(view.required)}

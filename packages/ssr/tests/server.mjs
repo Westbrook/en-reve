@@ -15,6 +15,7 @@ const {patternsTemplate} = await import('./fixtures/patterns-template.mjs');
 const { compositeAccessibilityTemplate } = await import('./fixtures/composite-accessibility-template.mjs');
 const { descriptionContentTemplate } = await import('./fixtures/description-content-template.mjs');
 const { fixtureTemplate } = await import('./fixtures/template.mjs');
+const { invalidPartsTemplate } = await import('./fixtures/invalid-parts-template.mjs');
 const { optionalSlotsTemplate, optionalSlotsDocumentStyles } = await import('./fixtures/optional-slots-template.mjs');
 const { comboboxContentTemplate } = await import('./fixtures/combobox-content-template.mjs');
 const { mediaViewerDeliveryTemplate, mediaViewerDeliveryDocumentParts } = await import('./fixtures/media-viewer-delivery-template.mjs');
@@ -112,10 +113,16 @@ const server = await createServer({
           res.end(`<!doctype html><html lang="en"><head><title>Description content</title><link rel="stylesheet" href="/packages/tokens/dist/default.css"><style>body{margin:24px;font:16px/1.5 sans-serif}main> :is(en-rich-text-editor,en-token-editor,en-range-slider,en-selection-collection){display:block;margin-block:16px;max-inline-size:40rem}</style></head><body><main id="description-content-fixture">${markup}</main><script type="module">window.hydrateDescriptions = () => import('/packages/ssr/tests/fixtures/description-content-hydrate.mjs').then(module => module.start());</script></body></html>`);
           return;
         }
+        if (pathname === '/invalid-parts-fixture') {
+          const markup = await renderToString(invalidPartsTemplate());
+          res.setHeader('Content-Type', 'text/html');
+          res.end(`<!doctype html><html lang="en"><head><title>Validation Part hydration</title><link rel="stylesheet" href="/packages/tokens/dist/default.css"><style>body{margin:24px}section{display:grid;gap:16px;max-width:32rem}</style></head><body><main id="invalid-parts-fixture">${markup}</main><script type="module">window.hydrateInvalidParts = () => import('/packages/ssr/tests/fixtures/invalid-parts-hydrate.mjs').then(module => module.start());</script></body></html>`);
+          return;
+        }
         if (pathname === '/fixture') {
           const markup = await renderToString(fixtureTemplate());
           res.setHeader('Content-Type', 'text/html');
-          res.end(`<!doctype html><html lang="en"><head><title>Real component hydration</title></head><body><main id="fixture">${markup}</main><script type="module">window.hydrateFixture = () => import('/packages/ssr/tests/fixtures/hydrate.mjs').then(module => module.start());</script></body></html>`);
+          res.end(`<!doctype html><html lang="en"><head><title>Real component hydration</title></head><body><main id="fixture">${markup}</main><script type="module">window.hydrateFixture = options => import('/packages/ssr/tests/fixtures/hydrate.mjs').then(module => module.start(options));</script></body></html>`);
           return;
         }
         if (pathname === '/' || pathname.startsWith('/assets/') || pathname.startsWith('/evidence/')) {

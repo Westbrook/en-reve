@@ -136,9 +136,16 @@ export function createSourceTokens(mode: ThemeMode = 'light', density: ThemeDens
   add('component.toast-region.gap','dimension','{space.3}','Notification spacing.');
   add('component.toast-region.width','dimension',{value:24,unit:'rem'},'Fixed notification region width, capped by the viewport.');
   add('component.rating.star-radius','dimension','{radius.control}','Optional rating star-target corner radius; square targets allow pill radii to form circles. Does not style the No rating option.');
+  add('component.menu.min-inline-size','dimension','{layout.panel-preferred}','Optional ordinary-menu content minimum, capped by its maximum and measured viewport. Replacement submenus keep their parent width.');
+  add('component.menu.max-inline-size','dimension','{layout.form-max}','Optional ordinary-menu maximum fallback below an explicit legacy overlay maximum. Replacement submenus keep their parent-width contract.');
   add('component.pagination.gap','dimension','{space.actions}','Optional gap between pagination actions; otherwise follows shared action spacing.');
   add('component.pagination.page-min-inline-size','dimension','{size.control-min}','Optional minimum numbered-page width; content and interaction-target floors still apply.');
   add('component.pagination.status-gap','dimension','{space.1}','Optional spacing between pagination actions and their status.');
+  add('component.choice.label-color','color','{color.text}','Optional checkbox, radio and switch label text color; state hooks fall back to this color. Descriptions, errors and forced colors retain their own styles.');
+  add('component.choice.label-hover-color','color','{color.text}','Optional enabled choice label hover color; otherwise follows the choice label color.');
+  add('component.choice.label-focus-color','color','{color.text}','Optional choice label color while the native control is focus-visible; ordinary focus retains its existing state.');
+  add('component.choice.label-pressed-color','color','{color.text}','Optional enabled choice label held color; otherwise follows the choice label color.');
+  add('component.choice.label-disabled-color','color','{color.text}','Optional disabled choice label color; otherwise follows the choice label color. Disabled paint takes precedence over interaction states.');
   add('component.radio.selected-color','color','{color.action}','Optional checked radio rim and dot color; otherwise follows the action fill. Disabled and forced-color states retain their own styles.');
   add('component.button.inline-padding','dimension','{space.control-inline}','Optional text-button inline padding; otherwise follows the selected control size.');
   add('component.input.inline-padding','dimension','{space.control-inline}','Optional text-editor and select inline padding; otherwise follows the selected control size.');

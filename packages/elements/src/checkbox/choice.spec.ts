@@ -8,6 +8,47 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole('checkbox', { name: 'Notify collaborators' })).toBeVisible();
 });
 
+for (const tag of ['en-checkbox', 'en-radio', 'en-switch']) {
+  test(`${tag}: invalid control Part follows application and reported constraint feedback`, async ({ page }) => {
+    await page.evaluate(async tag => {
+      const form = document.createElement('form'); form.id = 'invalid-choice-form';
+      const choice = document.createElement(tag) as HTMLElement & { required: boolean; checked: boolean; updateComplete: Promise<unknown> };
+      choice.id = 'invalid-choice'; choice.textContent = 'Validation choice'; choice.setAttribute('name', 'choice'); choice.required = true; choice.checked = false;
+      form.append(choice); document.body.append(form); await choice.updateComplete;
+    }, tag);
+    const host = page.locator('#invalid-choice'), control = host.locator('input[part~="control"]');
+    const feedback = async (visible: boolean) => {
+      await expect(host.locator('input[part~="control"]')).toHaveCount(1);
+      await expect(host.locator('[part~="control-invalid"]')).toHaveCount(visible ? 1 : 0);
+      await expect(host.locator('[part~="error"]')).toHaveCount(visible ? 1 : 0);
+      if (visible) await expect(control).toHaveAttribute('aria-invalid', 'true');
+      else await expect(control).not.toHaveAttribute('aria-invalid', 'true');
+    };
+    await expect(control).toBeVisible(); const original = await control.elementHandle();
+    await feedback(false);
+    expect(await host.evaluate(element => (element as HTMLElement & { validity: ValidityState }).validity.valueMissing)).toBe(true);
+    await control.focus();
+    for (const error of ['Application choice error', '']) {
+      await host.evaluate(async (element, error) => { const choice = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; choice.error = error; await choice.updateComplete; }, error);
+      await feedback(Boolean(error)); await expect(control).not.toBeChecked(); await expect(control).toBeFocused();
+      expect(await control.evaluate((element, original) => element === original, original)).toBe(true);
+    }
+    expect(await host.evaluate(element => (element as HTMLElement & { reportValidity(): boolean }).reportValidity())).toBe(false);
+    await feedback(true); await expect(control).toBeFocused();
+    await control.press('Space'); await expect(control).toBeChecked(); await feedback(false);
+    expect(await host.evaluate(element => (element as HTMLElement & { validity: ValidityState }).validity.valid)).toBe(true);
+    await host.evaluate(async element => { const choice = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; choice.error = 'Selected application error'; await choice.updateComplete; });
+    await feedback(true); await expect(control).toBeChecked();
+    await host.evaluate(async element => { const choice = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; choice.error = ''; await choice.updateComplete; });
+    await feedback(false); await expect(control).toBeChecked(); await expect(control).toBeFocused();
+    await page.locator('#invalid-choice-form').evaluate(form => (form as HTMLFormElement).reset());
+    await expect(control).not.toBeChecked(); await feedback(false); await expect(control).toBeFocused();
+    expect(await host.evaluate(element => (element as HTMLElement & { validity: ValidityState }).validity.valueMissing)).toBe(true);
+    expect(await control.evaluate((element, original) => element === original, original)).toBe(true);
+    await original?.dispose();
+  });
+}
+
 test('checkbox tentative checked state and FormData agree during one cancelable event', async ({ page }) => {
   const host = page.locator('en-checkbox');
   const checkbox = page.getByRole('checkbox', { name: 'Notify collaborators' });

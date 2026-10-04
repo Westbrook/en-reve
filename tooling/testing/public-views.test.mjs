@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { resolve } from 'node:path';
 import { comprehensiveGraph } from './comprehensive.mjs';
 import { publicViewPlan } from './public-views.mjs';
 import { publicViewOutput } from './public-view-output.mjs';
@@ -42,6 +43,16 @@ test('legacy theme and release output requests retain named child paths without 
  assert(Object.values(mapping).includes('/tmp/explicit-theme-run/docs'));
  const one=publicViewOutput(root,'root#test:api',{}),two=publicViewOutput(root,'root#test:api',{});
  assert.notEqual(one.output,two.output);assert(!one.explicit);
+});
+
+test('standalone theme keeps full component presentation owners from the canonical graph',async()=>{
+ const graph=await comprehensiveGraph({workspaceRoot:root});
+ const {plan}=publicViewPlan(graph,'root#test:theme',{root});
+ for(const config of [...['slider','rating','accordion','patterns'].map(name=>`packages/elements/src/${name}/tests/playwright.config.ts`),'apps/docs/tests/theme-composition.config.ts']){
+ const owners=plan.filter(task=>task.config===config);
+ assert.equal(owners.length,1);
+ assert.deepEqual(owners[0].command.slice(-2),['--config',resolve(root,config)]);
+ }
 });
 
 test('platform probe view includes pinned Reference Target checks without changing legacy filter forwarding',async()=>{

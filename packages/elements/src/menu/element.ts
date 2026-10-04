@@ -49,7 +49,9 @@ import { restoreFocus } from '../dialog/focus.js';
  * @cssprop --en-overlay-border-color - Shared surface customization.
  * @cssprop --en-overlay-radius - Shared surface customization.
  * @cssprop --en-overlay-padding - Shared surface customization.
- * @cssprop --en-overlay-max-inline-size - Shared surface customization.
+ * @cssprop --en-menu-min-inline-size - Ordinary-menu content minimum, capped by its maximum and measured viewport; replacement submenus retain their parent width.
+ * @cssprop --en-menu-max-inline-size - Ordinary-menu maximum fallback beneath an explicit overlay maximum; replacement geometry is unchanged.
+ * @cssprop --en-overlay-max-inline-size - Explicit menu maximum above the optional source menu maximum, also capped by the measured viewport.
  * @cssprop --en-overlay-max-block-size - Shared surface customization.
  * @slot - Direct en-menu-item children, noninteractive separators and nested en-menu siblings using for.
  * @csspart surface - Named native menu popover.

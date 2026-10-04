@@ -134,3 +134,56 @@ test('forced colors preserve a visible circular focus outline', async ({ page })
 	expect(box.outline).toBeGreaterThan(0);
 	expect(box.outlineStyle).not.toBe('none');
 });
+
+test('filled star Parts follow actual rating state through selection, cancellation, clear and silent writes', async ({ page }) => {
+	await mount(page);
+	const rating = page.locator('#rating');
+	const stars = rating.locator('[part~="star"]');
+	const expectFilled = async (value: number) => {
+		await expect(stars).toHaveCount(5);
+		await expect(rating.locator('[part~="star-filled"]')).toHaveCount(value);
+		await expect(stars).toHaveText(Array.from({ length: 5 }, (_, index) => index < value ? '★' : '☆'));
+		expect(await stars.evaluateAll(elements => elements.map(element => element.part.contains('star-filled'))))
+			.toEqual(Array.from({ length: 5 }, (_, index) => index < value));
+		await expect(rating.locator('[part~="clear-option"] [part~="star-filled"]')).toHaveCount(0);
+		expect(await rating.evaluate(element => (element as Rating).value)).toBe(value);
+	};
+	await rating.evaluate(element => {
+		(element as HTMLElement).dataset.changeCount = '0';
+		element.addEventListener('en-change', () => {
+			const host = element as HTMLElement;
+			host.dataset.changeCount = String(Number(host.dataset.changeCount) + 1);
+		});
+	});
+	await expectFilled(2);
+	await rating.locator('[part~="star-option"]').nth(4).hover();
+	await expectFilled(2);
+	await rating.locator('[part~="star-option"]').nth(3).click();
+	await expect(page.getByRole('radio', { name: '4 of 5 stars', exact: true })).toBeChecked();
+	await expectFilled(4);
+	await rating.evaluate(element => {
+		element.addEventListener('en-change', event => event.preventDefault(), { once: true });
+	});
+	await rating.locator('[part~="star-option"]').nth(4).click();
+	await expect(page.getByRole('radio', { name: '4 of 5 stars', exact: true })).toBeChecked();
+	await expectFilled(4);
+	await rating.locator('[part~="clear-option"]').click();
+	await expect(page.getByRole('radio', { name: 'No rating', exact: true })).toBeChecked();
+	await expectFilled(0);
+	await expect(rating).toHaveAttribute('data-change-count', '3');
+	await rating.evaluate(async element => {
+		const host = element as Rating;
+		host.value = 3;
+		await host.updateComplete;
+	});
+	await expect(page.getByRole('radio', { name: '3 of 5 stars', exact: true })).toBeChecked();
+	await expectFilled(3);
+	await expect(rating).toHaveAttribute('data-change-count', '3');
+	await rating.evaluate(async element => {
+		element.setAttribute('disabled', '');
+		await (element as Rating).updateComplete;
+	});
+	for (const radio of await rating.getByRole('radio').all()) await expect(radio).toBeDisabled();
+	await expectFilled(3);
+	await expect(rating).toHaveAttribute('data-change-count', '3');
+});

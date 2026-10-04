@@ -6,11 +6,12 @@ import { EnDateInput } from '../../date-input/element.js';
 import { EnSelect } from '../../select/element.js';
 import { EnNumberField } from '../../number-field/element.js';
 import { EnColorField } from '../../color-field/element.js';
+import { EnOtpField } from '../../otp-field.js';
 
 for (const [name, constructor] of [
   ['en-text-field', EnTextField], ['en-textarea', EnTextarea], ['en-search-input', EnSearchInput],
   ['en-date-input', EnDateInput], ['en-select', EnSelect], ['en-number-field', EnNumberField],
-  ['en-color-field', EnColorField],
+  ['en-color-field', EnColorField], ['en-otp-field', EnOtpField],
 ] as const) customElements.define(name, constructor);
 
 const events: Array<{ id: string; type: string; detail: unknown }> = [];

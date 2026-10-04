@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import { comprehensiveGraph } from './comprehensive.mjs';
-import { selectTasks } from './pathways.mjs';
+import { publicGraph, selectTasks } from './pathways.mjs';
+import { publicViewPlan } from './public-views.mjs';
 import { selectAffected } from '../evidence/graph.ts';
 import { maintainedFiles, workloadManifest } from './workload.mjs';
 import { mkdtemp, mkdir, writeFile, readFile, rm } from 'node:fs/promises';
@@ -44,9 +45,10 @@ test('public, specialized and legacy plans remain parseable through stdout pipes
 
 test('broad current graph inventories every maintained config and preserves standalone API stale-metadata detection',async()=>{
  const graph=await comprehensiveGraph({workspaceRoot});
- const api=selectTasks(graph,['api']);
+ const {plan:api}=publicViewPlan(graph,'root#test:api',{root:workspaceRoot});
  assert(!api.some(task=>task.kind==='producer'),'Standalone API must not regenerate the metadata it checks');
- assert(api.some(task=>task.id==='check-api'));
+ assert.equal(api[0].id,'check-api');
+ assert(api.some(task=>task.assertionSources?.includes('tooling/evidence/impact.test.mjs')),'Standalone API retains the complete impact owner against caller-supplied artifacts');
  const release=selectTasks(graph,['release']);assert(release.some(task=>task.id==='metadata:types'));assert(release.some(task=>task.id==='build:docs'));
  const union=selectTasks(graph,['correctness']);assert.equal(union.length,new Set(union.map(task=>task.id)).size);
  const dependencyGraph={schemaVersion:1,nodes:graph.tasks.map(task=>({id:task.id,kind:'scenario',dependencies:task.dependencies,complete:false}))};
@@ -99,6 +101,17 @@ test('reader table assertions wait for the owned build while pure sorting stays 
 test('the real CSS watcher control owns an exclusive Node cohort without relaxing its deadline',async()=>{const graph=await comprehensiveGraph({workspaceRoot});assert.equal(graph.tasks.find(task=>task.id==='node:tooling/css-authoring/compiler.test.mjs').nodeIsolation,'exclusive');});
 
 test('semantic docs types follow source preparation before bundling and core types stay independent',async()=>{const graph=await comprehensiveGraph({workspaceRoot});const task=id=>graph.tasks.find(task=>task.id===id);assert.deepEqual(task('semantic-doc-types').dependencies,['build:docs-sources']);assert.deepEqual(task('build:docs').dependencies,['build:docs-sources']);assert(task('build:docs').command.includes('--ignore-scripts'));assert(!selectTasks(graph,['fast']).some(task=>task.id==='build:docs-sources'));});
+
+test('real impact analysis waits for generated docs source without requiring docs bundling',async()=>{
+ for(const graph of [await publicGraph({workspaceRoot}),await comprehensiveGraph({workspaceRoot})]){
+  const impact=graph.tasks.find(task=>task.id==='node:tooling/evidence/impact.test.mjs');
+  assert.deepEqual(impact.dependencies,['build:docs-sources']);
+  assert.deepEqual(graph.tasks.find(task=>task.id==='node:tooling/evidence/impact-client.test.mjs').dependencies,[],'Synthetic impact clients stay independent of preparation');
+  const api=selectTasks(graph,['api']);
+  assert(api.findIndex(task=>task.id==='build:docs-sources')<api.findIndex(task=>task.id===impact.id));
+  assert(!api.some(task=>task.id==='build:docs'),'Source graph traversal does not consume bundled docs');
+ }
+});
 
 test('synthetic delivery analysis owners run without builds or acquisition',async()=>{
  const graph=await comprehensiveGraph({workspaceRoot}),selected=selectTasks(graph,['analysis-controls']);

@@ -24,6 +24,16 @@ Field paint follows `--en-input-background` → `--en-control-background` → th
 
 `component.rating.star-radius` maps to optional `--en-rating-star-radius` and defaults to `{radius.control}`. It styles only the square star targets and their focus contours; the separate “No rating” action keeps its ordinary shape. Managed choices include zero for square corners, intermediate rounded radii, and `{radius.pill}` / `9999px` for circular targets. Full child themes reset the optional pin; partial themes preserve it unless selected. Astryx- and shadcn-inspired candidates pin circular stars in both appearances without changing other controls.
 
+Menu geometry has two optional roles: `component.menu.min-inline-size` and
+`component.menu.max-inline-size`, exposed as `--en-menu-min-inline-size` and
+`--en-menu-max-inline-size`. Unpinned full themes keep the menu's existing
+contextual defaults; full child themes clear inherited pins, and partial
+changes preserve unspecified roles. They affect ordinary menus only. The
+legacy `--en-overlay-max-inline-size` remains an explicit override above the
+menu maximum fallback, and viewport fitting can reduce the minimum.
+Replacement submenus retain their existing parent-width behavior. The managed
+editor offers px/rem choices including Fluent's literal 138px/300px profile.
+
 Pagination geometry has three optional roles: `component.pagination.gap` follows
 `{space.actions}`, `component.pagination.status-gap` follows `{space.1}`, and
 `component.pagination.page-min-inline-size` follows `{size.control-min}`. Their
@@ -235,6 +245,8 @@ Managed controls offer 1–4px primary widths, 0–4px halo/accent widths, finit
 
 ## Public customization contracts and `@property`
 
+The five optional choice label color tokens are `component.choice.label-color`, `component.choice.label-hover-color`, `component.choice.label-focus-color`, `component.choice.label-pressed-color` and `component.choice.label-disabled-color`. They map to the corresponding `--en-choice-label-*` hooks for checkbox, radio and switch label text. Unpinned themes retain the ordinary text fallback in every state; source themes can independently pin rest, hover, native-input focus-visible, held and disabled colors. Full theme boundaries reset unspecified label pins and partial themes preserve them. Label paint does not change the control indicator, descriptions or validation text.
+
 `customizationContracts(theme)` returns the public CSS contract for semantic tokens, optional component/family hooks, inherited layout configuration and mechanical inputs. `getCustomizationContract(theme, cssName)` selects one entry. The records carry syntax, inheritance, fallback references, reset policy, family/concepts, state and size semantics, consumer sources, managed-authoring linkage and registration policy. `customization.json` exports the default contracts without executing the resolver. Managed editor descriptors include their `cssName`; a CSS-only hook does not automatically become a managed token.
 
 Full-theme reset declarations derive from the registry. Newly covered visual hooks include validation-summary padding/radius and later chat, calendar, color and editor surfaces. A full theme now clears these inherited component overrides so local semantic fallbacks take effect. Applications intentionally inheriting overrides should use a partial theme or reapply a local override. Viewport sizes, data-table minimum width, editor maximum height and mechanical progress/scroll/split inputs are explicitly preserved. The registry records the exact category for each hook; it does not reset every discovered `--en-*` name. Theme source and reset extensions reject reserved configuration/mechanical names.
@@ -337,10 +349,63 @@ for the capability matrix, full examples and a runnable export/reopen workflow.
 
 See the [complete authoring and delivery contract](../../plans/theme-api-authoring-contract.md) for typed/managed layers, portable companion recipes, pressed presentation, family refinements, consumed-role provenance, rendered alpha validation and licensed font delivery. `fontStyle` is a bounded normal/italic/oblique token type. Opt into unknown library-hook diagnostics with `resolveTheme({warnUnknownComponentHooks:true})`.
 
-`createThemeCompanion(theme, recipe)` supports finite component presentations over
-documented public Parts as well as the existing typed hook assignments. A rule's
-optional `roles` map supplies token IDs to the chosen presentation's declared
-role names and types:
+## Component presentation companions
+
+`createThemeCompanion(theme, recipe)` accepts trusted, finite component
+presentations alongside its existing token assignments. A rule may supply
+`presentation` and `roles`; each role names a token with the registered type.
+The compiler rejects unknown targets, presentations, roles, raw CSS and
+type-confused values. Optional roles preserve the ordinary component declaration.
+The renderer uses documented Parts and native helper contracts. It does not
+change events, native editing, focus ownership or registration.
+
+The registry includes sectioned surfaces, compact feedback and control recipes,
+enclosed tabs, source-sized choice and switch anatomy, layered field edges,
+raised segments, and source-specific code/keycap treatments. These are code-owned
+recipes, not selectors supplied by an imported theme. Size-aware presentations
+share the library's internal absolute-size selection machinery; those internal
+flags are not public customization inputs. Consumers continue to use `size`,
+`data-en-size`, typed roles and documented `--en-*` overrides.
+
+`tooltip/compact` supports numeric `paddingInlineEm`, `paddingBlockEm` and
+`maxInlineCharacters` roles for font-relative insets and measure; these take
+precedence over the corresponding dimension roles. `fontSizeDivisor` rounds a
+provided `fontSize` to whole CSS pixels after division. Sectioned dialogs support
+`viewportGutter` as a total viewport subtraction, `headerControlPaddingEm` for
+header close-control compensation, and `titleFontSizeMultiplier` for rounded
+scaling of a provided title size. A font modifier without its base emits no font
+size. Numeric geometry is bounded by the finite renderer; arbitrary CSS strings
+remain unsupported. Override-only surface hooks remain inherited fallbacks.
+
+Companions use named container style queries to select the nearest full theme
+boundary, including repeated same-name boundaries. Components and native helpers
+on a matching boundary itself receive direct rules. Public hook expressions stay
+on their consuming host or Part. Paired delivery follows light/dark media
+preferences for both an omitted appearance and explicit
+`data-en-appearance="auto"`. Load native component base styles, then token CSS,
+then companion CSS in document stylesheet order. Native presentation rules match
+the base helper specificity, so a later base sheet can replace them. This includes
+base stylesheet links inserted into body content; applications that add base
+styles later must restore the theme/companion order. The compiler remains DOM-free.
+
+Every `[data-en-theme]` boundary reserves `--en-theme-companion` in its
+`container-name` list. Application declarations of `container-name` or the
+`container` shorthand must explicitly retain it, for example
+`container-name: app-panel --en-theme-companion`. The generated default does not
+merge application names automatically. Omitting the reserved name can select an
+outer boundary, causing missing presentation or loss of nested-theme isolation.
+Reserve this name for full theme boundaries. Companion CSS requires custom-property
+container style queries; it does not set `container-type` or add size containment.
+See the [authoring contract](../../plans/theme-api-authoring-contract.md) for
+composition, cascade and qualification requirements.
+
+Ordinary and toggle actions share variant recipes. An omitted variant follows
+the element default: primary for `en-button` and `.en-button`, secondary for
+`en-toggle-button`. Existing native secondary/quiet/danger class aliases do not
+receive the omitted primary recipe. Field families include search, date and
+multivalue controls as well as text, number and choice editors.
+
+A finite presentation supplies token IDs through its optional roles map:
 
 ```ts
 const companion = createThemeCompanion(theme, {
@@ -353,31 +418,13 @@ const companion = createThemeCompanion(theme, {
 });
 ```
 
-Unknown roles, incompatible token types, arbitrary selectors and CSS strings are
-rejected. Omitted roles preserve component declarations; the selected presentation
-may still establish its documented Part layout. Load the library's component
-styles first, then theme CSS and the regenerated companion. Stylesheet order is
-document order: a base stylesheet linked in the body can follow a companion in
-the head. Named container style queries select the nearest full theme
-boundary, including repeated same-name themes. Matching components and native
-helpers on the boundary itself receive direct rules. Public hook expressions stay
-on their consuming host or Part, so local overrides resolve there.
-
-Companions reserve `--en-theme-companion` in the `container-name` list of every
-`[data-en-theme]` boundary. Application declarations of `container-name` or the
-`container` shorthand must retain that name, for example
-`container-name: app-panel --en-theme-companion`. Omitting it can select an outer
-boundary, causing missing presentation or loss of nested-theme isolation. Reserve
-this name for full theme boundaries. Companion CSS does not set `container-type`
-or add size containment. See the [authoring contract](../../plans/theme-api-authoring-contract.md)
-for composition and cascade details.
-
-Delivery requires custom-property container style queries, available in
+Custom-property container style queries are available in
 [Firefox 151](https://www.firefox.com/en-US/firefox/151.0/releasenotes/) and
 [Safari 18](https://webkit.org/blog/15865/webkit-features-in-safari-18-0/#style-queries).
-The repository's pinned browser matrix is Chromium 153, Firefox 155 and WebKit 26.6.
-Its author paint leaves forced colors to the component. The lower-level compiler emits one
-light or dark branch; the repository's paired companion delivery adds automatic
-appearance media rules. The eleven catalogue pairs retain independent trusted
-branch sources and exact review-file roundtrips. See the contract above for
-presentation scope, size/target limits and required rendered verification.
+The pinned browser matrix is Chromium 153, Firefox 155 and WebKit 26.6.
+Author paint leaves forced colors to the component. The eleven catalogue pairs
+retain independent trusted branch sources and exact review-file roundtrips.
+
+See the [inspired theme review](../../plans/theme-deep-review/README.md) for
+source provenance, intentional adaptations and verification status. A source
+mapping or compiler pass does not establish full source-system equivalence.

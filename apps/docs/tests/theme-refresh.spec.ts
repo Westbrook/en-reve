@@ -136,7 +136,35 @@ async function assertSignature(page: Page, theme: ResolvedTheme) {
 		share: { color: css('color.action-text') },
 		chatIcon: { color: css('color.action-text') },
 	});
-	expect(await signature(page), 'Rendered typography, field/action shape and surfaces follow the resolved authored branch').toEqual(expected);
+	const measured = await signature(page);
+	if (await page.locator('html').getAttribute('data-en-theme') === 'radix-inspired') {
+		const material = await page.locator('#showcase-project > en-card > [part=base]').evaluate(element => {
+			const properties = ['background', 'background-color', 'background-image', 'backdrop-filter', '-webkit-backdrop-filter', '--en-card-background', '--en-surface-background', '--en-color-surface'];
+			const read = (node: Element) => {
+				const css = getComputedStyle(node);
+				return {tag: node.tagName, theme: node.getAttribute('data-en-theme'), appearance: node.getAttribute('data-en-appearance'), values: Object.fromEntries(properties.map(name => [name, css.getPropertyValue(name)]))};
+			};
+			const host = (element.getRootNode() as ShadowRoot).host;
+			return {
+				surface: read(element), host: read(host), boundary: read(document.documentElement),
+				media: {reducedTransparency: matchMedia('(prefers-reduced-transparency: reduce)').matches, reducedMotion: matchMedia('(prefers-reduced-motion: reduce)').matches, forcedColors: matchMedia('(forced-colors: active)').matches},
+				supports: {blur: CSS.supports('backdrop-filter', 'blur(1px)'), webkitBlur: CSS.supports('-webkit-backdrop-filter', 'blur(1px)'), opaqueFallback: CSS.supports('not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)))')},
+			};
+		});
+		const fallback = material.media.reducedTransparency || material.supports.opaqueFallback;
+		const foreground = effective(theme, ['component.card.background', 'component.surface.background'], 'color.surface').cssValue;
+		const blur = fallback ? 'none' : `blur(clamp(0px, ${css('theme.radix.anatomy.d64')}, 64px))`;
+		const materialExpected = await canonical(page, {
+			'background-color': fallback ? css('color.surface') : foreground,
+			// The fallback shorthand has a color-only final layer whose image is none.
+			'background-image': fallback ? `linear-gradient(${foreground}, ${foreground}), none` : 'none',
+			'backdrop-filter': blur, '-webkit-backdrop-filter': blur,
+		});
+		await test.info().attach(`radix-material-${theme.mode}-diagnostic`, {contentType: 'application/json', body: JSON.stringify({expected: expected.card, measured: measured.card, material, fallback, materialExpected}, null, 2)});
+		expect(Object.fromEntries(Object.keys(materialExpected).map(name => [name, material.surface.values[name]])), 'Radix material retains exact alpha paint or the conditionally required opaque backing and foreground layer').toEqual(materialExpected);
+		if (fallback) expected.card['background-color'] = materialExpected['background-color'];
+	}
+	expect(measured, 'Rendered typography, field/action shape and surfaces follow the resolved authored branch').toEqual(expected);
 	if (await page.locator('html').getAttribute('data-en-theme') === 'spectrum-inspired') {
 		const measured = await page.evaluate(() => {
 			const style = (host: string, part: string) => getComputedStyle(document.querySelector(host)!.shadowRoot!.querySelector(`[part~="${part}"]`)!);
@@ -488,8 +516,20 @@ test('fluent-inspired: website typography and tiles reflow in RTL and at 200% te
 	const receipts: unknown[] = [];
 	const measure = () => page.evaluate(() => {
 		const heading = document.querySelector<HTMLElement>('.showcase-heading h1')!;
+		const poster = document.querySelector<HTMLElement>('.showcase-color-preview strong')!;
+		const words: { text: string; lines: number }[] = [];
+		const walker = document.createTreeWalker(poster, NodeFilter.SHOW_TEXT);
+		for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+			for (const match of (node.textContent ?? '').matchAll(/\S+/g)) {
+				const range = document.createRange(); range.setStart(node, match.index!); range.setEnd(node, match.index! + match[0].length);
+				const tops: number[] = [];
+				for (const rect of range.getClientRects()) if (rect.width > 0 && !tops.some(top => Math.abs(top - rect.top) < 1)) tops.push(rect.top);
+				words.push({ text: match[0], lines: tops.length });
+			}
+		}
 		return {
 			viewport: innerWidth, direction: document.documentElement.dir,
+			poster: { size: parseFloat(getComputedStyle(poster).fontSize), lineHeight: parseFloat(getComputedStyle(poster).lineHeight), width: poster.clientWidth, scrollWidth: poster.scrollWidth, words },
 			overflow: document.documentElement.scrollWidth - innerWidth,
 			heading: { size: parseFloat(getComputedStyle(heading).fontSize), width: heading.clientWidth, scrollWidth: heading.scrollWidth },
 			cards: [...document.querySelectorAll('.showcase-card')].map(element => {
@@ -502,6 +542,7 @@ test('fluent-inspired: website typography and tiles reflow in RTL and at 200% te
 		await expect.poll(() => page.evaluate(() => document.documentElement.scrollWidth - innerWidth), label).toBeLessThanOrEqual(1);
 		const sample = await measure();
 		expect(sample.heading.scrollWidth, `${label}: heading content fits`).toBeLessThanOrEqual(sample.heading.width + 1);
+		expect(sample.poster.scrollWidth, `${label}: poster text stays in its artwork tile`).toBeLessThanOrEqual(sample.poster.width + 1);
 		for (const card of sample.cards) {
 			expect(card.x, `${label}: ${card.id} start edge`).toBeGreaterThanOrEqual(-1);
 			expect(card.right, `${label}: ${card.id} end edge`).toBeLessThanOrEqual(sample.viewport + 1);
@@ -515,6 +556,13 @@ test('fluent-inspired: website typography and tiles reflow in RTL and at 200% te
 		await appearance(page, mode);
 		const baseSize = await heading.evaluate(element => parseFloat(getComputedStyle(element).fontSize));
 		expect(baseSize, 'Fluent 2 keeps the website display heading before text enlargement').toBe(68);
+		await page.setViewportSize({ width: 1440, height: 1000 });
+		const desktop = await measure();
+		expect(desktop.poster.size, 'The small poster uses the source medium heading size').toBe(32);
+		expect(desktop.poster.lineHeight, 'The small poster keeps the source medium leading').toBe(40);
+		expect(desktop.poster.words.map(word => word.text)).toEqual(['Color', 'outside', 'the', 'expected.']);
+		for (const word of desktop.poster.words) expect(word.lines, `${mode}: the ordinary desktop poster keeps ${word.text} intact`).toBe(1);
+		await reflows(`Fluent 2/${mode}/desktop-poster`);
 		for (const direction of ['ltr', 'rtl']) {
 			await page.getByRole('combobox', { name: 'Reading direction', exact: true }).selectOption(direction);
 			for (const width of [390, 320]) {
@@ -524,6 +572,8 @@ test('fluent-inspired: website typography and tiles reflow in RTL and at 200% te
 		}
 		await page.locator('html').evaluate(element => { element.style.fontSize = '200%'; });
 		expect(await heading.evaluate(element => parseFloat(getComputedStyle(element).fontSize)), 'The test genuinely enlarges the authored display type').toBeCloseTo(baseSize * 2, 1);
+		const enlargedPoster = await measure();
+		expect(enlargedPoster.poster.size, 'The poster also respects 200% text instead of shrinking to container pixels').toBeCloseTo(desktop.poster.size * 2, 1);
 		for (const width of [390, 320]) {
 			await page.setViewportSize({ width, height: 844 });
 			await reflows(`Fluent 2/${mode}/rtl/${width}/200%`);
@@ -774,7 +824,8 @@ async function openThemeAPI(page: Page) {
 }
 async function detachThemeAPI(page: Page) {
 	return page.locator('en-api-example-app').evaluateHandle(node => {
-		const saved = { node, parent: node.parentNode!, next: node.nextSibling }; node.remove(); return saved;
+		const anchor = document.createComment('api-theme-reconnect'); node.before(anchor);
+		const saved = { node, anchor }; node.remove(); return saved;
 	});
 }
 async function apiThemeHistory(page: Page) {
@@ -840,7 +891,7 @@ test('API example theme ownership retains current controls and native state thro
 		expect(await html.getAttribute('data-en-theme')).toBe(originalName);
 		await expect(html).toHaveAttribute('data-en-appearance', 'dark');
 		await expect(html).toHaveAttribute('data-example-density', 'compact');
-		await detached.evaluate(saved => saved.parent.insertBefore(saved.node, saved.next));
+		await detached.evaluate(saved => saved.anchor.replaceWith(saved.node));
 		await expect(html).toHaveAttribute('data-en-theme', 'web-awesome-inspired');
 		await expect(page.locator('style[data-example-theme]')).toHaveCount(1);
 		await expect(html).toHaveCSS('color-scheme', 'dark');
@@ -906,7 +957,7 @@ test('disconnecting during the API theme import discards the old completion and 
 		detached = await detachThemeAPI(page);
 		await expect(page.locator('style[data-example-theme]')).toHaveCount(0);
 		expect(await page.locator('html').getAttribute('data-en-theme')).toBe(originalName);
-		await detached.evaluate(saved => saved.parent.insertBefore(saved.node, saved.next));
+		await detached.evaluate(saved => saved.anchor.replaceWith(saved.node));
 		hold.release(); await hold.waitForReturned();
 		// Reconnection paints the retained workspace. Its observable presentation
 		// drains the shared module wait; the pre-disconnect request cannot report success.

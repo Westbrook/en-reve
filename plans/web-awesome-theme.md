@@ -23,7 +23,7 @@ The authoritative sources are the [official built-in theme instructions](https:/
 | Options | 3px radius, 16px inline/8px block inset, normal neutral hover fill | Public option tokens; selected-state behavior remains En Reve's |
 | Elevation | Offset/blur/spread scales; 12% light shadow, 72% dark shadow | Small card, medium overlay and large dialog structured shadows |
 | Motion | 75ms fast, 150ms normal, 300ms slow, CSS ease | Button and surface timing tokens; anchored popup geometry remains stable |
-| Toast | Raised surface, neutral border, 6px radius, 16px medium padding, semantic accent | Public toast paint/spacing/shadow tokens; semantic icons carry accent (no matching native accent-rail token) |
+| Toast | Raised surface, neutral border, 6px radius, 16px medium padding and a separate 4px leading loud-fill rail | Existing public paint/spacing/shadow tokens plus the finite public base-Part/native rail presentation; local info maps to source brand |
 
 The recipe consists of `inspired/web-awesome.light.json`, `inspired/web-awesome.dark.json`, and one canonical definition with authoritative source typography, structured shadows, geometry refinements and bounded variant companion. The initial recipe used existing public token APIs. The fidelity follow-up below adds narrowly scoped, typed companion typography support; no private shadow selector is used.
 
@@ -33,7 +33,7 @@ The recipe consists of `inspired/web-awesome.light.json`, `inspired/web-awesome.
 - Functional boundaries use Gray 50 in dark mode instead of source Gray 40, exceeding 3:1 against both default and raised surfaces. Light focus uses Blue 50 instead of Blue 60 (source Blue 60 measures 2.995:1 against white). Decorative borders retain the source colors.
 - Dark neutral outlined/plain button ink uses Gray 70 rather than the source's Gray 60. This preserves contrast on raised En Reve contexts and transient hover fills. Ordinary muted text still maps to the source Gray 60.
 - Layout density and minimum targets remain En Reve contracts. Source-relative font rounding is represented by typed rem values at the normal 16px root; native `round()` steps under unusual root font sizes are not reproduced exactly.
-- Native toast accent rails, exact keyframes and component-specific animation choreography do not have equivalent public En Reve inputs. The theme maps exposed paint, geometry and timing roles, retaining En Reve reduced-motion and anchored-position behavior.
+- The source toast rail is expressible through the existing public base Part and native helper. The [toast follow-up](theme-deep-review/web-awesome-toast.md) adds its 4px logical geometry and independent loud-fill paint while retaining color-or-gradient background overrides and padding shorthands. Source neutral/no-icon defaults map to local info/semantic-icon delivery; local icon treatment and complete source toast choreography remain explicit adaptations. Qualification evidence is recorded in [verification-20261003.json](theme-deep-review/verification-20261003.json); this implementation description does not establish a passing runtime result.
 - Source colors mixed in Oklab are resolved into the compiler's supported sRGB color representation. The source values and recipe identities are retained in the evidence.
 
 ## Validation

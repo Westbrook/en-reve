@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+import { createThemeCompanion, resolveTheme } from '@en-reve/tokens';
 import { placed } from '../../../../../tooling/browser/settling.js';
 
 test.beforeEach(async ({ page }) => {
@@ -182,26 +183,38 @@ for (const target of ['dialog', 'fallback-dialog']) {
 }
 
 test('responsive dialog changes presentation without replacing the open surface or losing edits and focus', async ({ page }) => {
+  const companion = createThemeCompanion(resolveTheme(), {
+    schemaVersion: 1, id: 'responsive-source-radius', rules: [{
+      target: 'dialog', presentation: 'sectioned', tokens: {}, roles: {radius: 'radius.dialog'},
+    }],
+  }, {name: 'responsive-source-radius'});
+  await page.addStyleTag({content: companion.css});
   await page.setViewportSize({ width: 1000, height: 800 });
   await page.evaluate(() => {
     const dialog = document.querySelector('#dialog') as any;
+    dialog.setAttribute('data-en-theme', 'responsive-source-radius');
+    dialog.setAttribute('data-en-appearance', 'light');
+    dialog.style.setProperty('--en-overlay-radius', '19px');
     dialog.presentation = 'responsive'; dialog.responsiveQuery = '(width < 700px)'; dialog.show();
     (window as any).savedDialogSurface = dialog.shadowRoot.querySelector('dialog');
   });
   const surface = page.getByRole('dialog', { name: 'Review changes' });
   const input = page.getByRole('textbox', { name: 'Review note' });
+  await expect(surface).toHaveCSS('border-radius', '19px');
   await input.fill('Preserve this edit');
   await expect(input).toBeFocused();
   await page.setViewportSize({ width: 390, height: 844 });
   await expect(surface).toBeVisible();
   await expect(input).toBeFocused();
   await expect(input).toHaveValue('Preserve this edit');
+  await expect(surface).toHaveCSS('border-radius', '0px');
   await expect.poll(async () => {
     const bounds = (await surface.boundingBox())!;
     return Math.abs(bounds.y + bounds.height - 844) < 2 && Math.abs(bounds.width - 390) < 2;
   }).toBe(true);
   expect(await page.evaluate(() => (window as any).savedDialogSurface === document.querySelector('#dialog')!.shadowRoot!.querySelector('dialog'))).toBe(true);
   await page.setViewportSize({ width: 1000, height: 800 });
+  await expect(surface).toHaveCSS('border-radius', '19px');
   await expect(input).toBeFocused();
   await expect.poll(async () => {
     const bounds = (await surface.boundingBox())!;

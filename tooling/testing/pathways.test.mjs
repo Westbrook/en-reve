@@ -13,3 +13,14 @@ test('named pathway union retains every obligation and executes shared prerequis
  assert.throws(()=>selectTasks({tasks:[{id:'a',dependencies:['a']}],pathways:{a:['a']}},['a']),/cycle/);
  assert.throws(()=>selectTasks({tasks:[],pathways:{a:['missing']}},['a']),/Unknown execution dependency/);
 });
+
+test('theme qualification includes the full component presentation browser owners',async()=>{
+ const graph=await publicGraph();
+ for(const config of [...['slider','rating','accordion','patterns'].map(name=>`packages/elements/src/${name}/tests/playwright.config.ts`),'apps/docs/tests/theme-composition.config.ts']){
+ const owners=selectTasks(graph,['theme']).filter(task=>task.config===config);
+ assert.equal(owners.length,1,`Theme qualification owns ${config} once`);
+ assert.deepEqual(owners[0].command.slice(1),['node_modules/@playwright/test/cli.js','test','--config',config],
+  'The complete owning configuration retains every case and engine without filters');
+ assert.deepEqual(owners[0].dependencies,['build']);
+ }
+});

@@ -10,6 +10,7 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * @csspart field - Field layout.
  * @csspart label - Visible label.
  * @csspart control - Native search input.
+ * @csspart control-invalid - Native control while associated application or reported constraint feedback is visible.
  * @csspart focus-frame - Noninteractive field frame supporting the supplemental focus accent.
  * @csspart description - Supporting text.
  * @csspart error - Validation feedback.
@@ -36,7 +37,7 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  */
 export class EnSearchInput extends EditableFieldElement {
   protected renderControl() {
-    return html`<input id="control" class="en-input" part="control" type="search"
+    return html`<input id="control" class="en-input" part=${this.visibleError ? 'control control-invalid' : 'control'} type="search"
       name=${this.name} value=${this.defaultControlValue} placeholder=${this.placeholder || nothing}
       autocomplete=${this.autocomplete || nothing} inputmode=${this.inputMode || nothing}
       ?disabled=${this.isDisabled} ?readonly=${this.readOnly} ?required=${this.required}

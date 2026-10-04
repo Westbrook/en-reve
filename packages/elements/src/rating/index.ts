@@ -24,11 +24,12 @@ import { ratingTemplate } from './template.js';
  * @csspart star-option - A square positive-score target; excludes the clear choice.
  * @csspart control - A native score radio.
  * @csspart star - The decorative star indicator.
+ * @csspart star-filled - A decorative star included in the current score; refines the star Part, including while disabled.
  * @csspart clear-option - The visible no-rating choice.
  * @csspart description - Supporting text.
  * @csspart error - Associated application or constraint validation feedback.
  * @cssprop --en-rating-star-radius - Positive-score target and focus contour radius; defaults to the control radius.
- * @cssprop --en-color-action - Selected rating color.
+ * @cssprop --en-color-action-text - Selected rating color.
  * @fires {import('@en-reve/primitives/interactions/events.js').ChangeEvent<number>} en-change - Tentative, cancelable change; the property and form data expose the proposed state during dispatch.
  */
 export class EnRating extends NumericChoiceBase {

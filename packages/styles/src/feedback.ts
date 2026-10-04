@@ -25,10 +25,10 @@ export const feedbackStyles = sizedStyles(css`
   .en-badge[data-variant='success'] { color: ${o('--en-badge-color', t('--en-color-success-text'))}; }
   .en-badge[data-variant='warning'] { color: ${o('--en-badge-color', t('--en-color-warning-text'))}; }
   .en-badge[data-variant='danger'] { color: ${o('--en-badge-color', t('--en-color-danger-text'))}; }
-  .en-progress, .en-progress-track { display: block; inline-size: 100%; block-size: ${o('--en-progress-size', t('--en-size-progress'))}; overflow: hidden; border: 0; border-radius: ${t('--en-radius-pill')}; background: ${o('--en-progress-track-color', t('--en-color-surface-subtle'))}; }
+  .en-progress, .en-progress-track { display: block; inline-size: 100%; block-size: ${o('--en-progress-size', t('--en-size-progress'))}; overflow: hidden; border: 0; border-radius: ${t('--en-radius-pill')}; background: ${o('--en-progress-track-color', css`var(--_en-source-progress-track-color, ${t('--en-color-surface-subtle')})`)}; }
   .en-progress { appearance: none; accent-color: ${o('--en-progress-color', t('--en-color-action'))}; }
   .en-progress-fill { display: block; inline-size: clamp(0%, var(--en-progress-value, 0%), 100%); block-size: 100%; border-radius: inherit; background: ${o('--en-progress-color', t('--en-color-action'))}; }
-  .en-progress::-webkit-progress-bar { background: ${o('--en-progress-track-color', t('--en-color-surface-subtle'))}; border-radius: inherit; }
+  .en-progress::-webkit-progress-bar { background: ${o('--en-progress-track-color', css`var(--_en-source-progress-track-color, ${t('--en-color-surface-subtle')})`)}; border-radius: inherit; }
   .en-progress::-webkit-progress-value { background: ${o('--en-progress-color', t('--en-color-action'))}; border-radius: inherit; }
   .en-progress::-moz-progress-bar { background: ${o('--en-progress-color', t('--en-color-action'))}; border-radius: inherit; }
   ${activityStyles}

@@ -32,6 +32,7 @@ export interface SelectItem {
  * @csspart field - Field layout.
  * @csspart label - Visible label.
  * @csspart control - Native select.
+ * @csspart control-invalid - Native control while associated application or reported constraint feedback is visible.
  * @csspart option - Native option; picker styling depends on browser support.
  * @csspart description - Supporting text.
  * @csspart error - Validation feedback.
@@ -197,7 +198,7 @@ export class EnSelect extends FormFieldElement {
     const defaultValue = !this.hasUpdated && this.childOptions.initialValue !== undefined
       ? this.childOptions.initialValue : this.defaultControlValue;
     const blankDefault = !this.placeholder && items.length > 0 && !items.some(item => item.value === defaultValue);
-    return html`<select id="control" class="en-select" part="control" name=${this.name}
+    return html`<select id="control" class="en-select" part=${this.visibleError ? 'control control-invalid' : 'control'} name=${this.name}
       ?disabled=${this.isDisabled} ?required=${this.required}
       aria-describedby=${this.describedBy} aria-invalid=${this.controlAriaInvalid}
       @input=${this.onInput} @change=${this.onChange}>

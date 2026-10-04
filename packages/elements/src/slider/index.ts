@@ -5,6 +5,7 @@ import type { FormValidation } from '@en-reve/primitives/interactions/form-contr
 import { NumericChoiceBase } from './numeric-base.js';
 import { normalizeNumberBounds, normalizeRangeValue } from './number.js';
 import { sliderTemplate } from './template.js';
+import { syncRangePresentation } from '@en-reve/primitives/interactions/range-presentation.js';
 
 /**
  * A numeric setting with immediate range adjustment and an optional exact-value editor.
@@ -12,6 +13,38 @@ import { sliderTemplate } from './template.js';
  * @cssprop --en-slider-thumb-pressed-scale - Thumb-only held geometry; reduced motion retains rest geometry.
  * @cssprop --en-slider-thumb-press-duration - Thumb-only held geometry; reduced motion retains rest geometry.
  * @cssprop --en-slider-thumb-release-duration - Thumb-only held geometry; reduced motion retains rest geometry.
+ * @cssprop --en-slider-track-size - Painted rail thickness; retains the separate interaction target.
+ * @cssprop --en-slider-thumb-size - Painted thumb border-box size; independent of icon size and interaction target.
+ * @cssprop --en-slider-track-radius - Track and selected-segment corner radius.
+ * @cssprop --en-slider-track-background - Unselected rail paint.
+ * @cssprop --en-slider-fill-background - Selected value or interval paint; native input fill is opt-in.
+ * @cssprop --en-slider-track-shadow - Decorative inset rail boundary.
+ * @cssprop --en-slider-disabled-track-shadow - Disabled decorative rail boundary.
+ * @cssprop --en-slider-thumb-background - Rest thumb plate.
+ * @cssprop --en-slider-thumb-border-width - Thumb border width inside its painted size.
+ * @cssprop --en-slider-thumb-border-color - Rest thumb boundary.
+ * @cssprop --en-slider-thumb-radius - Painted thumb corner radius.
+ * @cssprop --en-slider-thumb-shadow - Decorative thumb elevation; independent of the keyboard focus contour.
+ * @cssprop --en-slider-thumb-hover-shadow - Enabled hover decoration.
+ * @cssprop --en-slider-thumb-focus-shadow - Keyboard-focus decoration; retains the primary contour.
+ * @cssprop --en-slider-hover-thumb-background - Enabled hover thumb paint.
+ * @cssprop --en-slider-pressed-thumb-background - Enabled held thumb paint.
+ * @cssprop --en-slider-hover-fill-background - Enabled hover selected-segment paint.
+ * @cssprop --en-slider-pressed-fill-background - Enabled held selected-segment paint.
+ * @cssprop --en-slider-hover-pressed-thumb-background - Enabled hover-and-held thumb paint.
+ * @cssprop --en-slider-hover-pressed-fill-background - Enabled hover-and-held selected-segment paint.
+ * @cssprop --en-slider-hover-thumb-border-color - Enabled hover thumb boundary.
+ * @cssprop --en-slider-pressed-thumb-border-color - Enabled held thumb boundary.
+ * @cssprop --en-slider-disabled-track-background - Disabled rail paint.
+ * @cssprop --en-slider-disabled-fill-background - Disabled selected-segment paint.
+ * @cssprop --en-slider-disabled-thumb-background - Disabled thumb paint.
+ * @cssprop --en-slider-disabled-thumb-border-color - Disabled thumb boundary.
+ * @cssprop --en-slider-disabled-thumb-shadow - Disabled thumb decoration.
+ * @cssprop --en-slider-disabled-fill-opacity - Disabled selected-segment visibility; zero reveals the unselected rail.
+ * @cssprop --en-slider-disabled-opacity - Disabled opacity of the range input or interval track subtree.
+ * @cssprop --en-slider-disabled-thumb-opacity - Additional disabled thumb opacity.
+ * @cssprop --en-slider-paint-duration - Thumb paint transition duration; reduced motion removes transitions.
+ * @cssprop --en-slider-value-percent - Derived presentation state on the native control; managed by the component, never a theme pin.
  * @tagname en-slider
  * @slot - The visible slider label.
  * @slot label - Preferred visible label; falls back to the default slot and then label.
@@ -108,6 +141,7 @@ export class EnSlider extends NumericChoiceBase {
   protected override syncControl(): void {
     const range = this.renderRoot?.querySelector<HTMLInputElement>('#control');
     if (range && range.value !== String(this.value)) range.value = String(this.value);
+    if (range) syncRangePresentation(range);
     this.editing?.sync();
   }
 

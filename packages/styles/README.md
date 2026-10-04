@@ -56,6 +56,16 @@ control's documented CSS Part. Equal-width digits depend on the chosen font
 supporting tabular figures; this does not reserve space for additional digits
 or equalize letters.
 
+For themed native tab panels, use `.en-tabs > .en-tab-list` alongside immediate
+`.en-tab-panel` siblings. Mark a vertical wrapper with
+`.en-tabs[data-orientation="vertical"]` and its tab list with
+`aria-orientation="vertical"` (or `data-orientation="vertical"`). Source companion
+panel insets then follow the same logical orientation as custom `en-tabs`.
+This is a styling composition: applications own tab roles, focus, selection,
+panel visibility and the wrapper's overall layout. A nested full theme keeps
+its own tab styling. Public tab paint hooks and `--en-control-inline-padding`
+remain above source defaults; ordinary classes and Parts also accept local CSS.
+
 ## Native navigation helpers
 
 Import `navigationStyles` from `@en-reve/styles/navigation.js` for a Lit stylesheet, or load `@en-reve/styles/navigation.css` for native document HTML. Neither entry registers elements, observes layout, changes focus/history, or enables animated scrolling. Supply real anchors, a named navigation landmark, and a semantic breadcrumb list; decorative separators should be hidden from assistive technology. The legacy `.en-recipe-breadcrumbs` recipe retains its shared list layout.
@@ -220,11 +230,36 @@ Action collections use `--en-space-actions` while content rows retain `--en-spac
 
 The number-field contract is `.en-number-group` containing `.en-number-decrement`, `.en-number-input` and `.en-number-increment`. One outside boundary encloses the group; inset focus remains visible without clipping, and logical corners work in RTL. Only this custom stepper's number input suppresses native inner spinner controls. Native color inputs use `.en-color-control` with the `.en-input` class.
 
+`--en-choice-label-color` customizes the visible label of a checkbox, radio or switch. The independent `--en-choice-label-hover-color`, `--en-choice-label-focus-color`, `--en-choice-label-pressed-color` and `--en-choice-label-disabled-color` hooks fall back to that color, then `--en-color-text`. Priority is disabled, pressed, native-input `:focus-visible`, hover, rest; ordinary focus does not activate the focus color. Checked and invalid states do not change label paint. Native fieldset and radio-group disabling use the actual input state; `aria-disabled="true"` on the input or custom-element host supplies disabled paint without implementing disabled behavior. Forced colors retain the existing system label color.
+
+Native label paint requires a `.en-choice` containing a direct `input.en-checkbox`, `input.en-radio` or `input.en-switch`, plus a direct `.en-label` or `.en-choice-content > .en-label`. It paints only that text, preserving descriptions, errors and typography. The same hooks apply to custom elements without exposing their shadow structure; explicit `::part(label-text) { color: ... }` remains available for direct paint. All five hooks are managed as `component.choice.label-*` tokens. Full themes reset unspecified hooks; partial themes retain inherited pins.
+
 `--en-radio-selected-color` optionally customizes the checked native radio rim and dot, with `--en-color-action` as the ordinary fallback. It is also exposed as managed `component.radio.selected-color`. Apply it on a radio host or shared theme scope; a full child theme resets it while a partial theme retains unrelated inherited pins. It changes neither unchecked radio borders nor checkbox/switch/range/rating paint. Disabled and forced-color styles keep precedence; the focus contour uses its separate focus role. Consumers should compare the indicator with its actual adjacent interior/surrounding surface, not the foreground of a filled button.
+
+The native rating recipe is a labeled fieldset containing `.en-rating`, a separate `.en-rating-clear` label for score zero, and `.en-rating-values` for positive scores. Each `.en-rating-values > .en-rating-item` label contains an `.en-rating-input.en-sr-only` native radio and an `aria-hidden="true"` `.en-rating-star`. All radios share a name and have distinct values and accessible labels. The application synchronizes each star's `data-filled` marker and `★`/`☆` text with the live score, including silent value writes and form reset. A disabled fieldset supplies native disabled behavior. These light-DOM helper classes are public recipe surfaces; they do not expose custom-element shadow ancestry.
+
+Rating glyphs use `--en-color-action-text` when filled and `--en-color-text-muted` when empty or ordinarily disabled. The public native `.en-rating-star[data-filled]` marker represents every star included in the current score, including while disabled; it corresponds to the additive `en-rating::part(star-filled)` state Part. `--en-rating-star-radius` affects positive target/focus corners; `--en-rating-pressed-*` hooks refine held targets and retain precedence over companion defaults, including when inherited. The compact theme presentation maps the native positive row and glyphs alongside `en-rating`'s `star-options`, `star-option`, `star` and `star-filled` Parts, leaving the no-rating choice separate. A source companion supplies glyph paint defaults on the glyph itself; customize those defaults on `::part(star)` / `::part(star-filled)` or the corresponding native helper. Inherited host glyph paint does not override a default already assigned to the child Part. Source glyph canvases and spacing may differ from the protected square hit targets. Native size selection requires the existing `.en-foundation[data-size]` region; a plain `.en-rating[data-size]` does not establish a size context.
 
 A `.en-range-row` is horizontal by default. Set `data-orientation="vertical"` to stack its native range and optional output or number editor. Only the range uses `writing-mode: vertical-lr` and `direction: rtl`, placing the minimum at the bottom and maximum at the top in both LTR and RTL pages. Labels and number editing retain the surrounding text direction. The template must supply the matching `aria-orientation` on its native range.
 
 The vertical range's length defaults to `--en-size-range-length` (`12rem`) and accepts a scoped `--en-slider-length` override. This length remains independent of density and visual size; native thumb and cross-axis target dimensions retain their shared sizing and coarse-pointer floors. The length cannot shrink below those target floors. `--en-slider-length` participates in full-theme resets. Horizontal ranges continue to fill the available row; their containing layout controls the available length. The editor stays below the vertical range and fits the available inline space without changing its normal text layout.
+
+Slider presentation keeps the native input and interval endpoint buttons as interaction owners. `--en-slider-track-size` and `--en-slider-thumb-size` independently override the visual rail and thumb; the existing input target floor and interval thumb targets remain intact. Track/fill backgrounds, track and thumb radii, thumb border width/color, and track/thumb shadows have separate `--en-slider-*` hooks. The theme companion supplies private defaults on the public `control`/`track` surfaces, so consumer hooks remain authoritative. Unpinned native ranges retain their unfilled rail; unpinned interval ranges retain their filled interval. The interval's `range` Part exposes only the decorative selected segment.
+
+Enabled feedback uses `--en-slider-hover-thumb-background`, `--en-slider-pressed-thumb-background`, the corresponding `*-fill-background` hooks, and optional `hover-pressed-*` paint. Hover/pressed thumb boundary and hover/focus shadow hooks are independent. Native feedback follows the input's hover/active state; interval feedback follows its track. A stable, interoperable native thumb-only hover surface is not exposed. Disabled paint uses separate `disabled-track-background`, `disabled-fill-background`, `disabled-thumb-background`, `disabled-thumb-border-color`, `disabled-track-shadow`, and `disabled-thumb-shadow` hooks. `disabled-opacity` applies to the range input or whole interval track, while `disabled-thumb-opacity` is additional; `disabled-fill-opacity: 0` reveals the unselected rail. Prefix every abbreviated hook here with `--en-slider-`. Native semantics, forced colors and the immediate solid focus contour retain ownership. `--en-slider-paint-duration` affects thumb color, border-color and shadow transitions, and reduced motion removes them.
+
+The native helper needs explicit value-to-paint synchronization in Chromium, Firefox and WebKit. Import `syncRangePresentation` from `@en-reve/primitives/interactions/range-presentation.js`, call it once after initialization and after each native `input`, application value/bounds write, and completed form reset. The import installs no listeners and accesses no browser globals. For a reset listener, defer synchronization until the reset default action has completed (for example, a zero-delay task); a canceled reset then projects the retained native value. The function reads the live native value and writes only `--en-slider-value-percent`, a clamped percentage. This is presentation state rather than a theme token: do not pin or reset it in theme output. CSS alone cannot read the live native range value consistently across these engines. A scriptless helper remains usable with its original unfilled fallback; custom `en-slider` performs this synchronization automatically, including tentative changes and rollback, and emits the initial ratio during SSR.
+
+```js
+import {syncRangePresentation} from '@en-reve/primitives/interactions/range-presentation.js';
+const input = document.querySelector('input.en-range');
+syncRangePresentation(input);
+input.addEventListener('input', () => syncRangePresentation(input));
+input.form?.addEventListener('reset', () => setTimeout(() => syncRangePresentation(input), 0));
+// Applications also call syncRangePresentation after their silent value/bounds writes.
+```
+
+Native selected-fill paint changes immediately; the browser track gradient does not interpolate color stops. Native thumb-center travel remains browser owned. Radix's source default uses a 12px layout thumb with a 2px painted outset, whereas the mapped native thumb is a 16px border box: at the ends its center is 2px farther inward. Its visible diameter and selected-range percentage match the source; exact endpoint overhang is an intentional native-control adaptation. The interval keeps its existing coordinate track and endpoint centers. Neither mapping changes target size, focus routing, form entries, drafts, cancellation or keyboard behavior.
 
 `selectEnhancementStyles` enhances the native picker only when `appearance: base-select` and `::picker(select)` are supported. Set `--en-select-appearance: auto` to retain the OS picker. As [Chrome's primary documentation](https://developer.chrome.com/blog/a-customizable-select) explains, the customized picker remains inside the browser pane and does not invoke native mobile picker UI. Unsupported engines keep the native select. Option semantics, keyboard interaction and form values stay native.
 
@@ -262,6 +297,15 @@ Build with `npm run build --workspace @en-reve/styles` after the token package. 
 `commands.js` exports independent menu surface, menu-item, toolbar and command-palette fragments. Menu/items compose with foundations and block-host styles. The palette composes with existing dialog/control/overlay styles; the toolbar only groups its consumer-owned buttons. `commands.css` contains the same opt-in native recipe classes. These styles do not establish menu semantics, roving focus, query behavior, modal state or command execution.
 
 Menus and palette results consume the existing `--en-option-list-*` surface/spacing roles and `--en-option-*` row state/geometry roles. Menu popup paint keeps the documented legacy overlay fallbacks. The palette shell uses overlay hooks; its borderless result region has no second popup shadow. Unpinned row radii subtract actual inset and border from their containing result surface; explicit row pins stay independent. Actions have no persistent selected paint: menu native focus and palette `data-active` consume the active hooks, while the adapter owns any ARIA candidate state. Explicit state pins preserve the existing disabled > pressed > hover > active > selected > rest cascade; focus remains visible independently.
+
+Ordinary menu widths are content-sized. Optional `--en-menu-min-inline-size`
+and `--en-menu-max-inline-size` refine their minimum and maximum; unset inputs
+preserve the shared panel/form-width fallbacks. An explicit
+`--en-overlay-max-inline-size` remains above the menu maximum default. Both
+bounds stay capped by the controller's measured viewport, and narrow space can
+reduce the minimum. Replacement submenus retain their existing parent-width
+and viewport rules. These hooks style only menu surfaces, including the native
+`.en-menu` recipe; comboboxes and command-palette shells are independent.
 
 Rows retain selected-size control minima and unscaled target floors, with the existing coarse-pointer block-size enhancement. Long labels and optional content can grow and wrap. Empty named menu slots produce no spacing; rich label descendants remain in ordinary inline flow. Toolbars use `--en-space-actions`, support horizontal/vertical orientation and wrap without replacing labels or inventing an overflow menu. Every host still defaults to medium; authored menu-item/button children explicitly use `size="inherit"` when they should follow their parent.
 

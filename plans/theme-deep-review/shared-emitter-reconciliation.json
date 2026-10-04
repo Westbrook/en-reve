@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "capturedAt": "2026-10-03T16:50:57.141535+00:00",
+  "status": "unqualified-shared-source-reference",
+  "sourceCheckout": "/private/tmp/en-reve-chakra-theme-20261002",
+  "sourceHead": "dad768954619d245c2c4cfacf4bff631e811fdbf",
+  "destinationBase": "a1f23afb54aa572f5d344328736a83a42aae8fbc",
+  "files": [
+    {
+      "path": "packages/tokens/src/authoring.ts",
+      "sha256": "c5dbb1f83e4b7c6d0b64813d87cfa2937d9f32241e53bc8195b049811e590903",
+      "bytes": 14326
+    },
+    {
+      "path": "packages/tokens/src/companion/presentation.ts",
+      "sha256": "7efd5afe50e9e1b9c7808ae5b29cd0ead398362ffc558149ed3f0da12626ad2c",
+      "bytes": 1819
+    }
+  ],
+  "adoptedScope": [
+    "named style-container and direct-boundary emission",
+    "single ctx.style rule emission path",
+    "native type guards inside :where()"
+  ],
+  "excludedScope": [
+    "Chakra theme recipes",
+    "Chakra-only presentation roles",
+    "other workspace generated output",
+    "other workspace validation claims"
+  ],
+  "containerContract": "Every full [data-en-theme] boundary reserves --en-theme-companion in container-name. Consumer container-name/container declarations must explicitly compose the reserved identifier; automatic preservation is not claimed. No container-type or size containment is added.",
+  "probeEvidence": [
+    {
+      "path": "/private/tmp/chakra-scope-part-diagnostic-20261003-01/summary.json",
+      "sha256": "683967190d78d2a50a3863b8b5761b8cb9ada2feb406a2e06c8f7d56a0b2d724",
+      "bytes": 20261
+    },
+    {
+      "path": "/private/tmp/chakra-scope-part-diagnostic-20261003-01/fixture.html",
+      "sha256": "6d2839b8d10946b55f9cb2807db4d4e89671c188cc93ab0c9d619af7b4e782ce",
+      "bytes": 36233
+    },
+    {
+      "path": "/private/tmp/chakra-scope-part-workaround-20261003-03/results.json",
+      "sha256": "d141127d457aaae2c756000861b42c2781ade11c04d9ee4787deb891ed4ddb44",
+      "bytes": 1334203
+    },
+    {
+      "path": "/private/tmp/chakra-scope-part-workaround-20261003-04/results.json",
+      "sha256": "d935aae26b61b42c9c964db18d16044a0524079deeffd0ff9ce2b1879e0aa69b",
+      "bytes": 1098731
+    },
+    {
+      "path": "/private/tmp/chakra-scope-part-workaround-20261003-04/named.html",
+      "sha256": "9fe98fb4c8e553f756acc2af88b3d79263a18eeac6d12ae99e8420feeae7977d",
+      "bytes": 4573
+    },
+    {
+      "path": "/private/tmp/chakra-scope-part-workaround-20261003-04/named-consumer-conflict.html",
+      "sha256": "719e857cebd556004c15bb765e506dbe33b8d73865f27dc00a7817c7ef4c82aa",
+      "bytes": 4679
+    }
+  ],
+  "probeObservations": {
+    "engines": {
+      "chromium": "153.0.8010.12",
+      "firefox": "155.0",
+      "webkit": "26.6"
+    },
+    "namedFixture": "20 phases with no recorded mismatches in each engine.",
+    "consumerNameConflict": "19 of 20 phases record mismatches in each engine when the reserved container name is replaced; composing names resolves the final phase.",
+    "limits": "Synthetic fixtures, not production registry or inspired fidelity. The command may succeed with caught polling mismatches; JSON observations are authoritative. Production source and full paired delivery require independent qualification."
+  },
+  "validation": "No builds or tests executed during this capture or source port."
+}

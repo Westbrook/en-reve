@@ -15,8 +15,9 @@ export function compilePresetCompanion(theme, recipe) {
  let css = parts.map(part => part.css).join('');
  if (paired) {
   // The bounded compiler has explicit branch selectors. Add the same rules for
-  // auto appearance under media queries, retaining its nested-boundary guards.
-  css += parts.map((part, index) => `@media (prefers-color-scheme: ${index ? 'dark' : 'light'}) {\n${part.css.replaceAll(`[data-en-appearance="${index ? 'dark' : 'light'}"]`, '[data-en-appearance="auto"]')}\n}\n`).join('');
+  // Both an omitted appearance and explicit Auto follow the media preference,
+  // just like the paired token stylesheet. Keep boundary guards in each rule.
+  css += parts.map((part, index) => `@media (prefers-color-scheme: ${index ? 'dark' : 'light'}) {\n${part.css.replaceAll(`[data-en-appearance="${index ? 'dark' : 'light'}"]`, ':is([data-en-appearance="auto"], :not([data-en-appearance]))')}\n}\n`).join('');
  }
  return {schemaVersion:1, recipe, css, identity:hashValue({parts:parts.map(part=>part.identity),css})};
 }

@@ -1,5 +1,6 @@
 import { descriptionTemplate } from '@en-reve/primitives/templates/description.js';
 import { html, nothing, type TemplateResult } from 'lit';
+import { rangeValuePercent } from '@en-reve/primitives/interactions/range-presentation.js';
 
 export interface SliderView {
   readonly value: number;
@@ -35,6 +36,7 @@ export function sliderTemplate(view: SliderView, handlers: SliderHandlers, exact
     <label id="label" part="label" class="en-label" for="control"><slot name="label"><slot>${view.label}</slot></slot></label>
     <div part="row" class="en-range-row" data-orientation=${view.orientation} data-editable=${view.editable ? '' : nothing}>
       <input id="control" part="control" class="en-range" type="range"
+        style=${`--en-slider-value-percent: ${rangeValuePercent(view.value, view.min, view.max)}%;`}
         value=${String(view.value)} min=${view.min} max=${view.max} step=${view.step}
         ?disabled=${view.disabled} aria-orientation=${view.orientation} aria-valuetext=${view.valueText || nothing}
         aria-describedby=${view.applicationError ? 'description editor-error' : 'description'}

@@ -170,3 +170,20 @@ or unload evaluated code. Existing instance/application owners retain cancellati
 disposal and construction/readiness errors; never replay trusted native picker or
 clipboard actions after an asynchronous import. See [delivery recipes](../../plans/lazy-delivery/recipes.md)
 for intent, route, visibility, command and SSR ownership.
+
+
+## Visible validation Parts
+
+Text field, search input, textarea, number field, select, combobox, checkbox, radio
+and switch expose `control-invalid` on the same native node as `control` while
+associated application or reported constraint feedback is visible. This Part
+follows the existing `aria-invalid`/error-message presentation. A pristine empty
+required control may fail constraints without exposing `control-invalid`. Clearing
+feedback removes the additional Part without replacing the control or changing
+value, focus, validation, events or form participation.
+
+Number field also exposes `stepper-invalid` on its grouped perimeter. An adorned
+text field exposes `focus-frame-invalid` on its perimeter. These are additive
+styling states; the ordinary `control`, `stepper` and `focus-frame` Parts remain.
+Use `::part(control-invalid)` for visible error paint and preserve disabled and
+forced-color treatment in author styles.

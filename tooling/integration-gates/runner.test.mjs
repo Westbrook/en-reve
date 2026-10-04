@@ -19,6 +19,21 @@ test('missing required browser JSON fails successful child command',()=>fixture(
 test('concurrent contender cannot run or remove owner lock',()=>fixture(async root=>{let resume,started;const ready=new Promise(r=>started=r),hold=new Promise(r=>resume=r);const first=run(root,[stage('hold')],{executeCommand:async(_cmd,opts)=>{started();await hold;await writeFile(opts.log,'');return {exitCode:0};}});await ready;const contender=await runStages({root,output:join(root,'other'),stages:[stage('never')],identity,lockPath:join(root,'lock')});assert.equal(contender.exitCode,75);assert.equal(contender.stages[0].status,'skipped');assert.ok(JSON.parse(await readFile(join(root,'lock/owner.json'))).id);resume();assert.equal((await first).exitCode,0);const next=await runStages({root,output:join(root,'next'),stages:[stage('now')],identity,lockPath:join(root,'lock')});assert.equal(next.exitCode,0);}));
 test('source mutation prevents success',()=>fixture(async root=>{let n=0;const r=await run(root,[stage('ok')],{identity:async()=>({...await identity(),sha256:String(n++)})});assert.equal(r.sourceStability.status,'failed');assert.notEqual(r.exitCode,0);}));
 test('selection includes dependencies and marks exclusions; unknown stage rejected',()=>{const stages=[stage('build'),stage('a',0,['build']),stage('b')];const selected=selection(stages,{only:['a']});assert.equal(selected[0].required,true);assert.equal(selected[2].required,false);assert.throws(()=>selection(stages,{only:['typo']}));});
+test('explicit theme qualification retains complete component presentation owners',()=>{
+ const stages=catalog(resolve(import.meta.dirname,'../..'));
+ const selected=selection(stages,{only:['theme']});
+ for(const [id,name] of [['theme-slider','slider'],['theme-rating','rating'],['theme-accordion','accordion'],['patterns','patterns']]){
+ const owner=selected.find(stage=>stage.id===id);
+ assert.equal(owner.required,true);
+ assert.equal(owner.config,`packages/elements/src/${name}/tests/playwright.config.ts`);
+ assert.deepEqual(owner.command,stages.find(stage=>stage.id===id).command);
+ }
+ const composition=selected.find(stage=>stage.id==='theme-docs-composition');
+ assert.equal(composition.required,true);
+ assert.equal(composition.config,'apps/docs/tests/theme-composition.config.ts');
+ assert.deepEqual(composition.command,stages.find(stage=>stage.id==='theme-docs-composition').command);
+ assert.equal(selected.find(stage=>stage.id==='capabilities').required,true);
+});
 test('artifact hashes and paths reproduce in two clean directories',()=>fixture(async root=>{for(const name of ['first','different-path']){await mkdir(join(root,name));await writeFile(join(root,name,'asset.js'),'export const value=1;\n');}assert.deepEqual(await filesBelow(join(root,'first'),join(root,'first')),await filesBelow(join(root,'different-path'),join(root,'different-path')));}));
 test('preexisting output is refused without mutation',()=>fixture(async root=>{await mkdir(join(root,'out'));await writeFile(join(root,'out/keep'),'owned elsewhere');await assert.rejects(run(root,[stage('ok')]));assert.equal(await readFile(join(root,'out/keep'),'utf8'),'owned elsewhere');}));
 

@@ -17,6 +17,8 @@ en-rating.rectangular {
 
 `::part(star-option)` exposes each positive-score target for direct CSS customization. `::part(clear-option)` exposes “No rating”; the existing `::part(option)` still addresses both. The visible focus outline follows the target's border radius. Keep changes to target dimensions and glyph sizing consistent so the glyph remains contained and hit areas remain usable.
 
+`::part(star)` exposes every decorative glyph. `::part(star-filled)` additionally identifies each star included in the current normalized score, including while disabled; it follows initial server rendering, native changes, application writes and reset. It does not represent a hover preview or the individually checked radio. The selected glyph input is `--en-color-action-text`; empty and ordinary disabled glyphs use `--en-color-text-muted`. Theme companions may refine those defaults on the glyph Part. Public `--en-rating-pressed-*` properties remain authoritative over companion held-state defaults, including when inherited from the host.
+
 The shape changes do not replace the native radio group or its keyboard behavior. Arrow keys select a score; the clear choice selects zero. User changes dispatch the single cancelable `en-change` event. Slotted label and description content, form association and the `size` API remain available.
 
 ## Native-aligned form contract (API-03)

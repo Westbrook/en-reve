@@ -23,14 +23,14 @@ const paintRoles = { background: 'color', color: 'color', borderColor: 'color', 
 const motionRoles = { enterDuration: 'duration', exitDuration: 'duration', enterEase: 'cubicBezier', exitEase: 'cubicBezier' } as const;
 const modalRoles = {
   ...types, ...paintRoles, ...motionRoles,
-  inlineSize: 'dimension', sectionInlinePadding: 'dimension',
+  inlineSize: 'dimension', sectionInlinePadding: 'dimension', headerControlPaddingEm: 'number',
   headerBlockStartPadding: 'dimension', headerBlockEndPadding: 'dimension', headerGap: 'dimension',
   bodyBlockStartPadding: 'dimension', bodyBlockEndPadding: 'dimension',
   footerBlockStartPadding: 'dimension', footerBlockEndPadding: 'dimension', footerGap: 'dimension',
-  titleFontSize: 'dimension', titleLineHeight: 'number', titleFontWeight: 'fontWeight',
+  titleFontSize: 'dimension', titleFontSizeMultiplier: 'number', titleLineHeight: 'number', titleFontWeight: 'fontWeight',
   descriptionColor: 'color', surfaceScale: 'number', surfaceOffset: 'dimension',
 } as const;
-const popupRoles = { ...types, ...paintRoles, ...motionRoles, inlineSize: 'dimension', padding: 'dimension', titleFontSize: 'dimension', titleLineHeight: 'number', titleFontWeight: 'fontWeight' } as const;
+const popupRoles = { ...types, ...paintRoles, ...motionRoles, inlineSize: 'dimension', maxInlineSize: 'dimension', radius: 'dimension', padding: 'dimension', titleFontSize: 'dimension', titleLineHeight: 'number', titleFontWeight: 'fontWeight' } as const;
 const inset = (value: string | undefined, hook = '--en-overlay-padding') => value === undefined ? undefined : `var(${hook}, ${value})`;
 // Public focus inputs preserve the owned scrollport's clearance when a consumer
 // enlarges a contour beyond the source section inset. No private style is read.
@@ -41,7 +41,15 @@ const focusExtents = [undefined, 'button', 'input', 'option', 'overlay'].flatMap
   const halo = family ? `var(--en-${family}-focus-halo-width, var(--en-focus-halo-width))` : 'var(--en-focus-halo-width)';
   return [`calc(${width} + ${offset})`, halo];
 }).join(', ');
-const bodyInset = (value: string | undefined) => value === undefined ? undefined : `max(0px, ${inset(value)}, ${focusExtents})`;
+const bodySourceInset = (value: string) => `max(0px, ${value}, ${focusExtents})`;
+const bodyInset = (value: string | undefined) => value === undefined ? undefined : inset(bodySourceInset(value));
+// Public padding accepts the full CSS shorthand. Source arithmetic belongs only
+// in its fallback, never around a consumer's potentially multi-value input.
+const sectionPadding = (top: string | undefined, inline: string | undefined, bottom: string | undefined, body = false) => {
+  if (top === undefined && inline === undefined && bottom === undefined) return undefined;
+  const source = (value: string | undefined) => body ? bodySourceInset(value ?? '0px') : value ?? '0px';
+  return inset(`${source(top)} ${source(inline)} ${source(bottom)} ${source(inline)}`);
+};
 function text(ctx: CompanionPresentationContext): string {
   return declarations({ 'font-size': ctx.role('fontSize'), 'line-height': ctx.role('lineHeight'), 'font-weight': ctx.role('fontWeight') });
 }
@@ -68,42 +76,74 @@ function overlayPaint(ctx: CompanionPresentationContext, family: 'dialog' | 'pop
   })) + region(ctx, 'surface', '', declarations({ 'border-width': ctx.role('borderWidth') })));
 }
 function modal(ctx: CompanionPresentationContext, drawer: boolean): string {
-  const sectionInline = inset(ctx.role('sectionInlinePadding'));
+  const sectionInline = ctx.role('sectionInlinePadding');
+  const compensation = ctx.role('headerControlPaddingEm');
+  const headerInset = (value: string | undefined) => value === undefined ? undefined
+    : compensation === undefined ? value : `max(0px, calc(${value} - ${compensation} * 1em))`;
+  const headerTop = headerInset(ctx.role('headerBlockStartPadding'));
+  const headerBottom = ctx.role('headerBlockEndPadding');
+  const headerEnd = headerInset(sectionInline);
+  const headerPadding = (rtl = false) => headerTop === undefined && sectionInline === undefined && headerBottom === undefined ? undefined
+    : inset(`${headerTop ?? '0px'} ${(rtl ? sectionInline : headerEnd) ?? '0px'} ${headerBottom ?? '0px'} ${(rtl ? headerEnd : sectionInline) ?? '0px'}`);
+  const titleSize = ctx.role('titleFontSize'), titleMultiplier = ctx.role('titleFontSizeMultiplier');
+  const titleFontSize = titleSize === undefined ? undefined : titleMultiplier === undefined ? titleSize
+    : `round(calc(${titleSize} * max(0, ${titleMultiplier})), 1px)`;
+  const width = ctx.role('inlineSize'), gutter = ctx.role('viewportGutter') ?? 'var(--en-space-8)';
+  const centered = [`${ctx.selectors[0]}:not([presentation="responsive"])::part(surface)`,
+    ...(ctx.selectors[1] ? [`${nativeSurface(ctx.selectors[1])}:where(dialog):not(:where(.en-drawer))`] : [])];
   return [
-    ctx.block('', declarations({ '--en-overlay-max-inline-size': ctx.role('inlineSize') })),
+    // Drawers retain their owned full-viewport geometry. Centered dialogs read
+    // source defaults at the surface so inherited author maxima remain effective.
+    drawer ? ctx.block('', declarations({ '--en-overlay-max-inline-size': width }))
+      : region(ctx, 'surface', '', declarations({ '--_en-source-overlay-max-inline-size': width })),
     motion(ctx, 'dialog'), overlayPaint(ctx, 'dialog'),
     region(ctx, 'surface', '', `padding: 0; gap: 0; ${text(ctx)}`),
+    // Responsive dialogs keep the owned centered-token/square-drawer corners.
+    !drawer && ctx.role('radius') ? ctx.style([`${ctx.selectors[0]}:not([presentation="responsive"])::part(surface)`, ...(ctx.selectors[1] ? [`${nativeSurface(ctx.selectors[1])}:is(dialog)`] : [])], `border-radius: var(--en-overlay-radius, ${ctx.role('radius')});`) : '',
     // Native modal gap is declared by dialog.en-dialog/dialog.en-drawer.
     ctx.selectors[1] ? ctx.style([`${nativeSurface(ctx.selectors[1])}:is(dialog)`], 'gap: 0;') : '',
-    !drawer && ctx.role('inlineSize') ? ctx.style([`${ctx.selectors[0]}:not([presentation="responsive"])::part(surface)`, ...(ctx.selectors[1] ? [nativeSurface(ctx.selectors[1])] : [])], 'inline-size: min(var(--en-overlay-max-inline-size), calc(100% - var(--en-space-8)));') : '',
+    !drawer && width ? ctx.style(centered, `inline-size: min(var(--en-overlay-max-inline-size, ${width}), calc(100% - ${gutter})); max-inline-size: min(var(--en-overlay-max-inline-size, ${width}), calc(100% - ${gutter}));`) : '',
+    !drawer && ctx.role('viewportGutter') ? ctx.style(centered, `max-block-size: var(--en-overlay-max-block-size, calc(100dvh - ${gutter}));`) : '',
     region(ctx, 'header', ' > .en-overlay-header:not([data-en-theme])', declarations({
-      'padding-inline': sectionInline, 'padding-block-start': inset(ctx.role('headerBlockStartPadding')),
-      'padding-block-end': inset(ctx.role('headerBlockEndPadding')), gap: ctx.role('headerGap'),
+      padding: headerPadding(), gap: ctx.role('headerGap'),
     })),
+    // CSS padding is physical; only the asymmetric source fallback follows RTL.
+    // An authored one-to-four-value shorthand retains its ordinary CSS meaning.
+    compensation === undefined ? '' : ctx.style([`${ctx.selectors[0]}:dir(rtl)::part(header)`,
+      ...(ctx.selectors[1] ? [`${nativeSurface(ctx.selectors[1])} > .en-overlay-header:not([data-en-theme]):dir(rtl)`] : [])], declarations({ padding: headerPadding(true) })),
     region(ctx, 'heading', ' > .en-overlay-header:not([data-en-theme]) > .en-heading-small:not([data-en-theme])', declarations({
-      'font-size': ctx.role('titleFontSize'), 'line-height': ctx.role('titleLineHeight'), 'font-weight': ctx.role('titleFontWeight'),
+      'font-size': titleFontSize, 'line-height': ctx.role('titleLineHeight'), 'font-weight': ctx.role('titleFontWeight'),
     })),
     // Section padding supplies contour room; keep the owned dynamic scroll-padding
     // and overflow rules, but remove the old compensating negative margin.
     region(ctx, 'body', ' > .en-overlay-body:not([data-en-theme])', `margin: 0; ${drawer ? 'flex: 1; ' : ''}${declarations({
-      'padding-inline': bodyInset(ctx.role('sectionInlinePadding')), 'padding-block-start': bodyInset(ctx.role('bodyBlockStartPadding')), 'padding-block-end': bodyInset(ctx.role('bodyBlockEndPadding')),
+      padding: sectionPadding(ctx.role('bodyBlockStartPadding'), sectionInline, ctx.role('bodyBlockEndPadding'), true),
     })}`),
     region(ctx, 'footer', ' > .en-overlay-footer:not([data-en-theme])', declarations({
-      'padding-inline': sectionInline, 'padding-block-start': inset(ctx.role('footerBlockStartPadding')),
-      'padding-block-end': inset(ctx.role('footerBlockEndPadding')), gap: ctx.role('footerGap'),
+      padding: sectionPadding(ctx.role('footerBlockStartPadding'), sectionInline, ctx.role('footerBlockEndPadding')), gap: ctx.role('footerGap'),
     })),
-    // Inline inset adds no height for an empty fallback. Keep close in normal
+    // A section without authored actions must not retain a padded blank footer.
+    // The predicate inspects authored slots and native regions, never shadow ancestry.
+    ctx.style([`${ctx.selectors[0]}:not(:has(> [slot="footer"]))::part(footer)`,
+      ...(ctx.selectors[1] ? [`${nativeSurface(ctx.selectors[1])} > .en-overlay-footer:not([data-en-theme]):empty`] : [])], 'display: none;'),
+    // Source inline inset adds no height for an empty fallback. Keep close in normal
     // header flow so its protected target cannot cover a long or zoomed title.
-    ctx.block('::part(description)', `display: block; ${declarations({ 'padding-inline': sectionInline })}`),
+    ctx.block('::part(description)', `display: block; ${declarations({ padding: sectionInline === undefined ? undefined : inset(`0px ${sectionInline}`) })}`),
     authorPaint(ctx.block('::part(description)', declarations({ color: ctx.role('descriptionColor') }))),
   ].join('\n');
 }
 function popup(ctx: CompanionPresentationContext, maxOnly = false): string {
-  const width = ctx.role('inlineSize'), padding = inset(ctx.role('padding'));
+  const width = ctx.role('inlineSize'), maximum = ctx.role('maxInlineSize'), padding = inset(ctx.role('padding'));
   return [
     motion(ctx, 'popup'), overlayPaint(ctx, 'popup'),
     ctx.block('', declarations({ '--en-overlay-max-inline-size': width })),
-    region(ctx, 'surface', '', `padding: 0; gap: 0; ${text(ctx)} ${declarations({ 'inline-size': width && !maxOnly ? 'min(var(--en-overlay-max-inline-size), calc(100dvw - 1rem))' : undefined })}`),
+    region(ctx, 'surface', '', `padding: 0; gap: 0; ${text(ctx)} ${declarations({
+      'inline-size': width && !maxOnly ? 'min(var(--en-overlay-max-inline-size), calc(100dvw - 1rem))' : undefined,
+      // A source maximum keeps intrinsic popup sizing; the public hook can
+      // replace it without a locally assigned default masking inherited input.
+      'max-inline-size': maximum ? `min(var(--en-overlay-max-inline-size, ${maximum}), calc(100% - var(--en-space-8)))` : undefined,
+      'border-radius': ctx.role('radius') ? `var(--en-overlay-radius, ${ctx.role('radius')})` : undefined,
+    })}`),
     // The public content wrapper exists with and without an arrow.
     ctx.block('::part(content)', 'display: flex; flex-direction: column; gap: 0; padding: 0;'),
     region(ctx, 'heading', ' > .en-heading-small:not([data-en-theme])', declarations({ 'padding-inline': padding, 'padding-block-start': padding, 'font-size': ctx.role('titleFontSize'), 'line-height': ctx.role('titleLineHeight'), 'font-weight': ctx.role('titleFontWeight') })),
@@ -129,21 +169,63 @@ export const displayPresentations = {
       },
     },
   },
-  dialog: { sectioned: { roles: modalRoles, render: ctx => modal(ctx, false) } },
+  dialog: { sectioned: { roles: { ...modalRoles, radius: 'dimension', viewportGutter: 'dimension' }, render: ctx => modal(ctx, false) } },
   drawer: { sectioned: { roles: modalRoles, render: ctx => modal(ctx, true) } },
   popover: { sectioned: { roles: popupRoles, render: ctx => popup(ctx) } },
   'hover-card': { sectioned: { roles: popupRoles, render: ctx => popup(ctx, true) } },
   tooltip: {
     compact: {
-      roles: { ...types, ...paintRoles, ...motionRoles, maxInlineSize: 'dimension', paddingInline: 'dimension', paddingBlock: 'dimension', radius: 'dimension' },
+      roles: { ...types, ...paintRoles, ...motionRoles, maxInlineSize: 'dimension', maxInlineCharacters: 'number', fontSizeDivisor: 'number', paddingInline: 'dimension', paddingBlock: 'dimension', paddingInlineEm: 'number', paddingBlockEm: 'number', radius: 'dimension' },
       render(ctx) {
-        const padding = declarations({ 'padding-inline': inset(ctx.role('paddingInline')), 'padding-block': inset(ctx.role('paddingBlock')) });
+        const emInset = (scale: string | undefined, dimension: string | undefined) =>
+          scale === undefined ? dimension : `calc(max(0, ${scale}) * 1em)`;
+        const paddingInline = emInset(ctx.role('paddingInlineEm'), ctx.role('paddingInline'));
+        const paddingBlock = emInset(ctx.role('paddingBlockEm'), ctx.role('paddingBlock'));
+        const padding = (ordinary: string) => declarations({ padding: paddingInline === undefined && paddingBlock === undefined ? undefined
+          : inset(`${paddingBlock ?? ordinary} ${paddingInline ?? ordinary}`) });
+        const nativePadding = padding('var(--en-space-2)');
+        const fontSize = ctx.role('fontSize'), divisor = ctx.role('fontSizeDivisor');
+        const tooltipText = declarations({
+          'font-size': fontSize === undefined ? undefined : divisor === undefined ? fontSize : `round(calc(${fontSize} / max(0.01, ${divisor})), 1px)`,
+          'line-height': ctx.role('lineHeight'), 'font-weight': ctx.role('fontWeight'),
+        });
+        const characters = ctx.role('maxInlineCharacters');
+        const maximum = characters === undefined ? ctx.role('maxInlineSize') : `calc(max(1, ${characters}) * 1ch)`;
+        const fallback = (hook: string, value: string | undefined) => value === undefined ? undefined : `var(${hook}, ${value})`;
+        // Keep inherited and local public inputs authoritative. Tooltip surfaces
+        // have no focus-shadow composition; the same fallbacks paint the arrow.
+        const paint = declarations({
+          background: fallback('--en-overlay-background', ctx.role('background')),
+          color: fallback('--en-overlay-color', ctx.role('color')),
+          'border-color': fallback('--en-overlay-border-color', ctx.role('borderColor')),
+          'border-width': ctx.role('borderWidth'),
+          'box-shadow': fallback('--en-shadow-overlay', ctx.role('shadow')),
+        });
+        const geometry = declarations({
+          'border-radius': fallback('--en-overlay-radius', ctx.role('radius')),
+          'max-inline-size': maximum === undefined ? undefined : `min(var(--en-overlay-max-inline-size, ${maximum}), calc(100% - var(--en-space-8)))`,
+        });
         return [
-          motion(ctx, 'popup'), overlayPaint(ctx, 'popup'),
-          ctx.block('', declarations({ '--en-overlay-radius': ctx.role('radius'), '--en-overlay-max-inline-size': ctx.role('maxInlineSize') })),
-          ctx.block('::part(surface)', `padding: 0; ${text(ctx)}`),
-          ctx.block('::part(content)', `display: block; ${padding}`),
-          ctx.selectors[1] ? ctx.style([nativeSurface(ctx.selectors[1])], `${text(ctx)} ${padding}`) : '',
+          motion(ctx, 'popup'),
+          authorPaint(ctx.block('', declarations({ '--en-shadow-overlay': ctx.role('shadow') === 'var(--en-shadow-overlay)' ? undefined : ctx.role('shadow') }))),
+          authorPaint(region(ctx, 'surface', '', paint)),
+          authorPaint(region(ctx, 'arrow', ' > .en-overlay-arrow:not([data-en-theme])', declarations({
+            fill: fallback('--en-overlay-background', ctx.role('background')),
+            stroke: fallback('--en-overlay-border-color', ctx.role('borderColor')),
+            'stroke-width': ctx.role('borderWidth'),
+          }))),
+          region(ctx, 'surface', '', geometry),
+          ctx.block('::part(surface)', `padding: 0; ${tooltipText}`),
+          ctx.block('::part(content)', `display: block; ${padding('0px')}`),
+          // A sparse recipe leaves omitted axes at the content wrapper's ordinary
+          // inset: zero without an arrow, the core tooltip inset with one.
+          paddingInline === undefined || paddingBlock === undefined ? ctx.block('[arrow]::part(content)', nativePadding) : '',
+          ctx.selectors[1] ? [
+            ctx.style([nativeSurface(ctx.selectors[1])], tooltipText),
+            ctx.style([`${nativeSurface(ctx.selectors[1])}:not([data-arrow])`], nativePadding),
+            ctx.style([`${nativeSurface(ctx.selectors[1])}[data-arrow]`], 'padding: 0;'),
+            ctx.style([`${nativeSurface(ctx.selectors[1])}[data-arrow] > .en-overlay-content:not([data-en-theme])`], `display: block; ${nativePadding}`),
+          ].join('\n') : '',
         ].join('\n');
       },
     },

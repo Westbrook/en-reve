@@ -19,8 +19,10 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * @csspart field - Field layout.
  * @csspart label - Visible label.
  * @csspart control - Native number input.
+ * @csspart control-invalid - Native control while associated application or reported constraint feedback is visible.
  * @csspart focus-frame - Noninteractive field frame supporting the supplemental focus accent.
  * @csspart stepper - Group containing input and step buttons.
+ * @csspart stepper-invalid - Group perimeter while associated application or reported constraint feedback is visible.
  * @csspart decrement - Decrease button.
  * @csspart increment - Increase button.
  * @csspart description - Supporting text.
@@ -95,10 +97,10 @@ export class EnNumberField extends EditableFieldElement {
     const numeric = draft === '' ? undefined : Number(draft);
     const decrementDisabled = this.isDisabled || this.readOnly || (numeric !== undefined && this.min !== undefined && numeric <= this.min);
     const incrementDisabled = this.isDisabled || this.readOnly || (numeric !== undefined && this.max !== undefined && numeric >= this.max);
-    return html`<div class="en-input-group en-number-group en-field-focus-frame" part="stepper focus-frame" data-invalid=${this.visibleError ? '' : nothing}>
+    return html`<div class="en-input-group en-number-group en-field-focus-frame" part=${this.visibleError ? 'stepper focus-frame stepper-invalid' : 'stepper focus-frame'} data-invalid=${this.visibleError ? '' : nothing}>
       <button class="en-button en-button--quiet en-icon-button en-number-step en-number-decrement" part="decrement" type="button"
         ?disabled=${decrementDisabled} @click=${() => this.stepValue(-1)}><span class="en-sr-only"><slot name="decrement-label">${this.decrementLabel}</slot></span><span aria-hidden="true">−</span></button>
-      <input id="control" class="en-input en-number-input" part="control" type="number" name=${this.name}
+      <input id="control" class="en-input en-number-input" part=${this.visibleError ? 'control control-invalid' : 'control'} type="number" name=${this.name}
         value=${this.defaultControlValue} min=${this.min ?? nothing} max=${this.max ?? nothing} step=${this.step}
         placeholder=${this.placeholder || nothing} autocomplete=${this.autocomplete || nothing}
         inputmode=${this.inputMode || nothing} ?disabled=${this.isDisabled} ?readonly=${this.readOnly} ?required=${this.required}

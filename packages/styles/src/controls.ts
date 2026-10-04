@@ -6,6 +6,7 @@ import { selectChevron } from './internal/select-chevron.js';
 import { controlTargetSize, pointerTargetSize } from './internal/target-size.js';
 import { css } from 'lit';
 import { descriptionStyles } from './internal/description.js';
+import { choiceLabelStyles } from './internal/choice-label.js';
 import { nativeSurfaceMotion } from './internal/surface-motion.js';
 import { radioRules } from './internal/radio-rules.js';
 import { sizedStyles } from './internal/sizing.js';
@@ -364,6 +365,7 @@ export const formStyles = sizedStyles(css`
   .en-field > .en-legend + :not(.en-description) { margin-block-start: 0; }
   .en-label { display: block; color: ${t('--en-color-text')}; font-weight: ${t('--en-font-label-strong-weight')}; overflow-wrap: break-word; }
   ${descriptionStyles}
+  ${choiceLabelStyles}
   .en-error { margin: 0; font-size: ${t('--en-font-ui-size')}; line-height: ${t('--en-font-body-line-height')}; overflow-wrap: break-word; }
   .en-error { color: ${t('--en-color-danger-text')}; }
   .en-choice { display: flex; align-items: center; gap: ${t('--en-space-icon-label')}; min-block-size: ${controlTargetSize()}; min-inline-size: ${t('--en-size-target-min')}; cursor: pointer; }

@@ -1,0 +1,111 @@
+# Radix Themes deep review
+
+Reviewed October 3, 2026. The reference is **Radix Themes' default product configuration**, indigo/auto-slate, medium radius, 100% scaling and translucent panels. The marketing homepage and unstyled Radix Primitives are separate references. This review finds substantial work beyond color, but cannot honestly call the current preset the best available adaptation yet: several supported roles remain unused and one held state has a contrast defect.
+
+## Evidence and scope
+
+- Current official [getting started](https://www.radix-ui.com/themes/docs/overview/getting-started), [typography](https://www.radix-ui.com/themes/docs/theme/typography), [button](https://www.radix-ui.com/themes/docs/components/button), [switch](https://www.radix-ui.com/themes/docs/components/switch), [radius](https://www.radix-ui.com/themes/docs/theme/radius), [shadows](https://www.radix-ui.com/themes/docs/theme/shadows) and [cursor](https://www.radix-ui.com/themes/docs/theme/cursors) documentation were reopened.
+- Precise source remains Themes **3.3.0**, commit [`1faff10ac26ae17f09944d418c6949b93fc6b566`](https://github.com/radix-ui/themes/tree/1faff10ac26ae17f09944d418c6949b93fc6b566), and Colors commit [`dbdb85470547c7d34b9001f48fddb08ded335979`](https://github.com/radix-ui/colors/tree/dbdb85470547c7d34b9001f48fddb08ded335979). The ten inspected retained source files, including button/card/switch/typography/tooltip/dialog and color ramps, match the existing [source manifest](../../artifacts/radix-refresh/sources/manifest.json). Current documentation does not establish the deployed site's package version.
+- Avatar, badge, progress, slider and segmented-control CSS/props were additionally read from the already installed `showcases/radix-react/node_modules/@radix-ui/themes` package, which declares 3.3.0. Those files were not freshly retrieved at the pinned commit. Installed switch/text-field bytes match the retained source snapshot. Do not relabel this evidence as a new source acquisition.
+- Local authority: [canonical definitions](../../tooling/theme-candidates/definitions.json), the light/dark edit sequences, actual style consumers and public component contracts. [Theme API adoption](../theme-inspired-adoption.md) supersedes several older API-gap claims in [the original mapping](../theme-refresh-radix.md) and [component inventory](../theme-refresh-library-gaps-radix.md).
+- This is a source/contract audit, with a read-only compiler replay of the two current recipes. No new browser, build or interaction suite was run by this reviewer. The coordinator owns rendered validation and final acceptance. The supplied update script is a proposal until applied and verified.
+
+## What is already embodied
+
+| Dimension | Actual current coverage | Limit |
+| --- | --- | --- |
+| Typography | System UI family ordering; Menlo/Consolas code family; 16/24 body, 14/20 controls, 12/16 metadata; heading sizes 20/26, 24/30 and 35/40 with source tracking and 700 weight | Only three heading roles; adjusted local font metrics, leading trim, Em/Quote serif roles and code size adjustment are incomplete |
+| Geometry | Controls 24/32/40px, 3/4/6px corners, separate 12px action/8px input insets; 12px panels, 8px panels and 12px dialogs | Source families do not all share the same size scales; several remain generic |
+| Interaction states | Independent primary/soft/ghost/danger companion; exact indigo primary rest; solid highlighted menu/option rows with white ink; selected-at-rest rows retain ordinary text; field and focus contours | Soft states accidentally collapse; tab held ink is mismatched; source variants and open-trigger paint are incomplete |
+| Depth/material | Actual translucent card/field values; structured multi-layer shadow-5/6 for popups/dialogs | Card was moved to classic elevation despite declared surface default; no blur or independent material layers |
+| Motion | Immediate solid-button paint, 200ms dialog entry and 100ms exit, 5px travel/.97 scale, separate popup/toast profiles, reduced-motion guards | Switch direction timing, 140ms tooltip travel, dialog exit .99 scale and 160ms closing scrim differ |
+| Behavior | Native/form-associated choices and inputs, tabs, menus, dialog/popover, range slider, checkbox group, choice cards, context menu, hover card, toggle group and menubar are present | Existing equivalents have deliberate semantic/ownership differences; source props are not a parity count |
+| Portability | Same paired token output and trusted companion; nested-scope isolation and export/reopen checks already exist | Current companions cannot reach arbitrary internal shadow controls; broader family surfaces need the shared finite presentation engine |
+
+## Prioritized findings
+
+### RDX-01 — P1: light held tabs have 1.121:1 text contrast
+
+`component.tab.pressed-background` is `{color.accent-subtle}`, Indigo 3; `component.tab.pressed-color` aliases option pressed ink, white. `pressRecipes.tab` consumes both. A read-only replay resolves light to white on `#edf2fe` (**1.121021852564842:1**), while compiler diagnostics are empty. Dark happens to pass at 15.136:1. This demonstrates why token compilation alone cannot certify composed states.
+
+Set tab held ink to `{color.text}` independently of option rows. Keep the solid white-on-indigo option state. Add a held-tab relationship check for both appearances, selected/unselected, and verify the rendered mouse-down state. Source tabs use ordinary gray text, a narrow underline and inset hover treatment, not white menu-row ink. [Source tab anatomy](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/_internal/base-tab-list.css).
+
+### RDX-02 — P1: the soft action has no state progression
+
+Secondary rest uses selected, hover/pressed use accent-subtle; those roles resolve to the same Indigo 3 in both appearances. Ghost hover/pressed also collapse. The source uses alpha steps A3/A4/A5 for soft rest/hover/pressed and transparent/A3/A4 for ghost. Author those finite values inside the existing per-variant source tokens; do not change the global subtle selection role. Retain the stronger existing action-text ink and evaluate alpha composition over named canvas/panel surfaces. [Source button states](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/_internal/base-button.css).
+
+| Appearance | A3 | A4 | A5 |
+| --- | --- | --- | --- |
+| Light | `#0047f112` | `#0044ff1e` | `#0044ff2d` |
+| Dark | `#2f62ff3c` | `#3566ff57` | `#4171fd6b` |
+
+### RDX-03 — P2: ordinary text is too heavy
+
+The recipe sets global UI weight 500, but Radix's default text is 400 and actions are independently 500. Our button already reads `font.label-strong.weight`, so UI can become 400 without thinning actions. Choice labels themselves read label-strong: a scoped choice companion must also map that role to regular. Keep badges medium with their own companion, because they currently obtain correct 500 weight indirectly from the incorrect global weight. Unselected tabs and segmented items should inherit 400 while selected items retain 500. [Source typography](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/styles/tokens/typography.css).
+
+The native `.en-code` and `.en-keycap` recipes exist now, but hardcode `monospace` instead of consuming the configured code family. Correct this through their public recipe/finite presentation support. Do not repeat the older report's claim that the recipes are absent.
+
+### RDX-04 — P2: card depth contradicts the chosen source variant
+
+Radix Card defaults to `surface`, which uses a panel fill and one boundary ring. Current adoption adds the five-layer shadow-2 associated with classic surfaces on top of our native border. Remove drop elevation for the declared default and retain a single border. The existing opaque Slate 5 border remains an explicit material adaptation; exact Radix layers and `blur(64px)` require further bounded support. Do not call shadow-2 an exact default-card mapping. [Card defaults](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/card.props.tsx), [surface/classic anatomy](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/card.css).
+
+### RDX-05 — P2: family silhouettes still use En Reve defaults
+
+| Family | Current resolved/default | Source and concrete correction |
+| --- | --- | --- |
+| Switch | 40×24px, 16px thumb, 3px authored inset | Map source sizes 1/2/3 to 28×16/35×20/42×24, thumbs 14/18/22. Source inset is 1px. Our track already has a 1px border, so its authored thumb inset must be **0px** to place the visible edge 1px from the outer box. Test both directions and RTL. Preserve the label's independent hit target. |
+| Progress | 8px default; generic 7/8/10 sizes | Map source sizes 1/2/3 to 4/6/8px using existing size outputs. |
+| Slider | 4px default track | Map source sizes 1/2/3 to 6/8/10px. Source default visible thumb is 16px; avoid changing every icon to control the slider. |
+| Avatar | 40px circle, generic 35/40/50 sizes | Default source is size 3:40px and 6px corners. Local sizes can map source 2/3/4 =32/40/48. New finite avatar companion can use public radius hook; single/double-initial typography is still distinct. |
+| Badge | 12/16px, 8px horizontal inset, 4px corners, 22px including border | Source default size 1:12/16,500, 6px horizontal inset, 2px vertical inset,3px corners,20px total. Existing hooks fix inset/radius/weight; finite badge presentation removes the extra border. |
+
+Sources: [switch CSS](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/switch.css), [Progress](https://www.radix-ui.com/themes/docs/components/progress), [Slider](https://www.radix-ui.com/themes/docs/components/slider), [Avatar](https://www.radix-ui.com/themes/docs/components/avatar), [Badge](https://www.radix-ui.com/themes/docs/components/badge). Source variants still differ: native slider lacks an accent filled segment and white shadowed thumb; switch lacks separate checked/unchecked thumb shadows and 120/160ms track versus140ms thumb timing.
+
+### RDX-06 — P2: the tooltip is a generic floating panel
+
+Radix tooltip uses gray12 background/gray1 ink,4px corners,4×8px padding and140ms directional entry. Ours inherits neutral raised overlay paint, popup elevation and200/150ms timing. Reuse the incoming shared `tooltip/compact` presentation to provide the inverse palette, zero border/elevation, source padding and140ms fade. Keep stable anchored geometry as the host adaptation; it must not claim directional-motion parity. [Source tooltip](https://github.com/radix-ui/themes/blob/1faff10ac26ae17f09944d418c6949b93fc6b566/packages/radix-ui-themes/src/components/tooltip.css).
+
+### RDX-07 — P2/P3: remaining recognizable anatomy needs finite presentations
+
+Segmented Control is neutral with a raised selected plate, internal separators and moving100ms indicator; current selected/held treatment uses accent ink/fill and loose generic spacing. The shared enclosed presentation is useful, but its one weight role cannot reproduce inactive400/active500 by itself. Tabs need40px source default height, muted resting ink, an inset hover surface and selected tracking−.01em. Current underline support alone is partial fidelity. Reuse the shared finite Part-based engine; do not add arbitrary selectors to recipe JSON. [Segmented Control](https://www.radix-ui.com/themes/docs/components/segmented-control), [Tabs](https://www.radix-ui.com/themes/docs/components/tabs).
+
+Further source features remain legitimate future API work: classic/surface/outline button variants, independent color/high-contrast axes, optical ghost margins, field inset shadows, translucent blur with opaque fallback, leading trim and serif emphasis/quotation, and family-specific state motion. Default cursor policy also differs: Radix ordinary controls use the system default cursor; our controls use pointer. Changing that globally requires a documented cursor contract. None of these should be concealed behind a claim of full source equivalence.
+
+## Behavioral inventory correction
+
+The September20 inventory predates implemented range slider, checkbox group, choice cards, context menu, hover card, toggle button/group, menubar, dialog `kind="alertdialog"`, alert `announcement="none"`, code/keycap and flush-media recipes. Those are no longer missing capabilities. Verify their current contracts rather than adding duplicates. The local hover card is intentionally an interactive nonmodal preview; Radix's supplemental link-preview semantics differ. Native dialog/top layer, native input state, synchronous cancelable changes, form/reset ownership and explicit registration must remain authoritative. Custom scrollbar policy, fully coordinated navigation flyouts, and Radix's complete responsive/per-component configuration are still broader than this theme.
+
+## Prepared correction and acceptance
+
+[radix-update.py](radix-update.py) is an idempotent, Radix-only updater. Its default mode uses existing typed hooks for held ink, soft state steps, regular typography with scoped medium badge weight, flat surface cards, exact switch/progress/track dimensions and badge insets. Badge and avatar corner geometry use finite roles when `--presentations` is enabled. Optional `--presentations` requires the shared finite engine and adds inverse tooltip, avatar radius/soft paint, borderless badge and source switch thumb paint. It changes no component behavior, no Chakra/Holotable definition, and no generated files. The coordinator has applied the mappings visible at committed source checkpoint `98bed824`; runtime qualification remains pending.
+
+Acceptance needs real rendered small/medium/large and light/dark samples, held controls (including tabs), canvas/panel alpha composition, switches in both states/RTL, exported standalone CSS, companion isolation, reduced motion, forced colors and focused narrow-layout checks. Tests should verify the specific corrected state/geometry contracts. Source retrieval and compiler replay are evidence for the review, not substitute browser results or user review acceptance.
+
+## Prepared major-family anatomy follow-up
+
+[radix-anatomy-update.py](radix-anatomy-update.py) extends the source mapping through the shared finite presentation engine. It was not executed by the source reviewer. The coordinator has registered [the Radix presentation module](../../packages/tokens/src/companion/radix.ts) using `radixTargets`/`radixPresentations`, alongside the shared stateful-switch and source-shapes modules, and applied its definition mappings at `98bed824`.
+
+The additional mappings cover inverse tooltip; avatar soft fill and radius; borderless badge; source switch dimensions/white thumb/state shadows and140ms thumb timing; filled radio with6.4px white center at the default16px size; neutral segmented plates with regular/medium text; source-sized line tabs;6px progress with inset rim;24px/600px dialog anatomy;16px/480px automatic-width popover and hover-card bounds;8px menu frame with32px default rows; translucent card blur; relative inline code; and six-layer relative keycaps. The code/keycap/material additions use fixed trusted CSS with typed color/value roles because the generic presentations cannot express those defaults faithfully.
+
+The new material recipe retains the source64px blur, with an opaque panel when the browser lacks blur or requests reduced transparency. Forced colors retain the component's system paint. It applies blur to the public card surface, so it remains an approximation of Radix's separate inset background/overlaid ring. Code retains context-relative `.9025em`, `.1em/.25em` padding and−.007em tracking. Kbd retains UI font at`.75em`, no border and the six source shadows; the local native helper remains a display of keys, never an action/shortcut owner.
+
+Source dialog has a continuous padded content area while En Reve has heading, description, body and footer regions. The proposed sectioned mapping preserves those owners and focus clearance; source leading trim, exact authored footer rhythm and automatic content-only sizing are not claimed. Popovers retain automatic width and receive only a480px maximum; the generic fixed-width role is deliberately omitted. Menus reserve extra check padding for checkable items; Radix's whole-group indicator gutter policy remains a difference. The native progress indeterminate animation and slider filled-segment behavior remain unchanged. Segmented selected-indicator travel/separators and tab inset hover/active tracking remain gaps. Source radio/avatars have more size-specific typography/anatomy than the bounded host mapping.
+
+The source reviewer's Python checks established syntax parsing only. The later coordinated registration/application establishes source integration; it supplies no stylesheet compilation or browser pass. The coordinator must record final applied versions, rendered evidence and remaining limits before treating the review as complete.
+
+Material override correction: both normal and no-blur/reduced-transparency branches preserve `--en-card-background` → `--en-surface-background` → recipe paint precedence. In the no-blur branches, that resolved paint becomes a uniform gradient over the supplied opaque panel color. Alpha custom colors therefore composite onto an opaque backing; opaque custom colors retain their exact appearance. Both branches remove blur. A focused static compiler regression covers both public card surfaces and fallback branches; it was authored without execution by this reviewer.
+
+Companion export correction: avatar/badge corners, dialog/popup corners, popup maximum width and progress rail paint are finite typed presentation roles. They do not add globally pinned component tokens. The new radius/maximum consumers preserve inherited public overrides; native progress reads its public color hook before the scoped private source default. The dialog radius role applies to centered default dialogs and native `dialog.en-dialog` only. An `en-dialog` with `presentation="responsive"` keeps its native token radius when centered and square corners as a compact drawer; this responsive corner behavior is an intentional host adaptation. The existing responsive-dialog regression now exercises a finite companion with a public19px corner override across centered/compact/centered transitions. Validation remains coordinator-owned.
+
+Held soft-ink accessibility adaptation (union07 diagnosis): Chromium 153 on the exported light theme rendered source Indigo11 text `rgb(58,91,199)` over A5 `rgba(0,68,255,.176)` on the white canvas. The composited background is `rgb(210.12,222.088,255)` and contrast is 4.4688677949885305:1, below the 4.5:1 requirement. The light secondary pressed-color role is adjusted by one sRGB step per channel to `#395ac6` (`rgb(57,90,198)`), yielding 4.532518970931422:1 on that same observed background. Source A3/A4/A5 fills, resting/hover ink and all dark-state paint remain unchanged. The existing catalogue companion-export regression now checks exact and three-decimal-alpha held-state compositing on canvas, surface and raised-surface contexts; browser qualification remains coordinator-owned.
+
+The canonical token-editor recipe intentionally preserves solid source Indigo3/4/5 chip backgrounds (light `#edf2fe` / `#e1e9ff` / `#d2deff`, dark `#182449` / `#1d2e62` / `#253974`). The earlier held-color alias to the solid accent9 option foreground was inconsistent with those fills. Chips now use the secondary pressed-color role in both appearances, keeping their exact source fills and existing resting/hover ink. This is a host-component adaptation because Radix Themes does not expose an equivalent token editor. The same regression checks replayed chip rest, hover and held paint on canvas, surface and raised-surface contexts.
+
+
+### Default tab geometry follow-up
+
+The final bounded source pass closes three ordinary-default differences: custom and native tab lists now use the source's zero gap, tabs have the default size 2 40px minimum, and selected labels use the source `-.01em` tracking. The optional finite `minBlockSize` role supplies a fallback behind inherited or local `--en-control-min-size`; ordinary and coarse-pointer target floors remain authoritative. Tracking uses the actual font size and a zero-specificity selected-state condition so public Part styling can override it. No source size/variant axis or selection behavior is added. The source's inset hover plate, shared moving segmented indicator and other unselected variants remain explicit adaptations.
+
+Evidence is retained Themes 3.3.0 package `_internal/base-tab-list.css` (gapless flex at lines 1–14; default size 2 height `space7` at line 90; selected tracking at lines 40–43), SHA-256 `510da49513f6cc3cd809b511c5b3bca7b8aa97da967bb4a8ca0a1066f696ee7a`, and `base-tab-list.props.ts` default size 2, SHA-256 `e2343d8d1cb5c30cd4978fd8fd5ea755c8a132df83c3bbd098d1c12b8df197a1`. These installed component bytes are package evidence, not a fresh pinned-commit acquisition. Pinned commit `1faff10ac26ae17f09944d418c6949b93fc6b566` token snapshots independently supply `space7 = 40px` (`space.css`, SHA-256 `e7ef02a71575ecc896c0d330ad88d3548bdf68b58bce5a828fa37a497452cc2a`) and `--tab-active-letter-spacing: -0.01em` (`typography.css:108`, SHA-256 `6e3eceb987598abf72bdd8a338e7270d91000ab326bfc3d2852368e5436f04cd`).
+
+The former 38px height was a static calculation (20px line + two 8px insets + 2px underline), not a browser observation. Independent source-literal compiler/browser regressions now cover custom/native default metrics, selection changes, RTL, inherited/local minimum overrides, font-relative tracking and nested full-theme isolation. Qualification evidence is recorded in [verification-20261003.json](verification-20261003.json); authored regression coverage does not establish a passing runtime result.

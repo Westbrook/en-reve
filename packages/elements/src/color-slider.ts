@@ -12,15 +12,27 @@ import { colorSliderStyles } from '@en-reve/styles/color-slider.js';
  * numeric value, form and cancelable change API of en-slider; the exact-value editor is a small en-text-field with decimal input and range/step validation.
  * Visible description content describes both the range and exact-value input.
  * The nested input association requires hydration and ariaDescribedByElements support.
+ * @cssprop --en-slider-track-size - Fallback gradient thickness only when color-slider-track-size is unset.
+ * @cssprop --en-slider-thumb-size - Fallback hollow handle diameter only when color-slider-thumb-size is unset.
+ * @cssprop --en-slider-track-radius - Fallback gradient corner radius after color-slider-radius.
+ * @cssprop --en-slider-track-background - Optional underlay behind transparent gradient/checker paint; never a value segment.
+ * @cssprop --en-slider-disabled-track-background - Disabled gradient underlay; never a value segment.
+ * @cssprop --en-slider-value-percent - Inherited numeric presentation state; color stops still paint the entire channel gradient.
+ * @cssprop --en-slider-fill-background - Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.
+ * @cssprop --en-slider-hover-fill-background - Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.
+ * @cssprop --en-slider-pressed-fill-background - Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.
+ * @cssprop --en-slider-hover-pressed-fill-background - Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.
+ * @cssprop --en-slider-disabled-fill-background - Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.
+ * @cssprop --en-slider-disabled-fill-opacity - Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.
  * @tagname en-color-slider
  * @csspart error - Application error and forwarded exact-value validation message.
  * @csspart editor-field - Small exact-value en-text-field host.
  * @csspart editor - Forwarded native text input.
  * @csspart editor-label - Forwarded exact-value editor label, combining the setting name and editor-label qualifier when editable.
  * @csspart gradient - Wrapper supplying gradient paint to the native track.
- * @cssprop --en-color-slider-track-size - Gradient track thickness; defaults to 1.5rem.
- * @cssprop --en-color-slider-thumb-size - Handle diameter; defaults to 1.75rem.
- * @cssprop --en-color-slider-radius - Track corner radius; defaults to shared control radius.
+ * @cssprop --en-color-slider-track-size - Gradient track thickness; precedes slider-track-size, then 1.5rem.
+ * @cssprop --en-color-slider-thumb-size - Handle diameter; precedes slider-thumb-size, then 1.75rem.
+ * @cssprop --en-color-slider-radius - Track corners; precedes slider-track-radius, then the shared control radius.
  * @cssprop --en-color-slider-checker-size - Checker tile size; defaults to .5rem.
  * @cssprop --en-color-slider-checker-light - Light checker paint; defaults to white.
  * @cssprop --en-color-slider-checker-dark - Dark checker paint; defaults to #b8b8b8.

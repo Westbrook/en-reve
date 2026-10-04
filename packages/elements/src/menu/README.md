@@ -99,6 +99,15 @@ the shared `--en-option-list-*`/`--en-overlay-*` hooks customize the surface.
 Item `::part(control)`/`::part(option)` and `--en-option-*` hooks customize rows.
 System-color focus and disabled distinctions remain visible in forced colors.
 
+Ordinary menu widths are content-sized. Optional `--en-menu-min-inline-size`
+and `--en-menu-max-inline-size` refine their minimum and maximum; unset inputs
+preserve the shared panel/form-width fallbacks. An explicit
+`--en-overlay-max-inline-size` remains above the menu maximum default. Both
+bounds stay capped by the controller's measured viewport, and narrow space can
+reduce the minimum. Replacement submenus retain their existing parent-width
+and viewport rules. These hooks style only menu surfaces, including the native
+`.en-menu` recipe; comboboxes and command-palette shells are independent.
+
 SSR emits the original slotted markup and native menuitem buttons. The closed
 popup needs no child mapping or cloning. Hydration adds trigger/focus behavior;
 no JavaScript-free command execution or initial native top-layer opening is

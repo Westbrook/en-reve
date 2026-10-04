@@ -92,6 +92,13 @@ export const menuStyles = sizedStyles(css`
     overscroll-behavior: contain;
     scroll-behavior: auto;
   }
+  /* Source menu widths are optional defaults for ordinary menus only. Keep
+     replacement submenus on their existing parent-width/viewport contract.
+     The legacy public overlay ceiling remains above the source max default. */
+  .en-menu:where(:not([data-replacement])) {
+    min-inline-size: min(${o('--en-menu-min-inline-size', t('--en-layout-panel-preferred'))}, ${o('--en-overlay-max-inline-size', o('--en-menu-max-inline-size', t('--en-layout-form-max')))}, var(--_en-menu-viewport-width, calc(100dvw - ${t('--en-space-4')})));
+    max-inline-size: min(${o('--en-overlay-max-inline-size', o('--en-menu-max-inline-size', t('--en-layout-form-max')))}, var(--_en-menu-viewport-width, calc(100dvw - ${t('--en-space-4')})));
+  }
   ${nativeSurfaceMotion(css`.en-menu[popover]`, css`.en-menu:popover-open`, css`.en-menu[popover]:not(:popover-open)`, 'elevation')}
   .en-menu > slot { display: contents; }
   ::slotted(hr[role='separator']) { inline-size: 100%; box-sizing: border-box; border: 0; border-block-start: ${t('--en-border-width')} solid ${t('--en-color-line')}; margin-block: ${t('--en-space-1')}; margin-inline: 0; }

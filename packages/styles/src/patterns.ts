@@ -37,10 +37,10 @@ export const patternStyles = sizedStyles(css`
   .en-picker { position: relative; display: grid; gap: ${t('--en-space-2')}; }
   .en-picker-options { position: absolute; inset-inline: 0; inset-block-start: 100%; z-index: 10; background: ${t('--en-color-surface')}; max-block-size: 16rem; overflow: auto; border: ${t('--en-border-width')} solid ${t('--en-color-boundary')}; border-radius: ${t('--en-radius-control')}; padding: ${t('--en-space-1')}; }
   @media (hover: hover) {
-    .en-option[aria-selected=true]:not(:hover):not(:active), .en-button[aria-pressed=true]:not(:hover):not(:active), .en-button[aria-pressed=mixed]:not(:hover):not(:active) { background: ${t('--en-color-selected')}; color: ${t('--en-color-action-text')}; border-color: ${t('--en-color-action')}; }
+    .en-option[aria-selected=true]:is(:disabled, [aria-disabled=true], :not(:hover):not(:active)), .en-button[aria-pressed=true]:is(:disabled, [aria-disabled=true], :not(:hover):not(:active)), .en-button[aria-pressed=mixed]:is(:disabled, [aria-disabled=true], :not(:hover):not(:active)) { background: ${t('--en-color-selected')}; color: ${t('--en-color-action-text')}; border-color: ${t('--en-color-action')}; }
   }
   @media (hover: none) {
-    .en-option[aria-selected=true]:not(:active), .en-button[aria-pressed=true]:not(:active), .en-button[aria-pressed=mixed]:not(:active) { background: ${t('--en-color-selected')}; color: ${t('--en-color-action-text')}; border-color: ${t('--en-color-action')}; }
+    .en-option[aria-selected=true]:is(:disabled, [aria-disabled=true], :not(:active)), .en-button[aria-pressed=true]:is(:disabled, [aria-disabled=true], :not(:active)), .en-button[aria-pressed=mixed]:is(:disabled, [aria-disabled=true], :not(:active)) { background: ${t('--en-color-selected')}; color: ${t('--en-color-action-text')}; border-color: ${t('--en-color-action')}; }
   }
   ${joinedButtonStyles}
   .en-meter-label { display:grid; gap:${t('--en-space-2')}; }
@@ -49,7 +49,7 @@ export const patternStyles = sizedStyles(css`
   .en-app-shell { display:grid; grid-template-columns:minmax(12rem,18rem) minmax(0,1fr); gap:${t('--en-space-6')}; }
   .en-app-shell > header { grid-column:1/-1; }
   .en-form-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr)); gap:${t('--en-space-4')}; }
-  .en-code, .en-keycap { font-family:monospace; background:${t('--en-color-surface-subtle')}; border-radius:${t('--en-radius-control')}; padding:.125em .35em; }
+  .en-code, .en-keycap { font-family:${t('--en-font-code-family')}; background:${t('--en-color-surface-subtle')}; border-radius:${t('--en-radius-control')}; padding:.125em .35em; }
   .en-keycap { border:${t('--en-border-width')} solid ${t('--en-color-boundary')}; }
   pre.en-code { padding:${t('--en-space-4')}; overflow:auto; }
   .en-separator { border:0; border-block-start:${t('--en-border-width')} solid ${t('--en-color-line')}; }

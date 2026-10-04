@@ -45,5 +45,9 @@ export function fixtureTemplate(snapshot = initial) {
     <en-slider id="ssr-description-slider" label="SSR opacity" editable value="64"><span slot="description">The exact percentage is optional.</span></en-slider>
     <en-rating id="ssr-description-rating" label="SSR usefulness"><span slot="description">Rate this version, not the whole project.</span></en-rating>
     <h3 id="ssr-description-guide">Project naming guidance</h3>
+  </section>
+  <section aria-label="Button availability hydration">
+    <en-button id=${'ssr-disabled-action'} disabled>Initially unavailable action</en-button>
+    <en-button id=${'ssr-enabled-action'}>Initially available action</en-button>
   </section>`;
 }
