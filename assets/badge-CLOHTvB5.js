@@ -1,0 +1,1 @@
+import{t as e}from"./badge-ClZHevkG.js";e();

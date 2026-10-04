@@ -1,0 +1,1 @@
+import{n as e,t}from"./calendar-B1SlVrdO.js";e();export{t as calendarDefinition};

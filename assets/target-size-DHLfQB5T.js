@@ -1,2 +1,0 @@
-import{a as e,t}from"./lit-B8wTlSYy.js";import{g as n,h as r,m as i}from"./sizing-BP-4_-ml.js";import{t as a}from"./rolldown-runtime-B0lUwjiP.js";function o(t=!1){return t?e`max(${n(`--en-size-target-min`)}, ${n(`--en-size-target-touch`)})`:n(`--en-size-target-min`)}function s(t=!1,i=n(`--en-size-control-min`)){return e`max(${r(`--en-control-min-size`,i)}, ${o(t)})`}function c(){return(c=a((()=>{t(),i()})))()}export{c as n,o as r,s as t};
-//# sourceMappingURL=target-size-DHLfQB5T.js.map

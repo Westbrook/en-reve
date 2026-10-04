@@ -31,7 +31,7 @@
     "otherDeepImports": "Importable for staging compatibility; unsupported implementation details. No package export is removed by this policy."
   },
   "generatorDigest": "sha256:653b8ea8844aaf62e27fe630941e20e7ce70fa8c6d6ea8e783dacc04cb29dcaa:sha256:fb7c7a872e975328c4f45a302225cd8ecd5cc63e848347d1277ebbbe2807315f",
-  "manifestDigest": "sha256:6ba19ff673c439966e0056e0f1ea5d72afae47595efed4c6a967663d6a4d8bcb",
+  "manifestDigest": "sha256:199044f0efc000664dc129f37f4937b3fbcda6488c598d5442780923bf01ff5d",
   "typeDigest": "sha256:e2f9f984b7c2927f124c7846a855d78e79c4019100b24d70028067e3d9f79be0",
   "entrypoints": {
     "@en-reve/elements": {
@@ -8051,6 +8051,14 @@
           "description": "Native single-value OTP input; visual cells are CSS decoration."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible.",
+          "inheritedFrom": {
+            "name": "EnTextField",
+            "module": "src/text-field/element.ts"
+          }
+        },
+        {
           "name": "description",
           "description": "Supporting text.",
           "inheritedFrom": {
@@ -8077,6 +8085,14 @@
         {
           "name": "focus-frame",
           "description": "Noninteractive field frame supporting the supplemental focus accent.",
+          "inheritedFrom": {
+            "name": "EnTextField",
+            "module": "src/text-field/element.ts"
+          }
+        },
+        {
+          "name": "focus-frame-invalid",
+          "description": "Adorned field perimeter while associated feedback is visible.",
           "inheritedFrom": {
             "name": "EnTextField",
             "module": "src/text-field/element.ts"
@@ -9138,6 +9154,10 @@
           "description": "Lower endpoint, always first in Tab order."
         },
         {
+          "name": "range",
+          "description": "Decorative selected interval; never an interaction owner."
+        },
+        {
           "name": "track",
           "description": "Stationary coordinate track."
         },
@@ -9146,7 +9166,473 @@
           "description": "Upper endpoint, always second in Tab order."
         }
       ],
-      "cssProperties": []
+      "cssProperties": [
+        {
+          "name": "--en-slider-disabled-fill-background",
+          "description": "Disabled selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-fill-opacity",
+          "description": "Disabled selected-segment visibility; zero reveals the unselected rail.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-opacity",
+          "description": "Disabled opacity of the range input or interval track subtree.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-background",
+          "description": "Disabled thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-border-color",
+          "description": "Disabled thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-opacity",
+          "description": "Additional disabled thumb opacity.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-shadow",
+          "description": "Disabled thumb decoration.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-track-background",
+          "description": "Disabled rail paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-track-shadow",
+          "description": "Disabled decorative rail boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-fill-background",
+          "description": "Selected value or interval paint; native input fill is opt-in.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-fill-background",
+          "description": "Enabled hover selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-pressed-fill-background",
+          "description": "Enabled hover-and-held selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-pressed-thumb-background",
+          "description": "Enabled hover-and-held thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-thumb-background",
+          "description": "Enabled hover thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-thumb-border-color",
+          "description": "Enabled hover thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-paint-duration",
+          "description": "Thumb paint transition duration; reduced motion removes transitions.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-fill-background",
+          "description": "Enabled held selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-thumb-background",
+          "description": "Enabled held thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-thumb-border-color",
+          "description": "Enabled held thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-background",
+          "description": "Rest thumb plate.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-border-color",
+          "description": "Rest thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-border-width",
+          "description": "Thumb border width inside its painted size.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-focus-shadow",
+          "description": "Keyboard-focus decoration; retains the primary contour.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-hover-shadow",
+          "description": "Enabled hover decoration.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-radius",
+          "description": "Painted thumb corner radius.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-shadow",
+          "description": "Decorative thumb elevation; independent of the keyboard focus contour.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-size",
+          "description": "Painted thumb border-box size; independent of icon size and interaction target.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-background",
+          "description": "Unselected rail paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-radius",
+          "description": "Track and selected-segment corner radius.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-shadow",
+          "description": "Decorative inset rail boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-size",
+          "description": "Painted rail thickness; retains the separate interaction target.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        }
+      ]
     },
     {
       "tagName": "en-context-menu",
@@ -9645,6 +10131,46 @@
           }
         },
         {
+          "name": "--en-menu-max-inline-size",
+          "description": "Ordinary-menu maximum fallback beneath an explicit overlay maximum; replacement geometry is unchanged.",
+          "inheritedFrom": {
+            "name": "EnMenu",
+            "module": "src/menu/element.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "commands",
+            "reset": "theme",
+            "tokenId": "component.menu.max-inline-size",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.menu.max-inline-size",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-menu-min-inline-size",
+          "description": "Ordinary-menu content minimum, capped by its maximum and measured viewport; replacement submenus retain their parent width.",
+          "inheritedFrom": {
+            "name": "EnMenu",
+            "module": "src/menu/element.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "commands",
+            "reset": "theme",
+            "tokenId": "component.menu.min-inline-size",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.menu.min-inline-size",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-option-list-background",
           "description": "Shared surface customization.",
           "inheritedFrom": {
@@ -9982,7 +10508,7 @@
         },
         {
           "name": "--en-overlay-max-inline-size",
-          "description": "Shared surface customization.",
+          "description": "Explicit menu maximum above the optional source menu maximum, also capped by the measured viewport.",
           "inheritedFrom": {
             "name": "EnMenu",
             "module": "src/menu/element.ts"
@@ -25861,6 +26387,38 @@
           }
         },
         {
+          "name": "--en-menu-max-inline-size",
+          "description": "Ordinary-menu maximum fallback beneath an explicit overlay maximum; replacement geometry is unchanged.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "commands",
+            "reset": "theme",
+            "tokenId": "component.menu.max-inline-size",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.menu.max-inline-size",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-menu-min-inline-size",
+          "description": "Ordinary-menu content minimum, capped by its maximum and measured viewport; replacement submenus retain their parent width.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "commands",
+            "reset": "theme",
+            "tokenId": "component.menu.min-inline-size",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.menu.min-inline-size",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-option-list-background",
           "description": "Shared surface customization.",
           "x-en-reve-customization": {
@@ -26130,7 +26688,7 @@
         },
         {
           "name": "--en-overlay-max-inline-size",
-          "description": "Shared surface customization.",
+          "description": "Explicit menu maximum above the optional source menu maximum, also capped by the measured viewport.",
           "x-en-reve-customization": {
             "kind": "override",
             "family": "overlays",
@@ -33044,6 +33602,10 @@
           "description": "Native input."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "description",
           "description": "Supporting text."
         },
@@ -33058,6 +33620,10 @@
         {
           "name": "focus-frame",
           "description": "Noninteractive field frame supporting the supplemental focus accent."
+        },
+        {
+          "name": "focus-frame-invalid",
+          "description": "Adorned field perimeter while associated feedback is visible."
         },
         {
           "name": "label",
@@ -34249,6 +34815,10 @@
           "description": "Native textarea."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "description",
           "description": "Supporting text."
         },
@@ -35238,6 +35808,10 @@
         {
           "name": "control",
           "description": "Native search input."
+        },
+        {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
         },
         {
           "name": "description",
@@ -41109,6 +41683,10 @@
           "description": "Native select."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "description",
           "description": "Supporting text."
         },
@@ -42980,6 +43558,10 @@
         {
           "name": "control",
           "description": "Native textbox with combobox semantics."
+        },
+        {
+          "name": "control-invalid",
+          "description": "Native textbox while associated application or reported constraint feedback is visible."
         },
         {
           "name": "description",
@@ -45084,6 +45666,10 @@
           "description": "Native number input."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "decrement",
           "description": "Decrease button."
         },
@@ -45114,6 +45700,10 @@
         {
           "name": "stepper",
           "description": "Group containing input and step buttons."
+        },
+        {
+          "name": "stepper-invalid",
+          "description": "Group perimeter while associated application or reported constraint feedback is visible."
         }
       ],
       "cssProperties": [
@@ -46176,6 +46766,10 @@
           "description": "The native checkbox."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "description",
           "description": "Supporting text."
         },
@@ -46288,6 +46882,86 @@
             "managed": {
               "supported": true,
               "tokenId": "component.checkbox.release-duration",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-color",
+          "description": "Optional visible label text color and fallback for label state hooks; descriptions and errors keep their own paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-disabled-color",
+          "description": "Optional disabled label color; native fieldset and group disabling take precedence over enabled states.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-disabled-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-disabled-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-focus-color",
+          "description": "Optional label color while the native input is focus-visible; ordinary focus does not activate it.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-focus-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-focus-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-hover-color",
+          "description": "Optional enabled label hover color.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-hover-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-hover-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-pressed-color",
+          "description": "Optional enabled control or associated label held color.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-pressed-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-pressed-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -46907,6 +47581,10 @@
           "description": "The native switch control."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "description",
           "description": "Supporting text."
         },
@@ -46928,6 +47606,86 @@
         }
       ],
       "cssProperties": [
+        {
+          "name": "--en-choice-label-color",
+          "description": "Optional visible label text color and fallback for label state hooks; descriptions and errors keep their own paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-disabled-color",
+          "description": "Optional disabled label color; native fieldset and group disabling take precedence over enabled states.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-disabled-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-disabled-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-focus-color",
+          "description": "Optional label color while the native input is focus-visible; ordinary focus does not activate it.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-focus-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-focus-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-hover-color",
+          "description": "Optional enabled label hover color.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-hover-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-hover-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-pressed-color",
+          "description": "Optional enabled control or associated label held color.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-pressed-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-pressed-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
         {
           "name": "--en-color-action",
           "description": "Enabled setting color.",
@@ -47678,6 +48436,10 @@
           "description": "The native radio."
         },
         {
+          "name": "control-invalid",
+          "description": "Native control while associated application or reported constraint feedback is visible."
+        },
+        {
           "name": "description",
           "description": "Supporting text."
         },
@@ -47699,6 +48461,86 @@
         }
       ],
       "cssProperties": [
+        {
+          "name": "--en-choice-label-color",
+          "description": "Optional visible label text color and fallback for label state hooks; descriptions and errors keep their own paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-disabled-color",
+          "description": "Optional disabled label color; native fieldset and group disabling take precedence over enabled states.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-disabled-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-disabled-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-focus-color",
+          "description": "Optional label color while the native input is focus-visible; ordinary focus does not activate it.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-focus-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-focus-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-hover-color",
+          "description": "Optional enabled label hover color.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-hover-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-hover-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-choice-label-pressed-color",
+          "description": "Optional enabled control or associated label held color.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.choice.label-pressed-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.choice.label-pressed-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
         {
           "name": "--en-choice-size",
           "description": "Optional family presentation; see the customization registry.",
@@ -49114,8 +49956,368 @@
           }
         },
         {
+          "name": "--en-slider-disabled-fill-background",
+          "description": "Disabled selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-fill-opacity",
+          "description": "Disabled selected-segment visibility; zero reveals the unselected rail.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-opacity",
+          "description": "Disabled opacity of the range input or interval track subtree.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-background",
+          "description": "Disabled thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-border-color",
+          "description": "Disabled thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-opacity",
+          "description": "Additional disabled thumb opacity.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-shadow",
+          "description": "Disabled thumb decoration.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-track-background",
+          "description": "Disabled rail paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-track-shadow",
+          "description": "Disabled decorative rail boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-fill-background",
+          "description": "Selected value or interval paint; native input fill is opt-in.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-fill-background",
+          "description": "Enabled hover selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-pressed-fill-background",
+          "description": "Enabled hover-and-held selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-pressed-thumb-background",
+          "description": "Enabled hover-and-held thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-thumb-background",
+          "description": "Enabled hover thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-thumb-border-color",
+          "description": "Enabled hover thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-slider-length",
           "description": "Override the vertical range length for this component.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-paint-duration",
+          "description": "Thumb paint transition duration; reduced motion removes transitions.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-fill-background",
+          "description": "Enabled held selected-segment paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-thumb-background",
+          "description": "Enabled held thumb paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-thumb-border-color",
+          "description": "Enabled held thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-background",
+          "description": "Rest thumb plate.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-border-color",
+          "description": "Rest thumb boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-border-width",
+          "description": "Thumb border width inside its painted size.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-focus-shadow",
+          "description": "Keyboard-focus decoration; retains the primary contour.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-hover-shadow",
+          "description": "Enabled hover decoration.",
           "x-en-reve-customization": {
             "kind": "override",
             "family": "controls",
@@ -49161,6 +50363,21 @@
           }
         },
         {
+          "name": "--en-slider-thumb-radius",
+          "description": "Painted thumb corner radius.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-slider-thumb-release-duration",
           "description": "Thumb-only held geometry; reduced motion retains rest geometry.",
           "x-en-reve-customization": {
@@ -49172,6 +50389,111 @@
               "supported": true,
               "tokenId": "component.slider-thumb.release-duration",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-shadow",
+          "description": "Decorative thumb elevation; independent of the keyboard focus contour.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-size",
+          "description": "Painted thumb border-box size; independent of icon size and interaction target.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-background",
+          "description": "Unselected rail paint.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-radius",
+          "description": "Track and selected-segment corner radius.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-shadow",
+          "description": "Decorative inset rail boundary.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-size",
+          "description": "Painted rail thickness; retains the separate interaction target.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-value-percent",
+          "description": "Derived presentation state on the native control; managed by the component, never a theme pin.",
+          "x-en-reve-customization": {
+            "kind": "mechanical",
+            "family": "controls",
+            "reset": "preserve",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "Controller/data input, outside managed theme authoring."
             },
             "consumerStatus": "connected"
           }
@@ -49715,6 +51037,10 @@
           "description": "The decorative star indicator."
         },
         {
+          "name": "star-filled",
+          "description": "A decorative star included in the current score; refines the star Part, including while disabled."
+        },
+        {
           "name": "star-option",
           "description": "A square positive-score target; excludes the clear choice."
         },
@@ -49725,16 +51051,16 @@
       ],
       "cssProperties": [
         {
-          "name": "--en-color-action",
+          "name": "--en-color-action-text",
           "description": "Selected rating color.",
           "x-en-reve-customization": {
             "kind": "semantic",
             "family": "foundations",
             "reset": "semantic",
-            "tokenId": "color.action",
+            "tokenId": "color.action-text",
             "managed": {
               "supported": true,
-              "tokenId": "color.action",
+              "tokenId": "color.action-text",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "source-token"
@@ -56698,7 +58024,7 @@
         },
         {
           "name": "--en-color-slider-radius",
-          "description": "Track corner radius; defaults to shared control radius.",
+          "description": "Track corners; precedes slider-track-radius, then the shared control radius.",
           "x-en-reve-customization": {
             "kind": "override",
             "family": "color-slider",
@@ -56714,7 +58040,7 @@
         },
         {
           "name": "--en-color-slider-thumb-size",
-          "description": "Handle diameter; defaults to 1.75rem.",
+          "description": "Handle diameter; precedes slider-thumb-size, then 1.75rem.",
           "x-en-reve-customization": {
             "kind": "override",
             "family": "color-slider",
@@ -56730,7 +58056,7 @@
         },
         {
           "name": "--en-color-slider-track-size",
-          "description": "Gradient track thickness; defaults to 1.5rem.",
+          "description": "Gradient track thickness; precedes slider-track-size, then 1.5rem.",
           "x-en-reve-customization": {
             "kind": "override",
             "family": "color-slider",
@@ -56865,8 +58191,436 @@
           }
         },
         {
+          "name": "--en-slider-disabled-fill-background",
+          "description": "Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-fill-opacity",
+          "description": "Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-opacity",
+          "description": "Disabled opacity of the range input or interval track subtree.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-background",
+          "description": "Disabled thumb paint.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-border-color",
+          "description": "Disabled thumb boundary.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-opacity",
+          "description": "Additional disabled thumb opacity.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-thumb-shadow",
+          "description": "Disabled thumb decoration.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-track-background",
+          "description": "Disabled gradient underlay; never a value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-disabled-track-shadow",
+          "description": "Disabled decorative rail boundary.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-fill-background",
+          "description": "Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-fill-background",
+          "description": "Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-pressed-fill-background",
+          "description": "Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-pressed-thumb-background",
+          "description": "Enabled hover-and-held thumb paint.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-thumb-background",
+          "description": "Enabled hover thumb paint.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-hover-thumb-border-color",
+          "description": "Enabled hover thumb boundary.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-slider-length",
           "description": "Override the vertical range length for this component.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-paint-duration",
+          "description": "Thumb paint transition duration; reduced motion removes transitions.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-fill-background",
+          "description": "Inapplicable to the color channel: stops define a continuous gradient, with no selected value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-thumb-background",
+          "description": "Enabled held thumb paint.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-pressed-thumb-border-color",
+          "description": "Enabled held thumb boundary.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-background",
+          "description": "Rest thumb plate.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-border-color",
+          "description": "Rest thumb boundary.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-border-width",
+          "description": "Thumb border width inside its painted size.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-focus-shadow",
+          "description": "Keyboard-focus decoration; retains the primary contour.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-hover-shadow",
+          "description": "Enabled hover decoration.",
           "inheritedFrom": {
             "name": "EnSlider",
             "module": "src/slider/index.ts"
@@ -56924,6 +58678,25 @@
           }
         },
         {
+          "name": "--en-slider-thumb-radius",
+          "description": "Painted thumb corner radius.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-slider-thumb-release-duration",
           "description": "Thumb-only held geometry; reduced motion retains rest geometry.",
           "inheritedFrom": {
@@ -56939,6 +58712,119 @@
               "supported": true,
               "tokenId": "component.slider-thumb.release-duration",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-shadow",
+          "description": "Decorative thumb elevation; independent of the keyboard focus contour.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-thumb-size",
+          "description": "Fallback hollow handle diameter only when color-slider-thumb-size is unset.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-background",
+          "description": "Optional underlay behind transparent gradient/checker paint; never a value segment.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-radius",
+          "description": "Fallback gradient corner radius after color-slider-radius.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-shadow",
+          "description": "Decorative inset rail boundary.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-track-size",
+          "description": "Fallback gradient thickness only when color-slider-track-size is unset.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-slider-value-percent",
+          "description": "Inherited numeric presentation state; color stops still paint the entire channel gradient.",
+          "x-en-reve-customization": {
+            "kind": "mechanical",
+            "family": "controls",
+            "reset": "preserve",
+            "tokenId": null,
+            "managed": {
+              "supported": false,
+              "reason": "Controller/data input, outside managed theme authoring."
             },
             "consumerStatus": "connected"
           }

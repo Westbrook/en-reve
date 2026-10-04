@@ -1,0 +1,1 @@
+import{t as e}from"./table-sivsRnpi.js";e();

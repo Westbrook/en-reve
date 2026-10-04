@@ -1,0 +1,1 @@
+import{t as e}from"./tab-panel-CcGxWuQO.js";e();

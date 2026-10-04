@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./date-picker-rRdjqxF9.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),n(),t(customElements,r)})))()}export{a as t};
+//# sourceMappingURL=date-picker-PMQmfX4G.js.map

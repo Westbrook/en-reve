@@ -1,2 +1,0 @@
-import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./token-editor-Ce3-ZW_Z.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),r(),t(customElements,n)})))()}export{a as t};
-//# sourceMappingURL=token-editor-D25HNESw.js.map

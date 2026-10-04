@@ -1,2 +1,0 @@
-import{n as e,t}from"./deployment-fragments-C3Yo3Per.js";import"./site-x7Whl3sL.js";import{t as n}from"./main-lr3Skoqn.js";import{t as r}from"./rolldown-runtime-B0lUwjiP.js";function i(){return(i=r((async()=>{e(),t(),await n()})))()}await i();
-//# sourceMappingURL=api-example-color-slider-Bhey8Zcf.js.map

@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./avatar-C3IzWqEc.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),n(),t(customElements,r)})))()}a();
+//# sourceMappingURL=avatar-B2py_pWJ.js.map

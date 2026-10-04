@@ -1,2 +1,0 @@
-import{n as e,t}from"./element-B7eKeCzR.js";import{t as n}from"./rolldown-runtime-B0lUwjiP.js";var r;function i(){return(i=n((()=>{e(),r={tagName:`en-date-input`,elementClass:t}})))()}export{i as n,r as t};
-//# sourceMappingURL=date-input-Cmh0LaLG.js.map

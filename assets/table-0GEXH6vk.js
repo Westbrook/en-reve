@@ -1,2 +1,0 @@
-import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./table-BkKw2MzE.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),r(),t(customElements,n)})))()}export{a as t};
-//# sourceMappingURL=table-0GEXH6vk.js.map

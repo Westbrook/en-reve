@@ -3942,6 +3942,279 @@
       }
     },
     {
+      "cssName": "--en-choice-label-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text"
+        ],
+        "cssNames": [],
+        "description": "Checkbox, radio and switch label text only; state hooks fall back to this color. Descriptions, errors and forced colors retain their own styles."
+      },
+      "reset": "theme",
+      "states": [
+        "rest"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.choice.label-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/choice-label.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.choice.label-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(27 31 36 / 1)",
+        "cssExpression": "var(--en-color-text)",
+        "tokenIds": [
+          "color.text"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
+      "cssName": "--en-choice-label-disabled-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text"
+        ],
+        "cssNames": [
+          "--en-choice-label-color"
+        ],
+        "description": "Disabled choice label paint, including native fieldsets and grouped radios; unpinned labels retain their ordinary text color."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.choice.label-disabled-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/choice-label.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.choice.label-disabled-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(27 31 36 / 1)",
+        "cssExpression": "var(--en-color-text)",
+        "tokenIds": [
+          "color.text"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
+      "cssName": "--en-choice-label-focus-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text"
+        ],
+        "cssNames": [
+          "--en-choice-label-color"
+        ],
+        "description": "Label paint follows the native control focus-visible state; ordinary focus does not activate this hook."
+      },
+      "reset": "theme",
+      "states": [
+        "focus-visible"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.choice.label-focus-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/choice-label.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.choice.label-focus-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(27 31 36 / 1)",
+        "cssExpression": "var(--en-color-text)",
+        "tokenIds": [
+          "color.text"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
+      "cssName": "--en-choice-label-hover-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text"
+        ],
+        "cssNames": [
+          "--en-choice-label-color"
+        ],
+        "description": "Enabled choice label hover paint. Combined priority is disabled, pressed, focus-visible, hover, rest."
+      },
+      "reset": "theme",
+      "states": [
+        "hover"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.choice.label-hover-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/choice-label.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.choice.label-hover-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(27 31 36 / 1)",
+        "cssExpression": "var(--en-color-text)",
+        "tokenIds": [
+          "color.text"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
+      "cssName": "--en-choice-label-pressed-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text"
+        ],
+        "cssNames": [
+          "--en-choice-label-color"
+        ],
+        "description": "Enabled native control or associated choice label held paint; disabled paint takes precedence."
+      },
+      "reset": "theme",
+      "states": [
+        "pressed"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.choice.label-pressed-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/choice-label.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.choice.label-pressed-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(27 31 36 / 1)",
+        "cssExpression": "var(--en-color-text)",
+        "tokenIds": [
+          "color.text"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
       "cssName": "--en-choice-size",
       "kind": "override",
       "family": "controls",
@@ -5614,8 +5887,11 @@
         "tokenIds": [
           "radius.control"
         ],
-        "cssNames": [],
-        "description": "Contextual stylesheet fallback; a managed token default may differ from the rendered fallback."
+        "cssNames": [
+          "--en-slider-track-radius",
+          "--en-control-radius"
+        ],
+        "description": "Color gradient corners take precedence over slider-track-radius, then the control radius."
       },
       "reset": "theme",
       "states": [],
@@ -5663,8 +5939,10 @@
       "inherits": true,
       "fallback": {
         "tokenIds": [],
-        "cssNames": [],
-        "description": "Native slider thumb diameter; fallback is 1.75rem."
+        "cssNames": [
+          "--en-slider-thumb-size"
+        ],
+        "description": "Color channel handle diameter takes precedence over slider-thumb-size, then 1.75rem."
       },
       "reset": "theme",
       "states": [],
@@ -5710,8 +5988,10 @@
       "inherits": true,
       "fallback": {
         "tokenIds": [],
-        "cssNames": [],
-        "description": "Track thickness defaults to 1.5rem. The separate input minimum follows thumb size and target floors."
+        "cssNames": [
+          "--en-slider-track-size"
+        ],
+        "description": "Color gradient track thickness takes precedence over slider-track-size, then 1.5rem. The separate input minimum follows thumb size and target floors."
       },
       "reset": "theme",
       "states": [],
@@ -15293,6 +15573,108 @@
         "packages/styles/src/feedback.ts"
       ],
       "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-menu-max-inline-size",
+      "kind": "override",
+      "family": "commands",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<length-percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "layout.form-max"
+        ],
+        "cssNames": [],
+        "description": "Ordinary-menu source maximum fallback; an explicit legacy overlay maximum remains authoritative. Replacement submenu geometry is unchanged."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "maximum",
+        "description": "A ceiling input; available viewport or layout can impose a smaller limit."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.menu.max-inline-size",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/commands.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.menu.max-inline-size",
+      "tokenType": "dimension",
+      "tokenDefault": {
+        "cssValue": "28rem",
+        "cssExpression": "var(--en-layout-form-max)",
+        "tokenIds": [
+          "layout.form-max"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
+      "cssName": "--en-menu-min-inline-size",
+      "kind": "override",
+      "family": "commands",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<length-percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "layout.panel-preferred"
+        ],
+        "cssNames": [],
+        "description": "Ordinary-menu content minimum, additionally capped by its effective maximum and measured viewport. Replacement submenus keep their existing parent width."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "minimum",
+        "description": "A minimum input; content, target floors or available layout may constrain the rendered size."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.menu.min-inline-size",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/commands.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.menu.min-inline-size",
+      "tokenType": "dimension",
+      "tokenDefault": {
+        "cssValue": "20rem",
+        "cssExpression": "var(--en-layout-panel-preferred)",
+        "tokenIds": [
+          "layout.panel-preferred"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
     },
     {
       "cssName": "--en-motion-press-offset",
@@ -28360,6 +28742,673 @@
       "consumerStatus": "connected"
     },
     {
+      "cssName": "--en-slider-disabled-fill-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-fill-background",
+          "--en-slider-track-background"
+        ],
+        "description": "Disabled selected-segment color; source presentation precedes the resting fill. Disabled fill opacity controls its visibility over the rail."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-fill-opacity",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<number>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Disabled fill visibility, clamped to 0–1; source presentation precedes 1. Native ranges mix toward the rail; interval fills use opacity. Zero reveals the rail."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-opacity",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<number> | <percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Opacity of the disabled native range or interval track subtree; source presentation precedes 1."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-thumb-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<background>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text-muted",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-thumb-background"
+        ],
+        "description": "Disabled thumb background; source presentation precedes native muted text paint or the interval resting thumb background."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-thumb-border-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.text-muted",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-thumb-border-color"
+        ],
+        "description": "Disabled thumb boundary; source presentation precedes native muted text color or the interval resting boundary."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-thumb-opacity",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<number> | <percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Additional disabled thumb opacity; source presentation precedes 1 for native thumbs or 0.5 for interval thumb targets."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-thumb-shadow",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<shadow>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [
+          "--en-slider-thumb-shadow"
+        ],
+        "description": "Disabled thumb decoration; source presentation precedes the resting shadow. Forced colors remove the decoration."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-track-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary"
+        ],
+        "cssNames": [
+          "--en-slider-track-background"
+        ],
+        "description": "Disabled rail color; source presentation precedes the resting rail."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-disabled-track-shadow",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<shadow>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [
+          "--en-slider-track-shadow"
+        ],
+        "description": "Disabled unselected rail decoration; source presentation precedes the resting rail shadow."
+      },
+      "reset": "theme",
+      "states": [
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-fill-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-track-background"
+        ],
+        "description": "Selected value/interval color. Source presentation precedes the native rail fallback (unfilled appearance) or the interval action-color fallback."
+      },
+      "reset": "theme",
+      "states": [
+        "rest"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-hover-fill-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-fill-background",
+          "--en-slider-track-background"
+        ],
+        "description": "Enabled hover-capable selected-segment color; source presentation precedes the resting fill."
+      },
+      "reset": "theme",
+      "states": [
+        "hover"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-hover-pressed-fill-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-pressed-fill-background",
+          "--en-slider-fill-background",
+          "--en-slider-track-background"
+        ],
+        "description": "Enabled simultaneous hover-and-held selected-segment color; source presentation precedes pressed fill, then rest fill."
+      },
+      "reset": "theme",
+      "states": [
+        "hover",
+        "pressed"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-hover-pressed-thumb-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<background>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-pressed-thumb-background",
+          "--en-slider-thumb-background"
+        ],
+        "description": "Enabled simultaneous hover-and-held thumb background; source presentation precedes pressed paint, then rest paint."
+      },
+      "reset": "theme",
+      "states": [
+        "hover",
+        "pressed"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-hover-thumb-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<background>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-thumb-background"
+        ],
+        "description": "Enabled hover-capable thumb background; source presentation precedes rest paint."
+      },
+      "reset": "theme",
+      "states": [
+        "hover"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-hover-thumb-border-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-thumb-border-color"
+        ],
+        "description": "Enabled hover-capable thumb boundary; source presentation precedes the resting thumb boundary."
+      },
+      "reset": "theme",
+      "states": [
+        "hover"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
       "cssName": "--en-slider-length",
       "kind": "override",
       "family": "controls",
@@ -28395,6 +29444,398 @@
       },
       "consumers": [
         "packages/styles/src/controls.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-paint-duration",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "motion"
+      ],
+      "syntax": "<time>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Thumb background-color, border-color and shadow transition duration; source presentation precedes 0ms. Reduced motion suppresses the transitions."
+      },
+      "reset": "theme",
+      "states": [
+        "hover",
+        "pressed",
+        "focus-visible",
+        "disabled"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-pressed-fill-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary",
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-fill-background",
+          "--en-slider-track-background"
+        ],
+        "description": "Enabled held selected-segment color; source presentation precedes the resting fill."
+      },
+      "reset": "theme",
+      "states": [
+        "pressed"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-pressed-thumb-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<background>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-thumb-background"
+        ],
+        "description": "Enabled held thumb background; source presentation precedes rest paint."
+      },
+      "reset": "theme",
+      "states": [
+        "pressed"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-pressed-thumb-border-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [
+          "--en-slider-thumb-border-color"
+        ],
+        "description": "Enabled held thumb boundary; source presentation precedes the resting thumb boundary."
+      },
+      "reset": "theme",
+      "states": [
+        "pressed"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-thumb-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<background>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [],
+        "description": "Resting thumb background; source presentation precedes action paint."
+      },
+      "reset": "theme",
+      "states": [
+        "rest"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-thumb-border-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.action"
+        ],
+        "cssNames": [],
+        "description": "Resting thumb boundary; source presentation precedes action color for native ranges and currentColor for interval thumbs."
+      },
+      "reset": "theme",
+      "states": [
+        "rest"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-thumb-border-width",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<line-width>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "border.width"
+        ],
+        "cssNames": [],
+        "description": "Border width inside the painted thumb box; source presentation precedes the semantic border width."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "fixed",
+        "description": "An explicit hook value bypasses contextual selected-size fallbacks; it does not scale automatically."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-thumb-focus-shadow",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<shadow>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [
+          "--en-slider-thumb-shadow"
+        ],
+        "description": "Enabled keyboard-focus decoration; source presentation precedes the resting thumb shadow. The primary focus contour remains present; forced colors remove decoration."
+      },
+      "reset": "theme",
+      "states": [
+        "focus-visible"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-thumb-hover-shadow",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<shadow>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [
+          "--en-slider-thumb-shadow"
+        ],
+        "description": "Enabled hover-capable thumb decoration; source presentation precedes the resting thumb shadow. Keyboard focus and forced colors take precedence."
+      },
+      "reset": "theme",
+      "states": [
+        "hover"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
       ],
       "consumerStatus": "connected"
     },
@@ -28461,7 +29902,7 @@
       "fallback": {
         "tokenIds": [],
         "cssNames": [],
-        "description": "Thumb-only held geometry; disabled/reduced motion retain the resting geometry."
+        "description": "Thumb-only held geometry; defaults to 1 and is clamped to 0.9–1.25. Disabled/reduced motion retain the resting geometry."
       },
       "reset": "theme",
       "states": [
@@ -28485,7 +29926,8 @@
         }
       },
       "consumers": [
-        "packages/styles/src/internal/range.ts"
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts"
       ],
       "consumerStatus": "connected",
       "tokenId": "component.slider-thumb.pressed-scale",
@@ -28499,6 +29941,48 @@
         "provenance": "alias",
         "fullThemeValue": "initial"
       }
+    },
+    {
+      "cssName": "--en-slider-thumb-radius",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "radius",
+        "geometry"
+      ],
+      "syntax": "<border-radius>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "radius.pill"
+        ],
+        "cssNames": [],
+        "description": "Painted thumb corners; source presentation precedes the native pill radius or 50% interval radius."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "fixed",
+        "description": "An explicit hook value bypasses contextual selected-size fallbacks; it does not scale automatically."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
     },
     {
       "cssName": "--en-slider-thumb-release-duration",
@@ -28550,6 +30034,288 @@
         "provenance": "alias",
         "fullThemeValue": "initial"
       }
+    },
+    {
+      "cssName": "--en-slider-thumb-shadow",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<shadow>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Decorative thumb elevation; source presentation precedes none. The primary keyboard focus contour remains independent."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-thumb-size",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<length-percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "size.icon"
+        ],
+        "cssNames": [],
+        "description": "Painted thumb border-box size; source presentation precedes the icon-size fallback. The interval keeps its separate thumb interaction target."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "fixed",
+        "description": "An explicit hook value bypasses contextual selected-size fallbacks; it does not scale automatically."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-track-background",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary"
+        ],
+        "cssNames": [],
+        "description": "Unselected rail color; source presentation precedes the boundary role. Native gradient stops require a color."
+      },
+      "reset": "theme",
+      "states": [
+        "rest"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-track-radius",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "radius",
+        "geometry"
+      ],
+      "syntax": "<border-radius>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "radius.pill"
+        ],
+        "cssNames": [],
+        "description": "Rail and selected-segment corners; source presentation precedes pill rail corners. The unpinned interval fill uses square corners."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "fixed",
+        "description": "An explicit hook value bypasses contextual selected-size fallbacks; it does not scale automatically."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-track-shadow",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<shadow>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Decorative rail boundary; source presentation precedes none. Also applies to the interval selected segment."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-track-size",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "geometry"
+      ],
+      "syntax": "<length-percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "size.range-track"
+        ],
+        "cssNames": [],
+        "description": "Painted rail thickness; source presentation precedes the selected range-track role. Independent interaction targets remain intact."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "fixed",
+        "description": "An explicit hook value bypasses contextual selected-size fallbacks; it does not scale automatically."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "CSS-only unless this resolved theme contains a corresponding typed source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts",
+        "packages/elements/src/range-slider.ts",
+        "packages/styles/src/color-slider.ts"
+      ],
+      "consumerStatus": "connected"
+    },
+    {
+      "cssName": "--en-slider-value-percent",
+      "kind": "mechanical",
+      "family": "controls",
+      "concepts": [
+        "data"
+      ],
+      "syntax": "<percentage>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [],
+        "cssNames": [],
+        "description": "Current native range value projected into its bounds; clamped to 0%–100%, fallback 0%. The component or native synchronization helper owns updates; full themes preserve this data input."
+      },
+      "reset": "preserve",
+      "states": [],
+      "size": {
+        "behavior": "mechanical",
+        "description": "Data/controller geometry remains inherited across full theme boundaries."
+      },
+      "managed": {
+        "supported": false,
+        "reason": "Controller/data input, outside managed theme authoring."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Preserve authored/controller inheritance and unset fallbacks; a typed initial value would change this contract."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/range.ts"
+      ],
+      "consumerStatus": "connected"
     },
     {
       "cssName": "--en-space-0",
@@ -36632,6 +38398,41 @@
         "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
       },
       {
+        "name": "--en-choice-label-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-choice-label-disabled-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-choice-label-focus-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-choice-label-hover-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-choice-label-pressed-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
         "name": "--en-choice-size",
         "syntax": "*",
         "inherits": true,
@@ -38229,6 +40030,20 @@
       },
       {
         "name": "--en-media-radius",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-menu-max-inline-size",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-menu-min-inline-size",
         "syntax": "*",
         "inherits": true,
         "policy": "compatible",
@@ -40041,7 +41856,175 @@
         "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
       },
       {
+        "name": "--en-slider-disabled-fill-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-fill-opacity",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-opacity",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-thumb-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-thumb-border-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-thumb-opacity",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-thumb-shadow",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-track-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-disabled-track-shadow",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-fill-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-hover-fill-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-hover-pressed-fill-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-hover-pressed-thumb-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-hover-thumb-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-hover-thumb-border-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
         "name": "--en-slider-length",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-paint-duration",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-pressed-fill-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-pressed-thumb-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-pressed-thumb-border-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-border-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-border-width",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-focus-shadow",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-hover-shadow",
         "syntax": "*",
         "inherits": true,
         "policy": "compatible",
@@ -40062,7 +42045,63 @@
         "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
       },
       {
+        "name": "--en-slider-thumb-radius",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
         "name": "--en-slider-thumb-release-duration",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-shadow",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-thumb-size",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-track-background",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-track-radius",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-track-shadow",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-track-size",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-slider-value-percent",
         "syntax": "*",
         "inherits": true,
         "policy": "compatible",

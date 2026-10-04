@@ -1,2 +1,0 @@
-import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./accordion-item-m6qFe9HO.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),n(),t(customElements,r)})))()}a();
-//# sourceMappingURL=accordion-item-CT1qcOa9.js.map
