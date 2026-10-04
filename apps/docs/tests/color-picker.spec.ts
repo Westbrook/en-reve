@@ -64,7 +64,7 @@ test('initial picker values and controls survive SSR hydration', async ({ browse
 test('all inspired themes fit mobile with named controls, valid accessibility and configurable Parts', async ({ page }, info) => {
   test.setTimeout(60_000);
   await load(page); await page.setViewportSize({ width: 390, height: 844 });
-  for (const theme of ['spectrum', 'fluent', 'astryx', 'shadcn', 'holotable']) {
+  for (const theme of ['spectrum', 'fluent', 'astryx', 'shadcn', 'holotable', 'radix', 'web-awesome']) {
     await page.getByRole('combobox', { name: 'Inspired theme', exact: true }).selectOption(theme + '-inspired');
     await expect(page.getByRole('status', { name: 'Theme result' })).toContainText('applied');
     for (const mode of ['light', 'dark']) {
@@ -219,7 +219,7 @@ test('numeric validation survives tab switching and a corrected draft applies on
 });
 test('RGB and HSL alpha controls remain usable at narrow widths across inspired themes',async({page},info)=>{
   test.setTimeout(60_000);await load(page,'/api-examples/color-picker.html');await page.setViewportSize({width:390,height:844});const picker=page.locator('#basic-color-picker');
-  for(const theme of ['spectrum','fluent','astryx','shadcn','holotable']) {
+  for(const theme of ['spectrum','fluent','astryx','shadcn','holotable','radix','web-awesome']) {
     await page.getByRole('combobox',{name:'Inspired theme',exact:true}).selectOption(theme+'-inspired');
     await expect(page.getByRole('status',{name:'Theme result'})).toContainText('applied');
     for(const format of ['rgb','hsl']) {

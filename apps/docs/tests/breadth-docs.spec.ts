@@ -79,7 +79,7 @@ test('settings menu choices share application state with visible fields', async 
 for (const id of ['content-recipes', 'menu-choices']) test(`${id} has usable phone layout in all inspired themes`, async ({ page }, info) => {
 	await page.setViewportSize({ width: 390, height: 844 });
 	await openExample(page, id);
-	for (const [theme, title] of [['spectrum-inspired', 'Spectrum'], ['fluent-inspired', 'Fluent'], ['astryx-inspired', 'Astryx'], ['shadcn-inspired', 'shadcn'], ['holotable-inspired', 'Holotable']]) {
+	for (const [theme, title] of [['spectrum-inspired', 'Spectrum'], ['fluent-inspired', 'Fluent'], ['astryx-inspired', 'Astryx'], ['shadcn-inspired', 'shadcn'], ['radix-inspired', 'Radix Themes'], ['web-awesome-inspired', 'Web Awesome'], ['holotable-inspired', 'Holotable']]) {
 		await page.getByRole('combobox', { name: 'Inspired theme', exact: true }).selectOption(theme);
 		await expect(page.getByRole('status', { name: 'Theme result' })).toContainText(title);
 		await expect(page.locator('style[data-example-theme]')).toHaveCount(1);

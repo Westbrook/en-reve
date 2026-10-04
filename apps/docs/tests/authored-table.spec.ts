@@ -93,7 +93,7 @@ test('table accepts all inspired theme palettes and local sizing without changin
 	await choice.check();
 	const saved = await table.evaluateHandle(node => node);
 	const definitions = JSON.parse(await readFile(new URL('../../../tooling/theme-candidates/definitions.json', import.meta.url), 'utf8'));
-	for (const family of ['spectrum', 'fluent', 'astryx', 'shadcn', 'holotable']) {
+	for (const family of ['spectrum', 'fluent', 'astryx', 'shadcn', 'radix', 'web-awesome', 'holotable']) {
 		for (const mode of ['light', 'dark'] as const) {
 			const edits = JSON.parse(await readFile(new URL(`../../../tooling/theme-candidates/inspired/${family}.${mode}.json`, import.meta.url), 'utf8'));
 			const definition = definitions.find((item: { inputs: Record<string, string> }) => item.inputs[mode] === `inspired/${family}.${mode}.json`);

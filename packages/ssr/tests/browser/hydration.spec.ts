@@ -35,6 +35,8 @@ test('full-sheet hydration preserves native draft, node identity, focus and sele
     (control as HTMLInputElement).setSelectionRange(3, 9);
   });
   release();
+  // Finish the deferred module graph before checking hydration state.
+  await page.waitForLoadState('domcontentloaded');
   await expect(page.locator('en-sticker-app')).not.toHaveAttribute('data-ssr', '');
   await page.waitForFunction(() => (document.querySelector('en-sticker-app') as any)?.hasUpdated);
   await page.waitForFunction(() => [...document.querySelectorAll('en-sticker-app *')]

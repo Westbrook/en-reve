@@ -309,8 +309,8 @@ for (const appearance of ['light', 'dark'] as const) {
     expect(await style(part(switchHost, 'label'), ['gap'])).toEqual({ gap: '10px' });
     expect(await style(toggle, ['width', 'height'])).toEqual({ width: '40px', height: '20px' });
     const thumb = await style(toggle, ['background-color', 'width', 'height', 'box-shadow'], '::before');
-    // Solid checked switches use colorPalette.contrast; unchecked thumbs are white.
-    expect(thumb['background-color']).toBe(appearance === 'light' ? 'rgb(255, 255, 255)' : 'rgb(9, 9, 11)');
+    // Upstream 2a668458 restores teal with white colorPalette.contrast in both appearances.
+    expect(thumb['background-color']).toBe('rgb(255, 255, 255)');
     expect(thumb['box-shadow']).not.toBe('none');
     await checkbox.uncheck(); await expect(checkbox).not.toBeChecked();
     await toggle.uncheck(); await expect(toggle).not.toBeChecked();
@@ -322,7 +322,7 @@ for (const appearance of ['light', 'dark'] as const) {
     await radio.check(); await expect(radio).toBeChecked();
     const selected = await style(radio, ['background-color', 'border-top-color']);
     expect(selected['background-color']).toBe(selected['border-top-color']);
-    expect((await style(radio, ['background-color'], '::before'))['background-color']).toBe(appearance === 'light' ? 'rgb(255, 255, 255)' : 'rgb(9, 9, 11)');
+    expect((await style(radio, ['background-color'], '::before'))['background-color']).toBe('rgb(255, 255, 255)');
     await open(page, 'family-geometry', appearance, chakraCSS);
     const segments = specimen(page).locator('en-segmented-control').first();
     const frame = await style(part(segments, 'options'), ['padding-top', 'gap', 'border-top-width', 'border-radius']);
@@ -363,6 +363,7 @@ for (const appearance of ['light', 'dark'] as const) {
     });
     expect((await part(modal, 'surface').boundingBox())!.width).toBeCloseTo(448, 0);
     await expect(part(modal, 'body')).toHaveCSS('padding-inline-start', '10px');
+    await modal.evaluate(element => (element as HTMLElement).style.removeProperty('--en-overlay-padding'));
     await modal.evaluate(element => (element as HTMLElement).style.setProperty('--en-button-focus-halo-width', '30px'));
     expect(parseFloat((await style(part(modal, 'body'), ['padding-inline-start']))['padding-inline-start']), 'Section padding retains clearance for larger public focus contours').toBeGreaterThanOrEqual(30);
     await modal.evaluate(element => {
@@ -757,7 +758,7 @@ test('the reserved companion container name composes with consumer queries and s
 test('narrow RTL and enlarged text preserve companion content and keyboard editing', async ({ page, chakraCSS }, info) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await open(page, 'mixed-toolbar', 'dark', chakraCSS);
-  await page.locator('html').evaluate(element => { element.dir = 'rtl'; element.style.fontSize = '200%'; });
+  await page.locator('html').evaluate(element => { (element as HTMLHtmlElement).dir = 'rtl'; element.style.fontSize = '200%'; });
   const field = specimen(page).getByRole('textbox', { name: 'Study title', exact: true });
   await field.fill('Longer translated project title');
   const apply = specimen(page).getByRole('button', { name: 'Apply preview settings', exact: true });
@@ -768,7 +769,7 @@ test('narrow RTL and enlarged text preserve companion content and keyboard editi
   expect(geometry.scroll).toBeLessThanOrEqual(geometry.client + 1);
   await evidence(page, info, 'narrow-rtl-enlarged', geometry);
   await open(page, 'dialog-drawer', 'dark', chakraCSS);
-  await page.locator('html').evaluate(element => { element.dir = 'rtl'; element.style.fontSize = '200%'; });
+  await page.locator('html').evaluate(element => { (element as HTMLHtmlElement).dir = 'rtl'; element.style.fontSize = '200%'; });
   const modal = specimen(page).locator('en-dialog');
   await modal.evaluate(element => {
     element.setAttribute('label', 'A longer translated invitation heading with several wrapping lines');

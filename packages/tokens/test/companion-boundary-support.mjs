@@ -25,7 +25,11 @@ export function assertCompanionBoundary(css, name, mode) {
   assert.doesNotMatch(css, /@scope|:scope|container-type\s*:/,
     'Companion delivery must not depend on scoped Parts or impose size containment.');
   const rules = [...css.matchAll(/([^{}]+)\{([^{}]*)\}/g)].map(([, selector, declarations]) => ({ selector: selector.trim(), declarations }));
-  const surfaces = rules.filter(({ selector }) => selector !== ':where([data-en-theme])' && selector !== scope);
+  // Optional presentation branches can emit empty conditional groups. They
+  // have no selector subject; keep every qualified rule (even empty ones),
+  // unknown at-rule and declaration-bearing conditional in the guard audit.
+  const surfaces = rules.filter(({ selector, declarations }) => selector !== ':where([data-en-theme])' && selector !== scope
+    && !(/^@(media|container)\b/.test(selector) && declarations.trim() === ''));
   assert.ok(surfaces.length > 0, 'The recipe emits actual component declarations.');
   assert.ok(surfaces.some(({ selector }) => selector.includes(descendant)), 'Ordinary descendants retain their presentation.');
   assert.ok(surfaces.some(({ selector }) => selector.includes(root)), 'A component or native helper can own its full-theme boundary.');

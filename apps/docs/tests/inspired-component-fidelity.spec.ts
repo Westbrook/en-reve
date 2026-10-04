@@ -211,6 +211,18 @@ for (const theme of themes) {
       (element as HTMLElement).style.removeProperty('--en-alert-color');
     });
     expect(await Promise.all(alertFrames.map(alertSignature)), 'Removing Part, host and inherited overrides restores source presentation').toEqual(sourcePaint);
+    // These diagnostic sections are transparent composition regions, not
+    // widgets. Paint each region's own canvas only after the isolation probes
+    // so dark Auto regions and the explicit light child are legible together.
+    observations.captureContext = await page.locator('#boundary-fidelity').evaluate(fixture => {
+      const directComponent = fixture.querySelector('#component-scope')!;
+      (fixture as HTMLElement).style.backgroundColor = getComputedStyle(directComponent).getPropertyValue('--en-color-canvas').trim();
+      const regions = [...fixture.querySelectorAll<HTMLElement>('section.en-foundation')].map(region => {
+        region.style.backgroundColor = getComputedStyle(region).getPropertyValue('--en-color-canvas').trim();
+        return { id: region.id, appearance: region.getAttribute('data-en-appearance') ?? 'omitted', background: getComputedStyle(region).backgroundColor };
+      });
+      return { background: getComputedStyle(fixture).backgroundColor, regions };
+    });
     await evidence(info, `${theme}-boundaries`, page.locator('#boundary-fidelity'), observations);
   });
 }
@@ -769,7 +781,7 @@ async function sourceResponsiveDialog(
     selector: '#responsive-core-isolation', colorScheme: true,
   });
   const childSheet = await page.addStyleTag({ content: childCSS });
-  const authorSheet = await page.addStyleTag({ content: '' });
+  const authorSheet = await page.addStyleTag({ content: '/* Public source hook overrides are inserted below. */' });
   const observations: Record<string, unknown> = {};
   const expectWidth = async (target: Locator, width: number, label: string) => {
     await expect.poll(async () => (await target.boundingBox())?.width ?? -1, label).toBeCloseTo(width, 1);
@@ -886,7 +898,7 @@ async function sourceResponsiveDialog(
   } finally {
     // Restore existing authored nodes, attributes/properties, CSS, and viewport.
     await page.locator('#responsive-core-isolation, #responsive-native-drawer').evaluateAll(elements => elements.forEach(element => element.remove()));
-    for (const sheet of [authorSheet, childSheet, nativeSheet]) { await sheet.evaluate(element => element.remove()); await sheet.dispose(); }
+    for (const sheet of [authorSheet, childSheet, nativeSheet]) { await sheet.evaluate(element => (element as HTMLStyleElement).remove()); await sheet.dispose(); }
     await root.evaluate((element, value) => { if (value === null) element.removeAttribute('style'); else element.setAttribute('style', value); }, savedRootStyle);
     await modal.evaluate(async (element, saved) => {
       element.querySelector('#responsive-source-measure')?.remove();
@@ -1117,7 +1129,7 @@ async function webAwesomeOverlayHelpers(page: Page, appearance: Appearance, css:
     for (const plate of [surface, nativeTooltip]) await metrics(plate, { 'font-size': 20, 'line-height': 34, 'font-weight': '500' });
     for (const inset of [content, nativeTooltip]) await metrics(inset, { 'padding-top': 5, 'padding-inline-start': 10 });
   } finally {
-    await authorTypography.evaluate(element => element.remove()); await authorTypography.dispose();
+    await authorTypography.evaluate(element => (element as HTMLStyleElement).remove()); await authorTypography.dispose();
   }
   for (const plate of [surface, nativeTooltip]) await metrics(plate, { 'font-size': 14, 'line-height': 22.4, 'font-weight': '400' });
   // Local arrow is explicitly authored, unlike WA's default-on arrow. Insets
@@ -2108,7 +2120,15 @@ async function sourceSliders(page: Page, theme: Theme, appearance: Appearance, c
       expect((await thumb.boundingBox())!.height, 'Interval pointer target stays independent of source paint').toBeGreaterThanOrEqual(44);
     }
   }
-  await evidence(info, `${theme}-${appearance}-source-interval`, interval, { reference, scalarRaster: observations, nativePaintState: 'Explicit stationary --en-slider-value-percent:50%; synchronization is covered by the slider owning suite.' });
+  // Keep the transparent interval's source paint intact. Its isolated dark
+  // boundary needs an application canvas beneath it for a readable capture.
+  const captureContext = await interval.evaluate(element => {
+    const backdrop = document.createElement('div'); backdrop.id = 'source-interval-canvas';
+    backdrop.style.backgroundColor = getComputedStyle(element).getPropertyValue('--en-color-canvas').trim();
+    element.before(backdrop); backdrop.append(element);
+    return { appearance: element.getAttribute('data-en-appearance'), background: getComputedStyle(backdrop).backgroundColor };
+  });
+  await evidence(info, `${theme}-${appearance}-source-interval`, interval, { reference, scalarRaster: observations, captureContext, nativePaintState: 'Explicit stationary --en-slider-value-percent:50%; synchronization is covered by the slider owning suite.' });
 }
 
 
@@ -2156,7 +2176,7 @@ for (const appearance of ['light', 'dark'] as const) {
       expect(layers).toHaveLength(halo ? 2 : 1);
       expect(layers[0]).toContain('inset');
       expect(layers[0].filter(value => value !== 'inset').map(parseFloat)).toEqual([0, 0, 0, 2]);
-      expectPaint(colors[0], color);
+      expectPaint(colors[0]!, color);
       if (halo) {
         expect(layers[1]).not.toContain('inset');
         expect(layers[1].map(parseFloat)).toEqual([0, 0, 0, 3]);
@@ -2170,7 +2190,9 @@ for (const appearance of ['light', 'dark'] as const) {
     observations.focus = await sourceInset(focus, true);
     const contour = await style(control, ['outline-style', 'outline-width']);
     expect(contour['outline-style']).toBe('solid'); expect(parseFloat(contour['outline-width'])).toBeGreaterThan(0);
-    await control.fill('Source field geometry preserves editing');
+    // Pinned WebKit fill can return without input on this contenteditable;
+    // use the established native-typing path and retain both commit assertions.
+    await control.pressSequentially('Source field geometry preserves editing');
     await expect(control).toHaveText('Source field geometry preserves editing');
     await expect.poll(() => host.evaluate(element => (element as HTMLElement & { value: string }).value)).toBe('Source field geometry preserves editing');
     await control.blur(); await page.mouse.move(0, 0);
@@ -2320,6 +2342,7 @@ for (const theme of themes) for (const appearance of ['light', 'dark'] as const)
         observations[`${name}-mixed-mark`] = await metrics(choice, { width: 8, height: 8, 'border-radius': 2, transform: 'none' }, '::before');
       }
     }
+    const originalSwitchDirections = await Promise.all([toggle, native.getByRole('switch')].map(async control => ({ control, direction: await control.getAttribute('dir') })));
     for (const [name, control] of [['custom', toggle], ['native', native.getByRole('switch')]] as const) {
       const [width, height, off, on] = source.switch;
       observations[`${name}-switch`] = await metrics(control, { width, height });
@@ -2448,6 +2471,13 @@ for (const theme of themes) for (const appearance of ['light', 'dark'] as const)
         await owner.evaluate(element => { (element as HTMLElement & { disabled: boolean }).disabled = false; });
       }
     }
+    // The geometry loop deliberately ends in RTL. Restore the original
+    // attribute before the canonical choices picture, preserving every probe.
+    for (const { control, direction } of originalSwitchDirections) await control.evaluate((element, direction) => {
+      if (direction === null) element.removeAttribute('dir');
+      else element.setAttribute('dir', direction);
+    }, direction);
+    observations.choiceCaptureDirections = await Promise.all(originalSwitchDirections.map(({ control }) => control.evaluate(element => getComputedStyle(element).direction)));
     await evidence(info, `${theme}-${appearance}-choices`, specimen(page), observations);
     await open(page, 'text-fields', theme, appearance, css);
     const host = specimen(page).locator('en-text-field').filter({ has: page.getByRole('textbox', { name: 'Project name', exact: true }) });
@@ -3002,13 +3032,13 @@ for (const appearance of ['light', 'dark'] as const) {
       // samples portable across device scales; content remains unconstrained.
       fixture.style.cssText = 'position:fixed;inset:16px auto auto 16px;inline-size:360px;z-index:10000;display:grid;gap:16px;background:var(--en-color-canvas)';
       const glyph = '<svg class="en-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="currentColor"/></svg>';
-      const pair = (prefix: string) => `<en-toast id="${prefix}-custom-toast" open>Source notification.</en-toast><article id="${prefix}-native-toast" class="en-toast" data-variant="info"><span class="en-toast__icon" aria-hidden="true">${glyph}</span><div class="en-toast__body"><div class="en-toast__content">Source notification.</div></div><button class="en-button en-toast__close" type="button" aria-label="Native dismiss notification">×</button></article>`;
+      const pair = (prefix: string) => `<en-toast id="${prefix}-custom-toast" open>Source notification.</en-toast><article id="${prefix}-native-toast" class="en-toast" data-variant="info"><span class="en-toast__icon" aria-hidden="true">${glyph}</span><div class="en-toast__body"><div class="en-toast__content">Source notification.</div></div><button class="en-button en-toast__close" data-variant="ghost" type="button" aria-label="Native dismiss notification">×</button></article>`;
       const hooks = document.createElement('div'); hooks.id = 'wa-toast-hooks'; hooks.className = 'en-foundation'; hooks.style.cssText = 'display:grid;gap:16px'; hooks.innerHTML = pair('source-wa');
       const iconless = document.createElement('article'); iconless.id = 'wa-iconless-native-toast'; iconless.className = 'en-toast'; iconless.dataset.variant = 'info';
       // The source rail occupies four pixels before medium16 content padding,
       // including native compositions that omit the optional icon entirely.
       iconless.style.cssText = '--en-toast-padding:16px;--en-border-width:1px;--en-space-3:12px';
-      iconless.innerHTML = '<div class="en-toast__body"><div class="en-toast__content">Authored iconless notification.</div><div class="en-toast__actions"><button class="en-button" type="button">Undo</button></div></div><button class="en-button en-toast__close" type="button" aria-label="Iconless dismiss notification">×</button>';
+      iconless.innerHTML = '<div class="en-toast__body"><div class="en-toast__content">Authored iconless notification.</div><div class="en-toast__actions"><button class="en-button" type="button">Undo</button></div></div><button class="en-button en-toast__close" data-variant="ghost" type="button" aria-label="Iconless dismiss notification">×</button>';
       hooks.append(iconless);
       const middle = document.createElement('section'); middle.id = 'wa-toast-default'; middle.className = 'en-foundation';
       middle.dataset.enTheme = 'wa-toast-default'; middle.dataset.enAppearance = appearance; middle.style.cssText = 'display:grid;gap:16px'; middle.innerHTML = pair('isolated-wa');
@@ -3169,7 +3199,7 @@ for (const appearance of ['light', 'dark'] as const) {
     await metrics(entries[0].frame, { 'padding-top': 8, 'padding-bottom': 8, 'padding-left': 10, 'padding-right': 10 });
     await iconInset(entries[0], 'ltr', 15);
     await alertPaint(entries[1].frame, { 'background-color': '#405060' });
-    await partOverride.evaluate(element => element.remove());
+    await partOverride.evaluate(element => (element as HTMLStyleElement).remove());
     await hooks.evaluate(element => {
       const owner = element as HTMLElement;
       for (const name of ['--en-toast-info-background', '--en-toast-background', '--en-toast-padding']) owner.style.removeProperty(name);
@@ -3197,7 +3227,7 @@ for (const appearance of ['light', 'dark'] as const) {
       // composition without rail spacing; source close geometry is not assumed.
       const unspaced = await page.addStyleTag({ content: '#source-wa-custom-toast::part(icon), #source-wa-native-toast > .en-toast__icon { margin-inline-start:0; }' });
       const before = await Promise.all(entries.map(entry => inlineGeometry(entry, direction)));
-      await unspaced.evaluate(element => element.remove());
+      await unspaced.evaluate(element => (element as HTMLStyleElement).remove());
       for (const [index, entry] of entries.entries()) {
         await expect(entry.frame).toHaveCSS('display', 'flex');
         const after = await inlineGeometry(entry, direction);
@@ -3209,7 +3239,7 @@ for (const appearance of ['light', 'dark'] as const) {
         observations[`inline-${direction}-${entry.name}`] = { before: before[index], after };
       }
     }
-    await inlineRecipe.evaluate(element => element.remove());
+    await inlineRecipe.evaluate(element => (element as HTMLStyleElement).remove());
     await page.locator('#wa-toast-fidelity').evaluate(element => element.setAttribute('dir', 'ltr'));
     // The existing supported engine matrix records WebKit's platform limit;
     // it does not skip any ordinary rail or interaction checks above/below.
@@ -3717,7 +3747,7 @@ async function radixDefaultTabs(page: Page, appearance: Appearance, css: string,
   await metrics(nativeLayout, { height: 42, 'letter-spacing': -.2 });
   const trackingProbe = await page.addStyleTag({ content: '.radix-font-probe en-tab::part(base), #radix-default-tabs > .en-tab-list > .en-tab { letter-spacing: .03em; }' });
   await metrics(part(customSelected, 'base'), { 'letter-spacing': .6 }); await metrics(nativeLayout, { 'letter-spacing': .6 });
-  await trackingProbe.evaluate(element => element.remove()); await fontProbe.evaluate(element => element.remove());
+  await trackingProbe.evaluate(element => (element as HTMLStyleElement).remove()); await fontProbe.evaluate(element => (element as HTMLStyleElement).remove());
   await tabs.evaluate(element => element.classList.remove('radix-font-probe'));
   await evidence(info, `radix-inspired-${appearance}-default-tabs`, tabs, {
     source: { gap: 0, defaultSize: 2, minimum: 40, font: 14, leading: 20, selectedTrackingEm: -.01 },
