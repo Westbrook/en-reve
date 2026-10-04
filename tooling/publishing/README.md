@@ -42,7 +42,11 @@ Qualify `deployment-paths.test.mjs`, document-style tests and
 The browser fixture serves exact output bytes at the real project prefix and
 rejects requests outside it. Retain its engine matrix and every manifest hash.
 Its performance cases cover source/evidence delivery, section navigation with
-the project base, sorting, downloads, narrow layout and the static fallback.
+the project base, sorting, CSV downloads, narrow layout and the static fallback.
+Source downloads verify the authored download attribute, resolved URL and exact
+response bytes. Native URL downloads can bypass Playwright interception in
+Chromium/WebKit, so their operating-system download flow is not inferred from
+this candidate-build fixture.
 Run the publisher tests as well: `python3 tooling/publishing/publish-github-build.test.py`.
 
 Commit local `main`, push its source-only export, then publish:

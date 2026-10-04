@@ -19,8 +19,11 @@ test.beforeEach(async({context,page},info)=>{
   let file=resolve(root!,relative);
   if(!file.startsWith(resolve(root!)+'/')){failures.push('Unsafe path: '+url.href);await route.abort();return;}
   const entry=await stat(file).catch(()=>undefined);
-  if(entry?.isDirectory())file=resolve(file,'index.html');
-  else if(!entry?.isFile())file += '.html';
+  if(!entry?.isFile()){
+   // /workflows is a page alias beside the workflows/ child-page directory.
+   const page=await stat(file+'.html').catch(()=>undefined);
+   file=page?.isFile()?file+'.html':resolve(file,'index.html');
+  }
   try {await route.fulfill({status:200,contentType:types[extname(file)]??'application/octet-stream',body:await readFile(file)});}
   catch {failures.push('Missing asset: '+url.href);await route.fulfill({status:404,body:'Not found'});}
  });
@@ -58,10 +61,16 @@ test('performance results include current source, linked evidence, sorting and d
  const header=table.locator('thead th').nth(4);
  await header.getByRole('button').click();await expect(header).toHaveAttribute('aria-sort','ascending');
  await header.getByRole('button').click();await expect(header).toHaveAttribute('aria-sort','descending');
- const sourceDownload=page.waitForEvent('download');
- await page.getByRole('link',{name:'Download source',exact:false}).click();
- const sourceFile=await (await sourceDownload).path();
- expect(await readFile(sourceFile!,'utf8')).toBe(source);
+ // Native URL downloads bypass interception in Chromium/WebKit and would
+ // fetch the currently deployed site, not this candidate build. Verify the
+ // delivered download contract and target bytes here; blob downloads below
+ // exercise the native browser download event without escaping the fixture.
+ const sourceLink=page.getByRole('link',{name:'Download source',exact:false});
+ await expect(sourceLink).toHaveAttribute('download','');
+ await expect(sourceLink).toHaveAttribute('href',prefix+'performance/results.md');
+ const sourceURL=await sourceLink.evaluate((link:HTMLAnchorElement)=>link.href);
+ expect(sourceURL).toBe(origin+prefix+'performance/results.md');
+ expect(await page.evaluate(async url=>await(await fetch(url)).text(),sourceURL)).toBe(source);
  const csvDownload=page.waitForEvent('download');
  await page.locator('#reference-comparison .export-table').getByRole('button').click();
  expect((await csvDownload).suggestedFilename()).toMatch(/\.csv$/);
