@@ -342,3 +342,10 @@ Local main `df59c9e81b5a370a08f0f547e49540506346e779` adds bounded evidence part
 ## Chakra component recipe review — chakra-component-review-20261003
 
 Local `main` `ccc72465feb448adf69d80ad4d23f24e1e9c07dc` maps the neutral Chakra component recipes through typed public-Part companions, documents the complete reference overview and retains source-bound qualification. It descends from source-only GitHub main `dad768954619d245c2c4cfacf4bff631e811fdbf`; prior checkpoints and omitted historical evidence are preserved. See [the component source update](.source-export/updates/chakra-component-review-20261003.json) for exact changed paths, receipt identity and qualification limits.
+
+## Chakra teal accent — October 4, 2026
+
+Local `main` `2a668458b8e584dc841bf46e1f42d744401911b5` restores teal brand/action, focus and selected-fill colors
+in both appearances while preserving the newer component interpretation.
+Authored palette JSON and diff whitespace checks passed. Runtime palette/contrast and build/browser qualification remain blocked by the existing catalogue machine owner; no fresh build qualification claimed.
+See [the source update](.source-export/updates/chakra-accent-20261004.json) for publication status.

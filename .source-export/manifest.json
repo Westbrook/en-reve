@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "ccc72465feb448adf69d80ad4d23f24e1e9c07dc",
-  "exportedAt": "2026-10-03T19:59:29.377401+00:00",
+  "sourceCommit": "2a668458b8e584dc841bf46e1f42d744401911b5",
+  "exportedAt": "2026-10-04T13:13:58.484348+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264198,9 +264198,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5873,
-  "includedBytes": 159150917,
-  "qualification": "Complete theme+api union and project-prefix build/browser qualification; automated evidence, with manual assistive-technology acceptance remaining separate.",
-  "latestUpdate": ".source-export/updates/chakra-component-review-20261003.json",
+  "includedFiles": 5874,
+  "includedBytes": 159152378,
+  "qualification": "Authored palette JSON and diff whitespace checks passed. Runtime palette/contrast and build/browser qualification remain blocked by the existing catalogue machine owner; no fresh build qualification claimed.",
+  "latestUpdate": ".source-export/updates/chakra-accent-20261004.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
