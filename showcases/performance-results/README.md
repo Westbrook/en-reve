@@ -15,6 +15,20 @@ Open <http://127.0.0.1:4188/#first-reference-comparison>. Rebuild after changing
 
 This app installs the same frozen En Reve tarballs as the native showcase, with its own lockfile and dependencies. It does not modify the measured fixtures, root packages, performance harness or source measurements. It is a report reader, not an additional benchmark candidate. The `source.json` receipt identifies the source document and viewer build inputs.
 
+## GitHub Pages
+
+The documentation build with `EN_DOCS_BASE_PATH=/en-reve/` includes this reader at
+`/en-reve/performance/` and links it from the documentation home page. Install this
+project's own lockfile before that build; no root dependency or benchmark package
+is substituted. Standalone builds still default to `/` and `dist`; deployed builds
+use `PERF_REPORT_BASE` and `PERF_REPORT_OUTPUT` supplied by the docs builder.
+
+Publication always renders the canonical results document, including its latest
+completed, explicitly dated measurements and historical peer cohorts. It keeps
+the report and linked evidence byte-identical, records source hashes, and seals
+the reader into the same qualified build manifest. Rebuilding does not update
+measurement dates or run benchmarks. See the [publication workflow](../../tooling/publishing/README.md).
+
 ## Verify
 
 After a build, `npm test` starts or reuses the preview and checks both sort directions on every column, numeric thousands separators, source order, keyboard focus, mobile overflow, all source headings, evidence links, printing, and the no-JavaScript fallback in Chromium, Firefox, and WebKit. Install those browsers with `npx playwright install` if not already present.

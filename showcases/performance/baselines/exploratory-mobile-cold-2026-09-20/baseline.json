@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "name": "exploratory-mobile-cold-2026-09-20",
+  "createdAt": "2026-09-20T17:57:26.431Z",
+  "reason": "First complete 30-block mobile cold-load comparison; developer workstation evidence, not a certified quiet-runner release gate",
+  "sourceRun": "mobile-cold-reference-v1",
+  "harnessSha256": "254b61938b0914e2ba2af4ba49774173198c1d94f804c8569309153404dc66a6",
+  "host": {
+    "platform": "darwin",
+    "release": "25.6.0",
+    "architecture": "arm64",
+    "cpu": "Apple M5 Max",
+    "logicalCpus": 18,
+    "totalMemory": 68719476736,
+    "node": "v24.16.0",
+    "power": "Now drawing from 'Battery Power'\n -InternalBattery-0 (id=36241507)\t59%; discharging; 1:38 remaining present: true"
+  },
+  "timingBudgets": {
+    "lcp": {
+      "absolute": 50,
+      "relative": 0.1
+    },
+    "fcp": {
+      "absolute": 50,
+      "relative": 0.1
+    },
+    "cardsFrameOpportunity": {
+      "absolute": 50,
+      "relative": 0.1
+    },
+    "scriptedINP": {
+      "absolute": 16,
+      "relative": 0.1
+    },
+    "cls": {
+      "absolute": 0.01,
+      "relative": 0.1
+    }
+  },
+  "sizes": {
+    "radix-react": {
+      "raw": 1103113,
+      "gzip": 205210,
+      "brotli": 155543
+    },
+    "fluent-react": {
+      "raw": 821535,
+      "gzip": 224684,
+      "brotli": 175830
+    },
+    "spectrum-react": {
+      "raw": 1071101,
+      "gzip": 298954,
+      "brotli": 233016
+    },
+    "astryx-react": {
+      "raw": 935906,
+      "gzip": 249802,
+      "brotli": 205552
+    },
+    "shadcn-react": {
+      "raw": 617917,
+      "gzip": 181732,
+      "brotli": 153046
+    },
+    "fluent-web-components": {
+      "raw": 292281,
+      "gzip": 72409,
+      "brotli": 59681
+    },
+    "spectrum-web-components": {
+      "raw": 1280527,
+      "gzip": 224376,
+      "brotli": 175701
+    },
+    "en-reve": {
+      "raw": 455210,
+      "gzip": 109066,
+      "brotli": 88026
+    }
+  },
+  "runSummarySha256": "c9ea6c212b9cfa756605c1230820d68eb07b710acd9ff914d0533758932fa275",
+  "qualification": "Exploratory workstation baseline; timing gates require same host/browser/protocol and independent confirmation."
+}

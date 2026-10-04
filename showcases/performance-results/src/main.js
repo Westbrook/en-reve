@@ -128,6 +128,22 @@ for (const definition of tables) {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
 }
+// The published document has the documentation site's absolute <base>. Keep
+// section navigation on this report, including its optional review query.
+for (const eventName of ["click", "auxclick", "contextmenu"]) {
+  document.addEventListener(eventName, (event) => {
+    const anchor = event.composedPath().find(node => node instanceof HTMLAnchorElement);
+    if (!anchor) return;
+    const raw = anchor.getAttribute("href");
+    const current = new URL(location.href);
+    const target = new URL(anchor.href);
+    const pagePath = path => path.endsWith("/") ? path + "index.html" : path;
+    if (raw?.startsWith("#") || (target.hash && target.origin === current.origin && pagePath(target.pathname) === pagePath(current.pathname))) {
+      current.hash = raw?.startsWith("#") ? raw : target.hash;
+      anchor.href = current.href;
+    }
+  }, { capture: true });
+}
 if (new URLSearchParams(location.search).has("progress-report")) {
   const link = document.createElement("a");
   link.className = "progress-return";

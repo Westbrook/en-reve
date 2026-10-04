@@ -1,7 +1,12 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {deploymentBase,deploymentSource,deploymentMarkup,deploymentDocument} from './deployment-paths.mjs';
+import {buildPerformanceResults} from './performance-results.mjs';
 const base='/en-reve/';
+test('root documentation does not require the independent reader installation',async()=>{
+  await buildPerformanceResults({workspaceRoot:'/nonexistent-en-reader-fixture',outputRoot:'/nonexistent-en-reader-fixture/dist',base:'/'});
+  await assert.rejects(buildPerformanceResults({workspaceRoot:'/nonexistent-en-reader-fixture',outputRoot:'/nonexistent-en-reader-fixture/dist',base}),/Install the independent performance reader/);
+});
 test('deployment paths are explicit and root delivery remains unchanged',()=>{
   for(const bad of ['en-reve','/en-reve','//','/../','https://example.com/']) assert.throws(()=>deploymentBase(bad));
   assert.equal(deploymentBase(),'/');assert.equal(deploymentBase(base),base);

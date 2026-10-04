@@ -23,6 +23,43 @@ def sha256(path):
 BASE_URL = 'https://westbrook.github.io/en-reve/'
 
 
+def verify_performance_results(source, build):
+    """Bind the included reader and linked evidence to this source checkout."""
+    reader = build / 'performance'
+    for name in ['index.html', 'results.md', 'source.json']:
+        if not (reader / name).is_file():
+            raise ValueError('Missing performance publication file: ' + name)
+    provenance = json.loads((reader / 'source.json').read_text())
+    if provenance.get('source') != 'plans/native-showcase-performance-results.md' or provenance.get('basePath') != '/en-reve/performance/':
+        raise ValueError('Performance publication must use the canonical report and project subpath.')
+
+    def checked_file(root, name):
+        path = (root / name).resolve()
+        if not path.is_relative_to(root.resolve()) or not path.is_file():
+            raise ValueError('Invalid performance provenance path: ' + name)
+        return path
+
+    expected = provenance.get('sourceHash')
+    if sha256(checked_file(source, provenance['source'])) != expected or sha256(reader / 'results.md') != expected:
+        raise ValueError('Performance report differs from its built source.')
+    inputs = provenance.get('viewerInputs', {})
+    if not inputs or 'showcases/performance-results/scripts/render.mjs' not in inputs:
+        raise ValueError('Missing performance viewer input provenance.')
+    for name, digest in inputs.items():
+        if sha256(checked_file(source, name)) != digest:
+            raise ValueError('Performance viewer input changed: ' + name)
+    resources = provenance.get('resources', [])
+    if not resources or provenance.get('resourceCount') != len(resources):
+        raise ValueError('Missing performance linked-document provenance.')
+    for item in resources:
+        if not item['path'].startswith('documents/'):
+            raise ValueError('Performance evidence must remain under documents/.')
+        if sha256(checked_file(source, item['source'])) != item['sha256'] or sha256(checked_file(reader, item['path'])) != item['sha256']:
+            raise ValueError('Performance linked document changed: ' + item['source'])
+    return {'source': provenance['source'], 'sourceHash': expected,
+            'resourceCount': len(resources), 'viewerSourceReceiptSHA256': sha256(reader / 'source.json')}
+
+
 def github_html(content):
     """Require the qualified base; publication must not invalidate review hashes."""
     source = content.decode('utf-8')
@@ -90,6 +127,8 @@ def publish(args):
     if len(files) != qualified['distFiles'] or digest != qualified['distManifestSHA256']:
         raise ValueError('Static files differ from the qualified build receipt.')
 
+    performance = verify_performance_results(source, build)
+
     review = json.loads((build / 'review-build.json').read_text())
     if review.get('deployment') != {'basePath': '/en-reve/', 'baseURL': BASE_URL}:
         raise ValueError('GitHub Pages requires a separately qualified /en-reve/ build.')
@@ -124,7 +163,7 @@ def publish(args):
         info = {'schemaVersion': 1, 'sourceCommit': source_commit, 'githubSourceCommit': main,
                 'buildFiles': len(files), 'qualifiedBuildManifestSHA256': digest,
                 'baseURL': BASE_URL,
-                'qualificationReceiptSHA256': sha256(args.receipt)}
+                'qualificationReceiptSHA256': sha256(args.receipt), 'performanceResults': performance}
         with tempfile.TemporaryDirectory(prefix='en-github-build-') as directory:
             env = dict(os.environ, GIT_INDEX_FILE=str(Path(directory) / 'index'))
             git(repository, 'read-tree', '--empty', env=env)

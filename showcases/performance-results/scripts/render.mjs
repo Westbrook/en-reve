@@ -3,10 +3,12 @@ import { resolve, dirname, relative, extname } from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 import { Marked } from "marked";
+import { reportBase } from "./deployment.mjs";
 
 const project = fileURLToPath(new URL("..", import.meta.url));
 const repo = resolve(project, "../..");
 const source = resolve(repo, process.env.PERF_REPORT_SOURCE || "plans/native-showcase-performance-results.md");
+const base = reportBase(process.env.PERF_REPORT_BASE);
 // Derive measurement dates from immutable run timestamps before rendering.
 if (!process.env.PERF_REPORT_SOURCE) {
   const { dateReportTables } = await import("../../performance/experiments/date-report-tables.mjs");
@@ -30,10 +32,12 @@ const slug = (value) =>
 await rm(resolve(project, "public"), { recursive: true, force: true });
 await mkdir(resolve(project, "public/documents"), { recursive: true });
 const resources = new Map();
+const resourceFiles = [];
 // Copy only explicit document links; the viewer never exposes the repository root.
 for (const match of markdown.matchAll(/\]\(([^)]+)\)/g)) {
   const href = match[1];
   if (/^(https?:|#)/.test(href)) continue;
+  if (resources.has(href)) continue;
   const path = resolve(dirname(source), href);
   if (
     !path.startsWith(repo + "/") ||
@@ -43,7 +47,8 @@ for (const match of markdown.matchAll(/\]\(([^)]+)\)/g)) {
   const target = `documents/${relative(repo, path)}`;
   await mkdir(dirname(resolve(project, "public", target)), { recursive: true });
   await copyFile(path, resolve(project, "public", target));
-  resources.set(href, `/${target}`);
+  resources.set(href, `${base}${target}`);
+  resourceFiles.push({ source: relative(repo, path), path: target, sha256: hash(await readFile(path)) });
 }
 await copyFile(source, resolve(project, "public/results.md"));
 let section = "",
@@ -69,7 +74,7 @@ const renderer = {
   },
   link(token) {
     const href = resources.get(token.href) ?? token.href;
-    if (!/^(https?:|#|\/documents\/)/.test(href))
+    if (!/^(https?:|#)/.test(href) && !href.startsWith(`${base}documents/`))
       return this.parser.parseInline(token.tokens);
     return `<a href="${escape(href)}">${this.parser.parseInline(token.tokens)}</a>`;
   },
@@ -128,27 +133,36 @@ await writeFile(
   resolve(project, "index.html"),
   `<!doctype html>
 <html lang="en" style="color-scheme:light"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="En Reve native showcase performance evidence and engineering backlog, with grouped sortable measurements and a prioritized engineering backlog."><title>Performance results · En Reve</title></head>
-<body><a class="skip-link" href="#content">Skip to results</a><header class="masthead"><a href="#" class="wordmark">En Rêve<span>Performance laboratory</span></a><a href="/results.md" download>Download source ↗</a></header>
-<div class="page-layout"><aside><p class="eyebrow">Research / 01</p><h2>Results &amp;<br>engineering backlog</h2><nav aria-label="Report sections">${nav}</nav><p class="source-note">Exploratory evidence<br>Dated comparison cohorts</p></aside><main id="content"><div class="report-label"><en-badge>${process.env.PERF_REPORT_SOURCE ? "Campaign evidence" : "Exploratory baseline"}</en-badge><span>Native implementations · grouped measurements</span></div><article>${content}</article><footer>Rendered from the results document · Source <code>${sourceHash.slice(0, 12)}</code><br><a href="/results.md">Read the original Markdown</a></footer></main></div><script type="module" src="/src/main.js"></script></body></html>`,
+<body><a class="skip-link" href="#content">Skip to results</a><header class="masthead"><a href="#" class="wordmark">En Rêve<span>Performance laboratory</span></a><a href="${base}results.md" download>Download source ↗</a></header>
+<div class="page-layout"><aside><p class="eyebrow">Research / 01</p><h2>Results &amp;<br>engineering backlog</h2><nav aria-label="Report sections">${nav}</nav><p class="source-note">Exploratory evidence<br>Dated comparison cohorts</p></aside><main id="content"><div class="report-label"><en-badge>${process.env.PERF_REPORT_SOURCE ? "Campaign evidence" : "Exploratory baseline"}</en-badge><span>Native implementations · grouped measurements</span></div><article>${content}</article><footer>Rendered from the results document · Source <code>${sourceHash.slice(0, 12)}</code><br><a href="${base}results.md">Read the original Markdown</a></footer></main></div><script type="module" src="/src/main.js"></script></body></html>`,
 );
-const inputs = await Promise.all(
-  [
+const inputNames = [
     "src/main.js",
     "src/table-data.js",
     "src/styles.css",
     "src/sticky-columns.css",
     "scripts/render.mjs",
+    "scripts/deployment.mjs",
+    "vite.config.js",
+    "package.json",
     "package-lock.json",
-  ].map((name) => readFile(resolve(project, name))),
-);
+  ];
+const packageJSON = JSON.parse(await readFile(resolve(project, 'package.json'), 'utf8'));
+for (const value of Object.values(packageJSON.dependencies)) {
+  if (value.startsWith('file:')) inputNames.push(value.slice(5));
+}
+const inputs = await Promise.all(inputNames.map(name => readFile(resolve(project, name))));
 await writeFile(
   resolve(project, "public/source.json"),
   JSON.stringify(
     {
       source: relative(repo, source),
       sourceHash,
-      buildHash: hash(Buffer.concat([Buffer.from(markdown), ...inputs])),
+      basePath: base,
+      buildHash: hash(Buffer.concat([Buffer.from(markdown), ...inputs, Buffer.from(JSON.stringify({ base, resourceFiles }))])),
       resourceCount: resources.size,
+      resources: resourceFiles,
+      viewerInputs: Object.fromEntries(inputNames.map((name, i) => [relative(repo, resolve(project, name)), hash(inputs[i])])),
     },
     null,
     2,
