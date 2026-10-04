@@ -1,10 +1,12 @@
 # Chakra UI-inspired paired theme
 
-This independent En Reve interpretation follows **Chakra UI 3.37.0's default
-neutral `colorPalette`** in light and dark appearances. It maps component recipes
+This independent En Reve interpretation uses **Chakra UI 3.37.0 with the teal
+`colorPalette`** in light and dark appearances. It maps component recipes
 through public tokens, CSS Parts and documented native helpers. It adds no Chakra
 runtime or font download. The mapping records an authored design interpretation;
 it is separate from browser qualification, visual equivalence and user acceptance.
+Teal is the requested brand choice inspired by the official homepage; Chakra's
+default component palette is gray. Neutral component geometry and surfaces remain.
 
 The [complete component crosswalk](./chakra-component-mapping.json) accounts for
 all **114 entries** in the official component overview. Each entry identifies an
@@ -33,25 +35,26 @@ and [layered shadows](https://github.com/chakra-ui/chakra-ui/blob/2e7517745cff2f
 | Mapped role | Light | Dark |
 | --- | --- | --- |
 | Canvas / panel | `#ffffff` / `#ffffff` | `#09090b` / `#111111` |
-| Muted surface / selected fill | `#f4f4f5` | `#18181b` |
-| Emphasized fill | `#e4e4e7` | `#27272a` |
+| Muted surface | `#f4f4f5` | `#18181b` |
+| Selected fill | `#ccfbf1` | `#032726` |
+| Emphasized neutral fill | `#e4e4e7` | `#27272a` |
+| Accent subtle | `#99f6e4` | `#114240` |
 | Main / muted text | `#09090b` / `#52525b` | `#fafafa` / `#a1a1aa` |
 | Decorative line | `#e4e4e7` | `#27272a` |
-| Functional boundary / focus | `#71717a` | `#a1a1aa` |
-| Solid action / action label | `#18181b` / `#ffffff` | `#ffffff` / `#09090b` |
-| Action text | `#27272a` | `#e4e4e7` |
-| Opaque solid hover / pressed | `#2f2f32` | `#e7e7e7` |
+| Functional boundary | `#71717a` | `#a1a1aa` |
+| Focus / action text | `#0c5d56` | `#5eead4` |
+| Brand and solid action / label | `#0c5d56` / `#ffffff` | `#0b7e74` / `#ffffff` |
+| Opaque solid hover / pressed | `#114240` / `#032726` | `#0c8177` / `#0a756c` |
 | Tooltip background / text | `#09090b` / `#fafafa` | `#ffffff` / `#09090b` |
 | Modal scrim | `rgba(0,0,0,.36)` | `rgba(0,0,0,.36)` |
 
-Neutral selected, outline and ghost treatments follow the default gray palette.
-Semantic success, warning, error and information colors remain independent.
-Functional boundaries and the light focus color deliberately use stronger gray
-values than source decorative borders and gray-400 focus. Input focus uses a
-2px inset contour in place of the source's 1px inside ring. Other action focus
-retains a 2px contour and 2px offset. Opaque hover colors approximate source
-90% solid paint against the canonical panel; their appearance can differ on
-other application backgrounds.
+Brand, action, link, selected-fill and focus semantics use teal. Semantic success,
+warning, error and information colors remain independent. Light solid actions use
+teal 700 for white-text contrast. Dark solid actions use adapted opaque teal fills
+with white labels; brighter teal 300 supplies action ink and focus on dark panels.
+Functional boundaries remain neutral. Input focus keeps a 2px inset contour;
+other action focus retains a 2px contour and 2px offset. Explicit neutral component
+surfaces and text treatments remain part of the component recipe interpretation.
 
 Toast success uses green 700 in place of green 600, and light warning uses orange
 700 in place of orange 600, to retain ordinary white-text contrast. Dark warning
@@ -77,12 +80,12 @@ minimums, text growth and logical RTL dimensions remain authoritative.
 | Family | Source mapping and public controls | Retained adaptation or anatomy limit |
 | --- | --- | --- |
 | Button, close and icon actions | Solid/md; 36/40/44px sizes, inline 14/16/20px, 4px radius, disabled opacity .5. `button/compact` applies variant hooks and typed size roles. | Existing primary/secondary/ghost/danger variants, content growth and target floors remain. Download and clipboard behaviors are application compositions. |
-| Link | Plain neutral link, 2px radius, 6px gap, hover underline at 20% current color with 3px offset through `link/plain`. | Native navigation and accessible naming remain; Link Overlay/Skip Nav click and focus behavior is authored by the application. |
+| Link | Plain teal link, 2px radius, 6px gap, hover underline at 20% current color with 3px offset through `link/plain`. | Native navigation and accessible naming remain; Link Overlay/Skip Nav click and focus behavior is authored by the application. |
 | Field and fieldset | 6px label gap; 14/20px medium labels; 12/16px helper/error text; fieldset gap 16px. `form-field/compact` and native field helpers. | Error visibility, announcements and fieldset semantics stay with their owners. |
 | Input, textarea and aliases | Outline, transparent fill, 1px boundary; md 40px with 12px inset. Textarea uses 12px inline/8px block. Public input hooks and typed control roles cover search/date/time/color/password aliases. | Native editing/composition/selection and textarea rows/resize remain. Platform date/time/password UI is not a source slot replica. |
 | Number Input / Pin Input | Shared input geometry and typed `number-field/subtle` / `otp-field/continuous-pin`. | Number steppers remain horizontal; OTP remains one real input. Current Parts cannot create source stacked steppers or separate pin cells. |
 | Checkbox / Radio | Solid/md 20px mark, 10px label gap; checkbox corners 2px; checked solid fill and contrasting mark. | Labels retain minimum target envelopes. Card variants are composed with public card and choice controls. |
-| Switch | md 40×20px track, 16px elevated thumb, 2px visual inset; muted unchecked track with white thumb. Checked thumb uses palette contrast: white in light mode, #09090b against the white track in dark mode. Translation is 150ms. A dedicated thumb shadow matches the source's 80% visual scale. | Transparent retained border and adjusted inset preserve native switch geometry, checked state and RTL. |
+| Switch | md 40×20px track, 16px elevated thumb, 2px visual inset; muted unchecked track with white thumb. Checked thumb uses palette contrast: white against the teal track in both modes. Translation is 150ms. A dedicated thumb shadow matches the source's 80% visual scale. | Transparent retained border and adjusted inset preserve native switch geometry, checked state and RTL. |
 | Slider / Rating | Slider 8px track/20px thumb geometry; rating neutral state ink and compact star spacing. | Native slider track/fill/outlined-thumb paint differs by engine. Font-star rating retains clear action/targets; no half-star SVG feature is added. |
 | Segmented Control | Enclosed muted surface, 4px radius, zero root padding/gap, selected surface shadow; typed item spacing/weight. | No source moving indicator or separator anatomy; selected item semantics and targets remain. |
 | Combobox / Listbox / custom Select | md 40px input, 16px indicator, 4px popup radius, compact 14/20px rows; listbox selected muted surface. Typed `combobox/compact`, listbox and option presentations. | En Reve `en-select` is NativeSelect. Custom selection maps to combobox/multiselect with their own filtering/tag models and 40px row targets. |
