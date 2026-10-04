@@ -1,0 +1,165 @@
+{
+  "startedAt": "2026-09-21T18:21:54.668Z",
+  "status": "incomplete",
+  "interpretation": "Exploratory developer-workstation expansion. New randomized same-cohort controls; historical eight-system samples are preserved and never treated as paired with this campaign.",
+  "planned": [
+    {
+      "suite": "load",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold,warm",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-load-v1"
+    },
+    {
+      "suite": "startup",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-startup-v1"
+    },
+    {
+      "suite": "interactions",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-interactions-v1"
+    },
+    {
+      "suite": "lighthouse",
+      "samples": "5",
+      "profiles": "mobile",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-lighthouse-v1"
+    },
+    {
+      "suite": "memory",
+      "samples": "1",
+      "profiles": "desktop",
+      "caches": "cold",
+      "checkpoints": "0,10,50",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-memory-v1"
+    },
+    {
+      "suite": "diagnostic",
+      "samples": "1",
+      "profiles": "desktop",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-diagnostic-v1"
+    },
+    {
+      "suite": "bfcache",
+      "samples": "5",
+      "profiles": "desktop",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-bfcache-v1"
+    },
+    {
+      "suite": "overhead",
+      "samples": "5",
+      "profiles": "desktop",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-overhead-v1"
+    }
+  ],
+  "campaigns": [
+    {
+      "suite": "load",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold,warm",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-load-v1",
+      "startedAt": "2026-09-21T18:21:54.670Z",
+      "finishedAt": "2026-09-21T18:28:08.065Z",
+      "exitCode": 0,
+      "expected": 120,
+      "recorded": 120,
+      "successful": 120,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "startup",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-startup-v1",
+      "startedAt": "2026-09-21T18:28:08.075Z",
+      "finishedAt": "2026-09-21T18:28:52.361Z",
+      "exitCode": 0,
+      "expected": 60,
+      "recorded": 60,
+      "successful": 60,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "interactions",
+      "samples": "10",
+      "profiles": "desktop,mobile",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-interactions-v1",
+      "startedAt": "2026-09-21T18:28:52.369Z",
+      "finishedAt": "2026-09-21T18:34:38.526Z",
+      "exitCode": 0,
+      "expected": 60,
+      "recorded": 60,
+      "successful": 60,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "lighthouse",
+      "samples": "5",
+      "profiles": "mobile",
+      "caches": "cold",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-lighthouse-v1",
+      "startedAt": "2026-09-21T18:34:38.554Z",
+      "finishedAt": "2026-09-21T18:38:39.036Z",
+      "exitCode": 0,
+      "expected": 15,
+      "recorded": 15,
+      "successful": 15,
+      "failed": 0,
+      "complete": true
+    },
+    {
+      "suite": "memory",
+      "samples": "1",
+      "profiles": "desktop",
+      "caches": "cold",
+      "checkpoints": "0,10,50",
+      "systems": "web-awesome,en-reve,fluent-web-components",
+      "seed": "20260921",
+      "id": "web-awesome-memory-v1",
+      "startedAt": "2026-09-21T18:38:39.039Z",
+      "finishedAt": "2026-09-21T18:38:39.793Z",
+      "exitCode": 1,
+      "collectionError": "ENOENT: no such file or directory, open '/Users/westbrook/Documents/repos/design-system/showcases/performance/runs/web-awesome-memory-v1/manifest.json'"
+    }
+  ],
+  "stoppedAt": "2026-09-21T18:38:39.794Z"
+}

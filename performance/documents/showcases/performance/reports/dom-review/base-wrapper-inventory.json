@@ -1,0 +1,2227 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-20T21:13:02.150819+00:00",
+  "scope": "Read-only current source base-part architecture audit; frozen installed 0.1.0 package declaration sites checked separately; no component edits or performance claims.",
+  "counts": {
+    "currentComponentTypes": 41,
+    "currentComponentDeclarationSites": 43,
+    "currentDocumentedBasePartComponentTypes": 40,
+    "frozenComponentTypes": 40,
+    "frozenComponentDeclarationSites": 42,
+    "additionalStandalonePrimitiveTemplateSites": 2
+  },
+  "frozenVendorTarballSha256": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+  "entries": [
+    {
+      "component": "en-accordion",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/accordion/accordion.ts",
+        "line": 19
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/accordion/template.ts",
+          "line": 4,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-accordion\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/accordion/accordion.ts": "be2e5454be3cc89440d6f9d9a7fa0a875d8df164211649dc3cdaadc059e2c650",
+        "packages/elements/src/accordion/template.ts": "45492c934ffd229d339144401184a7f82abac03f1fab5e71d7c115169602b46f",
+        "packages/styles/src/selection.ts": "6fdf4aa9a4e19e9bc98958605e89775bb8df8361201dad946f1cc533f3511dac"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/accordion/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-accordion\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/accordion/template.js": "5cf95ffe0ba129b6922b3ff0a8953f45e14e2826b7ce9956dc2c71bbc865db85"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "flex layout, isolation, slot projection",
+      "opportunity": "Host can own flex column and isolation; retain slot and slotchange listener. Rewrite slotted focus stacking selectors.",
+      "styleSource": "packages/styles/src/selection.ts",
+      "acceptance": "Slot membership, cancellation, nested focus stacking and all item states.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 1
+    },
+    {
+      "component": "en-accordion-item",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/accordion-item/accordion-item.ts",
+        "line": 46
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/accordion-item/template.ts",
+          "line": 13,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-accordion-item\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/accordion-item/accordion-item.ts": "fe8fb0025be09e3665a7e08d94b41b4a16d668e38f32527e19120f1e0006eb70",
+        "packages/elements/src/accordion-item/template.ts": "34f1eccc98e36d69d8088746c2c73a0412eae73d2f6d403c769a8acc3c52a25d",
+        "packages/styles/src/selection.ts": "6fdf4aa9a4e19e9bc98958605e89775bb8df8361201dad946f1cc533f3511dac"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/accordion-item/template.js",
+          "line": 5,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-accordion-item\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/accordion-item/template.js": "719708a84859f00d6e75c0b91041b18a1f6461771e4fb4086d5043d662c9adbc"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "bordered section around heading/button/panel",
+      "opportunity": "Host can own border/min-size. Keep heading, native trigger and panel together in shadow for aria-controls; section has no accessible name today.",
+      "styleSource": "packages/styles/src/selection.ts",
+      "acceptance": "Heading levels, trigger/panel ID relationship, expanded state, disabled and focus ring.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 1
+    },
+    {
+      "component": "en-activity-feed",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/activity-feed.ts",
+        "line": 79
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/activity-feed.ts",
+          "line": 287,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"feed\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/activity-feed.ts": "646e34377461e78cf39ec3da359e966ed3b183a6ace30a2f26b6342a0f88bb20",
+        "packages/styles/src/collaboration.ts": "c6013042f2f4bda9dfcee63c3f5d08833fced53480f011d4591a43a15c0f0108"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/activity-feed.js",
+          "line": 344,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"feed\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/activity-feed.js": "a753901e62e702a4df0678a6ae5c2e7d838e7e2130a17c29af93f358932ba9af"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "grid layout over list, controls, slots, announcements",
+      "opportunity": "Host can own grid/gap; leave list/virtual scroll boundaries and announcements intact. Does not eliminate rows or hidden load controls.",
+      "styleSource": "packages/styles/src/collaboration.ts",
+      "acceptance": "List versus virtual/paginated modes; scroll anchoring, retained focus and live updates.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-activity-item",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/activity-item.ts",
+        "line": 28
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/activity-item.ts",
+          "line": 39,
+          "element": "article",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<article class=\"item\" part=\"base\" tabindex=\"-1\" aria-label=${this.label||nothing}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/activity-item.ts": "8e2ca4ea223374c220d4ae589fe27144c7645e154857eca46e1256e041702b96",
+        "packages/styles/src/collaboration.ts": "c6013042f2f4bda9dfcee63c3f5d08833fced53480f011d4591a43a15c0f0108"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/activity-item.js",
+          "line": 35,
+          "element": "article",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<article class=\"item\" part=\"base\" tabindex=\"-1\" aria-label=${this.label || nothing}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/activity-item.js": "f4ac8de4340b0d89744a218a170b720be1b0792897d537a512a1e5cfe2258dc6"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named focusable article inside listitem wrapper",
+      "opportunity": "Prefer move listitem to host and keep native article; alternatively move article role to host only when external listitem remains. One host cannot be both article and listitem.",
+      "styleSource": "packages/styles/src/collaboration.ts",
+      "acceptance": "Embedded versus standalone list semantics, article navigation, focus(), metadata slot fallback.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-alert",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/alert/element.ts",
+        "line": 26
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/alert/template.ts",
+          "line": 15,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-alert\" part=\"base\" data-variant=${view.variant} ?hidden=${!view.open}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/alert/element.ts": "9e6dda0908be794119b9441a6adf97cb3e9151f614dde5c64ce66039191883fd",
+        "packages/elements/src/alert/template.ts": "57adba2192b9faee43548c91852b935a4250272eb0bd4d19d47fc98fc216368b",
+        "packages/styles/src/feedback.ts": "6c8da540ad5f16a5c69233693bea4f1d5f033b062e15a4d3a9bce030ace3cd15"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/alert/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-alert\" part=\"base\" data-variant=${view.variant} ?hidden=${!view.open}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/alert/template.js": "7045b8e604997eed089198de211e3cb66028e6c6e333a683c1a2c4636642d6cd"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "flex surface, variant and closed visibility",
+      "opportunity": "Host can own flex/border/variant/visibility; keep stable content live region and native dismiss button. Do not hide host by overwriting an author-owned hidden attribute without a policy.",
+      "styleSource": "packages/styles/src/feedback.ts",
+      "acceptance": "Announcements across updates, dismiss cancellation, focus on dismissed controls, icon slot presence and SSR.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-avatar",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/avatar/element.ts",
+        "line": 16
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/avatar/template.ts",
+          "line": 13,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span\n    class=\"en-avatar\"\n    part=\"base\"\n    data-size=${view.size}\n    role=${view.name ? 'img' : nothing}\n    aria-label=${view.name || nothing}\n    aria-hidden=${view.name ? nothing : 'true'}\n  >"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/avatar/element.ts": "236d75da623f7ddd90b521960f9f7ee17a8cf71d8d0642001181481a2358e757",
+        "packages/elements/src/avatar/template.ts": "f1e47e9081bd5dece3091a25e98546da8a93ac34622c96d4db7a957ea8167526",
+        "packages/styles/src/feedback.ts": "6c8da540ad5f16a5c69233693bea4f1d5f033b062e15a4d3a9bce030ace3cd15"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/avatar/template.js",
+          "line": 3,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span\n    class=\"en-avatar\"\n    part=\"base\"\n    data-size=${view.size}\n    role=${view.name ? 'img' : nothing}\n    aria-label=${view.name || nothing}\n    aria-hidden=${view.name ? nothing : 'true'}\n  >"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/avatar/template.js": "f033ac43f0cc1779d58c9b516e8aded21afa75882843faf17635e08e33fa822c"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "image frame, img role/name or decorative hiding",
+      "opportunity": "Host can own grid/clip/radius/size and default img semantics; preserve actual img and initials fallback. Respect author aria overrides and decorative state.",
+      "styleSource": "packages/styles/src/feedback.ts",
+      "acceptance": "Accessible image naming/decorative mode, image errors, sizing/inheritance, clipping and baseline.",
+      "runtimeBaseInstances": 2,
+      "runtimeBaseInstancesWithoutDate": 2
+    },
+    {
+      "component": "en-badge",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/badge/element.ts",
+        "line": 18
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/badge/template.ts",
+          "line": 4,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-badge\" part=\"base\" data-variant=${variant}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/badge/element.ts": "745be7d75898b12d60dcf75abbce14067a2d99c90ae57016d673aec33fb6cb8e",
+        "packages/elements/src/badge/template.ts": "07b21b12b2fb5bb458a4aef783a15587f64d905dc612047d58d7227afcd843ff",
+        "packages/styles/src/feedback.ts": "6c8da540ad5f16a5c69233693bea4f1d5f033b062e15a4d3a9bce030ace3cd15"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/badge/template.js",
+          "line": 3,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-badge\" part=\"base\" data-variant=${variant}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/badge/template.js": "314434f292dfb0ef5c9fb9232f5b59ca4cd589e5dfae8ad0a613c7f72789cd7a"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "inline-flex status surface, variant, prefix/label slots",
+      "opportunity": "Host can own inline-flex/padding/border and variant; label min-size and nested fallback slots remain. No interactive role to migrate.",
+      "styleSource": "packages/styles/src/feedback.ts",
+      "acceptance": "Long labels, prefix semantics, inline baseline, wrapping, sizes and all variants.",
+      "runtimeBaseInstances": 5,
+      "runtimeBaseInstancesWithoutDate": 5
+    },
+    {
+      "component": "en-breadcrumbs",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/breadcrumbs/element.ts",
+        "line": 21
+      },
+      "currentSites": [
+        {
+          "file": "packages/primitives/src/templates/breadcrumbs.ts",
+          "line": 13,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav class=\"en-breadcrumbs\" part=\"base\" aria-label=${label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/breadcrumbs/element.ts": "e02d4dc37394f5189ee0d729a21cd8ba5a6b1c879692a1be2f97651f1eb1f42f",
+        "packages/primitives/src/templates/breadcrumbs.ts": "7181db7693108b78c990e6abe6f1e70de5358a161abfd9bc6c0fb086fce5d03d",
+        "packages/styles/src/navigation.ts": "6e0108458275d02907d6ee966ec54659c5a6c4fb05ee4c20ab7bde878e10c840"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/primitives/dist/templates/breadcrumbs.js",
+          "line": 7,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav class=\"en-breadcrumbs\" part=\"base\" aria-label=${label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/primitives/dist/templates/breadcrumbs.js": "e0a90a09313f19a40d3b40fcb07b33a5ebcb769edde0d4fdce0975124eae5a14"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "named native nav enclosing projection/list",
+      "opportunity": "Host role=navigation could replace native nav but loses automatic HTML landmark semantics and needs verified default semantics/SSR. Preserve ordered list, original anchors and projection wrappers.",
+      "styleSource": "packages/styles/src/navigation.ts",
+      "acceptance": "Landmark names, anchor identity/handlers, ordered list semantics and projection updates.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 1
+    },
+    {
+      "component": "en-calendar",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/calendar/element.ts",
+        "line": 69
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/calendar/element.ts",
+          "line": 285,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" class=\"en-calendar\" data-selection=${this.selection}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/calendar/element.ts": "bb961f85b1c5a9b67f73109e59d86978a37a4dcb6f04ae2b3ffcd3aeb5a9c888",
+        "packages/styles/src/calendar.ts": "b8e3c78d0808b24e95c83e6d8ad7c8b848a376b37424993707cb676861214392"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/calendar/element.js",
+          "line": 360,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" class=\"en-calendar\" data-selection=${this.selection}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/calendar/element.js": "10edee0a256c00f068103052f26112e08f0ee59ba0a165673722cc3eedda8db2"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "width/overflow boundary, selection styling, calendar grid container; keyboard reveal scrolling queries this surface",
+      "opportunity": "Host can own calendar width/max-width/overflow and selection selector. Grid, heading and days remain. Date picker currently styles en-calendar::part(base), so dependent style migration is required. Update updated() geometry/client-border/scrollBy logic at packages/elements/src/calendar/element.ts:267; it directly queries .en-calendar.",
+      "styleSource": "packages/styles/src/calendar.ts",
+      "acceptance": "Single/range state selectors, coarse targets, narrow/RTL overflow, grid naming, day keyboard focus and forced colors. Focused-day keyboard reveal must scroll the migrated surface without scrolling the page.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-card",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/card/element.ts",
+        "line": 26
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/card/template.ts",
+          "line": 10,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-card\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/card/element.ts": "de461f1728352215ca3fdfa2f34d6678551703f012854cda56a95670a078c4cb",
+        "packages/elements/src/card/template.ts": "6d8034e7e20a4db93abb95bae406510acc1689d5d3369bcff040642e271c9e19",
+        "packages/styles/src/css/surface.css": "95eb59390d8395736145cd19499c4e74df25016d1d46aa3d84dc17eb75b0fe72"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/card/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-card\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/card/template.js": "42ef7a16d0d65dba720713ae511fb3463f210fb56104dc36fc0dfac997761c79"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "flex surface, padding/border/background/shadow around three regions",
+      "opportunity": "Host can own entire surface layout; retain header/content/footer initially. Investigate absent optional region wrappers separately with slot discovery and SSR identity preserved.",
+      "styleSource": "packages/styles/src/css/surface.css",
+      "acceptance": "Actual showcase ::part(base) override, fill-height cards, spacing, nested cards, optional slots and hydration.",
+      "runtimeBaseInstances": 16,
+      "runtimeBaseInstancesWithoutDate": 16
+    },
+    {
+      "component": "en-carousel",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/carousel.ts",
+        "line": 53
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/carousel.ts",
+          "line": 655,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"base\" part=\"base\" role=\"group\" aria-roledescription=${this.listMode ? nothing : this.carouselLabel} aria-label=${this.label} @focusin=${this.focused} @focusout=${this.blurred} @pointerenter=${() =>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/carousel.ts": "42614be0120409d6074860ff9860bd8d2d00f8fa74d7298b7c134220a246b7eb",
+        "packages/styles/src/carousel.ts": "009d7c91684ce6e76b446424ef29298934020e13d7b732d5fb8ee3b5f5783831"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/carousel.js",
+          "line": 660,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"base\" part=\"base\" role=\"group\" aria-roledescription=${this.listMode ? nothing : this.carouselLabel} aria-label=${this.label} @focusin=${this.focused} @focusout=${this.blurred} @pointerenter=${() =>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/carousel.js": "fe0cc3209d651715d381c9438f7b709f62f92c037fb6fe8f597e2edc3c2fca61"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named group/grid, hover/focus pause boundary",
+      "opportunity": "Host could own group/grid and event boundary after auditing relatedTarget/containment paths and autoplay recovery; retain viewport scroll region.",
+      "styleSource": "packages/styles/src/carousel.ts",
+      "acceptance": "Pointer enter/leave, focus pause/resume, reduced motion, viewport clipping, resize and collection modes.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-carousel-slide",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/carousel-slide.ts",
+        "line": 13
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/carousel-slide.ts",
+          "line": 39,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"slide\" part=\"base\" role=\"group\" aria-roledescription=${this.context?.description ?? 'slide'} aria-label=${[this.label, this.context?.position].filter(Boolean).join(', ') || nothing} ?inert=${this.context?.visible === false} aria-hidden=${this.context?.visible === false ? 'true' : nothing}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/carousel-slide.ts": "9981dd325c87a31f602c5ec259f211fc0e3f4453f24d55eb54314921437277ec",
+        "packages/styles/src/carousel.ts": "009d7c91684ce6e76b446424ef29298934020e13d7b732d5fb8ee3b5f5783831"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/carousel-slide.js",
+          "line": 38,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"slide\" part=\"base\" role=\"group\" aria-roledescription=${this.context?.description ?? 'slide'} aria-label=${[this.label, this.context?.position].filter(Boolean).join(', ') || nothing} ?inert=${this.context?.visible === false} aria-hidden=${this.context?.visible === false ? 'true' : nothing}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/carousel-slide.js": "503999ca9b5bf7083ba38c228daee21bc8d48fd2810c6a2abdf6797fccea1357"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "group/name/position, inert/aria-hidden and slide surface",
+      "opportunity": "Host can own surface and default group semantics, but inert/hidden policy must distinguish internal visibility from consumer attributes; preserve authored children identity.",
+      "styleSource": "packages/styles/src/carousel.ts",
+      "acceptance": "Offscreen focus exclusion, visible set announcements, nested controls, scroll geometry and full-height slides.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-chat-composer",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/chat-composer/element.ts",
+        "line": 31
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/chat-composer/element.ts",
+          "line": 89,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-chat-composer\" part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/chat-composer/element.ts": "622eeb6c2024cdba39446f70c0ca36093fe53ede79e3c5db7965d28431e73dd2",
+        "packages/styles/src/chat.ts": "aa7615d22d58abd6e392dfe0b036421d0f45eb5dec0e3799860162f682437c88"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/chat-composer/element.js",
+          "line": 97,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-chat-composer\" part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/chat-composer/element.js": "09f3b2f3887d563b3454f1cb908a3b0950bf93a2b6653334d733d63be2ffbc6c"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named group/surface for editor and actions",
+      "opportunity": "Host can own default group semantics/surface; native editing and send controls remain. focus() must still target the editor adapter.",
+      "styleSource": "packages/styles/src/chat.ts",
+      "acceptance": "IME, native edit controls, validity, custom send slot, cancelable send and editor focus.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-chat-message",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/chat-message/element.ts",
+        "line": 28
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/chat-message/element.ts",
+          "line": 40,
+          "element": "article",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<article class=\"en-chat-message\" part=\"base\" aria-label=${this.label||this.author}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/chat-message/element.ts": "6554266296e2e735ac4d69bf30e84eb83e72d21d2ed3a48ef921dc1d7602876f",
+        "packages/styles/src/chat.ts": "aa7615d22d58abd6e392dfe0b036421d0f45eb5dec0e3799860162f682437c88"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/chat-message/element.js",
+          "line": 38,
+          "element": "article",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<article class=\"en-chat-message\" part=\"base\" aria-label=${this.label || this.author}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/chat-message/element.js": "2f89a96dae97a61690ab8724895640c5f97172e626d8f36ae6f43fb18250897e"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named article and explicit focus() target",
+      "opportunity": "Move role=article/name/surface to host only with article accessibility and focus API redesign; keep native article as lower-risk default.",
+      "styleSource": "packages/styles/src/chat.ts",
+      "acceptance": "Article navigation/name, focus() without permanent Tab stop, outgoing style and rich slots.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-color-picker",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/color-picker/element.ts",
+        "line": 64
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/color-picker/element.ts",
+          "line": 222,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/color-picker/element.ts": "80949bb71e6e5a0d8f42fcf801423ee71a8cb616014d2166398b943f666f2b36",
+        "packages/styles/src/color-picker.ts": "43141dc9179bd589b70d8ea9b740b719ccf47e5c57bf3607f8114799b14ec091"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/color-picker/element.js",
+          "line": 245,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/color-picker/element.js": "a3ac87129528f76dd089dfef787900e94987198947f98b1e3081473d6fc33583"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named group/grid/sizing around controls",
+      "opportunity": "Host can own default group semantics and layout; keep field/slider/native controls and existing forwarded parts. Larger savings likely lie in optional panels rather than one base.",
+      "styleSource": "packages/styles/src/color-picker.ts",
+      "acceptance": "Color spaces, responsive grid, all nested channel controls, validity and focus delegation.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-color-plane",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/color-plane.ts",
+        "line": 44
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/color-plane.ts",
+          "line": 103,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/color-plane.ts": "c2ade8ebd7e347fba8f2e87747e5f9039374b1f73c26b709321371204507518f",
+        "packages/styles/src/color-picker.ts": "43141dc9179bd589b70d8ea9b740b719ccf47e5c57bf3607f8114799b14ec091"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/color-plane.js",
+          "line": 115,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/color-plane.js": "d2e96dd6ec5fab9611910cbe0d16b51d7f666a04ee70ae515ed646ea62ff685c"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named group/grid around pointer plane and keyboard equivalents",
+      "opportunity": "Host can own group and layout; retain pointer plane gesture target and accessible equivalent sliders.",
+      "styleSource": "packages/styles/src/color-picker.ts",
+      "acceptance": "Pointer capture/geometry, keyboard equivalents, labels, alpha toggle and exact input errors.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-color-wheel",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/color-wheel.ts",
+        "line": 34
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/color-wheel.ts",
+          "line": 164,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/color-wheel.ts": "50f0165a77130f122ea712a4709ae3edd0e5f0322da76ac212f58be8aab4d538",
+        "packages/styles/src/color-wheel.ts": "35e3e885df71017d7ae7ab97dfa20926545bf6b8e776fe5ef3cc324e13a94d8a"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/color-wheel.js",
+          "line": 213,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/color-wheel.js": "4de48c1c3c76413a11634b8688052f388efe9f97c8101dac92783ec225da29c5"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named group/grid around wheel and sliders",
+      "opportunity": "Host can own group/layout; retain wheel gesture target and accessible slider controls.",
+      "styleSource": "packages/styles/src/color-wheel.ts",
+      "acceptance": "Wheel geometry, pointer capture, Hue alternatives, alpha and disabled state.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-editor-toolbar",
+      "classification": "top-layer-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/editor-toolbar.ts",
+        "line": 24
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/editor-toolbar.ts",
+          "line": 100,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"base\" part=\"base\" popover=${this.mode==='contextual'?'manual':nothing} @keydown=${this.keydown}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/editor-toolbar.ts": "0cf51d351aa75178576eb2211d0901ca1694266c5347ccc83454a689b4e294a1"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/editor-toolbar.js",
+          "line": 154,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"base\" part=\"base\" popover=${this.mode === 'contextual' ? 'manual' : nothing} @keydown=${this.keydown}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/editor-toolbar.js": "a6198c371d6f4bab7cec7ccf9e3781092eecac690786f96f5b9cfc34452ff5b0"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "popover surface, layout, placement geometry and keydown boundary",
+      "opportunity": "Popover can be host-owned in principle, but this moves top-layer participation, imperative geometry and all base references. Keep as separate measured redesign, not simple wrapper deletion.",
+      "styleSource": "packages/elements/src/editor-toolbar.ts",
+      "acceptance": "showPopover/hidePopover, selection rect, docking, clipping, focus, Escape, inline/contextual modes.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-icon",
+      "classification": "retain-primitive",
+      "currentImplementation": {
+        "file": "packages/elements/src/icon/element.ts",
+        "line": 14
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/icon/template.ts",
+          "line": 36,
+          "element": "svg",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<svg\n    class=\"en-icon\"\n    ?data-logical=${name === 'align-start' || name === 'align-end'}\n    part=\"base\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    stroke=\"currentColor\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    focusable=\"false\"\n    role=${label ? 'img' : nothing}\n    aria-label=${label || nothing}\n    aria-hidden=${label ? nothing : 'true'}\n  >"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/icon/element.ts": "4189b0ca0018ca7aa0191d7c1e02dee2b89f7fdb60cfe66659d6eff219cfad63",
+        "packages/elements/src/icon/template.ts": "68c89ef6943e53739c1ef23a7371a14c98949ebbc8685ebbfcb3b04e63385022",
+        "packages/styles/src/feedback.ts": "6c8da540ad5f16a5c69233693bea4f1d5f033b062e15a4d3a9bce030ace3cd15"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/icon/template.js",
+          "line": 28,
+          "element": "svg",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<svg\n    class=\"en-icon\"\n    part=\"base\"\n    viewBox=\"0 0 24 24\"\n    fill=\"none\"\n    stroke=\"currentColor\"\n    stroke-linecap=\"round\"\n    stroke-linejoin=\"round\"\n    focusable=\"false\"\n    role=${label ? 'img' : nothing}\n    aria-label=${label || nothing}\n    aria-hidden=${label ? nothing : 'true'}\n  >"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/icon/template.js": "844fb542216c92e7b5b53c630c73b2d8bc710fcc2ddf52711da896998862fea3"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "SVG viewport, stroke and accessible image contract",
+      "opportunity": "Base is the actual SVG, not an extra HTML wrapper. A custom HTML host cannot replace its SVG namespace/viewBox rendering. Investigate paths or repeated host use independently.",
+      "styleSource": "packages/styles/src/feedback.ts",
+      "acceptance": "Do not count SVG base as removable wrapper; preserve meaningful/decorative naming and RTL mirroring.",
+      "runtimeBaseInstances": 19,
+      "runtimeBaseInstancesWithoutDate": 15
+    },
+    {
+      "component": "en-navigation",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/navigation/element.ts",
+        "line": 47
+      },
+      "currentSites": [
+        {
+          "file": "packages/primitives/src/templates/slotted-navigation.ts",
+          "line": 12,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav class=\"en-section-nav\" part=\"base\" aria-label=${label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/navigation/element.ts": "fb7b048bc22d48081998943a7714e28fb219508a94d60b6f1a5103edb24dd7fc",
+        "packages/primitives/src/templates/slotted-navigation.ts": "4bf75d9de94567aed21ac2ed7b49fd0ebe89f33c6cb14a1d33bd58e7ab675fc5",
+        "packages/styles/src/navigation.ts": "6e0108458275d02907d6ee966ec54659c5a6c4fb05ee4c20ab7bde878e10c840"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/primitives/dist/templates/slotted-navigation.js",
+          "line": 5,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav class=\"en-section-nav\" part=\"base\" aria-label=${label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/primitives/dist/templates/slotted-navigation.js": "6cb2e18b99b1ae98bc330afeb88c043354baf8aae88d2f6cf03cb914ac426390"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "named native nav inside optional details disclosure",
+      "opportunity": "Host could supply navigation semantics but then landmark moves outside responsive details and must not expose a collapsed empty landmark accidentally. Keep details/summary.",
+      "styleSource": "packages/styles/src/navigation.ts",
+      "acceptance": "Responsive collapse, SSR, named landmarks, current links, native navigation and resize focus.",
+      "runtimeBaseInstances": 2,
+      "runtimeBaseInstancesWithoutDate": 2
+    },
+    {
+      "component": "en-navigation-group",
+      "classification": "retain-native",
+      "currentImplementation": {
+        "file": "packages/elements/src/navigation-group.ts",
+        "line": 20
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/navigation-group.ts",
+          "line": 63,
+          "element": "details",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<details part=\"base\" ?open=${this.open} @toggle=${this.toggled}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/navigation-group.ts": "91ad15dd578142c4a36a96e04a2a8bf88214729a3860ad13db3f88171ae6386d",
+        "packages/styles/src/navigation.ts": "6e0108458275d02907d6ee966ec54659c5a6c4fb05ee4c20ab7bde878e10c840"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/navigation-group.js",
+          "line": 62,
+          "element": "details",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<details part=\"base\" ?open=${this.open} @toggle=${this.toggled}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/navigation-group.js": "01476a36e31f489a73b77cb9f9a577463d762212eb9a115a514ae22e53839598"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "native details disclosure with summary toggle",
+      "opportunity": "Keep details/summary for native disclosure and SSR interaction capture; moving roles to host does not replace native behavior.",
+      "styleSource": "packages/styles/src/navigation.ts",
+      "acceptance": "Native toggle, keyboard, pre-upgrade interaction, current-link reveal and focus recovery.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-pagination",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/pagination/element.ts",
+        "line": 47
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/pagination/template.ts",
+          "line": 49,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav class=\"en-pagination\" part=\"base\" aria-label=${view.label} tabindex=\"-1\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/pagination/element.ts": "104fb91da88413bc0cb4b5b58560fbcb8f9c399251730a5a2ec8a3372b53f09a",
+        "packages/elements/src/pagination/template.ts": "4d6ba9f9176ead613b796f3bd7ed675fbc8564b8a35507092dbc0a4118ae9e97",
+        "packages/styles/src/pagination.ts": "1313e3169f593ff2d1bd560123c40a1b7de747a627e3f91568be5d427dd76ef1"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/pagination/template.js",
+          "line": 32,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav class=\"en-pagination\" part=\"base\" aria-label=${view.label} tabindex=\"-1\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/pagination/template.js": "f801328c2a05672e68fdf79c270fe856165ba2016bf13045df424dd3ffd1474a"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named nav and programmatic focus fallback",
+      "opportunity": "Host could own navigation semantics/layout/focus but requires every nav fallback and responsive direct-jump contract audited; keep native controls/popover.",
+      "styleSource": "packages/styles/src/pagination.ts",
+      "acceptance": "Focus after page replacement, gap popover invokers, responsive layouts, RTL and hidden variants.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-presence",
+      "classification": "mixed-native",
+      "currentImplementation": {
+        "file": "packages/elements/src/presence.ts",
+        "line": 27
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/presence.ts",
+          "line": 44,
+          "element": "a",
+          "parts": [
+            "base",
+            "link"
+          ],
+          "openingTag": "<a class=\"presence\" part=\"base link\" href=${this.href} target=${this.target||nothing} rel=${this.rel||nothing}>"
+        },
+        {
+          "file": "packages/elements/src/presence.ts",
+          "line": 44,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"presence\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/presence.ts": "ee55391155b41b6c2689aaba752fd686af88a426af4c9c36fb08d7c6f8cee61f",
+        "packages/styles/src/collaboration.ts": "c6013042f2f4bda9dfcee63c3f5d08833fced53480f011d4591a43a15c0f0108"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/presence.js",
+          "line": 42,
+          "element": "a",
+          "parts": [
+            "base",
+            "link"
+          ],
+          "openingTag": "<a class=\"presence\" part=\"base link\" href=${this.href} target=${this.target || nothing} rel=${this.rel || nothing}>"
+        },
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/presence.js",
+          "line": 42,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"presence\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/presence.js": "26601c8914c75bdd0ef4b878b21a43371e7f34f4fd607a8c720ee642fbde028c"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "native anchor when linked; div surface otherwise",
+      "opportunity": "Unlinked variant could move surface to host. Linked variant should retain native anchor (href/target/rel, browser link actions); styling on host alone does not move hit area or semantics.",
+      "styleSource": "packages/styles/src/collaboration.ts",
+      "acceptance": "Linked versus unlinked switch, open-in-new-tab, focus/hover, nested avatar, rich name and status slots.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-presence-group",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/presence-group.ts",
+        "line": 18
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/presence-group.ts",
+          "line": 52,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" tabindex=\"-1\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/presence-group.ts": "2ecb20a2ab262d58de5f4f5ec61481ac9df8a4610fc49d37dda505b48f96dbce",
+        "packages/styles/src/collaboration.ts": "c6013042f2f4bda9dfcee63c3f5d08833fced53480f011d4591a43a15c0f0108"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/presence-group.js",
+          "line": 71,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div part=\"base\" tabindex=\"-1\" role=\"group\" aria-label=${this.label}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/presence-group.js": "c5e245826d73ae8bc2fca6041f4bbdf4bb0a2ac69151e9fc14cd0476c5f557ba"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named focusable group around members and disclosure",
+      "opportunity": "Host can own role/name/focus; update explicit [part=base] focus recovery and preserve members layout and overflow dialog.",
+      "styleSource": "packages/styles/src/collaboration.ts",
+      "acceptance": "Member limit changes, focused disclosure removed, dialog return focus and host author attributes.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-progress-steps",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/progress-steps/element.ts",
+        "line": 37
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/progress-steps/element.ts",
+          "line": 146,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav @focusout=${this.recoverResponsiveFocus} part=\"base\" tabindex=\"-1\" aria-label=${this.label} @keydown=${(event: KeyboardEvent) =>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/progress-steps/element.ts": "0c5ba34be418aa45def4a7c1d1c8fc3ea50d5f97e31c80bcba898b67e97eb6ae",
+        "packages/styles/src/form-navigation.ts": "cf039aafc64adf62b3e5738f8cb2595843fdd39d502324dbed5e2232a487d00e"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/progress-steps/element.js",
+          "line": 145,
+          "element": "nav",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<nav @focusout=${this.recoverResponsiveFocus} part=\"base\" tabindex=\"-1\" aria-label=${this.label} @keydown=${(event) =>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/progress-steps/element.js": "5c260d6c08bb8ef07ccd740767c0936a51dfe2275c2ac8a8caebe4bea3e21f2f"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named nav, focusout/Escape and focus fallback",
+      "opportunity": "Host role=navigation is possible only with focus fallback/query and responsive details/list redesign; keep native summary and buttons.",
+      "styleSource": "packages/styles/src/form-navigation.ts",
+      "acceptance": "Wide/compact focus recovery, readOnly and disabled state, step replacement and disclosure.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-skeleton",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/skeleton/element.ts",
+        "line": 13
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/skeleton/template.ts",
+          "line": 4,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-skeleton\" part=\"base\" data-shape=${shape} aria-hidden=\"true\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/skeleton/element.ts": "f67618d46801166c88b9eea67344e527d44e08470c94cf9aeb4096969f75de05",
+        "packages/elements/src/skeleton/template.ts": "f4e442ca15f4035a8461f66e679ab54e36d338ada59530022d0c648e9c17dd35",
+        "packages/styles/src/activity.ts": "687b872b99ffe5f7f32991539e2899ac9875effeb31f53b7ddcc40f33dff0097"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/skeleton/template.js",
+          "line": 3,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-skeleton\" part=\"base\" data-shape=${shape} aria-hidden=\"true\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/skeleton/template.js": "2f49a405e3574fa8375d8e317f4ab1d5790bfce2e23de935077dd3d6a42d7351"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "decorative placeholder span, size/shape paint",
+      "opportunity": "Host or host pseudo-element can paint placeholder; host must become decorative without overwriting consumer semantics. Existing content styles target ::part(base).",
+      "styleSource": "packages/styles/src/activity.ts",
+      "acceptance": "All shapes, nested placeholder masks, forced colors, size inheritance and aria-hidden ownership.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-spinner",
+      "classification": "ancestor-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/spinner/element.ts",
+        "line": 12
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/spinner/template.ts",
+          "line": 5,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-spinner\" part=\"base\" aria-hidden=\"true\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/spinner/element.ts": "926706a8a5feb142d48cb3341e8d458c34cf870b37567ae82e3d7ae4176669c5",
+        "packages/elements/src/spinner/template.ts": "65bc5212ce7671407fd347e5cfa4dfecd4906c59d220c5aa96cdddf24be29d4d",
+        "packages/styles/src/activity.ts": "687b872b99ffe5f7f32991539e2899ac9875effeb31f53b7ddcc40f33dff0097"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/spinner/template.js",
+          "line": 4,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-spinner\" part=\"base\" aria-hidden=\"true\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/spinner/template.js": "df35a625b57edd2be3e3eec3028e995f1567602a347788594df63347308ef629"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "decorative rotating span inside named status span",
+      "opportunity": "Move stable status role/name to host and retain one rotating decoration; or retain status ancestor and draw pseudo-element after part API migration. Avoid rotating semantic host/content.",
+      "styleSource": "packages/styles/src/activity.ts",
+      "acceptance": "Reduced motion, forced colors, meaningful/decorative status naming, animation geometry and CSS-part contract.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-split-view",
+      "classification": "layout-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/split-view/split-view.ts",
+        "line": 36
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/split-view/template.ts",
+          "line": 33,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-split-view\" part=\"base\" data-orientation=${view.orientation} data-collapsed=${view.collapsed}\n    style=${styleMap({ '--en-split-ratio': String(view.value / 100) })}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/split-view/split-view.ts": "5a33da6aeb817938b25553b3c5d9c1d7baa93692a764a334707ff2d48367944a",
+        "packages/elements/src/split-view/template.ts": "a7c6cf13a8e898b1fb82ac6abd0358b8e2e64d63629780233b69174b83d1300f",
+        "packages/styles/src/surfaces.ts": "eba0a49a90d97d4c2851bdb3677c34752200bcf2bc1eb0008510e1637c3ce911"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/split-view/template.js",
+          "line": 13,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-split-view\" part=\"base\" data-orientation=${view.orientation} data-collapsed=${view.collapsed}\n    style=${styleMap({ '--en-split-ratio': String(view.value / 100) })}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/split-view/template.js": "bd85ea7bfcdc9c6b884f2b114d907d9c6aa2db668e516b3c8bd95e942c3fdb09"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "grid containing panes/splitter, ratio and dimensions",
+      "opportunity": "Host grid is not a drop-in: controls are a sibling outside base; splitter measures parentElement. First investigate removing the outer en-split-shell while keeping the dedicated pane grid/base; that can save an element without deleting the base part.",
+      "styleSource": "packages/styles/src/surfaces.ts",
+      "acceptance": "Control row excluded from splitter extent, pane collapse, pointer resize, RTL, orientation and focus recovery.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-splitter",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/splitter/splitter.ts",
+        "line": 29
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/splitter/template.ts",
+          "line": 4,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-split-separator\" part=\"base\" data-orientation=${orientation} aria-hidden=\"true\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/splitter/splitter.ts": "252e014db988f7a32640620cfbe7cd70756ad50fd2ececb7b6bd392c6b7ce5d9",
+        "packages/elements/src/splitter/template.ts": "cdea9a9a4043d3478b20f1de0f15f9ce6d0340456f74fde74295b24434156033",
+        "packages/styles/src/surfaces.ts": "eba0a49a90d97d4c2851bdb3677c34752200bcf2bc1eb0008510e1637c3ce911"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/splitter/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-split-separator\" part=\"base\" data-orientation=${orientation} aria-hidden=\"true\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/splitter/template.js": "1f63ccc603fafdbddbfd1cf819ab6533aaf06aee95a2ac6457f089ba7d3c1663"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "decorative grid/handle; host already owns separator role/focus/events",
+      "opportunity": "Host can own grid/paint with retained grip (or separately migrate grip to pseudo). Do not transfer aria-hidden=true from decorative base to semantic host.",
+      "styleSource": "packages/styles/src/surfaces.ts",
+      "acceptance": "Separator aria values, pointer capture, parent extent, hit target, keyboard resize and focus ring.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-stack",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/stack/element.ts",
+        "line": 13
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/stack/template.ts",
+          "line": 12,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div\n    class=\"en-stack\"\n    part=\"base\"\n    data-direction=${view.direction}\n    data-gap=${view.gap}\n    data-align=${view.align}\n    data-justify=${view.justify}\n    ?data-wrap=${view.wrap}\n  >"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/stack/element.ts": "5175de83561bd5214fa6649ee5e79fa6a28ab0fc5e739b790f221e70452d8dc1",
+        "packages/elements/src/stack/template.ts": "355813e7c04a08ef17ec50ebdb0585e81f0a323071ff7ec6a980fa51e269ebbd",
+        "packages/styles/src/surfaces.ts": "eba0a49a90d97d4c2851bdb3677c34752200bcf2bc1eb0008510e1637c3ce911"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/stack/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div\n    class=\"en-stack\"\n    part=\"base\"\n    data-direction=${view.direction}\n    data-gap=${view.gap}\n    data-align=${view.align}\n    data-justify=${view.justify}\n    ?data-wrap=${view.wrap}\n  >"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/stack/template.js": "db8de7c6db4ca09b12973eed2e02f2324f2ff860dfb36b6804871af29a04aaca"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "flex layout with reflected direction/gap/align/justify/wrap",
+      "opportunity": "Host can own flex and selectors using already reflected attributes. Keep slot flattening and minimum child sizing.",
+      "styleSource": "packages/styles/src/surfaces.ts",
+      "acceptance": "All combinations, slotted text/elements, RTL, wrap, author host display overrides and baseline.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 1
+    },
+    {
+      "component": "en-tab",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/tab/tab.ts",
+        "line": 27
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/tab/template.ts",
+          "line": 4,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-tab\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/tab/tab.ts": "0760fa22f426532a9ed07ade79430b02be31eec105b06b23361d0aa4664aa3ef",
+        "packages/elements/src/tab/template.ts": "105c504a1f15832a8f8ee23edb921e5e4491b37676680cd265b7aa18e49fada5",
+        "packages/styles/src/selection.ts": "6fdf4aa9a4e19e9bc98958605e89775bb8df8361201dad946f1cc533f3511dac"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/tab/template.js",
+          "line": 3,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-tab\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/tab/template.js": "13d2a8136c816b09f46699a85031668a48171735f2f3b9bfaf9f35b7267dcf47"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "label paint/spacing/press surface; host already role=tab/tabindex",
+      "opportunity": "Host can own label surface, but moving transforms/press animation changes hitbox and focus outline behavior; keep roving focus and IDs on host.",
+      "styleSource": "packages/styles/src/selection.ts",
+      "acceptance": "Tab/panel IDs, disabled state, press geometry, pointer active state, focus outline and long labels.",
+      "runtimeBaseInstances": 2,
+      "runtimeBaseInstancesWithoutDate": 2
+    },
+    {
+      "component": "en-tab-panel",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/tab-panel/tab-panel.ts",
+        "line": 13
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/tab-panel/template.ts",
+          "line": 4,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tab-panel\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/tab-panel/tab-panel.ts": "6616e501920765d3bbc4ec8e3d44c3034b5145469af864ba8f2793dc26bb7394",
+        "packages/elements/src/tab-panel/template.ts": "fc50db60ffcd7de9eaef7a0903ca3daceb476790fa5ebb02bedb820af74a62e3",
+        "packages/styles/src/selection.ts": "6fdf4aa9a4e19e9bc98958605e89775bb8df8361201dad946f1cc533f3511dac"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/tab-panel/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tab-panel\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/tab-panel/template.js": "6b1f10712a4a1677e316e455e2f5b1cde10cdb97a265a8d0ca18ff6fcac63523"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "padding/min-size around slot; host already role=tabpanel and focusable",
+      "opportunity": "Host can own padding/min-size; persistent content stays mounted by existing API. This removes one wrapper, not inactive panel descendants.",
+      "styleSource": "packages/styles/src/selection.ts",
+      "acceptance": "hidden panel behavior, focus outline geometry, tab labelling IDs, scroll and persistent state.",
+      "runtimeBaseInstances": 2,
+      "runtimeBaseInstancesWithoutDate": 2
+    },
+    {
+      "component": "en-table",
+      "classification": "ancestor-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/table/element.ts",
+        "line": 31
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/table/template.ts",
+          "line": 11,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-table\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/table/element.ts": "2756b46e72766ddfad53cbef0b304ea94ec2595282b93a36bedd58719e447f12",
+        "packages/elements/src/table/template.ts": "1d2433bdcfe0e37c61dd7336eb6bfc9311ad5071610ece83605cfc9758fa9917",
+        "packages/styles/src/table.ts": "5d34017116ac0d28b8b911c02f5bdafbba5bca0bbb3d4469bb502aff00b266e5"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/table/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-table\" part=\"base\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/table/template.js": "91ce20da5ff216ab2013b632f20f537167a7e16a10b1a3202009fd1edf389207"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "bordered paint wrapper around independent overflow region",
+      "opportunity": "Host can own border/background retaining viewport; alternatively combine base+viewport parts on existing viewport to preserve selector reach but merge two styling/geometry contracts.",
+      "styleSource": "packages/styles/src/table.ts",
+      "acceptance": "scrollElement identity, borders/clientTop, sticky inset math, corner clipping, focus outline, print and exportparts.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-tabs",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/tabs/tabs.ts",
+        "line": 25
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/tabs/template.ts",
+          "line": 9,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tabs\" part=\"base\" data-orientation=${view.orientation}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/tabs/tabs.ts": "db77526808745dbb548ed8dea9e9b19c2915da32503e560bedc26f0d4a34b3a8",
+        "packages/elements/src/tabs/template.ts": "c94787fe56f1e8096b95269536e9f8828efd39970fb9cdf5343bd61f7d999ce6",
+        "packages/styles/src/selection.ts": "6fdf4aa9a4e19e9bc98958605e89775bb8df8361201dad946f1cc533f3511dac"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/tabs/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tabs\" part=\"base\" data-orientation=${view.orientation}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/tabs/template.js": "be256c6cdb0026a408c03c3532c606acda1575783d7d6264173776b95a679573"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "min-size/isolation around tab-list and panels",
+      "opportunity": "Host can own min-size/isolation and orientation state. Keep tab-list role and named slots; preserve local stacking above panel content.",
+      "styleSource": "packages/styles/src/selection.ts",
+      "acceptance": "Vertical/horizontal, focus stacking, panel slots and resize.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 1
+    },
+    {
+      "component": "en-tag",
+      "classification": "host-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/tag.ts",
+        "line": 12
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/tag.ts",
+          "line": 21,
+          "element": "span",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<span class=\"en-tag\" part=\"base\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/tag.ts": "0e25cf0172fe3a22253c46c923885b0ebb31517d9e64e69445074bcfd0db377a",
+        "packages/styles/src/patterns.ts": "55a23575695c40c42b80c9635c0266c012da030ca87e58afb65010964e9cdce7"
+      },
+      "documentedBasePart": false,
+      "frozenAvailable": false,
+      "frozenBaseSites": [],
+      "frozenSourceHashes": {},
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "inline tag surface around text and native remove button",
+      "opportunity": "Host can own paint/layout; keep real remove button and cancellation semantics. New current-source component absent from frozen vendor; document its existing base/remove parts.",
+      "styleSource": "packages/styles/src/patterns.ts",
+      "acceptance": "Focus after external removal, disabled/remove state, naming, inline layout and catalog metadata.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-toast",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/toast/element.ts",
+        "line": 50
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/toast/element.ts",
+          "line": 140,
+          "element": "article",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<article class=\"en-toast\" part=\"base\" data-variant=${this.variant} ?hidden=${!this.open} @pointerdown=${this.swipeStart} @pointermove=${this.swipeMove} @pointerup=${this.swipeEnd} @pointercancel=${this.swipeCancel} @lostpointercapture=${this.swipeCancel} @keydown=${(event:KeyboardEvent)=>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/toast/element.ts": "8eed65f896a09109b74fcb2fbf25574da91a1ff3ec2158155cd682ca6922cbfc",
+        "packages/styles/src/toast.ts": "34eed9fcc8103e2530aacb498945dfa4baa692999a20310c96f27c9b16dd9ea9"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/toast/element.js",
+          "line": 165,
+          "element": "article",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<article class=\"en-toast\" part=\"base\" data-variant=${this.variant} ?hidden=${!this.open} @pointerdown=${this.swipeStart} @pointermove=${this.swipeMove} @pointerup=${this.swipeEnd} @pointercancel=${this.swipeCancel} @lostpointercapture=${this.swipeCancel} @keydown=${(event) =>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/toast/element.js": "085a1736ea472e551206396a7263c7c752f8681ded2966003c3147f1e7a6171b"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "article surface, hidden state, pointer swipe capture and keydown",
+      "opportunity": "Host can own surface/events but moves pointer capture/currentTarget geometry and article semantics; audit swipe cleanup and authored hidden behavior.",
+      "styleSource": "packages/styles/src/toast.ts",
+      "acceptance": "Swipe start/cancel/lost capture, Escape, live-region ownership, exit motion, timer pause and focus.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-toast-region",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/toast-region/element.ts",
+        "line": 25
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/toast-region/element.ts",
+          "line": 124,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-toast-region\" part=\"base\" role=\"region\" aria-label=${this.label} tabindex=\"-1\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/toast-region/element.ts": "d410da02333a319106b0fd21707a4416a86232bb28119238e4eb93d7e50db2d4",
+        "packages/styles/src/toast.ts": "34eed9fcc8103e2530aacb498945dfa4baa692999a20310c96f27c9b16dd9ea9"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/toast-region/element.js",
+          "line": 179,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-toast-region\" part=\"base\" role=\"region\" aria-label=${this.label} tabindex=\"-1\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/toast-region/element.js": "07dc917688e0d7e404881dc8d52ebace092bd3dbdd1e99a9d4ef73d265f617d8"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named focusable region plus separate live announcers",
+      "opportunity": "Host role=region would include live announcement siblings that are outside current base. Audit accessibility boundary and update focus() plus independent live regions.",
+      "styleSource": "packages/styles/src/toast.ts",
+      "acceptance": "Queue/history, region naming/focus, announcements, stacking and keyboard dismissal.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-toolbar",
+      "classification": "semantic-prototype",
+      "currentImplementation": {
+        "file": "packages/elements/src/toolbar/element.ts",
+        "line": 17
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/toolbar/template.ts",
+          "line": 11,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-toolbar\" part=\"base\" role=${view.nativeNavigation ? 'group' : 'toolbar'} aria-label=${view.label}\n    data-orientation=${view.orientation === 'vertical' ? 'vertical' : 'horizontal'}\n    aria-orientation=${view.nativeNavigation ? nothing : view.orientation === 'vertical' ? 'vertical' : 'horizontal'}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/toolbar/element.ts": "c46332853953b7fb8878341db6e61bc6d757468c8f7c8115bfdd4737c292da49",
+        "packages/elements/src/toolbar/template.ts": "6ecbd15ac0dd03d690e17226eef7dbffd41ac3bc10605716559e667e1b253a1d",
+        "packages/styles/src/commands.ts": "89d13275e03b1e26e6cf54f11dce4954c80bb341ebb6945ab7eb92bbf4d5dc53"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/toolbar/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-toolbar\" part=\"base\" role=${view.nativeNavigation ? 'group' : 'toolbar'} aria-label=${view.label}\n    data-orientation=${view.orientation === 'vertical' ? 'vertical' : 'horizontal'}\n    aria-orientation=${view.nativeNavigation ? nothing : view.orientation === 'vertical' ? 'vertical' : 'horizontal'}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/toolbar/template.js": "b98d788986ccfed005b148875f3b8e117a329e4999df93492bf5bf51a879ec7b"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": true,
+      "responsibilities": "toolbar/group role, label/orientation and flex layout",
+      "opportunity": "Host can own default toolbar/group semantics and layout; roving controller already host-based. Preserve mixed-control Tab mode and direct child discovery.",
+      "styleSource": "packages/styles/src/commands.ts",
+      "acceptance": "Auto versus tab navigation, upgrade order, dynamic children, disabled focus leasing and SSR explicit mode.",
+      "runtimeBaseInstances": 1,
+      "runtimeBaseInstancesWithoutDate": 1
+    },
+    {
+      "component": "en-tree",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/tree/element.ts",
+        "line": 59
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/tree/data-template.ts",
+          "line": 80,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tree en-tree-data\" part=\"base\" role=\"tree\" aria-multiselectable=${view.multiple ? 'true' : nothing} aria-label=${view.label} tabindex=\"-1\">"
+        },
+        {
+          "file": "packages/elements/src/tree/template.ts",
+          "line": 4,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tree\" part=\"base\" role=\"tree\" aria-multiselectable=${view.multiple ? 'true' : nothing} aria-label=${view.label} tabindex=\"-1\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/tree/element.ts": "89b9dd4bfab095dd0e6f23590ef1d1c28b9d9d630457540df32a9976deb9d079",
+        "packages/elements/src/tree/data-template.ts": "ce811ca9d2e94e57aad8e463776a53eb75b4b5df8b779061872a50b673160ac1",
+        "packages/elements/src/tree/template.ts": "ffd65a2145427fb24656f05f0fd6e9a159a87e70264cd0c598d49b12fcdbf48e",
+        "packages/styles/src/tree.ts": "57ba2c3259b3fc62bd071380b0045f8bd8fdcfa6879fca7d53b8204e01435122"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/tree/data-template.js",
+          "line": 74,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tree en-tree-data\" part=\"base\" role=\"tree\" aria-multiselectable=${view.multiple ? 'true' : nothing} aria-label=${view.label} tabindex=\"-1\">"
+        },
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/tree/template.js",
+          "line": 3,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tree\" part=\"base\" role=\"tree\" aria-multiselectable=${view.multiple ? 'true' : nothing} aria-label=${view.label} tabindex=\"-1\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/tree/data-template.js": "b817e2d1c01029846830e25b0c383e927579044c2a6edd7586067dbb63603bc1",
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/tree/template.js": "c7d5db68831a9673bb284d87d2930c62dcafb822f02ba83445edcb26089be79b"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "named focusable tree root in authored/data modes",
+      "opportunity": "Host role=tree could replace wrapper but error and data-mode sibling boundaries change; update focusEmpty/focus() queries and both template modes.",
+      "styleSource": "packages/styles/src/tree.ts",
+      "acceptance": "Empty focus, errors, row ownership, virtual tree modes, selection and keyboard navigation.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-tree-item",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/tree-item/element.ts",
+        "line": 40
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/tree-item/template.ts",
+          "line": 15,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tree-item\" part=\"base\" role=\"treeitem\" tabindex=${p.tabStop}\n    aria-keyshortcuts=${ifDefined(reorderable ? 'Alt+M' : undefined)} aria-labelledby=\"label\" aria-selected=${String(p.selected)} aria-disabled=${String(disabled)}\n    aria-expanded=${ifDefined(p.branch ? String(p.expanded) : undefined)}\n    aria-level=${p.level} aria-posinset=${p.posInSet} aria-setsize=${p.setSize}>"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/tree-item/element.ts": "57602f0bb8c3f02f6e2725daf5adc85c155db3fcacd83ae5b5823b075d0fa1db",
+        "packages/elements/src/tree-item/template.ts": "c2866d64ae8e9e205d1a163b381b2f37735ca90aba0c03f2d543e0f52477a0ff",
+        "packages/styles/src/tree.ts": "57ba2c3259b3fc62bd071380b0045f8bd8fdcfa6879fca7d53b8204e01435122"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/tree-item/template.js",
+          "line": 5,
+          "element": "div",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<div class=\"en-tree-item\" part=\"base\" role=\"treeitem\" tabindex=${p.tabStop}\n    aria-keyshortcuts=${ifDefined(reorderable ? 'Alt+M' : undefined)} aria-labelledby=\"label\" aria-selected=${String(p.selected)} aria-disabled=${String(disabled)}\n    aria-expanded=${ifDefined(p.branch ? String(p.expanded) : undefined)}\n    aria-level=${p.level} aria-posinset=${p.posInSet} aria-setsize=${p.setSize}>"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/tree-item/template.js": "b12fa27019770d7853c0c80f4fb4839a6758e112b33c3749dea81047f1371ab4"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "focusable treeitem with ARIA label ID, state and child group",
+      "opportunity": "Host treeitem requires control() changes and accessible label relationship across shadow boundary; do not copy aria-labelledby=label to host unchanged. Preserve child-group ownership.",
+      "styleSource": "packages/styles/src/tree.ts",
+      "acceptance": "Roving focus, label ID/reference, hierarchy/levels, reorder controls, SSR presentation and nested selection.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    },
+    {
+      "component": "en-validation-summary",
+      "classification": "semantic-redesign",
+      "currentImplementation": {
+        "file": "packages/elements/src/validation-summary/element.ts",
+        "line": 29
+      },
+      "currentSites": [
+        {
+          "file": "packages/elements/src/validation-summary/element.ts",
+          "line": 82,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-validation-summary\" part=\"base\" tabindex=\"-1\" aria-labelledby=\"summary-heading\">"
+        }
+      ],
+      "currentSourceHashes": {
+        "packages/elements/src/validation-summary/element.ts": "e8ff734cb1dff3b78d11c5d93be4f23e1bbbd8cd7dce072722f703578e9a0d7c",
+        "packages/styles/src/form-navigation.ts": "cf039aafc64adf62b3e5738f8cb2595843fdd39d502324dbed5e2232a487d00e"
+      },
+      "documentedBasePart": true,
+      "frozenAvailable": true,
+      "frozenBaseSites": [
+        {
+          "file": "showcases/en-reve/node_modules/@en-reve/elements/dist/validation-summary/element.js",
+          "line": 83,
+          "element": "section",
+          "parts": [
+            "base"
+          ],
+          "openingTag": "<section class=\"en-validation-summary\" part=\"base\" tabindex=\"-1\" aria-labelledby=\"summary-heading\">"
+        }
+      ],
+      "frozenSourceHashes": {
+        "showcases/en-reve/node_modules/@en-reve/elements/dist/validation-summary/element.js": "15fc1578c81f6600233f0fc1ed7939237e2e9d55a332303b9032ffc339d23684"
+      },
+      "implementationIncludedInFrozenShowcaseBundle": false,
+      "responsibilities": "focusable section named by internal heading ID",
+      "opportunity": "Host role=region/name/focus requires supported element-reference/default semantics strategy; copying internal heading ID to host aria-labelledby fails ordinary tree scoping.",
+      "styleSource": "packages/styles/src/form-navigation.ts",
+      "acceptance": "Heading naming, focus(), link activation, target errors, projected child changes and SSR.",
+      "runtimeBaseInstances": 0,
+      "runtimeBaseInstancesWithoutDate": 0
+    }
+  ],
+  "additionalStandalonePrimitiveSites": [
+    {
+      "file": "packages/primitives/src/templates/navigation.ts",
+      "line": 61,
+      "element": "nav",
+      "parts": [
+        "base"
+      ],
+      "openingTag": "<nav part=\"base\" class=${sticky ? 'en-section-nav en-section-nav--sticky' : 'en-section-nav'} aria-label=${label}>"
+    },
+    {
+      "file": "packages/primitives/src/templates/navigation.ts",
+      "line": 70,
+      "element": "nav",
+      "parts": [
+        "base"
+      ],
+      "openingTag": "<nav part=\"base\" class=\"en-breadcrumbs\" aria-label=${label}>"
+    }
+  ],
+  "dynamicPartCases": [
+    {
+      "file": "packages/elements/src/token-editor/element.ts",
+      "line": 204,
+      "kind": "Consumer registration can supply part=base in a token part list; not a built-in base wrapper contract."
+    },
+    {
+      "file": "packages/elements/src/rich-text-editor/element.ts",
+      "line": 265,
+      "kind": "Consumer registration can supply part=base in a token part list; not a built-in base wrapper contract."
+    },
+    {
+      "file": "packages/elements/src/dialog/template.ts",
+      "line": 29,
+      "kind": "Template accepts surfacePart, but searched built-in callers do not pass base."
+    },
+    {
+      "file": "packages/elements/src/forms-private/form-field.ts",
+      "line": 265,
+      "kind": "Protected errorPart defaults to error; searched built-in overrides do not use base."
+    }
+  ],
+  "standards": [
+    {
+      "title": "CSS Shadow Module Level 1, selecting a shadow element",
+      "url": "https://drafts.csswg.org/css-shadow-1/#part"
+    },
+    {
+      "title": "HTML custom elements accessibility semantics",
+      "url": "https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-accessibility-semantics"
+    }
+  ],
+  "runtimeContext": {
+    "source": "census.json",
+    "stage": "initial",
+    "system": "en-reve",
+    "protocol": "Completed v3 and current v4 produce the same En Reve counts; this is frozen showcase runtime, not current-source rendering.",
+    "total": {
+      "nodes": 4642,
+      "elements": 1578,
+      "baseParts": 55
+    },
+    "date": {
+      "nodes": 623,
+      "elements": 181,
+      "baseParts": 5
+    },
+    "withoutDate": {
+      "nodes": 4019,
+      "elements": 1397,
+      "baseParts": 50,
+      "slots": 391,
+      "comments": 756,
+      "whitespaceText": 1429
+    },
+    "baseElementKinds": {
+      "all": {
+        "svg": 19,
+        "nonSvg": 36
+      },
+      "withoutDate": {
+        "svg": 15,
+        "nonSvg": 35
+      }
+    },
+    "mountedBaseOwnerTypes": 14,
+    "byOwner": [
+      {
+        "owner": "en-card",
+        "tag": "div",
+        "count": 16,
+        "withoutDate": 16,
+        "roles": [],
+        "displays": [
+          "flex"
+        ]
+      },
+      {
+        "owner": "en-icon",
+        "tag": "svg",
+        "count": 19,
+        "withoutDate": 15,
+        "roles": [],
+        "displays": [
+          "block"
+        ]
+      },
+      {
+        "owner": "en-badge",
+        "tag": "span",
+        "count": 5,
+        "withoutDate": 5,
+        "roles": [],
+        "displays": [
+          "inline-flex"
+        ]
+      },
+      {
+        "owner": "en-toolbar",
+        "tag": "div",
+        "count": 1,
+        "withoutDate": 1,
+        "roles": [
+          "toolbar"
+        ],
+        "displays": [
+          "flex"
+        ]
+      },
+      {
+        "owner": "en-breadcrumbs",
+        "tag": "nav",
+        "count": 1,
+        "withoutDate": 1,
+        "roles": [],
+        "displays": [
+          "block"
+        ]
+      },
+      {
+        "owner": "en-navigation",
+        "tag": "nav",
+        "count": 2,
+        "withoutDate": 2,
+        "roles": [],
+        "displays": [
+          "flex"
+        ]
+      },
+      {
+        "owner": "en-tabs",
+        "tag": "div",
+        "count": 1,
+        "withoutDate": 1,
+        "roles": [],
+        "displays": [
+          "block"
+        ]
+      },
+      {
+        "owner": "en-tab",
+        "tag": "span",
+        "count": 2,
+        "withoutDate": 2,
+        "roles": [],
+        "displays": [
+          "flex"
+        ]
+      },
+      {
+        "owner": "en-tab-panel",
+        "tag": "div",
+        "count": 2,
+        "withoutDate": 2,
+        "roles": [],
+        "displays": [
+          "block"
+        ]
+      },
+      {
+        "owner": "en-accordion",
+        "tag": "div",
+        "count": 1,
+        "withoutDate": 1,
+        "roles": [],
+        "displays": [
+          "flex"
+        ]
+      },
+      {
+        "owner": "en-accordion-item",
+        "tag": "section",
+        "count": 1,
+        "withoutDate": 1,
+        "roles": [],
+        "displays": [
+          "block"
+        ]
+      },
+      {
+        "owner": "en-calendar",
+        "tag": "div",
+        "count": 1,
+        "withoutDate": 0,
+        "roles": [],
+        "displays": [
+          "block"
+        ]
+      },
+      {
+        "owner": "en-stack",
+        "tag": "div",
+        "count": 1,
+        "withoutDate": 1,
+        "roles": [],
+        "displays": [
+          "flex"
+        ]
+      },
+      {
+        "owner": "en-avatar",
+        "tag": "span",
+        "count": 2,
+        "withoutDate": 2,
+        "roles": [
+          "img"
+        ],
+        "displays": [
+          "inline-grid"
+        ]
+      }
+    ],
+    "nonDateNonSvgUpperBound": {
+      "elements": 35,
+      "denominatorElements": 1397,
+      "percent": 2.505368647100931,
+      "meaning": "Arithmetic ceiling only: assumes removal of every non-SVG base element. Not a valid blanket removal plan or predicted performance gain."
+    },
+    "cardAndBadgePrototypeInstances": 21,
+    "dateCalendarAndNavigation": {
+      "nodes": 497,
+      "elements": 139,
+      "calendarBaseWrappers": 1
+    },
+    "interpretation": "Base wrappers are a bounded simplification opportunity and cannot explain most of the node gap."
+  },
+  "complementaryScaffoldingTargets": [
+    {
+      "source": "packages/elements/src/button/template.ts",
+      "line": 17,
+      "structure": "Native button plus four slot elements and label span; loading indicator is conditional. There is no base part.",
+      "investigation": "Review forwarded prefix/label/default/suffix slot contract and per-instance whitespace/marker costs; preserve native button and naming. Avoid adding observers just to remove slots.",
+      "sha256": "dbd1cfc248d0e46183f0a304476db649fb0f5145c0e2544fef60d904b45b7d4b"
+    },
+    {
+      "source": "packages/elements/src/badge/template.ts",
+      "line": 3,
+      "structure": "Base span + label span + prefix, label and fallback-default slots.",
+      "investigation": "Base removal affects only one of five shadow elements; preserve prefix/label/default precedence and late slot updates.",
+      "sha256": "07b21b12b2fb5bb458a4aef783a15587f64d905dc612047d58d7227afcd843ff"
+    },
+    {
+      "source": "packages/elements/src/card/template.ts",
+      "line": 9,
+      "structure": "Base plus three region wrappers and three slots; header/footer are hidden when absent, not unmounted.",
+      "investigation": "Investigate optional region/scaffolding costs separately from base migration while preserving future slot assignment, hydration, independent part geometry and region spacing.",
+      "sha256": "6d8034e7e20a4db93abb95bae406510acc1689d5d3369bcff040642e271c9e19"
+    },
+    {
+      "source": "packages/primitives/src/templates/description.ts",
+      "line": 10,
+      "structure": "Stable div[id=description] + named slot + fallback span, including when description is empty.",
+      "investigation": "This is an intentional same-shadow ARIA and SSR/hydration target. Any structural alternative must preserve late slotted descriptions, empty override semantics and label/control association.",
+      "sha256": "f47ca0d40285a20f6784933f653973f92a418c4d66aaaf7175b9e47dfe9251f4"
+    }
+  ]
+}

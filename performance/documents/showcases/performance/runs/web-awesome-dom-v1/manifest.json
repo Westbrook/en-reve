@@ -1,0 +1,69 @@
+{
+  "id": "web-awesome-dom-v1",
+  "systems": [
+    "fluent-web-components",
+    "en-reve",
+    "web-awesome"
+  ],
+  "createdAt": "2026-09-21T18:49:13.798Z",
+  "scope": "Connected DOM diagnostic, no timing or heap ranking",
+  "protocol": {
+    "desktop": {
+      "width": 1500,
+      "height": 1100
+    },
+    "narrow": {
+      "width": 390,
+      "height": 844
+    },
+    "deviceScaleFactor": 1,
+    "isMobile": false,
+    "hasTouch": false,
+    "cpuThrottle": 1,
+    "networkThrottle": "none",
+    "desktopRepetitions": 3,
+    "narrowRepetitions": 1,
+    "settleMs": 1500,
+    "postActionSettleMs": 700,
+    "scenario": "Existing native journey, repeats=2; separate fresh custom-date opening/closing sessions",
+    "dateBoundary": "Whole field/host including label, controls, and custom popup. Popup-only body additions attributed explicitly. Closed roots, UA internals and disconnected template contents excluded."
+  },
+  "host": {
+    "platform": "darwin",
+    "release": "25.6.0",
+    "cpu": "Apple M5 Max",
+    "node": "v24.16.0"
+  },
+  "sources": {
+    "experiments/dom-census.mjs": "2417d3702f07669c4fba892e989e77f3fff20df7ac747d03cd9164ea5e9d580b",
+    "experiments/run-dom-review.mjs": "fe6759f3b811689017fc3cd2498c9abc29ecc7140482985ad00334122edaa979",
+    "scenarios/journey.mjs": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658"
+  },
+  "artifacts": {
+    "fluent-web-components": {
+      "assets/index-7X1QEckn.css": "ec89e27f3be2ab053b06747b64a8808752ac7127160f08f048e02e50fe900576",
+      "assets/index-DHbL8u7_.js": "94488b365414c47d3fd114a17a90c9f20f33cd8c1f720b1aa9f4f3dec5722a18",
+      "assets/index-DHbL8u7_.js.map": "8a1aabf6b25e7b9073fed887617a8f0c2cc64b0d13da29466effa228608f1d7b",
+      "build-metadata.json": "0f1bdeb13eff20c01ac491715167c877e138adbb923ce6c971239fdf79a9a95f",
+      "index.html": "e7f911b0dbd4b39dc86db03033351f5e1a500bc15d52599634406c24d49a5ce7"
+    },
+    "en-reve": {
+      "assets/index-CSoEuTYL.js": "038ca6003cce6fc311dfd6db84a853ad7ded7135281ab3b1c1b29b3dbd07b5fd",
+      "assets/index-CSoEuTYL.js.map": "402e698cdc38f4656469175f966e6d5656d4083a9da29367d9bc27686d556051",
+      "assets/index-DADEvvIk.css": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432",
+      "build-metadata.json": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+      "index.html": "8f98eaa7342e07081e627e12b6ce537e2d5062e407ae5b57a87a9f18945af8e7"
+    },
+    "web-awesome": {
+      "assets/index-BG3Zw-nj.js": "cfbb769a0ca258a312711011f6f7a97980b7a4e1515dbbbb252fa9b340dd8c68",
+      "assets/index-BG3Zw-nj.js.map": "2ee9c765465022fd6726cea35a08267ba86e2347b347ee169d97b4d414c1f92c",
+      "assets/index-D7icV0LY.css": "c84822efd68d8d4ac65c0e31e3aede38acd7f6ae5d340b258b1a99d371311e8a",
+      "build-metadata.json": "8d175c9e4be63483ac9a8b2ffa0c86229ecbec60f010b030c72b34e163659d0b",
+      "index.html": "5e6c34e3187bad9a437cfb11787e781c17264a41653af0defe03173b1023a621"
+    }
+  },
+  "browser": "153.0.8010.12",
+  "completedAt": "2026-09-21T18:50:03.136Z",
+  "successfulSnapshots": 30,
+  "failures": 0
+}

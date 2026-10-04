@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-01T17:10:16.727Z",
+  "passed": true,
+  "checks": [
+    {
+      "engine": "chromium",
+      "kind": "prepare-loads-code-without-registering-or-constructing",
+      "passed": true
+    },
+    {
+      "engine": "chromium",
+      "kind": "escape-cancels-pending-import-without-late-open",
+      "passed": true
+    },
+    {
+      "engine": "chromium",
+      "kind": "import-failure-native-editing-and-explicit-retry",
+      "passed": true,
+      "errorText": "Calendar could not load. Try again, reload the page, or enter a date directly.",
+      "retry": "rejected: Failed to fetch dynamically imported module: https://127.0.0.1:4617/assets/calendar-BkKesFi7.js"
+    },
+    {
+      "engine": "chromium",
+      "kind": "reload-recovery-and-touch-opening",
+      "passed": true
+    },
+    {
+      "engine": "firefox",
+      "kind": "prepare-loads-code-without-registering-or-constructing",
+      "passed": true
+    },
+    {
+      "engine": "firefox",
+      "kind": "escape-cancels-pending-import-without-late-open",
+      "passed": true
+    },
+    {
+      "engine": "firefox",
+      "kind": "import-failure-native-editing-and-explicit-retry",
+      "passed": true,
+      "errorText": "Calendar could not load. Try again, reload the page, or enter a date directly.",
+      "retry": "resolved"
+    },
+    {
+      "engine": "firefox",
+      "kind": "reload-recovery-and-touch-opening",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "kind": "prepare-loads-code-without-registering-or-constructing",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "kind": "escape-cancels-pending-import-without-late-open",
+      "passed": true
+    },
+    {
+      "engine": "webkit",
+      "kind": "import-failure-native-editing-and-explicit-retry",
+      "passed": true,
+      "errorText": "Calendar could not load. Try again, reload the page, or enter a date directly.",
+      "retry": "resolved"
+    },
+    {
+      "engine": "webkit",
+      "kind": "reload-recovery-and-touch-opening",
+      "passed": true
+    }
+  ]
+}

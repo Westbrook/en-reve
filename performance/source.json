@@ -1,0 +1,404 @@
+{
+  "source": "plans/native-showcase-performance-results.md",
+  "sourceHash": "1eb635122ec1872ddc2842b12fd1719f806dd5a579a9168c7af8cccbe44ec1a3",
+  "basePath": "/en-reve/performance/",
+  "buildHash": "3eff7ec373ece3a97849dfd1bbd77b8dede783d9d4c45689e8dc1efaa09ac8b4",
+  "resourceCount": 76,
+  "resources": [
+    {
+      "source": "plans/native-showcase-en-reve-main-results.md",
+      "path": "documents/plans/native-showcase-en-reve-main-results.md",
+      "sha256": "f3603ebf84415468187bb8abb80702f29b99f8c8fb485f6ef981d95f54f9448c"
+    },
+    {
+      "source": "showcases/performance/README.md",
+      "path": "documents/showcases/performance/README.md",
+      "sha256": "c59d10ddbd4999347847a8b71365c1ac3b3ffbbcaff8b26ac631b0c39ec31001"
+    },
+    {
+      "source": "showcases/performance/reports/pass2-tables.json",
+      "path": "documents/showcases/performance/reports/pass2-tables.json",
+      "sha256": "12cd2202546e15d8ae81f2a55c71538e68c9c410983760864e0ed341e143d348"
+    },
+    {
+      "source": "showcases/performance/reports/pass2-execution.json",
+      "path": "documents/showcases/performance/reports/pass2-execution.json",
+      "sha256": "0539852cc91060963c9a8014e3cba5b6e6e0d9d6e365155e669c36a817430415"
+    },
+    {
+      "source": "showcases/performance/reports/pass2-evidence/receipt.json",
+      "path": "documents/showcases/performance/reports/pass2-evidence/receipt.json",
+      "sha256": "c740caa8876b98f80d81145090b348149da7b4b905c61e2510b590f46a2a8fb4"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-main/prior-results.md",
+      "path": "documents/showcases/performance/reports/en-reve-main/prior-results.md",
+      "sha256": "58ac2dab4c4bf39c95f3f8db510885944b77b03e24af8843301da7def53207d1"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/prior-results.md",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/prior-results.md",
+      "sha256": "be16838e15298601f27fac702bdca9e15f8d54734c6fef15e9f8b040e06c7184"
+    },
+    {
+      "source": "showcases/performance/reports/pass2-startup-superseded.json",
+      "path": "documents/showcases/performance/reports/pass2-startup-superseded.json",
+      "sha256": "47c79ba585554487d0f55a8f035f5cd67fa218c872bc1233c3d470b0de8bb2cb"
+    },
+    {
+      "source": "showcases/performance/reports/startup-discovery-calibration-pass2.json",
+      "path": "documents/showcases/performance/reports/startup-discovery-calibration-pass2.json",
+      "sha256": "5d1aafea3f42dbcbf14f531c7e27976400ddc5d4b6603c6eeaf32bf67fb33c03"
+    },
+    {
+      "source": "showcases/performance/reports/startup-calibration-pass2.json",
+      "path": "documents/showcases/performance/reports/startup-calibration-pass2.json",
+      "sha256": "9ae6f434d0d5ffee9fc880ba509a98f79ebd807cacf8f368ac67373d30db183f"
+    },
+    {
+      "source": "showcases/performance/reports/cdp-scope-calibration-pass2.json",
+      "path": "documents/showcases/performance/reports/cdp-scope-calibration-pass2.json",
+      "sha256": "7af6cd23500533efa96887c821d54363d0b2a32c0a0c2f3720e27a1500e4e262"
+    },
+    {
+      "source": "showcases/performance/reports/memory-interpretation-correction-pass2.json",
+      "path": "documents/showcases/performance/reports/memory-interpretation-correction-pass2.json",
+      "sha256": "60e0cef5c517e4cd78f59083385b0c5324ece30f1886d12462d787876c3abc67"
+    },
+    {
+      "source": "showcases/performance/reports/delivery-calibration-pass2.json",
+      "path": "documents/showcases/performance/reports/delivery-calibration-pass2.json",
+      "sha256": "c41b887d7108d91abed7953d6ea2003ac5cbb0a17e0ad1d6cfc6694d5d20916f"
+    },
+    {
+      "source": "plans/native-showcase-performance-plan.md",
+      "path": "documents/plans/native-showcase-performance-plan.md",
+      "sha256": "3cf59e71a208e41c092b1a8f2d123fbfe27693c7f613383ff0cb7209269822cb"
+    },
+    {
+      "source": "showcases/performance/CONSUMER-GUIDE.md",
+      "path": "documents/showcases/performance/CONSUMER-GUIDE.md",
+      "sha256": "ef4f856cde90734392f4972692313540819d4af2b0119a8a76fe282101c0e71e"
+    },
+    {
+      "source": "showcases/performance/reports/bundles.md",
+      "path": "documents/showcases/performance/reports/bundles.md",
+      "sha256": "8ad4851c1a08b066772b32f8c2ea0206ad256e2865f11f70a3ade1eea0df9789"
+    },
+    {
+      "source": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/baseline.json",
+      "path": "documents/showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/baseline.json",
+      "sha256": "bf0934bf3aecfd1d71d6f1b7e754cf20243dd5abaaeaa6e456bc47372ea4ae46"
+    },
+    {
+      "source": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/summary.json",
+      "path": "documents/showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/summary.json",
+      "sha256": "c9ea6c212b9cfa756605c1230820d68eb07b710acd9ff914d0533758932fa275"
+    },
+    {
+      "source": "showcases/performance/reports/evidence-ledger.json",
+      "path": "documents/showcases/performance/reports/evidence-ledger.json",
+      "sha256": "fbd0552d77735cb89c8fed7cee3468152432ee206ced445907b8d9b7375f1bdc"
+    },
+    {
+      "source": "showcases/performance/reports/experiment-comparison.md",
+      "path": "documents/showcases/performance/reports/experiment-comparison.md",
+      "sha256": "f1579b224caf49dc0ad28b14427e65fa269bcc5055b6e63c1c49ac103f54bc94"
+    },
+    {
+      "source": "showcases/performance/reports/current-source-build.json",
+      "path": "documents/showcases/performance/reports/current-source-build.json",
+      "sha256": "940c687196c5b377808d7ad32bcdd1cd72fc440e0ea3eefad759416a1e8c6096"
+    },
+    {
+      "source": "showcases/COVERAGE.md",
+      "path": "documents/showcases/COVERAGE.md",
+      "sha256": "07dde26c6d0220b4d5d0a00456d2c0be8ffd3f0b83ac58f0598e4b1f6d255b1f"
+    },
+    {
+      "source": "showcases/performance/reports/invalidated-metrics.json",
+      "path": "documents/showcases/performance/reports/invalidated-metrics.json",
+      "sha256": "5858bcf5939dea0f0457814fd911e78b75421c4103a2b2c2025dea76c82a0a69"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-experiments.json",
+      "path": "documents/showcases/performance/reports/en-reve-experiments.json",
+      "sha256": "b2643e7d908cf1e6eecedf4c4f22939f17dad2069c53c40165bc09f1bbed2872"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/census.json",
+      "path": "documents/showcases/performance/reports/dom-review/census.json",
+      "sha256": "c9275a20054b792a8de8c41f191983550b88a608274679d1ea46e7ff8f602ad0"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/manifest.json",
+      "path": "documents/showcases/performance/reports/dom-review/manifest.json",
+      "sha256": "95c78e933b75ed0557dc02ae0e482b8bd269e4cb025dffc544ad48abee8f95ec"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/verification.json",
+      "path": "documents/showcases/performance/reports/dom-review/verification.json",
+      "sha256": "54e86c4ca5598d547cb8d6362f316f02b3329f37c4af06f3f91de11ed3d7293a"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/evidence-receipt.json",
+      "path": "documents/showcases/performance/reports/dom-review/evidence-receipt.json",
+      "sha256": "48fe85243052642de34e530e2c365f8adacbbd2139436b7574a3732ff29ba845"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/date-dom-audit.md",
+      "path": "documents/showcases/performance/reports/dom-review/date-dom-audit.md",
+      "sha256": "dce66b87651684701b8cbb41b5e980d5d45f405a1049aaaa7799b782183b5677"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/shadow-ownership.json",
+      "path": "documents/showcases/performance/reports/dom-review/shadow-ownership.json",
+      "sha256": "70dbcca138c164061b15a03b19a87f2684034321cb52d84be6af5e5004b2da66"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/base-wrapper-audit.md",
+      "path": "documents/showcases/performance/reports/dom-review/base-wrapper-audit.md",
+      "sha256": "9b7fa06610b928d907cbb501c7d427e21d8e91197c24000a9f59ef098a762b32"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/base-wrapper-inventory.json",
+      "path": "documents/showcases/performance/reports/dom-review/base-wrapper-inventory.json",
+      "sha256": "7db4cdebdb7c8050b407942cf70f664fb8c3fc1dbe7368801eb707ba58148332"
+    },
+    {
+      "source": "showcases/performance/reports/dom-review/method-review.md",
+      "path": "documents/showcases/performance/reports/dom-review/method-review.md",
+      "sha256": "d4ba0885270265460d96bd2c5594eb6ac7011b14ab9b60e762ef092667f90966"
+    },
+    {
+      "source": "showcases/web-awesome/README.md",
+      "path": "documents/showcases/web-awesome/README.md",
+      "sha256": "26bbf63fa08bbbffb01d948a0b528337a91c83675ca120fc57fd7029c8d8edfe"
+    },
+    {
+      "source": "showcases/performance/reports/web-awesome/execution-blocked-before-memory.json",
+      "path": "documents/showcases/performance/reports/web-awesome/execution-blocked-before-memory.json",
+      "sha256": "5acbc2c87ddad7f7928b0e4294cf9a4871be09bd44ba17c1caf59535a8d6c43d"
+    },
+    {
+      "source": "showcases/performance/reports/web-awesome/tables.json",
+      "path": "documents/showcases/performance/reports/web-awesome/tables.json",
+      "sha256": "ea73b4d3d0b71b4880616d0fbf83b36a38a039aacfb7d92a3ebe4f872f3f51c0"
+    },
+    {
+      "source": "showcases/performance/reports/web-awesome/config.json",
+      "path": "documents/showcases/performance/reports/web-awesome/config.json",
+      "sha256": "f3886133cfebbb1f3358a7e0ec7d0ed46480b66be493e62c87c78ca1e3dcede6"
+    },
+    {
+      "source": "showcases/performance/reports/web-awesome/execution.json",
+      "path": "documents/showcases/performance/reports/web-awesome/execution.json",
+      "sha256": "4ffe0e43dcaccdeab93000dc31f56a5e6ff039552a1b5cda5d0a8b3043d40d6d"
+    },
+    {
+      "source": "showcases/performance/reports/web-awesome/evidence/receipt.json",
+      "path": "documents/showcases/performance/reports/web-awesome/evidence/receipt.json",
+      "sha256": "8b3136619eea9834a6754e8a5ebcddf9bba5209677146ccd0033090202b727ec"
+    },
+    {
+      "source": "showcases/performance/reports/web-awesome/inventory.json",
+      "path": "documents/showcases/performance/reports/web-awesome/inventory.json",
+      "sha256": "0e556fb959fa15a3a38b278b3f2e625ccf6d52ca31217654705fe9011ad6d25a"
+    },
+    {
+      "source": "showcases/performance/runs/web-awesome-diagnostic-v1/diagnostics-summary.json",
+      "path": "documents/showcases/performance/runs/web-awesome-diagnostic-v1/diagnostics-summary.json",
+      "sha256": "e55dc4267d052ed1f9008a2cfd4e4b3fdb63b775966bd5dd971aaa014c424d3f"
+    },
+    {
+      "source": "showcases/performance/runs/web-awesome-dom-v1/manifest.json",
+      "path": "documents/showcases/performance/runs/web-awesome-dom-v1/manifest.json",
+      "sha256": "e7593331c3a85bd45a47631c18e85e8cd1458261b0387e7edf6689a61a931bd2"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/tables.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/tables.json",
+      "sha256": "9b6ce4739184eb8cd490ca3a823a6760258d760187050046e8f84a3663794a4f"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/config.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/config.json",
+      "sha256": "ff16fad40b649b52c83e130c3afb373b490d202443d92f96ef0595c571740a1d"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/execution.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/execution.json",
+      "sha256": "0e495f5dad076b2d174f5f07cfef48be436457ae62e2127adc1dafa28d9e76b9"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/evidence/receipt.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/evidence/receipt.json",
+      "sha256": "14f1b22bf0c5757308a6d7b132e01350adac2b6126d71b27f41c563771fc6e30"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/inventory.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/inventory.json",
+      "sha256": "63525336622e9778f9be6a69a083d06f252d879c0c8351aee3d3e64968a60c5c"
+    },
+    {
+      "source": "showcases/performance/runs/spectrum-gen2-diagnostic-v1/diagnostics-summary.json",
+      "path": "documents/showcases/performance/runs/spectrum-gen2-diagnostic-v1/diagnostics-summary.json",
+      "sha256": "f4c3766c65a98d22ffaae73a2d22aa8d813f25971fa43f8daa521cab8d2aaab3"
+    },
+    {
+      "source": "showcases/performance/runs/spectrum-gen2-dom-v1/manifest.json",
+      "path": "documents/showcases/performance/runs/spectrum-gen2-dom-v1/manifest.json",
+      "sha256": "8c9893e041e5175db533d5038d6afbae3b21f30e30c4c233ed8fbdab4247b566"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/lifecycle-diagnostic-instrumented.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/lifecycle-diagnostic-instrumented.json",
+      "sha256": "93e372ab83ff613849b9f8fdc46b7bf0fc010344dc835725f7207d8fc2d0b970"
+    },
+    {
+      "source": "showcases/performance/reports/spectrum-gen2/lifecycle-diagnostic.json",
+      "path": "documents/showcases/performance/reports/spectrum-gen2/lifecycle-diagnostic.json",
+      "sha256": "38750e159b51e877e4679f50a08f85724aaf1a5125bc23a6054f11e506201213"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-main/tables.json",
+      "path": "documents/showcases/performance/reports/en-reve-main/tables.json",
+      "sha256": "64062b99e9e8911da2e59a0db473f451084ab282640b008153d96dc0da96a9a1"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-main/config.json",
+      "path": "documents/showcases/performance/reports/en-reve-main/config.json",
+      "sha256": "44396c876c323a1f91d76b188cfe2ca328908dffea73a25431cfc29312a14d7c"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-main/execution.json",
+      "path": "documents/showcases/performance/reports/en-reve-main/execution.json",
+      "sha256": "e370905f7dc96862bf6d20912e172b9003bedba37742441cc8032560a941a18f"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-main/evidence/receipt.json",
+      "path": "documents/showcases/performance/reports/en-reve-main/evidence/receipt.json",
+      "sha256": "91546cfa08b31b4c4d0dde8c9e2e33bc70ae8e1a5d2056f2ef85d1501690422b"
+    },
+    {
+      "source": "showcases/performance/reports/en-reve-main/inventory.json",
+      "path": "documents/showcases/performance/reports/en-reve-main/inventory.json",
+      "sha256": "0a115d445827a4e20bda6edc4a705cb8f98e34ae4407684642f5858e72ab5e53"
+    },
+    {
+      "source": "showcases/performance/runs/en-reve-main-diagnostic-v1/diagnostics-summary.json",
+      "path": "documents/showcases/performance/runs/en-reve-main-diagnostic-v1/diagnostics-summary.json",
+      "sha256": "aafe8e45c21c572582dc9a8724e1bab54901f7c5fbeeebcb3857ebf28854a674"
+    },
+    {
+      "source": "showcases/performance/runs/en-reve-main-dom-v1/manifest.json",
+      "path": "documents/showcases/performance/runs/en-reve-main-dom-v1/manifest.json",
+      "sha256": "3cc15f6f0488faa6b18a8e4a10daf531c1f36e23d90ab825255a349e46b87384"
+    },
+    {
+      "source": "showcases/performance/reports/calendar-variants/qualification.json",
+      "path": "documents/showcases/performance/reports/calendar-variants/qualification.json",
+      "sha256": "60c8ecd909772c335ebae730eddb2374f3d36c31690898cd852b97791436fca0"
+    },
+    {
+      "source": "showcases/performance/reports/calendar-variants/recovery-qualification.json",
+      "path": "documents/showcases/performance/reports/calendar-variants/recovery-qualification.json",
+      "sha256": "21c25646d22bc0784b18dd6a4290b0e244e1531dcbdd92367d062d93330ae46b"
+    },
+    {
+      "source": "showcases/performance/reports/calendar-variants/builds.json",
+      "path": "documents/showcases/performance/reports/calendar-variants/builds.json",
+      "sha256": "c91ec856dc14b3b14dd2ab1442974b9c590aaa5565c7638e9c883af60f91248a"
+    },
+    {
+      "source": "showcases/performance/reports/calendar-variants/evidence.json",
+      "path": "documents/showcases/performance/reports/calendar-variants/evidence.json",
+      "sha256": "0603fac661a55acf15c092cb7e5e97f0d7812405ede8f390a6f8fe109c1bdfc3"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/results.md",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/results.md",
+      "sha256": "f75b2fe0ffcd35ec615e76d3b28abcec7c03e02301901f237e18395b09d71c07"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/campaign.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/campaign.json",
+      "sha256": "e6cb6fb1666c84105f31787319b3605eb89b51c127acf4d5faa28e2fc443d3ed"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/state.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/state.json",
+      "sha256": "89e6c0098cc1469b781badbabc9c81954b54e2ffbb5d37551a05c74e38887e60"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/source.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/source.json",
+      "sha256": "6a73729af46900ae1d50f4e3a0802d0754bada12e45e0ee4f9a3d4f613b1aa31"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/tables.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/tables.json",
+      "sha256": "517f0848a2b36999a5969358e2f0b112a4615810f4c2ff3f1b48a67ac129f75c"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/dom.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/dom.json",
+      "sha256": "57d8527f8bb62e47959c15e7a0e9de8e86c52a5cc851390f87833b6eadd7518b"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1/reporting-recovery/receipt.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1/reporting-recovery/receipt.json",
+      "sha256": "09bc9d52c2854ae477491499f7ae913adaacd2c94ffde21cb80f606fa3734880"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/results.md",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/results.md",
+      "sha256": "c6dfbf1ca67098f0499bc48c68eb9e3731bd0a91510e1ae4ad77446b68c26121"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/campaign.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/campaign.json",
+      "sha256": "28de044ab11e94c710659dc918b6f8f4b49f34f9aadcd15c7cff711985f88e0e"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/state.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/state.json",
+      "sha256": "a5d5eb476ac84611e9d746364fd2ec3aba250e3e73e62e394478cb4048c3001a"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/source.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/source.json",
+      "sha256": "c6e8f779664df6d2b5875257500002cbb47141b740dd56db0cfb9623601110d0"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/tables.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/tables.json",
+      "sha256": "7642d960091795670086f1634fbfb6f56311d4351112464bc64ce4ed568ed05e"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/qualification.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/qualification.json",
+      "sha256": "09185f7b533b8fd3300cb3f216d1462398ac5875a1787d7cfdf042f6cee8e15c"
+    },
+    {
+      "source": "showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/recovery-qualification.json",
+      "path": "documents/showcases/performance/reports/campaigns/main-be47f046-20261001-v1-calendar/recovery-qualification.json",
+      "sha256": "515aa6e71556f520fd1a923fa9067177c353f6f875377beb1be61292681c7837"
+    }
+  ],
+  "viewerInputs": {
+    "showcases/performance-results/src/main.js": "f4edf2ace431545c254a4a9f94f30dc85b8d4757d1c42783acf1af1046a6c7aa",
+    "showcases/performance-results/src/table-data.js": "d3825b3f491dbcfd9f57f1be574eddceca3dc5cb10cafccf1a25315926c50c41",
+    "showcases/performance-results/src/styles.css": "6d9bada6e9a66a2e9bc74d30384f9c82262532cd3ec7d5a841f1a2fffe2991a3",
+    "showcases/performance-results/src/sticky-columns.css": "b53836cca4994736a3f0603c0048ae40e4d6ce1acb57ec9a1f26d2a8f8aa7168",
+    "showcases/performance-results/scripts/render.mjs": "dd5eb4136897699a33c3e938558ede515ed50ac536702b0889440e1ffef34bb9",
+    "showcases/performance-results/scripts/deployment.mjs": "fb16637d1842585b375856acb44edaa1721d3d2026f98de247d6ef60ec8fac8d",
+    "showcases/performance-results/vite.config.js": "6c570926bdd1c4422ab3b71cb8c2c08cbc37cbf4954da9ff992fcfab0bd6004b",
+    "showcases/performance-results/package.json": "8f2b16ec6eda3e5f4bfaa4e2ff8c546d22c9f5461594c12ebf0e39a8fb679c23",
+    "showcases/performance-results/package-lock.json": "ef5bece1c4d22a576d0f82fe83746ea9681a3203a5f31569ecf80a45174a9111",
+    "showcases/en-reve/vendor/en-reve-tokens-0.1.0.tgz": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+    "showcases/en-reve/vendor/en-reve-styles-0.1.0.tgz": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+    "showcases/en-reve/vendor/en-reve-primitives-0.1.0.tgz": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+    "showcases/en-reve/vendor/en-reve-elements-0.1.0.tgz": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d"
+  }
+}

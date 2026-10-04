@@ -1,0 +1,8 @@
+{
+  "status": "build-failed",
+  "at": "2026-09-20",
+  "command": "node showcases/performance/experiments/build-current.mjs",
+  "stage": "@en-reve/elements native TypeScript build",
+  "message": "Working-tree EnQueryBuilder.remove overrides the HTMLElement method incompatibly. No current candidate was accepted or timed.",
+  "log": "current-source-build.log"
+}

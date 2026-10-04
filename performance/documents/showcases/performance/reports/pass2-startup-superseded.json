@@ -1,0 +1,19 @@
+{
+  "at": "2026-09-20T20:28:15.699Z",
+  "run": "pass2-startup-v1",
+  "replacement": "pass2-startup-v3",
+  "affectedMetrics": [
+    "startupVisible",
+    "startupInput",
+    "startupResult",
+    "startupFrame"
+  ],
+  "reason": "Host-side locator visibility wait retries with 20/50/100/100/500ms backoff in pinned Playwright. Navigation-relative early-readiness comparisons inherit a library-dependent discovery delay. V1 is retained as a superseded automation pilot, excluded from the current startup tables. Trusted click correctness and click-relative timings are not retroactively called failed.",
+  "additionalSupersededQualification": {
+    "run": "pass2-startup-qualification-v2",
+    "successful": 14,
+    "failed": 2,
+    "reason": "Fluent WC layout moved between first observed geometry and dispatch; input landed on a badge. V3 refreshes coordinates immediately before its one click and verifies the composed-path target. No full v2 timing cohort was collected."
+  },
+  "replacementMethod": "Injected animation-frame visibility/geometry probe, fresh dispatch coordinates and one verified-target trusted click; reports observed geometry, probe elapsed time and protocol dispatch delay. No exact-minimum-readiness claim."
+}

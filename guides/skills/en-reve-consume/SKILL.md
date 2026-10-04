@@ -29,6 +29,53 @@ Find runnable examples through `/api-examples` and retrieve exact contracts thro
 contains artifact digests and guide/skill locations, not a blanket support claim.
 When offline, use the matching package README, declarations and component guide.
 
+## Find guidance for the selected element
+
+Start with the exact tag, not a similarly named component in another library.
+In the matching `public-api.json`, find its `components` record and use its
+public import identities; retrieve attributes, properties, events, slots, Parts
+and CSS properties from the corresponding CEM declaration. Follow referenced
+types in `public-types.json` for event details and data/rendering contracts.
+These generated artifacts are the per-element API reference, not a recipe.
+
+In a source checkout, look for `packages/elements/src/<name>/README.md` and the
+component's owning examples. Not every element has its own README or isolated
+example page. A missing primary example link does not mean the element is
+unsupported or has no guidance. For these compositions, use the existing recipes:
+
+| Elements | Recipe in the matching documentation build |
+| --- | --- |
+| `en-checkbox-group`, `en-choice-option`, `en-multiselect`, `en-tag`, `en-toggle-button`, `en-toggle-group` | [Choices and authored options](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#choices) |
+| `en-otp-field`, `en-range-slider` | [Field composition](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#fields) |
+| `en-context-menu`, `en-hover-card` | [Contextual surfaces](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#context) |
+| `en-action-overflow`, `en-selection-collection` | [Selection with independent actions](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#collection) |
+| `en-menubar`, `en-sheet` | [Commands and destinations](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#navigation) |
+| `en-chart` | [Feedback and measurement](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#feedback) |
+| `en-query-builder` | [Structured query](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#workflows) |
+| `en-questionnaire` | [Questionnaire](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#questionnaire) |
+| `en-transcript` | [Conversation following](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#transcript) |
+| `en-media-viewer` | [Media viewer](https://en-reve-docs.reve-ai-0869.chatgpt.site/component-patterns.html#media) |
+| `en-splitter` | [Split-view composition](https://en-reve-docs.reve-ai-0869.chatgpt.site/api-examples/split-view) and `packages/elements/src/split-view/README.md` |
+
+The pattern recipes above are authored in `apps/docs/src/component-patterns.ts`;
+its section IDs match the links. Use that file when offline. Treat its gallery-wide
+registration and status reporting as demo infrastructure: register only the
+application's selected components and authored children. For other elements,
+follow the API reference's primary example and its source sample. Read only the
+selected recipe and relevant contracts; do not load the whole library catalog
+into a one-component task.
+
+The split-view recipe owns and registers its internal splitter. Use the standalone
+`en-splitter` API when the application itself owns pane sizing; do not query or
+bind to the split view's private separator.
+
+A recipe explains one composition. Check the specific element's contract before
+transferring an event payload, selection model, renderer wrapper, or focus rule
+from a sibling. For complex editor extensions, virtual collections, or overlays,
+read the family example and owning guide before composing the child elements.
+If matching docs are unavailable, use installed declarations and report what
+cannot be established instead of silently substituting hosted latest APIs.
+
 ## Choose the smallest supported composition
 
 - Register explicit `@en-reve/elements/define/<name>.js` entries for a global

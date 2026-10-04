@@ -1,0 +1,657 @@
+{
+  "archivedAt": "2026-09-20T20:31:17.599Z",
+  "note": "Raw JSONL, manifests, summaries and exact harness sources retained outside ignored runs. Lighthouse HTML/JSON audits and full browser run folders also remain in runs. Decompress *.gz to inspect. Existing frozen vendor tarballs and inventory hashes identify measured artifacts.",
+  "analysisSourcesSha256": "7df1e8ee3f11bbcddc986d2437c7dcb47bb0b3d6fab123127ac938864abd864f",
+  "campaigns": [
+    {
+      "id": "pass2-load-matrix-v1",
+      "expected": 320,
+      "observed": 320,
+      "successful": 320,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "9221cb51c9c30e8e198338a2db21550b47b01c2fced33a1c7362a547b01ae8c0",
+      "harnessSha256": "5b45f91e3812dbb6e29ca631599d11f973eb25c0d94256582eaf113a58f12890",
+      "host": {
+        "platform": "darwin",
+        "release": "25.6.0",
+        "architecture": "arm64",
+        "cpu": "Apple M5 Max",
+        "logicalCpus": 18,
+        "totalMemory": 68719476736,
+        "node": "v24.16.0",
+        "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=36241507)\t100%; charged; 0:00 remaining present: true"
+      },
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "9221cb51c9c30e8e198338a2db21550b47b01c2fced33a1c7362a547b01ae8c0",
+          "archiveSha256": "03584d036c9c3655b3d86aded9b4263a1fa77e6f8b5e4f5d696b6dc83d38888d",
+          "rawBytes": 8778966,
+          "archiveBytes": 652209
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "813b43c447f122078264b6db42daf568d93a71961a9e32fce0163c47848663c2",
+          "archiveSha256": "897118bb074fbe99cccb242d62ee84582c8c3297fc18df2573ddd71f90d298cc",
+          "rawBytes": 108865,
+          "archiveBytes": 14692
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "a5e5fbfa581ae02491a70dc7df749ea04ff01bfc65739f77af90897a87582c76",
+          "archiveSha256": "f24908c244e0f0eec91f6da19c8fef968957cd820493e571a4fd44ca1adda2e3",
+          "rawBytes": 227609,
+          "archiveBytes": 14467
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "0458c74157498e1718ca0129e3c7c590d63e2d2f8426ece8f1909e672b6f74b7",
+          "archiveSha256": "4bb4dba52bc543038ccf88a5e9e951be8227491333616d72edcd87a1ef199d54",
+          "rawBytes": 206479,
+          "archiveBytes": 50977
+        }
+      ]
+    },
+    {
+      "id": "pass2-startup-v3",
+      "expected": 160,
+      "observed": 160,
+      "successful": 160,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "160df5153df124ee572d63428c5604c063e900b56395e8c39158a5df73a7a5a5",
+      "harnessSha256": "8a01e391ebb52d57b27277708f66ba690a4d938e723ba94d1bcd82fd5c878009",
+      "host": {
+        "platform": "darwin",
+        "release": "25.6.0",
+        "architecture": "arm64",
+        "cpu": "Apple M5 Max",
+        "logicalCpus": 18,
+        "totalMemory": 68719476736,
+        "node": "v24.16.0",
+        "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=36241507)\t100%; charged; 0:00 remaining present: true"
+      },
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "160df5153df124ee572d63428c5604c063e900b56395e8c39158a5df73a7a5a5",
+          "archiveSha256": "a5205fa5546eadc40a65973a80cb54867ec734b426f2c861946addf09770f36d",
+          "rawBytes": 4690681,
+          "archiveBytes": 401446
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "0c392da6b41348f524402c7c72f1e4c17c1e2ae46da396387aa8aec20e57a598",
+          "archiveSha256": "67018acfb1e277095d3ab5087d4cdc3ec9978900067612aba75e87eec7568610",
+          "rawBytes": 83138,
+          "archiveBytes": 13754
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "75aee912d1795bf94cd6060d3391c853cbd52c352479647e76557d55e29b8f18",
+          "archiveSha256": "81a8b569047459937f2810deef9920cf0f1fcbeba29e318d38f2b832a2af916f",
+          "rawBytes": 135478,
+          "archiveBytes": 11384
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "649cf88a9be411441eed47e62519fff21f7637ac2b90595badfdab8340a57985",
+          "archiveSha256": "b0f3eddb012eb88ae53863706e7842fd7a5af909002722121deaa2ddfe000f65",
+          "rawBytes": 208419,
+          "archiveBytes": 51607
+        }
+      ]
+    },
+    {
+      "id": "pass2-interactions-v1",
+      "expected": 160,
+      "observed": 160,
+      "successful": 150,
+      "failed": 10,
+      "completed": true,
+      "rawHash": "1d3a3359dd953ac8087613f7cac203151840d3f5f9cde54acb1731a98307dd74",
+      "harnessSha256": "5b45f91e3812dbb6e29ca631599d11f973eb25c0d94256582eaf113a58f12890",
+      "host": {
+        "platform": "darwin",
+        "release": "25.6.0",
+        "architecture": "arm64",
+        "cpu": "Apple M5 Max",
+        "logicalCpus": 18,
+        "totalMemory": 68719476736,
+        "node": "v24.16.0",
+        "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=36241507)\t100%; charged; 0:00 remaining present: true"
+      },
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "1d3a3359dd953ac8087613f7cac203151840d3f5f9cde54acb1731a98307dd74",
+          "archiveSha256": "4f08f69b3c4160c77e86e64fe168a379a920b3effa44bbbc2f35ec5295b5adff",
+          "rawBytes": 21667360,
+          "archiveBytes": 1424605
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "e3d3bf73567d48129468c087ecd9be32c52334272ad4511be03df926d68caaf1",
+          "archiveSha256": "7a03c80387504f7106dd7e9e371f3c45daddabd28d5f4778fd9188abfc2ec716",
+          "rawBytes": 83030,
+          "archiveBytes": 13677
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "45118cb8effc0ebe371b3591734843ef4222c3fad56407ead1821a6da5f36cc4",
+          "archiveSha256": "78273b7a6d8fad64af39b3e5f88dbfae0cfa27a97785793f491fafc2482b9e45",
+          "rawBytes": 257294,
+          "archiveBytes": 17442
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "0458c74157498e1718ca0129e3c7c590d63e2d2f8426ece8f1909e672b6f74b7",
+          "archiveSha256": "4bb4dba52bc543038ccf88a5e9e951be8227491333616d72edcd87a1ef199d54",
+          "rawBytes": 206479,
+          "archiveBytes": 50977
+        }
+      ]
+    },
+    {
+      "id": "pass2-lighthouse-v1",
+      "expected": 40,
+      "observed": 40,
+      "successful": 40,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "a74b2db67a80e1f3090c41c6ae1b70133e724e3ac3ee42e9eb5da5233db73c59",
+      "harnessSha256": "5b45f91e3812dbb6e29ca631599d11f973eb25c0d94256582eaf113a58f12890",
+      "host": {
+        "cpu": "Apple M5 Max",
+        "platform": "darwin",
+        "release": "25.6.0"
+      },
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "a74b2db67a80e1f3090c41c6ae1b70133e724e3ac3ee42e9eb5da5233db73c59",
+          "archiveSha256": "ad4ff1fd106b73161f34e873130d38047103d3e9ad30045bc69e0788917b0143",
+          "rawBytes": 20414,
+          "archiveBytes": 1737
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "91c67d93a6413a27e556e2c731f2f4efb5e120060d27a28a43f393237782556d",
+          "archiveSha256": "ec5c3ebbbafd12edf1591fbd33dd0055b2ced87425cb62dbec40762ba204cfbb",
+          "rawBytes": 61576,
+          "archiveBytes": 12258
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "3705f2c27f04896437a6377088ab51bd810c63fddcf2f21f3f451d04d1d5be42",
+          "archiveSha256": "ef02f6f445e7f827c86f091813494c8b681494eb54ceb2c877ad115fd3c2b0e9",
+          "rawBytes": 44753,
+          "archiveBytes": 1815
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "0458c74157498e1718ca0129e3c7c590d63e2d2f8426ece8f1909e672b6f74b7",
+          "archiveSha256": "4bb4dba52bc543038ccf88a5e9e951be8227491333616d72edcd87a1ef199d54",
+          "rawBytes": 206479,
+          "archiveBytes": 50977
+        }
+      ]
+    },
+    {
+      "id": "pass2-memory-50-v1",
+      "expected": 8,
+      "observed": 8,
+      "successful": 8,
+      "failed": 0,
+      "completed": true,
+      "rawHash": "6ade807cd63903f8b58195275e8f600196e2c0ae8a9f02ae1d80211913b1547a",
+      "harnessSha256": "5b45f91e3812dbb6e29ca631599d11f973eb25c0d94256582eaf113a58f12890",
+      "host": {
+        "platform": "darwin",
+        "release": "25.6.0",
+        "architecture": "arm64",
+        "cpu": "Apple M5 Max",
+        "logicalCpus": 18,
+        "totalMemory": 68719476736,
+        "node": "v24.16.0",
+        "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=36241507)\t100%; charged; 0:00 remaining present: true"
+      },
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "6ade807cd63903f8b58195275e8f600196e2c0ae8a9f02ae1d80211913b1547a",
+          "archiveSha256": "b75a004a3c334c3ff0e849e8f9cef8af4868a098f7a2e8a175491f0c53bc6260",
+          "rawBytes": 108646,
+          "archiveBytes": 11209
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "d48c4fa143ae54e4bbf93e2a4403295434bfc3e8627a86b418e6f62053d0a069",
+          "archiveSha256": "c9ef706366b20cfe0769378e09866a9f98a4c775ffd504dca9be4c2e6b782b17",
+          "rawBytes": 58503,
+          "archiveBytes": 12707
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "b84f0d951f62e7259c364b80c3ad58c61efc566cff17138222a5fd1268a75a83",
+          "archiveSha256": "7b525fc666c0c6308965345d675fd5b023fa535c340ace2f82b370f24e8f4612",
+          "rawBytes": 61167,
+          "archiveBytes": 3646
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "0458c74157498e1718ca0129e3c7c590d63e2d2f8426ece8f1909e672b6f74b7",
+          "archiveSha256": "4bb4dba52bc543038ccf88a5e9e951be8227491333616d72edcd87a1ef199d54",
+          "rawBytes": 206479,
+          "archiveBytes": 50977
+        }
+      ]
+    },
+    {
+      "id": "pass2-startup-v1",
+      "status": "superseded",
+      "reason": "Host-side polling discovery bias; excluded from current startup comparisons.",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "9033fcd703ce66fe37e09b16ff352e791ffb8d5b5f41d0c97dfcc760f059a67a",
+          "archiveSha256": "db77f7d098294c4f9d869a63b8e8281262be152b96ff56265c5d48b20d8c0009",
+          "rawBytes": 4889143,
+          "archiveBytes": 422862
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "2b9390cca10c259b67f90656ebf0b3ce40bf26b13603f09545970a6b826041d5",
+          "archiveSha256": "eaf24ccc77b80456e88b77bcb0491caa3d9f159b74ab9f0dc1b5ad0e0b30bec8",
+          "rawBytes": 83103,
+          "archiveBytes": 13728
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "88550aa0f15f6028eb373d4603187c981ee9022535f74a7420e575141b69e34b",
+          "archiveSha256": "4a90a70a429d2a626fd596a3fa1b8d26813bae1a67f371f9b887317a183303ce",
+          "rawBytes": 136402,
+          "archiveBytes": 11605
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "0458c74157498e1718ca0129e3c7c590d63e2d2f8426ece8f1909e672b6f74b7",
+          "archiveSha256": "4bb4dba52bc543038ccf88a5e9e951be8227491333616d72edcd87a1ef199d54",
+          "rawBytes": 206479,
+          "archiveBytes": 50977
+        }
+      ]
+    },
+    {
+      "id": "diagnostic-desktop-v1",
+      "role": "historical supporting table input",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "c5c2b78edf5e7613753ed73fd06e0ccb47b9d1302ba45a344e12c364f36000ab",
+          "archiveSha256": "ff5a2ddb26e482cadb4d990fae7c2d8672d4887d257ac81d3be9ecf6bbebbedf",
+          "rawBytes": 1045543,
+          "archiveBytes": 74633
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "f11eb5b24e87b1aea6f80d394ac119720a8794a3e59b110a2f4bac807986f527",
+          "archiveSha256": "3ecf3196f03a7007a1b40d7caf810b68cce99f6f02fb187bbba725cbc170781a",
+          "rawBytes": 58453,
+          "archiveBytes": 12686
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "67028636c02aafa289e46d430e99360c28b34ae1de3e6182155350fcb598a051",
+          "archiveSha256": "c0d0b25d291cf7156f89de132a29c1d5d3b06869a0ecbc317366f5654291456b",
+          "rawBytes": 90645,
+          "archiveBytes": 5638
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "0617d98bff8a1fa9a023bc28d15f32079ef67404ceca4be2be5c177d0f3321bc",
+          "archiveSha256": "9ddbb419b2bff8e5444fb4cd28389ddcd25482ce1ba0bedf326b14b5553bebfd",
+          "rawBytes": 19890,
+          "archiveBytes": 7317
+        },
+        {
+          "path": "diagnostics-summary.json.gz",
+          "sourceSha256": "0a893d188e49232b47719cbeb6280002339780d8ad4d8eaf6343226c6d6e5fa7",
+          "archiveSha256": "86761db08d88e997d3bf34e60218b291e72d2879307d1661a3b820f690fdd715",
+          "rawBytes": 232658,
+          "archiveBytes": 21720
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "c8344236aca82c3cd48f78a2bcc1b35de6ba0909167874863ce852cefa30bdc2",
+          "archiveSha256": "c83b1a0f74785d72f715c950ff7276c0d84fa083da5b3b2cee7535be5b3785f4",
+          "rawBytes": 177656,
+          "archiveBytes": 43415
+        }
+      ]
+    },
+    {
+      "id": "bfcache-direct-cdp-v2",
+      "role": "historical supporting table input",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "2e28f5be7f4c9a5c1e14a8ef8038c643ad140be767b85551890d5c22e1bc726f",
+          "archiveSha256": "7ee51edb08d896e5264ca3fbc82be0ab41295ce4bd083eb853bb1c20b4d761a9",
+          "rawBytes": 153960,
+          "archiveBytes": 13776
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "99a6561540dfbaba2984c6164ee3af8cc96ca3e6fdab5825bfde427c477906bd",
+          "archiveSha256": "c06b1bdb8a848b127d6f50f08622baaf6b19437b2e08aab2da0de14ab1fdbed2",
+          "rawBytes": 58450,
+          "archiveBytes": 12697
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "0968b5a9eed840d988212d23a5527c18bc897b9b3916210381ccb185e3c56b97",
+          "archiveSha256": "c8eba6dfddee90eb0e739443796ccc40a7fbaea651b46ee051e5ce85ff1c567a",
+          "rawBytes": 30781,
+          "archiveBytes": 2595
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "6674464b2a710d5f47f63f3d04b0ba33e111484a6427302a52237350ebcecb94",
+          "archiveSha256": "c10f959635e972c72968ec9c5a61d16c4aabb9eb2d7f15f482eed8f8f4d32e0c",
+          "rawBytes": 199544,
+          "archiveBytes": 49071
+        }
+      ]
+    },
+    {
+      "id": "experiment-native-interaction-v2",
+      "role": "historical supporting table input",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "d5db31346d1225020320822c352cdaebf178478518cffa8d89c8c51d3efc6fba",
+          "archiveSha256": "71f115f7500c24e7eaeb1c69949762382481290cf5392682bc9357332f0688a5",
+          "rawBytes": 1098470,
+          "archiveBytes": 41556
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "800c543fb6f82b49a3175f290eb7025c5345e30a56db74fe56c0fe22ae159176",
+          "archiveSha256": "48d2b951dae38909db9151d8991de89c0020480adc871fb7002e52488c40ce66",
+          "rawBytes": 57668,
+          "archiveBytes": 12659
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "e14111139e849bf26a5fda86d4d45429dfb4287c234709cac307bc17976a6610",
+          "archiveSha256": "a8766d506c0cfe7678768c49cdfc61ba4c4090c43c98b59494076894bf0de869",
+          "rawBytes": 10989,
+          "archiveBytes": 1672
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "6674464b2a710d5f47f63f3d04b0ba33e111484a6427302a52237350ebcecb94",
+          "archiveSha256": "c10f959635e972c72968ec9c5a61d16c4aabb9eb2d7f15f482eed8f8f4d32e0c",
+          "rawBytes": 199544,
+          "archiveBytes": 49071
+        }
+      ]
+    },
+    {
+      "id": "experiment-lazy-commands-interaction-v2",
+      "role": "historical supporting table input",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "ed048d4abee7d11e2f35cca31f34f72cb32df9a2fbe62a15acc508eb84fb05e7",
+          "archiveSha256": "bde9acdbdf9417ddc9adbcb48acfc547f2e4387417f78a0941c53842f0100f6d",
+          "rawBytes": 854621,
+          "archiveBytes": 36054
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "2dfab14e729450e79da551ec2dee4796c8e7da32ff6f6b18034e9c6ee17b9129",
+          "archiveSha256": "78819d945b09b5b38cd5934103a09b32daeea54e06e62ed8946b17c499446d85",
+          "rawBytes": 63383,
+          "archiveBytes": 13826
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "069cb6322a8d34c1e882d5f8d02542698303df9f6032488c331cec205d56c227",
+          "archiveSha256": "765064b462ae82786f936592a5e4566cd916abaed42090951af50ec3b0f7adc8",
+          "rawBytes": 10938,
+          "archiveBytes": 1643
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "6674464b2a710d5f47f63f3d04b0ba33e111484a6427302a52237350ebcecb94",
+          "archiveSha256": "c10f959635e972c72968ec9c5a61d16c4aabb9eb2d7f15f482eed8f8f4d32e0c",
+          "rawBytes": 199544,
+          "archiveBytes": 49071
+        }
+      ]
+    },
+    {
+      "id": "experiment-intent-commands-interaction-v2",
+      "role": "historical supporting table input",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "4e3cf6101f4201e978a4f9f9a79a6ddab3aaae7092ff1a145c08bce278df1574",
+          "archiveSha256": "a0dfecf7ca51c861d43ea46d5e2ea31e4326564225605401fd883ad44a6b427f",
+          "rawBytes": 835114,
+          "archiveBytes": 36715
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "d44de754d7ae1ddb797dc8c8b51b44b04af7155799ec6e7237e0cd983ac1e8b8",
+          "archiveSha256": "60e039929463aa2188dae77a7b53e2907ade28cd86701e733ac47b1617920dbc",
+          "rawBytes": 63400,
+          "archiveBytes": 13828
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "51a6310200aeab26638152056b7d8d0adfe632f2e681d9211ed2e1a1e8acf8de",
+          "archiveSha256": "16356c13e6b7ffd7b3f5a0b505c5d86dcce3008a42c264bbead72950f0954d52",
+          "rawBytes": 11039,
+          "archiveBytes": 1648
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "6674464b2a710d5f47f63f3d04b0ba33e111484a6427302a52237350ebcecb94",
+          "archiveSha256": "c10f959635e972c72968ec9c5a61d16c4aabb9eb2d7f15f482eed8f8f4d32e0c",
+          "rawBytes": 199544,
+          "archiveBytes": 49071
+        }
+      ]
+    },
+    {
+      "id": "pass2-startup-qualification-v1",
+      "role": "startup qualification; excluded from timing distributions",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "201cd8cd33cc5a6b5c194a2fec9ec3695eeab9fcdb1e6a7a9d288f6fcb2033bc",
+          "archiveSha256": "bef04d3b387f861b342214a9f1b2a502b7cc0a3d96913c1f9a27a7c28216c496",
+          "rawBytes": 481826,
+          "archiveBytes": 44879
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "d0f02f904321375d9a7d40332ce0e45b1d0d23777c30d834f98b47401f80ef94",
+          "archiveSha256": "d55ed00690abed5f26837f238a492952ac34dd61dfb3116c52f93e7b4f564797",
+          "rawBytes": 59873,
+          "archiveBytes": 12819
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "bcd909939ec9ee8b53e2e34f7e8d5406965738081f02ae3f4eb823010bcdc1aa",
+          "archiveSha256": "ecaeaf9200d29aa04a67bb6e19c90638cb489621cbc080688b78f670f0762dd4",
+          "rawBytes": 129026,
+          "archiveBytes": 8856
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "0458c74157498e1718ca0129e3c7c590d63e2d2f8426ece8f1909e672b6f74b7",
+          "archiveSha256": "4bb4dba52bc543038ccf88a5e9e951be8227491333616d72edcd87a1ef199d54",
+          "rawBytes": 206479,
+          "archiveBytes": 50977
+        }
+      ]
+    },
+    {
+      "id": "pass2-startup-qualification-v2",
+      "role": "startup qualification; excluded from timing distributions",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "aaa0c0293bcc61cdee0be8c79d4e794cf812877261ad9d4b3bd0ba6022142211",
+          "archiveSha256": "0ffea1f6e1e25ece445eb6e4b246d992a1895bcbc36d11a2c6cd916e369ee967",
+          "rawBytes": 446634,
+          "archiveBytes": 41684
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "31b129a9fc1577b3375f6b46b60b6916ca9fd5156e0ddccc16c1a5e4d67a982c",
+          "archiveSha256": "917c1b97796e4466dfc24830c38847c51331dcfe0a6aca363194f3618b4f38ee",
+          "rawBytes": 59908,
+          "archiveBytes": 12842
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "14f9ef6846c24a6c3059ff7ef283cf52fcd7be5de6a93058cebd6e1530658c6a",
+          "archiveSha256": "a39f072a93b6b53940cd7e27bd9f2f58781c1f8363596481f40578617b8e1d16",
+          "rawBytes": 125264,
+          "archiveBytes": 8511
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "5e7a1fc0583a1b331431f2da960296789740ffe9acc156d752fc1de40cab3640",
+          "archiveSha256": "a394e08cecb882364f79f9669bad46db36255e473494a4591fb664814eecb62d",
+          "rawBytes": 207374,
+          "archiveBytes": 51303
+        }
+      ]
+    },
+    {
+      "id": "pass2-startup-qualification-v3",
+      "role": "startup qualification; excluded from timing distributions",
+      "files": [
+        {
+          "path": "samples.jsonl.gz",
+          "sourceSha256": "e928247d48a53a97af920bcda92de6326ef3f9c2ebc804b97d4d187696edcd32",
+          "archiveSha256": "e2ec7ba912264483b4cd8eaea428cffcbd880f79083ce465c5dc2a5545f87f16",
+          "rawBytes": 472667,
+          "archiveBytes": 43044
+        },
+        {
+          "path": "manifest.json.gz",
+          "sourceSha256": "ffa3560f9f3376c1c7e05a53c414d235c4bb61637a513d862d02ee914c3179a2",
+          "archiveSha256": "02a1e9cc9fea850ad3b88ff0813a78c7b70b75353c879f8c070f817086c71081",
+          "rawBytes": 59908,
+          "archiveBytes": 12844
+        },
+        {
+          "path": "summary.json.gz",
+          "sourceSha256": "e90a869c76cd0921866aa467199143b2fd4fb23b819b093c1386616689b7dc11",
+          "archiveSha256": "100f3af608dc51b683c9bf318981e8ece7688c73dce322c6209877adb0269146",
+          "rawBytes": 130010,
+          "archiveBytes": 9026
+        },
+        {
+          "path": "collector.js.gz",
+          "sourceSha256": "98b8ef2c65d646c8d2235a2fa6fbcce0803a6db77ae0394a366c7d01153b6870",
+          "archiveSha256": "bbd037be286c80b8c01ac92de2b26c8300ad2edfe4e707f2857e79d0d3140cf3",
+          "rawBytes": 20101,
+          "archiveBytes": 7408
+        },
+        {
+          "path": "harness.json.gz",
+          "sourceSha256": "649cf88a9be411441eed47e62519fff21f7637ac2b90595badfdab8340a57985",
+          "archiveSha256": "b0f3eddb012eb88ae53863706e7842fd7a5af909002722121deaa2ddfe000f65",
+          "rawBytes": 208419,
+          "archiveBytes": 51607
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1145 @@
+[
+  {
+    "id": "split-vendor",
+    "description": "Eager vendor/application chunks; isolates dependency caching without deferring capability.",
+    "entrySha256": "be564590dfe6fe9eb9a862adab4bca230c06f0480ddd952e6b60f858c9baeaf6",
+    "assets": [
+      {
+        "path": "assets/index-DADEvvIk.css",
+        "sha256": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432",
+        "raw": 40755,
+        "gzip": 6547,
+        "brotli": 5735,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-GmoQwOUI.js",
+        "sha256": "0314bd4a35506f2b106303e130b369968450e85dbe0e624d49d5ba4985143650",
+        "raw": 29359,
+        "gzip": 8951,
+        "brotli": 7648,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./vendor-JCQzG2oR.js",
+            "dynamic": false
+          }
+        ]
+      },
+      {
+        "path": "assets/index-GmoQwOUI.js.map",
+        "sha256": "f4966e3c489a82cb36a0b095a57ce62741e5cf53e21c5949a6402d7c37fab811",
+        "raw": 59356,
+        "gzip": 16353,
+        "brotli": 13982,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/vendor-JCQzG2oR.js",
+        "sha256": "8f74c0d498437e7009a352e6141f88ee2cfc94979871a7f903a059d8426068c0",
+        "raw": 385242,
+        "gzip": 94317,
+        "brotli": 75369,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/vendor-JCQzG2oR.js.map",
+        "sha256": "cf79c6ee16b075d9d3bfc45190f891b88b1ed64a31e137a5566313537a974043",
+        "raw": 1062497,
+        "gzip": 235825,
+        "brotli": 177869,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "daef34756ea3bc975dc230211749e589459665f6010a94327dfecfdbe8420144",
+        "raw": 434,
+        "gzip": 293,
+        "brotli": 173,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "43be81c69a0ae59338c30954cff5f07a1811fbba332a4eb0373a7e5b62ad2967",
+    "cohort": "supported-consumer-experiment",
+    "qualification": "Must pass functional and first-use checks before recommendation"
+  },
+  {
+    "id": "split-vendor-edit",
+    "description": "One application-only edit to test stable dependency chunk identity.",
+    "entrySha256": "9c9afcbd20728bb36525fcaeea2f1cae15339364a561bc9fbb17ed5a4f7005e2",
+    "assets": [
+      {
+        "path": "assets/index-5whDyuy6.js",
+        "sha256": "c317cb94660c704b33650c275d701c87c071e765756e2e4abfd78f6cc7bc3a1d",
+        "raw": 29407,
+        "gzip": 8970,
+        "brotli": 7661,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./vendor-JCQzG2oR.js",
+            "dynamic": false
+          }
+        ]
+      },
+      {
+        "path": "assets/index-5whDyuy6.js.map",
+        "sha256": "57f7c54e257331738b08c296e85105e33d1f3cf3e7faa98b4eef15ac9761e018",
+        "raw": 59433,
+        "gzip": 16386,
+        "brotli": 14004,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-DADEvvIk.css",
+        "sha256": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432",
+        "raw": 40755,
+        "gzip": 6547,
+        "brotli": 5735,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/vendor-JCQzG2oR.js",
+        "sha256": "8f74c0d498437e7009a352e6141f88ee2cfc94979871a7f903a059d8426068c0",
+        "raw": 385242,
+        "gzip": 94317,
+        "brotli": 75369,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/vendor-JCQzG2oR.js.map",
+        "sha256": "cf79c6ee16b075d9d3bfc45190f891b88b1ed64a31e137a5566313537a974043",
+        "raw": 1062497,
+        "gzip": 235825,
+        "brotli": 177869,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "259250d517dbbed0e6417947e0ede900710db7ff63c6a1e10fe5d3016b9ddfbb",
+        "raw": 434,
+        "gzip": 293,
+        "brotli": 173,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "037317f1a509ade4b5fc62f1a0e3ca8ac502d459986aca27c22c658f32d19110",
+    "cohort": "supported-consumer-experiment",
+    "qualification": "Must pass functional and first-use checks before recommendation"
+  },
+  {
+    "id": "lazy-commands",
+    "description": "Load command-palette registration on its first activation; preserve all other eager definitions.",
+    "entrySha256": "ffddaa289fe7df1345d2315a4f7bca9903bbace664b5cb65f598e20c40d505b1",
+    "assets": [
+      {
+        "path": "assets/command-palette-CihTeR90.js",
+        "sha256": "20cada59b683f86b0aff9145228ff309a8f1257466b3735b51995152ba37768f",
+        "raw": 9261,
+        "gzip": 3452,
+        "brotli": 3060,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./index-BNLQiEjj.js",
+            "dynamic": false
+          }
+        ]
+      },
+      {
+        "path": "assets/command-palette-CihTeR90.js.map",
+        "sha256": "6e68030865e739a7dea8ba4b384287471c275ef561e2b1535e2faa2c7927345d",
+        "raw": 34532,
+        "gzip": 9456,
+        "brotli": 8261,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-BNLQiEjj.js",
+        "sha256": "80343227742d4abca4f5500d40061950878d00553543505da2e91755299f5362",
+        "raw": 407079,
+        "gzip": 100537,
+        "brotli": 81311,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./command-palette-CihTeR90.js",
+            "dynamic": true
+          }
+        ]
+      },
+      {
+        "path": "assets/index-BNLQiEjj.js.map",
+        "sha256": "6a065fa5644081f63b7ea689e692d3fe3c1fe2b81100c103e358f71849fc26b1",
+        "raw": 1085035,
+        "gzip": 243075,
+        "brotli": 186098,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-DADEvvIk.css",
+        "sha256": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432",
+        "raw": 40755,
+        "gzip": 6547,
+        "brotli": 5735,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "f960a2d45f7c2e59c19af273b56c4e18e80c23b742b396cb992cd867e27c5d89",
+        "raw": 359,
+        "gzip": 266,
+        "brotli": 159,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "3e061556f667db29257264229300fe800fc9623c2e000436880cea1bb4f5616f",
+    "cohort": "supported-consumer-experiment",
+    "qualification": "Must pass functional and first-use checks before recommendation"
+  },
+  {
+    "id": "intent-commands",
+    "description": "Same dynamic boundary with pointer/focus intent preloading; cold keyboard activation remains supported.",
+    "entrySha256": "615ac8d1926061bd1a318de52c5348914e282a6cc7cfdcf569e77c6a23557fc4",
+    "assets": [
+      {
+        "path": "assets/command-palette-Dw7n05L_.js",
+        "sha256": "31834c3f10d9db93f75969a3c7913f502a019c3d8c196136470c85f89e6bd0a5",
+        "raw": 9261,
+        "gzip": 3453,
+        "brotli": 3058,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./index-DL8Eojut.js",
+            "dynamic": false
+          }
+        ]
+      },
+      {
+        "path": "assets/command-palette-Dw7n05L_.js.map",
+        "sha256": "1177ebbd98fda6ac827250c22a06b4bea30379e4f2a9d75e07d58fb9c1023498",
+        "raw": 34532,
+        "gzip": 9455,
+        "brotli": 8266,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-DADEvvIk.css",
+        "sha256": "25c8eb37c2f1de4aa1a9549f2c923ad82f0d4e1a2c489daa76766c137d21d432",
+        "raw": 40755,
+        "gzip": 6547,
+        "brotli": 5735,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-DL8Eojut.js",
+        "sha256": "289e91d4e15bb8118ee3c50db2fb0c1cc8b369b98da491e58a789e6568e11dac",
+        "raw": 407228,
+        "gzip": 100576,
+        "brotli": 81220,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./command-palette-Dw7n05L_.js",
+            "dynamic": true
+          }
+        ]
+      },
+      {
+        "path": "assets/index-DL8Eojut.js.map",
+        "sha256": "078a025b0bd6c62e24343cf740279965350923975d3505a84df68802bbc1dff2",
+        "raw": 1085400,
+        "gzip": 243151,
+        "brotli": 186094,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "ea789502e38a9be9f13f1421a6a59abcd5260b57ac944ed6cba47837de723816",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 164,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "c9fd36374d039aca3a57811b09066667d1efedc56fcebd3c291db6c6d88cb104",
+    "cohort": "supported-consumer-experiment",
+    "qualification": "Must pass functional and first-use checks before recommendation"
+  },
+  {
+    "id": "family-shell",
+    "description": "Import-only delivery attribution; not an interactive full-showcase comparator.",
+    "assets": [
+      {
+        "path": "assets/index-CJrvWFg1.css",
+        "sha256": "e51b52b1f4a224ba1c7e169a104639df20969bda3863df05f4a8a7ca61ad8fba",
+        "raw": 28826,
+        "gzip": 4270,
+        "brotli": 3636,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-Mxu-ygtG.js",
+        "sha256": "418c206484b89b68ef5f067277831e583fc9193a62aadf4de269acaaeb12a85f",
+        "raw": 670,
+        "gzip": 389,
+        "brotli": 325,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "6f2c8edd2bb9a932343068edc53e8181f7d19647735ea9152960abe0ef08e47e",
+        "raw": 359,
+        "gzip": 264,
+        "brotli": 159,
+        "diagnostic": false
+      }
+    ],
+    "cohort": "attribution",
+    "fingerprint": "7e371372d8f7603e6a1ad9ca4d3b0d2edc4625759d2766e1f6d1dc5f869a8890"
+  },
+  {
+    "id": "family-button",
+    "description": "Import-only delivery attribution; not an interactive full-showcase comparator.",
+    "assets": [
+      {
+        "path": "assets/index-Ba_eP0Wz.js",
+        "sha256": "77ccca755ba6342bd6d9051aae013ad1481c3a8cff617da360fd0796805ed3a3",
+        "raw": 53594,
+        "gzip": 14856,
+        "brotli": 13064,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-Ba_eP0Wz.js.map",
+        "sha256": "afdb81c69f2d7a1d26c18f48b720503d9204fa924074c688998bd373e6235801",
+        "raw": 124266,
+        "gzip": 30825,
+        "brotli": 26833,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CJrvWFg1.css",
+        "sha256": "e51b52b1f4a224ba1c7e169a104639df20969bda3863df05f4a8a7ca61ad8fba",
+        "raw": 28826,
+        "gzip": 4270,
+        "brotli": 3636,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "9004a2bfea199f9e0a482a5982a622cb2d7ac1cbd97df0f0db873e145bf98695",
+        "raw": 359,
+        "gzip": 266,
+        "brotli": 159,
+        "diagnostic": false
+      }
+    ],
+    "cohort": "attribution",
+    "fingerprint": "bba6fcdbdbdec1200d9996282274c6dd16d78040da00aaee1aae16f36d4f7632"
+  },
+  {
+    "id": "family-forms",
+    "description": "Import-only delivery attribution; not an interactive full-showcase comparator.",
+    "assets": [
+      {
+        "path": "assets/index-CJrvWFg1.css",
+        "sha256": "e51b52b1f4a224ba1c7e169a104639df20969bda3863df05f4a8a7ca61ad8fba",
+        "raw": 28826,
+        "gzip": 4270,
+        "brotli": 3636,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-CSpgyHaA.js",
+        "sha256": "ffa4f2a657bd2ee594cbffcb6320932aa4ecb87fb26ff7cae782000e184882c1",
+        "raw": 144760,
+        "gzip": 36783,
+        "brotli": 31274,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-CSpgyHaA.js.map",
+        "sha256": "a0c138d7888d9737aadf841cd1f9ada8efb34b58468d8ab4b6caeef0e54289d7",
+        "raw": 349814,
+        "gzip": 82681,
+        "brotli": 68560,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "c7c2f645a11acad5808256fde6710667ad3d7da348580c58c41488aa0d02f4eb",
+        "raw": 359,
+        "gzip": 263,
+        "brotli": 162,
+        "diagnostic": false
+      }
+    ],
+    "cohort": "attribution",
+    "fingerprint": "b4ddd169f54e47189b519332f5018393f0c16abb0703697966e50bcde94fe5fb"
+  },
+  {
+    "id": "family-overlays",
+    "description": "Import-only delivery attribution; not an interactive full-showcase comparator.",
+    "assets": [
+      {
+        "path": "assets/index-CJrvWFg1.css",
+        "sha256": "e51b52b1f4a224ba1c7e169a104639df20969bda3863df05f4a8a7ca61ad8fba",
+        "raw": 28826,
+        "gzip": 4270,
+        "brotli": 3636,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-TQUe-yfZ.js",
+        "sha256": "3e972318a6aa5f4a0c08911e8b9d2494bd016f845a634d67adc7f03b97a9881f",
+        "raw": 151928,
+        "gzip": 38190,
+        "brotli": 32481,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-TQUe-yfZ.js.map",
+        "sha256": "9195e9bfdfb43daa3d3b8f6947cf91c23494fdbcb43e88efb16d78d38becc1b8",
+        "raw": 351182,
+        "gzip": 83071,
+        "brotli": 68845,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "3484ac6e8802e3923593cd01e13cc48b7c0aac824a6e9a230d48679f9a24cc1d",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 161,
+        "diagnostic": false
+      }
+    ],
+    "cohort": "attribution",
+    "fingerprint": "60ebb4ee33a4d425820945ec0daf728d2a4e85b55a53300275d0eb5cc2ffafa5"
+  },
+  {
+    "id": "family-date",
+    "description": "Import-only delivery attribution; not an interactive full-showcase comparator.",
+    "assets": [
+      {
+        "path": "assets/index-CJrvWFg1.css",
+        "sha256": "e51b52b1f4a224ba1c7e169a104639df20969bda3863df05f4a8a7ca61ad8fba",
+        "raw": 28826,
+        "gzip": 4270,
+        "brotli": 3636,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-DbIjB7z7.js",
+        "sha256": "01e103e1f17edbe10644ee3b25becec3651e7b3c70666968788557b894217005",
+        "raw": 183045,
+        "gzip": 45592,
+        "brotli": 39121,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-DbIjB7z7.js.map",
+        "sha256": "d4cbf066891af7650f8ac5914a07b7ea43f43f579e09307729dd96de13021ef3",
+        "raw": 433860,
+        "gzip": 100705,
+        "brotli": 84357,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "59a6a73dbf792adeac80baa7504ef0a03ba517a8885fa90aba864984ac34c4aa",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 162,
+        "diagnostic": false
+      }
+    ],
+    "cohort": "attribution",
+    "fingerprint": "8f4632d852825efa630ce62e5a1f646ce9f5d3da02dec36d86b67807507f2644"
+  },
+  {
+    "id": "content-visibility",
+    "description": "Browser-managed rendering containment after the first card in each showcase column; intrinsic size reserved. Still downloads and instantiates all components.",
+    "entrySha256": "e29f455f7b06cbc0c7f79d01fb7fff3bf2a75231973025fbbc8ccc3832e9f7b3",
+    "assets": [
+      {
+        "path": "assets/index-BzpSsnJx.js",
+        "sha256": "a5af68cea48a8cb10eeda332313e1ecaeeb5ecb11e01d284e79229f577c10c17",
+        "raw": 414455,
+        "gzip": 102518,
+        "brotli": 82288,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-BzpSsnJx.js.map",
+        "sha256": "434a9c68640fa43e72425caff8d43d558e1e1fa48e0ad10ef335f5978696f549",
+        "raw": 1121798,
+        "gzip": 251324,
+        "brotli": 190749,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CNo15Y7I.css",
+        "sha256": "9f3ea609f2b70aabb8863d6cfcb51fdd8e7b49a347104386f26a370e709d83a4",
+        "raw": 40860,
+        "gzip": 6592,
+        "brotli": 5762,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "f00a73dc9d0a93c53fa25f47e270387a28b20c64a1fd952f9d814d7591ca5f37",
+        "raw": 741,
+        "gzip": 384,
+        "brotli": 330,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "a2b2f0aa331802b535d05ecee6b8136c21a4ec5b4ec67ff43bad56085fd16c9c",
+        "raw": 359,
+        "gzip": 267,
+        "brotli": 161,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "9c6f8b6c6ec2080b204b84cb6ef6321ce6dafbe43b795649abfddf2e23e88a87",
+    "cohort": "supported-consumer-experiment",
+    "qualification": "Must pass functional and first-use checks before recommendation"
+  },
+  {
+    "id": "calendar-eager",
+    "label": "Eager reference",
+    "description": "Eager reference; unchanged 16-card application, global registry and frozen main packages",
+    "assets": [
+      {
+        "path": "assets/index-C0meNs_7.js",
+        "sha256": "2b96bbe0542ee9b69891e993f33b18110e7c56c10e4195133d91b0a5bcb38eed",
+        "raw": 450035,
+        "gzip": 110874,
+        "brotli": 89035,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-C0meNs_7.js.map",
+        "sha256": "3aea1d71d753337cc9b65b905e3ef0c9f34a3c29cff4f392846b347a699de892",
+        "raw": 1209535,
+        "gzip": 272225,
+        "brotli": 206000,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+        "raw": 813,
+        "gzip": 426,
+        "brotli": 364,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "c646974e3d1bde22b4bd076bfcc9f7e157f73e7b8d99495f492018becd4c7417",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 161,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd",
+    "sourceInputs": {
+      "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6"
+    },
+    "cohort": "calendar-consumer-policy",
+    "referenceFingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+  },
+  {
+    "id": "calendar-deferred",
+    "label": "Deferred construction",
+    "description": "Deferred construction; unchanged 16-card application, global registry and frozen main packages",
+    "assets": [
+      {
+        "path": "assets/index-BnFGY6RL.js",
+        "sha256": "546431141ee0c20d76a463be0911cd21effaa10646053f3130ed36b4680679a0",
+        "raw": 450063,
+        "gzip": 110891,
+        "brotli": 88936,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-BnFGY6RL.js.map",
+        "sha256": "d42388074797ca1882c5dbba5c804d1e2e0a940174bf3ddb0259070c13768631",
+        "raw": 1178246,
+        "gzip": 263425,
+        "brotli": 198606,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+        "raw": 813,
+        "gzip": 426,
+        "brotli": 364,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "057c4efc6ed3f596de04dfa5874855be5c91541b0c936fac34a14911f51e67de",
+        "raw": 359,
+        "gzip": 269,
+        "brotli": 162,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "3bf301f0d46d92b2c1eb86075f841950ea84d589b530f88d4e32e7e301e1db70",
+    "sourceInputs": {
+      "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6"
+    },
+    "cohort": "calendar-consumer-policy",
+    "referenceFingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+  },
+  {
+    "id": "calendar-split",
+    "label": "Deferred code + construction",
+    "description": "Deferred code + construction; unchanged 16-card application, global registry and frozen main packages",
+    "assets": [
+      {
+        "path": "assets/calendar-Bnw96Yao.js",
+        "sha256": "a63480b138de0c65b218c2acb19b119a36e29ed1bf3456a33290cb05d0836888",
+        "raw": 20849,
+        "gzip": 5754,
+        "brotli": 5106,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./index-BuDGUI--.js",
+            "dynamic": false
+          }
+        ]
+      },
+      {
+        "path": "assets/calendar-Bnw96Yao.js.map",
+        "sha256": "820e48577a095b52cbb06d59d60623e75ac408d0524a8b0865c3fe2791ff6187",
+        "raw": 47163,
+        "gzip": 11853,
+        "brotli": 10382,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-BuDGUI--.js",
+        "sha256": "7de2d2c17a30207b0eae99deddf0243a7d36b4a763da1faccea0b73cccac50c3",
+        "raw": 431418,
+        "gzip": 106889,
+        "brotli": 86146,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./calendar-Bnw96Yao.js",
+            "dynamic": true
+          }
+        ]
+      },
+      {
+        "path": "assets/index-BuDGUI--.js.map",
+        "sha256": "07b763b9460943534d0897a20e4429635f8d7c0fa95138284caf0971855d3cfd",
+        "raw": 1129840,
+        "gzip": 253249,
+        "brotli": 191732,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+        "raw": 813,
+        "gzip": 426,
+        "brotli": 364,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "df6093985a813137f53cdc54f2d5122fe984e676721dc0c6e44a52978b2c5a74",
+        "raw": 359,
+        "gzip": 267,
+        "brotli": 157,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "89eae8a80cda7b88606038740359bdeab687a1ef9497c39ca68f29e4b008c8ba",
+    "sourceInputs": {
+      "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "package-lock.json": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6"
+    },
+    "cohort": "calendar-consumer-policy",
+    "referenceFingerprint": "35be87675f29f289818f22f778db5e76ade67cf97639acf0989ae6a4774dd7dd"
+  },
+  {
+    "id": "current-en-reve",
+    "description": "Current root library packages in a separate clean consuming project, using the unchanged native showcase source.",
+    "cohort": "current-library-native",
+    "packages": [
+      {
+        "name": "@en-reve/tokens",
+        "filename": "en-reve-tokens-0.1.0-1f20e6424174.tgz",
+        "sha256": "1f20e6424174a906fe9514760dc7c4053de327097a671409182e7125ea7cea73"
+      },
+      {
+        "name": "@en-reve/styles",
+        "filename": "en-reve-styles-0.1.0-054969354aa7.tgz",
+        "sha256": "054969354aa713bcff9345eaef0f49df573db8f255ad6f3c9243b36fcb81569d"
+      },
+      {
+        "name": "@en-reve/primitives",
+        "filename": "en-reve-primitives-0.1.0-f07fa569a399.tgz",
+        "sha256": "f07fa569a399a99c3f189d34bbe72b8c15fdd3ef92f8cf35f547be8ade2ad244"
+      },
+      {
+        "name": "@en-reve/elements",
+        "filename": "en-reve-elements-0.1.0-6d88fd58ebab.tgz",
+        "sha256": "6d88fd58ebabed6347bd463defb880e236b9291b5187b11fcde9f54d3b5091d7"
+      }
+    ],
+    "lockfileSha256": "a244c3d9fda33ede9c4b3a482f0c9e7b46641634c21ed1b329dcd0d4c7e3c2e3",
+    "assets": [
+      {
+        "path": "assets/index-C9eq-f9b.js",
+        "sha256": "436ce6797775d4a356cfffa1f6e64cdbb9be4b5fbaec773a97d3d08b2c271525",
+        "raw": 455724,
+        "gzip": 112566,
+        "brotli": 90314,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-C9eq-f9b.js.map",
+        "sha256": "09f469f854d9558967ec2296a5ebd046b70c0b5fea014a18edb5432fd8337c61",
+        "raw": 1265320,
+        "gzip": 299697,
+        "brotli": 230319,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "233e1bc167a9f9e9f6fb95e84f20b29f014ed67b30967c56e3b4406eae935ac8",
+        "raw": 793,
+        "gzip": 421,
+        "brotli": 362,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "805677810b4c63eb6b0cade9f9f359731996b200ae0d53df8f7dcfb47e81cc10",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 159,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6",
+    "qualification": "Requires functional --variant current-en-reve before measurement"
+  },
+  {
+    "id": "main-be47f046-20261001-v1-current",
+    "description": "Current root library packages in a separate clean consuming project, using the unchanged native showcase source.",
+    "cohort": "current-library-native",
+    "packages": [
+      {
+        "name": "@en-reve/tokens",
+        "filename": "en-reve-tokens-0.1.0-1f20e6424174.tgz",
+        "sha256": "1f20e6424174a906fe9514760dc7c4053de327097a671409182e7125ea7cea73"
+      },
+      {
+        "name": "@en-reve/styles",
+        "filename": "en-reve-styles-0.1.0-054969354aa7.tgz",
+        "sha256": "054969354aa713bcff9345eaef0f49df573db8f255ad6f3c9243b36fcb81569d"
+      },
+      {
+        "name": "@en-reve/primitives",
+        "filename": "en-reve-primitives-0.1.0-f07fa569a399.tgz",
+        "sha256": "f07fa569a399a99c3f189d34bbe72b8c15fdd3ef92f8cf35f547be8ade2ad244"
+      },
+      {
+        "name": "@en-reve/elements",
+        "filename": "en-reve-elements-0.1.0-6d88fd58ebab.tgz",
+        "sha256": "6d88fd58ebabed6347bd463defb880e236b9291b5187b11fcde9f54d3b5091d7"
+      }
+    ],
+    "lockfileSha256": "a244c3d9fda33ede9c4b3a482f0c9e7b46641634c21ed1b329dcd0d4c7e3c2e3",
+    "assets": [
+      {
+        "path": "assets/index-C9eq-f9b.js",
+        "sha256": "436ce6797775d4a356cfffa1f6e64cdbb9be4b5fbaec773a97d3d08b2c271525",
+        "raw": 455724,
+        "gzip": 112566,
+        "brotli": 90314,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-C9eq-f9b.js.map",
+        "sha256": "09f469f854d9558967ec2296a5ebd046b70c0b5fea014a18edb5432fd8337c61",
+        "raw": 1265320,
+        "gzip": 299697,
+        "brotli": 230319,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "233e1bc167a9f9e9f6fb95e84f20b29f014ed67b30967c56e3b4406eae935ac8",
+        "raw": 793,
+        "gzip": 421,
+        "brotli": 362,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "805677810b4c63eb6b0cade9f9f359731996b200ae0d53df8f7dcfb47e81cc10",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 159,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6",
+    "qualification": "Requires functional --variant current-en-reve before measurement",
+    "label": "Current source",
+    "policy": "current-source"
+  },
+  {
+    "id": "main-be47f046-20261001-v1-calendar-eager",
+    "policy": "calendar-eager",
+    "label": "Eager reference",
+    "description": "Eager reference; unchanged 16-card application and global registry; packages from main-be47f046-20261001-v1",
+    "assets": [
+      {
+        "path": "assets/index-C9eq-f9b.js",
+        "sha256": "436ce6797775d4a356cfffa1f6e64cdbb9be4b5fbaec773a97d3d08b2c271525",
+        "raw": 455724,
+        "gzip": 112566,
+        "brotli": 90314,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-C9eq-f9b.js.map",
+        "sha256": "09f469f854d9558967ec2296a5ebd046b70c0b5fea014a18edb5432fd8337c61",
+        "raw": 1265320,
+        "gzip": 299697,
+        "brotli": 230319,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "233e1bc167a9f9e9f6fb95e84f20b29f014ed67b30967c56e3b4406eae935ac8",
+        "raw": 793,
+        "gzip": 421,
+        "brotli": 362,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "805677810b4c63eb6b0cade9f9f359731996b200ae0d53df8f7dcfb47e81cc10",
+        "raw": 359,
+        "gzip": 265,
+        "brotli": 159,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6",
+    "sourceInputs": {
+      "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "package-lock.json": "a244c3d9fda33ede9c4b3a482f0c9e7b46641634c21ed1b329dcd0d4c7e3c2e3"
+    },
+    "cohort": "calendar-consumer-policy",
+    "referenceFingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6"
+  },
+  {
+    "id": "main-be47f046-20261001-v1-calendar-deferred",
+    "policy": "calendar-deferred",
+    "label": "Deferred construction",
+    "description": "Deferred construction; unchanged 16-card application and global registry; packages from main-be47f046-20261001-v1",
+    "assets": [
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-DbqS77PV.js",
+        "sha256": "db5a02ba516afca471da18f7c5f142b0c7128647852aaa962bbcc7817ef58622",
+        "raw": 455752,
+        "gzip": 112584,
+        "brotli": 90249,
+        "diagnostic": false,
+        "imports": []
+      },
+      {
+        "path": "assets/index-DbqS77PV.js.map",
+        "sha256": "47f2cf10e01341793c3a6c0df71aebc5895791960cc5d6c03baf583a7713c7f9",
+        "raw": 1248196,
+        "gzip": 290653,
+        "brotli": 222500,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "233e1bc167a9f9e9f6fb95e84f20b29f014ed67b30967c56e3b4406eae935ac8",
+        "raw": 793,
+        "gzip": 421,
+        "brotli": 362,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "8bcd664c8f3398a9104c019f66c4e1b9688755fae436f9b4545cf4a79e052962",
+        "raw": 359,
+        "gzip": 266,
+        "brotli": 160,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "dbc45425cd7a6e3524c8367584121a129516579346b3fde7d851282776df3bda",
+    "sourceInputs": {
+      "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "package-lock.json": "a244c3d9fda33ede9c4b3a482f0c9e7b46641634c21ed1b329dcd0d4c7e3c2e3"
+    },
+    "cohort": "calendar-consumer-policy",
+    "referenceFingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6"
+  },
+  {
+    "id": "main-be47f046-20261001-v1-calendar-split",
+    "policy": "calendar-split",
+    "label": "Deferred code + construction",
+    "description": "Deferred code + construction; unchanged 16-card application and global registry; packages from main-be47f046-20261001-v1",
+    "assets": [
+      {
+        "path": "assets/calendar-BkKesFi7.js",
+        "sha256": "cfbedad4c4b229b35528fea414fcf1a1d4d2fdc585115483c3de8dda98d93bfb",
+        "raw": 20849,
+        "gzip": 5753,
+        "brotli": 5119,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./index-viyPot4U.js",
+            "dynamic": false
+          }
+        ]
+      },
+      {
+        "path": "assets/calendar-BkKesFi7.js.map",
+        "sha256": "278ea75487c070097e804fc456f39951d8fe6743b51bc52dce74714cd21c84cb",
+        "raw": 48591,
+        "gzip": 12548,
+        "brotli": 11033,
+        "diagnostic": true
+      },
+      {
+        "path": "assets/index-CDV5OawH.css",
+        "sha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+        "raw": 44562,
+        "gzip": 6986,
+        "brotli": 6077,
+        "diagnostic": false
+      },
+      {
+        "path": "assets/index-viyPot4U.js",
+        "sha256": "87894df79638e6876049722424cd71d9055be023941f070bad5659bbc04805c9",
+        "raw": 437074,
+        "gzip": 108527,
+        "brotli": 87337,
+        "diagnostic": false,
+        "imports": [
+          {
+            "specifier": "./calendar-BkKesFi7.js",
+            "dynamic": true
+          }
+        ]
+      },
+      {
+        "path": "assets/index-viyPot4U.js.map",
+        "sha256": "8420465766324e9b54e1381b1efa45aab5848045a2460f5299b7965f25a588e2",
+        "raw": 1198743,
+        "gzip": 280082,
+        "brotli": 215304,
+        "diagnostic": true
+      },
+      {
+        "path": "build-metadata.json",
+        "sha256": "233e1bc167a9f9e9f6fb95e84f20b29f014ed67b30967c56e3b4406eae935ac8",
+        "raw": 793,
+        "gzip": 421,
+        "brotli": 362,
+        "diagnostic": true
+      },
+      {
+        "path": "index.html",
+        "sha256": "6ba4de30280b32160bba577521bf91dd7a6f58dbac685bc1b4f12115c32950a0",
+        "raw": 359,
+        "gzip": 264,
+        "brotli": 162,
+        "diagnostic": false
+      }
+    ],
+    "fingerprint": "ef86738813661bf1edb8c77e30cf747aff0f11b9bd7c405244ad79dcbe744ec1",
+    "sourceInputs": {
+      "src/main.js": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "src/template.ts": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "src/app.ts": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "src/theme.css": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "package-lock.json": "a244c3d9fda33ede9c4b3a482f0c9e7b46641634c21ed1b329dcd0d4c7e3c2e3"
+    },
+    "cohort": "calendar-consumer-policy",
+    "referenceFingerprint": "f28ce504edf08abdd6aea649060148a8c333e3c7092c7dd91e06112d7c188dd6"
+  }
+]

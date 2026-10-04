@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "systems": [
+    "en-reve",
+    "fluent-web-components",
+    "spectrum-web-components"
+  ],
+  "frozenControls": [
+    "en-reve",
+    "fluent-web-components"
+  ],
+  "campaigns": {
+    "load": "spectrum-gen2-load-v1",
+    "startup": "spectrum-gen2-startup-v1",
+    "interactions": "spectrum-gen2-interactions-v1",
+    "lighthouse": "spectrum-gen2-lighthouse-v1",
+    "memory": "spectrum-gen2-memory-v1",
+    "diagnostic": "spectrum-gen2-diagnostic-v1",
+    "bfcache": "spectrum-gen2-bfcache-v1",
+    "overhead": "spectrum-gen2-overhead-v1"
+  },
+  "bundlePath": "reports/spectrum-gen2/bundles.json",
+  "inventoryPath": "reports/spectrum-gen2/inventory.json",
+  "historicalTablesPath": "reports/pass2-tables.json",
+  "historicalBundlePath": "reports/bundles.json",
+  "historicalDOMPath": "reports/dom-review/census.json",
+  "dom": {
+    "customDateSystems": [
+      "en-reve"
+    ],
+    "snapshotsPath": "runs/spectrum-gen2-dom-v1/snapshots.json",
+    "manifestPath": "runs/spectrum-gen2-dom-v1/manifest.json",
+    "ownershipPath": "reports/spectrum-gen2/shadow-ownership.json"
+  },
+  "context": "Spectrum is refreshed to @adobe/spectrum-wc 2.0.0-beta.3 plus retained Gen1 1.12.2 controls. The same 306-sample protocol uses unchanged frozen En Reve and Fluent WC controls. Ten blocks per load profile/cache cell, ten startup and interaction blocks per profile, five mobile Lighthouse audits, one 0/10/50-cycle memory session, one diagnostic, five BFCache checks and five observer on/off pairs per system. Connected DOM includes 30 snapshots plus three ownership snapshots. Measurements are exploratory on a developer workstation. Existing historical Spectrum acquisitions remain retained; they are not paired with these new blocks. The inspired theme is not used in the frozen En Reve control.",
+  "findings": "**The new mixed Spectrum build loads more slowly than both contemporaneous controls in the mobile cold profile.** Median LCP is 776 ms for Spectrum WC Gen2 + Gen1, 596 ms for frozen En Reve and 500 ms for frozen Fluent WC. Warm medians are 288, 276 and 206 ms. These same-acquisition values are exploratory; the previous Gen1 values are not a controlled before/after experiment. En Reve\u2019s observed loading opportunity against Fluent remains relevant even though it is faster than this Spectrum fixture.\n\n**Zero Lighthouse blocking time does not imply equal loading performance.** All three implementations record zero TBT and CLS in the bounded Lighthouse audits, while their LCP and Speed Index differ. Keep initial delivery, rendering and interaction evidence separate when choosing remediation.\n\n**Spectrum mobile settled-journey metrics are unavailable because all ten journeys failed after dialog close.** The first canvas changes and dialog opening complete, but the repeated Landscape input does not change the canvas. All ten Spectrum desktop journeys and the En Reve/Fluent journeys pass. Failed samples remain in the evidence; partial actions are not promoted into complete-journey INP or transfer distributions. The independently measured early-click probe passes in both profiles.\n\n**Retain the generation and memory scope.** Spectrum\u2019s emitted artifacts include both Gen2 and remaining Gen1 controls and must not be described as Gen2-only package cost. The initial API-memory call timed out for Spectrum and En Reve, while both 10/50-cycle readings succeeded. One session per system and broad browser counters cannot establish leaks or a stable memory ranking.\n\n**The focused failure diagnostic points to the retained Gen1 focus-trap lifecycle.** In separate diagnostics both with and without the timing collector, the dialog reports closed but its focus trap remains active; the next Landscape click is cancelled by the focus-trap module. This reproduces the failure beyond the timing collector alone, but does not establish a library-wide regression or isolate Gen1 versus coexistence effects. Keep the failed cohort intact, investigate native focus-trap activation/deactivation ordering under the mobile profile, and use a new acquisition ID after any fixture or protocol correction. [With-collector diagnostic](../showcases/performance/reports/spectrum-gen2/lifecycle-diagnostic-instrumented.json), [without-collector diagnostic](../showcases/performance/reports/spectrum-gen2/lifecycle-diagnostic.json).\n\n**The current non-date node totals are close, but element counts still differ.** Spectrum has 4,075 connected nodes / 1,234 elements in total, or 4,072 / 1,232 excluding the native date field. En Reve has 4,642 / 1,578 in total, or 4,019 / 1,397 without its custom date field. En Reve has 53 fewer non-date nodes but 165 more non-date elements. Continue targeted element/template and custom-calendar investigations; total node count alone does not identify rendering cost.",
+  "names": {
+    "spectrum-web-components": "Spectrum WC Gen2 + Gen1"
+  },
+  "historicalOverview": false
+}

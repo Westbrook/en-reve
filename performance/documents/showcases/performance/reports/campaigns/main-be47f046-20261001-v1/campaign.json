@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "id": "main-be47f046-20261001-v1",
+  "config": {
+    "schemaVersion": 1,
+    "kind": "current",
+    "systems": [
+      "en-reve",
+      "fluent-web-components",
+      "web-awesome"
+    ],
+    "profiles": [
+      "desktop",
+      "mobile"
+    ],
+    "caches": [
+      "cold",
+      "warm"
+    ],
+    "seed": 20261001,
+    "suites": [
+      "load",
+      "startup",
+      "interactions",
+      "diagnostic",
+      "memory",
+      "lighthouse",
+      "bfcache",
+      "overhead"
+    ],
+    "samples": 10,
+    "calendarSamples": 30,
+    "preparedSamples": 10,
+    "lighthouseSamples": 5,
+    "memorySamples": 1,
+    "suiteOptions": {
+      "memory": {
+        "profiles": [
+          "desktop"
+        ],
+        "checkpoints": [
+          0,
+          10,
+          50
+        ]
+      },
+      "lighthouse": {
+        "profiles": [
+          "mobile"
+        ]
+      },
+      "diagnostic": {
+        "profiles": [
+          "desktop"
+        ]
+      },
+      "bfcache": {
+        "profiles": [
+          "desktop"
+        ],
+        "samples": 5
+      },
+      "overhead": {
+        "profiles": [
+          "desktop"
+        ],
+        "samples": 5
+      }
+    }
+  },
+  "directory": "/Users/westbrook/.codex/worktrees/performance-main-refresh/design-system/showcases/performance/reports/campaigns/main-be47f046-20261001-v1",
+  "primary": "main-be47f046-20261001-v1-primary",
+  "lighthouse": "main-be47f046-20261001-v1-lighthouse",
+  "variants": [
+    {
+      "id": "main-be47f046-20261001-v1-eager",
+      "policy": "calendar-eager"
+    },
+    {
+      "id": "main-be47f046-20261001-v1-deferred",
+      "policy": "calendar-deferred"
+    },
+    {
+      "id": "main-be47f046-20261001-v1-split",
+      "policy": "calendar-split"
+    }
+  ]
+}

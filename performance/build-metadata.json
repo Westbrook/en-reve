@@ -1,0 +1,21 @@
+{
+  "project": "en-reve-performance-results",
+  "dependencies": {
+    "@en-reve/tokens": "file:../en-reve/vendor/en-reve-tokens-0.1.0.tgz",
+    "@en-reve/styles": "file:../en-reve/vendor/en-reve-styles-0.1.0.tgz",
+    "@en-reve/primitives": "file:../en-reve/vendor/en-reve-primitives-0.1.0.tgz",
+    "@en-reve/elements": "file:../en-reve/vendor/en-reve-elements-0.1.0.tgz",
+    "lit": "3.3.3",
+    "signal-polyfill": "0.2.2"
+  },
+  "devDependencies": {
+    "vite": "8.3.1",
+    "marked": "18.0.14",
+    "@playwright/test": "1.63.0"
+  },
+  "lockfileSha256": "ef5bece1c4d22a576d0f82fe83746ea9681a3203a5f31569ecf80a45174a9111",
+  "mode": "production",
+  "rendering": "client",
+  "theme": "single default light appearance",
+  "isolation": "all bundled filesystem modules belong to this project or dependency-free shared fixtures"
+}

@@ -1,0 +1,3885 @@
+{
+  "archivedAt": "2026-09-24T00:45:32.277Z",
+  "format": "Individually gzipped evidence with raw and compressed SHA256; failed observations retained.",
+  "campaigns": [
+    {
+      "id": "en-reve-main-bfcache-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-bfcache-v1/collector.js",
+          "path": "en-reve-main-bfcache-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/package-lock.json",
+          "path": "en-reve-main-bfcache-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/package.json",
+          "path": "en-reve-main-bfcache-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-bfcache-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/registry/systems.json",
+          "path": "en-reve-main-bfcache-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-bfcache-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/collector.js",
+          "path": "en-reve-main-bfcache-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/config.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/report.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/server.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-bfcache-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/manifest.json",
+          "path": "en-reve-main-bfcache-v1/manifest.json.gz",
+          "rawBytes": 68758,
+          "archiveBytes": 14972,
+          "sourceSha256": "f00b44c8c3c2c3b7e960ecb4816bfcccdb0a161580625a27fc73a7a559d5ef97",
+          "archiveSha256": "7b029a5fe5a40b134315c258a6456e35a2e4c8355cd6c2a2bf20314b7ffc68c4"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/report.md",
+          "path": "en-reve-main-bfcache-v1/report.md.gz",
+          "rawBytes": 1448,
+          "archiveBytes": 757,
+          "sourceSha256": "3c800d6a8b2be7297519796ff5ed06ea95bf3b5fe3bbcd282c5bd021e3a4c4d1",
+          "archiveSha256": "bb899efa0a709be9e3897f5d67806ffa658db1b2a7a0c2341a56a956799854b3"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/run-started.json",
+          "path": "en-reve-main-bfcache-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "96c6ca61a535e69babe551e4db1088d0fba441d82e44d041ce8e83b1c343a87f",
+          "archiveSha256": "308179aab331a562bb63f709bb43debd647db672c2da2649dc54bb7b43b0d18b"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/samples.jsonl",
+          "path": "en-reve-main-bfcache-v1/samples.jsonl.gz",
+          "rawBytes": 261143,
+          "archiveBytes": 20297,
+          "sourceSha256": "b675aa517a36c34d4d7fbaf75d8e7c5dd956238e73def007295d22ebef936811",
+          "archiveSha256": "6dc5a24aa12725a5e21c9e5014a135e2ead03a81714ed7e44db4ef0dc18d2505"
+        },
+        {
+          "source": "runs/en-reve-main-bfcache-v1/summary.json",
+          "path": "en-reve-main-bfcache-v1/summary.json.gz",
+          "rawBytes": 20911,
+          "archiveBytes": 2204,
+          "sourceSha256": "ba8d802b8f663c7925b4928274bae84d00a4cd40f1154e02af77412bb5da3dfe",
+          "archiveSha256": "4ef4498e404589d3b46df81be4e083f13cb2047971c4d3263ee64eaa0486679d"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-diagnostic-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/00001-coverage.json",
+          "path": "en-reve-main-diagnostic-v1/00001-coverage.json.gz",
+          "rawBytes": 1215516,
+          "archiveBytes": 169594,
+          "sourceSha256": "846b3ac04f6ec14c70910076032e5a1210a07fa0868df80b5b31df2ef0dfc893",
+          "archiveSha256": "951597319d0bb1112299aff359a0044d0de342527b4fb2a168676b91867386d0"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/00001-trace.json",
+          "path": "en-reve-main-diagnostic-v1/00001-trace.json.gz",
+          "rawBytes": 6161296,
+          "archiveBytes": 420176,
+          "sourceSha256": "b95b08f6702a4c48d4fe55df8c628684d22f689c9974ac9c5a3e96455aa2c668",
+          "archiveSha256": "1e318b905bb0a27c7735665badc80a049a386339a2095e0493c18d707f289985"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/00002-coverage.json",
+          "path": "en-reve-main-diagnostic-v1/00002-coverage.json.gz",
+          "rawBytes": 1070868,
+          "archiveBytes": 161806,
+          "sourceSha256": "b4e751270be38e348cd97b06dff214152cf738df8dfd2b2f2f2ce31ec9ef3330",
+          "archiveSha256": "14c3bc16d69ee4eaae066ae79f5202f4412234e926d82f18f6c504229feb945f"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/00002-trace.json",
+          "path": "en-reve-main-diagnostic-v1/00002-trace.json.gz",
+          "rawBytes": 7321445,
+          "archiveBytes": 500387,
+          "sourceSha256": "6ba7a4d7ded63c23391a7b22ee967bf343d78b97d84ed28f0212e00d6f8ac053",
+          "archiveSha256": "0e947b3b36f83b3db329e6b5231c067827d88f12fc33e7710af3ef2b1d7fbba4"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/00003-coverage.json",
+          "path": "en-reve-main-diagnostic-v1/00003-coverage.json.gz",
+          "rawBytes": 750374,
+          "archiveBytes": 107954,
+          "sourceSha256": "c22503235feea35238616332b22980259374e238b5a01eea423e3cc8121ca386",
+          "archiveSha256": "aa859542a8a9e67133d3217bdc9fba2f601074e0b894cdfdb31d76c4f4e8731a"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/00003-trace.json",
+          "path": "en-reve-main-diagnostic-v1/00003-trace.json.gz",
+          "rawBytes": 6720197,
+          "archiveBytes": 474475,
+          "sourceSha256": "15a78cc251234597393fb6b83312790255e2905ee35f1802bced6f12b6814881",
+          "archiveSha256": "7fe70e31529c3a174718d2078d1b36c91d9a42cf4a95fc0722df2aed09f5b54b"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/collector.js",
+          "path": "en-reve-main-diagnostic-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/diagnostics-summary.json",
+          "path": "en-reve-main-diagnostic-v1/diagnostics-summary.json.gz",
+          "rawBytes": 88162,
+          "archiveBytes": 9473,
+          "sourceSha256": "aafe8e45c21c572582dc9a8724e1bab54901f7c5fbeeebcb3857ebf28854a674",
+          "archiveSha256": "a5160a266c30457dc58cf89bacea93ada9ae918d29619025d130d9da4c624fbf"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/package-lock.json",
+          "path": "en-reve-main-diagnostic-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/package.json",
+          "path": "en-reve-main-diagnostic-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-diagnostic-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/registry/systems.json",
+          "path": "en-reve-main-diagnostic-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-diagnostic-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/collector.js",
+          "path": "en-reve-main-diagnostic-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/config.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/report.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/server.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-diagnostic-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/manifest.json",
+          "path": "en-reve-main-diagnostic-v1/manifest.json.gz",
+          "rawBytes": 66835,
+          "archiveBytes": 14886,
+          "sourceSha256": "372ba93f9b68499cf00c2619af744180d1991732fe62afacd080300737cb7127",
+          "archiveSha256": "3d79f372cbea3c24dc0849a51e7cac0f0098e7c6beab6678510d59db675355cd"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/report.md",
+          "path": "en-reve-main-diagnostic-v1/report.md.gz",
+          "rawBytes": 1094,
+          "archiveBytes": 613,
+          "sourceSha256": "a04f219ea519cf43f78a82706ae29c13cad817e07136ee6323e30fddbcfaf1e8",
+          "archiveSha256": "7b37997afab6b0c9f4acaa156e3e3fb0f3aefa7555843da613eeda0ddccfe6ef"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/run-started.json",
+          "path": "en-reve-main-diagnostic-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "ee615f942b96ba56a454e8fd103ae09fcb2d438ecf6c0e6ab2f035bd5240e57a",
+          "archiveSha256": "98843a73dfb04cb4d1d10ce05d8efcca78274de82c2a9b41a6cf6adc0d93ecdc"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/samples.jsonl",
+          "path": "en-reve-main-diagnostic-v1/samples.jsonl.gz",
+          "rawBytes": 550093,
+          "archiveBytes": 33692,
+          "sourceSha256": "dfaf1c16fcb1bda713f5450924630cf00ce43455e775e5dd5009249b4bcea107",
+          "archiveSha256": "4c6c5a8d36595097360f7c56637aecd374170f9127e880b630d52155b7592648"
+        },
+        {
+          "source": "runs/en-reve-main-diagnostic-v1/summary.json",
+          "path": "en-reve-main-diagnostic-v1/summary.json.gz",
+          "rawBytes": 43694,
+          "archiveBytes": 3400,
+          "sourceSha256": "51032cd1b7ff4c99517811b73bb3170cbe73a07bfbe6eda585b4847ebe2ff1ab",
+          "archiveSha256": "98e43465e2c8cd61b3b846a1cdf61517849a3182aff2f7a3fac2d1b9f1305380"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-dom-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-dom-v1/collector-control.json",
+          "path": "en-reve-main-dom-v1/collector-control.json.gz",
+          "rawBytes": 4284,
+          "archiveBytes": 756,
+          "sourceSha256": "ab2a99579a53a9e1151f0a704cb9c836de9445682a2ea032fe0ab60568c435bc",
+          "archiveSha256": "8e838cef1f84dd8039838afbc5ad083bc528f81392d9c605de565109d26145e1"
+        },
+        {
+          "source": "runs/en-reve-main-dom-v1/manifest.json",
+          "path": "en-reve-main-dom-v1/manifest.json.gz",
+          "rawBytes": 3083,
+          "archiveBytes": 1601,
+          "sourceSha256": "3cc15f6f0488faa6b18a8e4a10daf531c1f36e23d90ab825255a349e46b87384",
+          "archiveSha256": "8bd270fe51e9f1f20457d0c804c5f2edbac380940cdd5b67778aff7ae79f784e"
+        },
+        {
+          "source": "runs/en-reve-main-dom-v1/snapshots.json",
+          "path": "en-reve-main-dom-v1/snapshots.json.gz",
+          "rawBytes": 1865241,
+          "archiveBytes": 105282,
+          "sourceSha256": "ded246eb984689447a138234cbfbfe4c32326bad71dc454a4f837eab7538fd93",
+          "archiveSha256": "e9aac6451dd69f8d6f2c88ab46c223d83da98cc21fdbe8eba4dc68fc2aaae00b"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-interactions-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-interactions-v1/collector.js",
+          "path": "en-reve-main-interactions-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/package-lock.json",
+          "path": "en-reve-main-interactions-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/package.json",
+          "path": "en-reve-main-interactions-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-interactions-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/registry/systems.json",
+          "path": "en-reve-main-interactions-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-interactions-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-interactions-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-interactions-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-interactions-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/collector.js",
+          "path": "en-reve-main-interactions-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/config.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/report.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/server.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-interactions-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/manifest.json",
+          "path": "en-reve-main-interactions-v1/manifest.json.gz",
+          "rawBytes": 75997,
+          "archiveBytes": 15282,
+          "sourceSha256": "3e5091730194c277ae24d5afa4fe39244aab2bffe200c21c2536544a8e4d9187",
+          "archiveSha256": "f3a59de0895a798b595a2088c679905d15a034937bdf95710b87c4fc715bde6e"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/report.md",
+          "path": "en-reve-main-interactions-v1/report.md.gz",
+          "rawBytes": 1353,
+          "archiveBytes": 677,
+          "sourceSha256": "544f91c6fe7cdf058884a33f7c59c93f599548dc7ecfced98dfebea04009d5f5",
+          "archiveSha256": "248650960e9a5045c9d72ff0c8b437645e2fd0e391938a1fed8aee5c4704cb09"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/run-started.json",
+          "path": "en-reve-main-interactions-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "841914e36eef4cf7a9fd54b46bc73dd119a6b3a926364900b42d8ce26d471e2b",
+          "archiveSha256": "9046ede7b84b885d80aa6502a9937a3f50beaa6926450ef5e50cc7469b79a017"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/samples.jsonl",
+          "path": "en-reve-main-interactions-v1/samples.jsonl.gz",
+          "rawBytes": 11605274,
+          "archiveBytes": 614719,
+          "sourceSha256": "10edcd9166d1ef7639f0d52a6e07dea076b5d8a1b9b7c48ca29ed7ca00156a28",
+          "archiveSha256": "6de356a1e6f1582b18d2994d527eec9a1dcfb407a0d93df451698ca6ced6854a"
+        },
+        {
+          "source": "runs/en-reve-main-interactions-v1/summary.json",
+          "path": "en-reve-main-interactions-v1/summary.json.gz",
+          "rawBytes": 89956,
+          "archiveBytes": 6894,
+          "sourceSha256": "22b037f2132c0af5169040bfca3818f14af13da6dc5a55d65fc8c1736fbd0d6d",
+          "archiveSha256": "f542d2adebc6bb51bc8d175b43b9d6d351694a133bd18585af5a5368b26b5be9"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-lighthouse-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00001-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00001-lighthouse.html.gz",
+          "rawBytes": 584857,
+          "archiveBytes": 192477,
+          "sourceSha256": "ab80604958db0cc90d1207220ee8191b71baee4693cae7c78c82e37ada0c740d",
+          "archiveSha256": "c4c9bf6644a710957d22cbe3d6859655c54019b68f09166129d24ab9b50ac98a"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00001-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00001-lighthouse.json.gz",
+          "rawBytes": 440776,
+          "archiveBytes": 144177,
+          "sourceSha256": "f8f0ff2b44557bcd766c5b4ca1026fd143be9095aac598a5595926606b7c9945",
+          "archiveSha256": "cf84e84f9436ca281c06cbc7beed77dc12da6f7db9a8975ea30f4a99022217bf"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00002-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00002-lighthouse.html.gz",
+          "rawBytes": 624015,
+          "archiveBytes": 196134,
+          "sourceSha256": "a0cd92b03879a413d61fedb9e7094bcf89e36089ddd281cefe4aea30ccd2bb1a",
+          "archiveSha256": "50769033b61712704bf6eae8bb8331a6e401d209c1298ba202002c4bcce53fb2"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00002-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00002-lighthouse.json.gz",
+          "rawBytes": 481102,
+          "archiveBytes": 148097,
+          "sourceSha256": "714583966082848f869061ee503686ca2a864b3d10ee878b04dbb635f26ec32b",
+          "archiveSha256": "670d64e810a613ae6b00a463b989e4fe125a94b0909f4db290839cf842e4fd04"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00003-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00003-lighthouse.html.gz",
+          "rawBytes": 610252,
+          "archiveBytes": 194115,
+          "sourceSha256": "a8d5cafe7191b129d6ba03a6bc8324deb192be1f8cc13df9c0b63d810b27aafd",
+          "archiveSha256": "fc02708d09f6a7dc06933f8f665881b866b7c7198faee5c97607d8c68fa5e4f2"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00003-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00003-lighthouse.json.gz",
+          "rawBytes": 465373,
+          "archiveBytes": 145775,
+          "sourceSha256": "f440c76f4d9b3a99a44dad04ddced3bbb39ce8497c1bba36cb618644fe9def0a",
+          "archiveSha256": "0699d0d073f620bed572ca89a1bf1911cbd1280dda3a2e7339506a65dc9cfcb7"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00004-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00004-lighthouse.html.gz",
+          "rawBytes": 610205,
+          "archiveBytes": 194129,
+          "sourceSha256": "408bd9b06c4885e38b5db2bf3f431176c9b60de7da0412a09069904200a6be80",
+          "archiveSha256": "bf2fcd072c6f7f513cad8d0b2712b2cdadee7c1b4fb4f3278ee62e32059ccf67"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00004-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00004-lighthouse.json.gz",
+          "rawBytes": 465326,
+          "archiveBytes": 145800,
+          "sourceSha256": "7f3bf205450ec895cbe4889f53f2d7207ac8ae4018edcfa88ce32810cbcf219f",
+          "archiveSha256": "14b7ab092f1a94821ce80096f0937b1268e59a96445fd8ee87027aecc170087d"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00005-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00005-lighthouse.html.gz",
+          "rawBytes": 605793,
+          "archiveBytes": 192510,
+          "sourceSha256": "5625a20a94a19eb64e79c9f21b06cb2534a385f748dcb71a2051d5ad953120ec",
+          "archiveSha256": "2132e8add3f5fb3b75a85bcf78bb0b50898ef7847f5dad5266708fcb0ef488b0"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00005-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00005-lighthouse.json.gz",
+          "rawBytes": 461534,
+          "archiveBytes": 144192,
+          "sourceSha256": "b7a497a18d6c03a4deb50e47f19cbc7f57ddace5c5d93249ae513fd6393316c2",
+          "archiveSha256": "bc5513afb600c1d7ffa5683412a90ebe9e2eaf91c9dd2a28f0db01e23169bf92"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00006-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00006-lighthouse.html.gz",
+          "rawBytes": 624022,
+          "archiveBytes": 196142,
+          "sourceSha256": "f20d1061e636e22a3e279f70814637f41a02c603201fcc8538ca8e00c9538cb7",
+          "archiveSha256": "3a0e145a493fd17143d00be75f0a62376b4adc5ddda62e3c77b811067b1ff6e2"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00006-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00006-lighthouse.json.gz",
+          "rawBytes": 481059,
+          "archiveBytes": 148096,
+          "sourceSha256": "4d420b604e0fdb1400a40f4f08806c46d503aa5aa191f888dddbca398e7aa055",
+          "archiveSha256": "ca529e84e5a028782ce495b6f386ffe3e188054e48e895a13aef995a0f8c8697"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00007-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00007-lighthouse.html.gz",
+          "rawBytes": 610286,
+          "archiveBytes": 194097,
+          "sourceSha256": "0ac0ad406781dfad4265d499764aa814c1facab291eae916e0c1e97441010311",
+          "archiveSha256": "be6280a6e4521010f4856c53ad89371796f613fa81f3f968983eed5cf87e79c5"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00007-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00007-lighthouse.json.gz",
+          "rawBytes": 465407,
+          "archiveBytes": 145777,
+          "sourceSha256": "6e8cee531759a92b9e139d44f30689cf3d742174378b15d43a3359752196c061",
+          "archiveSha256": "471b90685592ce0d4027554a5bbd54ba356930870de57da431b0c3a290ad9497"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00008-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00008-lighthouse.html.gz",
+          "rawBytes": 584663,
+          "archiveBytes": 192277,
+          "sourceSha256": "7371ccaa8b6d7d9b3bbf3800f97be064223732f162744198598c266b43847595",
+          "archiveSha256": "fc669ce2206ee59463a0e35ab43e08ef43a2c527da80ffddcb4d167efe576635"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00008-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00008-lighthouse.json.gz",
+          "rawBytes": 440404,
+          "archiveBytes": 143962,
+          "sourceSha256": "9020f60558659524f42e9ef0760e18d7c0aeff8175ecd9f7301636c84d79155b",
+          "archiveSha256": "1aae2f47150d20f1d6caf4408fbad56c93333f3ec43098b7cf11779ee97557c5"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00009-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00009-lighthouse.html.gz",
+          "rawBytes": 623942,
+          "archiveBytes": 196093,
+          "sourceSha256": "b8f7f7027a2bdaf80bc3cbd222bcc950ef8a13b8aec1f7f2f38045f52bf8f281",
+          "archiveSha256": "e9119417efc4846e0a344bfb43a4ef7430dd1aba685e82ac1070405c9a9ee177"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00009-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00009-lighthouse.json.gz",
+          "rawBytes": 480929,
+          "archiveBytes": 148038,
+          "sourceSha256": "e8a45d21cf748662cf50ba6a0d9b1e7a3094f534cfae65a125d8f36a0c264a2a",
+          "archiveSha256": "7e9ad3c6576ecd5ba3fe1a0aeba70556fd9d7aa7b4d234232ab9d96a84aa7861"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00010-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00010-lighthouse.html.gz",
+          "rawBytes": 584680,
+          "archiveBytes": 192275,
+          "sourceSha256": "2226f6cb62bd5645a5e9d270b684e76653268b9102222a36be15dc59633543cb",
+          "archiveSha256": "2bc21b1ecc4ddb8e0a74f8a253c38eb5d5ea4d013a7f223ca125d9eaca81b14c"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00010-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00010-lighthouse.json.gz",
+          "rawBytes": 440421,
+          "archiveBytes": 143964,
+          "sourceSha256": "e7060de95359b6337012e1b5d1edc13b27ab7a623b5e6568f46c2d1872181f55",
+          "archiveSha256": "85eed5fd7f70624d096b3fa154bea3d0831e5e2413a96e9b33b1389c4a2455b9"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00011-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00011-lighthouse.html.gz",
+          "rawBytes": 610297,
+          "archiveBytes": 195488,
+          "sourceSha256": "6800c1d3b463c28199373b5ce7cb7b6f23f71c2c783b378f913c3d76f774060c",
+          "archiveSha256": "92a9ec452586998b57acfbab02bdf78b7fbf20fc657c568716abfc72e4ec74b6"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00011-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00011-lighthouse.json.gz",
+          "rawBytes": 465468,
+          "archiveBytes": 147302,
+          "sourceSha256": "5d510bd8380fb32a230d0da97f13bac687b7c0685acb28de60c72a8e397d5227",
+          "archiveSha256": "e73f7afaab11028e946b825089510a2f764833b0668cf25cd345a0a6d051a50d"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00012-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00012-lighthouse.html.gz",
+          "rawBytes": 624047,
+          "archiveBytes": 196119,
+          "sourceSha256": "21cb2368d5490a8c9a7d2a21ac258e7cee18d49ad628f19eefb7c96d3d14ec8a",
+          "archiveSha256": "15ed5f6f4d22373fb2d799840ff45097b37da202ec4747bb4c99cf88bda5411a"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00012-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00012-lighthouse.json.gz",
+          "rawBytes": 481084,
+          "archiveBytes": 148069,
+          "sourceSha256": "92e1821ff41994c6f68d52796593d9c2c42126966de18e23053f469521a8c0aa",
+          "archiveSha256": "bb93f29121f1d0c73bba6cf066de87cd0f323b5580e81a4dd487cebab4aac62f"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00013-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00013-lighthouse.html.gz",
+          "rawBytes": 610312,
+          "archiveBytes": 194170,
+          "sourceSha256": "772a4713b5eb610bcc74f32c7259245d08f348ad8243967675a7a97b331461f9",
+          "archiveSha256": "a4eae664a740714b192413342bd475f0f8a276433b0b83d3ff938a09a40d6b98"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00013-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00013-lighthouse.json.gz",
+          "rawBytes": 465433,
+          "archiveBytes": 145846,
+          "sourceSha256": "7744c198537a6ab4246c7f88efc6782f3f074369cd324e97299e905af0dfc5cf",
+          "archiveSha256": "a010bf82b105d5aa74c432e80e95e4836c7eacfa8d43f1f40a3318c164bc90b4"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00014-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00014-lighthouse.html.gz",
+          "rawBytes": 601215,
+          "archiveBytes": 194902,
+          "sourceSha256": "0a13c1290cc1e327455c34a500436748332bf6aeddfc68f7ec3408774fe96e4b",
+          "archiveSha256": "c51f5a3b87f37e096cc8ec50db6eae1ae998c412c909909e2035f54ab5a53647"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00014-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00014-lighthouse.json.gz",
+          "rawBytes": 458252,
+          "archiveBytes": 146733,
+          "sourceSha256": "6afa303bdee76814751267e9b3669bf853540cc5a8cb5bbe5ddbb24dafe3ec54",
+          "archiveSha256": "85dd9ce8f7c7e83637c77a688c57f6607062eeb63353de1d540144ef75f71f37"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00015-lighthouse.html",
+          "path": "en-reve-main-lighthouse-v1/00015-lighthouse.html.gz",
+          "rawBytes": 584690,
+          "archiveBytes": 192361,
+          "sourceSha256": "772d687ec2a2a71a590ec9255c09f7790999a9fa269bc3e0b889bd20e95d3dbd",
+          "archiveSha256": "e56f3711a62bb823b7c8e99d658fac950825172b93cfb49918d92777ea5a85a1"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/00015-lighthouse.json",
+          "path": "en-reve-main-lighthouse-v1/00015-lighthouse.json.gz",
+          "rawBytes": 440431,
+          "archiveBytes": 144057,
+          "sourceSha256": "d22a8f9965dfe6a23c02541c9952aca77b686a9cce0c5948fe237155bedabd43",
+          "archiveSha256": "45671721a74782270583ae23976b1b1ca65cffe9f46e8db445c047147f3fbe66"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/package-lock.json",
+          "path": "en-reve-main-lighthouse-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/package.json",
+          "path": "en-reve-main-lighthouse-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-lighthouse-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/registry/systems.json",
+          "path": "en-reve-main-lighthouse-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-lighthouse-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/collector.js",
+          "path": "en-reve-main-lighthouse-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/config.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/report.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/server.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-lighthouse-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/manifest.json",
+          "path": "en-reve-main-lighthouse-v1/manifest.json.gz",
+          "rawBytes": 67362,
+          "archiveBytes": 14335,
+          "sourceSha256": "5d1f8f78a194b52f68a7f5359f867d73287a55670d8c858570194947eecce72a",
+          "archiveSha256": "f2124bb767bb057637bf13676b1e1e62c8e461cd8c90cdf38c2d8eca71625598"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/report.md",
+          "path": "en-reve-main-lighthouse-v1/report.md.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 610,
+          "sourceSha256": "54bcdd1bf597231d30b508a8aedc5b8dd9a9ff9f58ef534371bf4ac24faabfc5",
+          "archiveSha256": "3ff7dea8e2b907067f480a4ce0c28c19f35a7255a2fc05c6777f4125d46ff4df"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/samples.jsonl",
+          "path": "en-reve-main-lighthouse-v1/samples.jsonl.gz",
+          "rawBytes": 7361,
+          "archiveBytes": 802,
+          "sourceSha256": "dfca0c5a26465f7243214bacb80b3b3df5bc49fbb6f23bc6885f41c0f0ca1059",
+          "archiveSha256": "36dd65db03a5358aecf7c21d4688e0a31dbc3a363307c8107356d18b082b3b0b"
+        },
+        {
+          "source": "runs/en-reve-main-lighthouse-v1/summary.json",
+          "path": "en-reve-main-lighthouse-v1/summary.json.gz",
+          "rawBytes": 16271,
+          "archiveBytes": 1099,
+          "sourceSha256": "6f244f9214d5b61fa67c9b334a83651f3dc709a9f89bf2d3ab298f939675be5d",
+          "archiveSha256": "eb856c479564d010be54abb9578fe3e2e3b8d26fd7287619b86d836d2e99bbe3"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-load-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-load-v1/collector.js",
+          "path": "en-reve-main-load-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/package-lock.json",
+          "path": "en-reve-main-load-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/package.json",
+          "path": "en-reve-main-load-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-load-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/registry/systems.json",
+          "path": "en-reve-main-load-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-load-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-load-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-load-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-load-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-load-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-load-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-load-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-load-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-load-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/collector.js",
+          "path": "en-reve-main-load-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/config.mjs",
+          "path": "en-reve-main-load-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-load-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-load-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-load-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-load-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-load-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-load-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-load-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-load-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-load-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-load-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-load-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-load-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/report.mjs",
+          "path": "en-reve-main-load-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-load-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/server.mjs",
+          "path": "en-reve-main-load-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-load-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/manifest.json",
+          "path": "en-reve-main-load-v1/manifest.json.gz",
+          "rawBytes": 85608,
+          "archiveBytes": 15696,
+          "sourceSha256": "2be2e622eba976502009811291fdd3f44b11381bdfd91a9e9f09ee829c91221a",
+          "archiveSha256": "54aa8716cdd10cc2144ef283efd79a4d7f99b130831b34875cac853e93128b9f"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/report.md",
+          "path": "en-reve-main-load-v1/report.md.gz",
+          "rawBytes": 1845,
+          "archiveBytes": 763,
+          "sourceSha256": "ec13e47180173a59aee24ceabfd9a87d060fd957876db237fe9fabbe904d038a",
+          "archiveSha256": "1ef96457f066dfc75224697c52f1034fd6eae7d6a0c8894a1a3df4be7d0d09ed"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/run-started.json",
+          "path": "en-reve-main-load-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "d7dd1c65f1202bf7a9179a5e65ee6f7b9661b8a8319d2e56285638d05a38bc39",
+          "archiveSha256": "b2d0916cac7c9309bfb36d22a6fd2607aca9f729ffc2507c15a6cc87775ce52d"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/samples.jsonl",
+          "path": "en-reve-main-load-v1/samples.jsonl.gz",
+          "rawBytes": 3410042,
+          "archiveBytes": 273232,
+          "sourceSha256": "76956acdb93173f665612064392c856513343f0e96182546315b1ba7c68eaea7",
+          "archiveSha256": "5daef3a3661e73801b04163448508b9a5216917b3bf146fe85ea0dc962becf76"
+        },
+        {
+          "source": "runs/en-reve-main-load-v1/summary.json",
+          "path": "en-reve-main-load-v1/summary.json.gz",
+          "rawBytes": 82120,
+          "archiveBytes": 5839,
+          "sourceSha256": "bedb65714a91581f840dc69d7d999c21fba758cce7eb78652c259b5892916295",
+          "archiveSha256": "059343813a33b7d78ed78138cab3d688289ac6729359f6aedd95c07c3bc12b14"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-memory-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-memory-v1/collector.js",
+          "path": "en-reve-main-memory-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/package-lock.json",
+          "path": "en-reve-main-memory-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/package.json",
+          "path": "en-reve-main-memory-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-memory-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/registry/systems.json",
+          "path": "en-reve-main-memory-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-memory-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-memory-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-memory-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-memory-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/collector.js",
+          "path": "en-reve-main-memory-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/config.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/report.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/server.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-memory-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/manifest.json",
+          "path": "en-reve-main-memory-v1/manifest.json.gz",
+          "rawBytes": 66856,
+          "archiveBytes": 14900,
+          "sourceSha256": "e83d2b97ff5dc404ba635f591d39ff9e7132570f8ccd49f64db22c8b847767f7",
+          "archiveSha256": "e4d5be0e6a557e84bf9f34cb43a4978800297ba6c00e7a9b3b105e4e7e79a560"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/report.md",
+          "path": "en-reve-main-memory-v1/report.md.gz",
+          "rawBytes": 1994,
+          "archiveBytes": 952,
+          "sourceSha256": "7b443cf3a7b90eed9af234ae0aac89aaee5fa07928ae63e4a8aa06ea74282e48",
+          "archiveSha256": "a517cc64320bf3934f809141a4451412172fe2fa54f9a88e83179e810c7525e0"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/run-started.json",
+          "path": "en-reve-main-memory-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "4414f15c042fe25c3f4c12307924c33a46165f089772bd75c5468f4930ea8e53",
+          "archiveSha256": "ac79efe7d8b55598590bc2b529530fc980790890482776bff164dfa536c1f805"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/samples.jsonl",
+          "path": "en-reve-main-memory-v1/samples.jsonl.gz",
+          "rawBytes": 48700,
+          "archiveBytes": 6493,
+          "sourceSha256": "932ceb27ce6c689670b6b313c32a01352c0b42ad067daf8fae7ae296e6289b1d",
+          "archiveSha256": "260601bb24625d3c263b289d0c4c41a6c7327a5f0f4ce2814341f89c2fbcbc05"
+        },
+        {
+          "source": "runs/en-reve-main-memory-v1/summary.json",
+          "path": "en-reve-main-memory-v1/summary.json.gz",
+          "rawBytes": 22626,
+          "archiveBytes": 1941,
+          "sourceSha256": "6b91af225ac233590a2c280c81277a8a0122c475c16606ea6dcb29c9d2e1792b",
+          "archiveSha256": "5debeacb2410136bbc4fc10d54fb9471341ce14067a680f188aa3122d4cf0020"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-overhead-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-overhead-v1/collector.js",
+          "path": "en-reve-main-overhead-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/package-lock.json",
+          "path": "en-reve-main-overhead-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/package.json",
+          "path": "en-reve-main-overhead-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-overhead-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/registry/systems.json",
+          "path": "en-reve-main-overhead-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-overhead-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-overhead-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-overhead-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-overhead-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/collector.js",
+          "path": "en-reve-main-overhead-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/config.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/report.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/server.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-overhead-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/manifest.json",
+          "path": "en-reve-main-overhead-v1/manifest.json.gz",
+          "rawBytes": 71191,
+          "archiveBytes": 15073,
+          "sourceSha256": "9e8758ab1e4301e16b40b1e5d8d6e4567c98473e429b7e905d520eb608d3ba7b",
+          "archiveSha256": "7f983b133836292192e3c957a711f5c5d498b1c55e1fa818e0a80a49afdcb41e"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/report.md",
+          "path": "en-reve-main-overhead-v1/report.md.gz",
+          "rawBytes": 1322,
+          "archiveBytes": 649,
+          "sourceSha256": "27f15b9c05f5933c21b2266740d2551f11c67fa283d8ca36bcbf426ca8e091a3",
+          "archiveSha256": "b1928bb94d1885e7dee733c73cb22adafd111ed26ba50f7d80466c41351e0a4e"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/run-started.json",
+          "path": "en-reve-main-overhead-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "2635824861547ef98994db66b4346881829223263172b5a6bbdc145e2eb14815",
+          "archiveSha256": "cd2b447da5ce7d9c70c2c5f64526cb3a988314f55bb3364a725e5b0f17881ccc"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/samples.jsonl",
+          "path": "en-reve-main-overhead-v1/samples.jsonl.gz",
+          "rawBytes": 629424,
+          "archiveBytes": 52400,
+          "sourceSha256": "8bb63bf5a1ef5cdc2d6377c5de789c794f7d6fd94d249ff22091bb6e9fd791fa",
+          "archiveSha256": "0238e084bad5373665663d6ad25acfde2a30ffc65ab9e293776390aa26430ec9"
+        },
+        {
+          "source": "runs/en-reve-main-overhead-v1/summary.json",
+          "path": "en-reve-main-overhead-v1/summary.json.gz",
+          "rawBytes": 37289,
+          "archiveBytes": 2922,
+          "sourceSha256": "8606092381660e0ec2971712a83a5e78da0ec58b277929c646a5809a198902c8",
+          "archiveSha256": "64127a68331bf2a799e23311b979af59da06e741e6d1c7e171748ea24dd0ee56"
+        }
+      ]
+    },
+    {
+      "id": "en-reve-main-startup-v1",
+      "files": [
+        {
+          "source": "runs/en-reve-main-startup-v1/collector.js",
+          "path": "en-reve-main-startup-v1/collector.js.gz",
+          "rawBytes": 20323,
+          "archiveBytes": 7479,
+          "sourceSha256": "64543147510f2ea32b8825c36518dbaf4f8504b110f34eec0a942672b41051d3",
+          "archiveSha256": "20c18376474fc53983fe8a1e03b0f7c82af5235b706f4201f7e803ebb56e0b90"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/package-lock.json",
+          "path": "en-reve-main-startup-v1/harness/package-lock.json.gz",
+          "rawBytes": 71182,
+          "archiveBytes": 16675,
+          "sourceSha256": "d2dd6bc910378a5a57ec5d2c2a06e42773025f0cab285c384ab0d5df4d5324d3",
+          "archiveSha256": "e9f6e6b890819cc76ffc3fba2d2e7e64a736d3bfc039cbea747b305db82dd259"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/package.json",
+          "path": "en-reve-main-startup-v1/harness/package.json.gz",
+          "rawBytes": 1102,
+          "archiveBytes": 440,
+          "sourceSha256": "bec1d35aa34d0b66d741ce9202f7b91849f35fd757046656586c9d358d4dcbfd",
+          "archiveSha256": "15938557f2f09ec8a6e0374ce8a2864e66b1c4a22352e36df19b3ee82caac606"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/profiles/profiles.json",
+          "path": "en-reve-main-startup-v1/harness/profiles/profiles.json.gz",
+          "rawBytes": 540,
+          "archiveBytes": 281,
+          "sourceSha256": "ef15cc516d685ae610ebe7c6b458a5dd5b96426936448bc881075aea40c418d0",
+          "archiveSha256": "072121e0427fc0d18a541847a3315d735eefdff9ef0050fa1bab46728892c95f"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/registry/systems.json",
+          "path": "en-reve-main-startup-v1/harness/registry/systems.json.gz",
+          "rawBytes": 1209,
+          "archiveBytes": 255,
+          "sourceSha256": "622cbedfe100e58863c2fcb087921abe431b168bd1ec5bb7860251a9991a0a77",
+          "archiveSha256": "e1d1e86e8bbe424775c0fe82a1e9c4b09ef2b527a68fb55b1d66c15d156d3836"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/registry/verification-receipts.json",
+          "path": "en-reve-main-startup-v1/harness/registry/verification-receipts.json.gz",
+          "rawBytes": 61,
+          "archiveBytes": 63,
+          "sourceSha256": "2089f4c7999875add2d0aec7ddc62ff31674b5d778cf644ab2b23ff8dff692bc",
+          "archiveSha256": "0b0f363cf7e916af42b043ed07257bd5a2604f7b0207f7d7e00264ac6c4c7a74"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/scenarios/journey.mjs",
+          "path": "en-reve-main-startup-v1/harness/scenarios/journey.mjs.gz",
+          "rawBytes": 6985,
+          "archiveBytes": 2280,
+          "sourceSha256": "c19f34dc7b2263611c41590ac91854626f028279246e0636466e7008a94a6658",
+          "archiveSha256": "93bc620e97553a95d92807e41e761e009b5b2911fb4bb5fe99b52e7852eb7dfe"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/scenarios/registry-workflows.mjs",
+          "path": "en-reve-main-startup-v1/harness/scenarios/registry-workflows.mjs.gz",
+          "rawBytes": 9710,
+          "archiveBytes": 2933,
+          "sourceSha256": "041034a67041975f3cdb958c2f73d9f89bcad581037cc192bf1ce879bc977ef1",
+          "archiveSha256": "0227fc7972ce4e9e67db7d35b24fbdf23f78794bc257c797ae8538437117ce52"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/scenarios/startup.mjs",
+          "path": "en-reve-main-startup-v1/harness/scenarios/startup.mjs.gz",
+          "rawBytes": 3915,
+          "archiveBytes": 1576,
+          "sourceSha256": "671fab463cc94717593f5961152f26c91805dc0b84feab62b7b67361544b7624",
+          "archiveSha256": "0d8811e4e20a5cd70eca15586d7eb4290f445d89a998d728b3bacb18165fefdd"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/analysis.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/analysis.mjs.gz",
+          "rawBytes": 6915,
+          "archiveBytes": 2216,
+          "sourceSha256": "539c95e451c23fdbe12c7370e02728ba01b63342e5a9a704823f01aa232db7a0",
+          "archiveSha256": "b18a9269c2411838711786f707385061ba1b305d19d6b74fa27b2800a594d5e1"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/bfcache.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/bfcache.mjs.gz",
+          "rawBytes": 6805,
+          "archiveBytes": 2469,
+          "sourceSha256": "07d4abf2adebd6999503b969fedfb9fe40fa7f95fd8cfb99daeb14b73dbf8d08",
+          "archiveSha256": "d97aca5e5b8b5d8a66f590c321cf3c14535fd08b9bd81b9d24e26fa472dffc48"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/bundles.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/bundles.mjs.gz",
+          "rawBytes": 5845,
+          "archiveBytes": 2292,
+          "sourceSha256": "701ff433d0a0e73fa296364e85adce1275d77b7e16e27de8856c2d16d6980d64",
+          "archiveSha256": "e028dc581380be56641300b40be96df5944bbca225cb7146887fa60b0ee5ca0f"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/calibrate.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/calibrate.mjs.gz",
+          "rawBytes": 4472,
+          "archiveBytes": 1650,
+          "sourceSha256": "f4fac3c370a451255a200020109f0d368addd64f1031a53d09b82346cef1af74",
+          "archiveSha256": "ac0fff0d1b9f768179968c1146fda7cca0d8580910f26ba9f5c67ce2bb450b43"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/cli.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/cli.mjs.gz",
+          "rawBytes": 2066,
+          "archiveBytes": 800,
+          "sourceSha256": "c586a4153258dd2185c8000e90801befe611c9bd56ccc43bf0c5bbb5bcfeeef6",
+          "archiveSha256": "f14600ec5a8554bac9d1387ec6272061d33c2f8fcea6aa61961961cff3fd2e1b"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/collector.js",
+          "path": "en-reve-main-startup-v1/harness/src/collector.js.gz",
+          "rawBytes": 9072,
+          "archiveBytes": 2983,
+          "sourceSha256": "0ca7e76070bb1be177e6863f8a490c5074b244626dc0532265e89f8e69840b71",
+          "archiveSha256": "85682df5aca0e15289e911f0d363eeed5f94244986da8bc426d7c7157218fa85"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/config.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/config.mjs.gz",
+          "rawBytes": 1808,
+          "archiveBytes": 831,
+          "sourceSha256": "1a3be941b1db14551b482b486d8c8ed48c3766185628f0b2858d038fa3c0ce55",
+          "archiveSha256": "21dce97223b881fd4421d0cf9097b13e0c8b7eb1084536c958baed083ccaf790"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/delivery.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/delivery.mjs.gz",
+          "rawBytes": 3116,
+          "archiveBytes": 1153,
+          "sourceSha256": "bca211ace05d88726bd6fb5f337f832c4756384c738197e8cf4122cd9dbcfa88",
+          "archiveSha256": "d1938c169f053de1c53b359224960e60ba283ef58fa1424dc2c3139c0af90b29"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/diagnostics.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/diagnostics.mjs.gz",
+          "rawBytes": 7041,
+          "archiveBytes": 2429,
+          "sourceSha256": "bba31272d80b7d599f9b8971e847bbe50f3ec559b7541cda88e5afbb427e0b55",
+          "archiveSha256": "8859666f8d2a90e332662edf279fb169c9735d2ee686ef10c6122cb0acf96ecb"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/dom-diagnostics.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/dom-diagnostics.mjs.gz",
+          "rawBytes": 1329,
+          "archiveBytes": 556,
+          "sourceSha256": "81894be1f29629a9773bfaad6750083c88aa3af5176280e45665286370f70540",
+          "archiveSha256": "5d7ea1faba850cae5252fdf40ca6aea0d2f11e0ec8411989270968cb4b7317a3"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/functional.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/functional.mjs.gz",
+          "rawBytes": 5290,
+          "archiveBytes": 1823,
+          "sourceSha256": "c1648cbc2b996ad8e022361c8c7d18ca326585e377e666377cc2a7ea80053d9b",
+          "archiveSha256": "d4579d8698d56c805df8da5b4a4e97e9340e3d3e4b0269b015612eb016a21369"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/lighthouse.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/lighthouse.mjs.gz",
+          "rawBytes": 6575,
+          "archiveBytes": 2411,
+          "sourceSha256": "27a09ed92a0dfc520a2a4fe7b8f414c36e5ec15352920215baf2256973551f1f",
+          "archiveSha256": "4cc5f48b4e9625edd8c31872799edd68f7a77586a2ce1f7b369bc6a53c9bf501"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/lock.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/lock.mjs.gz",
+          "rawBytes": 1109,
+          "archiveBytes": 511,
+          "sourceSha256": "adcf2b8ad7bbe194014e2f9617bf9c2247962b32ad9eaeef30d46f7a5058c2e1",
+          "archiveSha256": "eb3601525a76358aa197bd1d6375656946a2fafb7ec547e74e756dbb02771d9b"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/prepare.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/prepare.mjs.gz",
+          "rawBytes": 10426,
+          "archiveBytes": 3095,
+          "sourceSha256": "fceee11ffd5678b89371570c93fc4821ae76335b9a461d4c8a6ac377d3e046bd",
+          "archiveSha256": "877a85dae07bf4b6bd6fae4b2d8a729a1a35c5e8c25e586b4d7475188a1b8794"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/registry-fixture.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/registry-fixture.mjs.gz",
+          "rawBytes": 5692,
+          "archiveBytes": 2344,
+          "sourceSha256": "41209804b64792eaab0d7c8e4b2c87f2c726f31f79056b45bcf1ffc10ccab54a",
+          "archiveSha256": "6d0ce2762858a44bb7d40796e69ec113b5dee8fe9e97a29841a015d1975bf4d3"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/registry-ownership.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/registry-ownership.mjs.gz",
+          "rawBytes": 7582,
+          "archiveBytes": 3112,
+          "sourceSha256": "615119b775743d63c52054961789651f7d7e04dd5120e276ae2cad66d230f51d",
+          "archiveSha256": "c310a32bd08832cca333d54106d10e7f6dd4c9079ed4de28206a7854c5f5bc86"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/registry-reference.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/registry-reference.mjs.gz",
+          "rawBytes": 12881,
+          "archiveBytes": 4323,
+          "sourceSha256": "ffe24944ecadab08c8698e0230e3ca71f43ac32dd83cf9e4e5454bfc1b196179",
+          "archiveSha256": "eb3237e8129216d3ae6c3f276275f5cf1d71bbbdf026c7d1425f18ad483f271e"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/registry-runner.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/registry-runner.mjs.gz",
+          "rawBytes": 13984,
+          "archiveBytes": 5124,
+          "sourceSha256": "2e329a29530be66ba26a342e15e1c4275f5a9214945a8f8f62ff74270330c8bb",
+          "archiveSha256": "0cb76f04da0145f300e3af2b022f679dee16a4dcd6727aee67bcbab4ef437875"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/regression.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/regression.mjs.gz",
+          "rawBytes": 9484,
+          "archiveBytes": 2911,
+          "sourceSha256": "d5f78e581a14eec8021c610b6312d9faa59771ad5d83fade732bdb693cbc0f98",
+          "archiveSha256": "fb061470253417ad2f01c3a0b4a0c0bcff65c295550097f478de52427535ab97"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/report.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/report.mjs.gz",
+          "rawBytes": 9471,
+          "archiveBytes": 3082,
+          "sourceSha256": "1f00363389faa9fd1aaf61d077516a4bc9a2b85b05979ef080a0ee27b273c3e6",
+          "archiveSha256": "c740e3be3e3052bbca8d22dbe600ccef5d7ee3713c041fc5df382c47bb9e69a7"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/runner.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/runner.mjs.gz",
+          "rawBytes": 20258,
+          "archiveBytes": 6584,
+          "sourceSha256": "b55ec6599b997f6f34f125b5ea31beba44d9b4aca7148af8dce06aa2e8cc1989",
+          "archiveSha256": "67efaaa97c1317910deac52f2a09c85b33c33f91c4bbd20a213d5f655125b0e4"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/server.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/server.mjs.gz",
+          "rawBytes": 6640,
+          "archiveBytes": 2383,
+          "sourceSha256": "a0fddcbe10e449b9ec2f3ef2298c619002a82e8cba120a5dae568309388ade12",
+          "archiveSha256": "cbbb2e9f97b992401ac1d03f1c006ca17b1e267d72c92f04f0ec05f0d86cd220"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/harness/src/verification-receipts.mjs",
+          "path": "en-reve-main-startup-v1/harness/src/verification-receipts.mjs.gz",
+          "rawBytes": 2068,
+          "archiveBytes": 792,
+          "sourceSha256": "811f0f6cccc2eaf79cf7f477757cd067900c40eb4f2117ad072897fa8cd77463",
+          "archiveSha256": "e864637ce07d8ae2b726f50f1c3c5ad5f82922e5f5efaf01883338ed1e2c6c3a"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/manifest.json",
+          "path": "en-reve-main-startup-v1/manifest.json.gz",
+          "rawBytes": 76105,
+          "archiveBytes": 15353,
+          "sourceSha256": "57a769f1eb6d89ed3e6e0f81aaeeef96d8522665d1e06c725ad4f5ebf5343b1e",
+          "archiveSha256": "5a47af7d4ff1fe9d1bef9ff06ac198e59399246e6025e8b899c26345021315f5"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/report.md",
+          "path": "en-reve-main-startup-v1/report.md.gz",
+          "rawBytes": 1338,
+          "archiveBytes": 671,
+          "sourceSha256": "d88b0c2c47baa80caa9dc9b006d8f7af161900b1b9532b47f8be7e018c2b5f22",
+          "archiveSha256": "05234acd0f5a8f4bfe96193173872706fbb93b3f234fc60181455072616682a7"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/run-started.json",
+          "path": "en-reve-main-startup-v1/run-started.json.gz",
+          "rawBytes": 55,
+          "archiveBytes": 73,
+          "sourceSha256": "44ac19a850efdd5253a731a3e83973b81049359eeba0baa93dc9d02cedc81b77",
+          "archiveSha256": "9cb5fe33ca6a4f30d64ab805db04ee48b2648a9d5f8489c295f8f138e1347b5b"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/samples.jsonl",
+          "path": "en-reve-main-startup-v1/samples.jsonl.gz",
+          "rawBytes": 1849987,
+          "archiveBytes": 163441,
+          "sourceSha256": "f2bbaa519c7ddbe6c649f60c990133d3d7e2ded394b04d1b249695104c104991",
+          "archiveSha256": "498252c34e84d7f8393707568d6e14d1ff5022afb0d159168a1701fab84d09ac"
+        },
+        {
+          "source": "runs/en-reve-main-startup-v1/summary.json",
+          "path": "en-reve-main-startup-v1/summary.json.gz",
+          "rawBytes": 49616,
+          "archiveBytes": 4955,
+          "sourceSha256": "e1567bf790100bc9f67a6c5e5d2f8afd0e5d9a5792c522d292a715c3ffcfd45a",
+          "archiveSha256": "0c3264dcc35ccce87096145837f24dcb80de6cf2a74d68d5e4fd3739ad91490d"
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "source": ".cache/snapshots/en-reve/assets/index-C0meNs_7.js",
+      "path": "measured-artifacts/en-reve/assets/index-C0meNs_7.js.gz",
+      "rawBytes": 450035,
+      "archiveBytes": 110874,
+      "sourceSha256": "2b96bbe0542ee9b69891e993f33b18110e7c56c10e4195133d91b0a5bcb38eed",
+      "archiveSha256": "cd48a698b5ddaf3fcfd1b885480870d4ac98eb07a2b9e0dc3b3421150d65b032"
+    },
+    {
+      "source": ".cache/snapshots/en-reve/assets/index-C0meNs_7.js.map",
+      "path": "measured-artifacts/en-reve/assets/index-C0meNs_7.js.map.gz",
+      "rawBytes": 1209535,
+      "archiveBytes": 272225,
+      "sourceSha256": "3aea1d71d753337cc9b65b905e3ef0c9f34a3c29cff4f392846b347a699de892",
+      "archiveSha256": "3a0d213fba0cf57b46403e8cd8525c9876c012f5f1bc307342564877097982c0"
+    },
+    {
+      "source": ".cache/snapshots/en-reve/assets/index-CDV5OawH.css",
+      "path": "measured-artifacts/en-reve/assets/index-CDV5OawH.css.gz",
+      "rawBytes": 44562,
+      "archiveBytes": 6986,
+      "sourceSha256": "b6c6a18cb9c88db2b0135f3454fbf31247ed1836cf12c695f1c5e0037f1c33cc",
+      "archiveSha256": "d9c8c4c94420da134ade587d37069c8e76e85c92723a70e645d2a254788d6541"
+    },
+    {
+      "source": ".cache/snapshots/en-reve/build-metadata.json",
+      "path": "measured-artifacts/en-reve/build-metadata.json.gz",
+      "rawBytes": 813,
+      "archiveBytes": 426,
+      "sourceSha256": "8fd42c64c0b736e97e451c3c8ef8913923a50f3c9464011108752f5ac95dccd7",
+      "archiveSha256": "19e06decc6f873a9125b599e7ef1548a9426a6be91bf03021daaf8d6c03e1325"
+    },
+    {
+      "source": ".cache/snapshots/en-reve/index.html",
+      "path": "measured-artifacts/en-reve/index.html.gz",
+      "rawBytes": 359,
+      "archiveBytes": 265,
+      "sourceSha256": "c646974e3d1bde22b4bd076bfcc9f7e157f73e7b8d99495f492018becd4c7417",
+      "archiveSha256": "b31d33a9578b05cfe8e636bb51b912639285b6683d77959e4d78eff8f5444b78"
+    },
+    {
+      "source": ".cache/snapshots/fluent-web-components/assets/index-7X1QEckn.css",
+      "path": "measured-artifacts/fluent-web-components/assets/index-7X1QEckn.css.gz",
+      "rawBytes": 4300,
+      "archiveBytes": 1456,
+      "sourceSha256": "ec89e27f3be2ab053b06747b64a8808752ac7127160f08f048e02e50fe900576",
+      "archiveSha256": "f19e3f894376c68200da8e7b953854da4cd618c1b6f2eddb11102a63b1258bee"
+    },
+    {
+      "source": ".cache/snapshots/fluent-web-components/assets/index-DHbL8u7_.js",
+      "path": "measured-artifacts/fluent-web-components/assets/index-DHbL8u7_.js.gz",
+      "rawBytes": 287981,
+      "archiveBytes": 70953,
+      "sourceSha256": "94488b365414c47d3fd114a17a90c9f20f33cd8c1f720b1aa9f4f3dec5722a18",
+      "archiveSha256": "afe87e4bab3960a550e806ae2b930e9ac680d19d298e0686c6bcf966577b52f0"
+    },
+    {
+      "source": ".cache/snapshots/fluent-web-components/assets/index-DHbL8u7_.js.map",
+      "path": "measured-artifacts/fluent-web-components/assets/index-DHbL8u7_.js.map.gz",
+      "rawBytes": 1115492,
+      "archiveBytes": 213438,
+      "sourceSha256": "8a1aabf6b25e7b9073fed887617a8f0c2cc64b0d13da29466effa228608f1d7b",
+      "archiveSha256": "20c54ed935a013cd684660c8ebabf58890b69c46cc1b24bf79dfdc87393c8cb3"
+    },
+    {
+      "source": ".cache/snapshots/fluent-web-components/build-metadata.json",
+      "path": "measured-artifacts/fluent-web-components/build-metadata.json.gz",
+      "rawBytes": 522,
+      "archiveBytes": 337,
+      "sourceSha256": "0f1bdeb13eff20c01ac491715167c877e138adbb923ce6c971239fdf79a9a95f",
+      "archiveSha256": "f0dc0198aba78cb143b23b977e5649b18eaef657e47712c6a620adef536e6d9c"
+    },
+    {
+      "source": ".cache/snapshots/fluent-web-components/index.html",
+      "path": "measured-artifacts/fluent-web-components/index.html.gz",
+      "rawBytes": 373,
+      "archiveBytes": 277,
+      "sourceSha256": "e7f911b0dbd4b39dc86db03033351f5e1a500bc15d52599634406c24d49a5ce7",
+      "archiveSha256": "4e2f87959adbe8ac11c26868b5e01d167e310a9462ad2449e9afc045847119c0"
+    },
+    {
+      "source": ".cache/snapshots/web-awesome/assets/index-BG3Zw-nj.js",
+      "path": "measured-artifacts/web-awesome/assets/index-BG3Zw-nj.js.gz",
+      "rawBytes": 481057,
+      "archiveBytes": 113108,
+      "sourceSha256": "cfbb769a0ca258a312711011f6f7a97980b7a4e1515dbbbb252fa9b340dd8c68",
+      "archiveSha256": "35c8df6327bc3d18abb14766269b908a6475df3fc0da60041e382dceb4e80a59"
+    },
+    {
+      "source": ".cache/snapshots/web-awesome/assets/index-BG3Zw-nj.js.map",
+      "path": "measured-artifacts/web-awesome/assets/index-BG3Zw-nj.js.map.gz",
+      "rawBytes": 1087827,
+      "archiveBytes": 224797,
+      "sourceSha256": "2ee9c765465022fd6726cea35a08267ba86e2347b347ee169d97b4d414c1f92c",
+      "archiveSha256": "ca75ef2a749f2b61d5d85cd97c93a9ada75243d5eb258c695d8698a743329ee6"
+    },
+    {
+      "source": ".cache/snapshots/web-awesome/assets/index-D7icV0LY.css",
+      "path": "measured-artifacts/web-awesome/assets/index-D7icV0LY.css.gz",
+      "rawBytes": 54664,
+      "archiveBytes": 8136,
+      "sourceSha256": "c84822efd68d8d4ac65c0e31e3aede38acd7f6ae5d340b258b1a99d371311e8a",
+      "archiveSha256": "2ab3383b00544a53ab2595e3d6aee6244d9fbdf0dc6540eed0263a5a9ec30568"
+    },
+    {
+      "source": ".cache/snapshots/web-awesome/build-metadata.json",
+      "path": "measured-artifacts/web-awesome/build-metadata.json.gz",
+      "rawBytes": 469,
+      "archiveBytes": 314,
+      "sourceSha256": "8d175c9e4be63483ac9a8b2ffa0c86229ecbec60f010b030c72b34e163659d0b",
+      "archiveSha256": "c6711afb29a4ebd148faeefe498551c7cab238d0839137cb7250758e6f4d61b1"
+    },
+    {
+      "source": ".cache/snapshots/web-awesome/index.html",
+      "path": "measured-artifacts/web-awesome/index.html.gz",
+      "rawBytes": 419,
+      "archiveBytes": 286,
+      "sourceSha256": "5e6c34e3187bad9a437cfb11787e781c17264a41653af0defe03173b1023a621",
+      "archiveSha256": "75022f252ebd5a3b56bc612809c3d92f103d4575e8c8950295d396ad356c48cf"
+    },
+    {
+      "source": "../en-reve/.npmrc",
+      "path": "qualified-source/en-reve/.npmrc.gz",
+      "rawBytes": 33,
+      "archiveBytes": 53,
+      "sourceSha256": "f5690c4ec4d1dffdd94a8cf7795aecde5abaaf5841a78604864d7a41cdf7a205",
+      "archiveSha256": "3218c5c29018fa85f55ff269a56890ef93cb72be56c72342241c0d793d4f592e"
+    },
+    {
+      "source": "../en-reve/.performance/containment.css",
+      "path": "qualified-source/en-reve/.performance/containment.css.gz",
+      "rawBytes": 108,
+      "archiveBytes": 114,
+      "sourceSha256": "b30aa0f791e8c07f7d6da41e9792425154c7dcf519b04de3f0b7c033adb7a5de",
+      "archiveSha256": "ab0fd744cfbcdd6d0779f0b7f2f4d200531988ff393d7442f5477451cbe87197"
+    },
+    {
+      "source": "../en-reve/.performance/content-visibility.js",
+      "path": "qualified-source/en-reve/.performance/content-visibility.js.gz",
+      "rawBytes": 2130,
+      "archiveBytes": 421,
+      "sourceSha256": "e29f455f7b06cbc0c7f79d01fb7fff3bf2a75231973025fbbc8ccc3832e9f7b3",
+      "archiveSha256": "a11c5787f7b0971d9fa66d6968851cfde909034debf4329d184ed4e11065991e"
+    },
+    {
+      "source": "../en-reve/.performance/family-button.js",
+      "path": "qualified-source/en-reve/.performance/family-button.js.gz",
+      "rawBytes": 98,
+      "archiveBytes": 93,
+      "sourceSha256": "0a033ce0845da4698bd93b1f04fbc95993a5c6b779eace34174fcd00da85b162",
+      "archiveSha256": "1f057dc89c85d3b741fc000df87a50891d02b6c9880ecb01f3e0226bc5b0159a"
+    },
+    {
+      "source": "../en-reve/.performance/family-date.js",
+      "path": "qualified-source/en-reve/.performance/family-date.js.gz",
+      "rawBytes": 103,
+      "archiveBytes": 96,
+      "sourceSha256": "088fd0303ff5c3a504a984c44321a2e1e6f2ada085dcfc1417765ac1d4bd5748",
+      "archiveSha256": "ede54f7fa35278c697e11671d4366aa7ad9badd6ebbdee0fd29e6f40e70a54ee"
+    },
+    {
+      "source": "../en-reve/.performance/family-forms.js",
+      "path": "qualified-source/en-reve/.performance/family-forms.js.gz",
+      "rawBytes": 291,
+      "archiveBytes": 125,
+      "sourceSha256": "67ad103a2fe174bf6fbe96c3c654737deb791f364f275df26478337fabb47b22",
+      "archiveSha256": "437152e3a20b9fd8ac83725d63cb39d2233826e444e3af45a4940ee3f9b9b4b1"
+    },
+    {
+      "source": "../en-reve/.performance/family-overlays.js",
+      "path": "qualified-source/en-reve/.performance/family-overlays.js.gz",
+      "rawBytes": 197,
+      "archiveBytes": 114,
+      "sourceSha256": "4d1ea23782cab9e6e7b09e71cedf58f89c2845ffe8ff79032449a9c805debd82",
+      "archiveSha256": "525a91ecb4e13df2401b79867f2a87997e40d3ea85c5ab314ef1aed612d45d10"
+    },
+    {
+      "source": "../en-reve/.performance/family-shell.js",
+      "path": "qualified-source/en-reve/.performance/family-shell.js.gz",
+      "rawBytes": 54,
+      "archiveBytes": 55,
+      "sourceSha256": "3f77ebd3bdc80202e19c63bdee3c88ec670c78b4b52911118c1afd9d289ed56e",
+      "archiveSha256": "0cc6638a31ea4ef4e63ee69f0d844cac5bde106e0a140f3d009c853feb81bb44"
+    },
+    {
+      "source": "../en-reve/.performance/intent-commands.js",
+      "path": "qualified-source/en-reve/.performance/intent-commands.js.gz",
+      "rawBytes": 2922,
+      "archiveBytes": 758,
+      "sourceSha256": "615ac8d1926061bd1a318de52c5348914e282a6cc7cfdcf569e77c6a23557fc4",
+      "archiveSha256": "f12168751dd775ceccc5ffc07c0299b30e8057b9ed1b2aca7edfd401074e808f"
+    },
+    {
+      "source": "../en-reve/.performance/lazy-commands.js",
+      "path": "qualified-source/en-reve/.performance/lazy-commands.js.gz",
+      "rawBytes": 2706,
+      "archiveBytes": 706,
+      "sourceSha256": "ffddaa289fe7df1345d2315a4f7bca9903bbace664b5cb65f598e20c40d505b1",
+      "archiveSha256": "702fb4e9a4aca368264094ae74b6e1e8539e1fccb420a97158de0f936bfe3c73"
+    },
+    {
+      "source": "../en-reve/.performance/split-vendor-edit.js",
+      "path": "qualified-source/en-reve/.performance/split-vendor-edit.js.gz",
+      "rawBytes": 2153,
+      "archiveBytes": 445,
+      "sourceSha256": "9c9afcbd20728bb36525fcaeea2f1cae15339364a561bc9fbb17ed5a4f7005e2",
+      "archiveSha256": "ab3f1c5aae5a2a5e000f4398ba926f4bf2d6aa87a777de7bf0c98b6717306dac"
+    },
+    {
+      "source": "../en-reve/.performance/split-vendor.js",
+      "path": "qualified-source/en-reve/.performance/split-vendor.js.gz",
+      "rawBytes": 2101,
+      "archiveBytes": 410,
+      "sourceSha256": "be564590dfe6fe9eb9a862adab4bca230c06f0480ddd952e6b60f858c9baeaf6",
+      "archiveSha256": "6346d1f9f76d499f7efc3d9f100be8bf14aa0fae287c31e832440ff76ca4824a"
+    },
+    {
+      "source": "../en-reve/index.html",
+      "path": "qualified-source/en-reve/index.html.gz",
+      "rawBytes": 259,
+      "archiveBytes": 204,
+      "sourceSha256": "7382c087e80812ef2097bfb940209c7586cf26d5298f9ec80c1fe38879a4f57d",
+      "archiveSha256": "c22fff736bb5903b26952f30366808f950b6eddf67e9c377cf7ba9075f694753"
+    },
+    {
+      "source": "../en-reve/package-lock.json",
+      "path": "qualified-source/en-reve/package-lock.json.gz",
+      "rawBytes": 47758,
+      "archiveBytes": 9741,
+      "sourceSha256": "ce11a2ed220ba0b631f04d8ddf055a48aef8a375dc034f6c3d7eb6836703d2d6",
+      "archiveSha256": "6166db4e660d6711341ec3050f8f700ff0c61eeea25b7105492681483d87c833"
+    },
+    {
+      "source": "../en-reve/package.json",
+      "path": "qualified-source/en-reve/package.json.gz",
+      "rawBytes": 761,
+      "archiveBytes": 348,
+      "sourceSha256": "200e24dd6c4832fea863cba6e2972e536e4533c3f0ea5355030e5a1d0b4f8be6",
+      "archiveSha256": "55d0468c9af8efc15fe65207213010a3182fe72f925d9a694ff31b460b3c8e38"
+    },
+    {
+      "source": "../en-reve/snapshot.json",
+      "path": "qualified-source/en-reve/snapshot.json.gz",
+      "rawBytes": 152664,
+      "archiveBytes": 55590,
+      "sourceSha256": "5b2cf3b48ed4ec307d3a3aa0b163058f483e14570c8e5be94a1e436c01d5ece8",
+      "archiveSha256": "6f366d5150fbbc9371b6210bf2500ba07b730ebe2a83f1019699dd83874a42fa"
+    },
+    {
+      "source": "../en-reve/src/app.ts",
+      "path": "qualified-source/en-reve/src/app.ts.gz",
+      "rawBytes": 6358,
+      "archiveBytes": 2311,
+      "sourceSha256": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "archiveSha256": "30bd13c8a70e1fb069b7383b93c8b5edebd826d6f5564da5eb7487a87c3ef177"
+    },
+    {
+      "source": "../en-reve/src/base.css",
+      "path": "qualified-source/en-reve/src/base.css.gz",
+      "rawBytes": 571,
+      "archiveBytes": 285,
+      "sourceSha256": "572a50f9bd509cf1ca11dcd525be0800e5321cc94aa58e79fa26367f34efb7c0",
+      "archiveSha256": "bd19355f3da71892211bc161a6d7bf63689fe78d46c173e9e31379db6469a90f"
+    },
+    {
+      "source": "../en-reve/src/change-consumption.ts",
+      "path": "qualified-source/en-reve/src/change-consumption.ts.gz",
+      "rawBytes": 1891,
+      "archiveBytes": 832,
+      "sourceSha256": "e1bc1b6b9d72fa561f6043721f8165c2cf78ace78720ecce3a07bc01d661c8be",
+      "archiveSha256": "372ced05c942dcd18de79337a9f683f0af4c1c725bd5c82bf6275c4517b293b9"
+    },
+    {
+      "source": "../en-reve/src/main.js",
+      "path": "qualified-source/en-reve/src/main.js.gz",
+      "rawBytes": 2081,
+      "archiveBytes": 408,
+      "sourceSha256": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "archiveSha256": "ed30b3b19a1e81264c30ef9a00ff09790dc372b3184d3fbdae5ca81fa879a47a"
+    },
+    {
+      "source": "../en-reve/src/model.ts",
+      "path": "qualified-source/en-reve/src/model.ts.gz",
+      "rawBytes": 2105,
+      "archiveBytes": 821,
+      "sourceSha256": "db63e21d6055808f15e9e9ea942d321871f6150b2f9b6b16c4e442e02ef79f65",
+      "archiveSha256": "ce5e221f8dc539f1bcce5c77af8ee9b987a4237822c5cea6b82b6a71a3319c46"
+    },
+    {
+      "source": "../en-reve/src/styles.css",
+      "path": "qualified-source/en-reve/src/styles.css.gz",
+      "rawBytes": 15222,
+      "archiveBytes": 2722,
+      "sourceSha256": "9e4ba3f86fe9662f74ee88b67a326f292652e0c5a0ecce8fc9fe5ae5d9fc14ff",
+      "archiveSha256": "e7a7383a94a6d1eb8b06b70ec3c909695a504cce14fe9276ee9bc8e23b7b2a8f"
+    },
+    {
+      "source": "../en-reve/src/template.ts",
+      "path": "qualified-source/en-reve/src/template.ts.gz",
+      "rawBytes": 29231,
+      "archiveBytes": 7709,
+      "sourceSha256": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "archiveSha256": "37d47b63fd5fa842c84d84a21aaa33f4a44eb50c8758adef3d17dda9ddf8a42d"
+    },
+    {
+      "source": "../en-reve/src/theme.css",
+      "path": "qualified-source/en-reve/src/theme.css.gz",
+      "rawBytes": 36958,
+      "archiveBytes": 4835,
+      "sourceSha256": "e5d19df93da00fa403fd73343cf07025de9a48a751ef5750b4094c707fe74bbe",
+      "archiveSha256": "2e8aa5155ed142ddc804cedfe7967665284a08f608e556c9baf91755eabd190c"
+    },
+    {
+      "source": "../en-reve/src/token-copy.ts",
+      "path": "qualified-source/en-reve/src/token-copy.ts.gz",
+      "rawBytes": 2651,
+      "archiveBytes": 1096,
+      "sourceSha256": "ae7e2ee7882d81b89e2d9427bb3f18f01e886660fcbf62d141f714dd114dc720",
+      "archiveSha256": "23d7800cd0c72f483d9aad085383864fd463f6ed3e6e0383e9c97576430ef83c"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-elements-0.1.0-main-1fd12d7737b1.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-elements-0.1.0-main-1fd12d7737b1.tgz.gz",
+      "rawBytes": 1230750,
+      "archiveBytes": 1228552,
+      "sourceSha256": "1fd12d7737b1880fe160eb61d7f95021140247d92e45fae6dbdcb1388985b3aa",
+      "archiveSha256": "8cf0e9385c912bfc251f8bf14169ca4d5867417788c5c0e4eb2bf48829af048c"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-elements-0.1.0.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-elements-0.1.0.tgz.gz",
+      "rawBytes": 1012111,
+      "archiveBytes": 1010381,
+      "sourceSha256": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+      "archiveSha256": "9ccb69014b576c90798cf18ce15fc121fe2a18c030aa9a3a977b05499f374553"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-primitives-0.1.0-main-3c07d968d025.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-primitives-0.1.0-main-3c07d968d025.tgz.gz",
+      "rawBytes": 158755,
+      "archiveBytes": 158823,
+      "sourceSha256": "3c07d968d02516aed51844276b88137964e55b4d0ed621d336293f2d2ba0656d",
+      "archiveSha256": "efb3eec17fa1b0ddc88f1409b57e996100092fa325d1dc23382dc69aa1c9bf41"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-primitives-0.1.0.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-primitives-0.1.0.tgz.gz",
+      "rawBytes": 149481,
+      "archiveBytes": 149549,
+      "sourceSha256": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+      "archiveSha256": "4d4633ff11a5a913fefd6e319197e8be6da1521c89e3b476fa9fbb6604282d70"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-styles-0.1.0-main-e9dd7ff5eb76.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-styles-0.1.0-main-e9dd7ff5eb76.tgz.gz",
+      "rawBytes": 150732,
+      "archiveBytes": 150728,
+      "sourceSha256": "e9dd7ff5eb76279e246ee74813e8e9febaad8bd1f776c0800fcf95c9dd204f2d",
+      "archiveSha256": "285d12e86220893eb8eca277993b4ecfa418d71f84b661f7ebf6916cc99c9367"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-styles-0.1.0.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-styles-0.1.0.tgz.gz",
+      "rawBytes": 135354,
+      "archiveBytes": 135160,
+      "sourceSha256": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+      "archiveSha256": "959035d7b1c5f87f6593da70d4564c8c68bd9fa1aa97c1a1fdca26e3bfbac9c9"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-tokens-0.1.0-main-41c2f927c730.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-tokens-0.1.0-main-41c2f927c730.tgz.gz",
+      "rawBytes": 452243,
+      "archiveBytes": 421749,
+      "sourceSha256": "41c2f927c7301eb4331e6398a8b89b1d1e642d868fe46b5f03125a9daef6e140",
+      "archiveSha256": "d4e95c7f6802781fae81651d0d5775d8c26189400ab1c885a3bc883706a9ab04"
+    },
+    {
+      "source": "../en-reve/vendor/en-reve-tokens-0.1.0.tgz",
+      "path": "qualified-source/en-reve/vendor/en-reve-tokens-0.1.0.tgz.gz",
+      "rawBytes": 387069,
+      "archiveBytes": 360972,
+      "sourceSha256": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+      "archiveSha256": "bc2914f7935a926c519feeceba462f6d5ab30ffdf1476748cb5d7ee01173aee4"
+    },
+    {
+      "source": "../en-reve/vite.config.js",
+      "path": "qualified-source/en-reve/vite.config.js.gz",
+      "rawBytes": 272,
+      "archiveBytes": 192,
+      "sourceSha256": "cd5bace161a6a47b3c7550399cf656d2fe7ba972d5bcf67442ac8e50d29479a3",
+      "archiveSha256": "6b500c1c939b884f2804fad52962a7eadb55f25c9471fd925810e43a280b0af8"
+    },
+    {
+      "source": "../shared/layout.css",
+      "path": "qualified-source/shared/layout.css.gz",
+      "rawBytes": 4522,
+      "archiveBytes": 1381,
+      "sourceSha256": "d5772d88fc2734a6eff66170abe045ef3138d87982199805bbc571bd613e1cb8",
+      "archiveSha256": "277f50c60895d20645aead9c0d0c1f9cb77a3ccc2b37f698fff91ba898f28f8e"
+    },
+    {
+      "source": "../shared/progress.js",
+      "path": "qualified-source/shared/progress.js.gz",
+      "rawBytes": 245,
+      "archiveBytes": 196,
+      "sourceSha256": "c35ead2e7f6c8546aa9045c09da7d47cba79a1be2c54200cfeb037206eb84500",
+      "archiveSha256": "f8fd7431ee2bdcad02e46479078d9d9caf17e5bfb51b9f13da2ae1dab97fb6e3"
+    },
+    {
+      "source": "../shared/Showcase.jsx",
+      "path": "qualified-source/shared/Showcase.jsx.gz",
+      "rawBytes": 26249,
+      "archiveBytes": 7066,
+      "sourceSha256": "008fc1d638c51df459de997183f94c75d3d33f29a5949972a5cc0c8a6e5444b0",
+      "archiveSha256": "e4abfbcd75891d3b7975bd5509a4d93df76d542ea079fc16c367c649b21f6c7e"
+    },
+    {
+      "source": "../shared/web-showcase.js",
+      "path": "qualified-source/shared/web-showcase.js.gz",
+      "rawBytes": 18269,
+      "archiveBytes": 6491,
+      "sourceSha256": "1e88cc4586b4bb2888ed8e77dd43705539c0f3e40975a2b658d16cf541b1d581",
+      "archiveSha256": "d94a20585fdaa8f8edd99a0ce0acd22edca8744d527b49ed0632a9dc2ada9b5b"
+    },
+    {
+      "source": "../tools/isolation-plugin.mjs",
+      "path": "qualified-source/tools/isolation-plugin.mjs.gz",
+      "rawBytes": 1792,
+      "archiveBytes": 772,
+      "sourceSha256": "a51b46617289507e4ee535ce2c25cd69ba6c9099f1de77a7faeac7522afe6200",
+      "archiveSha256": "22e2082ff451ab4883f27ae0d0e3bd24395efcc3d129954300cd35a317a74330"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/package-lock.json",
+      "path": "prior-fixture/package-lock.json.gz",
+      "rawBytes": 47614,
+      "archiveBytes": 9692,
+      "sourceSha256": "28a5a5695c5ab1f689d5d8cfaafe3457d5731aa3e0596d1c668e78fb829679fc",
+      "archiveSha256": "f10857a9b82eb6c99539d8652583aa533307d0466505a54cc9c542043ad38cba"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/package.json",
+      "path": "prior-fixture/package.json.gz",
+      "rawBytes": 689,
+      "archiveBytes": 305,
+      "sourceSha256": "53b31be830df923ec0d15ba2c0c289a061e81c0e0e21600928ee2a80d1577028",
+      "archiveSha256": "595cf60ab7cec729a18bb9cb02d2871612d7baf97ae8bf75a55b7ecb27ca07d7"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/snapshot.json",
+      "path": "prior-fixture/snapshot.json.gz",
+      "rawBytes": 1785,
+      "archiveBytes": 988,
+      "sourceSha256": "c3fbd4c000923175f3374a4a11bb20d85918b3e6fab5a0c5db2de35f4a976e1d",
+      "archiveSha256": "280707ea15235771afce1040e221e21925283af3e4177c46fa1c926aa0e03936"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/app.ts",
+      "path": "prior-fixture/src/app.ts.gz",
+      "rawBytes": 6358,
+      "archiveBytes": 2311,
+      "sourceSha256": "8387943a0bf9a1df32fcf09662a0d11d33495c88a979c2df1170d91dde908318",
+      "archiveSha256": "30bd13c8a70e1fb069b7383b93c8b5edebd826d6f5564da5eb7487a87c3ef177"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/base.css",
+      "path": "prior-fixture/src/base.css.gz",
+      "rawBytes": 571,
+      "archiveBytes": 285,
+      "sourceSha256": "572a50f9bd509cf1ca11dcd525be0800e5321cc94aa58e79fa26367f34efb7c0",
+      "archiveSha256": "bd19355f3da71892211bc161a6d7bf63689fe78d46c173e9e31379db6469a90f"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/change-consumption.ts",
+      "path": "prior-fixture/src/change-consumption.ts.gz",
+      "rawBytes": 1891,
+      "archiveBytes": 832,
+      "sourceSha256": "e1bc1b6b9d72fa561f6043721f8165c2cf78ace78720ecce3a07bc01d661c8be",
+      "archiveSha256": "372ced05c942dcd18de79337a9f683f0af4c1c725bd5c82bf6275c4517b293b9"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/main.js",
+      "path": "prior-fixture/src/main.js.gz",
+      "rawBytes": 2081,
+      "archiveBytes": 408,
+      "sourceSha256": "685b2926552961cfb3e394652a6f5994d133d926280264d5a5f2bfa80441fc09",
+      "archiveSha256": "ed30b3b19a1e81264c30ef9a00ff09790dc372b3184d3fbdae5ca81fa879a47a"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/model.ts",
+      "path": "prior-fixture/src/model.ts.gz",
+      "rawBytes": 2105,
+      "archiveBytes": 821,
+      "sourceSha256": "db63e21d6055808f15e9e9ea942d321871f6150b2f9b6b16c4e442e02ef79f65",
+      "archiveSha256": "ce5e221f8dc539f1bcce5c77af8ee9b987a4237822c5cea6b82b6a71a3319c46"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/styles.css",
+      "path": "prior-fixture/src/styles.css.gz",
+      "rawBytes": 15222,
+      "archiveBytes": 2722,
+      "sourceSha256": "9e4ba3f86fe9662f74ee88b67a326f292652e0c5a0ecce8fc9fe5ae5d9fc14ff",
+      "archiveSha256": "e7a7383a94a6d1eb8b06b70ec3c909695a504cce14fe9276ee9bc8e23b7b2a8f"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/template.ts",
+      "path": "prior-fixture/src/template.ts.gz",
+      "rawBytes": 29231,
+      "archiveBytes": 7709,
+      "sourceSha256": "d05fc1be918eab7d7fe750e002e6b746d4c21753276c6cfb14200d3567c27b61",
+      "archiveSha256": "37d47b63fd5fa842c84d84a21aaa33f4a44eb50c8758adef3d17dda9ddf8a42d"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/theme.css",
+      "path": "prior-fixture/src/theme.css.gz",
+      "rawBytes": 34069,
+      "archiveBytes": 4431,
+      "sourceSha256": "b3271186d7e800872f25c5d5b785abd5eb3f6705e686dba0c5cd5fb82703c14c",
+      "archiveSha256": "d74f71fcd12a2ec123781180113dbbeb6843de9c3528a7f8850a8d37314b042b"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/src/token-copy.ts",
+      "path": "prior-fixture/src/token-copy.ts.gz",
+      "rawBytes": 2651,
+      "archiveBytes": 1096,
+      "sourceSha256": "ae7e2ee7882d81b89e2d9427bb3f18f01e886660fcbf62d141f714dd114dc720",
+      "archiveSha256": "23d7800cd0c72f483d9aad085383864fd463f6ed3e6e0383e9c97576430ef83c"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/vendor/en-reve-elements-0.1.0.tgz",
+      "path": "prior-fixture/vendor/en-reve-elements-0.1.0.tgz.gz",
+      "rawBytes": 1012111,
+      "archiveBytes": 1010381,
+      "sourceSha256": "33f684de61949fb25a489f54cb8fedc4232aa97b1f50cfeb8b03198abc3d2c9d",
+      "archiveSha256": "9ccb69014b576c90798cf18ce15fc121fe2a18c030aa9a3a977b05499f374553"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/vendor/en-reve-primitives-0.1.0.tgz",
+      "path": "prior-fixture/vendor/en-reve-primitives-0.1.0.tgz.gz",
+      "rawBytes": 149481,
+      "archiveBytes": 149549,
+      "sourceSha256": "b2f699486258afb1f3301c721af49bd3369585fb71bc90e40d16b7d66ef9aeff",
+      "archiveSha256": "4d4633ff11a5a913fefd6e319197e8be6da1521c89e3b476fa9fbb6604282d70"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/vendor/en-reve-styles-0.1.0.tgz",
+      "path": "prior-fixture/vendor/en-reve-styles-0.1.0.tgz.gz",
+      "rawBytes": 135354,
+      "archiveBytes": 135160,
+      "sourceSha256": "401dbbefd4ba6c1452c00d52f7debc7e7f9897fd534c8fe0914ec3d507d01b85",
+      "archiveSha256": "959035d7b1c5f87f6593da70d4564c8c68bd9fa1aa97c1a1fdca26e3bfbac9c9"
+    },
+    {
+      "source": "reports/en-reve-main/prior-fixture/vendor/en-reve-tokens-0.1.0.tgz",
+      "path": "prior-fixture/vendor/en-reve-tokens-0.1.0.tgz.gz",
+      "rawBytes": 387069,
+      "archiveBytes": 360972,
+      "sourceSha256": "f302722e4cfe30a8015bf072efa910de6769daf27c40b151770a3814bb0e77b3",
+      "archiveSha256": "bc2914f7935a926c519feeceba462f6d5ab30ffdf1476748cb5d7ee01173aee4"
+    },
+    {
+      "source": "reports/en-reve-main/README.md",
+      "path": "analysis/README.md.gz",
+      "rawBytes": 3160,
+      "archiveBytes": 1577,
+      "sourceSha256": "4ed55bb3c358e5ed470ced22341da864e068fdf2039e0deec13012d01d14a9ed",
+      "archiveSha256": "56d0906ccc2d32c76ad87f85b2a85724d75c112cdb83e745054f9c975696b5bf"
+    },
+    {
+      "source": "reports/en-reve-main/acquisition.log",
+      "path": "analysis/acquisition.log.gz",
+      "rawBytes": 20220,
+      "archiveBytes": 2346,
+      "sourceSha256": "3b52f45b194824064b07934cd490927babda6885f6aa1a964fdc74b8f045c53d",
+      "archiveSha256": "7b9ae93670c4358a02c1b8b3aca97a89cb941f4e339d53d25f6d49328a442548"
+    },
+    {
+      "source": "reports/en-reve-main/build-provenance.json",
+      "path": "analysis/build-provenance.json.gz",
+      "rawBytes": 152664,
+      "archiveBytes": 55590,
+      "sourceSha256": "5b2cf3b48ed4ec307d3a3aa0b163058f483e14570c8e5be94a1e436c01d5ece8",
+      "archiveSha256": "6f366d5150fbbc9371b6210bf2500ba07b730ebe2a83f1019699dd83874a42fa"
+    },
+    {
+      "source": "reports/en-reve-main/build.log",
+      "path": "analysis/build.log.gz",
+      "rawBytes": 1001,
+      "archiveBytes": 527,
+      "sourceSha256": "0f46b1b46ed6570b13c6fa564e00addce0ece1cbad33cf8dcce40d5e2b724e14",
+      "archiveSha256": "7dd8666d4dd5cc02bc73c24dd69ab7a1e9842e7be6feed01f86f60dbc6b944af"
+    },
+    {
+      "source": "reports/en-reve-main/bundles.json",
+      "path": "analysis/bundles.json.gz",
+      "rawBytes": 4004,
+      "archiveBytes": 1238,
+      "sourceSha256": "cf0d62e7ce267fe4688b7f1dbb689a6f8d2110c9aab623778a290a30122e470b",
+      "archiveSha256": "ae33e1dece08fc605fe579f53c8f17b317c79d46d2c30c753a68857f4402d279"
+    },
+    {
+      "source": "reports/en-reve-main/bundles.md",
+      "path": "analysis/bundles.md.gz",
+      "rawBytes": 678,
+      "archiveBytes": 388,
+      "sourceSha256": "ff45238e05909a81c366ee3f6217d1dbd35a8f0d9373f5670ca46711e48c7f86",
+      "archiveSha256": "3109cad575d93f3c1dc2b0a34c5c9bde0185fb5aec9b0aafec0b5da272e136e1"
+    },
+    {
+      "source": "reports/en-reve-main/calibration.log",
+      "path": "analysis/calibration.log.gz",
+      "rawBytes": 33,
+      "archiveBytes": 53,
+      "sourceSha256": "ff7da1f90c1775b13120304abeb415ef2ba2d468c326b9534d901573538305c9",
+      "archiveSha256": "ed4e72a65ac302e2e6b9676c99412a3e26727f3fee370e2a1fa40f009b0748c9"
+    },
+    {
+      "source": "reports/en-reve-main/config.json",
+      "path": "analysis/config.json.gz",
+      "rawBytes": 6926,
+      "archiveBytes": 2919,
+      "sourceSha256": "44396c876c323a1f91d76b188cfe2ca328908dffea73a25431cfc29312a14d7c",
+      "archiveSha256": "8a03e755a857351f77f15de342405fee230028e4f9ac607f7b6eab5ece70999f"
+    },
+    {
+      "source": "reports/en-reve-main/execution.json",
+      "path": "analysis/execution.json.gz",
+      "rawBytes": 6149,
+      "archiveBytes": 744,
+      "sourceSha256": "e370905f7dc96862bf6d20912e172b9003bedba37742441cc8032560a941a18f",
+      "archiveSha256": "f639f2f9fe8d963c4e5789200b03fa88c505d5bfac98305b42c5d5eacf264b98"
+    },
+    {
+      "source": "reports/en-reve-main/final-verification.log",
+      "path": "analysis/final-verification.log.gz",
+      "rawBytes": 573,
+      "archiveBytes": 337,
+      "sourceSha256": "c9efb6aa0ba53cd668d07587763beed281567aa1fa1d1e3bea6f26fc89de000c",
+      "archiveSha256": "89be6ffec7d6a743b6713b5a2a8d7a724e7d2f48d39a09b9729e16e9abf7e7fc"
+    },
+    {
+      "source": "reports/en-reve-main/functional.log",
+      "path": "analysis/functional.log.gz",
+      "rawBytes": 1098,
+      "archiveBytes": 400,
+      "sourceSha256": "c2340782efcd87c0d47cef69160193bab27fceefb93afd91fbd97f9cbcc96eda",
+      "archiveSha256": "1c21dd8a19a0107725329924dc831e3269e4bc04e85b6ebb59381385d8475f33"
+    },
+    {
+      "source": "reports/en-reve-main/harness-tests.log",
+      "path": "analysis/harness-tests.log.gz",
+      "rawBytes": 3925,
+      "archiveBytes": 1823,
+      "sourceSha256": "0b0406e1312bf06433c48340d132f17c3b111702e47fc103c6c06a43116e0ffe",
+      "archiveSha256": "778cacb4eca47e5bccbaa7f786c7ab2be5c81595b383c9a4e76b7ebf96e094a9"
+    },
+    {
+      "source": "reports/en-reve-main/integration-test.log",
+      "path": "analysis/integration-test.log.gz",
+      "rawBytes": 221,
+      "archiveBytes": 181,
+      "sourceSha256": "ebd19310b5d52ed0ec927fb95513eeb1813bc3a0ce7929d9d75c0be7c5d004b6",
+      "archiveSha256": "6cd8d0f606fd85ba4451ada235cf269cbc35311be03f6adae16520edfec62202"
+    },
+    {
+      "source": "reports/en-reve-main/inventory.json",
+      "path": "analysis/inventory.json.gz",
+      "rawBytes": 61037,
+      "archiveBytes": 13525,
+      "sourceSha256": "0a115d445827a4e20bda6edc4a705cb8f98e34ae4407684642f5858e72ab5e53",
+      "archiveSha256": "cead646d9349e2550a9dbbce5e81174db9eba9897baf78e5be7bd33162b83166"
+    },
+    {
+      "source": "reports/en-reve-main/main-integration.json",
+      "path": "analysis/main-integration.json.gz",
+      "rawBytes": 134927,
+      "archiveBytes": 10046,
+      "sourceSha256": "7febd48cc1cf3c35effc101ef395929ae096de9abc15b3fbd81ed7131c3dfd7e",
+      "archiveSha256": "cfc9bf286148c63e9b56b3710a08017183b45590b1fb9619773bbe98a3733589"
+    },
+    {
+      "source": "reports/en-reve-main/page-refresh.json",
+      "path": "analysis/page-refresh.json.gz",
+      "rawBytes": 1063,
+      "archiveBytes": 609,
+      "sourceSha256": "7cf103a588f6091b6f3be1e0de87295394ee1f063e964a97c8951511a2c7ec04",
+      "archiveSha256": "21a79b0b7f471d81339ef12dadaa5d4ba9c47d313f90f085674bc5eaa68e303d"
+    },
+    {
+      "source": "reports/en-reve-main/pre-sync.json",
+      "path": "analysis/pre-sync.json.gz",
+      "rawBytes": 6224,
+      "archiveBytes": 2707,
+      "sourceSha256": "2b598f3b71581cdbddc17f36545636d7f1bf8cf7ff359d293bc50261ce2a10f7",
+      "archiveSha256": "f4a0aa90457f8e589d278bfcc9a74d6b8b835410ecdc4f4bc1f03580a879779c"
+    },
+    {
+      "source": "reports/en-reve-main/pre-sync.patch",
+      "path": "analysis/pre-sync.patch.gz",
+      "rawBytes": 444136,
+      "archiveBytes": 76400,
+      "sourceSha256": "29915d2c5f0f974cd212596d07dc4f05040dd01423fa4aa4f7ecad2d4190025a",
+      "archiveSha256": "ba7a194f494fdbb185825f4ae335362bdf49c999f0d96ecaf3bd60442ffeb5b5"
+    },
+    {
+      "source": "reports/en-reve-main/prepare.log",
+      "path": "analysis/prepare.log.gz",
+      "rawBytes": 109,
+      "archiveBytes": 107,
+      "sourceSha256": "dd3dfe6c88a6a8f44fe845b96dab0a30475e5c7f4dbfe8a21b0bde01cb53d509",
+      "archiveSha256": "416b865dae98ece9f51da94947eb373334752f45c235503bfb74602ce3b7a89f"
+    },
+    {
+      "source": "reports/en-reve-main/preservation-verification.json",
+      "path": "analysis/preservation-verification.json.gz",
+      "rawBytes": 470,
+      "archiveBytes": 306,
+      "sourceSha256": "1f714289a5d3ca182835a0659de43ca2895096471e66966b4485afb2fb079d85",
+      "archiveSha256": "f28607d9409eb58842dcf095709e0797d5b2a29bed09101569e2be5a78afd725"
+    },
+    {
+      "source": "reports/en-reve-main/preservation.json",
+      "path": "analysis/preservation.json.gz",
+      "rawBytes": 402,
+      "archiveBytes": 295,
+      "sourceSha256": "9cc721d7a6d01c76c80f5805e4a5585ca34b0a6c7e94f8f98fc7a0fd023ab26d",
+      "archiveSha256": "a13a7594cfb887d250251147bbdc06cbb567ee83ea1d679381071fd96bd9cc44"
+    },
+    {
+      "source": "reports/en-reve-main/preservation.log",
+      "path": "analysis/preservation.log.gz",
+      "rawBytes": 471,
+      "archiveBytes": 307,
+      "sourceSha256": "0c8fb87d1447e0bdec8c5bc3276228ad53dfb613046edf0fef008ce02d79f241",
+      "archiveSha256": "1a7b0da1028b062622ccd3efbd857df5dfc13f3fc389eec00b04836fdef64b19"
+    },
+    {
+      "source": "reports/en-reve-main/preview.log",
+      "path": "analysis/preview.log.gz",
+      "rawBytes": 131,
+      "archiveBytes": 130,
+      "sourceSha256": "4a5d95bda00b12b5b1e38e91693c651a55f063687c0e5dd2e1e3cd2fbc9a6890",
+      "archiveSha256": "677734429f18d688a1bdb0f7c0d0fc07d57cc6f38aa8de237deccfe7c899eece"
+    },
+    {
+      "source": "reports/en-reve-main/prior-inventory.json",
+      "path": "analysis/prior-inventory.json.gz",
+      "rawBytes": 58207,
+      "archiveBytes": 12676,
+      "sourceSha256": "63525336622e9778f9be6a69a083d06f252d879c0c8351aee3d3e64968a60c5c",
+      "archiveSha256": "d777827f55f0ac6a1e337a4c3d03ed039fc4916516e708f67a59a05785d53a19"
+    },
+    {
+      "source": "reports/en-reve-main/prior-results.md",
+      "path": "analysis/prior-results.md.gz",
+      "rawBytes": 341503,
+      "archiveBytes": 72269,
+      "sourceSha256": "58ac2dab4c4bf39c95f3f8db510885944b77b03e24af8843301da7def53207d1",
+      "archiveSha256": "5cce398924416d1c8a23f42fe1bdfa081edb0a5c5b9a2e094cdd6a037a289706"
+    },
+    {
+      "source": "reports/en-reve-main/qualification.log",
+      "path": "analysis/qualification.log.gz",
+      "rawBytes": 1829,
+      "archiveBytes": 776,
+      "sourceSha256": "224827daadeeb86764196e39f9c7ba92a27b882d57eea6645fa93ab04c0269a9",
+      "archiveSha256": "fc41e1f7f13d068178975ab5cf1973433b051cb7089ff2cdb2919b2479e3b368"
+    },
+    {
+      "source": "reports/en-reve-main/reader-build.log",
+      "path": "analysis/reader-build.log.gz",
+      "rawBytes": 914,
+      "archiveBytes": 543,
+      "sourceSha256": "f6c880497c81d5b29a676ad003b1b833bdf84d38ab8594e13b4426a48c2deb20",
+      "archiveSha256": "9235f5520814ad2fcc8217c6f7687df7f03202019f1446c0cde1983a4a92edac"
+    },
+    {
+      "source": "reports/en-reve-main/reader-check.log",
+      "path": "analysis/reader-check.log.gz",
+      "rawBytes": 283,
+      "archiveBytes": 143,
+      "sourceSha256": "81cd4771b55350d5c94f05f99cc1942284f6721390d2cf877a91b7a6641b1054",
+      "archiveSha256": "6e603c48228dbb23da7a08cbe1d8876b95ce16d57c52b50e5768a6a6be451f28"
+    },
+    {
+      "source": "reports/en-reve-main/reader-server.log",
+      "path": "analysis/reader-server.log.gz",
+      "rawBytes": 142,
+      "archiveBytes": 138,
+      "sourceSha256": "463f2313f60370fac5c87ab510cae0a479586e44cfe5e36e832c4e968cdb5932",
+      "archiveSha256": "1c8d1dbb83fbb4373cd2382f3aa7d8aea5c335c66b82403ff15bf8d55ee11f7c"
+    },
+    {
+      "source": "reports/en-reve-main/reader-unit.log",
+      "path": "analysis/reader-unit.log.gz",
+      "rawBytes": 685,
+      "archiveBytes": 429,
+      "sourceSha256": "e658e3adc269bd5cade933cbbd68488d696ba83066de77b91b2b1927785b0edc",
+      "archiveSha256": "3c081be257f147dc479212ab5ab0093eb706d139e81070c8fc0e2e114b042b99"
+    },
+    {
+      "source": "reports/en-reve-main/report-routes.json",
+      "path": "analysis/report-routes.json.gz",
+      "rawBytes": 977,
+      "archiveBytes": 366,
+      "sourceSha256": "33258e2646122fb5f307a5a0e4fbf5a77e1f359f6b388fb8bbeadbda140bff9d",
+      "archiveSha256": "df7dd1c37ebbd74e42d43176707bb68ddbe0b7a8086714c8216362d4ef68b8ec"
+    },
+    {
+      "source": "reports/en-reve-main/report.log",
+      "path": "analysis/report.log.gz",
+      "rawBytes": 341,
+      "archiveBytes": 253,
+      "sourceSha256": "d0e28283334cfde1272996e76c768bde7e581ae6ad0bee80d9ff7f9e10087e0f",
+      "archiveSha256": "a374406b3e0781fbd4fc030920abc3466372dd9cb357d8084c7a5c0a5a85c868"
+    },
+    {
+      "source": "reports/en-reve-main/shadow-ownership.json",
+      "path": "analysis/shadow-ownership.json.gz",
+      "rawBytes": 280037,
+      "archiveBytes": 18091,
+      "sourceSha256": "fa45552510282611b301e1fac355bb346c1beddcebf37379cce9bd8233322bc4",
+      "archiveSha256": "0fce2eccfd00e8d1bca96974d63f8508af740887a6636f3ee4946f33f0e5be9e"
+    },
+    {
+      "source": "reports/en-reve-main/startup-calibration.json",
+      "path": "analysis/startup-calibration.json.gz",
+      "rawBytes": 1437,
+      "archiveBytes": 676,
+      "sourceSha256": "bbab19d32ee47bcceb93bacbdf1d638208a643d3be9d32d8a70f669f7a5c3c85",
+      "archiveSha256": "290b00cbb0d2a4f02be0cf3a6bec6e506bc89b3014a5c2501af91165a913ab29"
+    },
+    {
+      "source": "reports/en-reve-main/structural.log",
+      "path": "analysis/structural.log.gz",
+      "rawBytes": 2131,
+      "archiveBytes": 478,
+      "sourceSha256": "18f0ef5e1cbbb12d28da5bc97a50a2494f0f90ce7afae599a5db1502d61b858e",
+      "archiveSha256": "502ac2874d009299551ff873b8b9828dbff0459cdbd2b46f7d3e0f38a423dba1"
+    },
+    {
+      "source": "reports/en-reve-main/sync-receipt.json",
+      "path": "analysis/sync-receipt.json.gz",
+      "rawBytes": 369,
+      "archiveBytes": 242,
+      "sourceSha256": "46c31e87f4501ff7941ec0f8765b41bc3302c75cbfa00b22121b4bf4d545455c",
+      "archiveSha256": "bfa354102ba3f3b07656004bd8368f6d4289bffc8801a7cd818eb1694df22f8f"
+    },
+    {
+      "source": "reports/en-reve-main/sync.log",
+      "path": "analysis/sync.log.gz",
+      "rawBytes": 27359,
+      "archiveBytes": 3381,
+      "sourceSha256": "4fa803df72cfa848e0861c17b04106dcbccd286fb62b40981a3411e1a0fe5c69",
+      "archiveSha256": "d32065a9322a0f70d4b7922c3a09d7040b91b93f7290264fbb93c5b93353437e"
+    },
+    {
+      "source": "reports/en-reve-main/tables.json",
+      "path": "analysis/tables.json.gz",
+      "rawBytes": 338348,
+      "archiveBytes": 24911,
+      "sourceSha256": "64062b99e9e8911da2e59a0db473f451084ab282640b008153d96dc0da96a9a1",
+      "archiveSha256": "27bc2e420210c46584e81a2e0a3fb52ea86fe9b273953fd4c2e1d3c6d49a3a3f"
+    },
+    {
+      "source": "reports/en-reve-main/verification.json",
+      "path": "analysis/verification.json.gz",
+      "rawBytes": 5512,
+      "archiveBytes": 1747,
+      "sourceSha256": "11050556ac566d343809d6ed1a4db471cbb521ea79384a891f0800033a76ec6f",
+      "archiveSha256": "322eb6340554bb7b696247083247c8c655ad32edbe8535dd98db64e432c80564"
+    },
+    {
+      "source": "experiments/archive-en-reve-main.mjs",
+      "path": "analysis-source/archive-en-reve-main.mjs.gz",
+      "rawBytes": 3808,
+      "archiveBytes": 1486,
+      "sourceSha256": "9b93d8a2bbf4e4485bf667945753e28aee6f7cb41fec02120b595d4454711af8",
+      "archiveSha256": "2b3a5eed1e39d31efdf405a6aca949a8c6943e879c2990461feb2e5e1b735f9f"
+    },
+    {
+      "source": "experiments/build-en-reve-main.mjs",
+      "path": "analysis-source/build-en-reve-main.mjs.gz",
+      "rawBytes": 3759,
+      "archiveBytes": 1569,
+      "sourceSha256": "ff7ae478e3f521b8e9a0aadde6eeffdb7d7d82c9e6c0d3fc1bc60dff5dd5544f",
+      "archiveSha256": "82b691c575bd16d7d285a29981b53ebfd1a927dcd1e1b7378a8378b993bf1d18"
+    },
+    {
+      "source": "experiments/calibrate-en-reve-main-startup.mjs",
+      "path": "analysis-source/calibrate-en-reve-main-startup.mjs.gz",
+      "rawBytes": 2493,
+      "archiveBytes": 1170,
+      "sourceSha256": "56bd45e8f1b4b3869cce52a02754d27db52c819eb37dfc5c5998e3b79af4193e",
+      "archiveSha256": "1a91e1ad100fbf1596cdf88336e768adfe9573dfbde11d8221f8c04710d53ede"
+    },
+    {
+      "source": "experiments/dom-census.mjs",
+      "path": "analysis-source/dom-census.mjs.gz",
+      "rawBytes": 4775,
+      "archiveBytes": 1861,
+      "sourceSha256": "2417d3702f07669c4fba892e989e77f3fff20df7ac747d03cd9164ea5e9d580b",
+      "archiveSha256": "dd2ac6a9f7c75ab5a23eff8dc16d180792db8cbc13aa0b8978eac702971739d6"
+    },
+    {
+      "source": "experiments/dom-ownership.mjs",
+      "path": "analysis-source/dom-ownership.mjs.gz",
+      "rawBytes": 2527,
+      "archiveBytes": 1069,
+      "sourceSha256": "c70315ff21f533129ce5954a86f0232933c72fb6b1c2247e329c815380d966b4",
+      "archiveSha256": "2e369e211b8d63fa22a6f2cf1beb7e489e7797a1b26bf3dce3adfb392517bebd"
+    },
+    {
+      "source": "experiments/finish-en-reve-main.mjs",
+      "path": "analysis-source/finish-en-reve-main.mjs.gz",
+      "rawBytes": 1635,
+      "archiveBytes": 772,
+      "sourceSha256": "35604583bfbc11e543dcedc79df99a295864f9e04b5bd2cc3251d57c11dfb799",
+      "archiveSha256": "1c213f75d9b16efd1075cbfad8ae3c20a8d2f16c35670ff173e9226ee7e0cee8"
+    },
+    {
+      "source": "experiments/integrate-en-reve-main.mjs",
+      "path": "analysis-source/integrate-en-reve-main.mjs.gz",
+      "rawBytes": 7022,
+      "archiveBytes": 2535,
+      "sourceSha256": "9da844390eaaee0760609dcc6b4855248068e488b791c127dbf68ebd0ef467b1",
+      "archiveSha256": "65c1217c821cdac47249f0c583049377b3486d5d89d228207029dc749bf041e7"
+    },
+    {
+      "source": "experiments/pass2-metrics.mjs",
+      "path": "analysis-source/pass2-metrics.mjs.gz",
+      "rawBytes": 626,
+      "archiveBytes": 358,
+      "sourceSha256": "a1bdaa57f280998f4e4f454c3b7771a063294e8b6c703b831c86d5f2d0e90339",
+      "archiveSha256": "3f7304953a51331ece25b1a685c5f0e9f6bf8e941b456dda604c9f80939e0efd"
+    },
+    {
+      "source": "experiments/report-en-reve-main.mjs",
+      "path": "analysis-source/report-en-reve-main.mjs.gz",
+      "rawBytes": 50119,
+      "archiveBytes": 15818,
+      "sourceSha256": "26092c37c5735be17c18d9f5ed91c43cc4b3ca7e4be1f98f3a637015f60b6552",
+      "archiveSha256": "c2603e1d7e6074db493103a5980b6287052b2a3a39a3b06248e30bf21cb667dc"
+    },
+    {
+      "source": "experiments/run-dom-ownership.mjs",
+      "path": "analysis-source/run-dom-ownership.mjs.gz",
+      "rawBytes": 2446,
+      "archiveBytes": 1077,
+      "sourceSha256": "18d11bf30ce0cf546df5e642daa0cd2a15ce645c61e6f26a18ba99e95958ce86",
+      "archiveSha256": "9b98b5e0ace3c138ae9c0c2927682d18f6d5f8dafe022ea8cc0a2b75939afb92"
+    },
+    {
+      "source": "experiments/run-dom-review.mjs",
+      "path": "analysis-source/run-dom-review.mjs.gz",
+      "rawBytes": 6876,
+      "archiveBytes": 2775,
+      "sourceSha256": "fe6759f3b811689017fc3cd2498c9abc29ecc7140482985ad00334122edaa979",
+      "archiveSha256": "b204feca046aa9936fe4c94a5fff06819d5ba7da1a14953c89cf692efd2ca799"
+    },
+    {
+      "source": "experiments/run-en-reve-main.mjs",
+      "path": "analysis-source/run-en-reve-main.mjs.gz",
+      "rawBytes": 3515,
+      "archiveBytes": 1308,
+      "sourceSha256": "52544c7b39e3042b083e2bcba90f3286bede21653dd294c0521395e33da19070",
+      "archiveSha256": "0367de542107ce667dbc80e02411dcaf8315e58e729025e11920a1a0d957cc57"
+    },
+    {
+      "source": "experiments/update-en-reve-main-pages.mjs",
+      "path": "analysis-source/update-en-reve-main-pages.mjs.gz",
+      "rawBytes": 5310,
+      "archiveBytes": 2174,
+      "sourceSha256": "1d26c8a7a425222b8cd5bd892ef5e63a0a07344b778c110e69c757f2cd3d25ee",
+      "archiveSha256": "a6399d87bfccd8e2c58f8cfaedbc4a9921e475cea5e334bdec6028563f4df134"
+    },
+    {
+      "source": "experiments/verify-en-reve-main-evidence.mjs",
+      "path": "analysis-source/verify-en-reve-main-evidence.mjs.gz",
+      "rawBytes": 2587,
+      "archiveBytes": 875,
+      "sourceSha256": "1797d622602b31f7bc642926016965494d3188a08e1054ded562947a84de577d",
+      "archiveSha256": "a247dd748f5e396f356142e948c6b79ed69d841b869809b6e514c270e14a6b6b"
+    },
+    {
+      "source": "experiments/verify-en-reve-main-report.mjs",
+      "path": "analysis-source/verify-en-reve-main-report.mjs.gz",
+      "rawBytes": 3583,
+      "archiveBytes": 1549,
+      "sourceSha256": "9b6de640397cfc2ef607f0631c849cc1bfcf17adf1809a7cc2baf48002d27769",
+      "archiveSha256": "82957216e90f7082b42985a0ae34f32adaffa7fdec9a9563c68ccfe32d8122ae"
+    },
+    {
+      "source": "experiments/web-awesome-metric-groups.mjs",
+      "path": "analysis-source/web-awesome-metric-groups.mjs.gz",
+      "rawBytes": 4607,
+      "archiveBytes": 1561,
+      "sourceSha256": "e235aacfce01b3c5d37ad8992c790a7cc308f6b117dc9682ebe7e1a967bebfc7",
+      "archiveSha256": "f6549ac2a539cb32e00d4b2ac4ad2bb0ab42bcfddaae75455f3547419fe9970c"
+    },
+    {
+      "source": "../../plans/native-showcase-performance-results.md",
+      "path": "report/native-showcase-performance-results.md.gz",
+      "rawBytes": 413112,
+      "archiveBytes": 87952,
+      "sourceSha256": "5d8aa54aaf2c12f9443c5d21c9e2c5520e150445c050846123d70b4cf7c4af0b",
+      "archiveSha256": "8285bbd7944611e100429cb0dd5629b273a6a16cb00a65f8d8f520a55c9df405"
+    },
+    {
+      "source": "../../plans/native-showcase-en-reve-main-results.md",
+      "path": "report/native-showcase-en-reve-main-results.md.gz",
+      "rawBytes": 60340,
+      "archiveBytes": 14997,
+      "sourceSha256": "73020f82c5b991242f272deaf0fa15a96d51871cf2801401d05a2e46996bc316",
+      "archiveSha256": "905a57cc872b5c4d1a689fb0ca4d9e84567c409398134d0dc0ebc7f3091a81a9"
+    },
+    {
+      "source": "../../plans/native-showcase-dom-review.md",
+      "path": "report/native-showcase-dom-review.md.gz",
+      "rawBytes": 47067,
+      "archiveBytes": 14514,
+      "sourceSha256": "83c7a093979087e3dacccdb058be25a2c31190dbb1c925f94e1411ff311e04fb",
+      "archiveSha256": "049863b8cb7c5cf30793c7a89e55175a0ff5b35dc329ec08c897f390dbddedb6"
+    },
+    {
+      "source": "../../plans/native-showcase-web-awesome-results.md",
+      "path": "report/native-showcase-web-awesome-results.md.gz",
+      "rawBytes": 98840,
+      "archiveBytes": 21134,
+      "sourceSha256": "597f47427005f130ab0f57d57cf6330027bf31aecbeb10da6adef242f484363b",
+      "archiveSha256": "ac58ca69373180138e80337fe32a854afecea4eded4b66d9ce70a4b9bb1bbd4a"
+    },
+    {
+      "source": "../../plans/native-showcase-spectrum-gen2-results.md",
+      "path": "report/native-showcase-spectrum-gen2-results.md.gz",
+      "rawBytes": 83748,
+      "archiveBytes": 16204,
+      "sourceSha256": "3a28803636f7888bbfc7b38b76a75345fd63ba2306a93e48c8ea708644f15c5a",
+      "archiveSha256": "914b8df65654f4860fac6f895a56e5ccbd294364060152577f42cb19e6d92055"
+    },
+    {
+      "source": "../verification-en-reve-main.json",
+      "path": "qualification/verification-en-reve-main.json.gz",
+      "rawBytes": 8535,
+      "archiveBytes": 3226,
+      "sourceSha256": "9e403c340ac79b717419e85ba8c27f0a754f07f5f08c68068a1923189f5f7884",
+      "archiveSha256": "c03bf3af59b7eb4897bcc03d7ee4c6ea8430eccf67fca818e8b219cc835db0fa"
+    },
+    {
+      "source": "../artifacts/en-reve-main/en-reve-mobile.png",
+      "path": "qualification/standalone/en-reve-mobile.png.gz",
+      "rawBytes": 445497,
+      "archiveBytes": 421211,
+      "sourceSha256": "0bf09a995bd3412d2a65d5487b6fa3670b7d732f9b9837ee72e0aa8a5c2f1d96",
+      "archiveSha256": "2f7be70ef3eddb3b14fdba2724af224340170f39930b989700fcac0d696250d6"
+    },
+    {
+      "source": "../artifacts/en-reve-main/en-reve.png",
+      "path": "qualification/standalone/en-reve.png.gz",
+      "rawBytes": 450866,
+      "archiveBytes": 439604,
+      "sourceSha256": "316ecbb4201e24ea7b2e6f023047f122dd0eeb11a893efef650316682ac3840f",
+      "archiveSha256": "34747721446d9a569c29ba57a3c926b4eaeba50630a86f20125968f18d722b12"
+    },
+    {
+      "source": "../artifacts/en-reve-main/inspection.json",
+      "path": "qualification/standalone/inspection.json.gz",
+      "rawBytes": 680,
+      "archiveBytes": 409,
+      "sourceSha256": "4030fe9e285bf79a5514ae8615dbff16c07bd15fb480309d61faac26edc9067c",
+      "archiveSha256": "7f44621d6b3b798bbc36b2d46bc2bb8271d88fe3a1d1b044a082c277bb1df23d"
+    },
+    {
+      "source": "../artifacts/en-reve-main/secondary.json",
+      "path": "qualification/standalone/secondary.json.gz",
+      "rawBytes": 383,
+      "archiveBytes": 168,
+      "sourceSha256": "373f7d53aac37c47177ff4860f2aecc2f13af728c6c91e310b5fad6ea23c9a29",
+      "archiveSha256": "2f6067b9fb834e4fa9f42e48a05e515939b6f12393d6f0acd96b9a2405413eb8"
+    },
+    {
+      "source": "../artifacts/en-reve-main/smoke.json",
+      "path": "qualification/standalone/smoke.json.gz",
+      "rawBytes": 1473,
+      "archiveBytes": 349,
+      "sourceSha256": "2f952c867495ea98541439eaf291a5beccdfe9b110e280c147e52e2cf57875e0",
+      "archiveSha256": "d5a8b49ec6536670c978b270cd1a8a112678c177dd9b2767bebf5a16428c099b"
+    },
+    {
+      "source": "reports/functional-en-reve.json",
+      "path": "qualification/functional-en-reve.json.gz",
+      "rawBytes": 2927,
+      "archiveBytes": 608,
+      "sourceSha256": "79c7284ded51b4d10f36184c2338110be2da8fbcb4b20e73760decab92c5e034",
+      "archiveSha256": "737e3825c06c65410a5754d991280029d487fb1e5538fc887b1c801f1acac31c"
+    },
+    {
+      "source": "reports/en-reve-main/reader/chromium-loading.png",
+      "path": "reader/chromium-loading.png.gz",
+      "rawBytes": 252528,
+      "archiveBytes": 243226,
+      "sourceSha256": "5ede27b2b48d67902ec8b3f3e896a5ebb1190c4a4e3bf6caf1044139ef813c4e",
+      "archiveSha256": "b887bfdf86f8f27099c590d639ffa81cd986b6f0a790bc31ce34947de2f265be"
+    },
+    {
+      "source": "reports/en-reve-main/reader/chromium-mobile.png",
+      "path": "reader/chromium-mobile.png.gz",
+      "rawBytes": 89974,
+      "archiveBytes": 86532,
+      "sourceSha256": "b11280af7d7a91e62b401c9311e6964d6fb698e89364abe2a0105186fcdbe794",
+      "archiveSha256": "84338b913c65c0887a96e99f79ea0f7f4639f5bec8d50ef5c12783d53ccda198"
+    },
+    {
+      "source": "reports/en-reve-main/reader/firefox-loading.png",
+      "path": "reader/firefox-loading.png.gz",
+      "rawBytes": 284548,
+      "archiveBytes": 272831,
+      "sourceSha256": "0ac4d0acbf4014a4a4ec845a2f9c345890d6de8af96163e12b04f5a846e57e04",
+      "archiveSha256": "77d9255eb2271478a66f4ac6b572093d805866235e3fabf6563882d5279888ee"
+    },
+    {
+      "source": "reports/en-reve-main/reader/firefox-mobile.png",
+      "path": "reader/firefox-mobile.png.gz",
+      "rawBytes": 130178,
+      "archiveBytes": 126131,
+      "sourceSha256": "870565d6a88808fd0fc32d8c085b5245a353e607fe121668f72984b772e62d8c",
+      "archiveSha256": "323695ac4850cf1505967b49cf39e8c82e3505661dbef6dd42a8aaa8984ab1d8"
+    },
+    {
+      "source": "reports/en-reve-main/reader/verification.json",
+      "path": "reader/verification.json.gz",
+      "rawBytes": 3189,
+      "archiveBytes": 845,
+      "sourceSha256": "5018d0fd3d0fd7acfb8efc2b42ce9d6ac14d7cabbda398fbd25f84f08b113d1e",
+      "archiveSha256": "72b6c7106e60484649bb5eb2f162fa779e8452a25e5423f655c7b2edc1714ac2"
+    },
+    {
+      "source": "reports/en-reve-main/reader/webkit-loading.png",
+      "path": "reader/webkit-loading.png.gz",
+      "rawBytes": 297590,
+      "archiveBytes": 274542,
+      "sourceSha256": "a0deecf82407ac7de38274ced0caca7cd9b60f6c7553d1178914065d930bf0cd",
+      "archiveSha256": "a441cf651f7812d8031f7903e78e61103b181c6402d917f50a6142b50ab7dcec"
+    },
+    {
+      "source": "reports/en-reve-main/reader/webkit-mobile.png",
+      "path": "reader/webkit-mobile.png.gz",
+      "rawBytes": 129479,
+      "archiveBytes": 125595,
+      "sourceSha256": "8a1d59830167574b5812a39bfc966100f57d76db1523eaf605d0ba573260d49c",
+      "archiveSha256": "b8586291ee4ff8a6ca46c89acba92bb837a6a8468c4148c4029ea1e9c7f5815f"
+    },
+    {
+      "source": "../performance-results/scripts/verify-en-reve-main.mjs",
+      "path": "reader/verify-en-reve-main.mjs.gz",
+      "rawBytes": 5900,
+      "archiveBytes": 2180,
+      "sourceSha256": "10b56632562df21f091d45e0d2478181c8d61d5eddd6dc3d042beb78f24f0c4d",
+      "archiveSha256": "95001fee50d2ab26cf157c9e17a3a4e48838463b2ae7382bc24f7e82b371e744"
+    }
+  ]
+}

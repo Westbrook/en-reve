@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "systems": [
+    "en-reve",
+    "fluent-web-components",
+    "web-awesome"
+  ],
+  "frozenControls": [
+    "fluent-web-components",
+    "web-awesome"
+  ],
+  "campaigns": {
+    "load": "en-reve-main-load-v1",
+    "startup": "en-reve-main-startup-v1",
+    "interactions": "en-reve-main-interactions-v1",
+    "lighthouse": "en-reve-main-lighthouse-v1",
+    "memory": "en-reve-main-memory-v1",
+    "diagnostic": "en-reve-main-diagnostic-v1",
+    "bfcache": "en-reve-main-bfcache-v1",
+    "overhead": "en-reve-main-overhead-v1"
+  },
+  "bundlePath": "reports/en-reve-main/bundles.json",
+  "inventoryPath": "reports/en-reve-main/inventory.json",
+  "historicalTablesPath": "reports/pass2-tables.json",
+  "historicalBundlePath": "reports/web-awesome/bundles.json",
+  "historicalDOMPath": "reports/dom-review/census.json",
+  "dom": {
+    "customDateSystems": [
+      "en-reve"
+    ],
+    "snapshotsPath": "runs/en-reve-main-dom-v1/snapshots.json",
+    "manifestPath": "runs/en-reve-main-dom-v1/manifest.json",
+    "ownershipPath": "reports/en-reve-main/shadow-ownership.json"
+  },
+  "context": "Exact local main 6d09b31cf43523ac8c75352208ab9697b62e2673 is built from tracked-clean source into content-addressed tarballs. The standalone sixteen-card CSR fixture retains its global eager individual registrations and application workload; default light tokens are regenerated. This does not enable the new scoped/lazy, SSR or deferred-date opt-in consumer policies. Frozen Fluent WC and Web Awesome are contemporaneous controls. The unchanged protocol has ten load blocks per desktop/mobile and cold/warm cell, ten startup and interaction blocks per profile, five mobile Lighthouse audits, one 0/10/50-cycle memory session, one diagnostic, five BFCache checks, five observer on/off pairs, and separate connected DOM snapshots. Original artifacts and acquisitions are retained. Timings are exploratory workstation evidence, not causal historical before/after tests or CI gates.",
+  "names": {
+    "en-reve": "En Reve main 6d09b31c"
+  },
+  "historicalOverview": false,
+  "followUps": [
+    [
+      "P1",
+      "Reduce initial eager JavaScript delivery",
+      "439.5 KiB emitted JS; one initial chunk and no dynamic import edges in this fixture",
+      "Use the new main scoped/lazy APIs in a separate capability-equivalent consumer variant; compare registration, route and intent boundaries against this frozen main baseline",
+      "Lower mobile cold/warm startup with complete first-use, keyboard, reset and form behavior; retain missing/failed samples"
+    ],
+    [
+      "P1",
+      "Explain warm startup work before removing DOM",
+      "Warm En Reve LCP remains above both same-campaign controls",
+      "Use the diagnostic trace and source leads to isolate registration, style and layout costs; change one factor at a time",
+      "Improved warm load and startup response without moving delay to first interaction"
+    ],
+    [
+      "P2",
+      "Measure deferred calendar tradeoffs explicitly",
+      "This eager fixture includes the complete custom-calendar contract; date-inclusive/excluded counts are reported separately",
+      "Create a separately qualified deferred-date variant from main, preserving native editing, first-open, retry and repeat-open behavior",
+      "Reduced initial bytes/tree with bounded measured first-open latency and retained accessibility/form checks"
+    ],
+    [
+      "P2",
+      "Revisit wrapper reductions against the current source",
+      "Historical base-wrapper audit is retained, not claimed as a current-source re-audit",
+      "Map current ownership/count hotspots to the original host-migration proposals, then validate semantics, parts and style inheritance for one candidate",
+      "Lower measured startup/rendering or retention cost while preserving styling, focus and public contracts"
+    ]
+  ],
+  "findings": "**Startup is the clearest current gap.** In the new mobile acquisition, En Reve median LCP is 644 ms cold / 304 ms warm, versus 514 / 208 ms for frozen Fluent WC and 600 / 246 ms for frozen Web Awesome. The early-click result arrives at 637.5 ms from navigation for En Reve, versus 515.0 and 600.6 ms. Use the matched-block difference tables and exploratory intervals below; these fixture differences are not a causal library-only decomposition. Historical timings were measured in other sessions and are not a controlled before/after experiment.\n\n**Settled responsiveness has a different ordering.** All 60 new interaction journeys passed. Mobile scripted INP medians are 56 ms for En Reve, 64 ms for Fluent and 48 ms for Web Awesome. The seven individual-action tables distinguish first-use and repeated costs. These bounded scripted results are not field INP, and first-input delay does not include the entire response.\n\n**The eager payload grew and remains a single initial JavaScript chunk.** En Reve emits 450,035 uncompressed production JS bytes and 89,035 Brotli bytes: 35,580 raw bytes / 6,744 Brotli bytes above the prior frozen fixture. The default-theme update is also included. This deterministic size change is separate from historical timing differences. Main now has opt-in scoped/lazy and deferred-date delivery APIs, but this unchanged global eager consumer does not exercise them; evaluate their user-visible tradeoffs in a new capability-equivalent variant instead of attributing those benefits to this run.\n\n**Zero blocking and layout-shift audits do not mean equal startup cost.** All three implementations have median Lighthouse TBT and CLS of zero. En Reve Lighthouse LCP is 779.35 ms and Speed Index 627 ms, from a separate full-browser audit configuration. Keep those results separate from primary headless loading and inspect script/style/layout trace leads before assigning causes.\n\n**Memory and connected nodes remain diagnostic evidence.** En Reve completes its 0/10/50-cycle API-memory checkpoints successfully. A single GC-dependent session cannot establish a leak or a stable memory ranking. The separate connected-DOM tables count the entire custom date field both in and out, and report opening/closing separately. Historical base-wrapper/source audits remain proposals against their original source; map current ownership hotspots back to those proposals before changing semantics, parts or host styling.\n\n**The custom-date boundary changes the DOM comparison materially.** En Reve starts with 4,667 nodes / 1,580 elements; its date field accounts for 628 / 181. Excluding that field leaves 4,039 nodes / 1,399 elements, versus Web Awesome at 4,182 / 1,393 and Fluent at 2,859 / 1,272. En Reve has 143 fewer non-date nodes than Web Awesome and only six more non-date elements, while retaining a larger gap against Fluent. The eagerly mounted calendar stays present through open/close, so an opt-in deferred variant is a distinct and useful experiment. These structural counts do not establish CPU cost."
+}
