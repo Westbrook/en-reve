@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "2a668458b8e584dc841bf46e1f42d744401911b5",
-  "exportedAt": "2026-10-04T13:13:58.484348+00:00",
+  "sourceCommit": "162085cd87ddd012d8108802e541ebf54aca651c",
+  "exportedAt": "2026-10-04T14:44:31.709860+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -80196,12 +80196,6 @@
       "bytes": 37487
     },
     {
-      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/baseline.json",
-      "mode": "100644",
-      "object": "1d8fe0e45d59e493aa7993e8c119bf901acbc024",
-      "bytes": 2105
-    },
-    {
       "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/collector.js",
       "mode": "100644",
       "object": "bc3abe69b518b3c0a9144f586dddb9919c958383",
@@ -80344,12 +80338,6 @@
       "mode": "100644",
       "object": "c1431d84ea4b0dd66b53c9d1a02b8fe8347023a7",
       "bytes": 5734099
-    },
-    {
-      "path": "showcases/performance/baselines/exploratory-mobile-cold-2026-09-20/summary.json",
-      "mode": "100644",
-      "object": "dfacf805ba21b8be16db257eaa11b1e7c673f58b",
-      "bytes": 31018
     },
     {
       "path": "showcases/performance/baselines/scoped-registry-phase-0-reference-v1/baseline.json",
@@ -264198,9 +264186,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 5874,
-  "includedBytes": 159152378,
-  "qualification": "Authored palette JSON and diff whitespace checks passed. Runtime palette/contrast and build/browser qualification remain blocked by the existing catalogue machine owner; no fresh build qualification claimed.",
-  "latestUpdate": ".source-export/updates/chakra-accent-20261004.json",
+  "includedFiles": 5879,
+  "includedBytes": 159209189,
+  "qualification": "Both production builds, focused source and publisher checks, and all 12 Pages browser checks passed. Full visual acquisition and physical/manual acceptance remain separate and incomplete.",
+  "latestUpdate": ".source-export/updates/integrated-publication-20261004.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
