@@ -24,6 +24,9 @@ installation is performed by the library build.
 The documentation build distributes the exact files at `/guides/skills/` and
 records their SHA-256 digests in `/guides/contract-index.json`. Copy each file into
 its named folder as `SKILL.md`. Inspect a downloaded skill before installing it.
+`en-reve-consume` provides one shared entry point and routes to element-specific
+contracts and existing recipes, including the companion elements without a
+primary example link. It does not require installing a separate skill per tag.
 These skills intentionally route to the installed contract instead of embedding
 a second component catalog. Use a documentation build matching your dependencies;
 the hosted latest URL and GitHub main are mutable references.
