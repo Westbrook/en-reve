@@ -10,6 +10,23 @@ Native semantics, editing ownership, transaction cancellation, focus restoration
 
 ## Current checkpoint
 
+**Implementation is integrated and published as of October 4, 2026.** Review source
+`b219a7a6f2a06a0e60e882f6afa9c052657a3ade`, including the hydration availability
+repair, was integrated into source-only GitHub history as
+`923c4931fa0214cd0e2c9ac8f31fd7093a9ac7da`. This preserves the newer documentation,
+consumption skills, performance reader and prior Chakra work. Large historical
+acquisition evidence remains local.
+
+Both production builds passed. The [private documentation
+Site](https://en-reve-docs.reve-ai-0869.chatgpt.site/showcase?progress-report) is
+published from Site commit `63194def954ab4e83a80b720edee3aae18feb988`; the matching
+GitHub Pages build is `8d7f5ee14a37829286f544ec1d5deafd456f4128`. The user directed
+the source handoff without further verification. Browser and visual qualification
+of this integrated candidate therefore remain **unverified**, not passed or
+retired. The historical checkpoints below retain their narrower evidence scope.
+
+## Historical authoring checkpoint
+
 **Source correspondence and selected authoring qualification are complete at `eb0efd6f` on the review clone's `main`; current-candidate browser qualification remains pending.** The review covers all six source slider profiles, Web Awesome avatar/disclosure/rating anatomy, inherited OTP invalid Parts, specialized ColorSlider state preservation, and each source's default inline alert/callout profile. The [alert mapping](source-alert.md) distinguishes the six geometries and status palettes from local announcement, content and dismissal contracts. Radix export corrections use finite typed roles rather than unregistered public-hook token mappings; responsive dialogs retain native drawer geometry.
 
 Union-06 at `c93f260f` passed complete browser owners for theme cascade, state paint, public Part reachability, composition, slider, rating, accordion and patterns. It was intentionally stopped during docs composition after finding the Radix export error and missing isolated delivery-probe dependencies. Those results are useful subset evidence, not a passing full qualification. The Radix correction is committed as `1c5ea7fe`; isolated dependencies are installed.
@@ -39,14 +56,14 @@ Every full `[data-en-theme]` boundary reserves `--en-theme-companion` in its `co
 
 ## Remaining qualification
 
-1. Retain the completed metadata, authoring-01 and authoring-02 receipts with their exact source identities. Keep `eb0efd6f` frozen for browser qualification; if source changes, check existing artifact freshness before required regeneration and requalify affected owners.
+1. Retain the completed metadata, authoring-01 and authoring-02 receipts with their exact source identities. `eb0efd6f` is historical evidence; any resumed qualification must freeze the integrated source and its matching build, rather than presenting old-source results as current. Check existing artifact freshness before any required regeneration.
 2. Complete the remaining affected theme/API and browser checks through supported leased entry points, retaining failures and exact source/build identities. Passing the selected authoring union does not establish full-library correctness.
 3. Execute the authored [fidelity specification](fidelity-evidence.md) and focused consumer coverage on the pinned Chromium, Firefox and WebKit matrix. Verify native/custom delivery, exported CSS, nesting/Auto, state geometry, invalid/disabled precedence, RTL, text growth, reduced motion and supported forced-color coverage.
 4. Record commands, results, screenshots, source adaptations and actual commit identities in this review and the independent Progress Report. A representative suite does not establish every source variant, manual assistive-technology coverage or user review acceptance.
 
 ## Workspace and source audits
 
-The implementation checkout is `/private/tmp/en-reve-inspired-review-20261003`, a separate local clone on `main` based on `df59c9e81b5a370a08f0f547e49540506346e779`. Integration uses the established `main` checkout at `/private/tmp/en-reve-initial-pass-closeout` after checking ownership and concurrent commits. The original dirty `codex/theme-api-adoption` checkout is preserved. No remote publication was requested. Focused, reviewable implementation checkpoints should continue to be committed to `main` as authorized.
+The implementation originated in `/private/tmp/en-reve-inspired-review-20261003`, a separate local clone on `main` based on `df59c9e81b5a370a08f0f547e49540506346e779`. Source-only integration and publication were completed through `/private/tmp/en-consumption-discovery-20261004` under the user's standing commit/push/publication instruction. The original dirty `codex/theme-api-adoption` checkout and historical evidence are preserved. Future work must inspect current ownership and GitHub `main` before continuing.
 
 The independent [Progress Report](http://127.0.0.1:4177) retains iteration `inspired-deep-review-20261003` and its handoff separately from other ongoing work. Only the user can mark a review checkpoint reviewed.
 

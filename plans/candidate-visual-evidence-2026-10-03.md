@@ -1,9 +1,36 @@
 # Candidate impact and visual evidence delivery
 
-This closes the still-open candidate-facing portion of experience §8, preserving
+This plan covers the still-open candidate-facing portion of experience §8, preserving
 the original scope rather than treating existing screenshots or cache primitives
 as finished integration. Managed remote adoption and physical/manual acceptance
 remain separate blocked work.
+
+## Current delivery status — October 4, 2026
+
+The capture, comparison, verified reader, portable multipart packaging, local
+assessment, coverage disclosure and authored-state catalogue are implemented.
+The checkpoints below retain their original source identities and qualification
+limits; later checkpoints supersede earlier pending implementation notes.
+
+The final full-catalogue attempt was interrupted. Its partial and failed results
+remain evidence, and its machine lease was released. The evidence writer now
+replaces checkpoints atomically (`e4efd035`), with a focused persistence regression
+passing. This does not recover or qualify the interrupted report.
+
+Integrated theme source `923c4931fa0214cd0e2c9ac8f31fd7093a9ac7da` is published
+to the private documentation Site and GitHub Pages. Both production builds passed;
+the Pages build includes the required project base in all 82 HTML documents.
+Browser/visual qualification of that integrated source was not run as part of the
+user-directed publication handoff. Earlier bounded results remain bound to their
+earlier sources.
+
+The remaining delivery is the complete **209-case × 3-density × 2-appearance ×
+2-viewport × 3-engine matrix (7,524 comparisons)**, partition verification for its
+nine reports, and the final requirement audit. These are unfinished qualification
+deliverables, not missing component implementation. No acquisition is currently
+running. The next campaign needs a deliberate execution decision and a frozen
+source/build; it must not reuse interrupted or mismatched evidence as a pass.
+Manual/device acceptance and managed adoption retain their separate blockers.
 
 ## Delivery sequence
 
