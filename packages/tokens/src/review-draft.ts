@@ -103,9 +103,12 @@ function contextBase(baseOptions: ThemeOptions, theme: ResolvedTheme): ResolvedT
 	return resolveTheme({ ...baseOptions, mode: theme.mode, density: theme.density });
 }
 function validateEdit(basis: ResolvedTheme, current: ResolvedTheme, id: string, value: unknown, preserveCurrent: boolean): void {
-	const descriptor = editorDescriptor(current, id);
+	// Literal edits do not consume the current graph's alias candidates. Keep
+	// unknown-token behavior, then build that descriptor only for an alias edit.
+	if (!current.tokens[id]) fail('unknown-token', `Unknown editor token ${id}.`, id);
 	const alias = aliasTarget(value);
 	if (alias) {
+		const descriptor = editorDescriptor(current, id);
 		if (!descriptor.aliasTargets.includes(alias)) fail('managed-choice', `${id}: this alias is incompatible or cyclic.`, id);
 		return;
 	}

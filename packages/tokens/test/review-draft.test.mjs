@@ -39,6 +39,23 @@ test('managed choices stay anchored while aliases follow the current graph', () 
 	assert.deepEqual(draft.theme.tokens['space.4'].value, dimension(1));
 });
 
+test('unknown draft edits preserve their error contract and leave accepted history unchanged', () => {
+	const draft = createReviewDraft();
+	draft.setToken('rhythm.base', dimension(.375));
+	draft.undo();
+	const accepted = draft.theme;
+	const serialized = draft.exportJSON(metadata);
+	for (const value of [dimension(.5), '{space.4}', undefined]) {
+		assert.throws(() => draft.setToken('missing.editor.token', value), {
+			name: 'TokenError', code: 'unknown-token', tokenId: 'missing.editor.token',
+			message: 'Unknown editor token missing.editor.token.',
+		});
+		assert.equal(draft.theme, accepted);
+		assert.equal(draft.canRedo, true);
+		assert.equal(draft.exportJSON(metadata), serialized);
+	}
+});
+
 test('restore removes a source-overlay pin without discarding unrelated group metadata', () => {
 	const draft = createReviewDraft({ source: { space: {
 		$description: 'Retained group metadata',
