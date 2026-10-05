@@ -83,3 +83,35 @@ EN_EXECUTION_OUTPUT=/absolute/fresh-run \
 The token compiler, original assets and candidate replay are reused unchanged.
 Old/new release comparison, managed adoption, formal human acceptance and the
 remaining physical/platform matrix remain separate work.
+
+## Submit a theme change through GitHub
+
+GitHub pull requests are the agreed shared submission and adoption workflow.
+The offline tools continue to prepare and preview candidates without submitting
+anything automatically.
+
+1. Export the candidate and retain its original documentation build. Record the
+   candidate source hash and build fingerprint so review comments identify the
+   exact proposal. A revised candidate needs a new identity and review context.
+2. Apply the intended changes to the authored token/theme inputs on a source
+   branch. Reopening a candidate previews it; it does not edit repository files.
+   Follow the token and CSS-authoring contracts for generation. Do not copy emitted
+   CSS over authored inputs or hand-edit generated adapters.
+3. Open a pull request with the [theme-change template](../../.github/PULL_REQUEST_TEMPLATE/theme-change.md).
+   Explain the visible change and scopes affected, link the exact candidate/review
+   material, and disclose focused verification and remaining manual checks. Keep
+   large builds, screenshots and historical evidence outside source history;
+   provide accessible review links and identities through the established transfer
+   process. Check access before linking private material from a public PR.
+4. Review the source diff and matching previews in the PR. Follow existing
+   maintainer permissions and repository merge rules; this workflow creates no new
+   approver role or bypass. Resolve feedback against the candidate version it
+   concerns. Acknowledging a preview is not approval to merge.
+5. Merge the approved source change to adopt it. Build and publish through the
+   existing delivery process, recording the actual deployed version separately.
+   A merged proposal is not necessarily published yet.
+
+No GitHub credential is entered into Theme Review, and no custom submission
+backend is required. The distinction remains explicit: **exported → submitted
+(PR opened) → adopted (merged) → published (deployed)**. Existing review tools do
+not infer those external states from an export or a successful local check.
