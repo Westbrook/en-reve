@@ -1,7 +1,29 @@
 # En Rêve installed web app — October 4, 2026
 
-Implementation is recorded on local `main` for the next build/publication phase. Publication, a production rebuild
-and browser/device qualification have not been completed in this work session.
+Home Screen support is published to the private documentation Site and pushed to
+GitHub `main` and `gh-pages`. Both production builds and all 12 focused browser
+cases pass. Physical iPhone/iPad installation acceptance remains open.
+
+## Published checkpoint — October 5, 2026
+
+- Product source: `894ff8bca8685589996a187c016195906fae251b`.
+- GitHub source/provenance: `89fd3cf7d66bb5696d2a7546ef3b6c034d6095c2`.
+- Static `gh-pages` build: `8ae818be018d2e2024c4561e0a143a0ad4b1076f`; all
+  82 HTML documents contain `<base href="https://westbrook.github.io/en-reve/">`.
+- Private Site deployment: `appgdep_6ac341c9763c8191aff532ab22c49bcb`, succeeded.
+- Focused browser evidence: `/private/tmp/en-installed-app-browser-20261005-01`,
+  four cases each in Chromium, Firefox and WebKit; no failures, skips or retries.
+  These cover manifest identity, decoded icons and safe-area geometry.
+
+The root build passed on the first attempt. The initial project-path build found
+missing dependencies for the independently installed performance reader. After
+installing its own lockfile, only that build was repeated; the root build was
+retained. The failed attempt remains recorded.
+
+Next: physical-device review using `apps/docs/INSTALLATION.md`. Browser emulation
+does not establish installation, native shell, multitasking or hardware safe-area
+acceptance. The earlier checkpoints below are retained history and are superseded
+by this publication checkpoint.
 
 ## Delivered
 
@@ -46,7 +68,7 @@ was created. The existing build and lease were left intact. The new cases remain
 in the standard Chromium/Firefox/WebKit workflow suite. Four Node cases are also
 registered in the extended Node suite.
 
-## Next action
+## Earlier pre-publication next action
 
 After the existing machine lease is released, build the docs through the supported
 owned validation workflow, then run the filtered browser suite with a fresh output

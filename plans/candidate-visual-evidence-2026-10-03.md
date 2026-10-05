@@ -5,6 +5,27 @@ the original scope rather than treating existing screenshots or cache primitives
 as finished integration. Managed remote adoption and physical/manual acceptance
 remain separate blocked work.
 
+## Current continuation — October 5, 2026
+
+Implementation remains delivered; the complete acquisition and final audit are
+still open. Run `en-published-catalogue-20261005-03` completed all six Chromium
+and Firefox density reports: **5,016 comparisons**, with finalized identities and
+no capture failures in those reports. It was deliberately interrupted during
+WebKit to publish the completed Home Screen work. Its outer result remains failed;
+the unfinished WebKit report is not accepted as a completed capture.
+
+Continue only the three unfinished WebKit density reports in
+`en-published-catalogue-webkit-20261005-04`. The final campaign combines the six
+hash-bound finalized reports with the three new reports, preserving each original
+run and outcome. It still requires **nine reports and all 7,524 comparisons**;
+no case, density, appearance, viewport or browser is removed. Multipart verification
+and the final requirement audit follow successful acquisition.
+
+This qualification stays tied to the unchanged `923c493` application build and
+`0336b8d` harness checkout. It is not visual qualification of the subsequently
+published Home Screen build or future theme changes. Mechanical differences do
+not constitute human approval. Historical failures remain retained.
+
 ## Current delivery status — October 4, 2026
 
 The capture, comparison, verified reader, portable multipart packaging, local
