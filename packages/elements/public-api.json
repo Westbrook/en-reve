@@ -31,7 +31,7 @@
     "otherDeepImports": "Importable for staging compatibility; unsupported implementation details. No package export is removed by this policy."
   },
   "generatorDigest": "sha256:653b8ea8844aaf62e27fe630941e20e7ce70fa8c6d6ea8e783dacc04cb29dcaa:sha256:fb7c7a872e975328c4f45a302225cd8ecd5cc63e848347d1277ebbbe2807315f",
-  "manifestDigest": "sha256:199044f0efc000664dc129f37f4937b3fbcda6488c598d5442780923bf01ff5d",
+  "manifestDigest": "sha256:97877b8cef3e983699ec5a3557e73da2bf0c152e08f06da81eb49283fe4edcd0",
   "typeDigest": "sha256:e2f9f984b7c2927f124c7846a855d78e79c4019100b24d70028067e3d9f79be0",
   "entrypoints": {
     "@en-reve/elements": {
@@ -4029,7 +4029,40 @@
       ],
       "slots": [],
       "parts": [],
-      "cssProperties": []
+      "cssProperties": [
+        {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the text and select answer frames; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the text and select answer frames on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        }
+      ]
     },
     {
       "tagName": "en-query-builder",
@@ -4223,7 +4256,40 @@
       ],
       "slots": [],
       "parts": [],
-      "cssProperties": []
+      "cssProperties": [
+        {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the clause value inputs and select control frames; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the clause value inputs and select control frames on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        }
+      ]
     },
     {
       "tagName": "en-sheet",
@@ -8408,6 +8474,26 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the text-field frame; invalid, disabled and forced colors take precedence.",
+          "inheritedFrom": {
+            "name": "EnTextField",
+            "module": "src/text-field/element.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "inheritedFrom": {
@@ -8582,6 +8668,26 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the text-field frame on hover-capable devices.",
+          "inheritedFrom": {
+            "name": "EnTextField",
+            "module": "src/text-field/element.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -9167,6 +9273,38 @@
         }
       ],
       "cssProperties": [
+        {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the exact-value endpoint editor frames; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the exact-value endpoint editor frames on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
         {
           "name": "--en-slider-disabled-fill-background",
           "description": "Disabled selected-segment paint.",
@@ -11457,7 +11595,40 @@
           "description": "Selected values and independently named removal buttons."
         }
       ],
-      "cssProperties": []
+      "cssProperties": [
+        {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the query input frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the query input frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        }
+      ]
     },
     {
       "tagName": "en-checkbox-group",
@@ -17570,6 +17741,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the editing surface frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Editing foreground; refines shared control color.",
           "x-en-reve-customization": {
@@ -17596,6 +17783,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the editing surface frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -28379,6 +28582,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the search input frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Search input foreground.",
           "x-en-reve-customization": {
@@ -28501,6 +28720,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.focus-width",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the search input frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -33871,6 +34106,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the text-field frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -34009,6 +34260,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the text-field frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -34984,6 +35251,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the multiline editor frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -35106,6 +35389,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.focus-width",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the multiline editor frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -35979,6 +36278,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the search input frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -36101,6 +36416,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.focus-width",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the search input frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -37057,6 +37388,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the localized time editor frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Editor foreground, refining the shared control color.",
           "x-en-reve-customization": {
@@ -37067,6 +37414,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the localized time editor frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -37992,6 +38355,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the native date input frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -38114,6 +38493,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.focus-width",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the native date input frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -40839,6 +41234,26 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the native date input frame; invalid, disabled and forced colors take precedence.",
+          "inheritedFrom": {
+            "name": "EnDateInput",
+            "module": "src/date-input/element.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "inheritedFrom": {
@@ -41009,6 +41424,26 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the native date input frame on hover-capable devices.",
+          "inheritedFrom": {
+            "name": "EnDateInput",
+            "module": "src/date-input/element.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -41896,6 +42331,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the select control frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -42034,6 +42485,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the select control frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -43934,6 +44401,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the query input frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Input text; takes precedence over the shared control default.",
           "x-en-reve-customization": {
@@ -44072,6 +44555,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the query input frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -45883,6 +46382,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the compound number-field frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -46021,6 +46536,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.hover-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the compound number-field frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -49908,6 +50439,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the optional exact-value editor frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Number editor text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -49918,6 +50465,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the optional exact-value editor frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -56967,6 +57530,22 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the native color input frame; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Field text falling back to the shared control color.",
           "x-en-reve-customization": {
@@ -57089,6 +57668,22 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.focus-width",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the native color input frame on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -58131,6 +58726,26 @@
           }
         },
         {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the optional exact-value editor frame; invalid, disabled and forced colors take precedence.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
           "name": "--en-input-color",
           "description": "Number editor text falling back to the shared control color.",
           "inheritedFrom": {
@@ -58145,6 +58760,26 @@
             "managed": {
               "supported": true,
               "tokenId": "component.input.color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the optional exact-value editor frame on hover-capable devices.",
+          "inheritedFrom": {
+            "name": "EnSlider",
+            "module": "src/slider/index.ts"
+          },
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
@@ -60463,6 +61098,38 @@
             "managed": {
               "supported": true,
               "tokenId": "component.color-picker.preview-size",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-bottom-border-color",
+          "description": "Optional resting bottom-border color for the composed text and select field frames; invalid, disabled and forced colors take precedence.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.bottom-border-color",
+              "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+            },
+            "consumerStatus": "connected"
+          }
+        },
+        {
+          "name": "--en-input-hover-bottom-border-color",
+          "description": "Optional hover bottom-border color for the composed text and select field frames on hover-capable devices.",
+          "x-en-reve-customization": {
+            "kind": "override",
+            "family": "controls",
+            "reset": "theme",
+            "tokenId": "component.input.hover-bottom-border-color",
+            "managed": {
+              "supported": true,
+              "tokenId": "component.input.hover-bottom-border-color",
               "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
             },
             "consumerStatus": "connected"
