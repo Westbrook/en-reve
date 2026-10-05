@@ -72,6 +72,35 @@ therefore no longer skips the other two densities for that browser. The same nin
 engine/density reports and 7,524 comparisons remain required; capture inputs,
 readiness limits, assertions and cache failure-history policy are unchanged.
 
+### Startup observability checkpoint — October 5, 2026
+
+The second published-build campaign (`en-published-catalogue-20261004-02`)
+terminated failed at 00:56:10 UTC after an intentional stop. Four reports completed
+their final identity checks: Chromium compact (836 captured comparisons),
+comfortable (835 plus one startup failure), spacious (834 plus two startup
+failures), and Firefox compact (835 plus one startup failure). These **3,340**
+captured comparisons are retained; only Chromium compact has complete coverage.
+Firefox comfortable was interrupted and its staged entries are not reusable.
+
+The recurring 20-second preview-ready timeouts affected file-upload selection,
+color-plane exact value, color-slider transparency, and color-picker RGB format,
+all before their interaction steps. Root cause is still unknown. No component
+regression is established by these timeouts, and no full-matrix pass is claimed.
+
+The catalogue harness now records passive startup diagnostics on failed waits:
+request failures/pending requests, browser errors, navigation, and parent/iframe
+readiness. It preserves the original exception and the producer's readiness
+budget, actions and identity rules. Six focused browser checks pass in
+`en-capture-startup-observer-20261005-03`; the preceding sandbox server failure
+and empty test-discovery attempt remain recorded separately. The capture producer
+and published application build are unchanged. No broad suite was repeated for
+this harness-only change.
+
+Next: use the recorder to investigate a real startup failure before another blind
+full acquisition. Retain all completed caches and original failures. The same
+nine reports, 7,524 comparisons, partition verification and final audit remain
+required; this diagnostic checkpoint does not reduce their scope.
+
 ## Delivery sequence
 
 1. Surface the existing exact-build source-impact graph in Theme Review. Show

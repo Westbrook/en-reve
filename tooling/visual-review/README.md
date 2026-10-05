@@ -345,3 +345,19 @@ nonnegative, and blank/non-numeric actual values fail. The authored tolerance is
 part of fixture identity and retained evidence; it does not relax pixel comparison
 thresholds. Color-plane midpoint gestures use 50 ± 0.5 percentage point, while
 keyboard and cancellation checks retain their exact values.
+
+### Preview startup diagnostics
+
+Each catalogue engine/density test attaches `startup-diagnostics.json`, including
+when capture assertions fail. Failed browser waits retain bounded request/error/
+navigation observations, pending request URLs, and the parent/iframe readiness
+snapshot before the context closes. The recorder rethrows the original failure;
+it does not retry, extend the readiness budget, or change the page. Successful
+waits produce no failure records. A hard termination before the test's `finally`
+block can prevent the attachment; existing capture checkpoints remain separate.
+
+Use these observations to distinguish preview initialization from the case's
+later interaction assertions. Diagnostics are local test artifacts, not automatic
+visual acceptance or a reason to discard a failed capture. The six focused checks
+in `capture-diagnostics.spec.ts` cover failures and transparent successful calls
+across Chromium, Firefox and WebKit.

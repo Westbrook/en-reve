@@ -1,4 +1,5 @@
 import {test,expect} from '@playwright/test';
+import {observeCaptureStartup,type CaptureStartupFailure} from './capture-diagnostics.js';
 import {readFile,writeFile} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import {resolve} from 'node:path';
@@ -108,12 +109,20 @@ for(const density of catalogueDensities){
  const cases=catalogue(build);const selected=process.env.EN_VISUAL_SELECTED?.split(',');
  const viewports=[{id:'desktop',width:1280,height:900},{id:'mobile',width:390,height:844}].filter(viewport=>!process.env.EN_VISUAL_VIEWPORTS || process.env.EN_VISUAL_VIEWPORTS.split(',').includes(viewport.id));
  const cacheDirectory=process.env.EN_VISUAL_CACHE_ROOT?resolve(process.env.EN_VISUAL_CACHE_ROOT,browserName,density):undefined;
- const result=await captureReview({buildDirectory,baselineFile,candidateFile,outputDirectory:info.outputPath(density+'-capture'),cacheDirectory,options:{engines:[browserName],viewports,cases,...(selected?{selected}:{})},browsers:{[browserName]:browser}});
+ const startupFailures:CaptureStartupFailure[]=[];
+ const observedBrowser=observeCaptureStartup(browser,startupFailures);
+ try {
+ const result=await captureReview({buildDirectory,baselineFile,candidateFile,outputDirectory:info.outputPath(density+'-capture'),cacheDirectory,options:{engines:[browserName],viewports,cases,...(selected?{selected}:{})},browsers:{[browserName]:observedBrowser}});
  expect(result.results.filter((row:any)=>row.status==='failed').map((row:any)=>({key:row.key,reason:row.reason}))).toEqual([]);
  for(const row of result.results.filter((row:any)=>['passed','different'].includes(row.status))){
   expect(row.captures.actual.details.stateChecks).toHaveLength(row.fixture.checks?.length??0);
   if(row.fixture.capture==='viewport')expect(row.captures.actual.details.coverage.method).toBe('viewport');
  }
  expect(result.results.filter((row:any)=>['passed','different'].includes(row.status))).toHaveLength((selected?.length??cases.length)*viewports.length*2);
+ } finally {
+  const path=info.outputPath('startup-diagnostics.json');
+  await writeFile(path,JSON.stringify({browserName,density,failures:startupFailures},null,2));
+  await info.attach('Capture startup diagnostics',{path,contentType:'application/json'});
+ }
  });
 }
