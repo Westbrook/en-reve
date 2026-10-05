@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><base href="https://westbrook.github.io/en-reve/"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>En Reve · Portable rich editing</title>
+<!doctype html><html lang="en"><head><base href="https://westbrook.github.io/en-reve/"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>En Reve · Portable rich editing</title>
 <style>body{color:#252525;background:#fafafa;max-width:54rem;margin:3rem auto;padding:1rem;font:16px system-ui}button{font:inherit;margin:.25rem;padding:.5rem}pre{white-space:pre-wrap;overflow-wrap:anywhere}.report{background:#fff;padding:.5rem;position:fixed;bottom:1rem;right:1rem}</style>  
   <script type="module" crossorigin src="/en-reve/assets/richCapabilities-CEhA6NwA.js"></script>
   <link rel="modulepreload" crossorigin href="/en-reve/assets/rolldown-runtime-B0lUwjiP.js">
@@ -37,7 +37,19 @@
   <link rel="modulepreload" crossorigin href="/en-reve/assets/dist-CZd4tlmq.js">
   <link rel="modulepreload" crossorigin href="/en-reve/assets/rich-text-editor-B_qtP4Hg.js">
   <link rel="modulepreload" crossorigin href="/en-reve/assets/rich-text-editor-BlWXC6fa.js">
-<meta name="en-review-build" content="sha256:4492093e94304461bf31aae1d384aecf3426aa0a89969d815f6ace511e87b30d"></head><body>
+
+<link rel="manifest" crossorigin="use-credentials" href="/en-reve/manifest.json">
+<link rel="icon" type="image/svg+xml" sizes="any" href="/en-reve/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/en-reve/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/en-reve/apple-touch-icon.png">
+<meta name="application-name" content="En Rêve">
+<meta name="apple-mobile-web-app-title" content="En Rêve">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#2457d6">
+<link rel="stylesheet" href="/en-reve/installed-app.css">
+<meta name="en-review-build" content="sha256:023db9eeb660c3ec523af38514df97a9079f3e872207a1fbe5f8695ed01ad6ea"></head><body>
 <h1>Portable rich editing</h1><p>Select text to capture a revision-bound range. Decorate it, replace it, then undo. Type <code>/insert t</code> to match a known multiword command. Copy a reference token between the editors to import it with a fresh occurrence ID.</p>
 <en-rich-text-editor label="Document"></en-rich-text-editor>
 <p><button id="capture">Capture selection</button><button id="decorate">Decorate captured range</button><button id="replace">Replace with “Revised”</button><button id="undo">Undo</button><button id="reset">Reset document</button></p>

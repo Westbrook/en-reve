@@ -1,0 +1,16 @@
+/* Full-bleed canvas; keep document content clear of cutouts and the Home indicator.
+   Leave scrolling, selection, touch gestures and browser zoom native. */
+:root {
+  --docs-safe-top: env(safe-area-inset-top, 0px);
+  --docs-safe-right: env(safe-area-inset-right, 0px);
+  --docs-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --docs-safe-left: env(safe-area-inset-left, 0px);
+  --docs-viewport-height: calc(100dvh - var(--docs-safe-top) - var(--docs-safe-bottom));
+}
+body {
+  padding: var(--docs-safe-top) var(--docs-safe-right) var(--docs-safe-bottom) var(--docs-safe-left);
+}
+@media (display-mode: standalone), (display-mode: fullscreen) {
+  html { min-block-size: 100%; }
+  body { min-block-size: 100dvh; box-sizing: border-box; }
+}

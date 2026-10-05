@@ -1,14 +1,14 @@
 {
   "mode": "build-time",
   "caseId": "rich-text",
-  "bytes": 1604286,
+  "bytes": 1605341,
   "minification": {
-    "inputBytes": 1811478,
-    "outputBytes": 1604125,
+    "inputBytes": 1812752,
+    "outputBytes": 1605180,
     "syntaxBytesSaved": 732,
-    "cssBytesSaved": 206621,
-    "styleBlocks": 64,
-    "cssCacheHits": 64
+    "cssBytesSaved": 206840,
+    "styleBlocks": 65,
+    "cssCacheHits": 65
   },
   "customElementTags": [
     "en-button",
@@ -22,5 +22,5 @@
     "en-token-editor",
     "en-toolbar"
   ],
-  "buildFingerprint": "sha256:4492093e94304461bf31aae1d384aecf3426aa0a89969d815f6ace511e87b30d"
+  "buildFingerprint": "sha256:023db9eeb660c3ec523af38514df97a9079f3e872207a1fbe5f8695ed01ad6ea"
 }

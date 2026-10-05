@@ -1,14 +1,14 @@
 {
   "mode": "build-time",
   "caseId": "popup-motion",
-  "bytes": 3031491,
+  "bytes": 3032546,
   "minification": {
-    "inputBytes": 3436726,
-    "outputBytes": 3031330,
+    "inputBytes": 3438000,
+    "outputBytes": 3032385,
     "syntaxBytesSaved": 733,
-    "cssBytesSaved": 404663,
-    "styleBlocks": 63,
-    "cssCacheHits": 63
+    "cssBytesSaved": 404882,
+    "styleBlocks": 64,
+    "cssCacheHits": 64
   },
   "customElementTags": [
     "en-button",
@@ -27,5 +27,5 @@
     "en-textarea",
     "en-tooltip"
   ],
-  "buildFingerprint": "sha256:4492093e94304461bf31aae1d384aecf3426aa0a89969d815f6ace511e87b30d"
+  "buildFingerprint": "sha256:023db9eeb660c3ec523af38514df97a9079f3e872207a1fbe5f8695ed01ad6ea"
 }

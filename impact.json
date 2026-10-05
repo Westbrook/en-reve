@@ -36,10 +36,11 @@
     "packages/styles/package.json": "sha256:c9f9c0c7ac494809dd825db8c6782d55ded892fbf32ec0fdd6bc86ca07fcbc27",
     "packages/primitives/package.json": "sha256:feb49afaf016466ff3fc9d72cb1c0bbc17b70c5fff4eeb1efaa031db1efb2941",
     "packages/elements/package.json": "sha256:8f33dffb9bd575d971623e375b11f8eed8608688a0414932e08ef4b1ca81832a",
+    "apps/docs/public/apple-touch-icon.png": "sha256:fba2da148bd7e1f4f9038dc11cbd3de5bbafd2cbb5003a500f1754caa2b1b804",
     "apps/docs/public/custom-elements.json": "sha256:43e6fe902d33f33592e3fde5117eb5d1067cdb82ebe07afdcd08e07eba62fb7a",
     "apps/docs/public/custom-elements.json.receipt.json": "sha256:7654fc81162c1c06001488a413b45bf81bd8acdc62691dd5e102ecba0cc186e0",
-    "apps/docs/public/favicon.png": "sha256:df941c508f6a8df2c6154f33a52c502dd131755a2cfd9c8bc4b7f006b2a4b9c5",
-    "apps/docs/public/favicon.svg": "sha256:c39a907d4b2c784ad2779dceecbc0f694776fb83a42421f95ec054e4552b0905",
+    "apps/docs/public/favicon.png": "sha256:4e021419305abc8c74d49dc65632c5e5be77057033fa0cc398ec06277806b210",
+    "apps/docs/public/favicon.svg": "sha256:2deb297924ff0beb27ccd62b1023dc73e4ebef95e3fe4ae87023a6a7b7a1abfc",
     "apps/docs/public/fonts/theme-references/Figtree-OFL.txt": "sha256:140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
     "apps/docs/public/fonts/theme-references/Figtree-Variable.woff2": "sha256:6b96ce6d4783658f09e2b92d468da8e542d57aa6e4bc461ab2e7ae71565fdc64",
     "apps/docs/public/fonts/theme-references/Geist-OFL.txt": "sha256:c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
@@ -55,6 +56,11 @@
     "apps/docs/public/guides/skills/en-reve-document/SKILL.md": "sha256:9daaef758e8a404d30c447744414dfa696a3b7cb979a1b03b2d0ec8f37f9c948",
     "apps/docs/public/guides/skills/en-reve-test/SKILL.md": "sha256:a1e63a7f8f097d4fbda8061f7c59b13836d8de8f4470c6dc627f82632db4f275",
     "apps/docs/public/guides/skills/en-reve-theme/SKILL.md": "sha256:93b91f1753c178d4a250084201f6efe5ffa288200d37ae8c29b06ebb66796066",
+    "apps/docs/public/icons/app-192.png": "sha256:1106e742d1879bb7c3f9602f59a3cc5ccab68101857633e828b86463ebe66567",
+    "apps/docs/public/icons/app-512.png": "sha256:7a46d9eaee525bcd2ff7350dcbda878dfda2e89ddbcda279f64fea0e915ffccb",
+    "apps/docs/public/icons/app-maskable-512.png": "sha256:7a46d9eaee525bcd2ff7350dcbda878dfda2e89ddbcda279f64fea0e915ffccb",
+    "apps/docs/public/installed-app.css": "sha256:e957bde8edfddfad7a847f099c8149542c439eb2f210c54537e0a38f42986a5a",
+    "apps/docs/public/manifest.json": "sha256:35213a6766cd3fdd79a3a633f9c9d6b8bd04dbc2122ae735b713c4b90018d42a",
     "apps/docs/public/public-api.json": "sha256:a4915c1ec948559e3754b16a804c74bc9659cbefcf0af35703e22ae5b596ca63",
     "apps/docs/public/public-types.json": "sha256:5afdee432898dec1d99df1f5d0f4a0f0ca60f59aa447b1ae9f1c308bbf4e2003",
     "apps/docs/public/reviews/api-normalization/README.md": "sha256:a292050e297ee41a260c80e3ed76d4949b32d395851d3c18c9c81cee920aa788",
@@ -810,6 +816,12 @@
     "schemaVersion": 1,
     "nodes": [
       {
+        "id": "asset:apps/docs/public/apple-touch-icon.png",
+        "kind": "asset",
+        "dependencies": [],
+        "complete": true
+      },
+      {
         "id": "asset:apps/docs/public/custom-elements.json",
         "kind": "asset",
         "dependencies": [],
@@ -919,6 +931,36 @@
       },
       {
         "id": "asset:apps/docs/public/guides/skills/en-reve-theme/SKILL.md",
+        "kind": "asset",
+        "dependencies": [],
+        "complete": true
+      },
+      {
+        "id": "asset:apps/docs/public/icons/app-192.png",
+        "kind": "asset",
+        "dependencies": [],
+        "complete": true
+      },
+      {
+        "id": "asset:apps/docs/public/icons/app-512.png",
+        "kind": "asset",
+        "dependencies": [],
+        "complete": true
+      },
+      {
+        "id": "asset:apps/docs/public/icons/app-maskable-512.png",
+        "kind": "asset",
+        "dependencies": [],
+        "complete": true
+      },
+      {
+        "id": "asset:apps/docs/public/installed-app.css",
+        "kind": "asset",
+        "dependencies": [],
+        "complete": true
+      },
+      {
+        "id": "asset:apps/docs/public/manifest.json",
         "kind": "asset",
         "dependencies": [],
         "complete": true
@@ -1581,6 +1623,7 @@
         "id": "assets:docs",
         "kind": "asset",
         "dependencies": [
+          "asset:apps/docs/public/apple-touch-icon.png",
           "asset:apps/docs/public/custom-elements.json",
           "asset:apps/docs/public/custom-elements.json.receipt.json",
           "asset:apps/docs/public/favicon.png",
@@ -1600,6 +1643,11 @@
           "asset:apps/docs/public/guides/skills/en-reve-document/SKILL.md",
           "asset:apps/docs/public/guides/skills/en-reve-test/SKILL.md",
           "asset:apps/docs/public/guides/skills/en-reve-theme/SKILL.md",
+          "asset:apps/docs/public/icons/app-192.png",
+          "asset:apps/docs/public/icons/app-512.png",
+          "asset:apps/docs/public/icons/app-maskable-512.png",
+          "asset:apps/docs/public/installed-app.css",
+          "asset:apps/docs/public/manifest.json",
           "asset:apps/docs/public/public-api.json",
           "asset:apps/docs/public/public-types.json",
           "asset:apps/docs/public/reviews/api-normalization.html",
@@ -50427,5 +50475,5 @@
     "packages/elements/src/select-option/index.ts": [],
     "packages/elements/src/avatar/index.ts": []
   },
-  "digest": "sha256:0bd7e3ca19eefb3d200aa3ef9894f18cb0a16ad81787c429a161d1fdcd70d63b"
+  "digest": "sha256:5a97939a08e0f1d701cb9561e1887a74488ed3e8c125eabea8815c3414d543f2"
 }
