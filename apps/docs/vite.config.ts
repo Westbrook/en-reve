@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { webAppPlugin } from './scripts/web-app.mjs';
 import { deploymentBase, deploymentPaths } from './scripts/deployment-paths.mjs';
 import { fileURLToPath } from 'node:url';
 import { litHighlighting } from './src/highlighting/vite.js';
@@ -9,7 +10,7 @@ export default defineConfig(async () => {
   const { apiExamplePages, settingsScenarioPages } = await prepareDocs();
   return {
   base: deploymentBase(process.env.EN_DOCS_BASE_PATH),
-  plugins: [deploymentPaths(), prepareDocsPlugin(), litHighlighting(), minifyLitTemplates({
+  plugins: [deploymentPaths(), webAppPlugin(), prepareDocsPlugin(), litHighlighting(), minifyLitTemplates({
     include: [new URL('./src/', import.meta.url), new URL('../../packages/', import.meta.url)],
   })],
   server: { host: '127.0.0.1', port: 4180, strictPort: true, fs: { allow: ['../..'] } },

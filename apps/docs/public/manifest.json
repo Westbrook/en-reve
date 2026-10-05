@@ -1,0 +1,25 @@
+{
+  "id": "./",
+  "name": "En Rêve",
+  "short_name": "En Rêve",
+  "description": "A design system for creativity and collaboration. Explore components, themes and working interfaces.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#2457d6",
+  "theme_color": "#2457d6",
+  "categories": ["design", "developer tools", "productivity"],
+  "prefer_related_applications": false,
+  "icons": [
+    { "src": "icons/app-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/app-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/app-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Showcase", "description": "Explore creative collaboration interfaces", "url": "./showcase.html" },
+    { "name": "Component API", "description": "Browse component contracts and examples", "url": "./api-reference.html" },
+    { "name": "Theme Review", "description": "Create and compare themes", "url": "./theme-review.html" }
+  ]
+}

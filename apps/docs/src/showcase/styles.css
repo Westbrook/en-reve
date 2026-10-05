@@ -1,6 +1,6 @@
 @layer showcase {
 	en-showcase-app { display:block; min-inline-size:0; }
-	.showcase-page { min-block-size:100dvh; }
+	.showcase-page { min-block-size:var(--docs-viewport-height, 100dvh); }
 	en-showcase-app main { max-inline-size:none; padding:var(--en-space-6) clamp(var(--en-space-3),2vw,var(--en-space-8)) var(--en-space-12); }
 	.showcase-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:var(--en-space-4); margin-block-end:var(--en-space-5); }
 	.showcase-heading > div { min-inline-size:0; max-inline-size:100%; }

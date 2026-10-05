@@ -450,3 +450,10 @@ calendar selection, slash commands, fragments, preview frames and candidate expo
 Every review asset and handbook artifact hash is checked. The publisher requires
 the already-qualified base and cannot patch sealed HTML after verification.
 See [the deployment contract](../../../tooling/publishing/README.md).
+
+## Installed web app
+
+See [iOS/iPadOS installation and delivery](../INSTALLATION.md).
+`web-app.spec.ts` checks shared production manifest links, decoded icon dimensions
+and phone/tablet safe-area geometry in the existing three-engine workflow suite.
+It does not automate Home Screen installation or establish physical-device coverage.

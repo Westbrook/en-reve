@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="En Rêve">
   <defs><linearGradient id="blue" x2="0.8" y2="1"><stop stop-color="#3978f6"/><stop offset="1" stop-color="#173dac"/></linearGradient></defs>
-  <rect width="64" height="64" rx="14" fill="url(#blue)"/>
-  <g fill="#fff">
+  <rect width="64" height="64" fill="url(#blue)"/>
+  <g fill="#fff" transform="translate(9.6 9.6) scale(.7)">
     <path d="M30 34H16c.5 4 2.5 6 6 6 2.5 0 4.5-.8 6-2l2 4c-2.5 2-5.5 3-9 3-7 0-11-5-11-13s4.5-13 11-13 10 4.5 10 12c0 1 0 2-1 3Zm-14-5h9c-.2-3.5-1.7-5-4-5s-4.3 1.5-5 5Z"/>
     <path d="M35 20h6v3c1.5-2.5 3.5-4 6.5-4 5 0 7.5 3.5 7.5 9v16h-6V29c0-3-1-4.5-3.5-4.5S41 26.5 41 30v14h-6Z"/>
   </g>
