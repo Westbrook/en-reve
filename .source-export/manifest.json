@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "sourceRef": "main",
-  "sourceCommit": "894ff8bca8685589996a187c016195906fae251b",
-  "exportedAt": "2026-10-05T06:19:40.966832+00:00",
+  "sourceCommit": "aaca58b96810b622962da92c55246cd775ff359b",
+  "exportedAt": "2026-10-05T13:50:00.795077+00:00",
   "scope": "Source-only history with explicitly retained compact performance evidence. Original large history and omitted baselines remain local.",
   "excluded": [
     {
@@ -264186,9 +264186,9 @@
       "bytes": 6428
     }
   ],
-  "includedFiles": 6000,
-  "includedBytes": 162020266,
-  "qualification": "Both production builds and focused Home Screen browser checks passed. Physical installation and manual acceptance remain incomplete; the earlier full visual campaign is separate evidence.",
-  "latestUpdate": ".source-export/updates/installed-app-publication-20261005.json",
+  "includedFiles": 6016,
+  "includedBytes": 162361168,
+  "qualification": "Source integration batch, GitHub project-path semantic/SSR build, deployment/document-style and publisher checks, plus complete github-pages.spec.ts:12 passing cases across Chromium, Firefox and WebKit. Broader theme fidelity and manual/device qualification remain separate.",
+  "latestUpdate": ".source-export/updates/theme-github-only-20261005.json",
   "countScope": "Delivered blobs excluding this manifest"
 }
