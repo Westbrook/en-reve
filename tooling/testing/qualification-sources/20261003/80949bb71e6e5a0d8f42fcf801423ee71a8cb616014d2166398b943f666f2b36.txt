@@ -18,8 +18,6 @@ export type ColorFormat = 'hex' | 'rgb' | 'hsl';
  * Inline sRGB and Display-P3 color controls with HEX, RGB, HSL and optional alpha editing. The containing application owns popup lifetime,
  * form submission, optional palette/recent colors and any Apply/Cancel transaction.
  * @tagname en-color-picker
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the composed text and select field frames; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the composed text and select field frames on hover-capable devices.
  * @slot palette - Optional application-owned palette controls.
  * @slot recent - Optional application-owned recent color controls.
  * @csspart hex-description - Forwarded hex guidance only.

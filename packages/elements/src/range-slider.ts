@@ -50,6 +50,8 @@ catch {
  * @cssprop --en-slider-disabled-thumb-opacity - Additional disabled thumb opacity.
  * @cssprop --en-slider-paint-duration - Thumb paint transition duration; reduced motion removes transitions.
  * @tagname en-range-slider
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the exact-value endpoint editor frames; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the exact-value endpoint editor frames on hover-capable devices.
  * @slot description - Supporting content; replaces the description attribute/property fallback.
  * @csspart description - Supporting content for both endpoints.
  * @csspart track - Stationary coordinate track.

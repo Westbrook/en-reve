@@ -48,11 +48,22 @@ def update(definition):
         values["helper-size"] = token("dimension", {"value": 12, "unit": "px"})
         values["helper-line-height"] = token("number", 16 / 12)
         values["normal-weight"] = token("fontWeight", 400)
+        # Inherited field hooks cross component shadow roots, preserving the
+        # source perimeter and independent bottom edge on unforwarded children.
+        definition["baseOptions"][mode].setdefault("pins", {}).update({
+            "component.input.border-color": "{theme.fluent-anatomy.perimeter}",
+            "component.input.hover-border-color": "{theme.fluent-anatomy.perimeter-hover}",
+            "component.input.bottom-border-color": "{theme.fluent-anatomy.accessible}",
+            "component.input.hover-bottom-border-color": "{theme.fluent-anatomy.accessible-hover}",
+        })
     rules = definition["companion"]["rules"]
     prefix = "theme.fluent-anatomy."
-    edges = {"perimeter": prefix + "perimeter", "perimeter-hover": prefix + "perimeter-hover", "bottom": prefix + "accessible", "bottom-hover": prefix + "accessible-hover"}
-    for target in ("fluent-field", "fluent-number-field"):
-        upsert(rules, {"target": target, "presentation": "bottom-edge", "tokens": {}, "roles": edges.copy()})
+    # Core consumers own inherited edges, including nested and adorned fields.
+    # Retain the reusable presentation registry; retire only these bundled rules.
+    rules[:] = [rule for rule in rules if not (
+        rule["target"] in ("fluent-field", "fluent-number-field")
+        and rule.get("presentation") == "bottom-edge"
+    )]
     choice = {
         "border": prefix + "accessible", "hover-border": prefix + "accessible-hover", "pressed-border": prefix + "accessible-pressed",
         "selected-background": "color.action-text", "selected-hover-background": prefix + "selected-hover", "selected-pressed-background": prefix + "selected-pressed",

@@ -12,6 +12,8 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * @cssprop --en-number-step-pressed-shadow - number-step held-state refinement; geometry is bounded and reduced motion wins.
  * @cssprop --en-number-step-pressed-background - number-step held-state refinement; geometry is bounded and reduced motion wins.
  * @tagname en-number-field
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the compound number-field frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the compound number-field frame on hover-capable devices.
  * @slot label - Visible field label; falls back to label.
  * @slot description - Supporting text; falls back to the description attribute/property.
  * @slot decrement-label - Accessible decrement action name; falls back to decrement-label.

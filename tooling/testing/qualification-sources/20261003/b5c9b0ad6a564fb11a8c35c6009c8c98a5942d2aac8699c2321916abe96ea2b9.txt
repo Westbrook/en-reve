@@ -14,8 +14,6 @@ function normalizeColor(value: string): string {
  * `for` adds an external button or swatch trigger in the same tree; the named native field remains available.
  * Native picker support varies, including iOS. No open state or successful picker display is inferred.
  * @tagname en-color-field
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the native color input frame; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the native color input frame on hover-capable devices.
  * @slot label - Visible field label; falls back to label.
  * @slot description - Supporting text; falls back to the description attribute/property.
  * @csspart field - Field layout.

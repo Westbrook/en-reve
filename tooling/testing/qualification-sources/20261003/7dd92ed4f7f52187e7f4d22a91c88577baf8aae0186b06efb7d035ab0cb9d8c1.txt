@@ -23,8 +23,6 @@ export interface Question {
 /** Retained local answers and validated step navigation. Persistence and submission
  * belong to the application; submit is intent, never an automatic network request.
  * @tagname en-questionnaire
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the text and select answer frames; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the text and select answer frames on hover-capable devices.
  * @fires {import('@en-reve/primitives/interactions/events.js').ChangeEvent<Record<string,QuestionnaireAnswer>>} en-change - Tentative answer map, reason answer.
  * @fires {CustomEvent<import('@en-reve/primitives/interactions/events.js').ActionDetail<string, {from:string;to:string|null;answers:Record<string,QuestionnaireAnswer>}>>} en-action - Cancelable next/previous/skip/submit intent with step ids and answers.
  */

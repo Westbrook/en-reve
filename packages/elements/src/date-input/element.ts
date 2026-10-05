@@ -5,6 +5,8 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * A native date control. Value, min and max are local calendar-date strings (YYYY-MM-DD), never timestamps.
  * The browser owns picker presentation and locale-specific editing.
  * @tagname en-date-input
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the native date input frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the native date input frame on hover-capable devices.
  * @slot label - Visible field label; falls back to label.
  * @slot description - Supporting text; falls back to the description attribute/property.
  * @csspart field - Field layout.

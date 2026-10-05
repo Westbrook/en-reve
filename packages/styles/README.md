@@ -218,6 +218,31 @@ Examples: `--en-button-background`, `--en-control-min-size`, `--en-surface-radiu
 
 Structural constants such as zero margins, `100%` containment, one full spinner revolution, grid fractions, and the one-pixel screen-reader clipping box are mechanisms rather than visual theme values. Native system colors in forced-colors mode preserve the user's palette. Those constants are not copied token defaults. The only `!important` declarations enforce hidden content and forced-color states across variants; no token defaults use it.
 
+### Optional field bottom-edge paint
+
+`--en-input-bottom-border-color` refines an enabled field's block-end border;
+`--en-input-hover-bottom-border-color` refines that edge on hover. Both inherit
+through compound shadow roots and are consumed on the existing frame, including
+ordinary native inputs/selects/textareas, number groups, adorned text fields and
+token editors. They change color only. They do not alter width, padding, editing,
+steppers, validity reporting or the separate focus accent/halo.
+
+At rest the bottom hook falls back to the frame's existing perimeter paint. On
+hover the hover-bottom hook falls back to the bottom hook, then the frame's
+existing perimeter paint for that state. An omitted hook preserves current
+behavior, including the adorned frame's rest perimeter and existing compound
+hover rules. A disabled auxiliary stepper or token action does not suppress an
+explicit bottom-hover hook while the primary editor remains enabled. Primary
+disabled state and visible errors (`aria-invalid`, `data-invalid`, or native
+`:user-invalid`) retain the owned contour. Pristine native `:invalid` alone does
+not expose an error. Forced colors retain system paint.
+
+The matching optional managed tokens are `component.input.bottom-border-color`
+and `component.input.hover-bottom-border-color`. Full themes reset omitted pins;
+partial themes preserve inherited values. Existing CSS Parts and native helper
+CSS remain available for direct consumer paint. Private per-frame fallbacks are
+implementation details and are not additional customization hooks.
+
 ## Size, density and composed geometry
 
 Every visual component defaults to medium without needing a `size` attribute. Explicit `size="small|medium|large"` selects absolute public role variants; `size="inherit"` opts into the ancestor's requested size. Choice descriptors (`en-select-option` and `en-segmented-item`) have no independent size API; their parent sizes the painted choices. An explicitly opted-in native `.en-foundation` region uses `data-size` with the same modes. Nested sizes never multiply. An icon inside a small/large button opts into that context with `size="inherit"`; `iconHostStyles` independently preserves inherited action/status color.

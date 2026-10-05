@@ -3755,3 +3755,190 @@ async function radixDefaultTabs(page: Page, appearance: Appearance, css: string,
     nativeSelected: await style(nativeLayout, ['height', 'min-block-size', 'letter-spacing']),
   });
 }
+
+// Fluent React Input 9.8.6 uses neutral perimeter tokens and a darker bottom
+// edge. Exercise inherited delivery through the actual lazy editor/picker graph,
+// since document-level ::part rules cannot reach these generated descendants.
+for (const appearance of ['light', 'dark'] as const) {
+  test(`fluent-inspired ${appearance}: nested fields retain source edges, validation and public bottom overrides`, async ({ page, browserName, exportedCSS }, info) => {
+    test.setTimeout(120_000);
+    const css = exportedCSS['fluent-inspired'];
+    const source = appearance === 'light'
+      ? { perimeter: 'rgb(209, 209, 209)', hover: 'rgb(199, 199, 199)', bottom: 'rgb(97, 97, 97)', hoverBottom: 'rgb(87, 87, 87)', danger: 'rgb(177, 14, 28)', accent: 'rgb(166, 63, 80)', preview: 'rgb(175, 78, 99)' }
+      : { perimeter: 'rgb(102, 102, 102)', hover: 'rgb(117, 117, 117)', bottom: 'rgb(173, 173, 173)', hoverBottom: 'rgb(189, 189, 189)', danger: 'rgb(238, 172, 178)', accent: 'rgb(253, 159, 176)', preview: 'rgb(219, 116, 136)' };
+    const edgeNames = ['border-top-color', 'border-right-color', 'border-left-color', 'border-bottom-color'];
+    const edges = (perimeter: string, bottom: string) => Object.fromEntries(edgeNames.map(name => [name, name === 'border-bottom-color' ? bottom : perimeter]));
+    const paint = async (control: Locator, perimeter: string, bottom: string) => {
+      await expect.poll(() => style(control, edgeNames)).toEqual(edges(perimeter, bottom));
+    };
+    const bottomHooks = ['--en-input-bottom-border-color', '--en-input-hover-bottom-border-color'];
+    const pinBottom = async (owner: Locator, enabled: boolean) => owner.evaluate((element, args) => {
+      const declaration = (element as HTMLElement).style;
+      for (const [index, name] of args.names.entries()) {
+        if (args.enabled) declaration.setProperty(name, index ? '#345678' : '#123456');
+        else declaration.removeProperty(name);
+      }
+    }, { names: bottomHooks, enabled });
+
+    // Direct custom and portable native controls must honor the same local
+    // public overrides as controls generated several shadow roots below them.
+    await open(page, 'text-fields', 'fluent-inspired', appearance, css);
+    await nativeStyles(page, info); await mountExportedCSS(page, css);
+    await specimen(page).evaluate(element => {
+      const region = document.createElement('div'); region.className = 'en-foundation';
+      region.innerHTML = '<input id="fluent-native-edge" class="en-input en-text-input" aria-label="Native edge reference">';
+      element.append(region);
+    });
+    const directHost = specimen(page).locator('en-text-field').filter({ has: page.getByRole('textbox', { name: 'Project name', exact: true }) });
+    for (const [owner, control] of [[directHost, directHost.getByRole('textbox')], [page.locator('#fluent-native-edge'), page.locator('#fluent-native-edge')]]) {
+      await control.blur(); await page.mouse.move(0, 0);
+      await paint(control, source.perimeter, source.bottom);
+      await pinBottom(owner, true); await paint(control, source.perimeter, 'rgb(18, 52, 86)');
+      await control.hover(); await paint(control, source.hover, 'rgb(52, 86, 120)');
+      await pinBottom(owner, false); await paint(control, source.hover, source.hoverBottom);
+    }
+
+    await open(page, 'composable-chat', 'fluent-inspired', appearance, css);
+    const demo = specimen(page).locator('en-composable-chat-demo');
+    const entry = demo.getByRole('combobox', { name: 'Color entry', exact: true });
+    const editor = demo.getByRole('textbox', { name: 'Structured message', exact: true });
+    await expect(entry).toHaveValue('picker');
+    await page.mouse.move(0, 0); await paint(entry, source.perimeter, source.bottom);
+    await entry.hover(); await paint(entry, source.hover, source.hoverBottom); await page.mouse.move(0, 0);
+    await editor.focus(); await editor.press('ControlOrMeta+a'); await editor.press('Backspace'); await editor.pressSequentially('#336699');
+    const dialog = demo.getByRole('dialog', { name: 'Color picker', exact: true });
+    await expect(dialog).toBeVisible();
+    const picker = dialog.locator('en-color-picker');
+    const hex = picker.getByRole('textbox', { name: 'Hex color', exact: true });
+    const format = picker.getByRole('combobox', { name: 'Color format', exact: true });
+    // Named native controls prove completion of the scoped lazy registrations;
+    // global customElements.whenDefined cannot establish that for this graph.
+    await expect(picker).toHaveJSProperty('value', '#336699');
+    await expect(hex).toHaveValue('#336699'); await expect(format).toHaveValue('hex');
+    await expect(picker.getByRole('slider')).toHaveCount(3);
+    const controls = [entry, hex, format];
+    await page.mouse.move(0, 0);
+    for (const control of controls) await paint(control, source.perimeter, source.bottom);
+    // Hover the outside selector before opening; later comparisons remain
+    // noninteractive so popup positioning cannot obscure that selector.
+    for (const control of [hex, format]) {
+      await control.hover(); await paint(control, source.hover, source.hoverBottom);
+      for (const other of controls.filter(value => value !== control)) await paint(other, source.perimeter, source.bottom);
+      await page.mouse.move(0, 0);
+    }
+    const identity = async () => {
+      await metrics(part(dialog.getByRole('tab', { name: 'Picker', exact: true }), 'base'), { color: source.accent });
+      await metrics(part(picker, 'preview'), { 'border-top-color': source.preview });
+      expectPaint((await style(part(picker, 'preview'), ['background-color']))['background-color'], [51, 102, 153, 1]);
+    };
+    await identity();
+    await hex.focus(); await expect(hex).toBeFocused();
+    const focus = await style(hex, ['outline-style', 'outline-width']);
+    expect(focus['outline-style']).toBe('solid'); expect(parseFloat(focus['outline-width'])).toBeGreaterThan(0);
+    await paint(hex, source.perimeter, source.bottom);
+    const hexHost = part(picker, 'hex-field');
+    await metrics(part(hexHost, 'focus-frame'), { 'border-bottom-width': 2, 'border-bottom-color': source.accent, transform: 'matrix(1, 0, 0, 1, 0, 0)' }, '::after');
+
+    await pinBottom(picker, true);
+    for (const control of [hex, format]) {
+      await page.mouse.move(0, 0); await paint(control, source.perimeter, 'rgb(18, 52, 86)');
+      await control.hover(); await paint(control, source.hover, 'rgb(52, 86, 120)');
+    }
+    await paint(entry, source.perimeter, source.bottom); await identity();
+    // Visible feedback wins over both public state overrides, including while
+    // the native editor is focused and hovered; accepted picker value survives.
+    await hex.fill('oops'); await hex.press('Enter'); await hex.hover();
+    await expect(hex).toHaveAttribute('aria-invalid', 'true'); await expect(hex).toBeFocused();
+    await expect(part(hexHost, 'error')).toHaveText('Use 3 or 6 hex digits; add alpha with 4 or 8.');
+    await expect(part(hexHost, 'error')).toBeVisible(); await paint(hex, source.danger, source.danger);
+    await expect(picker).toHaveJSProperty('value', '#336699'); await expect(hex).toHaveValue('oops');
+    await hex.fill('#336699'); await hex.press('Enter');
+    await expect(hex).not.toHaveAttribute('aria-invalid', 'true'); await expect(part(hexHost, 'error')).toBeHidden();
+    await paint(hex, source.hover, 'rgb(52, 86, 120)');
+    await pinBottom(picker, false); await editor.focus(); await page.mouse.move(0, 0);
+
+    // A partial pins only the selected state. It must retain the inherited
+    // Fluent side and hover-bottom pins through the compound shadow graph.
+    await demo.evaluate(element => element.setAttribute('data-fluent-edge-partial', ''));
+    const partial = resolveTheme({ name: 'fluent-edge-partial', mode: appearance, pins: { 'component.input.bottom-border-color': colorFromHex('#274869') } });
+    const partialSheet = await page.addStyleTag({ content: emitThemeCSS(partial, {
+      kind: 'partial', tokenIds: ['component.input.bottom-border-color'], selector: '[data-fluent-edge-partial]',
+    }) });
+    await paint(entry, source.perimeter, 'rgb(39, 72, 105)');
+    for (const control of [hex, format]) {
+      await paint(control, source.perimeter, 'rgb(39, 72, 105)');
+      await control.hover(); await paint(control, source.hover, source.hoverBottom); await page.mouse.move(0, 0);
+    }
+    await partialSheet.evaluate(element => element.parentNode?.removeChild(element));
+    await demo.evaluate(element => element.removeAttribute('data-fluent-edge-partial'));
+
+    // Full child B resets A's optional pins. Compare to an independent native
+    // B field, then remove B and prove the literal Fluent A profile returns.
+    await nativeStyles(page, info);
+    const childSheet = await page.addStyleTag({ content: emitThemeCSS(resolveTheme({ name: 'fluent-edge-child', mode: appearance }), {
+      selector: '[data-en-theme="fluent-edge-child"]', colorScheme: true,
+    }) });
+    await specimen(page).evaluate((element, mode) => {
+      const region = document.createElement('div'); region.id = 'fluent-edge-child-reference'; region.className = 'en-foundation';
+      region.dataset.enTheme = 'fluent-edge-child'; region.dataset.enAppearance = mode;
+      region.innerHTML = '<input class="en-input en-text-input" aria-label="Child edge reference">'; element.append(region);
+    }, appearance);
+    await pinBottom(specimen(page), true);
+    await demo.evaluate((element, mode) => { element.setAttribute('data-en-theme', 'fluent-edge-child'); element.setAttribute('data-en-appearance', mode); }, appearance);
+    const reference = page.getByRole('textbox', { name: 'Child edge reference', exact: true });
+    for (const control of controls) {
+      await expect.poll(() => style(control, edgeNames)).toEqual(await style(reference, edgeNames));
+      expect(Object.values(await style(control, bottomHooks)).map(value => value.trim())).toEqual(['', '']);
+    }
+    await reference.hover(); const childHover = await style(reference, edgeNames); await page.mouse.move(0, 0);
+    await hex.hover(); await expect.poll(() => style(hex, edgeNames)).toEqual(childHover); await page.mouse.move(0, 0);
+    await pinBottom(specimen(page), false);
+    await demo.evaluate(element => { element.removeAttribute('data-en-theme'); element.removeAttribute('data-en-appearance'); });
+    await childSheet.evaluate(element => element.parentNode?.removeChild(element));
+    for (const control of controls) await paint(control, source.perimeter, source.bottom);
+    await identity();
+
+    if (emulationLimits.forcedColors[browserName]) info.annotations.push({ type: 'forced-colors-emulation-limit', description: emulationLimits.forcedColors[browserName] });
+    else {
+      await pinBottom(picker, true); await page.emulateMedia({ forcedColors: 'active' });
+      const systemBorder = await page.evaluate(() => {
+        const probe = document.createElement('span'); probe.style.color = 'ButtonText'; document.body.append(probe);
+        const color = getComputedStyle(probe).color; probe.remove(); return color;
+      });
+      for (const control of [hex, format]) { await control.hover(); await paint(control, systemBorder, systemBorder); }
+      await hex.focus(); await expect(hex).toBeFocused();
+      await metrics(hex, { 'forced-color-adjust': 'auto', 'outline-style': 'solid' });
+      expect(parseFloat((await style(hex, ['outline-width']))['outline-width'])).toBeGreaterThan(0);
+      await page.emulateMedia({ forcedColors: 'none' }); await pinBottom(picker, false); await page.mouse.move(0, 0);
+    }
+    await evidence(info, `fluent-${appearance}-nested-field-edges`, demo, { source, focus, depth: 'composable editor → lazy picker → generated fields', publicOverrides: 'direct/native/nested, partial preservation and full reset' });
+    await dialog.getByRole('button', { name: 'Cancel', exact: true }).click();
+    await expect(dialog).toBeHidden(); await expect(editor).toBeFocused(); await expect(editor).toHaveText('#336699');
+
+    await open(page, 'precision', 'fluent-inspired', appearance, css);
+    const number = specimen(page).locator('en-number-field');
+    const numberInput = number.getByRole('spinbutton', { name: 'Corner radius', exact: true });
+    const frame = part(number, 'stepper');
+    await number.evaluate(async element => {
+      const field = element as HTMLElement & { value: string; updateComplete: Promise<unknown> }; field.value = '0'; await field.updateComplete;
+    });
+    await expect(part(number, 'decrement')).toBeDisabled(); await expect(numberInput).toBeEnabled();
+    await page.mouse.move(0, 0); await paint(frame, source.perimeter, source.bottom);
+    await pinBottom(number, true); await numberInput.hover();
+    // The existing perimeter gate sees the disabled decrement; the new bottom
+    // hook sees the enabled editor. Do not broaden the former hover behavior.
+    await paint(frame, source.perimeter, 'rgb(52, 86, 120)'); await metrics(numberInput, { 'border-top-width': 0, 'border-bottom-width': 0 });
+    await number.evaluate(async element => {
+      const field = element as HTMLElement & { error: string; updateComplete: Promise<unknown> }; field.error = 'Application error'; await field.updateComplete;
+    });
+    await expect(numberInput).toHaveAttribute('aria-invalid', 'true'); await paint(frame, source.danger, source.danger);
+    await number.evaluate(async element => {
+      const field = element as HTMLElement & { error: string; disabled: boolean; updateComplete: Promise<unknown> }; field.error = ''; field.disabled = true; await field.updateComplete;
+    });
+    await expect(numberInput).toBeDisabled(); await page.mouse.move(0, 0);
+    const disabled = await style(frame, edgeNames);
+    await pinBottom(number, false); expect(await style(frame, edgeNames)).toEqual(disabled);
+    await pinBottom(number, true); await numberInput.hover(); expect(await style(frame, edgeNames)).toEqual(disabled);
+    await evidence(info, `fluent-${appearance}-number-bottom-edge`, number, { source, disabled, atMinimum: true });
+  });
+}

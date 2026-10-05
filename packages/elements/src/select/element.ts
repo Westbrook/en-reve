@@ -25,6 +25,8 @@ export interface SelectItem {
  * @cssprop --en-select-pressed-background - select held-state refinement; geometry is bounded and reduced motion wins.
  * @cssprop --en-select-pressed-color - select held-state refinement; geometry is bounded and reduced motion wins.
  * @tagname en-select
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the select control frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the select control frame on hover-capable devices.
  * @slot - Direct en-select-option descriptors; their content supplies plain option labels.
  * @csspart focus-frame - Noninteractive field frame supporting the supplemental focus accent.
  * @slot label - Visible field label; falls back to label.

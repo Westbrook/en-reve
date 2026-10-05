@@ -1,6 +1,6 @@
 import { pressStyles } from './internal/press.js';
 import { pressRecipes } from './internal/press-recipes.js';
-import { fieldPresentation, fieldBottomPaint } from './internal/field-presentation.js';
+import { fieldPresentation } from './internal/field-presentation.js';
 import { controlTargetSize } from './internal/target-size.js';
 import {css} from 'lit';
 import {descriptionStyles} from './internal/description.js';
@@ -20,7 +20,6 @@ export const tokenEditorStyles=sizedStyles(css`
  ${controlSurfaceStyles(css`.editor`)}
  .editor{padding-inline:${o('--en-input-inline-padding',o('--en-control-inline-padding',t('--en-space-control-inline')))};background:${o('--en-input-background',o('--en-control-background',t('--en-color-surface')))};color:${o('--en-input-color',o('--en-control-color',t('--en-color-text')))};font: ${t('--en-font-input-weight')} ${t('--en-font-input-size')} / ${t('--en-font-input-line-height')} ${t('--en-font-input-family')}; font-style: ${t('--en-font-input-style')}; letter-spacing: ${t('--en-font-input-tracking')};min-block-size:7rem;max-block-size:var(--en-editor-max-size,20rem);overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere}
  ${fieldPresentation(css`.editor`, css`.editor[aria-invalid='true']`)}
- ${fieldBottomPaint(css`.editor:where(:not([aria-disabled='true']):not([aria-invalid='true']))`)}
  ${focusStylesFor(css`.editor`,{family:'input'})}
  ${controlDisabledStyles(css`.editor[aria-disabled=true]`)}
  [data-token]{

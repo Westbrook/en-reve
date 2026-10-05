@@ -46,6 +46,8 @@ export type { ComboboxItem } from './model.js';
  * @cssprop --en-option-release-duration - option held-state refinement; geometry is bounded and reduced motion wins.
  * @cssprop --en-option-pressed-shadow - option held-state refinement; geometry is bounded and reduced motion wins.
  * @tagname en-combobox
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the query input frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the query input frame on hover-capable devices.
  * @cssprop --en-option-focus-width - Immediate primary focus contour width.
  * @cssprop --en-option-focus-color - Immediate primary focus contour color.
  * @cssprop --en-option-focus-offset - Signed primary focus contour offset.

@@ -46,6 +46,8 @@ import { syncRangePresentation } from '@en-reve/primitives/interactions/range-pr
  * @cssprop --en-slider-paint-duration - Thumb paint transition duration; reduced motion removes transitions.
  * @cssprop --en-slider-value-percent - Derived presentation state on the native control; managed by the component, never a theme pin.
  * @tagname en-slider
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the optional exact-value editor frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the optional exact-value editor frame on hover-capable devices.
  * @slot - The visible slider label.
  * @slot label - Preferred visible label; falls back to the default slot and then label.
  * @slot description - Supporting text; falls back to the description attribute/property.

@@ -20,8 +20,6 @@ export type { CommandPaletteCommand } from './model.js';
  * @cssprop --en-motion-surface-offset - Optional modal travel, constrained to 0–8px.
  * @cssprop --en-motion-surface-scale - Optional modal scale, constrained to .95–1.
  * @tagname en-command-palette
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the search input frame; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the search input frame on hover-capable devices.
  * @cssprop --en-option-focus-width - Immediate primary focus contour width.
  * @cssprop --en-option-focus-color - Immediate primary focus contour color.
  * @cssprop --en-option-focus-offset - Signed primary focus contour offset.

@@ -40,8 +40,6 @@ export interface TokenEditorEventMap extends EditorEventMap {
  * @cssprop --en-editor-token-pressed-color - editor-token held-state refinement; geometry is bounded and reduced motion wins.
  * @cssprop --en-editor-token-pressed-border-color - editor-token held-state refinement; geometry is bounded and reduced motion wins.
  * @tagname en-token-editor
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the editing surface frame; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the editing surface frame on hover-capable devices.
  * @slot description - Supporting content; replaces the description attribute/property fallback.
  * @csspart description - Supporting content below the editing surface.
  * @slot label - Visible label; label supplies the textbox accessible name.

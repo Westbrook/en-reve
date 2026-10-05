@@ -33,8 +33,9 @@ function edges(ctx: CompanionPresentationContext, compound = false): string {
     '--en-input-border-color': ctx.role('perimeter'),
     '--en-input-hover-border-color': ctx.role('perimeter-hover'),
   }));
-  const bottom = declarations({ 'border-block-end-color': ctx.role('bottom') });
-  const hover = declarations({ 'border-block-end-color': ctx.role('bottom-hover') });
+  const bottom = declarations({ 'border-block-end-color': ctx.role('bottom') ? `var(--en-input-bottom-border-color, ${ctx.role('bottom')})` : undefined });
+  const hoverFallback = ctx.role('bottom-hover') ?? ctx.role('bottom');
+  const hover = declarations({ 'border-block-end-color': hoverFallback ? `var(--en-input-hover-bottom-border-color, var(--en-input-bottom-border-color, ${hoverFallback}))` : undefined });
   const invalid = 'border-block-end-color: var(--en-input-invalid-border-color, var(--en-color-danger-text));';
   const rules = ctx.selectors.map(selector => {
     if (/:where\(\.en-/.test(selector)) {

@@ -6,8 +6,6 @@ import { timeError, timePresentation, timeSeconds, timeString, type TimePrecisio
 /**
  * Localized wall-time entry with canonical local values, independent of dates and timezones.
  * @tagname en-time-field
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the localized time editor frame; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the localized time editor frame on hover-capable devices.
  * @slot label - Visible label; falls back to label.
  * @slot description - Supporting text; falls back to description.
  * @csspart field - Field layout.

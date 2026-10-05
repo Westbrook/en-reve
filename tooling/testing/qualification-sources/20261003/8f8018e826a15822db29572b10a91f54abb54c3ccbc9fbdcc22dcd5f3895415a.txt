@@ -2,8 +2,6 @@ import { MultipleChoice } from './internal/multiple-choice.js';
 /** Searchable multi-value field. Query is independent from selected form values.
  * @omit-csspart option-content
  * @tagname en-multiselect
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the query input frame; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the query input frame on hover-capable devices.
  * @csspart field - Field layout.
  * @csspart options - Multiselect listbox.
  * @csspart option - Selectable option surface.

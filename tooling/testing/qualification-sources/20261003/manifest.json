@@ -410,6 +410,315 @@
         "path": "packages/styles/src/overlays.ts",
         "note": "Exact bytes from the historical receipt sourceBase. This retains historical inputs; it does not qualify the current source overlay width fallback."
       }
+    },
+    {
+      "path": "packages/elements/src/color-field/element.ts",
+      "sha256": "b5c9b0ad6a564fb11a8c35c6009c8c98a5942d2aac8699c2321916abe96ea2b9",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/b5c9b0ad6a564fb11a8c35c6009c8c98a5942d2aac8699c2321916abe96ea2b9.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/color-field/element.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/color-picker/element.ts",
+      "sha256": "80949bb71e6e5a0d8f42fcf801423ee71a8cb616014d2166398b943f666f2b36",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/80949bb71e6e5a0d8f42fcf801423ee71a8cb616014d2166398b943f666f2b36.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/color-picker/element.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/command-palette/element.ts",
+      "sha256": "4c8c5c399c0776f0da7250350f0636a458c2e7c9804821de02d4c81cd145690b",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/4c8c5c399c0776f0da7250350f0636a458c2e7c9804821de02d4c81cd145690b.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/command-palette/element.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/date-input/element.ts",
+      "sha256": "88d64634684c55633af91a41d7e3720b80857192b5bd90800ce44b76d0f30d11",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/88d64634684c55633af91a41d7e3720b80857192b5bd90800ce44b76d0f30d11.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/date-input/element.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/multiselect.ts",
+      "sha256": "8f8018e826a15822db29572b10a91f54abb54c3ccbc9fbdcc22dcd5f3895415a",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/8f8018e826a15822db29572b10a91f54abb54c3ccbc9fbdcc22dcd5f3895415a.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/multiselect.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/query-builder.ts",
+      "sha256": "42d1c951fbb4969cafb6a4c7cc5fa10c815bd3725fa663b6ffc518d47ca87e23",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/42d1c951fbb4969cafb6a4c7cc5fa10c815bd3725fa663b6ffc518d47ca87e23.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/query-builder.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/questionnaire.ts",
+      "sha256": "7dd92ed4f7f52187e7f4d22a91c88577baf8aae0186b06efb7d035ab0cb9d8c1",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/7dd92ed4f7f52187e7f4d22a91c88577baf8aae0186b06efb7d035ab0cb9d8c1.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/questionnaire.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/time-field/element.ts",
+      "sha256": "41b2351bc2ca50d9d28e2ea6d2a2699bf85d459d937d83d244281137b426f5f8",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/41b2351bc2ca50d9d28e2ea6d2a2699bf85d459d937d83d244281137b426f5f8.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/time-field/element.ts"
+      }
+    },
+    {
+      "path": "packages/elements/src/token-editor/element.ts",
+      "sha256": "62f4ab50badc6a9c0cdb1cc25355fcab915b8e0ade9ee28bc19e6c97f46ef427",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/62f4ab50badc6a9c0cdb1cc25355fcab915b8e0ade9ee28bc19e6c97f46ef427.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/elements/src/token-editor/element.ts"
+      }
+    },
+    {
+      "path": "packages/styles/src/internal/field-presentation.ts",
+      "sha256": "9ab61229b3f5330ce2f5e0b1776b533b277200eb2078773b97d2c752ba977fbc",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/9ab61229b3f5330ce2f5e0b1776b533b277200eb2078773b97d2c752ba977fbc.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/styles/src/internal/field-presentation.ts"
+      }
+    },
+    {
+      "path": "packages/styles/src/token-editor.ts",
+      "sha256": "b52f9deb0bc557e0af3c9e4f450e0d4f8621f91dd3e7b6cdcc752f757ef40301",
+      "receipts": [
+        "apps/docs/tests/verification-candidate-impact-20261003.json",
+        "apps/docs/tests/verification-candidate-state-catalogue-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-producer-20261003.json",
+        "apps/docs/tests/verification-candidate-visual-reader-20261003.json",
+        "apps/docs/tests/verification-expanded-catalogue-20261003.json",
+        "apps/docs/tests/verification-expanded-gallery-20261003.json",
+        "apps/docs/tests/verification-geometry-density-20261003.json",
+        "apps/docs/tests/verification-github-pages-20261003.json",
+        "apps/docs/tests/verification-impact-20261003.json",
+        "apps/docs/tests/verification-preview-coverage-20261003.json",
+        "apps/docs/tests/verification-project-visual-capture-20261003.json",
+        "apps/docs/tests/verification-semantic-closeout-20261003.json",
+        "apps/docs/tests/verification-specimen-catalogue-20261003.json",
+        "apps/docs/tests/verification-visual-assessment-20261003.json",
+        "apps/docs/tests/verification-visual-parts-20261003.json",
+        "apps/docs/tests/verification-workflow-catalogue-20261003.json",
+        "probes/editor-collaboration-recipes/verification-20261002.json"
+      ],
+      "snapshot": "tooling/testing/qualification-sources/20261003/b52f9deb0bc557e0af3c9e4f450e0d4f8621f91dd3e7b6cdcc752f757ef40301.txt",
+      "origin": {
+        "kind": "git",
+        "commit": "611bceacb30e32fccc25186dc61266cfd4880038",
+        "path": "packages/styles/src/token-editor.ts"
+      }
     }
   ]
 }

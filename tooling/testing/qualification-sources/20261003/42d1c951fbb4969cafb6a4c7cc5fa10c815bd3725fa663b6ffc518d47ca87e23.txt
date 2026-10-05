@@ -10,8 +10,6 @@ import { copyQuery, validateQuery, queryOperators, type Query, type QueryField, 
 /** Structured filter editing with an explicit draft/apply/cancel boundary.
  * No arbitrary expression evaluation or remote filtering is performed.
  * @tagname en-query-builder
- * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the clause value inputs and select control frames; invalid, disabled and forced colors take precedence.
- * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the clause value inputs and select control frames on hover-capable devices.
  * @fires {import('@en-reve/primitives/interactions/events.js').ChangeEvent<Query>} en-change - Tentative committed query, reason apply.
  */
 export class EnQueryBuilder extends EnElement<{'en-change': import('@en-reve/primitives/interactions/events.js').ChangeEvent<Query>}> {

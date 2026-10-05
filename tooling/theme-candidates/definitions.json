@@ -4135,8 +4135,10 @@
           },
           "component.input.border-width": "{border.width}",
           "component.input.invalid-border-width": "{border.invalid-width}",
-          "component.input.border-color": "{color.boundary}",
-          "component.input.hover-border-color": "{color.action-text}",
+          "component.input.border-color": "{theme.fluent-anatomy.perimeter}",
+          "component.input.hover-border-color": "{theme.fluent-anatomy.perimeter-hover}",
+          "component.input.bottom-border-color": "{theme.fluent-anatomy.accessible}",
+          "component.input.hover-bottom-border-color": "{theme.fluent-anatomy.accessible-hover}",
           "component.input.invalid-border-color": "{color.danger-text}",
           "component.surface.shadow": "{shadow.none}",
           "component.card.shadow": "{shadow.none}",
@@ -5699,8 +5701,10 @@
           },
           "component.input.border-width": "{border.width}",
           "component.input.invalid-border-width": "{border.invalid-width}",
-          "component.input.border-color": "{color.boundary}",
-          "component.input.hover-border-color": "{color.action-text}",
+          "component.input.border-color": "{theme.fluent-anatomy.perimeter}",
+          "component.input.hover-border-color": "{theme.fluent-anatomy.perimeter-hover}",
+          "component.input.bottom-border-color": "{theme.fluent-anatomy.accessible}",
+          "component.input.hover-bottom-border-color": "{theme.fluent-anatomy.accessible-hover}",
           "component.input.invalid-border-color": "{color.danger-text}",
           "component.surface.shadow": "{shadow.none}",
           "component.card.shadow": "{shadow.none}",
@@ -7088,28 +7092,6 @@
             "titleFontWeight": "theme.fluent-dialog.strong-weight",
             "surfaceScale": "theme.fluent-dialog.surface-scale",
             "surfaceOffset": "theme.fluent-dialog.zero"
-          }
-        },
-        {
-          "target": "fluent-field",
-          "presentation": "bottom-edge",
-          "tokens": {},
-          "roles": {
-            "perimeter": "theme.fluent-anatomy.perimeter",
-            "perimeter-hover": "theme.fluent-anatomy.perimeter-hover",
-            "bottom": "theme.fluent-anatomy.accessible",
-            "bottom-hover": "theme.fluent-anatomy.accessible-hover"
-          }
-        },
-        {
-          "target": "fluent-number-field",
-          "presentation": "bottom-edge",
-          "tokens": {},
-          "roles": {
-            "perimeter": "theme.fluent-anatomy.perimeter",
-            "perimeter-hover": "theme.fluent-anatomy.perimeter-hover",
-            "bottom": "theme.fluent-anatomy.accessible",
-            "bottom-hover": "theme.fluent-anatomy.accessible-hover"
           }
         },
         {

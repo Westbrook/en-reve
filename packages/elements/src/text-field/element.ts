@@ -7,6 +7,8 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * Native drafts emit en-input; non-composing value changes dispatch the cancelable en-change event.
  * The label slot falls back to label. External labels are not forwarded into shadow DOM.
  * @tagname en-text-field
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the text-field frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the text-field frame on hover-capable devices.
  * @slot prefix - Leading decoration or independently named action; never part of the input label.
  * @slot suffix - Trailing units or independently named action.
  * @slot help-action - Adjacent independently named help button.

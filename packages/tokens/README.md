@@ -22,6 +22,25 @@ Optional component variables are not initialized on hosts. Styles consume `var(-
 
 Field paint follows `--en-input-background` → `--en-control-background` → the semantic surface, with the equivalent order for text color. The compound number field paints its wrapper behind a transparent editor. Card fill follows `--en-card-background` → `--en-surface-background` → the semantic surface. These component tokens leave action and choice surfaces independent. A `component.button.radius` pin can give buttons pill corners while fields retain `radius.control`; without a pin, buttons keep their selected-size radius fallback. An explicit button-radius pin or CSS override applies one radius across sizes. Full child themes reset these optional overrides, while partial themes retain unrelated inherited pins.
 
+`component.input.bottom-border-color` and
+`component.input.hover-bottom-border-color` expose optional inherited
+`--en-input-bottom-border-color` and `--en-input-hover-bottom-border-color`.
+They refine the bottom edge of enabled, non-invalid field frames, including
+compound fields, without changing the other edges or the focus accent. At rest,
+the bottom hook falls back to the existing perimeter paint for that frame. Hover
+uses its bottom hook, the resting bottom hook, then that frame's existing
+perimeter paint in its current state. Existing hover eligibility stays unchanged:
+an adorned frame or a compound frame with a disabled auxiliary control may keep
+its resting perimeter. Leaving both hooks unset preserves that behavior. Invalid,
+disabled and forced-color states keep precedence.
+Their typed authoring defaults alias `component.input.border-color` and
+`component.input.hover-border-color`; these defaults are separate from the
+contextual CSS fallback. Unpinned full themes emit `initial`, full child themes
+clear inherited bottom-edge pins, and partial themes preserve unspecified pins.
+Managed edits accept opaque colors and compatible color aliases; restoring a
+pin resumes its contextual fallback. Native field helpers and composed child fields
+inherit the same hooks; component annotations identify the applicable surfaces.
+
 `component.rating.star-radius` maps to optional `--en-rating-star-radius` and defaults to `{radius.control}`. It styles only the square star targets and their focus contours; the separate “No rating” action keeps its ordinary shape. Managed choices include zero for square corners, intermediate rounded radii, and `{radius.pill}` / `9999px` for circular targets. Full child themes reset the optional pin; partial themes preserve it unless selected. Astryx- and shadcn-inspired candidates pin circular stars in both appearances without changing other controls.
 
 Menu geometry has two optional roles: `component.menu.min-inline-size` and

@@ -5,6 +5,8 @@ import { EditableFieldElement } from '../forms-private/editable-field.js';
  * Labeled native search editing. Applications own query execution, results and network state.
  * The label slot falls back to label; internal input markup is private.
  * @tagname en-search-input
+ * @cssprop --en-input-bottom-border-color - Optional resting bottom-border color for the search input frame; invalid, disabled and forced colors take precedence.
+ * @cssprop --en-input-hover-bottom-border-color - Optional hover bottom-border color for the search input frame on hover-capable devices.
  * @slot label - Visible field label; falls back to label.
  * @slot description - Supporting text; falls back to the description attribute/property.
  * @csspart field - Field layout.

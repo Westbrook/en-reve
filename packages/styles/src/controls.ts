@@ -1,7 +1,7 @@
 import { insetButtonStyles, insetActionContext } from './internal/inset-action.js';
 import { pressStyles } from './internal/press.js';
 import { pressRecipes } from './internal/press-recipes.js';
-import { fieldPresentation, fieldBorderWidth, fieldInvalidWidth, fieldRadius } from './internal/field-presentation.js';
+import { fieldPresentation, fieldBottomPaint, fieldBorderWidth, fieldInvalidWidth, fieldRadius } from './internal/field-presentation.js';
 import { selectChevron } from './internal/select-chevron.js';
 import { controlTargetSize, pointerTargetSize } from './internal/target-size.js';
 import { css } from 'lit';
@@ -100,6 +100,10 @@ export const controlStyles = sizedStyles(css`
     background: ${o('--en-input-background', o('--en-control-background', t('--en-color-surface')))};
   }
   .en-number-group[data-invalid] { border-color: ${o('--en-input-invalid-border-color', t('--en-color-danger-text'))}; }
+  ${fieldBottomPaint(css`
+    :is(.en-input, .en-textarea, .en-select):where(:not(:disabled):not([aria-disabled='true']):not([data-invalid]):not([aria-invalid='true']):not(:user-invalid)),
+    .en-number-group:where(:not([data-invalid]):not([aria-invalid='true']):not([aria-disabled='true']):has(> .en-number-input:enabled:not([aria-disabled='true']):not([aria-invalid='true']):not(:user-invalid)))
+  `)}
   .en-number-group > :is(.en-number-input, .en-number-step, button.en-button.en-number-step) { min-block-size: max(calc(var(--_en-text-control-block-size) - 2 * ${fieldBorderWidth}), ${t('--en-size-target-min')}); }
   .en-number-group > .en-number-input { border: 0; border-radius: 0; background: none; appearance: textfield; }
   .en-number-input::-webkit-inner-spin-button, .en-number-input::-webkit-outer-spin-button { appearance: none; margin: 0; }
@@ -383,11 +387,12 @@ export const formStyles = sizedStyles(css`
 /** Adorned single-line fields share a frame; slotted actions retain their own
  * keyboard focus and receive compact geometry without changing their size API. */
 export const adornedFieldStyles = sizedStyles(css`
-  .en-adorned { display:flex !important; align-items:center; border:${fieldBorderWidth} solid ${o('--en-input-border-color', t('--en-color-boundary'))}; border-radius:${fieldRadius}; background:${o('--en-input-background', t('--en-color-surface'))}; }
+  .en-adorned { display:flex !important; align-items:center; border:${fieldBorderWidth} solid ${o('--en-input-border-color', t('--en-color-boundary'))}; border-radius:${fieldRadius}; background:${o('--en-input-background', t('--en-color-surface'))}; --_en-field-bottom-fallback:${o('--en-input-border-color', t('--en-color-boundary'))}; }
   .en-adorned > input { flex:1; min-inline-size:0; border:0; background:transparent; }
   .en-adorned:has(:focus-visible) { outline:var(--en-input-focus-width, ${t('--en-focus-width')}) solid var(--en-input-focus-color, ${t('--en-color-focus')}); outline-offset:var(--en-input-focus-offset, ${t('--en-focus-offset')}); }
   .en-adorned > input:focus-visible { outline:none; box-shadow:none; }
   .en-adorned[data-invalid] { border-color:var(--en-input-invalid-border-color, ${t('--en-color-danger-text')}); }
+  ${fieldBottomPaint(css`.en-adorned:where(:not([data-invalid]):not([aria-invalid='true']):not([aria-disabled='true']):has(> input:enabled:not([aria-disabled='true']):not([aria-invalid='true']):not(:user-invalid)))`)}
   .en-adorned slot::slotted(*) { margin-inline:${t('--en-space-2')}; }
   ${insetActionContext(css`.en-adorned`, css`.en-adorned slot[name='help-action']::slotted(*)`, fieldRadius, fieldBorderWidth)}
 `);
