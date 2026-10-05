@@ -14,10 +14,11 @@ no capture failures in those reports. It was deliberately interrupted during
 WebKit to publish the completed Home Screen work. Its outer result remains failed;
 the unfinished WebKit report is not accepted as a completed capture.
 
-Continue only the three unfinished WebKit density reports in
-`en-published-catalogue-webkit-20261005-04`. The final campaign combines the six
-hash-bound finalized reports with the three new reports, preserving each original
-run and outcome. It still requires **nine reports and all 7,524 comparisons**;
+Continue the WebKit density reports in
+`en-published-catalogue-webkit-20261005-04`. The final campaign must combine the six
+hash-bound finalized reports with three complete WebKit density reports, preserving
+each original run and outcome, including any recovery described below.
+It still requires **nine reports and all 7,524 comparisons**;
 no case, density, appearance, viewport or browser is removed. Multipart verification
 and the final requirement audit follow successful acquisition.
 
@@ -25,6 +26,35 @@ This qualification stays tied to the unchanged `923c493` application build and
 `0336b8d` harness checkout. It is not visual qualification of the subsequently
 published Home Screen build or future theme changes. Mechanical differences do
 not constitute human approval. Historical failures remain retained.
+
+### WebKit startup findings and targeted recovery — October 5, 2026
+
+Run04 completed compact with all 836 comparisons. Comfortable finalized with
+832 captured comparisons and four preview-readiness timeouts; its status remains
+`incomplete`. Spacious is still running. The failed comfortable cases are mobile,
+dark `radio-group:highest-quality`, `color-wheel:exact-hue`,
+`navigation-sidebar:drawer-open`, and `pagination:next-page`.
+
+The passive startup snapshots locate these failures before authored interaction:
+one already contains the exact ready reply just after the timeout; two retain
+pending trusted manifest or JavaScript requests; one shows an interactive iframe
+whose app element is not yet registered. No page errors or failed requests were
+recorded. This supports delayed preview initialization, but does not establish a
+component defect or a specific platform root cause. Keep the original 20-second
+budget and producer unchanged until stronger evidence warrants a correction.
+
+Let the existing spacious acquisition finish. Then make one fresh-output recovery
+of the affected comfortable density, using a byte-inventoried copy of its completed
+cache under normal machine and checkout ownership. Retain all 836 declared rows;
+successful exact-identity captures may reuse their verified artifacts, while
+missing or failed captures execute under the existing failure-history rules.
+Preserve the original report, failures, cache and originating-run references.
+A repeated startup failure requires further diagnosis, not an automatic retry loop.
+
+The already queued package04 command will reject the failed outer acquisition.
+After recovery, assemble a new ledger from the qualified density reports and their
+original outcomes before multipart verification and the final clause audit.
+No full-matrix pass, manual acceptance or baseline adoption is claimed here.
 
 ## Current delivery status — October 4, 2026
 
