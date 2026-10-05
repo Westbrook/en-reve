@@ -1,4 +1,4 @@
-/* @en-reve/tokens 0.1.0; sha256:504fedd531b2da0da5d80b9c5d565e4a66f4444a249268b5d80b3e56cc5ad938; paired full */
+/* @en-reve/tokens 0.1.0; sha256:f07eaa2c5d25e6dc0cf9630b0376044776ffae7391982ab4451402d94c874680; paired full */
 @layer en.tokens {
   :where(html[data-example-density="compact"]) {
     color-scheme: light dark;
@@ -283,6 +283,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -292,6 +293,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -827,7 +829,7 @@
   }
 }
 
-/* @en-reve/tokens 0.1.0; sha256:850d078c7db3fa38c5cf364ba213100c00b832308ba2b0c66eb75f85f043b8e1; full */
+/* @en-reve/tokens 0.1.0; sha256:04f5a144ab1b280b2b318e84d411022c06abdba5a8ea445e0e5b33f4526fb5ff; full */
 @layer en.tokens {
   html[data-example-density="compact"] [data-en-theme="inverse"] {
     color-scheme: dark;
@@ -1112,6 +1114,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -1121,6 +1124,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -1578,7 +1582,7 @@
   }
 }
 
-/* @en-reve/tokens 0.1.0; sha256:b2ca07e6f075d06a393ac1b278bb81640eb78099fe56f6bfe269cafdeeb1b4bb; full */
+/* @en-reve/tokens 0.1.0; sha256:0271239f5d8d22cf5ee40607447e4dda02366acbc9d33d89bcf55b2f6397b6f9; full */
 @layer en.tokens {
   html[data-example-density="compact"][data-en-appearance="dark"] [data-en-theme="inverse"] {
     color-scheme: light;
@@ -1863,6 +1867,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -1872,6 +1877,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -2330,7 +2336,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-/* @en-reve/tokens 0.1.0; sha256:b2ca07e6f075d06a393ac1b278bb81640eb78099fe56f6bfe269cafdeeb1b4bb; full */
+/* @en-reve/tokens 0.1.0; sha256:0271239f5d8d22cf5ee40607447e4dda02366acbc9d33d89bcf55b2f6397b6f9; full */
 @layer en.tokens {
   html[data-example-density="compact"]:not([data-en-appearance="light"], [data-en-appearance="dark"]) [data-en-theme="inverse"] {
     color-scheme: light;
@@ -2615,6 +2621,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -2624,6 +2631,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -3082,7 +3090,7 @@
 }
 
 }
-/* @en-reve/tokens 0.1.0; sha256:85bc6c211201dfaad08b22a7131a4dc1985b98dcf97c1c3f0a4c99e7297e7055; paired full */
+/* @en-reve/tokens 0.1.0; sha256:800e874a29fff4eec020f8bce55053050341f51e583e01c7444b38d479da5109; paired full */
 @layer en.tokens {
   :where(html[data-example-density="comfortable"]) {
     color-scheme: light dark;
@@ -3367,6 +3375,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -3376,6 +3385,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -3911,7 +3921,7 @@
   }
 }
 
-/* @en-reve/tokens 0.1.0; sha256:9b18d46fcba85421559010fb8f0ce0cbefc6d9d91e3e5820332f6f1b122352da; full */
+/* @en-reve/tokens 0.1.0; sha256:28cbd8c8650606fbbdcf7301ddd9e40a04f07c8355f39c9d20619ad678978cfa; full */
 @layer en.tokens {
   html[data-example-density="comfortable"] [data-en-theme="inverse"] {
     color-scheme: dark;
@@ -4196,6 +4206,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -4205,6 +4216,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -4662,7 +4674,7 @@
   }
 }
 
-/* @en-reve/tokens 0.1.0; sha256:3399a1abb454d0ac5ce2314da522cc4a394d2b4c3544c65990c6d39bab1164dc; full */
+/* @en-reve/tokens 0.1.0; sha256:530c2bdab6218a913edfc708d67a4751fc4417831397df296cd0fd8ad12c2bcd; full */
 @layer en.tokens {
   html[data-example-density="comfortable"][data-en-appearance="dark"] [data-en-theme="inverse"] {
     color-scheme: light;
@@ -4947,6 +4959,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -4956,6 +4969,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -5414,7 +5428,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-/* @en-reve/tokens 0.1.0; sha256:3399a1abb454d0ac5ce2314da522cc4a394d2b4c3544c65990c6d39bab1164dc; full */
+/* @en-reve/tokens 0.1.0; sha256:530c2bdab6218a913edfc708d67a4751fc4417831397df296cd0fd8ad12c2bcd; full */
 @layer en.tokens {
   html[data-example-density="comfortable"]:not([data-en-appearance="light"], [data-en-appearance="dark"]) [data-en-theme="inverse"] {
     color-scheme: light;
@@ -5699,6 +5713,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -5708,6 +5723,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -6166,7 +6182,7 @@
 }
 
 }
-/* @en-reve/tokens 0.1.0; sha256:b0830252c622ee94015cd1799b0e9f61a29d9084dfe29af45f05d8f4ea987f67; paired full */
+/* @en-reve/tokens 0.1.0; sha256:64c9a033ee62a951d3d4cc9c12e200bf77eea7c7d005fd3112df36219967c4ea; paired full */
 @layer en.tokens {
   :where(html[data-example-density="spacious"]) {
     color-scheme: light dark;
@@ -6451,6 +6467,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -6460,6 +6477,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -6995,7 +7013,7 @@
   }
 }
 
-/* @en-reve/tokens 0.1.0; sha256:c45da5337d6268dc5128051f341cb2fdb4edf33bbc720e20e395f856bd08ead4; full */
+/* @en-reve/tokens 0.1.0; sha256:f26b5c3a6db11444f39ed866b9b37d93695c28827c1941df506e6ca08aa4dacb; full */
 @layer en.tokens {
   html[data-example-density="spacious"] [data-en-theme="inverse"] {
     color-scheme: dark;
@@ -7280,6 +7298,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -7289,6 +7308,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -7746,7 +7766,7 @@
   }
 }
 
-/* @en-reve/tokens 0.1.0; sha256:fd7ef89e045a2e3cd27c47c60fb81d1a6480e4aa670227631bd49c7cbfd91bae; full */
+/* @en-reve/tokens 0.1.0; sha256:32f934a28b8758d03475d385a002a6d29745383710a266755b17ad20e7b80361; full */
 @layer en.tokens {
   html[data-example-density="spacious"][data-en-appearance="dark"] [data-en-theme="inverse"] {
     color-scheme: light;
@@ -8031,6 +8051,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -8040,6 +8061,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;
@@ -8498,7 +8520,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-/* @en-reve/tokens 0.1.0; sha256:fd7ef89e045a2e3cd27c47c60fb81d1a6480e4aa670227631bd49c7cbfd91bae; full */
+/* @en-reve/tokens 0.1.0; sha256:32f934a28b8758d03475d385a002a6d29745383710a266755b17ad20e7b80361; full */
 @layer en.tokens {
   html[data-example-density="spacious"]:not([data-en-appearance="light"], [data-en-appearance="dark"]) [data-en-theme="inverse"] {
     color-scheme: light;
@@ -8783,6 +8805,7 @@
     --en-input-background: initial;
     --en-input-border-color: initial;
     --en-input-border-width: initial;
+    --en-input-bottom-border-color: initial;
     --en-input-color: initial;
     --en-input-focus-accent-color: initial;
     --en-input-focus-accent-width: initial;
@@ -8792,6 +8815,7 @@
     --en-input-focus-offset: initial;
     --en-input-focus-width: initial;
     --en-input-hover-border-color: initial;
+    --en-input-hover-bottom-border-color: initial;
     --en-input-inline-padding: initial;
     --en-input-invalid-border-color: initial;
     --en-input-invalid-border-width: initial;

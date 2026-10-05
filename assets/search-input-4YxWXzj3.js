@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./search-input-D8So_ppD.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),r(),t(customElements,n)})))()}export{a as t};
+//# sourceMappingURL=search-input-4YxWXzj3.js.map

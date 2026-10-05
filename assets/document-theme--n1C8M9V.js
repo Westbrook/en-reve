@@ -1,1 +1,0 @@
-import{n as e,t}from"./document-theme-BCNXKbTb.js";e();export{t as attachDocumentTheme};

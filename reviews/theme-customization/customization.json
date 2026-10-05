@@ -14118,6 +14118,60 @@
       }
     },
     {
+      "cssName": "--en-input-bottom-border-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary"
+        ],
+        "cssNames": [
+          "--en-input-border-color",
+          "--en-control-border-color"
+        ],
+        "description": "Optional resting field bottom edge; falls back to the ordinary frame. Invalid, disabled and forced-color paint remain authoritative."
+      },
+      "reset": "theme",
+      "states": [],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.input.bottom-border-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/field-presentation.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.input.bottom-border-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(123 135 152 / 1)",
+        "cssExpression": "var(--en-input-border-color)",
+        "tokenIds": [
+          "component.input.border-color"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
       "cssName": "--en-input-color",
       "kind": "override",
       "family": "controls",
@@ -14596,6 +14650,64 @@
         "cssExpression": "var(--en-color-action-text)",
         "tokenIds": [
           "color.action-text"
+        ],
+        "provenance": "alias",
+        "fullThemeValue": "initial"
+      }
+    },
+    {
+      "cssName": "--en-input-hover-bottom-border-color",
+      "kind": "override",
+      "family": "controls",
+      "concepts": [
+        "paint"
+      ],
+      "syntax": "<color>",
+      "inherits": true,
+      "fallback": {
+        "tokenIds": [
+          "color.boundary"
+        ],
+        "cssNames": [
+          "--en-input-bottom-border-color",
+          "--en-input-hover-border-color",
+          "--en-input-border-color",
+          "--en-control-border-color"
+        ],
+        "description": "Optional enabled hover bottom edge; falls back to the resting bottom hook, then the existing perimeter paint for that frame and state. Invalid, disabled and forced-color paint remain authoritative."
+      },
+      "reset": "theme",
+      "states": [
+        "hover"
+      ],
+      "size": {
+        "behavior": "none",
+        "description": "No geometry contract."
+      },
+      "managed": {
+        "supported": true,
+        "tokenId": "component.input.hover-bottom-border-color",
+        "reason": "Present in this resolved theme; typed editor/pin authoring follows the source token."
+      },
+      "registration": {
+        "syntax": "*",
+        "inherits": true,
+        "typed": {
+          "eligible": false,
+          "reason": "Optional hook: typed registration requires an initial value that would suppress contextual var() fallbacks and selected-size behavior."
+        }
+      },
+      "consumers": [
+        "packages/styles/src/internal/field-presentation.ts"
+      ],
+      "consumerStatus": "connected",
+      "tokenId": "component.input.hover-bottom-border-color",
+      "tokenType": "color",
+      "tokenDefault": {
+        "cssValue": "rgb(36 87 214 / 1)",
+        "cssExpression": "var(--en-input-hover-border-color)",
+        "tokenIds": [
+          "component.input.hover-border-color"
         ],
         "provenance": "alias",
         "fullThemeValue": "initial"
@@ -39833,6 +39945,13 @@
         "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
       },
       {
+        "name": "--en-input-bottom-border-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
         "name": "--en-input-color",
         "syntax": "*",
         "inherits": true,
@@ -39890,6 +40009,13 @@
       },
       {
         "name": "--en-input-hover-border-color",
+        "syntax": "*",
+        "inherits": true,
+        "policy": "compatible",
+        "reason": "Preserves inherited token streams and guaranteed-invalid initial values, including var() fallbacks."
+      },
+      {
+        "name": "--en-input-hover-bottom-border-color",
         "syntax": "*",
         "inherits": true,
         "policy": "compatible",

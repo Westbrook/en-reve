@@ -1,0 +1,2 @@
+import{a as e,o as t}from"./registration-C-99iFfM.js";import{n,t as r}from"./editor-toolbar-CGfP4CYk.js";import{t as i}from"./rolldown-runtime-B0lUwjiP.js";function a(){return(a=i((()=>{e(),n(),t(customElements,r)})))()}export{a as t};
+//# sourceMappingURL=editor-toolbar-DLW6hpwG.js.map

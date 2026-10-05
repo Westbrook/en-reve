@@ -1,0 +1,1 @@
+import{n as e,t}from"./command-palette-BAeSsKcg.js";e();export{t as commandPaletteDefinition};

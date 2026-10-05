@@ -1,0 +1,2 @@
+import{n as e,t}from"./deployment-fragments-C3Yo3Per.js";import"./site-x7Whl3sL.js";import{t as n}from"./main-Clr0fyX2.js";import{t as r}from"./rolldown-runtime-B0lUwjiP.js";function i(){return(i=r((async()=>{e(),t(),await n()})))()}await i();
+//# sourceMappingURL=api-example-child-authored-choices-DoTr9kno.js.map

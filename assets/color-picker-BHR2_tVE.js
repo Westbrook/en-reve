@@ -1,0 +1,1 @@
+import{t as e}from"./color-picker-KQrOIecT.js";e();

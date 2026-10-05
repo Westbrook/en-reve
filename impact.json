@@ -20,8 +20,8 @@
     "boundaryDigest": "sha256:72202c2e72225ee6f788472d99427b26cbbe1081c3b5013e40af1436977b7e06"
   },
   "inputs": {
-    "packages/tokens/dist/manifest.json": "sha256:68b9ccc014690ac906b2367f3854be9501de368825a8d7bc613a64d7abd6b0e9",
-    "packages/elements/public-api.json": "sha256:a4915c1ec948559e3754b16a804c74bc9659cbefcf0af35703e22ae5b596ca63",
+    "packages/tokens/dist/manifest.json": "sha256:7101ce3d74e5e367c0c917b56c91d877f3c815835e123609841dd1a6fa559fa3",
+    "packages/elements/public-api.json": "sha256:39131952c2f5fa610c9d92b1db1ef02537430b5addbefc22e3d81313fd89449b",
     "packages/styles/css-authoring.json": "sha256:74705b57a2b8884996e3f4df005d9812f52fa95a775d0819838c412b975e3c58",
     "package-lock.json": "sha256:6fd6e44577cb81ac9df7549da0e095c31cfc2db6e81597bada5c484888821106",
     "tsconfig.base.json": "sha256:40adb4a43233b72907a9ca070deac2370dbb64f585c139dd914d60d52d5c5aed",
@@ -37,8 +37,8 @@
     "packages/primitives/package.json": "sha256:feb49afaf016466ff3fc9d72cb1c0bbc17b70c5fff4eeb1efaa031db1efb2941",
     "packages/elements/package.json": "sha256:8f33dffb9bd575d971623e375b11f8eed8608688a0414932e08ef4b1ca81832a",
     "apps/docs/public/apple-touch-icon.png": "sha256:fba2da148bd7e1f4f9038dc11cbd3de5bbafd2cbb5003a500f1754caa2b1b804",
-    "apps/docs/public/custom-elements.json": "sha256:43e6fe902d33f33592e3fde5117eb5d1067cdb82ebe07afdcd08e07eba62fb7a",
-    "apps/docs/public/custom-elements.json.receipt.json": "sha256:7654fc81162c1c06001488a413b45bf81bd8acdc62691dd5e102ecba0cc186e0",
+    "apps/docs/public/custom-elements.json": "sha256:bd92f48ed6565b72b111530df892dad175d8e6fd8640cf950118931ca0e82747",
+    "apps/docs/public/custom-elements.json.receipt.json": "sha256:d3b3bbc343f54edb8efd449a96667e42e8c6738a731ff28a2ff0f93cffef8700",
     "apps/docs/public/favicon.png": "sha256:4e021419305abc8c74d49dc65632c5e5be77057033fa0cc398ec06277806b210",
     "apps/docs/public/favicon.svg": "sha256:2deb297924ff0beb27ccd62b1023dc73e4ebef95e3fe4ae87023a6a7b7a1abfc",
     "apps/docs/public/fonts/theme-references/Figtree-OFL.txt": "sha256:140d37233e7f3ce7313798befa9600893bcceaf41a55fa0fa5ad52f7f657a268",
@@ -48,7 +48,7 @@
     "apps/docs/public/fonts/theme-references/GeistMono-Variable.woff2": "sha256:afaacc4c5fbba89d2ebf7a02dc4070208540874592a5504d57175782fe893101",
     "apps/docs/public/fonts/theme-references/README.md": "sha256:12d4b0f7ca0e095c9de3ba6e6342c9ed750de63fc26e9dec7d51eaf9bfc44d2a",
     "apps/docs/public/fonts/theme-references/sources.json": "sha256:1287359f3dee877f83bce9a640cf54de55c9c9df96a6085684e738909c4fd233",
-    "apps/docs/public/guides/contract-index.json": "sha256:9761c62ba1ee0790784bab86f135bbf9d13cf410943b1cf3c36d516a7eec368e",
+    "apps/docs/public/guides/contract-index.json": "sha256:9fa528ffe37432a2c9343bca3a56fee30ba6a8289dcb79966476377c99e96a10",
     "apps/docs/public/guides/skills/en-reve-accessibility/SKILL.md": "sha256:69ff2a732bb03fa819cb450cc3c27938032319f9ad79967e02d1406e6652e1c2",
     "apps/docs/public/guides/skills/en-reve-app/SKILL.md": "sha256:86691d3677daa83eb2adcb511b396fb7d1a2a53b56622beb770c3a48d567615f",
     "apps/docs/public/guides/skills/en-reve-component/SKILL.md": "sha256:9497ecff61317b5731b274b434b80f58a7c95125118d96117db838c09b134bf0",
@@ -61,7 +61,7 @@
     "apps/docs/public/icons/app-maskable-512.png": "sha256:7a46d9eaee525bcd2ff7350dcbda878dfda2e89ddbcda279f64fea0e915ffccb",
     "apps/docs/public/installed-app.css": "sha256:e957bde8edfddfad7a847f099c8149542c439eb2f210c54537e0a38f42986a5a",
     "apps/docs/public/manifest.json": "sha256:35213a6766cd3fdd79a3a633f9c9d6b8bd04dbc2122ae735b713c4b90018d42a",
-    "apps/docs/public/public-api.json": "sha256:a4915c1ec948559e3754b16a804c74bc9659cbefcf0af35703e22ae5b596ca63",
+    "apps/docs/public/public-api.json": "sha256:39131952c2f5fa610c9d92b1db1ef02537430b5addbefc22e3d81313fd89449b",
     "apps/docs/public/public-types.json": "sha256:5afdee432898dec1d99df1f5d0f4a0f0ca60f59aa447b1ae9f1c308bbf4e2003",
     "apps/docs/public/reviews/api-normalization/README.md": "sha256:a292050e297ee41a260c80e3ed76d4949b32d395851d3c18c9c81cee920aa788",
     "apps/docs/public/reviews/api-normalization/api-01-events.md": "sha256:a77d38a2c7e64913ce377a219f773a174fa05bcda94980d3df665947305676ba",
@@ -102,10 +102,10 @@
     "apps/docs/public/reviews/theme-customization/button-like-press-implementation.md": "sha256:f6b31279822ebff0b7d35fb17f9d27f7f04739ed609742c75a28b6b8c1240fd4",
     "apps/docs/public/reviews/theme-customization/component-gap-closure.md": "sha256:50d6b456ee6edb5b6ae1fda501876801aada7073e03337195fd2c44459a8db5b",
     "apps/docs/public/reviews/theme-customization/component-gap-implementation.md": "sha256:869c3c94b56da2956b8d6b57a985ff5ad6e1269d2012da92d6a647846eeb4a8c",
-    "apps/docs/public/reviews/theme-customization/contract-guide.md": "sha256:e09003b992af527f40a71a419c76390590fad34e35541c5215e359dab5db3e6c",
-    "apps/docs/public/reviews/theme-customization/coverage.json": "sha256:48626b313ee6182bc730c86893e8db1055d036253e363ac1a03d26572e49698f",
-    "apps/docs/public/reviews/theme-customization/coverage.md": "sha256:f4ef14817d3639c0fe045848362de1270e180a26e781540b8f4352eff41b97fb",
-    "apps/docs/public/reviews/theme-customization/customization.json": "sha256:7e342b58488d5e425275bb30f4194b0536e5033aeb7ca5e96f7e95700c6a7035",
+    "apps/docs/public/reviews/theme-customization/contract-guide.md": "sha256:af33afcbde7feb01b136537636e6bbc77320b88b87c9c679d214e7d167bd6c10",
+    "apps/docs/public/reviews/theme-customization/coverage.json": "sha256:36688c9d4bdcbbeca18907db67c601e9c946f39a38b7f3da33fa7c6220784862",
+    "apps/docs/public/reviews/theme-customization/coverage.md": "sha256:60db4098629db56e4591ade38043d1cea17a95cf186b20055bf3001ed5ab014d",
+    "apps/docs/public/reviews/theme-customization/customization.json": "sha256:719a416a8d35fdd39e58f1fb44fb5595a2cd47983281b24f04ac764eb2417ea2",
     "apps/docs/public/reviews/theme-customization/spectrum-wc-gen2-migration.md": "sha256:19bd4f720e2ce9218f6286562b6f43b815a35bd8672c578b4b8a3929124e0b79",
     "apps/docs/public/reviews/theme-customization/theme-02-cascade-migration.md": "sha256:7ac6256837be7cd5d613446237b8a2407d8d1cfbe3685f582234542187ca38a0",
     "apps/docs/public/reviews/theme-customization/theme-03-state-paint.md": "sha256:bf3cb39b562d396d1e457203632f83b6506173ddf57300929b4c723f37b218c6",
@@ -160,7 +160,7 @@
     "apps/docs/public/reviews/theme-customization/web-awesome-theme-fidelity.md": "sha256:7105d9d0c3bc493e2b850a3e6cf7b29205f8e5ee2869f40c0cf4872e9b4d7db8",
     "apps/docs/public/reviews/theme-customization/web-awesome-theme.md": "sha256:aaac6225dd99be4b934671e5c368798c4fbd9ba7ab5e2fb28fc35e49d0094aa4",
     "apps/docs/public/reviews/theme-customization.html": "sha256:9dfa5c0bf07310349197a1e5534328fb91144c8536f272ad8b66f23fad69b30f",
-    "apps/docs/public/styles/api-example-themes.css": "sha256:a3c374ae010501b3bfa5809da146c521de7c65520f92bf0571dbc73a04fe5871",
+    "apps/docs/public/styles/api-example-themes.css": "sha256:532c19d837760177bdfb67a931b4666be28fe7e215eefb5e913520285e9556c8",
     "apps/docs/public/styles/content.css": "sha256:42de96a5c67b019392679b76d3827fd6848cdd01de605c18eca75c5c8301fef2",
     "apps/docs/public/styles/github.css": "sha256:f87974cc1d851db540bb33eb8bda60cfbbbfcc42e113e8e11559fec632f42a0d",
     "apps/docs/public/styles/links.css": "sha256:3a8cc5360dbacbf74cd3fd142674d8d4b8061bb2fe60759e895aff739117889e",
@@ -168,7 +168,7 @@
     "apps/docs/public/styles/night-owl.css": "sha256:0118bb8b56062e0001d5e0f6a8b20f1e0d9cc5e2741883ccecdafb5ede869dae",
     "apps/docs/public/styles/radio.css": "sha256:d24564da3be9faab5b8562734e50533e8208c77f0cfaeb51694f7bbdc9533e64",
     "apps/docs/public/styles/table.css": "sha256:bb32805760f6e48098a1a050a9c1fcc76a28467567e8fd87ea735ef8668605ab",
-    "apps/docs/public/styles/tokens.css": "sha256:0aead6f658f46c0e340ac837752fd1772d842107bfecf4ab303b9a1a756c1721",
+    "apps/docs/public/styles/tokens.css": "sha256:8eced0a06820823fd688ddd6411bfb264c80fa9dd10b1da8e726feb06c9153f2",
     "apps/docs/public/styles/typography.css": "sha256:5efa834903afcc8570e239363cf8d74a174b7866804e9ad8b98c67750ac1bf85",
     "apps/docs/src/app.ts": "sha256:4f8cd30c41e968a7f2e8ac1b0e94a8a1d31abbf7f1635aeb6f4e7b95dd03dffa",
     "specimen:navigation-sidebar": "sha256:92534a921d7b6dffe339c7c6c9772b43845217e35939e656896b7bec4d6d338c",
@@ -235,18 +235,18 @@
     "packages/elements/src/media-viewer.ts": "sha256:210a81d3678292bc3cfb0418b764a20c179744fe15658c9c96ac12261ca6811a",
     "packages/elements/src/chart.ts": "sha256:24e19393ea1c85a71da4ee3632504445348f8afe14a2c5c0cf6494cd54b88078",
     "packages/elements/src/transcript.ts": "sha256:c67e90fb2e398b76a873e60119723ce5a8b6720d852a55623b2f14f91516b54e",
-    "packages/elements/src/questionnaire.ts": "sha256:7dd92ed4f7f52187e7f4d22a91c88577baf8aae0186b06efb7d035ab0cb9d8c1",
-    "packages/elements/src/query-builder.ts": "sha256:42d1c951fbb4969cafb6a4c7cc5fa10c815bd3725fa663b6ffc518d47ca87e23",
+    "packages/elements/src/questionnaire.ts": "sha256:e1993a30126ce52146bd044f102069a729872e30678b02fe35b3de8fbf2bb733",
+    "packages/elements/src/query-builder.ts": "sha256:0ac51108a3de9b5ba90bbd50a1eb71d3fbebc9ee0f676f4802469a0380706179",
     "packages/elements/src/sheet.ts": "sha256:50e1662f812bfe1c6693413354ba8d029b0f2cd1eff4a1502df9b87864ca738d",
     "packages/elements/src/menubar.ts": "sha256:0491892c6f62ecf0e90bde741626cf2550032fb8e1b65ff04d2f3d924717e91f",
     "packages/elements/src/action-overflow.ts": "sha256:c320c1cf1d6db8f4c8af7e26c65a64fe305a93235864d7d2eae485b7fbd7479a",
     "packages/elements/src/selection-collection.ts": "sha256:408e72732bd0615df9f8c2cbc68d961afc5b382ca1838867580d5df4e6c6c4ae",
     "packages/elements/src/hover-card.ts": "sha256:fef0cddcb7f556c30d42108e50727176298453f15a2166106bf473c0f5d09689",
     "packages/elements/src/otp-field.ts": "sha256:f25c77107db870b0a2b5d98e2996ab82d51f596b58645cba0b34edfbd5919d0e",
-    "packages/elements/src/range-slider.ts": "sha256:f2823beb8dce68e13ab7093020c356b5233197120c9c44e4ce6ebcad8b995d7b",
+    "packages/elements/src/range-slider.ts": "sha256:df288d94dbf23b4da7e7c48387337d86cb0d6530ed17074081a71c9d34e06a80",
     "packages/elements/src/context-menu.ts": "sha256:b19d6c4739b53b4c9abc08bb4fdcf6421cc86eafd65ab78d66d232ff217b92c9",
     "packages/elements/src/choice-option.ts": "sha256:fbfe15b3e18c3aeb05e059f5fb603325efe3c961f49d5606c7baef2af690e690",
-    "packages/elements/src/multiselect.ts": "sha256:8f8018e826a15822db29572b10a91f54abb54c3ccbc9fbdcc22dcd5f3895415a",
+    "packages/elements/src/multiselect.ts": "sha256:f533a33c3fcf897579098ffdfaa025c5d88732a221689889e099f00be47fd59b",
     "packages/elements/src/checkbox-group.ts": "sha256:5e91fc730b5b37f11aaa9b3bbba953bc0ad1c385fb0c9dd29a97a3526c711a96",
     "packages/elements/src/toggle-group.ts": "sha256:e396b83f10c62b8ee39a5ec9a6cdc83bba19b11c9fc9d8501e396ffa662c5fc6",
     "packages/elements/src/toggle-button.ts": "sha256:3b813f179130fe11a7320bc258e3e246fb664004c9d4825de4d8a83456ef3ae5",
@@ -256,7 +256,7 @@
     "packages/elements/src/presence-group.ts": "sha256:e21c53cf3f5101e5eff643f158701bd9a2fd898c117bc7f4c77e99fddc1aa8e1",
     "packages/elements/src/presence.ts": "sha256:ee55391155b41b6c2689aaba752fd686af88a426af4c9c36fb08d7c6f8cee61f",
     "packages/elements/src/chat-message/element.ts": "sha256:6554266296e2e735ac4d69bf30e84eb83e72d21d2ed3a48ef921dc1d7602876f",
-    "packages/elements/src/token-editor/element.ts": "sha256:62f4ab50badc6a9c0cdb1cc25355fcab915b8e0ade9ee28bc19e6c97f46ef427",
+    "packages/elements/src/token-editor/element.ts": "sha256:72f99776b941eab02302d5b5780ebf28e7c504570866b0de20b439c0943bc91f",
     "packages/elements/src/editor-trigger/element.ts": "sha256:4c9a7f6e58bfd37f50478cb8b5b93370aa0610559f140ce61a566f51358222c8",
     "packages/elements/src/chat-composer/element.ts": "sha256:622eeb6c2024cdba39446f70c0ca36093fe53ede79e3c5db7965d28431e73dd2",
     "packages/elements/src/toast/element.ts": "sha256:85598d12675e1c58b7480980b8401bddcace071d15aa09cdf0b395097f7070bf",
@@ -278,7 +278,7 @@
     "packages/elements/src/toolbar/element.ts": "sha256:c1d5112dcc16b53425a254bff11ce5c5902e3b22c18aa103ee6f33d22b331309",
     "packages/elements/src/menu/element.ts": "sha256:066e23f2340bbacf16c7c12dd5f6192d67a717d1ecf0924f9fad5941e6edac04",
     "packages/elements/src/menu-item/element.ts": "sha256:28d10102e5cd322eac1520628fa41896cf93352bc95dbddcd830e88ec2ff6a14",
-    "packages/elements/src/command-palette/element.ts": "sha256:4c8c5c399c0776f0da7250350f0636a458c2e7c9804821de02d4c81cd145690b",
+    "packages/elements/src/command-palette/element.ts": "sha256:e29f5f9beeec947667c7b0c76cf607b102de4f28a6e597749a47f632e2cf4bf3",
     "packages/elements/src/link/element.ts": "sha256:f63ba9829f1e1392c09173444c4da4e74105a16cf4a341d6d64bc6a0df3f6227",
     "packages/elements/src/navigation/element.ts": "sha256:fb7b048bc22d48081998943a7714e28fb219508a94d60b6f1a5103edb24dd7fc",
     "packages/elements/src/breadcrumbs/element.ts": "sha256:e02d4dc37394f5189ee0d729a21cd8ba5a6b1c879692a1be2f97651f1eb1f42f",
@@ -293,22 +293,22 @@
     "packages/elements/src/spinner/element.ts": "sha256:926706a8a5feb142d48cb3341e8d458c34cf870b37567ae82e3d7ae4176669c5",
     "packages/elements/src/skeleton/element.ts": "sha256:f67618d46801166c88b9eea67344e527d44e08470c94cf9aeb4096969f75de05",
     "packages/elements/src/stack/element.ts": "sha256:5175de83561bd5214fa6649ee5e79fa6a28ab0fc5e739b790f221e70452d8dc1",
-    "packages/elements/src/text-field/element.ts": "sha256:d20e14d7b74b78e0c7ce452ce97fc1c55e4144f3501c586a1bb5ef52496b667d",
-    "packages/elements/src/textarea/element.ts": "sha256:450a7a49bdf6632416db87752980a05995fa617cff2b327c94453cf7f95d672c",
-    "packages/elements/src/search-input/element.ts": "sha256:39f938ddf094905bf982c1a7a413d65d43f58019dbdd65cd2d7d925d4484384c",
-    "packages/elements/src/time-field/element.ts": "sha256:41b2351bc2ca50d9d28e2ea6d2a2699bf85d459d937d83d244281137b426f5f8",
-    "packages/elements/src/date-input/element.ts": "sha256:88d64634684c55633af91a41d7e3720b80857192b5bd90800ce44b76d0f30d11",
+    "packages/elements/src/text-field/element.ts": "sha256:02e3e9e9a567a02abd96b1dd7b32832536bca86ff4a5a27d4ee0fa8cf34e9669",
+    "packages/elements/src/textarea/element.ts": "sha256:91c7b4a2edf1d586fb7ac50d56af8e4d345c582a0f88d3793db69da523ccca73",
+    "packages/elements/src/search-input/element.ts": "sha256:62fd0839a92c70f209f19c9eaa78ff800eaf7151942afe3a47ffcb9f1e267084",
+    "packages/elements/src/time-field/element.ts": "sha256:037aab45aa907446b4c9beec946457b3af35392ec8cb6b8696127cf23405fe3b",
+    "packages/elements/src/date-input/element.ts": "sha256:9fe245baa2a279dd3122eced058f9a50bb99ea51c8e4a142fd46c5c9652f0359",
     "packages/elements/src/calendar/element.ts": "sha256:bb961f85b1c5a9b67f73109e59d86978a37a4dcb6f04ae2b3ffcd3aeb5a9c888",
     "packages/elements/src/date-picker/element.ts": "sha256:ee02fb62bc0d9019079dae6898a7a26cd76a0c320a2f76110243f318443c0968",
-    "packages/elements/src/select/element.ts": "sha256:ecfd21f2c6af3a8e50f81ba78011aac422ebbb1a4b5d47f8ea43e31742f458e7",
+    "packages/elements/src/select/element.ts": "sha256:e4fdaf9ea89a7037985abc0eb93e6b99e1bead5e58a6d6465914314a85fb48b1",
     "packages/elements/src/select-option/element.ts": "sha256:9c49f32d28bd69b2741fde41981b018828d16b6a96aeae799d0e190326c72bea",
-    "packages/elements/src/combobox/element.ts": "sha256:2a10f47310623d54ebeedd6932a9e13c470eda5d2325fd03bb04602c25e86c53",
-    "packages/elements/src/number-field/element.ts": "sha256:c4ede07e7b401f96e71568f2bfeece58d4e3a355ebfba39a6958b0556f1f8560",
+    "packages/elements/src/combobox/element.ts": "sha256:47a42fdff58786828742cfb4f06e08a40c3588d7f408fd9e3edb2f1dd17a6545",
+    "packages/elements/src/number-field/element.ts": "sha256:5c8e0be807884c58a737bced8833d76d66a0b8eff28ee8e428ff927bf0571494",
     "packages/elements/src/checkbox/index.ts": "sha256:7429fa205c7b4477e02910c0a24b9f940b5dc99d26fbff1b1ae547d720836a78",
     "packages/elements/src/switch/index.ts": "sha256:35df6613087a7618ded26371e90c63ffe561211f05b7543aecd4565a2f8aae52",
     "packages/elements/src/radio/index.ts": "sha256:255af0e0dc5a6e1bc2a53b6d1254c6c1d4a9652876a6ea873e6b039e058d0d96",
     "packages/elements/src/radio-group/index.ts": "sha256:ec239afaac7b19f29cef86c623ebc8ed7ef23343f7178cae69ee0c11ce970608",
-    "packages/elements/src/slider/index.ts": "sha256:e73405bbf21009be9852adf23450fad4b93417e2625e3610bb28d1130740bdd1",
+    "packages/elements/src/slider/index.ts": "sha256:afeb72608ae2b00757e6771097de1069881f2e920156e35e376e77dd509d571d",
     "packages/elements/src/rating/index.ts": "sha256:aefa51421b9bf69646c26729dce4e3ffe006a6729a45f413aa27f9d24b1f5932",
     "packages/elements/src/accordion/accordion.ts": "sha256:ff2a1afd57c8e9634aaabde915a45270384e2fc60c87b3531336f5ea3512cc3b",
     "packages/elements/src/accordion-item/accordion-item.ts": "sha256:fe8fb0025be09e3665a7e08d94b41b4a16d668e38f32527e19120f1e0006eb70",
@@ -321,11 +321,11 @@
     "packages/elements/src/drawer/drawer.ts": "sha256:5509da1b367fa588553423580b88881a8fbe19d30ba75f132ecb99eddd792d5a",
     "packages/elements/src/popover/popover.ts": "sha256:58c2ed610abca34c2d098080a2e5f3e4a931e455cc5637875b376e24d9a3ce68",
     "packages/elements/src/tooltip/tooltip.ts": "sha256:9257ba458cdb874409713884e0c7b957441c14e885c651ddd3bf2faeddcdd5f9",
-    "packages/elements/src/color-field/element.ts": "sha256:b5c9b0ad6a564fb11a8c35c6009c8c98a5942d2aac8699c2321916abe96ea2b9",
+    "packages/elements/src/color-field/element.ts": "sha256:ab985a76913c68568eed3bdbb8d5a2ed340df16e879bc19d39add9c903cfe451",
     "packages/elements/src/color-slider.ts": "sha256:0bba6909b0537509f51f0a9815675d7ee9ab204bce3d27540228b2050bcf2979",
     "packages/elements/src/color-wheel.ts": "sha256:efb3a0a4236c6413c06e9f7cbeae29fc16f0ecb1ba2c2b68d5d6625963844736",
     "packages/elements/src/color-plane.ts": "sha256:035df944e7fd5db1bd0b121cd9017a335365d4efaad61ae57420bd1dd173f680",
-    "packages/elements/src/color-picker/element.ts": "sha256:80949bb71e6e5a0d8f42fcf801423ee71a8cb616014d2166398b943f666f2b36",
+    "packages/elements/src/color-picker/element.ts": "sha256:c02953355454643c10b1a1b80f912fc93c9bccd0de92fbc9fff35ff7b26f813d",
     "packages/elements/src/segmented-control/element.ts": "sha256:2348178eee5fe284e9900a6773a6f3ec93cbd33b8f7f3e58c123f1c73a4d6d6d",
     "packages/elements/src/segmented-item/element.ts": "sha256:c7824d7376f773d09f844c64b911abe2712fce977ba101b14785a8b725b985f1",
     "apps/docs/src/site.css": "sha256:f3eea512972301bbdd28f184e6953c4bd7a2b81a56dee53b55f72f26ad706849",
@@ -350,10 +350,10 @@
     "packages/tokens/src/properties.ts": "sha256:b6a15131e37f8535f4f98b62b42ca33cba2b466f43af5274f16d3a15481ec32c",
     "packages/tokens/src/recipes.ts": "sha256:d4db5319ea73e9a393566b94935f33294e617c3903332c61ebc56c953db6f54e",
     "packages/tokens/src/relationships.ts": "sha256:bbf1f5124546e98b87694bb1fa22fae7aed0f687a7456f565876c5683aa96afc",
-    "packages/tokens/src/review-draft.ts": "sha256:16826d93c0285b67932a8bc1fa3b90a020479ec807aaccf56dd0b308c8e5c42b",
+    "packages/tokens/src/review-draft.ts": "sha256:21ecb77268448d01b5fdbe0efa3ad9b9ca4f8af110ae8853b25d899f31fd72a6",
     "packages/tokens/src/review-pair.ts": "sha256:8954fcc35c6d9e529e6b7f9e9e657e4ed736b3341e9f9f881ca346269e281dfe",
     "packages/tokens/src/sizing.ts": "sha256:09719f52655f2c8dc2a9e1194281fb80d6ad382fbf47c8a98139b25a36bf5e6f",
-    "packages/tokens/src/source.ts": "sha256:b533788e0709e12f573495dc10dc89ace2ea2d010c81c4e1e8afed91a53d8d16",
+    "packages/tokens/src/source.ts": "sha256:d57a129745e83586b227f23888c854b4d2eb5047f8eda5c1dca96114eb57e12b",
     "packages/tokens/src/theme-pair.ts": "sha256:ad4019fb1f3c1e46e7481a16bba22fc6795c85b3e5d2cb5f189f44a6638e5a71",
     "packages/tokens/src/theme.ts": "sha256:9f1d1369ec6aca07f67d96e006e7c5ecaf6d2f54e51340d55151607e642973b8",
     "packages/tokens/src/value.ts": "sha256:6678ac4dd536b19c692fd67c1e58cc0942e4ab4508b0ab65e2ff843264417ebc",
@@ -371,7 +371,7 @@
     "apps/docs/src/workflow-pages/assets-entry.ts": "sha256:5dc7c3fee17af5021a009d2a46484f9ed383fc7154a7b6a3e329038460bfa802",
     "packages/elements/src/internal/en-element.ts": "sha256:a98e372ea5787bea9e3a35432639c586a62227609746cea1a328cbf753ff1538",
     "packages/primitives/src/interactions/events.ts": "sha256:0d4a8948ca160189c50b8349c8b34b27bd911c09f29bdf30369b15de41c866b9",
-    "packages/styles/src/controls.ts": "sha256:e806493ea68205b797f6ba942a178f86e3a82893449cb6b2115a4163f493ba4c",
+    "packages/styles/src/controls.ts": "sha256:d9df3ffbc7107e29744fadeffc4f322a7256ceb48d49f63c31b73ebf6852c853",
     "packages/styles/src/foundations.ts": "sha256:89d661cdf3bacd4e1ea002f7d05b08b00253f5cc91bb847d510b348449dd0d02",
     "packages/styles/src/patterns.ts": "sha256:b61c1162e0fddf2859cc03873cea123b8378da02dc25ce9b78c55fdfee809134",
     "packages/elements/src/dialog/template.ts": "sha256:d16d823625f4a40da57cb53982350d03e50749f1fcf54cfba0c896423ac86dd4",
@@ -404,7 +404,7 @@
     "packages/primitives/src/interactions/editor-clipboard.ts": "sha256:3a8214510908e96a86c0a26ade9e1852f3a6bff89c95646a6f55169a3f5aa139",
     "packages/primitives/src/interactions/editor-extensions.ts": "sha256:cdddf35efe479c7172245c92c01c90556e8395ff66421cb291dc9fdd9d22bf1f",
     "packages/primitives/src/state/token-document.ts": "sha256:56dab9d180ca7b9ec3d6dd3c3e27d61b4781b66d6be6dcfb6e8dd668257648ee",
-    "packages/styles/src/token-editor.ts": "sha256:b52f9deb0bc557e0af3c9e4f450e0d4f8621f91dd3e7b6cdcc752f757ef40301",
+    "packages/styles/src/token-editor.ts": "sha256:ead4e7d5a3b91a98f58dd16404fe3868c88ff45d14b93060c180b698baf69657",
     "packages/elements/src/internal/editor-association.ts": "sha256:526f51516e0d19fddbddb0f0d89453dfb1d5cd926a72626553fa678515693c30",
     "packages/primitives/src/interactions/optional-slot-presence.ts": "sha256:2c07bacb87ac219ecc01ffd5026d7608701d11d48638a5858dbd752b5d53b81d",
     "packages/primitives/src/interactions/toast-stack.ts": "sha256:744797b45ac2e2ea0937a613c129caaf78986b7a130cf2d1e22ba3bf4ca8fb85",
@@ -588,7 +588,7 @@
     "packages/styles/src/internal/choice-label.ts": "sha256:e3ac3a16acc7080732f3cbd8f938647d986807f9ad7ee7d59b17379faaac83af",
     "packages/styles/src/internal/control-shared.ts": "sha256:843ed96f1ffd822f46c377da4946564218a9b22410141cc0f2a3d616f25b7176",
     "packages/styles/src/internal/description.ts": "sha256:604cf9cba992ea6c0172846b72e2c1237cd612e9c4f94da6de0eaedeb54edf10",
-    "packages/styles/src/internal/field-presentation.ts": "sha256:9ab61229b3f5330ce2f5e0b1776b533b277200eb2078773b97d2c752ba977fbc",
+    "packages/styles/src/internal/field-presentation.ts": "sha256:928ee4eaeacd0312bdb2c67bcd0514258dcbaf1b85a103850b8a26b91d5932a3",
     "packages/styles/src/internal/inset-action.ts": "sha256:99b09bbd93c00ebbc03817ab7177e35ab469ed4d65fc5418f88e72ad12dc64d2",
     "packages/styles/src/internal/link-rules.ts": "sha256:d7613321a88eb493a6c98ea8ffdc6d62b55f4667a14659337afd18e17e83cf85",
     "packages/styles/src/internal/option-paint.ts": "sha256:c109096ed3dd417e35315995ff4ae44dc76b03b447a8278df2e0e7ef5c0d21e1",
@@ -5296,6 +5296,17 @@
         "complete": true
       },
       {
+        "id": "property:--en-input-bottom-border-color",
+        "kind": "style",
+        "dependencies": [
+          "property:--en-control-border-color",
+          "property:--en-input-border-color",
+          "token:color.boundary",
+          "token:component.input.bottom-border-color"
+        ],
+        "complete": true
+      },
+      {
         "id": "property:--en-input-color",
         "kind": "style",
         "dependencies": [
@@ -5373,6 +5384,19 @@
         "kind": "style",
         "dependencies": [
           "token:component.input.hover-border-color"
+        ],
+        "complete": true
+      },
+      {
+        "id": "property:--en-input-hover-bottom-border-color",
+        "kind": "style",
+        "dependencies": [
+          "property:--en-control-border-color",
+          "property:--en-input-border-color",
+          "property:--en-input-bottom-border-color",
+          "property:--en-input-hover-border-color",
+          "token:color.boundary",
+          "token:component.input.hover-bottom-border-color"
         ],
         "complete": true
       },
@@ -10642,6 +10666,7 @@
           "property:--en-input-background",
           "property:--en-input-border-color",
           "property:--en-input-border-width",
+          "property:--en-input-bottom-border-color",
           "property:--en-input-color",
           "property:--en-input-focus-accent-color",
           "property:--en-input-focus-accent-width",
@@ -10651,6 +10676,7 @@
           "property:--en-input-focus-offset",
           "property:--en-input-focus-width",
           "property:--en-input-hover-border-color",
+          "property:--en-input-hover-bottom-border-color",
           "property:--en-input-inline-padding",
           "property:--en-input-invalid-border-color",
           "property:--en-input-invalid-border-width",
@@ -15918,6 +15944,7 @@
           "property:--en-input-background",
           "property:--en-input-border-color",
           "property:--en-input-border-width",
+          "property:--en-input-bottom-border-color",
           "property:--en-input-color",
           "property:--en-input-focus-accent-color",
           "property:--en-input-focus-accent-width",
@@ -15927,6 +15954,7 @@
           "property:--en-input-focus-offset",
           "property:--en-input-focus-width",
           "property:--en-input-hover-border-color",
+          "property:--en-input-hover-bottom-border-color",
           "property:--en-input-inline-padding",
           "property:--en-input-invalid-border-color",
           "property:--en-input-invalid-border-width",
@@ -18410,7 +18438,9 @@
           "property:--en-control-radius",
           "property:--en-input-border-color",
           "property:--en-input-border-width",
+          "property:--en-input-bottom-border-color",
           "property:--en-input-hover-border-color",
+          "property:--en-input-hover-bottom-border-color",
           "property:--en-input-invalid-border-color",
           "property:--en-input-invalid-border-width",
           "property:--en-input-radius",
@@ -20761,6 +20791,14 @@
         "complete": true
       },
       {
+        "id": "token:component.input.bottom-border-color",
+        "kind": "token",
+        "dependencies": [
+          "token:component.input.border-color"
+        ],
+        "complete": true
+      },
+      {
         "id": "token:component.input.color",
         "kind": "token",
         "dependencies": [
@@ -20829,6 +20867,14 @@
         "kind": "token",
         "dependencies": [
           "token:color.action-text"
+        ],
+        "complete": true
+      },
+      {
+        "id": "token:component.input.hover-bottom-border-color",
+        "kind": "token",
+        "dependencies": [
+          "token:component.input.hover-border-color"
         ],
         "complete": true
       },
@@ -25597,7 +25643,7 @@
       {
         "cssName": "--en-space-2",
         "file": "packages/elements/src/questionnaire.ts",
-        "line": 31,
+        "line": 33,
         "form": "var",
         "expression": "var(--en-space-2)",
         "fallback": null
@@ -25605,7 +25651,7 @@
       {
         "cssName": "--en-space-4",
         "file": "packages/elements/src/questionnaire.ts",
-        "line": 31,
+        "line": 33,
         "form": "var",
         "expression": "var(--en-space-4)",
         "fallback": null
@@ -25613,7 +25659,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/questionnaire.ts",
-        "line": 31,
+        "line": 33,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -25621,7 +25667,7 @@
       {
         "cssName": "--en-space-3",
         "file": "packages/elements/src/questionnaire.ts",
-        "line": 31,
+        "line": 33,
         "form": "var",
         "expression": "var(--en-space-3)",
         "fallback": null
@@ -25631,7 +25677,7 @@
       {
         "cssName": "--en-space-2",
         "file": "packages/elements/src/query-builder.ts",
-        "line": 17,
+        "line": 19,
         "form": "var",
         "expression": "var(--en-space-2)",
         "fallback": null
@@ -25639,7 +25685,7 @@
       {
         "cssName": "--en-space-3",
         "file": "packages/elements/src/query-builder.ts",
-        "line": 17,
+        "line": 19,
         "form": "var",
         "expression": "var(--en-space-3)",
         "fallback": null
@@ -25647,7 +25693,7 @@
       {
         "cssName": "--en-space-1",
         "file": "packages/elements/src/query-builder.ts",
-        "line": 17,
+        "line": 19,
         "form": "var",
         "expression": "var(--en-space-1)",
         "fallback": null
@@ -25722,7 +25768,7 @@
       {
         "cssName": "--en-slider-track-size",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 68,
+        "line": 70,
         "form": "var",
         "expression": "var(--en-slider-track-size,var(--_en-source-slider-track-size,var(--_en-sized-size-range-track,var(--en-size-range-track,4px))))",
         "fallback": "var(--_en-source-slider-track-size,var(--_en-sized-size-range-track,var(--en-size-range-track,4px)))"
@@ -25730,7 +25776,7 @@
       {
         "cssName": "--en-size-range-track",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 68,
+        "line": 70,
         "form": "var",
         "expression": "var(--en-size-range-track,4px)",
         "fallback": "4px"
@@ -25738,7 +25784,7 @@
       {
         "cssName": "--en-slider-track-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 69,
+        "line": 71,
         "form": "var",
         "expression": "var(--en-slider-track-background,var(--_en-source-slider-track-background,var(--en-color-boundary)))",
         "fallback": "var(--_en-source-slider-track-background,var(--en-color-boundary))"
@@ -25746,7 +25792,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 69,
+        "line": 71,
         "form": "var",
         "expression": "var(--en-color-boundary)",
         "fallback": null
@@ -25754,7 +25800,7 @@
       {
         "cssName": "--en-slider-track-radius",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 69,
+        "line": 71,
         "form": "var",
         "expression": "var(--en-slider-track-radius,var(--_en-source-slider-track-radius,var(--en-radius-pill)))",
         "fallback": "var(--_en-source-slider-track-radius,var(--en-radius-pill))"
@@ -25762,7 +25808,7 @@
       {
         "cssName": "--en-radius-pill",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 69,
+        "line": 71,
         "form": "var",
         "expression": "var(--en-radius-pill)",
         "fallback": null
@@ -25770,7 +25816,7 @@
       {
         "cssName": "--en-slider-track-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 69,
+        "line": 71,
         "form": "var",
         "expression": "var(--en-slider-track-shadow,var(--_en-source-slider-track-shadow,none))",
         "fallback": "var(--_en-source-slider-track-shadow,none)"
@@ -25778,7 +25824,7 @@
       {
         "cssName": "--en-slider-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 70,
+        "line": 72,
         "form": "var",
         "expression": "var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-fill-background,var(--en-color-action))"
@@ -25786,7 +25832,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 70,
+        "line": 72,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -25794,7 +25840,7 @@
       {
         "cssName": "--en-slider-track-radius",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 70,
+        "line": 72,
         "form": "var",
         "expression": "var(--en-slider-track-radius,var(--_en-source-slider-track-radius,0px))",
         "fallback": "var(--_en-source-slider-track-radius,0px)"
@@ -25802,7 +25848,7 @@
       {
         "cssName": "--en-slider-track-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 70,
+        "line": 72,
         "form": "var",
         "expression": "var(--en-slider-track-shadow,var(--_en-source-slider-track-shadow,none))",
         "fallback": "var(--_en-source-slider-track-shadow,none)"
@@ -25810,7 +25856,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 71,
+        "line": 73,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -25818,7 +25864,7 @@
       {
         "cssName": "--en-slider-thumb-size",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-thumb-size,var(--_en-source-slider-thumb-size,var(--en-size-icon)))",
         "fallback": "var(--_en-source-slider-thumb-size,var(--en-size-icon))"
@@ -25826,7 +25872,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-size-icon)",
         "fallback": null
@@ -25834,7 +25880,7 @@
       {
         "cssName": "--en-slider-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-thumb-background,var(--en-color-action))"
@@ -25842,7 +25888,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -25850,7 +25896,7 @@
       {
         "cssName": "--en-slider-thumb-border-width",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-thumb-border-width,var(--_en-source-slider-thumb-border-width,var(--en-border-width)))",
         "fallback": "var(--_en-source-slider-thumb-border-width,var(--en-border-width))"
@@ -25858,7 +25904,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-border-width)",
         "fallback": null
@@ -25866,7 +25912,7 @@
       {
         "cssName": "--en-slider-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))",
         "fallback": "var(--_en-source-slider-thumb-border-color,currentColor)"
@@ -25874,7 +25920,7 @@
       {
         "cssName": "--en-slider-thumb-radius",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-thumb-radius,var(--_en-source-slider-thumb-radius,50%))",
         "fallback": "var(--_en-source-slider-thumb-radius,50%)"
@@ -25882,7 +25928,7 @@
       {
         "cssName": "--en-slider-thumb-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))",
         "fallback": "var(--_en-source-slider-thumb-shadow,none)"
@@ -25890,7 +25936,7 @@
       {
         "cssName": "--en-slider-paint-duration",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-slider-paint-duration,var(--_en-source-slider-paint-duration,0ms))",
         "fallback": "var(--_en-source-slider-paint-duration,0ms)"
@@ -25898,7 +25944,7 @@
       {
         "cssName": "--en-ease-standard",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 73,
+        "line": 75,
         "form": "var",
         "expression": "var(--en-ease-standard)",
         "fallback": null
@@ -25906,7 +25952,7 @@
       {
         "cssName": "--en-slider-thumb-hover-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 74,
+        "line": 76,
         "form": "var",
         "expression": "var(--en-slider-thumb-hover-shadow,var(--_en-source-slider-thumb-hover-shadow,var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))))",
         "fallback": "var(--_en-source-slider-thumb-hover-shadow,var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none)))"
@@ -25914,7 +25960,7 @@
       {
         "cssName": "--en-slider-thumb-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 74,
+        "line": 76,
         "form": "var",
         "expression": "var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))",
         "fallback": "var(--_en-source-slider-thumb-shadow,none)"
@@ -25922,7 +25968,7 @@
       {
         "cssName": "--en-slider-thumb-focus-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 75,
+        "line": 77,
         "form": "var",
         "expression": "var(--en-slider-thumb-focus-shadow,var(--_en-source-slider-thumb-focus-shadow,var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))))",
         "fallback": "var(--_en-source-slider-thumb-focus-shadow,var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none)))"
@@ -25930,7 +25976,7 @@
       {
         "cssName": "--en-slider-thumb-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 75,
+        "line": 77,
         "form": "var",
         "expression": "var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))",
         "fallback": "var(--_en-source-slider-thumb-shadow,none)"
@@ -25938,7 +25984,7 @@
       {
         "cssName": "--en-slider-disabled-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-slider-disabled-thumb-background,var(--_en-source-slider-disabled-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-disabled-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action))))"
@@ -25946,7 +25992,7 @@
       {
         "cssName": "--en-slider-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-thumb-background,var(--en-color-action))"
@@ -25954,7 +26000,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -25962,7 +26008,7 @@
       {
         "cssName": "--en-slider-disabled-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-slider-disabled-thumb-border-color,var(--_en-source-slider-disabled-thumb-border-color,var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))))",
         "fallback": "var(--_en-source-slider-disabled-thumb-border-color,var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor)))"
@@ -25970,7 +26016,7 @@
       {
         "cssName": "--en-slider-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))",
         "fallback": "var(--_en-source-slider-thumb-border-color,currentColor)"
@@ -25978,7 +26024,7 @@
       {
         "cssName": "--en-slider-disabled-thumb-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-slider-disabled-thumb-shadow,var(--_en-source-slider-disabled-thumb-shadow,var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))))",
         "fallback": "var(--_en-source-slider-disabled-thumb-shadow,var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none)))"
@@ -25986,7 +26032,7 @@
       {
         "cssName": "--en-slider-thumb-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 76,
+        "line": 78,
         "form": "var",
         "expression": "var(--en-slider-thumb-shadow,var(--_en-source-slider-thumb-shadow,none))",
         "fallback": "var(--_en-source-slider-thumb-shadow,none)"
@@ -25994,7 +26040,7 @@
       {
         "cssName": "--en-slider-disabled-track-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 77,
+        "line": 79,
         "form": "var",
         "expression": "var(--en-slider-disabled-track-background,var(--_en-source-slider-disabled-track-background,var(--en-slider-track-background,var(--_en-source-slider-track-background,var(--en-color-boundary)))))",
         "fallback": "var(--_en-source-slider-disabled-track-background,var(--en-slider-track-background,var(--_en-source-slider-track-background,var(--en-color-boundary))))"
@@ -26002,7 +26048,7 @@
       {
         "cssName": "--en-slider-track-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 77,
+        "line": 79,
         "form": "var",
         "expression": "var(--en-slider-track-background,var(--_en-source-slider-track-background,var(--en-color-boundary)))",
         "fallback": "var(--_en-source-slider-track-background,var(--en-color-boundary))"
@@ -26010,7 +26056,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 77,
+        "line": 79,
         "form": "var",
         "expression": "var(--en-color-boundary)",
         "fallback": null
@@ -26018,7 +26064,7 @@
       {
         "cssName": "--en-slider-disabled-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 78,
+        "line": 80,
         "form": "var",
         "expression": "var(--en-slider-disabled-fill-background,var(--_en-source-slider-disabled-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-disabled-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action))))"
@@ -26026,7 +26072,7 @@
       {
         "cssName": "--en-slider-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 78,
+        "line": 80,
         "form": "var",
         "expression": "var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-fill-background,var(--en-color-action))"
@@ -26034,7 +26080,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 78,
+        "line": 80,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26042,7 +26088,7 @@
       {
         "cssName": "--en-slider-hover-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 80,
+        "line": 82,
         "form": "var",
         "expression": "var(--en-slider-hover-fill-background,var(--_en-source-slider-hover-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-hover-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action))))"
@@ -26050,7 +26096,7 @@
       {
         "cssName": "--en-slider-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 80,
+        "line": 82,
         "form": "var",
         "expression": "var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-fill-background,var(--en-color-action))"
@@ -26058,7 +26104,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 80,
+        "line": 82,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26066,7 +26112,7 @@
       {
         "cssName": "--en-slider-hover-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 81,
+        "line": 83,
         "form": "var",
         "expression": "var(--en-slider-hover-thumb-background,var(--_en-source-slider-hover-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-hover-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action))))"
@@ -26074,7 +26120,7 @@
       {
         "cssName": "--en-slider-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 81,
+        "line": 83,
         "form": "var",
         "expression": "var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-thumb-background,var(--en-color-action))"
@@ -26082,7 +26128,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 81,
+        "line": 83,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26090,7 +26136,7 @@
       {
         "cssName": "--en-slider-pressed-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 83,
+        "line": 85,
         "form": "var",
         "expression": "var(--en-slider-pressed-fill-background,var(--_en-source-slider-pressed-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-pressed-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action))))"
@@ -26098,7 +26144,7 @@
       {
         "cssName": "--en-slider-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 83,
+        "line": 85,
         "form": "var",
         "expression": "var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-fill-background,var(--en-color-action))"
@@ -26106,7 +26152,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 83,
+        "line": 85,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26114,7 +26160,7 @@
       {
         "cssName": "--en-slider-pressed-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 84,
+        "line": 86,
         "form": "var",
         "expression": "var(--en-slider-pressed-thumb-background,var(--_en-source-slider-pressed-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-pressed-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action))))"
@@ -26122,7 +26168,7 @@
       {
         "cssName": "--en-slider-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 84,
+        "line": 86,
         "form": "var",
         "expression": "var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-thumb-background,var(--en-color-action))"
@@ -26130,7 +26176,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 84,
+        "line": 86,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26138,7 +26184,7 @@
       {
         "cssName": "--en-slider-hover-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 86,
+        "line": 88,
         "form": "var",
         "expression": "var(--en-slider-hover-thumb-border-color,var(--_en-source-slider-hover-thumb-border-color,var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))))",
         "fallback": "var(--_en-source-slider-hover-thumb-border-color,var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor)))"
@@ -26146,7 +26192,7 @@
       {
         "cssName": "--en-slider-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 86,
+        "line": 88,
         "form": "var",
         "expression": "var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))",
         "fallback": "var(--_en-source-slider-thumb-border-color,currentColor)"
@@ -26154,7 +26200,7 @@
       {
         "cssName": "--en-slider-hover-pressed-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 87,
+        "line": 89,
         "form": "var",
         "expression": "var(--en-slider-hover-pressed-thumb-background,var(--_en-source-slider-hover-pressed-thumb-background,var(--en-slider-pressed-thumb-background,var(--_en-source-slider-pressed-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))))))",
         "fallback": "var(--_en-source-slider-hover-pressed-thumb-background,var(--en-slider-pressed-thumb-background,var(--_en-source-slider-pressed-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action))))))"
@@ -26162,7 +26208,7 @@
       {
         "cssName": "--en-slider-pressed-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 87,
+        "line": 89,
         "form": "var",
         "expression": "var(--en-slider-pressed-thumb-background,var(--_en-source-slider-pressed-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-pressed-thumb-background,var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action))))"
@@ -26170,7 +26216,7 @@
       {
         "cssName": "--en-slider-thumb-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 87,
+        "line": 89,
         "form": "var",
         "expression": "var(--en-slider-thumb-background,var(--_en-source-slider-thumb-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-thumb-background,var(--en-color-action))"
@@ -26178,7 +26224,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 87,
+        "line": 89,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26186,7 +26232,7 @@
       {
         "cssName": "--en-slider-hover-pressed-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 88,
+        "line": 90,
         "form": "var",
         "expression": "var(--en-slider-hover-pressed-fill-background,var(--_en-source-slider-hover-pressed-fill-background,var(--en-slider-pressed-fill-background,var(--_en-source-slider-pressed-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))))))",
         "fallback": "var(--_en-source-slider-hover-pressed-fill-background,var(--en-slider-pressed-fill-background,var(--_en-source-slider-pressed-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action))))))"
@@ -26194,7 +26240,7 @@
       {
         "cssName": "--en-slider-pressed-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 88,
+        "line": 90,
         "form": "var",
         "expression": "var(--en-slider-pressed-fill-background,var(--_en-source-slider-pressed-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))))",
         "fallback": "var(--_en-source-slider-pressed-fill-background,var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action))))"
@@ -26202,7 +26248,7 @@
       {
         "cssName": "--en-slider-fill-background",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 88,
+        "line": 90,
         "form": "var",
         "expression": "var(--en-slider-fill-background,var(--_en-source-slider-fill-background,var(--en-color-action)))",
         "fallback": "var(--_en-source-slider-fill-background,var(--en-color-action))"
@@ -26210,7 +26256,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 88,
+        "line": 90,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -26218,7 +26264,7 @@
       {
         "cssName": "--en-slider-pressed-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 90,
+        "line": 92,
         "form": "var",
         "expression": "var(--en-slider-pressed-thumb-border-color,var(--_en-source-slider-pressed-thumb-border-color,var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))))",
         "fallback": "var(--_en-source-slider-pressed-thumb-border-color,var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor)))"
@@ -26226,7 +26272,7 @@
       {
         "cssName": "--en-slider-thumb-border-color",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 90,
+        "line": 92,
         "form": "var",
         "expression": "var(--en-slider-thumb-border-color,var(--_en-source-slider-thumb-border-color,currentColor))",
         "fallback": "var(--_en-source-slider-thumb-border-color,currentColor)"
@@ -26234,7 +26280,7 @@
       {
         "cssName": "--en-slider-disabled-opacity",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 91,
+        "line": 93,
         "form": "var",
         "expression": "var(--en-slider-disabled-opacity,var(--_en-source-slider-disabled-opacity,1))",
         "fallback": "var(--_en-source-slider-disabled-opacity,1)"
@@ -26242,7 +26288,7 @@
       {
         "cssName": "--en-slider-disabled-track-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 92,
+        "line": 94,
         "form": "var",
         "expression": "var(--en-slider-disabled-track-shadow,var(--_en-source-slider-disabled-track-shadow,var(--en-slider-track-shadow,var(--_en-source-slider-track-shadow,none))))",
         "fallback": "var(--_en-source-slider-disabled-track-shadow,var(--en-slider-track-shadow,var(--_en-source-slider-track-shadow,none)))"
@@ -26250,7 +26296,7 @@
       {
         "cssName": "--en-slider-track-shadow",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 92,
+        "line": 94,
         "form": "var",
         "expression": "var(--en-slider-track-shadow,var(--_en-source-slider-track-shadow,none))",
         "fallback": "var(--_en-source-slider-track-shadow,none)"
@@ -26258,7 +26304,7 @@
       {
         "cssName": "--en-slider-disabled-fill-opacity",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 93,
+        "line": 95,
         "form": "var",
         "expression": "var(--en-slider-disabled-fill-opacity,var(--_en-source-slider-disabled-fill-opacity,1))",
         "fallback": "var(--_en-source-slider-disabled-fill-opacity,1)"
@@ -26266,7 +26312,7 @@
       {
         "cssName": "--en-focus-width",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 97,
+        "line": 99,
         "form": "var",
         "expression": "var(--en-focus-width)",
         "fallback": null
@@ -26274,7 +26320,7 @@
       {
         "cssName": "--en-color-focus",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 97,
+        "line": 99,
         "form": "var",
         "expression": "var(--en-color-focus)",
         "fallback": null
@@ -26282,7 +26328,7 @@
       {
         "cssName": "--en-focus-offset",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 97,
+        "line": 99,
         "form": "var",
         "expression": "var(--en-focus-offset)",
         "fallback": null
@@ -26290,7 +26336,7 @@
       {
         "cssName": "--en-slider-thumb-pressed-scale",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 98,
+        "line": 100,
         "form": "var",
         "expression": "var(--en-slider-thumb-pressed-scale,1)",
         "fallback": "1"
@@ -26298,7 +26344,7 @@
       {
         "cssName": "--en-slider-disabled-thumb-opacity",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 99,
+        "line": 101,
         "form": "var",
         "expression": "var(--en-slider-disabled-thumb-opacity,var(--_en-source-slider-disabled-thumb-opacity,.5))",
         "fallback": "var(--_en-source-slider-disabled-thumb-opacity,.5)"
@@ -26306,7 +26352,7 @@
       {
         "cssName": "--en-space-3",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 100,
+        "line": 102,
         "form": "var",
         "expression": "var(--en-space-3)",
         "fallback": null
@@ -26314,7 +26360,7 @@
       {
         "cssName": "--en-space-1",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 101,
+        "line": 103,
         "form": "var",
         "expression": "var(--en-space-1)",
         "fallback": null
@@ -26322,7 +26368,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/elements/src/range-slider.ts",
-        "line": 104,
+        "line": 106,
         "form": "var",
         "expression": "var(--en-color-action)",
         "fallback": null
@@ -29007,7 +29053,7 @@
       {
         "cssName": "--en-button-pressed-background",
         "file": "packages/styles/src/controls.ts",
-        "line": 118,
+        "line": 122,
         "form": "var",
         "expression": "var(--en-button-pressed-background, ${t('--en-color-accent-subtle')})",
         "fallback": "${t('--en-color-accent-subtle')}"
@@ -29015,7 +29061,7 @@
       {
         "cssName": "--en-switch-thumb-pressed-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 184,
+        "line": 188,
         "form": "var",
         "expression": "var(--en-switch-thumb-pressed-size, var(--en-switch-thumb-size, ${t('--en-size-switch-thumb')}))",
         "fallback": "var(--en-switch-thumb-size, ${t('--en-size-switch-thumb')})"
@@ -29023,7 +29069,7 @@
       {
         "cssName": "--en-switch-thumb-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 184,
+        "line": 188,
         "form": "var",
         "expression": "var(--en-switch-thumb-size, ${t('--en-size-switch-thumb')})",
         "fallback": "${t('--en-size-switch-thumb')}"
@@ -29031,7 +29077,7 @@
       {
         "cssName": "--en-switch-thumb-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 185,
+        "line": 189,
         "form": "var",
         "expression": "var(--en-switch-thumb-size, ${t('--en-size-switch-thumb')})",
         "fallback": "${t('--en-size-switch-thumb')}"
@@ -29039,7 +29085,7 @@
       {
         "cssName": "--en-switch-thumb-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 186,
+        "line": 190,
         "form": "var",
         "expression": "var(--en-switch-thumb-size, ${t('--en-size-switch-thumb')})",
         "fallback": "${t('--en-size-switch-thumb')}"
@@ -29239,7 +29285,7 @@
       {
         "cssName": "--en-size-target-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 103,
+        "line": 107,
         "form": "token",
         "expression": "t('--en-size-target-min')",
         "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -29247,7 +29293,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 109,
+        "line": 113,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -29255,7 +29301,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 111,
+        "line": 115,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29263,7 +29309,7 @@
       {
         "cssName": "--en-color-line",
         "file": "packages/styles/src/controls.ts",
-        "line": 111,
+        "line": 115,
         "form": "token",
         "expression": "t('--en-color-line')",
         "fallback": "defaultCSSValue(\"--en-color-line\")"
@@ -29271,7 +29317,7 @@
       {
         "cssName": "--en-color-surface-subtle",
         "file": "packages/styles/src/controls.ts",
-        "line": 113,
+        "line": 117,
         "form": "token",
         "expression": "t('--en-color-surface-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-surface-subtle\")"
@@ -29279,7 +29325,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 114,
+        "line": 118,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -29287,7 +29333,7 @@
       {
         "cssName": "--en-color-accent-subtle",
         "file": "packages/styles/src/controls.ts",
-        "line": 118,
+        "line": 122,
         "form": "token",
         "expression": "t('--en-color-accent-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-accent-subtle\")"
@@ -29295,7 +29341,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 120,
+        "line": 124,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29303,7 +29349,7 @@
       {
         "cssName": "--en-color-line",
         "file": "packages/styles/src/controls.ts",
-        "line": 120,
+        "line": 124,
         "form": "token",
         "expression": "t('--en-color-line')",
         "fallback": "defaultCSSValue(\"--en-color-line\")"
@@ -29311,7 +29357,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 122,
+        "line": 126,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -29319,7 +29365,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 124,
+        "line": 128,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29327,7 +29373,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 124,
+        "line": 128,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -29335,7 +29381,7 @@
       {
         "cssName": "--en-radius-control",
         "file": "packages/styles/src/controls.ts",
-        "line": 124,
+        "line": 128,
         "form": "token",
         "expression": "t('--en-radius-control')",
         "fallback": "defaultCSSValue(\"--en-radius-control\")"
@@ -29343,7 +29389,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 124,
+        "line": 128,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -29351,7 +29397,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 125,
+        "line": 129,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29359,7 +29405,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 125,
+        "line": 129,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -29367,7 +29413,7 @@
       {
         "cssName": "--en-radius-control",
         "file": "packages/styles/src/controls.ts",
-        "line": 125,
+        "line": 129,
         "form": "token",
         "expression": "t('--en-radius-control')",
         "fallback": "defaultCSSValue(\"--en-radius-control\")"
@@ -29375,7 +29421,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 125,
+        "line": 129,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -29383,7 +29429,7 @@
       {
         "cssName": "--en-choice-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 129,
+        "line": 133,
         "form": "override",
         "expression": "o('--en-choice-size', t('--en-size-icon'))",
         "fallback": "t('--en-size-icon')"
@@ -29391,7 +29437,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 129,
+        "line": 133,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -29399,7 +29445,7 @@
       {
         "cssName": "--en-choice-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 130,
+        "line": 134,
         "form": "override",
         "expression": "o('--en-choice-size', t('--en-size-icon'))",
         "fallback": "t('--en-size-icon')"
@@ -29407,7 +29453,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 130,
+        "line": 134,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -29415,7 +29461,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 132,
+        "line": 136,
         "form": "token",
         "expression": "t('--en-color-action')",
         "fallback": "defaultCSSValue(\"--en-color-action\")"
@@ -29423,7 +29469,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 139,
+        "line": 143,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29431,7 +29477,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 139,
+        "line": 143,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -29439,7 +29485,7 @@
       {
         "cssName": "--en-color-surface",
         "file": "packages/styles/src/controls.ts",
-        "line": 140,
+        "line": 144,
         "form": "token",
         "expression": "t('--en-color-surface')",
         "fallback": "defaultCSSValue(\"--en-color-surface\")"
@@ -29447,7 +29493,7 @@
       {
         "cssName": "--en-radius-choice",
         "file": "packages/styles/src/controls.ts",
-        "line": 143,
+        "line": 147,
         "form": "token",
         "expression": "t('--en-radius-choice')",
         "fallback": "defaultCSSValue(\"--en-radius-choice\")"
@@ -29455,7 +29501,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 144,
+        "line": 148,
         "form": "token",
         "expression": "t('--en-color-action')",
         "fallback": "defaultCSSValue(\"--en-color-action\")"
@@ -29463,7 +29509,7 @@
       {
         "cssName": "--en-size-choice-mark-inline",
         "file": "packages/styles/src/controls.ts",
-        "line": 148,
+        "line": 152,
         "form": "token",
         "expression": "t('--en-size-choice-mark-inline')",
         "fallback": "defaultCSSValue(\"--en-size-choice-mark-inline\")"
@@ -29471,7 +29517,7 @@
       {
         "cssName": "--en-size-choice-mark-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 149,
+        "line": 153,
         "form": "token",
         "expression": "t('--en-size-choice-mark-block')",
         "fallback": "defaultCSSValue(\"--en-size-choice-mark-block\")"
@@ -29479,7 +29525,7 @@
       {
         "cssName": "--en-size-choice-mark-stroke",
         "file": "packages/styles/src/controls.ts",
-        "line": 151,
+        "line": 155,
         "form": "token",
         "expression": "t('--en-size-choice-mark-stroke')",
         "fallback": "defaultCSSValue(\"--en-size-choice-mark-stroke\")"
@@ -29487,7 +29533,7 @@
       {
         "cssName": "--en-color-on-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 151,
+        "line": 155,
         "form": "token",
         "expression": "t('--en-color-on-action')",
         "fallback": "defaultCSSValue(\"--en-color-on-action\")"
@@ -29495,7 +29541,7 @@
       {
         "cssName": "--en-size-choice-mark-stroke",
         "file": "packages/styles/src/controls.ts",
-        "line": 152,
+        "line": 156,
         "form": "token",
         "expression": "t('--en-size-choice-mark-stroke')",
         "fallback": "defaultCSSValue(\"--en-size-choice-mark-stroke\")"
@@ -29503,7 +29549,7 @@
       {
         "cssName": "--en-color-on-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 152,
+        "line": 156,
         "form": "token",
         "expression": "t('--en-color-on-action')",
         "fallback": "defaultCSSValue(\"--en-color-on-action\")"
@@ -29511,7 +29557,7 @@
       {
         "cssName": "--en-size-choice-mark-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 155,
+        "line": 159,
         "form": "token",
         "expression": "t('--en-size-choice-mark-block')",
         "fallback": "defaultCSSValue(\"--en-size-choice-mark-block\")"
@@ -29519,7 +29565,7 @@
       {
         "cssName": "--en-size-choice-mark-stroke",
         "file": "packages/styles/src/controls.ts",
-        "line": 155,
+        "line": 159,
         "form": "token",
         "expression": "t('--en-size-choice-mark-stroke')",
         "fallback": "defaultCSSValue(\"--en-size-choice-mark-stroke\")"
@@ -29527,7 +29573,7 @@
       {
         "cssName": "--en-color-on-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 155,
+        "line": 159,
         "form": "token",
         "expression": "t('--en-color-on-action')",
         "fallback": "defaultCSSValue(\"--en-color-on-action\")"
@@ -29535,7 +29581,7 @@
       {
         "cssName": "--en-color-surface-subtle",
         "file": "packages/styles/src/controls.ts",
-        "line": 156,
+        "line": 160,
         "form": "token",
         "expression": "t('--en-color-surface-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-surface-subtle\")"
@@ -29543,7 +29589,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 156,
+        "line": 160,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -29551,7 +29597,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/controls.ts",
-        "line": 157,
+        "line": 161,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -29559,7 +29605,7 @@
       {
         "cssName": "--en-switch-inline-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 162,
+        "line": 166,
         "form": "override",
         "expression": "o('--en-switch-inline-size', t('--en-size-switch-inline'))",
         "fallback": "t('--en-size-switch-inline')"
@@ -29567,7 +29613,7 @@
       {
         "cssName": "--en-size-switch-inline",
         "file": "packages/styles/src/controls.ts",
-        "line": 162,
+        "line": 166,
         "form": "token",
         "expression": "t('--en-size-switch-inline')",
         "fallback": "defaultCSSValue(\"--en-size-switch-inline\")"
@@ -29575,7 +29621,7 @@
       {
         "cssName": "--en-switch-block-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 163,
+        "line": 167,
         "form": "override",
         "expression": "o('--en-switch-block-size', t('--en-size-switch-block'))",
         "fallback": "t('--en-size-switch-block')"
@@ -29583,7 +29629,7 @@
       {
         "cssName": "--en-size-switch-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 163,
+        "line": 167,
         "form": "token",
         "expression": "t('--en-size-switch-block')",
         "fallback": "defaultCSSValue(\"--en-size-switch-block\")"
@@ -29591,7 +29637,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 164,
+        "line": 168,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29599,7 +29645,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 164,
+        "line": 168,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -29607,7 +29653,7 @@
       {
         "cssName": "--en-radius-pill",
         "file": "packages/styles/src/controls.ts",
-        "line": 165,
+        "line": 169,
         "form": "token",
         "expression": "t('--en-radius-pill')",
         "fallback": "defaultCSSValue(\"--en-radius-pill\")"
@@ -29615,7 +29661,7 @@
       {
         "cssName": "--en-color-surface-subtle",
         "file": "packages/styles/src/controls.ts",
-        "line": 166,
+        "line": 170,
         "form": "token",
         "expression": "t('--en-color-surface-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-surface-subtle\")"
@@ -29623,7 +29669,7 @@
       {
         "cssName": "--en-space-switch-inset",
         "file": "packages/styles/src/controls.ts",
-        "line": 173,
+        "line": 177,
         "form": "token",
         "expression": "t('--en-space-switch-inset')",
         "fallback": "defaultCSSValue(\"--en-space-switch-inset\")"
@@ -29631,7 +29677,7 @@
       {
         "cssName": "--en-space-switch-inset",
         "file": "packages/styles/src/controls.ts",
-        "line": 174,
+        "line": 178,
         "form": "token",
         "expression": "t('--en-space-switch-inset')",
         "fallback": "defaultCSSValue(\"--en-space-switch-inset\")"
@@ -29639,7 +29685,7 @@
       {
         "cssName": "--en-switch-thumb-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 175,
+        "line": 179,
         "form": "override",
         "expression": "o('--en-switch-thumb-size', t('--en-size-switch-thumb'))",
         "fallback": "t('--en-size-switch-thumb')"
@@ -29647,7 +29693,7 @@
       {
         "cssName": "--en-size-switch-thumb",
         "file": "packages/styles/src/controls.ts",
-        "line": 175,
+        "line": 179,
         "form": "token",
         "expression": "t('--en-size-switch-thumb')",
         "fallback": "defaultCSSValue(\"--en-size-switch-thumb\")"
@@ -29655,7 +29701,7 @@
       {
         "cssName": "--en-switch-thumb-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 177,
+        "line": 181,
         "form": "override",
         "expression": "o('--en-switch-thumb-size', t('--en-size-switch-thumb'))",
         "fallback": "t('--en-size-switch-thumb')"
@@ -29663,7 +29709,7 @@
       {
         "cssName": "--en-size-switch-thumb",
         "file": "packages/styles/src/controls.ts",
-        "line": 177,
+        "line": 181,
         "form": "token",
         "expression": "t('--en-size-switch-thumb')",
         "fallback": "defaultCSSValue(\"--en-size-switch-thumb\")"
@@ -29671,7 +29717,7 @@
       {
         "cssName": "--en-radius-pill",
         "file": "packages/styles/src/controls.ts",
-        "line": 178,
+        "line": 182,
         "form": "token",
         "expression": "t('--en-radius-pill')",
         "fallback": "defaultCSSValue(\"--en-radius-pill\")"
@@ -29679,7 +29725,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/controls.ts",
-        "line": 179,
+        "line": 183,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -29687,7 +29733,7 @@
       {
         "cssName": "--en-duration-fast",
         "file": "packages/styles/src/controls.ts",
-        "line": 180,
+        "line": 184,
         "form": "token",
         "expression": "t('--en-duration-fast')",
         "fallback": "defaultCSSValue(\"--en-duration-fast\")"
@@ -29695,7 +29741,7 @@
       {
         "cssName": "--en-ease-standard",
         "file": "packages/styles/src/controls.ts",
-        "line": 180,
+        "line": 184,
         "form": "token",
         "expression": "t('--en-ease-standard')",
         "fallback": "defaultCSSValue(\"--en-ease-standard\")"
@@ -29703,7 +29749,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 182,
+        "line": 186,
         "form": "token",
         "expression": "t('--en-color-action')",
         "fallback": "defaultCSSValue(\"--en-color-action\")"
@@ -29711,7 +29757,7 @@
       {
         "cssName": "--en-space-switch-inset",
         "file": "packages/styles/src/controls.ts",
-        "line": 183,
+        "line": 187,
         "form": "token",
         "expression": "t('--en-space-switch-inset')",
         "fallback": "defaultCSSValue(\"--en-space-switch-inset\")"
@@ -29719,7 +29765,7 @@
       {
         "cssName": "--en-color-on-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 183,
+        "line": 187,
         "form": "token",
         "expression": "t('--en-color-on-action')",
         "fallback": "defaultCSSValue(\"--en-color-on-action\")"
@@ -29727,7 +29773,7 @@
       {
         "cssName": "--en-size-switch-thumb",
         "file": "packages/styles/src/controls.ts",
-        "line": 184,
+        "line": 188,
         "form": "token",
         "expression": "t('--en-size-switch-thumb')",
         "fallback": "defaultCSSValue(\"--en-size-switch-thumb\")"
@@ -29735,7 +29781,7 @@
       {
         "cssName": "--en-space-switch-inset",
         "file": "packages/styles/src/controls.ts",
-        "line": 184,
+        "line": 188,
         "form": "token",
         "expression": "t('--en-space-switch-inset')",
         "fallback": "defaultCSSValue(\"--en-space-switch-inset\")"
@@ -29743,7 +29789,7 @@
       {
         "cssName": "--en-size-switch-thumb",
         "file": "packages/styles/src/controls.ts",
-        "line": 185,
+        "line": 189,
         "form": "token",
         "expression": "t('--en-size-switch-thumb')",
         "fallback": "defaultCSSValue(\"--en-size-switch-thumb\")"
@@ -29751,7 +29797,7 @@
       {
         "cssName": "--en-size-switch-thumb",
         "file": "packages/styles/src/controls.ts",
-        "line": 186,
+        "line": 190,
         "form": "token",
         "expression": "t('--en-size-switch-thumb')",
         "fallback": "defaultCSSValue(\"--en-size-switch-thumb\")"
@@ -29759,7 +29805,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 187,
+        "line": 191,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -29767,7 +29813,7 @@
       {
         "cssName": "--en-color-surface-subtle",
         "file": "packages/styles/src/controls.ts",
-        "line": 187,
+        "line": 191,
         "form": "token",
         "expression": "t('--en-color-surface-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-surface-subtle\")"
@@ -29775,7 +29821,7 @@
       {
         "cssName": "--en-color-action-pressed",
         "file": "packages/styles/src/controls.ts",
-        "line": 188,
+        "line": 192,
         "form": "token",
         "expression": "t('--en-color-action-pressed')",
         "fallback": "defaultCSSValue(\"--en-color-action-pressed\")"
@@ -29783,7 +29829,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/controls.ts",
-        "line": 189,
+        "line": 193,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -29791,7 +29837,7 @@
       {
         "cssName": "--en-size-target-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 190,
+        "line": 194,
         "form": "token",
         "expression": "t('--en-size-target-min')",
         "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -29799,7 +29845,7 @@
       {
         "cssName": "--en-color-action",
         "file": "packages/styles/src/controls.ts",
-        "line": 190,
+        "line": 194,
         "form": "token",
         "expression": "t('--en-color-action')",
         "fallback": "defaultCSSValue(\"--en-color-action\")"
@@ -29807,7 +29853,7 @@
       {
         "cssName": "--en-space-3",
         "file": "packages/styles/src/controls.ts",
-        "line": 191,
+        "line": 195,
         "form": "token",
         "expression": "t('--en-space-3')",
         "fallback": "defaultCSSValue(\"--en-space-3\")"
@@ -29815,7 +29861,7 @@
       {
         "cssName": "--en-size-control-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 195,
+        "line": 199,
         "form": "token",
         "expression": "t('--en-size-control-min')",
         "fallback": "defaultCSSValue(\"--en-size-control-min\")"
@@ -29823,7 +29869,7 @@
       {
         "cssName": "--en-size-control-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 196,
+        "line": 200,
         "form": "token",
         "expression": "t('--en-size-control-min')",
         "fallback": "defaultCSSValue(\"--en-size-control-min\")"
@@ -29831,7 +29877,7 @@
       {
         "cssName": "--en-size-target-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 197,
+        "line": 201,
         "form": "token",
         "expression": "t('--en-size-target-min')",
         "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -29839,7 +29885,7 @@
       {
         "cssName": "--en-slider-length",
         "file": "packages/styles/src/controls.ts",
-        "line": 207,
+        "line": 211,
         "form": "override",
         "expression": "o('--en-slider-length', t('--en-size-range-length'))",
         "fallback": "t('--en-size-range-length')"
@@ -29847,7 +29893,7 @@
       {
         "cssName": "--en-size-range-length",
         "file": "packages/styles/src/controls.ts",
-        "line": 207,
+        "line": 211,
         "form": "token",
         "expression": "t('--en-size-range-length')",
         "fallback": "defaultCSSValue(\"--en-size-range-length\")"
@@ -29855,7 +29901,7 @@
       {
         "cssName": "--en-size-control-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 213,
+        "line": 217,
         "form": "token",
         "expression": "t('--en-size-control-min')",
         "fallback": "defaultCSSValue(\"--en-size-control-min\")"
@@ -29863,7 +29909,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 216,
+        "line": 220,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -29871,7 +29917,7 @@
       {
         "cssName": "--en-option-list-radius",
         "file": "packages/styles/src/controls.ts",
-        "line": 259,
+        "line": 263,
         "form": "override",
         "expression": "o('--en-option-list-radius', o('--en-overlay-radius', t('--en-radius-container')))",
         "fallback": "o('--en-overlay-radius', t('--en-radius-container'))"
@@ -29879,7 +29925,7 @@
       {
         "cssName": "--en-overlay-radius",
         "file": "packages/styles/src/controls.ts",
-        "line": 259,
+        "line": 263,
         "form": "override",
         "expression": "o('--en-overlay-radius', t('--en-radius-container'))",
         "fallback": "t('--en-radius-container')"
@@ -29887,7 +29933,7 @@
       {
         "cssName": "--en-radius-container",
         "file": "packages/styles/src/controls.ts",
-        "line": 259,
+        "line": 263,
         "form": "token",
         "expression": "t('--en-radius-container')",
         "fallback": "defaultCSSValue(\"--en-radius-container\")"
@@ -29895,7 +29941,7 @@
       {
         "cssName": "--en-option-list-padding",
         "file": "packages/styles/src/controls.ts",
-        "line": 260,
+        "line": 264,
         "form": "override",
         "expression": "o('--en-option-list-padding', o('--en-overlay-padding', t('--en-space-1')))",
         "fallback": "o('--en-overlay-padding', t('--en-space-1'))"
@@ -29903,7 +29949,7 @@
       {
         "cssName": "--en-overlay-padding",
         "file": "packages/styles/src/controls.ts",
-        "line": 260,
+        "line": 264,
         "form": "override",
         "expression": "o('--en-overlay-padding', t('--en-space-1'))",
         "fallback": "t('--en-space-1')"
@@ -29911,7 +29957,7 @@
       {
         "cssName": "--en-space-1",
         "file": "packages/styles/src/controls.ts",
-        "line": 260,
+        "line": 264,
         "form": "token",
         "expression": "t('--en-space-1')",
         "fallback": "defaultCSSValue(\"--en-space-1\")"
@@ -29919,7 +29965,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 274,
+        "line": 278,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -29927,7 +29973,7 @@
       {
         "cssName": "--en-space-icon-label",
         "file": "packages/styles/src/controls.ts",
-        "line": 274,
+        "line": 278,
         "form": "token",
         "expression": "t('--en-space-icon-label')",
         "fallback": "defaultCSSValue(\"--en-space-icon-label\")"
@@ -29935,7 +29981,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 275,
+        "line": 279,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -29943,7 +29989,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 275,
+        "line": 279,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -29951,7 +29997,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 275,
+        "line": 279,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29959,7 +30005,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 281,
+        "line": 285,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -29967,7 +30013,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 284,
+        "line": 288,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -29975,7 +30021,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 285,
+        "line": 289,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -29983,7 +30029,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/controls.ts",
-        "line": 286,
+        "line": 290,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -29991,7 +30037,7 @@
       {
         "cssName": "--en-select-appearance",
         "file": "packages/styles/src/controls.ts",
-        "line": 298,
+        "line": 302,
         "form": "override",
         "expression": "o('--en-select-appearance', css`base-select`)",
         "fallback": "css`base-select`"
@@ -29999,7 +30045,7 @@
       {
         "cssName": "--en-space-icon-label",
         "file": "packages/styles/src/controls.ts",
-        "line": 299,
+        "line": 303,
         "form": "token",
         "expression": "t('--en-space-icon-label')",
         "fallback": "defaultCSSValue(\"--en-space-icon-label\")"
@@ -30007,7 +30053,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 306,
+        "line": 310,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -30015,7 +30061,7 @@
       {
         "cssName": "--en-option-list-border-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 306,
+        "line": 310,
         "form": "override",
         "expression": "o('--en-option-list-border-color', o('--en-overlay-border-color', t('--en-color-boundary')))",
         "fallback": "o('--en-overlay-border-color', t('--en-color-boundary'))"
@@ -30023,7 +30069,7 @@
       {
         "cssName": "--en-overlay-border-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 306,
+        "line": 310,
         "form": "override",
         "expression": "o('--en-overlay-border-color', t('--en-color-boundary'))",
         "fallback": "t('--en-color-boundary')"
@@ -30031,7 +30077,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 306,
+        "line": 310,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -30039,7 +30085,7 @@
       {
         "cssName": "--en-option-list-background",
         "file": "packages/styles/src/controls.ts",
-        "line": 308,
+        "line": 312,
         "form": "override",
         "expression": "o('--en-option-list-background', o('--en-overlay-background', t('--en-color-surface-raised')))",
         "fallback": "o('--en-overlay-background', t('--en-color-surface-raised'))"
@@ -30047,7 +30093,7 @@
       {
         "cssName": "--en-overlay-background",
         "file": "packages/styles/src/controls.ts",
-        "line": 308,
+        "line": 312,
         "form": "override",
         "expression": "o('--en-overlay-background', t('--en-color-surface-raised'))",
         "fallback": "t('--en-color-surface-raised')"
@@ -30055,7 +30101,7 @@
       {
         "cssName": "--en-color-surface-raised",
         "file": "packages/styles/src/controls.ts",
-        "line": 308,
+        "line": 312,
         "form": "token",
         "expression": "t('--en-color-surface-raised')",
         "fallback": "defaultCSSValue(\"--en-color-surface-raised\")"
@@ -30063,7 +30109,7 @@
       {
         "cssName": "--en-option-list-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 309,
+        "line": 313,
         "form": "override",
         "expression": "o('--en-option-list-color', o('--en-overlay-color', t('--en-color-text')))",
         "fallback": "o('--en-overlay-color', t('--en-color-text'))"
@@ -30071,7 +30117,7 @@
       {
         "cssName": "--en-overlay-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 309,
+        "line": 313,
         "form": "override",
         "expression": "o('--en-overlay-color', t('--en-color-text'))",
         "fallback": "t('--en-color-text')"
@@ -30079,7 +30125,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 309,
+        "line": 313,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -30087,7 +30133,7 @@
       {
         "cssName": "--en-option-list-shadow",
         "file": "packages/styles/src/controls.ts",
-        "line": 310,
+        "line": 314,
         "form": "override",
         "expression": "o('--en-option-list-shadow', t('--en-shadow-overlay'))",
         "fallback": "t('--en-shadow-overlay')"
@@ -30095,7 +30141,7 @@
       {
         "cssName": "--en-shadow-overlay",
         "file": "packages/styles/src/controls.ts",
-        "line": 310,
+        "line": 314,
         "form": "token",
         "expression": "t('--en-shadow-overlay')",
         "fallback": "defaultCSSValue(\"--en-shadow-overlay\")"
@@ -30103,7 +30149,7 @@
       {
         "cssName": "--en-option-list-max-block-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 311,
+        "line": 315,
         "form": "override",
         "expression": "o('--en-option-list-max-block-size', o('--en-overlay-max-block-size', t('--en-layout-panel-preferred')))",
         "fallback": "o('--en-overlay-max-block-size', t('--en-layout-panel-preferred'))"
@@ -30111,7 +30157,7 @@
       {
         "cssName": "--en-overlay-max-block-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 311,
+        "line": 315,
         "form": "override",
         "expression": "o('--en-overlay-max-block-size', t('--en-layout-panel-preferred'))",
         "fallback": "t('--en-layout-panel-preferred')"
@@ -30119,7 +30165,7 @@
       {
         "cssName": "--en-layout-panel-preferred",
         "file": "packages/styles/src/controls.ts",
-        "line": 311,
+        "line": 315,
         "form": "token",
         "expression": "t('--en-layout-panel-preferred')",
         "fallback": "defaultCSSValue(\"--en-layout-panel-preferred\")"
@@ -30127,7 +30173,7 @@
       {
         "cssName": "--en-space-8",
         "file": "packages/styles/src/controls.ts",
-        "line": 311,
+        "line": 315,
         "form": "token",
         "expression": "t('--en-space-8')",
         "fallback": "defaultCSSValue(\"--en-space-8\")"
@@ -30135,7 +30181,7 @@
       {
         "cssName": "--en-option-block-padding",
         "file": "packages/styles/src/controls.ts",
-        "line": 319,
+        "line": 323,
         "form": "override",
         "expression": "o('--en-option-block-padding', t('--en-space-control-block'))",
         "fallback": "t('--en-space-control-block')"
@@ -30143,7 +30189,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/controls.ts",
-        "line": 319,
+        "line": 323,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -30151,7 +30197,7 @@
       {
         "cssName": "--en-option-inline-padding",
         "file": "packages/styles/src/controls.ts",
-        "line": 319,
+        "line": 323,
         "form": "override",
         "expression": "o('--en-option-inline-padding', t('--en-space-control-inline'))",
         "fallback": "t('--en-space-control-inline')"
@@ -30159,7 +30205,7 @@
       {
         "cssName": "--en-space-control-inline",
         "file": "packages/styles/src/controls.ts",
-        "line": 319,
+        "line": 323,
         "form": "token",
         "expression": "t('--en-space-control-inline')",
         "fallback": "defaultCSSValue(\"--en-space-control-inline\")"
@@ -30167,7 +30213,7 @@
       {
         "cssName": "--en-option-radius",
         "file": "packages/styles/src/controls.ts",
-        "line": 320,
+        "line": 324,
         "form": "override",
         "expression": "o('--en-option-radius', css`max(0px, ${optionListRadius} - ${optionListPadding} - ${t('--en-border-width')})`)",
         "fallback": "css`max(0px, ${optionListRadius} - ${optionListPadding} - ${t('--en-border-width')})`"
@@ -30175,7 +30221,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 320,
+        "line": 324,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -30183,7 +30229,7 @@
       {
         "cssName": "--en-option-list-gap",
         "file": "packages/styles/src/controls.ts",
-        "line": 322,
+        "line": 326,
         "form": "override",
         "expression": "o('--en-option-list-gap', css`0px`)",
         "fallback": "css`0px`"
@@ -30191,7 +30237,7 @@
       {
         "cssName": "--en-option-list-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 328,
+        "line": 332,
         "form": "override",
         "expression": "o('--en-option-list-color', o('--en-overlay-color', css`inherit`))",
         "fallback": "o('--en-overlay-color', css`inherit`)"
@@ -30199,7 +30245,7 @@
       {
         "cssName": "--en-overlay-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 328,
+        "line": 332,
         "form": "override",
         "expression": "o('--en-overlay-color', css`inherit`)",
         "fallback": "css`inherit`"
@@ -30207,7 +30253,7 @@
       {
         "cssName": "--en-option-list-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 329,
+        "line": 333,
         "form": "override",
         "expression": "o('--en-option-list-color', o('--en-overlay-color', t('--en-color-action-text')))",
         "fallback": "o('--en-overlay-color', t('--en-color-action-text'))"
@@ -30215,7 +30261,7 @@
       {
         "cssName": "--en-overlay-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 329,
+        "line": 333,
         "form": "override",
         "expression": "o('--en-overlay-color', t('--en-color-action-text'))",
         "fallback": "t('--en-color-action-text')"
@@ -30223,7 +30269,7 @@
       {
         "cssName": "--en-color-action-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 329,
+        "line": 333,
         "form": "token",
         "expression": "t('--en-color-action-text')",
         "fallback": "defaultCSSValue(\"--en-color-action-text\")"
@@ -30231,7 +30277,7 @@
       {
         "cssName": "--en-color-selected",
         "file": "packages/styles/src/controls.ts",
-        "line": 329,
+        "line": 333,
         "form": "token",
         "expression": "t('--en-color-selected')",
         "fallback": "defaultCSSValue(\"--en-color-selected\")"
@@ -30239,7 +30285,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 338,
+        "line": 342,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -30247,7 +30293,7 @@
       {
         "cssName": "--en-size-icon",
         "file": "packages/styles/src/controls.ts",
-        "line": 339,
+        "line": 343,
         "form": "token",
         "expression": "t('--en-size-icon')",
         "fallback": "defaultCSSValue(\"--en-size-icon\")"
@@ -30255,7 +30301,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/controls.ts",
-        "line": 341,
+        "line": 345,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -30263,7 +30309,7 @@
       {
         "cssName": "--en-field-gap",
         "file": "packages/styles/src/controls.ts",
-        "line": 360,
+        "line": 364,
         "form": "override",
         "expression": "o('--en-field-gap', t('--en-space-label-control'))",
         "fallback": "t('--en-space-label-control')"
@@ -30271,7 +30317,7 @@
       {
         "cssName": "--en-space-label-control",
         "file": "packages/styles/src/controls.ts",
-        "line": 360,
+        "line": 364,
         "form": "token",
         "expression": "t('--en-space-label-control')",
         "fallback": "defaultCSSValue(\"--en-space-label-control\")"
@@ -30279,7 +30325,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 366,
+        "line": 370,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -30287,7 +30333,7 @@
       {
         "cssName": "--en-font-label-strong-weight",
         "file": "packages/styles/src/controls.ts",
-        "line": 366,
+        "line": 370,
         "form": "token",
         "expression": "t('--en-font-label-strong-weight')",
         "fallback": "defaultCSSValue(\"--en-font-label-strong-weight\")"
@@ -30295,7 +30341,7 @@
       {
         "cssName": "--en-font-ui-size",
         "file": "packages/styles/src/controls.ts",
-        "line": 369,
+        "line": 373,
         "form": "token",
         "expression": "t('--en-font-ui-size')",
         "fallback": "defaultCSSValue(\"--en-font-ui-size\")"
@@ -30303,7 +30349,7 @@
       {
         "cssName": "--en-font-body-line-height",
         "file": "packages/styles/src/controls.ts",
-        "line": 369,
+        "line": 373,
         "form": "token",
         "expression": "t('--en-font-body-line-height')",
         "fallback": "defaultCSSValue(\"--en-font-body-line-height\")"
@@ -30311,7 +30357,7 @@
       {
         "cssName": "--en-color-danger-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 370,
+        "line": 374,
         "form": "token",
         "expression": "t('--en-color-danger-text')",
         "fallback": "defaultCSSValue(\"--en-color-danger-text\")"
@@ -30319,7 +30365,7 @@
       {
         "cssName": "--en-space-icon-label",
         "file": "packages/styles/src/controls.ts",
-        "line": 371,
+        "line": 375,
         "form": "token",
         "expression": "t('--en-space-icon-label')",
         "fallback": "defaultCSSValue(\"--en-space-icon-label\")"
@@ -30327,7 +30373,7 @@
       {
         "cssName": "--en-size-target-min",
         "file": "packages/styles/src/controls.ts",
-        "line": 371,
+        "line": 375,
         "form": "token",
         "expression": "t('--en-size-target-min')",
         "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -30335,7 +30381,7 @@
       {
         "cssName": "--en-field-gap",
         "file": "packages/styles/src/controls.ts",
-        "line": 373,
+        "line": 377,
         "form": "override",
         "expression": "o('--en-field-gap', t('--en-space-control-description'))",
         "fallback": "t('--en-space-control-description')"
@@ -30343,7 +30389,7 @@
       {
         "cssName": "--en-space-control-description",
         "file": "packages/styles/src/controls.ts",
-        "line": 373,
+        "line": 377,
         "form": "token",
         "expression": "t('--en-space-control-description')",
         "fallback": "defaultCSSValue(\"--en-space-control-description\")"
@@ -30351,7 +30397,7 @@
       {
         "cssName": "--en-space-label-control",
         "file": "packages/styles/src/controls.ts",
-        "line": 375,
+        "line": 379,
         "form": "token",
         "expression": "t('--en-space-label-control')",
         "fallback": "defaultCSSValue(\"--en-space-label-control\")"
@@ -30359,7 +30405,7 @@
       {
         "cssName": "--en-font-label-strong-weight",
         "file": "packages/styles/src/controls.ts",
-        "line": 375,
+        "line": 379,
         "form": "token",
         "expression": "t('--en-font-label-strong-weight')",
         "fallback": "defaultCSSValue(\"--en-font-label-strong-weight\")"
@@ -30367,7 +30413,7 @@
       {
         "cssName": "--en-space-fields",
         "file": "packages/styles/src/controls.ts",
-        "line": 376,
+        "line": 380,
         "form": "token",
         "expression": "t('--en-space-fields')",
         "fallback": "defaultCSSValue(\"--en-space-fields\")"
@@ -30375,7 +30421,7 @@
       {
         "cssName": "--en-space-panel",
         "file": "packages/styles/src/controls.ts",
-        "line": 377,
+        "line": 381,
         "form": "token",
         "expression": "t('--en-space-panel')",
         "fallback": "defaultCSSValue(\"--en-space-panel\")"
@@ -30383,7 +30429,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 377,
+        "line": 381,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -30391,7 +30437,7 @@
       {
         "cssName": "--en-color-danger-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 377,
+        "line": 381,
         "form": "token",
         "expression": "t('--en-color-danger-text')",
         "fallback": "defaultCSSValue(\"--en-color-danger-text\")"
@@ -30399,7 +30445,7 @@
       {
         "cssName": "--en-radius-container",
         "file": "packages/styles/src/controls.ts",
-        "line": 377,
+        "line": 381,
         "form": "token",
         "expression": "t('--en-radius-container')",
         "fallback": "defaultCSSValue(\"--en-radius-container\")"
@@ -30407,7 +30453,7 @@
       {
         "cssName": "--en-space-6",
         "file": "packages/styles/src/controls.ts",
-        "line": 378,
+        "line": 382,
         "form": "token",
         "expression": "t('--en-space-6')",
         "fallback": "defaultCSSValue(\"--en-space-6\")"
@@ -30415,7 +30461,7 @@
       {
         "cssName": "--en-input-focus-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 388,
+        "line": 392,
         "form": "var",
         "expression": "var(--en-input-focus-width, ${t('--en-focus-width')})",
         "fallback": "${t('--en-focus-width')}"
@@ -30423,7 +30469,7 @@
       {
         "cssName": "--en-input-focus-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 388,
+        "line": 392,
         "form": "var",
         "expression": "var(--en-input-focus-color, ${t('--en-color-focus')})",
         "fallback": "${t('--en-color-focus')}"
@@ -30431,7 +30477,7 @@
       {
         "cssName": "--en-input-focus-offset",
         "file": "packages/styles/src/controls.ts",
-        "line": 388,
+        "line": 392,
         "form": "var",
         "expression": "var(--en-input-focus-offset, ${t('--en-focus-offset')})",
         "fallback": "${t('--en-focus-offset')}"
@@ -30439,7 +30485,7 @@
       {
         "cssName": "--en-input-invalid-border-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 390,
+        "line": 394,
         "form": "var",
         "expression": "var(--en-input-invalid-border-color, ${t('--en-color-danger-text')})",
         "fallback": "${t('--en-color-danger-text')}"
@@ -30447,7 +30493,7 @@
       {
         "cssName": "--en-input-border-color",
         "file": "packages/styles/src/controls.ts",
-        "line": 386,
+        "line": 390,
         "form": "override",
         "expression": "o('--en-input-border-color', t('--en-color-boundary'))",
         "fallback": "t('--en-color-boundary')"
@@ -30455,7 +30501,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/controls.ts",
-        "line": 386,
+        "line": 390,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -30463,7 +30509,7 @@
       {
         "cssName": "--en-input-background",
         "file": "packages/styles/src/controls.ts",
-        "line": 386,
+        "line": 390,
         "form": "override",
         "expression": "o('--en-input-background', t('--en-color-surface'))",
         "fallback": "t('--en-color-surface')"
@@ -30471,7 +30517,7 @@
       {
         "cssName": "--en-color-surface",
         "file": "packages/styles/src/controls.ts",
-        "line": 386,
+        "line": 390,
         "form": "token",
         "expression": "t('--en-color-surface')",
         "fallback": "defaultCSSValue(\"--en-color-surface\")"
@@ -30479,7 +30525,7 @@
       {
         "cssName": "--en-focus-width",
         "file": "packages/styles/src/controls.ts",
-        "line": 388,
+        "line": 392,
         "form": "token",
         "expression": "t('--en-focus-width')",
         "fallback": "defaultCSSValue(\"--en-focus-width\")"
@@ -30487,7 +30533,7 @@
       {
         "cssName": "--en-color-focus",
         "file": "packages/styles/src/controls.ts",
-        "line": 388,
+        "line": 392,
         "form": "token",
         "expression": "t('--en-color-focus')",
         "fallback": "defaultCSSValue(\"--en-color-focus\")"
@@ -30495,7 +30541,7 @@
       {
         "cssName": "--en-focus-offset",
         "file": "packages/styles/src/controls.ts",
-        "line": 388,
+        "line": 392,
         "form": "token",
         "expression": "t('--en-focus-offset')",
         "fallback": "defaultCSSValue(\"--en-focus-offset\")"
@@ -30503,7 +30549,7 @@
       {
         "cssName": "--en-color-danger-text",
         "file": "packages/styles/src/controls.ts",
-        "line": 390,
+        "line": 394,
         "form": "token",
         "expression": "t('--en-color-danger-text')",
         "fallback": "defaultCSSValue(\"--en-color-danger-text\")"
@@ -30511,7 +30557,7 @@
       {
         "cssName": "--en-space-2",
         "file": "packages/styles/src/controls.ts",
-        "line": 391,
+        "line": 396,
         "form": "token",
         "expression": "t('--en-space-2')",
         "fallback": "defaultCSSValue(\"--en-space-2\")"
@@ -31926,7 +31972,7 @@
       {
         "cssName": "--en-editor-token-min-size",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 27,
+        "line": 28,
         "form": "var",
         "expression": "var(--en-editor-token-min-size,2rem)",
         "fallback": "2rem"
@@ -31934,7 +31980,7 @@
       {
         "cssName": "--en-editor-token-gap",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 28,
+        "line": 29,
         "form": "var",
         "expression": "var(--en-editor-token-gap,.25rem)",
         "fallback": ".25rem"
@@ -31942,7 +31988,7 @@
       {
         "cssName": "--en-editor-token-block-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 31,
+        "line": 32,
         "form": "var",
         "expression": "var(--en-editor-token-block-padding,.125em)",
         "fallback": ".125em"
@@ -31950,7 +31996,7 @@
       {
         "cssName": "--en-editor-token-inline-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 31,
+        "line": 32,
         "form": "var",
         "expression": "var(--en-editor-token-inline-padding,.375em)",
         "fallback": ".375em"
@@ -31958,7 +32004,7 @@
       {
         "cssName": "--en-editor-token-min-size",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 36,
+        "line": 37,
         "form": "var",
         "expression": "var(--en-editor-token-min-size,2rem)",
         "fallback": "2rem"
@@ -31966,7 +32012,7 @@
       {
         "cssName": "--en-editor-token-min-size",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 42,
+        "line": 43,
         "form": "var",
         "expression": "var(--en-editor-token-min-size,2rem)",
         "fallback": "2rem"
@@ -32142,7 +32188,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 29,
+        "line": 30,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -32150,7 +32196,7 @@
       {
         "cssName": "--en-editor-token-border-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 29,
+        "line": 30,
         "form": "override",
         "expression": "o('--en-editor-token-border-color',t('--en-color-line'))",
         "fallback": "t('--en-color-line')"
@@ -32158,7 +32204,7 @@
       {
         "cssName": "--en-color-line",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 29,
+        "line": 30,
         "form": "token",
         "expression": "t('--en-color-line')",
         "fallback": "defaultCSSValue(\"--en-color-line\")"
@@ -32166,7 +32212,7 @@
       {
         "cssName": "--en-editor-token-radius",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 30,
+        "line": 31,
         "form": "override",
         "expression": "o('--en-editor-token-radius',t('--en-radius-control'))",
         "fallback": "t('--en-radius-control')"
@@ -32174,7 +32220,7 @@
       {
         "cssName": "--en-radius-control",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 30,
+        "line": 31,
         "form": "token",
         "expression": "t('--en-radius-control')",
         "fallback": "defaultCSSValue(\"--en-radius-control\")"
@@ -32182,7 +32228,7 @@
       {
         "cssName": "--en-editor-token-background",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 32,
+        "line": 33,
         "form": "override",
         "expression": "o('--en-editor-token-background',t('--en-color-surface-subtle'))",
         "fallback": "t('--en-color-surface-subtle')"
@@ -32190,7 +32236,7 @@
       {
         "cssName": "--en-color-surface-subtle",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 32,
+        "line": 33,
         "form": "token",
         "expression": "t('--en-color-surface-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-surface-subtle\")"
@@ -32198,7 +32244,7 @@
       {
         "cssName": "--en-editor-token-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 32,
+        "line": 33,
         "form": "override",
         "expression": "o('--en-editor-token-color',t('--en-color-text'))",
         "fallback": "t('--en-color-text')"
@@ -32206,7 +32252,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 32,
+        "line": 33,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -32214,7 +32260,7 @@
       {
         "cssName": "--en-size-target-min",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 36,
+        "line": 37,
         "form": "token",
         "expression": "t('--en-size-target-min')",
         "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -32222,7 +32268,7 @@
       {
         "cssName": "--en-editor-token-hover-background",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 37,
+        "line": 38,
         "form": "override",
         "expression": "o('--en-editor-token-hover-background',t('--en-color-selected'))",
         "fallback": "t('--en-color-selected')"
@@ -32230,7 +32276,7 @@
       {
         "cssName": "--en-color-selected",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 37,
+        "line": 38,
         "form": "token",
         "expression": "t('--en-color-selected')",
         "fallback": "defaultCSSValue(\"--en-color-selected\")"
@@ -32238,7 +32284,7 @@
       {
         "cssName": "--en-editor-token-pressed-background",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 38,
+        "line": 39,
         "form": "override",
         "expression": "o('--en-editor-token-pressed-background',t('--en-color-accent-subtle'))",
         "fallback": "t('--en-color-accent-subtle')"
@@ -32246,7 +32292,7 @@
       {
         "cssName": "--en-color-accent-subtle",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 38,
+        "line": 39,
         "form": "token",
         "expression": "t('--en-color-accent-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-accent-subtle\")"
@@ -32254,7 +32300,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 40,
+        "line": 41,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -32262,7 +32308,7 @@
       {
         "cssName": "--en-color-line",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 40,
+        "line": 41,
         "form": "token",
         "expression": "t('--en-color-line')",
         "fallback": "defaultCSSValue(\"--en-color-line\")"
@@ -32270,7 +32316,7 @@
       {
         "cssName": "--en-size-target-min",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 42,
+        "line": 43,
         "form": "token",
         "expression": "t('--en-size-target-min')",
         "fallback": "defaultCSSValue(\"--en-size-target-min\")"
@@ -32278,7 +32324,7 @@
       {
         "cssName": "--en-option-list-max-block-size",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 45,
+        "line": 46,
         "form": "override",
         "expression": "o('--en-option-list-max-block-size',css`18rem`)",
         "fallback": "css`18rem`"
@@ -32286,7 +32332,7 @@
       {
         "cssName": "--en-option-list-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 46,
+        "line": 47,
         "form": "override",
         "expression": "o('--en-option-list-padding',o('--en-overlay-padding',t('--en-space-2')))",
         "fallback": "o('--en-overlay-padding',t('--en-space-2'))"
@@ -32294,7 +32340,7 @@
       {
         "cssName": "--en-overlay-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 46,
+        "line": 47,
         "form": "override",
         "expression": "o('--en-overlay-padding',t('--en-space-2'))",
         "fallback": "t('--en-space-2')"
@@ -32302,7 +32348,7 @@
       {
         "cssName": "--en-space-2",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 46,
+        "line": 47,
         "form": "token",
         "expression": "t('--en-space-2')",
         "fallback": "defaultCSSValue(\"--en-space-2\")"
@@ -32310,7 +32356,7 @@
       {
         "cssName": "--en-option-list-radius",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 47,
+        "line": 48,
         "form": "override",
         "expression": "o('--en-option-list-radius',o('--en-overlay-radius',t('--en-radius-container')))",
         "fallback": "o('--en-overlay-radius',t('--en-radius-container'))"
@@ -32318,7 +32364,7 @@
       {
         "cssName": "--en-overlay-radius",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 47,
+        "line": 48,
         "form": "override",
         "expression": "o('--en-overlay-radius',t('--en-radius-container'))",
         "fallback": "t('--en-radius-container')"
@@ -32326,7 +32372,7 @@
       {
         "cssName": "--en-radius-container",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 47,
+        "line": 48,
         "form": "token",
         "expression": "t('--en-radius-container')",
         "fallback": "defaultCSSValue(\"--en-radius-container\")"
@@ -32334,7 +32380,7 @@
       {
         "cssName": "--en-option-list-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 48,
+        "line": 49,
         "form": "override",
         "expression": "o('--en-option-list-padding',o('--en-overlay-padding',t('--en-space-2')))",
         "fallback": "o('--en-overlay-padding',t('--en-space-2'))"
@@ -32342,7 +32388,7 @@
       {
         "cssName": "--en-overlay-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 48,
+        "line": 49,
         "form": "override",
         "expression": "o('--en-overlay-padding',t('--en-space-2'))",
         "fallback": "t('--en-space-2')"
@@ -32350,7 +32396,7 @@
       {
         "cssName": "--en-space-2",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 48,
+        "line": 49,
         "form": "token",
         "expression": "t('--en-space-2')",
         "fallback": "defaultCSSValue(\"--en-space-2\")"
@@ -32358,7 +32404,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 49,
+        "line": 50,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -32366,7 +32412,7 @@
       {
         "cssName": "--en-option-list-border-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 49,
+        "line": 50,
         "form": "override",
         "expression": "o('--en-option-list-border-color',o('--en-overlay-border-color',t('--en-color-boundary')))",
         "fallback": "o('--en-overlay-border-color',t('--en-color-boundary'))"
@@ -32374,7 +32420,7 @@
       {
         "cssName": "--en-overlay-border-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 49,
+        "line": 50,
         "form": "override",
         "expression": "o('--en-overlay-border-color',t('--en-color-boundary'))",
         "fallback": "t('--en-color-boundary')"
@@ -32382,7 +32428,7 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 49,
+        "line": 50,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
@@ -32390,7 +32436,7 @@
       {
         "cssName": "--en-option-list-radius",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 50,
+        "line": 51,
         "form": "override",
         "expression": "o('--en-option-list-radius',o('--en-overlay-radius',t('--en-radius-container')))",
         "fallback": "o('--en-overlay-radius',t('--en-radius-container'))"
@@ -32398,7 +32444,7 @@
       {
         "cssName": "--en-overlay-radius",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 50,
+        "line": 51,
         "form": "override",
         "expression": "o('--en-overlay-radius',t('--en-radius-container'))",
         "fallback": "t('--en-radius-container')"
@@ -32406,7 +32452,7 @@
       {
         "cssName": "--en-radius-container",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 50,
+        "line": 51,
         "form": "token",
         "expression": "t('--en-radius-container')",
         "fallback": "defaultCSSValue(\"--en-radius-container\")"
@@ -32414,7 +32460,7 @@
       {
         "cssName": "--en-option-list-background",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 51,
+        "line": 52,
         "form": "override",
         "expression": "o('--en-option-list-background',o('--en-overlay-background',t('--en-color-surface-raised')))",
         "fallback": "o('--en-overlay-background',t('--en-color-surface-raised'))"
@@ -32422,7 +32468,7 @@
       {
         "cssName": "--en-overlay-background",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 51,
+        "line": 52,
         "form": "override",
         "expression": "o('--en-overlay-background',t('--en-color-surface-raised'))",
         "fallback": "t('--en-color-surface-raised')"
@@ -32430,7 +32476,7 @@
       {
         "cssName": "--en-color-surface-raised",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 51,
+        "line": 52,
         "form": "token",
         "expression": "t('--en-color-surface-raised')",
         "fallback": "defaultCSSValue(\"--en-color-surface-raised\")"
@@ -32438,7 +32484,7 @@
       {
         "cssName": "--en-option-list-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 52,
+        "line": 53,
         "form": "override",
         "expression": "o('--en-option-list-color',o('--en-overlay-color',t('--en-color-text')))",
         "fallback": "o('--en-overlay-color',t('--en-color-text'))"
@@ -32446,7 +32492,7 @@
       {
         "cssName": "--en-overlay-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 52,
+        "line": 53,
         "form": "override",
         "expression": "o('--en-overlay-color',t('--en-color-text'))",
         "fallback": "t('--en-color-text')"
@@ -32454,7 +32500,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 52,
+        "line": 53,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -32462,7 +32508,7 @@
       {
         "cssName": "--en-option-list-shadow",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 53,
+        "line": 54,
         "form": "override",
         "expression": "o('--en-option-list-shadow',t('--en-shadow-overlay'))",
         "fallback": "t('--en-shadow-overlay')"
@@ -32470,7 +32516,7 @@
       {
         "cssName": "--en-shadow-overlay",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 53,
+        "line": 54,
         "form": "token",
         "expression": "t('--en-shadow-overlay')",
         "fallback": "defaultCSSValue(\"--en-shadow-overlay\")"
@@ -32478,7 +32524,7 @@
       {
         "cssName": "--en-option-block-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 56,
+        "line": 57,
         "form": "override",
         "expression": "o('--en-option-block-padding',t('--en-space-control-block'))",
         "fallback": "t('--en-space-control-block')"
@@ -32486,7 +32532,7 @@
       {
         "cssName": "--en-space-control-block",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 56,
+        "line": 57,
         "form": "token",
         "expression": "t('--en-space-control-block')",
         "fallback": "defaultCSSValue(\"--en-space-control-block\")"
@@ -32494,7 +32540,7 @@
       {
         "cssName": "--en-option-inline-padding",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 56,
+        "line": 57,
         "form": "override",
         "expression": "o('--en-option-inline-padding',t('--en-space-control-inline'))",
         "fallback": "t('--en-space-control-inline')"
@@ -32502,7 +32548,7 @@
       {
         "cssName": "--en-space-control-inline",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 56,
+        "line": 57,
         "form": "token",
         "expression": "t('--en-space-control-inline')",
         "fallback": "defaultCSSValue(\"--en-space-control-inline\")"
@@ -32510,7 +32556,7 @@
       {
         "cssName": "--en-option-radius",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 56,
+        "line": 57,
         "form": "override",
         "expression": "o('--en-option-radius',css`max(0px,var(--_en-editor-list-radius) - var(--_en-editor-list-padding) - ${t('--en-border-width')})`)",
         "fallback": "css`max(0px,var(--_en-editor-list-radius) - var(--_en-editor-list-padding) - ${t('--en-border-width')})`"
@@ -32518,7 +32564,7 @@
       {
         "cssName": "--en-border-width",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 56,
+        "line": 57,
         "form": "token",
         "expression": "t('--en-border-width')",
         "fallback": "defaultCSSValue(\"--en-border-width\")"
@@ -32526,7 +32572,7 @@
       {
         "cssName": "--en-option-list-gap",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 57,
+        "line": 58,
         "form": "override",
         "expression": "o('--en-option-list-gap',css`0px`)",
         "fallback": "css`0px`"
@@ -32534,7 +32580,7 @@
       {
         "cssName": "--en-option-list-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 58,
+        "line": 59,
         "form": "override",
         "expression": "o('--en-option-list-color',o('--en-overlay-color',t('--en-color-text')))",
         "fallback": "o('--en-overlay-color',t('--en-color-text'))"
@@ -32542,7 +32588,7 @@
       {
         "cssName": "--en-overlay-color",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 58,
+        "line": 59,
         "form": "override",
         "expression": "o('--en-overlay-color',t('--en-color-text'))",
         "fallback": "t('--en-color-text')"
@@ -32550,7 +32596,7 @@
       {
         "cssName": "--en-color-text",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 58,
+        "line": 59,
         "form": "token",
         "expression": "t('--en-color-text')",
         "fallback": "defaultCSSValue(\"--en-color-text\")"
@@ -32558,7 +32604,7 @@
       {
         "cssName": "--en-color-surface-subtle",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 58,
+        "line": 59,
         "form": "token",
         "expression": "t('--en-color-surface-subtle')",
         "fallback": "defaultCSSValue(\"--en-color-surface-subtle\")"
@@ -32566,7 +32612,7 @@
       {
         "cssName": "--en-color-text-muted",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 60,
+        "line": 61,
         "form": "token",
         "expression": "t('--en-color-text-muted')",
         "fallback": "defaultCSSValue(\"--en-color-text-muted\")"
@@ -32574,7 +32620,7 @@
       {
         "cssName": "--en-font-metadata-weight",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 60,
+        "line": 61,
         "form": "token",
         "expression": "t('--en-font-metadata-weight')",
         "fallback": "defaultCSSValue(\"--en-font-metadata-weight\")"
@@ -32582,7 +32628,7 @@
       {
         "cssName": "--en-font-metadata-size",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 60,
+        "line": 61,
         "form": "token",
         "expression": "t('--en-font-metadata-size')",
         "fallback": "defaultCSSValue(\"--en-font-metadata-size\")"
@@ -32590,7 +32636,7 @@
       {
         "cssName": "--en-font-metadata-line-height",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 60,
+        "line": 61,
         "form": "token",
         "expression": "t('--en-font-metadata-line-height')",
         "fallback": "defaultCSSValue(\"--en-font-metadata-line-height\")"
@@ -32598,7 +32644,7 @@
       {
         "cssName": "--en-font-metadata-family",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 60,
+        "line": 61,
         "form": "token",
         "expression": "t('--en-font-metadata-family')",
         "fallback": "defaultCSSValue(\"--en-font-metadata-family\")"
@@ -32606,7 +32652,7 @@
       {
         "cssName": "--en-font-metadata-style",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 61,
+        "line": 62,
         "form": "token",
         "expression": "t('--en-font-metadata-style')",
         "fallback": "defaultCSSValue(\"--en-font-metadata-style\")"
@@ -32614,7 +32660,7 @@
       {
         "cssName": "--en-font-metadata-tracking",
         "file": "packages/styles/src/token-editor.ts",
-        "line": 61,
+        "line": 62,
         "form": "token",
         "expression": "t('--en-font-metadata-tracking')",
         "fallback": "defaultCSSValue(\"--en-font-metadata-tracking\")"
@@ -43303,33 +43349,9 @@
         "fallback": "defaultCSSValue(\"--en-radius-control\")"
       },
       {
-        "cssName": "--en-input-hover-border-color",
-        "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 12,
-        "form": "var",
-        "expression": "var(--en-input-hover-border-color, var(--en-input-border-color, var(--en-control-border-color, ${t('--en-color-boundary')})))",
-        "fallback": "var(--en-input-border-color, var(--en-control-border-color, ${t('--en-color-boundary')}))"
-      },
-      {
         "cssName": "--en-input-border-color",
         "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 12,
-        "form": "var",
-        "expression": "var(--en-input-border-color, var(--en-control-border-color, ${t('--en-color-boundary')}))",
-        "fallback": "var(--en-control-border-color, ${t('--en-color-boundary')})"
-      },
-      {
-        "cssName": "--en-control-border-color",
-        "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 12,
-        "form": "var",
-        "expression": "var(--en-control-border-color, ${t('--en-color-boundary')})",
-        "fallback": "${t('--en-color-boundary')}"
-      },
-      {
-        "cssName": "--en-input-border-color",
-        "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 10,
+        "line": 9,
         "form": "override",
         "expression": "o('--en-input-border-color', o('--en-control-border-color', t('--en-color-boundary')))",
         "fallback": "o('--en-control-border-color', t('--en-color-boundary'))"
@@ -43337,7 +43359,7 @@
       {
         "cssName": "--en-control-border-color",
         "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 10,
+        "line": 9,
         "form": "override",
         "expression": "o('--en-control-border-color', t('--en-color-boundary'))",
         "fallback": "t('--en-color-boundary')"
@@ -43345,23 +43367,23 @@
       {
         "cssName": "--en-color-boundary",
         "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 10,
+        "line": 9,
         "form": "token",
         "expression": "t('--en-color-boundary')",
         "fallback": "defaultCSSValue(\"--en-color-boundary\")"
       },
       {
-        "cssName": "--en-color-boundary",
+        "cssName": "--en-input-hover-border-color",
         "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 12,
-        "form": "token",
-        "expression": "t('--en-color-boundary')",
-        "fallback": "defaultCSSValue(\"--en-color-boundary\")"
+        "line": 10,
+        "form": "override",
+        "expression": "o('--en-input-hover-border-color', restBorder)",
+        "fallback": "restBorder"
       },
       {
         "cssName": "--en-input-invalid-border-color",
         "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 14,
+        "line": 19,
         "form": "override",
         "expression": "o('--en-input-invalid-border-color', t('--en-color-danger-text'))",
         "fallback": "t('--en-color-danger-text')"
@@ -43369,10 +43391,34 @@
       {
         "cssName": "--en-color-danger-text",
         "file": "packages/styles/src/internal/field-presentation.ts",
-        "line": 14,
+        "line": 19,
         "form": "token",
         "expression": "t('--en-color-danger-text')",
         "fallback": "defaultCSSValue(\"--en-color-danger-text\")"
+      },
+      {
+        "cssName": "--en-input-bottom-border-color",
+        "file": "packages/styles/src/internal/field-presentation.ts",
+        "line": 30,
+        "form": "var",
+        "expression": "var(--en-input-bottom-border-color, var(--_en-field-bottom-fallback))",
+        "fallback": "var(--_en-field-bottom-fallback)"
+      },
+      {
+        "cssName": "--en-input-hover-bottom-border-color",
+        "file": "packages/styles/src/internal/field-presentation.ts",
+        "line": 32,
+        "form": "var",
+        "expression": "var(--en-input-hover-bottom-border-color, var(--en-input-bottom-border-color, var(--_en-field-bottom-fallback)))",
+        "fallback": "var(--en-input-bottom-border-color, var(--_en-field-bottom-fallback))"
+      },
+      {
+        "cssName": "--en-input-bottom-border-color",
+        "file": "packages/styles/src/internal/field-presentation.ts",
+        "line": 32,
+        "form": "var",
+        "expression": "var(--en-input-bottom-border-color, var(--_en-field-bottom-fallback))",
+        "fallback": "var(--_en-field-bottom-fallback)"
       }
     ],
     "packages/styles/src/internal/inset-action.ts": [
@@ -50475,5 +50521,5 @@
     "packages/elements/src/select-option/index.ts": [],
     "packages/elements/src/avatar/index.ts": []
   },
-  "digest": "sha256:5a97939a08e0f1d701cb9561e1887a74488ed3e8c125eabea8815c3414d543f2"
+  "digest": "sha256:4ec8c9c8027bf363d444f6a1896f4457d17a6723467e3bb6868bda0da276c76b"
 }

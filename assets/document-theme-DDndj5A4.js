@@ -1,0 +1,1 @@
+import{n as e,t}from"./document-theme-Re2Ru_C8.js";e();export{t as attachDocumentTheme};

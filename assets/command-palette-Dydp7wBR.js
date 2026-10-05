@@ -1,1 +1,0 @@
-import{n as e,t}from"./command-palette-BEwLKBuN.js";e();export{t as commandPaletteDefinition};
