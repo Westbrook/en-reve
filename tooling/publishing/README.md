@@ -1,7 +1,10 @@
 # GitHub build snapshots
 
-After each GitHub source publication, publish a separately qualified project-site
-build to `gh-pages`. Keep the root/private build separate:
+When completing a coherent piece of work, push source to GitHub `main` and
+publish a separately qualified project-site build to `gh-pages`. Current
+publication is GitHub-only; do not build or publish a private Sites deployment
+as part of this workflow. Keep any independently needed root-path test build
+separate:
 
 ```sh
 # Once per checkout or reader lockfile change; preserve its isolated dependencies.
@@ -71,4 +74,5 @@ source, receipt and manifest provenance. Its first commit is parentless; later
 snapshots retain history through ordinary fast-forward pushes. Temporary indexes
 and refs leave developer checkouts untouched. A concurrent publication fails for
 retry; no force push is used. Repository visibility and Pages configuration are
-not changed. Continue publishing the **root** build to the existing private Site.
+not changed. Previous private Site deployments remain historical; this workflow
+does not update them.
