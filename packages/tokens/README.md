@@ -1,6 +1,6 @@
 # @en-reve/tokens
 
-Private, dependency-free token data and pure TypeScript utilities. Version `0.1.0`, MIT. The light/dark and compact/comfortable/spacious starting values support rendered review; they are not a claim of accessibility conformance.
+Dependency-free token data and pure TypeScript utilities. Version `0.1.0`, MIT. The light/dark and compact/comfortable/spacious starting values support rendered review; they are not a claim of accessibility conformance.
 
 Build with `npm run build --workspace @en-reve/tokens`; run its Node tests with `npm test --workspace @en-reve/tokens`. The build emits ES2022 modules and declarations, static CSS/default-value data, typed token snapshots, and a manifest. Importing a pure module neither reads the DOM nor installs styles, observers, custom elements, or globals.
 

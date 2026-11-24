@@ -13,8 +13,8 @@
     "test:workflows": "node ../../tooling/testing/invoke.mjs public --view='apps/docs#test:workflows' --"
   },
   "dependencies": {
-    "lit": "3.3.3",
-    "signal-polyfill": "0.2.2",
+    "lit": "^3.3.3",
+    "signal-polyfill": "^0.2.2",
     "@en-reve/primitives": "0.1.0",
     "@en-reve/ssr": "0.1.0",
     "@en-reve/elements": "0.1.0",

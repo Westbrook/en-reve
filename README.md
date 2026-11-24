@@ -1,6 +1,6 @@
 # en-reve
 
-A private, exploratory design system for creativity and collaboration tools.
+An exploratory design system for creativity and collaboration tools.
 Lit custom elements share token-driven styles and Signals state/interaction
 primitives. The public prefix is `en-*`; packages use `@en-reve`.
 
@@ -43,7 +43,7 @@ editor does not supply those services. See the current
 
 ## Local development
 
-Use Node.js 26.10.0 Current and npm 12.1.0 (`.nvmrc` and `packageManager`). Node 24.21.0 LTS is the additional supported validation line; Node types follow that minimum. Python checks use 3.14.7 (`.python-version`). After `npm ci`, run `npm run build` and
+Use Node.js 26.13.1 Current and npm 12.2.3 (`.nvmrc` and `packageManager`). Node 24.21.0 LTS is the additional supported validation line; Node types follow that minimum. Python checks use 3.14.7 (`.python-version`). After `npm ci`, run `npm run build` and
 `npm run dev:docs`. The sheet is available at `http://127.0.0.1:4180/`.
 The documentation build emits the static Site into the root `dist/` directory.
 It prerenders the sheet and workflows with Lit SSR and Declarative Shadow DOM, then
@@ -62,6 +62,54 @@ current contracts, remaining proposals, and next implementation work.
 their respective boundaries. Browser runs need installed Playwright engines;
 set `PLAYWRIGHT_BROWSERS_PATH` when using a separate browser installation.
 
-Packages remain private. Before1.0, `0.x.y` advances `x` for breaking or
+## Consuming the packages
+
+The `@en-reve/*` packages are no longer marked private and can be consumed as
+registry-style dependencies. Before 1.0, `0.x.y` advances `x` for breaking or
 deprecation changes and `y` for minor/patch changes. Stable releases use normal
 SemVer, with minor deprecations and major removals. Source is licensed MIT.
+
+The five packages are `@en-reve/tokens`, `@en-reve/styles`,
+`@en-reve/primitives`, `@en-reve/elements` and `@en-reve/ssr`. They are not yet
+published to the public npm registry: the coordinated breaking-change train is
+still being prepared (see `plans/api-next-release.md` and
+`plans/theme-next-release.md`), and versions stay at `0.1.0` until the release
+draft records the final classification. Until then, consume them from a local
+checkout or tarballs:
+
+```sh
+# Local checkout (npm installs file: dependencies as links)
+npm install \
+  @en-reve/tokens=file:../en-reve/packages/tokens \
+  @en-reve/styles=file:../en-reve/packages/styles \
+  @en-reve/primitives=file:../en-reve/packages/primitives \
+  @en-reve/elements=file:../en-reve/packages/elements \
+  @en-reve/ssr=file:../en-reve/packages/ssr
+
+# Or from tarballs (npm copies tarball contents into node_modules).
+# Tarballs land in the current directory; install them from the same directory.
+npm pack --workspace @en-reve/tokens --workspace @en-reve/styles \
+  --workspace @en-reve/primitives --workspace @en-reve/elements \
+  --workspace @en-reve/ssr
+npm install \
+  @en-reve/tokens=./en-reve-tokens-0.1.0.tgz \
+  @en-reve/styles=./en-reve-styles-0.1.0.tgz \
+  @en-reve/primitives=./en-reve-primitives-0.1.0.tgz \
+  @en-reve/elements=./en-reve-elements-0.1.0.tgz \
+  @en-reve/ssr=./en-reve-ssr-0.1.0.tgz
+```
+
+Install all five in one command so npm resolves the internal `@en-reve/*`
+dependencies from the same set; installing a package alone would look the
+sibling package up in the registry and fail. GitHub git-URL dependencies are
+not a supported consumption path for these sub-packages: npm git dependencies
+install the repository root, which is the private workspace, not the published
+packages. Public npm publication (`npm publish --workspaces`) is deferred to the
+release draft; run `npm run test:release` and the release tooling first, then
+publish with the matching version train.
+
+In an application, register explicit `@en-reve/elements/define/<name>.js` entries
+and load `@en-reve/tokens/default.css` through the application's stylesheet
+pipeline. For server rendering, import `@en-reve/ssr/install.js` before element
+definitions, then use `renderToString()` from `@en-reve/ssr`. See
+`skills/en-reve-consume/SKILL.md` and `packages/elements/README.md`.

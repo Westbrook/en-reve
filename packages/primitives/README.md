@@ -1,6 +1,6 @@
 # @en-reve/primitives
 
-Private `0.1.0` shared primitives for En Rêve, licensed MIT. Import the layer you need; there is no root barrel and no automatic custom-element registration. State modules depend on `signal-polyfill`; templates depend on Lit; the signal controller uses `signal-utils/subtle/reaction`. Controller imports use Lit types without importing its rendering runtime.
+`0.1.0` shared primitives for En Rêve, licensed MIT. Import the layer you need; there is no root barrel and no automatic custom-element registration. State modules depend on `signal-polyfill`; templates depend on Lit; the signal controller uses `signal-utils/subtle/reaction`. Controller imports use Lit types without importing its rendering runtime.
 
 ## State
 

@@ -1,9 +1,26 @@
 {
   "name": "@en-reve/ssr",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "license": "MIT",
+  "description": "Server-side rendering and hydration support for En Reve components.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Westbrook/en-reve.git",
+    "directory": "packages/ssr"
+  },
+  "homepage": "https://github.com/Westbrook/en-reve#readme",
+  "bugs": "https://github.com/Westbrook/en-reve/issues",
+  "keywords": [
+    "en-reve",
+    "ssr",
+    "lit",
+    "hydration",
+    "design-system"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "files": [
     "dist",
     "README.md",

@@ -21,7 +21,7 @@
 <section id="developers"><h2>Build an application</h2>
 <h3>1. Choose a pattern and its ownership</h3><p>Use the <a data-preserve-report href="/api-reference">searchable API reference</a> for attributes, properties, events, slots, Parts and CSS properties; use the <a data-preserve-report href="/component-patterns">native recipes</a> when ordinary HTML is sufficient. Keep routing, transport, persistence and business validation in your application.</p>
 <p>Authored slots support rich application content. Data APIs support keyed collections, virtualization and application-owned rendering where documented. A table cell renderer returns cell content, not another <code>td</code>; activity and carousel renderers similarly receive component-owned wrappers. Use stable keys rather than array positions when items can move.</p>
-<h3>2. Register only what you use</h3><p>Install matching private <code>@en-reve</code> packages through your approved package source or packed artifacts. No public npm availability is implied. With an ESM-capable bundler, this is a complete checkbox setup:</p>
+<h3>2. Register only what you use</h3><p>Install the matching <code>@en-reve</code> packages through your approved package source or packed artifacts. Public npm availability is not yet implied; packages are un-privated but remain at <code>0.1.0</code> pending the release draft. With an ESM-capable bundler, this is a complete checkbox setup:</p>
 <pre tabindex="0" aria-label="Checkbox integration source"><code>import '@en-reve/tokens/default.css';
 import '@en-reve/elements/define/checkbox.js';
 

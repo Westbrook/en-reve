@@ -1,6 +1,6 @@
 # @en-reve/styles
 
-Reusable, token-driven styles for library templates and independently composed patterns. This package has no state, custom-element registration, global reset, network work or token-generation runtime. Version `0.1.0` is private and MIT licensed.
+Reusable, token-driven styles for library templates and independently composed patterns. This package has no state, custom-element registration, global reset, network work or token-generation runtime. Version `0.1.0` is MIT licensed.
 
 ## CSS source authoring
 

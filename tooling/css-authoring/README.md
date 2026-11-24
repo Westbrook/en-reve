@@ -2,7 +2,7 @@
 
 Typography and surface recipes are maintained in `packages/styles/src/css/`. `css-authoring.json` lists their definitions and entry modules explicitly. The styles build generates Lit adapters, then emits the existing JavaScript, declarations and plain CSS entry points. No compiler, Node.js, TypeScript or external Reve checkout is required by consumers.
 
-From the repository root, using the locked dependencies and Node 26.10.0 Current (or the supported Node 24.21.0 LTS line):
+From the repository root, using the locked dependencies and Node 26.13.1 Current (or the supported Node 24.21.0 LTS line):
 
 ```sh
 npm ci

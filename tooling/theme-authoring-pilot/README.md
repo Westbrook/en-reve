@@ -4,7 +4,7 @@ Historical experiment, not a public authoring API. The user subsequently chose C
 
 ## Run
 
-Use Node 26.10.0 Current (or Node 24.21.0 LTS) with type stripping, the root workspace's locked dependencies, and its built tokens/styles:
+Use Node 26.13.1 Current (or Node 24.21.0 LTS) with type stripping, the root workspace's locked dependencies, and its built tokens/styles:
 
 ```sh
 npm ci

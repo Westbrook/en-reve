@@ -1,9 +1,26 @@
 {
   "name": "@en-reve/styles",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "license": "MIT",
+  "description": "Token-driven CSS and Lit style adapters for the En Reve design system.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Westbrook/en-reve.git",
+    "directory": "packages/styles"
+  },
+  "homepage": "https://github.com/Westbrook/en-reve#readme",
+  "bugs": "https://github.com/Westbrook/en-reve/issues",
+  "keywords": [
+    "en-reve",
+    "styles",
+    "css",
+    "lit",
+    "design-system"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": [
     "**/*.css"
   ],
@@ -192,7 +209,7 @@
     "test:authoring": "node ../../tooling/testing/invoke.mjs public --view='packages/styles#test:authoring' --"
   },
   "dependencies": {
-    "lit": "3.3.3",
+    "lit": "^3.3.3",
     "@en-reve/tokens": "0.1.0"
   }
 }

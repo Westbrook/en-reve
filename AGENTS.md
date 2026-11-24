@@ -1,7 +1,9 @@
 # En Reve agent instructions
 
-En Reve is a private, exploratory design system for creativity and collaboration
-tools. It uses Lit custom elements, Signals, `en-*` tags, and `@en-reve` packages.
+En Reve is an exploratory design system for creativity and collaboration
+tools. The `@en-reve/*` packages are un-privated and consumable as registry-style
+dependencies from a local checkout or tarballs; they are not yet published to the
+public npm registry. It uses Lit custom elements, Signals, `en-*` tags, and `@en-reve` packages.
 Use the guidance below for the area being changed; read linked contracts as needed.
 
 ## Package boundaries

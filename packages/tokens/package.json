@@ -1,14 +1,32 @@
 {
   "name": "@en-reve/tokens",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "license": "MIT",
+  "description": "Token data, theme authoring and compilation utilities for the En Reve design system.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Westbrook/en-reve.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/Westbrook/en-reve#readme",
+  "bugs": "https://github.com/Westbrook/en-reve/issues",
+  "keywords": [
+    "en-reve",
+    "design-tokens",
+    "tokens",
+    "themes",
+    "design-system"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "sideEffects": [
     "**/*.css"
   ],
   "files": [
     "dist",
+    "!dist/**/*.tsbuildinfo",
     "README.md"
   ],
   "exports": {
